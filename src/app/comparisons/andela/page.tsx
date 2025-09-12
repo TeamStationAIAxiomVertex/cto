@@ -5,11 +5,11 @@ import Link from 'next/link';
 
 const comparisonData = [
     { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
-    { feature: 'Cognitive Science-Based Vetting (Axiom Cortex™)', teamstation: true, competitor: false },
+    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
     { feature: 'Specific Focus on LATAM Nearshore', teamstation: true, competitor: false },
-    { feature: '2.6M+ LATAM Talent Graph', teamstation: true, competitor: true },
-    { feature: 'Publicly Stated Operational SLAs', teamstation: true, competitor: false },
-    { feature: 'Bias Mitigation & Fairness Audits in Vetting', teamstation: true, competitor: false },
+    { feature: 'Bundled hardware, offices, and cyber insurance', teamstation: true, competitor: false },
+    { feature: 'Global Talent Cloud (less LATAM focus)', teamstation: false, competitor: true },
+    { feature: 'Client handles compliance, devices, security', teamstation: false, competitor: true },
 ];
 
 
@@ -56,7 +56,7 @@ export default function AndelaComparisonPage() {
       <div className="prose mx-auto my-12">
         <h2 className="h2 text-center">Analysis: The Nearshore Specialist vs. The Global Generalist</h2>
         <p>
-            Andela operates a large, global "talent cloud" that connects companies with technologists from around the world. Their strength is their breadth and scale, offering access to a wide variety of skills across many geographies.
+            Andela operates a large, AI-powered global "talent cloud" that connects companies with technologists from around the world. Their strength is their breadth and scale. However, their model does not include bundled EOR, devices, or insurance, leaving the client to manage these critical operational components.
         </p>
         <p>
            TeamStation AI has a more specialized focus: building elite nearshore engineering teams specifically within Latin America. This focus allows us to provide a deeply integrated operational platform that is tailored to the unique legal, cultural, and logistical nuances of the region. While Andela helps you find talent, our platform provides the entire security and compliance wrapper—EOR, MDM-managed devices, insurance—that is critical for a secure nearshore operation.

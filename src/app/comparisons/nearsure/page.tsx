@@ -5,11 +5,11 @@ import Link from 'next/link';
 
 const comparisonData = [
     { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
-    { feature: 'Cognitive Science-Based Vetting (Axiom Cortex™)', teamstation: true, competitor: false },
-    { feature: '2.6M+ LATAM Talent Graph', teamstation: true, competitor: false },
-    { feature: 'Publicly Stated Delivery SLAs', teamstation: true, competitor: false },
+    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
+    { feature: 'Transparent, All-Inclusive Pricing', teamstation: true, competitor: false },
+    { feature: 'Faster Time-to-Offer (~9 days)', teamstation: true, competitor: false },
     { feature: 'Traditional Staff Augmentation Model', teamstation: false, competitor: true },
-    { feature: 'Focus on Sourcing and Placement', teamstation: false, competitor: true },
+    { feature: 'Client handles devices, compliance, security', teamstation: false, competitor: true },
 ];
 
 
@@ -56,18 +56,18 @@ export default function NearsureComparisonPage() {
       <div className="prose mx-auto my-12">
         <h2 className="h2 text-center">Analysis: The Integrated Platform vs. Traditional Staff Aug</h2>
         <p>
-            Nearsure operates on a classic staff augmentation model. They are experts at sourcing and placing nearshore talent to fill roles within your existing team. Their success in quickly filling a large number of roles demonstrates their recruiting prowess.
+            Nearsure operates on a classic staff augmentation model. They are experts at sourcing and placing nearshore talent, and their AI recruiter has improved their hiring time. However, their model leaves significant operational, legal, and security burdens on the client.
         </p>
         <p>
-           However, the traditional staff aug model leaves significant operational, legal, and security burdens on the client. Issues like compliant hiring, payroll, secure device management, and insurance are typically outside the scope of their service. TeamStation AI was created to solve this exact problem. We provide an integrated platform that handles not only the sourcing (powered by our{' '}
+           Issues like compliant hiring (EOR), payroll, secure device management, and insurance are outside their scope. TeamStation AI was created to solve this exact problem. We provide an integrated platform that handles not only sourcing (powered by our{' '}
             <Tooltip text="Axiom Cortex™ is TeamStation AI's proprietary Cognitive AI engine that uses 44 psychometric and NLP signals to evaluate engineering candidates.">
                 Axiom Cortex™
             </Tooltip>
-            {' '} and 2.6M+ talent graph) but also the entire operational infrastructure.
+            ) but also the entire operational infrastructure, all under a single, predictable SLA.
         </p>
-        <h3 className="h3">Beyond Placement</h3>
+        <h3 className="h3">Beyond Placement: The TCO and Risk Equation</h3>
         <p>
-            The key difference is what happens after the placement. With Nearsure, their primary job is done once the candidate is hired. With TeamStation AI, that's just the beginning. Our platform continues to provide value through secure onboarding, performance diagnostics, and ongoing operational management, all under a single, predictable SLA. We don't just fill seats; we provide a complete, managed operating system for your nearshore team.
+           The key difference is what happens after placement. With Nearsure, their primary job is done. With TeamStation AI, that's just the beginning. Our transparent <Link href="/pricing">pricing</Link> includes all the "hidden" costs—EOR, devices, insurance—that inflate the Total Cost of Ownership (TCO) with traditional vendors. We don't just fill seats; we provide a complete, managed operating system for your nearshore team, reducing both cost and risk.
         </p>
       </div>
 

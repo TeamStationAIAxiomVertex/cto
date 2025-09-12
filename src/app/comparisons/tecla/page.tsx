@@ -5,11 +5,10 @@ import Link from 'next/link';
 
 const comparisonData = [
     { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
-    { feature: 'Cognitive Science-Based Vetting (Axiom Cortex™)', teamstation: true, competitor: false },
-    { feature: '2.6M+ LATAM Talent Graph', teamstation: true, competitor: true },
-    { feature: 'Publicly Stated Delivery SLAs (e.g., Time-to-Offer)', teamstation: true, competitor: false },
-    { feature: 'Secure Device & Workspace Management', teamstation: true, competitor: false },
-    { feature: 'Bias Mitigation & Fairness Audits in Vetting', teamstation: true, competitor: false },
+    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
+    { feature: '2.6M+ LATAM Talent Graph (Nebula™)', teamstation: true, competitor: false },
+    { feature: 'Transparent, All-Inclusive Pricing', teamstation: true, competitor: false },
+    { feature: 'Marketplace model, client handles operations', teamstation: false, competitor: true },
 ];
 
 
@@ -54,12 +53,12 @@ export default function TeclaComparisonPage() {
       </div>
 
       <div className="prose mx-auto my-12">
-        <h2 className="h2 text-center">Analysis: The Platform vs. The Marketplace</h2>
+        <h2 className="h2 text-center">Analysis: The Integrated Platform vs. The Marketplace</h2>
         <p>
-            TECLA operates as a talent marketplace, connecting companies with a large network of developers across Latin America. Their model emphasizes fast matching and cultural fit. While effective for sourcing candidates, it places the burden of compliance, payroll, device security, and HR management on the client.
+            TECLA operates as a talent marketplace, connecting companies with a network of developers across Latin America. While effective for sourcing candidates, their model places the significant burden of compliance, payroll, device security, and HR management squarely on the client.
         </p>
         <p>
-           TeamStation AI provides a fully integrated platform. We don't just find talent; we provide the entire operational infrastructure. This includes Employer of Record (EOR), secure device provisioning (MDM), and comprehensive insurance. Our{' '}
+           TeamStation AI provides a fully integrated platform. We don't just find talent; we provide the entire operational infrastructure. This includes Employer of Record (EOR), secure device provisioning (MDM), and comprehensive insurance, all bundled into a single, predictable rate. Our{' '}
             <Tooltip text="Axiom Cortex™ is TeamStation AI's proprietary Cognitive AI engine that uses 44 psychometric and NLP signals to evaluate engineering candidates.">
                 Axiom Cortex™
             </Tooltip>
@@ -67,17 +66,14 @@ export default function TeclaComparisonPage() {
         </p>
         <h3 className="h3">Operational Responsibility: Where Does it Lie?</h3>
         <p>
-            With a marketplace like TECLA, you find the talent, but then you are largely on your own. You have to figure out how to hire them compliantly, how to pay them, and how to ensure their work environment is secure. This creates significant operational overhead and legal risk.
-        </p>
-        <p>
-            TeamStation AI absorbs this complexity. Our model is designed for CTOs who need to scale without building a global HR and legal department. We handle the operational details so you can focus on your product roadmap.
+            With a marketplace like TECLA, you find the talent, but then you are largely on your own. You have to figure out how to hire them compliantly, pay them, and secure their work environment. This creates significant operational overhead and legal risk. TeamStation AI absorbs this complexity. Our model is designed for CTOs who need to scale without building a global HR and legal department from scratch.
         </p>
       </div>
 
       <div className="section text-center">
         <h2 className="h2 mt-0">Conclusion</h2>
         <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
-            If you have the internal resources to manage international hiring, compliance, and IT security, a marketplace like TECLA can be a good sourcing tool. However, for companies looking for a complete, secure, and scalable solution, TeamStation AI's integrated platform offers a clear advantage by reducing risk and operational burden.
+            If you have the internal resources to manage international hiring, compliance, and IT security, a marketplace like TECLA can be a good sourcing tool. However, for companies looking for a complete, secure, and scalable solution that reduces risk and operational burden, TeamStation AI's integrated platform offers a clear advantage.
         </p>
         <Link href="/comparisons" className="cta">Back to Main Comparison</Link>
       </div>
