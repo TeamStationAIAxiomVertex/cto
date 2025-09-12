@@ -1,5 +1,4 @@
 
-import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -147,7 +146,7 @@ export default function PricingPage() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 mt-12 max-w-6xl mx-auto text-left">
             {includedItems.map(item => (
                 <div key={item.title} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 shrink-0 mt-0.5 text-primary" />
+                    <span className="h-5 w-5 shrink-0 mt-0.5 text-primary">✓</span>
                     <span className="text-muted-foreground">{item.title}</span>
                 </div>
             ))}
@@ -164,7 +163,7 @@ export default function PricingPage() {
                     <ul className="space-y-2">
                         {factor.items.map(item => (
                              <li key={item} className="flex items-start gap-2 text-sm">
-                                <CheckCircle className="h-4 w-4 shrink-0 mt-1 text-green-400" />
+                                <span className="h-4 w-4 shrink-0 mt-1 text-green-400">✓</span>
                                 <span className="text-muted-foreground">{item}</span>
                             </li>
                         ))}
@@ -239,3 +238,5 @@ export default function PricingPage() {
     </main>
   );
 }
+
+    
