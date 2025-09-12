@@ -9,13 +9,13 @@ export default function BuildVsBuyPage() {
       </div>
       <h1 className="h1">Build vs. Buy: A Framework for Scaling Your Team</h1>
       <p className="lead">
-        Should you build an in-house team from scratch or "buy" into an integrated nearshore platform? This playbook models the trade-offs in terms of cost, speed, and risk.
+        Should you build a nearshore operation from scratch or "buy" into an integrated platform? This playbook models the trade-offs in terms of cost, speed, and risk.
       </p>
 
       <div className="section my-12">
-        <h2 className="h2 mt-0">The True Cost of "Building" an In-House Team</h2>
+        <h2 className="h2 mt-0">The True Cost of "Building" a Nearshore Operation</h2>
         <p className="lead" style={{fontSize: '1rem', marginBottom: '1rem'}}>
-          Building an in-house team, especially in a new region, involves far more than just salaries. These are the hidden costs that are often overlooked.
+          Building an in-house team in a new region involves far more than just salaries. These are the hidden costs—the "gotchas" that sink budgets and timelines. See our <Link href="/comparisons">vendor comparison</Link> for how this plays out with specific providers.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card">
@@ -44,7 +44,7 @@ export default function BuildVsBuyPage() {
        <div className="section my-12">
         <h2 className="h2 mt-0">The Value of "Buying" into a Nearshore Co-Pilot</h2>
         <p className="lead" style={{fontSize: '1rem', marginBottom: '1rem'}}>
-          Partnering with TeamStation AI abstracts away the complexity and risk, allowing you to focus on building your product.
+          Partnering with TeamStation AI abstracts away the complexity and risk, allowing you to focus on building your product. Our <Link href="/process">process</Link> is engineered for this.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card">
@@ -72,7 +72,7 @@ export default function BuildVsBuyPage() {
       <div className="prose my-8">
         <h2 className="h2">The Verdict</h2>
         <p>
-            For most companies, especially those in the growth stage, the "Build" model presents significant hidden costs, risks, and delays. The "Buy" model, offered by an integrated platform like TeamStation AI, provides a faster, safer, and more cost-effective path to scaling your engineering team. It allows you to leverage world-class talent without the operational headache of building a global HR and legal infrastructure from scratch.
+            For most companies, especially those in the growth stage, the "Build" model presents significant hidden costs, risks, and delays. Our analysis of the <Link href="/playbook/latam-economics">economics of nearshoring</Link> shows this clearly. The "Buy" model, offered by an integrated platform like TeamStation AI, provides a faster, safer, and more cost-effective path to scaling your engineering team. It allows you to leverage world-class talent without the operational headache of building a global HR and legal infrastructure from scratch.
         </p>
       </div>
 

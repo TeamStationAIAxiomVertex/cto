@@ -1,4 +1,3 @@
-
 import { CheckCircle, XCircle } from 'lucide-react';
 import Tooltip from '@/components/Tooltip';
 import Link from 'next/link';

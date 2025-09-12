@@ -48,7 +48,7 @@ export default function SecurityCompliancePage() {
       <div className="prose my-8">
         <h2 className="h2">The Security Checklist for Vetting Any Partner</h2>
         <p>
-          When evaluating any nearshore or remote talent partner, your due diligence should include these critical questions. With TeamStation AI, the answer is "yes" to all.
+          When evaluating any nearshore or remote talent partner, your due diligence should include these critical questions. A "no" to any of these is a major red flag. See how vendors stack up in our <Link href="/comparisons">competitive analysis</Link>.
         </p>
         <ul>
             <li><strong>Device Management:</strong> Do you provide and manage corporate-owned devices for all engineers? Are they enrolled in an MDM solution?</li>
@@ -56,7 +56,7 @@ export default function SecurityCompliancePage() {
             <li><strong>Data Handling:</strong> Is there a clear policy for handling sensitive data and PII? Is data encrypted in transit and at rest?</li>
             <li><strong>Compliance:</strong> Can you provide evidence of alignment with frameworks like SOC 2 or ISO 27001?</li>
             <li><strong>Insurance:</strong> Do you carry Cyber and Errors & Omissions (E&O) insurance?</li>
-            <li><strong>Onboarding & Offboarding:</strong> Is there a formal, secure process for provisioning and de-provisioning access?</li>
+            <li><strong>Onboarding & Offboarding:</strong> Is there a formal, secure process for provisioning and de-provisioning access? Our <Link href="/nearshore-it-talent-onboarding">onboarding process</Link> is fully auditable.</li>
         </ul>
         <p>
             A vendor who cannot provide clear, confident answers to these questions is a significant risk to your organization.

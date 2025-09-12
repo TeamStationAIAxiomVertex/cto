@@ -67,7 +67,7 @@ export default function NearshoreVsOffshorePage() {
           <Tooltip text="Total Cost of Ownership: The sum of all direct and indirect costs, including rework, management overhead, and communication friction.">
             TCO
           </Tooltip>{' '}
-          often skyrockets due to hidden friction.
+          often skyrockets due to hidden friction. See our deep-dive on <Link href="/playbook/latam-economics">LATAM Economics</Link> for a full model.
         </p>
         <p>
           The core issue is latency. Not network latency, but human latency. Waiting 12 hours for a simple answer to unblock your team is a silent killer of velocity. Nearshore teams, typically in{' '}
@@ -85,38 +85,37 @@ export default function NearshoreVsOffshorePage() {
             <thead>
               <tr>
                 <th>Factor</th>
-                <th>Nearshore (e.g., LATAM)</th>
+                <th>Nearshore (e.g., TeamStation AI)</th>
                 <th>Offshore (e.g., Southeast Asia)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td className="flex items-center gap-2"><Clock size={16} /> Time-Zone Overlap</td>
-                <td>High (4-8 hours). Enables real-time pairing and problem-solving.</td>
+                <td className='text-accent-custom font-semibold'>High (4-8 hours). Enables real-time pairing and problem-solving.</td>
                 <td>Low (0-2 hours). Forces asynchronous handoffs and late-night calls.</td>
               </tr>
               <tr>
                 <td className="flex items-center gap-2"><Users size={16} /> Collaboration Fidelity</td>
-                <td>High. Ad-hoc conversations are possible, leading to faster feedback.</td>
+                <td className='text-accent-custom font-semibold'>High. Ad-hoc conversations are possible, leading to faster feedback.</td>
                 <td>Low. Communication is formal, ticket-based, and prone to misunderstanding.</td>
               </tr>
               <tr>
                 <td className="flex items-center gap-2"><Languages size={16} /> Cultural & Language Alignment</td>
-                <td>High. Strong affinity with U.S. work culture reduces friction.</td>
+                <td className='text-accent-custom font-semibold'>High. Strong affinity with U.S. work culture reduces friction.</td>
                 <td>Varies. Can introduce communication barriers that slow down projects.</td>
               </tr>
               <tr>
                 <td className="flex items-center gap-2"><Plane size={16} /> On-Site Escalation Path</td>
-                <td>Simple. Faster, cheaper travel for critical workshops or crisis resolution.</td>
+                <td className='text-accent-custom font-semibold'>Simple. Faster, cheaper travel for critical workshops or crisis resolution.</td>
                 <td>Complex. Expensive, multi-day travel, making it impractical for urgent needs.</td>
               </tr>
               <tr>
                 <td className="flex items-center gap-2"><ShieldCheck size={16} /> Compliance & Legal Risk</td>
                 <td>
-                  Lower. Stronger alignment with U.S. data privacy and IP laws. (See our{' '}
-                  <Link href="/comparisons">vendor comparisons</Link>).
+                  Lower. Our integrated <Link href="/playbook/security-compliance">security and compliance</Link> framework handles EOR, data privacy, and IP laws.
                 </td>
-                <td>Higher. Navigating different legal frameworks can be complex and risky.</td>
+                <td>Higher. Navigating different legal frameworks can be complex and risky, as detailed in our <Link href="/comparisons">vendor comparisons</Link>.</td>
               </tr>
             </tbody>
           </table>

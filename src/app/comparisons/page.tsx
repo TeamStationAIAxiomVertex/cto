@@ -64,7 +64,7 @@ const vendors = [
     slug: 'toptal',
     basePricing: '$60-150+/hr + subscription',
     additionalCosts: 'EOR, devices, insurance, offices',
-    risk: 'High: Expensive freelance model; no integrated compliance.',
+    risk: 'High: Expensive; freelance model; no integrated compliance.',
     riskLevel: 'high'
   },
   { 
@@ -128,23 +128,15 @@ export default function ComparisonsPage() {
       <header className="text-center mb-12">
         <h1 className="h1">TeamStation AI vs. The Competition</h1>
         <p className="lead max-w-4xl mx-auto">
-          A comparative analysis of features, cost, and risk. We synthesize vendor claims, pricing, and public data to compare TeamStation AI with ten prominent competitors, showing how our model delivers lower TCO and reduced operational risk.
+          A comparative analysis of features, cost, and risk. We synthesize vendor claims, pricing, and public data to compare TeamStation AI with prominent competitors, showing how our model delivers lower TCO and reduced operational risk.
         </p>
       </header>
 
-      <div className="my-12">
-        <h2 className="h2 text-center">Key Findings: The Platform Advantage</h2>
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 max-w-4xl mx-auto">
-            {takeaways.map(item => (
-                <div key={item.title} className="card flex flex-col p-6">
-                    <div className="flex items-center gap-4">
-                        {item.icon}
-                        <h3 className="h3 m-0 text-lg">{item.title}</h3>
-                    </div>
-                    <p className="text-sm m-0 text-mute mt-4 flex-grow">{item.description}</p>
-                </div>
-            ))}
-         </div>
+       <div className="prose mx-auto my-12">
+        <h2 className="h2 text-center">Key Findings</h2>
+         <p>
+            TeamStation AI bundles hiring, compliance, devices, MDM, workspace, insurance and performance under one contract. Competitors require clients to assemble multiple vendors. Our transparent <Link href="/pricing">pricing</Link> includes all services, while competitor rates exclude critical services, leading to a higher Total Cost of Ownership (TCO). Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ engine</Link> reduces mis-hire risk, and our integrated model eliminates compliance gaps and security vulnerabilities.
+        </p>
       </div>
 
       <div className="my-16">
