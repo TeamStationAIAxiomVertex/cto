@@ -1,8 +1,10 @@
 
+'use client';
+
 import { BrainCircuit, FileText, ShieldCheck, CheckCircle, Clock, GitCommit, Search, FileLock, Users } from 'lucide-react';
 import Link from 'next/link';
-import { DisclosureDrawer } from '@/components/DisclosureDrawer';
 import { AccordionItem } from "@/components/Accordion";
+import { DisclosureDrawer } from '@/components/DisclosureDrawer';
 
 const metrics = [
     { value: '8-year', label: 'proprietary corpus' },
@@ -100,7 +102,7 @@ const governancePillars = [
     },
     {
         title: 'From scores to decisions',
-        description: 'Senior reviewers gate decisions, can override scores, and provide plain-English rationale; the pipeline is auditable end-to-end.'
+        description: 'A Constrained Bayesian Decision Theory model optimizes for expected utility under your specific constraints, turning calibrated scores into a defensible hiring recommendation.'
     }
 ]
 
@@ -111,11 +113,11 @@ const faqs = [
     },
     {
         title: 'What is language-fairness calibration?',
-        content: 'It\'s an algorithmic adjustment we apply to raw scores to mitigate bias against non-native English speakers. The model is trained to focus on the logical and technical substance of an answer, not just linguistic fluency or accent.'
+        content: 'It\'s an algorithmic adjustment we apply to raw scores to mitigate bias against non-native English speakers. The model is trained to focus on the logical and technical substance of an answer, not just linguistic fluency or accent. This is achieved through a suite of L2-aware mathematical methods, including proficiency-normalized scoring and cross-lingual semantic fidelity tests.'
     },
     {
         title: 'Can the model free-run or hallucinate?',
-        content: 'No. Our system uses a staged/multi-step prompting architecture. The LLM is constrained to specific tasks at each stage and its output is validated against a schema. It is a governed, deterministic system, not a free-running chatbot.'
+        content: 'No. Our system uses a staged/multi-step prompting architecture with semantic chunking in RAG. The LLM is constrained to specific tasks at each stage and its output is validated against a schema. It is a governed, deterministic system, not a free-running chatbot, with a zero-tolerance policy for hallucination.'
     },
     {
         title: 'Do questions change by role and level?',
@@ -272,7 +274,7 @@ export default function TalentEvaluationPage() {
 
       <section id="governance" className="py-16">
          <div className="max-w-4xl mx-auto rounded-lg border bg-card p-8">
-            <h2 className="text-center text-3xl font-bold text-foreground">Axiom Cortex™ Governance Pillars</h2>
+            <h2 className="text-center text-3xl font-bold text-foreground">Axiom Cortex™ Governance & L2-Fairness Engine</h2>
              <p className="text-center mt-2 text-muted-foreground">Governed by semantic chunking in RAG and staged/multi-step prompting; the LLM is constrained, never free-running.</p>
              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                 {governancePillars.map(pillar => (
