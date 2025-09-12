@@ -37,7 +37,7 @@ RMJ Technologies, a North American fleet‑optimization provider, needed to stab
 -   **Precision team assembly:** AI‑assisted selection of senior engineers with telematics, .NET, and Vue experience; proven large‑tenant SaaS history.
 -   **Delivery discipline:** Embedded **Delivery Manager** and **Product Manager** (included) for scope control, roadmap clarity, and outcome accountability.
 -   **Time‑zone velocity:** Same‑day iteration with U.S. leadership; faster decision loops, fewer handoff losses.
--   **Built‑in governance:** MDM‑managed devices, MFA/SSO, least‑privilege access, pen‑testing cadence, and SOC 2/ISO‑aligned practices.
+-   **Built-in governance:** MDM‑managed devices, MFA/SSO, least‑privilege access, pen‑testing cadence, and SOC 2/ISO‑aligned practices.
 -   **Continuity & scale:** An elastic bench to surge for peak releases while maintaining core team cohesion.
 
 ---

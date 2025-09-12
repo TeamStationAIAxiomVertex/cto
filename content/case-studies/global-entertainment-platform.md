@@ -28,9 +28,9 @@ A top-tier entertainment company running a **billion‑dollar, globally distribu
 
 -   **Speed to value:** AI‑assisted matching and calibrated vetting enabled a full squad in **<30 days** across LATAM.
 -   **Time‑zone alignment:** Real‑time stand‑ups, pairing, and triage in U.S. business hours.
--   **Assured security posture:** End‑to‑end encryption, MFA/SSO, least‑privilege access, background checks, and regular pen‑tests.
+-   **Assured security posture:** End‑to-end encryption, MFA/SSO, least‑privilege access, background checks, and regular pen‑tests.
 -   **Devices & coverage:** Company‑issued devices with MDM, secure network baselines, and **cybersecurity insurance coverage**—a level of protection many far‑shore vendors typically do not provide.
--   **Integrated delivery:** Employer‑of‑Record (EOR), localized payroll/benefits, onboarding, governance, and ongoing performance management through the TeamStation platform.
+-   **Integrated delivery:** Employer‑of-Record (EOR), localized payroll/benefits, onboarding, governance, and ongoing performance management through the TeamStation platform.
 
 ---
 
@@ -51,7 +51,7 @@ A top-tier entertainment company running a **billion‑dollar, globally distribu
 ### Operating System for Quality
 
 -   **Automation‑first:** Shift‑left test design; scalable suites across UI/API; contract tests to protect integrations.
--   **Release guardrails:** CI/CD hooks (pre‑merge checks, smoke/perf gates), feature‑flag probing, and rollback playbooks.
+-   **Release guardrails:** CI/CD hooks (pre‑merge checks, smoke/perf gates), feature-flag probing, and rollback playbooks.
 -   **Data‑driven triage:** Defect taxonomy, severity SLAs, MTTR tracking, and weekly quality councils with product/engineering.
 -   **Environment reliability:** TestOps ensures steady non‑prod environments, seeded data, and ephemeral test runs for parallelization.
 -   **Security woven in:** Secrets hygiene, least‑privilege test data access, and periodic secure‑SDLC audits.
@@ -60,7 +60,7 @@ A top-tier entertainment company running a **billion‑dollar, globally distribu
 
 ## Security & Compliance
 
--   **Encryption & access:** End‑to‑end encryption, MFA/SSO, role‑based access controls, and quarterly access reviews.
+-   **Encryption & access:** End‑to-end encryption, MFA/SSO, role‑based access controls, and quarterly access reviews.
 -   **Certifications & testing:** Alignment with **SOC 2** and **ISO 27001** practices; regular internal and third‑party **penetration testing**.
 -   **Device governance:** Corporate‑owned, MDM‑enforced devices with patch compliance and remote wipe.
 -   **Insurance:** **Cybersecurity insurance** covering client workstreams and device operations.
@@ -92,4 +92,3 @@ A top-tier entertainment company running a **billion‑dollar, globally distribu
 
 -   **Rituals:** Daily stand‑ups, embedded QA in planning/refinement, weekly quality council, and monthly risk reviews.
 -   **Reporting:** Executive dashboards for coverage, flake rate, escape rate, MTTR, and readiness to ship.
--   **Commercials:** Transparent rate card; optional elastic capacity for peak launches.

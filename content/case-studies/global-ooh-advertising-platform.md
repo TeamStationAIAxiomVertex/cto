@@ -38,7 +38,7 @@ A global out‑of‑home (OOH) advertising company engaged TeamStation AI to acc
 **Selection rigor**
 
 -   Structured work‑sample tests aligned to the stack (Python concurrency & API design, React state for real‑time dashboards, CI/CD strategy).
--   System‑design and security scenarios; prompt‑engineering exercises for LLM usage; communication and leadership signals captured with rubric‑based scoring.
+-   System‑design and security scenarios; prompt‑engineering exercises for LLM usage; communication and leadership signals captured with rubric-based scoring.
 
 **Talent Integration & Acceleration (Day‑0 → Day‑90)**
 

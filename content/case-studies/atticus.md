@@ -44,7 +44,7 @@ Atticus set an ambitious goal: deliver a production‑ready probate and estate�
 
 Create a **web‑based** and **iPhone‑only** estate‑settlement application that:
 
--   Guides users through probate administration end‑to‑end.
+-   Guides users through probate administration end‑to-end.
 -   Allows registration and capture of assets, assignment to beneficiaries, and final report generation.
 -   Supports paid access with clear value realization and simple pricing.
 
