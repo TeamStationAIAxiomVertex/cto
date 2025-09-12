@@ -6,6 +6,7 @@ import html from 'remark-html';
 import Tooltip from '@/components/Tooltip';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { Award, Briefcase, Handshake } from 'lucide-react';
 
 export default async function CaseStudyPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -26,40 +27,41 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
         <Link href="/">Home</Link> / <Link href="/case-studies">Case Studies</Link> / {data.clientName}
       </div>
       
-      <div className="case-study-layout">
-        <article className="case-study-content">
-          <header>
-            <span className="badge">{data.industry}</span>
-            <h1 className="h1">{data.title}</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-8">
+        <article className="lg:col-span-2">
+          <header className="mb-8">
+            <span className="badge mb-4">{data.industry}</span>
+            <h1 className="h1 mt-0">{data.title}</h1>
             <p className="lead">{data.description}</p>
           </header>
-          <div className="prose" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: htmlContent }} />
         </article>
 
-        <aside className="case-study-sidebar">
+        <aside className="lg:col-span-1 space-y-6 lg:sticky top-24 self-start">
           <div className="card">
-            <h3 className="h3" style={{marginTop: 0}}>Client</h3>
-            <p className='font-semibold'>{data.clientName}</p>
+            <div className="flex items-center gap-3 mb-4">
+              <Briefcase className="icon" />
+              <h3 className="h3 mt-0 mb-0">Client</h3>
+            </div>
+            <p className='font-semibold text-lg'>{data.clientName}</p>
           </div>
           <div className="card">
-            <h3 className="h3" style={{marginTop: 0}}>Key Outcome</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <Award className="icon" />
+              <h3 className="h3 mt-0 mb-0">Key Outcome</h3>
+            </div>
             <p className='font-semibold'>{data.summary}</p>
           </div>
-          <div className="card">
-            <h3 className="h3" style={{marginTop: 0}}>Our Role</h3>
-             <p className='font-semibold'>
-                <Tooltip text="An integrated platform for CTOs who need to ship faster without sacrificing security or quality. We provide the talent, governance, and infrastructure.">
-                    Nearshore IT Co-Pilot™
-                </Tooltip>
-             </p>
-          </div>
            <div className="card">
-            <h3 className="h3" style={{marginTop: 0}}>Services Provided</h3>
-            <ul className='list-none p-0 m-0 text-sm'>
-                <li>AI-Powered Vetting</li>
-                <li>Nearshore EOR & Payroll</li>
-                <li>Secure Device & MDM</li>
-                <li>LATAM Office Network</li>
+             <div className="flex items-center gap-3 mb-4">
+              <Handshake className="icon" />
+              <h3 className="h3 mt-0 mb-0">Services Provided</h3>
+            </div>
+            <ul className='list-none p-0 m-0 text-sm space-y-2'>
+                <li className='flex gap-2'><span className='text-accent-custom'>✓</span> AI-Powered Vetting</li>
+                <li className='flex gap-2'><span className='text-accent-custom'>✓</span> Nearshore EOR & Payroll</li>
+                <li className='flex gap-2'><span className='text-accent-custom'>✓</span> Secure Device & MDM</li>
+                <li className='flex gap-2'><span className='text-accent-custom'>✓</span> LATAM Office Network</li>
             </ul>
           </div>
         </aside>

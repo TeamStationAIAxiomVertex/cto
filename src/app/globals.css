@@ -36,7 +36,7 @@
 
 @layer base {
   body { @apply bg-bg text-text; font-family: var(--font-poppins); }
-  .card { @apply bg-surface-1 rounded-lg border border-line p-6; }
+  .card { @apply bg-surface-1 rounded-lg border border-line; }
   .cta { @apply inline-block bg-transparent text-accent-custom font-bold py-2 px-6 rounded-lg border-2 border-accent-custom hover:bg-accent-custom hover:text-white transition-colors; }
   .breadcrumb { @apply text-sm text-mute mb-4; }
   .h1 { 
@@ -67,10 +67,29 @@
   .tooltip { @apply relative inline-block border-b border-dashed border-accent-custom cursor-pointer; }
   .tooltip .tooltiptext { @apply invisible w-48 bg-surface-2 text-text text-xs rounded py-1 px-2 absolute z-10 bottom-full left-1/2 -ml-24 transition-opacity duration-300; }
   .tooltip:hover .tooltiptext { @apply visible opacity-100; }
-  
-  .case-study-layout { @apply grid grid-cols-1 md:grid-cols-3 gap-8; }
-  .case-study-content { @apply md:col-span-2; }
-  .case-study-sidebar { @apply md:col-span-1 space-y-6; }
+
+  .prose {
+    --tw-prose-body: hsl(var(--mute));
+    --tw-prose-headings: hsl(var(--text));
+    --tw-prose-lead: hsl(var(--mute));
+    --tw-prose-links: hsl(var(--accent-custom));
+    --tw-prose-bold: hsl(var(--text));
+    --tw-prose-counters: hsl(var(--mute));
+    --tw-prose-bullets: hsl(var(--line));
+    --tw-prose-hr: hsl(var(--line));
+    --tw-prose-quotes: hsl(var(--text));
+    --tw-prose-quote-borders: hsl(var(--line));
+    --tw-prose-captions: hsl(var(--mute));
+    --tw-prose-code: hsl(var(--text));
+    --tw-prose-pre-code: hsl(var(--text));
+    --tw-prose-pre-bg: hsl(var(--surface-2));
+    --tw-prose-th-borders: hsl(var(--line));
+    --tw-prose-td-borders: hsl(var(--line));
+  }
+  .prose h2 { @apply text-2xl font-bold mb-4 mt-8; }
+  .prose h3 { @apply text-xl font-bold mb-4 mt-6; }
+  .prose ul > li::before { background-color: hsl(var(--accent-custom)); }
+
 }
 
 @layer utilities {

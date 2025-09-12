@@ -25,21 +25,23 @@ export default function CaseStudiesPage() {
       <div className="breadcrumb">
         <Link href="/">Home</Link> / Case Studies
       </div>
-      <h1 className="h1">Case Studies: Evidence of Impact</h1>
-      <p className="lead">
-        From resolving critical SSO failures for enterprise clients to scaling monolithic platforms for 15,000+ users, our nearshore squads deliver results. Here’s the evidence.
-      </p>
+      <header className="text-center my-12">
+        <h1 className="h1">Case Studies: Evidence of Impact</h1>
+        <p className="lead max-w-3xl mx-auto">
+          From resolving critical SSO failures for enterprise clients to scaling monolithic platforms for 15,000+ users, our nearshore squads deliver results. Here’s the evidence.
+        </p>
+      </header>
 
-      <div className="grid grid-2" style={{ marginTop: '24px' }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
         {caseStudies.map((study) => (
-          <div key={study.slug} className="card">
-            <h3 className="h3" style={{ marginTop: 0 }}>{study.clientName}</h3>
+          <Link href={`/case-studies/${study.slug}`} key={study.slug} className="card block p-8 hover:bg-surface-2 transition-colors group">
+            <h3 className="h3 mt-0 group-hover:text-accent-custom transition-colors">{study.clientName}</h3>
             <span className="badge">{study.industry}</span>
-            <p className="lead" style={{ fontSize: '1rem', margin: '12px 0' }}>
+            <p className="text-mute mt-4 mb-6">
               {study.summary}
             </p>
-            <Link href={`/case-studies/${study.slug}`}>Read Case Study →</Link>
-          </div>
+            <div className="font-semibold text-accent-custom">Read Case Study →</div>
+          </Link>
         ))}
       </div>
     </main>
