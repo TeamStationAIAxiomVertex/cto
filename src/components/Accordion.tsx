@@ -8,7 +8,7 @@ type AccordionItemProps = {
   children: ReactNode;
 };
 
-export const AccordionItem = ({ title, children }: AccordionItemProps) => {
+const AccordionItem = ({ title, children }: AccordionItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -21,23 +21,29 @@ export const AccordionItem = ({ title, children }: AccordionItemProps) => {
   }, [isOpen]);
 
   return (
-    <div className="accordion-item">
+    <div className="border-b">
       <button
-        className="accordion-button"
+        className="flex w-full items-center justify-between py-4 text-left font-semibold"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
         <span>{title}</span>
         <ChevronDown
+          className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200"
           style={{
             transform: `rotate(${isOpen ? 180 : 0}deg)`,
-            transition: "transform 0.3s",
           }}
         />
       </button>
-      <div ref={contentRef} className="accordion-content">
-        <div className="py-4 border-t border-line">{children}</div>
+      <div
+        ref={contentRef}
+        className="overflow-hidden text-sm transition-all duration-300 ease-in-out"
+        style={{ maxHeight: '0px' }}
+      >
+        <div className="pb-4 pt-0">{children}</div>
       </div>
     </div>
   );
 };
+
+export default AccordionItem;
