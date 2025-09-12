@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight } from 'lucide-react';
