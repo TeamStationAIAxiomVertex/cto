@@ -73,8 +73,8 @@ const vendors = [
 
 const takeaways = [
     { title: 'Platform Unification', description: 'TeamStation AI bundles hiring, legal & payroll compliance, devices & MDM, secure workspaces and cyber/E&O insurance into a single contract with clear SLAs. Competitors typically provide one or two of these services but not all.' },
-    { title: 'Cognitive AI & Fairness', description: 'Axiom Cortex uses 44 psychometric + NLP signals with a language-fairness calibration layer to evaluate candidates, producing BARS-mapped and expert-reviewed scores. None of the other vendors disclose cognitive-science methods or fairness audits.' },
-    { title: 'Talent Coverage & Speed', description: 'Nebula Neural Search spans 2.6M+ LATAM profiles, delivering short-list relevance ≥ 85 % and Time-to-Offer ≈ 9 days. Most competitors manage significantly smaller pools or do not publish numbers.' },
+    { title: 'Cognitive AI & Fairness', description: 'Axiom Cortex™ uses 44 psychometric + NLP signals with a language-fairness calibration layer to evaluate candidates, producing BARS-mapped and expert-reviewed scores. None of the other vendors disclose cognitive-science methods or fairness audits.' },
+    { title: 'Talent Coverage & Speed', description: 'Nebula Neural Search™ spans 2.6M+ LATAM profiles, delivering short-list relevance ≥ 85 % and Time-to-Offer ≈ 9 days. Most competitors manage significantly smaller pools or do not publish numbers.' },
     { title: 'Operational Guardrails', description: 'TeamStation’s SLAs include device procurement/activation within 5 days, MDM enrollment ≥ 99 %, workspace provisioning ≤ 3 days, and 90-day retention ≥ 96 %. Other vendors rarely publish such metrics.' },
     { title: 'Cost Transparency', description: 'Pricing tiers ($20/$30/$40/$50 per hour) include EOR, devices, compliance and insurance. Many competitors’ pricing is opaque or excludes critical services.' }
 ]
@@ -96,7 +96,7 @@ export default function ComparisonsPage() {
          <div className="prose mx-auto">
             <h2 className="h2 text-center mt-0">Why TeamStation AI Stands Alone</h2>
             <p>The platform unifies hiring, employer-of-record (EOR)/payroll, compliance and benefits, device provisioning and MDM, offices & workspaces across 45+ hubs, cybersecurity and errors-and-omissions insurance, day-one onboarding and performance diagnostics under one SLA. Key delivery metrics are public: Time-to-Offer ≈ 9 days, device MTPD ≤ 5 days, MDM enrollment ≥ 99% in 24h; the talent graph covers 2.6M+ LATAM IT profiles with bias-aware cognitive evaluations; offices and on-demand workspaces are provisioned in ≤ 3 business days; and every engagement includes cybersecurity & E&O insurance.</p>
-            <p>Axiom Cortex™—TeamStation’s cognitive AI—uses 44 psychometric + NLP signals and a language-fairness calibration layer to judge problem solving, architecture and collaboration. These signals are mapped to BARS (behaviorally anchored rating scales) and reviewed by experts, producing explainable evaluations. Combined with Nebula Neural Search (2.6M+ profiles) and BARS-anchored onboarding, TeamStation delivers pre-vetted engineers with 90-day retention ≥ 96%—while most vendors merely promise “top talent.”</p>
+            <p>Axiom Cortex™—TeamStation’s cognitive AI—uses 44 psychometric + NLP signals and a language-fairness calibration layer to judge problem solving, architecture and collaboration. These signals are mapped to BARS (behaviorally anchored rating scales) and reviewed by experts, producing explainable evaluations. Combined with Nebula Neural Search™ (2.6M+ profiles) and BARS-anchored onboarding, TeamStation delivers pre-vetted engineers with 90-day retention ≥ 96%—while most vendors merely promise “top talent.”</p>
          </div>
       </div>
       
@@ -148,7 +148,7 @@ export default function ComparisonsPage() {
       <div className="section text-center">
         <h2 className="h2 mt-0">Conclusion</h2>
         <p className="lead" style={{fontSize: '1rem'}}>
-          TeamStation AI occupies a different galaxy in the nearshore landscape. By unifying recruitment, cognitive AI evaluation, device and workspace provisioning, payroll/EOR, compliance and insurance under one SLA, TeamStation replaces multi-vendor complexity with a single accountable platform. Its bias-aware Axiom Cortex ensures fair, evidence-based hiring; Nebula’s 2.6M+ talent graph guarantees reach; and transparent delivery metrics (TTO ≈ 9 days, MTPD ≤ 5 days, MDM ≥ 99 %) set a standard none of the competition currently publishes. Traditional vendors may excel at one or two aspects—staffing, project delivery or EOR—but only TeamStation AI offers a scientifically grounded, end-to-end nearshore operating system.
+          TeamStation AI occupies a different galaxy in the nearshore landscape. By unifying recruitment, cognitive AI evaluation, device and workspace provisioning, payroll/EOR, compliance and insurance under one SLA, TeamStation replaces multi-vendor complexity with a single accountable platform. Its bias-aware Axiom Cortex™ ensures fair, evidence-based hiring; Nebula’s 2.6M+ talent graph guarantees reach; and transparent delivery metrics (TTO ≈ 9 days, MTPD ≤ 5 days, MDM ≥ 99 %) set a standard none of the competition currently publishes. Traditional vendors may excel at one or two aspects—staffing, project delivery or EOR—but only TeamStation AI offers a scientifically grounded, end-to-end nearshore operating system.
         </p>
       </div>
 

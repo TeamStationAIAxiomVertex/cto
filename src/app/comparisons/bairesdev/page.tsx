@@ -6,7 +6,7 @@ const teamStationFeatures = [
     { feature: 'Cognitive Science-Based Vetting (Axiom Cortex™)', included: true },
     { feature: 'Bias Mitigation & Fairness Audits', included: true },
     { feature: 'Publicly Stated Delivery SLAs (Time-to-Offer, MDM Enrollment)', included: true },
-    { feature: '2.6M+ LATAM Talent Graph (Nebula Neural Search)', included: true },
+    { feature: '2.6M+ LATAM Talent Graph (Nebula Neural Search™)', included: true },
     { feature: 'Day-One Onboarding & Performance Diagnostics', included: true },
 ];
 
@@ -15,7 +15,7 @@ const bairesDevFeatures = [
     { feature: 'Cognitive Science-Based Vetting (Axiom Cortex™)', included: false },
     { feature: 'Bias Mitigation & Fairness Audits', included: false },
     { feature: 'Publicly Stated Delivery SLAs (Time-to-Offer, MDM Enrollment)', included: false },
-    { feature: '2.6M+ LATAM Talent Graph (Nebula Neural Search)', included: false },
+    { feature: '2.6M+ LATAM Talent Graph (Nebula Neural Search™)', included: false },
     { feature: 'Day-One Onboarding & Performance Diagnostics', included: false },
 ];
 
@@ -61,12 +61,12 @@ export default function BairesDevComparisonPage() {
       </div>
 
       <div className="prose mx-auto my-12">
-        <h2 className="h2 text-center">Analysis: The Platform vs. The Vendor</h2>
+        <h2 className="h2 text-center">Analysis: The Co-Pilot vs. The Vendor</h2>
         <p>
-            BairesDev represents a scaled-up version of the traditional nearshore staff augmentation model. They market access to a large talent pool—"the top 1% of 1.5M applicants"—and emphasize time-zone alignment. While effective at sourcing a high volume of candidates, their model remains fundamentally a service for providing personnel, not an integrated platform for running engineering teams.
+            BairesDev emphasizes that it hires the top 1% of LATAM engineers from over 1.5 million applicants per year and has a 96% client retention rate. While this signals a large operation, BairesDev’s vetting focuses on technical skills, English proficiency and experience; there is no disclosed cognitive-science or bias-mitigation layer. 
         </p>
         <p>
-            The critical difference lies in what happens *after* sourcing. TeamStation AI provides a comprehensive, end-to-end operating system. This isn't just about finding a developer; it's about handling their legal employment (EOR), providing them with a secure, managed device (MDM), covering them with cybersecurity insurance, and integrating them through a structured onboarding process—all under a single, transparent SLA. BairesDev, like most traditional vendors, does not bundle these crucial operational and governance layers into their core offering.
+           TeamStation’s Axiom Cortex™ scores cognitive traits and ensures fair evaluation across language proficiencies. BairesDev offers broad project services, whereas TeamStation acts as a co-pilot—a controllable interface for hiring and ramping engineers under one SLA. With Nebula’s 2.6 million network and cognitive matching, TeamStation offers deeper bench access and more precise role fit than BairesDev’s published 4,000 engineers.
         </p>
         <h3 className="h3">The Vetting Process: Cognitive Science vs. Traditional Screening</h3>
         <p>
