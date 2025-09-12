@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText } from 'lucide-react';
+import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 
 function ServicePill({ icon: Icon, text }: { icon: React.ElementType, text: string }) {
@@ -43,6 +43,28 @@ const corePillars = [
     }
 ]
 
+const painPoints = [
+    "Is your best engineer babysitting a failing offshore team?",
+    "Did you spend 60 days hiring a 'senior' dev who can't ship code?",
+    "Are you one insecure laptop away from a major compliance breach?",
+    "Is 'vendor management' your secret second job?"
+];
+
+const comparisonPoints = {
+    "Vetting": {
+        traditional: "Resume-based, prone to bias and mis-hires.",
+        teamstation: "Cognitive AI-based, proving problem-solving ability."
+    },
+    "Security": {
+        traditional: "Client's problem. Unmanaged devices create major risk.",
+        teamstation: "Built-in. MDM-secured devices and insurance included."
+    },
+    "Cost": {
+        traditional: "Low hourly rate with massive hidden costs (EOR, IT, legal).",
+        teamstation: "Transparent, all-inclusive rate with a lower TCO."
+    }
+}
+
 
 export default async function HomePage() {
   const caseStudies = (await getAllCaseStudies()).slice(0, 3);
@@ -53,7 +75,7 @@ export default async function HomePage() {
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
           Ship Faster. Stop Worrying.
         </h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
+        <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
           You're under pressure to deliver, but hiring friction, vendor chaos, and compliance risks are slowing you down. TeamStation AI provides a single, integrated platform to build an elite nearshore team you can actually trust.
         </p>
         <div className="mt-10">
@@ -90,6 +112,56 @@ export default async function HomePage() {
             ))}
         </div>
       </section>
+
+      <section id="pain-points" className="py-24 bg-card rounded-lg">
+        <h2 className="text-center text-4xl font-bold text-foreground">Sound Familiar? It's the Cost of Doing Nothing.</h2>
+        <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">These aren't just headaches. They are symptoms of a broken IT staff augmentation model.</p>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {painPoints.map((pain, index) => (
+                <div key={index} className="flex items-center gap-4 bg-background p-4 rounded-lg">
+                    <AlertTriangle className="h-6 w-6 text-yellow-400 shrink-0"/>
+                    <p className="m-0 font-medium text-muted-foreground">{pain}</p>
+                </div>
+            ))}
+        </div>
+      </section>
+
+       <section id="comparison" className="py-24">
+         <h2 className="text-center text-4xl font-bold text-foreground">
+            There Is a Better Way
+        </h2>
+        <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">Here’s how our integrated platform for nearshore software development solves these problems by design.</p>
+        <div className="mt-12 flow-root">
+          <div className="overflow-x-auto">
+            <div className="inline-block min-w-full align-middle">
+              <table className="min-w-full divide-y divide-border">
+                <thead>
+                  <tr>
+                    <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-foreground sm:pl-0">Factor</th>
+                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-muted-foreground">Traditional Staff Augmentation</th>
+                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-primary">TeamStation AI</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border/50">
+                  {Object.entries(comparisonPoints).map(([key, value]) => (
+                    <tr key={key}>
+                      <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-foreground sm:pl-0">{key}</td>
+                      <td className="whitespace-pre-wrap px-3 py-4 text-sm text-muted-foreground">{value.traditional}</td>
+                      <td className="whitespace-pre-wrap px-3 py-4 text-sm text-foreground">{value.teamstation}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="text-center mt-8">
+                  <Link href="/comparisons" className="font-semibold text-primary hover:underline">
+                    See All Vendor Comparisons <ArrowRight className="inline h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <section id="case-studies" className="py-24">
         <h2 className="text-center text-4xl font-bold text-foreground">
