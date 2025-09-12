@@ -52,7 +52,7 @@ export default function LatamEconomicsPage() {
         <div className="prose mx-auto my-12">
           <h2 className="h2 text-center">Modeling the True Cost: A Tale of Two Budgets</h2>
           <p>
-              An engineer’s salary is just the tip of the iceberg. A CTO who presents a plan based solely on salary comparisons is walking into a financial trap. Below, we model the true TCO for a senior engineer, comparing the risky "Do-It-Yourself" approach with TeamStation AI's predictable, all-in-one platform model.
+              An engineer’s salary is just the tip of the iceberg. A CTO who presents a plan based solely on salary comparisons is walking into a financial trap. Below, we model the true <Tooltip text="Total Cost of Ownership includes salary plus all 'hidden' costs like recruitment, legal, benefits, hardware, and administrative overhead.">TCO</Tooltip> for a senior engineer, comparing the risky <Link href="/playbook/build-vs-buy">"Do-It-Yourself"</Link> approach with TeamStation AI's predictable, all-in-one platform model.
           </p>
         </div>
 
@@ -79,11 +79,11 @@ export default function LatamEconomicsPage() {
                   <td className='text-center text-warn-custom'>~$17,000</td>
                 </tr>
                 <tr>
-                  <td>Legal, EOR & Payroll Admin</td>
+                  <td>Legal, <Tooltip text="Employer of Record: A third-party organization that legally employs workers on behalf of another company, handling payroll, taxes, and compliance.">EOR</Tooltip> & Payroll Admin</td>
                   <td className='text-center text-warn-custom'>~$12,000</td>
                 </tr>
                 <tr>
-                  <td>Hardware, MDM & Security Tools</td>
+                  <td>Hardware, <Tooltip text="Mobile Device Management: Software to secure, monitor, and manage devices like laptops.">MDM</Tooltip> & Security Tools</td>
                   <td className='text-center text-warn-custom'>~$3,500</td>
                 </tr>
                 <tr>
@@ -122,7 +122,7 @@ export default function LatamEconomicsPage() {
         <div className="prose mx-auto my-12">
           <h2 className="h2 text-center">Productivity: The Ultimate Economic Lever</h2>
           <p>
-              The final piece of the economic puzzle is productivity. Time-zone alignment is not a "nice-to-have"; it's a direct multiplier on output. A nearshore team operating in real-time with your U.S. engineers eliminates the communication lags that kill velocity in offshore models.
+              The final piece of the economic puzzle is productivity. <Link href="/playbook/nearshore-vs-offshore">Time-zone alignment</Link> is not a "nice-to-have"; it's a direct multiplier on output. A nearshore team operating in real-time with your U.S. engineers eliminates the communication lags that kill velocity in offshore models.
           </p>
           <ul>
               <li><strong>Reduced Latency:</strong> Real-time pairing and problem-solving cut down on blocked tasks and accelerate development cycles.</li>
