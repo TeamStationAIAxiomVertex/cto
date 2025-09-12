@@ -1,5 +1,5 @@
 
-import { BrainCircuit, FileText, ShieldCheck, Scale } from 'lucide-react';
+import { BrainCircuit, FileText, ShieldCheck, Scale, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AxiomCortexReportPage() {
@@ -37,6 +37,19 @@ export default function AxiomCortexReportPage() {
           A deep dive into the proprietary Cognitive AI engine that powers TeamStation AI's talent evaluation, outlining its core scientific pillars and bias mitigation strategies.
         </p>
       </header>
+
+      <div className="prose dark:prose-invert mx-auto max-w-none">
+        <div className="text-center rounded-lg bg-primary/10 p-6 my-8">
+            <h2 className="text-2xl font-bold">Read the Full Paper</h2>
+            <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+                Access the complete research paper on the Social Science Research Network (SSRN).
+            </p>
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433476" target="_blank" rel="noopener noreferrer" className="cta-button mt-4">
+                <BookOpen className="mr-2 h-4 w-4" />
+                View on SSRN
+            </a>
+        </div>
+      </div>
 
       <div className="my-16">
         <h2 className="text-3xl font-bold text-center">Key Scientific Pillars</h2>
