@@ -2,6 +2,12 @@ import Link from 'next/link';
 import { getAllPlaybookSlugs } from '@/lib/playbook';
 import { getPlaybookBySlug } from '@/lib/playbook';
 import { ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'The CTO Playbook for Nearshore Software Development | TeamStation AI',
+  description: 'The CTO Playbook: Deep-dive guides for building and scaling high-performance nearshore engineering teams in LATAM. Covering economics, security, and hiring.',
+};
 
 export default async function PlaybookHub() {
   const slugs = await getAllPlaybookSlugs();

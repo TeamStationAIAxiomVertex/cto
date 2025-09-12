@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane, UserCheck, School, Languages } from 'lucide-react';
+import type { Metadata } from 'next';
 
 const countries: { [key: string]: { name: string; highlights: string[] } } = {
   'mexico': { 
@@ -76,6 +77,14 @@ const countries: { [key: string]: { name: string; highlights: string[] } } = {
     ]
   },
 };
+
+export async function generateMetadata({ params }: { params: { country: string } }): Promise<Metadata> {
+  const countryName = countries[params.country]?.name || 'LATAM';
+  return {
+    title: `Hire Nearshore Developers in ${countryName} | TeamStation AI`,
+    description: `Access elite, pre-vetted software engineers in ${countryName}. TeamStation AI provides a fully compliant platform for hiring nearshore talent in your time zone.`,
+  };
+}
 
 const roleCategories = [
   {

@@ -15,6 +15,7 @@ export type CaseStudy = {
   challenge: string;
   why: string;
   outcomes: string;
+  ogImage: string;
 };
 
 // A more robust function to extract a section based on a heading
@@ -46,6 +47,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
           challenge: extractSection(mainContent, 'The Challenge'),
           why: extractSection(mainContent, 'Why TeamStation AI'),
           outcomes: extractSection(mainContent, 'Outcomes') || extractSection(mainContent, 'Results'),
+          ogImage: data.ogImage,
         } as CaseStudy;
       })
     );

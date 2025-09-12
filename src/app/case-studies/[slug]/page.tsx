@@ -4,6 +4,34 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Briefcase, Award, CheckCircle } from 'lucide-react';
 import { markdownToHtml } from '@/lib/markdown-parser';
+import type { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const study = await getCaseStudyBySlug(params.slug);
+  if (!study) {
+    return {
+      title: 'Case Study Not Found',
+      description: 'The requested case study could not be found.',
+    };
+  }
+
+  return {
+    title: study.title,
+    description: study.summary,
+    openGraph: {
+      title: study.title,
+      description: study.summary,
+      images: [
+        {
+          url: study.ogImage || '/assets/og/default.png',
+          width: 1200,
+          height: 630,
+          alt: study.title,
+        },
+      ],
+    },
+  };
+}
 
 export default async function CaseStudyPage({ params }: { params: { slug: string } }) {
   const study = await getCaseStudyBySlug(params.slug);

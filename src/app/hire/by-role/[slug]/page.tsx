@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
+import type { Metadata } from 'next';
 
 
 const roleData: { [key: string]: { name: string; intro: string; roles: string[]; skills: string[]; tech: (string | React.ReactNode)[]; evaluation: string[] } } = {
@@ -168,6 +169,14 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
     ],
   }
 };
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const roleName = roleData[params.slug]?.name || 'Engineer';
+  return {
+    title: `Hire Nearshore ${roleName} | TeamStation AI`,
+    description: `Hire elite, pre-vetted LATAM ${roleName} engineers. Our scientific evaluation process de-risks hiring for critical roles in your tech stack.`,
+  };
+}
 
 
 export default function RoleCategoryPage({ params }: { params: { slug: string } }) {

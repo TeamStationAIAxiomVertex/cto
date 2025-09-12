@@ -2,6 +2,12 @@
 import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'ParallelStaff Alternative: TeamStation AI vs. ParallelStaff',
+    description: 'Is ParallelStaff\'s "try-before-you-buy" model right for you? See how TeamStation AI offers a more comprehensive nearshore alternative with integrated operations.'
+};
 
 const comparisonData = [
     { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },

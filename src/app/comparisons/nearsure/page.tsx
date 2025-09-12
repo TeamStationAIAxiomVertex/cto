@@ -2,6 +2,12 @@
 import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Nearsure Alternative: TeamStation AI vs. Nearsure',
+    description: 'Looking for a Nearsure alternative? Compare TeamStation AI\'s integrated nearshore platform with Nearsure\'s traditional staff augmentation for LATAM developers.'
+};
 
 const comparisonData = [
     { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },

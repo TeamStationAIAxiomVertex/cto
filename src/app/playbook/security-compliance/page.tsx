@@ -1,6 +1,12 @@
 
 import { ShieldCheck, Laptop, FileLock } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Nearshore Security & Compliance Playbook | MDM & EOR | TeamStation AI',
+    description: 'A CTO\'s playbook for audit-ready nearshore operations. Learn how TeamStation AI integrates security, MDM, EOR, and compliance for LATAM software development teams.'
+};
 
 export default function SecurityCompliancePage() {
     const pillars = [
@@ -24,7 +30,7 @@ export default function SecurityCompliancePage() {
   return (
     <main className="container max-w-4xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/">Home</Link> / <Link href="/playbook">CTO Playbook</Link> / <span>Security & Compliance</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook" className="hover:text-foreground">CTO Playbook</Link> / <span>Security & Compliance</span>
       </div>
       <header className="my-8">
         <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">The Playbook for Audit-Ready Nearshore Operations</h1>
