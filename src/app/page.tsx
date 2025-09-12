@@ -50,42 +50,42 @@ export default function Home() {
 
   return (
     <main className="container">
-      <div className="breadcrumb">Home</div>
       <div className="hero section">
         <div>
-          <span className="badge">Nearshore IT Co-Pilot™</span>
-          <h1 className="h1">
-            Hire. Onboard. Run LATAM Engineering — under one SLA.
+          <h1 className="h1" style={{ fontSize: '3rem', fontWeight: 700 }}>
+            Hire Elite LATAM Engineers—Fast, Fair, Day-One Ready
           </h1>
-          <p className="lead">
-            An integrated platform for CTOs who need to ship faster without
-            sacrificing security or quality. We provide the talent,
-            governance, and infrastructure.
+          <p className="lead max-w-2xl mx-auto my-6">
+            Evidence-based technical interviews, language-fair scoring, and day-one onboarding—so you get the right engineer, started fast, and performing quickly.
           </p>
-          <div style={{ marginTop: "16px" }}>
-            <a className="cta" href="/comparisons/">
-              See how we compare →
-            </a>
-            <a className="btn" style={{ marginLeft: "8px" }} href="/pricing/">
-              Transparent pricing
+          <div className="text-accent my-6">
+            9-day time-to-offer • 7-14 days to start • 96% 90-day retention • 50–70% savings vs. onshore
+          </div>
+          <div style={{ marginTop: "24px" }}>
+            <a className="btn" style={{ padding: '12px 24px', background: 'transparent', borderWidth: '1px', borderColor: 'var(--line)', color: 'var(--text)' }} href="/hire/">
+              Schedule a Demo
             </a>
           </div>
         </div>
-        <div>
-          <div className="grid grid-2">
-            {trustLines.map((line) => (
+      </div>
+
+       <div className="section">
+        <h2 className="h2 text-center mt-0 mb-6">An Integrated Platform for Secure, Scalable Nearshore Teams</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {trustLines.map(line => (
               <div className="icon-card" key={line.title}>
                 {line.icon}
                 <div>
                   <h3 className="h3" style={{ margin: 0, fontSize: "1rem" }}>
-                    <Tooltip text={line.description}>{line.title}</Tooltip>
+                    {line.title}
                   </h3>
+                   <p className="text-sm text-slate-400 m-0">{line.description}</p>
                 </div>
               </div>
             ))}
-          </div>
         </div>
       </div>
+
 
       <div className="grid grid-2" style={{ marginTop: "24px" }}>
         <div className="card">

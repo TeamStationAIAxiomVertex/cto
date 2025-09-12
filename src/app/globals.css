@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --bg: #111827;
-  --text: #d1d5db;
-  --mute: #9ca3af;
-  --accent: #3b82f6;
-  --accent-d: #2563eb;
-  --surface1: #1f2937;
-  --surface2: #374151;
-  --line: #374151;
+  --foreground-rgb: 217, 221, 227;
+  --background-start-rgb: 13, 17, 28;
+  --background-end-rgb: 13, 17, 28;
+  --bg: hsl(223, 39%, 8%);
+  --text: hsl(216, 15%, 84%);
+  --mute: hsl(217, 10%, 55%);
+  --accent: hsl(221, 100%, 60%);
+  --accent-d: hsl(221, 100%, 55%);
+  --surface1: hsl(223, 27%, 12%);
+  --surface2: hsl(223, 20%, 16%);
+  --line: hsl(223, 20%, 20%);
   --radius: 12px;
   --container: 1100px;
 }
@@ -145,7 +145,8 @@ a:hover {
 .h1 {
   font-size: 2.1rem;
   margin: .2rem 0 1rem;
-  color: var(--text);
+  color: var(--accent);
+  line-height: 1.2;
 }
 .h2 {
   font-size: 1.4rem;
@@ -214,9 +215,11 @@ a:hover {
 
 .hero {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 24px;
   align-items: center;
+  padding: 48px 24px;
+  text-align: center;
 }
 
 .badge {
