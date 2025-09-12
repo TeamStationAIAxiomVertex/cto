@@ -4,66 +4,183 @@
     <loc>https://cto.teamstation.dev/</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/about/</loc>
+    <loc>https://cto.teamstation.dev/about</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/pricing/</loc>
+    <loc>https://cto.teamstation.dev/case-studies</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/trust/</loc>
+    <loc>https://cto.teamstation.dev/case-studies/atticus</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/playbook/</loc>
+    <loc>https://cto.teamstation.dev/case-studies/global-entertainment-platform</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/research/</loc>
+    <loc>https://cto.teamstation.dev/case-studies/global-ooh-advertising-platform</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/case-studies/</loc>
+    <loc>https://cto.teamstation.dev/case-studies/healthcare-revenue-platform</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/hire/</loc>
+    <loc>https://cto.teamstation.dev/case-studies/parsable</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/</loc>
+    <loc>https://cto.teamstation.dev/case-studies/rmj-technologies</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/all-vendors/</loc>
+    <loc>https://cto.teamstation.dev/comparisons</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-andela/</loc>
+    <loc>https://cto.teamstation.dev/comparisons/andela</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-bairesdev/</loc>
+    <loc>https://cto.teamstation.dev/comparisons/bairesdev</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-deel/</loc>
+    <loc>https://cto.teamstation.dev/comparisons/deel</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-globant/</loc>
+    <loc>https://cto.teamstation.dev/comparisons/globant</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-nearsure/</loc>
+    <loc>https://cto.teamstation.dev/comparisons/nearsure</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-parallelstaff/</loc>
+    <loc>https://cto.teamstation.dev/comparisons/parallelstaff</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-revelo/</loc>
+    <loc>https://cto.teamstation.dev/comparisons/revelo</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-tecla/</loc>
+    <loc>https://cto.teamstation.dev/comparisons/tecla</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-terminal/</loc>
+    <loc>https://cto.teamstation.dev/comparisons/terminal</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-toptal/</loc>
+    <loc>https://cto.teamstation.dev/comparisons/toptal</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-unosquare/</loc>
+    <loc>https://cto.teamstation.dev/comparisons/unosquare</loc>
   </url>
   <url>
-    <loc>https://cto.teamstation.dev/seo-battle-map/</loc>
+    <loc>https://cto.teamstation.dev/hire</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-country</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-country/argentina</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-country/brazil</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-country/chile</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-country/colombia</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-country/costa-rica</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-country/ecuador</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-country/mexico</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-country/peru</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-country/uruguay</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role/backend-services</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role/data-engineering-analytics</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role/finops-biztech</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role/frontend-web</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role/it-enterprise-ops</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role/ml-ai-llm-ops</loc>roll>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role/mobile-cross-platform</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role/platform-infra-sre</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role/product-design-growth</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role/qa-quality-engineering</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-role/security-grc</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/hire/by-technology</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/playbook</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/playbook/bias-free-technical-hiring-axiom-cortex</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/playbook/build-vs-buy</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/playbook/latam-economics</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/playbook/nearshore-vs-offshore</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/playbook/security-compliance</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/pricing</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/process</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/research</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/research/axiom-cortex-scientific-report</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/research/performance-evaluation-framework</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/research/technical-talent-evaluation-system</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/services/integrated-services</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/services/talent-onboarding</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/technical-interview-evaluation</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/trust</loc>
   </url>
 </urlset>

@@ -1,7 +1,11 @@
-
-
 import { BrainCircuit, FileText, ShieldCheck, Scale, BookOpen } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AxiomCortex™ Scientific R&D Report | AI Talent Evaluation',
+  description: 'Read our peer-reviewed research on AxiomCortex™, the proprietary Cognitive AI engine for bias-free technical talent evaluation of nearshore engineers.',
+};
 
 export default function AxiomCortexReportPage() {
   const scientificPillars = [
