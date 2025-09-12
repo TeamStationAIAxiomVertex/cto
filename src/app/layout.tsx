@@ -48,8 +48,34 @@ export default function RootLayout({
         {children}
 
         <footer className="footer">
-          <div className="container">
-            © {new Date().getFullYear()} TeamStation AI — cto.teamstation.dev
+          <div className="container footer-grid">
+            <div className="footer-brand">
+              <h3 className="h3" style={{ marginTop: 0 }}>TeamStation AI</h3>
+              <p>The Nearshore IT Co-Pilot™ for CTOs.</p>
+              <div className="footer-copyright">
+                © {new Date().getFullYear()} TeamStation AI Inc.
+              </div>
+            </div>
+            <div className="footer-links">
+              <h4>Playbook</h4>
+              <a href="/playbook/nearshore-vs-offshore/">Nearshore vs Offshore</a>
+              <a href="/playbook/bias-free-technical-hiring-axiom-cortex/">Bias-Free Hiring</a>
+              <a href="/playbook/latam-economics/">LATAM Economics</a>
+              <a href="/playbook/security-compliance/">Security & Compliance</a>
+            </div>
+            <div className="footer-links">
+              <h4>Content</h4>
+              <a href="/case-studies/">Case Studies</a>
+              <a href="/research/">Research</a>
+              <a href="/comparisons/">Comparisons</a>
+            </div>
+            <div className="footer-links">
+              <h4>Company</h4>
+              <a href="/about/">About</a>
+              <a href="/trust/">Trust</a>
+              <a href="/hire/">Hire</a>
+              <a href="/pricing/">Pricing</a>
+            </div>
           </div>
         </footer>
       </body>

@@ -93,11 +93,49 @@ a:hover {
 
 .footer {
   border-top: 1px solid var(--line);
-  padding: 28px 0;
+  padding: 48px 0;
   color: var(--mute);
-  text-align: center;
   margin-top: 48px;
+  background: var(--surface1);
 }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  max-width: 240px;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  margin-top: 24px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links h4 {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+.footer-links a {
+  color: var(--mute);
+  padding: 6px 0;
+  font-size: 0.9rem;
+}
+.footer-links a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
 
 .breadcrumb {
   color: var(--mute);
