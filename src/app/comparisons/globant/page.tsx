@@ -2,22 +2,13 @@
 import { CheckCircle, XCircle } from 'lucide-react';
 import Tooltip from '@/components/Tooltip';
 
-const teamStationFeatures = [
-    { feature: 'Focus on Mission-Fit LATAM Talent', included: true },
-    { feature: 'Cognitive Trait Measurement (Axiom Cortex™)', included: true },
-    { feature: 'Platform Telemetry for Onboarding & Performance', included: true },
-    { feature: 'Integrated EOR, Devices, & Insurance', included: true },
-    { feature: 'Transparent, Candidate-Level Vetting', included: true },
-    { feature: 'Scalable Squads for Mid-Sized Companies', included: true },
-];
-
-const globantFeatures = [
-    { feature: 'Focus on Mission-Fit LATAM Talent', included: false },
-    { feature: 'Cognitive Trait Measurement (Axiom Cortex™)', included: false },
-    { feature: 'Platform Telemetry for Onboarding & Performance', included: false },
-    { feature: 'Integrated EOR, Devices, & Insurance', included: false },
-    { feature: 'Transparent, Candidate-Level Vetting', included: false },
-    { feature: 'Scalable Squads for Mid-Sized Companies', included: false },
+const comparisonData = [
+    { feature: 'Focus on Mission-Fit LATAM Talent', teamstation: true, competitor: false },
+    { feature: 'Cognitive Trait Measurement (Axiom Cortex™)', teamstation: true, competitor: false },
+    { feature: 'Platform Telemetry for Onboarding & Performance', teamstation: true, competitor: false },
+    { feature: 'Integrated EOR, Devices, & Insurance', teamstation: true, competitor: false },
+    { feature: 'Transparent, Candidate-Level Vetting', teamstation: true, competitor: false },
+    { feature: 'Scalable Squads for Mid-Sized Companies', teamstation: true, competitor: false },
 ];
 
 
@@ -34,30 +25,30 @@ export default function GlobantComparisonPage() {
         </p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-        <div className="card">
+      <div className="grid md:grid-cols-2 gap-8 my-12">
+        <div className="card border-green-500/50">
           <h2 className="h2 mt-0 text-center">TeamStation AI</h2>
           <p className="text-center text-sm text-slate-400 mb-6">The Integrated Nearshore IT Co-Pilot™</p>
-          <ul className="space-y-4">
-            {teamStationFeatures.map(item => (
-              <li key={item.feature} className="flex items-start">
-                <CheckCircle className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
-                <span>{item.feature}</span>
-              </li>
+          <div className="space-y-3">
+            {comparisonData.map(item => (
+              <div key={item.feature} className="icon-card !p-3 !gap-3">
+                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0" size={20} /> : <XCircle className="text-red-500 flex-shrink-0" size={20} />}
+                <span className="text-sm">{item.feature}</span>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
         <div className="card border-red-500/50">
           <h2 className="h2 mt-0 text-center">Globant</h2>
            <p className="text-center text-sm text-slate-400 mb-6">Global Systems Integrator</p>
-           <ul className="space-y-4">
-            {globantFeatures.map(item => (
-              <li key={item.feature} className="flex items-start">
-                <XCircle className="text-red-500 mr-3 mt-1 flex-shrink-0" size={20} />
-                <span>{item.feature}</span>
-              </li>
+           <div className="space-y-3">
+            {comparisonData.map(item => (
+              <div key={item.feature} className="icon-card !p-3 !gap-3">
+                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0" size={20} /> : <XCircle className="text-red-500 flex-shrink-0" size={20} />}
+                <span className="text-sm">{item.feature}</span>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
 

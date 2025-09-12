@@ -1,22 +1,13 @@
 
 import { CheckCircle, XCircle } from 'lucide-react';
 
-const teamStationFeatures = [
-    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', included: true },
-    { feature: 'Cognitive Science-Based Vetting (Axiom Cortex™)', included: true },
-    { feature: 'Bias Mitigation & Fairness Audits', included: true },
-    { feature: 'Publicly Stated Delivery SLAs (Time-to-Offer, MDM Enrollment)', included: true },
-    { feature: '2.6M+ LATAM Talent Graph (Nebula Neural Search™)', included: true },
-    { feature: 'Day-One Onboarding & Performance Diagnostics', included: true },
-];
-
-const bairesDevFeatures = [
-    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', included: false },
-    { feature: 'Cognitive Science-Based Vetting (Axiom Cortex™)', included: false },
-    { feature: 'Bias Mitigation & Fairness Audits', included: false },
-    { feature: 'Publicly Stated Delivery SLAs (Time-to-Offer, MDM Enrollment)', included: false },
-    { feature: '2.6M+ LATAM Talent Graph (Nebula Neural Search™)', included: false },
-    { feature: 'Day-One Onboarding & Performance Diagnostics', included: false },
+const comparisonData = [
+    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
+    { feature: 'Cognitive Science-Based Vetting (Axiom Cortex™)', teamstation: true, competitor: false },
+    { feature: 'Bias Mitigation & Fairness Audits', teamstation: true, competitor: false },
+    { feature: 'Publicly Stated Delivery SLAs', teamstation: true, competitor: false },
+    { feature: '2.6M+ LATAM Talent Graph', teamstation: true, competitor: false },
+    { feature: 'Day-One Onboarding & Performance Diagnostics', teamstation: true, competitor: false },
 ];
 
 
@@ -34,29 +25,29 @@ export default function BairesDevComparisonPage() {
       </header>
 
       <div className="grid md:grid-cols-2 gap-8 my-12">
-        <div className="card">
+        <div className="card border-green-500/50">
           <h2 className="h2 mt-0 text-center">TeamStation AI</h2>
           <p className="text-center text-sm text-slate-400 mb-6">The Integrated Nearshore IT Co-Pilot™</p>
-          <ul className="space-y-4">
-            {teamStationFeatures.map(item => (
-              <li key={item.feature} className="flex items-start">
-                <CheckCircle className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
-                <span>{item.feature}</span>
-              </li>
+          <div className="space-y-3">
+            {comparisonData.map(item => (
+              <div key={item.feature} className="icon-card !p-3 !gap-3">
+                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0" size={20} /> : <XCircle className="text-red-500 flex-shrink-0" size={20} />}
+                <span className="text-sm">{item.feature}</span>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
         <div className="card border-red-500/50">
           <h2 className="h2 mt-0 text-center">BairesDev</h2>
-           <p className="text-center text-sm text-slate-400 mb-6">Traditional Staff Augmentation Vendor</p>
-           <ul className="space-y-4">
-            {bairesDevFeatures.map(item => (
-              <li key={item.feature} className="flex items-start">
-                <XCircle className="text-red-500 mr-3 mt-1 flex-shrink-0" size={20} />
-                <span>{item.feature}</span>
-              </li>
+           <p className="text-center text-sm text-slate-400 mb-6">Traditional Staff Augmentation</p>
+           <div className="space-y-3">
+            {comparisonData.map(item => (
+              <div key={item.feature} className="icon-card !p-3 !gap-3">
+                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0" size={20} /> : <XCircle className="text-red-500 flex-shrink-0" size={20} />}
+                 <span className="text-sm">{item.feature}</span>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
 
