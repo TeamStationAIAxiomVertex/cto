@@ -1,17 +1,80 @@
 
 import Link from 'next/link';
-import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane } from 'lucide-react';
+import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane, UserCheck, School, Languages } from 'lucide-react';
 
-const countries: { [key: string]: { name: string } } = {
-  'mexico': { name: 'Mexico' },
-  'colombia': { name: 'Colombia' },
-  'brazil': { name: 'Brazil' },
-  'argentina': { name: 'Argentina' },
-  'chile': { name: 'Chile' },
-  'peru': { name: 'Peru' },
-  'costa-rica': { name: 'Costa Rica' },
-  'uruguay': { name: 'Uruguay' },
-  'ecuador': { name: 'Ecuador' },
+const countries: { [key: string]: { name: string; highlights: string[] } } = {
+  'mexico': { 
+    name: 'Mexico',
+    highlights: [
+        'Top engineering universities like Tec de Monterrey and UNAM produce thousands of skilled graduates annually.',
+        'Strong cultural alignment with the U.S. and significant English proficiency in tech hubs.',
+        'Central Time Zone overlap enables seamless real-time collaboration with U.S. teams.'
+    ]
+  },
+  'colombia': { 
+    name: 'Colombia',
+    highlights: [
+        'A rapidly growing tech ecosystem, especially in Medellín and Bogotá, with strong government support.',
+        'High concentration of bilingual talent with excellent communication skills.',
+        'A resilient and adaptable workforce known for its strong problem-solving abilities.'
+    ]
+  },
+  'brazil': { 
+    name: 'Brazil',
+    highlights: [
+        'The largest talent pool in Latin America, with deep expertise in complex domains like FinTech and Data Science.',
+        'World-class universities and a vibrant startup scene foster continuous innovation.',
+        'Engineers are known for their creativity and ability to handle large-scale, complex systems.'
+    ]
+   },
+  'argentina': { 
+    name: 'Argentina',
+    highlights: [
+        'Exceptionally high English proficiency and strong educational system.',
+        'A mature tech market with a deep pool of senior and lead-level engineers.',
+        'Strong European cultural ties foster a diverse and globally-minded workforce.'
+    ]
+  },
+  'chile': { 
+    name: 'Chile',
+    highlights: [
+        'Considered one of the most stable and economically advanced countries in the region.',
+        'A strong emphasis on engineering and data science in its top universities.',
+        'A hub for enterprise-level B2B and financial services technology.'
+    ]
+   },
+  'peru': { 
+    name: 'Peru',
+    highlights: [
+        'A rising tech scene with a growing pool of skilled mobile and web developers.',
+        'Strong work ethic and cultural affinity with North American business practices.',
+        'A cost-effective location without compromising on technical quality.'
+    ]
+  },
+  'costa-rica': { 
+    name: 'Costa Rica',
+    highlights: [
+        'A major hub for U.S. tech companies, with a highly educated and bilingual workforce.',
+        'Politically stable with significant investment in technology and education.',
+        'Expertise in life sciences, medical devices, and enterprise software.'
+    ]
+  },
+  'uruguay': { 
+    name: 'Uruguay',
+    highlights: [
+        'One of the most digitally advanced countries in LATAM with excellent infrastructure.',
+        'A strong focus on software exports and a highly skilled, specialized talent pool.',
+        'A stable, business-friendly environment with a high quality of life.'
+    ]
+  },
+  'ecuador': {
+    name: 'Ecuador',
+    highlights: [
+        'An emerging talent market with a growing number of skilled engineers in Quito and Guayaquil.',
+        'Strong desire to work with U.S. companies, leading to high engagement and retention.',
+        'Offers a significant cost advantage while developing a strong tech ecosystem.'
+    ]
+  },
 };
 
 const roleCategories = [
@@ -102,17 +165,46 @@ export default function CountryRolesPage({ params }: { params: { country: string
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire Elite Engineers in {country.name}</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            Access top-tier, pre-vetted LATAM talent in {country.name} across every major technology domain. Our integrated platform provides the talent, security, and infrastructure you need to scale with confidence.
+            You're here because you need world-class talent without the world-class time zone headaches. Access top-tier, pre-vetted engineers in {country.name}, fully aligned with your working hours.
         </p>
       </header>
 
+      <div className="my-16 rounded-lg border bg-card p-8">
+        <h2 className="text-3xl font-bold text-center">Why {country.name} for Top Engineering Talent?</h2>
+        <div className="grid md:grid-cols-3 gap-8 mt-8 text-muted-foreground">
+            <div className='flex items-start gap-4'>
+                <School className='h-8 w-8 text-primary shrink-0 mt-1'/>
+                <div>
+                    <h3 className='font-semibold text-foreground'>Strong Educational Foundation</h3>
+                    <p className='text-sm'>{country.highlights[0]}</p>
+                </div>
+            </div>
+            <div className='flex items-start gap-4'>
+                <Languages className='h-8 w-8 text-primary shrink-0 mt-1'/>
+                <div>
+                    <h3 className='font-semibold text-foreground'>Language & Cultural Alignment</h3>
+                    <p className='text-sm'>{country.highlights[1]}</p>
+                </div>
+            </div>
+            <div className='flex items-start gap-4'>
+                <UserCheck className='h-8 w-8 text-primary shrink-0 mt-1'/>
+                <div>
+                    <h3 className='font-semibold text-foreground'>Professional & Collaborative</h3>
+                    <p className='text-sm'>{country.highlights[2]}</p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+      <h2 className="text-center text-3xl font-bold mb-8">Explore Available Roles in {country.name}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {roleCategories.map((details) => (
           <Link href={`/hire/by-role/${details.slug}`} key={details.slug} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
               <div className='flex justify-between items-start'>
                 {details.icon}
               </div>
-              <h2 className="mt-4 text-2xl font-bold transition-colors group-hover:text-primary">{details.name}</h2>
+              <h2 className="mt-4 text-xl font-bold transition-colors group-hover:text-primary">{details.name}</h2>
               <p className="mt-2 text-sm text-muted-foreground flex-grow">
                 {details.description}
               </p>
