@@ -247,5 +247,3 @@ export default function EvaluationPage() {
     </main>
   );
 }
-
-    

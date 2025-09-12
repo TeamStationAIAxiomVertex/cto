@@ -114,5 +114,3 @@ export function Header() {
     </header>
   );
 }
-
-    
