@@ -34,7 +34,7 @@ export default function GlobantComparisonPage() {
         </p>
       </header>
 
-      <div className="grid md:grid-cols-2 gap-8 my-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
         <div className="card">
           <h2 className="h2 mt-0 text-center">TeamStation AI</h2>
           <p className="text-center text-sm text-slate-400 mb-6">The Integrated Nearshore IT Co-Pilot™</p>
@@ -93,4 +93,3 @@ export default function GlobantComparisonPage() {
     </main>
   );
 }
-
