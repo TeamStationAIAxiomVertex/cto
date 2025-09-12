@@ -76,7 +76,7 @@ export default function TrustPage() {
       <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Security is Our Default</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">Explore our MSA and see how our commitment to security is built into our legal framework.</p>
-        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
             Book a Strategy Call
         </a>
       </div>

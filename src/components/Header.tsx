@@ -79,7 +79,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button hidden sm:inline-flex">Book a Call</Link>
+          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button hidden sm:inline-flex">Book a Call</Link>
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="inline-flex h-10 w-10 items-center justify-center rounded-md border bg-transparent text-muted-foreground">
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -107,7 +107,7 @@ export function Header() {
                     {item.title}
                 </Link>
             ))}
-             <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button w-full mt-4">Book a Call</Link>
+             <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button w-full mt-4">Book a Call</Link>
           </div>
         </div>
       )}

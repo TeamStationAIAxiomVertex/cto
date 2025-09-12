@@ -2,9 +2,8 @@
 import { getCaseStudyBySlug, getAllCaseStudies } from '@/lib/case-studies';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { CheckCircle, ArrowRight, Target, Telescope, Shield, Briefcase, Award, Handshake } from 'lucide-react';
+import { ArrowRight, Briefcase, Award, CheckCircle } from 'lucide-react';
 import { markdownToHtml } from '@/lib/markdown-parser';
-import { Fragment } from 'react';
 
 export default async function CaseStudyPage({ params }: { params: { slug: string } }) {
   const study = await getCaseStudyBySlug(params.slug);
@@ -48,13 +47,43 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                     <h3 className="text-xl font-bold flex items-center gap-3"><Award className="h-6 w-6 text-primary" />Key Summary</h3>
                      <p className="mt-4 text-sm text-muted-foreground">{study.summary}</p>
                 </div>
+                
+                {study.challenge && (
+                    <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
+                        <h3 className="text-xl font-bold flex items-center gap-3">The Challenge</h3>
+                        <p className="mt-4 text-sm text-muted-foreground">{study.challenge}</p>
+                    </div>
+                )}
+                
+                {study.why && (
+                     <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
+                        <h3 className="text-xl font-bold flex items-center gap-3">Why TeamStation AI</h3>
+                        <p className="mt-4 text-sm text-muted-foreground">{study.why}</p>
+                    </div>
+                )}
+
+                {study.outcomes && (
+                    <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
+                        <h3 className="text-xl font-bold flex items-center gap-3">Outcomes</h3>
+                         <div className="mt-4 space-y-2 text-sm text-muted-foreground">
+                            {study.outcomes.split('\n').map((item, index) => (
+                                item.trim() && (
+                                    <div key={index} className="flex items-start gap-2">
+                                        <CheckCircle className="h-4 w-4 mt-1 shrink-0 text-primary"/>
+                                        <span>{item.replace(/^-/, '').trim()}</span>
+                                    </div>
+                                )
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 <div className="text-center rounded-lg bg-primary/10 p-8">
                     <h2 className="text-xl font-bold">Ready to Build Your Elite Team?</h2>
                     <p className="mt-2 text-sm text-muted-foreground">
                         Let TeamStation AI provide the talent, governance, and infrastructure you need to ship faster and more securely.
                     </p>
-                    <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button mt-6 text-sm">
+                    <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6 text-sm">
                         Book a Strategy Call
                     </Link>
                 </div>

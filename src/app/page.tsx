@@ -25,7 +25,7 @@ export default async function HomePage() {
           The definitive, research-backed hub for CTOs evaluating nearshore LATAM engineering, AI-driven hiring, and vendor choices.
         </p>
         <div className="mt-10">
-            <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Strategy Call</Link>
+            <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Strategy Call</Link>
         </div>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
             <ServicePill icon={BrainCircuit} text="AI-Powered Vetting" />
@@ -61,7 +61,7 @@ export default async function HomePage() {
             <h2 className="text-3xl font-bold text-foreground">Schedule a Consultation</h2>
             <p className="mt-3 text-muted-foreground">Ready to accelerate your roadmap? Let's discuss how our elite LATAM talent and integrated platform can help you achieve your goals.</p>
             <div className="mt-6">
-                <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button">Find a Time</Link>
+                <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Find a Time</Link>
             </div>
          </div>
       </section>

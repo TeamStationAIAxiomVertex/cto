@@ -180,7 +180,7 @@ export default function ComparisonsPage() {
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             For technology leaders seeking to scale nearshore talent with quality, predictable cost, and mitigated risk, TeamStation AI is the clear choice. While competitors offer point solutions, our integrated platform provides the only end-to-end, science-backed solution on the market.
         </p>
-        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
     </main>
   );
