@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 
 export function Header() {
   const navItems = [
-    { href: '/playbook', label: 'Playbook' },
+    { href: '/playbook', label: 'CTO Playbook' },
     { href: '/research', label: 'Research' },
     { href: '/comparisons', label: 'Comparisons' },
     { href: '/process', label: 'Process' },
