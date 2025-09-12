@@ -92,9 +92,9 @@ export default function PricingPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Pricing</span>
       </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Nearshore IT Staff Augmentation Pricing</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Your CFO-Ready Case for Nearshore</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          Transparent hourly rates with EOR, devices/MDM, and compliance included—under one SLA.
+          Stop getting ambushed by hidden fees and vendor chaos. This is a predictable, all-inclusive cost model that your finance team will actually approve.
         </p>
          <div className="mt-4 text-center">
             <span className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">From $20–$50/hr • 173 hrs/mo basis • Devices & compliance included</span>
@@ -124,23 +124,23 @@ export default function PricingPage() {
       </div>
       
         <div className="rounded-lg border bg-card my-12 p-8">
-         <h2 className="text-3xl font-bold text-center">The Math (Show This to Finance)</h2>
-         <p className="text-center text-muted-foreground max-w-3xl mx-auto mt-2">A roadmap feature is worth $1,000,000 ARR. Faster hiring pulls that revenue forward.</p>
+         <h2 className="text-3xl font-bold text-center">The Math Your CFO Cares About</h2>
+         <p className="text-center text-muted-foreground max-w-3xl mx-auto mt-2">A single delayed roadmap feature can cost you millions in ARR. Faster, more accurate hiring isn't a "nice-to-have"—it's a financial necessity.</p>
          <div className="text-center mt-8 bg-background p-6 rounded-lg max-w-2xl mx-auto">
-            <h3 className='font-semibold text-foreground'>Vacancy Tax Avoided</h3>
+            <h3 className='font-semibold text-foreground'>The Vacancy Tax You're Paying Today</h3>
             <div className="font-mono text-lg md:text-xl mt-2 flex flex-wrap justify-center items-center gap-2">
                 <span>(36 days saved / 365)</span>
                 <span>* $1,000,000 ARR</span>
                 <span>=</span>
                 <span className="font-bold text-green-400">$98,630</span>
             </div>
-            <p className="text-xs text-muted-foreground mt-2">Value pulled forward by hiring in 9 days vs. the industry average of 45.</p>
+            <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in 9 days vs. the industry average of 45.</p>
          </div>
       </div>
 
       <div className="my-16 text-center">
-        <h2 className="text-4xl font-bold">What's Included in Our Fully-Loaded Rate?</h2>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Our platform fee is embedded in the hourly rate, providing a comprehensive operational wrapper that reduces your Total Cost of Ownership (TCO).</p>
+        <h2 className="text-4xl font-bold">The All-Inclusive Risk Shield</h2>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Competitors' quotes hide 10-15% in extra fees for EOR, device management, and compliance. Our rate includes everything. No surprises.</p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 mt-12 max-w-6xl mx-auto text-left">
             {includedItems.map(item => (
                 <div key={item.title} className="flex items-start gap-3">
@@ -152,8 +152,8 @@ export default function PricingPage() {
       </div>
 
        <div className="my-16">
-        <h2 className="text-4xl font-bold text-center">How Pricing is Determined</h2>
-         <p className="mt-4 max-w-3xl mx-auto text-center text-muted-foreground">One fully-loaded hourly rate—clear, defensible, and optimized for value. We align talent expectations with local market reality and bundle critical services under one accountable SLA.</p>
+        <h2 className="text-4xl font-bold text-center">How We Justify Your Budget</h2>
+         <p className="mt-4 max-w-3xl mx-auto text-center text-muted-foreground">Our fully-loaded hourly rate is clear, defensible, and optimized for value. We align talent expectations with local market reality and bundle critical services under one accountable SLA.</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {pricingFactors.map(factor => (
                 <div key={factor.title} className="rounded-lg border bg-card p-6">
@@ -172,15 +172,15 @@ export default function PricingPage() {
       </div>
       
        <div className="my-16">
-        <h2 className="text-4xl font-bold text-center">U.S. Talent Onboarding Costs vs. TeamStation</h2>
-         <p className="mt-4 max-w-3xl mx-auto text-center text-muted-foreground">A comparable example of our value proposition to maximize your operating budget.</p>
+        <h2 className="text-4xl font-bold text-center">The TCO Knockout: U.S. Hire vs. TeamStation AI</h2>
+         <p className="mt-4 max-w-3xl mx-auto text-center text-muted-foreground">This is the slide to show your finance team. It's a simple, powerful comparison of the true first-year cost.</p>
         <div className="overflow-x-auto mt-8">
           <table className="w-full max-w-4xl mx-auto text-sm text-left">
             <thead className="border-b border-border/50">
               <tr>
                 <th className="px-4 py-3 font-semibold text-foreground">Cost Area</th>
                 <th className="px-4 py-3 font-semibold text-foreground text-center">Typical U.S. Onboarding</th>
-                <th className="px-4 py-3 font-semibold text-primary text-center">TeamStation AI</th>
+                <th className="px-4 py-3 font-semibold text-primary text-center">TeamStation AI (Included)</th>
               </tr>
             </thead>
             <tbody>
@@ -225,14 +225,16 @@ export default function PricingPage() {
       </div>
 
        <div className="text-center rounded-lg bg-primary/10 p-8">
-        <h2 className="text-2xl font-bold">Ready for a Transparent, Predictable Cost Model?</h2>
+        <h2 className="text-2xl font-bold">Stop Burning Money. Start Building.</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
-          Let us handle the operational complexity so you can focus on building your product with elite talent.
+          Let's have a real conversation about your budget and your roadmap. In 15 minutes, we can give you a concrete, defensible plan.
         </p>
          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
-            Book a Strategy Call
+            Book a No-Bullshit Strategy Call
         </Link>
       </div>
     </main>
   );
 }
+
+    
