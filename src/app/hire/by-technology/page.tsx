@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 export default function HireByTechnologyPage() {
   const technologies = [
@@ -7,8 +8,8 @@ export default function HireByTechnologyPage() {
   ];
 
   return (
-    <main className="container">
-       <div className="text-sm text-muted-foreground">
+    <main className="container py-12">
+       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <span>By Technology</span>
       </div>
       <header className="text-center my-12">
@@ -22,7 +23,7 @@ export default function HireByTechnologyPage() {
         {technologies.map((tech) => (
           <Link href="#" key={tech} className="group block rounded-lg border bg-card p-6 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
             <h3 className="text-lg font-bold transition-colors group-hover:text-primary">{tech}</h3>
-            <div className="mt-4 text-sm font-semibold text-primary">Find Engineers <span className="inline-block transition-transform group-hover:translate-x-1">→</span></div>
+            <div className="mt-4 flex items-center justify-center text-sm font-semibold text-primary">Find Engineers <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></div>
           </Link>
         ))}
       </div>

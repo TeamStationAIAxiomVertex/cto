@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 export default function HireByCountryPage() {
   const countries = [
@@ -16,8 +17,8 @@ export default function HireByCountryPage() {
   ];
 
   return (
-    <main className="container">
-       <div className="text-sm text-muted-foreground">
+    <main className="container py-12">
+       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <span>By Country</span>
       </div>
       <header className="text-center my-12">
@@ -32,10 +33,10 @@ export default function HireByCountryPage() {
           <Link href="#" key={country.slug} className="group block rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
             <h3 className="text-xl font-bold transition-colors group-hover:text-primary">{country.name}</h3>
             <p className="mt-1 text-sm text-muted-foreground">{country.cities}</p>
-            <div className="mt-4 text-sm font-semibold text-primary">Explore Talent <span className="inline-block transition-transform group-hover:translate-x-1">→</span></div>
+            <div className="mt-4 flex items-center text-sm font-semibold text-primary">Explore Talent <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></div>
           </Link>
         ))}
       </div>
-    </main>jinja
+    </main>
   );
 }

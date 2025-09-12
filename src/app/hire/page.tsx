@@ -1,23 +1,23 @@
 
 import Link from 'next/link';
-import { Building, Code, User } from 'lucide-react';
+import { Building, Code, User, ArrowRight } from 'lucide-react';
 
 export default function HirePage() {
   const hireOptions = [
     {
-      icon: <User className="h-6 w-6 text-primary" />,
+      icon: <User className="h-8 w-8 text-primary" />,
       title: 'Hire by Role',
       description: 'Find elite, pre-vetted LATAM talent for your specific engineering needs, from frontend to AI/ML.',
       href: '/hire/by-role',
     },
     {
-      icon: <Code className="h-6 w-6 text-primary" />,
+      icon: <Code className="h-8 w-8 text-primary" />,
       title: 'Hire by Technology',
       description: 'Build your team with engineers who have deep expertise in the technologies you use every day.',
       href: '/hire/by-technology',
     },
     {
-      icon: <Building className="h-6 w-6 text-primary" />,
+      icon: <Building className="h-8 w-8 text-primary" />,
       title: 'Hire by Country',
       description: 'Tap into the top engineering talent pools across Latin America, perfectly aligned with your time zone.',
       href: '/hire/by-country',
@@ -25,8 +25,8 @@ export default function HirePage() {
   ];
 
   return (
-    <main className="container">
-      <div className="text-sm text-muted-foreground">
+    <main className="container py-12">
+      <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Hire</span>
       </div>
       <header className="text-center my-12">
@@ -39,13 +39,11 @@ export default function HirePage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
         {hireOptions.map((option) => (
           <Link key={option.href} href={option.href} className="group block rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-             <div className="flex items-center gap-4">
-                {option.icon}
-                <h2 className="text-xl font-bold transition-colors group-hover:text-primary">{option.title}</h2>
-             </div>
+             {option.icon}
+            <h2 className="mt-4 text-xl font-bold transition-colors group-hover:text-primary">{option.title}</h2>
             <p className="mt-2 text-muted-foreground">{option.description}</p>
-            <div className="mt-4 text-sm font-semibold text-primary">
-                Explore Options <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+            <div className="mt-6 flex items-center text-sm font-semibold text-primary">
+                Explore Options <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </div>
           </Link>
         ))}

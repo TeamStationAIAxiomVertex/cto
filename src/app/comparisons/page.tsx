@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
-import { Package, BrainCircuit, CheckCircle, XCircle } from 'lucide-react';
-import Tooltip from '@/components/Tooltip';
+import { Tooltip } from '@/components/Tooltip';
+import { ArrowRight } from 'lucide-react';
 
 const vendors = [
   { 
@@ -102,99 +102,86 @@ const vendors = [
   },
 ];
 
-const takeaways = [
-    { 
-        icon: <Package className="icon" />,
-        title: 'The All-in-One Platform', 
-        description: 'One contract bundles everything: AI-powered hiring, EOR/payroll, compliance, secure devices (MDM), a network of offices, and comprehensive cyber/E&O insurance.',
-    },
-    { 
-        icon: <BrainCircuit className="icon" />,
-        title: 'Cognitive AI & Fairness', 
-        description: 'Our Axiom Cortex™ engine analyzes 44+ psychometric and NLP signals to evaluate talent, with a language-fairness layer to mitigate bias.',
-    },
-];
-
 export default function ComparisonsPage() {
   const getRiskColor = (level: string) => {
     switch (level) {
-      case 'low': return 'text-accent-custom';
-      case 'moderate': return 'text-yellow-500';
-      case 'high': return 'text-warn-custom';
-      default: return 'text-mute';
+      case 'low': return 'text-green-400';
+      case 'moderate': return 'text-yellow-400';
+      case 'high': return 'text-red-400';
+      default: return 'text-muted-foreground';
     }
   }
   return (
-    <div className="container mx-auto max-w-7xl px-6 py-12">
-      <div className="breadcrumb">
-        <Link href="/">Home</Link> / Comparisons
+    <main className="container py-12">
+      <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Comparisons</span>
       </div>
       <header className="text-center mb-12">
-        <h1 className="h1">TeamStation AI vs. The Competition</h1>
-        <p className="lead max-w-4xl mx-auto">
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TeamStation AI vs. The Competition</h1>
+        <p className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
           A comparative analysis of features, cost, and risk. We synthesize vendor claims, pricing, and public data to compare TeamStation AI with prominent competitors, showing how our model delivers lower TCO and reduced operational risk.
         </p>
       </header>
 
-       <div className="prose mx-auto my-12">
-        <h2 className="h2 text-center">Key Findings</h2>
+       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl text-center">
+        <h2>Key Findings</h2>
          <p>
             TeamStation AI bundles hiring, compliance, devices, MDM, workspace, insurance and performance under one contract. Competitors require clients to assemble multiple vendors. Our transparent <Link href="/pricing">pricing</Link> includes all services, while competitor rates exclude critical services, leading to a higher Total Cost of Ownership (TCO). Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ engine</Link> reduces mis-hire risk, and our integrated model eliminates compliance gaps and security vulnerabilities.
         </p>
       </div>
 
       <div className="my-16">
-        <h2 className="h2 text-center">Cost & Risk Summary Table</h2>
-        <p className="lead max-w-3xl mx-auto text-center" style={{fontSize: '1rem', marginBottom: '24px'}}>
+        <h2 className="text-3xl font-bold text-center text-foreground">Cost & Risk Summary Table</h2>
+        <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
           Aggregating base pricing, hidden costs, and risk factors for each vendor. Note that competitor TCO often exceeds TeamStation’s all-in pricing once hidden costs are factored in.
         </p>
-        <div className="overflow-x-auto max-w-6xl mx-auto">
-          <table className="table">
-            <thead>
+        <div className="overflow-x-auto mt-8">
+          <table className="w-full text-sm text-left">
+            <thead className="border-b border-border/50">
               <tr>
-                <th>Vendor</th>
-                <th>Base Pricing</th>
-                <th>Additional Costs / Hidden Fees</th>
-                <th>Key Risk Factors</th>
-                <th>Analysis</th>
+                <th className="px-4 py-3 font-semibold text-foreground">Vendor</th>
+                <th className="px-4 py-3 font-semibold text-foreground">Base Pricing</th>
+                <th className="px-4 py-3 font-semibold text-foreground">Additional Costs / Hidden Fees</th>
+                <th className="px-4 py-3 font-semibold text-foreground">Key Risk Factors</th>
+                <th className="px-4 py-3 font-semibold text-foreground text-right">Analysis</th>
               </tr>
             </thead>
             <tbody>
               {vendors.sort((a,b) => a.name === 'TeamStation AI' ? -1 : b.name === 'TeamStation AI' ? 1 : 0).map((vendor) => (
-                <tr key={vendor.name} className={vendor.name === 'TeamStation AI' ? 'bg-surface-2' : ''}>
-                  <td className="font-bold">
+                <tr key={vendor.name} className={`border-b border-border/50 ${vendor.name === 'TeamStation AI' ? 'bg-primary/5' : ''}`}>
+                  <td className="px-4 py-4 font-bold text-foreground">
                     {vendor.slug ? (
-                      <Link href={`/comparisons/${vendor.slug}`} className="hover:text-accent-custom">{vendor.name}</Link>
+                      <Link href={`/comparisons/${vendor.slug}`} className="hover:text-primary">{vendor.name}</Link>
                     ) : (
-                      <span className='text-accent-custom'>{vendor.name}</span>
+                      <span className='text-primary'>{vendor.name}</span>
                     )}
                   </td>
-                  <td>{vendor.basePricing}</td>
-                  <td className={vendor.additionalCosts !== 'None – all services bundled' ? 'text-warn-custom' : ''}>{vendor.additionalCosts}</td>
-                  <td className={getRiskColor(vendor.riskLevel)}>{vendor.risk}</td>
-                  <td>
+                  <td className="px-4 py-4 text-muted-foreground">{vendor.basePricing}</td>
+                  <td className={`px-4 py-4 ${vendor.additionalCosts !== 'None – all services bundled' ? 'text-yellow-400' : 'text-muted-foreground'}`}>{vendor.additionalCosts}</td>
+                  <td className={`px-4 py-4 ${getRiskColor(vendor.riskLevel)}`}>{vendor.risk}</td>
+                  <td className="px-4 py-4 text-right">
                     {vendor.slug ? (
-                       <Link href={`/comparisons/${vendor.slug}`} className="font-semibold text-accent-custom hover:text-accent-d-custom">
-                        See Details →
+                       <Link href={`/comparisons/${vendor.slug}`} className="font-semibold text-primary hover:underline flex items-center justify-end">
+                        See Details <ArrowRight className="ml-1 h-4 w-4" />
                       </Link>
                     ) : (
-                      <span className='font-semibold'>Integrated Platform</span>
+                      <span className='font-semibold text-foreground'>Integrated Platform</span>
                     )}
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-mute mt-2 text-center">Note: Additional costs are market-rate estimates for <Tooltip text="Employer of Record: A third-party organization that legally employs workers on behalf of another company.">EOR</Tooltip>, device leasing, <Tooltip text="Mobile Device Management: Software that allows IT to manage, secure, and enforce policies on devices.">MDM</Tooltip>, insurance, and workspace access.</p>
+          <p className="text-xs text-muted-foreground mt-4 text-center">Note: Additional costs are market-rate estimates for <Tooltip text="Employer of Record: A third-party organization that legally employs workers on behalf of another company.">EOR</Tooltip>, device leasing, <Tooltip text="Mobile Device Management: Software that allows IT to manage, secure, and enforce policies on devices.">MDM</Tooltip>, insurance, and workspace access.</p>
         </div>
       </div>
-       <div className="section text-center">
-        <h2 className="h2 mt-0">Strategic Recommendation</h2>
-        <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
+       <div className="text-center rounded-lg bg-primary/10 p-8 mt-16">
+        <h2 className="text-2xl font-bold">Strategic Recommendation</h2>
+        <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             For technology leaders seeking to scale nearshore talent with quality, predictable cost, and mitigated risk, TeamStation AI is the clear choice. While competitors offer point solutions, our integrated platform provides the only end-to-end, science-backed solution on the market.
         </p>
-        <Link href="/hire" className="cta">Book a Strategy Call</Link>
+        <Link href="/hire" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
-    </div>
+    </main>
   );
 }

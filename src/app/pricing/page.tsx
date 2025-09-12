@@ -3,7 +3,6 @@
 
 import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
-import { Tooltip } from '@/components/Tooltip';
 
 const levels = [
   { level: 'L1 Proficient', title: 'Guided contributor', description: 'Contributes on component-level tasks with guidance.', rate: 20 },
@@ -28,8 +27,8 @@ const includedItems = [
 
 export default function PricingPage() {
   return (
-    <div className="container mx-auto max-w-7xl">
-      <div className="text-sm text-muted-foreground">
+    <main className="container py-12">
+      <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Pricing</span>
       </div>
       <header className="text-center my-12">
@@ -43,7 +42,7 @@ export default function PricingPage() {
         {levels.map((level) => (
           <div key={level.level} className="group rounded-lg border bg-card p-6 flex flex-col transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
             <h2 className="text-lg font-bold">{level.level}</h2>
-            <p className="text-sm text-muted-foreground flex-grow">{level.description}</p>
+            <p className="text-sm text-muted-foreground flex-grow mt-1">{level.description}</p>
             <div className="my-6 text-center">
               <span className="text-5xl font-extrabold">${level.rate}</span>
               <span className="text-muted-foreground">/hour</span>
@@ -84,7 +83,6 @@ export default function PricingPage() {
             <p className="text-xs text-muted-foreground mt-1">Value pulled forward by hiring in 9 days vs. the industry average of 45.</p>
          </div>
       </div>
-
-    </div>
+    </main>
   );
 }

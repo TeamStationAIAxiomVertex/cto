@@ -1,6 +1,5 @@
 
-import Link from "next/link";
-import { Tooltip } from "./Tooltip";
+import Link from 'next/link';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -14,8 +13,15 @@ export function Footer() {
       ],
       "Services": [
         { href: '/process', label: 'Our Process' },
-        { href: '/technical-interview-evaluation', label: 'Talent Evaluations' },
-        { href: '/nearshore-integrated-services', label: 'Integrated Services' },
+        { href: '/research/technical-talent-evaluation-system', label: 'Talent Evaluations' },
+        { href: '/services/nearshore-integrated-services', label: 'Integrated Services' },
+        { href: '/services/nearshore-it-talent-onboarding', label: 'Talent Onboarding' },
+      ],
+      "Comparisons": [
+          { href: '/comparisons', label: 'All Comparisons' },
+          { href: '/comparisons/bairesdev', label: 'vs. BairesDev' },
+          { href: '/comparisons/globant', label: 'vs. Globant' },
+          { href: '/comparisons/toptal', label: 'vs. Toptal' },
       ],
       "Company": [
         { href: '/about', label: 'About Us' },
@@ -28,7 +34,7 @@ export function Footer() {
   return (
     <footer className="mt-32 border-t border-border py-16 text-muted-foreground">
       <div className="container mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           <div className="col-span-2 md:col-span-1">
             <h3 className="text-lg font-bold text-foreground">TeamStation AI</h3>
             <p className="mt-2 text-sm">The integrated platform for building and scaling elite nearshore engineering teams.</p>

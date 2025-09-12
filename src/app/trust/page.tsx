@@ -27,8 +27,8 @@ export default function TrustPage() {
     ];
 
   return (
-    <div className="container mx-auto max-w-7xl">
-      <div className="text-sm text-muted-foreground">
+    <main className="container max-w-7xl py-12">
+      <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Trust Center</span>
       </div>
       <header className="text-center my-12">
@@ -80,6 +80,6 @@ export default function TrustPage() {
             Book a Strategy Call
         </a>
       </div>
-    </div>
+    </main>
   );
 }

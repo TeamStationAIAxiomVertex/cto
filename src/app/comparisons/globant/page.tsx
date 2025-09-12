@@ -1,60 +1,60 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
-import Tooltip from '@/components/Tooltip';
+import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
+import { Tooltip } from '@/components/Tooltip';
 
 const comparisonData = [
-    { feature: 'Purpose-built for Staff Augmentation', teamstation: true, competitor: false },
-    { feature: 'Cognitive Trait Measurement (Axiom Cortex™)', teamstation: true, competitor: false },
-    { feature: 'Transparent, Candidate-Level Vetting', teamstation: true, competitor: false },
-    { feature: 'Integrated EOR, Devices, & Insurance', teamstation: true, competitor: false },
-    { feature: 'Focus on Large-Scale Project Outsourcing', teamstation: false, competitor: true },
-    { feature: 'Opaque, Project-Based Fees', teamstation: false, competitor: true },
+    { feature: 'Purpose-built for Staff Augmentation', teamstation: true },
+    { feature: 'Cognitive Trait Measurement (Axiom Cortex™)', teamstation: true },
+    { feature: 'Transparent, Candidate-Level Vetting', teamstation: true },
+    { feature: 'Integrated EOR, Devices, & Insurance', teamstation: true },
+    { feature: 'Focus on Large-Scale Project Outsourcing', competitor: true },
+    { feature: 'Opaque, Project-Based Fees', competitor: true },
 ];
 
 
 export default function GlobantComparisonPage() {
   return (
-    <main className="container">
-      <div className="breadcrumb">
-        <Link href="/">Home</Link> / <Link href="/comparisons">Comparisons</Link> / Globant
+    <main className="container py-12">
+      <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Globant</span>
       </div>
       <header className="text-center my-8">
-        <h1 className="h1">TeamStation AI vs. Globant</h1>
-        <p className="lead max-w-3xl mx-auto">
+        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">TeamStation AI vs. Globant</h1>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           A strategic breakdown for CTOs: TeamStation AI’s precision staff augmentation platform vs. Globant’s large-scale project delivery model.
         </p>
       </header>
 
       <div className="flex flex-col md:flex-row gap-8 my-12">
-        <div className="card border-accent-custom/50 flex-1">
-          <h2 className="h2 mt-0 text-center">TeamStation AI</h2>
-          <p className="text-center text-sm text-mute mb-6">The Integrated Nearshore IT Co-Pilot™</p>
+        <div className="rounded-lg border-2 border-primary/50 flex-1 p-8 bg-card">
+          <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
+          <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
           <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="icon-card !p-3 !gap-3">
-                {item.teamstation ? <CheckCircle className="text-accent-custom flex-shrink-0" size={20} /> : <XCircle className="text-warn-custom flex-shrink-0" size={20} />}
-                <span className="text-sm">{item.feature}</span>
+            {comparisonData.filter(i => i.teamstation).map(item => (
+              <div key={item.feature} className="flex items-start gap-3">
+                <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
             ))}
           </div>
         </div>
-        <div className="card border-warn-custom/50 flex-1">
-          <h2 className="h2 mt-0 text-center">Globant</h2>
-           <p className="text-center text-sm text-mute mb-6">Global Systems Integrator</p>
+        <div className="rounded-lg border bg-card flex-1 p-8">
+          <h2 className="text-2xl font-bold text-center text-foreground">Globant</h2>
+           <p className="text-center text-sm text-muted-foreground mb-6">Global Systems Integrator</p>
            <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="icon-card !p-3 !gap-3">
-                {item.competitor ? <CheckCircle className="text-accent-custom flex-shrink-0" size={20} /> : <XCircle className="text-warn-custom flex-shrink-0" size={20} />}
-                 <span className="text-sm">{item.feature}</span>
+            {comparisonData.filter(i => i.competitor).map(item => (
+               <div key={item.feature} className="flex items-start gap-3">
+                <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                 <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="prose mx-auto my-12">
-        <h2 className="h2 text-center">Analysis: The Co-Pilot vs. The Systems Integrator</h2>
+      <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
+        <h2 className="text-center">Analysis: The Co-Pilot vs. The Systems Integrator</h2>
         <p>
             Choosing between TeamStation AI and Globant is about selecting the right operational model. Globant is a massive, global systems integrator, a powerhouse for large-scale digital transformation projects. You hand them a problem, and their teams deliver a solution. It is not a staff augmentation platform.
         </p>
@@ -64,7 +64,7 @@ export default function GlobantComparisonPage() {
                 Nearshore IT Co-Pilot™
             </Tooltip>. Our entire platform is purpose-built for staff augmentation, providing you with elite, mission-fit LATAM engineering talent that integrates directly into your existing teams.
         </p>
-        <h3 className="h3">Talent vs. Projects: Where Do You Need Control?</h3>
+        <h3>Talent vs. Projects: Where Do You Need Control?</h3>
         <p>
             Globant sells project delivery. Their value is in the final product, not in the transparency of the team building it. This model works well for enterprise-level outsourcing of entire functions.
         </p>
@@ -77,12 +77,12 @@ export default function GlobantComparisonPage() {
         </p>
       </div>
 
-      <div className="section text-center">
-        <h2 className="h2 mt-0">Conclusion: Choose the Right Tool for the Job</h2>
-        <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
+      <div className="text-center rounded-lg bg-primary/10 p-8">
+        <h2 className="text-2xl font-bold">Conclusion: Choose the Right Tool for the Job</h2>
+        <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             If you need to outsource an entire digital transformation initiative, Globant is a world-class choice. If your goal is to strategically build and scale your own high-performing nearshore engineering team via staff augmentation, TeamStation AI provides the more targeted, controllable, and precise platform.
         </p>
-        <Link href="/comparisons" className="cta">Back to Main Comparison</Link>
+        <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
       </div>
     </main>
   );

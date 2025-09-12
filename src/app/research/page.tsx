@@ -1,28 +1,15 @@
 
 import Link from 'next/link';
+import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
+import { ArrowRight } from 'lucide-react';
 
-export default function ResearchPage() {
-  const papers = [
-    {
-      title: 'AxiomCortex™ Scientific R&D Report',
-      description: 'A deep dive into the proprietary Cognitive AI engine that powers TeamStation AI\'s talent evaluation, outlining its core scientific pillars and bias mitigation strategies.',
-      href: '/research/axiom-cortex-scientific-report',
-    },
-    {
-      title: 'Redefining Software Engineer Performance in the AI-Augmented Era',
-      description: 'Proposing a novel, value-centric, and quality-driven model for assessing software engineer performance, moving beyond outdated metrics.',
-      href: '/research/performance-evaluation-framework', 
-    },
-     {
-      title: 'Technical Talent Evaluation System (Sample Report)',
-      description: 'An interactive example of a real AxiomCortex™ evaluation report, showcasing the Cognitive Fingerprint, Evidence Locker, and Risk Mitigation plan for a candidate.',
-      href: '/research/technical-talent-evaluation-system',
-    },
-  ];
+export default async function ResearchPage() {
+  const slugs = await getAllResearchSlugs();
+  const papers = await Promise.all(slugs.map(slug => getResearchBySlug(slug)));
 
   return (
-    <div className="container mx-auto max-w-6xl">
-       <div className="text-sm text-muted-foreground">
+    <main className="container max-w-6xl py-12">
+       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research</span>
       </div>
       <header className="text-center my-12">
@@ -32,14 +19,16 @@ export default function ResearchPage() {
         </p>
       </header>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {papers.map((paper) => (
-          <Link key={paper.href} href={paper.href} className="group block rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-            <h2 className="text-xl font-bold transition-colors group-hover:text-primary">{paper.title}</h2>
-            <p className="mt-2 text-muted-foreground">{paper.description}</p>
-             <div className="mt-6 text-sm font-semibold text-primary">Read Research <span className="inline-block transition-transform group-hover:translate-x-1">→</span></div>
-          </Link>
+        {papers.map(paper => (
+          paper && (
+            <Link key={paper.href} href={paper.href} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+              <h2 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{paper.title}</h2>
+              <p className="mt-2 text-muted-foreground flex-grow">{paper.description}</p>
+               <div className="mt-6 flex items-center text-sm font-semibold text-primary">Read Research <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></div>
+            </Link>
+          )
         ))}
       </div>
-    </div>
+    </main>
   );
 }

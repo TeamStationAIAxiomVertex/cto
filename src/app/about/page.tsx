@@ -21,7 +21,7 @@ export default function AboutPage() {
         },
     ];
   return (
-    <main className="container max-w-5xl">
+    <main className="container max-w-5xl py-12">
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>About</span>
       </div>
