@@ -1,4 +1,4 @@
-// This file is deprecated. Please use the new content-specific files in /lib.
-// For example, use /lib/case-studies.ts and /lib/playbook.ts
-// This file is kept for compatibility but will be removed in a future update.
+// This file is deprecated and will be removed in a future update.
+// Content-specific data loading has been moved to dedicated files like `/lib/case-studies.ts` and `/lib/playbook.ts`.
+// No code should reference this file.
 export {};
