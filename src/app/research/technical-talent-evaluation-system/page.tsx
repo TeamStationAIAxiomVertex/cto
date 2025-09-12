@@ -5,12 +5,12 @@ import {
   Bar,
   XAxis,
   YAxis,
-  Tooltip,
+  Tooltip as RechartsTooltip,
   ResponsiveContainer,
   Cell,
 } from 'recharts';
 import { AccordionItem } from '@/components/Accordion';
-import { ShieldCheck, BrainCircuit, Target, Lightbulb } from 'lucide-react';
+import { ShieldCheck, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 
 const cognitiveData = [
@@ -20,12 +20,6 @@ const cognitiveData = [
     { name: 'Collaborative Mindset', candidate: 4.4, ideal: 4.0 },
 ];
 
-const mciLevels = [
-    { name: 'Dunning-Kruger', color: 'hsl(var(--warn-custom))' },
-    { name: 'Confident', color: '#f97316' },
-    { name: 'Expert', color: '#3b82f6' },
-    { name: 'HONEST SELF-ASSESSMENT', color: 'hsl(var(--accent-custom))' },
-];
 const mciScore = 3.5;
 
 const risks = [
@@ -50,7 +44,7 @@ const evidenceLocker = [
     {
         title: 'Q1: High-Throughput Service Architecture (Python)',
         content: (
-            <div className="prose">
+            <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
                 <p>The core challenge is managing I/O-bound concurrency. The system must not block on slow network calls or database queries. The principles of asynchronous processing and decoupling are paramount.</p>
                 <ul>
@@ -70,7 +64,7 @@ const evidenceLocker = [
     {
         title: 'Q2: API Evolvability and Security',
         content: (
-             <div className="prose">
+             <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
                 <p>API design is about creating a stable, secure, and understandable contract. Evolvability requires planning for change without breaking existing clients. Security requires a defense-in-depth approach.</p>
                 <ul>
@@ -88,7 +82,7 @@ const evidenceLocker = [
     {
         title: 'Q3: High-Performance React State Management',
         content: (
-            <div className="prose">
+            <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
                 <p>Frontend performance for large data sets hinges on rendering only what's necessary and minimizing state management overhead.</p>
                 <ul>
@@ -106,7 +100,7 @@ const evidenceLocker = [
         {
         title: 'Q4: Advanced Prompt Engineering Strategies',
         content: (
-            <div className="prose">
+            <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
                 <p>Prompt engineering is about constraining the LLM to produce a reliable, repeatable, and specific output. It's about breaking a complex request into simpler, logical steps.</p>
                 <ul>
@@ -124,7 +118,7 @@ const evidenceLocker = [
     {
         title: 'Q7: Proactive Leadership & Influence',
         content: (
-             <div className="prose">
+             <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
                 <p>This question measures leadership and influence. A great answer connects a technical problem to a business problem and demonstrates solving it through social and technical means (STAR Method).</p>
                 <ul>
@@ -145,99 +139,102 @@ const evidenceLocker = [
 
 export default function EvaluationPage() {
   return (
-    <main className="container">
-      <div className="breadcrumb">
-        <Link href="/">Home</Link> / <Link href="/research">Research</Link> / Technical Talent Evaluation
+    <main className="container max-w-4xl py-12">
+      <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/research" className="hover:text-foreground">Research</Link> / <span>Technical Talent Evaluation</span>
       </div>
-      <h1 className="h1">Technical Talent Evaluation System</h1>
-      <p className="lead">
-        A deep-dive into the Axiom Cortex™ evaluation process, showcasing how we identify elite engineering talent beyond the resume. This is a real report for a Full-Stack Engineer candidate.
-      </p>
+      <header className="my-8">
+        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Technical Talent Evaluation System</h1>
+        <p className="mt-4 text-lg text-muted-foreground">
+          A deep-dive into the Axiom Cortex™ evaluation process, showcasing how we identify elite engineering talent beyond the resume. This is a real report for a Full-Stack Engineer candidate.
+        </p>
+      </header>
+      
 
-      <div className="grid grid-2 my-8 gap-8">
-        <div className="card">
-            <h2 className="h2 mt-0">Executive Summary</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 my-12 gap-8">
+        <div className="rounded-lg border bg-card p-6">
+            <h2 className="text-xl font-bold">Executive Summary</h2>
             <div className="flex items-center gap-4 my-4">
                 <div className="text-center">
-                    <div className="text-4xl font-bold text-accent-custom">4.6<span className="text-2xl text-mute">/5.0</span></div>
-                    <div className="text-sm text-mute">Final Score</div>
+                    <div className="text-4xl font-bold text-primary">4.6<span className="text-2xl text-muted-foreground">/5.0</span></div>
+                    <div className="text-sm text-muted-foreground">Final Score</div>
                 </div>
-                <div className="w-px self-stretch bg-line"></div>
+                <div className="w-px self-stretch bg-border"></div>
                 <div>
-                     <div className="text-lg font-semibold text-accent-custom">Strong Hire</div>
-                     <p className="text-sm text-mute m-0">High-potential senior engineer with a robust technical foundation and exceptional cognitive traits.</p>
+                     <div className="text-lg font-semibold text-primary">Strong Hire</div>
+                     <p className="text-sm text-muted-foreground m-0">High-potential senior engineer with a robust technical foundation and exceptional cognitive traits.</p>
                 </div>
             </div>
-             <p className="text-sm text-mute">He demonstrates deep, modern expertise in frontend performance engineering and a solid grasp of backend architectural principles. His ability to reason from first principles is a powerful indicator of a superior mental model.</p>
+             <p className="text-sm text-muted-foreground">He demonstrates deep, modern expertise in frontend performance engineering and a solid grasp of backend architectural principles. His ability to reason from first principles is a powerful indicator of a superior mental model.</p>
         </div>
-        <div className="card">
-            <h2 className="h2 mt-0">Metacognitive Conviction Index (MCI)</h2>
-            <p className="text-sm text-mute">Assesses how well a candidate's confidence is calibrated with their knowledge.</p>
-            <div className="w-full bg-surface-2 rounded-full h-2.5 my-4 relative">
+        <div className="rounded-lg border bg-card p-6">
+            <h2 className="text-xl font-bold">Metacognitive Conviction Index (MCI)</h2>
+            <p className="text-sm text-muted-foreground">Assesses how well a candidate's confidence is calibrated with their knowledge.</p>
+            <div className="w-full bg-background rounded-full h-2.5 my-4 relative border">
                  <div className="h-2.5 rounded-full" style={{ 
                      width: `${(mciScore / 4) * 100}%`,
-                     background: 'linear-gradient(to right, hsl(var(--warn-custom)), hsl(var(--warn-custom)), hsl(var(--accent-custom)), hsl(var(--accent-custom)))' 
+                     background: 'linear-gradient(to right, #f97316, #3b82f6, #4A69FF)' 
                 }}></div>
                  <div className="absolute top-0 h-full flex items-center" style={{left: `calc(${(mciScore / 4) * 100}% - 8px)`}}>
-                    <div className="w-4 h-4 bg-white rounded-full border-2 border-accent-custom"></div>
+                    <div className="w-4 h-4 bg-white rounded-full border-2 border-primary"></div>
                  </div>
             </div>
-             <div className="flex justify-between text-xs text-mute">
+             <div className="flex justify-between text-xs text-muted-foreground">
                 <span>Dunning-Kruger</span>
                 <span>Expert</span>
-                <span className='font-bold text-accent-custom'>Honest Self-Assessment</span>
+                <span className='font-bold text-primary'>Honest Self-Assessment</span>
             </div>
         </div>
       </div>
 
-      <div className="section">
-        <h2 className="h2 mt-0">Cognitive Fingerprint 4.0</h2>
-        <p className="lead" style={{fontSize: '1rem'}}>
+      <div className="my-12 rounded-lg border bg-card p-6">
+        <h2 className="text-xl font-bold flex items-center gap-2"><BrainCircuit className="h-6 w-6 text-primary" /> Cognitive Fingerprint 4.0</h2>
+        <p className="text-sm text-muted-foreground">
             Maps the candidate's four latent traits against the ideal profile for the role.
         </p>
         <div style={{ height: 300 }} className='mt-4'>
             <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={cognitiveData} layout="vertical" margin={{ top: 5, right: 30, left: 50, bottom: 5 }}>
+            <BarChart data={cognitiveData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 <XAxis type="number" domain={[0, 5]} hide />
-                <YAxis type="category" dataKey="name" width={150} tick={{ fill: 'hsl(var(--mute))' }} axisLine={false} tickLine={false} />
-                <Tooltip 
-                    cursor={{ fill: 'hsla(var(--surface-2), 0.5)'}}
-                    contentStyle={{ backgroundColor: 'hsla(var(--surface-1))', border: '1px solid hsla(var(--line))' }}
+                <YAxis type="category" dataKey="name" width={150} tick={{ fill: 'hsl(var(--muted-foreground))' }} axisLine={false} tickLine={false} />
+                <RechartsTooltip 
+                    cursor={{ fill: 'hsl(var(--accent))'}}
+                    contentStyle={{ backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))' }}
                 />
                 <Bar dataKey="candidate" name="Candidate" barSize={20} radius={[0, 8, 8, 0]}>
                     {cognitiveData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.candidate >= entry.ideal ? 'hsl(var(--accent-custom))' : 'hsl(var(--warn-custom))'} />
+                        <Cell key={`cell-${index}`} fill={entry.candidate >= entry.ideal ? 'hsl(var(--primary))' : 'hsl(var(--yellow-400))'} />
                     ))}
                 </Bar>
-                 <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="hsla(var(--surface-2))" radius={[0, 8, 8, 0]} />
+                 <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="hsl(var(--accent))" radius={[0, 8, 8, 0]} />
             </BarChart>
             </ResponsiveContainer>
         </div>
       </div>
 
         <div className='my-12'>
-            <h2 className="h2">Risk Factors & Mitigation</h2>
-            <div className="grid grid-3 mt-4">
+            <h2 className="text-3xl font-bold">Risk Factors & Mitigation</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
                 {risks.map((risk) => (
-                    <div className="card" key={risk.title}>
+                    <div className="rounded-lg border bg-card p-6" key={risk.title}>
                         <div className="flex items-start gap-3 mb-2">
-                             <ShieldCheck className="text-warn-custom" />
-                            <h3 className="h3 m-0">{risk.title}</h3>
+                             <ShieldCheck className="text-yellow-400 h-6 w-6 shrink-0" />
+                            <h3 className="font-semibold text-foreground">{risk.title}</h3>
                         </div>
-                        <p className="text-sm text-mute border-b border-line pb-2">{risk.description}</p>
-                        <h4 className='text-sm font-bold mt-2'>Mitigation</h4>
-                        <p className="text-sm text-mute m-0">{risk.mitigation}</p>
+                        <p className="text-sm text-muted-foreground border-t border-border pt-2 mt-2">{risk.description}</p>
+                        <h4 className='text-sm font-bold mt-4 text-primary'>Mitigation Plan</h4>
+                        <p className="text-sm text-muted-foreground m-0">{risk.mitigation}</p>
                     </div>
                 ))}
             </div>
         </div>
 
         <div className='my-12'>
-            <h2 className="h2">Evidence Locker</h2>
-            <p className='lead' style={{fontSize: '1rem'}}>
+            <h2 className="text-3xl font-bold">Evidence Locker</h2>
+            <p className='text-muted-foreground mt-2'>
                 Analysis of the candidate's responses to key technical and behavioral questions.
             </p>
-            <div className="mt-4">
+            <div className="mt-4 space-y-2">
                 {evidenceLocker.map(item => (
                      <AccordionItem title={item.title} key={item.title}>
                         {item.content}
