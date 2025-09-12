@@ -1,3 +1,4 @@
+'use server';
 
 import Link from 'next/link';
 import { getAllPlaybookSlugs } from '@/lib/playbook';
