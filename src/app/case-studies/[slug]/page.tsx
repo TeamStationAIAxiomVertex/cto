@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import Tooltip from '@/components/Tooltip';
 
 export default function CaseStudyPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -27,25 +28,45 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       <div className="breadcrumb">
         <a href="/">Home</a> / <a href="/case-studies">Case Studies</a> / {data.clientName}
       </div>
-      <h1 className="h1">{data.title}</h1>
-      <p className="lead">{data.description}</p>
       
-      <div className="grid grid-3 my-8">
-        <div className="card">
-            <h4 className="h4 text-sm m-0 text-slate-400">Client</h4>
-            <p className="m-0 font-semibold">{data.clientName}</p>
-        </div>
-        <div className="card">
-            <h4 className="h4 text-sm m-0 text-slate-400">Industry</h4>
-            <p className="m-0 font-semibold">{data.industry}</p>
-        </div>
-        <div className="card">
-            <h4 className="h4 text-sm m-0 text-slate-400">Outcome</h4>
-            <p className="m-0 font-semibold">{data.summary}</p>
-        </div>
-      </div>
+      <div className="case-study-layout">
+        <article className="case-study-content">
+          <header>
+            <span className="badge">{data.industry}</span>
+            <h1 className="h1">{data.title}</h1>
+            <p className="lead">{data.description}</p>
+          </header>
+          <div className="prose" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        </article>
 
-      <div className="prose" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        <aside className="case-study-sidebar">
+          <div className="card">
+            <h3 className="h3" style={{marginTop: 0}}>Client</h3>
+            <p className='font-semibold'>{data.clientName}</p>
+          </div>
+          <div className="card">
+            <h3 className="h3" style={{marginTop: 0}}>Key Outcome</h3>
+            <p className='font-semibold'>{data.summary}</p>
+          </div>
+          <div className="card">
+            <h3 className="h3" style={{marginTop: 0}}>Our Role</h3>
+             <p className='font-semibold'>
+                <Tooltip text="An integrated platform for CTOs who need to ship faster without sacrificing security or quality. We provide the talent, governance, and infrastructure.">
+                    Nearshore IT Co-Pilot™
+                </Tooltip>
+             </p>
+          </div>
+           <div className="card">
+            <h3 className="h3" style={{marginTop: 0}}>Services Provided</h3>
+            <ul className='list-none p-0 m-0 text-sm'>
+                <li>AI-Powered Vetting</li>
+                <li>Nearshore EOR & Payroll</li>
+                <li>Secure Device & MDM</li>
+                <li>LATAM Office Network</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
     </main>
   );
 }

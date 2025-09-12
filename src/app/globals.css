@@ -342,3 +342,30 @@ a:hover {
   max-height: 0;
   transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
+
+.case-study-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .case-study-layout {
+    grid-template-columns: 2.5fr 1fr;
+  }
+}
+
+.case-study-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.prose h2 {
+  font-size: 1.25rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+  margin-top: 2rem;
+}
