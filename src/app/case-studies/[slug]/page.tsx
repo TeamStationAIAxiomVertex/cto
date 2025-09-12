@@ -3,7 +3,6 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import Tooltip from '@/components/Tooltip';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Award, Briefcase, Handshake } from 'lucide-react';
