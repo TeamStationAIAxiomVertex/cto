@@ -8,6 +8,12 @@ import {
   Building,
   Scale,
 } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Integrated Nearshore Services | One SLA for Your Entire Operation',
+  description: 'TeamStation AI bundles EOR, payroll, secure devices (MDM), and compliance into a single SLA for nearshore IT staff augmentation. Eliminate vendor chaos.',
+};
 
 export default function IntegratedServicesPage() {
   const services = [
@@ -86,8 +92,7 @@ export default function IntegratedServicesPage() {
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Stop managing vendors and start building your product. Let our integrated platform handle the operational complexity for you.
         </p>
-        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
-      </div>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>      </div>
     </main>
   );
 }

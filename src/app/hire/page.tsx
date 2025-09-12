@@ -1,6 +1,12 @@
 
 import Link from 'next/link';
 import { Building, Code, User, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Hire Vetted Nearshore Engineers | LATAM IT Staff Augmentation',
+  description: 'De-risk your roadmap. Hire elite, pre-vetted LATAM engineers by role, technology, or country. Secure, compliant, and ready to ship code from day one.',
+};
 
 export default function HirePage() {
   const hireOptions = [

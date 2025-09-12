@@ -1,6 +1,12 @@
 
 import Link from 'next/link';
 import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Code2, Plane } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Hire Nearshore Engineers by Role | LATAM Staff Augmentation',
+  description: 'Find elite, pre-vetted LATAM talent for your specific needs. Hire by role: Backend, Frontend, SRE, Security, Data, AI/ML, and more.',
+};
 
 const roleCategories = [
   {
@@ -144,5 +150,3 @@ export default function HireByRolePage() {
     </main>
   );
 }
-
-    

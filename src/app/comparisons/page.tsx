@@ -2,6 +2,12 @@
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import { ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Nearshore Vendor Comparison | TeamStation AI vs. Competitors',
+  description: 'An objective analysis of nearshore IT staff augmentation vendors. Compare TeamStation AI with BairesDev, Globant, Toptal, and more on TCO, risk, and services.',
+};
 
 const vendors = [
   { 
@@ -185,5 +191,3 @@ export default function ComparisonsPage() {
     </main>
   );
 }
-
-    

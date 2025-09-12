@@ -2,6 +2,12 @@
 import Link from 'next/link';
 import { ArrowRight, Building2 } from 'lucide-react';
 import { Tooltip } from '@/components/Tooltip';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Hire Nearshore Engineers by Country | Top LATAM Tech Hubs',
+  description: 'Stop losing a day to time zones. Hire elite, vetted engineers from top LATAM tech hubs like Mexico, Brazil, Colombia, and Argentina. Real-time collaboration, secure workspaces.',
+};
 
 export default function HireByCountryPage() {
   const countries = [

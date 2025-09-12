@@ -1,6 +1,12 @@
 
 import { Target, Telescope, Shield } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About TeamStation AI | Our Mission for Nearshore Engineering',
+  description: 'Learn about TeamStation AI\'s mission to provide the most efficient, secure, and scientifically-grounded platform for building elite nearshore LATAM engineering teams.',
+};
 
 export default function AboutPage() {
     const pillars = [

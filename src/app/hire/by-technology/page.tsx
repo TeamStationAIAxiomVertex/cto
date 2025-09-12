@@ -1,6 +1,12 @@
 
 import Link from 'next/link';
 import { ArrowRight, Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Hire Nearshore Developers by Technology | TeamStation AI',
+  description: 'Hire vetted LATAM engineers with expertise in your stack: React, Node, Python, Go, AWS, GCP, Kubernetes, AI/ML, and more. Secure and compliant staff augmentation.',
+};
 
 const techCategories = [
   {

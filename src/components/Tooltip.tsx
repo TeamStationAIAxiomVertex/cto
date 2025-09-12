@@ -1,3 +1,6 @@
+
+'use client';
+
 import React, { type ReactNode } from 'react';
 
 type TooltipProps = {
@@ -13,5 +16,3 @@ export function Tooltip({ children, text }: TooltipProps) {
     </span>
   );
 };
-
-    

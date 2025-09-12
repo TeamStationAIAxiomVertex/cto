@@ -1,6 +1,12 @@
 
 import { ShieldCheck, Laptop, FileLock, Scale } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Trust Center | Secure & Compliant Nearshore IT Staff Augmentation',
+  description: 'Security and compliance are the foundation of our nearshore platform. Learn about our SOC 2/ISO alignment, MDM, EOR, and Cyber Insurance for LATAM teams.',
+};
 
 export default function TrustPage() {
     const pillars = [

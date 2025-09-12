@@ -2,6 +2,12 @@
 import Link from 'next/link';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Nearshore IT Staff Augmentation Case Studies | TeamStation AI',
+  description: 'Evidence of Impact: See how our elite nearshore LATAM engineering teams solve critical problems, from scaling monoliths to resolving enterprise SSO failures.',
+};
 
 export default async function CaseStudiesPage() {
   const caseStudies = await getAllCaseStudies();
@@ -9,7 +15,7 @@ export default async function CaseStudiesPage() {
   return (
     <main className="container py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Case Studies</span>
+        <Link href="/" className="hover.text-foreground">Home</Link> / <span>Case Studies</span>
       </div>
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Evidence of Impact</h1>

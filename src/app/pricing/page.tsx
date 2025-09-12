@@ -1,9 +1,13 @@
 
-'use client';
-
 import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Nearshore IT Staff Augmentation Pricing | TeamStation AI',
+  description: 'Transparent, all-inclusive pricing for nearshore LATAM developers. See our TCO analysis and how we provide a CFO-ready business case for your engineering team.',
+};
 
 const levels = [
   { 
@@ -236,5 +240,3 @@ export default function PricingPage() {
     </main>
   );
 }
-
-    
