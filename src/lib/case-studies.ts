@@ -57,29 +57,6 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
 }
 
 export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
-    const filePath = path.join(contentDirectory, `${slug}.md`);
-    try {
-        const fileContents = await fs.readFile(filePath, 'utf8');
-        const { data, content } = matter(fileContents);
-        
-        const mainContent = content;
-
-        return {
-          slug: data.slug,
-          title: data.title,
-          clientName: data.clientName,
-          industry: data.industry,
-          summary: data.summary,
-          content: mainContent,
-          challenge: extractSection(mainContent, 'The Challenge'),
-          why: extractSection(mainContent, 'Why TeamStation AI'),
-          outcomes: extractSection(mainContent, 'Outcomes') || extractSection(mainContent, 'Results'),
-        } as CaseStudy;
-    } catch (error) {
-        // console.error(`Error reading case study ${slug}:`, error);
-        // It's better to delegate finding to the getAllCaseStudies to avoid reading files twice
-    }
-
     const allStudies = await getAllCaseStudies();
     return allStudies.find(study => study.slug === slug) || null;
 }

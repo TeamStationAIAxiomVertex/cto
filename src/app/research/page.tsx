@@ -1,10 +1,9 @@
-
-'use server';
-
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
+
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Research: AI Technical Interviews & Software Engineering Performance',
