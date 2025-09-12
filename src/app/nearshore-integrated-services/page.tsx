@@ -1,4 +1,5 @@
 import Tooltip from "@/components/Tooltip";
+import Link from "next/link";
 import {
   BrainCircuit,
   FileText,
@@ -51,7 +52,7 @@ export default function IntegratedServicesPage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / Services / Integrated Services
+        <Link href="/">Home</Link> / Services / Integrated Services
       </div>
       <header className="text-center my-8">
         <h1 className="h1">A Single SLA for Your Entire Nearshore Operation</h1>
@@ -66,7 +67,7 @@ export default function IntegratedServicesPage() {
             {service.icon}
             <div>
               <h3 className="h3 mt-0">{service.title}</h3>
-              <p className="text-sm text-slate-400 m-0">{service.description}</p>
+              <p className="text-sm text-mute m-0">{service.description}</p>
             </div>
           </div>
         ))}
@@ -87,7 +88,7 @@ export default function IntegratedServicesPage() {
         <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
             Stop managing vendors and start building your product. Let our integrated platform handle the operational complexity for you.
         </p>
-        <a href="/hire" className="cta">Book a Strategy Call</a>
+        <Link href="/hire" className="cta">Book a Strategy Call</Link>
       </div>
     </main>
   );

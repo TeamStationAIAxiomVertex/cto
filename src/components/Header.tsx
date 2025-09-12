@@ -30,7 +30,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <a href="/hire" className="cta hidden sm:inline-block">Book a Call</a>
+          <Link href="/hire" className="cta hidden sm:inline-block">Book a Call</Link>
         </div>
       </div>
     </header>

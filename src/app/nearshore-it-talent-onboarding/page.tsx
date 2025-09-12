@@ -1,4 +1,5 @@
 import { FileCheck, Laptop, Users, Gauge } from 'lucide-react';
+import Link from 'next/link';
 
 export default function OnboardingPage() {
     const steps = [
@@ -27,7 +28,7 @@ export default function OnboardingPage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / Services / Talent Onboarding
+        <Link href="/">Home</Link> / Services / Talent Onboarding
       </div>
       <h1 className="h1">Onboarding You Can Audit: Productive From Day One</h1>
       <p className="lead">
@@ -40,7 +41,7 @@ export default function OnboardingPage() {
             {step.icon}
             <div>
               <h3 className="h3 mt-0">{step.title}</h3>
-              <p className="text-sm text-slate-400 m-0">{step.description}</p>
+              <p className="text-sm text-mute m-0">{step.description}</p>
             </div>
           </div>
         ))}
@@ -61,7 +62,7 @@ export default function OnboardingPage() {
         <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
             See how our integrated platform and structured onboarding can accelerate your team's productivity.
         </p>
-        <a href="/process" className="cta">Explore Our Process</a>
+        <Link href="/process" className="cta">Explore Our Process</Link>
       </div>
     </main>
   );

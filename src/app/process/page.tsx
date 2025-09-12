@@ -1,4 +1,5 @@
 import { Search, BrainCircuit, Handshake, Rocket, ShieldCheck, UserCheck, FileSearch, GanttChartSquare } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ProcessPage() {
     const steps = [
@@ -37,6 +38,9 @@ export default function ProcessPage() {
 
   return (
     <main className="container">
+       <div className="breadcrumb">
+            <Link href="/">Home</Link> / Process
+        </div>
       <header className="text-center my-12">
         <h1 className="h1">Our Process: From Mandate to Mission-Ready</h1>
         <p className="lead max-w-3xl mx-auto">
@@ -82,7 +86,7 @@ export default function ProcessPage() {
         <p className="lead max-w-3xl mx-auto">
            Our streamlined process means you can have an elite, fully-onboarded nearshore engineer integrated into your team in about two weeks.
         </p>
-        <a href="/hire" className="cta mt-6">Book a Strategy Call</a>
+        <Link href="/hire" className="cta mt-6">Book a Strategy Call</Link>
       </div>
     </main>
   );
