@@ -1,3 +1,4 @@
+'use server';
 
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
