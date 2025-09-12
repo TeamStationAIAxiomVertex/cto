@@ -36,9 +36,9 @@ export default function ProcessPage() {
             <Link href="/" className="hover:text-foreground">Home</Link> / <span>Process</span>
         </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">How We Deliver Day-One-Ready LATAM Engineers</h1>
+        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">From Mandate to Mission-Ready</h1>
         <p className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
-          A clear, measurable process under one SLA—from role calibration to devices, access, and first PR. We handle the hiring, EOR/payroll, compliance, and devices so you can focus on shipping product.
+          This isn't a checklist; it's an engineered system. One accountable workflow for hiring, EOR/payroll, compliance, and secure devices, all under a single SLA. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
         </p>
          <div className="mt-6 font-semibold text-primary">
             Time-to-Offer ≈ 9 days • Day-1 Tool Readiness ≥ 95% • First PR in 7–14 days
@@ -49,31 +49,31 @@ export default function ProcessPage() {
         <h2 className="text-center text-4xl font-bold text-foreground">Your Platform-Driven Hiring Flow</h2>
         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">One SLA • System of Record • Audit Trails • US-Aligned Delivery</p>
         <div className="mt-12 flow-root">
-          <ul className="-mb-8">
-            {processSteps.map((step, stepIdx) => (
-              <li key={step.title}>
-                <div className="relative pb-8">
-                  {stepIdx !== processSteps.length - 1 ? (
-                    <span className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-border" aria-hidden="true" />
-                  ) : null}
-                  <div className="relative flex items-start space-x-3">
-                    <div>
-                      <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center ring-8 ring-background">
-                         <span className="text-primary font-bold">{stepIdx + 1}</span>
+          <div className="max-w-3xl mx-auto">
+            <ul className="-mb-8">
+              {processSteps.map((step, stepIdx) => (
+                <li key={step.title}>
+                  <div className="relative pb-8">
+                    {stepIdx !== processSteps.length - 1 ? (
+                      <span className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-border" aria-hidden="true" />
+                    ) : null}
+                    <div className="relative flex items-start space-x-4">
+                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center ring-8 ring-background flex-shrink-0">
+                          <span className="text-primary font-bold">{stepIdx + 1}</span>
+                        </div>
+                      <div className="min-w-0 flex-1 pt-1.5">
+                        <div className="text-lg font-semibold text-foreground">{step.title}</div>
+                        <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
+                        <p className="mt-2 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block">
+                          <span className="font-bold">Artifact:</span> {step.artifact}
+                          </p>
                       </div>
                     </div>
-                    <div className="min-w-0 flex-1 py-1.5">
-                      <div className="text-lg font-semibold text-foreground">{step.title}</div>
-                      <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
-                       <p className="mt-2 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block">
-                        <span className="font-bold">Artifact:</span> {step.artifact}
-                        </p>
-                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
