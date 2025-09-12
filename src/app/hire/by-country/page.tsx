@@ -10,6 +10,8 @@ export default function HireByCountryPage() {
     { name: 'Peru', slug: 'peru', cities: 'Lima' },
     { name: 'Costa Rica', slug: 'costa-rica', cities: 'San José' },
     { name: 'Uruguay', slug: 'uruguay', cities: 'Montevideo' },
+    { name: 'Ecuador', slug: 'ecuador', cities: 'Quito, Guayaquil' },
+    { name: 'Guatemala', slug: 'guatemala', cities: 'Guatemala City' },
   ];
 
   return (
