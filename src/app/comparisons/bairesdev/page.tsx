@@ -24,8 +24,8 @@ export default function BairesDevComparisonPage() {
         </p>
       </header>
 
-      <div className="grid md:grid-cols-2 gap-8 my-12">
-        <div className="card border-green-500/50">
+      <div className="flex flex-col md:flex-row gap-8 my-12">
+        <div className="card border-green-500/50 flex-1">
           <h2 className="h2 mt-0 text-center">TeamStation AI</h2>
           <p className="text-center text-sm text-slate-400 mb-6">The Integrated Nearshore IT Co-Pilot™</p>
           <div className="space-y-3">
@@ -37,7 +37,7 @@ export default function BairesDevComparisonPage() {
             ))}
           </div>
         </div>
-        <div className="card border-red-500/50">
+        <div className="card border-red-500/50 flex-1">
           <h2 className="h2 mt-0 text-center">BairesDev</h2>
            <p className="text-center text-sm text-slate-400 mb-6">Traditional Staff Augmentation</p>
            <div className="space-y-3">
