@@ -22,11 +22,11 @@ const cognitiveData = [
 
 const mciLevels = [
     { name: 'Dunning-Kruger', color: 'hsl(var(--warn-custom))' },
-    { name: 'Confident', color: '#f97316' }, // orange-500 - will be less used
-    { name: 'Expert', color: '#3b82f6' }, // blue-500 - will be less used
+    { name: 'Confident', color: '#f97316' },
+    { name: 'Expert', color: '#3b82f6' },
     { name: 'HONEST SELF-ASSESSMENT', color: 'hsl(var(--accent-custom))' },
 ];
-const mciScore = 3.5; // Represents "Honest Self-Assessment"
+const mciScore = 3.5;
 
 const risks = [
     {
@@ -199,9 +199,9 @@ export default function EvaluationPage() {
             <ResponsiveContainer width="100%" height="100%">
             <BarChart data={cognitiveData} layout="vertical" margin={{ top: 5, right: 30, left: 50, bottom: 5 }}>
                 <XAxis type="number" domain={[0, 5]} hide />
-                <YAxis type="category" dataKey="name" width={150} tick={{ fill: 'var(--mute)' }} axisLine={false} tickLine={false} />
+                <YAxis type="category" dataKey="name" width={150} tick={{ fill: 'hsl(var(--mute))' }} axisLine={false} tickLine={false} />
                 <Tooltip 
-                    cursor={{ fill: 'hsla(var(--surface-2))'}}
+                    cursor={{ fill: 'hsla(var(--surface-2), 0.5)'}}
                     contentStyle={{ backgroundColor: 'hsla(var(--surface-1))', border: '1px solid hsla(var(--line))' }}
                 />
                 <Bar dataKey="candidate" name="Candidate" barSize={20} radius={[0, 8, 8, 0]}>
@@ -220,7 +220,7 @@ export default function EvaluationPage() {
             <div className="grid grid-3 mt-4">
                 {risks.map((risk) => (
                     <div className="card" key={risk.title}>
-                        <div className="flex items-center gap-3 mb-2">
+                        <div className="flex items-start gap-3 mb-2">
                              <ShieldCheck className="text-warn-custom" />
                             <h3 className="h3 m-0">{risk.title}</h3>
                         </div>

@@ -1,27 +1,23 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { marked } from 'marked';
+import { remark } from 'remark';
+import html from 'remark-html';
 import Tooltip from '@/components/Tooltip';
+import { notFound } from 'next/navigation';
 
-export default function CaseStudyPage({ params }: { params: { slug: string } }) {
+export default async function CaseStudyPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), 'content/case-studies', `${slug}.md`);
   
   if (!fs.existsSync(filePath)) {
-    return (
-        <main className="container" style={{ padding: '40px' }}>
-            <h1 className="h1">404 - Case Study Not Found</h1>
-            <p className="lead">
-                The requested case study could not be found.
-            </p>
-        </main>
-    )
+    return notFound();
   }
 
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
-  const htmlContent = marked(content);
+  const processedContent = await remark().use(html).process(content);
+  const htmlContent = processedContent.toString();
 
   return (
     <main className="container">

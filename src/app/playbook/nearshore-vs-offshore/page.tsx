@@ -53,7 +53,7 @@ export default function NearshoreVsOffshorePage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / <a href="/playbook">CTO Playbook</a> / Nearshore vs. Offshore
+        <Link href="/">Home</Link> / <Link href="/playbook">CTO Playbook</Link> / Nearshore vs. Offshore
       </div>
       <h1 className="h1">Is Your Offshore Team a Strategic Asset or a Hidden Drain?</h1>
       <p className="lead">
@@ -114,7 +114,7 @@ export default function NearshoreVsOffshorePage() {
                 <td className="flex items-center gap-2"><ShieldCheck size={16} /> Compliance & Legal Risk</td>
                 <td>
                   Lower. Stronger alignment with U.S. data privacy and IP laws. (See our{' '}
-                  <a href="/comparisons">vendor comparisons</a>).
+                  <Link href="/comparisons">vendor comparisons</Link>).
                 </td>
                 <td>Higher. Navigating different legal frameworks can be complex and risky.</td>
               </tr>
@@ -160,9 +160,9 @@ export default function NearshoreVsOffshorePage() {
       <div className="section my-8 text-center">
           <h2 className="h2 mt-0">Ready to Upgrade Your Strategy?</h2>
           <p className="lead" style={{marginBottom: '24px'}}>Stop letting operational friction drain your budget and velocity.</p>
-          <a href="/hire" className="cta">
+          <Link href="/hire" className="cta">
             Book a Strategy Call
-          </a>
+          </Link>
       </div>
     </main>
   );

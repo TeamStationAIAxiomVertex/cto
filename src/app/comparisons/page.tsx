@@ -68,7 +68,7 @@ export default function ComparisonsPage() {
               {vendors.map((vendor) => (
                 <tr key={vendor.name}>
                   <td className="font-bold">
-                    {vendor.name}
+                    <Link href={`/comparisons/${vendor.slug}`} className="hover:text-accent-custom">{vendor.name}</Link>
                   </td>
                   <td>{vendor.claim}</td>
                   <td>

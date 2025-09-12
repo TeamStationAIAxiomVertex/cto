@@ -24,9 +24,9 @@ export default function HirePage() {
   ];
 
   return (
-    <main className="container py-8">
+    <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / Hire
+        <Link href="/">Home</Link> / Hire
       </div>
       <header className="text-center my-8">
         <h1 className="h1">Hire Elite LATAM Engineers—Fast, Fair, Day-One Ready</h1>
@@ -53,7 +53,7 @@ export default function HirePage() {
         <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
             Let's discuss your specific needs. In a 15-minute call, we can map your roles, security requirements, and a go-live timeline.
         </p>
-        <a href="/hire/book-a-call" className="cta">Book a Strategy Call</a>
+        <Link href="/hire" className="cta">Book a Strategy Call</Link>
       </div>
     </main>
   );

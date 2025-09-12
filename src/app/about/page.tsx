@@ -1,4 +1,5 @@
 import { Target, Telescope, Shield } from 'lucide-react';
+import Link from 'next/link';
 
 export default function AboutPage() {
     const pillars = [
@@ -21,7 +22,7 @@ export default function AboutPage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / About
+        <Link href="/">Home</Link> / About
       </div>
       <header className="text-center my-8">
         <h1 className="h1">We're Engineering a Better Way to Build Teams</h1>
@@ -48,7 +49,7 @@ export default function AboutPage() {
             We are not a staffing agency. We are not a consulting firm. We are a technology company. Our product is a fully integrated platform—the Nearshore IT Co-Pilot™—that solves the hardest parts of building a remote team.
         </p>
         <p>
-            Our innovation lies in unifying every part of the process under a single SLA. We use cognitive science and AI for vetting (<a href="/research/axiom-cortex-scientific-report">Axiom Cortex™</a>). We provide an end-to-end operational wrapper that includes EOR, payroll, secure devices, and insurance. We give you the tools and the data to run your nearshore team with the same confidence and control as your team down the hall.
+            Our innovation lies in unifying every part of the process under a single SLA. We use cognitive science and AI for vetting (<Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>). We provide an end-to-end operational wrapper that includes EOR, payroll, secure devices, and insurance. We give you the tools and the data to run your nearshore team with the same confidence and control as your team down the hall.
         </p>
         <p>
             This is the future of team building. We invite you to be a part of it.
@@ -60,7 +61,7 @@ export default function AboutPage() {
         <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
            Let's talk about how our platform can help you achieve your product goals faster and more securely.
         </p>
-        <a href="/hire" className="cta">Book a Strategy Call</a>
+        <Link href="/hire" className="cta">Book a Strategy Call</Link>
       </div>
     </main>
   );
