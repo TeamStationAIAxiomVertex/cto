@@ -9,6 +9,7 @@ import {
   Shuffle,
   Users,
   HelpCircle,
+  Lock,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -31,6 +32,12 @@ export default function NearshoreVsOffshorePage() {
       title: 'The Pain of Productivity Mismatch',
       description:
         "Do lower hourly rates actually translate to lower costs per feature, or is velocity half of what you expect? Ineffective collaboration can burn through your budget with nothing to show for it.",
+    },
+     {
+      icon: <Lock size={24} className="text-purple-400" />,
+      title: 'The Pain of Multi-Vendor Risk',
+      description:
+        'Are you stuck managing separate vendors for recruiting, payroll/EOR, and IT? This creates accountability gaps, multiplies your risk, and can lead to vendor lock-in with no easy escape route.',
     },
   ];
 
@@ -130,7 +137,7 @@ export default function NearshoreVsOffshorePage() {
         <p className="mt-2 text-lg text-muted-foreground text-center max-w-2xl mx-auto">
           If you're feeling these pains, your current model may be the cause, not the cure.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 mt-8 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-8">
           {failureModes.map((item) => (
              <div className="rounded-lg border bg-card p-6" key={item.title}>
                 <div className="flex items-center gap-3">
