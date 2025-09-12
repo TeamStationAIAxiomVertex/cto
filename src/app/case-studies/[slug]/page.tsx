@@ -5,6 +5,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import Tooltip from '@/components/Tooltip';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 
 export default async function CaseStudyPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -22,7 +23,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / <a href="/case-studies">Case Studies</a> / {data.clientName}
+        <Link href="/">Home</Link> / <Link href="/case-studies">Case Studies</Link> / {data.clientName}
       </div>
       
       <div className="case-study-layout">

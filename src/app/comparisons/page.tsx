@@ -125,6 +125,9 @@ export default function ComparisonsPage() {
   }
   return (
     <div className="container mx-auto max-w-7xl px-6 py-12">
+      <div className="breadcrumb">
+        <Link href="/">Home</Link> / Comparisons
+      </div>
       <header className="text-center mb-12">
         <h1 className="h1">TeamStation AI vs. The Competition</h1>
         <p className="lead max-w-4xl mx-auto">

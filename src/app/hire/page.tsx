@@ -53,7 +53,7 @@ export default function HirePage() {
         <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
             Let's discuss your specific needs. In a 15-minute call, we can map your roles, security requirements, and a go-live timeline.
         </p>
-        <Link href="/hire" className="cta">Book a Strategy Call</Link>
+        <Link href="/pricing" className="cta">See Our Pricing</Link>
       </div>
     </main>
   );

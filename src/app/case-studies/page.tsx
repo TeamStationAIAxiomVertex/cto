@@ -23,7 +23,7 @@ export default function CaseStudiesPage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / Case Studies
+        <Link href="/">Home</Link> / Case Studies
       </div>
       <h1 className="h1">Case Studies: Evidence of Impact</h1>
       <p className="lead">

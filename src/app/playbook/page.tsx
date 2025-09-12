@@ -4,6 +4,9 @@ import { playbookData } from '@/lib/data';
 export default function PlaybookHub() {
   return (
     <div className="container mx-auto max-w-7xl px-6 py-12">
+      <div className="breadcrumb">
+        <Link href="/">Home</Link> / Playbook
+      </div>
       <header className="text-center mb-12">
         <h1 className="h1">The CTO Playbook</h1>
         <p className="lead max-w-3xl mx-auto">A series of deep-dive guides for building and scaling high-performance nearshore engineering teams.</p>
