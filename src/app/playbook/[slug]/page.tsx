@@ -54,17 +54,21 @@ export default async function PlaybookPost({ params }: { params: { slug: string 
   };
 
   return (
-    <div className="container mx-auto max-w-4xl px-6 py-12">
+    <main className="container mx-auto max-w-4xl px-4 py-12">
         <Script id={`schema-article-${params.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-        <div className="breadcrumb">
-            <Link href="/">Home</Link> / <Link href="/playbook">Playbook</Link> / {postData.title}
+        
+        <div className="text-sm text-muted-foreground">
+            <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook" className="hover:text-foreground">Playbook</Link> / <span>{postData.title}</span>
         </div>
-        <article className="prose prose-lg mx-auto mt-8 dark:prose-invert">
-            <h1>{postData.title}</h1>
-            <p className="lead !my-2">{postData.description}</p>
-            <hr className="my-8 border-border"/>
+
+        <header className="my-8">
+            <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">{postData.title}</h1>
+            <p className="mt-4 text-lg text-muted-foreground">{postData.description}</p>
+        </header>
+        
+        <article className="prose prose-lg max-w-none dark:prose-invert prose-headings:text-primary prose-a:text-primary prose-strong:text-foreground">
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
-    </div>
+    </main>
   );
 }

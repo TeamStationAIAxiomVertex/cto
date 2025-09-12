@@ -82,7 +82,7 @@ const config: Config = {
             '--tw-prose-captions': theme('colors.muted.foreground'),
             '--tw-prose-code': theme('colors.foreground'),
             '--tw-prose-pre-code': theme('colors.foreground'),
-            '--tw-prose-pre-bg': theme('colors.card'),
+            '--tw-prose-pre-bg': theme('colors.card.DEFAULT'),
             '--tw-prose-th-borders': theme('colors.border'),
             '--tw-prose-td-borders': theme('colors.border'),
             '--tw-prose-invert-body': theme('colors.muted.foreground'),
@@ -98,7 +98,7 @@ const config: Config = {
             '--tw-prose-invert-captions': theme('colors.muted.foreground'),
             '--tw-prose-invert-code': theme('colors.foreground'),
             '--tw-prose-invert-pre-code': theme('colors.foreground'),
-            '--tw-prose-invert-pre-bg': theme('colors.card'),
+            '--tw-prose-invert-pre-bg': theme('colors.card.DEFAULT'),
             '--tw-prose-invert-th-borders': theme('colors.border'),
             '--tw-prose-invert-td-borders': theme('colors.border'),
           },
@@ -106,6 +106,6 @@ const config: Config = {
       }),
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
 export default config;
