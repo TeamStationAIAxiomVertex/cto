@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import Tooltip from '@/components/Tooltip';
-import { Layers, Gauge, Network, BrainCircuit } from 'lucide-react';
+import { Layers, Gauge, Network, BrainCircuit, ShieldCheck, FileText, Scale, Package, Landmark } from 'lucide-react';
 
 const vendors = [
   {
@@ -84,12 +84,31 @@ const vendors = [
 ];
 
 const takeaways = [
-    { title: 'Platform Unification', description: 'TeamStation AI bundles hiring, legal & payroll compliance, devices & MDM, secure workspaces and cyber/E&O insurance into a single contract with clear SLAs. Competitors typically provide one or two of these services but not all.' },
-    { title: 'Cognitive AI & Fairness', description: 'Axiom Cortex™ uses 44 psychometric + NLP signals with a language-fairness calibration layer to evaluate candidates, producing BARS-mapped and expert-reviewed scores. None of the other vendors disclose cognitive-science methods or fairness audits.' },
-    { title: 'Talent Coverage & Speed', description: 'Nebula Neural Search™ spans 2.6M+ LATAM profiles, delivering short-list relevance ≥ 85 % and Time-to-Offer ≈ 9 days. Most competitors manage significantly smaller pools or do not publish numbers.' },
-    { title: 'Operational Guardrails', description: 'TeamStation’s SLAs include device procurement/activation within 5 days, MDM enrollment ≥ 99 %, workspace provisioning ≤ 3 days, and 90-day retention ≥ 96 %. Other vendors rarely publish such metrics.' },
-    { title: 'Cost Transparency', description: 'Pricing tiers ($20/$30/$40/$50 per hour) include EOR, devices, compliance and insurance. Many competitors’ pricing is opaque or excludes critical services.' }
-]
+    { 
+        icon: <Package className="icon" />,
+        title: 'The All-in-One Platform', 
+        description: 'One contract bundles everything: AI-powered hiring, EOR/payroll, compliance, secure devices (MDM), a network of offices, and comprehensive cyber/E&O insurance. It replaces the complexity and risk of managing multiple vendors.',
+        link: { href: '/trust', text: 'Explore our MSA' } 
+    },
+    { 
+        icon: <BrainCircuit className="icon" />,
+        title: 'Cognitive AI & Fairness', 
+        description: 'Our Axiom Cortex™ engine analyzes 44+ psychometric and NLP signals to evaluate talent. A language-fairness layer mitigates bias against non-native English speakers, ensuring we assess pure engineering capability.',
+        link: { href: '/research/axiom-cortex-scientific-report', text: 'Read the science' } 
+    },
+    { 
+        icon: <Network className="icon" />,
+        title: 'Unmatched Talent Scale & Speed', 
+        description: 'Our Nebula Neural Search™ maps over 2.6M LATAM profiles. This unmatched scale allows us to deliver a curated shortlist in days and achieve an average Time-to-Offer of just 9 days.',
+        link: { href: '/process', text: 'See our process' }
+    },
+    { 
+        icon: <Gauge className="icon" />,
+        title: 'Published Operational SLAs', 
+        description: 'We operate with radical transparency. Our SLAs are public: device procurement in ≤5 days, MDM enrollment ≥99%, workspace provisioning in ≤3 days, and a 90-day retention rate of ≥96%.',
+        link: { href: '/pricing', text: 'View our public SLAs' } 
+    },
+];
 
 export default function ComparisonsPage() {
   return (
@@ -98,55 +117,28 @@ export default function ComparisonsPage() {
         <a href="/">Home</a> / Comparisons
       </div>
       <header className="text-center my-8">
-        <h1 className="h1">TeamStation AI vs. Top Nearshore Vendors</h1>
+        <h1 className="h1">TeamStation AI vs. The Competition</h1>
         <p className="lead max-w-3xl mx-auto">
-          TeamStation AI is not just another staff-augmentation vendor. It is the first fully integrated nearshore platform for hiring and running LATAM engineering teams, unifying every operational layer under a single, science-driven SLA.
+          We're not another staff-aug vendor. We are the first fully integrated nearshore platform for hiring and running LATAM engineering teams, unifying every operational layer under a single, science-driven SLA.
         </p>
       </header>
 
-      <div className="section">
-        <h2 className="h2 text-center mt-0 mb-6">Why TeamStation AI Stands Alone</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="icon-card">
-                <Layers className="icon" />
-                <div>
-                    <h3 className="h3 mt-0">Unified Platform</h3>
-                    <p className="text-sm text-slate-400">One SLA for hiring, EOR/payroll, compliance, devices/MDM, offices, and insurance. Replaces multi-vendor complexity.</p>
-                    <Link href="/trust" className="text-sm font-semibold">Explore our MSA →</Link>
+      <div className="my-12">
+        <h2 className="h2 text-center">Key Takeaways: The TeamStation AI Difference</h2>
+         <div className="grid grid-2 mt-6 gap-6">
+            {takeaways.map(item => (
+                <div key={item.title} className="icon-card items-start">
+                    {item.icon}
+                    <div>
+                        <h3 className="h3 mt-0">{item.title}</h3>
+                        <p className="text-sm m-0 text-slate-400">{item.description}</p>
+                        <Link href={item.link.href} className="text-sm font-semibold mt-2 inline-block">{item.link.text} →</Link>
+                    </div>
                 </div>
-            </div>
-            <div className="icon-card">
-                <Gauge className="icon" />
-                <div>
-                    <h3 className="h3 mt-0">Public Delivery Metrics</h3>
-                    <p className="text-sm text-slate-400">We publish our SLAs: Time-to-Offer ≈ 9 days, device procurement ≤ 5 days, and MDM enrollment ≥ 99%.</p>
-                    <Link href="/pricing" className="text-sm font-semibold">See our pricing tiers →</Link>
-                </div>
-            </div>
-            <div className="icon-card">
-                <Network className="icon" />
-                <div>
-                    <h3 className="h3 mt-0">Unmatched Talent Scale</h3>
-                    <p className="text-sm text-slate-400">Our Nebula Neural Search™ covers 2.6M+ LATAM profiles, ensuring deep talent access and precise matching.</p>
-                    <Link href="/hire" className="text-sm font-semibold">Start hiring →</Link>
-                </div>
-            </div>
-             <div className="icon-card">
-                <BrainCircuit className="icon" />
-                <div>
-                    <h3 className="h3 mt-0">Cognitive AI Vetting</h3>
-                    <p className="text-sm text-slate-400">
-                        <Tooltip text="Axiom Cortex™ is TeamStation AI's proprietary Cognitive AI engine that uses 44 psychometric and NLP signals to evaluate engineering candidates.">
-                            Axiom Cortex™
-                        </Tooltip>
-                        {' '}uses bias-aware cognitive evaluations to ensure fair, accurate, and deep assessment of talent.
-                    </p>
-                    <Link href="/research/axiom-cortex-scientific-report" className="text-sm font-semibold">Read the science →</Link>
-                </div>
-            </div>
+            ))}
          </div>
       </div>
-      
+
       <div className="my-12">
         <h2 className="h2 text-center">Comparative Table</h2>
         <div className="overflow-x-auto">
@@ -180,18 +172,6 @@ export default function ComparisonsPage() {
         </div>
       </div>
 
-       <div className="my-12">
-        <h2 className="h2 text-center">Key Takeaways</h2>
-         <div className="grid grid-2 mt-6 gap-6">
-            {takeaways.map(item => (
-                <div key={item.title} className="card">
-                    <h3 className="h3 mt-0">{item.title}</h3>
-                    <p className="text-sm m-0 text-slate-400">{item.description}</p>
-                </div>
-            ))}
-         </div>
-      </div>
-
       <div className="section text-center">
         <h2 className="h2 mt-0">Conclusion</h2>
         <p className="lead" style={{fontSize: '1rem'}}>
@@ -205,5 +185,3 @@ export default function ComparisonsPage() {
     </main>
   );
 }
-
-    
