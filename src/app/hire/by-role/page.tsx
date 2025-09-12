@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet } from 'lucide-react';
+import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Code2, Plane } from 'lucide-react';
 
 const roleCategories = [
   {
@@ -32,6 +32,13 @@ const roleCategories = [
     icon: <Layers className="h-8 w-8 text-primary" />,
   },
   {
+    name: 'Mobile / Cross-Platform',
+    slug: 'mobile-cross-platform',
+    priority: 'P2 Medium',
+    description: "React Native, Flutter, Swift, and Kotlin expertise for building high-quality mobile applications.",
+    icon: <Plane className="h-8 w-8 text-primary" />,
+  },
+  {
     name: 'Data Engineering / Analytics',
     slug: 'data-engineering-analytics',
     priority: 'P1 High',
@@ -58,6 +65,13 @@ const roleCategories = [
     priority: 'P1/P2 Risk-Based',
     description: "Shift-left testing, e2e automation, contract testing, performance/load analysis, and chaos engineering. Your insurance policy for quality.",
     icon: <TestTube2 className="h-8 w-8 text-primary" />,
+  },
+  {
+    name: 'IT / Enterprise Ops',
+    slug: 'it-enterprise-ops',
+    priority: 'P1 Regulated',
+    description: 'Endpoint Management (MDM), ITSM, and corporate security for enterprise-grade operations.',
+    icon: <Briefcase className="h-8 w-8 text-primary" />,
   },
   {
     name: 'FinOps / BizTech',
@@ -130,3 +144,5 @@ export default function HireByRolePage() {
     </main>
   );
 }
+
+    

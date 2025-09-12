@@ -11,13 +11,17 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
     skills: ['Cloud architecture (resilience, multi-AZ/region)', 'IaC', 'CI/CD', 'observability', 'cost control', 'incident mgmt (SLO/SLI/error budgets)'],
     tech: [
         'AWS/GCP/Azure', 
+        'Docker',
         'Kubernetes (GKE/EKS/AKS)', 
         <Tooltip text="Infrastructure as Code: Managing infrastructure through code instead of manual processes (e.g., Terraform).">Terraform/Pulumi</Tooltip>,
-        'GitHub Actions/Argo CD', 
+        'GitHub Actions/GitLab CI/Argo CD', 
         <Tooltip text="Service mesh technologies that provide traffic management, security, and observability for microservices.">Istio/Linkerd</Tooltip>, 
         'Prometheus/Grafana', 
-        <Tooltip text="An observability framework for instrumenting, generating, collecting, and exporting telemetry data.">OpenTelemetry</Tooltip>, 
-        <Tooltip text="A tool for securely managing secrets and sensitive data.">Vault</Tooltip>
+        <Tooltip text="An observability framework for instrumenting, generating, collecting, and exporting telemetry data.">OpenTelemetry</Tooltip>,
+        'ELK/EFK/Loki/Jaeger',
+        <Tooltip text="A tool for securely managing secrets and sensitive data.">Vault</Tooltip>,
+        'External Secrets',
+        'LaunchDarkly/OpenFeature'
     ],
     evaluation: [
         'Emphasis on systems thinking and understanding of distributed systems principles (CAP theorem, etc.).',
@@ -35,9 +39,10 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
         'Okta/Auth0/Keycloak', 
         'OIDC/SAML', 
         <Tooltip text="HashiCorp Vault is a tool for securely managing secrets, credentials, and encryption keys.">HashiCorp Vault</Tooltip>, 
-        <Tooltip text="Static & Dynamic Application Security Testing: Tools that scan code for vulnerabilities.">SAST/DAST (CodeQL, SonarQube, Snyk)</Tooltip>, 
+        'SOPS',
+        <Tooltip text="Static & Dynamic Application Security Testing: Tools that scan code for vulnerabilities.">SAST/DAST (CodeQL, SonarQube, Snyk, OWASP ZAP, Trivy)</Tooltip>, 
         'CrowdStrike/Defender', 
-        <Tooltip text="Governance, Risk, and Compliance: Frameworks like SOC 2, ISO 27001, HIPAA, and PCI DSS.">SOC 2, ISO 27001, HIPAA, PCI, GDPR</Tooltip>
+        <Tooltip text="Governance, Risk, and Compliance: Frameworks like SOC 2, ISO 27001, HIPAA, and PCI DSS.">SOC 2, ISO 27001, HIPAA, PCI, GDPR, CCPA</Tooltip>
     ],
     evaluation: [
         'Deep evaluation of threat modeling capabilities using real-world application scenarios.',
@@ -51,7 +56,7 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
     intro: "You're here because your backend is the engine of your product. Scalability bottlenecks, poor API design, and data integrity issues can grind your business to a halt. You need engineers who can build robust, performant, and maintainable services.",
     roles: ['Principal/Staff Backend', 'API Platform Eng', 'Data Services Eng'],
     skills: ['Domain modeling', 'API design (REST/gRPC/GraphQL)', 'eventing', 'performance', 'caching', 'testing'],
-    tech: ['PostgreSQL', 'MySQL', 'Redis', 'Kafka/RabbitMQ', 'Node (NestJS/Fastify)', 'Python (FastAPI/Django)', 'Java (Spring Boot)', 'Go', '.NET', <Tooltip text="A modern ORM for Node.js and TypeScript that makes database access easy and type-safe.">Prisma</Tooltip>, 'SQLAlchemy'],
+    tech: ['PostgreSQL', 'MySQL', 'SQL Server', 'Redis', 'Memcached', 'Kafka/RabbitMQ/NATS', 'Node (NestJS/Fastify)', 'Python (FastAPI/Django)', 'Java (Spring Boot)', 'Go (Gin/Fiber)', '.NET', <Tooltip text="A modern ORM for Node.js and TypeScript that makes database access easy and type-safe.">Prisma</Tooltip>, 'TypeORM', 'SQLAlchemy', 'Hibernate', 'EF'],
     evaluation: [
         'Focus on data modeling and database design, including normalization and indexing strategies.',
         'Practical API design exercises, evaluating choices between REST, gRPC, and GraphQL for different use cases.',
@@ -72,12 +77,25 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
         'Scenario-based questions on data fetching strategies, caching (client and server), and managing server state.',
     ],
   },
+   'mobile-cross-platform': {
+    name: 'Mobile / Cross-Platform',
+    intro: "You're here because a native or cross-platform mobile experience is critical to your product strategy, and the complexities of device fragmentation, offline sync, and store releases are slowing you down.",
+    roles: ['Mobile Lead', 'RN/Flutter Eng', 'SDK Engineer'],
+    skills: ['Native performance', 'offline-first architecture', 'OTA updates', 'crash reporting', 'mobile testing'],
+    tech: ['React Native', 'Flutter', 'SwiftUI', 'Kotlin', 'OTA updates (CodePush)', 'Crashlytics/Sentry', 'AppCenter', 'Detox/Appium'],
+     evaluation: [
+        'Assessment of mobile-specific architectural patterns (e.g., handling state with limited connectivity).',
+        'Practical exercises in debugging native module integrations and performance bottlenecks.',
+        'Evaluation of testing strategies across a wide range of devices and OS versions.',
+        'Knowledge of app store submission processes and lifecycle management.',
+    ],
+  },
   'data-engineering-analytics': {
     name: 'Data Engineering / Analytics',
     intro: "You're here because 'data-driven' is a mandate, not a buzzword. But without a reliable data platform, your business is flying blind. You need engineers who can build scalable, trustworthy data pipelines and empower the organization with clean, actionable insights.",
     roles: ['Head of Data', 'Analytics Eng (dbt)', 'Data Platform Eng', 'BI Developer'],
     skills: ['ELT', 'modeling', 'governance', 'streaming', 'DataOps', 'experimentation'],
-    tech: ['Snowflake/BigQuery/Redshift', <Tooltip text="Data Build Tool: The industry standard for transforming data in the warehouse (ELT).">dbt</Tooltip>, 'Airflow/Prefect/Dagster', 'Fivetran/Airbyte', 'Kafka/PubSub', 'Looker/Tableau/Metabase', <Tooltip text="Data discovery and metadata platforms that create a unified catalog of your data assets.">DataHub/Amundsen</Tooltip>],
+    tech: ['Snowflake/BigQuery/Redshift/ClickHouse', <Tooltip text="Data Build Tool: The industry standard for transforming data in the warehouse (ELT).">dbt</Tooltip>, 'Airflow/Prefect/Dagster', 'Fivetran/Airbyte', 'Kafka/PubSub/Kinesis', 'Looker/Tableau/Power BI/Metabase/Superset', <Tooltip text="Data discovery and metadata platforms that create a unified catalog of your data assets.">DataHub/Amundsen/Apache Atlas</Tooltip>, 'Great Expectations/Soda'],
      evaluation: [
         'Strong focus on SQL and data modeling principles (Kimball/Inmon, dimensional modeling).',
         'Practical evaluation of dbt skills, including model design, testing, and documentation.',
@@ -90,7 +108,7 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
     intro: "You're here because integrating AI is no longer optional, but turning a Jupyter notebook into a production-ready, scalable service is a massive challenge. You need engineers who understand the full lifecycle of ML/LLM systems, from data to deployment to evaluation.",
     roles: ['ML Lead', 'Applied Scientist', 'MLOps/LLMOps', 'Prompt/RAG Engineer', 'Evaluation Engineer'],
     skills: ['Feature engineering', 'offline/online eval', 'retrieval design', 'safety/guardrails', 'cost/perf tuning'],
-    tech: ['PyTorch/TensorFlow', 'Transformers (HF)', 'OpenAI/Anthropic SDKs', 'Ray Serve', <Tooltip text="Retrieval-Augmented Generation: Frameworks for building applications on top of LLMs using external data.">LangChain/LlamaIndex</Tooltip>, <Tooltip text="Vector databases used for efficient similarity search in RAG applications.">pgvector/Pinecone</Tooltip>, 'MLflow/W&B', <Tooltip text="Frameworks for evaluating the quality and performance of LLM and RAG applications.">Ragas</Tooltip>],
+    tech: ['PyTorch/TensorFlow', 'scikit-learn', 'Transformers (HF)', 'OpenAI/Anthropic SDKs', 'vLLM/TensorRT-LLM', 'Ray Serve', <Tooltip text="Retrieval-Augmented Generation: Frameworks for building applications on top of LLMs using external data.">LangChain/LlamaIndex</Tooltip>, <Tooltip text="Vector databases used for efficient similarity search in RAG applications.">pgvector/Pinecone</Tooltip>, 'MLflow/W&B', 'Kubeflow', <Tooltip text="Frameworks for evaluating the quality and performance of LLM and RAG applications.">Ragas/DeepEval</Tooltip>, 'DVC', 'Feast/Tecton'],
      evaluation: [
         'Deep assessment of ML fundamentals and practical application of modeling techniques.',
         'For LLMOps, a strong focus on RAG architecture, vector databases, and retrieval strategies.',
@@ -103,7 +121,7 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
     intro: "You're here because building features isn't enough. You need to build the *right* features, validate them with users, and drive meaningful business outcomes. You need product and design leaders who are data-fluent, user-obsessed, and strategically aligned.",
     roles: ['Product Lead/Group PM', 'Design Lead', 'UX Research', 'Growth PM', 'Experimentation Eng'],
     skills: ['Discovery', 'roadmap', 'analytics fluency', 'experiment design', 'funnel diagnostics'],
-    tech: ['Jira/Linear', 'Notion/Confluence', 'Figma', 'GA4/Amplitude/Mixpanel', <Tooltip text="Platforms for A/B testing and feature flagging to enable data-driven product development.">Optimizely/GrowthBook</Tooltip>],
+    tech: ['Jira/Linear', 'Notion/Confluence', 'Figma', 'GA4/Amplitude/Mixpanel/Heap', <Tooltip text="Platforms for A/B testing and feature flagging to enable data-driven product development.">Optimizely/GrowthBook/LaunchDarkly</Tooltip>],
      evaluation: [
         'Case-study based evaluation of product sense, including market analysis, user segmentation, and prioritization.',
         'Portfolio review and practical exercises for designers focused on UX principles, interaction design, and system thinking.',
@@ -114,8 +132,8 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
   'qa-quality-engineering': {
     name: 'QA / Quality Engineering',
     intro: "You're here because shipping fast doesn't matter if you're also shipping bugs. You need engineers who think critically about quality and build automated guardrails that enable velocity, not hinder it. A manual tester isn't enough; you need a true Quality Engineer.",
-    roles: ['QE Lead', 'SDET', 'Performance Eng'],
-    skills: ['Shift-left testing', 'e2e + contract tests', 'perf/load', 'chaos', 'accessibility'],
+    roles: ['QE Lead', 'SDET', 'Performance Eng', 'QA Automation Engineer', 'QA Manual Tester'],
+    skills: ['Shift-left testing', 'e2e + contract tests', 'perf/load', 'chaos', 'accessibility', 'test planning', 'usability testing'],
     tech: ['Playwright/Cypress', 'Jest/Vitest/JUnit/PyTest', 'k6/Locust/JMeter', <Tooltip text="A tool for contract testing, ensuring that services (e.g., a frontend and backend) can communicate with each other.">Pact (contract)</Tooltip>, 'OWASP ASVS', <Tooltip text="Tools for chaos engineering, the practice of intentionally injecting failure into systems to test their resilience.">Gremlin/Litmus</Tooltip>],
      evaluation: [
         'Strong emphasis on test automation strategy, including the testing pyramid (unit, integration, e2e).',
@@ -124,12 +142,24 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
         'Evaluation of non-functional testing knowledge, including security, accessibility, and chaos engineering principles.',
     ],
   },
+  'it-enterprise-ops': {
+    name: 'IT / Enterprise Ops',
+    intro: "You're here because employee productivity and corporate security depend on a well-run IT infrastructure. You need engineers who can manage identities, secure endpoints, and automate internal processes at scale.",
+    roles: ['IT Manager', 'MDM Engineer', 'ITSM Lead'],
+    skills: ['Endpoint management', 'identity and access management (IAM)', 'IT service management (ITSM)', 'email security', 'data loss prevention (DLP)'],
+    tech: ['Google Workspace/Microsoft 365', 'Intune/Jamf', 'ServiceNow/JSM', 'Proofpoint', 'EDR/XDR'],
+     evaluation: [
+        'Evaluation of experience with enterprise-scale device management and security policy enforcement.',
+        'Scenario-based questions on managing identity providers and SSO integrations.',
+        'Assessment of knowledge of ITSM principles and experience with platforms like ServiceNow or Jira Service Management.',
+    ],
+  },
   'finops-biztech': {
     name: 'FinOps / BizTech',
     intro: "You're here because cloud spend is a major line item and your go-to-market systems are critical infrastructure. You need engineers who can analyze and optimize cloud costs and connect your CRM, billing, and product data to drive revenue operations.",
     roles: ['FinOps Lead', 'Biz Systems Eng (RevOps)', 'Data FinOps'],
     skills: ['Cloud cost optimization', 'RevOps engineering', 'Salesforce/HubSpot automation', 'Reverse ETL', 'Usage-based metering'],
-    tech: [<Tooltip text="Tools for analyzing, monitoring, and optimizing cloud expenditure.">CloudZero/CloudHealth/Infracost</Tooltip>, 'AWS Cost Explorer', 'Salesforce/HubSpot', <Tooltip text="Reverse ETL tools that sync data from a data warehouse back into business applications like CRMs.">Hightouch/Census</Tooltip>, 'Zuora/Stripe Billing'],
+    tech: [<Tooltip text="Tools for analyzing, monitoring, and optimizing cloud expenditure.">CloudZero/CloudHealth/Infracost</Tooltip>, 'AWS Cost Explorer', 'Salesforce/HubSpot', <Tooltip text="Reverse ETL tools that sync data from a data warehouse back into business applications like CRMs.">Hightouch/Census</Tooltip>, 'Stripe Billing/Zuora'],
     evaluation: [
         'Scenario-based questions on diagnosing and optimizing cloud spend from real-world AWS/GCP billing data.',
         'For BizTech roles, practical exercises in designing automations and data flows within Salesforce or HubSpot.',
