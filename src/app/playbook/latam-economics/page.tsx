@@ -22,123 +22,125 @@ export default function LatamEconomicsPage() {
 
   return (
     <main className="container">
-      <div className="breadcrumb">
-        <a href="/">Home</a> / <a href="/playbook">CTO Playbook</a> / LATAM Economics
-      </div>
-      <header className="text-center my-8">
-        <h1 className="h1">LATAM Economics for CTOs: A CFO-Ready Framework</h1>
-        <p className="lead max-w-3xl mx-auto">
-            Stop guessing with hourly rates. This is a playbook for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, accounting for the hidden risks and productivity multipliers.
-        </p>
-      </header>
-
-       <div className="section my-12">
-        <h2 className="h2 mt-0 text-center">The Three Levers of Nearshore Financial Strategy</h2>
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-5xl mx-auto">
-          {factors.map((item) => (
-             <div className="card p-6" key={item.title}>
-                <div className="flex items-center gap-3">
-                    {item.icon}
-                    <h3 className="h3 m-0 text-lg">{item.title}</h3>
-                </div>
-                <p className="text-sm mt-3 text-mute">{item.description}</p>
-            </div>
-          ))}
+      <div className="mx-auto max-w-5xl">
+        <div className="breadcrumb">
+          <a href="/">Home</a> / <a href="/playbook">CTO Playbook</a> / LATAM Economics
         </div>
-      </div>
-
-      <div className="prose mx-auto my-12">
-        <h2 className="h2 text-center">Modeling the True Cost: A Tale of Two Budgets</h2>
-        <p>
-            An engineer’s salary is just the tip of the iceberg. A CTO who presents a plan based solely on salary comparisons is walking into a financial trap. Below, we model the true TCO for a senior engineer, comparing the risky "Do-It-Yourself" approach with TeamStation AI's predictable, all-in-one platform model.
-        </p>
-      </div>
-
-       <div className="overflow-x-auto my-12 max-w-4xl mx-auto">
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Cost Component</th>
-                <th className='text-center'>DIY "Build" Model (Annual Estimate)</th>
-                <th className='text-center'>TeamStation AI "Buy" Model</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Senior Engineer Salary (Mexico)</td>
-                <td className='text-center'>~$85,000</td>
-                <td className='text-center font-semibold' rowSpan={7}>
-                    All-inclusive in one rate<br/>
-                    (e.g., L3 Senior @ $83,040/yr)
-                </td>
-              </tr>
-               <tr>
-                <td>Recruitment & Agency Fees (15-20%)</td>
-                <td className='text-center text-red-400'>~$17,000</td>
-              </tr>
-              <tr>
-                <td>Legal, EOR & Payroll Admin</td>
-                 <td className='text-center text-red-400'>~$12,000</td>
-              </tr>
-               <tr>
-                <td>Hardware, MDM & Security Tools</td>
-                 <td className='text-center text-red-400'>~$3,500</td>
-              </tr>
-              <tr>
-                <td>Benefits & Statutory Costs (~20%)</td>
-                 <td className='text-center text-red-400'>~$17,000</td>
-              </tr>
-              <tr>
-                <td>Management & HR Overhead</td>
-                 <td className='text-center text-red-400'>~$5,000</td>
-              </tr>
-               <tr className='border-t-2 border-line'>
-                <td className='font-bold'>True TCO (Estimated)</td>
-                <td className='text-center font-bold text-2xl text-red-400'>~$139,500</td>
-                <td className='text-center font-bold text-2xl text-green-400'>~$83,040</td>
-              </tr>
-            </tbody>
-          </table>
-          <p className='text-xs text-mute text-center mt-2'>Estimates are for illustrative purposes. Actual costs vary by country and role complexity.</p>
-        </div>
-
-
-      <div className="prose my-8">
-        <h2 className="h2 text-center">The "Vacancy Tax": How Slow Hiring Burns Your Budget</h2>
-        <p>
-            Beyond direct costs, there's a powerful hidden cost: the value you lose every day a critical role sits empty. We call this the Vacancy Tax. Faster, more accurate hiring doesn't just save time; it pulls future revenue forward.
-        </p>
-         <div className="text-center mt-6 bg-surface-1 p-6 rounded-lg max-w-2xl mx-auto card">
-            <h3 className='h3 mt-0'>Example: The Cost of a 36-Day Delay</h3>
-            <p className="font-mono text-sm md:text-base">
-                (36 days saved / 365) * $1,000,000 ARR = <span className="font-bold text-green-400">$98,630</span>
-            </p>
-            <p className="text-xs text-mute mt-1">ARR pulled forward by hiring in 9 days vs. the industry average of 45.</p>
-         </div>
-      </div>
-
-       <div className="prose mx-auto my-12">
-        <h2 className="h2 text-center">Productivity: The Ultimate Economic Lever</h2>
-        <p>
-            The final piece of the economic puzzle is productivity. Time-zone alignment is not a "nice-to-have"; it's a direct multiplier on output. A nearshore team operating in real-time with your U.S. engineers eliminates the communication lags that kill velocity in offshore models.
-        </p>
-        <ul>
-            <li><strong>Reduced Latency:</strong> Real-time pairing and problem-solving cut down on blocked tasks and accelerate development cycles.</li>
-            <li><strong>Higher Fidelity Communication:</strong> Fewer misunderstandings from asynchronous handoffs mean less rework and higher quality code.</li>
-            <li><strong>Lower Management Overhead:</strong> Your leadership spends less time managing communication friction and more time on strategic work.</li>
-        </ul>
-        <p>
-            When you present your budget, the story isn't just "we're saving money on salaries." It's "we are investing in a model that maximizes output per dollar by optimizing for TCO, hiring velocity, and real-time productivity."
-        </p>
-      </div>
-
-      <div className="section my-8 text-center">
-          <h2 className="h2 mt-0">Ready for a Transparent, Predictable Cost Model?</h2>
-          <p className="lead max-w-2xl mx-auto" style={{marginBottom: '24px'}}>See our all-inclusive pricing tiers that eliminate hidden costs and simplify your budget.
+        <header className="text-center my-8">
+          <h1 className="h1">LATAM Economics for CTOs: A CFO-Ready Framework</h1>
+          <p className="lead max-w-3xl mx-auto">
+              Stop guessing with hourly rates. This is a playbook for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, accounting for the hidden risks and productivity multipliers.
           </p>
-          <a href="/pricing" className="cta">
-            Explore Our Pricing
-          </a>
+        </header>
+
+        <div className="section my-12">
+          <h2 className="h2 mt-0 text-center">The Three Levers of Nearshore Financial Strategy</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {factors.map((item) => (
+              <div className="card p-6" key={item.title}>
+                  <div className="flex items-center gap-3">
+                      {item.icon}
+                      <h3 className="h3 m-0 text-lg">{item.title}</h3>
+                  </div>
+                  <p className="text-sm mt-3 text-mute">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="prose mx-auto my-12">
+          <h2 className="h2 text-center">Modeling the True Cost: A Tale of Two Budgets</h2>
+          <p>
+              An engineer’s salary is just the tip of the iceberg. A CTO who presents a plan based solely on salary comparisons is walking into a financial trap. Below, we model the true TCO for a senior engineer, comparing the risky "Do-It-Yourself" approach with TeamStation AI's predictable, all-in-one platform model.
+          </p>
+        </div>
+
+        <div className="overflow-x-auto my-12">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Cost Component</th>
+                  <th className='text-center'>DIY "Build" Model (Annual Estimate)</th>
+                  <th className='text-center'>TeamStation AI "Buy" Model</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Senior Engineer Salary (Mexico)</td>
+                  <td className='text-center'>~$85,000</td>
+                  <td className='text-center font-semibold' rowSpan={7}>
+                      All-inclusive in one rate<br/>
+                      (e.g., L3 Senior @ $83,040/yr)
+                  </td>
+                </tr>
+                <tr>
+                  <td>Recruitment & Agency Fees (15-20%)</td>
+                  <td className='text-center text-red-400'>~$17,000</td>
+                </tr>
+                <tr>
+                  <td>Legal, EOR & Payroll Admin</td>
+                  <td className='text-center text-red-400'>~$12,000</td>
+                </tr>
+                <tr>
+                  <td>Hardware, MDM & Security Tools</td>
+                  <td className='text-center text-red-400'>~$3,500</td>
+                </tr>
+                <tr>
+                  <td>Benefits & Statutory Costs (~20%)</td>
+                  <td className='text-center text-red-400'>~$17,000</td>
+                </tr>
+                <tr>
+                  <td>Management & HR Overhead</td>
+                  <td className='text-center text-red-400'>~$5,000</td>
+                </tr>
+                <tr className='border-t-2 border-line'>
+                  <td className='font-bold'>True TCO (Estimated)</td>
+                  <td className='text-center font-bold text-2xl text-red-400'>~$139,500</td>
+                  <td className='text-center font-bold text-2xl text-green-400'>~$83,040</td>
+                </tr>
+              </tbody>
+            </table>
+            <p className='text-xs text-mute text-center mt-2'>Estimates are for illustrative purposes. Actual costs vary by country and role complexity.</p>
+          </div>
+
+
+        <div className="prose my-8">
+          <h2 className="h2 text-center">The "Vacancy Tax": How Slow Hiring Burns Your Budget</h2>
+          <p>
+              Beyond direct costs, there's a powerful hidden cost: the value you lose every day a critical role sits empty. We call this the Vacancy Tax. Faster, more accurate hiring doesn't just save time; it pulls future revenue forward.
+          </p>
+          <div className="text-center mt-6 bg-surface-1 p-6 rounded-lg max-w-2xl mx-auto card">
+              <h3 className='h3 mt-0'>Example: The Cost of a 36-Day Delay</h3>
+              <p className="font-mono text-sm md:text-base">
+                  (36 days saved / 365) * $1,000,000 ARR = <span className="font-bold text-green-400">$98,630</span>
+              </p>
+              <p className="text-xs text-mute mt-1">ARR pulled forward by hiring in 9 days vs. the industry average of 45.</p>
+          </div>
+        </div>
+
+        <div className="prose mx-auto my-12">
+          <h2 className="h2 text-center">Productivity: The Ultimate Economic Lever</h2>
+          <p>
+              The final piece of the economic puzzle is productivity. Time-zone alignment is not a "nice-to-have"; it's a direct multiplier on output. A nearshore team operating in real-time with your U.S. engineers eliminates the communication lags that kill velocity in offshore models.
+          </p>
+          <ul>
+              <li><strong>Reduced Latency:</strong> Real-time pairing and problem-solving cut down on blocked tasks and accelerate development cycles.</li>
+              <li><strong>Higher Fidelity Communication:</strong> Fewer misunderstandings from asynchronous handoffs mean less rework and higher quality code.</li>
+              <li><strong>Lower Management Overhead:</strong> Your leadership spends less time managing communication friction and more time on strategic work.</li>
+          </ul>
+          <p>
+              When you present your budget, the story isn't just "we're saving money on salaries." It's "we are investing in a model that maximizes output per dollar by optimizing for TCO, hiring velocity, and real-time productivity."
+          </p>
+        </div>
+
+        <div className="section my-8 text-center">
+            <h2 className="h2 mt-0">Ready for a Transparent, Predictable Cost Model?</h2>
+            <p className="lead max-w-2xl mx-auto" style={{marginBottom: '24px'}}>See our all-inclusive pricing tiers that eliminate hidden costs and simplify your budget.
+            </p>
+            <a href="/pricing" className="cta">
+              Explore Our Pricing
+            </a>
+        </div>
       </div>
     </main>
   );
