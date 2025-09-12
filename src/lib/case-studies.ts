@@ -19,7 +19,7 @@ export type CaseStudy = {
 
 // A more robust function to extract a section based on a heading
 function extractSection(content: string, heading: string): string {
-    const regex = new RegExp(`## ${heading}\\s*([\\s\\S]*?)(?=\\n## |$)`, 'i');
+    const regex = new RegExp(`## ${heading}[\\s\\S]*?((?:\\n(?:- |\\* |\\d+\\.)[\\s\\S]*?)*)(?=\\n##|$)`, 'i');
     const match = content.match(regex);
     return match ? match[1].trim() : '';
 }

@@ -24,14 +24,14 @@ const corePillars = [
         icon: <BrainCircuit className="h-8 w-8 text-primary"/>,
         title: "De-Risk Your Hiring",
         description: "Stop gambling on resumes. Our Axiom Cortex™ engine provides auditable, scientific proof of a candidate's cognitive ability, cutting your mis-hire risk by over 90%.",
-        href: "/technical-interview-evaluation",
+        href: "/research/technical-talent-evaluation-system",
         linkLabel: "Learn About Our Vetting"
     },
     {
         icon: <ShieldCheck className="h-8 w-8 text-primary"/>,
         title: "Eliminate Vendor Chaos",
         description: "Stop managing 5 vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
-        href: "/services/nearshore-integrated-services",
+        href: "/services/integrated-services",
         linkLabel: "See Our Integrated Services"
     },
     {

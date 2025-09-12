@@ -1,8 +1,14 @@
 
+'use client';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export function Footer() {
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   const links = {
       "Playbook": [
@@ -13,9 +19,9 @@ export function Footer() {
       ],
       "Services": [
         { href: '/process', label: 'Our Process' },
-        { href: '/technical-interview-evaluation', label: 'Talent Evaluations' },
-        { href: '/services/nearshore-integrated-services', label: 'Integrated Services' },
-        { href: '/services/nearshore-it-talent-onboarding', label: 'Talent Onboarding' },
+        { href: '/research/technical-talent-evaluation-system', label: 'Talent Evaluations' },
+        { href: '/services/integrated-services', label: 'Integrated Services' },
+        { href: '/services/talent-onboarding', label: 'Talent Onboarding' },
       ],
       "Comparisons": [
           { href: '/comparisons', label: 'All Comparisons' },
@@ -27,7 +33,7 @@ export function Footer() {
         { href: '/about', label: 'About Us' },
         { href: '/research', label: 'Research' },
         { href: '/trust', label: 'Trust Center' },
-        { href: '/hire', label: 'Contact' },
+        { href: '/hire', label: 'Hire Talent' },
       ]
   }
 
