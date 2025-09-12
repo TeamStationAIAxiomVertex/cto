@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, Building2 } from 'lucide-react';
+import { Tooltip } from '@/components/Tooltip';
 
 export default function HireByCountryPage() {
   const countries = [
@@ -34,7 +35,7 @@ export default function HireByCountryPage() {
                     Secure, Professional Workspaces Included
                 </h2>
                 <p className="mt-4 text-muted-foreground">
-                    Your team’s productivity and security shouldn't be left to chance in a home office or coffee shop. Through our unique partnership with WeWork, every TeamStation AI engineer has access to a secure, modern office environment across Latin America. This isn't an add-on; it's part of our all-inclusive service, ensuring your team has reliable internet, a professional setting, and a secure space to work, all while maintaining SOC 2 and ISO-aligned operational standards.
+                    Your team’s productivity and security shouldn't be left to chance in a home office or coffee shop. Through our unique partnership with <a href="https://www.wework.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">WeWork</a>, every TeamStation AI engineer has access to a secure, modern office environment across Latin America. This isn't an add-on; it's part of our all-inclusive service, ensuring your team has reliable internet, a professional setting, and a secure space to work, all while maintaining <Tooltip text="SOC 2 is a compliance standard for service organizations, specifying how organizations should manage customer data.">SOC 2</Tooltip> and <Tooltip text="ISO 27001 is the international standard for information security management.">ISO</Tooltip>-aligned operational standards.
                 </p>
             </div>
             <div className="flex justify-center">
