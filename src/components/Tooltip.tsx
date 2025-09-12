@@ -5,7 +5,7 @@ type TooltipProps = {
   text: string;
 };
 
-const Tooltip = ({ children, text }: TooltipProps) => {
+export const Tooltip = ({ children, text }: TooltipProps) => {
   return (
     <span className="tooltip">
       {children}
@@ -13,5 +13,3 @@ const Tooltip = ({ children, text }: TooltipProps) => {
     </span>
   );
 };
-
-export default Tooltip;

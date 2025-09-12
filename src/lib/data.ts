@@ -1,77 +1,85 @@
-export const playbookData = [
+export type CaseStudy = {
+  slug: string;
+  title: string;
+  subtitle: string;
+  metrics: { label: string; value: string }[];
+  challenge: string;
+  solution: string;
+  results: { text: string }[];
+  chartData: { name: string; value: number }[];
+};
+
+export const caseStudies: CaseStudy[] = [
   {
-    slug: 'nearshore-vs-offshore',
-    title: 'Nearshore vs. Offshore',
-    description: 'A CTO’s decision framework for measuring cost per release, not cost per hour.',
-    content: `
-<p class="lead">The choice between a nearshore or offshore model isn't just about budget; it's a strategic bet on how you plan to build, innovate, and compete. While offshore teams in distant time zones might seem cheaper on a spreadsheet, the <a href="/playbook/latam-economics">Total Cost of Ownership (TCO)</a> often skyrockets due to hidden friction.</p>
-
-<h3>The Core Diagnosis: Latency, Fidelity, and Control</h3>
-
-<p>The core issue is latency. Not network latency, but human latency. Waiting 12 hours for a simple answer to unblock your team is a silent killer of velocity. Nearshore teams, typically in LATAM, eliminate this bottleneck. That real-time overlap is the single biggest lever you have to reclaim lost productivity.</p>
-
-<h3>Decision Framework: A Tool for Diagnosing Your Risk</h3>
-
-<p>Use this table to understand the real-world trade-offs. See how vendors stack up in our <a href="/comparisons">competitive analysis</a>.</p>
-`
+    slug: 'atticus',
+    title: 'Atticus: From Broken POC to App Store MVP in <3 Months',
+    subtitle: 'TeamStation AI assembled a nearshore squad that took a non-functional POC and delivered a full web/iOS estate settlement MVP, saving an estimated $550,000.',
+    metrics: [
+      { label: 'Industry', value: 'LegalTech' },
+      { label: 'Time to MVP', value: '<3 Months' },
+      { label: 'Cost Savings', value: '$550,000+' }
+    ],
+    challenge: 'Atticus faced a tight budget and a three-month deadline to deliver a production-ready probate and estate-settlement experience on both web and iOS, starting from a non-functional proof of concept and requiring a complete technology stack migration.',
+    solution: 'TeamStation AI assembled a precision-matched LATAM squad, including senior engineers and a product manager, who took ownership of the project. We orchestrated a rapid, structured discovery process, defined a shippable MVP, and executed a pragmatic stack transition to accelerate development.',
+    results: [
+      { text: 'Shipped a production-ready MVP in under 3 months, and a complete system in under 6.' },
+      { text: 'Achieved successful Apple App Store approval and release to the market.' },
+      { text: 'Saved an estimated $550,000 in development costs compared to typical alternatives.' },
+      { text: 'Generated approximately 750 lifetime downloads and an estimated $100K in lifetime revenue.' }
+    ],
+    chartData: [
+      { name: 'Q1 (Before)', value: 5 },
+      { name: 'Q2', value: 25 },
+      { name: 'Q3 (MVP)', value: 80 },
+      { name: 'Q4 (GA)', value: 120 },
+    ],
   },
   {
-    slug: 'bias-free-technical-hiring-axiom-cortex',
-    title: 'Bias-Free Technical Hiring',
-    description: 'Using 44 explainable, psychometrically-grounded signals to replace resume keywords and gut feel.',
-    content: `
-<p class="lead">Traditional hiring is noisy. Resume keywords, alma maters, and interview charisma are weak predictors of on-the-job performance and rife with unconscious bias.</p>
-
-<h3>Signal Over Noise: The Axiom Cortex™ Advantage</h3>
-
-<p>Axiom Cortex™ replaces guesswork with science. It's a cognitive evaluation engine built to measure what actually matters: how an engineer thinks, reasons, and solves problems. We provide <a href="/research/technical-talent-evaluation-system">auditable proof</a> of a candidate's abilities.</p>
-
-<p>This methodology transforms hiring from a game of chance into a science. It's how you build an elite team, based on proven capability, not credentials.</p>
-`
+    slug: 'rmj-technologies',
+    title: 'RMJ Technologies: Rescuing a Monolith to Scale to 15,000 Users',
+    subtitle: 'See how TeamStation AI stabilized a fragile monolithic platform, enabling multi-million dollar growth and massive user-scaling for an automotive fleet optimization provider.',
+    metrics: [
+        { label: 'Industry', value: 'Automotive Fleet' },
+        { label: 'Users Scaled', value: '15,000+' },
+        { label: 'Core Problem', value: 'Monolith Rescue' }
+    ],
+    challenge: 'RMJ Technologies was struggling with a semi-functional monolithic platform built offshore. The system suffered from critical onboarding failures, delayed driver training schedules, and an inability to generate reports, blocking significant growth opportunities.',
+    solution: 'TeamStation AI deployed a dedicated nearshore squad with deep .NET and Vue.js experience. The team included delivery and product management to enforce discipline, refactor critical modules, and launch a progressive microservices program to decouple key functionalities.',
+    results: [
+      { text: 'Stabilized the platform and restored on-time delivery of driver training, ensuring compliance.' },
+      { text: 'Unlocked scalability, enabling the platform to onboard users toward a goal of 15,000.' },
+      { text: 'Enabled multi-million-dollar revenue expansion by unblocking enterprise client onboarding.' },
+      { text: 'Reduced operational risk through improved observability and safer, more frequent deployments.' }
+    ],
+    chartData: [
+      { name: 'Q1 (Before)', value: 10 },
+      { name: 'Q2', value: 15 },
+      { name: 'Q3', value: 50 },
+      { name: 'Q4 (Scaling)', value: 150 },
+    ],
   },
   {
-    slug: 'latam-economics',
-    title: 'LATAM Economics for CTOs',
-    description: 'Beyond the hourly rate: A strategic overview of salary bands, productivity, and the true cost of scaling.',
-    content: `
-<p class="lead">Stop guessing with hourly rates. This is a playbook for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, accounting for the hidden risks and productivity multipliers.</p>
-
-<h3>The "Vacancy Tax": How Slow Hiring Burns Your Budget</h3>
-<p>Beyond direct costs, there's a powerful hidden cost: the value you lose every day a critical role sits empty. Faster, more accurate hiring doesn't just save time; it pulls future revenue forward. This is a core part of the <a href="/playbook/build-vs-buy">Build vs. Buy calculation</a>.</p>
-
-<h3>Productivity: The Ultimate Economic Lever</h3>
-<p>Time-zone alignment is not a "nice-to-have"; it's a direct multiplier on output. A nearshore team operating in real-time with your U.S. engineers eliminates the communication lags that kill velocity in offshore models, a key differentiator from vendors in our <a href="/comparisons">comparisons</a>.</p>
-`
+    slug: 'parsable',
+    title: 'Parsable: Resolving Enterprise SSO Failures After 18 Vendors Failed',
+    subtitle: 'TeamStation AI\'s nearshore squad resolved a critical Okta SSO issue for a marquee enterprise client, restoring access and unlocking new revenue streams.',
+    metrics: [
+        { label: 'Industry', value: 'Industrial Automation' },
+        { label: 'Challenge', value: 'Critical SSO Failure' },
+        { label: 'Key Tech', value: 'Okta, SAML' }
+    ],
+    challenge: 'Parsable faced a persistent, mission-critical Okta SSO failure impacting a major enterprise client, blocking daily user access and halting the onboarding of new billable users. After 18 other vendors failed to solve the issue, the pressure was immense.',
+    solution: 'TeamStation AI was selected for its superior talent quality and security governance. We deployed a targeted squad of senior engineers with deep identity and SSO experience. The team executed a non-disruptive diagnostic plan, identified the failure path in the SAML exchange, and shipped a targeted fix.',
+    results: [
+      { text: 'Restored stable SSO authentication for the affected enterprise client without any platform downtime.' },
+      { text: 'Unlocked the onboarding of additional billable users, directly impacting revenue.' },
+      { text: 'Established a trusted, long-term partnership, with the team remaining embedded to drive product velocity.' },
+      { text: 'Succeeded where 18 previous vendors had failed, demonstrating superior diagnostic and execution capabilities.' }
+    ],
+    chartData: [
+      { name: 'Week 1-4', value: 0 },
+      { name: 'Week 5-8', value: 5 },
+      { name: 'Week 9 (Fix)', value: 200 },
+      { name: 'Week 10+', value: 250 },
+    ],
   },
-  {
-    slug: 'security-compliance',
-    title: 'Security & Compliance',
-    description: 'The playbook for audit-ready nearshore operations, from SOC 2 alignment to secure device management.',
-    content: `
-<p class="lead">Security isn't an afterthought; it's the foundation of a scalable and trustworthy nearshore strategy. This playbook details how TeamStation AI builds a secure, compliant operational environment from day one.</p>
-
-<h3>The Security Checklist for Vetting Any Partner</h3>
-<p>When evaluating any nearshore partner, your due diligence should include these critical questions. A "no" to any of these is a major red flag. See how vendors stack up in our <a href="/comparisons">competitive analysis</a>, and visit our <a href="/trust">Trust Center</a> for our commitments.</p>
-<ul>
-    <li><strong>Device Management:</strong> Do you provide and manage corporate-owned devices for all engineers?</li>
-    <li><strong>Access Control:</strong> Do you enforce MFA/SSO and role-based access control (RBAC)?</li>
-    <li><strong>Compliance:</strong> Can you provide evidence of alignment with frameworks like SOC 2 or ISO 27001?</li>
-    <li><strong>Insurance:</strong> Do you carry Cyber and Errors & Omissions (E&O) insurance?</li>
-</ul>
-`
-  },
-  {
-    slug: 'build-vs-buy',
-    title: 'Build vs. Buy Framework',
-    description: 'Modeling the trade-offs between building an in-house team vs. buying into an integrated nearshore platform.',
-    content: `
-<p class="lead">Should you build a nearshore operation from scratch or "buy" into an integrated platform? This playbook models the trade-offs in terms of cost, speed, and risk.</p>
-
-<h3>The True Cost of "Building" a Nearshore Operation</h3>
-<p>Building an in-house team in a new region involves far more than just salaries. These are the hidden costs—the "gotchas" that sink budgets and timelines. See our <a href="/comparisons">vendor comparison</a> for how this plays out with specific providers.</p>
-
-<h3>The Value of "Buying" into a Nearshore Co-Pilot</h3>
-<p>Partnering with TeamStation AI abstracts away the complexity and risk, allowing you to focus on building your product. Our <a href="/process">process</a> is engineered for this, delivering a faster, safer, and more cost-effective path to scaling your engineering team as shown in our analysis of <a href="/playbook/latam-economics">LATAM Economics</a>.</p>
-`
-  }
 ];
