@@ -11,12 +11,18 @@ export type CaseStudy = {
   clientName: string;
   industry: string;
   summary: string;
-  content: string;
+  content: string; // This will hold the full HTML content
   challenge: string;
   why: string;
   outcomes: string;
-  insights: string;
 };
+
+// A more robust function to extract a section based on a heading
+function extractSection(content: string, heading: string): string {
+    const regex = new RegExp(`## ${heading}\\s*([\\s\\S]*?)(?=\\n## |$)`, 'i');
+    const match = content.match(regex);
+    return match ? match[1].trim() : '';
+}
 
 export async function getAllCaseStudies(): Promise<CaseStudy[]> {
   try {
@@ -26,14 +32,9 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
         const filePath = path.join(contentDirectory, filename);
         const fileContents = await fs.readFile(filePath, 'utf8');
         const { data, content } = matter(fileContents);
-        
-        // Simple regex to extract sections. This assumes H2 (##) headings.
-        const challenge = content.match(/## The Challenge\s*([\s\S]*?)(?=## )/)?.[1]?.trim() ?? '';
-        const why = content.match(/## Why TeamStation AI\s*([\s\S]*?)(?=## )/)?.[1]?.trim() ?? '';
-        const outcomes = content.match(/## Outcomes\s*([\s\S]*?)(?=## )/)?.[1]?.trim() ?? '';
-        const insights = content.match(/## Product Insights/)?.[0] ? content.split(/## Product Insights/)[1].trim() : '';
 
-        const executiveSummary = content.match(/## Executive Summary\s*([\s\S]*?)(?=## )/)?.[1]?.trim() ?? '';
+        // Remove frontmatter from content before parsing sections
+        const mainContent = content;
 
         return {
           slug: data.slug,
@@ -41,11 +42,10 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
           clientName: data.clientName,
           industry: data.industry,
           summary: data.summary,
-          content: executiveSummary,
-          challenge,
-          why,
-          outcomes,
-          insights,
+          content: mainContent, // Pass the full content to be rendered as HTML
+          challenge: extractSection(mainContent, 'The Challenge'),
+          why: extractSection(mainContent, 'Why TeamStation AI'),
+          outcomes: extractSection(mainContent, 'Outcomes') || extractSection(mainContent, 'Results'),
         } as CaseStudy;
       })
     );
@@ -57,6 +57,29 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
 }
 
 export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
-  const caseStudies = await getAllCaseStudies();
-  return caseStudies.find(study => study.slug === slug) || null;
+    const filePath = path.join(contentDirectory, `${slug}.md`);
+    try {
+        const fileContents = await fs.readFile(filePath, 'utf8');
+        const { data, content } = matter(fileContents);
+        
+        const mainContent = content;
+
+        return {
+          slug: data.slug,
+          title: data.title,
+          clientName: data.clientName,
+          industry: data.industry,
+          summary: data.summary,
+          content: mainContent,
+          challenge: extractSection(mainContent, 'The Challenge'),
+          why: extractSection(mainContent, 'Why TeamStation AI'),
+          outcomes: extractSection(mainContent, 'Outcomes') || extractSection(mainContent, 'Results'),
+        } as CaseStudy;
+    } catch (error) {
+        // console.error(`Error reading case study ${slug}:`, error);
+        // It's better to delegate finding to the getAllCaseStudies to avoid reading files twice
+    }
+
+    const allStudies = await getAllCaseStudies();
+    return allStudies.find(study => study.slug === slug) || null;
 }

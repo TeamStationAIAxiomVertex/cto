@@ -6,50 +6,12 @@ import { CheckCircle, ArrowRight, Target, Telescope, Shield, Briefcase, Award, H
 import { markdownToHtml } from '@/lib/markdown-parser';
 import { Fragment } from 'react';
 
-
-function SectionCard({ title, content, icon }: { title: string, content: string, icon: React.ReactNode }) {
-    // Split content by bullet points, assuming they start with '*' or '-'
-    const items = content.split(/\s*[\*\-]\s+/).filter(item => item.trim() !== '');
-
-    return (
-        <div className="rounded-xl border bg-card text-card-foreground shadow-lg">
-            <div className="flex items-center gap-4 border-b p-6">
-                {icon}
-                <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
-            </div>
-            <div className="p-6 grid md:grid-cols-2 gap-6">
-                {items.map((item, index) => {
-                    const [heading, ...rest] = item.split(/:\s+/);
-                    const description = rest.join(': ');
-                    return (
-                        <div key={index} className="flex items-start gap-3">
-                            <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                            <div>
-                                <h3 className="font-semibold text-foreground">{heading.replace(/__/g, '')}</h3>
-                                <p className="text-sm text-muted-foreground">{description}</p>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
-        </div>
-    );
-}
-
-
 export default async function CaseStudyPage({ params }: { params: { slug: string } }) {
   const study = await getCaseStudyBySlug(params.slug);
 
   if (!study) {
     notFound();
   }
-
-  const sections = [
-    { title: 'The Challenge', content: study.challenge, icon: <Target className="h-8 w-8 text-primary" /> },
-    { title: 'Why TeamStation AI', content: study.why, icon: <Telescope className="h-8 w-8 text-primary" /> },
-    { title: 'Outcomes', content: study.outcomes, icon: <Award className="h-8 w-8 text-primary" /> },
-    { title: 'Product Insights', content: study.insights, icon: <Handshake className="h-8 w-8 text-primary" /> },
-  ];
 
   const contentHtml = await markdownToHtml(study.content);
 
@@ -69,11 +31,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                     </h1>
                 </header>
 
-                <div className="prose prose-lg dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: contentHtml }} />
-
-                {sections.map(section => (
-                    <SectionCard key={section.title} title={section.title} icon={section.icon} content={section.content} />
-                ))}
+                <article className="prose prose-lg dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: contentHtml }} />
 
             </div>
 
@@ -87,15 +45,8 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                     </div>
                 </div>
                  <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
-                    <h3 className="text-xl font-bold flex items-center gap-3"><Award className="h-6 w-6 text-primary" />Key Outcomes</h3>
-                    <ul className="mt-4 space-y-3">
-                         {study.summary.split(', ').map((item, index) => (
-                           <li key={index} className="flex items-start gap-3 text-sm">
-                               <CheckCircle className="h-4 w-4 mt-1 shrink-0 text-primary" />
-                               <span>{item}</span>
-                           </li>
-                         ))}
-                    </ul>
+                    <h3 className="text-xl font-bold flex items-center gap-3"><Award className="h-6 w-6 text-primary" />Key Summary</h3>
+                     <p className="mt-4 text-sm text-muted-foreground">{study.summary}</p>
                 </div>
 
                 <div className="text-center rounded-lg bg-primary/10 p-8">
