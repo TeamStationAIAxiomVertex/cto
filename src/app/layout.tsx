@@ -30,12 +30,13 @@ export default function RootLayout({
               TeamStation AI
             </a>
             <nav className="nav">
-              <a href="/latam-talent/">LATAM Talent</a>
-              <a href="/nearshore-integrated-services/">Services</a>
-              <a href="/pricing/">Pricing</a>
-              <a href="/process/">Process</a>
+              <a href="/playbook/">CTO Playbook</a>
+              <a href="/research/technical-talent-evaluation-system/">Research</a>
+              <a href="/playbook/nearshore-vs-offshore/">Comparisons</a>
               <a href="/case-studies/">Case Studies</a>
-              <a href="/technical-interview-evaluation/">Evaluations</a>
+              <a href="/hire/">Hire</a>
+              <a href="/pricing/">Pricing</a>
+              <a href="/trust/">Trust</a>
             </nav>
             <button className="btn" data-theme-toggle>
               Theme
