@@ -1,21 +1,22 @@
-import { DollarSign, UserCheck, TrendingUp } from 'lucide-react';
+import { DollarSign, UserCheck, TrendingUp, HelpCircle } from 'lucide-react';
+import Tooltip from '@/components/Tooltip';
 
 export default function LatamEconomicsPage() {
     const factors = [
         {
             icon: <DollarSign size={24} className="text-green-400" />,
-            title: 'Competitive Salary Bands',
-            description: 'Salaries for senior engineers in LATAM are competitive, but the real saving comes from reduced overhead. Our model includes all costs—EOR, benefits, devices—in one transparent rate.',
+            title: 'Salary is Only the Start',
+            description: 'Competitive salaries are the entry point, but the real savings come from abstracting away massive hidden costs in legal, compliance, and administrative overhead.',
         },
         {
             icon: <UserCheck size={24} className="text-blue-400" />,
-            title: 'High Talent Density',
-            description: 'Countries like Brazil, Mexico, Argentina, and Colombia have a high concentration of skilled engineers, particularly in modern technologies like React, Node.js, Python, and .NET.',
+            title: 'High Talent Density → Faster Hiring',
+            description: 'High-concentration talent pools in Brazil, Mexico, and Colombia mean faster sourcing, reducing the "vacancy tax" you pay for every day a role stays open.',
         },
         {
             icon: <TrendingUp size={24} className="text-amber-400" />,
-            title: 'Total Cost of Ownership (TCO)',
-            description: 'True cost isn\'t just salary. It\'s the cost of hiring, legal, compliance, and management. Our integrated platform significantly lowers TCO compared to direct hiring or traditional outsourcing.',
+            title: 'Focus on Total Cost of Ownership (TCO)',
+            description: 'True cost isn\'t just salary. It\'s the cost of hiring, legal, devices, and management. Our integrated platform significantly lowers TCO compared to DIY.',
         },
     ];
 
@@ -24,59 +25,117 @@ export default function LatamEconomicsPage() {
       <div className="breadcrumb">
         <a href="/">Home</a> / <a href="/playbook">CTO Playbook</a> / LATAM Economics
       </div>
-      <h1 className="h1">LATAM Economics for CTOs: Beyond the Hourly Rate</h1>
-      <p className="lead">
-        Understanding the financial landscape of Latin America is key to building a successful nearshore team. This playbook provides a strategic overview of salary bands, productivity metrics, and the true cost of scaling.
-      </p>
+      <header className="text-center my-8">
+        <h1 className="h1">LATAM Economics for CTOs: A CFO-Ready Framework</h1>
+        <p className="lead max-w-3xl mx-auto">
+            Stop guessing with hourly rates. This is a playbook for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, accounting for the hidden risks and productivity multipliers.
+        </p>
+      </header>
 
        <div className="section my-12">
-        <h2 className="h2 mt-0">The Economic Landscape: Key Factors</h2>
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+        <h2 className="h2 mt-0 text-center">The Three Levers of Nearshore Financial Strategy</h2>
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-5xl mx-auto">
           {factors.map((item) => (
-             <div className="card" key={item.title}>
+             <div className="card p-6" key={item.title}>
                 <div className="flex items-center gap-3">
                     {item.icon}
                     <h3 className="h3 m-0 text-lg">{item.title}</h3>
                 </div>
-                <p className="text-sm mt-2 text-mute">{item.description}</p>
+                <p className="text-sm mt-3 text-mute">{item.description}</p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="prose my-8">
-        <h2 className="h2">A Look at Representative Salary Bands (Senior Engineer)</h2>
+      <div className="prose mx-auto my-12">
+        <h2 className="h2 text-center">Modeling the True Cost: A Tale of Two Budgets</h2>
         <p>
-            While rates vary, here's a general guide for fully-loaded annual costs for a senior full-stack engineer. These are estimates and can change based on demand, specialty, and location. TeamStation AI provides precise, real-time data based on our 2.6M+ talent graph.
-        </p>
-        <ul>
-            <li><strong>Brazil:</strong> $75,000 - $110,000 USD</li>
-            <li><strong>Mexico:</strong> $70,000 - $105,000 USD</li>
-            <li><strong>Argentina:</strong> $65,000 - $95,000 USD (Note: Highly volatile due to economic conditions)</li>
-            <li><strong>Colombia:</strong> $65,000 - $100,000 USD</li>
-        </ul>
-        <p>
-            <strong>Important:</strong> These are not just salaries. These figures represent a closer approximation of Total Cost of Ownership when working with a partner like TeamStation AI, as they factor in benefits, taxes, and operational overhead that we manage for you. Our transparent pricing tiers often provide significant savings over these direct-hire estimates.
+            An engineer’s salary is just the tip of the iceberg. A CTO who presents a plan based solely on salary comparisons is walking into a financial trap. Below, we model the true TCO for a senior engineer, comparing the risky "Do-It-Yourself" approach with TeamStation AI's predictable, all-in-one platform model.
         </p>
       </div>
 
+       <div className="overflow-x-auto my-12 max-w-4xl mx-auto">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Cost Component</th>
+                <th className='text-center'>DIY "Build" Model (Annual Estimate)</th>
+                <th className='text-center'>TeamStation AI "Buy" Model</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Senior Engineer Salary (Mexico)</td>
+                <td className='text-center'>~$85,000</td>
+                <td className='text-center font-semibold' rowSpan={7}>
+                    All-inclusive in one rate<br/>
+                    (e.g., L3 Senior @ $83,040/yr)
+                </td>
+              </tr>
+               <tr>
+                <td>Recruitment & Agency Fees (15-20%)</td>
+                <td className='text-center text-red-400'>~$17,000</td>
+              </tr>
+              <tr>
+                <td>Legal, EOR & Payroll Admin</td>
+                 <td className='text-center text-red-400'>~$12,000</td>
+              </tr>
+               <tr>
+                <td>Hardware, MDM & Security Tools</td>
+                 <td className='text-center text-red-400'>~$3,500</td>
+              </tr>
+              <tr>
+                <td>Benefits & Statutory Costs (~20%)</td>
+                 <td className='text-center text-red-400'>~$17,000</td>
+              </tr>
+              <tr>
+                <td>Management & HR Overhead</td>
+                 <td className='text-center text-red-400'>~$5,000</td>
+              </tr>
+               <tr className='border-t-2 border-line'>
+                <td className='font-bold'>True TCO (Estimated)</td>
+                <td className='text-center font-bold text-2xl text-red-400'>~$139,500</td>
+                <td className='text-center font-bold text-2xl text-green-400'>~$83,040</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className='text-xs text-mute text-center mt-2'>Estimates are for illustrative purposes. Actual costs vary by country and role complexity.</p>
+        </div>
+
+
       <div className="prose my-8">
-        <h2 className="h2">Productivity Metrics: The Real ROI</h2>
+        <h2 className="h2 text-center">The "Vacancy Tax": How Slow Hiring Burns Your Budget</h2>
         <p>
-            The most significant economic advantage of nearshore is not a lower hourly rate, but higher productivity due to time-zone alignment.
+            Beyond direct costs, there's a powerful hidden cost: the value you lose every day a critical role sits empty. We call this the Vacancy Tax. Faster, more accurate hiring doesn't just save time; it pulls future revenue forward.
+        </p>
+         <div className="text-center mt-6 bg-surface-1 p-6 rounded-lg max-w-2xl mx-auto card">
+            <h3 className='h3 mt-0'>Example: The Cost of a 36-Day Delay</h3>
+            <p className="font-mono text-sm md:text-base">
+                (36 days saved / 365) * $1,000,000 ARR = <span className="font-bold text-green-400">$98,630</span>
+            </p>
+            <p className="text-xs text-mute mt-1">ARR pulled forward by hiring in 9 days vs. the industry average of 45.</p>
+         </div>
+      </div>
+
+       <div className="prose mx-auto my-12">
+        <h2 className="h2 text-center">Productivity: The Ultimate Economic Lever</h2>
+        <p>
+            The final piece of the economic puzzle is productivity. Time-zone alignment is not a "nice-to-have"; it's a direct multiplier on output. A nearshore team operating in real-time with your U.S. engineers eliminates the communication lags that kill velocity in offshore models.
         </p>
         <ul>
-            <li><strong>Reduced Latency:</strong> Real-time collaboration eliminates the 12-hour delays common with offshore teams, directly translating to faster project velocity.</li>
-            <li><strong>Higher Fidelity Communication:</strong> Overlapping work hours mean fewer misunderstandings and less rework, which is a direct cost saving.</li>
-            <li><strong>Lower Management Overhead:</strong> Managing a team in a similar time zone is simply easier and requires less managerial time, freeing up your leadership to focus on strategy.</li>
+            <li><strong>Reduced Latency:</strong> Real-time pairing and problem-solving cut down on blocked tasks and accelerate development cycles.</li>
+            <li><strong>Higher Fidelity Communication:</strong> Fewer misunderstandings from asynchronous handoffs mean less rework and higher quality code.</li>
+            <li><strong>Lower Management Overhead:</strong> Your leadership spends less time managing communication friction and more time on strategic work.</li>
         </ul>
         <p>
-            When you factor in the reduced friction and increased velocity, the effective cost per feature is often significantly lower with a nearshore team, even if the on-paper hourly rate is higher than some offshore alternatives.
-        </p>      </div>
+            When you present your budget, the story isn't just "we're saving money on salaries." It's "we are investing in a model that maximizes output per dollar by optimizing for TCO, hiring velocity, and real-time productivity."
+        </p>
+      </div>
 
       <div className="section my-8 text-center">
-          <h2 className="h2 mt-0">Ready for a Transparent Cost Model?</h2>
-          <p className="lead" style={{marginBottom: '24px'}}>See our all-inclusive pricing tiers that simplify your budget and maximize your ROI.</p>
+          <h2 className="h2 mt-0">Ready for a Transparent, Predictable Cost Model?</h2>
+          <p className="lead max-w-2xl mx-auto" style={{marginBottom: '24px'}}>See our all-inclusive pricing tiers that eliminate hidden costs and simplify your budget.
+          </p>
           <a href="/pricing" className="cta">
             Explore Our Pricing
           </a>
