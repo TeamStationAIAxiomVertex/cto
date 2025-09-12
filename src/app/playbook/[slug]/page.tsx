@@ -59,10 +59,10 @@ export default async function PlaybookPost({ params }: { params: { slug: string 
         <div className="breadcrumb">
             <Link href="/">Home</Link> / <Link href="/playbook">Playbook</Link> / {postData.title}
         </div>
-        <article className="prose prose-lg mx-auto mt-8">
+        <article className="prose prose-lg mx-auto mt-8 dark:prose-invert">
             <h1>{postData.title}</h1>
             <p className="lead !my-2">{postData.description}</p>
-            <hr className="my-8 border-line"/>
+            <hr className="my-8 border-border"/>
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
     </div>
