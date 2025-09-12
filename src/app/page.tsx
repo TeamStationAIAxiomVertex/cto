@@ -53,7 +53,7 @@ export default async function HomePage() {
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
           Ship Faster. Stop Worrying.
         </h1>
-        <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
           You're under pressure to deliver, but hiring friction, vendor chaos, and compliance risks are slowing you down. TeamStation AI provides a single, integrated platform to build an elite nearshore team you can actually trust.
         </p>
         <div className="mt-10">
