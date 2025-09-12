@@ -10,7 +10,7 @@ export default async function PlaybookHub() {
   return (
     <main className="container py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Playbook</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <span>CTO Playbook</span>
       </div>
       <header className="text-center mb-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The CTO Playbook</h1>
