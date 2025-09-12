@@ -34,7 +34,6 @@ export default function RootLayout({
               <a href="/research/">Research</a>
               <a href="/comparisons/">Comparisons</a>
               <a href="/case-studies/">Case Studies</a>
-              <a href="/seo-battle-map">SEO Map</a>
               <a href="/hire/">Hire</a>
               <a href="/pricing/">Pricing</a>
               <a href="/trust/">Trust</a>

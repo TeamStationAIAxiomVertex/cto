@@ -12,7 +12,7 @@ export default function NearshoreVsOffshorePage() {
         Move beyond "cost per hour" and start measuring "cost per successful
         release." This guide provides a clear framework for choosing the right
         global talent strategy.
-      p>
+      </p>
 
       <div className="prose">
         <h2 className="h2">1. The Core Trade-Off: Cost, Collaboration, and Control</h2>
