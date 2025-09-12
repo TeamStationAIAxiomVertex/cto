@@ -72,7 +72,7 @@ export default async function HomePage() {
   return (
     <div className="container mx-auto px-4">
       <section className="text-center py-16 md:py-24">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent px-2">
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent px-2 py-2">
           Ship Faster. Stop Worrying.
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
@@ -197,3 +197,5 @@ export default async function HomePage() {
     </div>
   );
 }
+
+    
