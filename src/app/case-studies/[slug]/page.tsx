@@ -38,21 +38,21 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
         </article>
 
         <aside className="lg:col-span-1 space-y-6 lg:sticky top-24 self-start">
-          <div className="card">
+          <div className="card p-6">
             <div className="flex items-center gap-3 mb-4">
               <Briefcase className="icon" />
               <h3 className="h3 mt-0 mb-0">Client</h3>
             </div>
             <p className='font-semibold text-lg'>{data.clientName}</p>
           </div>
-          <div className="card">
+          <div className="card p-6">
             <div className="flex items-center gap-3 mb-4">
               <Award className="icon" />
               <h3 className="h3 mt-0 mb-0">Key Outcome</h3>
             </div>
             <p className='font-semibold'>{data.summary}</p>
           </div>
-           <div className="card">
+           <div className="card p-6">
              <div className="flex items-center gap-3 mb-4">
               <Handshake className="icon" />
               <h3 className="h3 mt-0 mb-0">Services Provided</h3>
