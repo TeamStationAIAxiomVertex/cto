@@ -6,14 +6,14 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --bg: #0b1629;
-  --text: #e6ebf5;
-  --mute: #9aa7bd;
-  --accent: #3f83f8;
-  --accent-d: #2f6ce0;
-  --surface1: #101a2f;
-  --surface2: #14203a;
-  --line: #24324a;
+  --bg: #111827;
+  --text: #d1d5db;
+  --mute: #9ca3af;
+  --accent: #3b82f6;
+  --accent-d: #2563eb;
+  --surface1: #1f2937;
+  --surface2: #374151;
+  --line: #374151;
   --radius: 12px;
   --container: 1100px;
 }
@@ -107,10 +107,17 @@ a:hover {
 .h1 {
   font-size: 2.1rem;
   margin: .2rem 0 1rem;
+  color: #f9fafb;
 }
 .h2 {
   font-size: 1.4rem;
   margin: 1.5rem 0 .75rem;
+  color: #f9fafb;
+}
+.h3 {
+  font-size: 1.1rem;
+  margin: 1rem 0 .5rem;
+  color: #f9fafb;
 }
 
 .lead {
@@ -140,6 +147,10 @@ a:hover {
 .grid-2 {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
 
 .table {
   width: 100%;
@@ -230,4 +241,21 @@ a:hover {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.icon-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px;
+  background: var(--surface1);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+
+.icon-card .icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  color: var(--accent);
 }
