@@ -14,6 +14,8 @@
   --surface-1: 222 47% 15%;
   --surface-2: 222 47% 20%;
   --line: 215 28% 25%;
+  --cta-bg: 240 100% 40%;
+  --cta-bg-hover: 240 100% 35%;
 }
  
 .light {
@@ -28,12 +30,14 @@
   --surface-1: 210 40% 98%;
   --surface-2: 210 40% 94%;
   --line: 214 32% 91%;
+  --cta-bg: 240 100% 40%;
+  --cta-bg-hover: 240 100% 35%;
 }
 
 @layer base {
   body { @apply bg-bg text-text; font-family: var(--font-poppins); }
   .card { @apply bg-surface-1 rounded-lg border border-line p-6; }
-  .cta { @apply inline-block bg-accent-custom text-white font-bold py-2 px-6 rounded-lg hover:bg-accent-d-custom transition-colors; }
+  .cta { @apply inline-block bg-[hsl(var(--cta-bg))] text-white font-bold py-2 px-6 rounded-lg hover:bg-[hsl(var(--cta-bg-hover))] transition-colors; }
   .breadcrumb { @apply text-sm text-mute mb-4; }
   .h1 { 
     @apply text-3xl md:text-4xl font-bold mb-2;
