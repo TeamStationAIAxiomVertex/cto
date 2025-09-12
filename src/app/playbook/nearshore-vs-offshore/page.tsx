@@ -158,7 +158,7 @@ export default function NearshoreVsOffshorePage() {
       </div>
 
       <div className="mt-12 text-center">
-          <a href="/hire" className="cta">Is Your Current Vendor Causing These Pains? Let's Talk.</a>
+          <a href="/hire" className="cta">Upgrade Your Nearshore Strategy</a>
       </div>
     </main>
   );
