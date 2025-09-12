@@ -4,65 +4,65 @@ import { ArrowRight, Code, Database, BrainCircuit, GanttChartSquare, TestTube2, 
 
 const techCategories = [
   {
-    name: 'APIs',
+    name: 'APIs & Backend Services',
     icon: <Server className="h-6 w-6 text-primary" />,
-    tech: ['NestJS/Fastify', 'FastAPI', 'Spring Boot', 'gRPC', 'Apollo GraphQL'],
+    tech: ['Node (NestJS/Fastify)', 'Python (FastAPI/Django)', 'Java (Spring Boot)', 'Go (Gin/Fiber)', '.NET', 'gRPC', 'GraphQL (Apollo)'],
     roleSlug: 'backend-services',
     roleName: 'Backend / Services'
   },
   {
-    name: 'State & Data-fetching (FE)',
+    name: 'Frontend & UI/UX',
     icon: <Layers className="h-6 w-6 text-primary" />,
-    tech: ['TanStack Query', 'Redux Toolkit', 'Zustand'],
+    tech: ['React/TypeScript', 'Next.js/Vite', 'TanStack Query', 'Redux Toolkit/Zustand', 'Tailwind/shadcn/MUI', 'Testing Library'],
     roleSlug: 'frontend-web',
     roleName: 'Frontend / Web'
   },
   {
-    name: 'Data Modeling & Transform',
+    name: 'Data Modeling & Databases',
     icon: <Database className="h-6 w-6 text-primary" />,
-    tech: ['dbt', 'Prisma', 'SQLAlchemy', 'Hibernate'],
+    tech: ['PostgreSQL', 'MySQL', 'SQL Server', 'dbt', 'Prisma', 'SQLAlchemy', 'Hibernate', 'Redis', 'Memcached'],
     roleSlug: 'data-engineering-analytics',
     roleName: 'Data Engineering'
   },
   {
     name: 'Pipelines & Orchestration',
     icon: <Component className="h-6 w-6 text-primary" />,
-    tech: ['Airflow/Prefect', 'Kafka', 'Flink/Beam'],
+    tech: ['Airflow/Prefect/Dagster', 'Kafka/RabbitMQ/NATS', 'Flink/Beam', 'Kubernetes', 'Docker'],
     roleSlug: 'data-engineering-analytics',
     roleName: 'Data Engineering'
   },
   {
-    name: 'ML/LLM',
+    name: 'ML/AI & LLM Ops',
     icon: <BrainCircuit className="h-6 w-6 text-primary" />,
-    tech: ['PyTorch', 'Transformers', 'vLLM', 'MLflow', 'LangChain', 'pgvector'],
+    tech: ['PyTorch', 'Transformers', 'vLLM', 'Ray Serve', 'LangChain/LlamaIndex', 'pgvector/Pinecone', 'MLflow/W&B', 'Ragas'],
     roleSlug: 'ml-ai-llm-ops',
     roleName: 'ML/AI & LLM Ops'
   },
   {
-    name: 'Observability',
+    name: 'Observability & SRE',
     icon: <GanttChartSquare className="h-6 w-6 text-primary" />,
-    tech: ['Prometheus', 'Grafana', 'OpenTelemetry', 'Jaeger', 'Loki'],
+    tech: ['Prometheus', 'Grafana', 'OpenTelemetry', 'Jaeger/Loki', 'Terraform/Pulumi', 'Istio/Linkerd'],
     roleSlug: 'platform-infra-sre',
     roleName: 'Platform / Infra / SRE'
   },
   {
-    name: 'Security',
+    name: 'Security & GRC',
     icon: <ShieldCheck className="h-6 w-6 text-primary" />,
-    tech: ['Vault', 'CodeQL', 'SonarQube', 'Snyk', 'Trivy', 'OPA'],
+    tech: ['Vault', 'Okta/Auth0', 'CodeQL/SonarQube/Snyk', 'Trivy', 'OPA', 'SOC 2', 'ISO 27001', 'HIPAA'],
     roleSlug: 'security-grc',
     roleName: 'Security & GRC'
   },
   {
-    name: 'Testing',
+    name: 'Testing & Quality Engineering',
     icon: <TestTube2 className="h-6 w-6 text-primary" />,
-    tech: ['Playwright', 'Cypress', 'Jest/Vitest', 'PyTest', 'k6/Locust'],
+    tech: ['Playwright/Cypress', 'Jest/Vitest', 'PyTest/JUnit', 'k6/Locust', 'Pact', 'Gremlin/Litmus'],
     roleSlug: 'qa-quality-engineering',
     roleName: 'QA / Quality Engineering'
   },
   {
-    name: 'Cloud Cost',
+    name: 'Cloud FinOps & BizTech',
     icon: <Wallet className="h-6 w-6 text-primary" />,
-    tech: ['CloudZero', 'Infracost', 'AWS Cost Explorer'],
+    tech: ['CloudZero/Infracost', 'AWS Cost Explorer', 'Salesforce', 'HubSpot', 'Hightouch/Census'],
     roleSlug: 'finops-biztech',
     roleName: 'FinOps / BizTech'
   }
