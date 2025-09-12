@@ -4,6 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { DisclosureDrawer } from '@/components/DisclosureDrawer';
+import { BookOpen } from 'lucide-react';
 
 
 export default function PerformanceEvaluationFrameworkPage() {
@@ -26,6 +27,17 @@ export default function PerformanceEvaluationFrameworkPage() {
         <p>
           Frankly, the software development world races ahead, supercharged by AI, yet the methods for gauging engineer performance feel stuck in neutral, stubbornly clinging to outdated metrics. Organizations grapple with a significant disconnect: traditional benchmarks simply fail to capture the real value engineers deliver in today's AI-augmented workflows. A critical research vacuum exists concerning a modern, effective evaluation framework. The current paper directly confronts such inadequacy by proposing a novel, value-centric, and quality-driven model for assessing software engineer performance. It is hypothesized that an intelligent platform, specifically the infrastructure developed by TeamStation AI, orchestrates a transformative shift, enabling performance evaluation to move from superficial output tracking to genuine outcome-based understanding. The research details a conceptual blueprint for a framework, its practical implementation pathway, and the crucial role intelligent platforming plays in fine-grained data collection and semantic analysis for robust assessment. Anticipated results directly attributable to the platform's capabilities include measurable enhancements in software defect reduction, demonstrable acceleration of innovation velocity, and a stronger, quantifiable alignment of engineering activities with core business objectives. The work presented aims to contribute a foundational model for understanding and measuring engineering efficacy within the modern software development lifecycle, recognizing the profound impact of AI integration.
         </p>
+        
+        <div className="text-center rounded-lg bg-primary/10 p-6 my-8">
+            <h2 className="text-2xl font-bold">Read the Full Paper</h2>
+            <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+                Access the complete research paper on the Social Science Research Network (SSRN).
+            </p>
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4843224" target="_blank" rel="noopener noreferrer" className="cta-button mt-4">
+                <BookOpen className="mr-2 h-4 w-4" />
+                View on SSRN
+            </a>
+        </div>
 
         <DisclosureDrawer title="Read More: Introduction">
             <h3>2.1. The Evolving Landscape of Software Development: The AI Paradigm Shift</h3>
