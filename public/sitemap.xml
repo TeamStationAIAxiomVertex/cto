@@ -2,107 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cto.teamstation.dev/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>1.00</priority>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/about/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/pricing/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/trust/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/playbook/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/research/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/case-studies/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/hire/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/comparisons/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/comparisons/all-vendors/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-bairesdev/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-globant/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-tecla/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-revelo/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-terminal/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-deel/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-toptal/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-andela/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-bairesdev/</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-deel/</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-globant/</loc>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-nearsure/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-parallelstaff/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-revelo/</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-tecla/</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-terminal/</loc>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-toptal/</loc>
   </url>
   <url>
     <loc>https://cto.teamstation.dev/comparisons/teamstation-vs-unosquare/</loc>
-    <lastmod>2024-07-29</lastmod>
-    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/seo-battle-map/</loc>
   </url>
 </urlset>
