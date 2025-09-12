@@ -16,8 +16,13 @@ const navItems = {
   'Services': [
     { href: '/process', title: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
     { href: '/technical-interview-evaluation', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
-    { href: '/nearshore-it-talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
-    { href: '/nearshore-integrated-services', title: 'Integrated Services', description: 'A single SLA for your entire nearshore operation.' },
+    { href: '/services/nearshore-it-talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
+    { href: '/services/nearshore-integrated-services', title: 'Integrated Services', description: 'A single SLA for your entire nearshore operation.' },
+  ],
+  'Hire': [
+    { href: '/hire/by-role', title: 'Hire by Role', description: 'Find elite talent for your specific engineering needs.' },
+    { href: '/hire/by-technology', title: 'Hire by Technology', description: 'Build your team with experts in your tech stack.' },
+    { href: '/hire/by-country', title: 'Hire by Country', description: 'Tap into top engineering hubs across Latin America.' },
   ],
   'Comparisons': [
       { href: '/comparisons', title: 'All Comparisons', description: 'A comparative analysis of features, cost, and risk.' },
