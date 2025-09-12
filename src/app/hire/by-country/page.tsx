@@ -13,6 +13,7 @@ export default function HireByCountryPage() {
     { name: 'Peru', slug: 'peru', cities: 'Lima' },
     { name: 'Costa Rica', slug: 'costa-rica', cities: 'San José' },
     { name: 'Uruguay', slug: 'uruguay', cities: 'Montevideo' },
+    { name: 'Ecuador', slug: 'ecuador', cities: 'Quito, Guayaquil' },
   ];
 
   return (
@@ -46,7 +47,7 @@ export default function HireByCountryPage() {
 
       <div className="my-16">
         <h2 className="text-center text-3xl font-bold">Explore Our Premier LATAM Engineering Hubs</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {countries.map((country) => (
             <div key={country.slug} className="group relative block rounded-lg border bg-card p-6 transition-all hover:shadow-2xl hover:shadow-primary/10">
                 <h3 className="text-xl font-bold transition-colors group-hover:text-primary">{country.name}</h3>
