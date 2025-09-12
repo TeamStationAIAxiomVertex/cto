@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import Tooltip from '@/components/Tooltip';
+import { Layers, Gauge, Network, BrainCircuit } from 'lucide-react';
 
 const vendors = [
   {
@@ -104,34 +105,44 @@ export default function ComparisonsPage() {
       </header>
 
       <div className="section">
-         <div className="prose mx-auto">
-            <h2 className="h2 text-center mt-0">Why TeamStation AI Stands Alone</h2>
-         </div>
-         <div className="grid grid-2 gap-4 mt-4">
-            <div className="card">
-                <h3 className="h3 mt-0">Unified Platform</h3>
-                <p className="text-sm text-slate-400">One SLA for hiring, EOR/payroll, compliance, devices/MDM, offices, and insurance. Replaces multi-vendor complexity.</p>
-                <Link href="/trust" className="text-sm font-semibold">Explore our MSA →</Link>
+        <h2 className="h2 text-center mt-0 mb-6">Why TeamStation AI Stands Alone</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="icon-card">
+                <Layers className="icon" />
+                <div>
+                    <h3 className="h3 mt-0">Unified Platform</h3>
+                    <p className="text-sm text-slate-400">One SLA for hiring, EOR/payroll, compliance, devices/MDM, offices, and insurance. Replaces multi-vendor complexity.</p>
+                    <Link href="/trust" className="text-sm font-semibold">Explore our MSA →</Link>
+                </div>
             </div>
-            <div className="card">
-                <h3 className="h3 mt-0">Public Delivery Metrics</h3>
-                <p className="text-sm text-slate-400">We publish our SLAs: Time-to-Offer ≈ 9 days, device procurement ≤ 5 days, and MDM enrollment ≥ 99%.</p>
-                <Link href="/pricing" className="text-sm font-semibold">See our pricing tiers →</Link>
+            <div className="icon-card">
+                <Gauge className="icon" />
+                <div>
+                    <h3 className="h3 mt-0">Public Delivery Metrics</h3>
+                    <p className="text-sm text-slate-400">We publish our SLAs: Time-to-Offer ≈ 9 days, device procurement ≤ 5 days, and MDM enrollment ≥ 99%.</p>
+                    <Link href="/pricing" className="text-sm font-semibold">See our pricing tiers →</Link>
+                </div>
             </div>
-            <div className="card">
-                <h3 className="h3 mt-0">Unmatched Talent Scale</h3>
-                <p className="text-sm text-slate-400">Our Nebula Neural Search™ covers 2.6M+ LATAM profiles, ensuring deep talent access and precise matching.</p>
-                <Link href="/hire" className="text-sm font-semibold">Start hiring →</Link>
+            <div className="icon-card">
+                <Network className="icon" />
+                <div>
+                    <h3 className="h3 mt-0">Unmatched Talent Scale</h3>
+                    <p className="text-sm text-slate-400">Our Nebula Neural Search™ covers 2.6M+ LATAM profiles, ensuring deep talent access and precise matching.</p>
+                    <Link href="/hire" className="text-sm font-semibold">Start hiring →</Link>
+                </div>
             </div>
-             <div className="card">
-                <h3 className="h3 mt-0">Cognitive AI Vetting</h3>
-                <p className="text-sm text-slate-400">
-                    <Tooltip text="Axiom Cortex™ is TeamStation AI's proprietary Cognitive AI engine that uses 44 psychometric and NLP signals to evaluate engineering candidates.">
-                        Axiom Cortex™
-                    </Tooltip>
-                    {' '}uses bias-aware cognitive evaluations to ensure fair, accurate, and deep assessment of talent.
-                </p>
-                <Link href="/research/axiom-cortex-scientific-report" className="text-sm font-semibold">Read the science →</Link>
+             <div className="icon-card">
+                <BrainCircuit className="icon" />
+                <div>
+                    <h3 className="h3 mt-0">Cognitive AI Vetting</h3>
+                    <p className="text-sm text-slate-400">
+                        <Tooltip text="Axiom Cortex™ is TeamStation AI's proprietary Cognitive AI engine that uses 44 psychometric and NLP signals to evaluate engineering candidates.">
+                            Axiom Cortex™
+                        </Tooltip>
+                        {' '}uses bias-aware cognitive evaluations to ensure fair, accurate, and deep assessment of talent.
+                    </p>
+                    <Link href="/research/axiom-cortex-scientific-report" className="text-sm font-semibold">Read the science →</Link>
+                </div>
             </div>
          </div>
       </div>
@@ -194,3 +205,5 @@ export default function ComparisonsPage() {
     </main>
   );
 }
+
+    
