@@ -1,6 +1,6 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
+import Tooltip from '@/components/Tooltip';
 
 const vendors = [
   {
@@ -96,7 +96,16 @@ export default function ComparisonsPage() {
          <div className="prose mx-auto">
             <h2 className="h2 text-center mt-0">Why TeamStation AI Stands Alone</h2>
             <p>The platform unifies hiring, employer-of-record (EOR)/payroll, compliance and benefits, device provisioning and MDM, offices & workspaces across 45+ hubs, cybersecurity and errors-and-omissions insurance, day-one onboarding and performance diagnostics under one SLA. Key delivery metrics are public: Time-to-Offer ≈ 9 days, device MTPD ≤ 5 days, MDM enrollment ≥ 99% in 24h; the talent graph covers 2.6M+ LATAM IT profiles with bias-aware cognitive evaluations; offices and on-demand workspaces are provisioned in ≤ 3 business days; and every engagement includes cybersecurity & E&O insurance.</p>
-            <p>Axiom Cortex™—TeamStation’s cognitive AI—uses 44 psychometric + NLP signals and a language-fairness calibration layer to judge problem solving, architecture and collaboration. These signals are mapped to BARS (behaviorally anchored rating scales) and reviewed by experts, producing explainable evaluations. Combined with Nebula Neural Search™ (2.6M+ profiles) and BARS-anchored onboarding, TeamStation delivers pre-vetted engineers with 90-day retention ≥ 96%—while most vendors merely promise “top talent.”</p>
+            <p>
+                <Tooltip text="Axiom Cortex™ is TeamStation AI's proprietary Cognitive AI engine that uses 44 psychometric and NLP signals to evaluate engineering candidates for traits like problem-solving, architectural instinct, and learning orientation.">
+                    Axiom Cortex™
+                </Tooltip>
+                —TeamStation’s cognitive AI—uses 44 psychometric + NLP signals and a language-fairness calibration layer to judge problem solving, architecture and collaboration. These signals are mapped to{' '}
+                <Tooltip text="Behaviorally Anchored Rating Scales (BARS) are assessment tools that link specific behavioral examples to varying levels of performance to facilitate objective evaluation.">
+                 BARS
+                </Tooltip>
+                {' '}(behaviorally anchored rating scales) and reviewed by experts, producing explainable evaluations. Combined with Nebula Neural Search™ (2.6M+ profiles) and BARS-anchored onboarding, TeamStation delivers pre-vetted engineers with 90-day retention ≥ 96%—while most vendors merely promise “top talent.”
+            </p>
          </div>
       </div>
       
@@ -150,6 +159,9 @@ export default function ComparisonsPage() {
         <p className="lead" style={{fontSize: '1rem'}}>
           TeamStation AI occupies a different galaxy in the nearshore landscape. By unifying recruitment, cognitive AI evaluation, device and workspace provisioning, payroll/EOR, compliance and insurance under one SLA, TeamStation replaces multi-vendor complexity with a single accountable platform. Its bias-aware Axiom Cortex™ ensures fair, evidence-based hiring; Nebula’s 2.6M+ talent graph guarantees reach; and transparent delivery metrics (TTO ≈ 9 days, MTPD ≤ 5 days, MDM ≥ 99 %) set a standard none of the competition currently publishes. Traditional vendors may excel at one or two aspects—staffing, project delivery or EOR—but only TeamStation AI offers a scientifically grounded, end-to-end nearshore operating system.
         </p>
+         <div className="mt-6">
+            <a href="/hire" className="cta">Book a Strategy Call</a>
+        </div>
       </div>
 
     </main>
