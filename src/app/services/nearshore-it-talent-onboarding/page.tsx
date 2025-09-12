@@ -50,7 +50,7 @@ export default function OnboardingPage() {
         ))}
       </div>
 
-       <div className="prose dark:prose-invert mx-auto my-16 max-w-4xl">
+       <div className="prose prose-lg dark:prose-invert mx-auto my-16 max-w-4xl">
         <h2 className="text-center">The Difference is Evidence</h2>
         <p>
             Most onboarding processes are a black box. You hope the new hire is set up correctly, but you have no real proof. Our process is different. The Onboarding Dossier provides a clear, auditable trail of every step, from legal agreements to device security checks.
