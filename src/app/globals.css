@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --bg: 222 47% 11%;
+  --bg: 222 83% 4%;
   --text: 210 40% 98%;
   --mute: 215 20% 65%;
   --accent-custom: 210 100% 50%;
@@ -11,16 +11,16 @@
   --accent-gradient-from: 210 100% 50%;
   --accent-gradient-to: 210 100% 75%;
   --warn-custom: 210 100% 50%;
-  --surface-1: 222 47% 15%;
-  --surface-2: 222 47% 20%;
+  --surface-1: 222 47% 11%;
+  --surface-2: 222 47% 15%;
   --line: 215 28% 25%;
-  --cta-bg: 240 100% 40%;
-  --cta-bg-hover: 240 100% 35%;
+  --cta-bg: 240 71% 40%;
+  --cta-bg-hover: 240 71% 35%;
 }
  
 .light {
   --bg: 0 0% 100%;
-  --text: 222 47% 25%;
+  --text: 222 47% 11%;
   --mute: 215 20% 45%;
   --accent-custom: 210 100% 50%;
   --accent-d-custom: 210 100% 45%;
@@ -30,14 +30,14 @@
   --surface-1: 210 40% 98%;
   --surface-2: 210 40% 94%;
   --line: 214 32% 91%;
-  --cta-bg: 240 100% 40%;
-  --cta-bg-hover: 240 100% 35%;
+  --cta-bg: 240 71% 40%;
+  --cta-bg-hover: 240 71% 35%;
 }
 
 @layer base {
   body { @apply bg-bg text-text; font-family: var(--font-poppins); }
   .card { @apply bg-surface-1 rounded-lg border border-line p-6; }
-  .cta { @apply inline-block bg-[hsl(var(--cta-bg))] text-white font-bold py-2 px-6 rounded-lg hover:bg-[hsl(var(--cta-bg-hover))] transition-colors; }
+  .cta { @apply inline-block bg-transparent text-accent-custom font-bold py-2 px-6 rounded-full border-2 border-accent-custom hover:bg-accent-custom hover:text-white transition-colors; }
   .breadcrumb { @apply text-sm text-mute mb-4; }
   .h1 { 
     @apply text-3xl md:text-4xl font-bold mb-2;
