@@ -110,7 +110,7 @@ a:hover {
 }
 .h2 {
   font-size: 1.4rem;
-  margin: 0 0 .75rem;
+  margin: 1.5rem 0 .75rem;
 }
 
 .lead {
@@ -186,4 +186,48 @@ a:hover {
 .cta:hover {
   background: var(--accent-d);
   text-decoration: none;
+}
+
+.prose {
+  line-height: 1.7;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+.prose a {
+  font-weight: 600;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--mute);
+  cursor: help;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: var(--surface2);
+  color: var(--text);
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -110px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border: 1px solid var(--line);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
