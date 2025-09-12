@@ -116,6 +116,47 @@ const msaSections = [
   },
 ];
 
+const sowContent = `
+    <h3 class="h3">1. AGREEMENT</h3>
+    <p>This Statement of Work (SOW-001) is issued pursuant to the Master Services Agreement (MSA) executed by and between Attom Data Solutions, LLC ("Customer") and TeamStation Artificial Intelligence, LLC ("Contractor" or "TeamStation AI"), with an effective date of 7/10/2025 (the “MSA”).</p>
+    <ul>
+        <li><strong>SOW Number:</strong> 001</li>
+        <li><strong>Project Duration:</strong> 12 Months, extended upon mutual agreement</li>
+        <li><strong>Estimated Start Date:</strong> July 21, 2025</li>
+        <li><strong>Project Name:</strong> Nearshore IT Staff Augmentation – Senior Full Stack .NET Developer</li>
+        <li><strong>Terms & Conditions:</strong> Per executed MSA</li>
+        <li><strong>Execution Model:</strong> Remote team based in Latin America (LATAM)</li>
+        <li><strong>Payment Terms:</strong> Net 30</li>
+    </ul>
+
+    <h3 class="h3">2. DESCRIPTION OF ENGAGEMENT</h3>
+    <p>Customer has selected TeamStation AI to provide Nearshore IT Staff Augmentation Services. The engineer(s) working on this project will be prescreened and vetted by TeamStation AI, selected by Customer’s technical leadership, and fully integrated into Customer’s development team.</p>
+
+    <h3 class="h3">3. RESPONSIBILITIES</h3>
+    <h4>3.1 Responsibilities of TeamStation AI</h4>
+    <ul class="list-disc pl-5">
+        <li>Provide pre-screened, qualified, and experienced personnel.</li>
+        <li>Ensure Assigned Personnel attend all required meetings.</li>
+        <li>Maintain communication and documentation.</li>
+        <li>Facilitate onboarding of Assigned Personnel.</li>
+        <li>Support resource replacement in a timely manner.</li>
+    </ul>
+    <h4>3.2 Responsibilities of Customer</h4>
+    <ul class="list-disc pl-5">
+        <li>Provide sufficient remote access to project environments and tools.</li>
+        <li>Supply technical documentation and assets.</li>
+        <li>Ensure clear direction and project oversight.</li>
+        <li>Define and manage project scope and timelines.</li>
+        <li>Provide timely feedback on performance.</li>
+    </ul>
+
+    <h3 class="h3">4. RATES & PAYMENT TERMS</h3>
+    <p>The monthly rate for the Senior Full Stack .NET Developer is <strong>$6,920 USD</strong>. Invoices are issued on the 1st of each month with Net 30 payment terms.</p>
+
+    <h3 class="h3">6. TIME OFF & PAID TIME OFF (PTO)</h3>
+    <p>Assigned Personnel may take up to 15 days of paid time off (PTO) per year, subject to Customer’s prior written approval. The SOW also lists observed holidays, with the note that the Customer's holiday schedule takes precedence.</p>
+`;
+
 export default function TrustPage() {
   return (
     <main className="container">
@@ -123,27 +164,43 @@ export default function TrustPage() {
         <a href="/">Home</a> / Trust Center
       </div>
       <header className="my-8 text-center">
-        <h1 className="h1">Trust & Transparency: Our MSA, Explained</h1>
+        <h1 className="h1">The Trust Center: Our MSA & SOW, Explained</h1>
         <p className="lead max-w-3xl mx-auto">
-          We believe a strong partnership starts with clarity. Our Master Services Agreement (MSA) is designed to be fair, transparent, and easy to understand. Here’s a breakdown of the key sections, explained in plain English.
+          We believe a strong partnership starts with clarity. Our Master Services Agreement (MSA) and a sample Statement of Work (SOW) are designed to be fair, transparent, and easy to understand. Here’s a breakdown of the key sections, explained in plain English.
         </p>
       </header>
 
       <div className="max-w-3xl mx-auto">
-        {msaSections.map((section) => (
-          <div key={section.title} className="card mb-6">
-            <h2 className="h2 mt-0">{section.title}</h2>
-            <p className="lead text-base">{section.summary}</p>
-            <AccordionItem title="View Full Legal Text">
-              <div
-                className="prose prose-sm"
-                dangerouslySetInnerHTML={{ __html: section.content }}
-              />
-            </AccordionItem>
-          </div>
-        ))}
+        <div className='mb-12'>
+            <h2 className='text-2xl font-bold text-center mb-4'>Master Services Agreement (MSA)</h2>
+            {msaSections.map((section) => (
+            <div key={section.title} className="card mb-6">
+                <h2 className="h2 mt-0">{section.title}</h2>
+                <p className="lead text-base">{section.summary}</p>
+                <AccordionItem title="View Full Legal Text">
+                <div
+                    className="prose prose-sm"
+                    dangerouslySetInnerHTML={{ __html: section.content }}
+                />
+                </AccordionItem>
+            </div>
+            ))}
+        </div>
+        
+        <div>
+            <h2 className='text-2xl font-bold text-center mb-4'>Sample Statement of Work (SOW)</h2>
+            <div className="card">
+                <h2 className="h2 mt-0">SOW-001: Sample Engagement</h2>
+                <p className="lead text-base">This is a real-world example of an SOW for a Senior Full Stack .NET Developer, showing how we define roles, responsibilities, and rates for a specific engagement.</p>
+                <AccordionItem title="View SOW Details">
+                    <div
+                        className="prose prose-sm"
+                        dangerouslySetInnerHTML={{ __html: sowContent }}
+                    />
+                </AccordionItem>
+            </div>
+        </div>
       </div>
     </main>
   );
 }
-
