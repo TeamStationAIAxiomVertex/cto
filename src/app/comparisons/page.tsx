@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Package, BrainCircuit, Network, Gauge } from 'lucide-react';
+import Tooltip from '@/components/Tooltip';
 
 const vendors = [
   { name: 'BairesDev', slug: 'bairesdev', claim: 'Markets "top 1%" engineers.' },
@@ -8,6 +9,7 @@ const vendors = [
   { name: 'Revelo', slug: 'revelo', claim: 'Marketplace + EOR services.' },
   { name: 'Toptal', slug: 'toptal', claim: 'Premium freelance network.' },
   { name: 'Andela', slug: 'andela', claim: 'Global talent cloud.' },
+  { name: 'Terminal', slug: 'terminal', claim: 'Remote team building.' },
 ];
 
 const takeaways = [
