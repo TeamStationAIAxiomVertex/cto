@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${poppins.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
-          <main className="min-h-screen">
+          <main className="min-h-screen pt-8">
             {children}
           </main>
           <Footer />
