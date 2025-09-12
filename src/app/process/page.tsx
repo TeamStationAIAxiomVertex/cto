@@ -94,7 +94,7 @@ export default function ProcessPage() {
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
            Our streamlined process means you can have an elite, fully-onboarded nearshore engineer integrated into your team in about two weeks.
         </p>
-        <Link href="/hire" className="cta-button mt-6">Book a Strategy Call</Link>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
     </main>
   );

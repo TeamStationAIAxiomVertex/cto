@@ -54,7 +54,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                     <p className="mt-2 text-sm text-muted-foreground">
                         Let TeamStation AI provide the talent, governance, and infrastructure you need to ship faster and more securely.
                     </p>
-                    <Link href="/hire" className="cta-button mt-6 text-sm">
+                    <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button mt-6 text-sm">
                         Book a Strategy Call
                     </Link>
                 </div>

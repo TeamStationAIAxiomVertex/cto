@@ -45,7 +45,7 @@ export default function IntegratedServicesPage() {
       icon: <Scale className="h-8 w-8 text-primary" />,
       title: "Cyber & E&O Insurance",
       description:
-        "All work is covered by comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, a level of protection most vendors don't offer.",
+        "All work is. All work is covered by comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, a level of protection most vendors don't offer.",
     },
   ];
 
@@ -86,7 +86,7 @@ export default function IntegratedServicesPage() {
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Stop managing vendors and start building your product. Let our integrated platform handle the operational complexity for you.
         </p>
-        <Link href="/hire" className="cta-button mt-6">Book a Strategy Call</Link>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
     </main>
   );

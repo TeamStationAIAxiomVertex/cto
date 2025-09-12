@@ -1,3 +1,4 @@
+
 import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 
@@ -81,7 +82,7 @@ export default function BuildVsBuyPage() {
        <div className="text-center rounded-lg bg-primary/10 p-8">
           <h2 className="text-2xl font-bold">Ready to Scale the Smart Way?</h2>
           <p className="mt-2 mx-auto max-w-xl text-muted-foreground">Let us handle the operations so you can focus on shipping product.</p>
-          <Link href="/hire" className="cta-button mt-6">
+          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
             Book a Strategy Call
           </Link>
       </div>
