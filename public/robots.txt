@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cto.teamstation.dev/sitemap.xml
