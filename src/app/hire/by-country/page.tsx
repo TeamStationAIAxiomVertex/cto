@@ -52,8 +52,8 @@ export default function HireByCountryPage() {
             <div key={country.slug} className="group relative block rounded-lg border bg-card p-6 transition-all hover:shadow-2xl hover:shadow-primary/10">
                 <h3 className="text-xl font-bold transition-colors group-hover:text-primary">{country.name}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{country.cities}</p>
-                <Link href="#" className="mt-4 flex items-center text-sm font-semibold text-primary stretched-link">
-                    Explore Talent <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <Link href={`/hire/by-country/${country.slug}`} className="mt-4 flex items-center text-sm font-semibold text-primary stretched-link">
+                    Explore Talent in {country.name} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
             </div>
             ))}
