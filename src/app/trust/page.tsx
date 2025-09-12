@@ -4,8 +4,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Trust Center | Secure & Compliant Nearshore IT Staff Augmentation',
-  description: 'Security and compliance are the foundation of our nearshore platform. Learn about our SOC 2/ISO alignment, MDM, EOR, and Cyber Insurance for LATAM teams.',
+  title: 'Nearshore Compliance: GDPR, SSO, MDM & Device Control | Trust Center',
+  description: 'Security and compliance are the foundation of our nearshore platform. Learn about our nearshore compliance for GDPR, SSO, MDM & device control for LATAM teams.',
 };
 
 export default function TrustPage() {
@@ -23,7 +23,7 @@ export default function TrustPage() {
         {
             icon: <FileLock className="h-8 w-8 text-primary" />,
             title: 'Integrated EOR & Compliance',
-            description: 'We handle all Employer of Record complexities, ensuring compliance with local labor laws in every LATAM country.',
+            description: 'We handle all Employer of Record complexities, ensuring compliance with local labor laws (and frameworks like GDPR) in every LATAM country.',
         },
         {
             icon: <Scale className="h-8 w-8 text-primary" />,
@@ -40,7 +40,7 @@ export default function TrustPage() {
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Trust Center</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          Security and compliance are not features; they are the foundation of our platform. We provide an auditable, enterprise-ready environment for your nearshore team from day one.
+          Security and compliance are not features; they are the foundation of our platform. We provide an auditable, enterprise-ready environment for your nearshore team from day one, including SSO, MDM, and device control.
         </p>
       </header>
 
@@ -62,7 +62,7 @@ export default function TrustPage() {
         <ul className="list-none p-0 mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
             <li className="flex items-start gap-4">
                 <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>
-                <div><strong className="text-foreground">Device Management:</strong> Are devices corporate-owned and MDM-enrolled?</div>
+                <div><strong className="text-foreground">Device Management:</strong> Are devices corporate-owned and MDM-enrolled for full SSO, MDM, and device control?</div>
             </li>
             <li className="flex items-start gap-4">
                 <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>
@@ -70,7 +70,7 @@ export default function TrustPage() {
             </li>
             <li className="flex items-start gap-4">
                 <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>
-                <div><strong className="text-foreground">Compliance:</strong> Can they provide evidence of SOC 2 or ISO 27001 alignment?</div>
+                <div><strong className="text-foreground">Compliance:</strong> Can they provide evidence of SOC 2, ISO 27001, or nearshore compliance for GDPR?</div>
             </li>
             <li className="flex items-start gap-4">
                 <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>

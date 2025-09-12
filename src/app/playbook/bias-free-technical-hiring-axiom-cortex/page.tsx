@@ -2,6 +2,12 @@
 import { Tooltip } from '@/components/Tooltip';
 import { BrainCircuit, Scale, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Bias-Free Hiring & AI Technical Interviews | TeamStation AI',
+  description: 'A playbook for bias-free hiring using AI technical interviews. Replace resume-based gambling with a fair, accurate, and evidence-based system for hiring LATAM engineers.',
+};
 
 export default function BiasFreeHiringPage() {
   const principles = [
@@ -70,7 +76,7 @@ export default function BiasFreeHiringPage() {
         </p>
         <ol>
             <li><strong>Role Definition:</strong> We work with you to define the ideal cognitive and technical profile for the role. This becomes the non-negotiable benchmark for evaluation.</li>
-            <li><strong>Structured Interview:</strong> Candidates undergo a standardized technical interview designed to test specific competencies and cognitive traits under pressure.</li>
+            <li><strong>Structured Interview:</strong> Candidates undergo standardized AI technical interviews designed to test specific competencies and cognitive traits under pressure.</li>
             <li><strong>AI-Powered Analysis:</strong> The{' '}<Tooltip text="Axiom Cortex™ is TeamStation AI's proprietary Cognitive AI engine that uses 44 psychometric and NLP signals to evaluate engineering candidates.">Axiom Cortex™</Tooltip> engine analyzes the interview, scoring the candidate against the benchmark and identifying specific risks and strengths—with evidence.</li>
             <li><strong>Evidence-Based Decision:</strong> You get a detailed, auditable report with a cognitive fingerprint and an evidence locker. You make a data-driven decision, not a gut-feel guess.</li>
         </ol>

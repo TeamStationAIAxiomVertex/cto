@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { Header } from '@/components/Header';
@@ -12,8 +13,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'TeamStation AI | The CTO Playbook for Nearshore Engineering',
-  description: 'The definitive, research-backed hub for CTOs evaluating nearshore LATAM engineering, AI-driven hiring, and vendor choices.',
+  title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
+  description: 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.',
 };
 
 export default function RootLayout({

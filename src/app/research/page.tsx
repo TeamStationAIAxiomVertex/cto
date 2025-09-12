@@ -7,8 +7,8 @@ import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Research on Nearshore IT Staffing & AI-Powered Hiring | TeamStation AI',
-  description: 'Explore our peer-reviewed research on AI-powered talent evaluation, performance metrics for the AI era, and bias-free technical hiring for LATAM engineering teams.',
+  title: 'Research: AI Technical Interviews & Software Engineering Performance',
+  description: 'Explore our peer-reviewed research on AI technical interviews, software engineering performance telemetry, and bias-free hiring for LATAM engineering teams.',
 };
 
 export default async function ResearchPage() {

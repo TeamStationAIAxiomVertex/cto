@@ -2,6 +2,12 @@
 import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Globant Alternative: TeamStation AI vs. Globant for Staff Augmentation',
+  description: 'Looking for a Globant alternative for nearshore staff augmentation? Compare TeamStation AI\'s focused team-building platform with Globant\'s project outsourcing model.',
+};
 
 const comparisonData = [
     { feature: 'Purpose-built for Staff Augmentation', teamstation: true, competitor: false },
@@ -17,10 +23,10 @@ export default function GlobantComparisonPage() {
   return (
     <main className="container py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Globant</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Globant Alternative</span>
       </div>
       <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">TeamStation AI vs. Globant</h1>
+        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">Globant Alternative: TeamStation AI</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           A strategic breakdown for CTOs: TeamStation AI’s precision staff augmentation platform vs. Globant’s large-scale project delivery model.
         </p>
@@ -59,7 +65,7 @@ export default function GlobantComparisonPage() {
             Choosing between TeamStation AI and Globant is about selecting the right operational model. Globant is a massive, global systems integrator, a powerhouse for large-scale digital transformation projects. You hand them a problem, and their teams deliver a solution. It is not a staff augmentation platform.
         </p>
         <p>
-            TeamStation AI operates on a fundamentally different premise. We are your{' '}
+            As a Globant alternative, TeamStation AI operates on a fundamentally different premise. We are your{' '}
             <Tooltip text="An integrated platform for CTOs who need to ship faster without sacrificing security or quality. We provide the talent, governance, and infrastructure.">
                 Nearshore IT Co-Pilot™
             </Tooltip>. Our entire platform is purpose-built for staff augmentation, providing you with elite, mission-fit LATAM engineering talent that integrates directly into your existing teams.
@@ -80,7 +86,7 @@ export default function GlobantComparisonPage() {
       <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Conclusion: Choose the Right Tool for the Job</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
-            If you need to outsource an entire digital transformation initiative, Globant is a world-class choice. If your goal is to strategically build and scale your own high-performing nearshore engineering team via staff augmentation, TeamStation AI provides the more targeted, controllable, and precise platform.
+            If you need to outsource an entire digital transformation initiative, Globant is a world-class choice. If your goal is to strategically build and scale your own high-performing nearshore engineering team via staff augmentation, TeamStation AI is the superior Globant alternative.
         </p>
         <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
       </div>

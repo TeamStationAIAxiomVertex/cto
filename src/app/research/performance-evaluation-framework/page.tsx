@@ -5,7 +5,12 @@ import React from 'react';
 import Link from 'next/link';
 import { DisclosureDrawer } from '@/components/DisclosureDrawer';
 import { BookOpen } from 'lucide-react';
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Software Engineering Performance Telemetry | A Modern Framework',
+  description: 'Research proposing a novel, value-centric model for assessing engineer performance, moving beyond outdated metrics to software engineering performance telemetry.',
+};
 
 export default function PerformanceEvaluationFrameworkPage() {
   return (
@@ -15,7 +20,7 @@ export default function PerformanceEvaluationFrameworkPage() {
       </div>
       <header className="my-8 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-          Redefining Software Engineer Performance in the AI-Augmented Era
+          Software Engineering Performance Telemetry in the AI-Augmented Era
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
           A Value-Centric and Quality-Driven Framework for Evaluation via Intelligent Platform Orchestration

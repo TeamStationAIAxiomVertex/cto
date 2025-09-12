@@ -12,6 +12,13 @@ import {
   Lock,
 } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Nearshore vs. Offshore: A CTO\'s Guide to Total Cost & Risk',
+  description: 'A strategic framework for CTOs comparing nearshore vs offshore software development. Analyze TCO, communication latency, and security risks to make a data-driven decision.',
+};
+
 
 export default function NearshoreVsOffshorePage() {
   const failureModes = [
@@ -65,7 +72,7 @@ export default function NearshoreVsOffshorePage() {
       </div>
       
       <header className="my-8">
-        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Is Your Offshore Team a Strategic Asset or a Hidden Drain?</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Nearshore vs. Offshore: The Strategic Choice</h1>
         <p className="mt-4 text-lg text-muted-foreground">
            As a CTO, you're judged on outcomes, not hours billed. Let's move beyond "cost per hour" and use a framework to diagnose the true cost—and risk—of your global talent strategy.
         </p>

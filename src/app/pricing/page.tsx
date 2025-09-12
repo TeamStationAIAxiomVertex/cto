@@ -1,7 +1,6 @@
 
 import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
-import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

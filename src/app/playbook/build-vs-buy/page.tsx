@@ -1,6 +1,12 @@
 
 import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Build vs. Buy Software Team | Nearshore Staff Augmentation Framework',
+  description: 'A CTO\'s framework for the build vs. buy software team decision. See the true TCO of building a nearshore team vs. buying into an integrated staff augmentation platform.',
+};
 
 export default function BuildVsBuyPage() {
   return (
@@ -9,7 +15,7 @@ export default function BuildVsBuyPage() {
         <Link href="/">Home</Link> / <Link href="/playbook">CTO Playbook</Link> / <span>Build vs. Buy</span>
       </div>
        <header className="my-8">
-        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Build vs. Buy: A Framework for Scaling Your Team</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Build vs. Buy: A Framework for Scaling Your Software Team</h1>
         <p className="mt-4 text-lg text-muted-foreground">
           Should you build a nearshore operation from scratch or "buy" into an integrated platform? This playbook models the trade-offs in terms of cost, speed, and risk.
         </p>

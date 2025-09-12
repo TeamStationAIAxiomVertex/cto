@@ -2,6 +2,12 @@
 import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Revelo Alternative: TeamStation AI vs. Revelo for LATAM Developers',
+  description: 'Searching for a Revelo alternative? See how TeamStation AI\'s integrated platform for hiring developers in Latin America compares to Revelo\'s marketplace model.',
+};
 
 const comparisonData = [
     { feature: 'Fully Integrated Platform (Devices, MDM, Insurance)', teamstation: true, competitor: false },
@@ -17,12 +23,12 @@ export default function ReveloComparisonPage() {
   return (
     <main className="container py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Revelo</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Revelo Alternative</span>
       </div>
       <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">TeamStation AI vs. Revelo</h1>
+        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">Revelo Alternative: TeamStation AI</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          A comparison between TeamStation AI’s fully integrated platform and Revelo’s marketplace-plus-EOR model.
+          A comparison between TeamStation AI’s fully integrated platform and Revelo’s marketplace-plus-EOR model for hiring developers in Latin America.
         </p>
       </header>
 
@@ -63,7 +69,7 @@ export default function ReveloComparisonPage() {
         </p>
         <h3>The Security and Velocity Gap</h3>
         <p>
-            For any CTO, security is non-negotiable. The lack of integrated device management is a critical vulnerability. TeamStation AI addresses this head-on by providing MDM-managed laptops to all engineers, ensuring an audit-ready security posture from day one. Furthermore, our <Link href="/process">process</Link> delivers a faster time-to-offer (≈9 days) and our{' '}
+            For any CTO, security is non-negotiable. The lack of integrated device management is a critical vulnerability. As a Revelo alternative, TeamStation AI addresses this head-on by providing MDM-managed laptops to all engineers, ensuring an audit-ready security posture from day one. Furthermore, our <Link href="/process">process</Link> delivers a faster time-to-offer (≈9 days) and our{' '}
             <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>
             {' '} vetting engine provides a deeper, scientifically-grounded assessment of talent, reducing mis-hire risk.
         </p>
@@ -72,7 +78,7 @@ export default function ReveloComparisonPage() {
       <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Conclusion</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
-            Revelo is an excellent choice for companies that primarily need to solve sourcing and payroll. However, for CTOs who require a comprehensive solution that includes deep vetting, faster hiring, and end-to-end operational security, TeamStation AI's fully integrated platform provides a more complete and secure offering.
+            Revelo is an excellent choice for companies that primarily need to solve sourcing and payroll. However, for CTOs who require a comprehensive solution that includes deep vetting, faster hiring, and end-to-end operational security, TeamStation AI is the superior Revelo alternative.
         </p>
         <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
       </div>

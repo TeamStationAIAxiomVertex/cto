@@ -4,8 +4,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About TeamStation AI | Our Mission for Nearshore Engineering',
-  description: 'Learn about TeamStation AI\'s mission to provide the most efficient, secure, and scientifically-grounded platform for building elite nearshore LATAM engineering teams.',
+  title: 'About TeamStation AI | Nearshore Software Development with LATAM Teams',
+  description: 'Learn about TeamStation AI\'s mission to provide an integrated platform for building elite nearshore software development teams in Latin America. We are the top Bairesdev alternative.',
 };
 
 export default function AboutPage() {

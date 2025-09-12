@@ -2,6 +2,12 @@
 import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Unosquare Alternative: TeamStation AI vs. Unosquare',
+  description: 'Looking for an Unosquare alternative? Compare TeamStation AI\'s integrated nearshore platform with Unosquare\'s traditional staff augmentation and consulting.',
+};
 
 const comparisonData = [
     { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
@@ -17,10 +23,10 @@ export default function UnosquareComparisonPage() {
   return (
     <main className="container py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Unosquare</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Unosquare Alternative</span>
       </div>
       <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">TeamStation AI vs. Unosquare</h1>
+        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">Unosquare Alternative: TeamStation AI</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           A comparison between TeamStation AI’s integrated team-building platform and Unosquare’s traditional staff augmentation and consulting services.
         </p>
@@ -63,7 +69,7 @@ export default function UnosquareComparisonPage() {
         </p>
         <h3>Talent Pool, Vetting, and Risk</h3>
         <p>
-            While Unosquare offers significant capacity, their vetting process is traditional, leaving the client exposed to mis-hire risk. TeamStation AI's Nebula™ search taps into a much larger graph of over 2.6 million LATAM profiles, and our{' '}
+            While Unosquare offers significant capacity, their vetting process is traditional, leaving the client exposed to mis-hire risk. As a strong Unosquare alternative, TeamStation AI's Nebula™ search taps into a much larger graph of over 2.6 million LATAM profiles, and our{' '}
             <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>
             {' '}engine provides a deep, scientific analysis of a candidate's cognitive abilities. This, combined with our all-inclusive operational wrapper, significantly reduces your Total Cost of Ownership (TCO) and operational risk.
         </p>
@@ -72,7 +78,7 @@ export default function UnosquareComparisonPage() {
       <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Conclusion</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
-            If you are looking to outsource a software project or need to quickly add developers to your team without an integrated operational wrapper, Unosquare is a proven partner. If your goal is to build a long-term, scalable, and secure nearshore engineering team that you directly manage, with all the operational complexities handled for you, TeamStation AI's platform model is the superior choice.
+            If you are looking to outsource a software project or need to quickly add developers to your team without an integrated operational wrapper, Unosquare is a proven partner. If your goal is to build a long-term, scalable, and secure nearshore engineering team that you directly manage, with all the operational complexities handled for you, TeamStation AI's platform model is the superior Unosquare alternative.
         </p>
         <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
       </div>

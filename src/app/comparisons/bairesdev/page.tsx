@@ -2,6 +2,12 @@
 import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'BairesDev Alternative: TeamStation AI vs. BairesDev',
+  description: 'An objective comparison for CTOs looking for a BairesDev alternative. Compare TeamStation AI\'s integrated platform and AI vetting with BairesDev\'s traditional staff augmentation.',
+};
 
 const comparisonData = [
     { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
@@ -15,12 +21,12 @@ export default function BairesDevComparisonPage() {
   return (
     <main className="container py-12">
        <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>BairesDev</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>BairesDev Alternative</span>
       </div>
       <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">TeamStation AI vs. BairesDev</h1>
+        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">BairesDev Alternative: TeamStation AI</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          An objective comparison between TeamStation AI's integrated, science-driven platform and BairesDev's traditional staff augmentation model.
+          An objective comparison between TeamStation AI's integrated, science-driven platform and BairesDev's traditional nearshore staff augmentation model.
         </p>
       </header>
 
@@ -54,7 +60,7 @@ export default function BairesDevComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: The Co-Pilot vs. The "Top 1%" Vendor</h2>
         <p>
-            BairesDev markets heavily on hiring the "top 1%" of talent from a pool of 1.5 million applicants. While this signals a large recruiting operation, their model is traditional staff augmentation. They find and place engineers, but the client is left to manage compliance, device security, and the associated risks. TeamStation AI provides a complete, science-driven system for hiring, running, and securing your nearshore team under a single, predictable contract.
+            BairesDev markets heavily on hiring the "top 1%" of talent. While this signals a large recruiting operation, their model is traditional staff augmentation. They find and place engineers, but the client is left to manage compliance, device security, and the associated risks. As a Bairesdev alternative, TeamStation AI provides a complete, science-driven system for hiring, running, and securing your nearshore team under a single, predictable contract.
         </p>
         <h3>Vetting: Cognitive Science vs. Resume Screening</h3>
         <p>
@@ -67,7 +73,7 @@ export default function BairesDevComparisonPage() {
       </div>
 
       <div className="text-center rounded-lg bg-primary/10 p-8">
-        <h2 className="text-2xl font-bold">Conclusion</h2>
+        <h2 className="text-2xl font-bold">Conclusion: Why Choose TeamStation AI as a BairesDev Alternative</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             For leaders who prioritize operational excellence, governance, and a deeper, more accurate understanding of talent, TeamStation's integrated platform model represents a clear evolution over traditional staff augmentation. We reduce mis-hire risk and provide a lower, more predictable TCO.
         </p>
