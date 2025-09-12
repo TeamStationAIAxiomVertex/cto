@@ -157,6 +157,11 @@ a:hover {
   margin: 1rem 0 .5rem;
   color: var(--text);
 }
+.h4 {
+  font-size: 1rem;
+  margin: 1rem 0 .5rem;
+  color: var(--text);
+}
 
 .lead {
   color: var(--mute);
@@ -241,6 +246,14 @@ a:hover {
   line-height: 1.7;
 }
 
+.prose p, .prose li {
+  color: var(--mute);
+}
+.prose ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
 .prose p {
   margin-bottom: 1rem;
 }
@@ -296,4 +309,36 @@ a:hover {
   width: 32px;
   height: 32px;
   color: var(--accent);
+}
+
+.accordion-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  background-color: var(--surface1);
+}
+
+.accordion-button {
+  width: 100%;
+  padding: 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion-button:hover {
+    background-color: var(--surface2);
+}
+
+.accordion-content {
+  padding: 0 16px 16px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
