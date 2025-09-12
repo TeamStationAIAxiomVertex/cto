@@ -8,7 +8,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 const poppins = Poppins({ subsets: ['latin'], weight: ['400', '600', '700'], variable: '--font-poppins' });
 
 export const metadata: Metadata = {
-  title: 'The CTO Playbook for Nearshore Engineering',
+  title: 'TeamStation AI | The CTO Playbook for Nearshore Engineering',
   description: 'The definitive, research-backed hub for CTOs evaluating nearshore LATAM engineering, AI-driven hiring, and vendor choices.',
 };
 
@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${poppins.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
-          <main className="container mx-auto max-w-6xl px-6 py-8">
+          <main className="min-h-screen">
             {children}
           </main>
           <Footer />

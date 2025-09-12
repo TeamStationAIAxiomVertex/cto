@@ -1,4 +1,4 @@
-import { Search, Rocket, Handshake, BrainCircuit, GanttChartSquare, ShieldCheck, FileSearch, UserCheck } from 'lucide-react';
+import { Search, BrainCircuit, Handshake, Rocket, ShieldCheck, UserCheck, FileSearch, GanttChartSquare } from 'lucide-react';
 
 export default function ProcessPage() {
     const steps = [
@@ -6,67 +6,48 @@ export default function ProcessPage() {
             icon: <Search className="icon" />,
             title: '1. Discovery & Alignment',
             duration: '1-2 Days',
-            description: 'We meet with you to understand your technical needs, team culture, and the ideal cognitive profile for your role. This defines the benchmark for our search.',
+            description: 'We meet with you to understand your technical needs, team culture, and the ideal cognitive profile for your role.',
         },
         {
             icon: <BrainCircuit className="icon" />,
             title: '2. AI-Powered Sourcing & Vetting',
             duration: '3-5 Days',
-            description: 'Our Nebula Neural Search™ identifies top candidates from our 2.6M+ talent graph. Axiom Cortex™ then conducts deep, unbiased evaluations to create a shortlist of 2-3 elite, pre-vetted engineers.',
+            description: 'Our Nebula Neural Search™ identifies top candidates from our 2.6M+ talent graph. Axiom Cortex™ then creates a shortlist of 2-3 elite, pre-vetted engineers.',
         },
          {
             icon: <Handshake className="icon" />,
             title: '3. Final Interviews & Selection',
             duration: '1-2 Days',
-            description: 'You interview the curated shortlist. Since the heavy lifting of technical and cognitive vetting is done, you can focus on culture fit and team dynamics. You make the final hiring decision.',
+            description: 'You interview the curated shortlist and make the final hiring decision. We handle the rest.',
         },
         {
             icon: <Rocket className="icon" />,
             title: '4. Secure Onboarding & Launch',
             duration: '≤ 10 Days',
-            description: 'We handle all contracts, compliance, and secure device provisioning. Our evidence-backed onboarding process ensures your new team member is secure, compliant, and ready to contribute from day one.',
+            description: 'We handle all contracts, compliance, and secure device provisioning. Your new hire is ready to contribute from day one.',
         },
     ];
 
     const securityPillars = [
-        {
-            icon: <FileSearch className="icon"/>,
-            title: 'EOR & Country Compliance',
-            description: 'Contracts, payroll, statutory benefits (incl. 13th-month where applicable), PTO, taxes—fully compliant per country.',
-        },
-        {
-            icon: <ShieldCheck className="icon"/>,
-            title: 'Device Security & MDM',
-            description: 'Encrypted endpoints, provisioning & shipping, auto-patching, 24/7 monitoring, remote lock/wipe.',
-        },
-        {
-            icon: <GanttChartSquare className="icon"/>,
-            title: 'Insurance & IP Protection',
-            description: 'Cyber/E&O coverage, NDAs & DPAs, work-for-hire IP assignment, U.S.-enforceable agreements.',
-        },
-        {
-            icon: <UserCheck className="icon"/>,
-            title: 'Background & Identity Checks',
-            description: 'KYC, criminal record, employment & education verification, optional credit & reference checks.',
-        }
-    ]
+        { icon: <FileSearch className="icon"/>, title: 'EOR & Country Compliance' },
+        { icon: <ShieldCheck className="icon"/>, title: 'Device Security & MDM' },
+        { icon: <GanttChartSquare className="icon"/>, title: 'Insurance & IP Protection' },
+        { icon: <UserCheck className="icon"/>, title: 'Background & Identity Checks' }
+    ];
 
   return (
-    <main className="container">
-      <div className="breadcrumb">
-        <a href="/">Home</a> / Process
-      </div>
-      <header className="text-center my-8">
-        <h1 className="h1">How We Deliver Day-One-Ready LATAM Engineers</h1>
+    <div className="container mx-auto max-w-7xl px-6 py-12">
+      <header className="text-center mb-12">
+        <h1 className="h1">Our Process: From Mandate to Mission-Ready</h1>
         <p className="lead max-w-3xl mx-auto">
-          A clear, measurable process under one SLA—from role calibration to devices, access, and first pull request. One accountable workflow for hiring, EOR/payroll, compliance, and device management.
+          One accountable workflow for hiring, EOR/payroll, compliance, and device management under a single, measurable SLA.
         </p>
          <div className="text-accent-custom my-6 font-semibold">
-            Time-to-Offer ≈ 9 days • Day-1 tool readiness ≥ 95% • First PR in 7–14 days
+            Time-to-Offer ≈ 9 days • Day-1 Tool Readiness ≥ 95% • First PR in 7–14 days
           </div>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 my-12 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 my-12 gap-8 max-w-5xl mx-auto">
         {steps.map((step) => (
           <div className="icon-card" key={step.title}>
             {step.icon}
@@ -81,57 +62,28 @@ export default function ProcessPage() {
         ))}
       </div>
 
-       <div className="section my-12">
-        <h2 className="h2 text-center mt-0">Security, Compliance & Liability — Under One SLA</h2>
-        <p className='lead text-center' style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
-            We carry the risk so you can keep the velocity. Our integrated platform handles the complex operational burdens of nearshore hiring, ensuring a secure and compliant process from end to end.
+       <div className="section my-16 text-center">
+        <h2 className="h2 mt-0">Security & Compliance Under One SLA</h2>
+        <p className='lead mx-auto max-w-3xl'>
+            We carry the risk so you can keep the velocity. Our integrated platform handles the complex operational burdens of nearshore hiring.
         </p>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6 gap-6'>
+        <div className='grid grid-cols-2 md:grid-cols-4 mt-8 gap-6 max-w-4xl mx-auto'>
             {securityPillars.map(pillar => (
-                 <div className="icon-card !flex-col text-center items-center" key={pillar.title}>
+                 <div className="icon-card !flex-col text-center items-center p-6" key={pillar.title}>
                     {pillar.icon}
-                    <div>
-                        <h3 className="h3 mt-2 mb-1 text-base">{pillar.title}</h3>
-                        <p className="text-sm text-mute m-0">{pillar.description}</p>
-                    </div>
+                    <h3 className="h3 mt-2 mb-1 text-base">{pillar.title}</h3>
                 </div>
             ))}
         </div>
       </div>
 
-
-      <div className="prose mx-auto my-12">
-        <h2 className="h2 text-center">A Process Built on Published SLAs</h2>
-        <p className='text-center text-mute'>
-            We believe in accountability. That's why we publish our delivery metrics. This isn't just a process; it's a performance-driven system designed to give you a competitive advantage.
-        </p>
-        <ul className='grid grid-cols-2 md:grid-cols-4 text-center list-none p-0 mt-6 gap-4'>
-            <li>
-                <div className='text-3xl font-bold text-accent-custom'>≈ 9 days</div>
-                <div className='text-sm text-mute'>Time-to-Offer</div>
-            </li>
-             <li>
-                <div className='text-3xl font-bold text-accent-custom'>≤ 5 days</div>
-                <div className='text-sm text-mute'>Device Procurement</div>
-            </li>
-             <li>
-                <div className='text-3xl font-bold text-accent-custom'>≥ 99%</div>
-                <div className='text-sm text-mute'>MDM Enrollment</div>
-            </li>
-             <li>
-                <div className='text-3xl font-bold text-accent-custom'>≥ 96%</div>
-                <div className='text-sm text-mute'>90-Day Retention</div>
-            </li>
-        </ul>
-      </div>
-
       <div className="section text-center">
         <h2 className="h2 mt-0">Ready to Start Building?</h2>
-        <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
+        <p className="lead max-w-3xl mx-auto">
            Our streamlined process means you can have an elite, fully-onboarded nearshore engineer integrated into your team in about two weeks.
         </p>
-        <a href="/hire" className="cta">Book a Strategy Call</a>
+        <a href="/hire" className="cta mt-6">Book a Strategy Call</a>
       </div>
-    </main>
+    </div>
   );
 }

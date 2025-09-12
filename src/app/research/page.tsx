@@ -1,3 +1,4 @@
+
 export default function ResearchPage() {
   const papers = [
     {
@@ -8,36 +9,27 @@ export default function ResearchPage() {
     {
       title: 'Redefining Software Engineer Performance in the AI-Augmented Era',
       description: 'Proposing a novel, value-centric, and quality-driven model for assessing software engineer performance, moving beyond outdated metrics.',
-      href: '/research/performance-evaluation-framework',
-    },
-    {
-      title: 'Technical Talent Evaluation System',
-      description: 'A real-world example of the Axiom Cortex™ evaluation process, showcasing how we identify elite engineering talent beyond the resume with a real candidate report.',
-      href: '/research/technical-talent-evaluation-system',
+      href: '#', // Placeholder
     },
   ];
 
   return (
-    <main className="container">
-      <div className="breadcrumb">
-        <a href="/">Home</a> / Research
-      </div>
-      <h1 className="h1">Our Research: The Science of High-Performance Teams</h1>
-      <p className="lead">
-        We are not just a service provider; we are a research-driven organization committed to advancing the science of talent evaluation and team performance. Our work is grounded in data, cognitive science, and a deep understanding of the modern software development lifecycle.
-      </p>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{marginTop: '24px'}}>
+    <div className="container mx-auto max-w-7xl px-6 py-12">
+      <header className="text-center mb-12">
+        <h1 className="h1">Our Research</h1>
+        <p className="lead max-w-3xl mx-auto">
+        We are a research-driven organization committed to advancing the science of talent evaluation and team performance. Our work is grounded in data, cognitive science, and a deep understanding of the modern software development lifecycle.
+        </p>
+      </header>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {papers.map((paper) => (
-          <div key={paper.href} className="card">
-            <h2 className="h2 mt-0 text-2xl">{paper.title}</h2>
-            <p className="lead" style={{fontSize: '1rem'}}>
-              {paper.description}
-            </p>
-            <a href={paper.href} className="font-semibold text-accent-custom">Read the Research →</a>
-          </div>
+          <a key={paper.href} href={paper.href} className="card block p-6 hover:bg-surface-2 transition-colors">
+            <h2 className="text-xl font-semibold">{paper.title}</h2>
+            <p className="text-mute mt-2 text-sm">{paper.description}</p>
+             <div className="mt-4 text-sm font-semibold text-accent-custom">Read Research →</div>
+          </a>
         ))}
       </div>
-    </main>
+    </div>
   );
 }

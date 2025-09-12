@@ -5,6 +5,17 @@ import { useTheme } from "next-themes"
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme()
+
+  // Wait until mounted to avoid hydration mismatch
+  const [mounted, setMounted] = React.useState(false)
+  React.useEffect(() => setMounted(true), [])
+
+  if (!mounted) {
+    return (
+      <div className="inline-flex items-center justify-center w-10 h-10 rounded-md border border-line bg-transparent"></div>
+    );
+  }
+
   return (
     <button
       className="inline-flex items-center justify-center w-10 h-10 rounded-md border border-line bg-transparent"
