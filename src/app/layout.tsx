@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <head>
         <ThemeScript />
       </head>
@@ -30,14 +30,12 @@ export default function RootLayout({
               TeamStation AI
             </a>
             <nav className="nav">
-              <a href="/playbook/">CTO Playbook</a>
-              <a href="/research/">Research</a>
-              <a href="/comparisons/">Comparisons</a>
-              <a href="/case-studies/">Case Studies</a>
-              <a href="/hire/">Hire</a>
+              <a href="/latam-talent/">LATAM Talent</a>
+              <a href="/nearshore-integrated-services/">Services</a>
               <a href="/pricing/">Pricing</a>
-              <a href="/trust/">Trust</a>
-              <a href="/about/">About</a>
+              <a href="/process/">Process</a>
+              <a href="/case-studies/">Case Studies</a>
+              <a href="/technical-interview-evaluation/">Evaluations</a>
             </nav>
             <button className="btn" data-theme-toggle>
               Theme
@@ -57,23 +55,21 @@ export default function RootLayout({
               </div>
             </div>
             <div className="footer-links">
-              <h4>Playbook</h4>
-              <a href="/playbook/nearshore-vs-offshore/">Nearshore vs Offshore</a>
-              <a href="/playbook/bias-free-technical-hiring-axiom-cortex/">Bias-Free Hiring</a>
-              <a href="/playbook/latam-economics/">LATAM Economics</a>
-              <a href="/playbook/security-compliance/">Security & Compliance</a>
+              <h4>Services</h4>
+              <a href="/nearshore-integrated-services/">Integrated Services</a>
+              <a href="/nearshore-it-talent-onboarding/">Onboarding</a>
+              <a href="/technical-interview-evaluation/">Talent Evaluations</a>
             </div>
             <div className="footer-links">
-              <h4>Content</h4>
+              <h4>Resources</h4>
               <a href="/case-studies/">Case Studies</a>
-              <a href="/research/">Research</a>
-              <a href="/comparisons/">Comparisons</a>
+              <a href="/playbook/nearshore-vs-offshore/">Nearshore vs Offshore</a>
+              <a href="/research/technical-talent-evaluation-system/">Research</a>
             </div>
             <div className="footer-links">
               <h4>Company</h4>
               <a href="/about/">About</a>
-              <a href="/trust/">Trust</a>
-              <a href="/hire/">Hire</a>
+              <a href="/process/">Process</a>
               <a href="/pricing/">Pricing</a>
             </div>
           </div>
