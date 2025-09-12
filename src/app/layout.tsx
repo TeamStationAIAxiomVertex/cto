@@ -32,8 +32,8 @@ export default function RootLayout({
             </a>
             <nav className="nav">
               <a href="/playbook/">CTO Playbook</a>
-              <a href="/research/technical-talent-evaluation-system/">Research</a>
-              <a href="/playbook/nearshore-vs-offshore/">Comparisons</a>
+              <a href="/research/">Research</a>
+              <a href="/comparisons/">Comparisons</a>
               <a href="/case-studies/">Case Studies</a>
               <a href="/hire/">Hire</a>
               <a href="/pricing/">Pricing</a>
