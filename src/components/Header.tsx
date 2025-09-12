@@ -1,4 +1,3 @@
-
 'use client';
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -7,7 +6,7 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 const navItems = {
-  'Playbook': [
+  'CTO Playbook': [
     { href: '/playbook/nearshore-vs-offshore', title: 'Nearshore vs. Offshore', description: 'Diagnose the true cost of your global talent strategy.' },
     { href: '/playbook/latam-economics', title: 'LATAM Economics', description: 'A CFO-ready framework for modeling nearshore TCO.' },
     { href: '/playbook/build-vs-buy', title: 'Build vs. Buy', description: 'The trade-offs of building a nearshore operation from scratch.' },
@@ -16,9 +15,9 @@ const navItems = {
   ],
   'Services': [
     { href: '/process', title: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
-    { href: '/research/technical-talent-evaluation-system', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
-    { href: '/services/nearshore-it-talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
-    { href: '/services/nearshore-integrated-services', title: 'Integrated Services', description: 'A single SLA for your entire nearshore operation.' },
+    { href: '/technical-interview-evaluation', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
+    { href: '/nearshore-it-talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
+    { href: '/nearshore-integrated-services', title: 'Integrated Services', description: 'A single SLA for your entire nearshore operation.' },
   ],
   'Comparisons': [
       { href: '/comparisons', title: 'All Comparisons', description: 'A comparative analysis of features, cost, and risk.' },
