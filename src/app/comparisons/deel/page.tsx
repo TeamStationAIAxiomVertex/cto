@@ -79,8 +79,7 @@ export default function DeelComparisonPage() {
         <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
             Choosing between TeamStation AI and Deel is not an either/or decision. They are different tools for different jobs. If you need to find and run an elite nearshore team with full operational support, TeamStation AI is your solution. If you simply need a way to pay an international team you've already sourced, Deel is the industry leader.
         </p>
-        <Link href="/comparisons" className="cta">Back to Main Comparison</Link>
-      </div>
+        <Link href="/comparisons" className="cta">Back to Main Comparison</Link>      </div>
     </main>
   );
 }

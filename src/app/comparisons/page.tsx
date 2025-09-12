@@ -5,11 +5,13 @@ import Tooltip from '@/components/Tooltip';
 const vendors = [
   { name: 'BairesDev', slug: 'bairesdev', claim: 'Markets "top 1%" engineers.' },
   { name: 'Globant', slug: 'globant', claim: 'Global SI for large-scale projects.' },
-  { name: 'TECLA', slug: 'tecla', claim: 'LATAM talent marketplace.' },
-  { name: 'Revelo', slug: 'revelo', claim: 'Marketplace + EOR services.' },
-  { name: 'Toptal', slug: 'toptal', claim: 'Premium freelance network.' },
   { name: 'Andela', slug: 'andela', claim: 'Global talent cloud.' },
+  { name: 'Toptal', slug: 'toptal', claim: 'Premium freelance network.' },
   { name: 'Terminal', slug: 'terminal', claim: 'Remote team building.' },
+  { name: 'Deel', slug: 'deel', claim: 'Global HR & Payroll Platform.' },
+  { name: 'Nearsure', slug: 'nearsure', claim: 'Traditional Staff Augmentation.' },
+  { name: 'ParallelStaff', slug: 'parallelstaff', claim: 'Talent-as-a-Service (TaaS).' },
+  { name: 'Unosquare', slug: 'unosquare', claim: 'Staff Augmentation & Consulting.' },
 ];
 
 const takeaways = [

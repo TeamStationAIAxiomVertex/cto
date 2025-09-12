@@ -29,6 +29,7 @@ export function Footer() {
     { href: '/comparisons/andela', label: 'vs. Andela' },
     { href: '/comparisons/globant', label: 'vs. Globant' },
     { href: '/comparisons/bairesdev', label: 'vs. BairesDev' },
+    { href: '/comparisons/deel', label: 'vs. Deel' },
   ];
 
   return (
