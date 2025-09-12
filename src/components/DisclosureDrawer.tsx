@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useRef, useEffect, type ReactNode } from "react";
@@ -38,7 +39,7 @@ export const DisclosureDrawer = ({ title, children }: DisclosureDrawerProps) => 
         className="overflow-hidden transition-all duration-300 ease-in-out"
         style={{ maxHeight: "0px" }}
       >
-        <div className="pb-4">{children}</div>
+        <div className="pb-4 prose-sm dark:prose-invert max-w-none">{children}</div>
       </div>
     </div>
   );

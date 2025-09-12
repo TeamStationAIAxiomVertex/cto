@@ -40,7 +40,7 @@ export async function getResearchBySlug(slug: string): Promise<ResearchPaper | n
       href: `/research/${slug}`,
     } as ResearchPaper;
   } catch (error) {
-    console.error(`Error reading research paper ${slug}:`, error);
+    // console.error(`Error reading research paper ${slug}:`, error);
     return null;
   }
 }

@@ -1,3 +1,4 @@
+
 'use client'
 
 import {
@@ -203,7 +204,7 @@ export default function EvaluationPage() {
                 />
                 <Bar dataKey="candidate" name="Candidate" barSize={20} radius={[0, 8, 8, 0]}>
                     {cognitiveData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.candidate >= entry.ideal ? 'hsl(var(--primary))' : 'hsl(var(--yellow-400))'} />
+                        <Cell key={`cell-${index}`} fill={entry.candidate >= entry.ideal ? 'hsl(var(--primary))' : '#f59e0b'} />
                     ))}
                 </Bar>
                  <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="hsl(var(--accent))" radius={[0, 8, 8, 0]} />

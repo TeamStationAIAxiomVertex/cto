@@ -36,6 +36,7 @@ const navItems = {
 const simpleNavItems = [
     { href: '/case-studies', title: 'Case Studies' },
     { href: '/pricing', title: 'Pricing' },
+    { href: '/research', title: 'Research'},
     { href: '/trust', title: 'Trust Center' },
 ];
 
@@ -106,6 +107,7 @@ export function Header() {
                     {item.title}
                 </Link>
             ))}
+             <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_APPOINTMENT_SLOT_HERE" target="_blank" rel="noopener noreferrer" className="cta-button w-full mt-4">Book a Call</Link>
           </div>
         </div>
       )}

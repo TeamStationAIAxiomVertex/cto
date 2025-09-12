@@ -1,62 +1,63 @@
+
 import { BrainCircuit, FileText, ShieldCheck, Scale } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AxiomCortexReportPage() {
   const scientificPillars = [
     {
-        icon: <BrainCircuit className="icon" />,
+        icon: <BrainCircuit className="h-6 w-6 text-primary" />,
         title: 'Neuro-Psychometric Profiling',
         description: 'Utilizes a Latent Trait Inference Engine (LTIE) to quantify traits like Architectural Instinct and Problem-Solving Agility.'
     },
     {
-        icon: <FileText className="icon" />,
+        icon: <FileText className="h-6 w-6 text-primary" />,
         title: 'Advanced NLP Integration',
         description: 'Employs a suite of NLP techniques to analyze language patterns, thought organization, and conceptual understanding.'
     },
     {
-        icon: <ShieldCheck className="icon" />,
+        icon: <ShieldCheck className="h-6 w-6 text-primary" />,
         title: 'Bias Mitigation (Cortex Calibration Layer)',
         description: 'Applies algorithmic adjustments to raw scores to ensure the evaluation of pure technical and logical signals, not linguistic "noise."'
     },
     {
-        icon: <Scale className="icon" />,
+        icon: <Scale className="h-6 w-6 text-primary" />,
         title: 'Behavioral Answer Deconstruction',
         description: 'Deconstructs answers into core conceptual components, avoiding rigid frameworks like STAR to eliminate bias.'
     }
 ];
 
   return (
-    <div className="container mx-auto max-w-7xl px-6 py-12">
-      <div className="breadcrumb">
-        <Link href="/">Home</Link> / <Link href="/research">Research</Link> / AxiomCortex™ Report
+    <main className="container max-w-4xl py-12">
+       <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/research" className="hover:text-foreground">Research</Link> / <span>AxiomCortex™ Report</span>
       </div>
       <header className="my-8 text-center">
-        <h1 className="h1">AxiomCortex™: Scientific R&D Report</h1>
-        <p className="lead max-w-3xl mx-auto">
-          A deep dive into the proprietary Cognitive AI engine that powers TeamStation AI's talent evaluation.
+        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">AxiomCortex™: Scientific R&D Report</h1>
+        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+          A deep dive into the proprietary Cognitive AI engine that powers TeamStation AI's talent evaluation, outlining its core scientific pillars and bias mitigation strategies.
         </p>
       </header>
 
-      <div className="section">
-        <h2 className="h2 mt-0 text-center">Key Scientific Pillars</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-8 max-w-5xl mx-auto">
+      <div className="my-16">
+        <h2 className="text-3xl font-bold text-center">Key Scientific Pillars</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-8">
             {scientificPillars.map(pillar => (
-                <div className="icon-card" key={pillar.title}>
+                <div className="flex items-start gap-4 rounded-lg border bg-card p-6" key={pillar.title}>
                     {pillar.icon}
                     <div>
-                        <h3 className="h3 mt-0 text-lg">{pillar.title}</h3>
-                        <p className="text-sm text-mute m-0">{pillar.description}</p>
+                        <h3 className="font-semibold text-foreground">{pillar.title}</h3>
+                        <p className="text-sm text-muted-foreground m-0">{pillar.description}</p>
                     </div>
                 </div>
             ))}
         </div>
       </div>
 
-       <div className="prose mx-auto my-16 text-center">
-        <h2 className="h2">Methodology</h2>
+       <div className="prose dark:prose-invert mx-auto my-16 text-center">
+        <h2>Methodology</h2>
          <p>The operational backbone of Axiom Cortex is its novel approach to executing complex NLP tasks: a <strong>Self-Governing, Self-Learning Phasic Micro-Chunking NLP-based Prompt Engineering</strong> technique. This methodology is designed for maximum accuracy, token efficiency, and minimal external dependencies, allowing the LLM itself to perform the core analytical heavy lifting.</p>
        </div>
 
-    </div>
+    </main>
   );
 }
