@@ -1,4 +1,4 @@
-import { DollarSign, UserCheck, TrendingUp, HelpCircle } from 'lucide-react';
+import { DollarSign, UserCheck, TrendingUp } from 'lucide-react';
 import Tooltip from '@/components/Tooltip';
 import Link from 'next/link';
 
@@ -25,7 +25,7 @@ export default function LatamEconomicsPage() {
     <main className="container">
       <div className="mx-auto max-w-5xl">
         <div className="breadcrumb">
-          <a href="/">Home</a> / <a href="/playbook">CTO Playbook</a> / LATAM Economics
+          <Link href="/">Home</Link> / <Link href="/playbook">CTO Playbook</Link> / LATAM Economics
         </div>
         <header className="text-center my-8">
           <h1 className="h1">LATAM Economics for CTOs: A CFO-Ready Framework</h1>
@@ -69,9 +69,10 @@ export default function LatamEconomicsPage() {
                 <tr>
                   <td>Senior Engineer Salary (Mexico)</td>
                   <td className='text-center'>~$85,000</td>
-                  <td className='text-center font-semibold' rowSpan={7}>
+                  <td className='text-center font-semibold text-accent-custom' rowSpan={7}>
                       All-inclusive in one rate<br/>
-                      (e.g., L3 Senior @ $83,040/yr)
+                      (e.g., L3 Senior @ $83,040/yr)<br/>
+                      <Link href="/pricing" className="text-sm font-normal underline hover:no-underline">See all pricing tiers</Link>
                   </td>
                 </tr>
                 <tr>
@@ -94,8 +95,8 @@ export default function LatamEconomicsPage() {
                   <td>Management & HR Overhead</td>
                   <td className='text-center text-warn-custom'>~$5,000</td>
                 </tr>
-                <tr className='border-t-2 border-line'>
-                  <td className='font-bold'>True TCO (Estimated)</td>
+                <tr className='border-t-2 border-line bg-surface-1'>
+                  <td className='font-bold text-text'>True TCO (Estimated)</td>
                   <td className='text-center font-bold text-2xl text-warn-custom'>~$139,500</td>
                   <td className='text-center font-bold text-2xl text-accent-custom'>~$83,040</td>
                 </tr>
