@@ -1,5 +1,5 @@
 import { DollarSign, UserCheck, TrendingUp } from 'lucide-react';
-import Tooltip from '@/components/Tooltip';
+import { Tooltip } from '@/components/Tooltip';
 import Link from 'next/link';
 
 export default function LatamEconomicsPage() {

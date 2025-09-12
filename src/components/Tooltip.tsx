@@ -5,7 +5,7 @@ type TooltipProps = {
   text: string;
 };
 
-export const Tooltip = ({ children, text }: TooltipProps) => {
+export function Tooltip({ children, text }: TooltipProps) {
   return (
     <span className="tooltip">
       {children}

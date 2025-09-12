@@ -1,4 +1,4 @@
-import Tooltip from '@/components/Tooltip';
+import { Tooltip } from '@/components/Tooltip';
 import { BrainCircuit, Scale, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 
