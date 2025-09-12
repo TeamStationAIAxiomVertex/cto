@@ -9,13 +9,13 @@ Relying on resumes is like navigating with an old, inaccurate map. They tell you
 
 ### The Solution: Three Pillars of Science-Based Hiring
 
-*   **Cognitive Science over Credentials:** [Axiom Cortex™](/research/axiom-cortex-scientific-report) analyzes 44 distinct psychometric and NLP signals to evaluate problem-solving, architectural instinct, and learning orientation—traits that resumes cannot capture.
-*   **Language Fairness Calibration:** Our system is designed to mitigate bias against non-native English speakers. It focuses on the logical and technical substance of an answer, not just linguistic fluency.
-*   **Structured, Auditable Evidence:** Every evaluation is based on a structured interview and work-sample tests. The entire process is recorded and analyzed, creating an auditable [evidence locker](/research/technical-talent-evaluation-system) for every candidate.
+*   Cognitive Science over Credentials: [Axiom Cortex™](/research/axiom-cortex-scientific-report) analyzes 44 distinct psychometric and NLP signals to evaluate problem-solving, architectural instinct, and learning orientation—traits that resumes cannot capture.
+*   Language Fairness Calibration: Our system is designed to mitigate bias against non-native English speakers. It focuses on the logical and technical substance of an answer, not just linguistic fluency.
+*   Structured, Auditable Evidence: Every evaluation is based on a structured interview and work-sample tests. The entire process is recorded and analyzed, creating an auditable [evidence locker](/research/technical-talent-evaluation-system) for every candidate.
 
 ### Putting It Into Practice: The Axiom Cortex™ Workflow
 
-1.  **Role Definition:** We work with you to define the ideal cognitive and technical profile for the role.
-2.  **Structured Interview:** Candidates undergo a standardized technical interview designed to test specific competencies and cognitive traits.
-3.  **AI-Powered Analysis:** The Axiom Cortex™ engine analyzes the interview, scoring the candidate against the ideal profile.
-4.  **Evidence-Based Decision:** You receive a detailed report, including a cognitive fingerprint and an evidence locker, allowing you to make a data-driven decision.
+1.  Role Definition: We work with you to define the ideal cognitive and technical profile for the role.
+2.  Structured Interview: Candidates undergo a standardized technical interview designed to test specific competencies and cognitive traits.
+3.  AI-Powered Analysis: The Axiom Cortex™ engine analyzes the interview, scoring the candidate against the ideal profile.
+4.  Evidence-Based Decision: You receive a detailed report, including a cognitive fingerprint and an evidence locker, allowing you to make a data-driven decision.
