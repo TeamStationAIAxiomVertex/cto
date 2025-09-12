@@ -95,7 +95,18 @@ export default function ComparisonsPage() {
       <div className="section">
          <div className="prose mx-auto">
             <h2 className="h2 text-center mt-0">Why TeamStation AI Stands Alone</h2>
-            <p>The platform unifies hiring, employer-of-record (EOR)/payroll, compliance and benefits, device provisioning and MDM, offices & workspaces across 45+ hubs, cybersecurity and errors-and-omissions insurance, day-one onboarding and performance diagnostics under one SLA. Key delivery metrics are public: Time-to-Offer ≈ 9 days, device MTPD ≤ 5 days, MDM enrollment ≥ 99% in 24h; the talent graph covers 2.6M+ LATAM IT profiles with bias-aware cognitive evaluations; offices and on-demand workspaces are provisioned in ≤ 3 business days; and every engagement includes cybersecurity & E&O insurance.</p>
+            <p>The platform unifies every operational layer under one SLA, providing an end-to-end solution that traditional vendors cannot match. This includes:</p>
+            <ul>
+                <li><strong>Core Services:</strong> Employer-of-Record (EOR) payroll, compliance, and benefits management.</li>
+                <li><strong>Infrastructure:</strong> Secure device provisioning with MDM, plus access to 45+ office hubs.</li>
+                <li><strong>Governance:</strong> Day-one onboarding, performance diagnostics, and comprehensive cyber/E&O insurance.</li>
+            </ul>
+            <p>Key delivery metrics are public and transparent:</p>
+            <ul>
+                <li><strong>Speed:</strong> Time-to-Offer ≈ 9 days, device procurement ≤ 5 days, workspace access ≤ 3 days.</li>
+                <li><strong>Reliability:</strong> MDM enrollment ≥ 99% within 24 hours.</li>
+                <li><strong>Scale:</strong> A talent graph covering 2.6M+ LATAM IT profiles with bias-aware cognitive evaluations.</li>
+            </ul>
             <p>
                 <Tooltip text="Axiom Cortex™ is TeamStation AI's proprietary Cognitive AI engine that uses 44 psychometric and NLP signals to evaluate engineering candidates for traits like problem-solving, architectural instinct, and learning orientation.">
                     Axiom Cortex™
