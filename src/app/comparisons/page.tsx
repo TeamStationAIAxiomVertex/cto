@@ -36,7 +36,7 @@ const vendors = [
     riskLevel: 'high'
   },
   { 
-    name: 'TECLA', 
+    name: 'TECLA', _
     slug: 'tecla',
     basePricing: 'Per placement',
     additionalCosts: 'EOR, devices, insurance, offices',
@@ -57,7 +57,7 @@ const vendors = [
     basePricing: 'Not public (claims 30-50% savings)',
     additionalCosts: 'EOR, devices, insurance, offices',
     risk: 'Moderate: No integrated hardware or compliance.',
-    riskLevel: 'moderate'
+riskLevel: 'moderate'
   },
   { 
     name: 'Toptal', 

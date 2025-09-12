@@ -68,7 +68,7 @@ export default function UnosquareComparisonPage() {
                 Axiom Cortex™
             </Tooltip>
             {' '}engine provides a deep, scientific analysis of a candidate's cognitive abilities. This, combined with our all-inclusive operational wrapper, significantly reduces your Total Cost of Ownership (TCO) and operational risk.
-        </p>
+        p>
       </div>
 
       <div className="section text-center">
