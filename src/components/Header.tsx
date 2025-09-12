@@ -9,9 +9,13 @@ export function Header() {
         <Link href="/" className="font-bold text-lg">CTO Playbook</Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
           <Link href="/playbook" className="text-mute hover:text-text transition-colors">Playbook</Link>
+          <Link href="/comparisons" className="text-mute hover:text-text transition-colors">Comparisons</Link>
+          <Link href="/process" className="text-mute hover:text-text transition-colors">Process</Link>
+          <Link href="/pricing" className="text-mute hover:text-text transition-colors">Pricing</Link>
         </nav>
         <div className="flex items-center gap-4">
           <ThemeToggle />
+           <a href="/hire" className="cta-sm">Book a Call</a>
         </div>
       </div>
     </header>

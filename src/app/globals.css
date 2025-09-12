@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,4 +18,14 @@
 @layer base {
   body { @apply bg-bg text-text; font-family: var(--font-poppins); }
   .card { @apply bg-surface-1 rounded-lg border border-line; }
+  .h1 { @apply text-4xl md:text-5xl font-bold text-text leading-tight; }
+  .h2 { @apply text-2xl md:text-3xl font-bold text-text; }
+  .h3 { @apply text-xl font-semibold text-text; }
+  .lead { @apply text-lg text-mute; }
+  .cta { @apply inline-block bg-accent-custom text-bg font-bold py-3 px-6 rounded-lg hover:bg-accent-d-custom transition-colors; }
+  .cta-sm { @apply inline-block bg-accent-custom text-bg font-bold py-2 px-4 rounded-lg hover:bg-accent-d-custom transition-colors text-sm; }
+  .breadcrumb { @apply text-sm text-mute mb-4; }
+  .icon { @apply text-accent-custom; }
+  .icon-card { @apply bg-surface-1 rounded-lg border border-line p-6 flex items-start gap-4; }
+  .prose { @apply max-w-none; }
 }
