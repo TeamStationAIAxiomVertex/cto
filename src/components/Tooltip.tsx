@@ -7,10 +7,10 @@ type TooltipProps = {
 
 export function Tooltip({ children, text }: TooltipProps) {
   return (
-    <div className="tooltip inline-block">
+    <span className="tooltip inline-block">
       {children}
       <span className="tooltiptext">{text}</span>
-    </div>
+    </span>
   );
 };
 
