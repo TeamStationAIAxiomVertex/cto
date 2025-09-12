@@ -36,7 +36,7 @@ export const AccordionItem = ({ title, children }: AccordionItemProps) => {
         />
       </button>
       <div ref={contentRef} className="accordion-content">
-        {children}
+        <div className="p-4">{children}</div>
       </div>
     </div>
   );

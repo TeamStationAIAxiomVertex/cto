@@ -1,4 +1,4 @@
-import { Search, FileSearch, UserCheck, Rocket, Handshake, BrainCircuit, GanttChartSquare, ShieldCheck } from 'lucide-react';
+import { Search, Rocket, Handshake, BrainCircuit, GanttChartSquare, ShieldCheck, FileSearch, UserCheck } from 'lucide-react';
 
 export default function ProcessPage() {
     const steps = [
@@ -61,12 +61,12 @@ export default function ProcessPage() {
         <p className="lead max-w-3xl mx-auto">
           A clear, measurable process under one SLA—from role calibration to devices, access, and first pull request. One accountable workflow for hiring, EOR/payroll, compliance, and device management.
         </p>
-         <div className="text-accent my-6 font-semibold">
+         <div className="text-accent-custom my-6 font-semibold">
             Time-to-Offer ≈ 9 days • Day-1 tool readiness ≥ 95% • First PR in 7–14 days
           </div>
       </header>
 
-      <div className="grid grid-2 my-12 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 my-12 gap-8">
         {steps.map((step) => (
           <div className="icon-card" key={step.title}>
             {step.icon}
@@ -75,24 +75,24 @@ export default function ProcessPage() {
                  <h3 className="h3 mt-0">{step.title}</h3>
                  <span className="badge">{step.duration}</span>
               </div>
-              <p className="text-sm text-slate-400 m-0">{step.description}</p>
+              <p className="text-sm text-mute m-0">{step.description}</p>
             </div>
           </div>
         ))}
       </div>
 
-       <div className="section">
+       <div className="section my-12">
         <h2 className="h2 text-center mt-0">Security, Compliance & Liability — Under One SLA</h2>
         <p className='lead text-center' style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
             We carry the risk so you can keep the velocity. Our integrated platform handles the complex operational burdens of nearshore hiring, ensuring a secure and compliant process from end to end.
         </p>
-        <div className='grid grid-4 mt-6 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6 gap-6'>
             {securityPillars.map(pillar => (
                  <div className="icon-card !flex-col text-center items-center" key={pillar.title}>
                     {pillar.icon}
                     <div>
                         <h3 className="h3 mt-2 mb-1 text-base">{pillar.title}</h3>
-                        <p className="text-sm text-slate-400 m-0">{pillar.description}</p>
+                        <p className="text-sm text-mute m-0">{pillar.description}</p>
                     </div>
                 </div>
             ))}
@@ -102,25 +102,25 @@ export default function ProcessPage() {
 
       <div className="prose mx-auto my-12">
         <h2 className="h2 text-center">A Process Built on Published SLAs</h2>
-        <p className='text-center'>
+        <p className='text-center text-mute'>
             We believe in accountability. That's why we publish our delivery metrics. This isn't just a process; it's a performance-driven system designed to give you a competitive advantage.
         </p>
-        <ul className='grid grid-4 text-center list-none p-0 mt-6'>
+        <ul className='grid grid-cols-2 md:grid-cols-4 text-center list-none p-0 mt-6 gap-4'>
             <li>
-                <div className='text-3xl font-bold text-accent'>≈ 9 days</div>
-                <div className='text-sm text-slate-400'>Time-to-Offer</div>
+                <div className='text-3xl font-bold text-accent-custom'>≈ 9 days</div>
+                <div className='text-sm text-mute'>Time-to-Offer</div>
             </li>
              <li>
-                <div className='text-3xl font-bold text-accent'>≤ 5 days</div>
-                <div className='text-sm text-slate-400'>Device Procurement</div>
+                <div className='text-3xl font-bold text-accent-custom'>≤ 5 days</div>
+                <div className='text-sm text-mute'>Device Procurement</div>
             </li>
              <li>
-                <div className='text-3xl font-bold text-accent'>≥ 99%</div>
-                <div className='text-sm text-slate-400'>MDM Enrollment</div>
+                <div className='text-3xl font-bold text-accent-custom'>≥ 99%</div>
+                <div className='text-sm text-mute'>MDM Enrollment</div>
             </li>
              <li>
-                <div className='text-3xl font-bold text-accent'>≥ 96%</div>
-                <div className='text-sm text-slate-400'>90-Day Retention</div>
+                <div className='text-3xl font-bold text-accent-custom'>≥ 96%</div>
+                <div className='text-sm text-mute'>90-Day Retention</div>
             </li>
         </ul>
       </div>

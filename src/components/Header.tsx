@@ -12,6 +12,7 @@ export function Header() {
           <Link href="/comparisons" className="text-mute hover:text-text transition-colors">Comparisons</Link>
           <Link href="/process" className="text-mute hover:text-text transition-colors">Process</Link>
           <Link href="/pricing" className="text-mute hover:text-text transition-colors">Pricing</Link>
+          <Link href="/trust" className="text-mute hover:text-text transition-colors">Trust Center</Link>
         </nav>
         <div className="flex items-center gap-4">
           <ThemeToggle />

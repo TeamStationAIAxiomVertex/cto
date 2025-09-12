@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import Tooltip from '@/components/Tooltip';
 import { Layers, Gauge, Network, BrainCircuit, ShieldCheck, FileText, Scale, Package, Landmark } from 'lucide-react';
@@ -124,15 +123,17 @@ export default function ComparisonsPage() {
       </header>
 
       <div className="my-12">
-        <h2 className="h2 text-center">Key Takeaways: The TeamStation AI Difference</h2>
-         <div className="grid grid-2 mt-6 gap-6">
+        <h2 className="h2 text-center">Why TeamStation AI Stands Alone</h2>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
             {takeaways.map(item => (
-                <div key={item.title} className="icon-card items-start">
+                <div key={item.title} className="icon-card items-start !flex-col">
                     {item.icon}
                     <div>
-                        <h3 className="h3 mt-0">{item.title}</h3>
-                        <p className="text-sm m-0 text-slate-400">{item.description}</p>
-                        <Link href={item.link.href} className="text-sm font-semibold mt-2 inline-block">{item.link.text} →</Link>
+                        <h3 className="h3 mt-4 text-base">{item.title}</h3>
+                        <p className="text-sm m-0 text-mute">{item.description}</p>
+                        <Link href={item.link.href} className="text-sm font-semibold mt-2 inline-block text-accent-custom hover:text-accent-d-custom">
+                            {item.link.text} →
+                        </Link>
                     </div>
                 </div>
             ))}
@@ -163,7 +164,7 @@ export default function ComparisonsPage() {
                   <td className="font-bold">
                     <Link href={`/comparisons/${vendor.slug}`}>{vendor.name}</Link>
                   </td>
-                  <td>{vendor.claim} (<a href={`https://${vendor.url}`} target="_blank" rel="noopener noreferrer" className="text-xs">{vendor.url}</a>)</td>
+                  <td>{vendor.claim} (<a href={`https://${vendor.url}`} target="_blank" rel="noopener noreferrer" className="text-xs text-accent-custom hover:text-accent-d-custom">{vendor.url}</a>)</td>
                   <td>{vendor.lacks}</td>
                 </tr>
               ))}
@@ -174,7 +175,7 @@ export default function ComparisonsPage() {
 
       <div className="section text-center">
         <h2 className="h2 mt-0">Conclusion</h2>
-        <p className="lead" style={{fontSize: '1rem'}}>
+        <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
           TeamStation AI occupies a different galaxy in the nearshore landscape. By unifying recruitment, cognitive AI evaluation, device and workspace provisioning, payroll/EOR, compliance and insurance under one SLA, TeamStation replaces multi-vendor complexity with a single accountable platform. Its bias-aware Axiom Cortex™ ensures fair, evidence-based hiring; Nebula’s 2.6M+ talent graph guarantees reach; and transparent delivery metrics (TTO ≈ 9 days, MTPD ≤ 5 days, MDM ≥ 99 %) set a standard none of the competition currently publishes. Traditional vendors may excel at one or two aspects—staffing, project delivery or EOR—but only TeamStation AI offers a scientifically grounded, end-to-end nearshore operating system.
         </p>
          <div className="mt-6">
