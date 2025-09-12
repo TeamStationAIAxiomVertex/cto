@@ -157,8 +157,12 @@ export default function NearshoreVsOffshorePage() {
         </div>
       </div>
 
-      <div className="mt-12 text-center">
-          <a href="/hire" className="cta">Upgrade Your Nearshore Strategy</a>
+      <div className="section my-8 text-center">
+          <h2 className="h2 mt-0">Ready to Upgrade Your Strategy?</h2>
+          <p className="lead" style={{marginBottom: '24px'}}>Stop letting operational friction drain your budget and velocity.</p>
+          <a href="/hire" className="cta">
+            Book a Strategy Call
+          </a>
       </div>
     </main>
   );
