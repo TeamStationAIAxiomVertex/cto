@@ -14,8 +14,6 @@ export function Header() {
     { href: '/trust', label: 'Trust Center' },
   ];
 
-  const [isHireMenuOpen, setHireMenuOpen] = useState(false);
-
   return (
     <header className="sticky top-0 z-50 w-full border-b border-line bg-bg/90 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
@@ -26,33 +24,9 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-           <div className="relative" onMouseEnter={() => setHireMenuOpen(true)} onMouseLeave={() => setHireMenuOpen(false)}>
-            <button className="flex items-center gap-1 text-mute hover:text-text transition-colors">
+           <Link href="/hire" className="text-mute hover:text-text transition-colors">
               Hire
-              <ChevronDown size={16} />
-            </button>
-            {isHireMenuOpen && (
-              <div className="absolute top-full left-0 mt-2 w-48 bg-surface-1 border border-line rounded-lg shadow-lg">
-                <ul className="py-1">
-                  <li>
-                    <Link href="/hire/by-role" className="block px-4 py-2 text-sm text-mute hover:bg-surface-2 hover:text-text">
-                      By Role
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/hire/by-technology" className="block px-4 py-2 text-sm text-mute hover:bg-surface-2 hover:text-text">
-                      By Technology
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/hire/by-country" className="block px-4 py-2 text-sm text-mute hover:bg-surface-2 hover:text-text">
-                      By Country
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
+            </Link>
         </nav>
         <div className="flex items-center gap-4">
           <ThemeToggle />
