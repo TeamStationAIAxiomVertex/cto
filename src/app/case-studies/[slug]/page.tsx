@@ -20,6 +20,9 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
   const processedContent = await remark().use(html).process(content);
   const htmlContent = processedContent.toString();
 
+  // Simple parser for the summary to create bullet points
+  const summaryPoints = data.summary.split(', ').map((point: string) => point.charAt(0).toUpperCase() + point.slice(1));
+
   return (
     <main className="container">
       <div className="breadcrumb">
@@ -47,9 +50,16 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
           <div className="card p-6">
             <div className="flex items-center gap-3 mb-4">
               <Award className="icon" />
-              <h3 className="h3 mt-0 mb-0">Key Outcome</h3>
+              <h3 className="h3 mt-0 mb-0">Key Outcomes</h3>
             </div>
-            <p className='font-semibold'>{data.summary}</p>
+            <ul className='list-none p-0 m-0 text-sm space-y-3'>
+              {summaryPoints.map((point: string) => (
+                <li key={point} className='flex gap-2 font-semibold'>
+                  <span className='text-accent-custom'>✓</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
           </div>
            <div className="card p-6">
              <div className="flex items-center gap-3 mb-4">
