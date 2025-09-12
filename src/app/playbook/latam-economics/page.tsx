@@ -1,3 +1,4 @@
+
 import { DollarSign, UserCheck, TrendingUp } from 'lucide-react';
 import { Tooltip } from '@/components/Tooltip';
 import Link from 'next/link';
@@ -55,54 +56,61 @@ export default function LatamEconomicsPage() {
         </p>
       </article>
 
-      <div className="overflow-x-auto my-12">
-          <table className="w-full text-sm">
-            <thead className="border-b">
-              <tr>
-                <th className="px-4 py-3 text-left font-semibold text-foreground">Cost Component</th>
-                <th className='px-4 py-3 text-center font-semibold text-foreground'>DIY "Build" Model (Annual Estimate)</th>
-                <th className='px-4 py-3 text-center font-semibold text-foreground'>TeamStation AI "Buy" Model</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b">
-                <td className="px-4 py-3 font-medium text-foreground">Senior Engineer Salary (Mexico)</td>
-                <td className='px-4 py-3 text-center text-muted-foreground'>~$85,000</td>
-                <td className='px-4 py-3 text-center font-semibold text-primary' rowSpan={7}>
-                    All-inclusive in one rate<br/>
-                    (e.g., L3 Senior @ $83,040/yr)<br/>
-                    <Link href="/pricing" className="text-sm font-normal underline hover:no-underline">See all pricing tiers</Link>
-                </td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-4 py-3 font-medium text-foreground">Recruitment & Agency Fees (15-20%)</td>
-                <td className='px-4 py-3 text-center text-yellow-400'>~$17,000</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-4 py-3 font-medium text-foreground">Legal, <Tooltip text="Employer of Record: A third-party organization that legally employs workers on behalf of another company, handling payroll, taxes, and compliance.">EOR</Tooltip> & Payroll Admin</td>
-                <td className='px-4 py-3 text-center text-yellow-400'>~$12,000</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-4 py-3 font-medium text-foreground">Hardware, <Tooltip text="Mobile Device Management: Software to secure, monitor, and manage devices like laptops.">MDM</Tooltip> & Security Tools</td>
-                <td className='px-4 py-3 text-center text-yellow-400'>~$3,500</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-4 py-3 font-medium text-foreground">Benefits & Statutory Costs (~20%)</td>
-                <td className='px-4 py-3 text-center text-yellow-400'>~$17,000</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-4 py-3 font-medium text-foreground">Management & HR Overhead</td>
-                <td className='px-4 py-3 text-center text-yellow-400'>~$5,000</td>
-              </tr>
-              <tr className='border-t-2 bg-card'>
-                <td className='px-4 py-4 font-bold text-foreground'>True TCO (Estimated)</td>
-                <td className='px-4 py-4 text-center font-bold text-2xl text-red-400'>~$139,500</td>
-                <td className='px-4 py-4 text-center font-bold text-2xl text-green-400'>~$83,040</td>
-              </tr>
-            </tbody>
-          </table>
-          <p className='text-xs text-muted-foreground text-center mt-2'>Estimates are for illustrative purposes. Actual costs vary by country and role complexity.</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+        {/* DIY Build Model Card */}
+        <div className="rounded-lg border bg-card p-6 flex flex-col">
+            <h3 className="text-xl font-bold text-center">DIY "Build" Model</h3>
+            <p className="text-center text-sm text-muted-foreground">(Annual Estimate)</p>
+            <div className="mt-6 space-y-4 flex-grow">
+                <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Senior Engineer Salary (Mexico)</span>
+                    <span className="font-semibold text-foreground">~$85,000</span>
+                </div>
+                 <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Recruitment & Agency Fees (20%)</span>
+                    <span className="font-semibold text-yellow-400">~$17,000</span>
+                </div>
+                <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Legal, <Tooltip text="Employer of Record: A third-party organization that legally employs workers on behalf of another company, handling payroll, taxes, and compliance.">EOR</Tooltip> & Payroll</span>
+                    <span className="font-semibold text-yellow-400">~$12,000</span>
+                </div>
+                <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Hardware, <Tooltip text="Mobile Device Management: Software to secure, monitor, and manage devices like laptops.">MDM</Tooltip> & Security</span>
+                    <span className="font-semibold text-yellow-400">~$3,500</span>
+                </div>
+                <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Benefits & Statutory Costs</span>
+                    <span className="font-semibold text-yellow-400">~$17,000</span>
+                </div>
+                <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Management & HR Overhead</span>
+                    <span className="font-semibold text-yellow-400">~$5,000</span>
+                </div>
+            </div>
+            <div className="mt-6 pt-4 border-t">
+                <div className="flex justify-between items-center">
+                    <span className="text-lg font-bold text-foreground">True TCO (Estimated)</span>
+                    <span className="text-2xl font-bold text-red-400">~$139,500</span>
+                </div>
+            </div>
         </div>
+
+        {/* TeamStation AI Model Card */}
+        <div className="rounded-lg border-2 border-primary/50 p-6 flex flex-col justify-center bg-primary/5">
+             <h3 className="text-xl font-bold text-center">TeamStation AI "Buy" Model</h3>
+             <p className="text-center text-sm text-muted-foreground">(All-Inclusive Annual Rate)</p>
+             <div className="text-center my-8">
+                 <p className="text-sm text-muted-foreground">e.g., L3 Senior Engineer</p>
+                <p className="text-5xl font-bold text-green-400">~$83,040</p>
+             </div>
+             <p className="text-center text-sm text-muted-foreground">Includes all recruitment, legal, EOR, payroll, hardware, security, insurance, and management overhead.</p>
+            <div className="text-center mt-4">
+                 <Link href="/pricing" className="text-sm font-semibold text-primary hover:underline">
+                    See all pricing tiers & what's included
+                </Link>
+            </div>
+        </div>
+      </div>
 
 
       <div className="prose dark:prose-invert max-w-none mx-auto my-8">
