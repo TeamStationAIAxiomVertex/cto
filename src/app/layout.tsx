@@ -30,7 +30,7 @@ export default function RootLayout({
               TeamStation AI
             </a>
             <nav className="nav">
-              <a href="/playbook/">Playbook</a>
+              <a href="/playbook/">CTO Playbook</a>
               <a href="/research/">Research</a>
               <a href="/comparisons/">Comparisons</a>
               <a href="/case-studies/">Case Studies</a>
