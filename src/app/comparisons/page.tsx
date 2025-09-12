@@ -12,6 +12,8 @@ const vendors = [
   { name: 'Nearsure', slug: 'nearsure', claim: 'Traditional Staff Augmentation.' },
   { name: 'ParallelStaff', slug: 'parallelstaff', claim: 'Talent-as-a-Service (TaaS).' },
   { name: 'Unosquare', slug: 'unosquare', claim: 'Staff Augmentation & Consulting.' },
+  { name: 'TECLA', slug: 'tecla', claim: 'LATAM Talent Marketplace.' },
+  { name: 'Revelo', slug: 'revelo', claim: 'Marketplace + EOR.' },
 ];
 
 const takeaways = [
@@ -69,7 +71,7 @@ export default function ComparisonsPage() {
               </tr>
             </thead>
             <tbody>
-              {vendors.map((vendor) => (
+              {vendors.sort((a, b) => a.name.localeCompare(b.name)).map((vendor) => (
                 <tr key={vendor.name}>
                   <td className="font-bold">
                     <Link href={`/comparisons/${vendor.slug}`} className="hover:text-accent-custom">{vendor.name}</Link>

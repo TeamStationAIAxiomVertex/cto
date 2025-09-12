@@ -25,11 +25,11 @@ export function Footer() {
   ];
   
   const comparisonsLinks = [
-    { href: '/comparisons/toptal', label: 'vs. Toptal' },
     { href: '/comparisons/andela', label: 'vs. Andela' },
-    { href: '/comparisons/globant', label: 'vs. Globant' },
     { href: '/comparisons/bairesdev', label: 'vs. BairesDev' },
     { href: '/comparisons/deel', label: 'vs. Deel' },
+    { href: '/comparisons/globant', label: 'vs. Globant' },
+    { href: '/comparisons/toptal', label: 'vs. Toptal' },
   ];
 
   return (
