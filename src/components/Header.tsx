@@ -11,6 +11,7 @@ export function Header() {
     { href: '/comparisons', label: 'Comparisons' },
     { href: '/process', label: 'Process' },
     { href: '/pricing', label: 'Pricing' },
+    { href: '/case-studies', label: 'Case Studies' },
     { href: '/trust', label: 'Trust Center' },
   ];
 
