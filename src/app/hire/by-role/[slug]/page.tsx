@@ -106,3 +106,4 @@ export async function generateStaticParams() {
   return Object.keys(roleCategoryData).map(slug => ({ slug }));
 }
 
+

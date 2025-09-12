@@ -9,31 +9,31 @@ const roleCategories = {
     icon: <BrainCircuit className="h-8 w-8 text-primary" />,
     cta: "Explore Data & AI Roles"
   },
-  "Software": {
+  "Software Engineering": {
     slug: 'software-engineering',
     description: "Architects, Salesforce Architects, Machine Learning, Full Stack, Front End, Back End",
     icon: <Code className="h-8 w-8 text-primary" />,
     cta: "Explore Software Roles"
   },
-  "Product": {
+  "Product Management": {
     slug: 'product-management',
     description: "Product Managers, Product Designers, Product Owners, UX / UI Designers, Scrum Masters, Business Analysts",
     icon: <GanttChartSquare className="h-8 w-8 text-primary" />,
     cta: "Explore Product Roles"
   },
-  "Mobile": {
+  "Mobile Development": {
     slug: 'mobile-development',
     description: "Architects, Technical Leads, Engineers, Testers, Cross-Platform, Designers",
     icon: <Layers className="h-8 w-8 text-primary" />,
     cta: "Explore Mobile Roles"
   },
-  "DevOps": {
+  "DevOps & Cloud": {
     slug: 'devops',
     description: "Evangelist, Engineers & Testers, DevSec, Cloud Engineers, Release Managers",
     icon: <Briefcase className="h-8 w-8 text-primary" />,
     cta: "Explore DevOps Roles"
   },
-  "Testing": {
+  "Quality Assurance": {
     slug: 'quality-assurance',
     description: "QA Automation Engineers, QA Manual Testers, QA Lead, Test Lead, SDET, Usability Test Engineers",
     icon: <TestTube2 className="h-8 w-8 text-primary" />,
