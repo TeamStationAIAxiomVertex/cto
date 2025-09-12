@@ -72,8 +72,7 @@ export default function LatamEconomicsPage() {
         </ul>
         <p>
             When you factor in the reduced friction and increased velocity, the effective cost per feature is often significantly lower with a nearshore team, even if the on-paper hourly rate is higher than some offshore alternatives.
-        </p>
-      </div>
+        </p>      </div>
 
       <div className="section my-8 text-center">
           <h2 className="h2 mt-0">Ready for a Transparent Cost Model?</h2>

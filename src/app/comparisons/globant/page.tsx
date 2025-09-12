@@ -45,7 +45,7 @@ export default function GlobantComparisonPage() {
             {comparisonData.map(item => (
               <div key={item.feature} className="icon-card !p-3 !gap-3">
                 {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0" size={20} /> : <XCircle className="text-red-500 flex-shrink-0" size={20} />}
-                <span className="text-sm">{item.feature}</span>
+                 <span className="text-sm">{item.feature}</span>
               </div>
             ))}
           </div>
