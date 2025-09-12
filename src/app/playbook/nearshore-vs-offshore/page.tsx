@@ -9,6 +9,7 @@ import {
   Users,
   HelpCircle,
 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function NearshoreVsOffshorePage() {
   const failureModes = [
@@ -43,7 +44,7 @@ export default function NearshoreVsOffshorePage() {
       description: (
         <>
           Ask for proof, not promises. Can they provide evidence of their security posture (MDM, SSO)? Do they have a repeatable, science-based hiring process (like our{' '}
-          <a href="/research/axiom-cortex-scientific-report">Axiom Cortex research</a>)? Will you be working with a dedicated, long-term team? The answers reveal their true capability.
+          <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex research</Link>)? Will you be working with a dedicated, long-term team? The answers reveal their true capability.
         </>
       ),
     },

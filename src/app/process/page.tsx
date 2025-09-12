@@ -36,8 +36,8 @@ export default function ProcessPage() {
     ];
 
   return (
-    <div className="container mx-auto max-w-7xl px-6 py-12">
-      <header className="text-center mb-12">
+    <main className="container">
+      <header className="text-center my-12">
         <h1 className="h1">Our Process: From Mandate to Mission-Ready</h1>
         <p className="lead max-w-3xl mx-auto">
           One accountable workflow for hiring, EOR/payroll, compliance, and device management under a single, measurable SLA.
@@ -84,6 +84,6 @@ export default function ProcessPage() {
         </p>
         <a href="/hire" className="cta mt-6">Book a Strategy Call</a>
       </div>
-    </div>
+    </main>
   );
 }

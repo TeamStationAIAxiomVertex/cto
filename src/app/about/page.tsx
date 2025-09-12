@@ -36,7 +36,7 @@ export default function AboutPage() {
             {pillar.icon}
             <div>
               <h3 className="h3 mt-0">{pillar.title}</h3>
-              <p className="text-sm text-slate-400 m-0">{pillar.description}</p>
+              <p className="text-sm text-mute m-0">{pillar.description}</p>
             </div>
           </div>
         ))}
