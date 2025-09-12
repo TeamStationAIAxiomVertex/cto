@@ -22,22 +22,22 @@ const trustNumbers = [
 const corePillars = [
     {
         icon: <BrainCircuit className="h-8 w-8 text-primary"/>,
-        title: "AI-Powered Vetting",
-        description: "Our Axiom Cortex™ engine moves beyond resumes to evaluate cognitive ability, reducing bias and identifying elite problem-solvers.",
+        title: "De-Risk Your Hiring",
+        description: "Stop gambling on resumes. Our Axiom Cortex™ engine provides auditable, scientific proof of a candidate's cognitive ability, cutting your mis-hire risk by over 90%.",
         href: "/technical-interview-evaluation",
         linkLabel: "Learn About Our Vetting"
     },
     {
         icon: <ShieldCheck className="h-8 w-8 text-primary"/>,
-        title: "Integrated Nearshore Operations",
-        description: "We bundle EOR, payroll, secure devices (MDM), and insurance into one SLA, eliminating vendor chaos and reducing your TCO.",
+        title: "Eliminate Vendor Chaos",
+        description: "Stop managing 5 vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
         href: "/services/nearshore-integrated-services",
         linkLabel: "See Our Integrated Services"
     },
     {
         icon: <Scale className="h-8 w-8 text-primary"/>,
-        title: "Radical Transparency",
-        description: "From our all-inclusive pricing to our evidence-based evaluations, we provide the data you need to make confident decisions.",
+        title: "Justify Your Budget",
+        description: "We provide a predictable, all-inclusive TCO that is often lower than the 'hidden cost' of a DIY approach. Get the data you need to make a CFO-ready business case.",
         href: "/pricing",
         linkLabel: "View Our Pricing Model"
     }
@@ -51,10 +51,10 @@ export default async function HomePage() {
     <div className="container mx-auto px-4">
       <section className="text-center py-16 md:py-24">
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-          The CTO Playbook
+          Ship Faster. Stop Worrying.
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-          The definitive, research-backed hub for CTOs evaluating nearshore LATAM engineering, AI-driven hiring, and vendor choices.
+          You're under pressure to deliver, but hiring friction, vendor chaos, and compliance risks are slowing you down. TeamStation AI provides a single, integrated platform to build an elite nearshore team you can actually trust.
         </p>
         <div className="mt-10">
             <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Strategy Call</Link>
@@ -74,9 +74,9 @@ export default async function HomePage() {
       
        <section id="core-pillars" className="py-24">
          <h2 className="text-center text-4xl font-bold text-foreground">
-            The Nearshore IT Co-Pilot™
+            Your Unfair Advantage
         </h2>
-        <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">We are a technology company that provides a single, unified platform for building and running elite nearshore teams.</p>
+        <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">We're not another vendor. We are a force multiplier for your engineering organization, giving you the leverage to succeed.</p>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
             {corePillars.map(pillar => (
                 <div key={pillar.title} className="rounded-lg border bg-card p-8 flex flex-col">
@@ -95,7 +95,7 @@ export default async function HomePage() {
         <h2 className="text-center text-4xl font-bold text-foreground">
             Evidence of Impact
         </h2>
-        <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">See how our integrated platform and elite talent have delivered tangible results for companies like yours.</p>
+        <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">See how CTOs like you have used our platform to solve critical problems and deliver results.</p>
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {caseStudies.map(study => (
             <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
@@ -115,8 +115,8 @@ export default async function HomePage() {
 
       <section id="contact" className="py-24">
          <div className="mx-auto max-w-3xl rounded-lg border bg-card p-8 text-center">
-            <h2 className="text-3xl font-bold text-foreground">Ready to Build a High-Performance Team?</h2>
-            <p className="mt-3 text-muted-foreground">Stop managing vendors and start shipping product. In a 15-minute call, we can map your roles to our talent graph, define security requirements, and provide a clear, all-inclusive TCO model.</p>
+            <h2 className="text-3xl font-bold text-foreground">Stop Patching a Broken System. Build a Better One.</h2>
+            <p className="mt-3 text-muted-foreground">In a 15-minute call, we won't give you a sales pitch. We'll give you a concrete plan to fix your hiring process, consolidate your vendors, and get a predictable, CFO-ready budget for your nearshore team. You will walk away with actionable advice, whether you work with us or not.</p>
             <div className="mt-6">
                 <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a No-Obligation Strategy Call</Link>
             </div>
