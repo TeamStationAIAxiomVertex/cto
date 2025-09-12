@@ -1,4 +1,5 @@
 
+
 import { BrainCircuit, FileText, ShieldCheck, Scale, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 
@@ -69,8 +70,13 @@ export default function AxiomCortexReportPage() {
        <div className="prose dark:prose-invert mx-auto my-16 text-center">
         <h2>Methodology</h2>
          <p>The operational backbone of Axiom Cortex is its novel approach to executing complex NLP tasks: a <strong>Self-Governing, Self-Learning Phasic Micro-Chunking NLP-based Prompt Engineering</strong> technique. This methodology is designed for maximum accuracy, token efficiency, and minimal external dependencies, allowing the LLM itself to perform the core analytical heavy lifting.</p>
+        <div className="mt-8">
+            <Link href="/technical-interview-evaluation" className="cta-button">See the Full Evaluation Process</Link>
+        </div>
        </div>
 
     </main>
   );
 }
+
+    
