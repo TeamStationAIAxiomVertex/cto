@@ -15,38 +15,36 @@ export default function NearshoreVsOffshorePage() {
   const failureModes = [
     {
       icon: <Shuffle size={24} className="text-amber-400" />,
-      title: 'Staff-Augmentation Churn',
+      title: 'The Pain of Vendor Churn',
       description:
-        'Legacy vendors often rotate engineers, leading to constant knowledge loss. Mitigation: Dedicated Pods where the team remains consistent.',
+        'Does your offshore partner rotate engineers, causing constant knowledge loss and forcing your team to re-train them? This churn is a hidden tax on your budget and timeline.',
     },
     {
       icon: <AlertTriangle size={24} className="text-red-400" />,
-      title: '"Vendor Fog"',
+      title: 'The Pain of "Vendor Fog"',
       description:
-        'A lack of transparency into performance and progress. Mitigation: Demand access to source control, CI/CD pipelines, and performance telemetry.',
+        'Can you get a straight answer on project status, or is it lost in a fog of vague updates and delayed reports? A lack of direct access to source control, CI/CD, and telemetry is a red flag.',
     },
     {
       icon: <Users size={24} className="text-blue-400" />,
-      title: 'Productivity Mismatch',
+      title: 'The Pain of Productivity Mismatch',
       description:
-        "Lower hourly rates don't matter if velocity is half that of an in-house team. Mitigation: Focus on output-based metrics, not just hours billed.",
+        "Do lower hourly rates actually translate to lower costs per feature, or is velocity half of what you expect? Ineffective collaboration can burn through your budget with nothing to show for it.",
     },
   ];
 
   const faqs = [
     {
-      title: 'Is nearshore always more expensive?',
+      title: 'Is nearshore always more expensive on paper?',
       description:
-        'Not when measured by Total Cost of Ownership. Higher real-time collaboration reduces rework, management overhead, and delays, often making nearshore more cost-effective per feature shipped.',
+        'It can appear that way if you only look at the hourly rate. But what\'s the cost of a delayed launch or a critical bug that slips through because of a 12-hour communication lag? Total Cost of Ownership—including management overhead and rework—is often lower with a nearshore team.',
     },
     {
-      title: 'How do I evaluate a nearshore partner?',
+      title: 'How do you tell a good partner from a bad one?',
       description: (
         <>
-          Look beyond resumes. Ask for evidence of their security practices
-          (MDM, SSO), their hiring science (see our{' '}
-          <a href="/research">Axiom Cortex research</a>), and their ability to
-          provide dedicated, long-term teams.
+          Ask for proof, not promises. Can they provide evidence of their security posture (MDM, SSO)? Do they have a repeatable, science-based hiring process (like our{' '}
+          <a href="/research">Axiom Cortex research</a>)? Will you be working with a dedicated, long-term team? The answers reveal their true capability.
         </>
       ),
     },
@@ -58,39 +56,31 @@ export default function NearshoreVsOffshorePage() {
         <a href="/">Home</a> / <a href="/playbook">CTO Playbook</a> / Nearshore
         vs. Offshore
       </div>
-      <h1 className="h1">Nearshore vs. Offshore: The CTO's Decision Framework</h1>
+      <h1 className="h1">Is Your Offshore Team a Strategic Asset or a Hidden Drain?</h1>
       <p className="lead">
-        Move beyond "cost per hour" and start measuring "cost per successful
-        release." This guide provides a clear framework for choosing the right
-        global talent strategy.
+        As a CTO, you're judged on outcomes, not hours billed. Let's move beyond "cost per hour" and use a framework to diagnose the true cost—and risk—of your global talent strategy.
       </p>
 
       <div className="prose my-8">
-        <h2 className="h2">The Core Trade-Off: Cost, Collaboration, and Control</h2>
+        <h2 className="h2">The Core Diagnosis: Latency, Fidelity, and Control</h2>
         <p>
-          The debate between nearshore and offshore development models isn't just
-          about saving money—it's a strategic decision that impacts your
-          product's velocity, quality, and your team's sanity. While offshore
-          teams in distant time zones might offer a lower hourly rate,{' '}
-          <Tooltip text="Total Cost of Ownership: Includes direct and indirect costs like management overhead, rework, and communication friction.">
+          The choice between a nearshore or offshore model isn't just about budget; it's a strategic bet on how you plan to build, innovate, and compete. While offshore teams in distant time zones might seem cheaper on a spreadsheet, the{' '}
+          <Tooltip text="Total Cost of Ownership: The sum of all direct and indirect costs, including rework, management overhead, and communication friction.">
             TCO
           </Tooltip>{' '}
-          is often far higher due to communication friction and reduced
-          collaboration.
+          often skyrockets due to hidden friction.
         </p>
         <p>
-          Nearshore teams, typically in{' '}
-          <Tooltip text="Latin America: A region of the Americas where Romance languages (especially Spanish and Portuguese) are primarily spoken.">
+          The core issue is latency. Not network latency, but human latency. Waiting 12 hours for a simple answer to unblock your team is a silent killer of velocity. Nearshore teams, typically in{' '}
+          <Tooltip text="Latin America: A region with significant time-zone overlap with the U.S., enabling real-time collaboration.">
             LATAM
           </Tooltip>
-          , operate in the same time zones as U.S. companies. This overlap is the
-          single biggest factor in reducing the "cost of delay" caused by
-          waiting 12 hours for a simple answer.
+          , eliminate this bottleneck. That real-time overlap is the single biggest lever you have to reclaim lost productivity.
         </p>
       </div>
 
       <div className="section">
-        <h2 className="h2 mt-0">Decision Framework: Key Variables</h2>
+        <h2 className="h2 mt-0">Decision Framework: A Tool for Diagnosing Your Risk</h2>
         <div className="overflow-x-auto">
           <table className="table">
             <thead>
@@ -103,30 +93,30 @@ export default function NearshoreVsOffshorePage() {
             <tbody>
               <tr>
                 <td className="flex items-center gap-2"><Clock size={16} /> Time-Zone Overlap</td>
-                <td>High (4-8 hours with U.S. teams)</td>
-                <td>Low (0-2 hours, requiring late-night calls)</td>
+                <td>High (4-8 hours). Enables real-time pairing and problem-solving.</td>
+                <td>Low (0-2 hours). Forces asynchronous handoffs and late-night calls.</td>
               </tr>
               <tr>
                 <td className="flex items-center gap-2"><Users size={16} /> Collaboration Fidelity</td>
-                <td>Real-time pairing, ad-hoc meetings, faster feedback loops.</td>
-                <td>Asynchronous, ticket-based, potential for misunderstandings.</td>
+                <td>High. Ad-hoc conversations are possible, leading to faster feedback.</td>
+                <td>Low. Communication is formal, ticket-based, and prone to misunderstanding.</td>
               </tr>
               <tr>
                 <td className="flex items-center gap-2"><Languages size={16} /> Cultural & Language Alignment</td>
-                <td>High affinity with U.S. work culture; strong English proficiency.</td>
-                <td>Varies widely; can introduce communication barriers.</td>
+                <td>High. Strong affinity with U.S. work culture reduces friction.</td>
+                <td>Varies. Can introduce communication barriers that slow down projects.</td>
               </tr>
               <tr>
-                <td className="flex items-center gap-2"><Plane size={16} /> Travel & On-Site Escalation</td>
-                <td>Faster, cheaper travel for critical workshops or issue resolution.</td>
-                <td>Expensive, multi-day travel required.</td>
+                <td className="flex items-center gap-2"><Plane size={16} /> On-Site Escalation Path</td>
+                <td>Simple. Faster, cheaper travel for critical workshops or crisis resolution.</td>
+                <td>Complex. Expensive, multi-day travel, making it impractical for urgent needs.</td>
               </tr>
               <tr>
-                <td className="flex items-center gap-2"><ShieldCheck size={16} /> Compliance & Legal</td>
-                <td>Stronger alignment with U.S. data privacy and IP laws. See our{' '}
-                    <a href="/comparisons">vendor comparisons</a> for details.
+                <td className="flex items-center gap-2"><ShieldCheck size={16} /> Compliance & Legal Risk</td>
+                <td>Lower. Stronger alignment with U.S. data privacy and IP laws. (See our{' '}
+                    <a href="/comparisons">vendor comparisons</a>).
                 </td>
-                <td>Can be complex and vary significantly by country.</td>
+                <td>Higher. Navigating different legal frameworks can be complex and risky.</td>
               </tr>
             </tbody>
           </table>
@@ -135,10 +125,9 @@ export default function NearshoreVsOffshorePage() {
       
 
       <div className="my-8">
-        <h2 className="h2">Failure Modes & How to Mitigate Them</h2>
+        <h2 className="h2">Common Pains of Outsourcing & How to Cure Them</h2>
         <p className="lead">
-          Many outsourcing initiatives fail not because of technical incompetence,
-          but due to predictable operational friction.
+          If you're feeling these pains, your current model may be the cause, not the cure.
         </p>
         <div className="grid grid-3 mt-4">
           {failureModes.map((item) => (
@@ -154,7 +143,7 @@ export default function NearshoreVsOffshorePage() {
       </div>
 
       <div className="my-8">
-        <h2 className="h2">Frequently Asked Questions</h2>
+        <h2 className="h2">Answering the Hard Questions</h2>
         <div className="grid grid-2 mt-4">
           {faqs.map((faq) => (
              <div className="icon-card" key={faq.title}>
@@ -169,7 +158,7 @@ export default function NearshoreVsOffshorePage() {
       </div>
 
       <div className="mt-12 text-center">
-          <a href="/contact" className="cta">Book a Demo to Discuss Your Needs</a>
+          <a href="/hire" className="cta">Is Your Current Vendor Causing These Pains? Let's Talk.</a>
       </div>
     </main>
   );
