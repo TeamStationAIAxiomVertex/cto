@@ -29,16 +29,16 @@ export default function LatamEconomicsPage() {
         Understanding the financial landscape of Latin America is key to building a successful nearshore team. This playbook provides a strategic overview of salary bands, productivity metrics, and the true cost of scaling.
       </p>
 
-       <div className="section">
+       <div className="section my-12">
         <h2 className="h2 mt-0">The Economic Landscape: Key Factors</h2>
-         <div className="grid grid-3 mt-4">
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
           {factors.map((item) => (
              <div className="card" key={item.title}>
                 <div className="flex items-center gap-3">
                     {item.icon}
-                    <h3 className="h3 m-0">{item.title}</h3>
+                    <h3 className="h3 m-0 text-lg">{item.title}</h3>
                 </div>
-                <p className="text-sm mt-2">{item.description}</p>
+                <p className="text-sm mt-2 text-mute">{item.description}</p>
             </div>
           ))}
         </div>

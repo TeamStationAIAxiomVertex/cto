@@ -30,10 +30,12 @@ export default async function PlaybookPost({ params }: { params: { slug: string 
   if (!postData) return <div>Post not found.</div>;
 
   return (
-    <article className="prose prose-lg mx-auto">
-        <Link href="/playbook" className="text-mute text-sm no-underline hover:text-text">&larr; Back to Playbook</Link>
-      <h1 className="mt-2">{postData.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-    </article>
+    <main className="container">
+      <article className="prose prose-lg mx-auto">
+          <Link href="/playbook" className="text-mute text-sm no-underline hover:text-text">&larr; Back to Playbook</Link>
+        <h1 className="mt-2">{postData.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      </article>
+    </main>
   );
 }

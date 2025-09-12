@@ -45,14 +45,14 @@ export default function BiasFreeHiringPage() {
 
       <div className="section">
         <h2 className="h2 mt-0">The Solution: Three Pillars of Science-Based Hiring</h2>
-         <div className="grid grid-3 mt-4">
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
           {principles.map((item) => (
              <div className="card" key={item.title}>
                 <div className="flex items-center gap-3">
                     {item.icon}
-                    <h3 className="h3 m-0">{item.title}</h3>
+                    <h3 className="h3 m-0 text-lg">{item.title}</h3>
                 </div>
-                <p className="text-sm mt-2">{item.description}</p>
+                <p className="text-sm mt-2 text-mute">{item.description}</p>
             </div>
           ))}
         </div>

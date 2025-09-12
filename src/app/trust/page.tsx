@@ -174,11 +174,12 @@ export default function TrustPage() {
         <div className='mb-12'>
             <h2 className='h2 text-center mb-6'>Master Services Agreement (MSA)</h2>
             {msaSections.map((section) => (
-            <div key={section.title} className="card mb-4 p-6">
+            <div key={section.title} className="card mb-4">
                 <h3 className="h3 mt-0">{section.title}</h3>
                 <p className="text-mute">{section.summary}</p>
                 <AccordionItem title="View Full Legal Text">
                 <div
+                    className="prose"
                     dangerouslySetInnerHTML={{ __html: section.content }}
                 />
                 </AccordionItem>
@@ -188,11 +189,12 @@ export default function TrustPage() {
         
         <div>
             <h2 className='h2 text-center mb-6'>Sample Statement of Work (SOW)</h2>
-            <div className="card p-6">
+            <div className="card">
                 <h3 className="h3 mt-0">SOW-001: Sample Engagement</h3>
                 <p className="text-mute">This is a real-world example of an SOW for a Senior Full Stack .NET Developer, showing how we define roles, responsibilities, and rates for a specific engagement.</p>
                 <AccordionItem title="View SOW Details">
                     <div
+                        className="prose"
                         dangerouslySetInnerHTML={{ __html: sowContent }}
                     />
                 </AccordionItem>

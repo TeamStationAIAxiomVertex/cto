@@ -11,12 +11,12 @@ export default function BuildVsBuyPage() {
         Should you build an in-house team from scratch or "buy" into an integrated nearshore platform? This playbook models the trade-offs in terms of cost, speed, and risk.
       </p>
 
-      <div className="section">
+      <div className="section my-12">
         <h2 className="h2 mt-0">The True Cost of "Building" an In-House Team</h2>
         <p className="lead" style={{fontSize: '1rem', marginBottom: '1rem'}}>
           Building an in-house team, especially in a new region, involves far more than just salaries. These are the hidden costs that are often overlooked.
         </p>
-        <div className="grid grid-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card">
                 <h3 className="h3 mt-0">Direct & Indirect Costs</h3>
                 <ul className="list-none p-0 m-0 text-sm space-y-2">
@@ -40,12 +40,12 @@ export default function BuildVsBuyPage() {
         </div>
       </div>
 
-       <div className="section mt-8">
+       <div className="section my-12">
         <h2 className="h2 mt-0">The Value of "Buying" into a Nearshore Co-Pilot</h2>
         <p className="lead" style={{fontSize: '1rem', marginBottom: '1rem'}}>
           Partnering with TeamStation AI abstracts away the complexity and risk, allowing you to focus on building your product.
         </p>
-        <div className="grid grid-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card">
                 <h3 className="h3 mt-0">What You Get</h3>
                 <ul className="list-none p-0 m-0 text-sm space-y-2">

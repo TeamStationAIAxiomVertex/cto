@@ -27,14 +27,14 @@ export default function ResearchPage() {
         We are not just a service provider; we are a research-driven organization committed to advancing the science of talent evaluation and team performance. Our work is grounded in data, cognitive science, and a deep understanding of the modern software development lifecycle.
       </p>
 
-      <div className="grid grid-2" style={{marginTop: '24px'}}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{marginTop: '24px'}}>
         {papers.map((paper) => (
           <div key={paper.href} className="card">
-            <h2 className="h2" style={{marginTop: 0}}>{paper.title}</h2>
+            <h2 className="h2 mt-0 text-2xl">{paper.title}</h2>
             <p className="lead" style={{fontSize: '1rem'}}>
               {paper.description}
             </p>
-            <a href={paper.href}>Read the Research →</a>
+            <a href={paper.href} className="font-semibold text-accent-custom">Read the Research →</a>
           </div>
         ))}
       </div>

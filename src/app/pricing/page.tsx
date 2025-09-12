@@ -64,7 +64,7 @@ export default function PricingPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-12">
         {levels.map((level) => (
-          <div key={level.level} className="card p-6 flex flex-col">
+          <div key={level.level} className="card flex flex-col">
             <h2 className="text-lg font-bold">{level.level}</h2>
             <p className="text-sm text-mute flex-grow">{level.description}</p>
             <div className="my-4">
@@ -103,7 +103,7 @@ export default function PricingPage() {
         <p className="lead text-center max-w-3xl mx-auto">Providing end-to-end remote IT staffing with proven reliability you can trust.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {includedItems.map(item => (
-                <div key={item.title} className="card p-5 flex items-start gap-4">
+                <div key={item.title} className="card flex items-start gap-4">
                     <CheckCircle className="text-accent-custom flex-shrink-0 mt-1" size={20} />
                     <div>
                         <h3 className="font-semibold text-base mt-0">{item.title}</h3>
@@ -119,9 +119,9 @@ export default function PricingPage() {
         <p className="lead text-center max-w-3xl mx-auto">One fully-loaded hourly rate—clear, defensible, and optimized for value.</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {pricingFactors.map(factor => (
-                <div key={factor.title} className="card p-6">
+                <div key={factor.title} className="card">
                     <h3 className="h3 mt-0">{factor.title}</h3>
-                    <ul className="text-sm text-mute space-y-2">
+                    <ul className="text-sm text-mute space-y-2 list-none p-0">
                         {factor.items.map(item => <li key={item} className="flex items-start gap-2"><ArrowRight size={16} className="text-accent-custom mt-1 flex-shrink-0" /> {item}</li>)}
                     </ul>
                 </div>

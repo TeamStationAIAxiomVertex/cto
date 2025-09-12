@@ -36,7 +36,7 @@ export const AccordionItem = ({ title, children }: AccordionItemProps) => {
         />
       </button>
       <div ref={contentRef} className="accordion-content">
-        <div className="p-4">{children}</div>
+        <div className="py-4 border-t border-line">{children}</div>
       </div>
     </div>
   );

@@ -29,16 +29,16 @@ export default function SecurityCompliancePage() {
         Security isn't an afterthought; it's the foundation of a scalable and trustworthy nearshore strategy. This playbook details how TeamStation AI builds a secure, compliant operational environment from day one.
       </p>
 
-      <div className="section">
+      <div className="section my-12">
         <h2 className="h2 mt-0">The Three Pillars of Nearshore Security</h2>
-         <div className="grid grid-3 mt-4">
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
           {pillars.map((item) => (
              <div className="card" key={item.title}>
                 <div className="flex items-center gap-3">
                     {item.icon}
-                    <h3 className="h3 m-0">{item.title}</h3>
+                    <h3 className="h3 m-0 text-lg">{item.title}</h3>
                 </div>
-                <p className="text-sm mt-2">{item.description}</p>
+                <p className="text-sm mt-2 text-mute">{item.description}</p>
             </div>
           ))}
         </div>

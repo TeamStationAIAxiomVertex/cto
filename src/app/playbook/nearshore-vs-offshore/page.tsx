@@ -1,14 +1,13 @@
 import Tooltip from '@/components/Tooltip';
 import {
   AlertTriangle,
-  Book,
-  HelpCircle,
-  ShieldCheck,
-  Shuffle,
   Clock,
-  Users,
   Languages,
   Plane,
+  ShieldCheck,
+  Shuffle,
+  Users,
+  HelpCircle,
 } from 'lucide-react';
 
 export default function NearshoreVsOffshorePage() {
@@ -44,7 +43,7 @@ export default function NearshoreVsOffshorePage() {
       description: (
         <>
           Ask for proof, not promises. Can they provide evidence of their security posture (MDM, SSO)? Do they have a repeatable, science-based hiring process (like our{' '}
-          <a href="/research">Axiom Cortex research</a>)? Will you be working with a dedicated, long-term team? The answers reveal their true capability.
+          <a href="/research/axiom-cortex-scientific-report">Axiom Cortex research</a>)? Will you be working with a dedicated, long-term team? The answers reveal their true capability.
         </>
       ),
     },
@@ -53,8 +52,7 @@ export default function NearshoreVsOffshorePage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / <a href="/playbook">CTO Playbook</a> / Nearshore
-        vs. Offshore
+        <a href="/">Home</a> / <a href="/playbook">CTO Playbook</a> / Nearshore vs. Offshore
       </div>
       <h1 className="h1">Is Your Offshore Team a Strategic Asset or a Hidden Drain?</h1>
       <p className="lead">
@@ -79,7 +77,7 @@ export default function NearshoreVsOffshorePage() {
         </p>
       </div>
 
-      <div className="section">
+      <div className="section my-12">
         <h2 className="h2 mt-0">Decision Framework: A Tool for Diagnosing Your Risk</h2>
         <div className="overflow-x-auto">
           <table className="table">
@@ -113,8 +111,9 @@ export default function NearshoreVsOffshorePage() {
               </tr>
               <tr>
                 <td className="flex items-center gap-2"><ShieldCheck size={16} /> Compliance & Legal Risk</td>
-                <td>Lower. Stronger alignment with U.S. data privacy and IP laws. (See our{' '}
-                    <a href="/comparisons">vendor comparisons</a>).
+                <td>
+                  Lower. Stronger alignment with U.S. data privacy and IP laws. (See our{' '}
+                  <a href="/comparisons">vendor comparisons</a>).
                 </td>
                 <td>Higher. Navigating different legal frameworks can be complex and risky.</td>
               </tr>
@@ -124,33 +123,33 @@ export default function NearshoreVsOffshorePage() {
       </div>
       
 
-      <div className="my-8">
+      <div className="my-12">
         <h2 className="h2">Common Pains of Outsourcing & How to Cure Them</h2>
-        <p className="lead">
+        <p className="lead" style={{fontSize: '1rem'}}>
           If you're feeling these pains, your current model may be the cause, not the cure.
         </p>
-        <div className="grid grid-3 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 mt-4 gap-6">
           {failureModes.map((item) => (
              <div className="card" key={item.title}>
                 <div className="flex items-center gap-3">
                     {item.icon}
-                    <h3 className="h3 m-0">{item.title}</h3>
+                    <h3 className="h3 m-0 text-lg">{item.title}</h3>
                 </div>
-                <p className="text-sm mt-2">{item.description}</p>
+                <p className="text-sm mt-2 text-mute">{item.description}</p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="my-8">
+      <div className="my-12">
         <h2 className="h2">Answering the Hard Questions</h2>
-        <div className="grid grid-2 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-4 gap-6">
           {faqs.map((faq) => (
              <div className="icon-card" key={faq.title}>
-                <HelpCircle className="icon" />
+                <HelpCircle className="icon mt-1" />
                 <div>
-                    <h3 className="h3 mt-0">{faq.title}</h3>
-                    <p className="text-sm mt-1">{faq.description}</p>
+                    <h3 className="h3 mt-0 text-lg">{faq.title}</h3>
+                    <div className="text-sm mt-1 text-mute">{faq.description}</div>
                 </div>
             </div>
           ))}
