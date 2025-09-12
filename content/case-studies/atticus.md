@@ -90,7 +90,7 @@ Create a **web‑based** and **iPhone‑only** estate‑settlement application t
 
 -   **Identity & access:** MFA/SSO and role‑based access controls; least‑privilege data access for sensitive inventories.
 -   **Device governance:** MDM‑enforced laptops, patch compliance, and remote‑wipe capability.
--   **Data handling:** Encryption in transit, hashed credentials, environment‑variable secrets management.
+-   **Data handling:** Encryption in transit, hashed credentials, and environment‑variable secrets management.
 -   **Auditability:** Change history, release notes, and incident response playbooks consistent with SOC 2/ISO‑aligned practices.
 
 ---
