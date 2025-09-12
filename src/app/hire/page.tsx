@@ -24,7 +24,7 @@ export default function HirePage() {
   ];
 
   return (
-    <main className="container">
+    <main className="container py-8">
       <div className="breadcrumb">
         <a href="/">Home</a> / Hire
       </div>
