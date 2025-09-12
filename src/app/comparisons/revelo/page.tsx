@@ -1,15 +1,15 @@
 
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 
 const comparisonData = [
-    { feature: 'Fully Integrated Platform (Devices, MDM, Insurance)', teamstation: true },
-    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true },
-    { feature: '2.6M+ LATAM Talent Graph', teamstation: true },
-    { feature: 'Faster Time-to-Offer (9 vs 14 days)', teamstation: true },
-    { feature: 'Marketplace + EOR model', competitor: true },
-    { feature: 'Client handles devices, security, insurance', competitor: true },
+    { feature: 'Fully Integrated Platform (Devices, MDM, Insurance)', teamstation: true, competitor: false },
+    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
+    { feature: '2.6M+ LATAM Talent Graph', teamstation: true, competitor: false },
+    { feature: 'Faster Time-to-Offer (9 vs 14 days)', teamstation: true, competitor: false },
+    { feature: 'Marketplace + EOR model', teamstation: false, competitor: true },
+    { feature: 'Client handles devices, security, insurance', teamstation: false, competitor: true },
 ];
 
 
@@ -31,9 +31,9 @@ export default function ReveloComparisonPage() {
           <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
           <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
           <div className="space-y-3">
-            {comparisonData.filter(i => i.teamstation).map(item => (
+            {comparisonData.map(item => (
               <div key={item.feature} className="flex items-start gap-3">
-                <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
                 <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
             ))}
@@ -43,9 +43,9 @@ export default function ReveloComparisonPage() {
           <h2 className="text-2xl font-bold text-center text-foreground">Revelo</h2>
            <p className="text-center text-sm text-muted-foreground mb-6">Marketplace + EOR</p>
            <div className="space-y-3">
-            {comparisonData.filter(i => i.competitor).map(item => (
+            {comparisonData.map(item => (
               <div key={item.feature} className="flex items-start gap-3">
-                <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
                  <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
             ))}

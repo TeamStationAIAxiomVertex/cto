@@ -1,15 +1,15 @@
 
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 
 const comparisonData = [
-    { feature: 'Talent Sourcing & AI-Vetting', teamstation: true },
-    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true },
-    { feature: 'End-to-End Operational Management', teamstation: true },
-    { feature: 'Cognitive Science-Based Vetting (Axiom Cortex™)', teamstation: true },
-    { feature: 'Global HRIS & Payroll Platform', competitor: true },
-    { feature: 'Focus on Nearshore Engineering Teams', teamstation: true },
+    { feature: 'Talent Sourcing & AI-Vetting', teamstation: true, competitor: false },
+    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
+    { feature: 'End-to-End Operational Management', teamstation: true, competitor: false },
+    { feature: 'Cognitive Science-Based Vetting (Axiom Cortex™)', teamstation: true, competitor: false },
+    { feature: 'Global HRIS & Payroll Platform', teamstation: false, competitor: true },
+    { feature: 'Focus on Nearshore Engineering Teams', teamstation: true, competitor: false },
 ];
 
 
@@ -31,9 +31,9 @@ export default function DeelComparisonPage() {
           <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
           <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
           <div className="space-y-3">
-            {comparisonData.filter(i => i.teamstation).map(item => (
+            {comparisonData.map(item => (
               <div key={item.feature} className="flex items-start gap-3">
-                <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
                 <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
             ))}
@@ -43,9 +43,9 @@ export default function DeelComparisonPage() {
           <h2 className="text-2xl font-bold text-center text-foreground">Deel</h2>
            <p className="text-center text-sm text-muted-foreground mb-6">Global HR & Payroll Platform</p>
            <div className="space-y-3">
-            {comparisonData.filter(i => i.competitor).map(item => (
+            {comparisonData.map(item => (
                <div key={item.feature} className="flex items-start gap-3">
-                <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
                  <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
             ))}

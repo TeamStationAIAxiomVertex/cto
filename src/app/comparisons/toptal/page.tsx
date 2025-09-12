@@ -1,15 +1,15 @@
 
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 
 const comparisonData = [
-    { feature: 'Focus on Full-Time, Integrated Teams', teamstation: true },
-    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true },
-    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true },
-    { feature: 'Transparent, All-Inclusive Pricing', teamstation: true },
-    { feature: 'Focus on Freelance, Project-Based Talent', competitor: true },
-    { feature: 'High Hourly Rates + Subscription Fees', competitor: true },
+    { feature: 'Focus on Full-Time, Integrated Teams', teamstation: true, competitor: false },
+    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
+    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
+    { feature: 'Transparent, All-Inclusive Pricing', teamstation: true, competitor: false },
+    { feature: 'Focus on Freelance, Project-Based Talent', teamstation: false, competitor: true },
+    { feature: 'High Hourly Rates + Subscription Fees', teamstation: false, competitor: true },
 ];
 
 
@@ -31,9 +31,9 @@ export default function ToptalComparisonPage() {
           <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
           <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
           <div className="space-y-3">
-            {comparisonData.filter(i => i.teamstation).map(item => (
+            {comparisonData.map(item => (
               <div key={item.feature} className="flex items-start gap-3">
-                <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
                 <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
             ))}
@@ -43,9 +43,9 @@ export default function ToptalComparisonPage() {
           <h2 className="text-2xl font-bold text-center text-foreground">Toptal</h2>
            <p className="text-center text-sm text-muted-foreground mb-6">Premium Freelance Network</p>
            <div className="space-y-3">
-            {comparisonData.filter(i => i.competitor).map(item => (
+            {comparisonData.map(item => (
               <div key={item.feature} className="flex items-start gap-3">
-                <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
                  <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
             ))}

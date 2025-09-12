@@ -1,14 +1,14 @@
 
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 
 const comparisonData = [
-    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true },
-    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true },
-    { feature: 'Single, Unified Service Contract & SLA', teamstation: true },
-    { feature: '"Try-before-you-buy" model', competitor: true },
-    { feature: 'Client handles compliance and hardware', competitor: true },
+    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
+    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
+    { feature: 'Single, Unified Service Contract & SLA', teamstation: true, competitor: false },
+    { feature: '"Try-before-you-buy" model', teamstation: false, competitor: true },
+    { feature: 'Client handles compliance and hardware', teamstation: false, competitor: true },
 ];
 
 
@@ -30,9 +30,9 @@ export default function ParallelStaffComparisonPage() {
           <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
           <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
           <div className="space-y-3">
-            {comparisonData.filter(i => i.teamstation).map(item => (
+            {comparisonData.map(item => (
               <div key={item.feature} className="flex items-start gap-3">
-                <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
                 <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
             ))}
@@ -42,9 +42,9 @@ export default function ParallelStaffComparisonPage() {
           <h2 className="text-2xl font-bold text-center text-foreground">ParallelStaff</h2>
            <p className="text-center text-sm text-muted-foreground mb-6">Talent-as-a-Service (TaaS)</p>
            <div className="space-y-3">
-            {comparisonData.filter(i => i.competitor).map(item => (
+            {comparisonData.map(item => (
               <div key={item.feature} className="flex items-start gap-3">
-                <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} />
+                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
                  <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
             ))}
