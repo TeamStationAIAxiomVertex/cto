@@ -1,3 +1,4 @@
+
 import { Tooltip } from '@/components/Tooltip';
 import { BrainCircuit, Scale, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
@@ -30,25 +31,25 @@ export default function BiasFreeHiringPage() {
         <Link href="/">Home</Link> / <Link href="/playbook">CTO Playbook</Link> / <span>Bias-Free Technical Hiring</span>
       </div>
       <header className="my-8">
-        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Beyond Resumes: A Playbook for Bias-Free Technical Hiring</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Stop Gambling on Resumes. Start De-risking Your Hires.</h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Traditional hiring is broken. It’s slow, biased, and often fails to identify the best talent. This playbook outlines how to use the Axiom Cortex™ engine to build a fairer, faster, and more accurate hiring process.
+          You're here because you know traditional hiring is a broken, high-risk gamble. It's slow, it's biased, and it repeatedly fails to identify top talent. This is the playbook for replacing that broken system with a faster, fairer, and more accurate hiring engine.
         </p>
       </header>
       
 
       <article className="prose dark:prose-invert max-w-none my-8">
-        <h2>The Problem: Why Resumes and Unstructured Interviews Fail</h2>
+        <h2>The Problem: Your Hiring Process is Costing You a Fortune</h2>
         <p>
-          Relying on resumes is like navigating with an old, inaccurate map. They tell you where a candidate has been, but not how they think, how they solve problems, or how quickly they learn. Unstructured interviews are equally flawed, often devolving into conversations that favor charismatic speakers over deep thinkers, introducing unconscious bias.
+          Relying on resumes is like trying to value a company by looking at its logo. They tell you where a candidate has been, but nothing about how they think, solve problems, or learn. Unstructured interviews are even worse—they're a stage for charismatic speakers, not a filter for great engineers.
         </p>
         <p>
-          The result? You miss out on exceptional talent—especially from non-traditional backgrounds or those who are not native English speakers. You spend countless hours on a process that is not only inefficient but fundamentally unfair.
+          The result? You waste months and burn political capital on a process that delivers inconsistent results. Worse, a single mis-hire can cost you 6-12 months of salary, destroy team morale, and derail your roadmap. You're not just missing out on exceptional talent; you're actively exposing your organization to massive financial and operational risk.
         </p>
       </article>
 
       <div className="my-16">
-        <h2 className="text-3xl font-bold text-center">The Solution: Three Pillars of Science-Based Hiring</h2>
+        <h2 className="text-3xl font-bold text-center">The Antidote: Three Pillars of Science-Based Hiring</h2>
          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           {principles.map((item) => (
              <div className="rounded-lg border bg-card p-6" key={item.title}>
@@ -65,24 +66,24 @@ export default function BiasFreeHiringPage() {
       <article className="prose dark:prose-invert max-w-none my-8">
         <h2>Putting It Into Practice: The Axiom Cortex™ Workflow</h2>
         <p>
-          Our process standardizes evaluation to ensure every candidate is measured against the same objective criteria.
+          Our process standardizes evaluation to ensure every candidate is measured against the same objective, scientifically-validated criteria. It's a system, not a series of disconnected conversations.
         </p>
         <ol>
-            <li><strong>Role Definition:</strong> We work with you to define the ideal cognitive and technical profile for the role. This becomes the benchmark for evaluation.</li>
-            <li><strong>Structured Interview:</strong> Candidates undergo a standardized technical interview designed to test specific competencies and cognitive traits.</li>
-            <li><strong>AI-Powered Analysis:</strong> The{' '}<Tooltip text="Axiom Cortex™ is TeamStation AI's proprietary Cognitive AI engine that uses 44 psychometric and NLP signals to evaluate engineering candidates.">Axiom Cortex™</Tooltip> engine analyzes the interview, scoring the candidate against the ideal profile and identifying potential risks and strengths.</li>
-            <li><strong>Evidence-Based Decision:</strong> You receive a detailed report, including a cognitive fingerprint and an evidence locker with transcribed highlights, allowing you to make a data-driven decision.</li>
+            <li><strong>Role Definition:</strong> We work with you to define the ideal cognitive and technical profile for the role. This becomes the non-negotiable benchmark for evaluation.</li>
+            <li><strong>Structured Interview:</strong> Candidates undergo a standardized technical interview designed to test specific competencies and cognitive traits under pressure.</li>
+            <li><strong>AI-Powered Analysis:</strong> The{' '}<Tooltip text="Axiom Cortex™ is TeamStation AI's proprietary Cognitive AI engine that uses 44 psychometric and NLP signals to evaluate engineering candidates.">Axiom Cortex™</Tooltip> engine analyzes the interview, scoring the candidate against the benchmark and identifying specific risks and strengths—with evidence.</li>
+            <li><strong>Evidence-Based Decision:</strong> You get a detailed, auditable report with a cognitive fingerprint and an evidence locker. You make a data-driven decision, not a gut-feel guess.</li>
         </ol>
         <p>
-            This methodology transforms hiring from a game of chance into a science. It's how you build an elite team, based on proven capability, not credentials.
+            This methodology transforms hiring from a game of chance into a science. It's how you build an elite team based on proven capability, not just credentials on a PDF.
         </p>
       </article>
 
       <div className="text-center rounded-lg bg-primary/10 p-8">
-          <h2 className="text-2xl font-bold">Ready to Build a Fairer, More Effective Hiring Engine?</h2>
-          <p className="mt-2 mx-auto max-w-xl text-muted-foreground">Stop guessing and start making data-driven decisions about your most important asset: your talent.</p>
+          <h2 className="text-2xl font-bold">Stop Guessing. Start Building with Confidence.</h2>
+          <p className="mt-2 mx-auto max-w-xl text-muted-foreground">Your most important asset is your talent. It's time to start making data-driven decisions about it.</p>
           <Link href="/research/axiom-cortex-scientific-report" className="cta-button mt-6">
-            Read the Axiom Cortex™ Report
+            Read the Axiom Cortex™ Scientific Report
           </Link>
       </div>
     </main>
