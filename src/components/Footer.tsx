@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { Tooltip } from "./Tooltip";
 
@@ -6,23 +7,26 @@ export function Footer() {
 
   const links = {
       "Playbook": [
-        { href: '/case-studies/atticus', label: 'Case Studies' },
-        { href: '/#contact', label: 'Contact' },
+        { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs. Offshore' },
+        { href: '/playbook/latam-economics', label: 'LATAM Economics' },
+        { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
+        { href: '/playbook/security-compliance', label: 'Security & Compliance' },
       ],
       "Services": [
-        { href: '#', label: <Tooltip text="Cognitive AI Validation">AI Vetting</Tooltip> },
-        { href: '#', label: <Tooltip text="Employer of Record">EOR & Payroll</Tooltip> },
-        { href: '#', label: <Tooltip text="Secure Device & Mobile Device Management">Secure Onboarding</Tooltip> },
+        { href: '/process', label: 'Our Process' },
+        { href: '/technical-interview-evaluation', label: 'Talent Evaluations' },
+        { href: '/nearshore-integrated-services', label: 'Integrated Services' },
       ],
       "Company": [
-        { href: '#', label: 'About Us' },
-        { href: '#', label: 'Research' },
-        { href: '#', label: 'Trust Center' },
+        { href: '/about', label: 'About Us' },
+        { href: '/research', label: 'Research' },
+        { href: '/trust', label: 'Trust Center' },
+        { href: '/hire', label: 'Contact' },
       ]
   }
 
   return (
-    <footer className="mt-24 border-t border-border py-16 text-muted-foreground">
+    <footer className="mt-32 border-t border-border py-16 text-muted-foreground">
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">

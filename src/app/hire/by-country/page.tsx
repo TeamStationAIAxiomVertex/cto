@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 
 export default function HireByCountryPage() {
@@ -16,24 +17,25 @@ export default function HireByCountryPage() {
 
   return (
     <main className="container">
-       <div className="breadcrumb">
-        <a href="/">Home</a> / <a href="/hire">Hire</a> / By Country
+       <div className="text-sm text-muted-foreground">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <span>By Country</span>
       </div>
-      <h1 className="h1">Hire Nearshore Talent by Country</h1>
-      <p className="lead">
+      <header className="text-center my-12">
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire by Country</h1>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
        Tap into the top engineering talent pools across Latin America, perfectly aligned with your time zone.
       </p>
+      </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {countries.map((country) => (
-          <div key={country.slug} className="card p-6 hover:bg-surface-2 transition-colors">
-            <h3 className="h3 mt-0 text-xl">{country.name}</h3>
-            <p className="text-mute text-sm">{country.cities}</p>
-            {/* This would eventually link to /latam/[country]/... pages */}
-            <p className="text-accent-custom text-sm font-semibold mt-4">Explore {country.name} →</p>
-          </div>
+          <Link href="#" key={country.slug} className="group block rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+            <h3 className="text-xl font-bold transition-colors group-hover:text-primary">{country.name}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">{country.cities}</p>
+            <div className="mt-4 text-sm font-semibold text-primary">Explore Talent <span className="inline-block transition-transform group-hover:translate-x-1">→</span></div>
+          </Link>
         ))}
       </div>
-    </main>
+    </main>jinja
   );
 }
