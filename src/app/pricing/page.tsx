@@ -1,6 +1,7 @@
 'use client';
 
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const levels = [
   { level: 'L1 Proficient', title: 'Guided contributor', description: 'Contributes on component-level tasks with guidance.', rate: 20 },
@@ -59,11 +60,11 @@ export default function PricingPage() {
             <div className="text-3xl font-bold">-</div>
             <div><span className="text-3xl font-bold">9</span><p className="text-sm text-mute">TeamStation Hire Time</p></div>
             <div className="text-3xl font-bold">=</div>
-            <div><span className="text-3xl font-bold text-green-400">36</span><p className="text-sm text-mute">Days Saved</p></div>
+            <div><span className="text-3xl font-bold text-accent-custom">36</span><p className="text-sm text-mute">Days Saved</p></div>
          </div>
          <div className="text-center mt-6 bg-surface-1 p-4 rounded-lg max-w-lg mx-auto">
             <p className="font-mono text-sm md:text-base">
-                (36 days / 365) * $1,000,000 ARR = <span className="font-bold text-green-400">$98,630</span>
+                (36 days / 365) * $1,000,000 ARR = <span className="font-bold text-accent-custom">$98,630</span>
             </p>
             <p className="text-xs text-mute mt-1">ARR pulled forward this year</p>
          </div>
@@ -83,7 +84,7 @@ export default function PricingPage() {
       </div>
 
       <div className="section text-center">
-        <a href="/hire" className="cta">Book a Strategy Call</a>
+        <Link href="/hire" className="cta">Book a Strategy Call</Link>
       </div>
     </div>
   );

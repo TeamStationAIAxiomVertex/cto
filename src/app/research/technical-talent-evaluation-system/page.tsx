@@ -11,7 +11,7 @@ import {
 } from 'recharts';
 import { AccordionItem } from '@/components/Accordion';
 import { ShieldCheck, BrainCircuit, Target, Lightbulb } from 'lucide-react';
-
+import Link from 'next/link';
 
 const cognitiveData = [
     { name: 'Architectural Instinct', candidate: 4.3, ideal: 4.5 },
@@ -21,10 +21,10 @@ const cognitiveData = [
 ];
 
 const mciLevels = [
-    { name: 'Dunning-Kruger', color: '#ef4444' }, // red-500
-    { name: 'Confident', color: '#f97316' }, // orange-500
-    { name: 'Expert', color: '#3b82f6' }, // blue-500
-    { name: 'HONEST SELF-ASSESSMENT', color: '#22c55e' }, // green-500
+    { name: 'Dunning-Kruger', color: 'hsl(var(--warn-custom))' },
+    { name: 'Confident', color: '#f97316' }, // orange-500 - will be less used
+    { name: 'Expert', color: '#3b82f6' }, // blue-500 - will be less used
+    { name: 'HONEST SELF-ASSESSMENT', color: 'hsl(var(--accent-custom))' },
 ];
 const mciScore = 3.5; // Represents "Honest Self-Assessment"
 
@@ -147,7 +147,7 @@ export default function EvaluationPage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / <a href="/research">Research</a> / Technical Talent Evaluation
+        <Link href="/">Home</Link> / <Link href="/research">Research</Link> / Technical Talent Evaluation
       </div>
       <h1 className="h1">Technical Talent Evaluation System</h1>
       <p className="lead">
@@ -159,33 +159,33 @@ export default function EvaluationPage() {
             <h2 className="h2 mt-0">Executive Summary</h2>
             <div className="flex items-center gap-4 my-4">
                 <div className="text-center">
-                    <div className="text-4xl font-bold text-green-400">4.6<span className="text-2xl text-slate-400">/5.0</span></div>
-                    <div className="text-sm text-slate-400">Final Score</div>
+                    <div className="text-4xl font-bold text-accent-custom">4.6<span className="text-2xl text-mute">/5.0</span></div>
+                    <div className="text-sm text-mute">Final Score</div>
                 </div>
-                <div className="w-px self-stretch bg-slate-700"></div>
+                <div className="w-px self-stretch bg-line"></div>
                 <div>
-                     <div className="text-lg font-semibold text-green-400">Strong Hire</div>
-                     <p className="text-sm text-slate-400 m-0">High-potential senior engineer with a robust technical foundation and exceptional cognitive traits.</p>
+                     <div className="text-lg font-semibold text-accent-custom">Strong Hire</div>
+                     <p className="text-sm text-mute m-0">High-potential senior engineer with a robust technical foundation and exceptional cognitive traits.</p>
                 </div>
             </div>
-             <p className="text-sm text-slate-400">He demonstrates deep, modern expertise in frontend performance engineering and a solid grasp of backend architectural principles. His ability to reason from first principles is a powerful indicator of a superior mental model.</p>
+             <p className="text-sm text-mute">He demonstrates deep, modern expertise in frontend performance engineering and a solid grasp of backend architectural principles. His ability to reason from first principles is a powerful indicator of a superior mental model.</p>
         </div>
         <div className="card">
             <h2 className="h2 mt-0">Metacognitive Conviction Index (MCI)</h2>
-            <p className="text-sm text-slate-400">Assesses how well a candidate's confidence is calibrated with their knowledge.</p>
-            <div className="w-full bg-slate-700 rounded-full h-2.5 my-4 relative">
+            <p className="text-sm text-mute">Assesses how well a candidate's confidence is calibrated with their knowledge.</p>
+            <div className="w-full bg-surface-2 rounded-full h-2.5 my-4 relative">
                  <div className="h-2.5 rounded-full" style={{ 
                      width: `${(mciScore / 4) * 100}%`,
-                     background: 'linear-gradient(to right, #ef4444, #f97316, #3b82f6, #22c55e)' 
+                     background: 'linear-gradient(to right, hsl(var(--warn-custom)), hsl(var(--warn-custom)), hsl(var(--accent-custom)), hsl(var(--accent-custom)))' 
                 }}></div>
                  <div className="absolute top-0 h-full flex items-center" style={{left: `calc(${(mciScore / 4) * 100}% - 8px)`}}>
-                    <div className="w-4 h-4 bg-white rounded-full border-2 border-green-400"></div>
+                    <div className="w-4 h-4 bg-white rounded-full border-2 border-accent-custom"></div>
                  </div>
             </div>
-             <div className="flex justify-between text-xs text-slate-400">
+             <div className="flex justify-between text-xs text-mute">
                 <span>Dunning-Kruger</span>
                 <span>Expert</span>
-                <span className='font-bold text-green-400'>Honest Self-Assessment</span>
+                <span className='font-bold text-accent-custom'>Honest Self-Assessment</span>
             </div>
         </div>
       </div>
@@ -201,15 +201,15 @@ export default function EvaluationPage() {
                 <XAxis type="number" domain={[0, 5]} hide />
                 <YAxis type="category" dataKey="name" width={150} tick={{ fill: 'var(--mute)' }} axisLine={false} tickLine={false} />
                 <Tooltip 
-                    cursor={{ fill: 'rgba(255, 255, 255, 0.1)'}}
-                    contentStyle={{ backgroundColor: 'var(--surface2)', border: '1px solid var(--line)' }}
+                    cursor={{ fill: 'hsla(var(--surface-2))'}}
+                    contentStyle={{ backgroundColor: 'hsla(var(--surface-1))', border: '1px solid hsla(var(--line))' }}
                 />
                 <Bar dataKey="candidate" name="Candidate" barSize={20} radius={[0, 8, 8, 0]}>
                     {cognitiveData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.candidate >= entry.ideal ? '#22c55e' : '#f97316'} />
+                        <Cell key={`cell-${index}`} fill={entry.candidate >= entry.ideal ? 'hsl(var(--accent-custom))' : 'hsl(var(--warn-custom))'} />
                     ))}
                 </Bar>
-                 <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="#374151" radius={[0, 8, 8, 0]} />
+                 <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="hsla(var(--surface-2))" radius={[0, 8, 8, 0]} />
             </BarChart>
             </ResponsiveContainer>
         </div>
@@ -221,12 +221,12 @@ export default function EvaluationPage() {
                 {risks.map((risk) => (
                     <div className="card" key={risk.title}>
                         <div className="flex items-center gap-3 mb-2">
-                             <ShieldCheck className="text-amber-400" />
+                             <ShieldCheck className="text-warn-custom" />
                             <h3 className="h3 m-0">{risk.title}</h3>
                         </div>
-                        <p className="text-sm text-slate-400 border-b border-slate-700 pb-2">{risk.description}</p>
+                        <p className="text-sm text-mute border-b border-line pb-2">{risk.description}</p>
                         <h4 className='text-sm font-bold mt-2'>Mitigation</h4>
-                        <p className="text-sm text-slate-400 m-0">{risk.mitigation}</p>
+                        <p className="text-sm text-mute m-0">{risk.mitigation}</p>
                     </div>
                 ))}
             </div>

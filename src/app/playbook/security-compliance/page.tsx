@@ -1,19 +1,20 @@
 import { ShieldCheck, Laptop, FileLock } from 'lucide-react';
+import Link from 'next/link';
 
 export default function SecurityCompliancePage() {
     const pillars = [
         {
-            icon: <ShieldCheck size={24} className="text-green-400" />,
+            icon: <ShieldCheck size={24} className="text-accent-custom" />,
             title: 'SOC 2 / ISO 27001 Alignment',
             description: 'Our operational controls for security, availability, processing integrity, confidentiality, and privacy are aligned with leading industry standards, providing you an audit-ready posture.',
         },
         {
-            icon: <Laptop size={24} className="text-blue-400" />,
+            icon: <Laptop size={24} className="text-accent-custom" />,
             title: 'Secure Device & MDM',
             description: 'We provision, secure, and manage all developer laptops with enterprise-grade Mobile Device Management (MDM), enforcing policies like disk encryption, strong passwords, and remote wipe.',
         },
         {
-            icon: <FileLock size={24} className="text-red-400" />,
+            icon: <FileLock size={24} className="text-accent-custom" />,
             title: 'Integrated EOR & Compliance',
             description: 'We handle all Employer of Record (EOR) complexities, ensuring compliance with local labor laws in every LATAM country we operate in, mitigating your legal and financial risk.',
         },
@@ -22,7 +23,7 @@ export default function SecurityCompliancePage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / <a href="/playbook">CTO Playbook</a> / Security & Compliance
+        <Link href="/">Home</Link> / <Link href="/playbook">CTO Playbook</Link> / Security & Compliance
       </div>
       <h1 className="h1">The Playbook for Audit-Ready Nearshore Operations</h1>
       <p className="lead">
@@ -65,9 +66,9 @@ export default function SecurityCompliancePage() {
       <div className="section my-8 text-center">
           <h2 className="h2 mt-0">Security is Not a Feature. It's Our Platform.</h2>
           <p className="lead" style={{marginBottom: '24px'}}>Explore our MSA and see how our commitment to security is built into our legal framework.</p>
-          <a href="/trust" className="cta">
+          <Link href="/trust" className="cta">
             Visit Our Trust Center
-          </a>
+          </Link>
       </div>
     </main>
   );

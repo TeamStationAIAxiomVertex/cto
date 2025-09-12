@@ -1,22 +1,23 @@
 import Tooltip from '@/components/Tooltip';
 import { BrainCircuit, Scale, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
 
 export default function BiasFreeHiringPage() {
   const principles = [
     {
-      icon: <BrainCircuit size={24} className="text-blue-400" />,
+      icon: <BrainCircuit size={24} className="text-accent-custom" />,
       title: 'Cognitive Science over Credentials',
       description:
         'Axiom Cortex™ analyzes 44 distinct psychometric and NLP signals to evaluate problem-solving, architectural instinct, and learning orientation—traits that resumes cannot capture.',
     },
     {
-      icon: <ShieldCheck size={24} className="text-green-400" />,
+      icon: <ShieldCheck size={24} className="text-accent-custom" />,
       title: 'Language Fairness Calibration',
       description:
         'Our system is designed to mitigate bias against non-native English speakers. It focuses on the logical and technical substance of an answer, not just linguistic fluency.',
     },
     {
-      icon: <Scale size={24} className="text-amber-400" />,
+      icon: <Scale size={24} className="text-accent-custom" />,
       title: 'Structured, Auditable Evidence',
       description:
         'Every evaluation is based on a structured interview and work-sample tests. The entire process is recorded and analyzed, creating an auditable evidence locker for every candidate.',
@@ -26,7 +27,7 @@ export default function BiasFreeHiringPage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / <a href="/playbook">CTO Playbook</a> / Bias-Free Technical Hiring
+        <Link href="/">Home</Link> / <Link href="/playbook">CTO Playbook</Link> / Bias-Free Technical Hiring
       </div>
       <h1 className="h1">Beyond Resumes: A Playbook for Bias-Free Technical Hiring</h1>
       <p className="lead">
@@ -77,9 +78,9 @@ export default function BiasFreeHiringPage() {
       <div className="section my-8 text-center">
           <h2 className="h2 mt-0">Ready to Build a Fairer, More Effective Hiring Engine?</h2>
           <p className="lead" style={{marginBottom: '24px'}}>Stop guessing and start making data-driven decisions about your most important asset: your talent.</p>
-          <a href="/research/axiom-cortex-scientific-report" className="cta">
+          <Link href="/research/axiom-cortex-scientific-report" className="cta">
             Read the Axiom Cortex™ Report
-          </a>
+          </Link>
       </div>
     </main>
   );

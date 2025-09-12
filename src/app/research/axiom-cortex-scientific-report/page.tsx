@@ -1,4 +1,5 @@
 import { BrainCircuit, FileText, ShieldCheck, Scale } from 'lucide-react';
+import Link from 'next/link';
 
 export default function AxiomCortexReportPage() {
   const scientificPillars = [
@@ -27,7 +28,7 @@ export default function AxiomCortexReportPage() {
   return (
     <div className="container mx-auto max-w-7xl px-6 py-12">
       <div className="breadcrumb">
-        <a href="/">Home</a> / <a href="/research">Research</a> / AxiomCortex™ Report
+        <Link href="/">Home</Link> / <Link href="/research">Research</Link> / AxiomCortex™ Report
       </div>
       <header className="my-8 text-center">
         <h1 className="h1">AxiomCortex™: Scientific R&D Report</h1>

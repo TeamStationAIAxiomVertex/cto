@@ -22,25 +22,25 @@ export default function BairesDevComparisonPage() {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-        <div className="card border-green-500/50 flex-1 p-6">
+        <div className="card border-accent-custom/50 flex-1 p-6">
           <h2 className="h2 mt-0 text-center">TeamStation AI</h2>
           <p className="text-center text-sm text-mute mb-6">The Integrated Nearshore IT Co-Pilot™</p>
           <div className="space-y-3">
             {comparisonData.map(item => (
               <div key={item.feature} className="icon-card !p-3 !gap-3">
-                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0" size={20} /> : <XCircle className="text-red-500 flex-shrink-0" size={20} />}
+                {item.teamstation ? <CheckCircle className="text-accent-custom flex-shrink-0" size={20} /> : <XCircle className="text-warn-custom flex-shrink-0" size={20} />}
                 <span className="text-sm">{item.feature}</span>
               </div>
             ))}
           </div>
         </div>
-        <div className="card border-red-500/50 flex-1 p-6">
+        <div className="card border-warn-custom/50 flex-1 p-6">
           <h2 className="h2 mt-0 text-center">BairesDev</h2>
            <p className="text-center text-sm text-mute mb-6">Traditional Staff Augmentation</p>
            <div className="space-y-3">
             {comparisonData.map(item => (
               <div key={item.feature} className="icon-card !p-3 !gap-3">
-                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0" size={20} /> : <XCircle className="text-red-500 flex-shrink-0" size={20} />}
+                {item.competitor ? <CheckCircle className="text-accent-custom flex-shrink-0" size={20} /> : <XCircle className="text-warn-custom flex-shrink-0" size={20} />}
                  <span className="text-sm">{item.feature}</span>
               </div>
             ))}

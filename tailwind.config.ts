@@ -9,6 +9,7 @@ const config: Config = {
       colors: {
         'bg': 'hsl(var(--bg))', 'text': 'hsl(var(--text))', 'mute': 'hsl(var(--mute))',
         'accent-custom': 'hsl(var(--accent-custom))', 'accent-d-custom': 'hsl(var(--accent-d-custom))',
+        'warn-custom': 'hsl(var(--warn-custom))',
         'surface-1': 'hsl(var(--surface-1))', 'surface-2': 'hsl(var(--surface-2))',
         'line': 'hsl(var(--line))',
       },

@@ -1,6 +1,7 @@
 
 import { CheckCircle, XCircle } from 'lucide-react';
 import Tooltip from '@/components/Tooltip';
+import Link from 'next/link';
 
 const comparisonData = [
     { feature: 'Focus on Mission-Fit LATAM Talent', teamstation: true, competitor: false },
@@ -16,7 +17,7 @@ export default function GlobantComparisonPage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / <a href="/comparisons">Comparisons</a> / Globant
+        <Link href="/">Home</Link> / <Link href="/comparisons">Comparisons</Link> / Globant
       </div>
       <header className="text-center my-8">
         <h1 className="h1">TeamStation AI vs. Globant</h1>
@@ -26,25 +27,25 @@ export default function GlobantComparisonPage() {
       </header>
 
       <div className="flex flex-col md:flex-row gap-8 my-12">
-        <div className="card border-green-500/50 flex-1">
+        <div className="card border-accent-custom/50 flex-1">
           <h2 className="h2 mt-0 text-center">TeamStation AI</h2>
-          <p className="text-center text-sm text-slate-400 mb-6">The Integrated Nearshore IT Co-Pilot™</p>
+          <p className="text-center text-sm text-mute mb-6">The Integrated Nearshore IT Co-Pilot™</p>
           <div className="space-y-3">
             {comparisonData.map(item => (
               <div key={item.feature} className="icon-card !p-3 !gap-3">
-                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0" size={20} /> : <XCircle className="text-red-500 flex-shrink-0" size={20} />}
+                {item.teamstation ? <CheckCircle className="text-accent-custom flex-shrink-0" size={20} /> : <XCircle className="text-warn-custom flex-shrink-0" size={20} />}
                 <span className="text-sm">{item.feature}</span>
               </div>
             ))}
           </div>
         </div>
-        <div className="card border-red-500/50 flex-1">
+        <div className="card border-warn-custom/50 flex-1">
           <h2 className="h2 mt-0 text-center">Globant</h2>
-           <p className="text-center text-sm text-slate-400 mb-6">Global Systems Integrator</p>
+           <p className="text-center text-sm text-mute mb-6">Global Systems Integrator</p>
            <div className="space-y-3">
             {comparisonData.map(item => (
               <div key={item.feature} className="icon-card !p-3 !gap-3">
-                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0" size={20} /> : <XCircle className="text-red-500 flex-shrink-0" size={20} />}
+                {item.competitor ? <CheckCircle className="text-accent-custom flex-shrink-0" size={20} /> : <XCircle className="text-warn-custom flex-shrink-0" size={20} />}
                  <span className="text-sm">{item.feature}</span>
               </div>
             ))}
@@ -69,7 +70,9 @@ export default function GlobantComparisonPage() {
         </p>
         <p>
             TeamStation AI, in contrast, focuses on talent quality and integration. Our{' '}
-            <a href="/research/axiom-cortex-scientific-report">Axiom Cortex™</a>
+            <Link href="/research/axiom-cortex-scientific-report">
+                Axiom Cortex™
+            </Link>
             {' '}engine measures cognitive traits, ensuring you're hiring engineers who are not just skilled, but are also agile problem-solvers and strong collaborators. Our platform provides you with the data to monitor onboarding and performance, giving you the control and visibility you need to manage your team effectively. For mid-sized companies, or any organization that wants to retain direct control over their engineering culture and technical direction, the TeamStation model is far more aligned.
         </p>
       </div>
@@ -79,7 +82,7 @@ export default function GlobantComparisonPage() {
         <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
             If you need to outsource an entire digital transformation initiative to a large, capable firm, Globant is a world-class choice. If your goal is to strategically build and scale your own high-performing nearshore engineering team with scientifically vetted talent and full operational transparency, TeamStation AI provides the more targeted, controllable, and precise platform.
         </p>
-        <a href="/comparisons" className="cta">Back to Main Comparison</a>
+        <Link href="/comparisons" className="cta">Back to Main Comparison</Link>
       </div>
     </main>
   );

@@ -1,6 +1,7 @@
 
 import { CheckCircle, XCircle } from 'lucide-react';
 import Tooltip from '@/components/Tooltip';
+import Link from 'next/link';
 
 const comparisonData = [
     { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
@@ -16,7 +17,7 @@ export default function TeclaComparisonPage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / <a href="/comparisons">Comparisons</a> / TECLA
+        <Link href="/">Home</Link> / <Link href="/comparisons">Comparisons</Link> / TECLA
       </div>
       <header className="text-center my-8">
         <h1 className="h1">TeamStation AI vs. TECLA</h1>
@@ -26,25 +27,25 @@ export default function TeclaComparisonPage() {
       </header>
 
       <div className="flex flex-col md:flex-row gap-8 my-12">
-        <div className="card border-green-500/50 flex-1">
+        <div className="card border-accent-custom/50 flex-1">
           <h2 className="h2 mt-0 text-center">TeamStation AI</h2>
-          <p className="text-center text-sm text-slate-400 mb-6">The Integrated Nearshore IT Co-Pilot™</p>
+          <p className="text-center text-sm text-mute mb-6">The Integrated Nearshore IT Co-Pilot™</p>
           <div className="space-y-3">
             {comparisonData.map(item => (
               <div key={item.feature} className="icon-card !p-3 !gap-3">
-                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0" size={20} /> : <XCircle className="text-red-500 flex-shrink-0" size={20} />}
+                {item.teamstation ? <CheckCircle className="text-accent-custom flex-shrink-0" size={20} /> : <XCircle className="text-warn-custom flex-shrink-0" size={20} />}
                 <span className="text-sm">{item.feature}</span>
               </div>
             ))}
           </div>
         </div>
-        <div className="card border-red-500/50 flex-1">
+        <div className="card border-warn-custom/50 flex-1">
           <h2 className="h2 mt-0 text-center">TECLA</h2>
-           <p className="text-center text-sm text-slate-400 mb-6">LATAM Talent Marketplace</p>
+           <p className="text-center text-sm text-mute mb-6">LATAM Talent Marketplace</p>
            <div className="space-y-3">
             {comparisonData.map(item => (
               <div key={item.feature} className="icon-card !p-3 !gap-3">
-                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0" size={20} /> : <XCircle className="text-red-500 flex-shrink-0" size={20} />}
+                {item.competitor ? <CheckCircle className="text-accent-custom flex-shrink-0" size={20} /> : <XCircle className="text-warn-custom flex-shrink-0" size={20} />}
                  <span className="text-sm">{item.feature}</span>
               </div>
             ))}
@@ -78,7 +79,7 @@ export default function TeclaComparisonPage() {
         <p className="lead" style={{fontSize: '1rem', maxWidth: '800px', margin: '0 auto 24px auto'}}>
             If you have the internal resources to manage international hiring, compliance, and IT security, a marketplace like TECLA can be a good sourcing tool. However, for companies looking for a complete, secure, and scalable solution, TeamStation AI's integrated platform offers a clear advantage by reducing risk and operational burden.
         </p>
-        <a href="/comparisons" className="cta">Back to Main Comparison</a>
+        <Link href="/comparisons" className="cta">Back to Main Comparison</Link>
       </div>
     </main>
   );

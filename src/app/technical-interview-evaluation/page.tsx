@@ -1,20 +1,20 @@
-import Link from 'next/link';
 import { BrainCircuit, FileCheck, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
 
 export default function TalentEvaluationPage() {
     const features = [
         {
-            icon: <BrainCircuit size={24} className="text-blue-400" />,
+            icon: <BrainCircuit size={24} className="text-accent-custom" />,
             title: 'Cognitive Fingerprint',
             description: 'We map each candidate\'s latent cognitive traits—like Architectural Instinct and Problem-Solving Agility—against the ideal profile for your role.',
         },
         {
-            icon: <FileCheck size={24} className="text-green-400" />,
+            icon: <FileCheck size={24} className="text-accent-custom" />,
             title: 'Evidence Locker',
             description: 'You get a detailed analysis of the candidate\'s responses to key technical questions, including verbatim transcripts and a comparison against an ideal answer blueprint.',
         },
         {
-            icon: <ShieldCheck size={24} className="text-amber-400" />,
+            icon: <ShieldCheck size={24} className="text-warn-custom" />,
             title: 'Risk & Mitigation Plan',
             description: 'We identify potential weaknesses or gaps in a candidate\'s knowledge and provide a concrete, actionable plan to mitigate those risks during onboarding.',
         },
@@ -22,7 +22,7 @@ export default function TalentEvaluationPage() {
   return (
     <main className="container">
       <div className="breadcrumb">
-        <a href="/">Home</a> / Services / Talent Evaluations
+        <Link href="/">Home</Link> / <a href="/process">Process</a> / Talent Evaluations
       </div>
       <h1 className="h1">The Axiom Cortex™ Talent Evaluation</h1>
       <p className="lead">

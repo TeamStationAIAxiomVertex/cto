@@ -1,20 +1,21 @@
 import { DollarSign, UserCheck, TrendingUp, HelpCircle } from 'lucide-react';
 import Tooltip from '@/components/Tooltip';
+import Link from 'next/link';
 
 export default function LatamEconomicsPage() {
     const factors = [
         {
-            icon: <DollarSign size={24} className="text-green-400" />,
+            icon: <DollarSign size={24} className="icon" />,
             title: 'Salary is Only the Start',
             description: 'Competitive salaries are the entry point, but the real savings come from abstracting away massive hidden costs in legal, compliance, and administrative overhead.',
         },
         {
-            icon: <UserCheck size={24} className="text-blue-400" />,
+            icon: <UserCheck size={24} className="icon" />,
             title: 'High Talent Density → Faster Hiring',
             description: 'High-concentration talent pools in Brazil, Mexico, and Colombia mean faster sourcing, reducing the "vacancy tax" you pay for every day a role stays open.',
         },
         {
-            icon: <TrendingUp size={24} className="text-amber-400" />,
+            icon: <TrendingUp size={24} className="icon" />,
             title: 'Focus on Total Cost of Ownership (TCO)',
             description: 'True cost isn\'t just salary. It\'s the cost of hiring, legal, devices, and management. Our integrated platform significantly lowers TCO compared to DIY.',
         },
@@ -75,28 +76,28 @@ export default function LatamEconomicsPage() {
                 </tr>
                 <tr>
                   <td>Recruitment & Agency Fees (15-20%)</td>
-                  <td className='text-center text-red-400'>~$17,000</td>
+                  <td className='text-center text-warn-custom'>~$17,000</td>
                 </tr>
                 <tr>
                   <td>Legal, EOR & Payroll Admin</td>
-                  <td className='text-center text-red-400'>~$12,000</td>
+                  <td className='text-center text-warn-custom'>~$12,000</td>
                 </tr>
                 <tr>
                   <td>Hardware, MDM & Security Tools</td>
-                  <td className='text-center text-red-400'>~$3,500</td>
+                  <td className='text-center text-warn-custom'>~$3,500</td>
                 </tr>
                 <tr>
                   <td>Benefits & Statutory Costs (~20%)</td>
-                  <td className='text-center text-red-400'>~$17,000</td>
+                  <td className='text-center text-warn-custom'>~$17,000</td>
                 </tr>
                 <tr>
                   <td>Management & HR Overhead</td>
-                  <td className='text-center text-red-400'>~$5,000</td>
+                  <td className='text-center text-warn-custom'>~$5,000</td>
                 </tr>
                 <tr className='border-t-2 border-line'>
                   <td className='font-bold'>True TCO (Estimated)</td>
-                  <td className='text-center font-bold text-2xl text-red-400'>~$139,500</td>
-                  <td className='text-center font-bold text-2xl text-green-400'>~$83,040</td>
+                  <td className='text-center font-bold text-2xl text-warn-custom'>~$139,500</td>
+                  <td className='text-center font-bold text-2xl text-accent-custom'>~$83,040</td>
                 </tr>
               </tbody>
             </table>
@@ -112,7 +113,7 @@ export default function LatamEconomicsPage() {
           <div className="text-center mt-6 bg-surface-1 p-6 rounded-lg max-w-2xl mx-auto card">
               <h3 className='h3 mt-0'>Example: The Cost of a 36-Day Delay</h3>
               <p className="font-mono text-sm md:text-base">
-                  (36 days saved / 365) * $1,000,000 ARR = <span className="font-bold text-green-400">$98,630</span>
+                  (36 days saved / 365) * $1,000,000 ARR = <span className="font-bold text-accent-custom">$98,630</span>
               </p>
               <p className="text-xs text-mute mt-1">ARR pulled forward by hiring in 9 days vs. the industry average of 45.</p>
           </div>
@@ -137,9 +138,9 @@ export default function LatamEconomicsPage() {
             <h2 className="h2 mt-0">Ready for a Transparent, Predictable Cost Model?</h2>
             <p className="lead max-w-2xl mx-auto" style={{marginBottom: '24px'}}>See our all-inclusive pricing tiers that eliminate hidden costs and simplify your budget.
             </p>
-            <a href="/pricing" className="cta">
+            <Link href="/pricing" className="cta">
               Explore Our Pricing
-            </a>
+            </Link>
         </div>
       </div>
     </main>
