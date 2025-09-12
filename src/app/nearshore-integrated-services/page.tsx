@@ -51,9 +51,9 @@ export default function IntegratedServicesPage() {
   ];
 
   return (
-    <main className="container max-w-6xl">
-      <div className="text-sm text-muted-foreground">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/process" className="hover:text-foreground">Services</Link> / <span>Integrated Services</span>
+    <main className="container max-w-6xl py-12">
+      <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Services</span>
       </div>
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">A Single SLA for Your Entire Operation</h1>
@@ -72,7 +72,7 @@ export default function IntegratedServicesPage() {
         ))}
       </div>
 
-       <div className="prose prose-lg dark:prose-invert mx-auto my-16">
+       <div className="prose prose-lg dark:prose-invert mx-auto my-16 max-w-4xl">
         <h2 className="text-center">Why an Integrated Approach Matters</h2>
         <p>
             In a traditional model, a CTO might have to juggle a recruiting agency, a separate EOR provider for payroll, an IT consultant for device security, and a law firm for compliance. This is not only inefficient but also creates dangerous gaps in accountability. If something goes wrong, who is responsible?
@@ -87,7 +87,7 @@ export default function IntegratedServicesPage() {
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Stop managing vendors and start building your product. Let our integrated platform handle the operational complexity for you.
         </p>
-        <Link href="/hire" className="cta-button mt-6">Book a Strategy Call</Link>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
     </main>
   );

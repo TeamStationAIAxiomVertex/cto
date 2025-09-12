@@ -27,9 +27,9 @@ export default function OnboardingPage() {
     ];
 
   return (
-    <main className="container max-w-6xl">
-      <div className="text-sm text-muted-foreground">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/process" className="hover:text-foreground">Services</Link> / <span>Talent Onboarding</span>
+    <main className="container max-w-6xl py-12">
+      <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Services</span> / <span>Talent Onboarding</span>
       </div>
       <header className="text-center my-12">
       <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Onboarding You Can Audit</h1>
@@ -50,7 +50,7 @@ export default function OnboardingPage() {
         ))}
       </div>
 
-       <div className="prose prose-lg dark:prose-invert mx-auto my-16">
+       <div className="prose prose-lg dark:prose-invert mx-auto my-16 max-w-4xl">
         <h2 className="text-center">The Difference is Evidence</h2>
         <p>
             Most onboarding processes are a black box. You hope the new hire is set up correctly, but you have no real proof. Our process is different. The Onboarding Dossier provides a clear, auditable trail of every step, from legal agreements to device security checks.

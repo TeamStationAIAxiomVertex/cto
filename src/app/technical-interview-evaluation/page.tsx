@@ -12,7 +12,7 @@ export default function TalentEvaluationPage() {
         {
             icon: <FileCheck className="h-8 w-8 text-primary" />,
             title: 'Evidence Locker',
-            description: 'You get a detailed analysis of the candidate\'s responses to key technical questions, including verbatim transcripts and a comparison against an ideal answer blueprint.',
+            description: 'You get a detailed analysis of the candidate\'s responses to key technical questions, including verbatim transcripts, and a comparison against an ideal answer blueprint.',
         },
         {
             icon: <ShieldCheck className="h-8 w-8 text-primary" />,
@@ -21,9 +21,9 @@ export default function TalentEvaluationPage() {
         },
     ];
   return (
-    <main className="container max-w-6xl">
-      <div className="text-sm text-muted-foreground">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/process" className="hover:text-foreground">Services</Link> / <span>Talent Evaluations</span>
+    <main className="container max-w-6xl py-12">
+      <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Services</span> / <span>Talent Evaluations</span>
       </div>
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Axiom Cortex™ Talent Evaluation</h1>

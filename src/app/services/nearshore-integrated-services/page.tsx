@@ -45,14 +45,14 @@ export default function IntegratedServicesPage() {
       icon: <Scale className="h-8 w-8 text-primary" />,
       title: "Cyber & E&O Insurance",
       description:
-        "All work is. All work is covered by comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, a level of protection most vendors don't offer.",
+        "All work is covered by comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, a level of protection most vendors don't offer.",
     },
   ];
 
   return (
     <main className="container max-w-6xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Services</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Services</span> / <span>Integrated Services</span>
       </div>
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">A Single SLA for Your Entire Operation</h1>
