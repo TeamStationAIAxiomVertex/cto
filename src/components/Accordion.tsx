@@ -46,4 +46,4 @@ const AccordionItem = ({ title, children }: AccordionItemProps) => {
   );
 };
 
-export default AccordionItem;
+export { AccordionItem };
