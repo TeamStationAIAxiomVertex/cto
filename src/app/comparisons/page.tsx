@@ -151,7 +151,7 @@ export default function ComparisonsPage() {
               <tr className="bg-green-900/20">
                 <td className="font-bold">TeamStation AI (Reference)</td>
                 <td>
-                    Integrated Nearshore IT Co-Pilot: EOR, payroll, compliance, secure devices & MDM, offices & workspaces, cyber/E&O insurance, day-one onboarding, performance diagnostics—all under one contract. Cognitive AI evaluations (44 signals), bias-aware interviews, 2.6M+ talent graph and time-to-offer ≈ 9 days. Device MTPD ≤ 5 days; MDM ≥ 99%.
+                    The platform unifies hiring, employer-of-record (EOR)/payroll, compliance and benefits, device provisioning and MDM, offices & workspaces across 45+ hubs, cybersecurity and errors-and-omissions insurance, day-one onboarding and performance diagnostics under one SLA. Key delivery metrics are public: Time-to-Offer ≈ 9 days, device MTPD ≤ 5 days, MDM enrollment ≥ 99% in 24h; the talent graph covers 2.6M+ LATAM IT profiles with bias-aware cognitive evaluations; offices and on-demand workspaces are provisioned in ≤ 3 business days; and every engagement includes cybersecurity & E&O insurance.
                 </td>
                 <td className="text-center">—</td>
               </tr>
