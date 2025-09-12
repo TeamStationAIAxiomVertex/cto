@@ -5,11 +5,11 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { Award, Briefcase, Handshake, Target, CheckCircle, ShieldCheck, Rocket, BrainCircuit } from 'lucide-react';
+import { Award, Briefcase, Handshake, Target, CheckCircle, BrainCircuit, Rocket } from 'lucide-react';
 
 // Helper to extract sections from markdown
 const getSection = (content: string, title: string) => {
-    const regex = new RegExp(`---[^]*?## ${title}\\n\\n(.*?)(?=\\n## |$)`, 's');
+    const regex = new RegExp(`## ${title}\\n\\n(.*?)(?=\\n##|$)`, 's');
     const match = content.match(regex);
     if (!match) return null;
 
@@ -19,7 +19,7 @@ const getSection = (content: string, title: string) => {
       const mainPoint = cleanedLine.split('\n')[0];
       const [strong, ...rest] = mainPoint.split(':** ');
       return {
-        title: strong,
+        title: strong.replace(/\*\*/g, ''), // remove bold markers
         description: rest.join(':** ')
       }
     });
@@ -42,26 +42,30 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
   const processedContent = await remark().use(html).process(content);
   const htmlContent = processedContent.toString();
 
-  const summaryPoints = data.summary.split(', ').map((point: string) => point.charAt(0).toUpperCase() + point.slice(1));
+  const summaryPoints = data.summary.split('. ').map((point: string) => point.charAt(0).toUpperCase() + point.slice(1));
   const challenges = getSection(fileContents, 'The Challenge');
   const solutions = getSection(fileContents, 'Why TeamStation AI');
   const outcomes = getSection(fileContents, 'Outcomes');
 
 
   const SectionCard = ({ title, items, icon }: { title: string, items: any[] | null, icon: React.ReactNode }) => {
-    if (!items) return null;
+    if (!items || items.length === 0) return null;
+    // Check if the items have valid content to render
+    const hasContent = items.some(item => item.title && item.description);
+    if (!hasContent) return null;
+
     return (
         <div className="my-12">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-6">
                 {icon}
-                <h2 className="h2 m-0 text-2xl">{title}</h2>
+                <h2 className="h2 m-0 text-3xl">{title}</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {items.map((item, index) => (
-                    <div className="icon-card" key={index}>
+                    <div className="icon-card !items-start" key={index}>
                         <CheckCircle className="text-accent-custom mt-1 flex-shrink-0" />
                         <div>
-                            <h3 className="h3 mt-0 text-base font-semibold">{item.title}</h3>
+                            <h3 className="h3 mt-0 text-base font-bold">{item.title}</h3>
                             <p className="text-sm text-mute m-0">{item.description}</p>
                         </div>
                     </div>
@@ -91,7 +95,9 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
           <SectionCard title="The Solution" items={solutions} icon={<BrainCircuit className="icon h-8 w-8" />} />
           <SectionCard title="The Outcomes" items={outcomes} icon={<Rocket className="icon h-8 w-8" />} />
           
-          <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: htmlContent.split('---').slice(4).join('---') }} />
+          {/* This logic will render the rest of the markdown content after the main sections we've parsed */}
+          <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: htmlContent.split(/## (?:The Challenge|Why TeamStation AI|Outcomes)\n/s).slice(-1)[0].split('---').slice(1).join('---') }} />
+
 
         </article>
 
@@ -109,8 +115,8 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
               <h3 className="h3 mt-0 mb-0">Key Outcomes</h3>
             </div>
             <ul className='list-none p-0 m-0 text-sm space-y-3'>
-              {summaryPoints.map((point: string) => (
-                <li key={point} className='flex gap-2 font-semibold'>
+              {summaryPoints.map((point: string, index: number) => (
+                <li key={index} className='flex gap-2 font-semibold'>
                   <span className='text-accent-custom'>✓</span>
                   <span>{point}</span>
                 </li>
