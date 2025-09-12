@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Package, BrainCircuit, CheckCircle, XCircle } from 'lucide-react';
 import Tooltip from '@/components/Tooltip';
@@ -36,7 +37,7 @@ const vendors = [
     riskLevel: 'high'
   },
   { 
-    name: 'TECLA', _
+    name: 'TECLA', 
     slug: 'tecla',
     basePricing: 'Per placement',
     additionalCosts: 'EOR, devices, insurance, offices',
@@ -57,7 +58,7 @@ const vendors = [
     basePricing: 'Not public (claims 30-50% savings)',
     additionalCosts: 'EOR, devices, insurance, offices',
     risk: 'Moderate: No integrated hardware or compliance.',
-riskLevel: 'moderate'
+    riskLevel: 'moderate'
   },
   { 
     name: 'Toptal', 
@@ -174,7 +175,7 @@ export default function ComparisonsPage() {
                   <td>
                     {vendor.slug ? (
                        <Link href={`/comparisons/${vendor.slug}`} className="font-semibold text-accent-custom hover:text-accent-d-custom">
-                        Read Analysis →
+                        See Details →
                       </Link>
                     ) : (
                       <span className='font-semibold'>Integrated Platform</span>
@@ -184,7 +185,7 @@ export default function ComparisonsPage() {
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-mute mt-2 text-center">Note: Additional costs are market-rate estimates for EOR, device leasing, MDM, insurance, and workspace access.</p>
+          <p className="text-xs text-mute mt-2 text-center">Note: Additional costs are market-rate estimates for <Tooltip text="Employer of Record: A third-party organization that legally employs workers on behalf of another company.">EOR</Tooltip>, device leasing, <Tooltip text="Mobile Device Management: Software that allows IT to manage, secure, and enforce policies on devices.">MDM</Tooltip>, insurance, and workspace access.</p>
         </div>
       </div>
        <div className="section text-center">
