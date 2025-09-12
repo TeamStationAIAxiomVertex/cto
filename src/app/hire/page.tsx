@@ -7,19 +7,19 @@ export default function HirePage() {
     {
       icon: <User className="h-8 w-8 text-primary" />,
       title: 'Hire by Role',
-      description: 'Find elite, pre-vetted LATAM talent for your specific engineering needs, from frontend to AI/ML.',
+      description: 'Stop searching for keywords. Find elite, pre-vetted LATAM engineers matched to the specific competencies your project demands.',
       href: '/hire/by-role',
     },
     {
       icon: <Code className="h-8 w-8 text-primary" />,
       title: 'Hire by Technology',
-      description: 'Build your team with engineers who have deep expertise in the technologies you use every day.',
+      description: 'Your stack is modern and specific. Your team should be too. Find engineers with proven expertise in the technologies you use daily.',
       href: '/hire/by-technology',
     },
     {
       icon: <Building className="h-8 w-8 text-primary" />,
       title: 'Hire by Country',
-      description: 'Tap into the top engineering talent pools across Latin America, perfectly aligned with your time zone.',
+      description: 'Leverage the top engineering hubs across Latin America, perfectly aligned with your time zone for seamless collaboration.',
       href: '/hire/by-country',
     },
   ];
@@ -30,9 +30,9 @@ export default function HirePage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Hire</span>
       </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire Elite LATAM Engineers</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Stop Gambling on Talent. Start De-Risking Your Roadmap.</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          Access the world's fastest-growing pool of elite engineers, aligned with U.S. time zones and culture. Our integrated platform handles sourcing, vetting, onboarding, and compliance, so you can focus on building.
+          You're here because a generic "developer" isn't enough. You have a critical, high-stakes role to fill, and a mis-hire could cost you months. Our integrated platform doesn't just find candidates—it provides scientific evidence of their ability to solve your specific problems, so you can build with confidence.
         </p>
       </header>
 
@@ -54,7 +54,7 @@ export default function HirePage() {
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Let's discuss your specific needs. In a 15-minute call, we can map your roles, security requirements, and a go-live timeline.
         </p>
-        <Link href="/pricing" className="cta-button mt-6">See Our Pricing</Link>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
     </main>
   );

@@ -13,9 +13,9 @@ export default function HireByTechnologyPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <span>By Technology</span>
       </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire by Technology</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Your Stack, Their Expertise</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            Build your team with engineers who have deep expertise in the specific technologies you use every day.
+            Finding engineers who claim experience in a technology is easy. Finding engineers with proven, deeply-rooted expertise is hard. We provide talent scientifically vetted for their ability to deliver in the specific technologies you rely on.
         </p>
       </header>
 
