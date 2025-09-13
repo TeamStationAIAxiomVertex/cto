@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { ArrowRight, Building, Check, Languages, School, UserCheck } from 'lucide-react';
 import type { Metadata } from 'next';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Country | Top LATAM Tech Hubs',
@@ -43,7 +44,7 @@ export default function HireByCountryPage() {
                     Secure, Professional Workspaces
                 </h2>
                 <div className="flex items-center gap-2 mt-4">
-                  <span className="text-sm text-muted-foreground">In partnership with</span> <span className="font-bold text-lg text-foreground">WeWork</span>
+                  <span className="text-sm text-muted-foreground">In partnership with</span> <Link href="https://www.wework.com" target="_blank" rel="noopener noreferrer" className="font-bold text-lg text-foreground hover:underline">WeWork</Link>
                 </div>
                 <p className="mt-4 text-muted-foreground">
                     Your team’s productivity and security shouldn't be left to chance. Every TeamStation AI engineer has access to a secure, modern office across LATAM. This isn't an add-on; it's part of our all-inclusive service, ensuring reliable internet, a professional setting, and a secure space to work, all while maintaining SOC 2 and ISO-aligned operational standards.
