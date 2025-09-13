@@ -20,11 +20,6 @@ const navItems = {
     { href: '/services/talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
     { href: '/services/integrated-services', title: 'Integrated Services', description: 'A single SLA for your entire nearshore operation.' },
   ],
-  'Hire': [
-    { href: '/hire/by-role', title: 'Hire by Role', description: 'Find elite talent for your specific engineering needs.' },
-    { href: '/hire/by-technology', title: 'Hire by Technology', description: 'Build your team with experts in your tech stack.' },
-    { href: '/hire/by-country', title: 'Hire by Country', description: 'Tap into top engineering hubs across Latin America.' },
-  ],
   'Comparisons': [
       { href: '/comparisons', title: 'All Comparisons', description: 'A comparative analysis of features, cost, and risk.' },
       { href: '/comparisons/bairesdev', title: 'vs. BairesDev', description: 'The Co-Pilot vs. The "Top 1%" Vendor.' },
@@ -37,6 +32,7 @@ const simpleNavItems = [
     { href: '/platform', title: 'Platform' },
     { href: '/case-studies', title: 'Case Studies' },
     { href: '/pricing', title: 'Pricing' },
+    { href: '/hire', title: 'Hire' },
     { href: '/research', title: 'Research'},
     { href: '/trust', title: 'Trust Center' },
 ];
@@ -109,6 +105,9 @@ export function Header() {
                     {item.title}
                 </Link>
             ))}
+             <Link href="/hire/by-role" className="block font-semibold text-foreground hover:text-primary" onClick={() => setIsOpen(false)}>Hire by Role</Link>
+             <Link href="/hire/by-technology" className="block font-semibold text-foreground hover:text-primary" onClick={() => setIsOpen(false)}>Hire by Technology</Link>
+             <Link href="/hire/by-country" className="block font-semibold text-foreground hover:text-primary" onClick={() => setIsOpen(false)}>Hire by Country</Link>
             <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="block font-semibold text-foreground hover:text-primary" onClick={() => setIsOpen(false)}>
                 Sign In
             </Link>

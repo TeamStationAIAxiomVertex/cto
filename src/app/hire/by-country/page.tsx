@@ -1,30 +1,23 @@
 
 import Link from 'next/link';
-import { ArrowRight, Building2 } from 'lucide-react';
-import { Tooltip } from '@/components/Tooltip';
+import { ArrowRight, Building, Check, Languages, School, UserCheck } from 'lucide-react';
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import placeholderImages from '@/app/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Country | Top LATAM Tech Hubs',
   description: 'Stop losing a day to time zones. Hire elite, vetted engineers from top LATAM tech hubs like Mexico, Brazil, Colombia, and Argentina. Real-time collaboration, secure workspaces.',
 };
 
-export default function HireByCountryPage() {
-  const countries = [
-    { name: 'Mexico', slug: 'mexico' as const, cities: 'Guadalajara, Monterrey, Mexico City' },
-    { name: 'Colombia', slug: 'colombia' as const, cities: 'Bogotá, Medellín' },
-    { name: 'Brazil', slug: 'brazil' as const, cities: 'São Paulo, Rio de Janeiro' },
-    { name: 'Argentina', slug: 'argentina' as const, cities: 'Buenos Aires' },
-    { name: 'Chile', slug: 'chile' as const, cities: 'Santiago' },
-    { name: 'Peru', slug: 'peru' as const, cities: 'Lima' },
-    { name: 'Costa Rica', slug: 'costa-rica' as const, cities: 'San José' },
-    { name: 'Uruguay', slug: 'uruguay' as const, cities: 'Montevideo' },
-    { name: 'Ecuador', slug: 'ecuador' as const, cities: 'Quito, Guayaquil' },
-  ];
+const countries = [
+    { name: 'Mexico', slug: 'mexico', pain: 'Need US time-zone overlap with a massive talent pool?', solution: 'Leverage the largest and most mature nearshore market, with deep expertise in enterprise software and a huge pool of bilingual engineers.', kpi: '3-hour overlap with PST/CST/EST' },
+    { name: 'Colombia', slug: 'colombia', pain: 'Looking for a rapidly growing hub with strong bilingual skills?', solution: 'Tap into the vibrant ecosystems of Bogotá and Medellín, known for their adaptable workforce and strong government support for tech.', kpi: 'Top 5 in LATAM English proficiency' },
+    { name: 'Brazil', slug: 'brazil', pain: 'Need talent for complex, large-scale systems?', solution: 'Access the largest talent pool in LATAM, with world-class expertise in FinTech, Data Science, and complex backend systems.', kpi: 'LATAM\'s #1 talent market by volume' },
+    { name: 'Argentina', slug: 'argentina', pain: 'Searching for highly-educated, senior talent?', solution: 'Benefit from a mature market with exceptionally high English proficiency and a deep pool of senior and lead-level engineers.', kpi: 'Highest English proficiency in LATAM' },
+    { name: 'Chile', slug: 'chile', pain: 'Require enterprise-grade stability and skills?', solution: 'Engage with one of the most stable and economically advanced countries in the region, with a strong emphasis on engineering and data science.', kpi: 'Regional leader in B2B/financial tech' },
+    { name: 'Peru', slug: 'peru', pain: 'Need a cost-effective location without quality loss?', solution: 'Tap into a rising tech scene with a growing pool of skilled mobile and web developers known for their strong work ethic.', kpi: 'Strong cost/quality ratio' },
+];
 
-  const weworkImage = placeholderImages.weworkOffice;
+export default function HireByCountryPage() {
 
   return (
     <main className="container py-12">
@@ -38,27 +31,25 @@ export default function HireByCountryPage() {
       </p>
       </header>
 
-      <div className="my-16 rounded-lg border bg-card p-8 md:p-12">
+       <div className="my-16 rounded-lg border bg-card p-8 md:p-12">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
                  <p className="text-sm font-semibold text-primary">Tired of insecure home offices and spotty Wi-Fi?</p>
                 <h2 className="text-3xl font-bold flex items-center gap-3 mt-3">
-                    <Building2 className="h-8 w-8 text-primary" />
+                    <Building className="h-8 w-8 text-primary" />
                     Secure, Professional Workspaces Included
                 </h2>
                 <p className="mt-4 text-muted-foreground">
-                    Your team’s productivity and security shouldn't be left to chance. Through our unique partnership with <a href="https://www.wework.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">WeWork</a>, every TeamStation AI engineer has access to a secure, modern office across LATAM. This isn't an add-on; it's part of our all-inclusive service, ensuring reliable internet, a professional setting, and a secure space to work, all while maintaining <Tooltip text="SOC 2 is a compliance standard for service organizations, specifying how organizations should manage customer data.">SOC 2</Tooltip> and <Tooltip text="ISO 27001 is the international standard for information security management.">ISO</Tooltip>-aligned operational standards.
+                    Your team’s productivity and security shouldn't be left to chance. Through our unique partnership with WeWork, every TeamStation AI engineer has access to a secure, modern office across LATAM. This isn't an add-on; it's part of our all-inclusive service, ensuring reliable internet, a professional setting, and a secure space to work, all while maintaining SOC 2 and ISO-aligned operational standards.
                 </p>
                  <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">One less vendor to manage</p>
             </div>
             <div className="flex justify-center">
-                <Image 
-                    src={weworkImage.src.url} 
-                    alt={weworkImage.alt} 
-                    width={weworkImage.src.width}
-                    height={weworkImage.src.height}
+                <img 
+                    src="https://picsum.photos/seed/office-workspace/1080/720"
+                    alt="Modern office interior with developers working." 
                     className="rounded-lg shadow-lg aspect-video object-cover" 
-                    data-ai-hint={weworkImage.aiHint}
+                    data-ai-hint="modern office interior software developers"
                 />
             </div>
         </div>
@@ -67,29 +58,17 @@ export default function HireByCountryPage() {
       <div className="my-16">
         <h2 className="text-center text-3xl font-bold">Explore Our Premier LATAM Engineering Hubs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {countries.map((country) => {
-              const image = placeholderImages.countries[country.slug];
-              return (
-                <Link href={`/hire/by-country/${country.slug}`} key={country.slug} className="group relative block rounded-lg overflow-hidden border transition-all hover:shadow-2xl hover:shadow-primary/10">
-                    <Image 
-                        src={image.src.url}
-                        alt={image.alt}
-                        width={image.src.width}
-                        height={image.src.height}
-                        className="aspect-video object-cover w-full transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={image.aiHint}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 p-6">
-                        <h3 className="text-xl font-bold text-white">{country.name}</h3>
-                        <p className="mt-1 text-sm text-white/80">{country.cities}</p>
-                         <div className="mt-4 flex items-center text-sm font-semibold text-primary">
-                            Explore Talent <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </div>
-                    </div>
-                </Link>
-              )
-            })}
+            {countries.map((country) => (
+                <div key={country.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                    <p className="text-sm font-semibold text-primary">{country.pain}</p>
+                    <h3 className="mt-3 text-xl font-bold text-foreground">{country.name}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground flex-grow">{country.solution}</p>
+                    <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{country.kpi}</p>
+                    <Link href={`/hire/by-country/${country.slug}`} className="mt-6 flex items-center text-sm font-semibold text-primary stretched-link">
+                        Explore Talent in {country.name} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                </div>
+            ))}
         </div>
       </div>
 
