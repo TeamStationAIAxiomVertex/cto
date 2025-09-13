@@ -72,7 +72,7 @@ export default function GlobantComparisonPage() {
         </p>
         <h3>Talent vs. Projects: Where Do You Need Control?</h3>
         <p>
-            Globant sells project delivery. Their value is in the final product, not in the transparency of the team building it. This model works well for enterprise-level outsourcing of entire functions.
+            Globant sells project delivery. Their value is in the final product, not in the transparency of the team building it. Their use of "AI" is a marketing label for a process, not a scientifically-validated tool for assessing individual talent. This model works well for enterprise-level outsourcing of entire functions.
         </p>
         <p>
             TeamStation AI, in contrast, focuses on talent quality and integration. Our{' '}

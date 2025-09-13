@@ -48,9 +48,9 @@ export default async function ResearchPage() {
       answer: "This is the exact problem our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> was built to solve. Traditional interviews are flawed because they conflate communication style with technical ability. Our process measures 'Problem-Solving Agility' through structured, bias-aware evaluations. We provide an auditable <a href='/technical-interview-evaluation' class='text-primary hover:underline'>Evidence Locker</a> so you're judging the logic, not just the presentation. This is how we de-risk the hire."
     },
     {
-      question: "How is your 'AI' different from a keyword scanner?",
+      question: "How is your 'Cognitive AI' different from a keyword scanner?",
       subQuestion: "Everyone claims to use AI in hiring.",
-      answer: "Simple: we use AI for cognitive analysis, not just resume parsing. While others use AI to find keywords, we use it to score a candidate's latent cognitive traits. Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>peer-reviewed research</a> in NLP and psychometrics outlines how we separate the signal (true ability) from the noise (jargon, fluency). It's the difference between finding someone who has 'used' a tool and someone who can 'think' with it."
+      answer: "Simple: we use Cognitive AI for psychometric analysis, not just resume parsing. While others use a generic LLM API call to find keywords, we use our proprietary, peer-reviewed models to score a candidate's latent cognitive traits. Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>research</a> outlines how we separate the signal (true ability) from the noise (jargon, fluency). It's the difference between finding someone who has 'used' a tool and someone who can 'think' with it."
     },
     {
       question: "How do I measure the real impact of my engineers?",

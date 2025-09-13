@@ -64,7 +64,7 @@ export default function BairesDevComparisonPage() {
         </p>
         <h3>Vetting: Cognitive Science vs. Resume Screening</h3>
         <p>
-            This is the most significant divide. BairesDev's "top 1%" claim is based on their internal screening of experience and English proficiency. TeamStation AI's <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link> engine uses proprietary Cognitive AI with over 44 algorithms to evaluate a candidate's problem-solving abilities and learning orientation, with a fairness layer to mitigate bias against non-native English speakers. We provide evidence-based validation of cognitive ability, not just resume keywords.
+            This is the most significant divide. BairesDev's "top 1%" claim is based on their internal screening of resumes. Their "AI" is a marketing claim for what is likely just a wrapper around a generic LLM API, with no peer-reviewed science to back it up. TeamStation AI's <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link> engine uses proprietary Cognitive AI with over 44 algorithms to evaluate a candidate's problem-solving abilities and learning orientation, with a fairness layer to mitigate bias. We provide evidence-based validation of cognitive ability, not just resume keywords.
         </p>
         <h3>Cost & Risk: Predictable TCO vs. Hidden Fees</h3>
         <p>
