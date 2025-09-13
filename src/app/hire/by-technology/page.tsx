@@ -108,6 +108,14 @@ export default function HireByTechnologyPage() {
           </div>
         ))}
       </div>
+
+       <div className="text-center rounded-lg bg-primary/10 p-8">
+        <h2 className="text-2xl font-bold">Ready to Hire for Your Stack?</h2>
+        <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+            Let's discuss your specific technology needs. In 15 minutes, we can map your stack to our evaluation process and find the right experts for your team.
+        </p>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
+      </div>
     </main>
   );
 }
