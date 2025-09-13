@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
-import { ArrowRight, Beaker, FileText, BrainCircuit } from 'lucide-react';
+import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
@@ -38,6 +38,21 @@ export default async function ResearchPage() {
       solutionDescription: "In the AI-augmented era, 'lines of code' and 'tickets closed' are meaningless. This research proposes a novel, value-centric framework for measuring engineering performance based on outcomes, not outputs."
     }
   ];
+  
+  const faqs = [
+    {
+      question: "How can I be sure a candidate who interviews well will actually perform? I've been burned by charisma before.",
+      answer: "This is the exact problem we built Axiom Cortex™ to solve. Traditional interviews are flawed because they conflate communication style with technical ability. Our process measures 'Problem-Solving Agility' and 'Architectural Instinct' through structured, bias-aware evaluations. We provide an auditable 'Evidence Locker' so you're judging the logic, not just the presentation. This is how we de-risk the hire."
+    },
+    {
+      question: "Everyone claims to use 'AI' in hiring. What makes your approach different from a simple keyword scanner?",
+      answer: "Simple: we use AI for cognitive analysis, not just resume parsing. While others use AI to find keywords, we use it to score a candidate's latent cognitive traits based on their spoken answers. Our peer-reviewed research in NLP and psychometrics outlines how we separate the signal (true ability) from the noise (jargon, fluency). It's the difference between finding someone who has 'used' a tool and someone who can 'think' with it."
+    },
+    {
+      question: "My current performance reviews feel subjective. How do I measure the real impact of my engineers?",
+      answer: "Our research into a 'Performance Evaluation Framework' directly tackles this. We're building a system that moves beyond 'tickets closed' to measure true value creation. It correlates engineering activity (from git commits, CI/CD data, etc.) with business outcomes. It's about shifting the conversation from 'How busy are you?' to 'What impact did you have?'"
+    }
+  ]
 
   return (
     <main className="container max-w-6xl py-12">
@@ -69,8 +84,25 @@ export default async function ResearchPage() {
           );
         })}
       </div>
+      
+       <div className="my-24">
+        <h2 className="text-center text-4xl font-bold">A CTO's Questions, Answered by Science</h2>
+         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">The strategic questions our research directly addresses.</p>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {faqs.map(faq => (
+            <div key={faq.question} className="rounded-lg border bg-card p-6">
+               <div className="flex items-start gap-3">
+                  <HelpCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                  <h3 className="font-semibold text-foreground">{faq.question}</h3>
+               </div>
+               <p className="mt-4 pt-4 border-t border-border text-sm text-muted-foreground">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
 
-       <div className="text-center rounded-lg bg-primary/10 p-8 mt-24">
+
+       <div className="text-center rounded-lg bg-primary/10 p-8 mt-12">
         <h2 className="text-2xl font-bold">Ready to Apply the Science?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
           Let's move from theory to practice. In a 15-minute call, we can show you how our research-backed platform can solve your specific challenges.
