@@ -2,11 +2,11 @@
 {
     "weworkOffice": {
         "src": {
-            "url": "https://picsum.photos/seed/boston-city/600/400",
+            "url": "https://picsum.photos/seed/boston/600/400",
             "width": 600,
             "height": 400
         },
-        "alt": "Modern office building in a city, representing our global reach",
-        "aiHint": "cityscape office"
+        "alt": "A modern office building in Boston, representing our global reach and professional workspaces.",
+        "aiHint": "boston cityscape"
     }
 }
