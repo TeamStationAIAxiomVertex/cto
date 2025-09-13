@@ -42,9 +42,9 @@ export default function AboutPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>About</span>
       </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Engineering a Better Way to Build Teams</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">We Dare to Go Beyond</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          TeamStation AI was founded on a simple premise: the traditional outsourcing model is broken. We knew there had to be a better way—a way to combine the talent of nearshore with the security and efficiency of a modern technology platform.
+          TeamStation AI was founded not just to improve the traditional outsourcing model, but to completely replace it. We are engineering a better way to build teams by combining elite nearshore talent with the security and efficiency of a modern technology platform.
         </p>
       </header>
 
