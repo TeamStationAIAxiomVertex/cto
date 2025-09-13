@@ -57,5 +57,52 @@
             },
             "aiHint": "fleet trucks"
         }
+    },
+    "countries": {
+        "mexico": {
+            "src": { "url": "https://picsum.photos/seed/mexico/600/400", "width": 600, "height": 400 },
+            "alt": "Modern cityscape of Mexico City, representing the tech hub in Mexico.",
+            "aiHint": "Mexico City"
+        },
+        "colombia": {
+            "src": { "url": "https://picsum.photos/seed/colombia/600/400", "width": 600, "height": 400 },
+            "alt": "Innovation district in Medellín, Colombia, showcasing its vibrant tech scene.",
+            "aiHint": "Medellin skyline"
+        },
+        "brazil": {
+            "src": { "url": "https://picsum.photos/seed/brazil/600/400", "width": 600, "height": 400 },
+            "alt": "Aerial view of São Paulo, Brazil, highlighting its massive talent pool.",
+            "aiHint": "Sao Paulo"
+        },
+        "argentina": {
+            "src": { "url": "https://picsum.photos/seed/argentina/600/400", "width": 600, "height": 400 },
+            "alt": "European-style architecture in Buenos Aires, Argentina.",
+            "aiHint": "Buenos Aires"
+        },
+        "chile": {
+            "src": { "url": "https://picsum.photos/seed/chile/600/400", "width": 600, "height": 400 },
+            "alt": "Financial district of Santiago, Chile, with mountains in the background.",
+            "aiHint": "Santiago Chile"
+        },
+        "peru": {
+            "src": { "url": "https://picsum.photos/seed/peru/600/400", "width": 600, "height": 400 },
+            "alt": "Modern buildings in Lima, Peru, against the coastline.",
+            "aiHint": "Lima Peru"
+        },
+        "costa-rica": {
+            "src": { "url": "https://picsum.photos/seed/costarica/600/400", "width": 600, "height": 400 },
+            "alt": "Lush greenery surrounding a modern building in San José, Costa Rica.",
+            "aiHint": "San Jose"
+        },
+        "uruguay": {
+            "src": { "url": "https://picsum.photos/seed/uruguay/600/400", "width": 600, "height": 400 },
+            "alt": "The iconic Palacio Salvo in Montevideo, Uruguay.",
+            "aiHint": "Montevideo Uruguay"
+        },
+        "ecuador": {
+            "src": { "url": "https://picsum.photos/seed/ecuador/600/400", "width": 600, "height": 400 },
+            "alt": "Historic center of Quito, Ecuador, a UNESCO World Heritage site.",
+            "aiHint": "Quito Ecuador"
+        }
     }
 }

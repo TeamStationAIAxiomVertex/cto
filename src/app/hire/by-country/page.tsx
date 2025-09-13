@@ -13,15 +13,15 @@ export const metadata: Metadata = {
 
 export default function HireByCountryPage() {
   const countries = [
-    { name: 'Mexico', slug: 'mexico', cities: 'Guadalajara, Monterrey, Mexico City' },
-    { name: 'Colombia', slug: 'colombia', cities: 'Bogotá, Medellín' },
-    { name: 'Brazil', slug: 'brazil', cities: 'São Paulo, Rio de Janeiro' },
-    { name: 'Argentina', slug: 'argentina', cities: 'Buenos Aires' },
-    { name: 'Chile', slug: 'chile', cities: 'Santiago' },
-    { name: 'Peru', slug: 'peru', cities: 'Lima' },
-    { name: 'Costa Rica', slug: 'costa-rica', cities: 'San José' },
-    { name: 'Uruguay', slug: 'uruguay', cities: 'Montevideo' },
-    { name: 'Ecuador', slug: 'ecuador', cities: 'Quito, Guayaquil' },
+    { name: 'Mexico', slug: 'mexico' as const, cities: 'Guadalajara, Monterrey, Mexico City' },
+    { name: 'Colombia', slug: 'colombia' as const, cities: 'Bogotá, Medellín' },
+    { name: 'Brazil', slug: 'brazil' as const, cities: 'São Paulo, Rio de Janeiro' },
+    { name: 'Argentina', slug: 'argentina' as const, cities: 'Buenos Aires' },
+    { name: 'Chile', slug: 'chile' as const, cities: 'Santiago' },
+    { name: 'Peru', slug: 'peru' as const, cities: 'Lima' },
+    { name: 'Costa Rica', slug: 'costa-rica' as const, cities: 'San José' },
+    { name: 'Uruguay', slug: 'uruguay' as const, cities: 'Montevideo' },
+    { name: 'Ecuador', slug: 'ecuador' as const, cities: 'Quito, Guayaquil' },
   ];
 
   const weworkImage = placeholderImages.weworkOffice;
@@ -39,15 +39,17 @@ export default function HireByCountryPage() {
       </header>
 
       <div className="my-16 rounded-lg border bg-card p-8 md:p-12">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <h2 className="text-3xl font-bold flex items-center gap-3">
+                 <p className="text-sm font-semibold text-primary">Tired of insecure home offices and spotty Wi-Fi?</p>
+                <h2 className="text-3xl font-bold flex items-center gap-3 mt-3">
                     <Building2 className="h-8 w-8 text-primary" />
                     Secure, Professional Workspaces Included
                 </h2>
                 <p className="mt-4 text-muted-foreground">
-                    Your team’s productivity and security shouldn't be left to chance in a home office or a coffee shop. Through our unique partnership with <a href="https://www.wework.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">WeWork</a>, every TeamStation AI engineer has access to a secure, modern office environment across Latin America. This isn't an add-on; it's part of our all-inclusive service, ensuring your team has reliable internet, a professional setting, and a secure space to work, all while maintaining <Tooltip text="SOC 2 is a compliance standard for service organizations, specifying how organizations should manage customer data.">SOC 2</Tooltip> and <Tooltip text="ISO 27001 is the international standard for information security management.">ISO</Tooltip>-aligned operational standards.
+                    Your team’s productivity and security shouldn't be left to chance. Through our unique partnership with <a href="https://www.wework.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">WeWork</a>, every TeamStation AI engineer has access to a secure, modern office across LATAM. This isn't an add-on; it's part of our all-inclusive service, ensuring reliable internet, a professional setting, and a secure space to work, all while maintaining <Tooltip text="SOC 2 is a compliance standard for service organizations, specifying how organizations should manage customer data.">SOC 2</Tooltip> and <Tooltip text="ISO 27001 is the international standard for information security management.">ISO</Tooltip>-aligned operational standards.
                 </p>
+                 <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">One less vendor to manage</p>
             </div>
             <div className="flex justify-center">
                 <Image 
@@ -65,15 +67,29 @@ export default function HireByCountryPage() {
       <div className="my-16">
         <h2 className="text-center text-3xl font-bold">Explore Our Premier LATAM Engineering Hubs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {countries.map((country) => (
-            <div key={country.slug} className="group relative block rounded-lg border bg-card p-6 transition-all hover:shadow-2xl hover:shadow-primary/10">
-                <h3 className="text-xl font-bold transition-colors group-hover:text-primary">{country.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{country.cities}</p>
-                <Link href={`/hire/by-country/${country.slug}`} className="mt-4 flex items-center text-sm font-semibold text-primary stretched-link">
-                    Explore Talent in {country.name} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            {countries.map((country) => {
+              const image = placeholderImages.countries[country.slug];
+              return (
+                <Link href={`/hire/by-country/${country.slug}`} key={country.slug} className="group relative block rounded-lg overflow-hidden border transition-all hover:shadow-2xl hover:shadow-primary/10">
+                    <Image 
+                        src={image.src.url}
+                        alt={image.alt}
+                        width={image.src.width}
+                        height={image.src.height}
+                        className="aspect-video object-cover w-full transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint={image.aiHint}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 p-6">
+                        <h3 className="text-xl font-bold text-white">{country.name}</h3>
+                        <p className="mt-1 text-sm text-white/80">{country.cities}</p>
+                         <div className="mt-4 flex items-center text-sm font-semibold text-primary">
+                            Explore Talent <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </div>
+                    </div>
                 </Link>
-            </div>
-            ))}
+              )
+            })}
         </div>
       </div>
 
