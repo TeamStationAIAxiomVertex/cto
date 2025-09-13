@@ -18,7 +18,7 @@ export function Footer() {
       ],
       "Services": [
         { href: '/process', label: 'Our Process' },
-        { href: '/research/technical-talent-evaluation-system', label: 'Talent Evaluations' },
+        { href: '/technical-interview-evaluation', label: 'Talent Evaluations' },
         { href: '/services/integrated-services', label: 'Integrated Services' },
         { href: '/services/talent-onboarding', label: 'Talent Onboarding' },
       ],
