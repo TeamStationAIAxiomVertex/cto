@@ -3,11 +3,12 @@
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X, BookOpen } from 'lucide-react';
 import { useState } from 'react';
 
 const navItems = {
   'CTO Playbook': [
+    { href: '/playbook', title: 'The CTO Playbook', description: 'Go to the main playbook hub.', isHubLink: true },
     { href: '/playbook/nearshore-vs-offshore', title: 'Nearshore vs. Offshore', description: 'Diagnose the true cost of your global talent strategy.' },
     { href: '/playbook/latam-economics', title: 'LATAM Economics', description: 'A CFO-ready framework for modeling nearshore TCO.' },
     { href: '/playbook/build-vs-buy', title: 'Build vs. Buy', description: 'The trade-offs of building a nearshore operation from scratch.' },
@@ -15,7 +16,6 @@ const navItems = {
     { href: '/trust', title: 'Security & Compliance', description: 'The playbook for audit-ready nearshore operations.' },
   ],
   'What\'s Included': [
-    { href: '/platform', title: 'Platform', description: 'A single pane of glass for your entire nearshore operation.' },
     { href: '/process', title: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
     { href: '/technical-interview-evaluation', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
     { href: '/services/talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
@@ -38,10 +38,13 @@ const simpleNavItems = [
     { href: '/about', title: 'About' },
 ];
 
-function NavLink({ href, title, description }: { href: string, title: string, description: string }) {
+function NavLink({ href, title, description, isHubLink }: { href: string, title: string, description: string, isHubLink?: boolean }) {
     return (
         <Link href={href} className="-m-3 flex flex-col rounded-lg p-3 hover:bg-accent">
-            <p className="text-sm font-medium text-foreground">{title}</p>
+            <p className="text-sm font-medium text-foreground flex items-center">
+                {isHubLink && <BookOpen className="mr-2 h-4 w-4" />}
+                {title}
+            </p>
             <p className="text-sm text-muted-foreground">{description}</p>
         </Link>
     );
