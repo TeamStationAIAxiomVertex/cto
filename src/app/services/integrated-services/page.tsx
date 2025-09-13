@@ -7,6 +7,7 @@ import {
   Laptop,
   Building,
   Scale,
+  ArrowRight,
 } from "lucide-react";
 import type { Metadata } from 'next';
 
@@ -19,39 +20,57 @@ export default function IntegratedServicesPage() {
   const services = [
     {
       icon: <BrainCircuit className="h-8 w-8 text-primary" />,
-      title: "AI-Powered Vetting",
+      pain: "Gambling on resume keywords?",
+      title: "AI-Powered Vetting & Onboarding",
       description:
-        "Our Axiom Cortex™ engine uses cognitive science to validate engineering skills beyond resumes, reducing hiring bias and increasing team performance.",
+        "Our Axiom Cortex™ engine validates cognitive ability, not just credentials. We then run a structured, auditable onboarding process to ensure Day-1 readiness.",
+      kpi: "Mismatch Rate ≤10%",
+      href: "/technical-interview-evaluation"
     },
     {
       icon: <FileText className="h-8 w-8 text-primary" />,
-      title: "Nearshore EOR & Payroll",
+      pain: "Worried about complex local labor laws?",
+      title: "Nearshore EOR, Payroll & Compliance",
       description:
-        "We handle all Employer of Record (EOR) complexities, including local contracts, payroll, and benefits, mitigating your legal and financial risk.",
-    },
-    {
-      icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-      title: "SOC 2 / ISO Alignment",
-      description:
-        "Our operations are aligned with SOC 2 and ISO 27001 standards, providing an audit-ready security posture from day one.",
+        "We handle all Employer of Record (EOR) complexities: country-legal contracts, payroll, taxes, and statutory benefits, mitigating your legal and financial risk.",
+      kpi: "Zero compliance overhead",
+      href: "/trust"
     },
     {
       icon: <Laptop className="h-8 w-8 text-primary" />,
-      title: "Secure Device & MDM",
+      pain: "Exposed by insecure remote laptops?",
+      title: "Secure Devices & Endpoint Security (MDM)",
       description:
-        "We provision, secure, and manage all developer laptops with enterprise-grade Mobile Device Management (MDM), eliminating a major security risk.",
+        "We procure, ship, enroll, patch, and monitor all developer laptops via enterprise-grade MDM, enforcing CIS-aligned guardrails and 24/7 endpoint visibility.",
+       kpi: "MDM enrollment ≥99% (24h)",
+       href: "/trust"
     },
     {
-      icon: <Building className="h-8 w-8 text-primary" />,
-      title: "LATAM Office Network",
+      icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+      pain: "Lacking an audit-ready security posture?",
+      title: "SOC 2 / ISO Alignment & Governance",
       description:
-        "Your team gets access to our network of secure, modern offices across Latin America for collaboration and reliable infrastructure.",
+        "Our operational controls for security, availability, and privacy are aligned with leading industry standards, providing you an auditable posture from day one.",
+      kpi: "100% auditable evidence trail",
+      href: "/trust"
     },
     {
       icon: <Scale className="h-8 w-8 text-primary" />,
-      title: "Cyber & E&O Insurance",
+      pain: "Carrying all the liability for remote work?",
+      title: "Cyber, E&O Insurance & IP Protection",
       description:
-        "All work is covered by comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, a level of protection most vendors don't offer.",
+        "All work is covered by comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, plus Work-for-Hire IP protection, giving you a critical liability shield.",
+       kpi: "Liability shield included",
+       href: "/trust"
+    },
+     {
+      icon: <Building className="h-8 w-8 text-primary" />,
+      pain: "Need a physical space for your team?",
+      title: "Global Office Network & Infrastructure",
+      description:
+        "Through our partnership with WeWork, your team gets access to a global network of secure, modern offices for collaboration and reliable infrastructure.",
+       kpi: "45+ LATAM Hubs available",
+       href: "/hire/by-country"
     },
   ];
 
@@ -69,10 +88,19 @@ export default function IntegratedServicesPage() {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 my-16 gap-8">
         {services.map((service) => (
-          <div className="rounded-lg border bg-card p-8" key={service.title}>
-            {service.icon}
-            <h2 className="mt-4 text-xl font-bold">{service.title}</h2>
-            <p className="mt-2 text-muted-foreground">{service.description}</p>
+           <div key={service.title} className="rounded-lg border bg-card p-6 flex flex-col">
+              <p className="text-sm font-semibold text-primary">{service.pain}</p>
+              <div className="flex items-center gap-3 mt-3">
+                  {service.icon}
+                  <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground flex-grow">{service.description}</p>
+              <div className="mt-6 border-t border-border pt-4">
+                <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {service.kpi}</p>
+                <Link href={service.href} className="mt-4 flex items-center text-sm font-semibold text-primary">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
           </div>
         ))}
       </div>
