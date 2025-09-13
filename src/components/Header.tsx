@@ -34,6 +34,7 @@ const navItems = {
 };
 
 const simpleNavItems = [
+    { href: '/platform', title: 'Platform' },
     { href: '/case-studies', title: 'Case Studies' },
     { href: '/pricing', title: 'Pricing' },
     { href: '/research', title: 'Research'},
@@ -114,3 +115,5 @@ export function Header() {
     </header>
   );
 }
+
+    
