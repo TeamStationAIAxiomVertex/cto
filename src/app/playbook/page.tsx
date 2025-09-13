@@ -82,8 +82,8 @@ export default async function PlaybookHub() {
                   {data.icon}
                   <h3 className="text-lg font-semibold text-foreground">{post.title}</h3>
                 </div>
-                <p className="mt-4 text-sm text-muted-foreground flex-grow">{post.description.replace('TCO', '')}
-                   {post.description.includes('TCO') && <Tooltip text="Total Cost of Ownership: Includes not just salary, but all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
+                <p className="mt-4 text-sm text-muted-foreground flex-grow">{post.description?.replace('TCO', '')}
+                   {post.description?.includes('TCO') && <Tooltip text="Total Cost of Ownership: Includes not just salary, but all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
                 </p>
                 <div className="mt-6 border-t border-border pt-4 flex justify-between items-center">
                    <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
