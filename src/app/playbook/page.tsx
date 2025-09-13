@@ -2,8 +2,9 @@
 import Link from 'next/link';
 import { getAllPlaybookSlugs } from '@/lib/playbook';
 import { getPlaybookBySlug } from '@/lib/playbook';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen, GitCompare, Scale, ShieldCheck, UserCheck, Zap } from 'lucide-react';
 import type { Metadata } from 'next';
+import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
   title: 'The CTO Playbook for Nearshore Software Development | TeamStation AI',
@@ -11,23 +12,51 @@ export const metadata: Metadata = {
 };
 
 export default async function PlaybookHub() {
-  const slugs = await getAllPlaybookSlugs();
-  const posts = await Promise.all(slugs.map(slug => getPlaybookBySlug(slug)));
+  const allPosts = await Promise.all(
+    (await getAllPlaybookSlugs()).map(slug => getPlaybookBySlug(slug))
+  );
+  const posts = allPosts.filter(Boolean) as Awaited<ReturnType<typeof getPlaybookBySlug>>[];
 
-  // Manually define the order
+
+  const playbookData = {
+    'nearshore-vs-offshore': {
+      pain: "Is time-zone lag killing your productivity?",
+      icon: <GitCompare className="h-8 w-8 text-primary" />,
+      kpi: "4-8 hour daily overlap"
+    },
+    'latam-economics': {
+      pain: "Are you struggling to justify your budget?",
+      icon: <Scale className="h-8 w-8 text-primary" />,
+      kpi: "40-60% lower TCO"
+    },
+    'build-vs-buy': {
+      pain: "Are hidden costs making your 'cheaper' option more expensive?",
+      icon: <Zap className="h-8 w-8 text-primary" />,
+      kpi: "1 accountable SLA"
+    },
+    'bias-free-technical-hiring-axiom-cortex': {
+      pain: "Is your hiring process a high-risk gamble?",
+      icon: <UserCheck className="h-8 w-8 text-primary" />,
+      kpi: "Mismatch rate ≤ 10%"
+    },
+    'security-compliance': {
+      pain: "Is your next hire also your next compliance breach?",
+      icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+      kpi: "SOC 2 & ISO Aligned"
+    },
+  };
+
   const orderedSlugs = [
     'nearshore-vs-offshore',
     'latam-economics',
     'build-vs-buy',
     'bias-free-technical-hiring-axiom-cortex',
-    'security-compliance', // This now links to /trust
+    'security-compliance',
   ];
 
-  const sortedPosts = posts.filter(p => p).sort((a, b) => {
+  const sortedPosts = posts.sort((a, b) => {
     const aIndex = orderedSlugs.indexOf(a!.slug);
     const bIndex = orderedSlugs.indexOf(b!.slug);
-    if (aIndex === -1) return 1;
-    if (bIndex === -1) return -1;
     return aIndex - bIndex;
   });
 
@@ -43,17 +72,29 @@ export default async function PlaybookHub() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {sortedPosts.map(post => {
             if (!post) return null;
-            // Handle the security-compliance case to link to /trust
+            const data = playbookData[post.slug as keyof typeof playbookData] || { pain: "Gain a strategic advantage.", icon: <BookOpen className="h-8 w-8 text-primary" />, kpi: "Data-driven insights" };
             const href = post.slug === 'security-compliance' ? '/trust' : `/playbook/${post.slug}`;
+            
             return (
-              <Link key={post.slug} href={href} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-                <div className="flex items-center gap-3">
-                    <BookOpen className="h-6 w-6 text-primary" />
-                    <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{post.title}</h3>
+              <div key={post.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                <p className="text-sm font-semibold text-primary">{data.pain}</p>
+                <div className="flex items-center gap-3 mt-3">
+                  {data.icon}
+                  <h3 className="text-lg font-semibold text-foreground">{post.title}</h3>
                 </div>
-                <p className="text-sm text-muted-foreground mt-4 flex-grow">{post.description}</p>
-                <div className="mt-6 flex items-center text-sm font-semibold text-primary">Read Chapter <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></div>
-              </Link>
+                <p className="mt-4 text-sm text-muted-foreground flex-grow">{post.description.replace('TCO', '')}
+                   {post.description.includes('TCO') && <Tooltip text="Total Cost of Ownership: Includes not just salary, but all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
+                </p>
+                <div className="mt-6 border-t border-border pt-4 flex justify-between items-center">
+                   <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
+                        Proof: {data.kpi.replace('TCO', '')}
+                         {data.kpi.includes('TCO') && <Tooltip text="Total Cost of Ownership: Includes not just salary, but all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
+                    </p>
+                   <Link href={href} className="flex items-center text-sm font-semibold text-primary stretched-link">
+                    Read Chapter <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
             );
         })}
       </div>
