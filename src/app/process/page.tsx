@@ -15,7 +15,7 @@ export default function ProcessPage() {
         { title: "Add Jobs & Calibrate Success", description: "Define stack, level (L1–L4), ownership scope, and the 90-day outcome you need.", artifact: "Role profile + 'Success at 90 Days' spec." },
         { title: "Country Targeting & Market Bands", description: "Pick LATAM cities; align salary bands, benefits norms, and hiring constraints.", artifact: "Country shortlist + comp/benefit bands." },
         { title: "Cognitive AI Sourcing & Short-List", description: "Always-on sourcing; candidates scored to your role profile.", artifact: "5–8 candidate short-list (relevance ≥ 85%)." },
-        { title: "Technical Evaluation (Bias-Aware)", description: "Structured, evidence-based interviews; explainable scoring across core competencies.", artifact: "Scorecards + hiring signal; mismatch rate ≤ 10%." },
+        { title: "Technical Evaluation (Bias-Aware)", description: "Structured, evidence-based interviews generate an 'Evidence Locker' with explainable scoring across core competencies.", artifact: "Scorecards + hiring signal; mismatch rate ≤ 10%." },
         { title: "Client Interview Loop", description: "Calibrated panel agenda; consolidate notes and go/no-go in the platform.", artifact: "Finalist(s) + reference checks." },
         { title: "Offer, EOR & Compliance", description: "We issue enforceable contracts, handle payroll, taxes, and statutory benefits.", artifact: "Signed offer; compliant start date set." },
         { title: "Devices, MDM & Day-1 Access", description: "Procure/ship device, enroll MDM, verify tool/account access before Day-1.", artifact: "Device MTPD ≤ 5 days, MDM enrollment ≥ 99%." },
