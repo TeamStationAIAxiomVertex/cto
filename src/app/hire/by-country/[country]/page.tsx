@@ -76,6 +76,14 @@ const countries: { [key: string]: { name: string; highlights: string[] } } = {
         'Offers a significant cost advantage while developing a strong tech ecosystem.'
     ]
   },
+  'guatemala': {
+    name: 'Guatemala',
+    highlights: [
+        'A growing tech hub in Central America with a large, young, and motivated talent pool.',
+        'Strong cultural affinity with the U.S. and a service-oriented workforce.',
+        'Offers excellent Central Time Zone alignment and a cost-effective environment for scaling teams.'
+    ]
+  },
 };
 
 export async function generateMetadata({ params }: { params: { country: string } }): Promise<Metadata> {

@@ -104,6 +104,11 @@
             "src": { "url": "https://picsum.photos/seed/ecuador/600/400", "width": 600, "height": 400 },
             "alt": "Historic center of Quito, Ecuador, a UNESCO World Heritage site.",
             "aiHint": "Quito historic center"
+        },
+        "guatemala": {
+            "src": { "url": "https://picsum.photos/seed/guatemala/600/400", "width": 600, "height": 400 },
+            "alt": "Volcanoes surrounding the city of Antigua, Guatemala.",
+            "aiHint": "Antigua Guatemala volcano"
         }
     }
 }
