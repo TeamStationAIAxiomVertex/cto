@@ -1,12 +1,12 @@
 
 import Link from 'next/link';
-import { ArrowRight, TrendingUp, DollarSign, Zap, AlertTriangle } from 'lucide-react';
+import { ArrowRight, TrendingUp, DollarSign, Zap, AlertTriangle, BrainCircuit, ShieldCheck } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
   title: 'LATAM Economics & TCO for CTOs | Nearshore Software Development Costs',
-  description: 'A CFO-ready framework for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, accounting for hidden risks and productivity multipliers.',
+  description: 'A CFO-ready framework for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, covering salaries, hidden costs of mis-hires, and security risks.',
 };
 
 const financialLevers = [
@@ -20,7 +20,7 @@ const financialLevers = [
         kpi: '40-60% lower TCO than DIY'
     },
     {
-        icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+        icon: <Zap className="h-8 w-8 text-primary" />,
         pain: "Is slow hiring delaying your revenue?",
         title: 'Calculate the "Vacancy Tax"',
         description: 'Every day a critical role sits empty, you pay a "Vacancy Tax" in lost productivity and delayed revenue. High-concentration LATAM talent pools mean we hire faster, pulling your future revenue forward.',
@@ -38,6 +38,27 @@ const financialLevers = [
         kpi: '4-8 hour daily overlap'
     }
 ];
+
+const hiddenTaxes = [
+    {
+        icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+        pain: "Did your last 'star' hire turn into a black hole for productivity?",
+        title: 'The "Mis-Hire Tax"',
+        description: 'The cost of a bad hire is 6-12 months of salary in lost productivity, team disruption, and recruiting do-overs. Our Axiom Cortex™ engine de-risks hiring with scientific, evidence-based validation of cognitive ability, not just resume keywords.',
+        solutionHref: '/technical-interview-evaluation',
+        solutionLabel: 'See our vetting process',
+        kpi: 'Mismatch rate ≤ 10%'
+    },
+    {
+        icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+        pain: "Are you one insecure laptop away from a multi-million dollar breach?",
+        title: 'The "Compliance Default" Risk',
+        description: 'Using a vendor without integrated security is a catastrophic liability. A single breach from an unmanaged device can lead to devastating financial and legal consequences. Our platform provides a complete risk shield: EOR, MDM-secured devices, and Cyber/E&O insurance are all included.',
+        solutionHref: '/trust',
+        solutionLabel: 'Explore our Trust Center',
+        kpi: 'SOC 2 & ISO Aligned'
+    }
+]
 
 export default function LatamEconomicsPage() {
   return (
@@ -74,19 +95,24 @@ export default function LatamEconomicsPage() {
       </div>
 
        <div className="my-24 rounded-lg border bg-card p-8">
-         <h2 className="text-3xl font-bold text-center">The Vacancy Tax: How Slow Hiring Burns Your Budget</h2>
-         <p className="text-center text-muted-foreground max-w-3xl mx-auto mt-2">Beyond direct costs, there's a powerful hidden cost: the value you lose every day a critical role sits empty. Faster, more accurate hiring doesn't just save time; it pulls future revenue forward.</p>
-         <div className="text-center mt-8 bg-background p-6 rounded-lg max-w-2xl mx-auto">
-            <h3 className='font-semibold text-foreground'>The Math That Matters</h3>
-            <div className="font-mono text-lg md:text-xl mt-2 flex flex-wrap justify-center items-center gap-2">
-                <span>(36 days saved / 365)</span>
-                <span className='text-primary'>*</span>
-                <span>$1,000,000 ARR</span>
-                <span className='text-primary'>=</span>
-                <span className="font-bold text-green-400">$98,630</span>
-            </div>
-            <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in <Link href="/process" className='text-primary hover:underline'>≈9 days</Link> vs. the industry average of 45.</p>
-         </div>
+         <h2 className="text-3xl font-bold text-center">Beyond the Spreadsheet: The Hidden Taxes That Cripple Businesses</h2>
+         <p className="text-center text-muted-foreground max-w-3xl mx-auto mt-2">The most dangerous costs are the ones that don't appear on a vendor's quote. Here's how to model the real financial risks of building a team.</p>
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+             {hiddenTaxes.map((point) => (
+                 <div key={point.title} className="rounded-lg border border-transparent bg-background p-6 flex flex-col">
+                    <p className="text-sm font-semibold text-yellow-400">{point.pain}</p>
+                    <div className="flex items-center gap-3 mt-3">
+                        {point.icon}
+                        <h3 className="text-lg font-semibold text-foreground">{point.title}</h3>
+                    </div>
+                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{point.description}</p>
+                     <Link href={point.solutionHref} className="mt-4 flex items-center text-sm font-semibold text-primary">
+                        {point.solutionLabel} <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                    <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{point.kpi}</p>
+                </div>
+            ))}
+        </div>
       </div>
 
        <div className="my-24">
@@ -149,3 +175,5 @@ export default function LatamEconomicsPage() {
     </main>
   );
 }
+
+    
