@@ -1,14 +1,14 @@
 
-import { ShieldCheck, Laptop, FileLock, Scale } from 'lucide-react';
+import { ShieldCheck, Laptop, FileLock, Scale, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Nearshore Compliance: GDPR, SSO, MDM & Device Control | Trust Center',
-  description: 'Security and compliance are the foundation of our nearshore platform. Learn about our nearshore compliance for GDPR, SSO, MDM & device control for LATAM teams.',
+  title: 'Security & Compliance Playbook for Nearshore Teams | TeamStation AI',
+  description: 'The CTO\'s playbook for audit-ready nearshore operations. Learn how our integrated platform handles GDPR, SSO, MDM, and device control for your LATAM team.',
 };
 
-export default function TrustPage() {
+export default function SecurityCompliancePage() {
     const pillars = [
         {
             icon: <ShieldCheck className="h-8 w-8 text-primary" />,
@@ -43,12 +43,12 @@ export default function TrustPage() {
   return (
     <main className="container max-w-7xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Trust Center</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook" className="hover:text-foreground">CTO Playbook</Link> / <span>Security & Compliance</span>
       </div>
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">You Keep the Velocity. We Take the Risk.</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          The AI era demands greater control over your IP, assets, and security. Why throw that control over the fence to a traditional vendor and just hope for the best? Our platform puts you in the driver's seat by providing an auditable, enterprise-ready environment for your nearshore team from day one.
+          This is the CTO's playbook for building an auditable, enterprise-ready nearshore operation. We don't just hand you engineers; we provide a secure, compliant, and fully-managed platform so you can innovate with confidence.
         </p>
       </header>
 
@@ -92,11 +92,11 @@ export default function TrustPage() {
       </div>
 
       <div className="text-center rounded-lg bg-primary/10 p-8">
-        <h2 className="text-2xl font-bold">Security is Our Default</h2>
-        <p className="mt-2 mx-auto max-w-xl text-muted-foreground">Explore our MSA and see how our commitment to security is built into our legal framework.</p>
-        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
-            Book a Strategy Call
-        </a>
+        <h2 className="text-2xl font-bold">Security is Our Default Setting</h2>
+        <p className="mt-2 mx-auto max-w-xl text-muted-foreground">Explore our process and see how our commitment to security is built into every step of our platform.</p>
+        <Link href="/process" className="cta-button mt-6">
+            Explore Our Process <ArrowRight className="ml-2 h-4 w-4"/>
+        </Link>
       </div>
     </main>
   );

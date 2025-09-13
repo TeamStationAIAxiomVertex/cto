@@ -17,8 +17,7 @@ async function getFilenames(): Promise<string[]> {
         const filenames = await fs.readdir(contentDirectory);
         // Filter out files that now have custom pages
         return filenames.filter(filename => {
-            return filename.endsWith('.md') && 
-                   !['build-vs-buy.md', 'security-compliance.md'].includes(filename);
+            return filename.endsWith('.md');
         });
     } catch (error) {
         console.error("Error reading playbook directory:", error);
@@ -29,14 +28,15 @@ async function getFilenames(): Promise<string[]> {
 
 export async function getAllPlaybookSlugs(): Promise<string[]> {
     const filenames = await getFilenames();
-    return filenames.map(filename => filename.replace(/\.md$/, ''));
+    // Add slugs for custom pages
+    const customPageSlugs = ['build-vs-buy', 'security-compliance', 'bias-free-technical-hiring-axiom-cortex', 'latam-economics', 'nearshore-vs-offshore'];
+    const markdownSlugs = filenames.map(filename => filename.replace(/\.md$/, ''));
+    
+    // Combine and remove duplicates
+    return [...new Set([...markdownSlugs, ...customPageSlugs])];
 }
 
 export async function getPlaybookBySlug(slug: string): Promise<PlaybookPost | null> {
-  // If the slug is for a custom page, return null to avoid errors.
-  if (['build-vs-buy', 'security-compliance'].includes(slug)) {
-    return null;
-  }
   const filePath = path.join(contentDirectory, `${slug}.md`);
   try {
     const fileContents = await fs.readFile(filePath, 'utf8');
@@ -49,7 +49,10 @@ export async function getPlaybookBySlug(slug: string): Promise<PlaybookPost | nu
       content,
     } as PlaybookPost;
   } catch (error) {
-    console.error(`Error reading playbook post ${slug}:`, error);
+    // This is expected for custom pages, so we don't log an error
+    if (error.code !== 'ENOENT') {
+        console.error(`Error reading playbook post ${slug}:`, error);
+    }
     return null;
   }
 }

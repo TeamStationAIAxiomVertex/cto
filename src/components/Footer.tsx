@@ -16,6 +16,7 @@ export function Footer() {
         { href: '/playbook/latam-economics', label: 'LATAM Economics' },
         { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
         { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring' },
+        { href: '/playbook/security-compliance', label: 'Security & Compliance' },
       ],
       "What's Included": [
         { href: '/platform', label: 'Platform' },
@@ -33,7 +34,6 @@ export function Footer() {
       "Company": [
         { href: '/about', label: 'About Us' },
         { href: '/research', label: 'Research' },
-        { href: '/trust', label: 'Trust Center' },
         { href: '/hire', label: 'Hire Talent' },
       ]
   }

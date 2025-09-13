@@ -12,6 +12,7 @@ const navItems = {
     { href: '/playbook/latam-economics', title: 'LATAM Economics', description: 'A CFO-ready framework for modeling nearshore TCO.' },
     { href: '/playbook/build-vs-buy', title: 'Build vs. Buy', description: 'The trade-offs of building a nearshore operation from scratch.' },
     { href: '/playbook/bias-free-technical-hiring-axiom-cortex', title: 'Bias-Free Hiring', description: 'How to use Axiom Cortex™ for fairer, more accurate hiring.' },
+    { href: '/playbook/security-compliance', title: 'Security & Compliance', description: 'The playbook for audit-ready nearshore operations.' },
   ],
   'What\'s Included': [
     { href: '/platform', title: 'Platform', description: 'A single pane of glass for your entire nearshore operation.' },
@@ -33,7 +34,7 @@ const simpleNavItems = [
     { href: '/pricing', title: 'Pricing' },
     { href: '/hire', title: 'Hire' },
     { href: '/research', title: 'Research'},
-    { href: '/trust', title: 'Trust Center' },
+    { href: '/about', title: 'About' },
 ];
 
 function NavLink({ href, title, description }: { href: string, title: string, description: string }) {
