@@ -112,7 +112,7 @@ const faqs = [
     },
     {
         title: 'What is language-fairness calibration?',
-        content: 'It\'\'s an algorithmic adjustment we apply to raw scores to mitigate bias against non-native English speakers. The model is trained to focus on the logical and technical substance of an answer, not just linguistic fluency or accent. This is achieved through a suite of L2-aware mathematical methods, including proficiency-normalized scoring and cross-lingual semantic fidelity tests.'
+        content: 'It\'s an algorithmic adjustment we apply to raw scores to mitigate bias against non-native English speakers. The model is trained to focus on the logical and technical substance of an answer, not just linguistic fluency or accent. This is achieved through a suite of L2-aware mathematical methods, including proficiency-normalized scoring and cross-lingual semantic fidelity tests.'
     },
     {
         title: 'Can the model free-run or hallucinate?',
@@ -213,7 +213,7 @@ const ctoAppendixContent = `
 </div>
 `;
 
-export default function TalentEvaluationClient() {
+export default function TalentEvaluationPage() {
   return (
     <main className="container max-w-6xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
