@@ -132,7 +132,7 @@ export default function ComparisonsPage() {
        <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl text-center">
         <h2>Key Findings</h2>
          <p>
-            TeamStation AI bundles hiring, compliance, devices, MDM, workspace, insurance and performance under one contract. Competitors require clients to assemble multiple vendors. Our transparent <Link href="/pricing">pricing</Link> includes all services, while competitor rates exclude critical services, leading to a higher Total Cost of Ownership (TCO). Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ engine</Link> reduces mis-hire risk, and our integrated model eliminates compliance gaps and security vulnerabilities.
+            TeamStation AI bundles hiring, compliance, devices, MDM, workspace, insurance and performance under one contract. Competitors require clients to assemble multiple vendors. Our transparent <Link href="/pricing">pricing</Link> includes all services, while competitor rates exclude critical services, leading to a higher Total Cost of Ownership (TCO). Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI engine</Link> reduces mis-hire risk, and our integrated model eliminates compliance gaps and security vulnerabilities.
         </p>
       </div>
 
@@ -243,3 +243,5 @@ export default function ComparisonsPage() {
     </main>
   );
 }
+
+    
