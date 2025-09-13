@@ -32,7 +32,7 @@ export function Footer() {
       ],
       "Company": [
         { href: '/about', label: 'About Us' },
-        { href: 'https://app.teamstation.dev/research', label: 'Research' },
+        { href: '/research', label: 'Research' },
         { href: '/trust', label: 'Trust Center' },
         { href: '/hire', label: 'Hire Talent' },
       ]

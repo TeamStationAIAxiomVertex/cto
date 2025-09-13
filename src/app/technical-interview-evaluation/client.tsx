@@ -148,7 +148,7 @@ export default function EvaluationClient() {
   return (
     <main className="container max-w-4xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/services" className="hover:text-foreground">Services</Link> / <span>Talent Evaluations</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/process" className="hover:text-foreground">Process</Link> / <span>Talent Evaluations</span>
       </div>
       <header className="my-8">
         <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Evidence-Based Technical Evaluation</h1>
@@ -196,7 +196,7 @@ export default function EvaluationClient() {
       <div className="my-12 rounded-lg border bg-card p-6">
         <h2 className="text-xl font-bold flex items-center gap-2"><BrainCircuit className="h-6 w-6 text-primary" /> Cognitive Fingerprint 4.0</h2>
         <p className="text-sm text-muted-foreground">
-            Maps the candidate's four latent traits against the ideal profile for the role. See our research paper on <Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">bias-free hiring</Link> to learn more.
+            Maps the candidate's four latent traits against the ideal profile for the role. See our research paper on <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">bias-free hiring</Link> to learn more.
         </p>
         <div style={{ height: 300 }} className='mt-4'>
             <ResponsiveContainer width="100%" height="100%">
@@ -233,9 +233,9 @@ export default function EvaluationClient() {
                         </div>
                         <p className="mt-4 text-sm text-muted-foreground border-t border-border pt-4">{risk.description}</p>
                         <div className='flex-grow'></div>
-                        <h4 className='text-sm font-bold mt-4 text-primary'>Mitigation Plan (Proof)</h4>
+                        <h4 className='text-sm font-bold mt-4 text-primary'>Mitigation Plan (Solution)</h4>
                         <p className="text-sm text-muted-foreground m-0 flex-grow">{risk.mitigation}</p>
-                        <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{risk.kpi}</p>
+                        <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {risk.kpi}</p>
                     </div>
                 ))}
             </div>
@@ -263,6 +263,4 @@ export default function EvaluationClient() {
     </main>
   );
 }
-    
-
     
