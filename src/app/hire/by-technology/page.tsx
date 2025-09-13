@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 const techCategories = [
   {
     name: 'APIs & Backend Services',
+    pain: "Is your backend a bottleneck or a force multiplier?",
     icon: <Server className="h-6 w-6 text-primary" />,
     tech: ['Node (NestJS/Fastify)', 'Python (FastAPI/Django)', 'Java (Spring Boot)', 'Go (Gin/Fiber)', '.NET', 'gRPC', 'GraphQL (Apollo)'],
     roleSlug: 'backend-services',
@@ -18,6 +19,7 @@ const techCategories = [
   },
   {
     name: 'Frontend & UI/UX',
+    pain: "Is a slow, buggy UI costing you customers?",
     icon: <Layers className="h-6 w-6 text-primary" />,
     tech: ['React/TypeScript', 'Next.js/Vite', 'TanStack Query', 'Redux Toolkit/Zustand', 'Tailwind/shadcn/MUI', 'Testing Library'],
     roleSlug: 'frontend-web',
@@ -25,6 +27,7 @@ const techCategories = [
   },
   {
     name: 'Data Modeling & Databases',
+    pain: "Is your data model built for scale or for future refactors?",
     icon: <Database className="h-6 w-6 text-primary" />,
     tech: ['PostgreSQL', 'MySQL', 'SQL Server', 'dbt', 'Prisma', 'SQLAlchemy', 'Hibernate', 'Redis', 'Memcached'],
     roleSlug: 'data-engineering-analytics',
@@ -32,6 +35,7 @@ const techCategories = [
   },
   {
     name: 'Pipelines & Orchestration',
+    pain: "Are your data pipelines brittle and unreliable?",
     icon: <Component className="h-6 w-6 text-primary" />,
     tech: ['Airflow/Prefect/Dagster', 'Kafka/RabbitMQ/NATS', 'Flink/Beam', 'Kubernetes', 'Docker'],
     roleSlug: 'data-engineering-analytics',
@@ -39,6 +43,7 @@ const techCategories = [
   },
   {
     name: 'ML/AI & LLM Ops',
+    pain: "Struggling to move AI from a notebook to production?",
     icon: <BrainCircuit className="h-6 w-6 text-primary" />,
     tech: ['PyTorch', 'Transformers', 'vLLM', 'Ray Serve', 'LangChain/LlamaIndex', 'pgvector/Pinecone', 'MLflow/W&B', 'Ragas'],
     roleSlug: 'ml-ai-llm-ops',
@@ -46,6 +51,7 @@ const techCategories = [
   },
   {
     name: 'Observability & SRE',
+    pain: "Are you debugging in the dark when systems fail?",
     icon: <GanttChartSquare className="h-6 w-6 text-primary" />,
     tech: ['Prometheus', 'Grafana', 'OpenTelemetry', 'Jaeger/Loki', 'Terraform/Pulumi', 'Istio/Linkerd'],
     roleSlug: 'platform-infra-sre',
@@ -53,6 +59,7 @@ const techCategories = [
   },
   {
     name: 'Security & GRC',
+    pain: "Is compliance an afterthought or built into your stack?",
     icon: <ShieldCheck className="h-6 w-6 text-primary" />,
     tech: ['Vault', 'Okta/Auth0', 'CodeQL/SonarQube/Snyk', 'Trivy', 'OPA', 'SOC 2', 'ISO 27001', 'HIPAA'],
     roleSlug: 'security-grc',
@@ -60,6 +67,7 @@ const techCategories = [
   },
   {
     name: 'Testing & Quality Engineering',
+    pain: "Does 'shipping fast' also mean 'shipping bugs'?",
     icon: <TestTube2 className="h-6 w-6 text-primary" />,
     tech: ['Playwright/Cypress', 'Jest/Vitest', 'PyTest/JUnit', 'k6/Locust', 'Pact', 'Gremlin/Litmus'],
     roleSlug: 'qa-quality-engineering',
@@ -67,6 +75,7 @@ const techCategories = [
   },
   {
     name: 'Cloud FinOps & BizTech',
+    pain: "Are runaway cloud costs eating into your margins?",
     icon: <Wallet className="h-6 w-6 text-primary" />,
     tech: ['CloudZero/Infracost', 'AWS Cost Explorer', 'Salesforce', 'HubSpot', 'Hightouch/Census'],
     roleSlug: 'finops-biztech',
@@ -82,16 +91,17 @@ export default function HireByTechnologyPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <span>By Technology</span>
       </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Your Stack, Their Expertise</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Stop Hiring for Keywords. Start Hiring for Mastery.</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            You're here because finding an engineer who has simply "used" a technology isn't enough. You need someone who has mastered it to solve real-world problems. We don't just find candidates with keyword matches; we find experts with proven, deeply-rooted expertise in the specific technologies you rely on.
+            You're here because finding an engineer who has simply "used" a technology isn't enough. You need someone who has mastered it to solve real-world problems. We provide experts with proven, deeply-rooted expertise in the specific technologies that power your business.
         </p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {techCategories.map((category) => (
-          <div key={category.name} className="rounded-lg border bg-card p-6 flex flex-col">
-            <div className="flex items-center gap-3">
+          <div key={category.name} className="group rounded-lg border bg-card p-6 flex flex-col">
+             <p className="text-sm font-semibold text-primary">{category.pain}</p>
+            <div className="flex items-center gap-3 mt-3">
               {category.icon}
               <h2 className="text-xl font-bold text-foreground">{category.name}</h2>
             </div>
@@ -102,7 +112,7 @@ export default function HireByTechnologyPage() {
             </div>
             <div className="flex-grow"></div>
             <Link href={`/hire/by-role/${category.roleSlug}`} className="group mt-4 flex items-center text-sm font-semibold text-primary">
-              See <span className="hidden sm:inline-block mx-1">{category.roleName}</span> Roles
+              Proof: See {category.roleName} Roles
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
