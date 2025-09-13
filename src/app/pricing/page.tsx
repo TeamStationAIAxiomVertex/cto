@@ -172,59 +172,6 @@ export default function PricingPage() {
             ))}
         </div>
       </div>
-      
-      <div className="my-16">
-        <h2 className="text-4xl font-bold text-center">The TCO Knockout: U.S. Hire vs. TeamStation AI</h2>
-         <p className="mt-4 max-w-3xl mx-auto text-center text-muted-foreground">This is the slide to show your finance team. It's a simple, powerful comparison of the true first-year cost.</p>
-        <div className="overflow-x-auto mt-8">
-          <table className="w-full max-w-4xl mx-auto text-sm text-left">
-            <thead className="border-b border-border/50">
-              <tr>
-                <th className="px-4 py-3 font-semibold text-foreground">Cost Area</th>
-                <th className="px-4 py-3 font-semibold text-foreground text-center">Typical U.S. Onboarding</th>
-                <th className="px-4 py-3 font-semibold text-primary text-center">TeamStation AI (Included)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b border-border/50">
-                  <td className="px-4 py-3 font-medium text-foreground">Recruitment</td>
-                  <td className="px-4 py-3 text-muted-foreground text-center">$5,000–$8,000</td>
-                  <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
-              </tr>
-               <tr className="border-b border-border/50">
-                  <td className="px-4 py-3 font-medium text-foreground">Hardware & Software Setup</td>
-                  <td className="px-4 py-3 text-muted-foreground text-center">$3,000–$5,000</td>
-                  <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
-              </tr>
-                <tr className="border-b border-border/50">
-                  <td className="px-4 py-3 font-medium text-foreground">Training & Onboarding</td>
-                  <td className="px-4 py-3 text-muted-foreground text-center">$2,000–$5,000</td>
-                   <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
-              </tr>
-               <tr className="border-b border-border/50">
-                  <td className="px-4 py-3 font-medium text-foreground">Compliance & Payroll Setup</td>
-                  <td className="px-4 py-3 text-muted-foreground text-center">$1,000–$2,000</td>
-                   <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
-              </tr>
-               <tr className="border-b border-border/50 bg-card">
-                  <td className="px-4 py-3 font-bold text-foreground">Total Onboarding Cost</td>
-                  <td className="px-4 py-3 font-bold text-red-400 text-center">$11,000–$20,000</td>
-                   <td className="px-4 py-3 font-bold text-green-400 text-center">$0</td>
-              </tr>
-                <tr className="border-b border-border/50">
-                  <td className="px-4 py-3 font-bold text-foreground">Est. Annual Salary (Senior)</td>
-                  <td className="px-4 py-3 font-bold text-red-400 text-center">~$180,000</td>
-                   <td className="px-4 py-3 font-bold text-green-400 text-center">~$83,040</td>
-              </tr>
-              <tr className="bg-primary/10">
-                  <td className="px-4 py-4 font-extrabold text-foreground text-lg">First-Year TCO</td>
-                  <td className="px-4 py-4 font-extrabold text-red-400 text-center text-lg">~$191,000+</td>
-                   <td className="px-4 py-4 font-extrabold text-green-400 text-center text-lg">~$83,040</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
 
        <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Stop Burning Money. Start Building.</h2>
