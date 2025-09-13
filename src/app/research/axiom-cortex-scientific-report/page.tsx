@@ -1,3 +1,4 @@
+
 import { BrainCircuit, FileText, ShieldCheck, Scale, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -49,7 +50,7 @@ export default function AxiomCortexReportPage() {
             <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
                 Access the complete research paper on the Social Science Research Network (SSRN).
             </p>
-            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433476" target="_blank" rel="noopener noreferrer" className="cta-button mt-4">
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4533476" target="_blank" rel="noopener noreferrer" className="cta-button mt-4">
                 <BookOpen className="mr-2 h-4 w-4" />
                 View on SSRN
             </a>

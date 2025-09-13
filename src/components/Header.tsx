@@ -16,7 +16,7 @@ const navItems = {
   ],
   'Services': [
     { href: '/process', title: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
-    { href: '/research/technical-talent-evaluation-system', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
+    { href: '/technical-interview-evaluation', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
     { href: '/services/talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
     { href: '/services/integrated-services', title: 'Integrated Services', description: 'A single SLA for your entire nearshore operation.' },
   ],

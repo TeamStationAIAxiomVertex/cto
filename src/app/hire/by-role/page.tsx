@@ -10,6 +10,13 @@ export const metadata: Metadata = {
 
 const roleCategories = [
   {
+    name: 'Backend / Services',
+    slug: 'backend-services',
+    priority: 'P1 High',
+    description: "Domain modeling, API design (REST/gRPC/GraphQL), event-driven architecture, performance, caching, and robust testing.",
+    icon: <Code className="h-8 w-8 text-primary" />,
+  },
+  {
     name: 'Platform / Infra / SRE',
     slug: 'platform-infra-sre',
     priority: 'P0 Critical',
@@ -17,18 +24,32 @@ const roleCategories = [
     icon: <Server className="h-8 w-8 text-primary" />,
   },
   {
+    name: 'Data Engineering / Analytics',
+    slug: 'data-engineering-analytics',
+    priority: 'P1 High',
+    description: "ELT, data modeling, governance, streaming, DataOps, and experimentation platforms. The engine for business intelligence.",
+    icon: <Database className="h-8 w-8 text-primary" />,
+  },
+   {
+    name: 'ML/AI & LLM Ops',
+    slug: 'ml-ai-llm-ops',
+    priority: 'P1 High',
+    description: "Feature engineering, offline/online evaluation, RAG, safety guardrails, and performance tuning for AI/ML systems.",
+    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+  },
+  {
+    name: 'QA / Quality Engineering',
+    slug: 'qa-quality-engineering',
+    priority: 'P1/P2 Risk-Based',
+    description: "Shift-left testing, e2e automation, contract testing, performance/load analysis, and chaos engineering. Your insurance policy for quality.",
+    icon: <TestTube2 className="h-8 w-8 text-primary" />,
+  },
+   {
     name: 'Security & GRC',
     slug: 'security-grc',
     priority: 'P0 Critical',
     description: "Threat modeling, SDLC security, secrets management, identity, data protection, and compliance operations. Reduces existential risk.",
     icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-  },
-  {
-    name: 'Backend / Services',
-    slug: 'backend-services',
-    priority: 'P1 High',
-    description: "Domain modeling, API design (REST/gRPC/GraphQL), event-driven architecture, performance, caching, and robust testing.",
-    icon: <Code className="h-8 w-8 text-primary" />,
   },
   {
     name: 'Frontend / Web',
@@ -45,32 +66,11 @@ const roleCategories = [
     icon: <Plane className="h-8 w-8 text-primary" />,
   },
   {
-    name: 'Data Engineering / Analytics',
-    slug: 'data-engineering-analytics',
-    priority: 'P1 High',
-    description: "ELT, data modeling, governance, streaming, DataOps, and experimentation platforms. The engine for business intelligence.",
-    icon: <Database className="h-8 w-8 text-primary" />,
-  },
-  {
-    name: 'ML/AI & LLM Ops',
-    slug: 'ml-ai-llm-ops',
-    priority: 'P1 High',
-    description: "Feature engineering, offline/online evaluation, RAG, safety guardrails, and performance tuning for AI/ML systems.",
-    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
-  },
-  {
     name: 'Product, Design & Growth',
     slug: 'product-design-growth',
     priority: 'P1 High',
     description: "Product discovery, roadmapping, user research, experimentation, and funnel diagnostics to drive business outcomes.",
     icon: <GanttChartSquare className="h-8 w-8 text-primary" />,
-  },
-  {
-    name: 'QA / Quality Engineering',
-    slug: 'qa-quality-engineering',
-    priority: 'P1/P2 Risk-Based',
-    description: "Shift-left testing, e2e automation, contract testing, performance/load analysis, and chaos engineering. Your insurance policy for quality.",
-    icon: <TestTube2 className="h-8 w-8 text-primary" />,
   },
   {
     name: 'IT / Enterprise Ops',
