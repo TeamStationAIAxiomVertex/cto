@@ -59,16 +59,25 @@ const painPoints = [
 
 const comparisonPoints = {
     "Vetting": {
-        traditional: "Resume-based, prone to bias and mis-hires.",
-        teamstation: "Cognitive AI-based, proving problem-solving ability."
+        pain: "Is your hiring process a high-risk gamble?",
+        traditional: "Traditional staff augmentation relies on resume keywords and unstructured interviews, a biased process that frequently results in costly mis-hires.",
+        teamstation: "Our Axiom Cortex™ engine provides scientific, evidence-based proof of a candidate's problem-solving ability, not just their credentials.",
+        proof: "Mismatch rate ≤10%",
+        href: "/technical-interview-evaluation"
     },
     "Security": {
-        traditional: "Client's problem. Unmanaged devices create major risk.",
-        teamstation: "Built-in. MDM-secured devices and insurance included."
+        pain: "Is your vendor creating massive security holes?",
+        traditional: "Most vendors leave security to you. Unmanaged devices, no MDM, and no compliance framework expose you to catastrophic risk.",
+        teamstation: "Our integrated platform is secure by default. We provide MDM-secured devices, EOR/compliance, and insurance under one SLA.",
+        proof: "SOC 2 & ISO Aligned",
+        href: "/trust"
     },
     "Cost": {
-        traditional: "Low hourly rate with massive hidden costs (EOR, IT, legal).",
-        teamstation: "Transparent, all-inclusive rate with a lower TCO."
+        pain: "Are hidden fees killing your budget?",
+        traditional: "A low hourly rate hides a mountain of extra costs for EOR, IT, legal, and vendor management, inflating your Total Cost of Ownership (TCO).",
+        teamstation: "Our all-inclusive rate provides a predictable, CFO-ready TCO that is often 40-60% lower than the fully-loaded cost of other models.",
+        proof: "40-60% Lower TCO",
+        href: "/playbook/latam-economics"
     }
 }
 
@@ -143,36 +152,36 @@ export default async function HomePage() {
          <h2 className="text-center text-4xl font-bold text-foreground">
             There Is a Better Way
         </h2>
-        <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">Here’s how our integrated platform for nearshore software development solves these problems by design.</p>
-        <div className="mt-12 flow-root">
-          <div className="overflow-x-auto">
-            <div className="inline-block min-w-full align-middle">
-              <table className="min-w-full divide-y divide-border">
-                <thead>
-                  <tr>
-                    <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-foreground sm:pl-0">Factor</th>
-                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-muted-foreground">Traditional Staff Augmentation</th>
-                    <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-primary">TeamStation AI</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border/50">
-                  {Object.entries(comparisonPoints).map(([key, value]) => (
-                    <tr key={key}>
-                      <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-foreground sm:pl-0">{key}</td>
-                      <td className="whitespace-pre-wrap px-3 py-4 text-sm text-muted-foreground">{value.traditional}</td>
-                      <td className="whitespace-pre-wrap px-3 py-4 text-sm text-foreground">{value.teamstation}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <div className="text-center mt-8">
-                  <Link href="/comparisons" className="font-semibold text-primary hover:underline">
-                    See All Vendor Comparisons <ArrowRight className="inline h-4 w-4" />
-                </Link>
+        <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">Here’s how our integrated platform solves these problems by design.</p>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {Object.entries(comparisonPoints).map(([key, value]) => (
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+              <p className="text-sm font-semibold text-primary">{value.pain}</p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+              
+              <div className="mt-4 flex-grow">
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-muted-foreground">Traditional Model</h4>
+                  <p className="text-sm text-muted-foreground">{value.traditional}</p>
+                </div>
+                <div className="mt-4 border-t border-border pt-4">
+                  <h4 className="font-semibold text-foreground">TeamStation AI Solution</h4>
+                  <p className="text-sm text-foreground">{value.teamstation}</p>
+                </div>
               </div>
+              
+              <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{value.proof}</p>
+              <Link href={value.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
+                Learn More <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </div>
-          </div>
+          ))}
         </div>
+         <div className="text-center mt-12">
+              <Link href="/comparisons" className="font-semibold text-primary hover:underline">
+                See All Vendor Comparisons <ArrowRight className="inline h-4 w-4" />
+            </Link>
+          </div>
       </section>
 
 
@@ -210,5 +219,3 @@ export default async function HomePage() {
     </div>
   );
 }
-
-    
