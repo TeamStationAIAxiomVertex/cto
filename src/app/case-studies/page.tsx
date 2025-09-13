@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { getAllCaseStudies } from '@/lib/case-studies';
-import { ArrowRight, Award } from 'lucide-react';
+import { ArrowRight, Award, AlertTriangle, Shield, CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -24,34 +24,49 @@ export default async function CaseStudiesPage() {
         </p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
         {caseStudies.map((study) => (
           <div key={study.slug} className="group relative flex flex-col rounded-lg overflow-hidden border bg-card transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
             <div className="p-6 flex flex-col flex-grow">
-                <div className="flex items-center gap-4">
-                    <Award className="h-8 w-8 text-primary" />
+                <div className="flex items-start gap-4">
+                    <Award className="h-8 w-8 text-primary mt-1" />
                     <div>
                         <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{study.clientName}</h3>
                         <span className="text-xs font-medium text-muted-foreground">{study.industry}</span>
                     </div>
                 </div>
-                <p className="text-sm text-muted-foreground flex-grow my-4">
-                {study.summary}
-                </p>
 
-                {study.techStack && study.techStack.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {study.techStack.map((tech) => (
-                      <Link key={tech.name} href={tech.link} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground transition-colors hover:bg-primary/20 hover:text-primary">
-                        {tech.name}
-                      </Link>
-                    ))}
+                <div className="mt-4 space-y-4 flex-grow">
+                  {study.challenge && (
+                    <div>
+                      <h4 className="font-semibold text-sm flex items-center gap-2 text-yellow-400">
+                        <AlertTriangle className="h-4 w-4" />
+                        Pain
+                      </h4>
+                      <p className="text-sm text-muted-foreground m-0">{study.challenge.split('\n')[0].replace(/^-/, '').trim()}</p>
+                    </div>
+                  )}
+                  <div>
+                    <h4 className="font-semibold text-sm flex items-center gap-2 text-primary">
+                        <Shield className="h-4 w-4" />
+                        Solution
+                    </h4>
+                     <p className="text-sm text-foreground m-0">{study.summary}</p>
                   </div>
-                )}
-
-                <div className="mt-auto">
+                  {study.outcomes && (
+                    <div>
+                       <h4 className="font-semibold text-sm flex items-center gap-2 text-green-400">
+                        <CheckCircle className="h-4 w-4" />
+                        Proof
+                      </h4>
+                       <p className="text-sm text-muted-foreground m-0">{study.outcomes.split('\n')[0].replace(/^-/, '').trim()}</p>
+                    </div>
+                  )}
+                </div>
+                
+                <div className="mt-6">
                     <Link href={`/case-studies/${study.slug}`} className="flex items-center text-sm font-semibold text-primary stretched-link">
-                        Read Case Study <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        Read Full Case Study <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                 </div>
             </div>
