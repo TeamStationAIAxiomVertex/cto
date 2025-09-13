@@ -1,9 +1,8 @@
 
 import Link from 'next/link';
 import { getAllCaseStudies } from '@/lib/case-studies';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Award } from 'lucide-react';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Nearshore IT Staff Augmentation Case Studies | TeamStation AI',
@@ -27,27 +26,36 @@ export default async function CaseStudiesPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {caseStudies.map((study) => (
-          <Link href={`/case-studies/${study.slug}`} key={study.slug} className="group relative flex flex-col rounded-lg overflow-hidden border bg-card transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-            <div className="relative h-48 w-full">
-                <Image 
-                    src={study.ogImage.src.url}
-                    alt={`Case study for ${study.clientName}`}
-                    width={study.ogImage.src.width}
-                    height={study.ogImage.src.height}
-                    className="object-cover w-full h-full"
-                    data-ai-hint={study.ogImage.aiHint}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-            </div>
+          <div key={study.slug} className="group relative flex flex-col rounded-lg overflow-hidden border bg-card transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
             <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{study.clientName}</h3>
-                <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary my-3 self-start">{study.industry}</span>
-                <p className="text-sm text-muted-foreground flex-grow">
+                <div className="flex items-center gap-4">
+                    <Award className="h-8 w-8 text-primary" />
+                    <div>
+                        <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{study.clientName}</h3>
+                        <span className="text-xs font-medium text-muted-foreground">{study.industry}</span>
+                    </div>
+                </div>
+                <p className="text-sm text-muted-foreground flex-grow my-4">
                 {study.summary}
                 </p>
-                <div className="mt-6 flex items-center text-sm font-semibold text-primary">Read Case Study <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></div>
+
+                {study.techStack && study.techStack.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {study.techStack.map((tech) => (
+                      <Link key={tech.name} href={tech.link} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground transition-colors hover:bg-primary/20 hover:text-primary">
+                        {tech.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                <div className="mt-auto">
+                    <Link href={`/case-studies/${study.slug}`} className="flex items-center text-sm font-semibold text-primary stretched-link">
+                        Read Case Study <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </main>

@@ -6,6 +6,13 @@ clientName: 'Global Entertainment Platform'
 industry: 'Global Entertainment & Media'
 summary: 'Replaced an incumbent offshore QA vendor with a 10+ engineer LATAM squad in <30 days, stabilizing releases and reducing defect leakage for a billion-dollar product.'
 canonical: 'https://cto.teamstation.dev/case-studies/global-entertainment-platform'
+techStack:
+  - name: 'QA Automation'
+    link: '/hire/by-role/qa-quality-engineering'
+  - name: 'CI/CD'
+    link: '/hire/by-role/platform-infra-sre'
+  - name: 'TestOps'
+    link: '/hire/by-role/qa-quality-engineering'
 ---
 
 ## Executive Summary

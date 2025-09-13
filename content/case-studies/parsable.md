@@ -6,6 +6,15 @@ clientName: 'Parsable'
 industry: 'Industrial Worker Automation'
 summary: 'Resolved a mission-critical Okta SSO integration failure for a marquee enterprise client, unlocking onboarding for new billable users.'
 canonical: 'https://cto.teamstation.dev/case-studies/parsable'
+techStack:
+  - name: 'Okta SSO'
+    link: '/hire/by-role/security-grc'
+  - name: 'iOS/Android'
+    link: '/hire/by-role/mobile-cross-platform'
+  - name: 'QA Automation'
+    link: '/hire/by-role/qa-quality-engineering'
+  - name: 'UX/UI'
+    link: '/hire/by-role/product-design-growth'
 ---
 
 ## Executive Summary

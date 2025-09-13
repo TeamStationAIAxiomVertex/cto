@@ -6,6 +6,13 @@ clientName: 'Healthcare Revenue Cycle Platform'
 industry: 'Healthcare Technology'
 summary: 'Operationalized a rigorous MSA/SOW framework into a documentation-first delivery system, achieving predictable throughput and audit-ready operations.'
 canonical: 'https://cto.teamstation.dev/case-studies/healthcare-revenue-platform'
+techStack:
+  - name: 'Security & GRC'
+    link: '/hire/by-role/security-grc'
+  - name: 'Data Engineering'
+    link: '/hire/by-role/data-engineering-analytics'
+  - name: 'SOC 2 / ISO'
+    link: '/trust'
 ---
 
 ## Executive Summary

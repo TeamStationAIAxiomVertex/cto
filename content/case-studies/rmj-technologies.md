@@ -6,6 +6,15 @@ clientName: 'RMJ Technologies'
 industry: 'Automotive Fleet Optimization'
 summary: 'Stabilized a monolithic platform and launched a microservices program, scaling to 15,000 users and enabling multi-million-dollar revenue expansion.'
 canonical: 'https://cto.teamstation.dev/case-studies/rmj-technologies'
+techStack:
+  - name: 'C#/.NET'
+    link: '/hire/by-technology'
+  - name: 'Vue.js'
+    link: '/hire/by-technology'
+  - name: 'Microservices'
+    link: '/hire/by-role/backend-services'
+  - name: 'SQL Server'
+    link: '/hire/by-role/data-engineering-analytics'
 ---
 
 ## Executive Summary
