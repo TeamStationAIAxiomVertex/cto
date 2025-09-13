@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane } from 'lucide-react';
 import type { Metadata } from 'next';
+import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Role | LATAM Staff Augmentation',
@@ -10,81 +11,114 @@ export const metadata: Metadata = {
 
 const roleCategories = [
   {
-    name: 'Backend / Services',
-    slug: 'backend-services',
-    priority: 'P1 High',
-    description: "Domain modeling, API design (REST/gRPC/GraphQL), event-driven architecture, performance, caching, and robust testing.",
-    icon: <Code className="h-8 w-8 text-primary" />,
-  },
-  {
     name: 'Platform / Infra / SRE',
     slug: 'platform-infra-sre',
     priority: 'P0 Critical',
-    description: "Cloud architecture, IaC, CI/CD, observability, cost control, and incident management. The foundation for availability, velocity, and spend.",
+    priorityTooltip: 'Mission-critical roles that prevent existential risks like major downtime or security breaches.',
+    pain: 'Are platform issues burning cash and credibility?',
+    description: "Cloud architecture, IaC, CI/CD, observability, and incident management. The foundation for availability, velocity, and spend.",
     icon: <Server className="h-8 w-8 text-primary" />,
+    proof: { href: '/case-studies/rmj-technologies', label: 'See how we stabilized a monolith at scale.'}
   },
   {
-    name: 'Data Engineering / Analytics',
-    slug: 'data-engineering-analytics',
-    priority: 'P1 High',
-    description: "ELT, data modeling, governance, streaming, DataOps, and experimentation platforms. The engine for business intelligence.",
-    icon: <Database className="h-8 w-8 text-primary" />,
-  },
-   {
-    name: 'ML/AI & LLM Ops',
-    slug: 'ml-ai-llm-ops',
-    priority: 'P1 High',
-    description: "Feature engineering, offline/online evaluation, RAG, safety guardrails, and performance tuning for AI/ML systems.",
-    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
-  },
-  {
-    name: 'QA / Quality Engineering',
-    slug: 'qa-quality-engineering',
-    priority: 'P1/P2 Risk-Based',
-    description: "Shift-left testing, e2e automation, contract testing, performance/load analysis, and chaos engineering. Your insurance policy for quality.",
-    icon: <TestTube2 className="h-8 w-8 text-primary" />,
-  },
-   {
     name: 'Security & GRC',
     slug: 'security-grc',
     priority: 'P0 Critical',
-    description: "Threat modeling, SDLC security, secrets management, identity, data protection, and compliance operations. Reduces existential risk.",
+    priorityTooltip: 'Mission-critical roles that prevent existential risks like major downtime or security breaches.',
+    pain: 'Is your next feature also your next vulnerability?',
+    description: "Threat modeling, SDLC security, secrets management, identity, and compliance. Reduces existential risk.",
     icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+    proof: { href: '/case-studies/parsable', label: 'See how we solved an enterprise SSO crisis.'}
+  },
+   {
+    name: 'Backend / Services',
+    slug: 'backend-services',
+    priority: 'P1 High',
+    priorityTooltip: 'High-impact roles that directly drive core product value and revenue.',
+    pain: 'Is your backend a bottleneck or a force multiplier?',
+    description: "Domain modeling, API design (REST/gRPC/GraphQL), eventing, and performance. The engine of your product.",
+    icon: <Code className="h-8 w-8 text-primary" />,
+    proof: { href: '/case-studies/atticus', label: 'See how we delivered a full-stack MVP in <3 months.'}
   },
   {
     name: 'Frontend / Web',
     slug: 'frontend-web',
     priority: 'P1 High',
-    description: "Core Web Vitals, accessibility, modern SSR/CSR patterns, state management, and end-to-end testing. The core of UX quality.",
+    priorityTooltip: 'High-impact roles that directly drive core product value and revenue.',
+    pain: 'Is a poor user experience costing you customers?',
+    description: "Core Web Vitals, accessibility, modern SSR/CSR patterns, and state management. The core of UX quality.",
     icon: <Layers className="h-8 w-8 text-primary" />,
+    proof: { href: '/case-studies/global-ooh-advertising-platform', label: 'See how we built a high-stakes analytics UI.'}
   },
   {
-    name: 'Mobile / Cross-Platform',
-    slug: 'mobile-cross-platform',
-    priority: 'P2 Medium',
-    description: "React Native, Flutter, Swift, and Kotlin expertise for building high-quality mobile applications.",
-    icon: <Plane className="h-8 w-8 text-primary" />,
+    name: 'Data Engineering / Analytics',
+    slug: 'data-engineering-analytics',
+    priority: 'P1 High',
+    priorityTooltip: 'High-impact roles that directly drive core product value and revenue.',
+    pain: 'Is your business flying blind without trusted data?',
+    description: "ELT, data modeling, governance, streaming, and DataOps. The engine for business intelligence.",
+    icon: <Database className="h-8 w-8 text-primary" />,
+    proof: { href: '/case-studies/healthcare-revenue-platform', label: 'See how we built an audit-ready data system.'}
+  },
+   {
+    name: 'ML/AI & LLM Ops',
+    slug: 'ml-ai-llm-ops',
+    priority: 'P1 High',
+    priorityTooltip: 'High-impact roles that directly drive core product value and revenue.',
+    pain: 'Are you struggling to get AI from notebook to production?',
+    description: "Feature engineering, RAG, safety guardrails, and performance tuning for AI/ML systems.",
+    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+    proof: { href: '/case-studies/global-ooh-advertising-platform', label: 'See how we accelerated AI feature velocity.'}
   },
   {
     name: 'Product, Design & Growth',
     slug: 'product-design-growth',
     priority: 'P1 High',
-    description: "Product discovery, roadmapping, user research, experimentation, and funnel diagnostics to drive business outcomes.",
+    priorityTooltip: 'High-impact roles that directly drive core product value and revenue.',
+    pain: 'Are you building features or building value?',
+    description: "Product discovery, roadmapping, user research, and experimentation to drive business outcomes.",
     icon: <GanttChartSquare className="h-8 w-8 text-primary" />,
+    proof: { href: '/case-studies/parsable', label: 'See how our product and design talent helped ship features.'}
+  },
+  {
+    name: 'QA / Quality Engineering',
+    slug: 'qa-quality-engineering',
+    priority: 'P1/P2 Risk-Based',
+    priorityTooltip: 'Priority depends on the product risk profile and release velocity needs.',
+    pain: 'Does shipping fast mean shipping bugs?',
+    description: "Shift-left testing, e2e automation, contract testing, and chaos engineering. Your insurance policy for quality.",
+    icon: <TestTube2 className="h-8 w-8 text-primary" />,
+    proof: { href: '/case-studies/global-entertainment-platform', label: 'See how our QA squad stabilized global releases.'}
+  },
+  {
+    name: 'Mobile / Cross-Platform',
+    slug: 'mobile-cross-platform',
+    priority: 'P2 Medium',
+    priorityTooltip: 'Important roles that support specific business lines or secondary platforms.',
+    pain: 'Is your mobile experience falling behind?',
+    description: "React Native, Flutter, Swift, and Kotlin expertise for building high-quality mobile applications.",
+    icon: <Plane className="h-8 w-8 text-primary" />,
+    proof: { href: '/case-studies/atticus', label: 'See how we shipped a production iOS app.'}
   },
   {
     name: 'IT / Enterprise Ops',
     slug: 'it-enterprise-ops',
     priority: 'P1 Regulated',
+    priorityTooltip: 'High priority in regulated environments or for maintaining enterprise-wide compliance and security.',
+    pain: 'Is your internal IT a productivity bottleneck?',
     description: 'Endpoint Management (MDM), ITSM, and corporate security for enterprise-grade operations.',
     icon: <Briefcase className="h-8 w-8 text-primary" />,
+    proof: { href: '/trust', label: 'Learn about our secure operations.'}
   },
   {
     name: 'FinOps / BizTech',
     slug: 'finops-biztech',
     priority: 'P2 Medium',
-    description: 'Cloud cost optimization, RevOps engineering, and financial data analysis to improve efficiency and revenue operations.',
+    priorityTooltip: 'Important roles that support specific business lines or secondary platforms.',
+    pain: 'Are runaway cloud costs eating your margin?',
+    description: 'Cloud cost optimization, RevOps engineering, and financial data analysis to improve efficiency.',
     icon: <Wallet className="h-8 w-8 text-primary" />,
+    proof: { href: '/playbook/latam-economics', label: 'See how we model Total Cost of Ownership.'}
   }
 ];
 
@@ -110,19 +144,29 @@ export default function HireByRolePage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {roleCategories.map((details) => (
-          <Link href={`/hire/by-role/${details.slug}`} key={details.slug} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-              <div className='flex justify-between items-start'>
-                {details.icon}
-                <span className={`rounded-full px-3 py-1 text-xs font-medium ${getPriorityColor(details.priority)}`}>{details.priority}</span>
+          <div key={details.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+              <p className="text-sm font-semibold text-primary">{details.pain}</p>
+              <div className='flex justify-between items-start mt-3'>
+                <div className="flex items-center gap-3">
+                    {details.icon}
+                    <h2 className="text-xl font-bold text-foreground">{details.name}</h2>
+                </div>
+                <Tooltip text={details.priorityTooltip}>
+                    <span className={`rounded-full px-3 py-1 text-xs font-medium ${getPriorityColor(details.priority)}`}>{details.priority}</span>
+                </Tooltip>
               </div>
-              <h2 className="mt-4 text-2xl font-bold transition-colors group-hover:text-primary">{details.name}</h2>
-              <p className="mt-2 text-sm text-muted-foreground flex-grow">
+              <p className="mt-4 text-sm text-muted-foreground flex-grow">
                 {details.description}
               </p>
-              <div className="mt-6 flex items-center text-sm font-semibold text-primary">
-                  Explore Roles & Evaluation <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <div className="mt-6 space-y-4">
+                <Link href={`/hire/by-role/${details.slug}`} className="flex items-center text-sm font-semibold text-primary">
+                    Explore Roles & Evaluation <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link href={details.proof.href} className="flex items-center text-xs font-semibold text-muted-foreground hover:text-primary">
+                    {details.proof.label} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </div>
-          </Link>
+          </div>
         ))}
       </div>
       
