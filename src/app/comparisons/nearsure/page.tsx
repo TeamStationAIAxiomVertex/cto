@@ -50,7 +50,7 @@ export default function NearsureComparisonPage() {
            <p className="text-center text-sm text-muted-foreground mb-6">Traditional Staff Augmentation</p>
            <div className="space-y-3">
             {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
+               <div key={item.feature} className="flex items-start gap-3">
                 {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
                  <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>

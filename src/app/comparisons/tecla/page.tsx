@@ -65,7 +65,7 @@ export default function TeclaComparisonPage() {
         </p>
         <p>
            As a TECLA alternative, TeamStation AI provides a fully integrated platform. We don't just find talent; we provide the entire operational infrastructure. This includes <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>, secure device provisioning (<Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>), and comprehensive insurance, all bundled into a single, predictable rate. Our{' '}
-            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>
+            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link>
             {' '} engine also provides a layer of cognitive and bias-aware vetting that goes far beyond traditional screening.
         </p>
         <h3>Operational Responsibility: Where Does it Lie?</h3>

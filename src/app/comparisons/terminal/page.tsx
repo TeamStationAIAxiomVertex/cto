@@ -49,7 +49,7 @@ export default function TerminalComparisonPage() {
            <p className="text-center text-sm text-muted-foreground mb-6">Global Hiring & EOR Service</p>
            <div className="space-y-3">
             {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
+               <div key={item.feature} className="flex items-start gap-3">
                 {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
                  <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
@@ -68,7 +68,7 @@ export default function TerminalComparisonPage() {
         </p>
         <h3>The Governance & Validation Gap</h3>
         <p>
-           TeamStation AI provides a complete, software-defined operating model. Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link> engine de-risks hiring through scientific validation, while our integrated platform bundles all necessary "run-state" services—devices, MDM, offices, compliance, and insurance—under a single, predictable SLA. This is the fundamental difference: Terminal is an EOR-plus-recruiter; TeamStation is a scientific nearshore platform that runs the whole loop from discovery to delivery.
+           TeamStation AI provides a complete, software-defined operating model. Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link> engine de-risks hiring through scientific validation, while our integrated platform bundles all necessary "run-state" services—devices, MDM, offices, compliance, and insurance—under a single, predictable SLA. This is the fundamental difference: Terminal is an EOR-plus-recruiter; TeamStation is a scientific nearshore platform that runs the whole loop from discovery to delivery.
         </p>
          <h3>Buyer's Checklist</h3>
         <ul>

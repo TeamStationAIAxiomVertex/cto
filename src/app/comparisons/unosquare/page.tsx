@@ -50,7 +50,7 @@ export default function UnosquareComparisonPage() {
            <p className="text-center text-sm text-muted-foreground mb-6">Staff Augmentation & Consulting</p>
            <div className="space-y-3">
             {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
+               <div key={item.feature} className="flex items-start gap-3">
                 {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
                  <span className="text-sm text-muted-foreground">{item.feature}</span>
               </div>
@@ -70,7 +70,7 @@ export default function UnosquareComparisonPage() {
         <h3>Talent Pool, Vetting, and Risk</h3>
         <p>
             While Unosquare offers significant capacity, their vetting process is traditional, leaving the client exposed to mis-hire risk. As a strong Unosquare alternative, TeamStation AI's Nebula™ search taps into a much larger graph of over 2.6 million LATAM profiles, and our{' '}
-            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>
+            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link>
             {' '}engine provides a deep, scientific analysis of a candidate's cognitive abilities. This, combined with our all-inclusive operational wrapper, significantly reduces your Total Cost of Ownership (TCO) and operational risk.
         </p>
       </div>

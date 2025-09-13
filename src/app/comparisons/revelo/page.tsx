@@ -70,7 +70,7 @@ export default function ReveloComparisonPage() {
         <h3>The Security and Velocity Gap</h3>
         <p>
             For any CTO, security is non-negotiable. The lack of integrated device management is a critical vulnerability. As a Revelo alternative, TeamStation AI addresses this head-on by providing MDM-managed laptops to all engineers, ensuring an audit-ready security posture from day one. Furthermore, our <Link href="/process">process</Link> delivers a faster time-to-offer (≈9 days) and our{' '}
-            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>
+            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link>
             {' '} vetting engine provides a deeper, scientifically-grounded assessment of talent, reducing mis-hire risk.
         </p>
       </div>
