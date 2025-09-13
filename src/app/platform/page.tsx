@@ -88,6 +88,11 @@ export default function PlatformPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable <Tooltip text="Service Level Agreement: A contract defining the level of service you can expect, backed by our MSA.">SLA</Tooltip>.
         </p>
+         <div className="mt-8">
+            <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="cta-button">
+                See the Platform in Action
+            </Link>
+        </div>
       </header>
 
        <section className="my-16 max-w-6xl mx-auto">

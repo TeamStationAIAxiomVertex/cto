@@ -36,6 +36,7 @@ const simpleNavItems = [
     { href: '/hire', title: 'Hire' },
     { href: '/research', title: 'Research'},
     { href: '/about', title: 'About' },
+    { href: '/platform', title: 'Platform' },
 ];
 
 function NavLink({ href, title, description }: { href: string, title: string, description: string }) {
