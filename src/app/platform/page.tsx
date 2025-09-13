@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { CheckCircle, Trophy, Star, BookOpen, Beaker, GitCommit, Search, Users, BrainCircuit, FileCheck, Laptop, Gauge, ShieldCheck, FileText, Building, Scale } from "lucide-react";
 import type { Metadata } from 'next';
@@ -17,7 +18,7 @@ const includedServices = [
     { icon: <ShieldCheck className="h-6 w-6 text-primary"/>, title: 'Cybersecurity & E&O Insurance', description: 'Enterprise guardrails and liability coverage for peace of mind.' },
     { icon: <Building className="h-6 w-6 text-primary"/>, title: 'Offices & Workspaces', description: 'On-demand desks and meeting space across LATAM.' },
     { icon: <FileCheck className="h-6 w-6 text-primary"/>, title: 'Day-One Onboarding Automation', description: 'Access, first ticket, and a 30-60-90 plan baked in.' },
-    { icon: <Gauge className="h-6 w-6 text-primary"/>(h-6 w-6 text-primary"/>, title: 'Performance & KPIs', description: 'TTH, TTP, retention, device compliance, and security posture tracked.' },
+    { icon: <Gauge className="h-6 w-6 text-primary"/>, title: 'Performance & KPIs', description: 'TTH, TTP, retention, device compliance, and security posture tracked.' },
 ];
 
 const recognitions = [
@@ -26,7 +27,6 @@ const recognitions = [
     { icon: <BookOpen className="h-6 w-6 text-yellow-400" />, title: 'Peer-Reviewed Research', papers: [
         { title: "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation", href: "/research/axiom-cortex-scientific-report" },
         { title: "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering", href: "/research/performance-evaluation-framework" },
-        { title: "Nearshore IT Talent Performance Metrics in the Age of AI", href: "/research/performance-evaluation-framework" },
     ]},
     { icon: <Beaker className="h-6 w-6 text-yellow-400" />, title: 'Platform KPIs', kpis: [
         '2.6M+ LATAM IT profiles',
@@ -58,7 +58,7 @@ export default function PlatformPage() {
 
        <section className="my-16">
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {includedServices.slice(0, 9).map((service) => (
+            {includedServices.map((service) => (
                 <div key={service.title} className="flex items-start gap-4">
                     {service.icon}
                     <div>
@@ -139,5 +139,3 @@ export default function PlatformPage() {
     </main>
   );
 }
-
-    

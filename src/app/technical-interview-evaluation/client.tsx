@@ -3,7 +3,7 @@
 
 import { BrainCircuit, CheckCircle, GitCommit, Search, Users } from 'lucide-react';
 import Link from 'next/link';
-import { AccordionItem } from "@/components/Accordion";
+import { Accordion, AccordionItem } from "@/components/Accordion";
 import { DisclosureDrawer } from '@/components/DisclosureDrawer';
 
 const metrics = [

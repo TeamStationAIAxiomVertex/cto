@@ -79,7 +79,7 @@ export default function GlobantComparisonPage() {
             <Link href="/research/axiom-cortex-scientific-report">
                 Axiom Cortex™
             </Link>
-            {' '}engine measures cognitive traits, ensuring you're hiring engineers who are not just skilled, but are also agile problem-solvers. Our platform provides you with the data and control to manage your team effectively. For any organization that wants to retain direct control over their engineering culture and technical direction, the TeamStation model is far more aligned.
+            {' '} engine measures cognitive traits, ensuring you're hiring engineers who are not just skilled, but are also agile problem-solvers. Our platform provides you with the data and control to manage your team effectively. For any organization that wants to retain direct control over their engineering culture and technical direction, the TeamStation model is far more aligned.
         </p>
       </div>
 
