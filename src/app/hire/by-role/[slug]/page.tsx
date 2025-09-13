@@ -294,7 +294,3 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
 export async function generateStaticParams() {
   return Object.keys(roleData).map(slug => ({ slug }));
 }
-
-    
-
-    

@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Code2, Plane } from 'lucide-react';
+import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
