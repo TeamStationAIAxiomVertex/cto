@@ -56,7 +56,7 @@ const includedServices = [
 ];
 
 const recognitions = [
-    { icon: <Trophy className="h-6 w-6 text-yellow-400" />, title: 'Market Leader', source: 'Recognized for AI innovation in nearshore IT delivery.' },
+    { icon: <Trophy className="h-6 w-6 text-yellow-400" />, title: 'Market Leader', source: 'Recognized for Cognitive AI innovation in nearshore IT delivery.' },
     { icon: <Star className="h-6 w-6 text-yellow-400" />, title: 'Service Excellence', source: 'Independent market leader for nearshore staffing.' },
     { icon: <BookOpen className="h-6 w-6 text-yellow-400" />, title: 'Peer-Reviewed Research', papers: [
         { title: "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation", href: "/research/axiom-cortex-scientific-report" },
@@ -190,3 +190,5 @@ export default function PlatformPage() {
     </main>
   );
 }
+
+    

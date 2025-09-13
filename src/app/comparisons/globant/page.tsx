@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const comparisonData = [
     { feature: 'Purpose-built for Staff Augmentation', teamstation: true, competitor: false },
-    { feature: 'Cognitive Trait Measurement (Axiom Cortex™)', teamstation: true, competitor: false },
+    { feature: 'Cognitive Trait Measurement (Cognitive AI)', teamstation: true, competitor: false },
     { feature: 'Transparent, Candidate-Level Vetting', teamstation: true, competitor: false },
     { feature: 'Integrated EOR, Devices, & Insurance', teamstation: true, competitor: false },
     { feature: 'Focus on Large-Scale Project Outsourcing', teamstation: false, competitor: true },
@@ -77,7 +77,7 @@ export default function GlobantComparisonPage() {
         <p>
             TeamStation AI, in contrast, focuses on talent quality and integration. Our{' '}
             <Link href="/research/axiom-cortex-scientific-report">
-                Axiom Cortex™
+                Axiom Cortex™ Cognitive AI
             </Link>
             {' '} engine measures cognitive traits, ensuring you're hiring engineers who are not just skilled, but are also agile problem-solvers. Our platform provides you with the data and control to manage your team effectively. For any organization that wants to retain direct control over their engineering culture and technical direction, the TeamStation model is far more aligned.
         </p>
@@ -93,3 +93,5 @@ export default function GlobantComparisonPage() {
     </main>
   );
 }
+
+    

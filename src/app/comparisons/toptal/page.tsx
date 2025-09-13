@@ -66,7 +66,7 @@ export default function ToptalComparisonPage() {
         </p>
         <p>
             As a Toptal alternative, TeamStation AI's model is different. We build fully integrated, long-term nearshore teams and provide the operational, legal, and security infrastructure to run them. While Toptal's screening is rigorous, our{' '}
-            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>
+            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link>
             {' '} engine adds a layer of cognitive science and bias mitigation that provides a deeper, evidence-based understanding of a candidate's true potential.
         </p>
         <h3>Cost and Continuity Risk</h3>
@@ -88,3 +88,5 @@ export default function ToptalComparisonPage() {
     </main>
   );
 }
+
+    

@@ -25,7 +25,7 @@ const corePillars = [
         icon: <BrainCircuit className="h-8 w-8 text-primary"/>,
         pain: "Wasting months on bad hires?",
         title: "De-Risk Your Hiring with Cognitive AI",
-        description: "Stop gambling on resumes. Our Axiom Cortex™ engine provides auditable, scientific proof of a candidate's cognitive ability, cutting your mis-hire risk by over 90%.",
+        description: "Stop gambling on resumes. Our Axiom Cortex™ Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.",
         href: "/playbook/bias-free-technical-hiring-axiom-cortex",
         linkLabel: "Learn About Our Vetting",
         kpi: "Mismatch rate ≤10%"
@@ -61,7 +61,7 @@ const comparisonPoints = {
     "Vetting": {
         pain: "Is your hiring process a high-risk gamble?",
         traditional: "Traditional staff augmentation relies on resume keywords and unstructured interviews, a biased process that frequently results in costly mis-hires.",
-        teamstation: "Our Axiom Cortex™ engine provides scientific, evidence-based proof of a candidate's problem-solving ability, not just their credentials.",
+        teamstation: "Our Axiom Cortex™ Cognitive AI engine provides scientific, evidence-based proof of a candidate's problem-solving ability, not just their credentials.",
         proof: "Mismatch rate ≤10%",
         href: "/technical-interview-evaluation"
     },

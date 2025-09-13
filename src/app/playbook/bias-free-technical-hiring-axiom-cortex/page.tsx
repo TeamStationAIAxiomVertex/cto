@@ -15,7 +15,7 @@ const hiringPains = [
         pain: "Is your hiring process a high-risk gamble?",
         solutionTitle: "From Resume Keywords to Cognitive Proof",
         problem: "Traditional hiring relies on resume keywords and unstructured interviews—a biased, low-signal process that tells you nothing about a candidate's actual problem-solving ability.",
-        solution: "Our Axiom Cortex™ engine uses over 44 psychometric and NLP signals to provide scientific, evidence-based proof of a candidate's cognitive traits, like Architectural Instinct and Problem-Solving Agility.",
+        solution: "Our Axiom Cortex™ Cognitive AI engine synthesizes the interview conversation, using over 44 proprietary algorithms to provide scientific, evidence-based proof of a candidate's cognitive traits and mental shape.",
         proof: "Mismatch Rate ≤ 10%",
         href: "/technical-interview-evaluation",
         linkLabel: "See a Real Evaluation Report"
@@ -25,7 +25,7 @@ const hiringPains = [
         pain: "Are you losing top talent to a slow, biased process?",
         solutionTitle: "From Subjective Interviews to Objective Evidence",
         problem: "Unstructured interviews favor charismatic speakers over the best engineers and are notoriously prone to interviewer bias, especially against non-native English speakers.",
-        solution: "We use structured, bias-aware interviews and a Cortex Calibration Layer to ensure we evaluate pure technical and logical signals, not just linguistic fluency or presentation style.",
+        solution: "A human expert conducts a structured, bias-aware interview. Our Cognitive AI then provides a Cortex Calibration Layer to ensure we evaluate pure technical and logical signals, not just linguistic fluency or presentation style.",
         proof: "Time-to-Offer ≈ 9 days",
         href: "/research/axiom-cortex-scientific-report",
         linkLabel: "Read the Scientific Paper"

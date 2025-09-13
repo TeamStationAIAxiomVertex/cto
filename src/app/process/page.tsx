@@ -6,7 +6,7 @@ import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
   title: 'Our Nearshore IT Staff Augmentation Process | One Accountable SLA',
-  description: 'Our engineered system for hiring LATAM engineers under one SLA. From role calibration and AI-vetting to secure devices and first PR, we deliver Day-1-ready talent.',
+  description: 'Our engineered system for hiring LATAM engineers under one SLA. From role calibration and Cognitive AI vetting to secure devices and first PR, we deliver Day-1-ready talent.',
 };
 
 export default function ProcessPage() {
@@ -15,8 +15,8 @@ export default function ProcessPage() {
         { title: "Platform Onboarding", description: "Create your org, users, roles, and legal entity; connect tools (Slack/Jira/GitHub/IdP).", artifact: "Org workspace, SSO, billing & DPA on file." },
         { title: "Add Jobs & Calibrate Success", description: "Define stack, level (L1–L4), ownership scope, and the 90-day outcome you need.", artifact: "Role profile + 'Success at 90 Days' spec." },
         { title: "Country Targeting & Market Bands", description: "Pick LATAM cities; align salary bands, benefits norms, and hiring constraints.", artifact: "Country shortlist + comp/benefit bands." },
-        { title: "Cognitive AI Sourcing & Short-List", description: "Always-on sourcing; candidates scored to your role profile.", artifact: "5–8 candidate short-list (relevance ≥ 85%)." },
-        { title: "Technical Evaluation (Bias-Aware)", description: "Structured, evidence-based interviews generate an 'Evidence Locker' with explainable scoring across core competencies.", artifact: "Scorecards + hiring signal; mismatch rate ≤ 10%." },
+        { title: "Cognitive AI Sourcing & Short-List", description: "Our Cognitive AI is always-on sourcing; candidates are scored against your role profile to find the ideal mental shape.", artifact: "5–8 candidate short-list (relevance ≥ 85%)." },
+        { title: "Technical Evaluation (Bias-Aware)", description: "A human expert conducts a structured, evidence-based interview. Our Cognitive AI then synthesizes the conversation to generate an 'Evidence Locker' with explainable scoring.", artifact: "Scorecards + hiring signal; mismatch rate ≤ 10%." },
         { title: "Client Interview Loop", description: "Calibrated panel agenda; consolidate notes and go/no-go in the platform.", artifact: "Finalist(s) + reference checks." },
         { title: "Offer, EOR & Compliance", description: "We issue enforceable contracts, handle payroll, taxes, and statutory benefits.", artifact: "Signed offer; compliant start date set." },
         { title: "Devices, MDM & Day-1 Access", description: "Procure/ship device, enroll MDM, verify tool/account access before Day-1.", artifact: "Device MTPD ≤ 5 days, MDM enrollment ≥ 99%." },
@@ -55,9 +55,9 @@ export default function ProcessPage() {
     ];
 
     const recognitions = [
-        { icon: <Trophy className="h-6 w-6 text-yellow-400" />, title: 'Market Leader Award', source: 'Recognized for AI innovation in nearshore IT delivery.' },
+        { icon: <Trophy className="h-6 w-6 text-yellow-400" />, title: 'Market Leader Award', source: 'Recognized for Cognitive AI innovation in nearshore IT delivery.' },
         { icon: <Star className="h-6 w-6 text-yellow-400" />, title: 'Service Excellence', source: 'Selected for service excellence and trust signals.' },
-        { icon: <BookOpen className="h-6 w-6 text-yellow-400" />, title: 'Peer-Reviewed Research', source: 'Scientific papers on AI in talent evaluation and performance.' },
+        { icon: <BookOpen className="h-6 w-6 text-yellow-400" />, title: 'Peer-Reviewed Research', source: 'Scientific papers on Cognitive AI in talent evaluation and performance.' },
         { icon: <Beaker className="h-6 w-6 text-yellow-400" />, title: 'Field-Proven', source: '2.6M+ profiles, ≈9-day TTO, 96% retention.' },
     ]
 
@@ -159,3 +159,5 @@ export default function ProcessPage() {
     </main>
   );
 }
+
+    

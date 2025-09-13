@@ -21,9 +21,9 @@ export default function IntegratedServicesPage() {
     {
       icon: <BrainCircuit className="h-8 w-8 text-primary" />,
       pain: "Gambling on resume keywords?",
-      title: "AI-Powered Vetting & Onboarding",
+      title: "Cognitive AI-Powered Vetting & Onboarding",
       description:
-        "Our Axiom Cortex™ engine validates cognitive ability, not just credentials. We then run a structured, auditable onboarding process to ensure Day-1 readiness.",
+        "Our Axiom Cortex™ Cognitive AI engine validates problem-solving ability, not just credentials. A human expert interviews, and our system synthesizes the conversation to determine the candidate's mental shape. We then run a structured, auditable onboarding process to ensure Day-1 readiness.",
       kpi: "Mismatch Rate ≤10%",
       href: "/technical-interview-evaluation"
     },
@@ -59,7 +59,7 @@ export default function IntegratedServicesPage() {
       pain: "Carrying all the liability for remote work?",
       title: "Cyber, E&O Insurance & IP Protection",
       description:
-        "All work is covered by comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, plus Work-for-Hire IP protection, giving you a critical liability shield.",
+        "All work is covered by our comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, plus Work-for-Hire IP protection, giving you a critical liability shield.",
        kpi: "Liability shield included",
        href: "/trust"
     },
@@ -124,3 +124,5 @@ export default function IntegratedServicesPage() {
     </main>
   );
 }
+
+    

@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'BairesDev Alternative: TeamStation AI vs. BairesDev',
-  description: 'An objective comparison for CTOs looking for a BairesDev alternative. Compare TeamStation AI\'s integrated platform and AI vetting with BairesDev\'s traditional staff augmentation.',
+  description: 'An objective comparison for CTOs looking for a BairesDev alternative. Compare TeamStation AI\'s integrated platform and Cognitive AI vetting with BairesDev\'s traditional staff augmentation.',
 };
 
 const comparisonData = [
@@ -64,7 +64,7 @@ export default function BairesDevComparisonPage() {
         </p>
         <h3>Vetting: Cognitive Science vs. Resume Screening</h3>
         <p>
-            This is the most significant divide. BairesDev's "top 1%" claim is based on their internal screening of experience and English proficiency. TeamStation AI's <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link> engine uses 44 distinct psychometric and NLP signals to evaluate a candidate's problem-solving abilities and learning orientation, with a fairness layer to mitigate bias against non-native English speakers. We provide evidence-based validation of cognitive ability, not just resume keywords.
+            This is the most significant divide. BairesDev's "top 1%" claim is based on their internal screening of experience and English proficiency. TeamStation AI's <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link> engine uses proprietary Cognitive AI with over 44 algorithms to evaluate a candidate's problem-solving abilities and learning orientation, with a fairness layer to mitigate bias against non-native English speakers. We provide evidence-based validation of cognitive ability, not just resume keywords.
         </p>
         <h3>Cost & Risk: Predictable TCO vs. Hidden Fees</h3>
         <p>
@@ -82,3 +82,5 @@ export default function BairesDevComparisonPage() {
     </main>
   );
 }
+
+    

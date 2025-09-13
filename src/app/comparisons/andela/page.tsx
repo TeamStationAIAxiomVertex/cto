@@ -62,7 +62,7 @@ export default function AndelaComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: The Nearshore Specialist vs. The Global Generalist</h2>
         <p>
-            Andela operates a large, AI-powered global "talent cloud" that connects companies with technologists from around the world. Their strength is their breadth and scale. However, their model does not include bundled <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>, devices, or insurance, leaving the client to manage these critical operational components.
+            Andela operates a large, global "talent cloud" that connects companies with technologists from around the world. Their strength is their breadth and scale. However, their model does not include bundled <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>, devices, or insurance, leaving the client to manage these critical operational components.
         </p>
         <p>
            TeamStation AI has a more specialized focus: building elite nearshore engineering teams specifically within Latin America. This focus allows us to provide a deeply integrated operational platform that is tailored to the unique legal, cultural, and logistical nuances of the region. While Andela helps you find talent, our platform provides the entire security and compliance wrapper—EOR, <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>-managed devices, insurance—that is critical for a secure nearshore operation.
@@ -70,7 +70,7 @@ export default function AndelaComparisonPage() {
         <h3>Depth vs. Breadth</h3>
         <p>
             The choice between TeamStation AI and Andela is one of depth versus breadth. Andela offers a massive, geographically diverse talent pool. TeamStation AI offers a deep, operationally-integrated solution specifically for the nearshore (LATAM) time zones. Our vetting process, powered by the{' '}
-            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>
+            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link>
             , is also uniquely designed to provide a deeper cognitive and bias-aware assessment than traditional screening methods.
         </p>
       </div>
@@ -85,3 +85,5 @@ export default function AndelaComparisonPage() {
     </main>
   );
 }
+
+    
