@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
+import { Tooltip } from '@/components/Tooltip';
 
 function ServicePill({ icon: Icon, text }: { icon: React.ElementType, text: string }) {
     return (
@@ -24,7 +25,7 @@ const corePillars = [
         icon: <BrainCircuit className="h-8 w-8 text-primary"/>,
         title: "De-Risk Your Hiring",
         description: "Stop gambling on resumes. Our Axiom Cortex™ engine provides auditable, scientific proof of a candidate's cognitive ability, cutting your mis-hire risk by over 90%.",
-        href: "/research/technical-talent-evaluation-system",
+        href: "/playbook/bias-free-technical-hiring-axiom-cortex",
         linkLabel: "Learn About Our Vetting"
     },
     {
@@ -38,8 +39,8 @@ const corePillars = [
         icon: <Scale className="h-8 w-8 text-primary"/>,
         title: "Justify Your Budget",
         description: "We provide a predictable, all-inclusive TCO that is often lower than the 'hidden cost' of a DIY approach. Get the data you need to make a CFO-ready business case.",
-        href: "/pricing",
-        linkLabel: "View Our Pricing Model"
+        href: "/playbook/latam-economics",
+        linkLabel: "View Our TCO Model"
     }
 ]
 
@@ -76,7 +77,7 @@ export default async function HomePage() {
           Nearshore Software Development That Works
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-          You're under pressure to deliver, but hiring friction, vendor chaos, and compliance risks are slowing you down. TeamStation AI provides a single, integrated platform to build elite LATAM nearshore teams you can actually trust.
+          You're under pressure to deliver, but hiring friction, vendor chaos, and <Link href="/playbook/security-compliance" className="text-primary hover:underline">compliance risks</Link> are slowing you down. TeamStation AI provides a single, integrated platform to build elite LATAM <Link href="/playbook/nearshore-vs-offshore" className="text-primary hover:underline">nearshore teams</Link> you can actually trust.
         </p>
         <div className="mt-10">
             <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Strategy Call</Link>
@@ -104,7 +105,9 @@ export default async function HomePage() {
                 <div key={pillar.title} className="rounded-lg border bg-card p-8 flex flex-col">
                     {pillar.icon}
                     <h3 className="mt-4 text-xl font-bold text-foreground">{pillar.title}</h3>
-                    <p className="mt-2 text-muted-foreground flex-grow">{pillar.description}</p>
+                    <p className="mt-2 text-muted-foreground flex-grow">{pillar.description.replace('Axiom Cortex™', '').replace('TCO', 'Total Cost of Ownership (TCO)')}
+                      {pillar.title === "De-Risk Your Hiring" && <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip>}
+                    </p>
                     <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
                         {pillar.linkLabel} <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -197,3 +200,5 @@ export default async function HomePage() {
     </div>
   );
 }
+
+    

@@ -39,17 +39,17 @@ const levels = [
 ];
 
 const includedItems = [
-    { title: 'LATAM Employer of Record (EOR)' },
-    { title: 'AI-Powered Vetting & Onboarding' },
-    { title: 'Secure Devices & MDM' },
-    { title: 'Cybersecurity & E&O Insurance' },
-    { title: 'LATAM Office Network Access' },
-    { title: 'Performance & Documentation Platform' },
-    { title: 'Compliance & IP Protection' },
-    { title: 'Rapid Scaling & Backfill' },
-    { title: 'Advanced Talent Retention' },
-    { title: 'Dedicated Account Manager' },
-    { title: 'Unified Billing Support' },
+    { title: 'LATAM Employer of Record (EOR)', href: "/services/integrated-services" },
+    { title: 'AI-Powered Vetting & Onboarding', href: "/process" },
+    { title: 'Secure Devices & MDM', href: "/playbook/security-compliance" },
+    { title: 'Cybersecurity & E&O Insurance', href: "/trust" },
+    { title: 'LATAM Office Network Access', href: "/hire/by-country" },
+    { title: 'Performance & Documentation Platform', href: "/research/performance-evaluation-framework" },
+    { title: 'Compliance & IP Protection', href: "/trust" },
+    { title: 'Rapid Scaling & Backfill', href: "/process" },
+    { title: 'Advanced Talent Retention', href: "/process" },
+    { title: 'Dedicated Account Manager', href: "/about" },
+    { title: 'Unified Billing Support', href: "/pricing" },
 ];
 
 const pricingFactors = [
@@ -105,7 +105,7 @@ export default function PricingPage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
         {levels.map((level) => (
-          <div key={level.level} className="group rounded-lg border bg-card p-6 flex flex-col transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+          <div key={level.level} className={`group rounded-lg border bg-card p-6 flex flex-col transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 ${level.level === 'L3 Senior' ? 'border-primary/50' : ''}`}>
             <h2 className="text-lg font-bold">{level.level}</h2>
             <p className="text-sm text-muted-foreground flex-grow mt-1">{level.description}</p>
             <div className="my-6 text-center">
@@ -136,7 +136,7 @@ export default function PricingPage() {
                 <span>=</span>
                 <span className="font-bold text-green-400">$98,630</span>
             </div>
-            <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in 9 days vs. the industry average of 45.</p>
+            <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in <Link href="/process" className='text-primary hover:underline'>≈9 days</Link> vs. the industry average of 45.</p>
          </div>
       </div>
 
@@ -147,7 +147,7 @@ export default function PricingPage() {
             {includedItems.map(item => (
                 <div key={item.title} className="flex items-start gap-3">
                     <span className="h-5 w-5 shrink-0 mt-0.5 text-primary">✓</span>
-                    <span className="text-muted-foreground">{item.title}</span>
+                    <Link href={item.href} className="text-muted-foreground hover:text-foreground">{item.title}</Link>
                 </div>
             ))}
         </div>
@@ -238,3 +238,5 @@ export default function PricingPage() {
     </main>
   );
 }
+
+    
