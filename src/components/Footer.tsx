@@ -34,6 +34,7 @@ export function Footer() {
       "Company": [
         { href: '/about', label: 'About Us' },
         { href: '/research', label: 'Research' },
+        { href: '/trust', label: 'Trust Center' },
         { href: '/hire', label: 'Hire Talent' },
       ]
   }
