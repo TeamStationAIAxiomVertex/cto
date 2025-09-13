@@ -173,7 +173,7 @@ export default function PricingPage() {
         </div>
       </div>
       
-       <div className="my-16">
+      <div className="my-16">
         <h2 className="text-4xl font-bold text-center">The TCO Knockout: U.S. Hire vs. TeamStation AI</h2>
          <p className="mt-4 max-w-3xl mx-auto text-center text-muted-foreground">This is the slide to show your finance team. It's a simple, powerful comparison of the true first-year cost.</p>
         <div className="overflow-x-auto mt-8">
@@ -238,5 +238,3 @@ export default function PricingPage() {
     </main>
   );
 }
-
-    
