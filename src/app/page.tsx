@@ -162,11 +162,18 @@ export default async function HomePage() {
               <div className="mt-4 flex-grow">
                 <div className="border-t border-border pt-4">
                   <h4 className="font-semibold text-muted-foreground">Traditional Model</h4>
-                  <p className="text-sm text-muted-foreground">{value.traditional}</p>
+                  <p className="text-sm text-muted-foreground">{value.traditional.replace('Axiom Cortex™', '')}
+                    {value.traditional.includes("TCO") && <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
+                  </p>
                 </div>
                 <div className="mt-4 border-t border-border pt-4">
                   <h4 className="font-semibold text-foreground">TeamStation AI Solution</h4>
-                  <p className="text-sm text-foreground">{value.teamstation}</p>
+                  <p className="text-sm text-foreground">{value.teamstation.replace('Axiom Cortex™', '')}
+                    {value.teamstation.includes("Axiom Cortex") && <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip>}
+                    {value.teamstation.includes("MDM") && <Tooltip text="Mobile Device Management: Software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
+                    {value.teamstation.includes("EOR") && <Tooltip text="Employer of Record: A third-party organization that legally employs workers on behalf of another company.">EOR</Tooltip>}
+                    {value.teamstation.includes("TCO") && <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
+                  </p>
                 </div>
               </div>
               
@@ -219,3 +226,5 @@ export default async function HomePage() {
     </div>
   );
 }
+
+    

@@ -61,7 +61,7 @@ export default function NearshoreVsOffshorePage() {
       <header className="my-8 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Nearshore vs. Offshore: A CTO’s Guide to Total Cost</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-          The choice is a strategic bet on how you build, innovate, and compete. While offshore seems cheaper on a spreadsheet, the <Link href="/playbook/latam-economics" className="text-primary hover:underline">Total Cost of Ownership (TCO)</Link> often skyrockets due to hidden friction.
+          The choice is a strategic bet on how you build, innovate, and compete. While offshore seems cheaper on a spreadsheet, the <Link href="/playbook/latam-economics" className="text-primary hover:underline"><Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip></Link> often skyrockets due to hidden friction.
         </p>
       </header>
 
@@ -83,7 +83,11 @@ export default function NearshoreVsOffshorePage() {
                         {point.icon}
                         <h3 className="text-lg font-semibold text-foreground">{point.title}</h3>
                     </div>
-                    <p className="mt-4 text-sm text-muted-foreground">{point.description}</p>
+                    <p className="mt-4 text-sm text-muted-foreground">{point.description.replace('EOR', '').replace('MDM','').replace('SLA','')}
+                    {point.description.includes("EOR") && <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>}
+                    {point.description.includes("MDM") && <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
+                    {point.description.includes("SLA") && <Tooltip text="Service Level Agreement: A contract defining the level of service you can expect.">SLA</Tooltip>}
+                    </p>
                     <div className="flex-grow mt-4 pt-4 border-t border-border">
                         <h4 className="text-sm font-semibold text-foreground">The TeamStation AI Solution:</h4>
                         <p className="mt-1 text-sm text-muted-foreground">{point.solution}</p>
@@ -114,7 +118,9 @@ export default function NearshoreVsOffshorePage() {
                     <td className="py-4 pl-6 pr-3 text-sm font-medium text-foreground">{item.factor}</td>
                     <td className="px-3 py-4 text-sm">
                         <span className="font-semibold text-green-400">{item.nearshore}</span>
-                        <p className="text-muted-foreground m-0">{item.nearshoreDetail}</p>
+                        <p className="text-muted-foreground m-0">{item.nearshoreDetail.replace('EOR','')}
+                        {item.nearshoreDetail.includes("EOR") && <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>}
+                        </p>
                     </td>
                     <td className="px-3 py-4 text-sm">
                         <span className="font-semibold text-yellow-400">{item.offshore}</span>

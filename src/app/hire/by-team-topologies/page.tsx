@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { ArrowRight, Zap, Users, Shield, Layers, BrainCircuit, CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
+import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore IT Teams by Topology | TeamStation AI',
@@ -38,7 +39,7 @@ const topologies = [
         description: "A team of elite specialists (e.g., security, QA automation, architecture) who embed across the organization to uplift skills and accelerate adoption of complex practices.",
         benefits: ["Proactively transfer knowledge & mentor staff", "Drive adoption of new standards & tools", "Solve the trickiest technical challenges"],
          proof: {
-            href: "/case\-studies/global-entertainment-platform",
+            href: "/case-studies/global-entertainment-platform",
             label: "See how our QA squad stabilized releases"
         }
     },
@@ -104,7 +105,7 @@ export default function TeamTopologiesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="bg-background rounded-lg p-6">
                 <h3 className="font-bold text-primary">1. Cognitive Mapping</h3>
-                <p className="text-sm text-muted-foreground">We use our <Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link> engine to map candidates' cognitive traits. A Platform Engineer needs high Architectural Instinct; a Stream-Aligned engineer needs high Collaborative Mindset. We find the right mental shape for the role.</p>
+                <p className="text-sm text-muted-foreground">We use our <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip> engine to map candidates' cognitive traits. A Platform Engineer needs high Architectural Instinct; a Stream-Aligned engineer needs high Collaborative Mindset. We find the right mental shape for the role.</p>
             </div>
             <div className="bg-background rounded-lg p-6">
                 <h3 className="font-bold text-primary">2. Role Blueprinting</h3>
@@ -112,7 +113,7 @@ export default function TeamTopologiesPage() {
             </div>
             <div className="bg-background rounded-lg p-6">
                 <h3 className="font-bold text-primary">3. Platform Control</h3>
-                <p className="text-sm text-muted-foreground">Our <Link href="/platform" className="text-primary hover:underline">Nearshore IT Co-Pilot™ platform</Link> gives you a single pane of glass to manage it all—from vetting and secure onboarding to performance KPIs, ensuring your team structure performs as designed.</p>
+                <p className="text-sm text-muted-foreground">Our <Tooltip text="Our integrated platform for hiring, managing, and securing nearshore teams."><Link href="/platform" className="text-primary hover:underline">Nearshore IT Co-Pilot™ platform</Link></Tooltip> gives you a single pane of glass to manage it all—from vetting and secure onboarding to performance KPIs, ensuring your team structure performs as designed.</p>
             </div>
         </div>
       </section>
@@ -128,3 +129,5 @@ export default function TeamTopologiesPage() {
     </main>
   );
 }
+
+    

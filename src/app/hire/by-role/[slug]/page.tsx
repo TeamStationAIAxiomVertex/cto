@@ -84,7 +84,7 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
     intro: "You're here because a native or cross-platform mobile experience is critical to your product strategy, and the complexities of device fragmentation, offline sync, and store releases are slowing you down.",
     roles: ['Mobile Lead', 'RN/Flutter Eng', 'iOS Engineer', 'Android Engineer', 'SDK Engineer'],
     skills: ['Native performance', 'offline-first architecture', 'OTA updates', 'crash reporting', 'mobile testing'],
-    tech: ['React Native', 'Flutter', 'Swift (SwiftUI/UIKit)', 'Kotlin (Jetpack Compose)', 'Objective-C', 'Java', 'OTA updates (CodePush)', 'Crashlytics/Sentry', 'AppCenter', 'Fastlane', 'Detox/Appium/XCUITest'],
+    tech: ['React Native', 'Flutter', 'Swift (SwiftUI/UIKit)', 'Kotlin (Jetpack Compose)', 'Objective-C', 'Java', <Tooltip text="Over-the-Air updates allow you to deploy mobile app updates directly to users' devices.">OTA updates (CodePush)</Tooltip>, 'Crashlytics/Sentry', 'AppCenter', 'Fastlane', 'Detox/Appium/XCUITest'],
      evaluation: [
         'Assessment of mobile-specific architectural patterns (e.g., handling state with limited connectivity).',
         'Practical exercises in debugging native module integrations and performance bottlenecks.',
@@ -149,7 +149,7 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
     intro: "You're here because employee productivity and corporate security depend on a well-run IT infrastructure. You need engineers who can manage identities, secure endpoints, and automate internal processes at scale.",
     roles: ['IT Manager', 'MDM Engineer', 'ITSM Lead', 'Identity Engineer'],
     skills: ['Endpoint management', 'identity and access management (IAM)', 'IT service management (ITSM)', 'email security', 'data loss prevention (DLP)'],
-    tech: ['Google Workspace/Microsoft 365', 'Intune/Jamf/Kandji', 'ServiceNow/JSM', 'Okta/JumpCloud', 'CrowdStrike/SentinelOne', 'Proofpoint', 'EDR/XDR'],
+    tech: ['Google Workspace/Microsoft 365', <Tooltip text="Mobile Device Management (MDM) tools for managing and securing endpoints like laptops.">Intune/Jamf/Kandji</Tooltip>, 'ServiceNow/JSM', 'Okta/JumpCloud', 'CrowdStrike/SentinelOne', 'Proofpoint', 'EDR/XDR'],
      evaluation: [
         'Evaluation of experience with enterprise-scale device management and security policy enforcement.',
         'Scenario-based questions on managing identity providers and SSO integrations.',
@@ -232,7 +232,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
                                 <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground cursor-pointer">{skill}</span>
                             </Tooltip>;
                         }
-                         if (skill === 'SLO/SLI/error budgets') {
+                         if (skill.includes('SLO/SLI')) {
                             return <Tooltip key={skill} text="Service Level Objectives/Indicators: A framework for defining and measuring reliability.">
                                 <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground cursor-pointer">{skill}</span>
                             </Tooltip>;
@@ -242,9 +242,9 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
                                 <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground cursor-pointer">{skill}</span>
                             </Tooltip>;
                         }
-                        if (skill === 'retrieval design') {
+                        if (skill.includes('retrieval')) {
                             return <Tooltip key={skill} text="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database.">
-                                <span className="rounded-full bg-secondary px-colid-darkblue px-3 py-1 text-xs font-medium text-secondary-foreground cursor-pointer">{skill}</span>
+                                <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground cursor-pointer">{skill}</span>
                             </Tooltip>;
                         }
 
@@ -270,7 +270,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
       <div className="my-16 rounded-lg border bg-card p-8">
         <h2 className="text-center text-3xl font-bold">Our Evaluation Approach for {name}</h2>
         <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
-             For roles in <strong>{name}</strong>, we understand that "good enough" is a recipe for disaster. Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ evaluation</Link> goes beyond simple coding tests to de-risk your hiring decision.
+             For roles in <strong>{name}</strong>, we understand that "good enough" is a recipe for disaster. Our <Link href="/research/axiom-cortex-scientific-report" className='text-primary hover:underline'>Axiom Cortex™ evaluation</Link> goes beyond simple coding tests to de-risk your hiring decision.
         </p>
          <ul className="space-y-4 mt-8 max-w-2xl mx-auto">
             {evaluation.map((point, i) => (
@@ -299,7 +299,5 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
 export async function generateStaticParams() {
   return Object.keys(roleData).map(slug => ({ slug }));
 }
-
-    
 
     
