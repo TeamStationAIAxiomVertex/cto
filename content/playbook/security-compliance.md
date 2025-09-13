@@ -1,26 +1,102 @@
----
-slug: 'security-compliance'
-title: 'The Playbook for Audit-Ready Nearshore Operations'
-description: 'Security isn''t an afterthought; it''s the foundation of a scalable and trustworthy nearshore strategy. This playbook details how TeamStation AI builds a secure, compliant operational environment from day one.'
----
+import { ShieldCheck, Laptop, FileLock, Scale } from 'lucide-react';
+import Link from 'next/link';
+import type { Metadata } from 'next';
 
-## The Three Pillars of Nearshore Security
+export const metadata: Metadata = {
+  title: 'Nearshore Compliance: GDPR, SSO, MDM & Device Control | Trust Center',
+  description: 'Security and compliance are the foundation of our nearshore platform. Learn about our nearshore compliance for GDPR, SSO, MDM & device control for LATAM teams.',
+};
 
-### SOC 2 / ISO 27001 Alignment
-Our operational controls for security, availability, processing integrity, confidentiality, and privacy are aligned with leading industry standards, providing you an audit-ready posture.
+export default function TrustPage() {
+    const pillars = [
+        {
+            icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+            pain: "Worried about audit-readiness?",
+            title: 'SOC 2 / ISO 27001 Alignment',
+            description: 'Our operational controls for security, availability, and privacy are aligned with leading industry standards, providing an auditable posture from day one.',
+            kpi: "100% auditable evidence trail"
+        },
+        {
+            icon: <Laptop className="h-8 w-8 text-primary" />,
+            pain: "Exposed by unmanaged laptops?",
+            title: 'Secure Devices & MDM',
+            description: 'We provision and manage all developer laptops with enterprise-grade MDM, enforcing disk encryption, auto-patching, and remote lock/wipe capabilities.',
+            kpi: "MDM enrollment ≥99% (24h)"
+        },
+        {
+            icon: <FileLock className="h-8 w-8 text-primary" />,
+            pain: "Navigating complex local laws?",
+            title: 'Integrated EOR & Compliance',
+            description: 'We handle all Employer of Record complexities, ensuring compliance with local labor laws and data privacy frameworks (GDPR/LGPD) in every LATAM country.',
+            kpi: "Zero compliance overhead"
+        },
+        {
+            icon: <Scale className="h-8 w-8 text-primary" />,
+            pain: "Carrying all the liability?",
+            title: 'Cyber & E&O Insurance',
+            description: 'All work is covered by our comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, giving you a critical layer of financial protection.',
+            kpi: "Liability shield included"
+        },
+    ];
 
-### Secure Device & MDM
-We provision, secure, and manage all developer laptops with enterprise-grade Mobile Device Management (MDM), enforcing policies like disk encryption, strong passwords, and remote wipe.
+  return (
+    <main className="container max-w-7xl py-12">
+      <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Trust Center</span>
+      </div>
+      <header className="text-center my-12">
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">You Keep the Velocity. We Take the Risk.</h1>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          The AI era demands greater control over your IP, assets, and security. Why throw that control over the fence to a traditional vendor and just hope for the best? Our platform puts you in the driver's seat by providing an auditable, enterprise-ready environment for your nearshore team from day one.
+        </p>
+      </header>
 
-### Integrated EOR & Compliance
-We handle all Employer of Record (EOR) complexities, ensuring compliance with local labor laws in every LATAM country we operate in, mitigating your legal and financial risk.
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
+          {pillars.map((pillar) => (
+             <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col">
+                <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
+                <div className="flex items-center gap-3 mt-3">
+                    {pillar.icon}
+                    <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
+                </div>
+                <p className="mt-4 text-sm text-muted-foreground flex-grow">{pillar.description}</p>
+                <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
+            </div>
+          ))}
+      </div>
 
-## The Security Checklist for Vetting Any Partner
+      <div className="my-16 text-center">
+        <h2 className="text-4xl font-bold">The Security Checklist for Vetting Any Partner</h2>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          A vendor who cannot provide clear answers to these questions is a significant risk to your organization. With TeamStation AI, the answer is "yes" to all.
+        </p>
+        <ul className="list-none p-0 mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
+            <li className="flex items-start gap-4">
+                <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>
+                <div><strong className="text-foreground">Device Management:</strong> Are devices corporate-owned and MDM-enrolled for full SSO, MDM, and device control?</div>
+            </li>
+            <li className="flex items-start gap-4">
+                <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>
+                <div><strong className="text-foreground">Access Control:</strong> Is MFA/SSO and least-privilege RBAC enforced?</div>
+            </li>
+            <li className="flex items-start gap-4">
+                <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>
+                <div><strong className="text-foreground">Compliance:</strong> Can they provide evidence of SOC 2, ISO 27001, or nearshore compliance for GDPR?</div>
+            </li>
+            <li className="flex items-start gap-4">
+                <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>
+                <div><strong className="text-foreground">Insurance:</strong> Do they carry Cyber and E&O insurance?</div>
+            </li>
+        </ul>
+      </div>
 
-When evaluating any remote talent partner, your due diligence should include these critical questions. A "no" to any of these is a major red flag. See how vendors stack up in our [competitive analysis](/comparisons).
-*   **Device Management:** Do you provide and manage corporate-owned devices for all engineers? Are they enrolled in an MDM solution?
-*   **Access Control:** Do you enforce MFA/SSO and role-based access control (RBAC) with least-privilege principles?
-*   **Data Handling:** Is there a clear policy for handling sensitive data and PII? Is data encrypted in transit and at rest?
-*   **Compliance:** Can you provide evidence of alignment with frameworks like SOC 2 or ISO 27001?
-*   **Insurance:** Do you carry Cyber and Errors & Omissions (E&O) insurance?
-*   **Onboarding & Offboarding:** Is there a formal, secure process for provisioning and de-provisioning access? Our [onboarding process](/services/talent-onboarding) is fully auditable.
+      <div className="text-center rounded-lg bg-primary/10 p-8">
+        <h2 className="text-2xl font-bold">Security is Our Default</h2>
+        <p className="mt-2 mx-auto max-w-xl text-muted-foreground">Explore our MSA and see how our commitment to security is built into our legal framework.</p>
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
+            Book a Strategy Call
+        </a>
+      </div>
+    </main>
+  );
+}
