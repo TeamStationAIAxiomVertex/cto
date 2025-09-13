@@ -46,7 +46,7 @@ export default function HireByCountryPage() {
             </div>
             <div className="flex justify-center">
                 <img 
-                    src="https://picsum.photos/seed/office-workspace/1080/720"
+                    src="https://images.unsplash.com/photo-1603201667141-5a2d4c673378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8d2V3b3JrfGVufDB8fHx8MTc1Nzc5MjMwNnww&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Modern office interior with developers working." 
                     className="rounded-lg shadow-lg aspect-video object-cover" 
                     data-ai-hint="modern office interior software developers"
