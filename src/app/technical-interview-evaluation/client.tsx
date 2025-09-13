@@ -1,3 +1,4 @@
+
 'use client';
 
 import { BrainCircuit, CheckCircle, GitCommit, Search, Users } from 'lucide-react';
@@ -213,7 +214,7 @@ const ctoAppendixContent = `
 </div>
 `;
 
-export default function TalentEvaluationPage() {
+export default function TalentEvaluationClient() {
   return (
     <main className="container max-w-6xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
