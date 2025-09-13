@@ -5,7 +5,6 @@ description: 'TeamStation AI assembled a nearshore squad that took a non-functio
 clientName: 'Atticus'
 industry: 'Estate Settlement & Probate Technology'
 summary: 'Shipped a production-ready web and iOS estate settlement MVP in under 3 months, saving an estimated $550,000 in development costs.'
-ogImage: '/assets/og/case-study-atticus.png'
 canonical: 'https://cto.teamstation.dev/case-studies/atticus'
 ---
 

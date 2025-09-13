@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowRight, Briefcase, Award, CheckCircle } from 'lucide-react';
 import { markdownToHtml } from '@/lib/markdown-parser';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const study = await getCaseStudyBySlug(params.slug);
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description: study.summary,
       images: [
         {
-          url: study.ogImage || '/assets/og/default.png',
+          url: study.ogImage.src.url,
           width: 1200,
           height: 630,
           alt: study.title,
@@ -56,6 +57,16 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                     <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                         {study.title}
                     </h1>
+                     <div className="relative h-96 w-full my-8 rounded-lg overflow-hidden border">
+                        <Image 
+                            src={study.ogImage.src.url}
+                            alt={`Hero image for ${study.clientName} case study`}
+                            fill
+                            className="object-cover"
+                            priority
+                            data-ai-hint={study.ogImage.aiHint}
+                        />
+                    </div>
                 </header>
 
                 <article className="prose prose-lg dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: contentHtml }} />

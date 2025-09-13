@@ -2,8 +2,18 @@
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 const contentDirectory = path.join(process.cwd(), 'content', 'case-studies');
+
+type PlaceholderImage = {
+    src: {
+        url: string;
+        width: number;
+        height: number;
+    };
+    aiHint: string;
+};
 
 export type CaseStudy = {
   slug: string;
@@ -11,11 +21,11 @@ export type CaseStudy = {
   clientName: string;
   industry: string;
   summary: string;
-  content: string; // This will hold the full HTML content
+  content: string;
   challenge: string;
   why: string;
   outcomes: string;
-  ogImage: string;
+  ogImage: PlaceholderImage;
 };
 
 // A more robust function to extract a section based on a heading
@@ -36,6 +46,13 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
 
         // Remove frontmatter from content before parsing sections
         const mainContent = content;
+        
+        const slug = data.slug as keyof typeof placeholderImages.caseStudies;
+        const imageInfo = placeholderImages.caseStudies[slug] || { 
+            src: { url: 'https://picsum.photos/seed/default/600/400', width: 600, height: 400 },
+            aiHint: 'abstract technology'
+        };
+
 
         return {
           slug: data.slug,
@@ -47,7 +64,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
           challenge: extractSection(mainContent, 'The Challenge'),
           why: extractSection(mainContent, 'Why TeamStation AI'),
           outcomes: extractSection(mainContent, 'Outcomes') || extractSection(mainContent, 'Results'),
-          ogImage: data.ogImage,
+          ogImage: imageInfo,
         } as CaseStudy;
       })
     );

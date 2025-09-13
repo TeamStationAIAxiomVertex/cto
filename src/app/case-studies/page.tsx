@@ -30,10 +30,12 @@ export default async function CaseStudiesPage() {
           <Link href={`/case-studies/${study.slug}`} key={study.slug} className="group relative flex flex-col rounded-lg overflow-hidden border bg-card transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
             <div className="relative h-48 w-full">
                 <Image 
-                    src={study.ogImage || '/assets/og/default.png'}
+                    src={study.ogImage.src.url}
                     alt={`Case study for ${study.clientName}`}
-                    fill
-                    className="object-cover"
+                    width={study.ogImage.src.width}
+                    height={study.ogImage.src.height}
+                    className="object-cover w-full h-full"
+                    data-ai-hint={study.ogImage.aiHint}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
             </div>

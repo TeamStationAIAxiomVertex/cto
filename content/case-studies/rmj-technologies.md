@@ -5,7 +5,6 @@ description: "See how TeamStation AI's nearshore squad stabilized a fragile mono
 clientName: 'RMJ Technologies'
 industry: 'Automotive Fleet Optimization'
 summary: 'Stabilized a monolithic platform and launched a microservices program, scaling to 15,000 users and enabling multi-million-dollar revenue expansion.'
-ogImage: '/assets/og/case-study-rmj-technologies.png'
 canonical: 'https://cto.teamstation.dev/case-studies/rmj-technologies'
 ---
 

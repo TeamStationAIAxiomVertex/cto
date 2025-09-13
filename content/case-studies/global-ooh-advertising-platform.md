@@ -5,7 +5,6 @@ description: 'TeamStation AI embedded senior nearshore full-stack engineers into
 clientName: 'Global OOH Advertising Platform'
 industry: 'Advertising Technology'
 summary: 'Accelerated development of AI-assisted media planning software by embedding two senior Full-Stack LATAM engineers, increasing feature velocity and reducing operational risk.'
-ogImage: '/assets/og/case-study-global-ooh-advertising-platform.png'
 canonical: 'https://cto.teamstation.dev/case-studies/global-ooh-advertising-platform'
 ---
 

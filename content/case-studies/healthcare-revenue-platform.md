@@ -5,7 +5,6 @@ description: 'TeamStation AI''s Nearshore IT Copilot built an audit-ready, docum
 clientName: 'Healthcare Revenue Cycle Platform'
 industry: 'Healthcare Technology'
 summary: 'Operationalized a rigorous MSA/SOW framework into a documentation-first delivery system, achieving predictable throughput and audit-ready operations.'
-ogImage: '/assets/og/case-study-healthcare-revenue-platform.png'
 canonical: 'https://cto.teamstation.dev/case-studies/healthcare-revenue-platform'
 ---
 

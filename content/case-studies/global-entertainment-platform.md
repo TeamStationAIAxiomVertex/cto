@@ -5,7 +5,6 @@ description: 'TeamStation AI deployed a 10+ engineer nearshore QA squad in <30 d
 clientName: 'Global Entertainment Platform'
 industry: 'Global Entertainment & Media'
 summary: 'Replaced an incumbent offshore QA vendor with a 10+ engineer LATAM squad in <30 days, stabilizing releases and reducing defect leakage for a billion-dollar product.'
-ogImage: '/assets/og/case-study-global-entertainment-platform.png'
 canonical: 'https://cto.teamstation.dev/case-studies/global-entertainment-platform'
 ---
 

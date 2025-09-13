@@ -1,12 +1,61 @@
-
 {
     "weworkOffice": {
         "src": {
-            "url": "https://images.unsplash.com/photo-1565127803082-69dd82351360?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib3N0b258ZW58MHx8fHwxNzU3Nzc2ODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+            "url": "https://picsum.photos/seed/office/1080/720",
             "width": 1080,
             "height": 720
         },
-        "alt": "A modern office building in Boston, representing our global reach and professional workspaces.",
+        "alt": "A modern office building, representing our global reach and professional workspaces.",
         "aiHint": "modern office"
+    },
+    "caseStudies": {
+        "atticus": {
+            "src": {
+                "url": "https://picsum.photos/seed/atticus/600/400",
+                "width": 600,
+                "height": 400
+            },
+            "aiHint": "legal tech"
+        },
+        "global-entertainment-platform": {
+            "src": {
+                "url": "https://picsum.photos/seed/entertainment/600/400",
+                "width": 600,
+                "height": 400
+            },
+            "aiHint": "media platform"
+        },
+        "global-ooh-advertising-platform": {
+            "src": {
+                "url": "https://picsum.photos/seed/adtech/600/400",
+                "width": 600,
+                "height": 400
+            },
+            "aiHint": "advertising analytics"
+        },
+        "healthcare-revenue-platform": {
+            "src": {
+                "url": "https://picsum.photos/seed/healthtech/600/400",
+                "width": 600,
+                "height": 400
+            },
+            "aiHint": "healthcare data"
+        },
+        "parsable": {
+            "src": {
+                "url": "https://picsum.photos/seed/industrial/600/400",
+                "width": 600,
+                "height": 400
+            },
+            "aiHint": "industrial factory"
+        },
+        "rmj-technologies": {
+            "src": {
+                "url": "https://picsum.photos/seed/automotive/600/400",
+                "width": 600,
+                "height": 400
+            },
+            "aiHint": "fleet trucks"
+        }
     }
 }

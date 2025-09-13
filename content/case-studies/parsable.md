@@ -5,7 +5,6 @@ description: 'After 18 vendors failed, TeamStation AI''s nearshore squad resolve
 clientName: 'Parsable'
 industry: 'Industrial Worker Automation'
 summary: 'Resolved a mission-critical Okta SSO integration failure for a marquee enterprise client, unlocking onboarding for new billable users.'
-ogImage: '/assets/og/case-study-parsable.png'
 canonical: 'https://cto.teamstation.dev/case-studies/parsable'
 ---
 
