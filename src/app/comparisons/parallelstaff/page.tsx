@@ -9,13 +9,26 @@ export const metadata: Metadata = {
     description: 'Is ParallelStaff\'s "try-before-you-buy" model right for you? See how TeamStation AI offers a more comprehensive nearshore alternative with integrated operations.'
 };
 
-const comparisonData = [
-    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
-    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
-    { feature: 'Single, Unified Service Contract & SLA', teamstation: true, competitor: false },
-    { feature: '"Try-before-you-buy" model', teamstation: false, competitor: true },
-    { feature: 'Client handles compliance and hardware', teamstation: false, competitor: true },
-];
+const comparisonPoints = {
+    "Vetting": {
+        pain: "Is a two-week trial enough to predict long-term success?",
+        traditional: "ParallelStaff's 'try-before-you-buy' model is smart, but a short trial can be misleading. It doesn't reveal deep architectural thinking or problem-solving under pressure.",
+        teamstation: "We go deeper. Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> provides scientific proof of a candidate's cognitive traits before you even interview them, drastically reducing mis-hire risk.",
+        proof: "Mismatch Rate ≤ 10%"
+    },
+    "Operations": {
+        pain: "Who handles the operational complexity after the trial?",
+        traditional: "Their model still leaves the client to manage critical components like compliant hiring (<a href='/services/integrated-services' class='text-primary hover:underline'><Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip></a>), secure device management (<a href='/trust' class='text-primary hover:underline'><Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip></a>), and insurance.",
+        teamstation: "We provide a complete, end-to-end operating system. Our platform unifies hiring, legal/EOR, compliance, devices, security, and insurance under a single contract and a single SLA.",
+        proof: "1 accountable SLA"
+    },
+    "Model": {
+        pain: "Are you buying a feature or a full platform?",
+        traditional: "ParallelStaff offers a service with a valuable risk-reduction feature (the trial). It's an improvement on classic staff augmentation.",
+        teamstation: "We offer a complete, integrated platform. We don't just reduce risk; we eliminate the operational overhead that slows you down and creates security holes.",
+        proof: "SOC 2 & ISO Aligned"
+    }
+}
 
 
 export default function ParallelStaffComparisonPage() {
@@ -31,30 +44,33 @@ export default function ParallelStaffComparisonPage() {
         </p>
       </header>
 
-      <div className="flex flex-col md:flex-row gap-8 my-12">
-        <div className="rounded-lg border-2 border-primary/50 flex-1 p-8 bg-card">
-          <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
-          <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
-          <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                <span className="text-sm text-muted-foreground">{item.feature}</span>
+      <div className="my-12">
+        <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The TaaS Model</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
+          {Object.entries(comparisonPoints).map(([key, value]) => (
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+              <p className="text-sm font-semibold text-primary">{value.pain}</p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+              
+              <div className="mt-4 flex-grow space-y-4">
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                    <XCircle className="h-5 w-5 text-red-400" />
+                    ParallelStaff Model
+                  </h4>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                </div>
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    TeamStation AI Solution
+                  </h4>
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card flex-1 p-8">
-          <h2 className="text-2xl font-bold text-center text-foreground">ParallelStaff</h2>
-           <p className="text-center text-sm text-muted-foreground mb-6">Talent-as-a-Service (TaaS)</p>
-           <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                 <span className="text-sm text-muted-foreground">{item.feature}</span>
-              </div>
-            ))}
-          </div>
+              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+            </div>
+          ))}
         </div>
       </div>
 

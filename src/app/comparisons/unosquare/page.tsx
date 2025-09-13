@@ -9,14 +9,26 @@ export const metadata: Metadata = {
   description: 'Looking for an Unosquare alternative? Compare TeamStation AI\'s integrated nearshore platform with Unosquare\'s traditional staff augmentation and consulting.',
 };
 
-const comparisonData = [
-    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
-    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
-    { feature: '2.6M+ LATAM Talent Graph (Nebula™)', teamstation: true, competitor: false },
-    { feature: 'Purpose-built for Integrated Teams', teamstation: true, competitor: false },
-    { feature: 'Traditional Staff Aug & Project Consulting', teamstation: false, competitor: true },
-    { feature: 'Client handles compliance, security, devices', teamstation: false, competitor: true },
-];
+const comparisonPoints = {
+    "Model": {
+        pain: "Do you need a team you manage, or a project they manage?",
+        traditional: "Unosquare offers both staff augmentation and project consulting. This hybrid model can create a conflict of interest, where the goal may shift from empowering your team to expanding their own project scope.",
+        teamstation: "Our focus is singular: providing a complete platform for you to build and run your own elite nearshore team. We empower your management, we don't replace it. There is no conflict of interest.",
+        proof: "100% Client-Managed Teams"
+    },
+    "Vetting": {
+        pain: "Are you hiring from a captive talent pool or the entire market?",
+        traditional: "Traditional service providers often pull from their existing bench, which may not be the best fit for your specific need. Their vetting is based on past project experience, not deep cognitive traits.",
+        teamstation: "Our Nebula™ search engine scans a graph of over 2.6 million LATAM profiles, and our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> ensures we find the absolute best fit from the entire market, not just our bench.",
+        proof: "2.6M+ Talent Graph"
+    },
+    "Operations": {
+        pain: "Is your staff-aug partner also your security and compliance partner?",
+        traditional: "Like most traditional firms, their model leaves you to manage the critical and risky operational components: secure devices, <a href='/trust' class='text-primary hover:underline'><Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip></a>, compliance, and insurance.",
+        teamstation: "Our integrated platform absorbs all of this risk and complexity. We bundle <a href='/services/integrated-services' class='text-primary hover:underline'><Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip></a>, secure devices, and insurance under one accountable SLA.",
+        proof: "SOC 2 & ISO Aligned"
+    }
+}
 
 
 export default function UnosquareComparisonPage() {
@@ -32,30 +44,33 @@ export default function UnosquareComparisonPage() {
         </p>
       </header>
 
-      <div className="flex flex-col md:flex-row gap-8 my-12">
-        <div className="rounded-lg border-2 border-primary/50 flex-1 p-8 bg-card">
-          <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
-          <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
-          <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                <span className="text-sm text-muted-foreground">{item.feature}</span>
+      <div className="my-12">
+        <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The Hybrid Service Provider</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
+          {Object.entries(comparisonPoints).map(([key, value]) => (
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+              <p className="text-sm font-semibold text-primary">{value.pain}</p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+              
+              <div className="mt-4 flex-grow space-y-4">
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                    <XCircle className="h-5 w-5 text-red-400" />
+                    Unosquare Model
+                  </h4>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                </div>
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    TeamStation AI Solution
+                  </h4>
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card flex-1 p-8">
-          <h2 className="text-2xl font-bold text-center text-foreground">Unosquare</h2>
-           <p className="text-center text-sm text-muted-foreground mb-6">Staff Augmentation & Consulting</p>
-           <div className="space-y-3">
-            {comparisonData.map(item => (
-               <div key={item.feature} className="flex items-start gap-3">
-                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                 <span className="text-sm text-muted-foreground">{item.feature}</span>
-              </div>
-            ))}
-          </div>
+              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+            </div>
+          ))}
         </div>
       </div>
 

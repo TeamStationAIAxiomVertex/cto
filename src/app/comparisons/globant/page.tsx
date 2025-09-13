@@ -9,15 +9,26 @@ export const metadata: Metadata = {
   description: 'Looking for a Globant alternative for nearshore staff augmentation? Compare TeamStation AI\'s focused team-building platform with Globant\'s project outsourcing model.',
 };
 
-const comparisonData = [
-    { feature: 'Purpose-built for Staff Augmentation', teamstation: true, competitor: false },
-    { feature: 'Cognitive Trait Measurement (Cognitive AI)', teamstation: true, competitor: false },
-    { feature: 'Transparent, Candidate-Level Vetting', teamstation: true, competitor: false },
-    { feature: 'Integrated EOR, Devices, & Insurance', teamstation: true, competitor: false },
-    { feature: 'Focus on Large-Scale Project Outsourcing', teamstation: false, competitor: true },
-    { feature: 'Opaque, Project-Based Fees', teamstation: false, competitor: true },
-];
-
+const comparisonPoints = {
+    "Model": {
+        pain: "Do you need to augment your team or outsource a project?",
+        traditional: "Globant is a massive systems integrator. They sell project delivery, which works for large-scale outsourcing but is misaligned for CTOs who need to embed talent into their own teams.",
+        teamstation: "We are purpose-built for staff augmentation. We provide elite, mission-fit LATAM engineers who integrate directly into your existing teams, culture, and workflows.",
+        proof: "Time-to-First-PR in 7–14 days"
+    },
+    "Vetting": {
+        pain: "Are you hiring an individual or a black box team?",
+        traditional: "Globant sells project outcomes, not talent transparency. Their use of 'AI' is a marketing label for a process, not a scientifically-validated tool for assessing individual engineers.",
+        teamstation: "Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> provides peer-reviewed, scientific proof of an individual's cognitive ability, ensuring you know exactly who you're hiring.",
+        proof: "Mismatch Rate ≤ 10%"
+    },
+    "Control": {
+        pain: "Do you want to retain control over your engineering culture?",
+        traditional: "With a large SI, you lose direct control over technical direction, architecture, and team culture. This can lead to long-term dependency and integration challenges.",
+        teamstation: "Our model is built for control. You manage the team, own the roadmap, and shape the culture. We provide the talent and the operational platform to make it happen.",
+        proof: "100% Client-Managed Teams"
+    }
+}
 
 export default function GlobantComparisonPage() {
   return (
@@ -32,30 +43,33 @@ export default function GlobantComparisonPage() {
         </p>
       </header>
 
-      <div className="flex flex-col md:flex-row gap-8 my-12">
-        <div className="rounded-lg border-2 border-primary/50 flex-1 p-8 bg-card">
-          <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
-          <p className="text-center text-sm text-muted-foreground mb-6">The Nearshore IT Co-Pilot™</p>
-          <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                <span className="text-sm text-muted-foreground">{item.feature}</span>
+      <div className="my-12">
+        <h2 className="text-3xl font-bold text-center">The Co-Pilot vs. The Systems Integrator</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
+          {Object.entries(comparisonPoints).map(([key, value]) => (
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+              <p className="text-sm font-semibold text-primary">{value.pain}</p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+              
+              <div className="mt-4 flex-grow space-y-4">
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                    <XCircle className="h-5 w-5 text-red-400" />
+                    Globant Model
+                  </h4>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                </div>
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    TeamStation AI Solution
+                  </h4>
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card flex-1 p-8">
-          <h2 className="text-2xl font-bold text-center text-foreground">Globant</h2>
-           <p className="text-center text-sm text-muted-foreground mb-6">Global Systems Integrator</p>
-           <div className="space-y-3">
-            {comparisonData.map(item => (
-               <div key={item.feature} className="flex items-start gap-3">
-                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                 <span className="text-sm text-muted-foreground">{item.feature}</span>
-              </div>
-            ))}
-          </div>
+              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+            </div>
+          ))}
         </div>
       </div>
 

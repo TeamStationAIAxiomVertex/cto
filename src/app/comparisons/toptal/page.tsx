@@ -9,14 +9,26 @@ export const metadata: Metadata = {
   description: 'Looking for a Toptal alternative for building long-term teams? Compare TeamStation AI\'s integrated nearshore model with Toptal\'s premium freelance network.',
 };
 
-const comparisonData = [
-    { feature: 'Focus on Full-Time, Integrated Teams', teamstation: true, competitor: false },
-    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
-    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
-    { feature: 'Transparent, All-Inclusive Pricing', teamstation: true, competitor: false },
-    { feature: 'Focus on Freelance, Project-Based Talent', teamstation: false, competitor: true },
-    { feature: 'High Hourly Rates + Subscription Fees', teamstation: false, competitor: true },
-];
+const comparisonPoints = {
+    "Model": {
+        pain: "Do you need a temporary freelancer or a long-term team member?",
+        traditional: "Toptal is an elite freelance network. It's ideal for short-term projects but isn't designed for building integrated, long-term teams, introducing continuity risk.",
+        teamstation: "We build dedicated, long-term teams of full-time employees. Our model is designed for continuity, knowledge retention, and deep integration into your company culture.",
+        proof: "90-day retention ≥96%"
+    },
+    "Cost": {
+        pain: "Is a premium hourly rate sustainable for your budget?",
+        traditional: "Toptal's premium positioning comes with high hourly rates ($60-$150+) plus subscription fees. This is expensive for building full-time capacity.",
+        teamstation: "Our <a href='/pricing' class='text-primary hover:underline'>all-inclusive pricing</a> provides a predictable, CFO-ready <a href='/playbook/latam-economics' class='text-primary hover:underline'><Tooltip text='Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.'>TCO</Tooltip></a> that is significantly lower and more sustainable for building full-time teams.",
+        proof: "40-60% Lower TCO"
+    },
+    "Operations": {
+        pain: "Are you prepared to manage compliance and security for freelancers?",
+        traditional: "The freelance model leaves all operational burdens—compliance, security, device management—on you. This creates risk and administrative overhead.",
+        teamstation: "Our integrated platform is a complete operational wrapper. We handle <a href='/services/integrated-services' class='text-primary hover:underline'><Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip></a>, <a href='/trust' class='text-primary hover:underline'><Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip></a>-secured devices, and insurance, so you can focus on your product.",
+        proof: "SOC 2 & ISO Aligned"
+    }
+}
 
 
 export default function ToptalComparisonPage() {
@@ -32,30 +44,33 @@ export default function ToptalComparisonPage() {
         </p>
       </header>
 
-      <div className="flex flex-col md:flex-row gap-8 my-12">
-        <div className="rounded-lg border-2 border-primary/50 flex-1 p-8 bg-card">
-          <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
-          <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
-          <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                <span className="text-sm text-muted-foreground">{item.feature}</span>
+      <div className="my-12">
+        <h2 className="text-3xl font-bold text-center">Integrated Teams vs. Elite Freelancers</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
+          {Object.entries(comparisonPoints).map(([key, value]) => (
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+              <p className="text-sm font-semibold text-primary">{value.pain}</p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+              
+              <div className="mt-4 flex-grow space-y-4">
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                    <XCircle className="h-5 w-5 text-red-400" />
+                    Toptal Model
+                  </h4>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                </div>
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    TeamStation AI Solution
+                  </h4>
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card flex-1 p-8">
-          <h2 className="text-2xl font-bold text-center text-foreground">Toptal</h2>
-           <p className="text-center text-sm text-muted-foreground mb-6">Premium Freelance Network</p>
-           <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                 <span className="text-sm text-muted-foreground">{item.feature}</span>
-              </div>
-            ))}
-          </div>
+              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+            </div>
+          ))}
         </div>
       </div>
 

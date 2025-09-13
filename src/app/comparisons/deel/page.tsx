@@ -1,5 +1,5 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -9,14 +9,26 @@ export const metadata: Metadata = {
     description: 'Looking for a Deel alternative for sourcing talent? See how TeamStation AI provides an end-to-end nearshore talent platform, while Deel focuses on HR and payroll.'
 };
 
-const comparisonData = [
-    { feature: 'Talent Sourcing & AI-Vetting', teamstation: true, competitor: false },
-    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
-    { feature: 'End-to-End Operational Management', teamstation: true, competitor: false },
-    { feature: 'Cognitive Science-Based Vetting (Axiom Cortex™)', teamstation: true, competitor: false },
-    { feature: 'Global HRIS & Payroll Platform', teamstation: false, competitor: true },
-    { feature: 'Focus on Nearshore Engineering Teams', teamstation: true, competitor: false },
-];
+const comparisonPoints = {
+    "Talent": {
+        pain: "Where do you find elite talent?",
+        traditional: "Deel is an HR platform, not a talent marketplace. They do not source, vet, or validate candidates. You must bring your own talent to their system.",
+        teamstation: "We are a talent-first platform. Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> and expert recruiters find and scientifically validate elite LATAM talent for you.",
+        proof: "Time-to-Offer ≈ 9 days"
+    },
+    "Operations": {
+        pain: "Who manages the hardware and security?",
+        traditional: "Deel handles payroll and compliance. They do not provide or manage secure laptops, <a href='/trust' class='text-primary hover:underline'><Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip></a>, or insurance. This is a major operational and security gap you must fill.",
+        teamstation: "Our platform is a complete operational wrapper. We bundle <a href='/services/integrated-services' class='text-primary hover:underline'><Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip></a>, MDM-secured devices, and insurance under one accountable SLA.",
+        proof: "SOC 2 & ISO Aligned"
+    },
+    "Model": {
+        pain: "Are you buying a tool or a complete solution?",
+        traditional: "Deel provides a world-class tool for a specific problem: global payroll. It is a piece of the puzzle, not the whole solution for building a remote team.",
+        teamstation: "We provide the end-to-end solution. From sourcing and vetting to hiring, compliance, and ongoing operations, we are the single partner you need to build and run your team.",
+        proof: "1 accountable SLA"
+    }
+}
 
 
 export default function DeelComparisonPage() {
@@ -32,30 +44,33 @@ export default function DeelComparisonPage() {
         </p>
       </header>
 
-      <div className="flex flex-col md:flex-row gap-8 my-12">
-        <div className="rounded-lg border-2 border-primary/50 flex-1 p-8 bg-card">
-          <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
-          <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
-          <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                <span className="text-sm text-muted-foreground">{item.feature}</span>
+       <div className="my-12">
+        <h2 className="text-3xl font-bold text-center">The Talent Platform vs. The HR Platform</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
+          {Object.entries(comparisonPoints).map(([key, value]) => (
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+              <p className="text-sm font-semibold text-primary">{value.pain}</p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+              
+              <div className="mt-4 flex-grow space-y-4">
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                    <XCircle className="h-5 w-5 text-red-400" />
+                    Deel Model
+                  </h4>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                </div>
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    TeamStation AI Solution
+                  </h4>
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card flex-1 p-8">
-          <h2 className="text-2xl font-bold text-center text-foreground">Deel</h2>
-           <p className="text-center text-sm text-muted-foreground mb-6">Global HR & Payroll Platform</p>
-           <div className="space-y-3">
-            {comparisonData.map(item => (
-               <div key={item.feature} className="flex items-start gap-3">
-                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                 <span className="text-sm text-muted-foreground">{item.feature}</span>
-              </div>
-            ))}
-          </div>
+              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+            </div>
+          ))}
         </div>
       </div>
 

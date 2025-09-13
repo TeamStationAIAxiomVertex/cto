@@ -9,13 +9,26 @@ export const metadata: Metadata = {
   description: 'Evaluating TECLA? See why TeamStation AI is a strong TECLA alternative, offering an integrated platform with EOR, device management, and AI-vetting.',
 };
 
-const comparisonData = [
-    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
-    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
-    { feature: '2.6M+ LATAM Talent Graph (Nebula™)', teamstation: true, competitor: false },
-    { feature: 'Transparent, All-Inclusive Pricing', teamstation: true, competitor: false },
-    { feature: 'Marketplace model, client handles operations', teamstation: false, competitor: true },
-];
+const comparisonPoints = {
+    "Operations": {
+        pain: "Are you equipped to be a global employer?",
+        traditional: "TECLA is a talent marketplace. They connect you with talent, but the significant burden of compliance, payroll (<a href='/services/integrated-services' class='text-primary hover:underline'><Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip></a>), and IT security falls squarely on you.",
+        teamstation: "We are your global employer platform. We absorb all operational complexity—EOR, secure devices (<a href='/trust' class='text-primary hover:underline'><Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip></a>), and insurance—into one accountable SLA.",
+        proof: "1 accountable SLA"
+    },
+    "Vetting": {
+        pain: "Is a skills test enough to de-risk a hire?",
+        traditional: "Marketplace vetting is often limited to self-reported skills and basic technical challenges. This doesn't measure the deeper cognitive traits that predict success.",
+        teamstation: "Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> provides peer-reviewed, scientific proof of a candidate's problem-solving ability and learning orientation.",
+        proof: "Mismatch Rate ≤ 10%"
+    },
+    "Cost": {
+        pain: "Is a placement fee the real cost?",
+        traditional: "A marketplace model seems cheap upfront, but the 'hidden costs' of setting up your own EOR, IT, and legal frameworks create a massive, unpredictable <a href='/playbook/latam-economics' class='text-primary hover:underline'><Tooltip text='Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.'>TCO</Tooltip></a>.",
+        teamstation: "Our <a href='/pricing' class='text-primary hover:underline'>all-inclusive pricing</a> eliminates surprises. You get a predictable, CFO-ready TCO that is often 40-60% lower than the fully-loaded cost of the marketplace model.",
+        proof: "40-60% Lower TCO"
+    }
+}
 
 
 export default function TeclaComparisonPage() {
@@ -31,30 +44,33 @@ export default function TeclaComparisonPage() {
         </p>
       </header>
 
-      <div className="flex flex-col md:flex-row gap-8 my-12">
-        <div className="rounded-lg border-2 border-primary/50 flex-1 p-8 bg-card">
-          <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
-          <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
-          <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                <span className="text-sm text-muted-foreground">{item.feature}</span>
+       <div className="my-12">
+        <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The Talent Marketplace</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
+          {Object.entries(comparisonPoints).map(([key, value]) => (
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+              <p className="text-sm font-semibold text-primary">{value.pain}</p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+              
+              <div className="mt-4 flex-grow space-y-4">
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                    <XCircle className="h-5 w-5 text-red-400" />
+                    TECLA Model
+                  </h4>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                </div>
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    TeamStation AI Solution
+                  </h4>
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card flex-1 p-8">
-          <h2 className="text-2xl font-bold text-center text-foreground">TECLA</h2>
-           <p className="text-center text-sm text-muted-foreground mb-6">LATAM Talent Marketplace</p>
-           <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                 <span className="text-sm text-muted-foreground">{item.feature}</span>
-              </div>
-            ))}
-          </div>
+              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+            </div>
+          ))}
         </div>
       </div>
 

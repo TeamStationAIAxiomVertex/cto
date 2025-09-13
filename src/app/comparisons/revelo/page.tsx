@@ -9,14 +9,26 @@ export const metadata: Metadata = {
   description: 'Searching for a Revelo alternative? See how TeamStation AI\'s integrated platform for hiring developers in Latin America compares to Revelo\'s marketplace model.',
 };
 
-const comparisonData = [
-    { feature: 'Fully Integrated Platform (Devices, MDM, Insurance)', teamstation: true, competitor: false },
-    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
-    { feature: '2.6M+ LATAM Talent Graph', teamstation: true, competitor: false },
-    { feature: 'Faster Time-to-Offer (9 vs 14 days)', teamstation: true, competitor: false },
-    { feature: 'Marketplace + EOR model', teamstation: false, competitor: true },
-    { feature: 'Client handles devices, security, insurance', teamstation: false, competitor: true },
-];
+const comparisonPoints = {
+    "Operations": {
+        pain: "Who handles device security and insurance?",
+        traditional: "Revelo combines a marketplace with <a href='/services/integrated-services' class='text-primary hover:underline'><Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip></a>, which is a great start. However, secure device provisioning (<a href='/trust' class='text-primary hover:underline'><Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip></a>) and insurance are not included, leaving a critical security and compliance gap.",
+        teamstation: "Our integrated platform is a complete operational and risk shield. We bundle EOR, MDM-secured devices, and Cyber/E&O insurance under a single, accountable SLA.",
+        proof: "SOC 2 & ISO Aligned"
+    },
+    "Vetting": {
+        pain: "How do you ensure you're hiring top problem-solvers, not just skilled test-takers?",
+        traditional: "Revelo's vetting focuses on technical skills and English proficiency. While important, this doesn't measure deeper cognitive traits like architectural instinct or learning orientation.",
+        teamstation: "Our peer-reviewed <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> goes beyond skills tests to provide scientific evidence of a candidate's problem-solving ability and 'mental shape'.",
+        proof: "Mismatch Rate ≤ 10%"
+    },
+    "Velocity": {
+        pain: "Is your hiring process fast, or just 'not slow'?",
+        traditional: "Revelo's 14-day time-to-hire is good, but it's still a multi-step process involving separate client interviews and negotiations.",
+        teamstation: "Our process is engineered for speed and accuracy. The deep validation from our Cognitive AI allows you to move faster with higher confidence, achieving a time-to-offer in ≈9 days.",
+        proof: "Time-to-Offer ≈ 9 days"
+    }
+}
 
 
 export default function ReveloComparisonPage() {
@@ -32,30 +44,33 @@ export default function ReveloComparisonPage() {
         </p>
       </header>
 
-      <div className="flex flex-col md:flex-row gap-8 my-12">
-        <div className="rounded-lg border-2 border-primary/50 flex-1 p-8 bg-card">
-          <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
-          <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
-          <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                <span className="text-sm text-muted-foreground">{item.feature}</span>
+       <div className="my-12">
+        <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. Sourcing + EOR</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
+          {Object.entries(comparisonPoints).map(([key, value]) => (
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+              <p className="text-sm font-semibold text-primary">{value.pain}</p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+              
+              <div className="mt-4 flex-grow space-y-4">
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                    <XCircle className="h-5 w-5 text-red-400" />
+                    Revelo Model
+                  </h4>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                </div>
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    TeamStation AI Solution
+                  </h4>
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card flex-1 p-8">
-          <h2 className="text-2xl font-bold text-center text-foreground">Revelo</h2>
-           <p className="text-center text-sm text-muted-foreground mb-6">Marketplace + EOR</p>
-           <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                 <span className="text-sm text-muted-foreground">{item.feature}</span>
-              </div>
-            ))}
-          </div>
+              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+            </div>
+          ))}
         </div>
       </div>
 

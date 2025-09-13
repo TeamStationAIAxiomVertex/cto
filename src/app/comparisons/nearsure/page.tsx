@@ -9,14 +9,26 @@ export const metadata: Metadata = {
     description: 'Looking for a Nearsure alternative? Compare TeamStation AI\'s integrated nearshore platform with Nearsure\'s traditional staff augmentation for LATAM developers.'
 };
 
-const comparisonData = [
-    { feature: 'Integrated Platform (EOR, Devices, MDM, Insurance)', teamstation: true, competitor: false },
-    { feature: 'Cognitive AI Validation (Axiom Cortex™)', teamstation: true, competitor: false },
-    { feature: 'Transparent, All-Inclusive Pricing', teamstation: true, competitor: false },
-    { feature: 'Faster Time-to-Offer (~9 days)', teamstation: true, competitor: false },
-    { feature: 'Traditional Staff Augmentation Model', teamstation: false, competitor: true },
-    { feature: 'Client handles devices, compliance, security', teamstation: false, competitor: true },
-];
+const comparisonPoints = {
+    "Operations": {
+        pain: "Are you prepared to manage compliance, IT, and security?",
+        traditional: "Nearsure is a recruiting partner. They find talent, but the client is left to manage compliant hiring (<a href='/services/integrated-services' class='text-primary hover:underline'><Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip></a>), payroll, secure devices, and insurance.",
+        teamstation: "We provide the complete, managed operating system. Our platform includes EOR, <a href='/trust' class='text-primary hover:underline'><Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip></a>-secured devices, and insurance under a single, predictable SLA.",
+        proof: "1 accountable SLA"
+    },
+    "Cost": {
+        pain: "Is a low hourly rate hiding your true Total Cost of Ownership (TCO)?",
+        traditional: "The quoted rate from traditional vendors excludes the significant 'hidden costs' of EOR, IT, legal, and management overhead, which can inflate your <a href='/playbook/latam-economics' class='text-primary hover:underline'><Tooltip text='Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.'>TCO</Tooltip></a>.",
+        teamstation: "Our <a href='/pricing' class='text-primary hover:underline'>all-inclusive pricing</a> is transparent and predictable. It bundles all operational costs, leading to a lower, CFO-ready TCO.",
+        proof: "40-60% Lower TCO"
+    },
+    "Vetting": {
+        pain: "Is your vetting process based on science or just conversation?",
+        traditional: "Nearsure's 'AI recruiter' speeds up sourcing, but the final evaluation is still based on traditional interviews, which are prone to bias and failure.",
+        teamstation: "Our vetting is powered by the <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a>, a peer-reviewed scientific model that provides evidence-based proof of a candidate's problem-solving ability.",
+        proof: "Mismatch Rate ≤ 10%"
+    }
+}
 
 
 export default function NearsureComparisonPage() {
@@ -32,30 +44,33 @@ export default function NearsureComparisonPage() {
         </p>
       </header>
 
-      <div className="flex flex-col md:flex-row gap-8 my-12">
-        <div className="rounded-lg border-2 border-primary/50 flex-1 p-8 bg-card">
-          <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
-          <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
-          <div className="space-y-3">
-            {comparisonData.map(item => (
-              <div key={item.feature} className="flex items-start gap-3">
-                {item.teamstation ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                <span className="text-sm text-muted-foreground">{item.feature}</span>
+       <div className="my-12">
+        <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The Recruiting Partner</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
+          {Object.entries(comparisonPoints).map(([key, value]) => (
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+              <p className="text-sm font-semibold text-primary">{value.pain}</p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+              
+              <div className="mt-4 flex-grow space-y-4">
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                    <XCircle className="h-5 w-5 text-red-400" />
+                    Nearsure Model
+                  </h4>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                </div>
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    TeamStation AI Solution
+                  </h4>
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card flex-1 p-8">
-          <h2 className="text-2xl font-bold text-center text-foreground">Nearsure</h2>
-           <p className="text-center text-sm text-muted-foreground mb-6">Traditional Staff Augmentation</p>
-           <div className="space-y-3">
-            {comparisonData.map(item => (
-               <div key={item.feature} className="flex items-start gap-3">
-                {item.competitor ? <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={16} /> : <XCircle className="text-red-500 flex-shrink-0 mt-1" size={16} />}
-                 <span className="text-sm text-muted-foreground">{item.feature}</span>
-              </div>
-            ))}
-          </div>
+              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+            </div>
+          ))}
         </div>
       </div>
 
