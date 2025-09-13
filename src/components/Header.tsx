@@ -14,7 +14,8 @@ const navItems = {
     { href: '/playbook/security-compliance', title: 'Security & Compliance', description: 'The playbook for audit-ready nearshore operations.' },
     { href: '/playbook/bias-free-technical-hiring-axiom-cortex', title: 'Bias-Free Hiring', description: 'How to use Axiom Cortex™ for fairer, more accurate hiring.' },
   ],
-  'Services': [
+  'What\'s Included': [
+    { href: '/platform', title: 'Platform', description: 'A single pane of glass for your entire nearshore operation.' },
     { href: '/process', title: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
     { href: '/technical-interview-evaluation', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
     { href: '/services/talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
@@ -29,7 +30,6 @@ const navItems = {
 };
 
 const simpleNavItems = [
-    { href: '/platform', title: 'Platform' },
     { href: '/case-studies', title: 'Case Studies' },
     { href: '/pricing', title: 'Pricing' },
     { href: '/hire', title: 'Hire' },
@@ -118,5 +118,3 @@ export function Header() {
     </header>
   );
 }
-
-    

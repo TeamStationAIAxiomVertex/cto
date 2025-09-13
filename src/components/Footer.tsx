@@ -17,7 +17,8 @@ export function Footer() {
         { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
         { href: '/playbook/security-compliance', label: 'Security & Compliance' },
       ],
-      "Services": [
+      "What's Included": [
+        { href: '/platform', label: 'Platform' },
         { href: '/process', label: 'Our Process' },
         { href: '/technical-interview-evaluation', label: 'Talent Evaluations' },
         { href: '/services/integrated-services', label: 'Integrated Services' },
@@ -31,7 +32,7 @@ export function Footer() {
       ],
       "Company": [
         { href: '/about', label: 'About Us' },
-        { href: '/research', label: 'Research' },
+        { href: 'https://app.teamstation.dev/research', label: 'Research' },
         { href: '/trust', label: 'Trust Center' },
         { href: '/hire', label: 'Hire Talent' },
       ]
@@ -65,5 +66,3 @@ export function Footer() {
     </footer>
   );
 }
-
-    
