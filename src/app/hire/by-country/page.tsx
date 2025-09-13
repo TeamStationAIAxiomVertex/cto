@@ -40,10 +40,14 @@ export default function HireByCountryPage() {
                  <p className="text-sm font-semibold text-primary">Tired of insecure home offices and spotty Wi-Fi?</p>
                 <h2 className="text-3xl font-bold flex items-center gap-3 mt-3">
                     <Building className="h-8 w-8 text-primary" />
-                    Secure, Professional Workspaces Included
+                    Secure, Professional Workspaces
                 </h2>
+                <div className="flex items-center gap-2 mt-4">
+                  <span className="text-sm text-muted-foreground">In partnership with</span>
+                  <svg className="h-5 fill-current text-foreground" viewBox="0 0 118 32" role="img" aria-label="WeWork logo"><path d="M60.1 3.2C54.7 3.2 51 7 51 12.5c0 5.1 3.7 9.3 9.3 9.3 2.5 0 4.7-1 6.3-2.6v2.2h5.8V3.7h-5.8v2.6c-1.6-1.6-3.8-2.1-6.3-2.1zM57 18.2c-2.9 0-5.3-2.4-5.3-5.6s2.4-5.6 5.3-5.6 5.3 2.4 5.3 5.6-2.3 5.6-5.3 5.6zm13.1-15h-6.1L58.5 19.3h6.1L70 3.2zm11.2 0h-6.1L73.6 19.3h6.1L81.3 3.2zm19.9 16.1h6.1V3.7h-6.1v15.6zm-17.6 0h6.1V3.7h-6.1v15.6zm-26.6-8.1c0-2.8-2.2-5-5-5s-5 2.2-5 5 2.2 5 5 5 5-2.2 5-5zm10.7 8.1h6.1V3.7h-6.1v15.6zM0 3.7h6.1v8.9c0 3.9 2.5 6.3 6.3 6.3s6.3-2.5 6.3-6.3V3.7h6.1v8.9c0 7.1-5.1 12-12.3 12S0 17.9 0 10.6V3.7zm24.9 15.6h6.1V3.7h-6.1v15.6z"></path></svg>
+                </div>
                 <p className="mt-4 text-muted-foreground">
-                    Your team’s productivity and security shouldn't be left to chance. Through our unique partnership with WeWork, every TeamStation AI engineer has access to a secure, modern office across LATAM. This isn't an add-on; it's part of our all-inclusive service, ensuring reliable internet, a professional setting, and a secure space to work, all while maintaining SOC 2 and ISO-aligned operational standards.
+                    Your team’s productivity and security shouldn't be left to chance. Every TeamStation AI engineer has access to a secure, modern office across LATAM. This isn't an add-on; it's part of our all-inclusive service, ensuring reliable internet, a professional setting, and a secure space to work, all while maintaining SOC 2 and ISO-aligned operational standards.
                 </p>
                  <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">One less vendor to manage</p>
             </div>
@@ -88,3 +92,5 @@ export default function HireByCountryPage() {
     </main>
   );
 }
+
+    
