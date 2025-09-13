@@ -13,36 +13,42 @@ export const metadata: Metadata = {
 const includedServices = [
     {
         icon: <Users className="h-8 w-8 text-primary"/>,
+        pain: 'Struggling to find elite LATAM talent?',
         title: 'Dedicated Operations & Recruiting Teams',
         description: 'US-led ops and LATAM recruiters handle sourcing, structured interviews, and start logistics, all tracked in the platform.',
         kpi: '2.6M+ LATAM profiles targeted'
     },
     {
         icon: <FileText className="h-8 w-8 text-primary"/>,
+        pain: 'Worried about complex local labor laws?',
         title: 'Employer of Record (EOR) & Compliance',
         description: 'Country-legal contracts, payroll, taxes, and statutory benefits handled by TeamStation, centralizing HR and labor-law compliance.',
         kpi: ' '
     },
     {
         icon: <Laptop className="h-8 w-8 text-primary"/>,
+        pain: 'Concerned about insecure remote laptops?',
         title: 'Devices & Endpoint Security (MDM)',
         description: 'We procure, ship, enroll, patch, and monitor laptops via MDM with CIS-aligned guardrails and 24/7 endpoint visibility.',
         kpi: 'MDM enrollment ≥99% (24h)'
     },
     {
         icon: <ShieldCheck className="h-8 w-8 text-primary"/>,
+        pain: 'Exposed to liability from remote work?',
         title: 'Cybersecurity & Insurance Coverage',
         description: 'Security workflows, NDA/IP protection, and Cyber/E&O coverage for project liability. Policy documents are stored and auditable.',
         kpi: ' '
     },
     {
         icon: <Gauge className="h-8 w-8 text-primary"/>,
+        pain: 'New hires taking weeks to ship code?',
         title: 'Onboarding Automation',
         description: 'Pre-boarding checklists, access requests, first ticket, and a 30-60-90 plan are auto-tracked to Day-1 readiness with status and alerts.',
         kpi: 'Day-1 readiness ≥95%'
     },
     {
         icon: <Building className="h-8 w-8 text-primary"/>,
+        pain: 'Need a physical space for your team?',
         title: 'LATAM Meeting Offices & Spaces',
         description: 'On-demand desks and meeting rooms in major LATAM hubs for planning sessions, interviews, and quarterly reviews. (Optional Add-on)',
         kpi: ' '
@@ -90,9 +96,12 @@ export default function PlatformPage() {
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {includedServices.map((service) => (
                 <div key={service.title} className="rounded-lg border bg-card p-6 flex flex-col">
-                    {service.icon}
-                    <h3 className="mt-4 text-lg font-semibold text-foreground">{service.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground flex-grow">{service.description}</p>
+                    <p className="text-sm font-semibold text-primary">{service.pain}</p>
+                    <div className="flex items-center gap-3 mt-3">
+                        {service.icon}
+                        <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
+                    </div>
+                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{service.description}</p>
                     {service.kpi.trim() && <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{service.kpi}</p>}
                 </div>
             ))}
