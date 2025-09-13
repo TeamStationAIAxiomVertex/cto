@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CheckCircle, Trophy, Star, BookOpen, Beaker, GitCommit, Search, Users, BrainCircuit, FileCheck, Laptop, Gauge, ShieldCheck, FileText, Building, Scale } from "lucide-react";
 import type { Metadata } from 'next';
 import { Tooltip } from "@/components/Tooltip";
+import { DisclosureDrawer } from "@/components/DisclosureDrawer";
 
 export const metadata: Metadata = {
   title: 'Nearshore IT Co-Pilot™ Platform | TeamStation AI',
@@ -10,15 +11,36 @@ export const metadata: Metadata = {
 };
 
 const includedServices = [
-    { icon: <Search className="h-6 w-6 text-primary"/>, title: 'Talent Sourcing & Vetting', description: 'Cognitive AI talent graph across 2.6M+ LATAM IT profiles, deduped and kept fresh.' },
-    { icon: <BrainCircuit className="h-6 w-6 text-primary"/>, title: 'Cognitive Technical Evaluations', description: 'Bias-aware, evidence-based interview scoring against role-specific rubrics.' },
-    { icon: <FileText className="h-6 w-6 text-primary"/>, title: 'EOR & Country Compliance', description: 'Contracts, payroll, taxes, and statutory benefits handled in-country.' },
-    { icon: <Scale className="h-6 w-6 text-primary"/>, title: 'Payroll & Benefits', description: 'Local norms, 13th-month pay, PTO admin, and accurate withholdings.' },
-    { icon: <Laptop className="h-6 w-6 text-primary"/>, title: 'Secure Devices & MDM', description: 'Procure, ship, enroll, and patch devices; global logistics included.' },
-    { icon: <ShieldCheck className="h-6 w-6 text-primary"/>, title: 'Cybersecurity & E&O Insurance', description: 'Enterprise guardrails and liability coverage for peace of mind.' },
-    { icon: <Building className="h-6 w-6 text-primary"/>, title: 'Offices & Workspaces', description: 'On-demand desks and meeting space across LATAM.' },
-    { icon: <FileCheck className="h-6 w-6 text-primary"/>, title: 'Day-One Onboarding Automation', description: 'Access, first ticket, and a 30-60-90 plan baked in.' },
-    { icon: <Gauge className="h-6 w-6 text-primary"/>, title: 'Performance & KPIs', description: 'TTH, TTP, retention, device compliance, and security posture tracked.' },
+    { 
+        icon: <Search className="h-6 w-6 text-primary"/>, 
+        pain: 'Wasting months on bad hires?', 
+        solution: 'De-risk hiring with our Cognitive AI talent graph across 2.6M+ LATAM IT profiles, and bias-aware, evidence-based interview scoring against role-specific rubrics.' 
+    },
+    { 
+        icon: <FileText className="h-6 w-6 text-primary"/>, 
+        pain: 'Buried in compliance & payroll?', 
+        solution: 'Eliminate administrative overhead. We handle all contracts, payroll, taxes, and statutory benefits as your in-country Employer of Record (EOR).' 
+    },
+     { 
+        icon: <ShieldCheck className="h-6 w-6 text-primary"/>, 
+        pain: 'Worried about security & liability?', 
+        solution: 'Operate with peace of mind. All work is covered by enterprise-grade Cybersecurity & E&O Insurance under an audit-ready, SOC 2 / ISO-aligned framework.' 
+    },
+    { 
+        icon: <Laptop className="h-6 w-6 text-primary"/>, 
+        pain: 'Exposed by unmanaged devices?', 
+        solution: 'Close a major security gap. We procure, ship, enroll, and patch all devices with enterprise-grade MDM, including global logistics.' 
+    },
+    { 
+        icon: <Building className="h-6 w-6 text-primary"/>, 
+        pain: 'Need a professional workspace?', 
+        solution: 'Provide your team with on-demand desks and meeting spaces across our LATAM office network for collaboration and secure infrastructure.' 
+    },
+    { 
+        icon: <FileCheck className="h-6 w-6 text-primary"/>, 
+        pain: 'Is onboarding slow and chaotic?', 
+        solution: 'Achieve Day-1 productivity. Our automated process ensures access, first ticket, and a 30-60-90 plan are baked in from the start.' 
+    },
 ];
 
 const recognitions = [
@@ -56,16 +78,17 @@ export default function PlatformPage() {
         </p>
       </header>
 
-       <section className="my-16">
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+       <section className="my-16 max-w-4xl mx-auto">
+         <h2 className="text-center text-4xl font-bold text-foreground">Everything Included, Under One SLA</h2>
+         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">The first integrated nearshore platform: hire, equip, secure, and manage LATAM teams with one contract and one accountable owner.</p>
+         <div className="mt-8 rounded-lg border bg-card p-8">
             {includedServices.map((service) => (
-                <div key={service.title} className="flex items-start gap-4">
-                    {service.icon}
-                    <div>
-                        <h3 className="font-semibold text-foreground">{service.title}</h3>
-                        <p className="text-sm text-muted-foreground m-0">{service.description}</p>
+                <DisclosureDrawer key={service.pain} title={service.pain}>
+                    <div className="flex items-start gap-4">
+                        {service.icon}
+                        <p className="m-0">{service.solution}</p>
                     </div>
-                </div>
+                </DisclosureDrawer>
             ))}
         </div>
         <div className="text-center mt-8">
