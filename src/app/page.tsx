@@ -77,7 +77,7 @@ export default async function HomePage() {
           Nearshore Software Development, Or Another Crisis?
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-          You're under pressure to deliver, but juggling multiple vendors for hiring, compliance, and security is a crisis in itself. TeamStation AI averts this by providing a single, integrated platform to build elite LATAM <Link href="/playbook/nearshore-vs-offshore" className="text-primary hover:underline">nearshore teams</Link> you can actually trust.
+          TeamStation AI averts this by providing a single, integrated platform to build elite LATAM teams you can actually trust. It's a proactive strategy to prevent the crisis that juggling multiple vendors creates.
         </p>
         <div className="mt-10">
             <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Strategy Call</Link>
@@ -200,5 +200,3 @@ export default async function HomePage() {
     </div>
   );
 }
-
-    
