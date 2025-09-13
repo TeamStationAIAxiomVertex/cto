@@ -38,9 +38,9 @@ export default function TrustPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Trust Center</span>
       </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Trust Center</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">You Keep the Velocity. We Take the Risk.</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          Security and compliance are not features; they are the foundation of our platform. We provide an auditable, enterprise-ready environment for your nearshore team from day one, including SSO, MDM, and device control.
+          The AI era demands greater control over your IP, assets, and security. Why throw that control over the fence to a traditional vendor and just hope for the best? Our platform puts you in the driver's seat by providing an auditable, enterprise-ready environment for your nearshore team from day one.
         </p>
       </header>
 
