@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import { CheckCircle, Trophy, Star, BookOpen, Beaker, GitCommit, Search, Users, BrainCircuit, FileCheck, Laptop, Gauge, ShieldCheck, FileText, Building, Scale } from "lucide-react";
+import { CheckCircle, Trophy, Star, BookOpen, Beaker, GitCommit, Search, Users, BrainCircuit, FileCheck, Laptop, Gauge, ShieldCheck, FileText, Building, Scale, ArrowRight } from "lucide-react";
 import type { Metadata } from 'next';
 import { Tooltip } from "@/components/Tooltip";
 import { DisclosureDrawer } from "@/components/DisclosureDrawer";
@@ -23,7 +23,7 @@ const includedServices = [
         pain: 'Worried about complex local labor laws?',
         title: 'Employer of Record (EOR) & Compliance',
         description: 'Country-legal contracts, payroll, taxes, and statutory benefits handled by TeamStation, centralizing HR and labor-law compliance.',
-        kpi: ' '
+        kpi: 'Zero compliance overhead'
     },
     {
         icon: <Laptop className="h-8 w-8 text-primary"/>,
@@ -37,7 +37,7 @@ const includedServices = [
         pain: 'Exposed to liability from remote work?',
         title: 'Cybersecurity & Insurance Coverage',
         description: 'Security workflows, NDA/IP protection, and Cyber/E&O coverage for project liability. Policy documents are stored and auditable.',
-        kpi: ' '
+        kpi: 'Liability shield included'
     },
     {
         icon: <Gauge className="h-8 w-8 text-primary"/>,
@@ -51,7 +51,7 @@ const includedServices = [
         pain: 'Need a physical space for your team?',
         title: 'LATAM Meeting Offices & Spaces',
         description: 'On-demand desks and meeting rooms in major LATAM hubs for planning sessions, interviews, and quarterly reviews. (Optional Add-on)',
-        kpi: ' '
+        kpi: '45+ WeWork Hubs available'
     }
 ];
 
@@ -86,7 +86,7 @@ export default function PlatformPage() {
       <header className="text-center my-12">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Nearshore IT Co-Pilot™ Platform</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable <Tooltip text="Service Level Agreement: A contract defining the level of service you can expect.">SLA</Tooltip>.
+          Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable <Tooltip text="Service Level Agreement: A contract defining the level of service you can expect, backed by our MSA.">SLA</Tooltip>.
         </p>
       </header>
 
@@ -105,14 +105,14 @@ export default function PlatformPage() {
                     {service.title.includes("EOR") && <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>}
                     {service.title.includes("MDM") && <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
                     </p>
-                    {service.kpi.trim() && <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{service.kpi.replace('MDM', '')}
+                    <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {service.kpi.replace('MDM', '')}
                      {service.kpi.includes("MDM") && <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
-                    </p>}
+                    </p>
                 </div>
             ))}
         </div>
         <div className="text-center mt-12">
-            <Link href="/services/integrated-services" className="cta-button">See All Included Services</Link>
+            <Link href="/services/integrated-services" className="cta-button">See All Included Services <ArrowRight className="ml-2 h-4 w-4" /></Link>
         </div>
       </section>
 
@@ -148,7 +148,7 @@ export default function PlatformPage() {
 
       <section id="guardrails" className="my-24">
         <h2 className="text-center text-4xl font-bold text-foreground">Operational Guardrails & SLAs</h2>
-        <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">One owner, zero guesswork. Clear ownership across hiring, compliance, devices, and security so your risks are managed and your roadmap keeps moving.</p>
+        <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">These aren't just promises. They are contractually-binding commitments defined in your Master Services Agreement (MSA) and Statements of Work (SOW), giving you one accountable owner for your entire operation.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {guardrails.map(item => (
                 <div key={item.title} className="rounded-lg border bg-card p-6">
@@ -185,5 +185,3 @@ export default function PlatformPage() {
     </main>
   );
 }
-
-    
