@@ -12,7 +12,7 @@
     "caseStudies": {
         "atticus": {
             "src": {
-                "url": "https://picsum.photos/seed/atticus/600/400",
+                "url": "https://images.unsplash.com/photo-1543022982-fb326f27b1a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZXN0YXRlJTIwbWFuYWdlbWVudHxlbnwwfHx8fDE3NTc3OTg3NDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
                 "width": 600,
                 "height": 400
             },
