@@ -123,9 +123,9 @@ export default function ComparisonsPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Comparisons</span>
       </div>
       <header className="text-center mb-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TeamStation AI vs. The Competition</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Promises, or Proof?</h1>
         <p className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
-          A comparative analysis of features, cost, and risk. We synthesize vendor claims, pricing, and public data to compare TeamStation AI with prominent competitors, showing how our model delivers lower TCO and reduced operational risk.
+          Every vendor sells promises with expensive marketing ploys and shiny websites. That era is over. Science and proven brilliant minds change the world. Here, we move beyond marketing claims to provide a data-driven analysis of Total Cost of Ownership (TCO), operational risk, and true value.
         </p>
       </header>
 
