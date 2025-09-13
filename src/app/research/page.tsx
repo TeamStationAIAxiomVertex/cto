@@ -23,7 +23,7 @@ export default async function ResearchPage() {
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Our Research</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-        We are a research-driven organization committed to advancing the science of talent evaluation and team performance. Our work is grounded in data, cognitive science, and a deep understanding of the modern software development lifecycle.
+          Science is our method for delivering a single source of truth that filters noise from signal. We provide a controlled environment to intelligently prepare and avert crisis, enabling the science of humans coming together to push the needle forward—to go beyond.
         </p>
       </header>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
