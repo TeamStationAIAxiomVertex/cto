@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle } from 'lucide-react';
 import type { Metadata } from 'next';
+import { Tooltip } from '@/components/Tooltip';
+
 
 export const dynamic = 'force-static';
 
@@ -42,15 +44,15 @@ export default async function ResearchPage() {
   const faqs = [
     {
       question: "How can I be sure a candidate who interviews well will actually perform? I've been burned by charisma before.",
-      answer: "This is the exact problem we built Axiom Cortex™ to solve. Traditional interviews are flawed because they conflate communication style with technical ability. Our process measures 'Problem-Solving Agility' and 'Architectural Instinct' through structured, bias-aware evaluations. We provide an auditable 'Evidence Locker' so you're judging the logic, not just the presentation. This is how we de-risk the hire."
+      answer: "This is the exact problem our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> was built to solve. Traditional interviews are flawed because they conflate communication style with technical ability. Our process measures 'Problem-Solving Agility' through structured, bias-aware evaluations. We provide an auditable <a href='/technical-interview-evaluation' class='text-primary hover:underline'>Evidence Locker</a> so you're judging the logic, not just the presentation. This is how we de-risk the hire."
     },
     {
       question: "Everyone claims to use 'AI' in hiring. What makes your approach different from a simple keyword scanner?",
-      answer: "Simple: we use AI for cognitive analysis, not just resume parsing. While others use AI to find keywords, we use it to score a candidate's latent cognitive traits based on their spoken answers. Our peer-reviewed research in NLP and psychometrics outlines how we separate the signal (true ability) from the noise (jargon, fluency). It's the difference between finding someone who has 'used' a tool and someone who can 'think' with it."
+      answer: "Simple: we use AI for cognitive analysis, not just resume parsing. While others use AI to find keywords, we use it to score a candidate's latent cognitive traits. Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>peer-reviewed research</a> in NLP and psychometrics outlines how we separate the signal (true ability) from the noise (jargon, fluency). It's the difference between finding someone who has 'used' a tool and someone who can 'think' with it."
     },
     {
       question: "My current performance reviews feel subjective. How do I measure the real impact of my engineers?",
-      answer: "Our research into a 'Performance Evaluation Framework' directly tackles this. We're building a system that moves beyond 'tickets closed' to measure true value creation. It correlates engineering activity (from git commits, CI/CD data, etc.) with business outcomes. It's about shifting the conversation from 'How busy are you?' to 'What impact did you have?'"
+      answer: "Our research into a <a href='/research/performance-evaluation-framework' class='text-primary hover:underline'>Performance Evaluation Framework</a> directly tackles this. We're building a system that moves beyond 'tickets closed' to measure true value creation. It correlates engineering activity with business outcomes. It's about shifting the conversation from 'How busy are you?' to 'What impact did you have?'"
     }
   ]
 
@@ -95,7 +97,7 @@ export default async function ResearchPage() {
                   <HelpCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <h3 className="font-semibold text-foreground">{faq.question}</h3>
                </div>
-               <p className="mt-4 pt-4 border-t border-border text-sm text-muted-foreground">{faq.answer}</p>
+               <p className="mt-4 pt-4 border-t border-border text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: faq.answer }}></p>
             </div>
           ))}
         </div>
