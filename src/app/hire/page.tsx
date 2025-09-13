@@ -13,19 +13,22 @@ export default function HirePage() {
     {
       icon: <User className="h-8 w-8 text-primary" />,
       title: 'Hire by Role',
-      description: 'Stop searching for keywords. Find elite, pre-vetted LATAM engineers matched to the specific competencies your project demands.',
+      pain: "You don't need a 'developer.' You need a specific set of competencies.",
+      description: 'Find elite, pre-vetted LATAM engineers matched to the specific, high-stakes competencies your business demands, from SRE to AppSec to AI/ML.',
       href: '/hire/by-role',
     },
     {
       icon: <Code className="h-8 w-8 text-primary" />,
       title: 'Hire by Technology',
-      description: 'Your stack is modern and specific. Your team should be too. Find engineers with proven expertise in the technologies you use daily.',
+      pain: "Your stack is modern and specific. Your team must be too.",
+      description: 'Find engineers with proven, deep expertise in the technologies you rely on daily, not just a passing familiarity listed on a resume.',
       href: '/hire/by-technology',
     },
     {
       icon: <Building className="h-8 w-8 text-primary" />,
       title: 'Hire by Country',
-      description: 'Leverage the top engineering hubs across Latin America, perfectly aligned with your time zone for seamless collaboration.',
+      pain: 'Losing a full day to time zones is killing your velocity.',
+      description: 'Leverage the top engineering hubs across Latin America, perfectly aligned with your time zone for the real-time collaboration that agile demands.',
       href: '/hire/by-country',
     },
   ];
@@ -44,14 +47,17 @@ export default function HirePage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
         {hireOptions.map((option) => (
-          <Link key={option.href} href={option.href} className="group block rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-             {option.icon}
-            <h2 className="mt-4 text-xl font-bold transition-colors group-hover:text-primary">{option.title}</h2>
-            <p className="mt-2 text-muted-foreground">{option.description}</p>
-            <div className="mt-6 flex items-center text-sm font-semibold text-primary">
-                Explore Options <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <div key={option.href} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+            <p className="text-sm font-semibold text-primary">{option.pain}</p>
+            <div className='flex items-center gap-3 mt-3'>
+              {option.icon}
+              <h2 className="text-xl font-bold text-foreground">{option.title}</h2>
             </div>
-          </Link>
+            <p className="mt-4 text-sm text-muted-foreground flex-grow">{option.description}</p>
+            <Link href={option.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
+                Explore {option.title} Options <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         ))}
       </div>
       
