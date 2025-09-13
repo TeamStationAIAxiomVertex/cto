@@ -22,27 +22,32 @@ export default async function PlaybookHub() {
     'nearshore-vs-offshore': {
       pain: "Is time-zone lag killing your productivity?",
       icon: <GitCompare className="h-8 w-8 text-primary" />,
-      kpi: "4-8 hour daily overlap"
+      kpi: "4-8 hour daily overlap",
+      description: "A framework for CTOs to diagnose the true cost—and risk—of their global talent strategy, moving beyond cost per hour to Total Cost of Ownership."
     },
     'latam-economics': {
       pain: "Are you struggling to justify your budget?",
       icon: <Scale className="h-8 w-8 text-primary" />,
-      kpi: "40-60% lower TCO"
+      kpi: "40-60% lower TCO",
+      description: "A CFO-ready framework for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, covering salaries, hidden costs of mis-hires, and security risks."
     },
     'build-vs-buy': {
       pain: "Are hidden costs making your 'cheaper' option more expensive?",
       icon: <Zap className="h-8 w-8 text-primary" />,
-      kpi: "1 accountable SLA"
+      kpi: "1 accountable SLA",
+       description: "Should you build a nearshore operation from scratch or 'buy' into an integrated platform? This playbook models the trade-offs in terms of Total Cost of Ownership (TCO), speed, and risk."
     },
     'bias-free-technical-hiring-axiom-cortex': {
       pain: "Is your hiring process a high-risk gamble?",
       icon: <UserCheck className="h-8 w-8 text-primary" />,
-      kpi: "Mismatch rate ≤ 10%"
+      kpi: "Mismatch rate ≤ 10%",
+      description: "A playbook for replacing your broken, high-risk hiring process with a faster, fairer, and more accurate hiring engine powered by cognitive science."
     },
     'security-compliance': {
       pain: "Is your next hire also your next compliance breach?",
       icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-      kpi: "SOC 2 & ISO Aligned"
+      kpi: "SOC 2 & ISO Aligned",
+      description: "The playbook for audit-ready nearshore operations. Learn about our nearshore compliance for GDPR, SSO, MDM & device control for LATAM teams."
     },
   };
 
@@ -72,7 +77,7 @@ export default async function PlaybookHub() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {sortedPosts.map(post => {
             if (!post) return null;
-            const data = playbookData[post.slug as keyof typeof playbookData] || { pain: "Gain a strategic advantage.", icon: <BookOpen className="h-8 w-8 text-primary" />, kpi: "Data-driven insights" };
+            const data = playbookData[post.slug as keyof typeof playbookData] || { pain: "Gain a strategic advantage.", icon: <BookOpen className="h-8 w-8 text-primary" />, kpi: "Data-driven insights", description: "Learn more." };
             const href = post.slug === 'security-compliance' ? '/trust' : `/playbook/${post.slug}`;
             
             return (
@@ -82,8 +87,8 @@ export default async function PlaybookHub() {
                   {data.icon}
                   <h3 className="text-lg font-semibold text-foreground">{post.title}</h3>
                 </div>
-                <p className="mt-4 text-sm text-muted-foreground flex-grow">{post.description?.replace('TCO', '')}
-                   {post.description?.includes('TCO') && <Tooltip text="Total Cost of Ownership: Includes not just salary, but all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
+                <p className="mt-4 text-sm text-muted-foreground flex-grow">{data.description?.replace('TCO', '')}
+                   {data.description?.includes('TCO') && <Tooltip text="Total Cost of Ownership: Includes not just salary, but all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
                 </p>
                 <div className="mt-6 border-t border-border pt-4 flex justify-between items-center">
                    <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
