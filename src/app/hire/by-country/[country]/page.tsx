@@ -31,7 +31,7 @@ const countries: { [key: string]: { name: string; highlights: string[] } } = {
   'argentina': { 
     name: 'Argentina',
     highlights: [
-        'Exceptionally high English proficiency and strong educational system.',
+        'Exceptionally high English proficiency and a strong educational system.',
         'A mature tech market with a deep pool of senior and lead-level engineers.',
         'Strong European cultural ties foster a diverse and globally-minded workforce.'
     ]
