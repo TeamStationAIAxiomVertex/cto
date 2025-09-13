@@ -269,7 +269,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
       <div className="prose dark:prose-invert max-w-none mx-auto my-16">
         <h2 className="text-center">Our Evaluation Approach for {name}</h2>
         <p>
-            For roles in <strong>{name}</strong>, we understand that "good enough" is a recipe for disaster. You need engineers with not just the right technical skills, but the right cognitive abilities to solve complex problems under pressure. That's why our <Link href="/technical-interview-evaluation">Axiom Cortex™ evaluation</Link> for this domain goes beyond simple coding tests. It's an evidence-based process designed to de-risk your hiring decision.
+            For roles in <strong>{name}</strong>, we understand that "good enough" is a recipe for disaster. You need engineers with not just the right technical skills, but the right cognitive abilities to solve complex problems under pressure. That's why our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ evaluation</Link> for this domain goes beyond simple coding tests. It's an evidence-based process designed to de-risk your hiring decision.
         </p>
         
         <ul>
@@ -294,7 +294,5 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
 export async function generateStaticParams() {
   return Object.keys(roleData).map(slug => ({ slug }));
 }
-
-    
 
     
