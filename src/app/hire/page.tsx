@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { Building, Code, User, ArrowRight } from 'lucide-react';
+import { Building, Code, User, ArrowRight, Shapes } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -31,6 +31,13 @@ export default function HirePage() {
       description: 'Leverage the top engineering hubs across Latin America, perfectly aligned with your time zone for the real-time collaboration that agile demands.',
       href: '/hire/by-country',
     },
+     {
+      icon: <Shapes className="h-8 w-8 text-primary" />,
+      title: 'Hire by Team Topologies',
+      pain: "Are your teams structured for scale or for silos?",
+      description: 'From stream-aligned squads to platform teams, we build the LATAM engineering structures you need to accelerate delivery and reduce cognitive load.',
+      href: '/hire/by-team-topologies',
+    },
   ];
 
   return (
@@ -45,7 +52,7 @@ export default function HirePage() {
         </p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
         {hireOptions.map((option) => (
           <div key={option.href} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
             <p className="text-sm font-semibold text-primary">{option.pain}</p>
