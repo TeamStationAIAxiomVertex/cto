@@ -12,23 +12,31 @@ export default function TrustPage() {
     const pillars = [
         {
             icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+            pain: "Worried about audit-readiness?",
             title: 'SOC 2 / ISO 27001 Alignment',
-            description: 'Our operational controls for security, availability, and privacy are aligned with leading industry standards.',
+            description: 'Our operational controls for security, availability, and privacy are aligned with leading industry standards, providing an auditable posture from day one.',
+            kpi: "100% auditable evidence trail"
         },
         {
             icon: <Laptop className="h-8 w-8 text-primary" />,
-            title: 'Secure Device & MDM',
-            description: 'We provision and manage all developer laptops with enterprise-grade MDM, enforcing disk encryption and remote wipe.',
+            pain: "Exposed by unmanaged laptops?",
+            title: 'Secure Devices & MDM',
+            description: 'We provision and manage all developer laptops with enterprise-grade MDM, enforcing disk encryption, auto-patching, and remote lock/wipe capabilities.',
+            kpi: "MDM enrollment ≥99% (24h)"
         },
         {
             icon: <FileLock className="h-8 w-8 text-primary" />,
+            pain: "Navigating complex local laws?",
             title: 'Integrated EOR & Compliance',
-            description: 'We handle all Employer of Record complexities, ensuring compliance with local labor laws (and frameworks like GDPR) in every LATAM country.',
+            description: 'We handle all Employer of Record complexities, ensuring compliance with local labor laws and data privacy frameworks (GDPR/LGPD) in every LATAM country.',
+            kpi: "Zero compliance overhead"
         },
         {
             icon: <Scale className="h-8 w-8 text-primary" />,
+            pain: "Carrying all the liability?",
             title: 'Cyber & E&O Insurance',
-            description: 'All work is covered by comprehensive Cybersecurity and Errors & Omissions (E&O) insurance.',
+            description: 'All work is covered by our comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, giving you a critical layer of financial protection.',
+            kpi: "Liability shield included"
         },
     ];
 
@@ -45,11 +53,15 @@ export default function TrustPage() {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
-          {pillars.map((item) => (
-             <div key={item.title} className="rounded-lg border bg-card p-8">
-                {item.icon}
-                <h2 className="mt-4 text-xl font-bold">{item.title}</h2>
-                <p className="mt-2 text-muted-foreground">{item.description}</p>
+          {pillars.map((pillar) => (
+             <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col">
+                <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
+                <div className="flex items-center gap-3 mt-3">
+                    {pillar.icon}
+                    <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
+                </div>
+                <p className="mt-4 text-sm text-muted-foreground flex-grow">{pillar.description}</p>
+                <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
             </div>
           ))}
       </div>
@@ -89,3 +101,5 @@ export default function TrustPage() {
     </main>
   );
 }
+
+    

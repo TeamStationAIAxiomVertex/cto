@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
+import { CheckCircle } from 'lucide-react';
 
 
 const roleData: { [key: string]: { name: string; intro: string; roles: string[]; skills: string[]; tech: (string | React.ReactNode)[]; evaluation: string[] } } = {
@@ -266,16 +267,20 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
       </div>
 
 
-      <div className="prose dark:prose-invert max-w-none mx-auto my-16">
-        <h2 className="text-center">Our Evaluation Approach for {name}</h2>
-        <p>
-            For roles in <strong>{name}</strong>, we understand that "good enough" is a recipe for disaster. You need engineers with not just the right technical skills, but the right cognitive abilities to solve complex problems under pressure. That's why our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ evaluation</Link> for this domain goes beyond simple coding tests. It's an evidence-based process designed to de-risk your hiring decision.
+      <div className="my-16 rounded-lg border bg-card p-8">
+        <h2 className="text-center text-3xl font-bold">Our Evaluation Approach for {name}</h2>
+        <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
+             For roles in <strong>{name}</strong>, we understand that "good enough" is a recipe for disaster. Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ evaluation</Link> goes beyond simple coding tests to de-risk your hiring decision.
         </p>
-        
-        <ul>
-            {evaluation.map((point, i) => <li key={i}>{point}</li>)}
+         <ul className="space-y-4 mt-8 max-w-2xl mx-auto">
+            {evaluation.map((point, i) => (
+                <li key={i} className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 shrink-0 mt-1" />
+                    <span className='text-muted-foreground'>{point}</span>
+                </li>
+            ))}
         </ul>
-         <p>
+         <p className="mt-6 max-w-3xl mx-auto text-center text-muted-foreground">
            This means you get a candidate who is not only technically proficient but is also a proven problem-solver, a strong collaborator, and ready to contribute from day one. You're not just hiring a resume; you're hiring a pre-validated, high-impact team member whose "mental shape" has been mapped to the specific demands of the role.
         </p>
       </div>
@@ -294,5 +299,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
 export async function generateStaticParams() {
   return Object.keys(roleData).map(slug => ({ slug }));
 }
+
+    
 
     

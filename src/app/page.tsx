@@ -23,24 +23,30 @@ const trustNumbers = [
 const corePillars = [
     {
         icon: <BrainCircuit className="h-8 w-8 text-primary"/>,
-        title: "De-Risk Your Hiring",
+        pain: "Wasting months on bad hires?",
+        title: "De-Risk Your Hiring with Cognitive AI",
         description: "Stop gambling on resumes. Our Axiom Cortex™ engine provides auditable, scientific proof of a candidate's cognitive ability, cutting your mis-hire risk by over 90%.",
         href: "/playbook/bias-free-technical-hiring-axiom-cortex",
-        linkLabel: "Learn About Our Vetting"
+        linkLabel: "Learn About Our Vetting",
+        kpi: "Mismatch rate ≤10%"
     },
     {
         icon: <ShieldCheck className="h-8 w-8 text-primary"/>,
-        title: "Eliminate Vendor Chaos",
-        description: "Stop managing 5 vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
+        pain: "Drowning in vendor management?",
+        title: "Eliminate Vendor Chaos with One SLA",
+        description: "Stop juggling 5+ vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
         href: "/services/integrated-services",
-        linkLabel: "See Our Integrated Services"
+        linkLabel: "See Our Integrated Services",
+        kpi: "1 contract, 1 invoice"
     },
     {
         icon: <Scale className="h-8 w-8 text-primary"/>,
-        title: "Justify Your Budget",
-        description: "We provide a predictable, all-inclusive TCO that is often lower than the 'hidden cost' of a DIY approach. Get the data you need to make a CFO-ready business case.",
+        pain: "Struggling to justify your budget?",
+        title: "Get a CFO-Ready TCO Model",
+        description: "We provide a predictable, all-inclusive Total Cost of Ownership (TCO) that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.",
         href: "/playbook/latam-economics",
-        linkLabel: "View Our TCO Model"
+        linkLabel: "View Our TCO Model",
+        kpi: "≈$98k revenue pulled forward"
     }
 ]
 
@@ -102,13 +108,17 @@ export default async function HomePage() {
         <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">We're not another vendor. We are a force multiplier for your engineering organization, giving you the leverage to succeed.</p>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
             {corePillars.map(pillar => (
-                <div key={pillar.title} className="rounded-lg border bg-card p-8 flex flex-col">
-                    {pillar.icon}
-                    <h3 className="mt-4 text-xl font-bold text-foreground">{pillar.title}</h3>
-                    <p className="mt-2 text-muted-foreground flex-grow">{pillar.description.replace('Axiom Cortex™', '').replace('TCO', 'Total Cost of Ownership (TCO)')}
-                      {pillar.title === "De-Risk Your Hiring" && <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip>}
+                 <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col">
+                    <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
+                    <div className="flex items-center gap-3 mt-3">
+                        {pillar.icon}
+                        <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
+                    </div>
+                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{pillar.description.replace('Axiom Cortex™', '')}
+                      {pillar.title.includes("Cognitive AI") && <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip>}
                     </p>
-                    <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
+                    <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
+                     <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
                         {pillar.linkLabel} <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                 </div>

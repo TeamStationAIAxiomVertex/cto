@@ -72,9 +72,12 @@ export default function AboutPage() {
       </div>
 
       <section className="my-24 rounded-lg border bg-card p-8">
-        <h2 className="text-center text-4xl font-bold text-foreground">Led by Experts</h2>
-        <div className="mt-8 flex flex-col items-center text-center max-w-4xl mx-auto">
-            <Users className="h-12 w-12 text-primary" />
+         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+            <p className="text-sm font-semibold text-primary">Decades of combined experience</p>
+            <div className="flex items-center gap-3 mt-3">
+                <Users className="h-8 w-8 text-primary"/>
+                <h2 className="text-3xl font-bold text-foreground">Guided by a Multi-Disciplinary Team</h2>
+            </div>
             <p className="mt-4 text-muted-foreground">
                 TeamStation AI is guided by a multi-disciplinary executive team with decades of experience across technology, science, and operations. Our leadership includes Co-Founders Lonnie McRorey, a Cognitive Science graduate from Temple University with 25 years in technology, and Dan Diachenko, an MBA graduate from Universidad Torcuato Di Tella focused on AI-driven process optimization. They are supported by a robust LATAM leadership team with deep expertise in regional law, AI research, SaaS platform technology, people operations, and finance. This blend of strategic vision and on-the-ground operational excellence ensures our platform is not only innovative but also secure, compliant, and scalable.
             </p>
@@ -118,3 +121,5 @@ export default function AboutPage() {
     </main>
   );
 }
+
+    
