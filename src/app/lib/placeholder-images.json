@@ -1,0 +1,11 @@
+{
+    "weworkOffice": {
+        "src": {
+            "url": "https://picsum.photos/seed/wework/600/400",
+            "width": 600,
+            "height": 400
+        },
+        "alt": "Modern WeWork office interior with professionals collaborating",
+        "aiHint": "modern office"
+    }
+}

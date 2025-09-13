@@ -5,6 +5,18 @@ const nextConfig = {
     // trailingSlash: true,
     // Optional: Change the output directory `out` -> `dist`
     // distDir: 'dist',
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+            },
+             {
+                protocol: 'https',
+                hostname: 'picsum.photos',
+            }
+        ],
+    },
     async redirects() {
         return [
           {

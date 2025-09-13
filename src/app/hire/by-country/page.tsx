@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ArrowRight, Building2 } from 'lucide-react';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Country | Top LATAM Tech Hubs',
@@ -21,6 +23,8 @@ export default function HireByCountryPage() {
     { name: 'Uruguay', slug: 'uruguay', cities: 'Montevideo' },
     { name: 'Ecuador', slug: 'ecuador', cities: 'Quito, Guayaquil' },
   ];
+
+  const weworkImage = placeholderImages.weworkOffice;
 
   return (
     <main className="container py-12">
@@ -42,11 +46,18 @@ export default function HireByCountryPage() {
                     Secure, Professional Workspaces Included
                 </h2>
                 <p className="mt-4 text-muted-foreground">
-                    Your team’s productivity and security shouldn't be left to chance in a home office or coffee shop. Through our unique partnership with <a href="https://www.wework.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">WeWork</a>, every TeamStation AI engineer has access to a secure, modern office environment across Latin America. This isn't an add-on; it's part of our all-inclusive service, ensuring your team has reliable internet, a professional setting, and a secure space to work, all while maintaining <Tooltip text="SOC 2 is a compliance standard for service organizations, specifying how organizations should manage customer data.">SOC 2</Tooltip> and <Tooltip text="ISO 27001 is the international standard for information security management.">ISO</Tooltip>-aligned operational standards.
+                    Your team’s productivity and security shouldn't be left to chance in a home office or a coffee shop. Through our unique partnership with <a href="https://www.wework.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">WeWork</a>, every TeamStation AI engineer has access to a secure, modern office environment across Latin America. This isn't an add-on; it's part of our all-inclusive service, ensuring your team has reliable internet, a professional setting, and a secure space to work, all while maintaining <Tooltip text="SOC 2 is a compliance standard for service organizations, specifying how organizations should manage customer data.">SOC 2</Tooltip> and <Tooltip text="ISO 27001 is the international standard for information security management.">ISO</Tooltip>-aligned operational standards.
                 </p>
             </div>
             <div className="flex justify-center">
-                <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=600&h=400&auto=format&fit=crop" alt="Modern WeWork office interior" className="rounded-lg shadow-lg aspect-video object-cover" />
+                <Image 
+                    src={weworkImage.src.url} 
+                    alt={weworkImage.alt} 
+                    width={weworkImage.src.width}
+                    height={weworkImage.src.height}
+                    className="rounded-lg shadow-lg aspect-video object-cover" 
+                    data-ai-hint={weworkImage.aiHint}
+                />
             </div>
         </div>
       </div>
