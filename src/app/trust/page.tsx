@@ -92,10 +92,10 @@ export default function TrustPage() {
       </div>
 
       <div className="text-center rounded-lg bg-primary/10 p-8">
-        <h2 className="text-2xl font-bold">Want the Deep Dive?</h2>
-        <p className="mt-2 mx-auto max-w-xl text-muted-foreground">Explore our CTO Playbook chapter on Security & Compliance for a detailed breakdown of our strategies and controls.</p>
-        <Link href="/playbook/security-compliance" className="cta-button mt-6">
-            Read the Playbook <ArrowRight className="ml-2 h-4 w-4"/>
+        <h2 className="text-2xl font-bold">Security is Our Default Setting</h2>
+        <p className="mt-2 mx-auto max-w-xl text-muted-foreground">Explore our process and see how our commitment to security is built into every step of our platform.</p>
+        <Link href="/process" className="cta-button mt-6">
+            Explore Our Process <ArrowRight className="ml-2 h-4 w-4"/>
         </Link>
       </div>
     </main>

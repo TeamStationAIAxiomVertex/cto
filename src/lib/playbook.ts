@@ -29,7 +29,7 @@ async function getFilenames(): Promise<string[]> {
 export async function getAllPlaybookSlugs(): Promise<string[]> {
     const filenames = await getFilenames();
     // Add slugs for custom pages
-    const customPageSlugs = ['build-vs-buy', 'security-compliance', 'bias-free-technical-hiring-axiom-cortex', 'latam-economics', 'nearshore-vs-offshore'];
+    const customPageSlugs = ['build-vs-buy', 'bias-free-technical-hiring-axiom-cortex', 'latam-economics', 'nearshore-vs-offshore'];
     const markdownSlugs = filenames.map(filename => filename.replace(/\.md$/, ''));
     
     // Combine and remove duplicates

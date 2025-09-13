@@ -16,7 +16,7 @@ export function Footer() {
         { href: '/playbook/latam-economics', label: 'LATAM Economics' },
         { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
         { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring' },
-        { href: '/playbook/security-compliance', label: 'Security & Compliance' },
+        { href: '/trust', label: 'Security & Compliance' },
       ],
       "What's Included": [
         { href: '/platform', label: 'Platform' },
