@@ -1,87 +1,97 @@
 
 import Link from 'next/link';
-import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane, UserCheck, School, Languages } from 'lucide-react';
+import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane, UserCheck, School, Languages, Zap, Users, Clock } from 'lucide-react';
 import type { Metadata } from 'next';
 
-const countries: { [key: string]: { name: string; highlights: string[] } } = {
+const countries: { [key: string]: { name: string; flag: React.ReactNode; psp: { pain: string; solution: string; proof: string; icon: React.ReactNode }[] } } = {
   'mexico': { 
     name: 'Mexico',
-    highlights: [
-        'Top engineering universities like Tec de Monterrey and UNAM produce thousands of skilled graduates annually.',
-        'Strong cultural alignment with the U.S. and significant English proficiency in tech hubs.',
-        'Central Time Zone overlap enables seamless real-time collaboration with U.S. teams.'
+    flag: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#006847" d="M0 0h3v2H0z"/><path fill="#fff" d="M1 0h2v2H1z"/><path fill="#ce1126" d="M2 0h1v2H2z"/></svg>,
+    psp: [
+      { pain: "Need perfect time-zone sync?", solution: "Engineers work in your time zone (CST/PST), enabling real-time pairing that eliminates communication delays.", proof: "4-8 hour daily overlap", icon: <Clock className="h-8 w-8 text-primary" /> },
+      { pain: "Struggling to find a deep talent pool?", solution: "Access a massive, mature tech market fueled by top universities like Tec de Monterrey, providing a stream of enterprise-level talent.", proof: "LATAM's largest nearshore market", icon: <Users className="h-8 w-8 text-primary" /> },
+      { pain: "Facing communication barriers?", solution: "Benefit from strong US cultural alignment and a large pool of bilingual engineers with excellent communication skills.", proof: "High English proficiency in tech hubs", icon: <Languages className="h-8 w-8 text-primary" /> },
     ]
   },
   'colombia': { 
     name: 'Colombia',
-    highlights: [
-        'A rapidly growing tech ecosystem, especially in Medellín and Bogotá, with strong government support.',
-        'High concentration of bilingual talent with excellent communication skills.',
-        'A resilient and adaptable workforce known for its strong problem-solving abilities.'
+    flag: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#fcd116" d="M0 0h3v2H0z"/><path fill="#003893" d="M0 1h3v.5H0z"/><path fill="#ce1126" d="M0 1.5h3v.5H0z"/></svg>,
+    psp: [
+       { pain: "Looking for a rapidly growing hub?", solution: "Tap into the vibrant ecosystems of Bogotá and Medellín, known for their adaptable, resilient, and fast-growing workforce.", proof: "Strong government support for tech", icon: <Zap className="h-8 w-8 text-primary" /> },
+       { pain: "Need strong soft skills?", solution: "Hire from a talent pool known for its high concentration of bilingual professionals with excellent communication and problem-solving abilities.", proof: "Top 5 in LATAM English proficiency", icon: <Languages className="h-8 w-8 text-primary" /> },
+       { pain: "Is your team adaptable enough?", solution: "Leverage a workforce renowned for its resilience and ability to thrive in fast-paced, agile environments.", proof: "Proven problem-solving mindset", icon: <BrainCircuit className="h-8 w-8 text-primary" /> },
     ]
   },
   'brazil': { 
     name: 'Brazil',
-    highlights: [
-        'The largest talent pool in Latin America, with deep expertise in complex domains like FinTech and Data Science.',
-        'World-class universities and a vibrant startup scene foster continuous innovation.',
-        'Engineers are known for their creativity and ability to handle large-scale, complex systems.'
+    flag: <svg width="24" height="24" viewBox="0 0 10 7"><path fill="#009b3a" d="M0 0h10v7H0z"/><path fill="#fedf00" d="M5 1L1 3.5 5 6l4-2.5z"/><circle cx="5" cy="3.5" r="1.75" fill="#002776"/></svg>,
+    psp: [
+        { pain: "Need talent for complex systems?", solution: "Access the largest talent pool in LATAM, with world-class expertise in FinTech, Data Science, and large-scale backend systems.", proof: "LATAM's #1 market by volume", icon: <Users className="h-8 w-8 text-primary" /> },
+        { pain: "Struggling with innovation?", solution: "Tap into a vibrant startup scene and world-class universities that foster a culture of creativity and continuous innovation.", proof: "Hub for FinTech & Data Science", icon: <BrainCircuit className="h-8 w-8 text-primary" /> },
+        { pain: "Are your systems built to scale?", solution: "Hire engineers known for their creativity and proven ability to design, build, and handle highly complex, scalable systems.", proof: "Deep expertise in large-scale architecture", icon: <Layers className="h-8 w-8 text-primary" /> },
     ]
    },
   'argentina': { 
     name: 'Argentina',
-    highlights: [
-        'Exceptionally high English proficiency and a strong educational system.',
-        'A mature tech market with a deep pool of senior and lead-level engineers.',
-        'Strong European cultural ties foster a diverse and globally-minded workforce.'
+    flag: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#74acdf" d="M0 0h3v2H0z"/><path fill="#fff" d="M0 .67h3v.66H0z"/></svg>,
+    psp: [
+        { pain: "Frustrated with language barriers?", solution: "Benefit from the highest English proficiency in LATAM, ensuring clear, nuanced communication and reducing misunderstandings.", proof: "Highest English proficiency in LATAM", icon: <Languages className="h-8 w-8 text-primary" /> },
+        { pain: "Need more than just junior talent?", solution: "Tap into a mature tech market with a deep pool of senior and lead-level engineers ready to take ownership and mentor others.", proof: "Deep pool of senior-level talent", icon: <Users className="h-8 w-8 text-primary" /> },
+        { pain: "Is your team globally aware?", solution: "Engage with a workforce shaped by strong European cultural ties, fostering a diverse, open, and globally-minded perspective.", proof: "Strong educational system", icon: <School className="h-8 w-8 text-primary" /> },
     ]
   },
   'chile': { 
     name: 'Chile',
-    highlights: [
-        'Considered one of the most stable and economically advanced countries in the region.',
-        'A strong emphasis on engineering and data science in its top universities.',
-        'A hub for enterprise-level B2B and financial services technology.'
+    flag: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#fff" d="M0 0h3v2H0z"/><path fill="#d52b1e" d="M0 1h3v1H0z"/><path fill="#0039a6" d="M0 0h1v1H0z"/><path fill="#fff" d="M.5.3l.1.3h.3L.6.8l.1.3-.2-.2-.3.2.1-.3L.3.6h.3z"/></svg>,
+    psp: [
+        { pain: "Worried about instability?", solution: "Hire from one of the most stable and economically advanced countries in the region, ensuring a reliable and predictable business environment.", proof: "Region's most stable economy", icon: <ShieldCheck className="h-8 w-8 text-primary" /> },
+        { pain: "Need enterprise-grade skills?", solution: "Access a talent pool with a strong emphasis on engineering and data science, making it a hub for enterprise B2B and financial technology.", proof: "Leader in B2B/financial tech", icon: <Briefcase className="h-8 w-8 text-primary" /> },
+        { pain: "Is your data strategy robust?", solution: "Leverage talent from top universities with a strong focus on data science and rigorous engineering principles.", proof: "Strong focus on data science", icon: <Database className="h-8 w-8 text-primary" /> },
     ]
    },
   'peru': { 
     name: 'Peru',
-    highlights: [
-        'A rising tech scene with a growing pool of skilled mobile and web developers.',
-        'Strong work ethic and cultural affinity with North American business practices.',
-        'A cost-effective location without compromising on technical quality.'
+    flag: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#d91023" d="M0 0h3v2H0z"/><path fill="#fff" d="M1 0h1v2H1z"/></svg>,
+    psp: [
+        { pain: "Budget stretched thin?", solution: "Tap into a rising tech scene that offers a significant cost advantage without compromising on the quality of mobile and web development talent.", proof: "Excellent cost/quality ratio", icon: <Wallet className="h-8 w-8 text-primary" /> },
+        { pain: "Need a stronger work ethic?", solution: "Engage with engineers known for their dedication and strong work ethic, combined with a high cultural affinity for North American business practices.", proof: "High cultural affinity", icon: <UserCheck className="h-8 w-8 text-primary" /> },
+        { pain: "Looking for emerging talent?", solution: "Access a growing pool of skilled mobile and web developers in a tech scene that is rapidly expanding and eager to adopt new technologies.", proof: "Rising tech ecosystem", icon: <Zap className="h-8 w-8 text-primary" /> },
     ]
   },
   'costa-rica': { 
     name: 'Costa Rica',
-    highlights: [
-        'A major hub for U.S. tech companies, with a highly educated and bilingual workforce.',
-        'Politically stable with significant investment in technology and education.',
-        'Expertise in life sciences, medical devices, and enterprise software.'
+    flag: <svg width="24" height="24" viewBox="0 0 5 3"><path fill="#002b7f" d="M0 0h5v3H0z"/><path fill="#fff" d="M0 1h5v1H0z"/><path fill="#ce1126" d="M0 1.2h5v.6H0z"/></svg>,
+    psp: [
+        { pain: "Need a proven U.S. tech hub?", solution: "Hire from a major hub for U.S. tech companies, with a highly educated, bilingual workforce accustomed to enterprise-level expectations.", proof: "Major hub for US tech companies", icon: <Briefcase className="h-8 w-8 text-primary" /> },
+        { pain: "Is political risk a concern?", solution: "Operate in a politically stable country with significant foreign investment in technology and education, ensuring a secure long-term partnership.", proof: "Politically stable & secure", icon: <ShieldCheck className="h-8 w-8 text-primary" /> },
+        { pain: "Need specialized expertise?", solution: "Access a talent pool with deep expertise in specialized, high-stakes domains like life sciences, medical devices, and enterprise software.", proof: "Expertise in life sciences", icon: <BrainCircuit className="h-8 w-8 text-primary" /> },
     ]
   },
   'uruguay': { 
     name: 'Uruguay',
-    highlights: [
-        'One of the most digitally advanced countries in LATAM with excellent infrastructure.',
-        'A strong focus on software exports and a highly skilled, specialized talent pool.',
-        'A stable, business-friendly environment with a high quality of life.'
+    flag: <svg width="24" height="24" viewBox="0 0 3 2"><g fill="#fff"><path d="M0 0h3v2H0z"/><path fill="#0038a8" d="M0 .2h3v.2H0zm0 .4h3v.2H0zm0 .8h3v.2H0zm0 .4h3v.2H0z"/></g><path fill="#fcd116" d="M.3.2c.1-.1.3-.1.4 0 .1.1.1.3 0 .4-.1.1-.3.1-.4 0-.1-.1-.1-.3 0-.4z"/></svg>,
+    psp: [
+        { pain: "Is poor infrastructure a bottleneck?", solution: "Leverage one of the most digitally advanced countries in LATAM, with excellent internet and power infrastructure ensuring high uptime.", proof: "LATAM's most advanced digital infrastructure", icon: <Server className="h-8 w-8 text-primary" /> },
+        { pain: "Need specialized, high-skill talent?", solution: "Access a highly skilled and specialized talent pool with a strong focus on software exports and complex application development.", proof: "Top software exporter per capita", icon: <Zap className="h-8 w-8 text-primary" /> },
+        { pain: "Worried about business friction?", solution: "Partner with a stable, business-friendly environment that has a high quality of life, leading to better talent retention.", proof: "High-retention, stable environment", icon: <UserCheck className="h-8 w-8 text-primary" /> },
     ]
   },
   'ecuador': {
     name: 'Ecuador',
-    highlights: [
-        'An emerging talent market with a growing number of skilled engineers in Quito and Guayaquil.',
-        'Strong desire to work with U.S. companies, leading to high engagement and retention.',
-        'Offers a significant cost advantage while developing a strong tech ecosystem.'
+    flag: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#fcd116" d="M0 0h3v2H0z"/><path fill="#003893" d="M0 1h3v.5H0z"/><path fill="#ce1126" d="M0 1.5h3v.5H0z"/></svg>,
+    psp: [
+        { pain: "Need a significant cost advantage?", solution: "Access an emerging talent market that offers one of the best cost-to-quality ratios in the region for skilled engineers.", proof: "Significant cost advantage", icon: <Wallet className="h-8 w-8 text-primary" /> },
+        { pain: "Is talent engagement a problem?", solution: "Hire from a pool of engineers with a strong desire to work with U.S. companies, leading to higher engagement, motivation, and retention.", proof: "High motivation & retention", icon: <UserCheck className="h-8 w-8 text-primary" /> },
+        { pain: "Want to get in on a growing market?", solution: "Invest in an emerging tech ecosystem with a growing number of skilled engineers in hubs like Quito and Guayaquil.", proof: "Emerging talent market", icon: <Zap className="h-8 w-8 text-primary" /> },
     ]
   },
   'guatemala': {
     name: 'Guatemala',
-    highlights: [
-        'A growing tech hub in Central America with a large, young, and motivated talent pool.',
-        'Strong cultural affinity with the U.S. and a service-oriented workforce.',
-        'Offers excellent Central Time Zone alignment and a cost-effective environment for scaling teams.'
+    flag: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#4997d0" d="M0 0h3v2H0z"/><path fill="#fff" d="M1 0h1v2H1z"/></svg>,
+    psp: [
+        { pain: "Need perfect Central Time Zone alignment?", solution: "Collaborate in real-time with a large, young talent pool that shares the Central Time Zone, eliminating all communication lag.", proof: "Perfect CST alignment", icon: <Clock className="h-8 w-8 text-primary" /> },
+        { pain: "Are cultural gaps causing friction?", solution: "Partner with a workforce that has strong cultural affinity with the U.S. and a service-oriented mindset, ensuring smoother collaboration.", proof: "Strong U.S. cultural affinity", icon: <Users className="h-8 w-8 text-primary" /> },
+        { pain: "Is budget a primary constraint?", solution: "Leverage a cost-effective environment that allows you to scale your team more efficiently without sacrificing quality or time-zone alignment.", proof: "Highly cost-effective", icon: <Wallet className="h-8 w-8 text-primary" /> },
     ]
   },
 };
@@ -180,37 +190,29 @@ export default function CountryRolesPage({ params }: { params: { country: string
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <Link href="/hire/by-country" className="hover:text-foreground">By Country</Link> / <span>{country.name}</span>
       </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire Elite Engineers in {country.name}</h1>
+        <h1 className="flex items-center justify-center gap-4 text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+          <span className="h-10 w-10 rounded-sm overflow-hidden flex-shrink-0">{country.flag}</span>
+          Hire Elite Engineers in {country.name}
+        </h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             You're here because you need world-class talent without the world-class time zone headaches. Access top-tier, pre-vetted engineers in {country.name}, fully aligned with your working hours.
         </p>
       </header>
 
-      <div className="my-16 rounded-lg border bg-card p-8">
-        <h2 className="text-3xl font-bold text-center">Why {country.name} for Top Engineering Talent?</h2>
-        <div className="grid md:grid-cols-3 gap-8 mt-8 text-muted-foreground">
-            <div className='flex items-start gap-4'>
-                <School className='h-8 w-8 text-primary shrink-0 mt-1'/>
-                <div>
-                    <h3 className='font-semibold text-foreground'>Strong Educational Foundation</h3>
-                    <p className='text-sm'>{country.highlights[0]}</p>
+      <div className="my-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {country.psp.map((card) => (
+            <div key={card.pain} className="rounded-lg border bg-card p-6 flex flex-col">
+                <p className="text-sm font-semibold text-primary">{card.pain}</p>
+                <div className="flex items-center gap-3 mt-3">
+                    {card.icon}
+                    <h3 className="text-lg font-semibold text-foreground">The Solution</h3>
                 </div>
+                <p className="mt-4 text-sm text-muted-foreground flex-grow">{card.solution}</p>
+                <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
+                    <span className='font-bold'>Proof:</span> {card.proof}
+                </p>
             </div>
-            <div className='flex items-start gap-4'>
-                <Languages className='h-8 w-8 text-primary shrink-0 mt-1'/>
-                <div>
-                    <h3 className='font-semibold text-foreground'>Language & Cultural Alignment</h3>
-                    <p className='text-sm'>{country.highlights[1]}</p>
-                </div>
-            </div>
-            <div className='flex items-start gap-4'>
-                <UserCheck className='h-8 w-8 text-primary shrink-0 mt-1'/>
-                <div>
-                    <h3 className='font-semibold text-foreground'>Professional & Collaborative</h3>
-                    <p className='text-sm'>{country.highlights[2]}</p>
-                </div>
-            </div>
-        </div>
+        ))}
       </div>
 
 
@@ -246,3 +248,5 @@ export default function CountryRolesPage({ params }: { params: { country: string
 export async function generateStaticParams() {
   return Object.keys(countries).map(country => ({ country }));
 }
+
+    
