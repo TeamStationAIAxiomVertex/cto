@@ -78,8 +78,9 @@ export function Header() {
               </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <ThemeToggle />
+           <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hidden sm:inline-flex">Sign In</Link>
           <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button hidden sm:inline-flex">Book a Call</Link>
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="inline-flex h-10 w-10 items-center justify-center rounded-md border bg-transparent text-muted-foreground">
@@ -108,6 +109,9 @@ export function Header() {
                     {item.title}
                 </Link>
             ))}
+            <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="block font-semibold text-foreground hover:text-primary" onClick={() => setIsOpen(false)}>
+                Sign In
+            </Link>
              <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button w-full mt-4">Book a Call</Link>
           </div>
         </div>
@@ -115,5 +119,3 @@ export function Header() {
     </header>
   );
 }
-
-    
