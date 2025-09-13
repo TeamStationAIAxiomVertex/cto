@@ -2,9 +2,10 @@
 import { Search, BrainCircuit, Handshake, Rocket, ShieldCheck, UserCheck, FileSearch, GanttChartSquare, Check, BookOpen, Star, Trophy, Beaker } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
-  title: 'Our Nearshore IT Staff Augmentation Process | TeamStation AI',
+  title: 'Our Nearshore IT Staff Augmentation Process | One Accountable SLA',
   description: 'Our engineered system for hiring LATAM engineers under one SLA. From role calibration and AI-vetting to secure devices and first PR, we deliver Day-1-ready talent.',
 };
 
@@ -23,10 +24,34 @@ export default function ProcessPage() {
     ];
 
     const securityPillars = [
-        { icon: <FileSearch className="h-8 w-8 text-primary"/>, title: 'EOR & Country Compliance', description: 'Contracts, payroll, statutory benefits, PTO, taxes—fully compliant per country.' },
-        { icon: <ShieldCheck className="h-8 w-8 text-primary"/>, title: 'Device Security & MDM', description: 'Encrypted endpoints, provisioning, auto-patching, 24/7 monitoring, remote lock/wipe.' },
-        { icon: <GanttChartSquare className="h-8 w-8 text-primary"/>, title: 'Insurance & IP Protection', description: 'Cyber/E&O coverage, NDAs & DPAs, work-for-hire IP assignment, U.S.-enforceable agreements.' },
-        { icon: <UserCheck className="h-8 w-8 text-primary"/>, title: 'Background & Identity Checks', description: 'KYC, criminal record, employment & education verification, optional credit checks.' }
+        { 
+            icon: <FileSearch className="h-8 w-8 text-primary"/>,
+            pain: "Worried about navigating complex local labor laws?",
+            title: 'EOR & Country Compliance', 
+            description: 'Contracts, payroll, statutory benefits, PTO, taxes—fully compliant per country and contractually guaranteed in the SOW.',
+            kpi: "Zero compliance overhead"
+        },
+        { 
+            icon: <ShieldCheck className="h-8 w-8 text-primary"/>,
+            pain: "Exposed by insecure remote laptops?",
+            title: 'Device Security & MDM', 
+            description: 'Encrypted endpoints, provisioning, auto-patching, 24/7 monitoring, and remote lock/wipe, all governed by the MSA.',
+            kpi: "MDM enrollment ≥99% (24h)"
+        },
+        { 
+            icon: <GanttChartSquare className="h-8 w-8 text-primary"/>, 
+            pain: "Carrying all the liability for vendor mistakes?",
+            title: 'Insurance & IP Protection', 
+            description: 'Cyber/E&O coverage, NDAs & DPAs, and work-for-hire IP assignment, all defined in the Master Services Agreement.',
+            kpi: "Liability shield included"
+        },
+        { 
+            icon: <UserCheck className="h-8 w-8 text-primary"/>, 
+            pain: "Unsure who you're really hiring?",
+            title: 'Background & Identity Checks', 
+            description: 'KYC, criminal record, employment & education verification, with results stored in an auditable evidence locker.',
+            kpi: "100% auditable record"
+        }
     ];
 
     const recognitions = [
@@ -42,9 +67,9 @@ export default function ProcessPage() {
             <Link href="/" className="hover:text-foreground">Home</Link> / <span>Process</span>
         </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Nearshore IT Co-Pilot™ Process</h1>
+        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">One Accountable Process, Guaranteed by Contract</h1>
         <p className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
-          This isn't a checklist; it's an engineered system. Our Nearshore IT Co-Pilot™ provides one accountable workflow for hiring, EOR/payroll, compliance, and secure devices, all under a single SLA. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
+          This isn't a checklist; it's an engineered system. Our Nearshore IT Co-Pilot™ provides one accountable workflow for hiring, compliance, and secure devices, governed by a single <Tooltip text="A Master Services Agreement (MSA) and Statement of Work (SOW) form a legally binding contract for our services.">MSA/SOW</Tooltip>. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
         </p>
          <div className="mt-6 font-semibold text-primary">
             Time-to-Offer ≈ 9 days • Day-1 Tool Readiness ≥ 95% • First PR in 7–14 days
@@ -87,14 +112,20 @@ export default function ProcessPage() {
        <div className="my-24 text-center">
         <h2 className="text-4xl font-bold">Security, Compliance & Liability — Under One SLA</h2>
         <p className='mt-4 mx-auto max-w-3xl text-lg text-muted-foreground'>
-            We carry the risk. You keep the velocity.
+            We carry the risk, contractually. You keep the velocity.
         </p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-12 gap-8 max-w-6xl mx-auto'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 mt-12 gap-8 max-w-4xl mx-auto'>
             {securityPillars.map(pillar => (
-                 <div className="flex flex-col items-center text-center p-4 rounded-lg border bg-card" key={pillar.title}>
-                    {pillar.icon}
-                    <h3 className="mt-4 text-lg font-semibold text-foreground">{pillar.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{pillar.description}</p>
+                <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col text-left">
+                    <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
+                    <div className="flex items-center gap-3 mt-3">
+                        {pillar.icon}
+                        <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
+                    </div>
+                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{pillar.description}</p>
+                    <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
+                        <span className='font-bold'>Proof:</span> {pillar.kpi}
+                    </p>
                 </div>
             ))}
         </div>
