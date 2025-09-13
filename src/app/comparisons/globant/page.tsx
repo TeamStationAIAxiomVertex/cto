@@ -35,7 +35,7 @@ export default function GlobantComparisonPage() {
       <div className="flex flex-col md:flex-row gap-8 my-12">
         <div className="rounded-lg border-2 border-primary/50 flex-1 p-8 bg-card">
           <h2 className="text-2xl font-bold text-center text-foreground">TeamStation AI</h2>
-          <p className="text-center text-sm text-muted-foreground mb-6">The Integrated Nearshore IT Co-Pilot™</p>
+          <p className="text-center text-sm text-muted-foreground mb-6">The Nearshore IT Co-Pilot™</p>
           <div className="space-y-3">
             {comparisonData.map(item => (
               <div key={item.feature} className="flex items-start gap-3">

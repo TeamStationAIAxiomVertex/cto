@@ -42,9 +42,9 @@ export default function ProcessPage() {
             <Link href="/" className="hover:text-foreground">Home</Link> / <span>Process</span>
         </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">From Mandate to Mission-Ready</h1>
+        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Nearshore IT Co-Pilot™ Process</h1>
         <p className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
-          This isn't a checklist; it's an engineered system. One accountable workflow for hiring, EOR/payroll, compliance, and secure devices, all under a single SLA. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
+          This isn't a checklist; it's an engineered system. Our Nearshore IT Co-Pilot™ provides one accountable workflow for hiring, EOR/payroll, compliance, and secure devices, all under a single SLA. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
         </p>
          <div className="mt-6 font-semibold text-primary">
             Time-to-Offer ≈ 9 days • Day-1 Tool Readiness ≥ 95% • First PR in 7–14 days
