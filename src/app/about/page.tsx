@@ -1,5 +1,5 @@
 
-import { Target, Telescope, Shield } from 'lucide-react';
+import { Target, Telescope, Shield, Star, Award, BookOpen, Beaker } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -26,13 +26,40 @@ export default function AboutPage() {
             description: 'To operate with radical transparency, grounding our processes in scientific rigor, and providing an unparalleled level of security and compliance for our partners.',
         },
     ];
+
+    const timeline = [
+        { year: 2017, event: "Kicked off the Self-funded Nearshore Staffing Services with legal entities in the United States and Mexico." },
+        { year: 2019, event: "Amassed a sizeable client listing that started funding the Research and Development of our Artificial Intelligence-driven SaaS Service Platform." },
+        { year: 2021, event: "Services expanded to South America with locations in Colombia and Brazil." },
+        { year: 2023, event: "Won TechBehemoths first place award for Artificial Intelligence and ranked as a TOP IT STAFF AUGMENTATION provider in Mexico by CLUTCH." },
+        { year: 2024, event: "Launched the AI-Driven SaaS platform with select clients and welcomed Dan Diachenko as Co-Founder to CEO Lonnie McRorey." },
+        { year: 2025, event: "Became the first company to publish two peer-reviewed scientific papers on Nearshore IT Staff Augmentation, validating our methodology." }
+    ];
+
+    const founders = [
+        { 
+            name: "Lonnie McRorey", 
+            role: "Co-Founder", 
+            image: "https://picsum.photos/seed/lonnie/200/200",
+            imageHint: "professional man",
+            bio: "Lonnie harnesses over 25 years of extensive technology experience to steer innovation. His visionary leadership seamlessly integrates Human-Centered AI, resulting in the delivery of efficient, adaptive solutions and has firmly positioned TeamStation AI as a trailblazer in the field of IT staff augmentation. He has a Cognitive Science Degree from Temple University.",
+        },
+        { 
+            name: "Dan Diachenko", 
+            role: "Co-Founder", 
+            image: "https://picsum.photos/seed/dan/200/200",
+            imageHint: "professional man",
+            bio: "Dan is transforming nearshore software development with AI and machine learning. Since 2017, he has focused on optimizing processes for faster, more efficient software creation. With extensive experience, including roles at the SIM National Chapter Advisory Council and Framework Science, Dan is committed to leveraging nearshore talent for unparalleled visibility and cost-savings. He holds a Bachelors Degree from Rollins College and an MBA from Universidad Torcuato Di Tella.",
+        }
+    ];
+
   return (
-    <main className="container max-w-5xl py-12">
+    <main className="container max-w-6xl py-12">
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>About</span>
       </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">We're Engineering a Better Way to Build Teams</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Engineering a Better Way to Build Teams</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           TeamStation AI was founded by engineers and operators who experienced the friction and risk of traditional outsourcing firsthand. We knew there had to be a better way—a way to combine the talent of nearshore with the security and efficiency of a modern technology platform.
         </p>
@@ -57,9 +84,50 @@ export default function AboutPage() {
             Our innovation lies in unifying every part of the process under a single SLA. We use cognitive science and AI for vetting (<Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>). We provide an end-to-end operational wrapper that includes EOR, payroll, secure devices, and insurance. We give you the tools and the data to run your nearshore team with the same confidence and control as your team down the hall.
         </p>
         <p>
-            This is the future of team building. We invite you to be a part of it.
+           At the core of every technological advance lies a team of brilliant minds. The NASA Space Program exemplifies this ethos, showcasing how the paramount challenge of sending humans to space can be overcome through a united mission. This inspires us to push boundaries and explore new frontiers. This is the future of team building. We invite you to be a part of it.
         </p>
       </div>
+
+       <section className="my-24">
+        <h2 className="text-center text-4xl font-bold text-foreground">Meet the Founders</h2>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          {founders.map(founder => (
+            <div key={founder.name} className="flex flex-col items-center text-center">
+              <img src={founder.image} alt={`Portrait of ${founder.name}`} data-ai-hint={founder.imageHint} className="h-40 w-40 rounded-full object-cover shadow-lg" />
+              <h3 className="mt-6 text-2xl font-bold">{founder.name}</h3>
+              <p className="text-primary font-semibold">{founder.role}</p>
+              <p className="mt-2 text-muted-foreground">{founder.bio}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      
+      <section className="my-24">
+        <h2 className="text-center text-4xl font-bold text-foreground">Our Journey</h2>
+        <div className="mt-12 flow-root">
+          <div className="max-w-3xl mx-auto">
+            <ul className="-mb-8">
+              {timeline.map((item, itemIdx) => (
+                <li key={item.year}>
+                  <div className="relative pb-8">
+                    {itemIdx !== timeline.length - 1 ? (
+                      <span className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-border" aria-hidden="true" />
+                    ) : null}
+                    <div className="relative flex items-start space-x-4">
+                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center ring-8 ring-background flex-shrink-0">
+                          <span className="text-primary font-bold">{item.year}</span>
+                        </div>
+                      <div className="min-w-0 flex-1 pt-1.5">
+                        <p className="text-muted-foreground">{item.event}</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
 
       <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Ready to Experience the Difference?</h2>
