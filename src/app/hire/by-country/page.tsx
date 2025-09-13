@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 };
 
 const countries = [
-    { name: 'Mexico', slug: 'mexico', pain: 'Need US time-zone overlap with a massive talent pool?', solution: 'Leverage the largest and most mature nearshore market, with deep expertise in enterprise software and a huge pool of bilingual engineers.', kpi: '3-hour overlap with PST/CST/EST' },
-    { name: 'Colombia', slug: 'colombia', pain: 'Looking for a rapidly growing hub with strong bilingual skills?', solution: 'Tap into the vibrant ecosystems of Bogotá and Medellín, known for their adaptable workforce and strong government support for tech.', kpi: 'Top 5 in LATAM English proficiency' },
-    { name: 'Brazil', slug: 'brazil', pain: 'Need talent for complex, large-scale systems?', solution: 'Access the largest talent pool in LATAM, with world-class expertise in FinTech, Data Science, and complex backend systems.', kpi: 'LATAM\'s #1 talent market by volume' },
-    { name: 'Argentina', slug: 'argentina', pain: 'Searching for highly-educated, senior talent?', solution: 'Benefit from a mature market with exceptionally high English proficiency and a deep pool of senior and lead-level engineers.', kpi: 'Highest English proficiency in LATAM' },
-    { name: 'Chile', slug: 'chile', pain: 'Require enterprise-grade stability and skills?', solution: 'Engage with one of the most stable and economically advanced countries in the region, with a strong emphasis on engineering and data science.', kpi: 'Regional leader in B2B/financial tech' },
-    { name: 'Peru', slug: 'peru', pain: 'Need a cost-effective location without quality loss?', solution: 'Tap into a rising tech scene with a growing pool of skilled mobile and web developers known for their strong work ethic.', kpi: 'Strong cost/quality ratio' },
+    { name: 'Mexico', slug: 'mexico', pain: 'Need US time-zone overlap with a massive talent pool?', solution: 'Leverage the largest and most mature nearshore market, with deep expertise in enterprise software and a huge pool of bilingual engineers.', kpi: '3-hour overlap with PST/CST/EST', icon: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#006847" d="M0 0h3v2H0z"/><path fill="#fff" d="M1 0h2v2H1z"/><path fill="#ce1126" d="M2 0h1v2H2z"/></svg> },
+    { name: 'Colombia', slug: 'colombia', pain: 'Looking for a rapidly growing hub with strong bilingual skills?', solution: 'Tap into the vibrant ecosystems of Bogotá and Medellín, known for their adaptable workforce and strong government support for tech.', kpi: 'Top 5 in LATAM English proficiency', icon: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#fcd116" d="M0 0h3v2H0z"/><path fill="#003893" d="M0 1h3v.5H0z"/><path fill="#ce1126" d="M0 1.5h3v.5H0z"/></svg> },
+    { name: 'Brazil', slug: 'brazil', pain: 'Need talent for complex, large-scale systems?', solution: 'Access the largest talent pool in LATAM, with world-class expertise in FinTech, Data Science, and complex backend systems.', kpi: 'LATAM\'s #1 talent market by volume', icon: <svg width="24" height="24" viewBox="0 0 10 7"><path fill="#009b3a" d="M0 0h10v7H0z"/><path fill="#fedf00" d="M5 1L1 3.5 5 6l4-2.5z"/><circle cx="5" cy="3.5" r="1.75" fill="#002776"/></svg> },
+    { name: 'Argentina', slug: 'argentina', pain: 'Searching for highly-educated, senior talent?', solution: 'Benefit from a mature market with exceptionally high English proficiency and a deep pool of senior and lead-level engineers.', kpi: 'Highest English proficiency in LATAM', icon: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#74acdf" d="M0 0h3v2H0z"/><path fill="#fff" d="M0 .67h3v.66H0z"/></svg> },
+    { name: 'Chile', slug: 'chile', pain: 'Require enterprise-grade stability and skills?', solution: 'Engage with one of the most stable and economically advanced countries in the region, with a strong emphasis on engineering and data science.', kpi: 'Regional leader in B2B/financial tech', icon: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#fff" d="M0 0h3v2H0z"/><path fill="#d52b1e" d="M0 1h3v1H0z"/><path fill="#0039a6" d="M0 0h1v1H0z"/><path fill="#fff" d="M.5.3l.1.3h.3L.6.8l.1.3-.2-.2-.3.2.1-.3L.3.6h.3z"/></svg> },
+    { name: 'Peru', slug: 'peru', pain: 'Need a cost-effective location without quality loss?', solution: 'Tap into a rising tech scene with a growing pool of skilled mobile and web developers known for their strong work ethic.', kpi: 'Strong cost/quality ratio', icon: <svg width="24" height="24" viewBox="0 0 3 2"><path fill="#d91023" d="M0 0h3v2H0z"/><path fill="#fff" d="M1 0h1v2H1z"/></svg> },
 ];
 
 export default function HireByCountryPage() {
@@ -61,7 +61,10 @@ export default function HireByCountryPage() {
             {countries.map((country) => (
                 <div key={country.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                     <p className="text-sm font-semibold text-primary">{country.pain}</p>
-                    <h3 className="mt-3 text-xl font-bold text-foreground">{country.name}</h3>
+                    <div className="mt-3 flex items-center gap-3">
+                        <span className="h-6 w-6 rounded-sm overflow-hidden flex-shrink-0">{country.icon}</span>
+                        <h3 className="text-xl font-bold text-foreground">{country.name}</h3>
+                    </div>
                     <p className="mt-2 text-sm text-muted-foreground flex-grow">{country.solution}</p>
                     <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{country.kpi}</p>
                     <Link href={`/hire/by-country/${country.slug}`} className="mt-6 flex items-center text-sm font-semibold text-primary stretched-link">
