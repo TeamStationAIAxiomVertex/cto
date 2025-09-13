@@ -1,5 +1,5 @@
 
-import { Target, Telescope, Shield, Star, Award, BookOpen, Beaker } from 'lucide-react';
+import { Target, Telescope, Shield, Star, Award, BookOpen, Beaker, Users } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -36,23 +36,6 @@ export default function AboutPage() {
         { year: 2025, event: "Became the first company to publish two peer-reviewed scientific papers on Nearshore IT Staff Augmentation, validating our methodology." }
     ];
 
-    const founders = [
-        { 
-            name: "Lonnie McRorey", 
-            role: "Co-Founder", 
-            image: "https://picsum.photos/seed/lonnie/200/200",
-            imageHint: "professional man",
-            bio: "Lonnie harnesses over 25 years of extensive technology experience to steer innovation. His visionary leadership seamlessly integrates Human-Centered AI, resulting in the delivery of efficient, adaptive solutions and has firmly positioned TeamStation AI as a trailblazer in the field of IT staff augmentation. He has a Cognitive Science Degree from Temple University.",
-        },
-        { 
-            name: "Dan Diachenko", 
-            role: "Co-Founder", 
-            image: "https://picsum.photos/seed/dan/200/200",
-            imageHint: "professional man",
-            bio: "Dan is transforming nearshore software development with AI and machine learning. Since 2017, he has focused on optimizing processes for faster, more efficient software creation. With extensive experience, including roles at the SIM National Chapter Advisory Council and Framework Science, Dan is committed to leveraging nearshore talent for unparalleled visibility and cost-savings. He holds a Bachelors Degree from Rollins College and an MBA from Universidad Torcuato Di Tella.",
-        }
-    ];
-
   return (
     <main className="container max-w-6xl py-12">
       <div className="text-sm text-muted-foreground">
@@ -61,7 +44,7 @@ export default function AboutPage() {
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Engineering a Better Way to Build Teams</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          TeamStation AI was founded by engineers and operators who experienced the friction and risk of traditional outsourcing firsthand. We knew there had to be a better way—a way to combine the talent of nearshore with the security and efficiency of a modern technology platform.
+          TeamStation AI was founded on a simple premise: the traditional outsourcing model is broken. We knew there had to be a better way—a way to combine the talent of nearshore with the security and efficiency of a modern technology platform.
         </p>
       </header>
 
@@ -88,17 +71,13 @@ export default function AboutPage() {
         </p>
       </div>
 
-       <section className="my-24">
-        <h2 className="text-center text-4xl font-bold text-foreground">Meet the Founders</h2>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          {founders.map(founder => (
-            <div key={founder.name} className="flex flex-col items-center text-center">
-              <img src={founder.image} alt={`Portrait of ${founder.name}`} data-ai-hint={founder.imageHint} className="h-40 w-40 rounded-full object-cover shadow-lg" />
-              <h3 className="mt-6 text-2xl font-bold">{founder.name}</h3>
-              <p className="text-primary font-semibold">{founder.role}</p>
-              <p className="mt-2 text-muted-foreground">{founder.bio}</p>
-            </div>
-          ))}
+      <section className="my-24 rounded-lg border bg-card p-8">
+        <h2 className="text-center text-4xl font-bold text-foreground">Led by Experts</h2>
+        <div className="mt-8 flex flex-col items-center text-center max-w-4xl mx-auto">
+            <Users className="h-12 w-12 text-primary" />
+            <p className="mt-4 text-muted-foreground">
+                TeamStation AI is guided by a multi-disciplinary executive team with decades of experience across technology, science, and operations. Our leadership includes Co-Founders Lonnie McRorey, a Cognitive Science graduate from Temple University with 25 years in technology, and Dan Diachenko, an MBA graduate from Universidad Torcuato Di Tella focused on AI-driven process optimization. They are supported by a robust LATAM leadership team with deep expertise in regional law, AI research, SaaS platform technology, people operations, and finance. This blend of strategic vision and on-the-ground operational excellence ensures our platform is not only innovative but also secure, compliant, and scalable.
+            </p>
         </div>
       </section>
       
