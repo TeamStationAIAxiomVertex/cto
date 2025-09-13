@@ -51,7 +51,7 @@ export default function AboutPage() {
        <div className="prose prose-lg dark:prose-invert mx-auto my-16">
         <h2 className="text-center">The TeamStation AI Difference</h2>
         <p>
-            We are not a staffing agency. We are not a consulting firm. We are a technology company. Our product is a fully integrated platform—the Nearshore IT Co-Pilot™—that solves the hardest parts of building a remote team.
+            We are not a staffing agency. We are not a consulting firm. We are a technology company. Our product is a fully integrated platform—the <Link href="/process">Nearshore IT Co-Pilot™</Link>—that solves the hardest parts of building a remote team.
         </p>
         <p>
             Our innovation lies in unifying every part of the process under a single SLA. We use cognitive science and AI for vetting (<Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>). We provide an end-to-end operational wrapper that includes EOR, payroll, secure devices, and insurance. We give you the tools and the data to run your nearshore team with the same confidence and control as your team down the hall.
