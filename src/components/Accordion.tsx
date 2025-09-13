@@ -47,4 +47,9 @@ const AccordionItem = ({ title, children }: AccordionItemProps) => {
   );
 };
 
-export { AccordionItem };
+const Accordion = ({ children }: { children: ReactNode }) => {
+    return <div className="space-y-2">{children}</div>;
+};
+
+
+export { Accordion, AccordionItem };

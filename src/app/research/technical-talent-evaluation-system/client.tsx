@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
   Cell,
 } from 'recharts';
-import { AccordionItem } from '@/components/Accordion';
+import { Accordion, AccordionItem } from '@/components/Accordion';
 import { ShieldCheck, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 
