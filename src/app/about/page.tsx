@@ -1,5 +1,5 @@
 
-import { Target, Telescope, Shield, Star, Award, BookOpen, Beaker, Users } from 'lucide-react';
+import { Target, Telescope, Shield, Users } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
