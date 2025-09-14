@@ -20,6 +20,8 @@ const techCategories = [
       { name: 'Java', slug: 'java' },
       { name: 'Go', slug: 'go' },
       { name: '.NET', slug: 'net' },
+      { name: 'Ruby on Rails', slug: 'ruby' },
+      { name: 'PHP (Laravel/Symphony)', slug: 'php' },
       { name: 'gRPC', slug: 'grpc' },
       { name: 'GraphQL', slug: 'graphql' },
     ],

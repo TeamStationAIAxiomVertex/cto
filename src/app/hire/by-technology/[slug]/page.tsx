@@ -90,6 +90,22 @@ const allTech: {
     pains: [], 
     evaluation: ['Modern ASP.NET Core patterns (middleware, DI)', 'Entity Framework Core mastery', 'Advanced LINQ proficiency', 'Azure service integrations (Functions, App Service)', 'Performance tuning and diagnostics'] 
   },
+  'ruby': {
+    name: 'Ruby on Rails',
+    category: 'APIs & Backend Services',
+    categorySlug: 'backend-services',
+    intro: "You're not just maintaining a Rails app; you're trying to scale one. You need an engineer who appreciates the 'Rails Way' but also knows when to deviate for performance. You're here because you need an expert who can optimize ActiveRecord, manage background jobs effectively, and ensure your mature codebase remains a competitive advantage, not a liability.",
+    pains: [],
+    evaluation: ['Deep ActiveRecord knowledge (scoping, includes/joins)', 'Background job processing (Sidekiq, Resque)', 'Performance tuning (database indexing, caching)', 'Modern Rails practices (Hotwire, Stimulus)', 'Testing with RSpec and Capybara']
+  },
+  'php': {
+    name: 'PHP (Laravel/Symphony)',
+    category: 'APIs & Backend Services',
+    categorySlug: 'backend-services',
+    intro: "You're not running a simple WordPress site. You're running a sophisticated application on a modern PHP framework like Laravel or Symfony, and you need an engineer who respects the craft. You're here because you need an expert who can leverage PHP's modern features, build robust systems with its powerful ecosystem (Composer, PHPUnit), and write clean, maintainable, and performant code.",
+    pains: [],
+    evaluation: ['Modern PHP features (PHP 8+)', 'Deep framework knowledge (Laravel or Symfony)', 'ORM proficiency (Eloquent, Doctrine)', 'Composer for dependency management', 'Testing with PHPUnit/Pest']
+  },
   'grpc': { 
     name: 'gRPC', 
     category: 'APIs & Backend Services', 
