@@ -8,7 +8,7 @@ import { DisclosureDrawer } from './DisclosureDrawer';
 
 const navItems = {
   'CTO Playbook': [
-    { href: '/playbook', title: 'The CTO Playbook', description: 'Go to the main playbook hub.', isHubLink: true },
+    { href: '/playbook/hub', title: 'The CTO Playbook', description: 'Go to the main playbook hub.', isHubLink: true },
     { href: '/playbook/nearshore-vs-offshore', title: 'Nearshore vs. Offshore', description: 'Diagnose the true cost of your global talent strategy.' },
     { href: '/playbook/latam-economics', title: 'LATAM Economics', description: 'A CFO-ready framework for modeling nearshore TCO.' },
     { href: '/playbook/build-vs-buy', title: 'Build vs. Buy', description: 'The trade-offs of building a nearshore operation from scratch.' },
