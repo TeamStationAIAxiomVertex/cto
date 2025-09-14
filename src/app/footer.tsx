@@ -1,12 +1,19 @@
 
 'use client';
 import Link from 'next/link';
-import { SpotifyIcon } from '@/components/SpotifyIcon';
+import { SpotifyIcon } from './SpotifyIcon';
+import type { ReactNode } from 'react';
+
+type LinkItem = {
+  href: string;
+  label: string;
+  icon?: ReactNode;
+};
 
 export function Footer() {
   const year = new Date().getFullYear();
 
-  const links = {
+  const links: { [key: string]: LinkItem[] } = {
       "Playbook": [
         { href: '/playbook/hub', label: 'Playbook Hub' },
         { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs. Offshore' },
@@ -53,7 +60,7 @@ export function Footer() {
                     {linkItems.map((link, i) => (
                         <li key={i} className="text-sm">
                             <Link href={link.href} className="transition-colors hover:text-foreground flex items-center">
-                              {link.label} {link.icon}
+                              {link.label} {link.icon && link.icon}
                             </Link>
                         </li>
                     ))}
