@@ -11,75 +11,66 @@ export const metadata: Metadata = {
 const techCategories = [
   {
     name: 'APIs & Backend Services',
+    slug: 'backend-services',
     pain: "Is your backend a bottleneck or a force multiplier?",
     icon: <Server className="h-6 w-6 text-primary" />,
     tech: ['Node (NestJS/Fastify)', 'Python (FastAPI/Django)', 'Java (Spring Boot)', 'Go (Gin/Fiber)', '.NET', 'gRPC', 'GraphQL (Apollo)'],
-    roleSlug: 'backend-services',
-    roleName: 'Backend / Services'
   },
   {
     name: 'Frontend & UI/UX',
+    slug: 'frontend-web',
     pain: "Is a slow, buggy UI costing you customers?",
     icon: <Layers className="h-6 w-6 text-primary" />,
     tech: ['React/TypeScript', 'Next.js/Vite', 'TanStack Query', 'Redux Toolkit/Zustand', 'Tailwind/shadcn/MUI', 'Testing Library'],
-    roleSlug: 'frontend-web',
-    roleName: 'Frontend / Web'
   },
   {
     name: 'Data Modeling & Databases',
+    slug: 'data-engineering-analytics',
     pain: "Is your data model built for scale or for future refactors?",
     icon: <Database className="h-6 w-6 text-primary" />,
     tech: ['PostgreSQL', 'MySQL', 'SQL Server', 'dbt', 'Prisma', 'SQLAlchemy', 'Hibernate', 'Redis', 'Memcached'],
-    roleSlug: 'data-engineering-analytics',
-    roleName: 'Data Engineering'
   },
   {
     name: 'Pipelines & Orchestration',
+    slug: 'data-engineering-analytics',
     pain: "Are your data pipelines brittle and unreliable?",
     icon: <Component className="h-6 w-6 text-primary" />,
     tech: ['Airflow/Prefect/Dagster', 'Kafka/RabbitMQ/NATS', 'Flink/Beam', 'Kubernetes', 'Docker'],
-    roleSlug: 'data-engineering-analytics',
-    roleName: 'Data Engineering'
   },
   {
     name: 'ML/AI & LLM Ops',
+    slug: 'ml-ai-llm-ops',
     pain: "Struggling to move AI from a notebook to production?",
     icon: <BrainCircuit className="h-6 w-6 text-primary" />,
     tech: ['PyTorch', 'Transformers', 'vLLM', 'Ray Serve', 'LangChain/LlamaIndex', 'pgvector/Pinecone', 'MLflow/W&B', 'Ragas'],
-    roleSlug: 'ml-ai-llm-ops',
-    roleName: 'ML/AI & LLM Ops'
   },
   {
     name: 'Observability & SRE',
+    slug: 'platform-infra-sre',
     pain: "Are you debugging in the dark when systems fail?",
     icon: <GanttChartSquare className="h-6 w-6 text-primary" />,
     tech: ['Prometheus', 'Grafana', 'OpenTelemetry', 'Jaeger/Loki', 'Terraform/Pulumi', 'Istio/Linkerd'],
-    roleSlug: 'platform-infra-sre',
-    roleName: 'Platform / Infra / SRE'
   },
   {
     name: 'Security & GRC',
+    slug: 'security-grc',
     pain: "Is compliance an afterthought or built into your stack?",
     icon: <ShieldCheck className="h-6 w-6 text-primary" />,
     tech: ['Vault', 'Okta/Auth0', 'CodeQL/SonarQube/Snyk', 'Trivy', 'OPA', 'SOC 2', 'ISO 27001', 'HIPAA'],
-    roleSlug: 'security-grc',
-    roleName: 'Security & GRC'
   },
   {
     name: 'Testing & Quality Engineering',
+    slug: 'qa-quality-engineering',
     pain: "Does 'shipping fast' also mean 'shipping bugs'?",
     icon: <TestTube2 className="h-6 w-6 text-primary" />,
     tech: ['Playwright/Cypress', 'Jest/Vitest', 'PyTest/JUnit', 'k6/Locust', 'Pact', 'Gremlin/Litmus'],
-    roleSlug: 'qa-quality-engineering',
-    roleName: 'QA / Quality Engineering'
   },
   {
     name: 'Cloud FinOps & BizTech',
+    slug: 'finops-biztech',
     pain: "Are runaway cloud costs eating into your margins?",
     icon: <Wallet className="h-6 w-6 text-primary" />,
     tech: ['CloudZero/Infracost', 'AWS Cost Explorer', 'Salesforce', 'HubSpot', 'Hightouch/Census'],
-    roleSlug: 'finops-biztech',
-    roleName: 'FinOps / BizTech'
   }
 ];
 
@@ -106,13 +97,18 @@ export default function HireByTechnologyPage() {
               <h2 className="text-xl font-bold text-foreground">{category.name}</h2>
             </div>
             <div className="flex flex-wrap gap-2 my-4">
-              {category.tech.map(tech => (
-                <span key={tech} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{tech}</span>
-              ))}
+              {category.tech.map(tech => {
+                const techSlug = tech.split(' ')[0].toLowerCase().replace(/[^a-z0-9]/g, '');
+                return (
+                  <Link href={`/hire/by-technology/${techSlug}`} key={tech} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary">
+                    {tech}
+                  </Link>
+                );
+              })}
             </div>
             <div className="flex-grow"></div>
-            <Link href={`/hire/by-role/${category.roleSlug}`} className="group mt-4 flex items-center text-sm font-semibold text-primary">
-              Proof: See {category.roleName} Roles
+            <Link href={`/hire/by-role/${category.slug}`} className="group mt-4 flex items-center text-sm font-semibold text-primary">
+              Related Role: {category.name}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
