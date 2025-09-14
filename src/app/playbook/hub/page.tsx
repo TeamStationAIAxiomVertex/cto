@@ -18,7 +18,7 @@ const crisisScenarios = [
     problem: 'Deadlines slip because decisions wait 12–24 hours for replies across time zones.',
     solutionHref: '/playbook/nearshore-vs-offshore',
     solutionLabel: 'Align time zones to accelerate delivery.',
-    icon: <Clock className="h-8 w-8 text-primary" />,
+    icon: <Clock className="h-8 w-8" />,
     proof: 'Cycle time ↓30–50%; lead time ↓25–40%'
   },
   {
@@ -27,7 +27,7 @@ const crisisScenarios = [
     problem: 'One question → one day lost. PR reviews stretch a week, blocking progress.',
     solutionHref: '/process',
     solutionLabel: 'Implement same-day PR review SLAs.',
-    icon: <GitCompare className="h-8 w-8 text-primary" />,
+    icon: <GitCompare className="h-8 w-8" />,
     proof: 'PR turnaround <8h median'
   },
   {
@@ -36,7 +36,7 @@ const crisisScenarios = [
     problem: 'Product, Design, and Eng can’t iterate because they don’t have real-time overlap.',
     solutionHref: '/hire/by-team-topologies',
     solutionLabel: 'Build product-aligned squads.',
-    icon: <Users className="h-8 w-8 text-primary" />,
+    icon: <Users className="h-8 w-8" />,
     proof: 'Story rework rate ↓20–35%'
   },
   {
@@ -45,7 +45,7 @@ const crisisScenarios = [
     problem: 'Your current vendor can’t adopt your tooling, rituals, and release cadence.',
     solutionHref: '/process',
     solutionLabel: 'Integrate new teams into your SDLC in days.',
-    icon: <Zap className="h-8 w-8 text-primary" />,
+    icon: <Zap className="h-8 w-8" />,
     proof: 'Time-to-first-useful-PR <7 days'
   },
   // Quality & Architecture
@@ -55,7 +55,7 @@ const crisisScenarios = [
     problem: 'Defects escape to prod because QA is an afterthought; your team is firefighting instead of building.',
     solutionHref: '/hire/by-role/qa-quality-engineering',
     solutionLabel: 'Embed nearshore SDETs to shift-left.',
-    icon: <TestTube2 className="h-8 w-8 text-primary" />,
+    icon: <TestTube2 className="h-8 w-8" />,
     proof: 'Defect escape rate ↓40–60%'
   },
   {
@@ -64,7 +64,7 @@ const crisisScenarios = [
     problem: 'Your vendor supplies ‘senior’ engineers who copy-paste code but can’t design scalable systems.',
     solutionHref: '/playbook/bias-free-technical-hiring-axiom-cortex',
     solutionLabel: 'Hire for architectural instinct, not just keywords.',
-    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+    icon: <BrainCircuit className="h-8 w-8" />,
     proof: 'Architectural churn ↓; fewer ‘rewrite’ ADRs'
   },
   {
@@ -73,7 +73,7 @@ const crisisScenarios = [
     problem: 'You have monolith fatigue; no one can safely carve out new domains or standardize APIs without breaking something.',
     solutionHref: '/hire/by-role/platform-infra-sre',
     solutionLabel: 'Deploy a platform team to enforce contracts.',
-    icon: <Layers className="h-8 w-8 text-primary" />,
+    icon: <Layers className="h-8 w-8" />,
     proof: 'p95 latency ↓; change failure rate ↓'
   },
     {
@@ -82,7 +82,7 @@ const crisisScenarios = [
     problem: 'Code is hard to understand, tech debt is piling up, and key decisions are lost in Slack history.',
     solutionHref: '/process',
     solutionLabel: 'Hire for clarity and maintainability.',
-    icon: <FileText className="h-8 w-8 text-primary" />,
+    icon: <FileText className="h-8 w-8" />,
     proof: 'New hire productivity ramp-up time ↓'
   },
   // Security & Compliance
@@ -92,7 +92,7 @@ const crisisScenarios = [
     problem: 'Enterprise security questionnaires are stalling revenue because your team can\'t prove compliance.',
     solutionHref: '/trust',
     solutionLabel: 'Get audit-ready with nearshore AppSec.',
-    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+    icon: <ShieldCheck className="h-8 w-8" />,
     proof: 'Vendor security review pass-rate ↑'
   },
   {
@@ -101,7 +101,7 @@ const crisisScenarios = [
     problem: 'You have secrets in repos, unauditable endpoints, and over-privileged access—a breach waiting to happen.',
     solutionHref: '/trust',
     solutionLabel: 'Enforce least-privilege with vaulted secrets.',
-    icon: <FileLock className="h-8 w-8 text-primary" />,
+    icon: <FileLock className="h-8 w-8" />,
     proof: 'Zero critical findings in quarterly scans'
   },
   // Communication & Culture
@@ -111,7 +111,7 @@ const crisisScenarios = [
     problem: 'Night calls, low engagement, and thin notes lead to evaporating decisions and constant rework.',
     solutionHref: '/playbook/nearshore-vs-offshore',
     solutionLabel: 'Replace night calls with daytime collaboration.',
-    icon: <MessageSquare className="h-8 w-8 text-primary" />,
+    icon: <MessageSquare className="h-8 w-8" />,
     proof: 'Decision lead time ↓'
   },
   {
@@ -120,7 +120,7 @@ const crisisScenarios = [
     problem: 'Language nuances and a cultural "yes" create silent failures that surface too late.',
     solutionHref: '/hire/by-country/argentina',
     solutionLabel: 'Hire bilingual leads trained to surface risk.',
-    icon: <Users2 className="h-8 w-8 text-primary" />,
+    icon: <Users2 className="h-8 w-8" />,
     proof: 'Rework tickets ↓; acceptance on first demo ↑'
   },
   // Cost & Transparency
@@ -130,7 +130,7 @@ const crisisScenarios = [
     problem: 'Your invoices are a surprise every month due to spiked hours, shadow staffing, and unclear roles.',
     solutionHref: '/playbook/latam-economics',
     solutionLabel: 'Get cost-predictability with transparent TCO.',
-    icon: <Scale className="h-8 w-8 text-primary" />,
+    icon: <Scale className="h-8 w-8" />,
     proof: 'Forecast vs. actual variance <10%'
   },
   {
@@ -139,7 +139,7 @@ const crisisScenarios = [
     problem: 'You were promised senior engineers in the sales pitch, but juniors showed up to do the work.',
     solutionHref: '/playbook/bias-free-technical-hiring-axiom-cortex',
     solutionLabel: 'End bait-and-switch with evidence-based vetting.',
-    icon: <UserCheck className="h-8 w-8 text-primary" />,
+    icon: <UserCheck className="h-8 w-8" />,
     proof: 'Staffed-as-sold rate tracked & enforced'
   },
   // People & Retention
@@ -149,7 +149,7 @@ const crisisScenarios = [
     problem: 'Constant team churn from your vendor resets context and creates velocity whiplash.',
     solutionHref: '/process',
     solutionLabel: 'Improve retention with nearshore career ladders.',
-    icon: <Users className="h-8 w-8 text-primary" />,
+    icon: <Users className="h-8 w-8" />,
     proof: 'Rolling 90-day retention >95%'
   },
   {
@@ -158,7 +158,7 @@ const crisisScenarios = [
     problem: 'Offshore devs are burning out on night shifts; quality is dropping and attrition is rising.',
     solutionHref: '/playbook/nearshore-vs-offshore',
     solutionLabel: 'Create sustainable on-call rotations.',
-    icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+    icon: <AlertTriangle className="h-8 w-8" />,
     proof: 'On-call fatigue signals ↓'
   },
   // Process & Tooling
@@ -168,7 +168,7 @@ const crisisScenarios = [
     problem: 'Your team relies on manual deploys, and every release is filled with fear and uncertainty.',
     solutionHref: '/hire/by-role/platform-infra-sre',
     solutionLabel: 'Build a CI/CD spine with a nearshore platform team.',
-    icon: <GitBranch className="h-8 w-8 text-primary" />,
+    icon: <GitBranch className="h-8 w-8" />,
     proof: 'Deploy frequency ↑; change failure rate ↓'
   },
   {
@@ -177,7 +177,7 @@ const crisisScenarios = [
     problem: 'Testing happens at the end of the cycle, meaning bugs are already baked into the product.',
     solutionHref: '/hire/by-role/qa-quality-engineering',
     solutionLabel: 'Shift-left with contract tests and smoke suites.',
-    icon: <TestTube2 className="h-8 w-8 text-primary" />,
+    icon: <TestTube2 className="h-8 w-8" />,
     proof: 'Regressions per release ↓50%+'
   },
   // Data & ML
@@ -187,7 +187,7 @@ const crisisScenarios = [
     problem: 'You can’t trust your analytics. Dashboards are broken, metrics are undefined, and events are stale.',
     solutionHref: '/hire/by-role/data-engineering-analytics',
     solutionLabel: 'Build data trust with analytics engineers.',
-    icon: <Database className="h-8 w-8 text-primary" />,
+    icon: <Database className="h-8 w-8" />,
     proof: 'Metric freshness & test coverage SLAs met'
   },
   {
@@ -196,7 +196,7 @@ const crisisScenarios = [
     problem: 'Your LLM is hallucinating because your RAG system is grafted onto bad data and slow infrastructure.',
     solutionHref: '/hire/by-role/ml-ai-llm-ops',
     solutionLabel: 'Curb hallucinations with nearshore LLMOps.',
-    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+    icon: <BrainCircuit className="h-8 w-8" />,
     proof: 'Answer accuracy ↑; token spend ↓'
   },
   // Executive Pressure
@@ -206,7 +206,7 @@ const crisisScenarios = [
     problem: 'The board is asking "Why is engineering so slow?" and your velocity narrative is mush.',
     solutionHref: '/research/performance-evaluation-framework',
     solutionLabel: 'Report on DORA metrics, not just story points.',
-    icon: <BarChart className="h-8 w-8 text-primary" />,
+    icon: <BarChart className="h-8 w-8" />,
     proof: 'Cycle/lead time, CFR, deploy freq reported weekly'
   },
   {
@@ -215,7 +215,7 @@ const crisisScenarios = [
     problem: 'A critical incident hits during U.S. business hours, and there\'s no one awake to fix it.',
     solutionHref: '/hire/by-role/platform-infra-sre',
     solutionLabel: 'Establish nearshore incident response.',
-    icon: <Server className="h-8 w-8 text-primary" />,
+    icon: <Server className="h-8 w-8" />,
     proof: 'MTTA/MTTR ↓'
   },
   // Switching Vendors
@@ -225,7 +225,7 @@ const crisisScenarios = [
     problem: 'You\'re trapped by rigid SOWs and vendor lock-in, unable to right-size your team.',
     solutionHref: '/process',
     solutionLabel: 'Switch vendors smoothly with transfer SLAs.',
-    icon: <Briefcase className="h-8 w-8 text-primary" />,
+    icon: <Briefcase className="h-8 w-8" />,
     proof: 'Transition in <30 days with shadowing'
   },
   {
@@ -234,7 +234,7 @@ const crisisScenarios = [
     problem: 'Your vendor’s hiring process is a black box that results in surprise junior talent.',
     solutionHref: '/playbook/bias-free-technical-hiring-axiom-cortex',
     solutionLabel: 'Demand a transparent hiring pipeline.',
-    icon: <FileSearch className="h-8 w-8 text-primary" />,
+    icon: <FileSearch className="h-8 w-8" />,
     proof: 'Staffed-as-sold rate tracked quarterly'
   },
   {
@@ -243,7 +243,7 @@ const crisisScenarios = [
     problem: 'Your vendor can’t adopt your tooling, rituals, and release cadence.',
     solutionHref: '/process',
     solutionLabel: 'Integrate your teams into your SDLC in days.',
-    icon: <Zap className="h-8 w-8 text-primary" />,
+    icon: <Zap className="h-8 w-8" />,
     proof: 'Time-to-first-useful-PR <7 days'
   },
   {
@@ -252,7 +252,7 @@ const crisisScenarios = [
     problem: 'Coaching, discovery, and strategic alignment are suffering over endless Zoom calls.',
     solutionHref: '/hire/by-country',
     solutionLabel: 'Enable same-week onsite travel.',
-    icon: <Tv className="h-8 w-8 text-primary" />,
+    icon: <Tv className="h-8 w-8" />,
     proof: 'Design cycle time ↓ after onsite spikes'
   }
 ];
@@ -330,3 +330,5 @@ export default async function PlaybookHub() {
     </main>
   );
 }
+
+    
