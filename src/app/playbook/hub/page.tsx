@@ -11,7 +11,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'The CTO Playbook for Nearshore Software Development | TeamStation AI',
-  description: 'Missed milestones aren’t “bad luck.” They’re the physics of offshore delay. This Playbook puts the chaos in an intelligent, testable box so CTOs can govern outcomes, not gamble on vendors.',
+  description: 'The pitch deck says “senior.” The sprint says “rewrite.” This Playbook is the anti-theater: a system that replaces vendor roulette with evidence, control, and outcomes.',
 };
 
 export default async function ResearchPage() {
@@ -120,9 +120,9 @@ export default async function ResearchPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research</span>
       </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Missed milestones aren’t “bad luck.” They’re the physics of offshore delay: one question → one day lost → one quarter gone.</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The pitch deck says “senior.” The sprint says “rewrite.”</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-         This Playbook puts the chaos in an intelligent, testable box—cognitive vetting, device/MDM control, EOR & compliance, and same-day PR reviews—so CTOs can govern outcomes, not gamble on vendors.
+         This Playbook is the anti-theater: Axiom Cortex™ for evidence, device/MDM + EOR for control, and PR/incident SLAs for daylight operations. Replace vendor roulette with a system that ships.
         </p>
       </header>
        <div className="my-24">
