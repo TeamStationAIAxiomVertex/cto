@@ -1,5 +1,7 @@
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import React from 'react';
 import {
   ArrowRight,
   DollarSign,
@@ -284,7 +286,7 @@ export default function PerformanceEvaluationPage() {
             <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Level-calibrated expectations, behavior-anchored ratings, and clear signals for promotion readiness.</p>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
                 {runwayLevels.map(level => (
-                    <div key={level.level} className="rounded-lg border bg-card p-6 flex flex-col h-full">
+                    <div key={level.level} className="rounded-lg border bg-card p-6 flex flex-col h-full shadow-lg">
                         <div className="text-center">
                             <div className="inline-block bg-primary/10 text-primary font-bold rounded-full px-3 py-1 text-sm">{level.level} {level.title}</div>
                             <h3 className="text-lg font-bold text-foreground mt-2">{level.subtitle}</h3>
@@ -311,7 +313,7 @@ export default function PerformanceEvaluationPage() {
              <p className="text-center mt-8 text-sm font-mono text-primary">BARS-calibrated per level • Language-fair scoring (ESL aware) • Expert review with growth vector each cycle</p>
         </section>
         
-        <section className="my-24 rounded-lg bg-card border p-8">
+        <section className="my-24 rounded-lg bg-card border p-8 shadow-lg">
             <h2 className="text-4xl font-bold text-center text-foreground">The TeamStation–Client Diagnostic</h2>
             <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">A standardized, level-calibrated instrument. Every cycle we capture evidence, score behaviors with BARS, and deliver a single growth vector plus promotion signals you can act on.</p>
             
@@ -351,7 +353,7 @@ export default function PerformanceEvaluationPage() {
                         ))}
                     </div>
                 </div>
-                <div className="rounded-lg border bg-card p-6">
+                <div className="rounded-lg border bg-card p-6 shadow-lg">
                     <h3 className="text-xl font-bold text-primary">What is "BARS"?</h3>
                     <p className="mt-2 text-foreground font-semibold">Behaviorally Anchored Rating Scales: a scoring method where each rating point is tied to a concrete, observable behavior for a specific level (L1–L4). This reduces opinion drift, improves fairness (incl. ESL/communication differences), and makes feedback actionable.</p>
                     <p className="mt-4 text-sm text-muted-foreground">We calibrate BARS to the engineer’s current level; consistent next-level behavior triggers promotion signals.</p>
@@ -393,7 +395,7 @@ export default function PerformanceEvaluationPage() {
                                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center ring-8 ring-background flex-shrink-0">
                                 <span className="text-primary font-bold">{item.step}</span>
                                 </div>
-                            <div className="min-w-0 flex-1 pt-1.5 rounded-lg border bg-card p-4">
+                            <div className="min-w-0 flex-1 pt-1.5 rounded-lg border bg-card p-4 shadow-lg">
                                 <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
                                 <p className="mt-1 text-sm"><strong className="text-primary/90">Purpose:</strong> <span className="text-muted-foreground">{item.purpose}</span></p>
                                 <p className="mt-1 text-sm"><strong className="text-primary/90">Activities:</strong> <span className="text-muted-foreground">{item.activities}</span></p>
@@ -426,7 +428,7 @@ export default function PerformanceEvaluationPage() {
             <p className="text-center mt-4 text-sm font-mono text-primary">KPI focus: Onboarding TTP ↓ • Review latency ↓ • Unblocked PR rate ↑ • Incident repeat rate ↓</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                 {healthCheckItems.map(check => (
-                    <div key={check.category} className="rounded-lg border bg-card p-6">
+                    <div key={check.category} className="rounded-lg border bg-card p-6 shadow-lg">
                         <h3 className="text-xl font-bold text-foreground">{check.category}</h3>
                         <ul className="mt-4 space-y-2">
                             {check.items.map(item => (
@@ -445,15 +447,15 @@ export default function PerformanceEvaluationPage() {
                 <p className="mt-2 max-w-2xl mx-auto text-muted-foreground">Clear decisions each cycle: proven strengths, one growth vector, and a promotion signal.</p>
             </div>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div className="rounded-lg border bg-card p-6">
+                <div className="rounded-lg border bg-card p-6 shadow-lg">
                     <h3 className="font-bold text-foreground">Key Strengths</h3>
                     <p className="text-sm text-muted-foreground mt-1">1–2 behaviors with repeat evidence (PRs, designs, incidents prevented).</p>
                 </div>
-                <div className="rounded-lg border-2 border-primary bg-card p-6">
+                <div className="rounded-lg border-2 border-primary bg-card p-6 shadow-lg">
                     <h3 className="font-bold text-primary">Primary Growth Vector (Next Quarter)</h3>
                     <p className="text-sm text-muted-foreground mt-1">One focus that unlocks next-level behavior; success criteria included.</p>
                 </div>
-                <div className="rounded-lg border bg-card p-6">
+                <div className="rounded-lg border bg-card p-6 shadow-lg">
                     <h3 className="font-bold text-foreground">Promotion Readiness Signal</h3>
                     <p className="text-sm text-muted-foreground mt-1">Yes / Not yet — with rationale tied to BARS examples.</p>
                 </div>
@@ -465,7 +467,7 @@ export default function PerformanceEvaluationPage() {
             <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Look through the answers to the most popular questions of our customers.</p>
             <div className="mt-12 max-w-3xl mx-auto space-y-6">
                 {faqs.map(faq => (
-                     <div key={faq.question} className="rounded-lg border bg-card p-6">
+                     <div key={faq.question} className="rounded-lg border bg-card p-6 shadow-lg">
                         <h3 className="font-semibold text-foreground">{faq.question}</h3>
                         <p className="mt-2 text-sm text-muted-foreground">{faq.answer}</p>
                     </div>
