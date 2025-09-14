@@ -2,7 +2,10 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
-import { Users2, FileSearch, Scale, Briefcase, Clock, ArrowRight, DollarSign, Zap } from 'lucide-react';
+import { Users2, FileSearch, Scale, Briefcase, Clock, ArrowRight, Zap } from 'lucide-react';
+import { getPlaybookBySlug } from '@/lib/playbook';
+import { markdownToHtml } from '@/lib/markdown-parser';
+import { notFound } from 'next/navigation';
 
 
 export const metadata: Metadata = {
@@ -86,7 +89,12 @@ const comparisonTable = [
   { factor: 'Total Cost of Ownership', nearshore: 'Predictable & Lower', offshore: 'Unpredictable & Higher', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'An all-inclusive rate eliminates hidden fees.', offshore_detail: 'Low hourly rates are inflated by massive hidden costs.' },
 ];
 
-export default function NearshoreVsOffshorePage() {
+export default async function NearshoreVsOffshorePage() {
+  const post = await getPlaybookBySlug('nearshore-vs-offshore');
+  if (!post) {
+    notFound();
+  }
+  const contentHtml = await markdownToHtml(post.content || '');
 
   return (
     <main className="container max-w-5xl py-12">
@@ -101,7 +109,7 @@ export default function NearshoreVsOffshorePage() {
         </p>
       </header>
       
-      <div className="my-16 rounded-xl border bg-card p-8 md:p-12">
+       <div className="my-16 rounded-xl border bg-card p-8 md:p-12">
         <h2 className="text-center text-3xl font-bold">Foreword: The CTO's Dilemma</h2>
         <div className="prose dark:prose-invert max-w-2xl mx-auto mt-6 text-center">
             <p>You’re here because you’re under pressure. The board wants faster feature delivery. The CFO wants to cut engineering costs. Your best engineers are threatening to quit because they’re tired of 10 PM calls with a team on the other side of the world. You’ve been told that "offshore" is the answer to your budget problem, but your gut tells you it’s a trap. Your gut is right.</p>
@@ -149,15 +157,15 @@ export default function NearshoreVsOffshorePage() {
                     </div>
                     <p className="text-sm text-muted-foreground mt-4">
                         {tax.description}
-                        {tax.tooltipTerm && (
-                            <>
-                                {' '}<Tooltip text={tax.tooltipText || ''}>{tax.tooltipTerm}</Tooltip>{' '}
-                            </>
-                        )}
                         {tax.impact && (
                              <strong className={`font-bold ${tax.impactColor}`}> {tax.impact} </strong>
                         )}
                         {tax.afterText}
+                         {tax.tooltipTerm && (
+                            <>
+                                {' '}<Tooltip text={tax.tooltipText || ''}>{tax.tooltipTerm}</Tooltip>{' '}
+                            </>
+                         )}
                          {tax.afterTooltipText && (
                             <>
                                 {tax.afterTooltipText.split('MDM')[0]}
@@ -207,15 +215,7 @@ export default function NearshoreVsOffshorePage() {
         </div>
       </section>
 
-      <div className="prose dark:prose-invert max-w-none text-center">
-        <h2 className="mt-12">The Verdict: Choose Velocity and Control, Not Just Cost</h2>
-        <p>
-            For startups and growth-stage companies where speed and agility are paramount, the choice is clear. The hidden "latency tax" of the offshore model is a risk most cannot afford. While large enterprises with waterfall-style projects may tolerate asynchronous workflows, any organization practicing agile will see a dramatic ROI from the real-time collaboration enabled by a nearshore team.
-        </p>
-         <p>
-          Our platform maximizes this advantage by providing not only the talent but the entire security and operational wrapper under a single SLA. This is not about finding cheaper developers; it's about engineering a faster, safer, and more efficient way to build software. It's a strategic decision to buy back time, reduce risk, and increase the velocity of your entire engineering organization.
-        </p>
-      </div>
+      <article className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: contentHtml }} />
 
        <div className="text-center rounded-lg bg-primary/10 p-8 mt-12">
             <h2 className="text-2xl font-bold">Ready to Eliminate the Latency Tax?</h2>
@@ -229,5 +229,3 @@ export default function NearshoreVsOffshorePage() {
     </main>
   );
 }
-
-    
