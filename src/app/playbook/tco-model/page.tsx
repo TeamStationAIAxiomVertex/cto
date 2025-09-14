@@ -26,7 +26,8 @@ const costCards = [
         "Annual Savings": 74400
       },
       "proof_note": "Based on a fully-loaded cost including a typical 30% for U.S. payroll burden (taxes, benefits, 401k).",
-      "cta_question": "How many seats until this delta funds an entire roadmap line item?"
+      "cta_question": "How many seats until this delta funds an entire roadmap line item?",
+      "learn_more_href": "/playbook/latam-economics"
     },
     {
       "id": "team-delta-six",
@@ -45,7 +46,8 @@ const costCards = [
         "Monthly Team Savings": 37200
       },
       "proof_note": "Scales linearly. This saving alone can often fund an entire additional product team or strategic initiative.",
-      "cta_question": "What could you ship with an extra $37,200/mo in engineering oxygen?"
+      "cta_question": "What could you ship with an extra $37,200/mo in engineering oxygen?",
+      "learn_more_href": "/hire/by-team-topologies"
     },
     {
       "id": "cost-of-vacancy",
@@ -64,7 +66,8 @@ const costCards = [
          "Revenue Recaptured": 138000
       },
       "proof_note": "Time-to-Hire (TTH) is a direct lever on revenue. Faster hiring pulls future revenue into the current fiscal year.",
-      "cta_question": "What did last quarter’s open req actually cost your roadmap?"
+      "cta_question": "What did last quarter’s open req actually cost your roadmap?",
+      "learn_more_href": "/process"
     },
     {
       "id": "pr-lgtm-latency",
@@ -83,7 +86,8 @@ const costCards = [
         "Monthly Savings": 30600
       },
       "proof_note": "This calculates the cost of developer time wasted waiting for feedback, a direct hit to productivity.",
-      "cta_question": "How many quarters died waiting for “Looks Good To Me”?"
+      "cta_question": "How many quarters died waiting for “Looks Good To Me”?",
+      "learn_more_href": "/playbook/nearshore-vs-offshore"
     },
     {
       "id": "faster-onboarding",
@@ -102,7 +106,8 @@ const costCards = [
         "Onboarding Savings": 36000
       },
       "proof_note": "A structured onboarding process directly translates to faster time-to-value for every new hire.",
-      "cta_question": "What is your measured Time-to-First-PR seat-by-seat?"
+      "cta_question": "What is your measured Time-to-First-PR seat-by-seat?",
+      "learn_more_href": "/services/talent-onboarding"
     },
     {
       "id": "change-failure-rate",
@@ -121,7 +126,8 @@ const costCards = [
         "Monthly Savings": 28800
       },
       "proof_note": "Improving Change Failure Rate (CFR), a core DORA metric, directly reduces the high cost of incident response.",
-      "cta_question": "Which metric—CFR, MTTR, or both—hurts your renewals more?"
+      "cta_question": "Which metric—CFR, MTTR, or both—hurts your renewals more?",
+      "learn_more_href": "/hire/by-role/qa-quality-engineering"
     },
     {
       "id": "attrition-replacement",
@@ -140,7 +146,8 @@ const costCards = [
         "Annual Savings": 24000
       },
       "proof_note": "Lowering attrition avoids the massive costs of recruiting, interviewing, and ramping up a replacement.",
-      "cta_question": "How many ‘new intros’ did your squad do this month?"
+      "cta_question": "How many ‘new intros’ did your squad do this month?",
+      "learn_more_href": "/process"
     },
     {
       "id": "management-overhead",
@@ -161,7 +168,8 @@ const costCards = [
         "Annual Savings": 33000
       },
       "proof_note": "This is a direct productivity gain for your most expensive and valuable management resources.",
-      "cta_question": "What would your EM do with 10 hours/week back?"
+      "cta_question": "What would your EM do with 10 hours/week back?",
+       "learn_more_href": "/playbook/build-vs-buy"
     },
     {
       "id": "compliance-security-drag",
@@ -179,7 +187,8 @@ const costCards = [
         "Annual Savings": 27500
       },
       "proof_note": "Having an audit-ready posture from day one dramatically reduces the internal time spent on security questionnaires.",
-      "cta_question": "Which control is blocking the biggest open opportunity right now?"
+      "cta_question": "Which control is blocking the biggest open opportunity right now?",
+      "learn_more_href": "/trust"
     },
     {
       "id": "all-in-vs-all-these-invoices",
@@ -198,7 +207,8 @@ const costCards = [
         "Annual Savings": 37000
       },
       "proof_note": "Vendor consolidation reduces direct costs and eliminates the soft costs of managing multiple relationships.",
-      "cta_question": "How many vendors do you really need to ship one roadmap?"
+      "cta_question": "How many vendors do you really need to ship one roadmap?",
+      "learn_more_href": "/comparisons"
     }
   ];
 
@@ -274,11 +284,17 @@ export default function TCOModelPage() {
                             </div>
                         </div>
                         {card.proof_note && <p className="text-xs text-muted-foreground mt-3 italic">{card.proof_note}</p>}
+                         {card.learn_more_href && (
+                            <Link href={card.learn_more_href} className="text-xs text-primary hover:underline mt-3 block">
+                                Learn more <ArrowRight className="inline h-3 w-3"/>
+                            </Link>
+                        )}
                     </div>
                 </div>
 
-                 <div className="mt-6 text-sm italic text-primary/80 border-t border-border/50 pt-4">
-                    <span className="font-bold not-italic">Question: </span>{card.cta_question}
+                 <div className="mt-6 text-sm text-center font-semibold text-primary/90 border-t border-border/50 pt-4">
+                    <span className="font-bold not-italic">Question: </span>
+                    <span className="italic">{card.cta_question}</span>
                 </div>
             </div>
         ))}
@@ -286,8 +302,8 @@ export default function TCOModelPage() {
 
        <div className="my-16 rounded-lg border bg-card p-6">
             <h3 className="text-xl font-bold text-foreground">Tiny Legend (Variables for Estimation)</h3>
-            <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-2 text-sm text-muted-foreground font-mono">
-              {legend.map(item => <span key={item}>{item}</span>)}
+            <div className="mt-4 flex flex-wrap gap-2">
+              {legend.map(item => <span key={item} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{item}</span>)}
             </div>
        </div>
 
