@@ -264,12 +264,12 @@ export default function TCOModelPage() {
                     </div>
                     
                     <div className="mt-4 pt-4 border-t border-border/50">
-                        <h3 className="font-semibold text-yellow-400">The Pain (Problem)</h3>
+                        <h3 className="font-semibold text-destructive">The Pain (Problem)</h3>
                         <p className="text-sm text-muted-foreground m-0">{card.problem}</p>
                     </div>
 
                     <div className="mt-4 pt-4 border-t border-border/50">
-                        <h3 className="font-semibold text-green-400">The Gain (Solution)</h3>
+                        <h3 className="font-semibold text-primary">The Gain (Solution)</h3>
                         <p className="text-sm text-muted-foreground m-0">{card.solution}</p>
                     </div>
                     
@@ -291,11 +291,11 @@ export default function TCOModelPage() {
                                     ))}
                                 </div>
                                 <div className="border-l border-border pl-4">
-                                    <p className="font-semibold text-green-400">Outputs:</p>
+                                    <p className="font-semibold text-primary">Outputs:</p>
                                     {Object.entries(card.example_outputs).map(([key, value]) => (
                                         <div key={key} className="flex justify-between">
                                             <span>{key.replace(/_/g, ' ')}:</span>
-                                            <span className="font-bold text-green-400">${Number(value).toLocaleString()}</span>
+                                            <span className="font-bold text-primary">${Number(value).toLocaleString()}</span>
                                         </div>
                                     ))}
                                 </div>

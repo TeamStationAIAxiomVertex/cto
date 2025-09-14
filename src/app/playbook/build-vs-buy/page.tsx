@@ -191,15 +191,16 @@ export default function BuildVsBuyPage() {
             </div>
              <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-background p-6 rounded-lg border border-destructive/20">
-                    <h3 className="font-bold text-destructive">The "Build" Model</h3>
+                    <h3 className="font-bold text-destructive flex items-center gap-2"><Layers className="h-5 w-5"/>The "Build" Model</h3>
                      <p className="mt-2 text-muted-foreground">Optimizes for a single, misleading metric: <strong className="text-foreground">a lower base salary number on a spreadsheet</strong>. It ignores the massive, compounding hidden costs.</p>
                 </div>
                  <div className="bg-background p-6 rounded-lg border border-primary/20">
-                    <h3 className="font-bold text-primary">The "Buy" Model (Integrated Platform)</h3>
+                    <h3 className="font-bold text-primary flex items-center gap-2"><Zap className="h-5 w-5"/>The "Buy" Model (Integrated Platform)</h3>
                     <p className="mt-2 text-muted-foreground">Optimizes for what actually matters: <Link href="/playbook/tco-model" className="text-primary font-bold hover:underline">predictable TCO</Link>, <strong className="text-foreground">speed-to-market</strong>, and <strong className="text-foreground">enterprise-grade risk management.</strong></p>
                 </div>
             </div>
             <div className="bg-background p-6 rounded-lg border border-primary/20">
+                 <h3 className="font-bold text-primary flex items-center gap-2"><CheckCircle className="h-5 w-5"/>The Conclusion</h3>
                 <p className="mt-2 text-foreground">By presenting this TCO framework, you are demonstrating to your CFO and your board that you are not just a technical manager but a strategic business partner. You are making a capital allocation decision based on a clear-eyed assessment of total cost and risk. For most growth-stage companies, the "Build" model is a financially and operationally reckless gamble. The "Buy" model, offered by an integrated platform like TeamStation AI, is the only logical choice to scale with speed and safety.</p>
             </div>
         </div>

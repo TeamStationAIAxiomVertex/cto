@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { ArrowRight, UserCheck, FileText, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Nearshore IT Staff Augmentation Pricing | TeamStation AI',
@@ -41,7 +42,7 @@ const levels = [
 const includedItems = [
     { title: 'LATAM Employer of Record (EOR)', href: "/services/integrated-services" },
     { title: 'AI-Powered Vetting & Onboarding', href: "/process" },
-    { title: 'Secure Devices & MDM', href: "/playbook/security-compliance" },
+    { title: 'Secure Devices & MDM', href: "/trust" },
     { title: 'Cybersecurity & E&O Insurance', href: "/trust" },
     { title: 'LATAM Office Network Access', href: "/hire/by-country" },
     { title: 'Performance & Documentation Platform', href: "/research/performance-evaluation-framework" },
@@ -55,6 +56,7 @@ const includedItems = [
 const pricingFactors = [
   {
     title: 'Role & Talent Signal',
+    icon: <UserCheck className="h-8 w-8 text-primary" />,
     items: [
       'Level & scope (L1–L4), ownership, leadership signals',
       'Stack fit & specialization (AI/ML, Salesforce, data, security)',
@@ -66,6 +68,7 @@ const pricingFactors = [
   },
   {
     title: 'Country & Statutory Reality',
+    icon: <FileText className="h-8 w-8 text-primary" />,
     items: [
       'Stable delivery across countries/cities in LATAM',
       'Holidays/PTO cadence that won’t break sprints',
@@ -76,6 +79,7 @@ const pricingFactors = [
   },
   {
     title: 'Platform Services & Risk Shield (Included)',
+    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
     items: [
       'Company devices with MDM, patch SLAs, endpoint monitoring',
       'Security workflows, IP/NDAs, incident response guardrails',
@@ -134,7 +138,7 @@ export default function PricingPage() {
                 <span>(36 days saved / 365)</span>
                 <span>* $1,000,000 ARR</span>
                 <span>=</span>
-                <span className="font-bold text-green-400">$98,630</span>
+                <span className="font-bold text-primary">$98,630</span>
             </div>
             <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in <Link href="/process" className='text-primary hover:underline'>≈9 days</Link> vs. the industry average of 45.</p>
          </div>
@@ -159,11 +163,14 @@ export default function PricingPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {pricingFactors.map(factor => (
                 <div key={factor.title} className="rounded-lg border bg-card p-6">
-                    <h3 className="text-xl font-bold text-primary mb-4">{factor.title}</h3>
-                    <ul className="space-y-2">
+                     <div className="flex items-center gap-3">
+                        {factor.icon}
+                        <h3 className="text-xl font-bold text-foreground">{factor.title}</h3>
+                    </div>
+                    <ul className="space-y-3 mt-4 border-t border-border pt-4">
                         {factor.items.map(item => (
                              <li key={item} className="flex items-start gap-2 text-sm">
-                                <span className="h-4 w-4 shrink-0 mt-1 text-green-400">✓</span>
+                                <span className="h-4 w-4 shrink-0 mt-1 text-primary">✓</span>
                                 <span className="text-muted-foreground">{item}</span>
                             </li>
                         ))}
@@ -179,7 +186,7 @@ export default function PricingPage() {
           Let's have a real conversation about your budget and your roadmap. In 15 minutes, we can give you a concrete, defensible plan.
         </p>
          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
-            Book a No-Bullshit Strategy Call
+            Book a No-Bullshit Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
         </Link>
       </div>
     </main>
