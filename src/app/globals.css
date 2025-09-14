@@ -22,7 +22,6 @@
   --destructive: 0 63% 50%;
   --destructive-foreground: 210 40% 98%;
   --ring: 229 100% 65%;
-  --radius: 0.75rem;
   --chart-1: 229 100% 65%;
   --chart-2: 160 60% 45%;
 }
@@ -63,7 +62,7 @@
     @apply font-bold;
   }
   .light .bg-card {
-    background: linear-gradient(to bottom, hsl(220 60% 97%), hsl(0 0% 100%));
+    background: linear-gradient(to bottom, hsl(220 80% 95%), hsl(0 0% 100%));
   }
 }
 
