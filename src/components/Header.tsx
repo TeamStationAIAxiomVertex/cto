@@ -5,6 +5,7 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
 import { ChevronDown, Menu, X, BookOpen } from 'lucide-react';
 import { useState } from 'react';
+import { DisclosureDrawer } from './DisclosureDrawer';
 
 const navItems = {
   'CTO Playbook': [
@@ -52,6 +53,7 @@ function NavLink({ href, title, description, isHubLink }: { href: string, title:
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const handleLinkClick = () => setIsOpen(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm">
@@ -91,28 +93,21 @@ export function Header() {
       </div>
       {isOpen && (
         <div className="md:hidden border-t">
-          <div className="container px-4 py-4 space-y-4">
+          <div className="container px-4 py-4 space-y-2">
             {Object.entries(navItems).map(([title, items]) => (
-              <div key={title}>
-                <h3 className="font-semibold text-foreground">{title}</h3>
-                <div className="mt-2 space-y-2">
-                  {items.map(item => (
-                    <Link key={item.href} href={item.href} className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>
-                      {item.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              <DisclosureDrawer
+                key={title}
+                title={title}
+                items={items.map(({ href, title }) => ({ href, title }))}
+                onLinkClick={handleLinkClick}
+              />
             ))}
             {simpleNavItems.map(item => (
-                <Link key={item.href} href={item.href} className="block font-semibold text-foreground hover:text-primary" onClick={() => setIsOpen(false)}>
+                <Link key={item.href} href={item.href} className="block py-2 text-lg font-semibold text-foreground hover:text-primary" onClick={handleLinkClick}>
                     {item.title}
                 </Link>
             ))}
-             <Link href="/hire/by-role" className="block font-semibold text-foreground hover:text-primary" onClick={() => setIsOpen(false)}>Hire by Role</Link>
-             <Link href="/hire/by-technology" className="block font-semibold text-foreground hover:text-primary" onClick={() => setIsOpen(false)}>Hire by Technology</Link>
-             <Link href="/hire/by-country" className="block font-semibold text-foreground hover:text-primary" onClick={() => setIsOpen(false)}>Hire by Country</Link>
-            <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="block font-semibold text-foreground hover:text-primary" onClick={() => setIsOpen(false)}>
+            <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="block py-2 text-lg font-semibold text-foreground hover:text-primary" onClick={handleLinkClick}>
                 Sign In
             </Link>
              <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button w-full mt-4">Book a Call</Link>
