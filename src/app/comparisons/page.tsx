@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, Users, Scale, ShieldCheck, Briefcase } from 'lucide-react';
+import { ArrowRight, Users, Scale, ShieldCheck, Briefcase, ExternalLink } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
 
@@ -16,9 +16,9 @@ const models = [
         pain: "Is your vendor just filling seats with unvetted talent?",
         problem: "These vendors focus on volume, placing bodies in seats with minimal vetting. You get a low hourly rate but inherit massive risk in quality, security, and retention.",
         vendors: [
-            { name: "BairesDev", href: "/comparisons/bairesdev" },
-            { name: "Nearsure", href: "/comparisons/nearsure" },
-            { name: "Unosquare", href: "/comparisons/unosquare" },
+            { name: "BairesDev", href: "/comparisons/bairesdev", website: "https://www.bairesdev.com/" },
+            { name: "Nearsure", href: "/comparisons/nearsure", website: "https://nearsure.com/" },
+            { name: "Unosquare", href: "/comparisons/unosquare", website: "https://www.unosquare.com/" },
         ],
         solution: "Our <a href='/technical-interview-evaluation' class='text-primary hover:underline'>Axiom Cortex™</a> vetting provides scientific proof of skill, and our integrated platform handles all operations, creating a lower, predictable <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO</a>."
     },
@@ -28,7 +28,7 @@ const models = [
         pain: "Are you building a team or just renting a temporary coder?",
         problem: "Elite talent, but at a premium price. The freelance model creates continuity risk and leaves you with the entire burden of security, compliance, and management.",
         vendors: [
-            { name: "Toptal", href: "/comparisons/toptal" },
+            { name: "Toptal", href: "/comparisons/toptal", website: "https://www.toptal.com/" },
         ],
         solution: "We build dedicated, long-term teams of full-time employees, ensuring knowledge retention and deep integration, all at a sustainable cost."
     },
@@ -38,7 +38,7 @@ const models = [
         pain: "Do you need to augment your team or outsource your brain?",
         problem: "SIs are for large-scale project outsourcing, not staff augmentation. You lose control over architecture and team culture, creating long-term dependency.",
         vendors: [
-            { name: "Globant", href: "/comparisons/globant" }
+            { name: "Globant", href: "/comparisons/globant", website: "https://www.globant.com/" }
         ],
         solution: "Our model is built for control. We provide elite engineers who integrate into your teams, your rituals, and your roadmap. You own the technical direction."
     },
@@ -48,11 +48,11 @@ const models = [
         pain: "Is your vendor solving payroll or the entire operational stack?",
         problem: "These vendors handle hiring and payroll but leave critical gaps. They don't provide secure devices, MDM, or insurance, forcing you to become a global IT and risk manager.",
         vendors: [
-            { name: "Terminal", href: "/comparisons/terminal" },
-            { name: "Deel", href: "/comparisons/deel" },
-            { name: "Revelo", href: "/comparisons/revelo" },
-            { name: "ParallelStaff", href: "/comparisons/parallelstaff" },
-            { name: "TECLA", href: "/comparisons/tecla" }
+            { name: "Terminal", href: "/comparisons/terminal", website: "https://terminal.io/" },
+            { name: "Deel", href: "/comparisons/deel", website: "https://www.deel.com/" },
+            { name: "Revelo", href: "/comparisons/revelo", website: "https://www.revelo.com/" },
+            { name: "ParallelStaff", href: "/comparisons/parallelstaff", website: "https://www.parallelstaff.com/" },
+            { name: "TECLA", href: "/comparisons/tecla", website: "https://www.tecla.io/" }
         ],
         solution: "We are a complete operational platform. We bundle all 'run-state' services—EOR, devices, MDM, security, insurance—into a single, accountable SLA."
     }
@@ -85,9 +85,14 @@ export default function ComparisonsPage() {
                         <h4 className="font-semibold text-sm text-muted-foreground">Key Offenders:</h4>
                         <div className="flex flex-wrap gap-2 mt-2">
                             {model.vendors.map(vendor => (
-                                <Link key={vendor.href} href={vendor.href} className="text-sm font-medium text-primary hover:underline bg-primary/10 px-2 py-1 rounded">
-                                    {vendor.name}
-                                </Link>
+                                <div key={vendor.href} className="flex gap-2 items-center bg-primary/10 px-2 py-1 rounded">
+                                    <Link href={vendor.href} className="text-sm font-medium text-primary hover:underline">
+                                        {vendor.name}
+                                    </Link>
+                                    <a href={vendor.website} target="_blank" rel="noopener noreferrer" className="text-primary/70 hover:text-primary">
+                                        <ExternalLink className="h-3 w-3" />
+                                    </a>
+                                </div>
                             ))}
                         </div>
                     </div>
