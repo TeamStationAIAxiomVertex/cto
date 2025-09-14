@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
+import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -64,29 +64,32 @@ const painPoints = [
     "Is 'vendor management' your secret second job?"
 ];
 
-const comparisonPoints = {
-    "Vetting": {
-        pain: "Is your hiring process a high-risk gamble?",
-        traditional: "Traditional staff augmentation relies on resume keywords and unstructured interviews, a biased process that frequently results in costly mis-hires.",
-        teamstation: "Our Axiom Cortex™ Cognitive AI engine provides scientific, evidence-based proof of a candidate's problem-solving ability, not just their credentials.",
-        proof: "Mismatch rate ≤10%",
-        href: "/technical-interview-evaluation"
+const sandlerCards = [
+    {
+        title: 'Velocity: 24-Hour Ping-Pong vs Daylight Cadence',
+        question: 'How many releases died waiting for “LGTM”?',
+        problem: 'PRs sleep overnight; one question = one day lost.',
+        solution: 'Daylight overlap + same-day review SLAs with telemetry.',
+        proof: 'PR turnaround 36–72h → <8h; cycle time drops in 2 sprints.',
+        icon: <Zap className="h-8 w-8 text-primary" />,
     },
-    "Security": {
-        pain: "Is your vendor creating massive security holes?",
-        traditional: "Most vendors leave security to you. Unmanaged devices, no MDM, and no compliance framework expose you to catastrophic risk.",
-        teamstation: "Our integrated platform is secure by default. We provide MDM-secured devices, EOR/compliance, and insurance under one SLA.",
-        proof: "SOC 2 & ISO Aligned",
-        href: "/trust"
+    {
+        title: 'Seniority: Resume Theater vs Cognitive Evidence',
+        question: 'Who last vetoed a bad pattern before it shipped?',
+        problem: '“Senior” in the deck, junior in the repo.',
+        solution: 'Axiom Cortex™ cognitive signals + structured rubrics + recorded panels.',
+        proof: 'Mismatch rate ≤10%; rewrite ADRs down.',
+        icon: <BrainCircuit className="h-8 w-8 text-primary" />,
     },
-    "Cost": {
-        pain: "Are hidden fees killing your budget?",
-        traditional: "A low hourly rate hides a mountain of extra costs for EOR, IT, legal, and vendor management, inflating your Total Cost of Ownership (TCO).",
-        teamstation: "Our all-inclusive rate provides a predictable, CFO-ready TCO that is often 40-60% lower than the fully-loaded cost of other models.",
-        proof: "40-60% Lower TCO",
-        href: "/playbook/latam-economics"
+    {
+        title: 'Governance: Five Invoices vs One Operating Rhythm',
+        question: 'How many vendors does it take to ship one roadmap?',
+        problem: 'Vendor sprawl; shadow staffing; no single throat to choke.',
+        solution: 'One governed system: hiring → devices/MDM → access → payroll/EOR → SLAs.',
+        proof: 'Forecast vs actual variance <10%; fewer reopenings.',
+        icon: <Users className="h-8 w-8 text-primary" />,
     }
-}
+];
 
 
 export default async function HomePage() {
@@ -164,37 +167,32 @@ export default async function HomePage() {
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">Legacy vendors promise, overcharge, and under-deliver. This Field Manual names the failure modes and instruments the fixes—cognitive hiring signals, daylight SLAs for PRs/incidents, device/MDM control, EOR & compliance, and TCO you can defend in front of Finance.</p>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
-              <p className="text-sm font-semibold text-primary">{value.pain}</p>
-              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
-              
-              <div className="mt-4 flex-grow">
-                <div className="border-t border-border pt-4">
-                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
-                    <XCircle className="h-5 w-5 text-destructive" /> Traditional Model
-                    </h4>
-                  <p className="text-sm text-muted-foreground">{value.traditional.replace('Axiom Cortex™', '')}
-                    {value.traditional.includes("TCO") && <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
-                  </p>
+          {sandlerCards.map((card) => (
+            <div key={card.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+                <div className="flex items-start gap-4">
+                    {card.icon}
+                    <div>
+                        <h3 className="text-lg font-bold text-foreground">{card.title}</h3>
+                    </div>
                 </div>
-                <div className="mt-4 border-t border-border pt-4">
-                  <h4 className="font-semibold text-foreground flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" /> TeamStation AI Solution
-                  </h4>
-                  <p className="text-sm text-foreground">{value.teamstation.replace('Axiom Cortex™', '')}
-                    {value.teamstation.includes("Axiom Cortex") && <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/hub/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip>}
-                    {value.teamstation.includes("MDM") && <Tooltip text="Mobile Device Management: Software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
-                    {value.teamstation.includes("EOR") && <Tooltip text="Employer of Record: A third-party organization that legally employs workers on behalf of another company.">EOR</Tooltip>}
-                    {value.teamstation.includes("TCO") && <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
-                  </p>
+                <div className="mt-4 pt-4 border-t border-border/50">
+                    <h4 className="font-semibold text-destructive text-sm">Problem (Legacy)</h4>
+                    <p className="text-sm text-muted-foreground m-0">{card.problem}</p>
                 </div>
-              </div>
-              
-              <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{value.proof}</p>
-              <Link href={value.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
-                Learn More <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+                <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
+                    <h4 className="font-semibold text-primary text-sm">Solution (Next-Gen)</h4>
+                    <p className="text-sm text-foreground m-0">{card.solution.replace('Axiom Cortex™', '').replace('MDM', '').replace('EOR', '')}
+                     {card.solution.includes("Axiom Cortex") && <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip>}
+                      {card.solution.includes("MDM") && <Tooltip text="Mobile Device Management: Software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
+                      {card.solution.includes("EOR") && <Tooltip text="Employer of Record: A third-party organization that legally employs workers on behalf of another company.">EOR</Tooltip>}
+                    </p>
+                </div>
+                <div className="mt-4 pt-4 border-t border-border/50">
+                     <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {card.proof}</p>
+                </div>
+                <div className="mt-6 text-sm text-center font-semibold text-primary/90 border-t border-border/50 pt-4">
+                    <span className="italic">{card.question}</span>
+                </div>
             </div>
           ))}
         </div>
@@ -264,3 +262,5 @@ export default async function HomePage() {
     </div>
   );
 }
+
+    
