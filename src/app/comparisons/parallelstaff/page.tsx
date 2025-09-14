@@ -1,5 +1,5 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -77,7 +77,7 @@ export default function ParallelStaffComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: The Integrated Platform vs. TaaS</h2>
         <p>
-            ParallelStaff's Talent-as-a-Service (TaaS) model, with its "try-before-you-buy" evaluation period, is a smart evolution of traditional staff augmentation. It rightly identifies the need for structured onboarding and aims to reduce mis-hire risk.
+            <a href="https://www.parallelstaff.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">ParallelStaff's <ExternalLink className="h-4 w-4" /></a> Talent-as-a-Service (TaaS) model, with its "try-before-you-buy" evaluation period, is a smart evolution of traditional staff augmentation. It rightly identifies the need for structured onboarding and aims to reduce mis-hire risk.
         </p>
         <p>
            However, their model still leaves the client to manage critical operational components. <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>, secure device provisioning with <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>, and cybersecurity insurance are not bundled into a unified offering. Furthermore, while a two-week trial is better than nothing, it is not a substitute for the deep, scientific validation provided by TeamStation AI's{' '}

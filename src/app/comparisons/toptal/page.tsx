@@ -1,5 +1,5 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -77,7 +77,7 @@ export default function ToptalComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: Integrated Teams vs. Elite Freelancers</h2>
         <p>
-            Toptal markets an exclusive network of the "top 3%" of freelance talent, ideal for companies needing individual experts for specific projects. However, it is fundamentally a freelance model, not a solution for building integrated, long-term teams.
+            <a href="https://www.toptal.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Toptal <ExternalLink className="h-4 w-4" /></a> markets an exclusive network of the "top 3%" of freelance talent, ideal for companies needing individual experts for specific projects. However, it is fundamentally a freelance model, not a solution for building integrated, long-term teams.
         </p>
         <p>
             As a Toptal alternative, TeamStation AI's model is different. We build fully integrated, long-term nearshore teams and provide the operational, legal, and security infrastructure to run them. While Toptal's screening is rigorous, our{' '}

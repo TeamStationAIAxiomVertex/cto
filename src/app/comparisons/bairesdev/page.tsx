@@ -1,5 +1,5 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -76,7 +76,7 @@ export default function BairesDevComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: The Co-Pilot vs. The Staffing Agency</h2>
         <p>
-            BairesDev markets heavily on hiring the "top 1%" of talent. While this signals a large recruiting operation, their model is traditional staff augmentation. They find and place engineers, but the client is left to manage compliance, device security, and the associated risks. As a Bairesdev alternative, TeamStation AI provides a complete, science-driven system for hiring, running, and securing your nearshore team under a single, predictable contract.
+            <a href="https://www.bairesdev.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">BairesDev <ExternalLink className="h-4 w-4" /></a> markets heavily on hiring the "top 1%" of talent. While this signals a large recruiting operation, their model is traditional staff augmentation. They find and place engineers, but the client is left to manage compliance, device security, and the associated risks. As a Bairesdev alternative, TeamStation AI provides a complete, science-driven system for hiring, running, and securing your nearshore team under a single, predictable contract.
         </p>
         <h3>Vetting: Cognitive Science vs. Resume Screening</h3>
         <p>

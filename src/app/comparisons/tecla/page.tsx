@@ -1,5 +1,5 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -77,7 +77,7 @@ export default function TeclaComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: The Integrated Platform vs. The Marketplace</h2>
         <p>
-            TECLA operates as a talent marketplace, connecting companies with a network of developers across Latin America. While effective for sourcing candidates, their model places the significant burden of compliance, payroll, device security, and HR management squarely on the client.
+            <a href="https://www.tecla.io/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">TECLA <ExternalLink className="h-4 w-4" /></a> operates as a talent marketplace, connecting companies with a network of developers across Latin America. While effective for sourcing candidates, their model places the significant burden of compliance, payroll, device security, and HR management squarely on the client.
         </p>
         <p>
            As a TECLA alternative, TeamStation AI provides a fully integrated platform. We don't just find talent; we provide the entire operational infrastructure. This includes <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>, secure device provisioning (<Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>), and comprehensive insurance, all bundled into a single, predictable rate. Our{' '}

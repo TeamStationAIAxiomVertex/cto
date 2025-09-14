@@ -1,5 +1,5 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -77,7 +77,7 @@ export default function ReveloComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: The Integrated Platform vs. Sourcing + EOR</h2>
         <p>
-            Revelo offers a strong value proposition by combining a LATAM talent marketplace with <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip> services, promising a 14-day time-to-hire. This solves a major pain point for companies by handling payroll and benefits. However, it stops short of a truly integrated operational solution.
+            <a href="https://www.revelo.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Revelo <ExternalLink className="h-4 w-4" /></a> offers a strong value proposition by combining a LATAM talent marketplace with <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip> services, promising a 14-day time-to-hire. This solves a major pain point for companies by handling payroll and benefits. However, it stops short of a truly integrated operational solution.
         </p>
         <p>
            Key operational areas like secure device provisioning, <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>, and cybersecurity insurance are not part of their core offering. This leaves a significant security and compliance gap for clients to fill, adding hidden costs and risks.

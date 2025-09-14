@@ -1,5 +1,5 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -76,7 +76,7 @@ export default function GlobantComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: The Co-Pilot vs. The Systems Integrator</h2>
         <p>
-            Choosing between TeamStation AI and Globant is about selecting the right operational model. Globant is a massive, global systems integrator, a powerhouse for large-scale digital transformation projects. You hand them a problem, and their teams deliver a solution. It is not a staff augmentation platform.
+            Choosing between TeamStation AI and Globant is about selecting the right operational model. <a href="https://www.globant.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Globant <ExternalLink className="h-4 w-4" /></a> is a massive, global systems integrator, a powerhouse for large-scale digital transformation projects. You hand them a problem, and their teams deliver a solution. It is not a staff augmentation platform.
         </p>
         <p>
             As a Globant alternative, TeamStation AI operates on a fundamentally different premise. We are your{' '}

@@ -1,5 +1,5 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -77,7 +77,7 @@ export default function TerminalComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: The Integrated Co-Pilot vs. The EOR-Plus-Recruiter</h2>
         <p>
-            Terminal builds remote engineering teams and can act as an <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>, handling payroll and benefits. They offer a valuable service by removing many of the initial hurdles of hiring globally.
+            <a href="https://terminal.io/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Terminal <ExternalLink className="h-4 w-4" /></a> builds remote engineering teams and can act as an <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>, handling payroll and benefits. They offer a valuable service by removing many of the initial hurdles of hiring globally.
         </p>
         <p>
            However, their model stops there, leaving critical operational and security gaps. They do not provide a productized cognitive AI for talent validation, nor do they bundle secure devices, <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>, or cyber insurance. This means the client must still assemble and manage multiple vendors to cover their operational and security needs, increasing Total Cost of Ownership (TCO) and risk.

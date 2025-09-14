@@ -1,5 +1,5 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -77,7 +77,7 @@ export default function UnosquareComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: The Integrated Platform vs. The Service Provider</h2>
         <p>
-            Unosquare is a well-established provider of both staff augmentation and custom software development services. This hybrid model allows them to either supplement a client's team or take on entire projects as a consulting engagement.
+            <a href="https://www.unosquare.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Unosquare <ExternalLink className="h-4 w-4" /></a> is a well-established provider of both staff augmentation and custom software development services. This hybrid model allows them to either supplement a client's team or take on entire projects as a consulting engagement.
         </p>
         <p>
            This differs significantly from TeamStation AI's singular focus: providing a complete platform for you to build and run your own elite nearshore team. We don't do project-based consulting; instead, we provide the talent and the entire operational infrastructure—<Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>, devices, security, insurance—for you to manage your team as a direct extension of your own. Our model is about empowerment and integration, not outsourcing.

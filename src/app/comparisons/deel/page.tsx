@@ -1,5 +1,5 @@
 
-import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck } from 'lucide-react';
+import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -77,7 +77,7 @@ export default function DeelComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: Talent Platform vs. HR Platform</h2>
         <p>
-            Deel is a world-class global payroll and compliance engine. They solve the critical problem of how to legally hire and pay people almost anywhere in the world. However, Deel is not a talent platform. They do not source, vet, or manage talent. You must bring your own candidates to their platform.
+            <a href="https://www.deel.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Deel <ExternalLink className="h-4 w-4" /></a> is a world-class global payroll and compliance engine. They solve the critical problem of how to legally hire and pay people almost anywhere in the world. However, Deel is not a talent platform. They do not source, vet, or manage talent. You must bring your own candidates to their platform.
         </p>
         <p>
            TeamStation AI, on the other hand, is an end-to-end talent and operations platform. Our primary function is to find, vet, and deliver elite LATAM engineering talent. Our platform then provides the entire operational wrapper—including <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>/payroll (which could even be powered by a platform like Deel), secure devices, and insurance—to run that team effectively.

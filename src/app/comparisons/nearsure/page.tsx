@@ -1,5 +1,5 @@
 
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -77,7 +77,7 @@ export default function NearsureComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: The Integrated Platform vs. Traditional Staff Aug</h2>
         <p>
-            Nearsure operates on a classic staff augmentation model. They are experts at sourcing and placing nearshore talent, and their AI recruiter has improved their hiring time. However, their model leaves significant operational, legal, and security burdens on the client.
+            <a href="https://nearsure.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Nearsure <ExternalLink className="h-4 w-4" /></a> operates on a classic staff augmentation model. They are experts at sourcing and placing nearshore talent, and their AI recruiter has improved their hiring time. However, their model leaves significant operational, legal, and security burdens on the client.
         </p>
         <p>
            Issues like compliant hiring (<Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>), payroll, secure device management, and insurance are outside their scope. TeamStation AI was created to solve this exact problem. We provide an integrated platform that handles not only sourcing (powered by our{' '}
