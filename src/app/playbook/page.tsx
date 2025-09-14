@@ -281,7 +281,7 @@ export default async function PlaybookHub() {
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The CTO Crisis Playbook</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-         The 12-hour lag with your offshore team is a daily tax on velocity. Your current nearshore vendor delivers junior-level quality at senior-level rates. Your CFO is asking why engineering—the most expensive part of the budget—is also the most unpredictable. You're not just looking for another vendor; you're looking for a new, more controllable operating model. This is the data-driven guide to help you build it.
+         As a technology leader, you are under constant pressure to deliver faster, with higher quality, and under budget—all while navigating a landscape of shifting priorities and hidden risks. This isn't just about managing a team; it's about engineering a high-performance organization. This playbook provides the data-driven frameworks to diagnose your biggest drags on velocity and the actionable solutions to fix them.
         </p>
       </header>
 
@@ -290,7 +290,7 @@ export default async function PlaybookHub() {
           <h2 className="text-3xl font-bold text-center mb-8">{category}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {crisisScenarios.filter(s => s.category === category).map(scenario => (
-              <div key={scenario.pain.toString()} className="group flex flex-col rounded-lg border bg-background/50 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+              <div key={scenario.pain.toString()} className="group relative flex flex-col rounded-lg border bg-background/50 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                 <div className="flex items-start justify-between">
                   <div className="text-primary">{scenario.icon}</div>
                   <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1">{scenario.proof}</p>
