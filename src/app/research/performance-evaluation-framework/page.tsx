@@ -24,50 +24,50 @@ const phases = [
 
 const competencies = [
     {
-        title: 'Technical Craftsmanship & Quality',
-        description: 'The disciplined application of QA principles to ensure product integrity.',
-        question: 'How effectively does the engineer design, execute, and maintain tests that ensure product quality?',
-        scale: [
+        pain: 'How effectively does the engineer design, execute, and maintain tests that ensure product quality?',
+        solutionTitle: 'Technical Craftsmanship & Quality',
+        solutionDescription: 'The disciplined application of QA principles to ensure product integrity.',
+        proof: [
             { rating: 1, label: 'Foundational', detail: 'Work often requires significant review for correctness, coverage, or adherence to standards.' },
             { rating: 3, label: 'Effective', detail: 'Consistently delivers solid, reliable test suites that meet project requirements and quality standards.' },
             { rating: 5, label: 'Exemplary', detail: 'Goes beyond requirements to improve test architecture and elevate the team\'s overall quality bar.' },
         ]
     },
     {
-        title: 'Proactive Ownership & Agency',
-        description: 'The drive to operate with autonomy and take responsibility for outcomes.',
-        question: 'Does the engineer proactively seek clarity, identify risks, and drive their tasks to completion without constant prompting?',
-        scale: [
+        pain: 'Does the engineer proactively seek clarity, identify risks, and drive their tasks to completion without constant prompting?',
+        solutionTitle: 'Proactive Ownership & Agency',
+        solutionDescription: 'The drive to operate with autonomy and take responsibility for outcomes.',
+        proof: [
             { rating: 1, label: 'Reactive', detail: 'Tends to wait for instructions; work can stall when faced with ambiguity.' },
             { rating: 3, label: 'Proactive', detail: 'Reliably asks clarifying questions, flags blockers, and manages tasks from start to finish.' },
             { rating: 5, label: 'Pre-emptive', detail: 'Thinks ahead, anticipates future problems, and takes ownership beyond their immediate tasks.' },
         ]
     },
     {
-        title: 'Communication & Collaborative Mindset',
-        description: 'The ability to act as a clear, effective node in the team\'s information network.',
-        question: 'How effective is the engineer\'s communication in conveying findings and collaborating with developers?',
-        scale: [
+        pain: 'How effective is the engineer\'s communication in conveying findings and collaborating with developers?',
+        solutionTitle: 'Communication & Collaborative Mindset',
+        solutionDescription: 'The ability to act as a clear, effective node in the team\'s information network.',
+        proof: [
             { rating: 1, label: 'Needs Development', detail: 'Communication can be unclear, leading to misunderstandings or rework.' },
             { rating: 3, label: 'Clear & Consistent', detail: 'Communicates effectively in tickets and stand-ups. A reliable collaborator.' },
             { rating: 5, label: 'Force Multiplier', detail: 'Their communication actively prevents ambiguity and accelerates the entire team.' },
         ]
     },
     {
-        title: 'Adaptability & Systems Integration',
-        description: 'The speed at which they become effective in your ecosystem.',
-        question: 'How quickly has the engineer adapted to your specific tools, codebase, and workflows?',
-        scale: [
+        pain: 'How quickly has the engineer adapted to your specific tools, codebase, and workflows?',
+        solutionTitle: 'Adaptability & Systems Integration',
+        solutionDescription: 'The speed at which they become effective in your ecosystem.',
+        proof: [
             { rating: 1, label: 'Slow to Adapt', detail: 'Struggles to adopt new tools or processes, requiring repeated instruction.' },
             { rating: 3, label: 'Adapts Well', detail: 'Got up to speed on the tech stack and workflows within the expected 90-day timeframe.' },
             { rating: 5, label: 'Rapidly Integrates', detail: 'Masters new tools exceptionally quickly. Seems like they\'ve been on the team for twice as long.' },
         ]
     },
     {
-        title: 'Security & Compliance Mindset',
-        description: 'The non-negotiable understanding that security is a core feature of all work.',
-        question: 'Does the engineer consistently demonstrate a "security-first" mindset in their daily work?',
-        scale: [
+        pain: 'Does the engineer consistently demonstrate a "security-first" mindset in their daily work?',
+        solutionTitle: 'Security & Compliance Mindset',
+        solutionDescription: 'The non-negotiable understanding that security is a core feature of all work.',
+        proof: [
             { rating: 1, label: 'Lacks Awareness', detail: 'Has made errors related to security protocols or requires frequent reminders.' },
             { rating: 3, label: 'Compliant', detail: 'Understands and consistently adheres to all documented security requirements. A safe pair of hands.' },
             { rating: 5, label: 'Vigilant', detail: 'Not only follows protocols but actively identifies potential security weaknesses in the product or processes.' },
@@ -141,18 +141,27 @@ export default function PerformanceEvaluationFrameworkPage() {
                 <p className="text-center mt-2 text-muted-foreground">This is the engine of our entire program. It is the standardized, evidence-based tool we use at each stage of the Talent Runway. Below is the exact framework we will use with your leadership to evaluate our engineers.</p>
 
                 <div className="mt-12 space-y-8">
-                    {competencies.map(comp => (
-                        <div key={comp.title} className="p-6 rounded-lg border bg-card shadow-lg">
-                            <h3 className="text-lg font-bold text-primary">{comp.title}</h3>
-                            <p className="text-sm italic text-muted-foreground">{comp.description}</p>
-                            <p className="mt-4 text-sm font-semibold text-foreground">{comp.question}</p>
-                            <div className="mt-4 space-y-2">
-                                {comp.scale.map(item => (
-                                    <div key={item.rating} className="text-sm flex items-start gap-2">
-                                        <span className="font-bold text-primary">({item.rating}) {item.label}:</span>
-                                        <span className="text-muted-foreground">{item.detail}</span>
-                                    </div>
-                                ))}
+                    {competencies.map((comp, index) => (
+                        <div key={index} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+                            <p className="text-sm font-semibold text-destructive">The Pain</p>
+                            <p className="text-lg font-semibold text-foreground mt-1">{comp.pain}</p>
+
+                            <div className="mt-4 pt-4 border-t border-border">
+                                <h4 className="font-semibold text-primary">The Solution</h4>
+                                <p className="text-base font-bold text-foreground mt-1">{comp.solutionTitle}</p>
+                                <p className="text-sm italic text-muted-foreground">{comp.solutionDescription}</p>
+                            </div>
+                            
+                            <div className="mt-4 pt-4 border-t border-border">
+                                <h4 className="font-semibold text-foreground">The Proof (BARS Scale)</h4>
+                                <div className="mt-2 space-y-2">
+                                    {comp.proof.map(item => (
+                                        <div key={item.rating} className="text-sm flex items-start gap-2">
+                                            <span className="font-bold text-primary">({item.rating}) {item.label}:</span>
+                                            <span className="text-muted-foreground">{item.detail}</span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     ))}
