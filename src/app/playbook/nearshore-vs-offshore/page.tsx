@@ -45,12 +45,12 @@ const painPoints = [
 ];
 
 const comparisonTable = [
-  { factor: 'Time-Zone Overlap', nearshore: 'High (4-8 hours)', offshore: 'Low (0-2 hours)', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Enables real-time pairing, ad-hoc problem-solving, and same-day PR reviews.', offshore_detail: 'Forces asynchronous handoffs, late-night calls, and 24-hour feedback cycles.' },
-  { factor: 'Collaboration Fidelity', nearshore: 'High', offshore: 'Low', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Nuanced conversations are possible, reducing ambiguity and rework. Fosters a single, unified team.', offshore_detail: 'Communication is often formal, ticket-based, and prone to misunderstanding.' },
-  { factor: 'Cultural Alignment', nearshore: 'High', offshore: 'Medium-High', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Strong affinity with U.S. work culture and business practices reduces friction.', offshore_detail: 'Varies by country, but tech hubs often have excellent English proficiency. Cultural gaps can still exist.' },
-  { factor: 'Travel & Escalation', nearshore: 'Simple & Cost-Effective', offshore: 'Complex & Expensive', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'Same-day or next-day travel is feasible for critical workshops or crisis resolution.', offshore_detail: 'Requires multi-day travel, visas, and significant expense, making it impractical.' },
-  { factor: 'Compliance & Risk', nearshore: 'Lower', offshore: 'Higher', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'Our integrated EOR model handles compliance with data privacy laws (GDPR/LGPD) and local labor regulations.', offshore_detail: 'Navigating disparate legal frameworks and data residency laws is complex and introduces significant risk.' },
-  { factor: 'Total Cost of Ownership (TCO)', nearshore: 'Predictable & Lower', offshore: 'Unpredictable & Higher', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'An all-inclusive rate with no hidden fees. Higher productivity and lower risk lead to a lower true cost.', offshore_detail: 'Low hourly rates are offset by high costs of management overhead, lost productivity, and vendor management.' },
+  { factor: 'Time-Zone Overlap', nearshore: 'High (4-8 hours)', offshore: 'Low (0-2 hours)', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Enables real-time pairing and same-day PR reviews.', offshore_detail: 'Forces 24-hour feedback cycles and late-night calls.' },
+  { factor: 'Collaboration Fidelity', nearshore: 'High', offshore: 'Low', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Nuanced conversations reduce ambiguity and rework.', offshore_detail: 'Formal, ticket-based communication leads to misunderstanding.' },
+  { factor: 'Cultural Alignment', nearshore: 'High', offshore: 'Medium', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Strong affinity with U.S. work culture reduces friction.', offshore_detail: 'Varies by country; can introduce cultural gaps.' },
+  { factor: 'Travel & Escalation', nearshore: 'Simple & Cost-Effective', offshore: 'Complex & Expensive', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'Same-day or next-day travel is feasible for crisis resolution.', offshore_detail: 'Requires multi-day travel and visas, making it impractical.' },
+  { factor: 'Compliance & Risk', nearshore: 'Lower (Contractually Managed)', offshore: 'Higher (Fragmented)', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'An integrated EOR model handles all local labor and data laws.', offshore_detail: 'Navigating disparate legal frameworks is complex and risky.' },
+  { factor: 'Total Cost of Ownership', nearshore: 'Predictable & Lower', offshore: 'Unpredictable & Higher', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'An all-inclusive rate eliminates hidden fees.', offshore_detail: 'Low hourly rates are inflated by massive hidden costs.' },
 ];
 
 export default function NearshoreVsOffshorePage() {
@@ -162,5 +162,3 @@ export default function NearshoreVsOffshorePage() {
     </main>
   );
 }
-
-    
