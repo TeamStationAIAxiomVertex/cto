@@ -35,7 +35,7 @@
     --muted-foreground: 215 20% 40%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --card: 220 60% 97%;
+    --card: 220 80% 95%;
     --card-foreground: 222 47% 11%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
@@ -66,6 +66,9 @@
   .bg-card {
     background: hsl(var(--card));
   }
+  .dark .bg-card {
+    background: linear-gradient(to bottom right, hsl(222 47% 15%), hsl(222 47% 8%));
+  }
   .light .bg-card {
     background: linear-gradient(to bottom, hsl(220 80% 95%), hsl(0 0% 100%));
   }
@@ -76,7 +79,7 @@
     @apply relative inline-block cursor-pointer border-b border-dashed border-primary;
   }
   .tooltip .tooltiptext {
-    @apply invisible absolute bottom-full left-1/2 z-10 w-48 -translate-x-1/2 rounded-md bg-card p-2 text-center text-sm text-foreground opacity-0 shadow-lg transition-opacity;
+    @apply invisible absolute bottom-full left-1/2 z-10 w-48 -translate-x-1/2 rounded-md bg-card p-2 text-center text-sm text-foreground shadow-lg transition-opacity;
   }
   .tooltip:hover .tooltiptext {
     @apply visible opacity-100;
