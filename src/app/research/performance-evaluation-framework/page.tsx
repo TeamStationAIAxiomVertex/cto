@@ -1,11 +1,11 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BookOpen, Check, BarChart, GitCompare, ShieldCheck, Zap, Users, Briefcase } from 'lucide-react';
+import { BookOpen, CheckCircle, BarChart, GitCompare, ShieldCheck, Zap, Users, Briefcase, ArrowRight, AlertTriangle } from 'lucide-react';
 import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
-    title: 'The TeamStation Technical Talent Performance & Growth Framework',
+    title: 'The TeamStation Performance & Growth Framework | TeamStation AI',
     description: 'A data-driven approach to maximizing engineer impact and partnership success, moving beyond broken traditional performance reviews.',
 };
 
@@ -89,27 +89,46 @@ export default function PerformanceEvaluationFrameworkPage() {
               <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">A Data-Driven Approach to Maximizing Engineer Impact and Partnership Success.</p>
             </header>
 
-            <section className="my-16 prose dark:prose-invert max-w-none">
-                <h2 className="text-center">1. The Philosophy: Performance Management is Broken. We're Fixing It.</h2>
-                <p className="text-center">Let's start with the ground truth: traditional performance reviews are a broken tool. They’re a backward-looking mix of subjective bias, recency effect, and goals that were irrelevant three months ago. They generate anxiety for engineers and very little actionable data for leaders. Our approach is different. <strong>We don't do "reviews." We run diagnostics.</strong></p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 not-prose">
-                    {principles.map(p => (
-                        <div key={p.title} className="p-6 rounded-lg border bg-card">
-                            <h3 className="font-bold text-primary">{p.title}</h3>
-                            <p className="text-sm text-muted-foreground mt-2">{p.description}</p>
+            <section className="my-16">
+                 <div className="rounded-lg border bg-card p-6 shadow-lg">
+                    <p className="text-sm font-semibold text-destructive">The Pain: Performance Management is Broken</p>
+                    <div className="flex items-center gap-3 mt-3">
+                         <AlertTriangle className="h-8 w-8 text-destructive" />
+                        <h2 className="text-xl font-semibold text-foreground">Traditional reviews are subjective, backward-looking, and generate zero actionable data.</h2>
+                    </div>
+                    <p className="mt-4 text-sm text-muted-foreground">Let's start with the ground truth: traditional performance reviews are a broken tool. They’re a mix of subjective bias, recency effect, and goals that were irrelevant three months ago. They generate anxiety for engineers and very little useful data for leaders.</p>
+
+                    <div className="mt-6 border-t border-border pt-4">
+                        <h3 className="font-semibold text-primary">The Solution: A Diagnostic System, Not a Judgment</h3>
+                         <p className="mt-2 text-sm text-foreground">Our approach is different. We don't do "reviews." We run diagnostics. Our entire framework is built on four core principles to turn performance management from a subjective art into an objective science.</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            {principles.map(p => (
+                                <div key={p.title} className="p-4 rounded-lg bg-background">
+                                    <h4 className="font-bold text-foreground text-base">{p.title}</h4>
+                                    <p className="text-xs text-muted-foreground mt-1">{p.description.replace('BARS', '')}
+                                     {p.description.includes("BARS") && <Tooltip text="Behaviorally Anchored Rating Scale: A method that ties ratings to specific, observable behaviors to reduce subjectivity.">BARS</Tooltip>}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
+                     <div className="mt-6 border-t border-border pt-4">
+                        <h3 className="font-semibold text-foreground">The Proof: Predictable Growth & Higher Retention</h3>
+                        <p className="mt-2 text-sm text-muted-foreground">This system provides a clear, high-velocity runway for our engineers to succeed within your organization. It's the proof behind our high retention rates and the predictable impact our engineers deliver.</p>
+                         <Link href="/process" className="mt-4 flex items-center text-sm font-semibold text-primary">
+                            See How This Fits Our Process <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </div>
                 </div>
             </section>
 
-            <section className="my-16 prose dark:prose-invert max-w-none">
-                <h2 className="text-center">2. The Program Architecture: The Talent Runway</h2>
-                <p className="text-center">We structure an engineer's journey as a clear, multi-stage runway designed for acceleration and long-term success.</p>
-                <div className="mt-12 space-y-8 not-prose">
+            <section className="my-16">
+                <h2 className="text-center text-3xl font-bold">The Program Architecture: The Talent Runway</h2>
+                <p className="text-center mt-2 text-muted-foreground">We structure an engineer's journey as a clear, multi-stage runway designed for acceleration and long-term success.</p>
+                <div className="mt-12 space-y-8">
                     {phases.map(phase => (
-                        <div key={phase.name} className="p-6 rounded-lg border bg-card">
-                            <h3 className="font-semibold text-foreground">{phase.name}</h3>
+                        <div key={phase.name} className="p-6 rounded-lg border bg-card shadow-lg">
+                            <h3 className="font-semibold text-foreground text-xl">{phase.name}</h3>
                             <p className="text-sm text-muted-foreground mt-1"><strong>Goal:</strong> {phase.goal}</p>
                             <p className="text-sm text-muted-foreground mt-1"><strong>Key Instrument:</strong> {phase.instrument}</p>
                         </div>
@@ -117,13 +136,13 @@ export default function PerformanceEvaluationFrameworkPage() {
                 </div>
             </section>
 
-            <section className="my-16 prose dark:prose-invert max-w-none">
-                <h2 className="text-center">3. The Core Instrument: The TeamStation-Client Diagnostic</h2>
-                <p className="text-center">This is the engine of our entire program. It is the standardized, evidence-based tool we use at each stage of the Talent Runway. Below is the exact framework we will use with your leadership to evaluate our engineers.</p>
+            <section className="my-16">
+                <h2 className="text-center text-3xl font-bold">The Core Instrument: The TeamStation-Client Diagnostic</h2>
+                <p className="text-center mt-2 text-muted-foreground">This is the engine of our entire program. It is the standardized, evidence-based tool we use at each stage of the Talent Runway. Below is the exact framework we will use with your leadership to evaluate our engineers.</p>
 
-                <div className="not-prose mt-12 space-y-8">
+                <div className="mt-12 space-y-8">
                     {competencies.map(comp => (
-                        <div key={comp.title} className="p-6 rounded-lg border bg-card">
+                        <div key={comp.title} className="p-6 rounded-lg border bg-card shadow-lg">
                             <h3 className="text-lg font-bold text-primary">{comp.title}</h3>
                             <p className="text-sm italic text-muted-foreground">{comp.description}</p>
                             <p className="mt-4 text-sm font-semibold text-foreground">{comp.question}</p>
@@ -140,25 +159,25 @@ export default function PerformanceEvaluationFrameworkPage() {
                 </div>
             </section>
 
-            <section className="my-16 prose dark:prose-invert max-w-none">
-                <h2 className="text-center">4. The Outcomes: What This Delivers</h2>
-                <p className="text-center">By committing to this rigorous, structured program, we create a powerful set of outcomes for both you as our client and for the engineers dedicated to your success.</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 not-prose">
-                    <div className="p-6 rounded-lg border bg-card">
-                        <h3 className="font-bold text-primary">For Our Clients</h3>
-                        <ul className="mt-4 space-y-2 list-none p-0">
-                            <li className="flex items-start gap-2 text-sm"><Check className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <strong className="text-foreground">Actionable Performance Data:</strong> A clear picture of strengths and growth areas, free from subjective noise.</li>
-                            <li className="flex items-start gap-2 text-sm"><Check className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <strong className="text-foreground">Reduced Management Overhead:</strong> Less time deciphering performance issues, more time on strategy.</li>
-                            <li className="flex items-start gap-2 text-sm"><Check className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <strong className="text-foreground">Continuous Improvement Loop:</strong> A candid feedback channel to refine our joint processes for better results.</li>
-                            <li className="flex items-start gap-2 text-sm"><Check className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <strong className="text-foreground">Higher Talent Retention & ROI:</strong> Engaged engineers with clear growth paths stay longer, ensuring stability.</li>
+            <section className="my-16">
+                <h2 className="text-center text-3xl font-bold">The Outcomes: What This Delivers</h2>
+                <p className="text-center mt-2 text-muted-foreground">By committing to this rigorous, structured program, we create a powerful set of outcomes for both you as our client and for the engineers dedicated to your success.</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                    <div className="p-6 rounded-lg border bg-card shadow-lg">
+                        <h3 className="font-bold text-primary text-xl">For Our Clients</h3>
+                        <ul className="mt-4 space-y-3 list-none p-0">
+                            <li className="flex items-start gap-3 text-sm"><CheckCircle className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <div><strong className="text-foreground">Actionable Performance Data:</strong> A clear picture of strengths and growth areas, free from subjective noise.</div></li>
+                            <li className="flex items-start gap-3 text-sm"><CheckCircle className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <div><strong className="text-foreground">Reduced Management Overhead:</strong> Less time deciphering performance issues, more time on strategy.</div></li>
+                            <li className="flex items-start gap-3 text-sm"><CheckCircle className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <div><strong className="text-foreground">Continuous Improvement Loop:</strong> A candid feedback channel to refine our joint processes for better results.</div></li>
+                            <li className="flex items-start gap-3 text-sm"><CheckCircle className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <div><strong className="text-foreground">Higher Talent Retention & ROI:</strong> Engaged engineers with clear growth paths stay longer, ensuring stability.</div></li>
                         </ul>
                     </div>
-                     <div className="p-6 rounded-lg border bg-card">
-                        <h3 className="font-bold text-primary">For Our Engineers</h3>
-                        <ul className="mt-4 space-y-2 list-none p-0">
-                            <li className="flex items-start gap-2 text-sm"><Check className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <strong className="text-foreground">Clarity and Fair Expectations:</strong> They know exactly what the bar is and how they are measured.</li>
-                            <li className="flex items-start gap-2 text-sm"><Check className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <strong className="text-foreground">Feedback They Can Use:</strong> Specific, actionable insights to build their skills, not vague judgments.</li>
-                            <li className="flex items-start gap-2 text-sm"><Check className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <strong className="text-foreground">A Defined Career Runway:</strong> They see we are invested in their long-term success, fostering ownership.</li>
+                     <div className="p-6 rounded-lg border bg-card shadow-lg">
+                        <h3 className="font-bold text-primary text-xl">For Our Engineers</h3>
+                        <ul className="mt-4 space-y-3 list-none p-0">
+                            <li className="flex items-start gap-3 text-sm"><CheckCircle className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <div><strong className="text-foreground">Clarity and Fair Expectations:</strong> They know exactly what the bar is and how they are measured.</div></li>
+                            <li className="flex items-start gap-3 text-sm"><CheckCircle className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <div><strong className="text-foreground">Feedback They Can Use:</strong> Specific, actionable insights to build their skills, not vague judgments.</div></li>
+                            <li className="flex items-start gap-3 text-sm"><CheckCircle className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <div><strong className="text-foreground">A Defined Career Runway:</strong> They see we are invested in their long-term success, fostering ownership.</div></li>
                         </ul>
                     </div>
                 </div>
@@ -167,5 +186,3 @@ export default function PerformanceEvaluationFrameworkPage() {
         </main>
     );
 }
-
-    
