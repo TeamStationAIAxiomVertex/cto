@@ -1,7 +1,7 @@
 
+import React from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import React from 'react';
 import {
   ArrowRight,
   DollarSign,
@@ -30,6 +30,13 @@ import {
   GanttChartSquare,
   Users2,
   FileText,
+  Terminal,
+  Map,
+  Key,
+  MessageCircle,
+  Target,
+  ClipboardCheck,
+  Repeat,
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -207,26 +214,27 @@ const cycleSteps = [
 
 const healthCheckItems = [
     {
-        category: 'Onboarding & documentation',
+        category: 'Onboarding & Documentation',
         items: [
-            'Clarity of setup docs (1–5) — Can a new engineer become productive without DM’ing for basics?',
-            'Architecture overview (1–5) — Does a current systems map exist (services, data, auth)?',
-            'Local dev experience (1–5) — One command to run; fixtures & seeds provided.',
-            'Access provisioning (1–5) — Repos, CI, cloud, dashboards granted on Day 1.',
-            'Blocking gap (free-text) — Name one doc or context that would’ve cut onboarding time by 50%.'
+            { icon: <BookOpen className="h-5 w-5 text-primary"/>, text: 'Clarity of setup docs (1–5) — Can a new engineer become productive without DM’ing for basics?' },
+            { icon: <Map className="h-5 w-5 text-primary"/>, text: 'Architecture overview (1–5) — Does a current systems map exist (services, data, auth)?' },
+            { icon: <Terminal className="h-5 w-5 text-primary"/>, text: 'Local dev experience (1–5) — One command to run; fixtures & seeds provided.' },
+            { icon: <Key className="h-5 w-5 text-primary"/>, text: 'Access provisioning (1–5) — Repos, CI, cloud, dashboards granted on Day 1.' },
+            { icon: <HelpCircle className="h-5 w-5 text-primary"/>, text: 'Blocking gap (free-text) — Name one doc or context that would’ve cut onboarding time by 50%.' }
         ]
     },
     {
-        category: 'Process & communication',
+        category: 'Process & Communication',
         items: [
-            'Goal clarity (1–5) — Do OKRs/roadmap map to sprint scope cleanly?',
-            'Ownership clarity (1–5) — Who signs off on requirements, QA, release?',
-            'PR & review SLA (1–5) — Median <24h? Clear guidelines for “ready to merge”?',
-            'Incident hygiene (1–5) — Postmortems with owners, actions, deadlines.',
-            'One change that would 2× velocity (free-text) — Name the smallest rule that would accelerate delivery.'
+            { icon: <Target className="h-5 w-5 text-primary"/>, text: 'Goal clarity (1–5) — Do OKRs/roadmap map to sprint scope cleanly?' },
+            { icon: <UserCheck className="h-5 w-5 text-primary"/>, text: 'Ownership clarity (1–5) — Who signs off on requirements, QA, release?' },
+            { icon: <GitCompare className="h-5 w-5 text-primary"/>, text: 'PR & review SLA (1–5) — Median <24h? Clear guidelines for “ready to merge”?' },
+            { icon: <ClipboardCheck className="h-5 w-5 text-primary"/>, text: 'Incident hygiene (1–5) — Postmortems with owners, actions, deadlines.' },
+            { icon: <Repeat className="h-5 w-5 text-primary"/>, text: 'One change that would 2× velocity (free-text) — Name the smallest rule that would accelerate delivery.' }
         ]
     }
-]
+];
+
 
 const faqs = [
     {
@@ -262,7 +270,7 @@ export default function PerformanceEvaluationPage() {
 
         <header className="text-center my-12">
             <p className="text-sm font-semibold text-primary">LATAM IT Talent Performance Evaluations</p>
-            <h1 className="mt-2 text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Performance Management Is Broken. We’re Fixing It.</h1>
+            <h1 className="mt-2 text-5xl font-extrabold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Performance Management Is Broken. We’re Fixing It.</h1>
             <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
                 Traditional reviews are backward-looking and biased. We don’t “review”—we diagnose. TeamStation runs evidence-based, level-calibrated evaluations so nearshore LATAM engineers get a fair runway to grow—and your org gets reliable performance data you can act on.
             </p>
@@ -423,16 +431,19 @@ export default function PerformanceEvaluationPage() {
 
 
         <section className="my-24">
-            <h2 className="text-4xl font-bold text-center text-foreground">Partnership Health & Process Check</h2>
+            <h2 className="text-4xl font-bold text-center text-foreground">Partnership Health &amp; Process Check</h2>
             <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Performance lives inside a system. Each cycle we run a light diagnostic on the environment so engineers can execute at full potential.</p>
             <p className="text-center mt-4 text-sm font-mono text-primary">KPI focus: Onboarding TTP ↓ • Review latency ↓ • Unblocked PR rate ↑ • Incident repeat rate ↓</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                 {healthCheckItems.map(check => (
                     <div key={check.category} className="rounded-lg border bg-card p-6 shadow-lg">
                         <h3 className="text-xl font-bold text-foreground">{check.category}</h3>
-                        <ul className="mt-4 space-y-2">
+                        <ul className="mt-4 space-y-4">
                             {check.items.map(item => (
-                                <li key={item} className="text-sm text-muted-foreground">{item}</li>
+                                <li key={item.text} className="flex items-start gap-3">
+                                  {item.icon}
+                                  <span className="text-sm text-muted-foreground">{item.text}</span>
+                                </li>
                             ))}
                         </ul>
                     </div>
@@ -463,7 +474,7 @@ export default function PerformanceEvaluationPage() {
         </section>
 
         <section className="my-24">
-            <h2 className="text-4xl font-bold text-center text-foreground">Performance & evaluation: common questions</h2>
+            <h2 className="text-4xl font-bold text-center text-foreground">Performance &amp; evaluation: common questions</h2>
             <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Look through the answers to the most popular questions of our customers.</p>
             <div className="mt-12 max-w-3xl mx-auto space-y-6">
                 {faqs.map(faq => (
@@ -481,10 +492,10 @@ export default function PerformanceEvaluationPage() {
             Evidence-based evaluations, clear growth vectors, and nearshore teams that deliver.
             </p>
             <div className="mt-4 text-center">
-                <span className="inline-block rounded-full bg-primary/20 px-4 py-2 text-sm font-semibold text-primary">From $20 / $30 / $40 / $50 per hour • 173 hrs/mo basis • Devices & compliance included</span>
+                <span className="inline-block rounded-full bg-primary/20 px-4 py-2 text-sm font-semibold text-primary">From $20 / $30 / $40 / $50 per hour • 173 hrs/mo basis • Devices &amp; compliance included</span>
             </div>
             <Link href="/pricing" className="cta-button mt-6">
-                See Pricing & TCO Model
+                See Pricing &amp; TCO Model
             </Link>
         </section>
 
