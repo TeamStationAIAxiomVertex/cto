@@ -14,63 +14,133 @@ const techCategories = [
     slug: 'backend-services',
     pain: "Is your backend a bottleneck or a force multiplier?",
     icon: <Server className="h-6 w-6 text-primary" />,
-    tech: ['Node (NestJS/Fastify)', 'Python (FastAPI/Django)', 'Java (Spring Boot)', 'Go (Gin/Fiber)', '.NET', 'gRPC', 'GraphQL (Apollo)'],
+    tech: [
+      { name: 'Node.js', slug: 'node' },
+      { name: 'Python', slug: 'python' },
+      { name: 'Java', slug: 'java' },
+      { name: 'Go', slug: 'go' },
+      { name: '.NET', slug: 'net' },
+      { name: 'gRPC', slug: 'grpc' },
+      { name: 'GraphQL', slug: 'graphql' },
+    ],
   },
   {
     name: 'Frontend & UI/UX',
     slug: 'frontend-web',
     pain: "Is a slow, buggy UI costing you customers?",
     icon: <Layers className="h-6 w-6 text-primary" />,
-    tech: ['React/TypeScript', 'Next.js/Vite', 'TanStack Query', 'Redux Toolkit/Zustand', 'Tailwind/shadcn/MUI', 'Testing Library'],
+    tech: [
+      { name: 'React/TypeScript', slug: 'react' },
+      { name: 'Next.js', slug: 'nextjs' },
+      { name: 'Vite', slug: 'vite' },
+      { name: 'TanStack Query', slug: 'tanstack' },
+      { name: 'Redux/Zustand', slug: 'redux' },
+      { name: 'Tailwind/shadcn', slug: 'tailwind' },
+      { name: 'Testing Library', slug: 'testing' },
+    ],
   },
   {
     name: 'Data Modeling & Databases',
     slug: 'data-engineering-analytics',
     pain: "Is your data model built for scale or for future refactors?",
     icon: <Database className="h-6 w-6 text-primary" />,
-    tech: ['PostgreSQL', 'MySQL', 'SQL Server', 'dbt', 'Prisma', 'SQLAlchemy', 'Hibernate', 'Redis', 'Memcached'],
+    tech: [
+      { name: 'PostgreSQL', slug: 'postgresql' },
+      { name: 'MySQL', slug: 'mysql' },
+      { name: 'SQL Server', slug: 'sql' },
+      { name: 'dbt', slug: 'dbt' },
+      { name: 'Prisma', slug: 'prisma' },
+      { name: 'SQLAlchemy', slug: 'sqlalchemy' },
+      { name: 'Hibernate', slug: 'hibernate' },
+      { name: 'Redis', slug: 'redis' },
+      { name: 'Memcached', slug: 'memcached' },
+    ],
   },
   {
     name: 'Pipelines & Orchestration',
     slug: 'data-engineering-analytics',
     pain: "Are your data pipelines brittle and unreliable?",
     icon: <Component className="h-6 w-6 text-primary" />,
-    tech: ['Airflow/Prefect/Dagster', 'Kafka/RabbitMQ/NATS', 'Flink/Beam', 'Kubernetes', 'Docker'],
+    tech: [
+      { name: 'Airflow/Prefect', slug: 'airflow' },
+      { name: 'Kafka/RabbitMQ', slug: 'kafka' },
+      { name: 'Flink/Beam', slug: 'flink' },
+      { name: 'Kubernetes', slug: 'kubernetes' },
+      { name: 'Docker', slug: 'docker' },
+    ],
   },
   {
     name: 'ML/AI & LLM Ops',
     slug: 'ml-ai-llm-ops',
     pain: "Struggling to move AI from a notebook to production?",
     icon: <BrainCircuit className="h-6 w-6 text-primary" />,
-    tech: ['PyTorch', 'Transformers', 'vLLM', 'Ray Serve', 'LangChain/LlamaIndex', 'pgvector/Pinecone', 'MLflow/W&B', 'Ragas'],
+    tech: [
+      { name: 'PyTorch', slug: 'pytorch' },
+      { name: 'Transformers', slug: 'transformers' },
+      { name: 'vLLM', slug: 'vllm' },
+      { name: 'Ray Serve', slug: 'ray' },
+      { name: 'LangChain', slug: 'langchain' },
+      { name: 'pgvector/Pinecone', slug: 'pgvector' },
+      { name: 'MLflow/W&B', slug: 'mlflow' },
+      { name: 'Ragas', slug: 'ragas' },
+    ],
   },
   {
     name: 'Observability & SRE',
     slug: 'platform-infra-sre',
     pain: "Are you debugging in the dark when systems fail?",
     icon: <GanttChartSquare className="h-6 w-6 text-primary" />,
-    tech: ['Prometheus', 'Grafana', 'OpenTelemetry', 'Jaeger/Loki', 'Terraform/Pulumi', 'Istio/Linkerd'],
+    tech: [
+      { name: 'Prometheus', slug: 'prometheus' },
+      { name: 'Grafana', slug: 'grafana' },
+      { name: 'OpenTelemetry', slug: 'opentelemetry' },
+      { name: 'Jaeger/Loki', slug: 'jaeger' },
+      { name: 'Terraform/Pulumi', slug: 'terraform' },
+      { name: 'Istio/Linkerd', slug: 'istio' },
+    ],
   },
   {
     name: 'Security & GRC',
     slug: 'security-grc',
     pain: "Is compliance an afterthought or built into your stack?",
     icon: <ShieldCheck className="h-6 w-6 text-primary" />,
-    tech: ['Vault', 'Okta/Auth0', 'CodeQL/SonarQube/Snyk', 'Trivy', 'OPA', 'SOC 2', 'ISO 27001', 'HIPAA'],
+    tech: [
+      { name: 'Vault', slug: 'vault' },
+      { name: 'Okta/Auth0', slug: 'okta' },
+      { name: 'CodeQL/Snyk', slug: 'codeql' },
+      { name: 'Trivy', slug: 'trivy' },
+      { name: 'OPA', slug: 'opa' },
+      { name: 'SOC 2', slug: 'soc' },
+      { name: 'ISO 27001', slug: 'iso' },
+      { name: 'HIPAA', slug: 'hipaa' },
+    ],
   },
   {
     name: 'Testing & Quality Engineering',
     slug: 'qa-quality-engineering',
     pain: "Does 'shipping fast' also mean 'shipping bugs'?",
     icon: <TestTube2 className="h-6 w-6 text-primary" />,
-    tech: ['Playwright/Cypress', 'Jest/Vitest', 'PyTest/JUnit', 'k6/Locust', 'Pact', 'Gremlin/Litmus'],
+    tech: [
+      { name: 'Playwright/Cypress', slug: 'playwright' },
+      { name: 'Jest/Vitest', slug: 'jest' },
+      { name: 'PyTest/JUnit', slug: 'pytest' },
+      { name: 'k6/Locust', slug: 'k6' },
+      { name: 'Pact', slug: 'pact' },
+      { name: 'Gremlin/Litmus', slug: 'gremlin' },
+    ],
   },
   {
     name: 'Cloud FinOps & BizTech',
     slug: 'finops-biztech',
     pain: "Are runaway cloud costs eating into your margins?",
     icon: <Wallet className="h-6 w-6 text-primary" />,
-    tech: ['CloudZero/Infracost', 'AWS Cost Explorer', 'Salesforce', 'HubSpot', 'Hightouch/Census'],
+    tech: [
+      { name: 'CloudZero/Infracost', slug: 'cloudzero' },
+      { name: 'AWS Cost Explorer', slug: 'aws' },
+      { name: 'Salesforce', slug: 'salesforce' },
+      { name: 'HubSpot', slug: 'hubspot' },
+      { name: 'Hightouch/Census', slug: 'hightouch' },
+    ],
   }
 ];
 
@@ -97,14 +167,12 @@ export default function HireByTechnologyPage() {
               <h2 className="text-xl font-bold text-foreground">{category.name}</h2>
             </div>
             <div className="flex flex-wrap gap-2 my-4">
-              {category.tech.map(tech => {
-                const techSlug = tech.split(' ')[0].toLowerCase().replace(/[^a-z0-9]/g, '');
-                return (
-                  <Link href={`/hire/by-technology/${techSlug}`} key={tech} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary">
-                    {tech}
+              {category.tech.map(tech => (
+                  <Link href={`/hire/by-technology/${tech.slug}`} key={tech.slug} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary">
+                    {tech.name}
                   </Link>
-                );
-              })}
+                )
+              )}
             </div>
             <div className="flex-grow"></div>
             <Link href={`/hire/by-role/${category.slug}`} className="group mt-4 flex items-center text-sm font-semibold text-primary">
