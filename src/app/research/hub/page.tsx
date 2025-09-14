@@ -143,6 +143,14 @@ export default async function ResearchPage() {
         </div>
       </div>
 
+      <section className="my-24">
+        <h2 className="text-center text-4xl font-bold">Listen to the Platform Vision</h2>
+        <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Hear directly from our founders and technical leaders about the science and strategy behind TeamStation AI.</p>
+        <div className="mt-8 max-w-2xl mx-auto">
+          <iframe data-testid="embed-iframe" style={{borderRadius: "12px"}} src="https://open.spotify.com/embed/episode/7EwovXvoVFIGLJDwqTZFUE?utm_source=generator" width="100%" height="352" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </section>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {researchAssets.map(asset => {
           return (
