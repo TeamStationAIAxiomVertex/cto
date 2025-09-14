@@ -323,7 +323,7 @@ const allTech: {
     pains: [],
     evaluation: ['Component Story Format (CSF)', 'Controls, args, and mocking data', 'Addons for accessibility, testing, and documentation', 'Visual regression testing integration', 'Publishing and versioning a Storybook instance']
   },
-  'testing': { g
+  'testing': {
     name: 'Testing Library', 
     category: 'Frontend & UI/UX', 
     categorySlug: 'frontend-web', 
@@ -788,10 +788,10 @@ const allTech: {
     evaluation: ['Zero-touch deployment and enrollment', 'Policy and configuration profile management', 'Software deployment and patching', 'Compliance reporting and enforcement', 'Scripting and automation']
   },
   'jira-service-management': {
-    name: 'ServiceNow/JSM',
+    name: 'Jira Service Mgmt',
     category: 'IT / Enterprise Ops',
     categorySlug: 'it-enterprise-ops',
-    intro: "Your IT support is a chaotic mess of emails and Slack messages. You need an ITSM expert who can implement ServiceNow or Jira Service Management to create a structured service desk, automate workflows, and provide a great support experience for your employees.",
+    intro: "Your IT support is a chaotic mess of emails and Slack messages. You need an ITSM expert who can implement Jira Service Management to create a structured service desk, automate workflows, and provide a great support experience for your employees.",
     pains: [],
     evaluation: ['Service catalog and request fulfillment design', 'Incident, problem, and change management workflows', 'CMDB population and management', 'Reporting and SLA tracking', 'Automation and integration with other systems']
   },
@@ -851,13 +851,13 @@ const allTech: {
     pains: [],
     evaluation: ['Product catalog and rate plan configuration', 'Subscription lifecycle management (upgrades, downgrades, cancellations)', 'Usage-based billing and metering', 'Invoice generation and dunning management', 'Integration with CRMs and ERPs']
   },
-  'hightouch': { 
-    name: 'Hightouch/Census', 
-    category: 'Cloud FinOps & BizTech', 
-    categorySlug: 'finops-biztech', 
+  'hightouch': {
+    name: 'Hightouch/Census',
+    category: 'Cloud FinOps & BizTech',
+    categorySlug: 'finops-biztech',
     intro: "Your customer data is trapped in your data warehouse, and your go-to-market teams are working with stale, incomplete information. You need a RevOps or Data engineer who understands Reverse ETL. You're here to find an expert in Hightouch or Census who can sync data from your warehouse back into business tools like Salesforce and HubSpot, empowering your teams with the data they need to act.",
-    pains: [], 
-    evaluation: ['Understanding of Reverse ETL concepts and use cases', 'Data modeling for activation in business tools', 'Sync configuration, scheduling, and debugging', 'Identity resolution and mapping', 'Measuring the impact of data activation on GTM efforts'] 
+    pains: [],
+    evaluation: ['Understanding of Reverse ETL concepts and use cases', 'Data modeling for activation in business tools', 'Sync configuration, scheduling, and debugging', 'Identity resolution and mapping', 'Measuring the impact of data activation on GTM efforts']
   },
   'stripe': {
     name: 'Stripe Billing',
@@ -1018,3 +1018,5 @@ export default function TechPage({ params }: { params: { slug: string } }) {
 export async function generateStaticParams() {
   return Object.keys(allTech).map(slug => ({ slug }));
 }
+
+    
