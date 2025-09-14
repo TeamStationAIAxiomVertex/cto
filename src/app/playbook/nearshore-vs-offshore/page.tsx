@@ -2,7 +2,10 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
-import { Users2, FileSearch, Scale, Briefcase, Clock, MessageSquare, CheckCircle, ArrowRight } from 'lucide-react';
+import { Users2, FileSearch, Scale, Briefcase, Clock, ArrowRight } from 'lucide-react';
+import { getPlaybookBySlug } from '@/lib/playbook';
+import { markdownToHtml } from '@/lib/markdown-parser';
+import { notFound } from 'next/navigation';
 
 
 export const metadata: Metadata = {
@@ -54,7 +57,13 @@ const comparisonTable = [
   { factor: 'Total Cost of Ownership (TCO)', nearshore: 'Predictable & Lower', offshore: 'Unpredictable & Higher', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'An all-inclusive rate with no hidden fees. Higher productivity and lower risk lead to a lower true cost.', offshore_detail: 'Low hourly rates are offset by high costs of management overhead, lost productivity, and vendor management.' },
 ];
 
-export default function NearshoreVsOffshorePage() {
+export default async function NearshoreVsOffshorePage() {
+  const post = await getPlaybookBySlug('nearshore-vs-offshore');
+  if (!post) {
+    notFound();
+  }
+  const contentHtml = await markdownToHtml(post.content);
+
   return (
     <main className="container max-w-5xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
@@ -67,6 +76,13 @@ export default function NearshoreVsOffshorePage() {
           Your choice between nearshore and offshore is not a line item; it's a strategic bet on how your company will innovate. While offshore lures with low hourly rates, this sticker price masks a cascade of hidden costs that inflate your <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">Total Cost of Ownership (TCO)</Tooltip> and silently sabotage your roadmap.
         </p>
       </header>
+      
+      <div className="text-center my-12">
+        <div className="inline-flex items-center gap-2 rounded-full border bg-card px-6 py-3 text-lg font-semibold text-primary">
+            <Clock className="h-6 w-6" />
+            <span>The fundamental flaw in a cost-per-hour analysis is its failure to account for <strong>human latency</strong>.</span>
+        </div>
+      </div>
 
       <section className="my-24">
         <h2 className="text-center text-4xl font-bold text-foreground">Diagnosing the Pains of a Broken Outsourcing Strategy</h2>
@@ -92,7 +108,7 @@ export default function NearshoreVsOffshorePage() {
       
       <section className="my-24">
         <h2 className="text-center text-4xl font-bold text-foreground">Decision Framework: A Holistic Comparison</h2>
-         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">The fundamental flaw in a cost-per-hour analysis is its failure to account for <strong>human latency</strong>. A 12-hour time difference is a systemic bottleneck that destroys agile velocity.</p>
+         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">A 12-hour time difference isn't an inconvenience; it's a systemic bottleneck that destroys agile velocity.</p>
         <div className="overflow-x-auto mt-12">
           <table className="w-full text-sm text-left">
             <thead className="border-b border-border/50">
@@ -121,10 +137,7 @@ export default function NearshoreVsOffshorePage() {
         </div>
       </section>
 
-      <div className="prose dark:prose-invert max-w-none text-center">
-        <h2 className="mt-12">The Verdict: Choose Velocity and Control</h2>
-        <p>For startups and growth-stage companies where speed and agility are paramount, the choice is clear. The hidden "latency tax" of the offshore model is a risk most cannot afford. While large enterprises with waterfall-style projects may tolerate asynchronous workflows, any organization practicing agile will see a dramatic ROI from the real-time collaboration enabled by a nearshore team. Our platform maximizes this advantage by providing not only the talent but the entire security and operational wrapper under a single SLA.</p>
-      </div>
+      <article className="prose dark:prose-invert max-w-none my-24" dangerouslySetInnerHTML={{ __html: contentHtml }} />
 
        <div className="text-center rounded-lg bg-primary/10 p-8 mt-12">
             <h2 className="text-2xl font-bold">Ready to Eliminate the Latency Tax?</h2>
