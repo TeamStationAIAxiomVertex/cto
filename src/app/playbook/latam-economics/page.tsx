@@ -78,7 +78,7 @@ export default function LatamEconomicsPage() {
 
        <header className="my-8">
           <div className="rounded-lg border bg-card p-8 md:p-12">
-              <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">LATAM Economics for CTOs: A CFO-Ready Framework</h1>
+              <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">LATAM Economics for CTOs: A CFO-Ready Framework</h1>
               <div className="mt-8 max-w-4xl grid gap-6">
                   <div className="bg-background p-6 rounded-lg border border-primary/20">
                       <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>The CTO's Dilemma</h2>
