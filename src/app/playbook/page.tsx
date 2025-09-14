@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, BookOpen, GitCompare, Scale, ShieldCheck, UserCheck, Zap, Layers, TestTube2, Server, Database, BrainCircuit, GanttChartSquare, DollarSign, Users, Clock, AlertTriangle, MessageSquare, Briefcase, GitBranch, Tv, BarChart, FileLock, Users2 } from 'lucide-react';
+import { ArrowRight, BookOpen, GitCompare, Scale, ShieldCheck, UserCheck, Zap, Layers, TestTube2, Server, Database, BrainCircuit, GanttChartSquare, DollarSign, Users, Clock, AlertTriangle, MessageSquare, Briefcase, GitBranch, Tv, BarChart, FileLock, Users2, FileSearch } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
 
