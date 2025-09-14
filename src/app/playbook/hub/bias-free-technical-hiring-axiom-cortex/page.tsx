@@ -1,7 +1,8 @@
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
-import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck } from 'lucide-react';
+import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen, UserX } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Stop Gambling on Resumes. Start De-risking Your Hires.',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 const hiringPains = [
     {
-        icon: <UserX className="h-8 w-8 text-yellow-400" />,
+        icon: <UserX className="h-8 w-8 text-primary" />,
         pain: "Is your hiring process a high-risk gamble?",
         solutionTitle: "From Resume Keywords to Cognitive Proof",
         problem: "Traditional hiring relies on resume keywords and unstructured interviews—a biased, low-signal process that tells you nothing about a candidate's actual problem-solving ability.",
@@ -70,11 +71,11 @@ export default function BiasFreeHiringPage() {
                         
                         <div className="mt-4 flex-grow space-y-4">
                             <div>
-                                <h4 className="font-semibold text-yellow-400">The Traditional Flaw</h4>
+                                <h4 className="font-semibold text-destructive">The Traditional Flaw</h4>
                                 <p className="text-sm text-muted-foreground m-0">{item.problem}</p>
                             </div>
                             <div className="border-t border-border pt-4">
-                                <h4 className="font-semibold text-green-400">The TeamStation AI Solution</h4>
+                                <h4 className="font-semibold text-primary">The TeamStation AI Solution</h4>
                                 <p className="text-sm text-foreground m-0">{item.solution.replace('Axiom Cortex™', '')}
                                   <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline font-semibold">Axiom Cortex™</Link></Tooltip>
                                 </p>
@@ -109,3 +110,5 @@ export default function BiasFreeHiringPage() {
     </main>
   );
 }
+
+    

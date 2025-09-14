@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
@@ -9,12 +10,12 @@ export const metadata: Metadata = {
 };
 
 const buildCosts = [
-    { area: "Recruitment & Hiring", tax: "Months of your senior engineers' time wasted on screening and interviewing instead of building product. High agency fees.", impact: "$25,000 - $40,000", icon: <UserCheck className="h-8 w-8 text-yellow-400" /> },
-    { area: "Legal & Entity Setup", tax: "Navigating foreign labor laws, tax codes, and corporate registration is a legal minefield that requires expensive local counsel.", impact: "$15,000 - $30,000+ (one-time)", icon: <FileText className="h-8 w-8 text-yellow-400" /> },
-    { area: "HR & Payroll Admin", tax: "Managing international payroll, benefits, and compliance for each country is a full-time job you now own.", impact: "$10,000 - $15,000 (annual)", icon: <Briefcase className="h-8 w-8 text-yellow-400" /> },
-    { area: "IT & Security", tax: "Procuring, shipping, securing (MDM), and managing laptops globally without a dedicated international IT team is an operational nightmare.", impact: "$5,000 - $8,000 (per hire)", icon: <ShieldCheck className="h-8 w-8 text-yellow-400" /> },
-    { area: "The Mis-Hire Tax", tax: "A bad hire costs 6-12 months of salary in lost productivity, team disruption, and the cost of re-hiring.", impact: "$40,000 - $80,000", icon: <BrainCircuit className="h-8 w-8 text-yellow-400" /> },
-    { area: "The Vacancy Tax", tax: "Every day a role is open is a day you're not shipping revenue-generating features. The industry average is 45 days.", impact: "≈$12,000 (per $1M ARR)", icon: <DollarSign className="h-8 w-8 text-yellow-400" /> },
+    { area: "Recruitment & Hiring", tax: "Months of your senior engineers' time wasted on screening and interviewing instead of building product. High agency fees.", impact: "$25,000 - $40,000", icon: <UserCheck className="h-8 w-8 text-primary" /> },
+    { area: "Legal & Entity Setup", tax: "Navigating foreign labor laws, tax codes, and corporate registration is a legal minefield that requires expensive local counsel.", impact: "$15,000 - $30,000+ (one-time)", icon: <FileText className="h-8 w-8 text-primary" /> },
+    { area: "HR & Payroll Admin", tax: "Managing international payroll, benefits, and compliance for each country is a full-time job you now own.", impact: "$10,000 - $15,000 (annual)", icon: <Briefcase className="h-8 w-8 text-primary" /> },
+    { area: "IT & Security", tax: "Procuring, shipping, securing (MDM), and managing laptops globally without a dedicated international IT team is an operational nightmare.", impact: "$5,000 - $8,000 (per hire)", icon: <ShieldCheck className="h-8 w-8 text-primary" /> },
+    { area: "The Mis-Hire Tax", tax: "A bad hire costs 6-12 months of salary in lost productivity, team disruption, and the cost of re-hiring.", impact: "$40,000 - $80,000", icon: <BrainCircuit className="h-8 w-8 text-primary" /> },
+    { area: "The Vacancy Tax", tax: "Every day a role is open is a day you're not shipping revenue-generating features. The industry average is 45 days.", impact: "≈$12,000 (per $1M ARR)", icon: <DollarSign className="h-8 w-8 text-primary" /> },
 ];
 
 const buySolutions = [
@@ -76,7 +77,7 @@ export default function BuildVsBuyPage() {
 
         <div className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {buildCosts.map((item) => (
-                <div key={item.area} className="rounded-lg border border-amber-500/20 bg-card p-6 flex flex-col">
+                <div key={item.area} className="rounded-lg border border-destructive/20 bg-card p-6 flex flex-col">
                     <div className="flex items-center gap-3">
                         {item.icon}
                         <h3 className="text-lg font-semibold text-foreground">{item.area}</h3>
@@ -84,7 +85,7 @@ export default function BuildVsBuyPage() {
                     <p className="mt-4 text-sm text-muted-foreground flex-grow">{item.tax.replace('MDM', '')}
                         {item.tax.includes("MDM") && <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
                     </p>
-                    <p className="mt-4 text-base font-mono text-amber-400 bg-amber-500/10 rounded px-3 py-2 inline-block self-start">
+                    <p className="mt-4 text-base font-mono text-destructive bg-destructive/10 rounded px-3 py-2 inline-block self-start">
                         {item.impact}
                     </p>
                 </div>
@@ -92,7 +93,7 @@ export default function BuildVsBuyPage() {
         </div>
          <div className="text-center my-8 p-6 rounded-lg bg-background border border-red-500/30">
             <h3 className="text-xl font-bold text-foreground">Total Hidden Cost (1st Year, per hire)</h3>
-            <p className="text-3xl font-mono font-bold text-red-400 mt-2">$97,000 - $185,000+</p>
+            <p className="text-3xl font-mono font-bold text-destructive mt-2">$97,000 - $185,000+</p>
             <p className="text-sm text-muted-foreground mt-1">This is <em>in addition</em> to the engineer's salary. The "cheaper" build model is often twice as expensive.</p>
         </div>
 
@@ -143,3 +144,5 @@ export default function BuildVsBuyPage() {
     </main>
   );
 }
+
+    

@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { ArrowRight, TrendingUp, DollarSign, Zap, AlertTriangle, BrainCircuit, ShieldCheck } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -99,7 +100,7 @@ export default function LatamEconomicsPage() {
          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
              {hiddenTaxes.map((point) => (
                  <div key={point.title} className="rounded-lg border border-transparent bg-background p-6 flex flex-col">
-                    <p className="text-sm font-semibold text-yellow-400">{point.pain}</p>
+                    <p className="text-sm font-semibold text-destructive">{point.pain}</p>
                     <div className="flex items-center gap-3 mt-3">
                         {point.icon}
                         <h3 className="text-lg font-semibold text-foreground">{point.title}</h3>
@@ -130,32 +131,32 @@ export default function LatamEconomicsPage() {
               <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-medium text-foreground">Recruitment Fees</td>
                   <td className="px-4 py-3 text-muted-foreground text-center">$25,000–$40,000</td>
-                  <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
+                  <td className="px-4 py-3 font-semibold text-primary text-center">Included</td>
               </tr>
                <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-medium text-foreground">Hardware & Software Setup</td>
                   <td className="px-4 py-3 text-muted-foreground text-center">$3,000–$5,000</td>
-                  <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
+                  <td className="px-4 py-3 font-semibold text-primary text-center">Included</td>
               </tr>
                 <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-medium text-foreground">Admin & Legal Onboarding</td>
                   <td className="px-4 py-3 text-muted-foreground text-center">$2,000–$5,000</td>
-                   <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
+                   <td className="px-4 py-3 font-semibold text-primary text-center">Included</td>
               </tr>
                <tr className="border-b border-border/50 bg-card">
                   <td className="px-4 py-3 font-bold text-foreground">Total Onboarding Cost</td>
-                  <td className="px-4 py-3 font-bold text-red-400 text-center">$30,000–$50,000+</td>
-                   <td className="px-4 py-3 font-bold text-green-400 text-center">$0</td>
+                  <td className="px-4 py-3 font-bold text-destructive text-center">$30,000–$50,000+</td>
+                   <td className="px-4 py-3 font-bold text-primary text-center">$0</td>
               </tr>
                 <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-bold text-foreground">Est. Annual Salary (Senior)</td>
-                  <td className="px-4 py-3 font-bold text-red-400 text-center">~$180,000</td>
-                   <td className="px-4 py-3 font-bold text-green-400 text-center">~$83,040</td>
+                  <td className="px-4 py-3 font-bold text-destructive text-center">~$180,000</td>
+                   <td className="px-4 py-3 font-bold text-primary text-center">~$83,040</td>
               </tr>
               <tr className="bg-primary/10">
                   <td className="px-4 py-4 font-extrabold text-foreground text-lg">First-Year TCO</td>
-                  <td className="px-4 py-4 font-extrabold text-red-400 text-center text-lg">~$210,000+</td>
-                   <td className="px-4 py-4 font-extrabold text-green-400 text-center text-lg">~$83,040</td>
+                  <td className="px-4 py-4 font-extrabold text-destructive text-center text-lg">~$210,000+</td>
+                   <td className="px-4 py-4 font-extrabold text-primary text-center text-lg">~$83,040</td>
               </tr>
             </tbody>
           </table>
@@ -179,3 +180,5 @@ export default function LatamEconomicsPage() {
     </main>
   );
 }
+
+    

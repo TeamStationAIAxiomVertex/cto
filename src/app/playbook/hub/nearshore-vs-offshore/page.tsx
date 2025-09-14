@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    icon: <Users2 className="h-8 w-8 text-yellow-400" />,
+    icon: <Users2 className="h-8 w-8 text-primary" />,
     title: 'The Pain of Vendor Churn',
     question: 'Is your best engineer re-training a revolving door of vendor talent?',
     problem: 'Offshore partners often rotate engineers off projects with little notice, leading to constant knowledge loss. Your seniors are forced to re-train new team members instead of building product.',
@@ -19,7 +20,7 @@ const painPoints = [
     kpi: '90-day retention ≥96%'
   },
   {
-    icon: <FileSearch className="h-8 w-8 text-yellow-400" />,
+    icon: <FileSearch className="h-8 w-8 text-primary" />,
     title: 'The Pain of "Vendor Fog"',
     question: 'Can you get a straight answer, or is project status lost in vague updates?',
     problem: 'When you lack direct access to source control, CI/CD, and system telemetry, you are flying blind. Vague status reports and delayed tickets make it impossible to forecast delivery.',
@@ -27,7 +28,7 @@ const painPoints = [
     kpi: '100% auditable system of record'
   },
   {
-    icon: <Scale className="h-8 w-8 text-yellow-400" />,
+    icon: <Scale className="h-8 w-8 text-primary" />,
     title: 'The Pain of Productivity Mismatch',
     question: 'Are low hourly rates burning your budget with slow delivery?',
     problem: 'A 12-hour feedback loop can easily cut a team\'s velocity in half. A feature that should take two weeks takes four, doubling your "true" cost.',
@@ -35,7 +36,7 @@ const painPoints = [
     kpi: 'Time-to-First-PR in 7–14 days'
   },
   {
-    icon: <Briefcase className="h-8 w-8 text-yellow-400" />,
+    icon: <Briefcase className="h-8 w-8 text-primary" />,
     title: 'The Pain of Multi-Vendor Risk',
     question: 'Are you juggling separate vendors for hiring, payroll, IT, and legal?',
     problem: 'Using separate vendors creates a web of complexity and accountability gaps. If a security incident occurs, who is responsible? The EOR? The recruiting firm?',
@@ -45,12 +46,12 @@ const painPoints = [
 ];
 
 const comparisonTable = [
-  { factor: 'Time-Zone Overlap', nearshore: 'High (4-8 hours)', offshore: 'Low (0-2 hours)', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Enables real-time pairing, ad-hoc problem-solving, and same-day PR reviews.', offshore_detail: 'Forces asynchronous handoffs, late-night calls, and 24-hour feedback cycles.' },
-  { factor: 'Collaboration Fidelity', nearshore: 'High', offshore: 'Low', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Nuanced conversations are possible, reducing ambiguity and rework. Fosters a single, unified team.', offshore_detail: 'Communication is often formal, ticket-based, and prone to misunderstanding.' },
-  { factor: 'Cultural & Language Alignment', nearshore: 'High', offshore: 'Medium-High', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Strong affinity with U.S. work culture and business practices reduces friction.', offshore_detail: 'Varies by country, but tech hubs often have excellent English proficiency. Cultural gaps can still exist.' },
-  { factor: 'Travel & On-Site Escalation', nearshore: 'Simple & Cost-Effective', offshore: 'Complex & Expensive', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'Same-day or next-day travel is feasible for critical workshops or crisis resolution.', offshore_detail: 'Requires multi-day travel, visas, and significant expense, making it impractical.' },
-  { factor: 'Compliance & Legal Risk', nearshore: 'Lower', offshore: 'Higher', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'Our integrated EOR model handles compliance with data privacy laws (GDPR/LGPD) and local labor regulations.', offshore_detail: 'Navigating disparate legal frameworks and data residency laws is complex and introduces significant risk.' },
-  { factor: 'Total Cost of Ownership (TCO)', nearshore: 'Predictable & Lower', offshore: 'Unpredictable & Higher', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'An all-inclusive rate with no hidden fees. Higher productivity and lower risk lead to a lower true cost.', offshore_detail: 'Low hourly rates are offset by high costs of management overhead, lost productivity, and vendor management.' },
+  { factor: 'Time-Zone Overlap', nearshore: 'High (4-8 hours)', offshore: 'Low (0-2 hours)', nearshore_color: 'text-primary', offshore_color: 'text-destructive', nearshore_detail: 'Enables real-time pairing, ad-hoc problem-solving, and same-day PR reviews.', offshore_detail: 'Forces asynchronous handoffs, late-night calls, and 24-hour feedback cycles.' },
+  { factor: 'Collaboration Fidelity', nearshore: 'High', offshore: 'Low', nearshore_color: 'text-primary', offshore_color: 'text-destructive', nearshore_detail: 'Nuanced conversations are possible, reducing ambiguity and rework. Fosters a single, unified team.', offshore_detail: 'Communication is often formal, ticket-based, and prone to misunderstanding.' },
+  { factor: 'Cultural & Language Alignment', nearshore: 'High', offshore: 'Medium-High', nearshore_color: 'text-primary', offshore_color: 'text-primary', nearshore_detail: 'Strong affinity with U.S. work culture and business practices reduces friction.', offshore_detail: 'Varies by country, but tech hubs often have excellent English proficiency. Cultural gaps can still exist.' },
+  { factor: 'Travel & On-Site Escalation', nearshore: 'Simple & Cost-Effective', offshore: 'Complex & Expensive', nearshore_color: 'text-primary', offshore_color: 'text-destructive', nearshore_detail: 'Same-day or next-day travel is feasible for critical workshops or crisis resolution.', offshore_detail: 'Requires multi-day travel, visas, and significant expense, making it impractical.' },
+  { factor: 'Compliance & Legal Risk', nearshore: 'Lower', offshore: 'Higher', nearshore_color: 'text-primary', offshore_color: 'text-destructive', nearshore_detail: 'Our integrated EOR model handles compliance with data privacy laws (GDPR/LGPD) and local labor regulations.', offshore_detail: 'Navigating disparate legal frameworks and data residency laws is complex and introduces significant risk.' },
+  { factor: 'Total Cost of Ownership (TCO)', nearshore: 'Predictable & Lower', offshore: 'Unpredictable & Higher', nearshore_color: 'text-primary', offshore_color: 'text-destructive', nearshore_detail: 'An all-inclusive rate with no hidden fees. Higher productivity and lower risk lead to a lower true cost.', offshore_detail: 'Low hourly rates are offset by high costs of management overhead, lost productivity, and vendor management.' },
 ];
 
 export default function NearshoreVsOffshorePage() {
@@ -80,7 +81,7 @@ export default function NearshoreVsOffshorePage() {
               </div>
               <p className="mt-4 text-sm text-muted-foreground">{point.problem}</p>
               <div className="mt-4 border-t border-border pt-4 flex-grow">
-                <h4 className="font-semibold text-green-400">The TeamStation AI Solution</h4>
+                <h4 className="font-semibold text-primary">The TeamStation AI Solution</h4>
                 <p className="text-sm text-foreground m-0">{point.solution}</p>
               </div>
                <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {point.kpi}</p>
@@ -137,3 +138,5 @@ export default function NearshoreVsOffshorePage() {
     </main>
   );
 }
+
+    
