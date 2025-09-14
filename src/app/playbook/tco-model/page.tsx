@@ -72,7 +72,7 @@ const costCards = [
     "formula": [
         "Savings_onboard = H × C_day × ΔTP"
     ],
-    "example": "H=6, C_day (US FLC) ≈ $600/day, ΔTP=10 days → $36,000 saved.",
+    "example": "H=6, C_day (US FLC) ≈ $156,000/260 ≈ $600/day, ΔTP=10 days → $36,000 saved.",
     "cta_question": "What is your measured ΔTP seat-by-seat?"
   },
   {
@@ -169,11 +169,11 @@ export default function TCOModelPage() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-border/50">
                     <h3 className="font-semibold text-primary">Problem</h3>
-                    <p className="text-sm text-muted-foreground">{card.problem}</p>
+                    <p className="text-sm text-muted-foreground m-0">{card.problem}</p>
                 </div>
                 <div className="mt-4">
                     <h3 className="font-semibold text-green-400">Solution</h3>
-                    <p className="text-sm text-muted-foreground">{card.solution}</p>
+                    <p className="text-sm text-muted-foreground m-0">{card.solution}</p>
                 </div>
                 <div className="mt-4 flex-grow">
                     <h3 className="font-semibold">Proof</h3>
