@@ -6,7 +6,7 @@ import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
     title: 'Software Engineer Performance & Growth Framework | TeamStation AI',
-    description: 'Our data-driven performance evaluation framework for software engineers moves beyond broken traditional reviews to maximize impact and success for nearshore teams. A playbook for CTOs on technical performance review.',
+    description: 'Our data-driven performance evaluation framework for software engineers moves beyond broken traditional reviews to maximize impact and success for nearshore teams. A playbook for CTOs on technical performance review and bias-free evaluation.',
 };
 
 const principles = [
@@ -143,17 +143,15 @@ export default function PerformanceEvaluationFrameworkPage() {
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {competencies.map((comp, index) => (
                         <div key={index} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
-                            <p className="text-sm font-semibold text-destructive">The Pain</p>
-                            <p className="text-lg font-semibold text-foreground mt-1">{comp.pain}</p>
+                            <p className="text-sm font-semibold text-destructive">{comp.pain}</p>
 
                             <div className="mt-4 pt-4 border-t border-border">
-                                <h4 className="font-semibold text-primary">The Solution</h4>
-                                <p className="text-base font-bold text-foreground mt-1">{comp.solutionTitle}</p>
+                                <h4 className="font-semibold text-primary">{comp.solutionTitle}</h4>
                                 <p className="text-sm italic text-muted-foreground">{comp.solutionDescription}</p>
                             </div>
                             
                             <div className="mt-4 pt-4 border-t border-border flex-grow">
-                                <h4 className="font-semibold text-foreground">The Proof (<Tooltip text="Behaviorally Anchored Rating Scale">BARS</Tooltip> Scale)</h4>
+                                <h4 className="font-semibold text-foreground">Proof (<Tooltip text="Behaviorally Anchored Rating Scale: A method that ties ratings to specific, observable behaviors to reduce subjectivity.">BARS</Tooltip> Scale)</h4>
                                 <div className="mt-2 space-y-2">
                                     {comp.proof.map(item => (
                                         <div key={item.rating} className="text-sm flex items-start gap-2">
