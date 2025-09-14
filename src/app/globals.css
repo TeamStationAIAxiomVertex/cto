@@ -63,6 +63,9 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
   }
+  .bg-card {
+    background: hsl(var(--card));
+  }
   .light .bg-card {
     background: linear-gradient(to bottom, hsl(220 80% 95%), hsl(0 0% 100%));
   }
