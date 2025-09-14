@@ -29,7 +29,6 @@ const models = [
         problem: "Elite talent, but at a premium price. The freelance model creates continuity risk and leaves you with the entire burden of security, compliance, and management.",
         vendors: [
             { name: "Toptal", href: "/comparisons/toptal" },
-            { name: "TECLA", href: "/comparisons/tecla" }
         ],
         solution: "We build dedicated, long-term teams of full-time employees, ensuring knowledge retention and deep integration, all at a sustainable cost."
     },
@@ -53,6 +52,7 @@ const models = [
             { name: "Deel", href: "/comparisons/deel" },
             { name: "Revelo", href: "/comparisons/revelo" },
             { name: "ParallelStaff", href: "/comparisons/parallelstaff" },
+            { name: "TECLA", href: "/comparisons/tecla" }
         ],
         solution: "We are a complete operational platform. We bundle all 'run-state' services—EOR, devices, MDM, security, insurance—into a single, accountable SLA."
     }
