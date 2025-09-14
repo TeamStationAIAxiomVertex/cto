@@ -365,6 +365,7 @@ const evidenceLocker = [
 ]
 
 const glossary = [
+  { term: "PSP", definition: "Pain, Solution, Proof. A communication framework used to frame problems, present solutions, and provide evidence of effectiveness." },
   { term: "Axiom Cortex™", definition: "Our proprietary Cognitive AI engine that analyzes interview data to produce a scientific, evidence-based evaluation of a candidate's latent cognitive traits." },
   { term: "Cognitive Fingerprint", definition: "A visualization of a candidate's scores across four key latent traits: Architectural Instinct (AI), Problem-Solving Agility (PSA), Learning Orientation (LO), and Collaborative Mindset (CM)." },
   { term: "IaC", definition: "Infrastructure as Code. The practice of managing and provisioning infrastructure through code and software development techniques, rather than through manual processes." },
@@ -372,7 +373,6 @@ const glossary = [
   { term: "BARS", definition: "Behaviorally Anchored Rating Scales. A scoring method that ties numerical ratings to specific, observable behaviors, reducing subjective bias." },
   { term: "EOR", definition: "Employer of Record. A service that allows us to legally hire employees in other countries on your behalf, handling all local compliance, payroll, and taxes." },
   { term: "MDM", definition: "Mobile Device Management. Software that allows us to secure, monitor, and manage all company-provisioned laptops, ensuring a high level of security and compliance." },
-  { term: "PSP", definition: "Pain, Solution, Proof. A communication framework used in our reports to clearly articulate a problem, our proposed solution, and the evidence that supports it." },
 ];
 
 const faqs = [
@@ -426,11 +426,10 @@ export default function TalentEvaluationClient() {
                 <h2 className="text-xl font-semibold text-foreground">Executive Summary: Strong Hire</h2>
             </div>
             <div className="mt-4 text-sm text-muted-foreground space-y-2">
-                 <p><strong>Final Score: 4.6 / 5.0</strong> (Country: Mexico)</p>
                  <p>This recommendation is based on a comprehensive analysis that reveals Erick as a high-potential senior engineer with a robust technical foundation and exceptional cognitive traits. He demonstrates deep, modern expertise in frontend performance engineering and a solid grasp of backend architectural principles.</p>
                  <p>While he may not use standard industry jargon for every concept, particularly in prompt engineering, his ability to reason from first principles and arrive at architecturally sound, analogous solutions is a powerful indicator of a superior mental model. This, combined with a perfect score in Learning Orientation—evidenced by his consistent intellectual honesty—and a proven collaborative mindset, makes him a prime candidate. He passed all Core Competency Gates, and his profile strongly suggests he will not only excel in the role but also rapidly evolve into a key technical leader.</p>
             </div>
-             <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: All Core Competency Gates Passed</p>
+             <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: Final Score: 4.6 / 5.0 (All Core Competency Gates Passed)</p>
         </div>
 
         <div className="rounded-lg border bg-card p-6 shadow-lg">
@@ -468,7 +467,7 @@ export default function TalentEvaluationClient() {
                 
                  <div className="mt-8 prose dark:prose-invert max-w-none text-sm">
                     <h4 className="flex items-center gap-2 text-base"><HelpCircle className="h-5 w-5 text-primary" />How is this score calculated?</h4>
-                    <p>The score is a data-driven output from the Axiom Cortex™ AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary <Tooltip text="Behaviorally Anchored Rating Scales: a scoring method that ties numerical ratings to specific, observable behaviors.">BARS</Tooltip> rubric, and applies calibration layers to mitigate bias. The final score is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</p>
+                    <p>The score is a data-driven output from the <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip> AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary <Tooltip text="Behaviorally Anchored Rating Scales: a scoring method that ties numerical ratings to specific, observable behaviors.">BARS</Tooltip> rubric, and applies calibration layers to mitigate bias. The final score is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</p>
                 </div>
             </div>
             <div className="mt-8 pt-6 border-t border-border">

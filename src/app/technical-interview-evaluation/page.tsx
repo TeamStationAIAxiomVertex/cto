@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import TalentEvaluationClient from '@/app/research/technical-talent-evaluation-system/client';
+import TalentEvaluationClient from './client';
 
 export const metadata: Metadata = {
     title: 'Evidence-Based Technical Interview Process | TeamStation AI',
