@@ -87,7 +87,7 @@ export default function AxiomCortexReportPage() {
             </div>
 
              <div>
-                <h4 className="flex items-center gap  -2"><Sigma className="h-5 w-5 text-primary" />Formulas: BARS (Behaviorally Anchored Rating Scales) Scoring</h4>
+                <h4 className="flex items-center gap-2"><Sigma className="h-5 w-5 text-primary" />Formulas: BARS (Behaviorally Anchored Rating Scales) Scoring</h4>
                 <p className="text-sm">A suite of algorithms (7-19) scores the answer chunk against multiple behavioral axioms. Each B-Axiom has its own scoring function.</p>
                 <ul>
                     <li><strong>Algorithm 7 (B_P - Procedural Knowledge):</strong> Scores the correctness and completeness of the process described by the candidate.</li>
@@ -161,3 +161,4 @@ export default function AxiomCortexReportPage() {
   );
 }
 
+    
