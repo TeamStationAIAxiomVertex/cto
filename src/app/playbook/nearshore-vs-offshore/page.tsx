@@ -75,11 +75,13 @@ export default function NearshoreVsOffshorePage() {
         </div>
       </div>
       
-      <div className="prose dark:prose-invert max-w-none my-16">
-        <h2 className="text-center">Foreword: The CTO's Dilemma</h2>
-        <p>You’re here because you’re under pressure. The board wants faster feature delivery. The CFO wants to cut engineering costs. Your best engineers are threatening to quit because they’re tired of 10 PM calls with a team on the other side of the world. You’ve been told that "offshore" is the answer to your budget problem, but your gut tells you it’s a trap. Your gut is right.</p>
-        <p>The traditional offshore model, built on the simple arithmetic of lower hourly rates, is a relic of a pre-agile world. It was designed for waterfall projects with long lead times and minimal need for real-time collaboration. In today's world of two-week sprints, continuous deployment, and complex, interdependent systems, that model is not just inefficient; it is actively destructive to your velocity, your culture, and your bottom line.</p>
-        <p>This guide is not another generic blog post listing the pros and cons of global talent. This is a strategic framework—a playbook—for you, the CTO, to diagnose the hidden costs bleeding your budget and the unseen risks threatening your roadmap. It is built on the Sandler methodology: we will first amplify the pain of your current situation, quantify its true financial impact, and then present a data-driven, logical solution. This is how you build a CFO-ready case for moving from a cost-centric offshore gamble to a value-driven nearshore strategy.</p>
+       <div className="my-16 rounded-xl border bg-card p-8 md:p-12">
+        <h2 className="text-center text-3xl font-bold">Foreword: The CTO's Dilemma</h2>
+        <div className="prose dark:prose-invert max-w-2xl mx-auto mt-6">
+            <p>You’re here because you’re under pressure. The board wants faster feature delivery. The CFO wants to cut engineering costs. Your best engineers are threatening to quit because they’re tired of 10 PM calls with a team on the other side of the world. You’ve been told that "offshore" is the answer to your budget problem, but your gut tells you it’s a trap. Your gut is right.</p>
+            <p>The traditional offshore model, built on the simple arithmetic of lower hourly rates, is a relic of a pre-agile world. It was designed for waterfall projects with long lead times and minimal need for real-time collaboration. In today's world of two-week sprints, continuous deployment, and complex, interdependent systems, that model is not just inefficient; it is actively destructive to your velocity, your culture, and your bottom line.</p>
+            <p>This guide is not another generic blog post listing the pros and cons of global talent. This is a strategic framework—a playbook—for you, the CTO, to diagnose the hidden costs bleeding your budget and the unseen risks threatening your roadmap. It is built on the Sandler methodology: we will first amplify the pain of your current situation, quantify its true financial impact, and then present a data-driven, logical solution. This is how you build a CFO-ready case for moving from a cost-centric offshore gamble to a value-driven nearshore strategy.</p>
+        </div>
       </div>
 
       <section className="my-24">
@@ -185,5 +187,3 @@ export default function NearshoreVsOffshorePage() {
     </main>
   );
 }
-
-    
