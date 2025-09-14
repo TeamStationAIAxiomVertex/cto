@@ -212,11 +212,11 @@ export default function TalentEvaluationClient() {
                 />
                 <Bar dataKey="candidate" name="Candidate" barSize={20} radius={[0, 8, 8, 0]}>
                     {cognitiveData.map((entry, index) => {
-                        let fillColor = 'hsl(var(--destructive))';
+                        let fillColor = 'hsl(var(--destructive))'; // Red for score < 3.0
                         if (entry.candidate >= 4.0) {
-                            fillColor = 'hsl(var(--primary))';
+                            fillColor = 'hsl(var(--primary))'; // Blue for score >= 4.0
                         } else if (entry.candidate >= 3.0) {
-                            fillColor = 'hsl(var(--accent))';
+                            fillColor = 'hsl(215 28% 45%)'; // Yellow/Accent for score 3.0-3.9
                         }
                         return <Cell key={`cell-${index}`} fill={fillColor} />;
                     })}
@@ -231,7 +231,7 @@ export default function TalentEvaluationClient() {
                 <span>Excellent (Score &gt;= 4.0)</span>
             </div>
             <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(var(--accent))' }}></div>
+                <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(215 28% 45%)' }}></div>
                 <span>Good (Score 3.0-3.9)</span>
             </div>
             <div className="flex items-center gap-2">
@@ -255,7 +255,7 @@ export default function TalentEvaluationClient() {
       </div>
 
         <div className='my-12'>
-            <h2 className="text-3xl font-bold text-center text-foreground">Risk Factors & Mitigation Plan</h2>
+            <h2 className="text-3xl font-bold text-center text-foreground">Risk Factors &amp; Mitigation Plan</h2>
              <p className='text-muted-foreground mt-2 text-center'>
                 Every hire has risks. Our process identifies them and provides a concrete, actionable plan to mitigate them from Day 1, turning potential weaknesses into strengths.
             </p>
@@ -299,6 +299,5 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
-
 
     
