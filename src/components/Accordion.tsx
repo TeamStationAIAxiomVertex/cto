@@ -22,7 +22,7 @@ export const AccordionItem = ({ title, children }: AccordionItemProps) => {
   }, [isOpen]);
 
   return (
-    <div className="border-b">
+    <div className="border-b border-border/50">
       <button
         className="flex w-full items-center justify-between py-4 text-left font-semibold"
         onClick={() => setIsOpen(!isOpen)}
