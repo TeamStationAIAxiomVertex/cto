@@ -44,35 +44,6 @@ const painPoints = [
   },
 ];
 
-const hiddenTaxes = [
-    {
-        icon: <Zap className="h-6 w-6 text-red-400" />,
-        title: "The Human Latency Tax",
-        description: "This is the most significant and most often ignored cost. Assume a team of 6 engineers. A 12-hour time difference means that for every simple question, an entire workday is lost. If each engineer loses just 2 hours per day to waiting—a conservative estimate—that's 12 hours of wasted, fully-loaded engineering time every single day. At a loaded cost of $50/hour, that's $600 per day, or",
-        impact: "$132,000 per year,",
-        impactColor: "text-red-400",
-        afterText: "evaporated into thin air. That's the cost of a senior US engineer, spent on waiting."
-    },
-    {
-        icon: <Briefcase className="h-6 w-6 text-red-400" />,
-        title: "The Management Overhead Tax",
-        description: "Your engineering managers and product managers are expensive, high-leverage resources. An offshore model forces them into the role of vendor coordinators and late-night wranglers. If an EM spends 25% of their time managing offshore communications and rework, that's a quarter of their $200k+ salary—",
-        impact: "$50,000 per year",
-        impactColor: "text-red-400",
-        afterText: "—dedicated to mitigating a problem that shouldn't exist."
-    },
-    {
-        icon: <Scale className="h-6 w-6 text-red-400" />,
-        title: "The Quality & Rework Tax",
-        description: "Misunderstandings born from asynchronous communication lead directly to building the wrong thing. Every feature that needs significant rework due to a misread ticket is a 100% tax on the original development time. A single two-week sprint ($20k cost) that has to be redone because the requirements were misunderstood costs you $20k and, more importantly, two weeks of opportunity you'll never get back."
-    },
-    {
-        icon: <ShieldCheck className="h-6 w-6 text-red-400" />,
-        title: "The Compliance & Security Risk Multiplier",
-        description: "What is the cost of a single data breach? For a mid-stage startup, it's not just the fines; it's existential. Relying on an offshore vendor who allows engineers to use personal laptops without MDM isn't a cost-saving measure; it's a multi-million dollar liability waiting to happen. The cost is not a line item until it is, at which point it's too late. An integrated nearshore model with full device control and contractual liability shifts this risk from your books to ours."
-    }
-];
-
 const comparisonTable = [
   { factor: 'Time-Zone Overlap', nearshore: 'High (4-8 hours)', offshore: 'Low (0-2 hours)', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Enables real-time pairing and same-day PR reviews. This is the fundamental driver of agile velocity.', offshore_detail: 'Forces asynchronous handoffs, late-night calls, and 24-hour feedback cycles. This systematically destroys agile workflows.' },
   { factor: 'Collaboration Fidelity', nearshore: 'High', offshore: 'Low', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Nuanced, high-context conversations are possible, reducing ambiguity and expensive rework. Fosters a single, unified team culture.', offshore_detail: 'Communication is often formal, ticket-based, and prone to misunderstanding due to cultural and linguistic gaps. It creates an "us vs. them" dynamic.' },
@@ -89,24 +60,24 @@ export default async function NearshoreVsOffshorePage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook/hub" className="hover:text-foreground">CTO Playbook</Link> / <span>Nearshore vs. Offshore</span>
       </div>
 
-      <header className="my-8 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Nearshore vs. Offshore: The Strategic Choice for CTOs</h1>
+       <header className="my-8">
+          <div className="rounded-lg border bg-card p-8 md:p-12">
+              <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Nearshore vs. Offshore: The Strategic Choice for CTOs</h1>
+              <div className="mt-8 max-w-4xl grid gap-6">
+                  <div className="bg-background p-6 rounded-lg border border-primary/20">
+                      <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>Foreword: The CTO's Dilemma</h2>
+                      <p className="mt-2 text-muted-foreground">You’re here because you’re under pressure. The board wants faster feature delivery. The CFO wants to cut engineering costs. Your best engineers are threatening to quit because they’re tired of <strong className="text-foreground">10 PM calls</strong> with a team on the other side of the world. You’ve been told that "offshore" is the answer to your budget problem, but your gut tells you it’s a trap. <strong className="text-primary">Your gut is right.</strong></p>
+                  </div>
+                  <div className="bg-background p-6 rounded-lg border border-border/50">
+                       <p className="mt-2 text-muted-foreground">The traditional offshore model, built on the simple arithmetic of lower hourly rates, is a relic of a pre-agile world. It was designed for waterfall projects with long lead times and minimal need for real-time collaboration. In today's world of two-week sprints, continuous deployment, and complex, interdependent systems, that model is not just inefficient; it is <strong className="text-red-400">actively destructive</strong> to your velocity, your culture, and your bottom line.</p>
+                  </div>
+                   <div className="bg-background p-6 rounded-lg border border-border/50">
+                       <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Playbook's Purpose</h3>
+                      <p className="mt-2 text-muted-foreground">This guide is not another generic blog post. This is a <strong className="text-primary">strategic framework—a playbook—</strong>for you, the CTO, to diagnose the hidden costs bleeding your budget and the unseen risks threatening your roadmap. It is built on the <strong className="text-foreground">Sandler methodology:</strong> we will first amplify the pain of your current situation, quantify its true financial impact, and then present a data-driven, logical solution. This is how you build a CFO-ready case for moving from a cost-centric offshore gamble to a value-driven nearshore strategy.</p>
+                  </div>
+              </div>
+          </div>
       </header>
-
-      <section className="my-16 rounded-xl border bg-card p-8 md:p-12">
-        <h2 className="text-center text-3xl font-bold text-foreground">Foreword: The CTO's Dilemma</h2>
-        <div className="mt-8 max-w-4xl mx-auto space-y-6">
-            <div className="bg-background p-6 rounded-lg border border-border/50">
-                <p className="mt-2 text-muted-foreground">You’re here because you’re under pressure. The board wants faster feature delivery. The CFO wants to cut engineering costs. Your best engineers are threatening to quit because they’re tired of <strong className="text-foreground">10 PM calls</strong> with a team on the other side of the world. You’ve been told that "offshore" is the answer to your budget problem, but your gut tells you it’s a trap. <strong className="text-primary">Your gut is right.</strong></p>
-            </div>
-            <div className="bg-background p-6 rounded-lg border border-border/50">
-                <p className="mt-2 text-muted-foreground">The traditional offshore model, built on the simple arithmetic of lower hourly rates, is a relic of a pre-agile world. It was designed for waterfall projects with long lead times and minimal need for real-time collaboration. In today's world of two-week sprints, continuous deployment, and complex, interdependent systems, that model is not just inefficient; it is <strong className="text-red-400">actively destructive</strong> to your velocity, your culture, and your bottom line.</p>
-            </div>
-             <div className="bg-background p-6 rounded-lg border border-primary/20">
-                <p className="mt-2 text-muted-foreground">This guide is not another generic blog post. This is a <strong className="text-primary">strategic framework—a playbook—</strong>for you, the CTO, to diagnose the hidden costs bleeding your budget and the unseen risks threatening your roadmap. It is built on the <strong className="text-foreground">Sandler methodology:</strong> we will first amplify the pain, quantify its true financial impact, and then present a data-driven, logical solution. This is how you build a CFO-ready case for moving from a cost-centric offshore gamble to a value-driven nearshore strategy.</p>
-            </div>
-        </div>
-      </section>
 
       <section className="my-24">
         <h2 className="text-center text-4xl font-bold text-foreground">Part 1 (The Pain): Diagnosing the Hidden Costs of Your Outsourcing Strategy</h2>
@@ -136,25 +107,45 @@ export default async function NearshoreVsOffshorePage() {
       <section className="my-24 rounded-lg border bg-card p-8 md:p-12">
         <h2 className="text-center text-4xl font-bold text-foreground">Part 2 (The Budget): Quantifying the True Cost — A CFO-Ready TCO Model</h2>
         <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
-          A CTO who presents a plan based solely on salary comparisons is walking into a financial trap. A true <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip> model must include the "hidden taxes" of management overhead, lost productivity due to the Human Latency Tax, the cost of vendor churn, and the significant financial risk of a compliance breach. These are not soft costs; they are real dollars draining from your P&L.
+          A CTO who presents a plan based solely on salary comparisons is walking into a financial trap. A true <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip> model must include the "hidden taxes" of management overhead, productivity loss due to the Human Latency Tax, vendor churn, and the significant financial risk of a compliance breach. These are not soft costs; they are real dollars draining from your P&L.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            {hiddenTaxes.map((tax, index) => (
-                <div key={index} className="bg-background/50 rounded-lg border border-red-500/20 p-6">
-                    <div className="flex items-center gap-3">
-                        {tax.icon}
-                        <h3 className="text-lg font-bold text-foreground">{tax.title}</h3>
-                    </div>
-                    <p className="text-sm text-muted-foreground mt-4">
-                        {tax.description}
-                        {tax.impact && (
-                             <strong className={`font-bold ${tax.impactColor}`}> {tax.impact} </strong>
-                        )}
-                        {tax.afterText}
-                         {tax.description.includes('MDM') && <Tooltip text="Mobile Device Management: Software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
-                    </p>
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div className="bg-background/50 rounded-lg border border-red-500/20 p-6">
+                <div className="flex items-center gap-3">
+                    <Zap className="h-6 w-6 text-red-400" />
+                    <h3 className="text-lg font-bold text-foreground">The Human Latency Tax</h3>
                 </div>
-            ))}
+                <p className="text-sm text-muted-foreground mt-4">
+                    This is the most significant and most often ignored cost. A 12-hour time difference means that for every simple question, an entire workday is lost. If each of 6 engineers loses just 2 hours per day to waiting, that's 12 hours of wasted time every single day. At a loaded cost of $50/hour, that's <strong className="font-bold text-red-400">$132,000 per year</strong> evaporated. That's the cost of a senior US engineer, spent on waiting.
+                </p>
+            </div>
+            <div className="bg-background/50 rounded-lg border border-red-500/20 p-6">
+                <div className="flex items-center gap-3">
+                    <Briefcase className="h-6 w-6 text-red-400" />
+                    <h3 className="text-lg font-bold text-foreground">The Management Overhead Tax</h3>
+                </div>
+                <p className="text-sm text-muted-foreground mt-4">
+                    Your engineering managers are expensive, high-leverage resources. An offshore model forces them into the role of late-night coordinators. If an EM spends 25% of their time on this, that's a quarter of their $200k+ salary—<strong className="font-bold text-red-400">$50,000 per year</strong>—dedicated to a problem that shouldn't exist.
+                </p>
+            </div>
+            <div className="bg-background/50 rounded-lg border border-red-500/20 p-6">
+                <div className="flex items-center gap-3">
+                    <Scale className="h-6 w-6 text-red-400" />
+                    <h3 className="text-lg font-bold text-foreground">The Quality & Rework Tax</h3>
+                </div>
+                <p className="text-sm text-muted-foreground mt-4">
+                   Misunderstandings from asynchronous communication lead to building the wrong thing. Every feature that needs significant rework due to a misread ticket is a 100% tax on the original development time. A single two-week sprint ($20k cost) that has to be redone costs you $20k and two weeks of opportunity you'll never get back.
+                </p>
+            </div>
+             <div className="bg-background/50 rounded-lg border border-red-500/20 p-6">
+                <div className="flex items-center gap-3">
+                    <ShieldCheck className="h-6 w-6 text-red-400" />
+                    <h3 className="text-lg font-bold text-foreground">The Compliance & Security Risk Multiplier</h3>
+                </div>
+                <p className="text-sm text-muted-foreground mt-4">
+                    What is the cost of a single data breach? For a mid-stage startup, it's existential. Relying on an offshore vendor who allows engineers to use personal laptops without MDM isn't a cost-saving measure; it's a multi-million dollar liability waiting to happen. An integrated nearshore model shifts this risk from your books to ours.
+                </p>
+            </div>
         </div>
          <div className="mt-8 text-center">
             <Link href="/playbook/latam-economics" className="cta-button">
@@ -193,7 +184,6 @@ export default async function NearshoreVsOffshorePage() {
           </table>
         </div>
       </section>
-
       <section className="my-24 rounded-lg border bg-card p-8 md:p-12">
         <h2 className="text-4xl font-bold text-center text-foreground">The Verdict: Choose Velocity and Control, Not Just Cost</h2>
         <div className="mt-8 max-w-4xl mx-auto space-y-6">
@@ -213,8 +203,8 @@ export default async function NearshoreVsOffshorePage() {
                 </div>
             </div>
 
-            <div className="bg-background p-6 rounded-lg border border-border/50">
-                 <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Strategic Decision</h3>
+            <div className="bg-background p-6 rounded-lg border border-primary/20">
+                 <h3 className="font-bold text-primary flex items-center gap-2"><CheckCircle className="h-5 w-5"/>The Strategic Decision</h3>
                 <p className="mt-2 text-muted-foreground">The most expensive asset in your engineering organization is not your payroll, but your <strong className="text-foreground">time</strong>. Time to market, time to recovery, and the time your best engineers spend on high-value work instead of low-value coordination.</p>
                 <p className="mt-4 text-foreground">Our platform maximizes this advantage by providing not only the talent but the entire <Link href="/trust" className="text-primary font-bold hover:underline">security and operational wrapper</Link> under a single SLA. This is not about finding cheaper developers; it's about engineering a faster, safer, and more efficient way to build software. It's a strategic decision to <strong className="text-primary">buy back time, reduce risk, and increase the velocity</strong> of your entire engineering organization.</p>
             </div>
@@ -233,3 +223,5 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
+
+    

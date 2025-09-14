@@ -2,95 +2,118 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
-import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Users, FileSearch } from 'lucide-react';
+import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Bias-Free Technical Hiring: A CTO\'s Playbook for De-Risking Talent',
-  description: 'The definitive playbook for replacing your broken, high-risk hiring process with a faster, fairer, and more accurate hiring engine powered by our Axiom Cortex™ cognitive AI.',
+  title: 'Build vs. Buy: The Definitive CTO Framework for Scaling Nearshore Teams',
+  description: 'Should you build a nearshore operation from scratch or "buy" into an integrated platform? This data-driven playbook for CTOs models the trade-offs in Total Cost of Ownership (TCO), speed, and risk.',
 };
 
-const hiringPains = [
-    {
-        icon: <Users className="h-8 w-8 text-yellow-400" />,
-        pain: "Is your hiring process a high-risk gamble on resumes?",
-        question: "How many 'senior' engineers have you hired who couldn't solve a real-world problem?",
-        problem: "Traditional hiring relies on resume keywords and unstructured interviews—a biased, low-signal process that tells you nothing about a candidate's actual problem-solving ability or architectural instinct. You're betting your roadmap on a PDF.",
-        solution: "Our Axiom Cortex™ Cognitive AI engine provides scientific, evidence-based proof of a candidate's cognitive traits, like Architectural Instinct and Problem-Solving Agility. We measure how they think, not just what they know.",
-        kpi: "Mismatch Rate ≤ 10%",
-        href: "/technical-interview-evaluation",
-        linkLabel: "See a Real Evaluation Report"
+const buildCosts = [
+    { 
+        area: "Recruitment & Hiring", 
+        tax: "Months of your senior engineers' time wasted on screening and interviewing instead of building product. High agency fees and a low signal-to-noise ratio make this a costly gamble.", 
+        impact: "$25,000 - $40,000", 
+        icon: <UserCheck className="h-8 w-8 text-yellow-400" />,
+        impactColor: "text-red-400"
     },
-    {
-        icon: <Zap className="h-8 w-8 text-yellow-400" />,
-        pain: "Are you losing top talent to a slow, frustrating process?",
-        question: "How many great candidates have you lost to a competitor because your interview loop took 45 days?",
-        problem: "Slow, multi-stage interview loops with poor scheduling and subjective feedback create a terrible candidate experience. The best engineers are off the market in 10 days. Your process is selecting for the patient, not the exceptional.",
-        solution: "Our integrated platform streamlines the entire process, from sourcing to offer. Deep, AI-powered vetting up front means fewer, more meaningful interviews, reducing your time-to-hire by over 80%.",
-        kpi: "Time-to-Offer ≈ 9 days",
-        href: "/process",
-        linkLabel: "Explore Our Full Process"
+    { 
+        area: "Legal & Entity Setup", 
+        tax: "Navigating foreign labor laws, tax codes, and corporate registration is a legal minefield that requires expensive local counsel and months of administrative delay.", 
+        impact: "$15,000 - $30,000+", 
+        icon: <FileText className="h-8 w-8 text-yellow-400" />,
+        impactColor: "text-red-400"
     },
-    {
-        icon: <FileSearch className="h-8 w-8 text-yellow-400" />,
-        pain: "Can you defend your hiring decisions with data?",
-        question: "When a hire fails, can you pinpoint the failure in your vetting process?",
-        problem: "When a mis-hire happens, there's often no data to explain why the decision was made. The process is a black box of gut feelings and vague interview notes, making it impossible to learn from mistakes or defend against compliance inquiries.",
-        solution: "Every evaluation generates a complete 'Evidence Locker' with transcripts, scores, and an explainable hiring signal. You get a fully auditable evidence trail for every candidate, turning hiring into a science.",
-        kpi: "100% Auditable Evidence Trail",
-        href: "/technical-interview-evaluation",
-        linkLabel: "See the Evidence Locker"
-    }
+    { 
+        area: "HR & Payroll Admin", 
+        tax: "Managing international payroll, benefits, and compliance for each country is a full-time job you now own. This is a massive, ongoing operational drag on your internal resources.", 
+        impact: "$10,000 - $15,000 (annual)", 
+        icon: <Briefcase className="h-8 w-8 text-yellow-400" />,
+        impactColor: "text-red-400"
+    },
+    { 
+        area: "IT & Security", 
+        tax: "Procuring, shipping, securing (MDM), and managing laptops globally without a dedicated international IT team is an operational nightmare and a significant security risk.", 
+        impact: "$5,000 - $8,000 (per hire)", 
+        icon: <ShieldCheck className="h-8 w-8 text-yellow-400" />,
+        impactColor: "text-red-400"
+    },
+    { 
+        area: "The 'Mis-Hire Tax'", 
+        tax: "A bad hire costs 6-12 months of salary in lost productivity, team disruption, management overhead, and the cost of re-hiring. It's the most expensive mistake you can make.", 
+        impact: "$75,000 - $150,000", 
+        icon: <BrainCircuit className="h-8 w-8 text-yellow-400" />,
+        impactColor: "text-red-400"
+    },
+    { 
+        area: "The 'Vacancy Tax'", 
+        tax: "Every day a critical role sits empty, your company pays a 'Vacancy Tax' in delayed features, missed revenue targets, and lost market share. The industry average is 45-60 days.", 
+        impact: "≈$160,000 per $1M ARR", 
+        icon: <DollarSign className="h-8 w-8 text-yellow-400" />,
+        impactColor: "text-red-400"
+    },
 ];
 
-const hiddenTaxes = [
-    {
-        icon: <BrainCircuit className="h-6 w-6 text-red-400" />,
-        title: "The 'Mis-Hire Tax'",
-        description: "The most obvious cost. A single bad senior hire costs 6-12 months of salary in lost productivity, team disruption, management overhead, and the cost of re-hiring. For a $150k engineer, that's a",
-        impact: "$75,000 - $150,000",
-        impactColor: "text-red-400",
-        afterText: "direct hit to your P&L."
+const buySolutions = [
+    { 
+        pain: "Is your recruiting process a high-risk gamble?", 
+        solutionTitle: "From Resume Keywords to Cognitive Proof",
+        solution: "Our Axiom Cortex™ engine provides scientifically-vetted shortlists, cutting your team's interview time by >80%. We find candidates with the right 'mental shape' for the role, not just the right keywords.", 
+        proof: "Mismatch Rate ≤ 10%",
+        href: "/technical-interview-evaluation",
+        linkLabel: "See Our Vetting Process",
+        icon: <UserCheck className="h-8 w-8 text-primary" />
     },
-    {
-        icon: <Briefcase className="h-6 w-6 text-red-400" />,
-        title: "The 'Vacancy Tax'",
-        description: "Every day a critical role sits empty, your company pays a 'Vacancy Tax' in delayed features, missed revenue targets, and lost market share. If a 60-day hiring cycle could be 10 days, you've pulled nearly two months of future revenue forward. For a feature worth $1M ARR, that's",
-        impact: "over $160,000",
-        impactColor: "text-red-400",
-        afterText: "in recaptured value."
+    { 
+        pain: "Are you drowning in legal and HR complexity?",
+        solutionTitle: "From Multi-Vendor Chaos to One SLA",
+        solution: "Our platform includes full Employer of Record (EOR) services. We handle all contracts, payroll, taxes, and benefits, ensuring full compliance in every LATAM country and eliminating your administrative burden.", 
+        proof: "Zero legal or HR overhead",
+        href: "/services/integrated-services",
+        linkLabel: "Explore Integrated Services",
+        icon: <FileText className="h-8 w-8 text-primary" />
     },
-    {
-        icon: <Scale className="h-6 w-6 text-red-400" />,
-        title: "The 'Productivity Tax'",
-        description: "Your best engineers spend countless hours screening resumes, conducting first-round interviews, and training new hires who don't have the right skills. This isn't just frustrating; it's an enormous drain on your most valuable resource. Every hour they spend interviewing is an hour they aren't building your product."
+    { 
+        pain: "Is your security posture full of holes?",
+        solutionTitle: "From 'Bring Your Own Device' to Audit-Ready",
+        solution: "We provide secure, MDM-managed devices and comprehensive Cyber/E&O insurance. Your security posture is audit-ready from Day 1, with no work from your IT team. We own the risk.", 
+        proof: "SOC 2 & ISO Aligned posture",
+        href: "/trust",
+        linkLabel: "Visit Our Trust Center",
+        icon: <ShieldCheck className="h-8 w-8 text-primary" />
     },
-    {
-        icon: <ShieldCheck className="h-6 w-6 text-red-400" />,
-        title: "The 'Bias & Compliance Risk' Multiplier",
-        description: "An unstructured, subjective hiring process is a massive, unquantified legal and reputational risk. It opens you up to claims of bias and makes it impossible to defend your hiring practices. A scientific, evidence-based process is your best defense and ensures you're building a diverse, high-performing team."
-    }
+    { 
+        pain: "Are you paying for vendors or for outcomes?",
+        solutionTitle: "From Hidden Fees to Predictable TCO",
+        solution: "Our all-inclusive pricing eliminates surprise fees. You get a predictable, CFO-ready Total Cost of Ownership that is often 40-60% lower than the fully-loaded cost of the 'Build' model.", 
+        proof: "40-60% Lower TCO",
+        href: "/playbook/latam-economics",
+        linkLabel: "See the TCO Framework",
+        icon: <Scale className="h-8 w-8 text-primary" />
+    },
 ];
 
-export default function BiasFreeHiringPage() {
+
+export default function BuildVsBuyPage() {
   return (
     <main className="container max-w-5xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook/hub" className="hover:text-foreground">CTO Playbook</Link> / <span>Bias-Free Hiring</span>
       </div>
 
-       <header className="my-8">
-          <div className="rounded-lg border bg-card p-8 md:p-12">
-              <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">The Playbook for Bias-Free Technical Hiring</h1>
-              <div className="mt-8 max-w-4xl space-y-6">
+      <header className="my-8">
+        <div className="rounded-lg border bg-card p-8 md:p-12">
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Playbook for Bias-Free Technical Hiring</h1>
+            <div className="mt-8 max-w-4xl space-y-6">
                   <div className="bg-background p-6 rounded-lg border border-primary/20">
                       <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>The CTO's Dilemma</h2>
                       <p className="mt-2 text-muted-foreground">You’re here because your hiring process feels like a high-stakes gamble. You've been burned by charismatic candidates who aced the interview but couldn't write production-ready code. You're losing your best engineers to a slow, frustrating hiring loop. Your board is asking why head-count is up but velocity is down. You know your current process is broken, but you lack the data to prove it and a system to fix it.</p>
                   </div>
                   <div className="bg-background p-6 rounded-lg border border-border/50">
-                       <p className="mt-2 text-muted-foreground">This guide is not another list of interview questions. This is a <strong className="text-primary">strategic framework</strong> for you, the CTO, to transform your hiring process from a subjective, high-risk art form into a data-driven, low-risk science. We will diagnose the hidden costs bleeding your budget, quantify the financial impact, and provide a concrete system—powered by our <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/hub/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™ Cognitive AI</Link></Tooltip>—to build a high-performance team you can bet your roadmap on.</p>
+                       <p className="mt-2 text-muted-foreground">This guide is not another list of interview questions. This is a <strong className="text-primary">strategic framework</strong> for you, the CTO, to transform your hiring process from a subjective, high-risk art form into a data-driven, low-risk science. We will diagnose the hidden costs bleeding your budget, quantify the financial impact, and provide a concrete system—powered by our <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/hub/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip>—to build a high-performance team you can bet your roadmap on.</p>
                   </div>
               </div>
-          </div>
+        </div>
       </header>
 
       <section className="my-24">
@@ -228,3 +251,5 @@ export default function BiasFreeHiringPage() {
     </main>
   );
 }
+
+    
