@@ -91,7 +91,7 @@
 }
 
 h1 {
-  @apply text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent;
+  @apply text-5xl font-extrabold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent;
 }
 
 h2 {
