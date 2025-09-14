@@ -197,7 +197,7 @@ export default function LatamEconomicsPage() {
       </section>
 
       <section className="my-24 rounded-lg border bg-card p-8 md:p-12">
-        <h2 className="text-4xl font-bold text-center text-foreground">The Verdict: Speak the Language of Value</h2>
+        <h2 className="text-4xl font-bold text-center text-foreground">The Verdict: From Cost Center to Value Driver</h2>
         <div className="mt-8 max-w-4xl mx-auto space-y-6">
             <div className="bg-background p-6 rounded-lg border border-primary/20">
                 <h3 className="font-bold text-primary flex items-center gap-2"><HelpCircle className="h-5 w-5"/>The Strategic Conversation</h3>
