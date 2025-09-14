@@ -11,9 +11,10 @@ import {
   Cell,
 } from 'recharts';
 import { AccordionItem } from '@/components/Accordion';
-import { ShieldCheck, BrainCircuit, ArrowRight } from 'lucide-react';
+import { ShieldCheck, BrainCircuit, ArrowRight, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import { Tooltip } from '@/components/Tooltip';
 
 const cognitiveData = [
     { name: 'Architectural Instinct', candidate: 4.3, ideal: 4.5 },
@@ -160,7 +161,7 @@ export default function TalentEvaluationClient() {
       </header>
       
       <div className="grid grid-cols-1 md:grid-cols-2 my-12 gap-8">
-        <div className="rounded-lg border bg-card p-6">
+        <div className="rounded-lg border bg-card p-6 shadow-lg">
             <h2 className="text-xl font-bold text-foreground">Executive Summary</h2>
             <div className="flex items-center gap-4 my-4">
                 <div className="text-center">
@@ -175,7 +176,7 @@ export default function TalentEvaluationClient() {
             </div>
              <p className="text-sm text-muted-foreground">He demonstrates deep, modern expertise in frontend performance engineering and a solid grasp of backend architectural principles. His ability to reason from first principles is a powerful indicator of a superior mental model.</p>
         </div>
-        <div className="rounded-lg border bg-card p-6">
+        <div className="rounded-lg border bg-card p-6 shadow-lg">
             <h2 className="text-xl font-bold text-foreground">Metacognitive Conviction Index (MCI)</h2>
             <p className="text-sm text-muted-foreground">Assesses how well a candidate's confidence is calibrated with their knowledge.</p>
             <div className="w-full bg-background rounded-full h-2.5 my-4 relative border">
@@ -195,7 +196,7 @@ export default function TalentEvaluationClient() {
         </div>
       </div>
 
-      <div className="my-12 rounded-lg border bg-card p-6">
+      <div className="my-12 rounded-lg border bg-card p-6 shadow-lg">
         <h2 className="text-xl font-bold text-foreground flex items-center gap-2"><BrainCircuit className="h-6 w-6 text-primary" /> Cognitive Fingerprint 4.0</h2>
         <p className="text-sm text-muted-foreground">
             Maps the candidate's four latent traits against the ideal profile for the role. See our research paper on <Link href="/playbook/hub/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">bias-free hiring</Link> to learn more.
@@ -218,6 +219,29 @@ export default function TalentEvaluationClient() {
             </DynamicBarChart>
             </ResponsiveContainer>
         </div>
+        <div className="flex justify-center items-center gap-6 mt-4 text-xs text-muted-foreground">
+            <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(var(--primary))' }}></div>
+                <span>Candidate Score (Meets/Exceeds Ideal)</span>
+            </div>
+            <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(var(--destructive))' }}></div>
+                <span>Candidate Score (Below Ideal)</span>
+            </div>
+            <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(var(--accent))' }}></div>
+                <span>Ideal Profile for Role</span>
+            </div>
+        </div>
+         <div className="mt-8 pt-6 border-t border-border">
+            <h3 className="font-bold text-foreground flex items-center gap-2">
+                <HelpCircle className="h-5 w-5 text-primary" />
+                How is this score calculated?
+            </h3>
+            <p className="text-sm text-muted-foreground mt-2">
+                This is not a subjective rating. The score is a weighted average calculated by our <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline font-semibold">Axiom Cortex™</Link></Tooltip> AI. The engine analyzes the full interview transcript, identifies specific <Tooltip text="We've trained the model to recognize patterns in speech that indicate strong or weak problem-solving skills, architectural thinking, etc.">behavioral indicators</Tooltip> in the candidate's answers, and maps them to each cognitive trait. The raw scores are then calibrated to remove linguistic bias. The "Ideal Profile" is configured based on the specific demands of the role you define.
+            </p>
+        </div>
       </div>
 
         <div className='my-12'>
@@ -227,7 +251,7 @@ export default function TalentEvaluationClient() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
                 {risks.map((risk) => (
-                    <div key={risk.title} className="rounded-lg border bg-card p-6 flex flex-col">
+                    <div key={risk.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
                         <p className="text-sm font-semibold text-primary">{risk.pain}</p>
                         <div className="flex items-center gap-3 mt-3">
                            <ShieldCheck className="text-destructive h-6 w-6 shrink-0" />
