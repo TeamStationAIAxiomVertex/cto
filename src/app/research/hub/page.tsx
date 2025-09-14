@@ -58,23 +58,30 @@ export default async function ResearchPage() {
   const publications = [
       {
           icon: <BookOpen className="h-8 w-8 text-primary" />,
-          title: "The Nearshore Revolution: A CEO's guide to scaling with LATAM pods and squads",
+          title: "Platforming the Nearshore IT Staff Augmentation Industry",
           description: "This Amazon-published book is a strategic guide for executives on how to leverage nearshore teams to accelerate growth, innovate faster, and build a more resilient organization. It provides a practical framework for navigating the challenges and capitalizing on the opportunities of the modern global talent landscape.",
           href: "https://www.amazon.com/dp/B0F4TF6TWD?ref=cm_sw_r_ffobk_cp_ud_dp_ZD22XHJNVBWXRCMY7C3K&ref_=cm_sw_r_ffobk_cp_ud_dp_ZD22XHJNVBWXRCMY7C3K&social_share=cm_sw_r_ffobk_cp_ud_dp_ZD22XHJNVBWXRCMY7C3K&bestFormat=true&previewDoh=1",
           label: "View on Amazon"
       },
       {
           icon: <BrainCircuit className="h-8 w-8 text-primary" />,
-          title: "AxiomCortex™: Scientific R&D Report — Bias-Mitigated AI Evaluation for Nearshore Software Engineering Teams",
-          description: "Our peer-reviewed paper detailing the AxiomCortex™ architecture. This work outlines the foundational algorithms and bias-mitigation techniques that allow us to move beyond resume-scanning to a scientific model of talent evaluation. Published on the Social Science Research Network (SSRN).",
-          href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
+          title: "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation",
+          description: "Our peer-reviewed paper detailing a novel framework for predicting hiring timelines and optimizing the recruitment process, demonstrating a significant reduction in Time-to-Hire.",
+          href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433",
+          label: "Read on SSRN"
+      },
+      {
+          icon: <FileText className="h-8 w-8 text-primary" />,
+          title: "Nearshore Platformed: A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering",
+          description: "A comprehensive overview of the TeamStation AI platform architecture, its core AI technologies, integrated services, and responsible AI principles, forming the foundation of our transparent, evidence-based approach.",
+          href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490",
           label: "Read on SSRN"
       },
       {
           icon: <Beaker className="h-8 w-8 text-primary" />,
-          title: "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering",
-          description: "Our second peer-reviewed paper, which proposes a novel, value-centric model for assessing software engineer performance in the AI-augmented era. It provides the scientific underpinning for our Performance & Growth Framework, moving beyond outdated metrics to focus on quantifiable impact and growth potential.",
-          href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4749129",
+          title: "Nearshore IT Talent Performance Metrics in the Age of AI",
+          description: "This paper proposes a novel, value-centric model for assessing software engineer performance in the AI-augmented era, moving beyond outdated metrics to focus on quantifiable impact and growth potential.",
+          href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470",
           label: "Read on SSRN"
       }
   ]
