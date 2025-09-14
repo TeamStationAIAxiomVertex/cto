@@ -179,7 +179,7 @@ export default function PlatformPage() {
       </section>
 
       <section className="text-center rounded-lg bg-primary/10 p-8">
-        <h2 className="text-2xl font-bold">One Contract, One SLA, One Invoice.</h2>
+        <h2 className="text-2xl font-bold text-foreground">One Contract, One SLA, One Invoice.</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
           Ready to consolidate your vendors and de-risk your operation? Let's build your CFO-ready business case for a fully integrated nearshore platform.
         </p>

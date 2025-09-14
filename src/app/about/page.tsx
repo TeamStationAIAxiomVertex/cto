@@ -52,14 +52,14 @@ export default function AboutPage() {
         {pillars.map((pillar) => (
           <div className="flex flex-col items-center text-center p-6" key={pillar.title}>
             {pillar.icon}
-            <h2 className="mt-4 text-xl font-bold">{pillar.title}</h2>
+            <h2 className="mt-4 text-xl font-bold text-foreground">{pillar.title}</h2>
             <p className="mt-2 text-sm text-muted-foreground">{pillar.description}</p>
           </div>
         ))}
       </div>
 
        <div className="prose prose-lg dark:prose-invert mx-auto my-16">
-        <h2 className="text-center">The TeamStation AI Difference</h2>
+        <h2 className="text-center text-4xl font-bold text-foreground">The TeamStation AI Difference</h2>
         <p>
             We are not a staffing agency. We are not a consulting firm. We are a technology company. Our product is a fully integrated platform—the <Link href="/process">Nearshore IT Co-Pilot™</Link>—that solves the hardest parts of building a remote team.
         </p>
@@ -112,7 +112,7 @@ export default function AboutPage() {
       </section>
 
       <div className="text-center rounded-lg bg-primary/10 p-8">
-        <h2 className="text-2xl font-bold">Ready to Experience the Difference?</h2>
+        <h2 className="text-2xl font-bold text-foreground">Ready to Experience the Difference?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
            Let's talk about how our platform can help you achieve your product goals faster and more securely.
         </p>

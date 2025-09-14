@@ -110,7 +110,7 @@ export default function ProcessPage() {
 
 
        <div className="my-24 text-center">
-        <h2 className="text-4xl font-bold">Security, Compliance & Liability — Under One SLA</h2>
+        <h2 className="text-4xl font-bold text-foreground">Security, Compliance & Liability — Under One SLA</h2>
         <p className='mt-4 mx-auto max-w-3xl text-lg text-muted-foreground'>
             We carry the risk, contractually. You keep the velocity.
         </p>
@@ -132,7 +132,7 @@ export default function ProcessPage() {
       </div>
       
        <div className="my-24 text-center">
-        <h2 className="text-4xl font-bold">Recognized. Research-Backed. Field-Proven.</h2>
+        <h2 className="text-4xl font-bold text-foreground">Recognized. Research-Backed. Field-Proven.</h2>
         <p className='mt-4 mx-auto max-w-3xl text-lg text-muted-foreground'>
             Independent awards and peer-reviewed research underpin the platform that powers your LATAM teams.
         </p>
@@ -150,7 +150,7 @@ export default function ProcessPage() {
       </div>
 
       <div className="text-center rounded-lg bg-primary/10 p-8">
-        <h2 className="text-2xl font-bold">Ready to Hire Under One Accountable SLA?</h2>
+        <h2 className="text-2xl font-bold text-foreground">Ready to Hire Under One Accountable SLA?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
            Let's map your roles, security needs, and go-live timeline.
         </p>

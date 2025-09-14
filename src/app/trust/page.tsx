@@ -67,7 +67,7 @@ export default function TrustPage() {
       </div>
 
       <div className="my-16 text-center">
-        <h2 className="text-4xl font-bold">The Security Checklist for Vetting Any Partner</h2>
+        <h2 className="text-4xl font-bold text-foreground">The Security Checklist for Vetting Any Partner</h2>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           A vendor who cannot provide clear answers to these questions is a significant risk to your organization. With TeamStation AI, the answer is "yes" to all.
         </p>
@@ -92,7 +92,7 @@ export default function TrustPage() {
       </div>
 
       <div className="text-center rounded-lg bg-primary/10 p-8">
-        <h2 className="text-2xl font-bold">Security is Our Default Setting</h2>
+        <h2 className="text-2xl font-bold text-foreground">Security is Our Default Setting</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">Explore our process and see how our commitment to security is built into every step of our platform.</p>
         <Link href="/process" className="cta-button mt-6">
             Explore Our Process <ArrowRight className="ml-2 h-4 w-4"/>
