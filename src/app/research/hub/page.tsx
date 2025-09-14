@@ -1,16 +1,13 @@
 
-
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle } from 'lucide-react';
 import type { Metadata } from 'next';
-import { Tooltip } from '@/components/Tooltip';
-
 
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Research: The Science Behind Predictable Nearshore Results | TeamStation AI',
+  title: 'Research Hub: The Science of Predictable Nearshore Results | TeamStation AI',
   description: 'Explore our peer-reviewed research on AI technical interviews, software engineering performance telemetry, and bias-free hiring for LATAM engineering teams.',
 };
 

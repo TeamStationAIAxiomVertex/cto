@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import EvaluationClient from './client';
+import TalentEvaluationClient from './client';
 
 export const metadata: Metadata = {
     title: 'Sample Technical Talent Evaluation Report | TeamStation AI',
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function EvaluationPage() {
-  return <EvaluationClient />;
+  return <TalentEvaluationClient />;
 }

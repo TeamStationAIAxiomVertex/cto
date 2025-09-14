@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const post = await getPlaybookBySlug(params.slug);
   if (!post) return { title: 'Not Found' };
   return {
-    title: `${post.title} | CTO Playbook`,
+    title: `${post.title} | CTO Playbook | TeamStation AI`,
     description: post.description,
   };
 }

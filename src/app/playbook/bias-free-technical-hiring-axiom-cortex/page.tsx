@@ -5,8 +5,8 @@ import { Tooltip } from '@/components/Tooltip';
 import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen, UserX } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Build vs. Buy: The Definitive CTO Framework for Scaling Nearshore Teams',
-  description: 'Should you build a nearshore operation from scratch or "buy" into an integrated platform? This data-driven playbook for CTOs models the trade-offs in Total Cost of Ownership (TCO), speed, and risk.',
+  title: 'Bias-Free Technical Hiring: A Playbook for CTOs | TeamStation AI',
+  description: 'A strategic framework for CTOs to transform hiring from a subjective art into a data-driven science, powered by our Axiom Cortex™ Cognitive AI.',
 };
 
 const hiringPains = [
@@ -100,7 +100,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">If you recognize your organization in these scenarios, your hiring process isn't just inefficient; it's actively harming your business.</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {hiringPains.map((point) => (
-            <div key={point.title} className="rounded-lg border bg-card p-6 flex flex-col">
+            <div key={point.pain} className="rounded-lg border bg-card p-6 flex flex-col">
               <p className="text-sm font-semibold text-primary">{point.question}</p>
               <div className="flex items-center gap-3 mt-3">
                 {point.icon}

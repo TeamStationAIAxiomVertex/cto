@@ -61,7 +61,7 @@ export default function AboutPage() {
        <div className="prose prose-lg dark:prose-invert mx-auto my-16">
         <h2 className="text-center text-4xl font-bold text-foreground">The TeamStation AI Difference</h2>
         <p>
-            We are not a staffing agency. We are not a consulting firm. We are a technology company. Our product is a fully integrated platform—the <Link href="/process">Nearshore IT Co-Pilot™</Link>—that solves the hardest parts of building a remote team.
+            We are not a staffing agency. We are not a consulting firm. We are a technology company. Our product is a fully integrated platform—the <Link href="/platform">Nearshore IT Co-Pilot™</Link>—that solves the hardest parts of building a remote team.
         </p>
         <p>
             We are inspired by the ethos of the space program—a belief in doing what is hard to push humanity forward. To avert crisis, the Apollo missions required absolute certainty, continuity, and predictability. Without them, we would never have set foot on the moon. Our mission is to provide that same level of mission certainty in a highly intelligent service infrastructure that takes anomalies out of the hiring and team management equation.
@@ -88,7 +88,7 @@ export default function AboutPage() {
         <h2 className="text-center text-4xl font-bold text-foreground">Our Journey</h2>
         <div className="mt-12 flow-root">
           <div className="max-w-3xl mx-auto">
-            <ul className="-mb-8">
+            <ul class="-mb-8">
               {timeline.map((item, itemIdx) => (
                 <li key={item.year}>
                   <div className="relative pb-8">
@@ -121,5 +121,3 @@ export default function AboutPage() {
     </main>
   );
 }
-
-    
