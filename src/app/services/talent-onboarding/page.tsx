@@ -54,7 +54,7 @@ export default function OnboardingPage() {
 
       <div className="grid md:grid-cols-2 my-16 gap-8">
         {steps.map((step) => (
-           <div key={step.title} className="rounded-lg border bg-card p-6 flex flex-col">
+           <div key={step.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
                 <p className="text-sm font-semibold text-primary">{step.pain}</p>
                 <div className="flex items-center gap-3 mt-3">
                     {step.icon}
@@ -76,7 +76,7 @@ export default function OnboardingPage() {
         </p>
       </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8">
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Ready for a Faster, Safer Onboarding?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             See how our integrated platform and structured onboarding can accelerate your team's productivity.

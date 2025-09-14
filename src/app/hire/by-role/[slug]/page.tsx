@@ -356,7 +356,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
       </div>
 
 
-      <div className="my-16 rounded-lg border bg-card p-8">
+      <div className="my-16 rounded-lg border bg-card p-8 shadow-lg">
         <h2 className="text-center text-3xl font-bold">Our Evaluation Approach for {name}</h2>
         <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
              For roles in <strong>{name}</strong>, we understand that "good enough" is a recipe for disaster. Our <Link href="/research/axiom-cortex-scientific-report" className='text-primary hover:underline'>Axiom Cortex™ evaluation</Link> goes beyond simple coding tests to de-risk your hiring decision.
@@ -374,7 +374,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
         </p>
       </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8">
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Ready to Hire Elite {name} Talent?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
           Stop sifting through unqualified resumes. Let us provide you with a shortlist of 2-3 elite, pre-vetted candidates ready to make an impact.

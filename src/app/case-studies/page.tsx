@@ -26,7 +26,7 @@ export default async function CaseStudiesPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
         {caseStudies.map((study) => (
-          <div key={study.slug} className="group relative flex flex-col rounded-lg overflow-hidden border bg-card transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+          <div key={study.slug} className="group relative flex flex-col rounded-lg overflow-hidden border bg-card transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
             <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-start gap-4">
                     <Award className="h-8 w-8 text-primary mt-1" />

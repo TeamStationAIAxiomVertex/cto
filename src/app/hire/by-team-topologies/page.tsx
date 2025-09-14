@@ -74,7 +74,7 @@ export default function TeamTopologiesPage() {
         <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">We apply proven Team Topologies to build scalable nearshore IT teams from LATAM talent, matching the team structure to your specific business challenge.</p>
          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             {topologies.map((topo) => (
-                <div key={topo.name} className="group rounded-lg border bg-card p-6 flex flex-col">
+                <div key={topo.name} className="group rounded-lg border bg-card p-6 flex flex-col shadow-lg">
                     <p className="text-sm font-semibold text-primary">{topo.pain}</p>
                     <div className="flex items-center gap-4 mt-3">
                         {topo.icon}
@@ -99,19 +99,19 @@ export default function TeamTopologiesPage() {
         </div>
       </section>
 
-      <section className="my-24 rounded-lg border bg-card p-8">
+      <section className="my-24 rounded-lg border bg-card p-8 shadow-lg">
         <h2 className="text-center text-4xl font-bold text-foreground">The Science of Team Assembly</h2>
         <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">Building elite teams isn't guesswork. It's a science. Our platform provides the control and data you need to construct high-performing topologies with confidence.</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="bg-background rounded-lg p-6">
+            <div className="bg-background rounded-lg p-6 shadow-lg">
                 <h3 className="font-bold text-primary">1. Cognitive Mapping</h3>
                 <p className="text-sm text-muted-foreground">We use our <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip> engine to map candidates' cognitive traits. A Platform Engineer needs high Architectural Instinct; a Stream-Aligned engineer needs high Collaborative Mindset. We find the right mental shape for the role.</p>
             </div>
-            <div className="bg-background rounded-lg p-6">
+            <div className="bg-background rounded-lg p-6 shadow-lg">
                 <h3 className="font-bold text-primary">2. Role Blueprinting</h3>
                 <p className="text-sm text-muted-foreground">We work with you to define the precise skillsets, communication patterns, and experience levels required for each role within a topology, creating a data-driven blueprint for success.</p>
             </div>
-            <div className="bg-background rounded-lg p-6">
+            <div className="bg-background rounded-lg p-6 shadow-lg">
                 <h3 className="font-bold text-primary">3. Platform Control</h3>
                 <p className="text-sm text-muted-foreground">Our <Tooltip text="Our integrated platform for hiring, managing, and securing nearshore teams."><Link href="/platform" className="text-primary hover:underline">Nearshore IT Co-Pilot™ platform</Link></Tooltip> gives you a single pane of glass to manage it all—from vetting and secure onboarding to performance KPIs, ensuring your team structure performs as designed.</p>
             </div>
@@ -119,7 +119,7 @@ export default function TeamTopologiesPage() {
       </section>
 
 
-       <div className="text-center rounded-lg bg-primary/10 p-8">
+       <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Ready to design your high-velocity organization?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             This isn't a hiring conversation; it's an architectural one. Let's discuss which team topologies will unlock your roadmap and how our platform can build them for you with precision and control.
@@ -129,5 +129,3 @@ export default function TeamTopologiesPage() {
     </main>
   );
 }
-
-  

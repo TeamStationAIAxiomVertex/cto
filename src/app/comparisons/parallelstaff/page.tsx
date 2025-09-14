@@ -48,7 +48,7 @@ export default function ParallelStaffComparisonPage() {
         <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The TaaS Model</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
               <p className="text-sm font-semibold text-primary">{value.pain}</p>
               <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
               
@@ -89,7 +89,7 @@ export default function ParallelStaffComparisonPage() {
         </p>
       </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8">
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Conclusion</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             ParallelStaff's TaaS model is a step in the right direction. However, for CTOs seeking a truly comprehensive, secure, and unified platform that minimizes risk and administrative overhead through scientific vetting and all-inclusive operations, TeamStation AI's integrated model represents the next logical evolution.

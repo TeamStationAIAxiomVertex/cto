@@ -47,7 +47,7 @@ export default function BairesDevComparisonPage() {
         <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The "Top 1%" Vendor</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
               <p className="text-sm font-semibold text-primary">{value.pain}</p>
               <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
               
@@ -88,7 +88,7 @@ export default function BairesDevComparisonPage() {
         </p>
       </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8">
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Conclusion: Why Choose TeamStation AI as a BairesDev Alternative</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             For leaders who prioritize operational excellence, governance, and a deeper, more accurate understanding of talent, TeamStation's integrated platform model represents a clear evolution over traditional staff augmentation. We reduce mis-hire risk and provide a lower, more predictable TCO.

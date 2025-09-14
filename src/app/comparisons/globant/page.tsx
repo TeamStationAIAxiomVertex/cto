@@ -47,7 +47,7 @@ export default function GlobantComparisonPage() {
         <h2 className="text-3xl font-bold text-center">The Co-Pilot vs. The Systems Integrator</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
               <p className="text-sm font-semibold text-primary">{value.pain}</p>
               <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
               
@@ -97,7 +97,7 @@ export default function GlobantComparisonPage() {
         </p>
       </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8">
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Conclusion: Choose the Right Tool for the Job</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             If you need to outsource an entire digital transformation initiative, Globant is a world-class choice. If your goal is to strategically build and scale your own high-performing nearshore engineering team via staff augmentation, TeamStation AI is the superior Globant alternative.

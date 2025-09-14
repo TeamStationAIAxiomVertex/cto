@@ -100,7 +100,7 @@ export default function PlatformPage() {
          <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">Everything you need to hire, equip, secure, and run LATAM engineering teams—inside one platform and SLA.</p>
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {includedServices.map((service) => (
-                <div key={service.title} className="rounded-lg border bg-card p-6 flex flex-col">
+                <div key={service.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
                     <p className="text-sm font-semibold text-primary">{service.pain}</p>
                     <div className="flex items-center gap-3 mt-3">
                         {service.icon}
@@ -121,7 +121,7 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      <section id="proof" className="my-24 bg-card rounded-xl p-8 md:p-12">
+      <section id="proof" className="my-24 bg-card rounded-xl p-8 md:p-12 shadow-lg">
          <h2 className="text-center text-4xl font-bold text-foreground">Proof, Not Promises</h2>
          <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Independent recognition, peer-reviewed research, and platform delivery metrics—so you’re not taking our word for it.</p>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-12 gap-8'>
@@ -156,7 +156,7 @@ export default function PlatformPage() {
         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">These aren't just promises. They are contractually-binding commitments defined in your Master Services Agreement (MSA) and Statements of Work (SOW), giving you one accountable owner for your entire operation.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {guardrails.map(item => (
-                <div key={item.title} className="rounded-lg border bg-card p-6">
+                <div key={item.title} className="rounded-lg border bg-card p-6 shadow-lg">
                     <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
                     <p className="text-sm font-semibold text-primary my-2">Owner: {item.owner}</p>
                     <ul className="space-y-2 mt-4">
@@ -178,7 +178,7 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      <section className="text-center rounded-lg bg-primary/10 p-8">
+      <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold text-foreground">One Contract, One SLA, One Invoice.</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
           Ready to consolidate your vendors and de-risk your operation? Let's build your CFO-ready business case for a fully integrated nearshore platform.

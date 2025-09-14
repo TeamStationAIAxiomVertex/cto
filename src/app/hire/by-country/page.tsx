@@ -36,7 +36,7 @@ export default function HireByCountryPage() {
       </p>
       </header>
 
-       <div className="my-16 rounded-lg border bg-card p-8 md:p-12">
+       <div className="my-16 rounded-lg border bg-card p-8 md:p-12 shadow-lg">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
                  <p className="text-sm font-semibold text-primary">Tired of insecure home offices and spotty Wi-Fi?</p>
@@ -69,7 +69,7 @@ export default function HireByCountryPage() {
         <h2 className="text-center text-3xl font-bold">Explore Our Premier LATAM Engineering Hubs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {countries.map((country) => (
-                <div key={country.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                <div key={country.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
                     <p className="text-sm font-semibold text-primary">{country.pain}</p>
                     <div className="mt-3 flex items-center gap-3">
                         <span className="h-6 w-6 rounded-sm overflow-hidden flex-shrink-0">{country.icon}</span>
@@ -85,7 +85,7 @@ export default function HireByCountryPage() {
         </div>
       </div>
 
-       <div className="text-center rounded-lg bg-primary/10 p-8">
+       <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Ready to build your real-time team?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Let's discuss how our nearshore talent and integrated WeWork infrastructure can accelerate your roadmap.

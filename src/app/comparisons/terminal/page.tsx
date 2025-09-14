@@ -48,7 +48,7 @@ export default function TerminalComparisonPage() {
         <h2 className="text-3xl font-bold text-center">The Integrated Co-Pilot vs. The EOR-Plus-Recruiter</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
               <p className="text-sm font-semibold text-primary">{value.pain}</p>
               <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
               
@@ -94,7 +94,7 @@ export default function TerminalComparisonPage() {
         </ul>
       </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8">
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Conclusion</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             For companies that just need to solve hiring and payroll, Terminal is a capable partner. For CTOs who require an end-to-end, secure, and scientifically-validated platform for their entire nearshore operation, TeamStation AI offers a far more comprehensive and integrated solution.

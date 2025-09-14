@@ -117,7 +117,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                     </div>
                 )}
 
-                <div className="text-center rounded-lg bg-primary/10 p-8">
+                <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
                     <h2 className="text-xl font-bold">Ready to Build Your Elite Team?</h2>
                     <p className="mt-2 text-sm text-muted-foreground">
                         Let TeamStation AI provide the talent, governance, and infrastructure you need to ship faster and more securely.

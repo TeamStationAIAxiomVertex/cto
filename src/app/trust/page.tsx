@@ -54,7 +54,7 @@ export default function TrustPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
           {pillars.map((pillar) => (
-             <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col">
+             <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
                 <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
                 <div className="flex items-center gap-3 mt-3">
                     {pillar.icon}
@@ -91,7 +91,7 @@ export default function TrustPage() {
         </ul>
       </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8">
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold text-foreground">Security is Our Default Setting</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">Explore our process and see how our commitment to security is built into every step of our platform.</p>
         <Link href="/process" className="cta-button mt-6">

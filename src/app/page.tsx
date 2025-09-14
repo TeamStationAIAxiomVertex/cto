@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 function ServicePill({ icon: Icon, text }: { icon: React.ElementType, text: string }) {
     return (
-        <div className="flex items-center gap-2 rounded-full border bg-card px-4 py-2 text-sm text-muted-foreground">
+        <div className="flex items-center gap-2 rounded-full border bg-card px-4 py-2 text-sm text-muted-foreground shadow-lg">
             <Icon className="h-5 w-5 text-primary" />
             <span>{text}</span>
         </div>
@@ -123,7 +123,7 @@ export default async function HomePage() {
         <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">We're not another vendor. We are a force multiplier for your engineering organization, giving you the leverage to succeed.</p>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
             {corePillars.map(pillar => (
-                 <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col">
+                 <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
                     <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
                     <div className="flex items-center gap-3 mt-3">
                         {pillar.icon}
@@ -132,7 +132,7 @@ export default async function HomePage() {
                     <p className="mt-4 text-sm text-muted-foreground flex-grow">{pillar.description.replace('Axiom Cortex™', '').replace('MDM', '').replace('EOR', '').replace('TCO', '')}
                       {pillar.title.includes("Cognitive AI") && <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/hub/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip>}
                       {pillar.description.includes("MDM") && <Tooltip text="Mobile Device Management: Software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
-                      {pillar.description.includes("EOR") && <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>}
+                      {pillar.description.includes("EOR") && <Tooltip text="Employer of Record: A third-party organization that legally employs workers on behalf of another company.">EOR</Tooltip>}
                       {pillar.description.includes("TCO") && <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
                     </p>
                     <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
@@ -144,12 +144,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section id="pain-points" className="py-24 bg-card rounded-lg">
+      <section id="pain-points" className="py-24 bg-card rounded-lg shadow-lg">
         <h2 className="text-center text-4xl font-bold text-foreground">Sound Familiar? It's the Cost of Doing Nothing.</h2>
         <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">These aren't just headaches. They are symptoms of a broken IT staff augmentation model.</p>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {painPoints.map((pain, index) => (
-                <div key={index} className="flex items-center gap-4 bg-background p-4 rounded-lg">
+                <div key={index} className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-lg">
                     <AlertTriangle className="h-6 w-6 text-primary shrink-0"/>
                     <p className="m-0 font-medium text-muted-foreground">{pain}</p>
                 </div>
@@ -164,7 +164,7 @@ export default async function HomePage() {
         <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">Here’s how our integrated platform solves these problems by design.</p>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
               <p className="text-sm font-semibold text-primary">{value.pain}</p>
               <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
               
@@ -212,7 +212,7 @@ export default async function HomePage() {
         <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">See how CTOs like you have used our platform to solve critical problems and deliver results.</p>
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {caseStudies.map(study => (
-            <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+            <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
                 <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{study.clientName}</h3>
                 <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary my-3">{study.industry}</span>
                 <p className="text-sm text-muted-foreground flex-grow">{study.summary}</p>
@@ -228,7 +228,7 @@ export default async function HomePage() {
       </section>
 
       <section id="contact" className="py-24">
-         <div className="mx-auto max-w-3xl rounded-lg border bg-card p-8 text-center">
+         <div className="mx-auto max-w-3xl rounded-lg border bg-card p-8 text-center shadow-lg">
             <h2 className="text-3xl font-bold text-foreground">Stop Patching a Broken System. Build a Better One.</h2>
             <p className="mt-3 text-muted-foreground">In a 15-minute call, we won't give you a sales pitch. We'll give you a concrete plan to fix your hiring process, consolidate your vendors, and get a predictable, CFO-ready budget for your nearshore team. You will walk away with actionable advice, whether you work with us or not.</p>
             <div className="mt-6">

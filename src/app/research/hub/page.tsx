@@ -73,7 +73,7 @@ export default async function ResearchPage() {
           const paper = papers.find(p => p?.slug === asset.slug);
           if (!paper) return null;
           return (
-            <div key={paper.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+            <div key={paper.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
                <p className="text-sm font-semibold text-primary">{asset.pain}</p>
                 <div className="flex items-center gap-3 mt-3">
                     {asset.icon}
@@ -93,7 +93,7 @@ export default async function ResearchPage() {
          <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">The strategic questions our research directly addresses.</p>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           {faqs.map(faq => (
-            <div key={faq.question} className="rounded-lg border bg-card p-6">
+            <div key={faq.question} className="rounded-lg border bg-card p-6 shadow-lg">
                <div className="flex items-start gap-3">
                   <HelpCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
@@ -108,7 +108,7 @@ export default async function ResearchPage() {
       </div>
 
 
-       <div className="text-center rounded-lg bg-primary/10 p-8 mt-12">
+       <div className="text-center rounded-lg bg-primary/10 p-8 mt-12 shadow-lg">
         <h2 className="text-2xl font-bold">Ready to Apply the Science?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
           Let's move from theory to practice. In a 15-minute call, we can show you how our research-backed platform can solve your specific challenges.

@@ -144,7 +144,7 @@ export default function HireByRolePage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {roleCategories.map((details) => (
-          <Link href={`/hire/by-role/${details.slug}`} key={details.slug} className="group relative flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+          <Link href={`/hire/by-role/${details.slug}`} key={details.slug} className="group relative flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
               <p className="text-sm font-semibold text-primary">{details.pain}</p>
               <div className='flex justify-between items-start mt-3'>
                 <div className="flex items-center gap-3">
@@ -184,12 +184,12 @@ export default function HireByRolePage() {
         </div>
       </div>
 
-       <div className="text-center rounded-lg bg-primary/10 p-8">
+       <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Ready to build your team with confidence?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Let's discuss your specific needs. In a 15-minute call, we can map your roles to our evaluation process and show you how we de-risk your hiring.
         </p>
-        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
     </main>
   );

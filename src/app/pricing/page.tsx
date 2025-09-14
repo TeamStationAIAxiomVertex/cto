@@ -109,7 +109,7 @@ export default function PricingPage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
         {levels.map((level) => (
-          <div key={level.level} className={`group rounded-lg border bg-card p-6 flex flex-col transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 ${level.level === 'L3 Senior' ? 'border-primary/50' : ''}`}>
+          <div key={level.level} className={`group rounded-lg border bg-card p-6 flex flex-col transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg ${level.level === 'L3 Senior' ? 'border-primary/50' : ''}`}>
             <h2 className="text-lg font-bold">{level.level}</h2>
             <p className="text-sm text-muted-foreground flex-grow mt-1">{level.description}</p>
             <div className="my-6 text-center">
@@ -129,10 +129,10 @@ export default function PricingPage() {
         ))}
       </div>
       
-        <div className="rounded-lg border bg-card my-12 p-8">
+        <div className="rounded-lg border bg-card my-12 p-8 shadow-lg">
          <h2 className="text-3xl font-bold text-center">The Math Your CFO Cares About</h2>
          <p className="text-center text-muted-foreground max-w-3xl mx-auto mt-2">A single delayed roadmap feature can cost you millions in ARR. Faster, more accurate hiring isn't a "nice-to-have"—it's a financial necessity.</p>
-         <div className="text-center mt-8 bg-background p-6 rounded-lg max-w-2xl mx-auto">
+         <div className="text-center mt-8 bg-background p-6 rounded-lg max-w-2xl mx-auto shadow-lg">
             <h3 className='font-semibold text-foreground'>The Vacancy Tax You're Paying Today</h3>
             <div className="font-mono text-lg md:text-xl mt-2 flex flex-wrap justify-center items-center gap-2">
                 <span>(36 days saved / 365)</span>
@@ -162,7 +162,7 @@ export default function PricingPage() {
          <p className="mt-4 max-w-3xl mx-auto text-center text-muted-foreground">Our fully-loaded hourly rate is clear, defensible, and optimized for value. We align talent expectations with local market reality and bundle critical services under one accountable SLA.</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {pricingFactors.map(factor => (
-                <div key={factor.title} className="rounded-lg border bg-card p-6">
+                <div key={factor.title} className="rounded-lg border bg-card p-6 shadow-lg">
                      <div className="flex items-center gap-3">
                         {factor.icon}
                         <h3 className="text-xl font-bold text-foreground">{factor.title}</h3>
@@ -180,7 +180,7 @@ export default function PricingPage() {
         </div>
       </div>
 
-       <div className="text-center rounded-lg bg-primary/10 p-8">
+       <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Stop Burning Money. Start Building.</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
           Let's have a real conversation about your budget and your roadmap. In 15 minutes, we can give you a concrete, defensible plan.

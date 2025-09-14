@@ -10,9 +10,10 @@ import {
   ResponsiveContainer,
   Cell,
 } from 'recharts';
-import { Accordion, AccordionItem } from '@/components/Accordion';
+import { AccordionItem } from '@/components/Accordion';
 import { ShieldCheck, BrainCircuit, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 
 const cognitiveData = [
     { name: 'Architectural Instinct', candidate: 4.3, ideal: 4.5 },
@@ -143,6 +144,7 @@ const evidenceLocker = [
     },
 ]
 
+const DynamicBarChart = dynamic(() => Promise.resolve(BarChart), { ssr: false });
 
 export default function TalentEvaluationClient() {
   return (
@@ -158,7 +160,7 @@ export default function TalentEvaluationClient() {
       </header>
       
       <div className="grid grid-cols-1 md:grid-cols-2 my-12 gap-8">
-        <div className="rounded-lg border bg-card p-6">
+        <div className="rounded-lg border bg-card p-6 shadow-lg">
             <h2 className="text-xl font-bold text-foreground">Executive Summary</h2>
             <div className="flex items-center gap-4 my-4">
                 <div className="text-center">
@@ -173,13 +175,13 @@ export default function TalentEvaluationClient() {
             </div>
              <p className="text-sm text-muted-foreground">He demonstrates deep, modern expertise in frontend performance engineering and a solid grasp of backend architectural principles. His ability to reason from first principles is a powerful indicator of a superior mental model.</p>
         </div>
-        <div className="rounded-lg border bg-card p-6">
+        <div className="rounded-lg border bg-card p-6 shadow-lg">
             <h2 className="text-xl font-bold text-foreground">Metacognitive Conviction Index (MCI)</h2>
             <p className="text-sm text-muted-foreground">Assesses how well a candidate's confidence is calibrated with their knowledge.</p>
             <div className="w-full bg-background rounded-full h-2.5 my-4 relative border">
                  <div className="h-2.5 rounded-full" style={{ 
                      width: `${(mciScore / 4) * 100}%`,
-                     background: 'linear-gradient(to right, #f97316, #3b82f6, #4A69FF)' 
+                     background: 'linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary)))' 
                 }}></div>
                  <div className="absolute top-0 h-full flex items-center" style={{left: `calc(${(mciScore / 4) * 100}% - 8px)`}}>
                     <div className="w-4 h-4 bg-white rounded-full border-2 border-primary"></div>
@@ -193,14 +195,14 @@ export default function TalentEvaluationClient() {
         </div>
       </div>
 
-      <div className="my-12 rounded-lg border bg-card p-6">
+      <div className="my-12 rounded-lg border bg-card p-6 shadow-lg">
         <h2 className="text-xl font-bold text-foreground flex items-center gap-2"><BrainCircuit className="h-6 w-6 text-primary" /> Cognitive Fingerprint 4.0</h2>
         <p className="text-sm text-muted-foreground">
             Maps the candidate's four latent traits against the ideal profile for the role. See our research paper on <Link href="/playbook/hub/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">bias-free hiring</Link> to learn more.
         </p>
         <div style={{ height: 300 }} className='mt-4'>
             <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={cognitiveData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+            <DynamicBarChart data={cognitiveData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 <XAxis type="number" domain={[0, 5]} hide />
                 <YAxis type="category" dataKey="name" width={150} tick={{ fill: 'hsl(var(--muted-foreground))' }} axisLine={false} tickLine={false} />
                 <RechartsTooltip 
@@ -209,11 +211,11 @@ export default function TalentEvaluationClient() {
                 />
                 <Bar dataKey="candidate" name="Candidate" barSize={20} radius={[0, 8, 8, 0]}>
                     {cognitiveData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.candidate >= entry.ideal ? 'hsl(var(--primary))' : '#f59e0b'} />
+                        <Cell key={`cell-${index}`} fill={entry.candidate >= entry.ideal ? 'hsl(var(--primary))' : 'hsl(var(--destructive))'} />
                     ))}
                 </Bar>
                  <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="hsl(var(--accent))" radius={[0, 8, 8, 0]} />
-            </BarChart>
+            </DynamicBarChart>
             </ResponsiveContainer>
         </div>
       </div>
@@ -225,10 +227,10 @@ export default function TalentEvaluationClient() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
                 {risks.map((risk) => (
-                    <div key={risk.title} className="rounded-lg border bg-card p-6 flex flex-col">
+                    <div key={risk.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
                         <p className="text-sm font-semibold text-primary">{risk.pain}</p>
                         <div className="flex items-center gap-3 mt-3">
-                           <ShieldCheck className="text-yellow-400 h-6 w-6 shrink-0" />
+                           <ShieldCheck className="text-destructive h-6 w-6 shrink-0" />
                             <h3 className="font-semibold text-foreground">{risk.title}</h3>
                         </div>
                         <p className="mt-4 text-sm text-muted-foreground border-t border-border pt-4">{risk.description}</p>

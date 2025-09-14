@@ -48,7 +48,7 @@ export default function DeelComparisonPage() {
         <h2 className="text-3xl font-bold text-center">The Talent Platform vs. The HR Platform</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col">
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
               <p className="text-sm font-semibold text-primary">{value.pain}</p>
               <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
               
@@ -92,7 +92,7 @@ export default function DeelComparisonPage() {
         </p>
       </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8">
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Conclusion</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             Choosing between TeamStation AI and Deel is not an either/or decision. They are different tools for different jobs. If you need to find and run an elite nearshore team with full operational support, TeamStation AI is your solution. If you simply need a way to pay an international team you've already sourced, Deel is the industry leader.

@@ -54,7 +54,7 @@ export default function HirePage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
         {hireOptions.map((option) => (
-          <div key={option.href} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+          <div key={option.href} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
             <p className="text-sm font-semibold text-primary">{option.pain}</p>
             <div className='flex items-center gap-3 mt-3'>
               {option.icon}
@@ -68,7 +68,7 @@ export default function HirePage() {
         ))}
       </div>
       
-      <div className="text-center rounded-lg bg-primary/10 p-8">
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Ready to build your team?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Let's discuss your specific needs. In a 15-minute call, we can map your roles, security requirements, and a go-live timeline.
