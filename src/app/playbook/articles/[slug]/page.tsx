@@ -36,7 +36,7 @@ export default async function PlaybookArticlePage({ params }: { params: { slug: 
       </div>
 
       <header className="my-8">
-        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">{post.title}</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{post.title}</h1>
         <p className="mt-4 text-lg text-muted-foreground">{post.description}</p>
       </header>
       

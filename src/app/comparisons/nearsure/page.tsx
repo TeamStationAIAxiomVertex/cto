@@ -23,7 +23,7 @@ const comparisonPoints = {
         proof: "40-60% Lower TCO"
     },
     "Vetting": {
-        pain: "Is your vetting process based on science or just conversation?",
+        pain: "Is your vetting process based on science or just a conversation?",
         traditional: "Nearsure's 'AI recruiter' speeds up sourcing, but the final evaluation is still based on traditional interviews, which are prone to bias and failure.",
         teamstation: "Our vetting is powered by the <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a>, a peer-reviewed scientific model that provides evidence-based proof of a candidate's problem-solving ability.",
         proof: "Mismatch Rate ≤ 10%"
@@ -38,7 +38,7 @@ export default function NearsureComparisonPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Nearsure</span>
       </div>
       <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">TeamStation AI vs. Nearsure</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TeamStation AI vs. Nearsure</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           A comparison between TeamStation AI’s integrated platform and Nearsure’s traditional staff augmentation model.
         </p>

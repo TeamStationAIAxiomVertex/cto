@@ -38,7 +38,7 @@ export default function AxiomCortexReportPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/research" className="hover:text-foreground">Research</Link> / <span>AxiomCortex™ Report</span>
       </div>
       <header className="my-8 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">AxiomCortex™: Scientific R&D Report</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">AxiomCortex™: Scientific R&D Report</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
           A deep dive into the proprietary Cognitive AI engine that powers TeamStation AI's talent evaluation, outlining its core scientific pillars and bias mitigation strategies.
         </p>

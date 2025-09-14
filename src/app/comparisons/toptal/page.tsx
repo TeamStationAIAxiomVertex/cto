@@ -38,7 +38,7 @@ export default function ToptalComparisonPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Toptal Alternative</span>
       </div>
       <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">Toptal Alternative: TeamStation AI</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Toptal Alternative: TeamStation AI</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           A comparison between TeamStation AI’s integrated team model for nearshore software development and Toptal’s premium freelance network.
         </p>

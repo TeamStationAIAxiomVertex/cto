@@ -38,7 +38,7 @@ export default function ReveloComparisonPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Revelo Alternative</span>
       </div>
       <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">Revelo Alternative: TeamStation AI</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Revelo Alternative: TeamStation AI</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           A comparison between TeamStation AI’s fully integrated platform and Revelo’s marketplace-plus-EOR model for hiring developers in Latin America.
         </p>

@@ -38,7 +38,7 @@ export default function TeclaComparisonPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>TECLA Alternative</span>
       </div>
       <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold text-foreground md:text-5xl">TECLA Alternative: TeamStation AI</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TECLA Alternative: TeamStation AI</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           A comparison between TeamStation AI’s integrated platform and TECLA’s talent marketplace model for hiring developers in Latin America.
         </p>
