@@ -38,6 +38,15 @@ const crisisScenarios = [
     icon: <Users className="h-8 w-8" />,
     proof: 'Story rework rate ↓20–35%'
   },
+  {
+    category: 'Velocity & Delivery',
+    pain: 'How fast can a new team land a non-trivial PR?',
+    problem: 'Your current vendor can’t adopt your tooling, rituals, and release cadence.',
+    solutionHref: '/process',
+    solutionLabel: 'Integrate new teams into your SDLC in days.',
+    icon: <Zap className="h-8 w-8" />,
+    proof: 'Time-to-first-useful-PR <7 days'
+  },
   // Quality & Architecture
   {
     category: 'Quality & Architecture',
@@ -66,7 +75,7 @@ const crisisScenarios = [
     icon: <Layers className="h-8 w-8" />,
     proof: 'p95 latency ↓; change failure rate ↓'
   },
-    {
+  {
     category: 'Quality & Architecture',
     pain: 'How much does "clever" code cost you in onboarding time?',
     problem: 'Code is hard to understand, tech debt is piling up, and key decisions are lost in Slack history.',
@@ -229,15 +238,6 @@ const crisisScenarios = [
   },
   {
     category: 'Switching Vendors',
-    pain: 'How fast can a new team land a non-trivial PR?',
-    problem: 'Your current vendor can’t adopt your tooling, rituals, and release cadence.',
-    solutionHref: '/process',
-    solutionLabel: 'Integrate new teams into your SDLC in days.',
-    icon: <Zap className="h-8 w-8" />,
-    proof: 'Time-to-first-useful-PR <7 days'
-  },
-  {
-    category: 'Switching Vendors',
     pain: 'When did your team last whiteboard together without jet lag?',
     problem: 'Coaching, discovery, and strategic alignment are suffering over endless Zoom calls.',
     solutionHref: '/hire/by-country',
@@ -312,3 +312,5 @@ export default async function PlaybookHub() {
     </main>
   );
 }
+
+    
