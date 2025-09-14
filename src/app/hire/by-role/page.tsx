@@ -128,7 +128,7 @@ export default function HireByRolePage() {
     if (priority.includes('P0')) return 'bg-destructive/20 text-destructive';
     if (priority.includes('P1')) return 'bg-primary/20 text-primary';
     return 'bg-secondary';
-  }
+  };
 
   return (
     <main className="container py-12">
@@ -189,7 +189,7 @@ export default function HireByRolePage() {
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Let's discuss your specific needs. In a 15-minute call, we can map your roles to our evaluation process and show you how we de-risk your hiring.
         </p>
-        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
     </main>
   );
