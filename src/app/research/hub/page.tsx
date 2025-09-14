@@ -12,19 +12,22 @@ export const metadata: Metadata = {
 };
 
 export default async function ResearchPage() {
-  const slugs = await getAllResearchSlugs();
-  const papers = await Promise.all(slugs.map(slug => getResearchBySlug(slug)));
-
   const researchAssets = [
     {
       slug: 'axiom-cortex-scientific-report',
+      title: 'AxiomCortex™ Scientific R&D Report',
+      description: 'A deep dive into the proprietary Cognitive AI engine that powers TeamStation AI\'s talent evaluation, outlining its core scientific pillars and bias mitigation strategies.',
+      href: '/research/axiom-cortex-scientific-report',
       pain: "Is your hiring process a high-risk gamble on resumes?",
       icon: <BrainCircuit className="h-8 w-8 text-primary" />,
       solutionTitle: "The Science of De-Risking Talent",
       solutionDescription: "This peer-reviewed paper details the proprietary Cognitive AI engine that powers our talent evaluation. It's the science behind how we provide evidence-based proof of a candidate's problem-solving ability, not just their credentials."
     },
      {
-      slug: 'technical-talent-evaluation-system',
+      slug: 'technical-interview-evaluation',
+      title: 'Technical Talent Evaluation System (Sample Report)',
+      description: 'An interactive example of a real AxiomCortex™ evaluation report, showcasing the Cognitive Fingerprint, Evidence Locker, and Risk Mitigation plan for a candidate.',
+      href: '/technical-interview-evaluation',
       pain: "Can you defend your hiring decisions with data?",
       icon: <FileText className="h-8 w-8 text-primary" />,
       solutionTitle: "The Evidence Locker in Action",
@@ -32,6 +35,9 @@ export default async function ResearchPage() {
     },
     {
       slug: 'performance-evaluation-framework',
+      title: 'Redefining Software Engineer Performance in the AI-Augmented Era',
+      description: 'Proposing a novel, value-centric, and quality-driven model for assessing software engineer performance, moving beyond outdated metrics.',
+      href: '/research/performance-evaluation-framework',
       pain: "Are outdated metrics failing to capture true engineering value?",
       icon: <Beaker className="h-8 w-8 text-primary" />,
       solutionTitle: "Measuring What Matters",
@@ -70,17 +76,15 @@ export default async function ResearchPage() {
       </header>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {researchAssets.map(asset => {
-          const paper = papers.find(p => p?.slug === asset.slug);
-          if (!paper) return null;
           return (
-            <div key={paper.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
+            <div key={asset.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
                <p className="text-sm font-semibold text-primary">{asset.pain}</p>
                 <div className="flex items-center gap-3 mt-3">
                     {asset.icon}
                     <h3 className="text-lg font-semibold text-foreground">{asset.solutionTitle}</h3>
                 </div>
               <p className="mt-4 text-sm text-muted-foreground flex-grow">{asset.solutionDescription}</p>
-               <Link href={paper.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
+               <Link href={asset.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
                 Read the Proof <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

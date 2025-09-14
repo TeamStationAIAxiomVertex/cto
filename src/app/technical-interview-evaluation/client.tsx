@@ -1,4 +1,3 @@
-
 'use client'
 
 import {
@@ -85,7 +84,7 @@ const evidenceLocker = [
                     <li>B_M (Mental Model): ★★★★☆ (4.0) - His mental model is sound. He understands the core concepts of caching, non-blocking I/O, and decoupling, even if his vocabulary or immediate recall isn't perfect.</li>
                     <li>B_A (Accuracy): ★★★★★ (4.8) - All technical choices (Redis, asyncio, SQS) are correct for this problem. The score is boosted to near-perfect by the authenticityIncident where he honestly stated his limitation, demonstrating high integrity.</li>
                     <li>B_C (Clarity): ★★★☆☆ (3.5) - After applying the Cortez Calibration for L2 ESL, his explanation was conceptually clear. He needed some guidance to structure his thoughts, which slightly lowers the score.</li>
-                    <li>B_L (Cognitive Load): ★★★☆☆ (3.p) - He demonstrated some cognitive load in structuring a complex architectural answer on the fly, but he successfully retrieved the correct concepts.</li>
+                    <li>B_L (Cognitive Load): ★★★☆☆ (3.5) - He demonstrated some cognitive load in structuring a complex architectural answer on the fly, but he successfully retrieved the correct concepts.</li>
                 </ul>
 
                 <h4>Key Insights</h4>
@@ -129,7 +128,7 @@ const evidenceLocker = [
                     <li>B_M (Mental Model): ★★★★☆ (4.0) - He has a strong mental model for API evolvability. His security model is correct at a high level but lacks depth on granular authorization, which he honestly admits.</li>
                     <li>B_A (Accuracy): ★★★★★ (5.0) - His proposed strategies are industry best practices. The score is maxed out due to the authenticityIncident, where he accurately described the limits of his experience, demonstrating perfect integrity.</li>
                     <li>B_C (Clarity): ★★★★☆ (4.0) - After calibration, his explanation of evolvability was very clear. The security part was slightly less clear until guided by the interviewer, but the core concepts were present.</li>
-                    <li>B_L (Cognitive Load): ★★★★☆ (4.p) - He handled this multi-part question with low cognitive load, clearly separating the concepts of evolvability and security.</li>
+                    <li>B_L (Cognitive Load): ★★★★☆ (4.5) - He handled this multi-part question with low cognitive load, clearly separating the concepts of evolvability and security.</li>
                 </ul>
 
                 <h4>Key Insights</h4>
@@ -275,6 +274,13 @@ const evidenceLocker = [
 const DynamicBarChart = dynamic(() => Promise.resolve(BarChart), { ssr: false });
 
 export default function TalentEvaluationClient() {
+
+  const getBarColor = (score: number) => {
+    if (score >= 4.0) return 'hsl(var(--primary))'; // Excellent
+    if (score >= 3.0) return 'hsl(215 28% 25%)'; // Good (using accent color)
+    return 'hsl(var(--destructive))'; // Concern
+  };
+
   return (
     <main className="container max-w-4xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
@@ -303,38 +309,32 @@ export default function TalentEvaluationClient() {
             <div className="mt-6">
                 <h3 className="text-xl font-bold text-foreground flex items-center gap-2"><BrainCircuit className="h-6 w-6 text-primary" /> Cognitive Fingerprint 4.0</h3>
                 <p className="text-sm text-muted-foreground mt-2">This visualization maps the candidate's four latent traits against the ideal profile for this role.</p>
-                <div className="mt-4 space-y-6">
-                    {cognitiveData.map(trait => (
-                        <div key={trait.name}>
-                            <h4 className="font-bold text-lg">{trait.name}:</h4>
-                            <p className="text-sm text-muted-foreground"><strong>Definition:</strong> {
-                                trait.name === 'Architectural Instinct' ? 'Measures the ability to think top-down, design robust, scalable systems, and reason about high-level trade-offs.' :
-                                trait.name === 'Problem-Solving Agility' ? 'Measures the ability to deconstruct novel problems, adapt thinking when faced with new constraints, and explore multiple solution paths.' :
-                                trait.name === 'Learning Orientation' ? 'Measures intellectual honesty, coachability, and a genuine drive to learn and improve. This is a proxy for growth mindset.' :
-                                'Measures the tendency to frame work in a team context, consider stakeholder impact, and communicate in a way that fosters shared understanding.'
-                            }</p>
-                            <div className="mt-2 flex items-center gap-4">
-                                <div>
-                                    <p className="text-sm"><strong>Candidate:</strong> {trait.candidate}/5.0 {trait.stars}</p>
-                                    <p className="text-sm"><strong>Ideal:</strong> {trait.ideal}/5.0 ★★★★☆</p>
-                                </div>
-                                <div className="font-mono text-sm tracking-widest">
-                                    <p>Candidate: <span className="text-primary">{trait.bar}</span></p>
-                                    <p>Ideal: <span className="text-muted-foreground/50">{trait.name === 'Learning Orientation' ? '██████████' : '█████████░'}</span></p>
-                                </div>
-                            </div>
-                            <p className="text-sm text-muted-foreground mt-2"><strong>Evidence & Rationale:</strong> {
-                                trait.name === 'Architectural Instinct' ? "Erick's architectural instinct is strong. He correctly navigates monolith vs. microservices trade-offs (Q1), proposes a 'contract-first' API strategy (Q2), and, most impressively, demonstrated a powerful architectural mind by inventing the 'micro prompts' analogy (Q4). This shows he can apply architectural principles to novel domains like AI, even without knowing the specific terminology. His score reflects this high-level reasoning, moderated slightly by the need for some prompting on specific resiliency patterns." :
-                                trait.name === 'Problem-Solving Agility' ? "Erick's PSA is a significant strength. He showcased remarkable adaptability in the prompt engineering discussion (Q4), quickly grasping the interviewer's 'microservices' analogy and synthesizing it into a new, valid concept ('micro prompts'). This ability to pivot and apply existing mental models to new problems is a hallmark of agile thinking. His solution to the complex stakeholder problem (Q7) further confirms his ability to deconstruct and solve multifaceted challenges." :
-                                trait.name === 'Learning Orientation' ? "This is Erick's strongest trait and a powerful positive signal. His score is a perfect 5.0, supported by a high MCI score and 4 distinct authenticityIncidents. He proactively and honestly stated his limitations in error handling (Q1, Q5), creating security architecture from scratch (Q2), and Infrastructure as Code (Q6). This intellectual honesty is a critical predictor of coachability and rapid growth, making him an excellent investment." :
-                                "Erick's score is driven by the powerful behavioral example in Q7. He demonstrated extreme ownership and empathy by positioning himself as a 'bridge between the stakeholders and the developments' to protect his team and improve project outcomes. He explicitly discussed translating technical concepts for non-technical stakeholders, a key collaborative skill. His ownershipRatio was balanced, reflecting a healthy mix of individual accountability and team-oriented thinking."
-                            }</p>
-                        </div>
-                    ))}
+                 <div className="my-4 flex justify-center gap-4 text-xs">
+                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-primary"></div><span>Excellent (≥4.0)</span></div>
+                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm" style={{backgroundColor: 'hsl(215 28% 25%)'}}></div><span>Good (3.0-3.9)</span></div>
+                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-destructive"></div><span>Concern (&lt;3.0)</span></div>
+                </div>
+                <div style={{ height: 300 }}>
+                    <ResponsiveContainer width="100%" height="100%">
+                    <DynamicBarChart data={cognitiveData} layout="vertical" margin={{ top: 5, right: 30, left: 120, bottom: 5 }}>
+                        <XAxis type="number" domain={[0, 5]} hide />
+                        <YAxis type="category" dataKey="name" width={150} tick={{ fill: 'hsl(var(--muted-foreground))' }} axisLine={false} tickLine={false} />
+                        <RechartsTooltip 
+                            cursor={{ fill: 'hsl(var(--accent))'}}
+                            contentStyle={{ backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))' }}
+                        />
+                        <Bar dataKey="candidate" name="Candidate" barSize={20} radius={[0, 8, 8, 0]}>
+                            {cognitiveData.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={getBarColor(entry.candidate)} />
+                            ))}
+                        </Bar>
+                         <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="hsl(var(--border))" radius={[0, 8, 8, 0]} />
+                    </DynamicBarChart>
+                    </ResponsiveContainer>
                 </div>
                  <div className="mt-4 prose dark:prose-invert max-w-none">
-                    <h4>Profile Analysis:</h4>
-                    <p>Erick's cognitive fingerprint is that of a formidable senior engineer with outstanding growth potential. His Architectural Instinct (AI) and Problem-Solving Agility (PSA) are well above the ideal benchmark for the role, indicating he can handle more than just the prescribed tasks; he can innovate and lead. His world-class Learning Orientation (LO) is the critical multiplier, ensuring that any current knowledge gaps will be closed with remarkable speed. He is not just a candidate who can do the job today, but one who is architected for growth and will likely become a significant technical asset to the team.</p>
+                    <h4 className="flex items-center gap-2"><HelpCircle className="h-5 w-5 text-primary" />How is this score calculated?</h4>
+                    <p>The score is not a subjective judgment. It's a data-driven output from the Axiom Cortex™ AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary BARS rubric, and applies calibration layers to mitigate bias. The final score for each trait is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</p>
                 </div>
             </div>
             <div className="mt-8 pt-6 border-t border-border">
@@ -385,8 +385,13 @@ export default function TalentEvaluationClient() {
                     </AccordionItem>
                 ))}
             </div>
+             <div className="text-center mt-8">
+                <Link href="/technical-interview-evaluation" className="font-semibold text-primary hover:underline">
+                    Learn about the Full Evaluation Process <ArrowRight className="inline h-4 w-4" />
+                </Link>
+              </div>
         </div>
-
+      </div>
     </main>
   );
 }
