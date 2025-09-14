@@ -211,9 +211,11 @@ export default function TalentEvaluationClient() {
                     contentStyle={{ backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))' }}
                 />
                 <Bar dataKey="candidate" name="Candidate" barSize={20} radius={[0, 8, 8, 0]}>
-                    {cognitiveData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.candidate >= entry.ideal ? 'hsl(var(--primary))' : 'hsl(var(--destructive))'} />
-                    ))}
+                    {cognitiveData.map((entry, index) => {
+                        const scoreRatio = entry.candidate / entry.ideal;
+                        const fillColor = scoreRatio >= 0.9 ? 'hsl(var(--primary))' : 'hsl(var(--destructive))';
+                        return <Cell key={`cell-${index}`} fill={fillColor} />;
+                    })}
                 </Bar>
                  <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="hsl(var(--accent))" radius={[0, 8, 8, 0]} />
             </DynamicBarChart>
@@ -226,7 +228,7 @@ export default function TalentEvaluationClient() {
             </div>
             <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(var(--destructive))' }}></div>
-                <span>Candidate Score (Below Ideal)</span>
+                <span>Candidate Score (Significant Gap)</span>
             </div>
             <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(var(--accent))' }}></div>
@@ -280,7 +282,7 @@ export default function TalentEvaluationClient() {
                 ))}
             </div>
              <div className="text-center mt-8">
-                <Link href="/process" className="font-semibold text-primary hover:underline">
+                <Link href="/technical-interview-evaluation" className="font-semibold text-primary hover:underline">
                     See Our Full Evaluation Process <ArrowRight className="inline h-4 w-4" />
                 </Link>
               </div>
@@ -289,3 +291,5 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
+
+    
