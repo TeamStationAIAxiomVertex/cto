@@ -103,7 +103,7 @@ export default function BuildVsBuyPage() {
 
       <header className="my-8">
         <div className="rounded-lg border bg-card p-8 md:p-12">
-            <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Build vs. Buy: The Definitive CTO Framework for Scaling Nearshore Teams</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Build vs. Buy: The Definitive CTO Framework for Scaling Nearshore Teams</h1>
             <div className="mt-8 max-w-4xl space-y-6">
                 <div className="bg-background p-6 rounded-lg border border-primary/20">
                     <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>Foreword: The Strategic Choice</h2>

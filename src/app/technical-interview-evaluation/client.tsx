@@ -144,7 +144,7 @@ const evidenceLocker = [
 ]
 
 
-export default function EvaluationClient() {
+export default function TalentEvaluationClient() {
   return (
     <main className="container max-w-4xl py-12">
       <div className="text-sm text-muted-foreground mb-8">

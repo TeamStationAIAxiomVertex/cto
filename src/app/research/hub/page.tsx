@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle } from 'lucide-react';
@@ -120,5 +121,3 @@ export default async function ResearchPage() {
     </main>
   );
 }
-
-    
