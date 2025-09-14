@@ -15,7 +15,7 @@ export type PlaybookPost = {
 async function getFilenames(): Promise<string[]> {
     try {
         const filenames = await fs.readdir(contentDirectory);
-        return filenames.filter(filename => filename.endsWith('.md'));
+        return filenames.filter(filename => filename.endsWith('.md') && filename !== 'tco-model.md');
     } catch (error) {
         console.error("Error reading playbook directory:", error);
         return [];
@@ -45,6 +45,16 @@ export async function getPlaybookBySlug(slug: string): Promise<PlaybookPost | nu
       }
   }
 
+  // Handle tco-model as a custom page
+  if (slug === 'tco-model') {
+    return {
+        slug: 'tco-model',
+        title: 'The Computational Cost & TCO Playbook',
+        description: 'A CFO-grade analysis of the true Total Cost of Ownership (TCO) of engineering teams, presented in Sandler-style "Computational Cost" cards.',
+        content: ''
+    };
+  }
+
   const filePath = path.join(contentDirectory, `${slug}.md`);
   try {
     const fileContents = await fs.readFile(filePath, 'utf8');
@@ -71,8 +81,6 @@ export async function getPlaybookBySlug(slug: string): Promise<PlaybookPost | nu
             return { slug, title: 'LATAM Economics & TCO for CTOs | Nearshore Software Development Costs', description: 'A CFO-ready framework for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, covering salaries, hidden costs of mis-hires, and security risks.', content: '' };
         case 'nearshore-vs-offshore':
             return { slug, title: 'Nearshore vs. Offshore: The Strategic Choice for CTOs | TeamStation AI', description: 'A framework for CTOs to diagnose the true cost—and risk—of their global talent strategy, moving beyond cost per hour to Total Cost of Ownership.', content: '' };
-        case 'tco-model':
-            return { slug, title: 'The Complete CFO-Ready TCO Model for Nearshore Engineering', description: 'A detailed, CFO-grade Total Cost of Ownership (TCO) model to compare a multi-vendor offshore setup vs. TeamStation AI’s single-SLA nearshore platform.', content: '' };
         default:
             return null;
     }
