@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
@@ -57,7 +58,7 @@ export default function NearshoreVsOffshorePage() {
   return (
     <main className="container max-w-5xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook" className="hover:text-foreground">CTO Playbook</Link> / <span>Nearshore vs. Offshore</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook/hub" className="hover:text-foreground">CTO Playbook</Link> / <span>Nearshore vs. Offshore</span>
       </div>
 
       <header className="my-8 text-center">
@@ -137,3 +138,5 @@ export default function NearshoreVsOffshorePage() {
     </main>
   );
 }
+
+    

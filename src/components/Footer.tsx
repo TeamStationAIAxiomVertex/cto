@@ -12,6 +12,7 @@ export function Footer() {
 
   const links = {
       "Playbook": [
+        { href: '/playbook/hub', label: 'Playbook Hub' },
         { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs. Offshore' },
         { href: '/playbook/latam-economics', label: 'LATAM Economics' },
         { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
@@ -33,7 +34,7 @@ export function Footer() {
       ],
       "Company": [
         { href: '/about', label: 'About Us' },
-        { href: '/research', label: 'Research' },
+        { href: '/research/hub', label: 'Research' },
         { href: '/trust', label: 'Trust Center' },
         { href: '/hire', label: 'Hire Talent' },
       ]
