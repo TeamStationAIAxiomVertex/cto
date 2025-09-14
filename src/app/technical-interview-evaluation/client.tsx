@@ -434,15 +434,15 @@ export default function TalentEvaluationClient() {
 
         <div className="rounded-lg border bg-card p-6 shadow-lg">
             <h2 className="text-2xl font-bold text-foreground">Cognitive & Psychometric Profile</h2>
-            <div className="mt-6 space-y-8">
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
                 {cognitiveData.map(trait => (
-                    <div key={trait.name} className="rounded-lg border bg-background p-4">
+                    <div key={trait.name} className="rounded-lg border bg-background p-4 flex flex-col">
                         <p className="text-sm font-semibold text-primary">{trait.pain}</p>
                         <div className="flex items-center gap-3 mt-3">
                             <BrainCircuit className="h-8 w-8 text-primary" />
                             <h3 className="text-lg font-semibold text-foreground">{trait.name}</h3>
                         </div>
-                        <div className="mt-4 text-sm text-muted-foreground">{trait.rationale.replace('PSA', '').replace('LO', '')}
+                        <div className="mt-4 text-sm text-muted-foreground flex-grow">{trait.rationale.replace('PSA', '').replace('LO', '')}
                             {trait.rationale.includes('PSA') && <Tooltip text="Problem-Solving Agility">PSA</Tooltip>}
                             {trait.rationale.includes('LO') && <Tooltip text="Learning Orientation">LO</Tooltip>}
                         </div>
@@ -458,18 +458,19 @@ export default function TalentEvaluationClient() {
                         </div>
                     </div>
                 ))}
-                
-                 <div className="my-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs">
-                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-primary"></div><span>Excellent (4.0+)</span></div>
-                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm" style={{backgroundColor: 'hsl(var(--chart-2))'}}></div><span>Good (3.0-3.9)</span></div>
-                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-destructive"></div><span>Concern (&lt;3.0)</span></div>
-                </div>
-                
-                 <div className="mt-8 prose dark:prose-invert max-w-none text-sm">
-                    <h4 className="flex items-center gap-2 text-base"><HelpCircle className="h-5 w-5 text-primary" />How is this score calculated?</h4>
-                    <p>The score is a data-driven output from the <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip> AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary <Tooltip text="Behaviorally Anchored Rating Scales: a scoring method that ties numerical ratings to specific, observable behaviors.">BARS</Tooltip> rubric, and applies calibration layers to mitigate bias. The final score is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</p>
-                </div>
             </div>
+            
+            <div className="my-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs">
+                <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-primary"></div><span>Excellent (4.0+)</span></div>
+                <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm" style={{backgroundColor: 'hsl(var(--chart-2))'}}></div><span>Good (3.0-3.9)</span></div>
+                <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-destructive"></div><span>Concern (&lt;3.0)</span></div>
+            </div>
+            
+            <div className="mt-8 prose dark:prose-invert max-w-none text-sm">
+                <h4 className="flex items-center gap-2 text-base"><HelpCircle className="h-5 w-5 text-primary" />How is this score calculated?</h4>
+                <p>The score is a data-driven output from the <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip> AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary <Tooltip text="Behaviorally Anchored Rating Scales: a scoring method that ties numerical ratings to specific, observable behaviors.">BARS</Tooltip> rubric, and applies calibration layers to mitigate bias. The final score is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</p>
+            </div>
+            
             <div className="mt-8 pt-6 border-t border-border">
                  <div className="rounded-lg border bg-background p-4">
                     <p className="text-sm font-semibold text-primary">How self-aware is the candidate?</p>
@@ -570,3 +571,5 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
+
+    
