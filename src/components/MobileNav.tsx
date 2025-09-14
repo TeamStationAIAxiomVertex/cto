@@ -1,4 +1,3 @@
-
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
@@ -12,7 +11,7 @@ const navItems = {
     { href: '/playbook/latam-economics', title: 'LATAM Economics' },
     { href: '/playbook/build-vs-buy', title: 'Build vs. Buy' },
     { href: '/playbook/bias-free-technical-hiring-axiom-cortex', title: 'Bias-Free Hiring' },
-    { href: '/playbook/hub/vendor-risk-model', title: 'Vendor Risk Model' },
+    { href: '/playbook/tco-model', title: 'TCO Model' },
   ],
   'What\'s Included': [
     { href: '/platform', title: 'Our Platform'},

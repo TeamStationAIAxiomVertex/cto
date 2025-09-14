@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BookOpen, CheckCircle, BarChart, GitCompare, ShieldCheck, Zap, Users, Briefcase, ArrowRight, AlertTriangle } from 'lucide-react';
@@ -180,7 +179,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                     ))}
                 </div>
                  <div className="text-center mt-8">
-                    <Link href="/research/performance-evaluation-report-example" className="font-semibold text-primary hover:underline">
+                    <Link href="/technical-interview-evaluation" className="font-semibold text-primary hover:underline">
                         See a Real Sample Report <ArrowRight className="inline h-4 w-4" />
                     </Link>
                 </div>

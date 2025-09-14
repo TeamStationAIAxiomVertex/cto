@@ -50,7 +50,7 @@ export default async function ResearchPage() {
       slug: 'performance-evaluation-report-example',
       title: 'Sample Performance Report (Day 30)',
       description: 'A real, anonymized example of our 30-Day Onboarding Check diagnostic, demonstrating how we track performance and establish a growth baseline from the start.',
-      href: '/research/performance-evaluation-report-example',
+      href: '/technical-interview-evaluation',
       pain: "Is your onboarding process a black box?",
       icon: <BarChart className="h-8 w-8 text-primary" />,
       solutionTitle: "Proof of Performance",

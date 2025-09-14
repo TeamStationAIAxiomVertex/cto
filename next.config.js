@@ -18,20 +18,6 @@ const nextConfig = {
             }
         ],
     },
-    async redirects() {
-        return [
-          {
-            source: '/services/nearshore-integrated-services',
-            destination: '/services/integrated-services',
-            permanent: true,
-          },
-          {
-            source: '/services/nearshore-it-talent-onboarding',
-            destination: '/services/talent-onboarding',
-            permanent: true,
-          },
-        ]
-    },
 };
 
 module.exports = nextConfig;

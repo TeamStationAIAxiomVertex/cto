@@ -1,15 +1,10 @@
 
 'use client';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
 
 export function Footer() {
-  const [year, setYear] = useState(new Date().getFullYear());
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+  const year = new Date().getFullYear();
 
   const links = {
       "Playbook": [

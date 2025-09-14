@@ -1,4 +1,3 @@
-
 'use client'
 
 import {
@@ -382,7 +381,7 @@ const faqs = [
   },
   {
     question: "What do the Cognitive Fingerprint scores mean?",
-    answer: "They measure four key latent traits that predict success in a senior engineering role: Architectural Instinct (AI), Problem-Solving Agility (PSA), Learning Orientation (LO), and Collaborative Mindset (CM). Each score is benchmarked against an ideal profile for the specific role."
+    answer: "They measure four key latent traits that predict success in a senior engineering role: Architectural Instinct (systems thinking), Problem-Solving Agility (adapting to new challenges), Learning Orientation (coachability), and Collaborative Mindset (teamwork). Each score is benchmarked against an ideal profile for the specific role."
   },
   {
     question: "How do you mitigate bias, especially for non-native English speakers?",
@@ -571,5 +570,3 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
-
-    
