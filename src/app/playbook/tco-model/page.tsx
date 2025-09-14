@@ -9,138 +9,198 @@ export const metadata: Metadata = {
 };
 
 const costCards = [
-  {
-    "id": "seat-cost-delta",
-    "title": "Seat Cost Delta — Sticker vs Fully-Loaded",
-    "segment": "Cost",
-    "icon": <DollarSign className="h-8 w-8 text-primary" />,
-    "problem": "U.S. senior salaries look manageable… until benefits, taxes, tools, and overhead land on the P&L.",
-    "solution": "Replace/augment seats with nearshore seniors at $6,800/mo all-in under one SLA.",
-    "formula": [
-        "US_FLC = Salary × (1 + burden)",
-        "Savings/yr = (US_FLC ÷ 12 − 6,800) × 12"
-    ],
-    "example": "Salary $120,000, burden 30% → US_FLC $156,000 (=$13,000/mo). Savings = (13,000 − 6,800) × 12 = $74,400/yr per seat.",
-    "cta_question": "How many seats until this delta funds an entire roadmap line item?"
-  },
-  {
-    "id": "team-delta-six",
-    "title": "Team Delta — Six Seniors, One Decision",
-    "segment": "Cost",
-    "icon": <Users className="h-8 w-8 text-primary" />,
-    "problem": "You need a full squad; headcount is frozen.",
-    "solution": "6 nearshore seniors under one contract, one invoice, one SLA.",
-    "formula": [
-        "Annual savings = 6 × 74,400"
-    ],
-    "example": "Result: $446,400/yr (using Card #1 math).",
-    "cta_question": "What could you ship with an extra $37,200/mo in engineering oxygen?"
-  },
-  {
-    "id": "cost-of-vacancy",
-    "title": "Cost of Vacancy — The Invisible Tax",
-    "segment": "Speed",
-    "icon": <Zap className="h-8 w-8 text-primary" />,
-    "problem": "Roles stay open; velocity stalls; opportunity cost compounds.",
-    "solution": "Bench-ready nearshore talent; start in weeks, not quarters.",
-    "formula": [
-        "Vacancy_Cost = Daily_Value × (TTH_current − TTH_TS)"
-    ],
-    "example": "$3,000/day product value × (60d − 14d) = $138,000 not lost.",
-    "cta_question": "What did last quarter’s open req actually cost your roadmap?"
-  },
-  {
-    "id": "pr-lgtm-latency",
-    "title": "PR “LGTM” Latency — Days Lost to Time Zones",
-    "segment": "Speed",
-    "icon": <GitCompare className="h-8 w-8 text-primary" />,
-    "problem": "One PR → one day lost; reviews trickle in overnight.",
-    "solution": "Same-day PR SLAs in your timezone.",
-    "formula": [
-        "Savings_PR = PRs/mo × Δreview_hours × C_dev_hour"
-    ],
-    "example": "120 PRs/mo × (4h − 1h) × $85 = $30,600/mo recaptured.",
-    "cta_question": "How many quarters died waiting for “Looks Good To Me”?"
-  },
-  {
-    "id": "faster-onboarding",
-    "title": "Faster Onboarding — Time-to-Productivity",
-    "segment": "Speed",
-    "icon": <UserCheck className="h-8 w-8 text-primary" />,
-    "problem": "New engineers take weeks to add useful code.",
-    "solution": "Playbooked onboarding with nearshore leads embedded in your rituals.",
-    "formula": [
-        "Savings_onboard = H × C_day × ΔTP"
-    ],
-    "example": "H=6, C_day (US FLC) ≈ $156,000/260 ≈ $600/day, ΔTP=10 days → $36,000 saved.",
-    "cta_question": "What is your measured ΔTP seat-by-seat?"
-  },
-  {
-    "id": "change-failure-rate",
-    "title": "Change-Failure Rate — Fewer Hotfix Fridays",
-    "segment": "Quality",
-    "icon": <TestTube2 className="h-8 w-8 text-primary" />,
-    "problem": "Failed changes burn cash and trust.",
-    "solution": "Shift-left QA, contract tests, and canary releases run by platform crew.",
-    "formula": [
-        "Savings_fc = D × (CFR₀ − CFR₁) × C_incident"
-    ],
-    "example": "D=60 deploys, CFR 8%→4%, C_incident=$12k → $28,800/mo saved.",
-    "cta_question": "Which metric—CFR, MTTR, or both—hurts your renewals more?"
-  },
-  {
-    "id": "attrition-replacement",
-    "title": "Attrition & Replacement — Context Reset Penalty",
-    "segment": "People",
-    "icon": <Users className="h-8 w-8 text-primary" />,
-    "problem": "Night-shift offshore drives churn; you keep paying the knowledge tax.",
-    "solution": "Same-day schedules + retention ladders + documented runbooks.",
-    "formula": [
-        "Savings_attrition = Team × (rate₀ − rate₁) × C_replace"
-    ],
-    "example": "Team=12, 20%→12%, C_replace=$25k → $24,000/yr saved.",
-    "cta_question": "How many ‘new intros’ did your squad do this month?"
-  },
-  {
-    "id": "management-overhead",
-    "title": "Management Overhead — Meetings You Don’t Need",
-    "segment": "Ops",
-    "icon": <Briefcase className="h-8 w-8 text-primary" />,
-    "problem": "EMs/PMs spend hours herding vendors across time zones.",
-    "solution": "Single vendor, single SLA, single cadence.",
-    "formula": [
-        "Savings_mgmt = 12 × (EM_hrs×C_EM + PM_hrs×C_PM) × reduction"
-    ],
-    "example": "(30h×$120 + 20h×$95) × 12 × 0.5 ≈ $33,000/yr freed.",
-    "cta_question": "What would your EM do with 10 hours/week back?"
-  },
-  {
-    "id": "compliance-security-drag",
-    "title": "Compliance & Security — Questionnaire Drag",
-    "segment": "Risk",
-    "icon": <ShieldCheck className="h-8 w-8 text-primary" />,
-    "problem": "SOC2/ISO gaps stall enterprise deals.",
-    "solution": "Built-in SSO/SAML/SCIM, SBOMs, audit trails—operated in-timezone.",
-    "formula": [
-        "Savings_audit = H_audit_saved × C_hour"
-    ],
-    "example": "250 hours saved × $110/hr = $27,500/yr.",
-    "cta_question": "Which control is blocking the biggest open opportunity right now?"
-  },
-  {
-    "id": "all-in-vs-all-these-invoices",
-    "title": "All-in vs. “All-these-Invoices”",
-    "segment": "Consolidation",
-    "icon": <Layers className="h-8 w-8 text-primary" />,
-    "problem": "Fragmented vendors → duplicated tools, travel, and shadow staffing.",
-    "solution": "Consolidate under one SLA at $6,800/mo per senior.",
-    "formula": [
-        "Consolidation_Savings = (Travel + Duplicate_Tools − Credits)"
-    ],
-    "example": "($20k + $25k − $8k) = $37,000/yr.",
-    "cta_question": "How many vendors do you really need to ship one roadmap?"
-  }
-];
+    {
+      "id": "seat-cost-delta",
+      "title": "Seat Cost Delta — Sticker vs Fully-Loaded",
+      "segment": "Cost",
+      "icon": <DollarSign className="h-8 w-8 text-primary" />,
+      "problem": "U.S. senior salaries look manageable… until benefits, taxes, tools, and overhead land on the P&L.",
+      "solution": "Replace/augment seats with nearshore seniors at $6,800/mo all-in under one SLA.",
+      "formula": "Savings/yr = ((Salary * (1 + burden)) / 12 - NearshoreFee) * 12",
+      "example_inputs": {
+        "Salary": 120000,
+        "burden": 0.3,
+        "NearshoreFee": 6800
+      },
+      "example_outputs": {
+        "Annual Savings": 74400
+      },
+      "proof_note": "Based on a fully-loaded cost including a typical 30% for U.S. payroll burden (taxes, benefits, 401k).",
+      "cta_question": "How many seats until this delta funds an entire roadmap line item?"
+    },
+    {
+      "id": "team-delta-six",
+      "title": "Team Delta — Six Seniors, One Decision",
+      "segment": "Cost",
+      "icon": <Users className="h-8 w-8 text-primary" />,
+      "problem": "You need a full squad; headcount is frozen.",
+      "solution": "6 nearshore seniors under one contract, one invoice, one SLA.",
+      "formula": "TeamSavingsYr = SavingsPerSeatYr * TeamSize",
+       "example_inputs": {
+        "SavingsPerSeatYr": 74400,
+        "TeamSize": 6
+      },
+      "example_outputs": {
+        "Annual Team Savings": 446400,
+        "Monthly Team Savings": 37200
+      },
+      "proof_note": "Scales linearly. This saving alone can often fund an entire additional product team or strategic initiative.",
+      "cta_question": "What could you ship with an extra $37,200/mo in engineering oxygen?"
+    },
+    {
+      "id": "cost-of-vacancy",
+      "title": "Cost of Vacancy — The Invisible Tax",
+      "segment": "Speed",
+      "icon": <Zap className="h-8 w-8 text-primary" />,
+      "problem": "Roles stay open; velocity stalls; opportunity cost compounds.",
+      "solution": "Bench-ready nearshore talent; start in weeks, not quarters.",
+      "formula": "Revenue_Recaptured = Daily_Value * (TTH_current - TTH_TS)",
+      "example_inputs": {
+        "Daily_Value": 3000,
+        "TTH_current (days)": 60,
+        "TTH_TS (days)": 14
+      },
+      "example_outputs": {
+         "Revenue Recaptured": 138000
+      },
+      "proof_note": "Time-to-Hire (TTH) is a direct lever on revenue. Faster hiring pulls future revenue into the current fiscal year.",
+      "cta_question": "What did last quarter’s open req actually cost your roadmap?"
+    },
+    {
+      "id": "pr-lgtm-latency",
+      "title": "PR “LGTM” Latency — Days Lost to Time Zones",
+      "segment": "Speed",
+      "icon": <GitCompare className="h-8 w-8 text-primary" />,
+      "problem": "One PR → one day lost; reviews trickle in overnight.",
+      "solution": "Same-day PR SLAs in your timezone.",
+      "formula": "Savings/mo = PRs/mo * (ΔReview_Hours) * C_dev_hour",
+      "example_inputs": {
+        "PRs_per_month": 120,
+        "ΔReview_Hours": 3,
+        "C_dev_hour": 85
+      },
+      "example_outputs": {
+        "Monthly Savings": 30600
+      },
+      "proof_note": "This calculates the cost of developer time wasted waiting for feedback, a direct hit to productivity.",
+      "cta_question": "How many quarters died waiting for “Looks Good To Me”?"
+    },
+    {
+      "id": "faster-onboarding",
+      "title": "Faster Onboarding — Time-to-Productivity",
+      "segment": "Speed",
+      "icon": <UserCheck className="h-8 w-8 text-primary" />,
+      "problem": "New engineers take weeks to add useful code.",
+      "solution": "Playbooked onboarding with nearshore leads embedded in your rituals.",
+      "formula": "Savings = Hires * Daily_Cost * Days_Saved",
+       "example_inputs": {
+        "Hires": 6,
+        "Daily_Cost": 600,
+        "Days_Saved": 10
+      },
+      "example_outputs": {
+        "Onboarding Savings": 36000
+      },
+      "proof_note": "A structured onboarding process directly translates to faster time-to-value for every new hire.",
+      "cta_question": "What is your measured Time-to-First-PR seat-by-seat?"
+    },
+    {
+      "id": "change-failure-rate",
+      "title": "Change-Failure Rate — Fewer Hotfix Fridays",
+      "segment": "Quality",
+      "icon": <TestTube2 className="h-8 w-8 text-primary" />,
+      "problem": "Failed changes burn cash and trust.",
+      "solution": "Shift-left QA, contract tests, and canary releases run by our platform crew.",
+      "formula": "Savings/mo = Deploys * (ΔCFR) * C_incident",
+      "example_inputs": {
+        "Deploys": 60,
+        "ΔCFR": 0.04,
+        "C_incident": 12000
+      },
+      "example_outputs": {
+        "Monthly Savings": 28800
+      },
+      "proof_note": "Improving Change Failure Rate (CFR), a core DORA metric, directly reduces the high cost of incident response.",
+      "cta_question": "Which metric—CFR, MTTR, or both—hurts your renewals more?"
+    },
+    {
+      "id": "attrition-replacement",
+      "title": "Attrition & Replacement — Context Reset Penalty",
+      "segment": "People",
+      "icon": <Users className="h-8 w-8 text-primary" />,
+      "problem": "Night-shift offshore drives churn; you keep paying the knowledge tax.",
+      "solution": "Same-day schedules + retention ladders + documented runbooks.",
+      "formula": "Savings/yr = Team * (ΔAttrition_Rate) * C_replace",
+      "example_inputs": {
+        "Team_Size": 12,
+        "ΔAttrition_Rate": 0.08,
+        "C_replace": 25000
+      },
+      "example_outputs": {
+        "Annual Savings": 24000
+      },
+      "proof_note": "Lowering attrition avoids the massive costs of recruiting, interviewing, and ramping up a replacement.",
+      "cta_question": "How many ‘new intros’ did your squad do this month?"
+    },
+    {
+      "id": "management-overhead",
+      "title": "Management Overhead — Meetings You Don’t Need",
+      "segment": "Ops",
+      "icon": <Briefcase className="h-8 w-8 text-primary" />,
+      "problem": "EMs/PMs spend hours herding vendors across time zones.",
+      "solution": "Single vendor, single SLA, single cadence.",
+      "formula": "Savings/yr = 12 * ((EM_hrs*C_EM + PM_hrs*C_PM) * reduction)",
+       "example_inputs": {
+        "EM_hrs": 30,
+        "PM_hrs": 20,
+        "C_EM": 120,
+        "C_PM": 95,
+        "reduction": 0.5
+      },
+      "example_outputs": {
+        "Annual Savings": 33000
+      },
+      "proof_note": "This is a direct productivity gain for your most expensive and valuable management resources.",
+      "cta_question": "What would your EM do with 10 hours/week back?"
+    },
+    {
+      "id": "compliance-security-drag",
+      "title": "Compliance & Security — Questionnaire Drag",
+      "segment": "Risk",
+      "icon": <ShieldCheck className="h-8 w-8 text-primary" />,
+      "problem": "SOC2/ISO gaps stall enterprise deals.",
+      "solution": "Built-in SSO/SAML/SCIM, SBOMs, audit trails—operated in-timezone.",
+      "formula": "Savings/yr = Hours_Saved * C_hour",
+      "example_inputs": {
+        "Hours_Saved": 250,
+        "C_hour": 110
+      },
+      "example_outputs": {
+        "Annual Savings": 27500
+      },
+      "proof_note": "Having an audit-ready posture from day one dramatically reduces the internal time spent on security questionnaires.",
+      "cta_question": "Which control is blocking the biggest open opportunity right now?"
+    },
+    {
+      "id": "all-in-vs-all-these-invoices",
+      "title": "All-in vs. “All-these-Invoices”",
+      "segment": "Consolidation",
+      "icon": <Layers className="h-8 w-8 text-primary" />,
+      "problem": "Fragmented vendors → duplicated tools, travel, and shadow staffing.",
+      "solution": "Consolidate under one SLA at $6,800/mo per senior.",
+      "formula": "Savings/yr = Travel + Duplicate_Tools - Credits",
+      "example_inputs": {
+        "Annual_Travel": 20000,
+        "Duplicate_Tools": 25000,
+        "Credits": 8000
+      },
+      "example_outputs": {
+        "Annual Savings": 37000
+      },
+      "proof_note": "Vendor consolidation reduces direct costs and eliminates the soft costs of managing multiple relationships.",
+      "cta_question": "How many vendors do you really need to ship one roadmap?"
+    }
+  ];
 
 const legend = "Salary (US), burden (e.g., 0.30), US_FLC (fully loaded), PRs/mo, Δreview_hours, C_dev_hour, D (deploys/mo), CFR₀/CFR₁, C_incident, H (hires in wave), C_day, ΔTP, Team, attrition rates, C_replace, EM_hrs/PM_hrs, C_EM/C_PM, reduction, H_audit_saved, C_hour, Travel, Duplicate_Tools, Credits.";
 
@@ -162,26 +222,56 @@ export default function TCOModelPage() {
       
       <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
         {costCards.map(card => (
-            <div key={card.id} className="rounded-lg border bg-card p-6 flex flex-col">
-                <div className="flex items-center gap-4">
+            <div key={card.id} className="rounded-xl border bg-card p-6 flex flex-col">
+                <div className="flex items-start gap-4">
                     {card.icon}
-                    <h2 className="text-xl font-bold text-foreground">{card.title}</h2>
+                    <div>
+                        <h2 className="text-lg font-bold text-foreground">{card.title}</h2>
+                        <p className="text-sm font-semibold text-primary">{card.segment}</p>
+                    </div>
                 </div>
+                
                 <div className="mt-4 pt-4 border-t border-border/50">
-                    <h3 className="font-semibold text-primary">Problem</h3>
+                    <h3 className="font-semibold text-foreground">Problem</h3>
                     <p className="text-sm text-muted-foreground m-0">{card.problem}</p>
                 </div>
-                <div className="mt-4">
-                    <h3 className="font-semibold text-green-400">Solution</h3>
+
+                <div className="mt-4 pt-4 border-t border-border/50">
+                    <h3 className="font-semibold text-foreground">Solution</h3>
                     <p className="text-sm text-muted-foreground m-0">{card.solution}</p>
                 </div>
-                <div className="mt-4 flex-grow">
-                    <h3 className="font-semibold">Proof</h3>
-                    <div className="font-mono text-sm bg-background/50 rounded p-4 my-2">
-                        {card.formula.map(line => <p key={line} className='m-0 font-normal'>{line}</p>)}
+                
+                <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
+                    <h3 className="font-semibold text-foreground">Proof</h3>
+                     <div className="font-mono text-xs bg-background/50 rounded p-3 my-2 border">
+                        {card.formula}
                     </div>
-                     <p className="text-sm text-muted-foreground"><span className='font-semibold'>Example:</span> {card.example}</p>
+                    <div className="bg-background/50 rounded border p-4">
+                        <h4 className="font-semibold text-sm mb-2 text-primary">Calculation</h4>
+                        <div className="grid grid-cols-2 gap-x-4 text-xs font-mono">
+                            <div>
+                                <p className="font-semibold text-muted-foreground">Inputs:</p>
+                                {Object.entries(card.example_inputs).map(([key, value]) => (
+                                    <div key={key} className="flex justify-between">
+                                        <span>{key.replace(/_/g, ' ')}:</span>
+                                        <span className="text-foreground">{Number(value).toLocaleString()}</span>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="border-l border-border pl-4">
+                                <p className="font-semibold text-green-400">Outputs:</p>
+                                {Object.entries(card.example_outputs).map(([key, value]) => (
+                                    <div key={key} className="flex justify-between">
+                                        <span>{key.replace(/_/g, ' ')}:</span>
+                                        <span className="font-bold text-green-400">${Number(value).toLocaleString()}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        {card.proof_note && <p className="text-xs text-muted-foreground mt-3 italic">{card.proof_note}</p>}
+                    </div>
                 </div>
+
                  <div className="mt-6 text-sm italic text-primary/80 border-t border-border/50 pt-4">
                     <span className="font-bold not-italic">Question: </span>{card.cta_question}
                 </div>
@@ -197,3 +287,5 @@ export default function TCOModelPage() {
     </main>
   );
 }
+
+    
