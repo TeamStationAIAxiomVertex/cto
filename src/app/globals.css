@@ -4,9 +4,9 @@
 
 :root {
   --background: 222 47% 8%; /* #0A0F1E */
-  --foreground: 210 40% 98%;
-  --muted: 215 20% 65%;
-  --muted-foreground: 215 20% 65%;
+  --foreground: 210 40% 90%;
+  --muted: 215 20% 75%;
+  --muted-foreground: 215 20% 75%;
   --popover: 222 47% 8%;
   --popover-foreground: 210 40% 98%;
   --card: 222 47% 15%;
@@ -30,8 +30,8 @@
 .light {
   --background: 0 0% 100%;
   --foreground: 222 47% 11%;
-  --muted: 215 20% 45%;
-  --muted-foreground: 215 20% 45%;
+  --muted: 215 20% 40%;
+  --muted-foreground: 215 20% 40%;
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
   --card: 210 40% 98%;
@@ -44,7 +44,7 @@
   --secondary-foreground: 222 47% 11%;
   --accent: 210 40% 96.1%;
   --accent-foreground: 222 47% 11%;
-  --destructive: 0 84% 60%;
+  --destructive: 0 70% 45%;
   --destructive-foreground: 0 0% 98%;
   --ring: 229 100% 65%;
   --chart-1: 229 100% 65%;
