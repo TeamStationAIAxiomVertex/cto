@@ -2,12 +2,19 @@
   "name": "cto-playbook-platform",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "packageManager": "npm@10",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "build:production": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "build:strict": "npm run typecheck && npm run lint && next build",
+    "build:fast": "next build --no-lint"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.7",

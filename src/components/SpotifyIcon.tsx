@@ -1,6 +1,5 @@
 'use client';
 import * as React from 'react';
-
 export function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false" {...props}>

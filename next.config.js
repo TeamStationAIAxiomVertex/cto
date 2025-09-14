@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
+
+// BREAK-GLASS: set BREAK_GLASS=1 to ignore TS/ESLint errors during build.
+// Default is strict (no ignoring).
+const breakGlass = process.env.BREAK_GLASS === '1';
+
 const nextConfig = {
     output: 'export',
     // Optional: Add a trailing slash to all paths `/about` -> `/about/`
@@ -18,6 +23,8 @@ const nextConfig = {
             }
         ],
     },
+  eslint: { ignoreDuringBuilds: breakGlass ? true : false },
+  typescript: { ignoreBuildErrors: breakGlass ? true : false },
 };
 
 module.exports = nextConfig;
