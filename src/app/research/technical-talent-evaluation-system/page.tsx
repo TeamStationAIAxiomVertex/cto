@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import TalentEvaluationClient from './client';
 
 export const metadata: Metadata = {
-    title: 'Sample Technical Talent Evaluation Report | TeamStation AI',
-    description: 'See a real, anonymized Axiom Cortex™ evaluation report. Understand how we use cognitive AI for bias-free technical hiring of LATAM engineers.',
+    title: 'Evidence-Based Technical Interview Process | TeamStation AI',
+    description: 'Our evidence-based technical interview process for LATAM engineers uses Cognitive AI, semantic RAG, and expert review to de-risk your hiring. Learn more.',
 };
 
-export default function EvaluationPage() {
+export default function TechnicalInterviewEvaluationPage() {
   return <TalentEvaluationClient />;
 }
