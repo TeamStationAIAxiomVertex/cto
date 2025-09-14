@@ -2,4 +2,8 @@
   "hosting": [
     {
       "site": "failsafe",
-      "public": "failsa
+      "public": "failsafe",
+      "ignore": ["**/.*", "**/node_modules/**"]
+    }
+  ]
+}
