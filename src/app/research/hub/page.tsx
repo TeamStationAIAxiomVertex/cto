@@ -43,7 +43,7 @@ export default async function ResearchPage() {
     {
       question: "How can I be sure a candidate who interviews well will actually perform?",
       subQuestion: "I've been burned by charisma before.",
-      answer: "This is the exact problem our <a href='/playbook/hub/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> was built to solve. Traditional interviews are flawed because they conflate communication style with technical ability. Our process measures 'Problem-Solving Agility' through structured, bias-aware evaluations. We provide an auditable <a href='/technical-interview-evaluation' class='text-primary hover:underline'>Evidence Locker</a> so you're judging the logic, not just the presentation. This is how we de-risk the hire."
+      answer: "This is the exact problem our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> was built to solve. Traditional interviews are flawed because they conflate communication style with technical ability. Our process measures 'Problem-Solving Agility' through structured, bias-aware evaluations. We provide an auditable <a href='/technical-interview-evaluation' class='text-primary hover:underline'>Evidence Locker</a> so you're judging the logic, not just the presentation. This is how we de-risk the hire."
     },
     {
       question: "How is your 'Cognitive AI' different from a keyword scanner?",
@@ -80,7 +80,7 @@ export default async function ResearchPage() {
                     <h3 className="text-lg font-semibold text-foreground">{asset.solutionTitle}</h3>
                 </div>
               <p className="mt-4 text-sm text-muted-foreground flex-grow">{asset.solutionDescription}</p>
-               <Link href={paper.href.replace('/research/', '/research/hub/')} className="mt-6 flex items-center text-sm font-semibold text-primary">
+               <Link href={paper.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
                 Read the Proof <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

@@ -17,6 +17,7 @@ const navItems = {
     { href: '/platform', title: 'Our Platform'},
     { href: '/process', title: 'Our Process' },
     { href: '/technical-interview-evaluation', title: 'Talent Evaluations' },
+    { href: '/research/performance-evaluation-framework', title: 'Performance' },
     { href: '/services/talent-onboarding', title: 'Talent Onboarding' },
     { href: '/services/integrated-services', title: 'Integrated Services' },
     { href: '/trust', title: 'Trust Center' },
