@@ -199,7 +199,7 @@ const allTech: {
     category: 'Data Modeling & Databases', 
     categorySlug: 'data-engineering-analytics', 
     intro: "Your data warehouse is a swamp of untested, undocumented SQL scripts. You're here because you need to bring software engineering best practices to your analytics workflow. You need an analytics engineer who is a master of dbt, someone who can build modular, testable, and well-documented data models that your entire organization can trust.",
-    pains: [], 
+    pains: [],
     evaluation: ['Data modeling for analytics (Kimball, dimensional modeling)', 'Advanced Jinja and macro usage for DRY code', 'dbt testing (generic, singular, custom)', 'Materialization strategies and performance tuning', 'Deployment, orchestration, and CI/CD for dbt projects'] 
   },
   'prisma': { 
@@ -514,7 +514,7 @@ const allTech: {
     pains: [], 
     evaluation: ['Cost anomaly detection and root cause analysis', 'Cost allocation and showback/chargeback', 'Calculating unit cost economics (e.g., cost per feature)', 'Budgeting, forecasting, and trend analysis', 'Integrating cost into the developer workflow'] 
   },
-  'aws': { 
+  'aws-cost-explorer': { 
     name: 'AWS Cost Explorer', 
     category: 'Cloud FinOps & BizTech', 
     categorySlug: 'finops-biztech', 
@@ -649,3 +649,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
 export async function generateStaticParams() {
   return Object.keys(allTech).map(slug => ({ slug }));
 }
+
+    
+
+    
