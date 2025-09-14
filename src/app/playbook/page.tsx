@@ -17,7 +17,8 @@ const crisisScenarios = [
     problem: 'Deadlines slip because decisions wait 12–24 hours for replies across time zones.',
     solutionHref: '/playbook/nearshore-vs-offshore',
     solutionLabel: 'Align time zones to accelerate delivery.',
-    icon: <Clock className="h-6 w-6 text-primary" />
+    icon: <Clock className="h-8 w-8" />,
+    proof: 'Cycle time ↓30–50%; lead time ↓25–40%'
   },
   {
     category: 'Velocity & Delivery',
@@ -25,7 +26,8 @@ const crisisScenarios = [
     problem: 'One question → one day lost. PR reviews stretch for a week, blocking progress.',
     solutionHref: '/process',
     solutionLabel: 'Implement same-day PR review SLAs.',
-    icon: <GitCompare className="h-6 w-6 text-primary" />
+    icon: <GitCompare className="h-8 w-8" />,
+    proof: 'PR turnaround <8h median'
   },
   {
     category: 'Velocity & Delivery',
@@ -33,7 +35,8 @@ const crisisScenarios = [
     problem: 'Product, Design, and Eng can’t iterate because they don’t have real-time overlap.',
     solutionHref: '/hire/by-team-topologies',
     solutionLabel: 'Build product-aligned squads.',
-    icon: <Users className="h-6 w-6 text-primary" />
+    icon: <Users className="h-8 w-8" />,
+    proof: 'Story rework rate ↓20–35%'
   },
   // Quality & Architecture
   {
@@ -42,7 +45,8 @@ const crisisScenarios = [
     problem: 'Defects escape to prod because QA is an afterthought; your team is firefighting instead of building.',
     solutionHref: '/hire/by-role/qa-quality-engineering',
     solutionLabel: 'Embed nearshore SDETs to shift-left.',
-    icon: <TestTube2 className="h-6 w-6 text-primary" />
+    icon: <TestTube2 className="h-8 w-8" />,
+    proof: 'Defect escape rate ↓40–60%'
   },
   {
     category: 'Quality & Architecture',
@@ -50,7 +54,8 @@ const crisisScenarios = [
     problem: 'Your vendor supplies ‘senior’ engineers who copy-paste code but can’t design scalable systems.',
     solutionHref: '/playbook/bias-free-technical-hiring-axiom-cortex',
     solutionLabel: 'Hire for architectural instinct, not just keywords.',
-    icon: <BrainCircuit className="h-6 w-6 text-primary" />
+    icon: <BrainCircuit className="h-8 w-8" />,
+    proof: 'Architectural churn ↓; fewer ‘rewrite’ ADRs'
   },
   {
     category: 'Quality & Architecture',
@@ -58,7 +63,8 @@ const crisisScenarios = [
     problem: 'You have monolith fatigue; no one can safely carve out new domains or standardize APIs without breaking something.',
     solutionHref: '/hire/by-role/platform-infra-sre',
     solutionLabel: 'Deploy a platform team to enforce contracts.',
-    icon: <Layers className="h-6 w-6 text-primary" />
+    icon: <Layers className="h-8 w-8" />,
+    proof: 'p95 latency ↓; change failure rate ↓'
   },
   // Security & Compliance
   {
@@ -67,7 +73,8 @@ const crisisScenarios = [
     problem: 'Enterprise security questionnaires are stalling revenue because your team can\'t prove compliance.',
     solutionHref: '/trust',
     solutionLabel: 'Get audit-ready with nearshore AppSec.',
-    icon: <ShieldCheck className="h-6 w-6 text-primary" />
+    icon: <ShieldCheck className="h-8 w-8" />,
+    proof: 'Vendor security review pass-rate ↑'
   },
   {
     category: 'Security & Compliance',
@@ -75,7 +82,8 @@ const crisisScenarios = [
     problem: 'You have secrets in repos, unauditable endpoints, and over-privileged access—a breach waiting to happen.',
     solutionHref: '/trust',
     solutionLabel: 'Enforce least-privilege with vaulted secrets.',
-    icon: <FileLock className="h-6 w-6 text-primary" />
+    icon: <FileLock className="h-8 w-8" />,
+    proof: 'Zero critical findings in quarterly scans'
   },
   // Communication & Culture
   {
@@ -84,7 +92,8 @@ const crisisScenarios = [
     problem: 'Night calls, low engagement, and thin notes lead to evaporating decisions and constant rework.',
     solutionHref: '/playbook/nearshore-vs-offshore',
     solutionLabel: 'Replace night calls with daytime collaboration.',
-    icon: <MessageSquare className="h-6 w-6 text-primary" />
+    icon: <MessageSquare className="h-8 w-8" />,
+    proof: 'Decision lead time ↓'
   },
   {
     category: 'Communication & Culture',
@@ -92,7 +101,8 @@ const crisisScenarios = [
     problem: 'Language nuances and a cultural "yes" create silent failures that surface too late.',
     solutionHref: '/hire/by-country/argentina',
     solutionLabel: 'Hire bilingual leads trained to surface risk.',
-    icon: <Users2 className="h-6 w-6 text-primary" />
+    icon: <Users2 className="h-8 w-8" />,
+    proof: 'Rework tickets ↓; acceptance on first demo ↑'
   },
   // Cost & Transparency
   {
@@ -101,7 +111,8 @@ const crisisScenarios = [
     problem: 'Your invoices are a surprise every month due to spiked hours, shadow staffing, and unclear roles.',
     solutionHref: '/playbook/latam-economics',
     solutionLabel: 'Get cost-predictability with transparent TCO.',
-    icon: <Scale className="h-6 w-6 text-primary" />
+    icon: <Scale className="h-8 w-8" />,
+    proof: 'Forecast vs. actual variance <10%'
   },
   {
     category: 'Cost & Transparency',
@@ -109,7 +120,8 @@ const crisisScenarios = [
     problem: 'You were promised senior engineers in the sales pitch, but juniors showed up to do the work.',
     solutionHref: '/playbook/bias-free-technical-hiring-axiom-cortex',
     solutionLabel: 'End bait-and-switch with evidence-based vetting.',
-    icon: <UserCheck className="h-6 w-6 text-primary" />
+    icon: <UserCheck className="h-8 w-8" />,
+    proof: 'Staffed-as-sold rate tracked & enforced'
   },
   // People & Retention
   {
@@ -118,7 +130,8 @@ const crisisScenarios = [
     problem: 'Constant team churn from your vendor resets context and creates velocity whiplash.',
     solutionHref: '/process',
     solutionLabel: 'Improve retention with nearshore career ladders.',
-    icon: <Users className="h-6 w-6 text-primary" />
+    icon: <Users className="h-8 w-8" />,
+    proof: 'Rolling 90-day retention >95%'
   },
   {
     category: 'People & Retention',
@@ -126,7 +139,8 @@ const crisisScenarios = [
     problem: 'Offshore devs are burning out on night shifts; quality is dropping and attrition is rising.',
     solutionHref: '/playbook/nearshore-vs-offshore',
     solutionLabel: 'Create sustainable on-call rotations.',
-    icon: <AlertTriangle className="h-6 w-6 text-primary" />
+    icon: <AlertTriangle className="h-8 w-8" />,
+    proof: 'On-call fatigue signals ↓'
   },
   // Process & Tooling
   {
@@ -135,7 +149,8 @@ const crisisScenarios = [
     problem: 'Your team relies on manual deploys, and every release is filled with fear and uncertainty.',
     solutionHref: '/hire/by-role/platform-infra-sre',
     solutionLabel: 'Build a CI/CD spine with a nearshore platform team.',
-    icon: <GitBranch className="h-6 w-6 text-primary" />
+    icon: <GitBranch className="h-8 w-8" />,
+    proof: 'Deploy frequency ↑; change failure rate ↓'
   },
   {
     category: 'Process & Tooling',
@@ -143,7 +158,8 @@ const crisisScenarios = [
     problem: 'Testing happens at the end of the cycle, meaning bugs are already baked into the product.',
     solutionHref: '/hire/by-role/qa-quality-engineering',
     solutionLabel: 'Shift-left with contract tests and smoke suites.',
-    icon: <TestTube2 className="h-6 w-6 text-primary" />
+    icon: <TestTube2 className="h-8 w-8" />,
+    proof: 'Regressions per release ↓50%+'
   },
   // Data & ML
   {
@@ -152,7 +168,8 @@ const crisisScenarios = [
     problem: 'You can’t trust your analytics. Dashboards are broken, metrics are undefined, and events are stale.',
     solutionHref: '/hire/by-role/data-engineering-analytics',
     solutionLabel: 'Build data trust with analytics engineers.',
-    icon: <Database className="h-6 w-6 text-primary" />
+    icon: <Database className="h-8 w-8" />,
+    proof: 'Metric freshness & test coverage SLAs met'
   },
   {
     category: 'Data & ML',
@@ -160,7 +177,8 @@ const crisisScenarios = [
     problem: 'Your LLM is hallucinating because your RAG system is grafted onto bad data and slow infrastructure.',
     solutionHref: '/hire/by-role/ml-ai-llm-ops',
     solutionLabel: 'Curb hallucinations with nearshore LLMOps.',
-    icon: <BrainCircuit className="h-6 w-6 text-primary" />
+    icon: <BrainCircuit className="h-8 w-8" />,
+    proof: 'Answer accuracy ↑; token spend ↓'
   },
   // Executive Pressure
   {
@@ -169,7 +187,8 @@ const crisisScenarios = [
     problem: 'The board is asking "Why is engineering so slow?" and your velocity narrative is mush.',
     solutionHref: '/research/performance-evaluation-framework',
     solutionLabel: 'Report on DORA metrics, not just story points.',
-    icon: <BarChart className="h-6 w-6 text-primary" />
+    icon: <BarChart className="h-8 w-8" />,
+    proof: 'Cycle/lead time, CFR, deploy freq reported weekly'
   },
   {
     category: 'Executive Pressure',
@@ -177,7 +196,8 @@ const crisisScenarios = [
     problem: 'A critical incident hits during U.S. business hours, and there\'s no one awake to fix it.',
     solutionHref: '/hire/by-role/platform-infra-sre',
     solutionLabel: 'Establish nearshore incident response.',
-    icon: <Server className="h-6 w-6 text-primary" />
+    icon: <Server className="h-8 w-8" />,
+    proof: 'MTTA/MTTR ↓'
   },
   // Switching Vendors
   {
@@ -186,7 +206,8 @@ const crisisScenarios = [
     problem: 'You\'re trapped by rigid SOWs and vendor lock-in, unable to right-size your team.',
     solutionHref: '/process',
     solutionLabel: 'Switch vendors smoothly with transfer SLAs.',
-    icon: <Briefcase className="h-6 w-6 text-primary" />
+    icon: <Briefcase className="h-8 w-8" />,
+    proof: 'Transition in <30 days with shadowing'
   },
   {
     category: 'Switching Vendors',
@@ -194,7 +215,8 @@ const crisisScenarios = [
     problem: 'Your vendor’s hiring process is a black box that results in surprise junior talent.',
     solutionHref: '/playbook/bias-free-technical-hiring-axiom-cortex',
     solutionLabel: 'Demand a transparent hiring pipeline.',
-    icon: <FileSearch className="h-6 w-6 text-primary" />
+    icon: <FileSearch className="h-8 w-8" />,
+    proof: 'Staffed-as-sold rate tracked quarterly'
   },
   {
     category: 'Switching Vendors',
@@ -202,7 +224,8 @@ const crisisScenarios = [
     problem: 'Your current vendor can’t adopt your tooling, rituals, and release cadence.',
     solutionHref: '/process',
     solutionLabel: 'Integrate new teams into your SDLC in days.',
-    icon: <Zap className="h-6 w-6 text-primary" />
+    icon: <Zap className="h-8 w-8" />,
+    proof: 'Time-to-first-useful-PR <7 days'
   },
   {
     category: 'Switching Vendors',
@@ -210,12 +233,25 @@ const crisisScenarios = [
     problem: 'Coaching, discovery, and strategic alignment are suffering over endless Zoom calls.',
     solutionHref: '/hire/by-country',
     solutionLabel: 'Enable same-week onsite travel.',
-    icon: <Tv className="h-6 w-6 text-primary" />
+    icon: <Tv className="h-8 w-8" />,
+    proof: 'Design cycle time ↓ after onsite spikes'
   }
 ];
 
-// Get unique categories for grouping
 const categories = [...new Set(crisisScenarios.map(s => s.category))];
+
+const categoryColors: { [key: string]: string } = {
+  'Velocity & Delivery': 'border-blue-500/30 bg-blue-900/10',
+  'Quality & Architecture': 'border-green-500/30 bg-green-900/10',
+  'Security & Compliance': 'border-red-500/30 bg-red-900/10',
+  'Communication & Culture': 'border-purple-500/30 bg-purple-900/10',
+  'Cost & Transparency': 'border-amber-500/30 bg-amber-900/10',
+  'People & Retention': 'border-teal-500/30 bg-teal-900/10',
+  'Process & Tooling': 'border-cyan-500/30 bg-cyan-900/10',
+  'Data & ML': 'border-indigo-500/30 bg-indigo-900/10',
+  'Executive Pressure': 'border-rose-500/30 bg-rose-900/10',
+  'Switching Vendors': 'border-pink-500/30 bg-pink-900/10',
+};
 
 export default async function PlaybookHub() {
   return (
@@ -231,16 +267,28 @@ export default async function PlaybookHub() {
       </header>
 
       {categories.map(category => (
-        <section key={category} className="my-16">
+        <section key={category} className={`my-16 rounded-xl border p-8 ${categoryColors[category] || 'bg-card'}`}>
           <h2 className="text-3xl font-bold text-center mb-8">{category}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {crisisScenarios.filter(s => s.category === category).map(scenario => (
-              <div key={scenario.pain} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-                <div className="flex items-start gap-3">
-                  {scenario.icon}
-                  <h3 className="text-lg font-semibold text-foreground leading-snug">{scenario.pain}</h3>
+              <div key={scenario.pain} className="group flex flex-col rounded-lg border bg-background/50 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                <div className="flex items-start justify-between">
+                  <div className="text-primary">{scenario.icon}</div>
+                  <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1">{scenario.proof}</p>
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground flex-grow">{scenario.problem}</p>
+                <h3 className="text-lg font-semibold text-foreground leading-snug mt-4 flex-grow">{scenario.pain}</h3>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  {scenario.problem.split(' ').map((word, index) => {
+                    if (word.includes('PR')) return <Tooltip key={index} text="Pull Request: A proposal to merge code changes."> {word} </Tooltip>
+                    if (word.includes('SDET')) return <Tooltip key={index} text="Software Development Engineer in Test: A developer who writes testing software."> {word} </Tooltip>
+                    if (word.includes('SLO')) return <Tooltip key-={index} text="Service Level Objective: A target for system reliability."> {word} </Tooltip>
+                    if (word.includes('AppSec')) return <Tooltip key={index} text="Application Security: Measures to protect applications from threats."> {word} </Tooltip>
+                    if (word.includes('IaC')) return <Tooltip key={index} text="Infrastructure as Code: Managing infrastructure through code."> {word} </Tooltip>
+                    if (word.includes('CI/CD')) return <Tooltip key={index} text="Continuous Integration/Continuous Deployment: Automating software release."> {word} </Tooltip>
+                     if (word.includes('RAG')) return <Tooltip key={index} text="Retrieval-Augmented Generation: An AI technique to improve LLM answers with external data."> {word} </Tooltip>
+                    return ` ${word} `;
+                  })}
+                </p>
                 <div className="mt-4">
                   <Link href={scenario.solutionHref} className="flex items-center text-sm font-semibold text-primary stretched-link">
                     Solution: {scenario.solutionLabel} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -255,3 +303,5 @@ export default async function PlaybookHub() {
     </main>
   );
 }
+
+    
