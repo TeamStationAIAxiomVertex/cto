@@ -9,10 +9,18 @@ type LinkItem = {
   icon?: ReactNode;
 };
 
+type FooterLinks = {
+  "Playbook": LinkItem[];
+  "What's Included": LinkItem[];
+  "Comparisons": LinkItem[];
+  "Company": LinkItem[];
+};
+
+
 export function Footer() {
   const year = new Date().getFullYear();
 
-  const links: { [key: string]: LinkItem[] } = {
+  const links: FooterLinks = {
       "Playbook": [
         { href: '/playbook/hub', label: 'Playbook Hub' },
         { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs. Offshore' },
@@ -59,7 +67,7 @@ export function Footer() {
                     {linkItems.map((link, i) => (
                         <li key={i} className="text-sm">
                             <Link href={link.href} className="transition-colors hover:text-foreground flex items-center">
-                              {link.label} {link.icon && link.icon}
+                              {link.label} {link.icon}
                             </Link>
                         </li>
                     ))}
