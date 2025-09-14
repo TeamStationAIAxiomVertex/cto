@@ -1,115 +1,169 @@
 ---
 slug: 'tco-model'
-title: 'The Complete CFO-Ready TCO Model for Nearshore Engineering'
-description: 'A detailed, CFO-grade Total Cost of Ownership (TCO) model to compare a multi-vendor offshore setup vs. TeamStation AI’s single-SLA nearshore platform.'
+title: 'The Computational Cost & TCO Playbook'
+description: 'A CFO-grade analysis of the true Total Cost of Ownership (TCO) of engineering teams, presented in Sandler-style "Computational Cost" cards.'
 ---
 
-## 1. Side-by-Side Annual TCO Model
+## 1) Seat Cost Delta — Sticker vs Fully-Loaded
 
-This model provides a comprehensive comparison between a typical multi-vendor/offshore setup and TeamStation AI's single-SLA, all-inclusive platform. It accounts for direct fees as well as the critical "hidden taxes" (management overhead, quality risk, delays) that are often missed in simpler analyses.
+**Problem:** U.S. senior salaries look manageable… until benefits, taxes, tools, and overhead land on the P&L.
 
-### Annual TCO (Current Vendor)
-```
-Annual_TCO(current) = 
-  Direct_Fees + 
-  Mgmt_Overhead + 
-  Quality_Risk + 
-  Delay_Tax + 
-  Compliance_Cost + 
-  Travel_Tooling - 
-  Attrition_Savings
-```
+**Solution:** Replace/augment seats with nearshore seniors at $6,800/mo all-in under one SLA.
 
-### Annual TCO (TeamStation AI Single SLA)
+**Proof (per seat):**
 ```
-Annual_TCO(teamstation) = 
-  SLA_Fee + 
-  Residual_Mgmt + 
-  Residual_Risk + 
-  Transition_Amort - 
-  (Savings_fc + Savings_onboard + Savings_cloud + Savings_audit + Benefit_cash + Benefit_denial)
+US_FLC = Salary × (1 + burden)
+Savings/yr = (US_FLC ÷ 12 − 6,800) × 12
 ```
+*Example:* Salary $120,000, burden 30% → US_FLC $156,000 (=$13,000/mo).
+Savings = (13,000 − 6,800) × 12 = **$74,400/yr per seat.**
 
-### Key Financial Metrics
-- **Annual Savings** = `Annual_TCO(current) - Annual_TCO(teamstation)`
-- **Return on Investment (ROI)** = `Annual_Savings / (SLA_Fee + Transition_Amort)`
-- **Payback Period (Months)** = `TransitionCost / (Annual_Savings / 12)`
-- **Net Present Value (36 months)** = `Σ (Monthly_Savings / (1+r)^m) - TransitionCost`
+**Question:** How many seats until this delta funds an entire roadmap line item?
 
 ---
 
-## 2. Line-by-Line Formula Breakdown
+## 2) Team Delta — Six Seniors, One Decision
 
-Here is how each component of the TCO model is calculated.
+**Problem:** You need a full squad; headcount is frozen.
 
-| Category                      | Formula                                                                                                |
-| :---------------------------- | :----------------------------------------------------------------------------------------------------- |
-| **Direct & Visible Fees**     | `Direct_Fees = (hourly_rate × hours/mo × 12)` or `(seat_rate × seats × 12)`                             |
-|                               | `SLA_Fee = base_fee + (per_seat_fee × seats)` (TeamStation's single price)                             |
-| **Internal Mgmt Overhead**    | `Mgmt_Overhead = 12 × [(EM_hours/mo × C_EM) + ...]`                                                    |
-|                               | `Residual_Mgmt = Mgmt_Overhead × β_mgmt` (where `β_mgmt` is the fraction remaining, ≈0.25–0.4)          |
-| **Quality & Incident Risk**   | `Quality_Risk = D × CFR_current × C_incident`                                                          |
-|                               | `Residual_Risk = D × CFR_TS × C_incident` (CFR_TS is TeamStation's lower Change Failure Rate)          |
-| **Time-to-Productivity Tax**  | `Delay_Tax = PRs/mo × Δreview_hours × C_dev_hour × 12`                                                 |
-| **Churn/Attrition Cost**      | `Attrition_Cost = team_size × (attrition_rate_current - attrition_rate_TS) × C_replace`                 |
-| **Compliance & Audit Cost**   | `Compliance_Cost = (H_audit_current - H_audit_TS) × C_hour`                                            |
-| **Travel & Tooling**          | `Travel_Tooling = annual_travel + duplicate_tool_licenses - consolidated_tool_credits`                 |
-| **Transition Costs**          | `Transition_Amort = TransitionCost / amort_months` (Amortized over 6-12 months)                         |
-| **Consolidated Savings**      | A sum of savings from reduced change failure (`Savings_fc`), faster onboarding (`Savings_onboard`), etc. |
+**Solution:** 6 nearshore seniors under one contract, one invoice, one SLA.
+
+**Proof (team of 6):**
+```
+Annual savings = 6 × 74,400 = $446,400/yr (using Card #1 math).
+```
+
+**Question:** What could you ship with an extra $37,200/mo in engineering oxygen?
 
 ---
 
-## 3. Minimal Variable Checklist for Finance
+## 3) Cost of Vacancy — The Invisible Tax
 
-To make this actionable, here is the minimum set of variables your finance team needs to plug in.
+**Problem:** Roles stay open; velocity stalls; opportunity cost compounds.
 
-| Category               | Variables                                                                   |
-| :--------------------- | :-------------------------------------------------------------------------- |
-| **Seats & Rates**      | `seats`, `seat_rate` (or `hourly_rate`, `hours/mo`)                         |
-| **Management Time**    | `EM_hours/mo`, `PM_hours/mo`, `SecEng_hours/mo`, `C_EM`, `C_PM`, `C_Sec`      |
-| **DORA/Risk Metrics**  | `D` (deploys/mo), `CFR_current`, `C_incident`                               |
-| **Onboarding**         | `H` (new hires), `C_day`, `ΔTP` (days saved)                                |
-| **Code-Review Latency**| `PRs/mo`, `review_hours_current`, `review_hours_TS`, `C_dev_hour`           |
-| **Attrition**          | `team_size`, `attrition_rate_current`, `attrition_rate_TS`, `C_replace`     |
-| **Compliance & Cloud** | `H_audit_current`, `H_audit_TS`, `C_hour`, `p_cloud`, `S_cloud`              |
-| **Revenue & Cash**     | `R_m`, `r_capital`, `Δcash_days`, `Δdenial`                                 |
-| **Ops Extras**         | `annual_travel`, `duplicate_tool_licenses`                                  |
-| **Transition**         | `TransitionCost`, `amort_months`                                            |
-| **TeamStation Inputs** | `base_fee`, `per_seat_fee`, `β_mgmt`, `CFR_TS`                                |
+**Solution:** Bench-ready nearshore talent; start in weeks, not quarters.
+
+**Proof:**
+```
+Vacancy_Cost = Daily_Value × (TTH_current − TTH_TS)
+```
+*Example:* $3,000/day product value × (60d − 14d) = **$138,000 not lost.**
+
+**Question:** What did last quarter’s “open req” actually cost your roadmap?
 
 ---
 
-## 4. Worked Example (Illustrative)
+## 4) PR “LGTM” Latency — Days Lost to Time Zones
 
-This example demonstrates the model's flow. Swap in your own numbers to see the specific financial impact for your organization.
+**Problem:** One PR → one day lost; reviews trickle in overnight.
 
-### Assumptions
-- **Team:** 12 seats
-- **Current Vendor Rate:** $7,500/seat/mo
-- **TeamStation Rate:** $6,000/seat/mo + $60k base fee
-- **Management Overhead:** 40 EM hrs + 30 PM hrs/mo
-- **Risk Profile:** 60 deploys/mo, 8% CFR (current) vs. 3% (TS)
-- **Code Review:** 4-hour improvement per PR
-- **Transition:** $120k cost, amortized over 12 months
+**Solution:** Same-day PR SLAs in your timezone.
 
-### TCO Calculation
+**Proof (monthly):**
+```
+Savings_PR = PRs/mo × Δreview_hours × C_dev_hour
+```
+*Example:* 120 PRs/mo × (4h − 1h) × $85 = **$30,600/mo recaptured.**
 
-| Metric                       | Current Vendor TCO                                                                  | TeamStation TCO                                                                     |
-| :--------------------------- | :---------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
-| **Direct Fees**              | $1,080,000/yr                                                                       | $924,000/yr (`SLA_Fee`)                                                             |
-| **Mgmt Overhead**            | +$101,000/yr                                                                        | +$35,000/yr (`Residual_Mgmt`)                                                       |
-| **Quality Risk**             | +$69,000/yr                                                                         | +$26,000/yr (`Residual_Risk`)                                                       |
-| **Delay Tax**                | +$844,000/yr                                                                        | $0 (Included in Savings)                                                            |
-| **Compliance Cost**          | +$20,000/yr                                                                         | $0 (Included in Savings)                                                            |
-| **Travel & Tooling**         | +$35,000/yr                                                                         | $0 (Consolidated)                                                                   |
-| **Attrition Savings**        | -$30,000/yr                                                                         | $0 (Accounted for in lower rate)                                                    |
-| **Transition Amortization**  | $0                                                                                  | +$120,000/yr                                                                        |
-| **Other Savings**            | $0                                                                                  | -$320,000/yr                                                                        |
-| **Total Annual TCO**         | <span style="color: #f87171; font-weight: bold;">$2,119,000</span>                   | <span style="color: #4ade80; font-weight: bold;">$785,000</span>                     |
+**Question:** How many quarters died waiting for “Looks Good To Me”?
 
-### Financial Outcomes
+---
 
-- **Annual Savings:** **$1,334,000**
-- **Payback Period:** **1.1 Months**
+## 5) Faster Onboarding — Time-to-Productivity
 
-This demonstrates that while the sticker price is a factor, the "hidden taxes" of management overhead, delay, and risk are what truly drive the total cost. An integrated platform model offers substantial savings by systemically reducing these hidden costs.
+**Problem:** New engineers take weeks to add useful code.
+
+**Solution:** Playbooked onboarding with nearshore leads embedded in your rituals.
+
+**Proof:**
+```
+Savings_onboard = H × C_day × ΔTP
+```
+*Example:* H=6, C_day (US FLC) ≈ $156,000/260 ≈ $600/day, ΔTP=10 days → **$36,000 saved.**
+
+**Question:** What is your measured ΔTP seat-by-seat?
+
+---
+
+## 6) Change-Failure Rate — Fewer Hotfix Fridays
+
+**Problem:** Failed changes burn cash and trust.
+
+**Solution:** Shift-left QA + contract tests + canaries managed by our platform crew.
+
+**Proof (monthly):**
+```
+Savings_fc = D × (CFR₀ − CFR₁) × C_incident
+```
+*Example:* D=60 deploys, CFR 8%→4%, C_incident=$12k → **$28,800/mo saved.**
+
+**Question:** Which metric—CFR, MTTR, or both—hurts your renewals more?
+
+---
+
+## 7) Attrition & Replacement — Context Reset Penalty
+
+**Problem:** Offshore night shifts drive churn; you keep paying the knowledge tax.
+
+**Solution:** Same-day schedules + retention ladders + documented runbooks.
+
+**Proof (annual):**
+```
+Savings_attrition = Team × (rate₀ − rate₁) × C_replace
+```
+*Example:* Team=12, 20%→12%, C_replace=$25k → **$24,000/yr saved.**
+
+**Question:** How many “new intros” did your squad do this month?
+
+---
+
+## 8) Management Overhead — Meetings You Don’t Need
+
+**Problem:** EMs/PMs spend hours herding vendors across time zones.
+
+**Solution:** Single vendor, single SLA, single cadence.
+
+**Proof (annual):**
+```
+Savings_mgmt = 12 × (EM_hrs×C_EM + PM_hrs×C_PM) × reduction
+```
+*Example:* (30h×$120 + 20h×$95) × 12 × 0.5 ≈ **$40,200/yr freed.**
+
+**Question:** What would your EM do with 10 hours/week back?
+
+---
+
+## 9) Compliance & Security — Questionnaire Drag
+
+**Problem:** SOC2/ISO gaps stall enterprise deals.
+
+**Solution:** Built-in SSO/SAML/SCIM, SBOMs, audit trails—operated in-timezone.
+
+**Proof (annual):**
+```
+Savings_audit = H_audit_saved × C_hour
+```
+*Example:* 250 hours saved × $110/hr = **$27,500/yr.**
+
+**Question:** Which control is blocking the biggest open opportunity right now?
+
+---
+
+## 10) All-in vs. “All-these-Invoices”
+
+**Problem:** Fragmented vendors → duplicated tools, travel, and shadow staffing.
+
+**Solution:** Consolidate under one SLA at $6,800/mo per senior.
+
+**Proof (annual):**
+```
+Consolidation_Savings = (Travel + Duplicate_Tools − Credits)
+```
+*Example:* ($20k + $25k − $8k) = **$37,000/yr.**
+
+**Question:** How many vendors do you really need to ship one roadmap?
+
+---
+
+### Tiny Legend (Variables for Estimation)
+`Salary (US)`, `burden` (e.g., 0.30), `US_FLC` (fully loaded), `PRs/mo`, `Δreview_hours`, `C_dev_hour`, `D` (deploys/mo), `CFR₀/CFR₁`, `C_incident`, `H` (hires in wave), `C_day`, `ΔTP`, `Team`, `attrition rates`, `C_replace`, `EM_hrs/PM_hrs`, `C_EM/C_PM`, `reduction`, `H_audit_saved`, `C_hour`, `Travel`, `Duplicate_Tools`, `Credits`.
