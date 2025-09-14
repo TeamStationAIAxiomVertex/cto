@@ -4,45 +4,20 @@ import matter from 'gray-matter';
 
 const contentDirectory = path.join(process.cwd(), 'content', 'playbook');
 
-export type PlaybookPost = {
-  slug: string;
-  title: string;
-  description: string;
-  content: string;
-};
-
-async function getFilenames(): Promise<string[]> {
-    try {
-        const filenames = await fs.readdir(contentDirectory);
-        // Ensure we don't try to process the new React page as a markdown file
-        return filenames.filter(filename => filename.endsWith('.md'));
-    } catch (error) {
-        console.error("Error reading playbook directory:", error);
-        return [];
-    }
-}
+// Statically define the slugs for the existing playbook pages.
+// This prevents the build process from trying to find markdown files that no longer exist.
+const playbookSlugs = [
+    'bias-free-technical-hiring-axiom-cortex',
+    'build-vs-buy',
+    'latam-economics',
+    'nearshore-vs-offshore',
+    'tco-model'
+];
 
 export async function getAllPlaybookSlugs(): Promise<string[]> {
-    const filenames = await getFilenames();
-    return filenames.map(filename => filename.replace(/\.md$/, ''));
+    return playbookSlugs;
 }
 
-export async function getPlaybookBySlug(slug: string): Promise<PlaybookPost | null> {
-    const filePath = path.join(contentDirectory, `${slug}.md`);
-
-    try {
-        const fileContents = await fs.readFile(filePath, 'utf8');
-        const { data, content } = matter(fileContents);
-
-        return {
-            slug,
-            title: data.title,
-            description: data.description,
-            content,
-        } as PlaybookPost;
-    } catch (error) {
-        // For other errors, log them
-        console.error(`Error reading playbook post ${slug}:`, error);
-        return null;
-    }
-}
+// NOTE: getPlaybookBySlug and PlaybookPost are no longer needed
+// as all playbook pages are now custom React components and not parsed from markdown.
+// They are being removed to prevent any future build errors.
