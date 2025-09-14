@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { ArrowRight, TrendingUp, DollarSign, Zap, AlertTriangle, BrainCircuit, ShieldCheck } from 'lucide-react';
 import type { Metadata } from 'next';

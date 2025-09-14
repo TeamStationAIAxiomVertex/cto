@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, DollarSign, Zap, TestTube2, Users, Briefcase, ShieldCheck, Layers, GitCompare, UserCheck } from 'lucide-react';
@@ -306,5 +305,3 @@ export default function TCOModelPage() {
     </main>
   );
 }
-
-    
