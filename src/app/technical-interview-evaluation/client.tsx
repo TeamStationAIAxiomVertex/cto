@@ -488,7 +488,7 @@ export default function TalentEvaluationClient() {
                 ))}
             </div>
              <div className="text-center mt-8">
-                <Link href="/process" className="font-semibold text-primary hover:underline">
+                <Link href="https://teamstation.dev/technical-interview-evaluation" className="font-semibold text-primary hover:underline">
                     See Our Full Evaluation Process <ArrowRight className="inline h-4 w-4" />
                 </Link>
               </div>
@@ -505,4 +505,3 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
-
