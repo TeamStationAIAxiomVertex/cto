@@ -6,7 +6,7 @@ import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
     title: 'Software Engineer Performance & Growth Framework | TeamStation AI',
-    description: 'Our data-driven performance evaluation framework for software engineers moves beyond broken traditional reviews to maximize impact and success for nearshore teams. A playbook for CTOs on technical performance review and bias-free evaluation.',
+    description: 'A data-driven performance evaluation framework for software engineers that moves beyond broken traditional reviews to maximize impact. A playbook for CTOs on technical performance review and bias-free evaluation.',
 };
 
 const principles = [
@@ -105,8 +105,17 @@ export default function PerformanceEvaluationFrameworkPage() {
                             {principles.map(p => (
                                 <div key={p.title} className="p-4 rounded-lg bg-background">
                                     <h4 className="font-bold text-foreground text-base">{p.title}</h4>
-                                    <p className="text-xs text-muted-foreground mt-1">{p.description.replace('BARS', '')}
-                                     {p.description.includes("BARS") && <Tooltip text="Behaviorally Anchored Rating Scale: A method that ties ratings to specific, observable behaviors to reduce subjectivity.">BARS</Tooltip>}
+                                    <p className="text-xs text-muted-foreground mt-1">
+                                        {p.description.includes("BARS") ? 
+                                          <>
+                                            {p.description.split('BARS')[0]}
+                                            <Tooltip text="Behaviorally Anchored Rating Scale: A method that ties ratings to specific, observable behaviors to reduce subjectivity.">
+                                                BARS
+                                            </Tooltip>
+                                            {p.description.split('BARS')[1]}
+                                          </> 
+                                          : p.description
+                                        }
                                     </p>
                                 </div>
                             ))}
@@ -198,3 +207,5 @@ export default function PerformanceEvaluationFrameworkPage() {
         </main>
     );
 }
+
+    
