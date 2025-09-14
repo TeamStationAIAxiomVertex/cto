@@ -20,30 +20,35 @@ export default async function PlaybookHub() {
 
   const playbookData = {
     'nearshore-vs-offshore': {
+      title: 'Nearshore vs. Offshore: The Strategic Choice for CTOs | TeamStation AI',
       pain: "Is time-zone lag killing your productivity?",
       icon: <GitCompare className="h-8 w-8 text-primary" />,
       kpi: "4-8 hour daily overlap",
       description: "A framework for CTOs to diagnose the true cost—and risk—of their global talent strategy, moving beyond cost per hour to Total Cost of Ownership."
     },
     'latam-economics': {
+      title: 'LATAM Economics & TCO for CTOs | Nearshore Software Development Costs',
       pain: "Are you struggling to justify your budget?",
       icon: <Scale className="h-8 w-8 text-primary" />,
       kpi: "40-60% lower TCO",
       description: "A CFO-ready framework for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, covering salaries, hidden costs of mis-hires, and security risks."
     },
     'build-vs-buy': {
+      title: 'Build vs. Buy: A CTO’s Framework for Scaling Nearshore Teams',
       pain: "Are hidden costs making your 'cheaper' option more expensive?",
       icon: <Zap className="h-8 w-8 text-primary" />,
       kpi: "1 accountable SLA",
        description: "Should you build a nearshore operation from scratch or 'buy' into an integrated platform? This playbook models the trade-offs in terms of Total Cost of Ownership (TCO), speed, and risk."
     },
     'bias-free-technical-hiring-axiom-cortex': {
+      title: 'Stop Gambling on Resumes. Start De-risking Your Hires.',
       pain: "Is your hiring process a high-risk gamble?",
       icon: <UserCheck className="h-8 w-8 text-primary" />,
       kpi: "Mismatch rate ≤ 10%",
       description: "A playbook for replacing your broken, high-risk hiring process with a faster, fairer, and more accurate hiring engine powered by cognitive science."
     },
     'security-compliance': {
+      title: 'Security & Compliance',
       pain: "Is your next hire also your next compliance breach?",
       icon: <ShieldCheck className="h-8 w-8 text-primary" />,
       kpi: "SOC 2 & ISO Aligned",
@@ -59,12 +64,6 @@ export default async function PlaybookHub() {
     'security-compliance',
   ];
 
-  const sortedPosts = posts.sort((a, b) => {
-    const aIndex = orderedSlugs.indexOf(a!.slug);
-    const bIndex = orderedSlugs.indexOf(b!.slug);
-    return aIndex - bIndex;
-  });
-
   return (
     <main className="container py-12">
       <div className="text-sm text-muted-foreground mb-8">
@@ -75,17 +74,17 @@ export default async function PlaybookHub() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">A series of battle-tested, data-driven guides for building and scaling high-performance nearshore engineering teams. This is the strategic framework for de-risking your roadmap and out-maneuvering the competition.</p>
       </header>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {sortedPosts.map(post => {
-            if (!post) return null;
-            const data = playbookData[post.slug as keyof typeof playbookData] || { pain: "Gain a strategic advantage.", icon: <BookOpen className="h-8 w-8 text-primary" />, kpi: "Data-driven insights", description: "Learn more." };
-            const href = post.slug === 'security-compliance' ? '/trust' : `/playbook/${post.slug}`;
+        {orderedSlugs.map(slug => {
+            const data = playbookData[slug as keyof typeof playbookData];
+            if (!data) return null;
+            const href = slug === 'security-compliance' ? '/trust' : `/playbook/${slug}`;
             
             return (
-              <div key={post.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+              <div key={slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                 <p className="text-sm font-semibold text-primary">{data.pain}</p>
                 <div className="flex items-center gap-3 mt-3">
                   {data.icon}
-                  <h3 className="text-lg font-semibold text-foreground">{post.title}</h3>
+                  <h3 className="text-lg font-semibold text-foreground">{data.title}</h3>
                 </div>
                 <p className="mt-4 text-sm text-muted-foreground flex-grow">{data.description?.replace('TCO', '')}
                    {data.description?.includes('TCO') && <Tooltip text="Total Cost of Ownership: Includes not just salary, but all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
