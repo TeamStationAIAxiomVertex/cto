@@ -123,8 +123,11 @@ export default async function HomePage() {
                         {pillar.icon}
                         <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
                     </div>
-                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{pillar.description.replace('Axiom Cortex™', '')}
+                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{pillar.description.replace('Axiom Cortex™', '').replace('MDM', '').replace('EOR', '').replace('TCO', '')}
                       {pillar.title.includes("Cognitive AI") && <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip>}
+                      {pillar.description.includes("MDM") && <Tooltip text="Mobile Device Management: Software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
+                      {pillar.description.includes("EOR") && <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>}
+                      {pillar.description.includes("TCO") && <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
                     </p>
                     <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
                      <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
