@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, BookOpen, GitCompare, Scale, ShieldCheck, UserCheck, Zap, Layers, TestTube2, Server, Database, BrainCircuit, GanttChartSquare, DollarSign, Users, Clock, AlertTriangle, MessageSquare, Briefcase, GitBranch, Tv, BarChart, FileLock, Users2, FileSearch, FileText } from 'lucide-react';
+import { ArrowRight, BookOpen, GitCompare, Scale, ShieldCheck, UserCheck, Zap, Layers, TestTube2, Server, Database, BrainCircuit, GanttChartSquare, DollarSign, Users, Clock, AlertTriangle, MessageSquare, Briefcase, GitBranch, Tv, BarChart, FileLock, Users2, FileText, FileSearch } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
 
@@ -238,6 +238,15 @@ const crisisScenarios = [
   },
   {
     category: 'Switching Vendors',
+    pain: 'How fast can a new team land a non-trivial PR in your codebase?',
+    problem: 'Your vendor can’t adopt your tooling, rituals, and release cadence.',
+    solutionHref: '/process',
+    solutionLabel: 'Integrate your teams into your SDLC in days.',
+    icon: <Zap className="h-8 w-8" />,
+    proof: 'Time-to-first-useful-PR <7 days'
+  },
+  {
+    category: 'Switching Vendors',
     pain: 'When did your team last whiteboard together without jet lag?',
     problem: 'Coaching, discovery, and strategic alignment are suffering over endless Zoom calls.',
     solutionHref: '/hire/by-country',
@@ -271,7 +280,7 @@ export default async function PlaybookHub() {
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The CTO Crisis Playbook</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          The 12-hour lag with your offshore team is a daily tax on velocity. Your current nearshore vendor delivers junior-level quality at senior-level rates. Your CFO is asking why engineering—the most expensive part of the budget—is also the most unpredictable. You're not just looking for another vendor; you're looking for a new, more controllable operating model. This is the data-driven guide to help you build it.
+         The 12-hour lag with your offshore team is a daily tax on velocity. Your current nearshore vendor delivers junior-level quality at senior-level rates. Your CFO is asking why engineering—the most expensive part of the budget—is also the most unpredictable. You're not just looking for another vendor; you're looking for a new, more controllable operating model. This is the data-driven guide to help you build it.
         </p>
       </header>
 
