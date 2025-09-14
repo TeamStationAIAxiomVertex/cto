@@ -60,7 +60,7 @@ export default async function ResearchPage() {
           icon: <BookOpen className="h-8 w-8 text-primary" />,
           title: "The Nearshore Revolution: A CEO's guide to scaling with LATAM pods and squads",
           description: "This Amazon-published book is a strategic guide for executives on how to leverage nearshore teams to accelerate growth, innovate faster, and build a more resilient organization. It provides a practical framework for navigating the challenges and capitalizing on the opportunities of the modern global talent landscape.",
-          href: "https://www.amazon.com/dp/B0D5B3J539",
+          href: "https://www.amazon.com/dp/B0F4TF6TWD?ref=cm_sw_r_ffobk_cp_ud_dp_ZD22XHJNVBWXRCMY7C3K&ref_=cm_sw_r_ffobk_cp_ud_dp_ZD22XHJNVBWXRCMY7C3K&social_share=cm_sw_r_ffobk_cp_ud_dp_ZD22XHJNVBWXRCMY7C3K&bestFormat=true&previewDoh=1",
           label: "View on Amazon"
       },
       {
