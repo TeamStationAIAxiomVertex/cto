@@ -67,7 +67,8 @@ export function Footer() {
                     {linkItems.map((link, i) => (
                         <li key={i} className="text-sm">
                             <Link href={link.href} className="transition-colors hover:text-foreground flex items-center">
-                              {link.label} {link.icon}
+                              <span>{link.label}</span>
+                              {link.icon ? <span aria-hidden="true" className="ml-1">{link.icon}</span> : null}
                             </Link>
                         </li>
                     ))}
