@@ -65,9 +65,9 @@ export default async function ResearchPage() {
       },
       {
           icon: <BrainCircuit className="h-8 w-8 text-primary" />,
-          title: "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation",
-          description: "Our first peer-reviewed paper detailing the AxiomCortex™ v1 architecture. This work outlines the foundational algorithms and bias-mitigation techniques that allow us to move beyond resume-scanning to a scientific model of talent evaluation. Published on the Social Science Research Network (SSRN).",
-          href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4533476",
+          title: "AxiomCortex™: Scientific R&D Report — Bias-Mitigated AI Evaluation for Nearshore Software Engineering Teams",
+          description: "Our peer-reviewed paper detailing the AxiomCortex™ architecture. This work outlines the foundational algorithms and bias-mitigation techniques that allow us to move beyond resume-scanning to a scientific model of talent evaluation. Published on the Social Science Research Network (SSRN).",
+          href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
           label: "Read on SSRN"
       },
       {

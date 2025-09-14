@@ -146,7 +146,7 @@ export default function AxiomCortexReportPage() {
             <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
                 For a deeper academic analysis of the foundational principles, access the complete research paper on the Social Science Research Network (SSRN).
             </p>
-            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4533476" target="_blank" rel="noopener noreferrer" className="cta-button mt-4">
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397" target="_blank" rel="noopener noreferrer" className="cta-button mt-4">
                 <BookOpen className="mr-2 h-4 w-4" />
                 View on SSRN
             </a>
@@ -160,5 +160,4 @@ export default function AxiomCortexReportPage() {
     </main>
   );
 }
-
     
