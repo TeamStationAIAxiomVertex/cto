@@ -160,7 +160,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                             </div>
                             
                             <div className="mt-4 pt-4 border-t border-border flex-grow">
-                                <h4 className="font-semibold text-foreground">Proof (<Tooltip text="Behaviorally Anchored Rating Scale: A method that ties ratings to specific, observable behaviors to reduce subjectivity.">BARS</Tooltip> Scale)</h4>
+                                <h4 className="font-semibold text-foreground">Proof (BARS Scale)</h4>
                                 <div className="mt-2 space-y-2">
                                     {comp.proof.map(item => (
                                         <div key={item.rating} className="text-sm flex items-start gap-2">
