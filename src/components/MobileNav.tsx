@@ -12,7 +12,7 @@ const navItems = {
     { href: '/playbook/latam-economics', title: 'LATAM Economics' },
     { href: '/playbook/build-vs-buy', title: 'Build vs. Buy' },
     { href: '/playbook/bias-free-technical-hiring-axiom-cortex', title: 'Bias-Free Hiring' },
-    { href: '/trust', title: 'Security & Compliance' },
+    { href: '/playbook/hub/vendor-risk-model', title: 'Vendor Risk Model' },
   ],
   'What\'s Included': [
     { href: '/platform', title: 'Our Platform'},
@@ -82,5 +82,3 @@ export function MobileNav() {
     </div>
   );
 }
-
-    

@@ -11,7 +11,7 @@ export function Footer() {
         { href: '/playbook/latam-economics', label: 'LATAM Economics' },
         { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
         { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring' },
-        { href: '/playbook/tco-model', label: 'TCO Model' },
+        { href: '/playbook/hub/vendor-risk-model', label: 'Vendor Risk Model' },
       ],
       "What's Included": [
         { href: '/platform', label: 'Platform' },
