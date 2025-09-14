@@ -286,11 +286,11 @@ export default async function PlaybookHub() {
 
       {categories.map(category => (
         <section key={category} className={`my-16 rounded-xl border p-8 ${categoryColors[category] || 'bg-card'}`}>
-          <h2 className="text-3xl font-bold text-center mb-8">{category}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <h2 className="text-3xl font-bold text-center mb-8 text-foreground">{category}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {crisisScenarios.filter(s => s.category === category).map(scenario => (
               <div key={scenario.pain.toString()} className="group relative flex flex-col rounded-lg border bg-background/50 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-                <div className="flex items-start justify-between">
+                 <div className="flex items-start justify-between">
                   <div className="text-primary">{scenario.icon}</div>
                   <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1">{scenario.proof}</p>
                 </div>
@@ -304,6 +304,15 @@ export default async function PlaybookHub() {
                     if (word.includes('IaC')) return <Tooltip key={index} text="Infrastructure as Code: Managing infrastructure through code."> {word} </Tooltip>
                     if (word.includes('CI/CD')) return <Tooltip key={index} text="Continuous Integration/Continuous Deployment: Automating software release."> {word} </Tooltip>
                      if (word.includes('RAG')) return <Tooltip key={index} text="Retrieval-Augmented Generation: An AI technique to improve LLM answers with external data."> {word} </Tooltip>
+                    if (word.includes('ADR')) return <Tooltip key={index} text="Architecture Decision Record: A document that captures an important architectural decision."> {word} </Tooltip>
+                    if (word.includes('KPI')) return <Tooltip key={index} text="Key Performance Indicator: A measurable value that demonstrates how effectively a company is achieving key business objectives."> {word} </Tooltip>
+                    if (word.includes('LLM')) return <Tooltip key={index} text="Large Language Model: A type of artificial intelligence model trained on vast amounts of text data."> {word} </Tooltip>
+                    if (word.includes('DORA')) return <Tooltip key={index} text="DevOps Research and Assessment: A set of metrics for measuring software delivery performance."> {word} </Tooltip>
+                    if (word.includes('CFR')) return <Tooltip key={index} text="Change Failure Rate: The percentage of deployments causing a failure in production."> {word} </Tooltip>
+                    if (word.includes('MTTA/MTTR')) return <Tooltip key={index} text="Mean Time to Acknowledge / Mean Time to Resolve: Metrics for incident response time."> {word} </Tooltip>
+                    if (word.includes('SOW')) return <Tooltip key={index} text="Statement of Work: A document that captures and defines all aspects of a project."> {word} </Tooltip>
+                    if (word.includes('SDLC')) return <Tooltip key={index} text="Software Development Life Cycle: A process for planning, creating, testing, and deploying an information system."> {word} </Tooltip>
+                    if (word.includes('TCO')) return <Tooltip key={index} text="Total Cost of Ownership: A financial estimate to help buyers and owners determine the direct and indirect costs of a product or system."> {word} </Tooltip>
                     return ` ${word} `;
                   })}
                 </p>
@@ -321,5 +330,3 @@ export default async function PlaybookHub() {
     </main>
   );
 }
-
-    

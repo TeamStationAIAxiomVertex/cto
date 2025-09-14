@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 222 80% 5%; /* Slightly adjusted for better contrast */
+    --background: 222 80% 5%;
     --foreground: 210 40% 90%;
     --muted: 215 20% 75%;
     --muted-foreground: 215 20% 75%;
@@ -39,8 +39,8 @@
     --card-foreground: 222 47% 11%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --primary: 229 '80%' 55%;
-    --primary-foreground: 0 0% 100%; /* Changed to white for better contrast on buttons */
+    --primary: 229 80% 55%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222 47% 11%;
     --accent: 210 40% 96.1%;
@@ -88,6 +88,12 @@
 
 .cta-button {
     @apply inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+}
+.light .cta-button {
+  background-color: hsl(229 80% 55%);
+}
+.light .cta-button:hover {
+  background-color: hsl(229 80% 50%);
 }
 
 h1 {
