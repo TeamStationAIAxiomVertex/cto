@@ -4,6 +4,7 @@ import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, Fil
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
+import { SpotifyIcon } from '@/components/SpotifyIcon';
 
 export const metadata: Metadata = {
   title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
@@ -204,6 +205,30 @@ export default async function HomePage() {
           </div>
       </section>
 
+      <section id="thought-leadership" className="py-24">
+        <h2 className="text-center text-4xl font-bold text-foreground">
+            Go Deeper: Our Research & Vision
+        </h2>
+        <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">We don't just follow best practices; we author them. Explore our peer-reviewed research and listen to our leadership discuss the future of engineering.</p>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="rounded-lg border bg-card p-8 flex flex-col items-center text-center shadow-lg">
+                <SpotifyIcon className="h-12 w-12 text-[#1DB954]" />
+                <h3 className="text-2xl font-bold mt-4">Listen to the Platform Vision</h3>
+                <p className="mt-2 text-muted-foreground flex-grow">Hear directly from our founders about the science and strategy behind the TeamStation AI platform.</p>
+                <Link href="/research/hub#podcast" className="cta-button mt-6">
+                    Listen Now <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+            </div>
+            <div className="rounded-lg border bg-card p-8 flex flex-col items-center text-center shadow-lg">
+                <BookOpen className="h-12 w-12 text-primary" />
+                <h3 className="text-2xl font-bold mt-4">Explore Our Research</h3>
+                <p className="mt-2 text-muted-foreground flex-grow">From our Amazon book to peer-reviewed papers on AI in hiring, see the evidence that powers our platform.</p>
+                 <Link href="/research/hub" className="cta-button mt-6">
+                    Visit Research Hub <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+            </div>
+        </div>
+      </section>
 
       <section id="case-studies" className="py-24">
         <h2 className="text-center text-4xl font-bold text-foreground">

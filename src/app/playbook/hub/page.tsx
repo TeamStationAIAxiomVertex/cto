@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { ArrowRight, BookOpen, GitCompare, Scale, ShieldCheck, UserCheck, Zap, Layers, TestTube2, Server, Database, BrainCircuit, GanttChartSquare, DollarSign, Users, Clock, AlertTriangle, MessageSquare, Briefcase, GitBranch, Tv, BarChart, FileLock, Users2, FileText, FileSearch } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
+import { SpotifyIcon } from '@/components/SpotifyIcon';
+
 
 export const metadata: Metadata = {
   title: 'The CTO Playbook for Nearshore Software Development | TeamStation AI',
@@ -284,6 +286,27 @@ export default async function PlaybookHub() {
          As a technology leader, you are under constant pressure to deliver faster, with higher quality, and under budget—all while navigating a landscape of shifting priorities and hidden risks. This isn't just about managing a team; it's about engineering a high-performance organization. This playbook provides the data-driven frameworks to diagnose your biggest drags on velocity and the actionable solutions to fix them.
         </p>
       </header>
+       <section className="my-16 rounded-xl border p-8 shadow-lg bg-card">
+          <h2 className="text-3xl font-bold text-center mb-8 text-foreground">Featured Content</h2>
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="rounded-lg border bg-background p-8 flex flex-col items-center text-center shadow-lg">
+                  <SpotifyIcon className="h-12 w-12 text-[#1DB954]" />
+                  <h3 className="text-2xl font-bold mt-4">Listen to the Platform Vision</h3>
+                  <p className="mt-2 text-muted-foreground flex-grow">Hear directly from our founders about the science and strategy behind the TeamStation AI platform.</p>
+                  <Link href="/research/hub#podcast" className="cta-button mt-6">
+                      Listen Now <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+              </div>
+              <div className="rounded-lg border bg-background p-8 flex flex-col items-center text-center shadow-lg">
+                  <BookOpen className="h-12 w-12 text-primary" />
+                  <h3 className="text-2xl font-bold mt-4">Explore Our Research</h3>
+                  <p className="mt-2 text-muted-foreground flex-grow">From our Amazon book to peer-reviewed papers on AI in hiring, see the evidence that powers our platform.</p>
+                   <Link href="/research/hub" className="cta-button mt-6">
+                      Visit Research Hub <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+              </div>
+          </div>
+      </section>
 
       {categories.map(category => (
         <section key={category} className={`my-16 rounded-xl border p-8 shadow-lg ${categoryColors[category] || 'bg-card'}`}>

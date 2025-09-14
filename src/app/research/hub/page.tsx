@@ -1,8 +1,11 @@
 
+
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart, BookOpen, Star, Trophy } from 'lucide-react';
 import type { Metadata } from 'next';
+import { SpotifyIcon } from '@/components/SpotifyIcon';
+
 
 export const dynamic = 'force-static';
 
@@ -55,7 +58,7 @@ export default async function ResearchPage() {
     },
   ];
 
-  const publications = [
+ const publications = [
       {
           icon: <BookOpen className="h-8 w-8 text-primary" />,
           title: "Platforming the Nearshore IT Staff Augmentation Industry",
@@ -143,7 +146,7 @@ export default async function ResearchPage() {
         </div>
       </div>
 
-      <section className="my-24">
+      <section id="podcast" className="my-24 scroll-mt-20">
         <h2 className="text-center text-4xl font-bold">Listen to the Platform Vision</h2>
         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Hear directly from our founders and technical leaders about the science and strategy behind TeamStation AI.</p>
         <div className="mt-8 max-w-2xl mx-auto">

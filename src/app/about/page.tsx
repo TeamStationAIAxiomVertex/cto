@@ -1,7 +1,8 @@
 
-import { Target, Telescope, Shield, Users } from 'lucide-react';
+import { Target, Telescope, Shield, Users, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { SpotifyIcon } from '@/components/SpotifyIcon';
 
 export const metadata: Metadata = {
   title: 'About TeamStation AI | Nearshore Software Development with LATAM Teams',
@@ -69,6 +70,14 @@ export default function AboutPage() {
         <p>
            Our innovation lies in unifying every part of the process under a single SLA. We use cognitive science and AI for vetting (<Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>). We provide an end-to-end operational wrapper that includes EOR, payroll, secure devices, and insurance. We give you the tools and the data to run your nearshore team with the same confidence and control as your team down the hall. This is the future of team building. We invite you to be a part of it.
         </p>
+        <div className="not-prose rounded-lg border bg-card p-6 my-8 flex items-center gap-4">
+            <SpotifyIcon className="h-12 w-12 text-[#1DB954] flex-shrink-0" />
+            <div>
+                <h4 className="font-bold text-foreground">Listen to the Founders</h4>
+                <p className="text-sm text-muted-foreground m-0">Hear directly from our leadership about the vision and science behind TeamStation AI on our podcast.</p>
+                <Link href="/research/hub#podcast" className="text-sm font-semibold text-primary hover:underline mt-2 inline-block">Listen Now &rarr;</Link>
+            </div>
+        </div>
       </div>
 
       <section className="my-24 rounded-lg border bg-card p-8 shadow-lg">

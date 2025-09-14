@@ -2,6 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { SpotifyIcon } from '@/components/SpotifyIcon';
 
 export function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -38,6 +39,7 @@ export function Footer() {
         { href: '/research/hub', label: 'Research' },
         { href: '/trust', label: 'Trust Center' },
         { href: '/hire', label: 'Hire Talent' },
+        { href: '/research/hub#podcast', label: 'Podcast', icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1" /> },
       ]
   }
 
@@ -55,7 +57,9 @@ export function Footer() {
                 <ul className="mt-4 space-y-3">
                     {linkItems.map((link, i) => (
                         <li key={i} className="text-sm">
-                            <Link href={link.href} className="transition-colors hover:text-foreground">{link.label}</Link>
+                            <Link href={link.href} className="transition-colors hover:text-foreground flex items-center">
+                              {link.label} {link.icon}
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -69,7 +73,3 @@ export function Footer() {
     </footer>
   );
 }
-
-    
-
-    
