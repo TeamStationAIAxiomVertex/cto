@@ -162,7 +162,7 @@ export default function HireByRolePage() {
                 <div className="flex items-center text-sm font-semibold text-primary">
                     Explore Roles & Evaluation <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
-                <Link href={details.proof.href} className="z-10 relative flex items-center text-xs font-semibold text-muted-foreground hover:text-primary" onClick={(e) => e.stopPropagation()}>
+                <Link href={details.proof.href} className="z-10 relative flex items-center text-xs font-semibold text-muted-foreground hover:text-primary">
                     {details.proof.label} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
@@ -194,3 +194,5 @@ export default function HireByRolePage() {
     </main>
   );
 }
+
+    
