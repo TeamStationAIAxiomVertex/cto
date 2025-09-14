@@ -41,7 +41,7 @@ const financialLevers = [
 
 const hiddenTaxes = [
     {
-        icon: <BrainCircuit className="h-8 w-8 text-yellow-400" />,
+        icon: <BrainCircuit className="h-8 w-8 text-primary" />,
         pain: "Did your last 'star' hire turn into a black hole for productivity?",
         title: 'The "Mis-Hire Tax"',
         description: 'A single bad senior hire costs 6-12 months of salary in lost productivity, team disruption, management overhead, and the cost of re-hiring. For a $150k engineer, that\'s a $75,000 - $150,000 direct hit to your P&L.',
@@ -50,7 +50,7 @@ const hiddenTaxes = [
         kpi: 'Mismatch rate ≤ 10%'
     },
     {
-        icon: <ShieldCheck className="h-8 w-8 text-yellow-400" />,
+        icon: <ShieldCheck className="h-8 w-8 text-primary" />,
         pain: "Are you one insecure laptop away from a multi-million dollar breach?",
         title: 'The "Compliance Default" Risk',
         description: 'Using a vendor without integrated security is a catastrophic liability. A single breach from an unmanaged device can lead to devastating financial and legal consequences. Our platform provides a complete risk shield: EOR, MDM-secured devices, and Cyber/E&O insurance are all included.',
@@ -59,7 +59,7 @@ const hiddenTaxes = [
         kpi: 'SOC 2 & ISO Aligned'
     },
     {
-        icon: <Briefcase className="h-8 w-8 text-yellow-400" />,
+        icon: <Briefcase className="h-8 w-8 text-primary" />,
         pain: "Is 'vendor management' your secret second job?",
         title: 'The Management Overhead Tax',
         description: 'Your engineering and product managers are expensive, high-leverage resources. A fragmented vendor model forces them into the role of coordinators and late-night wranglers. If an EM spends 25% of their time managing vendor communications and rework, that\'s a quarter of their salary dedicated to a problem that shouldn\'t exist.',
@@ -120,7 +120,7 @@ export default function LatamEconomicsPage() {
          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
              {hiddenTaxes.map((point) => (
                  <div key={point.title} className="rounded-lg border border-transparent bg-background p-6 flex flex-col">
-                    <p className="text-sm font-semibold text-yellow-400">{point.pain}</p>
+                    <p className="text-sm font-semibold text-primary">{point.pain}</p>
                     <div className="flex items-center gap-3 mt-3">
                         {point.icon}
                         <h3 className="text-lg font-semibold text-foreground">{point.title}</h3>
@@ -157,37 +157,37 @@ export default function LatamEconomicsPage() {
               <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-medium text-foreground">Recruitment Fees (20% of Salary)</td>
                   <td className="px-4 py-3 text-muted-foreground text-center">$36,000</td>
-                  <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
+                  <td className="px-4 py-3 font-semibold text-primary text-center">Included</td>
               </tr>
                <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-medium text-foreground">Hardware & Software Setup</td>
                   <td className="px-4 py-3 text-muted-foreground text-center">$3,500</td>
-                  <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
+                  <td className="px-4 py-3 font-semibold text-primary text-center">Included</td>
               </tr>
                 <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-medium text-foreground">Admin, Legal & HR Onboarding</td>
                   <td className="px-4 py-3 text-muted-foreground text-center">$3,000</td>
-                   <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
+                   <td className="px-4 py-3 font-semibold text-primary text-center">Included</td>
               </tr>
                 <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-medium text-foreground">Management Time (First 90 Days)</td>
                   <td className="px-4 py-3 text-muted-foreground text-center">$15,000</td>
-                   <td className="px-4 py-3 font-semibold text-green-400 text-center">Minimized</td>
+                   <td className="px-4 py-3 font-semibold text-primary text-center">Minimized</td>
               </tr>
                <tr className="border-b border-border/50 bg-card">
                   <td className="px-4 py-3 font-bold text-foreground">Total Onboarding Cost (Hidden)</td>
-                  <td className="px-4 py-3 font-bold text-red-400 text-center">$57,500</td>
-                   <td className="px-4 py-3 font-bold text-green-400 text-center">$0</td>
+                  <td className="px-4 py-3 font-bold text-destructive text-center">$57,500</td>
+                   <td className="px-4 py-3 font-bold text-primary text-center">$0</td>
               </tr>
                 <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-bold text-foreground">Est. Annual Salary (Senior)</td>
-                  <td className="px-4 py-3 font-bold text-red-400 text-center">~$180,000</td>
-                   <td className="px-4 py-3 font-bold text-green-400 text-center">~$83,040</td>
+                  <td className="px-4 py-3 font-bold text-destructive text-center">~$180,000</td>
+                   <td className="px-4 py-3 font-bold text-primary text-center">~$83,040</td>
               </tr>
               <tr className="bg-primary/10">
                   <td className="px-4 py-4 font-extrabold text-foreground text-lg">First-Year TCO</td>
-                  <td className="px-4 py-4 font-extrabold text-red-400 text-center text-lg">~$237,500</td>
-                   <td className="px-4 py-4 font-extrabold text-green-400 text-center text-lg">~$83,040</td>
+                  <td className="px-4 py-4 font-extrabold text-destructive text-center text-lg">~$237,500</td>
+                   <td className="px-4 py-4 font-extrabold text-primary text-center text-lg">~$83,040</td>
               </tr>
             </tbody>
           </table>

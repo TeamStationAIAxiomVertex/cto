@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const hiringPains = [
     {
-        icon: <UserX className="h-8 w-8 text-yellow-400" />,
+        icon: <UserX className="h-8 w-8 text-primary" />,
         pain: "Hiring process is a high-risk gamble",
         question: "Is your hiring process a high-risk gamble?",
         solutionTitle: "From Resume Keywords to Cognitive Proof",
@@ -51,24 +51,24 @@ const hiddenTaxes = [
         description: "The cost of a bad hire is 6-12 months of salary in lost productivity, team disruption, management overhead, and the cost of re-hiring. For a $150k engineer, that's a",
         impact: "$75,000 - $150,000",
         afterText: "direct hit to your P&L.",
-        icon: <BrainCircuit className="h-8 w-8 text-red-400" />,
-        impactColor: "text-red-400"
+        icon: <BrainCircuit className="h-8 w-8 text-destructive" />,
+        impactColor: "text-destructive"
     },
      { 
         title: "The 'Vacancy Tax'",
         description: "Every day a critical role sits empty, you pay a 'Vacancy Tax' in delayed features and lost market share. A 60-day hiring cycle for a feature worth $1M ARR costs you over",
         impact: "$160,000",
         afterText: "in lost opportunity.",
-        icon: <DollarSign className="h-8 w-8 text-red-400" />,
-        impactColor: "text-red-400"
+        icon: <DollarSign className="h-8 w-8 text-destructive" />,
+        impactColor: "text-destructive"
     },
     { 
         title: "The Management Overhead Tax",
         description: "Your engineering managers are expensive resources. A flawed hiring process forces them into endless screening and interviewing cycles. If an EM spends 25% of their time on this, that's a quarter of their salary—",
         impact: "$50,000+ per year",
         afterText: "—dedicated to a problem that shouldn't exist.",
-        icon: <Briefcase className="h-8 w-8 text-red-400" />,
-        impactColor: "text-red-400"
+        icon: <Briefcase className="h-8 w-8 text-destructive" />,
+        impactColor: "text-destructive"
     },
 ];
 
@@ -107,11 +107,11 @@ export default function BiasFreeHiringAxiomCortexPage() {
                 <h3 className="text-lg font-semibold text-foreground">{point.pain}</h3>
               </div>
                <div className="mt-4 border-t border-border pt-4">
-                <h4 className="font-semibold text-yellow-400/80">The Problem</h4>
+                <h4 className="font-semibold text-destructive">The Problem</h4>
                 <p className="text-sm text-muted-foreground m-0">{point.problem}</p>
               </div>
               <div className="mt-4 border-t border-border pt-4 flex-grow">
-                <h4 className="font-semibold text-green-400">The Solution (The TeamStation Way)</h4>
+                <h4 className="font-semibold text-primary">The Solution (The TeamStation Way)</h4>
                 <p className="text-sm text-foreground m-0">{point.solution}</p>
               </div>
                <div className="mt-6">
@@ -132,7 +132,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {hiddenTaxes.map((tax, index) => (
-                <div key={index} className="bg-background/50 rounded-lg border border-red-500/20 p-6">
+                <div key={index} className="bg-background/50 rounded-lg border border-destructive/20 p-6">
                     <div className="flex items-center gap-3">
                         {tax.icon}
                         <h3 className="text-lg font-bold text-foreground">{tax.title}</h3>
@@ -170,33 +170,33 @@ export default function BiasFreeHiringAxiomCortexPage() {
               <tr className="border-b border-border/50">
                 <td className="px-4 py-4 font-bold text-foreground align-top">1. Sourcing</td>
                 <td className="px-4 py-4">
-                  <p className="font-bold text-yellow-400">Keyword Matching</p>
+                  <p className="font-bold text-destructive">Keyword Matching</p>
                   <p className="text-xs text-muted-foreground m-0">Scanning resumes for keywords ("React," "Python"). High noise, low signal. Optimizes for candidates who are good at writing resumes.</p>
                 </td>
                 <td className="px-4 py-4">
-                   <p className="font-bold text-green-400">Cognitive AI Sourcing</p>
+                   <p className="font-bold text-primary">Cognitive AI Sourcing</p>
                    <p className="text-xs text-foreground m-0">Our Nebula™ engine scans a 2.6M+ talent graph, using AI to match your role's required cognitive profile (e.g., high 'Architectural Instinct') to candidates' scientifically-validated traits.</p>
                 </td>
               </tr>
                <tr className="border-b border-border/50">
                 <td className="px-4 py-4 font-bold text-foreground align-top">2. Vetting</td>
                 <td className="px-4 py-4">
-                  <p className="font-bold text-yellow-400">Unstructured Interviews</p>
+                  <p className="font-bold text-destructive">Unstructured Interviews</p>
                   <p className="text-xs text-muted-foreground m-0">Relies on "favorite questions" and "gut feel." Highly susceptible to interviewer bias, leading to inconsistent and indefensible evaluations.</p>
                 </td>
                 <td className="px-4 py-4">
-                   <p className="font-bold text-green-400">Evidence-Based Evaluation</p>
+                   <p className="font-bold text-primary">Evidence-Based Evaluation</p>
                    <p className="text-xs text-foreground m-0">A human expert conducts a structured, bias-aware interview. Our <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/hub/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip> AI synthesizes the conversation, providing a "Cognitive Fingerprint" and a full <Tooltip text="Every evaluation generates a complete 'Evidence Locker' with transcripts, scores, and an explainable hiring signal."><Link href="/technical-interview-evaluation" className="text-primary hover:underline">Evidence Locker</Link></Tooltip> to prove a candidate's abilities.</p>
                 </td>
               </tr>
                 <tr className="border-b border-border/50">
                 <td className="px-4 py-4 font-bold text-foreground align-top">3. Decision</td>
                 <td className="px-4 py-4">
-                  <p className="font-bold text-yellow-400">Subjective "Debrief"</p>
+                  <p className="font-bold text-destructive">Subjective "Debrief"</p>
                   <p className="text-xs text-muted-foreground m-0">A meeting where the loudest voice or most senior person often wins. Decisions are based on memory and opinion, not data. The process is a black box.</p>
                 </td>
                 <td className="px-4 py-4">
-                   <p className="font-bold text-green-400">Data-Driven Go/No-Go</p>
+                   <p className="font-bold text-primary">Data-Driven Go/No-Go</p>
                    <p className="text-xs text-foreground m-0">The hiring decision is made based on the auditable Evidence Locker, comparing the candidate's Cognitive Fingerprint against the role's ideal profile. The decision is transparent, defensible, and based on objective data.</p>
                 </td>
               </tr>

@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle } from 'lucide-react';
+import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -150,7 +150,7 @@ export default async function HomePage() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {painPoints.map((pain, index) => (
                 <div key={index} className="flex items-center gap-4 bg-background p-4 rounded-lg">
-                    <AlertTriangle className="h-6 w-6 text-yellow-400 shrink-0"/>
+                    <AlertTriangle className="h-6 w-6 text-primary shrink-0"/>
                     <p className="m-0 font-medium text-muted-foreground">{pain}</p>
                 </div>
             ))}
@@ -170,13 +170,17 @@ export default async function HomePage() {
               
               <div className="mt-4 flex-grow">
                 <div className="border-t border-border pt-4">
-                  <h4 className="font-semibold text-muted-foreground">Traditional Model</h4>
+                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                    <XCircle className="h-5 w-5 text-destructive" /> Traditional Model
+                    </h4>
                   <p className="text-sm text-muted-foreground">{value.traditional.replace('Axiom Cortex™', '')}
                     {value.traditional.includes("TCO") && <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip>}
                   </p>
                 </div>
                 <div className="mt-4 border-t border-border pt-4">
-                  <h4 className="font-semibold text-foreground">TeamStation AI Solution</h4>
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" /> TeamStation AI Solution
+                  </h4>
                   <p className="text-sm text-foreground">{value.teamstation.replace('Axiom Cortex™', '')}
                     {value.teamstation.includes("Axiom Cortex") && <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/hub/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip>}
                     {value.teamstation.includes("MDM") && <Tooltip text="Mobile Device Management: Software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}

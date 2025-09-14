@@ -125,9 +125,9 @@ const roleCategories = [
 
 export default function HireByRolePage() {
   const getPriorityColor = (priority: string) => {
-    if (priority.includes('P0')) return 'bg-red-500/20 text-red-400';
-    if (priority.includes('P1')) return 'bg-amber-500/20 text-amber-400';
-    return 'bg-blue-500/20 text-blue-400';
+    if (priority.includes('P0')) return 'bg-destructive/20 text-destructive';
+    if (priority.includes('P1')) return 'bg-primary/20 text-primary';
+    return 'bg-secondary';
   }
 
   return (
@@ -194,5 +194,3 @@ export default function HireByRolePage() {
     </main>
   );
 }
-
-    

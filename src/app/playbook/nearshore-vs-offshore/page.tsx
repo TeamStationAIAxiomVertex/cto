@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    icon: <Clock className="h-8 w-8 text-yellow-400" />,
+    icon: <Clock className="h-8 w-8 text-primary" />,
     title: 'The Pain of Productivity Mismatch',
     question: 'Are low hourly rates burning your budget with slow delivery?',
     problem: 'A 12-hour feedback loop can easily cut a team\'s velocity in half. A feature that should take two weeks takes four, doubling your "true" cost. This isn\'t a minor inconvenience; it\'s a direct hit to your product roadmap and revenue projections. Every day spent waiting on a response from a team on the other side of the world is a day your competitor is shipping code.',
@@ -19,7 +19,7 @@ const painPoints = [
     kpi: 'Time-to-First-PR in 7–14 days'
   },
   {
-    icon: <Users2 className="h-8 w-8 text-yellow-400" />,
+    icon: <Users2 className="h-8 w-8 text-primary" />,
     title: 'The Pain of Vendor Churn',
     question: 'Is your best engineer re-training a revolving door of vendor talent?',
     problem: 'Offshore partners often rotate engineers off projects with little notice, leading to constant knowledge loss. Your most expensive and valuable engineers are forced to re-train new team members on the basics of your architecture instead of building high-value features. This "knowledge tax" is a silent killer of productivity and morale.',
@@ -27,7 +27,7 @@ const painPoints = [
     kpi: '90-day retention ≥96%'
   },
   {
-    icon: <FileSearch className="h-8 w-8 text-yellow-400" />,
+    icon: <FileSearch className="h-8 w-8 text-primary" />,
     title: 'The Pain of "Vendor Fog"',
     question: 'Can you get a straight answer, or is project status lost in vague updates?',
     problem: 'When you lack direct access to source control, CI/CD, and system telemetry, you are flying blind. Vague status reports and delayed tickets make it impossible to forecast delivery. You cannot manage what you cannot measure, and this operational opacity creates massive, unquantifiable risk.',
@@ -35,7 +35,7 @@ const painPoints = [
     kpi: '100% auditable system of record'
   },
   {
-    icon: <Briefcase className="h-8 w-8 text-yellow-400" />,
+    icon: <Briefcase className="h-8 w-8 text-primary" />,
     title: 'The Pain of Multi-Vendor Risk',
     question: 'Are you juggling separate vendors for hiring, payroll, IT, and legal?',
     problem: 'Using separate vendors for EOR, recruiting, and IT creates a web of complexity and accountability gaps. When a security incident occurs—and it will—who is responsible? The EOR? The recruiting firm? The engineer using their personal laptop? This fragmented model is a compliance nightmare.',
@@ -45,12 +45,12 @@ const painPoints = [
 ];
 
 const comparisonTable = [
-  { factor: 'Time-Zone Overlap', nearshore: 'High (4-8 hours)', offshore: 'Low (0-2 hours)', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Enables real-time pairing and same-day PR reviews. This is the fundamental driver of agile velocity.', offshore_detail: 'Forces asynchronous handoffs, late-night calls, and 24-hour feedback cycles. This systematically destroys agile workflows.' },
-  { factor: 'Collaboration Fidelity', nearshore: 'High', offshore: 'Low', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Nuanced, high-context conversations are possible, reducing ambiguity and expensive rework. Fosters a single, unified team culture.', offshore_detail: 'Communication is often formal, ticket-based, and prone to misunderstanding due to cultural and linguistic gaps. It creates an "us vs. them" dynamic.' },
-  { factor: 'Cultural Alignment', nearshore: 'High', offshore: 'Medium', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Strong affinity with U.S. work culture and business practices reduces friction and allows for direct, candid feedback. The talent is trained to challenge assumptions and surface risks early.', offshore_detail: 'Varies by country; even with excellent English, cultural differences can lead to a "yes-man" culture where problems are not surfaced until it\'s too late.' },
-  { factor: 'Travel & Escalation', nearshore: 'Simple & Cost-Effective', offshore: 'Complex & Expensive', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'Same-day or next-day travel is feasible for critical architectural workshops, quarterly planning, or crisis resolution. This is your strategic escape hatch.', offshore_detail: 'Requires multi-day travel, visas, and significant expense, making it impractical for anything other than a major, pre-planned event.' },
-  { factor: 'Compliance & Risk', nearshore: 'Lower (Contractually Managed)', offshore: 'Higher (Fragmented)', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'An integrated EOR model handles all local labor and data laws.', offshore_detail: 'Navigating disparate legal frameworks is complex and risky.' },
-  { factor: 'Total Cost of Ownership', nearshore: 'Predictable & Lower', offshore: 'Unpredictable & Higher', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'An all-inclusive rate eliminates hidden fees.', offshore_detail: 'Low hourly rates are inflated by massive hidden costs.' },
+  { factor: 'Time-Zone Overlap', nearshore: 'High (4-8 hours)', offshore: 'Low (0-2 hours)', nearshore_color: 'text-primary', offshore_color: 'text-primary', nearshore_detail: 'Enables real-time pairing and same-day PR reviews. This is the fundamental driver of agile velocity.', offshore_detail: 'Forces asynchronous handoffs, late-night calls, and 24-hour feedback cycles. This systematically destroys agile workflows.' },
+  { factor: 'Collaboration Fidelity', nearshore: 'High', offshore: 'Low', nearshore_color: 'text-primary', offshore_color: 'text-primary', nearshore_detail: 'Nuanced, high-context conversations are possible, reducing ambiguity and expensive rework. Fosters a single, unified team culture.', offshore_detail: 'Communication is often formal, ticket-based, and prone to misunderstanding due to cultural and linguistic gaps. It creates an "us vs. them" dynamic.' },
+  { factor: 'Cultural Alignment', nearshore: 'High', offshore: 'Medium', nearshore_color: 'text-primary', offshore_color: 'text-primary', nearshore_detail: 'Strong affinity with U.S. work culture and business practices reduces friction and allows for direct, candid feedback. The talent is trained to challenge assumptions and surface risks early.', offshore_detail: 'Varies by country; even with excellent English, cultural differences can lead to a "yes-man" culture where problems are not surfaced until it\'s too late.' },
+  { factor: 'Travel & Escalation', nearshore: 'Simple & Cost-Effective', offshore: 'Complex & Expensive', nearshore_color: 'text-primary', offshore_color: 'text-destructive', nearshore_detail: 'Same-day or next-day travel is feasible for critical architectural workshops, quarterly planning, or crisis resolution. This is your strategic escape hatch.', offshore_detail: 'Requires multi-day travel, visas, and significant expense, making it impractical for anything other than a major, pre-planned event.' },
+  { factor: 'Compliance & Risk', nearshore: 'Lower (Contractually Managed)', offshore: 'Higher (Fragmented)', nearshore_color: 'text-primary', offshore_color: 'text-destructive', nearshore_detail: 'An integrated EOR model handles all local labor and data laws.', offshore_detail: 'Navigating disparate legal frameworks is complex and risky.' },
+  { factor: 'Total Cost of Ownership', nearshore: 'Predictable & Lower', offshore: 'Unpredictable & Higher', nearshore_color: 'text-primary', offshore_color: 'text-primary', nearshore_detail: 'An all-inclusive rate eliminates hidden fees.', offshore_detail: 'Low hourly rates are inflated by massive hidden costs.' },
 ];
 
 export default async function NearshoreVsOffshorePage() {
@@ -69,7 +69,7 @@ export default async function NearshoreVsOffshorePage() {
                       <p className="mt-2 text-muted-foreground">You’re here because you’re under pressure. The board wants faster feature delivery. The CFO wants to cut engineering costs. Your best engineers are threatening to quit because they’re tired of <strong className="text-foreground">10 PM calls</strong> with a team on the other side of the world. You’ve been told that "offshore" is the answer to your budget problem, but your gut tells you it’s a trap. <strong className="text-primary">Your gut is right.</strong></p>
                   </div>
                   <div className="bg-background p-6 rounded-lg border border-border/50">
-                       <p className="mt-2 text-muted-foreground">The traditional offshore model, built on the simple arithmetic of lower hourly rates, is a relic of a pre-agile world. It was designed for waterfall projects with long lead times and minimal need for real-time collaboration. In today's world of two-week sprints, continuous deployment, and complex, interdependent systems, that model is not just inefficient; it is <strong className="text-red-400">actively destructive</strong> to your velocity, your culture, and your bottom line.</p>
+                       <p className="mt-2 text-muted-foreground">The traditional offshore model, built on the simple arithmetic of lower hourly rates, is a relic of a pre-agile world. It was designed for waterfall projects with long lead times and minimal need for real-time collaboration. In today's world of two-week sprints, continuous deployment, and complex, interdependent systems, that model is not just inefficient; it is <strong className="text-destructive">actively destructive</strong> to your velocity, your culture, and your bottom line.</p>
                   </div>
                    <div className="bg-background p-6 rounded-lg border border-border/50">
                        <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Playbook's Purpose</h3>
@@ -91,11 +91,11 @@ export default async function NearshoreVsOffshorePage() {
                 <h3 className="text-lg font-semibold text-foreground">{point.title}</h3>
               </div>
               <div className="mt-4 border-t border-border pt-4">
-                <h4 className="font-semibold text-yellow-400/80">The Problem</h4>
+                <h4 className="font-semibold text-destructive">The Problem</h4>
                 <p className="text-sm text-muted-foreground m-0">{point.problem}</p>
               </div>
               <div className="mt-4 border-t border-border pt-4 flex-grow">
-                <h4 className="font-semibold text-green-400">The Solution (Nearshore Integrated Platform)</h4>
+                <h4 className="font-semibold text-primary">The Solution (Nearshore Integrated Platform)</h4>
                 <p className="text-sm text-foreground m-0">{point.solution}</p>
               </div>
                <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {point.kpi}</p>
@@ -110,36 +110,36 @@ export default async function NearshoreVsOffshorePage() {
           A CTO who presents a plan based solely on salary comparisons is walking into a financial trap. A true <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">TCO</Tooltip> model must include the "hidden taxes" of management overhead, productivity loss due to the Human Latency Tax, vendor churn, and the significant financial risk of a compliance breach. These are not soft costs; they are real dollars draining from your P&L.
         </p>
          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <div className="bg-background/50 rounded-lg border border-red-500/20 p-6">
+            <div className="bg-background/50 rounded-lg border border-destructive/20 p-6">
                 <div className="flex items-center gap-3">
-                    <Zap className="h-6 w-6 text-red-400" />
+                    <Zap className="h-6 w-6 text-destructive" />
                     <h3 className="text-lg font-bold text-foreground">The Human Latency Tax</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
-                    This is the most significant and most often ignored cost. A 12-hour time difference means that for every simple question, an entire workday is lost. If each of 6 engineers loses just 2 hours per day to waiting, that's 12 hours of wasted time every single day. At a loaded cost of $50/hour, that's <strong className="font-bold text-red-400">$132,000 per year</strong> evaporated. That's the cost of a senior US engineer, spent on waiting.
+                    This is the most significant and most often ignored cost. A 12-hour time difference means that for every simple question, an entire workday is lost. If each of 6 engineers loses just 2 hours per day to waiting, that's 12 hours of wasted time every single day. At a loaded cost of $50/hour, that's <strong className="font-bold text-destructive">$132,000 per year</strong> evaporated. That's the cost of a senior US engineer, spent on waiting.
                 </p>
             </div>
-            <div className="bg-background/50 rounded-lg border border-red-500/20 p-6">
+            <div className="bg-background/50 rounded-lg border border-destructive/20 p-6">
                 <div className="flex items-center gap-3">
-                    <Briefcase className="h-6 w-6 text-red-400" />
+                    <Briefcase className="h-6 w-6 text-destructive" />
                     <h3 className="text-lg font-bold text-foreground">The Management Overhead Tax</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
-                    Your engineering managers are expensive, high-leverage resources. An offshore model forces them into the role of late-night coordinators. If an EM spends 25% of their time on this, that's a quarter of their $200k+ salary—<strong className="font-bold text-red-400">$50,000 per year</strong>—dedicated to a problem that shouldn't exist.
+                    Your engineering managers are expensive, high-leverage resources. An offshore model forces them into the role of late-night coordinators. If an EM spends 25% of their time on this, that's a quarter of their $200k+ salary—<strong className="font-bold text-destructive">$50,000 per year</strong>—dedicated to a problem that shouldn't exist.
                 </p>
             </div>
-            <div className="bg-background/50 rounded-lg border border-red-500/20 p-6">
+            <div className="bg-background/50 rounded-lg border border-destructive/20 p-6">
                 <div className="flex items-center gap-3">
-                    <Scale className="h-6 w-6 text-red-400" />
+                    <Scale className="h-6 w-6 text-destructive" />
                     <h3 className="text-lg font-bold text-foreground">The Quality & Rework Tax</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
                    Misunderstandings from asynchronous communication lead to building the wrong thing. Every feature that needs significant rework due to a misread ticket is a 100% tax on the original development time. A single two-week sprint ($20k cost) that has to be redone costs you $20k and two weeks of opportunity you'll never get back.
                 </p>
             </div>
-             <div className="bg-background/50 rounded-lg border border-red-500/20 p-6">
+             <div className="bg-background/50 rounded-lg border border-destructive/20 p-6">
                 <div className="flex items-center gap-3">
-                    <ShieldCheck className="h-6 w-6 text-red-400" />
+                    <ShieldCheck className="h-6 w-6 text-destructive" />
                     <h3 className="text-lg font-bold text-foreground">The Compliance & Security Risk Multiplier</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
@@ -193,12 +193,12 @@ export default async function NearshoreVsOffshorePage() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-background p-6 rounded-lg border border-red-500/20">
-                    <h3 className="font-bold text-red-400">Offshore Model Optimization</h3>
+                <div className="bg-background p-6 rounded-lg border border-destructive/20">
+                    <h3 className="font-bold text-destructive">Offshore Model Optimization</h3>
                      <p className="mt-2 text-muted-foreground">Optimizes for a single, flawed metric: <strong className="text-foreground">cost per hour.</strong></p>
                 </div>
-                 <div className="bg-background p-6 rounded-lg border border-green-500/20">
-                    <h3 className="font-bold text-green-400">Integrated Nearshore Model Optimization</h3>
+                 <div className="bg-background p-6 rounded-lg border border-primary/20">
+                    <h3 className="font-bold text-primary">Integrated Nearshore Model Optimization</h3>
                     <p className="mt-2 text-muted-foreground">Optimizes for what actually matters: <Link href="/playbook/tco-model" className="text-primary font-bold hover:underline">Total Cost of Ownership</Link>, <strong className="text-foreground">velocity</strong>, and <strong className="text-foreground">risk mitigation.</strong></p>
                 </div>
             </div>
@@ -223,5 +223,3 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
-
-    

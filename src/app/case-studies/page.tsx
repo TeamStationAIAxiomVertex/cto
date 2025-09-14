@@ -39,7 +39,7 @@ export default async function CaseStudiesPage() {
                 <div className="mt-4 space-y-4 flex-grow">
                   {study.challenge && (
                     <div>
-                      <h4 className="font-semibold text-sm flex items-center gap-2 text-yellow-400">
+                      <h4 className="font-semibold text-sm flex items-center gap-2 text-destructive">
                         <AlertTriangle className="h-4 w-4" />
                         Pain
                       </h4>
@@ -55,7 +55,7 @@ export default async function CaseStudiesPage() {
                   </div>
                   {study.outcomes && (
                     <div>
-                       <h4 className="font-semibold text-sm flex items-center gap-2 text-green-400">
+                       <h4 className="font-semibold text-sm flex items-center gap-2 text-primary">
                         <CheckCircle className="h-4 w-4" />
                         Proof
                       </h4>

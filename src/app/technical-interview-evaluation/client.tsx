@@ -10,12 +10,10 @@ import {
   ResponsiveContainer,
   Cell,
 } from 'recharts';
+import { AccordionItem } from '@/components/Accordion';
 import { ShieldCheck, BrainCircuit, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import type { ReactNode } from 'react';
-
-const AccordionItem = dynamic(() => import('@/components/Accordion').then(mod => mod.AccordionItem), { ssr: false });
 
 const cognitiveData = [
     { name: 'Architectural Instinct', candidate: 4.3, ideal: 4.5 },
@@ -183,7 +181,7 @@ export default function TalentEvaluationClient() {
             <div className="w-full bg-background rounded-full h-2.5 my-4 relative border">
                  <div className="h-2.5 rounded-full" style={{ 
                      width: `${(mciScore / 4) * 100}%`,
-                     background: 'linear-gradient(to right, #f97316, #3b82f6, #4A69FF)' 
+                     background: 'linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary)))' 
                 }}></div>
                  <div className="absolute top-0 h-full flex items-center" style={{left: `calc(${(mciScore / 4) * 100}% - 8px)`}}>
                     <div className="w-4 h-4 bg-white rounded-full border-2 border-primary"></div>
@@ -213,7 +211,7 @@ export default function TalentEvaluationClient() {
                 />
                 <Bar dataKey="candidate" name="Candidate" barSize={20} radius={[0, 8, 8, 0]}>
                     {cognitiveData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.candidate >= entry.ideal ? 'hsl(var(--primary))' : '#f59e0b'} />
+                        <Cell key={`cell-${index}`} fill={entry.candidate >= entry.ideal ? 'hsl(var(--primary))' : 'hsl(var(--destructive))'} />
                     ))}
                 </Bar>
                  <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="hsl(var(--accent))" radius={[0, 8, 8, 0]} />
@@ -232,7 +230,7 @@ export default function TalentEvaluationClient() {
                     <div key={risk.title} className="rounded-lg border bg-card p-6 flex flex-col">
                         <p className="text-sm font-semibold text-primary">{risk.pain}</p>
                         <div className="flex items-center gap-3 mt-3">
-                           <ShieldCheck className="text-yellow-400 h-6 w-6 shrink-0" />
+                           <ShieldCheck className="text-destructive h-6 w-6 shrink-0" />
                             <h3 className="font-semibold text-foreground">{risk.title}</h3>
                         </div>
                         <p className="mt-4 text-sm text-muted-foreground border-t border-border pt-4">{risk.description}</p>

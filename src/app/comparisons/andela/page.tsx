@@ -54,14 +54,14 @@ export default function AndelaComparisonPage() {
               <div className="mt-4 flex-grow space-y-4">
                 <div className="border-t border-border pt-4">
                   <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
-                    <XCircle className="h-5 w-5 text-red-400" />
+                    <XCircle className="h-5 w-5 text-destructive" />
                     Andela Model
                   </h4>
                   <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
                 </div>
                 <div className="border-t border-border pt-4">
                   <h4 className="font-semibold text-foreground flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    <CheckCircle className="h-5 w-5 text-primary" />
                     TeamStation AI Solution
                   </h4>
                    <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />

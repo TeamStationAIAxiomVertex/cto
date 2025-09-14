@@ -28,21 +28,21 @@ const allTech: {
     intro: "You're not here because you need another developer who 'knows React.' You're here because your application feels sluggish, your state management is a tangled mess, and your component library is a collection of one-off hacks. You need a true React expert who obsesses over performance, architecture, and user experience as much as you do.",
     pains: [
         {
-            icon: <AlertTriangle className="h-8 w-8 text-yellow-400" />,
+            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is your app slow because of endless re-renders?",
             problem: "Many 'senior' React developers don't profile their code, leading to slow, janky UIs that frustrate users and kill conversion rates.",
             solution: "Our engineers are vetted for their deep understanding of the React render cycle. They master performance tools to hunt down bottlenecks and use techniques like memoization and virtualization to ensure a buttery-smooth experience.",
             kpi: "Expertise in React Profiler & why-did-you-render"
         },
         {
-            icon: <AlertTriangle className="h-8 w-8 text-yellow-400" />,
+            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is your state management a spaghetti of props and contexts?",
             problem: "Legacy patterns and a poor grasp of server-side state lead to complex, bug-prone applications that are a nightmare to maintain and scale.",
             solution: "We select for expertise in modern state management, separating client state (e.g., Zustand) from server cache (e.g., TanStack Query) for a simpler, more resilient architecture.",
             kpi: "Proven ability to architect scalable state"
         },
         {
-            icon: <AlertTriangle className="h-8 w-8 text-yellow-400" />,
+            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is your component library just a folder of inconsistent parts?",
             problem: "Without strong API design and accessibility standards, your component library becomes a source of tech debt, not a force multiplier.",
             solution: "We hire for strong component API design, accessibility (ARIA), and experience with tools like Storybook. You get a robust, reusable design system, not just a UI that 'looks right.'",
@@ -969,7 +969,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
                         <p className="mt-4 text-sm text-muted-foreground ">{item.problem}</p>
                         
                         <div className="mt-4 border-t border-border pt-4">
-                            <h4 className="font-semibold text-green-400">The TeamStation AI Solution</h4>
+                            <h4 className="font-semibold text-primary">The TeamStation AI Solution</h4>
                             <p className="text-sm text-foreground m-0">{item.solution}</p>
                         </div>
                         <div className="flex-grow"></div>
@@ -991,7 +991,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-8 max-w-2xl mx-auto">
             {tech.evaluation.map((point, i) => (
                 <li key={i} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-1" />
                     <span className='text-muted-foreground'>{point}</span>
                 </li>
             ))}
@@ -1018,5 +1018,3 @@ export default function TechPage({ params }: { params: { slug: string } }) {
 export async function generateStaticParams() {
   return Object.keys(allTech).map(slug => ({ slug }));
 }
-
-    

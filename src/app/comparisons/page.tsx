@@ -111,9 +111,9 @@ const vendors = [
 export default function ComparisonsPage() {
   const getRiskColor = (level: string) => {
     switch (level) {
-      case 'low': return 'text-green-400';
-      case 'moderate': return 'text-yellow-400';
-      case 'high': return 'text-red-400';
+      case 'low': return 'text-primary';
+      case 'moderate': return 'text-primary';
+      case 'high': return 'text-destructive';
       default: return 'text-muted-foreground';
     }
   }
@@ -163,7 +163,7 @@ export default function ComparisonsPage() {
                     )}
                   </td>
                   <td className="px-4 py-4 text-muted-foreground">{vendor.basePricing}</td>
-                  <td className={`px-4 py-4 ${vendor.additionalCosts !== 'None – all services bundled' ? 'text-yellow-400' : 'text-muted-foreground'}`}>{vendor.additionalCosts}</td>
+                  <td className={`px-4 py-4 ${vendor.additionalCosts !== 'None – all services bundled' ? 'text-destructive' : 'text-muted-foreground'}`}>{vendor.additionalCosts}</td>
                   <td className={`px-4 py-4 ${getRiskColor(vendor.riskLevel)}`}>{vendor.risk}</td>
                   <td className="px-4 py-4 text-right">
                     {vendor.slug ? (
@@ -197,37 +197,37 @@ export default function ComparisonsPage() {
               <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-medium text-foreground">Recruitment</td>
                   <td className="px-4 py-3 text-muted-foreground text-center">$5,000–$8,000</td>
-                  <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
+                  <td className="px-4 py-3 font-semibold text-primary text-center">Included</td>
               </tr>
                <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-medium text-foreground">Hardware & Software Setup</td>
                   <td className="px-4 py-3 text-muted-foreground text-center">$3,000–$5,000</td>
-                  <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
+                  <td className="px-4 py-3 font-semibold text-primary text-center">Included</td>
               </tr>
                 <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-medium text-foreground">Training & Onboarding</td>
                   <td className="px-4 py-3 text-muted-foreground text-center">$2,000–$5,000</td>
-                   <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
+                   <td className="px-4 py-3 font-semibold text-primary text-center">Included</td>
               </tr>
                <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-medium text-foreground">Compliance & Payroll Setup</td>
                   <td className="px-4 py-3 text-muted-foreground text-center">$1,000–$2,000</td>
-                   <td className="px-4 py-3 font-semibold text-green-400 text-center">Included</td>
+                   <td className="px-4 py-3 font-semibold text-primary text-center">Included</td>
               </tr>
                <tr className="border-b border-border/50 bg-card">
                   <td className="px-4 py-3 font-bold text-foreground">Total Onboarding Cost</td>
-                  <td className="px-4 py-3 font-bold text-red-400 text-center">$11,000–$20,000</td>
-                   <td className="px-4 py-3 font-bold text-green-400 text-center">$0</td>
+                  <td className="px-4 py-3 font-bold text-destructive text-center">$11,000–$20,000</td>
+                   <td className="px-4 py-3 font-bold text-primary text-center">$0</td>
               </tr>
                 <tr className="border-b border-border/50">
                   <td className="px-4 py-3 font-bold text-foreground">Est. Annual Salary (Senior)</td>
-                  <td className="px-4 py-3 font-bold text-red-400 text-center">~$180,000</td>
-                   <td className="px-4 py-3 font-bold text-green-400 text-center">~$83,040</td>
+                  <td className="px-4 py-3 font-bold text-destructive text-center">~$180,000</td>
+                   <td className="px-4 py-3 font-bold text-primary text-center">~$83,040</td>
               </tr>
               <tr className="bg-primary/10">
                   <td className="px-4 py-4 font-extrabold text-foreground text-lg">First-Year TCO</td>
-                  <td className="px-4 py-4 font-extrabold text-red-400 text-center text-lg">~$191,000+</td>
-                   <td className="px-4 py-4 font-extrabold text-green-400 text-center text-lg">~$83,040</td>
+                  <td className="px-4 py-4 font-extrabold text-destructive text-center text-lg">~$191,000+</td>
+                   <td className="px-4 py-4 font-extrabold text-primary text-center text-lg">~$83,040</td>
               </tr>
             </tbody>
           </table>
@@ -243,5 +243,3 @@ export default function ComparisonsPage() {
     </main>
   );
 }
-
-    

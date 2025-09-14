@@ -14,43 +14,43 @@ const buildCosts = [
         area: "Recruitment & Hiring", 
         tax: "Months of your senior engineers' time wasted on screening and interviewing instead of building product. High agency fees and a low signal-to-noise ratio make this a costly gamble.", 
         impact: "$25,000 - $40,000", 
-        icon: <UserCheck className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
+        icon: <UserCheck className="h-8 w-8 text-primary" />,
+        impactColor: "text-destructive"
     },
     { 
         area: "Legal & Entity Setup", 
         tax: "Navigating foreign labor laws, tax codes, and corporate registration is a legal minefield that requires expensive local counsel and months of administrative delay.", 
         impact: "$15,000 - $30,000+", 
-        icon: <FileText className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
+        icon: <FileText className="h-8 w-8 text-primary" />,
+        impactColor: "text-destructive"
     },
     { 
         area: "HR & Payroll Admin", 
         tax: "Managing international payroll, benefits, and compliance for each country is a full-time job you now own. This is a massive, ongoing operational drag on your internal resources.", 
         impact: "$10,000 - $15,000 (annual)", 
-        icon: <Briefcase className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
+        icon: <Briefcase className="h-8 w-8 text-primary" />,
+        impactColor: "text-destructive"
     },
     { 
         area: "IT & Security", 
         tax: "Procuring, shipping, securing (MDM), and managing laptops globally without a dedicated international IT team is an operational nightmare and a significant security risk.", 
         impact: "$5,000 - $8,000 (per hire)", 
-        icon: <ShieldCheck className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
+        icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+        impactColor: "text-destructive"
     },
     { 
         area: "The 'Mis-Hire Tax'", 
         tax: "A bad hire costs 6-12 months of salary in lost productivity, team disruption, management overhead, and the cost of re-hiring. It's the most expensive mistake you can make.", 
         impact: "$75,000 - $150,000", 
-        icon: <BrainCircuit className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
+        icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+        impactColor: "text-destructive"
     },
     { 
         area: "The 'Vacancy Tax'", 
         tax: "Every day a critical role sits empty, your company pays a 'Vacancy Tax' in delayed features, missed revenue targets, and lost market share. The industry average is 45-60 days.", 
         impact: "≈$160,000 per $1M ARR", 
-        icon: <DollarSign className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
+        icon: <DollarSign className="h-8 w-8 text-primary" />,
+        impactColor: "text-destructive"
     },
 ];
 
@@ -128,7 +128,7 @@ export default function BuildVsBuyPage() {
 
         <div className="my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {buildCosts.map((item) => (
-                <div key={item.area} className="rounded-lg border border-amber-500/20 bg-card p-6 flex flex-col">
+                <div key={item.area} className="rounded-lg border border-destructive/20 bg-card p-6 flex flex-col">
                     <div className="flex items-center gap-3">
                         {item.icon}
                         <h3 className="text-lg font-semibold text-foreground">{item.area}</h3>
@@ -136,15 +136,15 @@ export default function BuildVsBuyPage() {
                     <p className="mt-4 text-sm text-muted-foreground flex-grow">{item.tax.replace('MDM', '')}
                         {item.tax.includes("MDM") && <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
                     </p>
-                    <p className={`mt-4 text-base font-mono bg-amber-500/10 rounded px-3 py-2 inline-block self-start ${item.impactColor}`}>
+                    <p className={`mt-4 text-base font-mono bg-destructive/10 rounded px-3 py-2 inline-block self-start ${item.impactColor}`}>
                         {item.impact}
                     </p>
                 </div>
             ))}
         </div>
-         <div className="text-center my-8 p-6 rounded-lg bg-background border border-red-500/30">
+         <div className="text-center my-8 p-6 rounded-lg bg-background border border-destructive/30">
             <h3 className="text-xl font-bold text-foreground">Total Hidden Cost (1st Year, per hire):</h3>
-            <p className="text-4xl font-mono font-bold text-red-400 mt-2">$97,000 - $185,000+</p>
+            <p className="text-4xl font-mono font-bold text-destructive mt-2">$97,000 - $185,000+</p>
             <p className="text-sm text-muted-foreground mt-1">This is <em className="font-bold">in addition</em> to the engineer's salary. The "cheaper" build model is often twice as expensive in the first year.</p>
         </div>
       </section>
@@ -190,12 +190,12 @@ export default function BuildVsBuyPage() {
                 <p className="mt-2 text-muted-foreground">The choice between "Build" and "Buy" is a classic business trade-off. For a CTO, however, the variables are different. You are not just buying a component; you are buying <strong className="text-foreground">time, speed, and risk mitigation</strong>. The "Build" model forces you, a technology leader, to become an expert in international law, HR, and logistics. It is a massive, unforced error that diverts your focus from your primary mission.</p>
             </div>
              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-background p-6 rounded-lg border border-red-500/20">
-                    <h3 className="font-bold text-red-400">The "Build" Model</h3>
+                <div className="bg-background p-6 rounded-lg border border-destructive/20">
+                    <h3 className="font-bold text-destructive">The "Build" Model</h3>
                      <p className="mt-2 text-muted-foreground">Optimizes for a single, misleading metric: <strong className="text-foreground">a lower base salary number on a spreadsheet</strong>. It ignores the massive, compounding hidden costs.</p>
                 </div>
-                 <div className="bg-background p-6 rounded-lg border border-green-500/20">
-                    <h3 className="font-bold text-green-400">The "Buy" Model (Integrated Platform)</h3>
+                 <div className="bg-background p-6 rounded-lg border border-primary/20">
+                    <h3 className="font-bold text-primary">The "Buy" Model (Integrated Platform)</h3>
                     <p className="mt-2 text-muted-foreground">Optimizes for what actually matters: <Link href="/playbook/tco-model" className="text-primary font-bold hover:underline">predictable TCO</Link>, <strong className="text-foreground">speed-to-market</strong>, and <strong className="text-foreground">enterprise-grade risk management.</strong></p>
                 </div>
             </div>
