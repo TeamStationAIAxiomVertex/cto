@@ -17,7 +17,3 @@ const playbookSlugs = [
 export async function getAllPlaybookSlugs(): Promise<string[]> {
     return playbookSlugs;
 }
-
-// NOTE: getPlaybookBySlug and PlaybookPost are no longer needed
-// as all playbook pages are now custom React components and not parsed from markdown.
-// They are being removed to prevent any future build errors.
