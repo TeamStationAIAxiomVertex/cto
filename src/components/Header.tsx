@@ -10,10 +10,10 @@ import { DisclosureDrawer } from './DisclosureDrawer';
 const navItems = {
   'CTO Playbook': [
     { href: '/playbook', title: 'The CTO Playbook', description: 'Go to the main playbook hub.', isHubLink: true },
-    { href: '/playbook/nearshore-vs-offshore', title: 'Nearshore vs. Offshore', description: 'Diagnose the true cost of your global talent strategy.' },
-    { href: '/playbook/latam-economics', title: 'LATAM Economics', description: 'A CFO-ready framework for modeling nearshore TCO.' },
-    { href: '/playbook/build-vs-buy', title: 'Build vs. Buy', description: 'The trade-offs of building a nearshore operation from scratch.' },
-    { href: '/playbook/bias-free-technical-hiring-axiom-cortex', title: 'Bias-Free Hiring', description: 'How to use Axiom Cortex™ for fairer, more accurate hiring.' },
+    { href: '/playbook/articles/nearshore-vs-offshore', title: 'Nearshore vs. Offshore', description: 'Diagnose the true cost of your global talent strategy.' },
+    { href: '/playbook/articles/latam-economics', title: 'LATAM Economics', description: 'A CFO-ready framework for modeling nearshore TCO.' },
+    { href: '/playbook/articles/build-vs-buy', title: 'Build vs. Buy', description: 'The trade-offs of building a nearshore operation from scratch.' },
+    { href: '/playbook/articles/bias-free-hiring', title: 'Bias-Free Hiring', description: 'How to use Axiom Cortex™ for fairer, more accurate hiring.' },
     { href: '/trust', title: 'Security & Compliance', description: 'The playbook for audit-ready nearshore operations.' },
   ],
   'What\'s Included': [
@@ -118,3 +118,5 @@ export function Header() {
     </header>
   );
 }
+
+    
