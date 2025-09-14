@@ -11,7 +11,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'The CTO Playbook for Nearshore Software Development | TeamStation AI',
-  description: 'A series of battle-tested, data-driven guides for CTOs to de-risk their roadmap, fix delivery velocity, and gain control over their engineering organization.',
+  description: 'Missed milestones aren’t “bad luck.” They’re the physics of offshore delay. This Playbook puts the chaos in an intelligent, testable box so CTOs can govern outcomes, not gamble on vendors.',
 };
 
 export default async function ResearchPage() {
@@ -100,107 +100,105 @@ export default async function ResearchPage() {
     {
       question: "How can I be sure a candidate who interviews well will actually perform?",
       subQuestion: "I've been burned by charisma before.",
-      answer: "This is the exact problem our &lt;a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'&gt;Axiom Cortex™&lt;/a&gt; was built to solve. Traditional interviews are flawed because they conflate communication style with technical ability. Our process measures 'Problem-Solving Agility' through structured, bias-aware evaluations. We provide an auditable &lt;a href='/technical-interview-evaluation' class='text-primary hover:underline'&gt;Evidence Locker&lt;/a&gt; so you're judging the logic, not just the presentation. This is how we de-risk the hire."
+      answer: "This is the exact problem our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> was built to solve. Traditional interviews are flawed because they conflate communication style with technical ability. Our process measures 'Problem-Solving Agility' through structured, bias-aware evaluations. We provide an auditable <a href='/technical-interview-evaluation' class='text-primary hover:underline'>Evidence Locker</a> so you're judging the logic, not just the presentation. This is how we de-risk the hire."
     },
     {
       question: "How is your 'Cognitive AI' different from a keyword scanner?",
       subQuestion: "Everyone claims to use AI in hiring.",
-      answer: "Simple: we use Cognitive AI for psychometric analysis, not just resume parsing. While others use a generic LLM API call to find keywords, we use our proprietary, peer-reviewed models to score a candidate's latent cognitive traits. Our &lt;a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'&gt;research&lt;/a&gt; outlines how we separate the signal (true ability) from the noise (jargon, fluency). It's the difference between finding someone who has 'used' a tool and someone who can 'think' with it."
+      answer: "Simple: we use Cognitive AI for psychometric analysis, not just resume parsing. While others use a generic LLM API call to find keywords, we use our proprietary, peer-reviewed models to score a candidate's latent cognitive traits. Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>research</a> outlines how we separate the signal (true ability) from the noise (jargon, fluency). It's the difference between finding someone who has 'used' a tool and someone who can 'think' with it."
     },
     {
       question: "How do I measure the real impact of my engineers?",
       subQuestion: "My current performance reviews feel subjective.",
-      answer: "Our research into a &lt;a href='/research/performance-evaluation-framework' class='text-primary hover:underline'&gt;Performance Evaluation Framework&lt;/a&gt; directly tackles this. We're building a system that moves beyond 'tickets closed' to measure true value creation. It correlates engineering activity with business outcomes. It's about shifting the conversation from 'How busy are you?' to 'What impact did you have?'"
+      answer: "Our research into a <a href='/research/performance-evaluation-framework' class='text-primary hover:underline'>Performance Evaluation Framework</a> directly tackles this. We're building a system that moves beyond 'tickets closed' to measure true value creation. It correlates engineering activity with business outcomes. It's about shifting the conversation from 'How busy are you?' to 'What impact did you have?'"
     }
   ]
 
   return (
-    &lt;main className="container max-w-6xl py-12"&gt;
-       &lt;div className="text-sm text-muted-foreground mb-8"&gt;
-        &lt;Link href="/" className="hover:text-foreground"&gt;Home&lt;/Link&gt; / &lt;span&gt;Research&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;header className="text-center my-12"&gt;
-        &lt;h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent"&gt;Our Research: The Science Behind Predictable Results&lt;/h1&gt;
-        &lt;p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground"&gt;
-          We don't rely on buzzwords; we rely on evidence. Our platform is built on a foundation of peer-reviewed research to de-risk your most critical decisions around hiring, performance, and security. Here is the proof.
-        &lt;/p&gt;
-      &lt;/header&gt;
-       &lt;div className="my-24"&gt;
-        &lt;h2 className="text-center text-4xl font-bold"&gt;Key Publications&lt;/h2&gt;
-         &lt;p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground"&gt;Our foundational, peer-reviewed research and strategic guides that underpin our entire methodology.&lt;/p&gt;
-        &lt;div className="mt-12 grid grid-cols-1 md:grid-cols-1 gap-8"&gt;
-          {publications.map(pub =&gt; (
-            &lt;div key={pub.title} className="rounded-lg border bg-card p-6 flex flex-col md:flex-row gap-6 shadow-lg"&gt;
-                &lt;div className="flex-shrink-0"&gt;{pub.icon}&lt;/div&gt;
-                &lt;div className="flex-grow"&gt;
-                  &lt;h3 className="font-semibold text-foreground"&gt;{pub.title}&lt;/h3&gt;
-                  &lt;p className="text-sm text-muted-foreground mt-2"&gt;{pub.description}&lt;/p&gt;
-                &lt;/div&gt;
-                 &lt;div className="flex-shrink-0 self-center"&gt;
-                    &lt;Link href={pub.href} target="_blank" rel="noopener noreferrer" className="cta-button"&gt;
-                        {pub.label} &lt;ArrowRight className="ml-2 h-4 w-4" /&gt;
-                    &lt;/Link&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
+    <main className="container max-w-6xl py-12">
+       <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research</span>
+      </div>
+      <header className="text-center my-12">
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Missed milestones aren’t “bad luck.” They’re the physics of offshore delay: one question → one day lost → one quarter gone.</h1>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+         This Playbook puts the chaos in an intelligent, testable box—cognitive vetting, device/MDM control, EOR & compliance, and same-day PR reviews—so CTOs can govern outcomes, not gamble on vendors.
+        </p>
+      </header>
+       <div className="my-24">
+        <h2 className="text-center text-4xl font-bold">Key Publications</h2>
+         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Our foundational, peer-reviewed research and strategic guides that underpin our entire methodology.</p>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-1 gap-8">
+          {publications.map(pub => (
+            <div key={pub.title} className="rounded-lg border bg-card p-6 flex flex-col md:flex-row gap-6 shadow-lg">
+                <div className="flex-shrink-0">{pub.icon}</div>
+                <div className="flex-grow">
+                  <h3 className="font-semibold text-foreground">{pub.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-2">{pub.description}</p>
+                </div>
+                 <div className="flex-shrink-0 self-center">
+                    <Link href={pub.href} target="_blank" rel="noopener noreferrer" className="cta-button">
+                        {pub.label} <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                </div>
+            </div>
           ))}
-        &lt;/div&gt;
-      &lt;/div&gt;
+        </div>
+      </div>
 
-      &lt;section id="podcast" className="my-24 scroll-mt-20"&gt;
-        &lt;h2 className="text-center text-4xl font-bold"&gt;Listen to the Platform Vision&lt;/h2&gt;
-        &lt;p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground"&gt;Hear directly from our founders and technical leaders about the science and strategy behind TeamStation AI.&lt;/p&gt;
-        &lt;div className="mt-8 max-w-2xl mx-auto"&gt;
-          &lt;iframe data-testid="embed-iframe" style={{borderRadius: "12px"}} src="https://open.spotify.com/embed/episode/7EwovXvoVFIGLJDwqTZFUE?utm_source=generator" width="100%" height="352" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
-        &lt;/div&gt;
-      &lt;/section&gt;
+      <section id="podcast" className="my-24 scroll-mt-20">
+        <h2 className="text-center text-4xl font-bold">Listen to the Platform Vision</h2>
+        <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Hear directly from our founders and technical leaders about the science and strategy behind TeamStation AI.</p>
+        <div className="mt-8 max-w-2xl mx-auto">
+          <iframe data-testid="embed-iframe" style={{borderRadius: "12px"}} src="https://open.spotify.com/embed/episode/7EwovXvoVFIGLJDwqTZFUE?utm_source=generator" width="100%" height="352" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </section>
 
-      &lt;div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"&gt;
-        {researchAssets.map(asset =&gt; {
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {researchAssets.map(asset => {
           return (
-            &lt;div key={asset.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg"&gt;
-               &lt;p className="text-sm font-semibold text-primary"&gt;{asset.pain}&lt;/p&gt;
-                &lt;div className="flex items-center gap-3 mt-3"&gt;
+            <div key={asset.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
+               <p className="text-sm font-semibold text-primary">{asset.pain}</p>
+                <div className="flex items-center gap-3 mt-3">
                     {asset.icon}
-                    &lt;h3 className="text-lg font-semibold text-foreground"&gt;{asset.solutionTitle}&lt;/h3&gt;
-                &lt;/div&gt;
-              &lt;p className="mt-4 text-sm text-muted-foreground flex-grow"&gt;{asset.solutionDescription}&lt;/p&gt;
-               &lt;Link href={asset.href} className="stretched-link mt-6 flex items-center text-sm font-semibold text-primary"&gt;
-                Read the Proof &lt;ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /&gt;
-              &lt;/Link&gt;
-            &lt;/div&gt;
+                    <h3 className="text-lg font-semibold text-foreground">{asset.solutionTitle}</h3>
+                </div>
+              <p className="mt-4 text-sm text-muted-foreground flex-grow">{asset.solutionDescription}</p>
+               <Link href={asset.href} className="stretched-link mt-6 flex items-center text-sm font-semibold text-primary">
+                Read the Proof <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
           );
         })}
-      &lt;/div&gt;
+      </div>
       
-       &lt;div className="my-24"&gt;
-        &lt;h2 className="text-center text-4xl font-bold"&gt;A CTO's Questions, Answered by Science&lt;/h2&gt;
-         &lt;p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground"&gt;The strategic questions our research directly addresses.&lt;/p&gt;
-        &lt;div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"&gt;
-          {faqs.map(faq =&gt; (
-            &lt;div key={faq.question} className="rounded-lg border bg-card p-6 shadow-lg"&gt;
-               &lt;div className="flex items-start gap-3"&gt;
-                  &lt;HelpCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" /&gt;
-                  &lt;div&gt;
-                      &lt;h3 className="font-semibold text-foreground"&gt;{faq.question}&lt;/h3&gt;
-                      &lt;p className="text-sm text-muted-foreground m-0"&gt;{faq.subQuestion}&lt;/p&gt;
-                  &lt;/div&gt;
-               &lt;/div&gt;
-               &lt;p className="mt-4 pt-4 border-t border-border text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: faq.answer }}&gt;&lt;/p&gt;
-            &lt;/div&gt;
+       <div className="my-24">
+        <h2 className="text-center text-4xl font-bold">A CTO's Questions, Answered by Science</h2>
+         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">The strategic questions our research directly addresses.</p>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {faqs.map(faq => (
+            <div key={faq.question} className="rounded-lg border bg-card p-6 shadow-lg">
+               <div className="flex items-start gap-3">
+                  <HelpCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                      <h3 className="font-semibold text-foreground">{faq.question}</h3>
+                      <p className="text-sm text-muted-foreground m-0">{faq.subQuestion}</p>
+                  </div>
+               </div>
+               <p className="mt-4 pt-4 border-t border-border text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: faq.answer }}></p>
+            </div>
           ))}
-        &lt;/div&gt;
-      &lt;/div&gt;
+        </div>
+      </div>
 
 
-       &lt;div className="text-center rounded-lg bg-primary/10 p-8 mt-12 shadow-lg"&gt;
-        &lt;h2 className="text-2xl font-bold"&gt;Ready to Apply the Science?&lt;/h2&gt;
-        &lt;p className="mt-2 mx-auto max-w-xl text-muted-foreground"&gt;
+       <div className="text-center rounded-lg bg-primary/10 p-8 mt-12 shadow-lg">
+        <h2 className="text-2xl font-bold">Ready to Apply the Science?</h2>
+        <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
           Let's move from theory to practice. In a 15-minute call, we can show you how our research-backed platform can solve your specific challenges.
-        &lt;/p&gt;
-        &lt;Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6"&gt;Book a Strategy Call&lt;/Link&gt;
-      &lt;/div&gt;
-    &lt;/main&gt;
+        </p>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
+      </div>
+    </main>
   );
 }
-
-    

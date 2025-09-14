@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import { ArrowRight, TrendingUp, DollarSign, Zap, AlertTriangle, BrainCircuit, ShieldCheck, HelpCircle, Scale, Briefcase, BarChart, BookOpen, UserCheck, FileText } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -78,14 +79,10 @@ export default function LatamEconomicsPage() {
 
        <header className="my-8">
           <div className="rounded-lg border bg-card p-8 md:p-12">
-              <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">LATAM Economics for CTOs: A CFO-Ready Framework</h1>
+              <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">If a board asked “why so slow?”, would you show code-review latency, CFR, and MTTR—or excuses?</h1>
               <div className="mt-8 max-w-4xl grid gap-6">
                   <div className="bg-background p-6 rounded-lg border border-primary/20">
-                      <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>The CTO's Dilemma</h2>
-                      <p className="mt-2 text-muted-foreground">You present a hiring plan to your CFO based on a vendor's "low hourly rate." The CFO, whose job is to see the risks you don't, immediately pokes holes in it: "What about legal setup in Brazil? What about laptop security? What's the fully-loaded cost?" You leave the meeting without a budget, looking unprepared.</p>
-                  </div>
-                  <div className="bg-background p-6 rounded-lg border border-border/50">
-                       <p className="mt-2 text-muted-foreground">This guide is not a list of salary ranges. It is a <strong className="text-primary">strategic framework</strong> for you, the CTO, to walk into that meeting armed with a data-driven model for the <Tooltip text="Total Cost of Ownership: The comprehensive accounting of all direct and indirect costs, not just salary.">Total Cost of Ownership (TCO)</Tooltip> of a nearshore engineering team. We will arm you with the language and the logic to have a true financial conversation, moving beyond hourly rates to ROI, risk mitigation, and value creation.</p>
+                      <p className="mt-2 text-muted-foreground">This CTO Playbook gives you a measured nearshore system: cognition-first hiring, secure-by-default devices, real SLAs for PRs and incidents, and a TCO model Finance signs without flinching.</p>
                   </div>
               </div>
           </div>
