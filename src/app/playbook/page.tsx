@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, BookOpen, GitCompare, Scale, ShieldCheck, UserCheck, Zap, Layers, TestTube2, Server, Database, BrainCircuit, GanttChartSquare, DollarSign, Users, Clock, AlertTriangle, MessageSquare, Briefcase, GitBranch, Tv, BarChart, FileLock, Users2, FileSearch } from 'lucide-react';
+import { ArrowRight, BookOpen, GitCompare, Scale, ShieldCheck, UserCheck, Zap, Layers, TestTube2, Server, Database, BrainCircuit, GanttChartSquare, DollarSign, Users, Clock, AlertTriangle, MessageSquare, Briefcase, GitBranch, Tv, BarChart, FileLock, Users2, FileSearch, FileText } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
 
@@ -65,6 +65,15 @@ const crisisScenarios = [
     solutionLabel: 'Deploy a platform team to enforce contracts.',
     icon: <Layers className="h-8 w-8" />,
     proof: 'p95 latency ↓; change failure rate ↓'
+  },
+    {
+    category: 'Quality & Architecture',
+    pain: 'How much does "clever" code cost you in onboarding time?',
+    problem: 'Code is hard to understand, tech debt is piling up, and key decisions are lost in Slack history.',
+    solutionHref: '/process',
+    solutionLabel: 'Hire for clarity and maintainability.',
+    icon: <FileText className="h-8 w-8" />,
+    proof: 'New hire productivity ramp-up time ↓'
   },
   // Security & Compliance
   {
