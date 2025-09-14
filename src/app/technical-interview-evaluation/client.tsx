@@ -527,8 +527,8 @@ export default function TalentEvaluationClient() {
                 </Accordion>
              </div>
              <div className="text-center mt-8">
-                <Link href="https://teamstation.dev/process" className="font-semibold text-primary hover:underline">
-                    Learn About Our Full Evaluation Process <ArrowRight className="inline h-4 w-4" />
+                <Link href="https://teamstation.dev/process" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+                    See Our Full Evaluation Process <ArrowRight className="inline h-4 w-4" />
                 </Link>
               </div>
         </div>
@@ -571,4 +571,3 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
-
