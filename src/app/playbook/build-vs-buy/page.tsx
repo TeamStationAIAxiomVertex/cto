@@ -5,8 +5,8 @@ import { Tooltip } from '@/components/Tooltip';
 import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Build vs. Buy: A CTO’s Framework for Scaling Nearshore Teams',
-  description: 'Should you build a nearshore operation from scratch or "buy" into an integrated platform? This playbook models the trade-offs in terms of Total Cost of Ownership (TCO), speed, and risk.',
+  title: 'Build vs. Buy: The Definitive CTO Framework for Scaling Nearshore Teams',
+  description: 'Should you build a nearshore operation from scratch or "buy" into an integrated platform? This data-driven playbook for CTOs models the trade-offs in Total Cost of Ownership (TCO), speed, and risk.',
 };
 
 const buildCosts = [
@@ -101,26 +101,24 @@ export default function BuildVsBuyPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook/hub" className="hover:text-foreground">CTO Playbook</Link> / <span>Build vs. Buy</span>
       </div>
 
-      <header className="my-8 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Build vs. Buy: The Definitive CTO Framework for Scaling Nearshore Teams</h1>
-      </header>
-
-      <section className="my-16 rounded-xl border bg-card p-8 md:p-12">
-        <h2 className="text-center text-3xl font-bold text-foreground">Foreword: The Strategic Choice</h2>
-        <div className="mt-8 max-w-4xl mx-auto space-y-6">
-          <div className="bg-background p-6 rounded-lg border border-primary/20">
-            <h3 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>The CTO's Dilemma</h3>
-            <p className="mt-2 text-muted-foreground">You have the mandate to scale your engineering team. The budget is tight, the timeline is aggressive, and the cost of a mis-step is catastrophic. You're facing one of the most consequential decisions a technology leader can make: Do you take on the immense operational load of "building" a foreign entity from scratch, or do you "buy" into an integrated platform that abstracts away the complexity?</p>
-          </div>
-          <div className="bg-background p-6 rounded-lg border border-border/50">
-            <p className="mt-2 text-muted-foreground">This is not a tactical choice; it's an architectural one with massive financial and operational consequences. Your CFO sees a lower salary on a spreadsheet and asks, "Why can't we just hire directly?" They see a number. You, the CTO, must see the system. You must see the hidden costs, the unseen risks, and the operational drag that can sink your entire strategy.</p>
-          </div>
-          <div className="bg-background p-6 rounded-lg border border-border/50">
-             <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Playbook's Purpose</h3>
-            <p className="mt-2 text-muted-foreground">This guide is your strategic ammunition. It is a CFO-ready framework, built on the Sandler methodology, to move the conversation beyond misleading salary comparisons to the only metric that matters: <strong className="text-foreground">Total Cost of Ownership (TCO)</strong>. We will diagnose the pain of the "Build" model, quantify its true cost, and present the data-driven case for the "Buy" model as a faster, safer, and more capital-efficient path to scaling your engineering team.</p>
-          </div>
+      <header className="my-8">
+        <div className="rounded-lg border bg-card p-8 md:p-12">
+            <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Build vs. Buy: The Definitive CTO Framework for Scaling Nearshore Teams</h1>
+            <div className="mt-8 max-w-4xl space-y-6">
+                <div className="bg-background p-6 rounded-lg border border-primary/20">
+                    <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>Foreword: The Strategic Choice</h2>
+                    <p className="mt-2 text-muted-foreground">You have the mandate to scale your engineering team. The budget is tight, the timeline is aggressive, and the cost of a mis-step is catastrophic. You're facing one of the most consequential decisions a technology leader can make: Do you take on the immense operational load of "building" a foreign entity from scratch, or do you "buy" into an integrated platform that abstracts away the complexity?</p>
+                </div>
+                <div className="bg-background p-6 rounded-lg border border-border/50">
+                    <p className="mt-2 text-muted-foreground">This is not a tactical choice; it's an architectural one with massive financial and operational consequences. Your CFO sees a lower salary on a spreadsheet and asks, "Why can't we just hire directly?" They see a number. You, the CTO, must see the system. You must see the hidden costs, the unseen risks, and the operational drag that can sink your entire strategy.</p>
+                </div>
+                <div className="bg-background p-6 rounded-lg border border-border/50">
+                    <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Playbook's Purpose</h3>
+                    <p className="mt-2 text-muted-foreground">This guide is your strategic ammunition. It is a CFO-ready framework, built on the Sandler methodology, to move the conversation beyond misleading salary comparisons to the only metric that matters: <strong className="text-foreground"><Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">Total Cost of Ownership (TCO)</Tooltip></strong>. We will diagnose the pain of the "Build" model, quantify its true cost, and present the data-driven case for the "Buy" model as a faster, safer, and more capital-efficient path to scaling your engineering team.</p>
+                </div>
+            </div>
         </div>
-      </section>
+      </header>
 
       <section className="my-24">
         <div className="text-center">
@@ -153,7 +151,7 @@ export default function BuildVsBuyPage() {
 
       <section className="my-24">
          <div className="text-center">
-            <h2 className="text-4xl font-bold text-foreground">Part 2 (The Solution): The "Buy" Model — The Integrated Platform</h2>
+            <h2 className="text-4xl font-bold text-foreground">Part 2 (The Solution): The "Buy" Model — An Integrated Platform That Absorbs Risk</h2>
             <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Partnering with TeamStation AI means you "buy" a complete, managed operating system for your nearshore team. We absorb all the risk and operational overhead into a single, predictable, all-inclusive rate, allowing you to focus on your core competency: building world-class software.</p>
         </div>
 
