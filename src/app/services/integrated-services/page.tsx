@@ -48,7 +48,7 @@ export default function IntegratedServicesPage() {
     {
       icon: <ShieldCheck className="h-8 w-8 text-primary" />,
       pain: "Lacking an audit-ready security posture?",
-      title: "SOC 2 / ISO Alignment & Governance",
+      title: "SOC 2 / ISO 27001 Alignment & Governance",
       description:
         "Our operational controls for security, availability, and privacy are aligned with leading industry standards, providing you an auditable posture from day one.",
       kpi: "100% auditable evidence trail",
@@ -88,7 +88,7 @@ export default function IntegratedServicesPage() {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 my-16 gap-8">
         {services.map((service) => (
-           <div key={service.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+           <div key={service.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
               <p className="text-sm font-semibold text-primary">{service.pain}</p>
               <div className="flex items-center gap-3 mt-3">
                   {service.icon}
@@ -97,8 +97,8 @@ export default function IntegratedServicesPage() {
               <p className="mt-4 text-sm text-muted-foreground flex-grow">{service.description}</p>
               <div className="mt-6 border-t border-border pt-4">
                 <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {service.kpi}</p>
-                <Link href={service.href} className="mt-4 flex items-center text-sm font-semibold text-primary">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                <Link href={service.href} className="stretched-link mt-4 flex items-center text-sm font-semibold text-primary">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
           </div>

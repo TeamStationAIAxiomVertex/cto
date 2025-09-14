@@ -229,7 +229,7 @@ export default function TCOModelPage() {
       </div>
 
        <header className="my-8">
-          <div className="rounded-lg border bg-card p-8 md:p-12">
+          <div className="rounded-lg border bg-card p-8 md:p-12 shadow-lg">
               <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Beyond Salary: The CTO's Guide to Total Cost of Ownership</h1>
               <div className="mt-8 max-w-4xl space-y-6">
                   <div className="bg-background p-6 rounded-lg border border-primary/20">
@@ -254,7 +254,7 @@ export default function TCOModelPage() {
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             {costCards.map(card => (
-                <div key={card.id} className="rounded-xl border bg-card p-6 flex flex-col">
+                <div key={card.id} className="rounded-xl border bg-card p-6 flex flex-col shadow-lg">
                     <div className="flex items-start gap-4">
                         {card.icon}
                         <div>
@@ -316,7 +316,7 @@ export default function TCOModelPage() {
         </div>
       </section>
 
-       <section className="my-24 rounded-lg border bg-card p-8 md:p-12">
+       <section className="my-24 rounded-lg border bg-card p-8 md:p-12 shadow-lg">
         <h2 className="text-4xl font-bold text-center text-foreground">The Verdict: From Cost Center to Value Driver</h2>
         <div className="mt-8 max-w-4xl mx-auto space-y-6">
             <div className="bg-background p-6 rounded-lg border border-primary/20">
@@ -327,7 +327,7 @@ export default function TCOModelPage() {
         </div>
        </section>
 
-       <div className="my-16 rounded-xl border bg-card p-6">
+       <div className="my-16 rounded-xl border bg-card p-6 shadow-lg">
             <h3 className="text-xl font-bold text-foreground">Variables for Estimation</h3>
             <p className="text-sm text-muted-foreground mt-1">A legend of variables used in the computational cost cards.</p>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -335,7 +335,7 @@ export default function TCOModelPage() {
             </div>
        </div>
 
-        <div className="text-center rounded-lg bg-primary/10 p-8 mt-12">
+        <div className="text-center rounded-lg bg-primary/10 p-8 mt-12 shadow-lg">
             <h2 className="text-2xl font-bold">Ready to Build Your Business Case?</h2>
             <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
                 Let's plug your numbers into this framework. In a 15-minute, no-obligation strategy call, we can build a CFO-ready TCO model for your specific situation.

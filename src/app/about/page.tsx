@@ -50,7 +50,7 @@ export default function AboutPage() {
 
       <div className="grid md:grid-cols-3 my-16 gap-8">
         {pillars.map((pillar) => (
-          <div className="flex flex-col items-center text-center p-6" key={pillar.title}>
+          <div className="flex flex-col items-center text-center p-6 rounded-lg border bg-card shadow-lg" key={pillar.title}>
             {pillar.icon}
             <h2 className="mt-4 text-xl font-bold text-foreground">{pillar.title}</h2>
             <p className="mt-2 text-sm text-muted-foreground">{pillar.description}</p>
@@ -71,7 +71,7 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <section className="my-24 rounded-lg border bg-card p-8">
+      <section className="my-24 rounded-lg border bg-card p-8 shadow-lg">
          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <p className="text-sm font-semibold text-primary">Decades of combined experience</p>
             <div className="flex items-center gap-3 mt-3">
@@ -88,7 +88,7 @@ export default function AboutPage() {
         <h2 className="text-center text-4xl font-bold text-foreground">Our Journey</h2>
         <div className="mt-12 flow-root">
           <div className="max-w-3xl mx-auto">
-            <ul class="-mb-8">
+            <ul className="-mb-8">
               {timeline.map((item, itemIdx) => (
                 <li key={item.year}>
                   <div className="relative pb-8">
@@ -111,7 +111,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8">
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold text-foreground">Ready to Experience the Difference?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
            Let's talk about how our platform can help you achieve your product goals faster and more securely.

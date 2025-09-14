@@ -61,7 +61,7 @@ export default function HirePage() {
               <h2 className="text-xl font-bold text-foreground">{option.title}</h2>
             </div>
             <p className="mt-4 text-sm text-muted-foreground flex-grow">{option.description}</p>
-            <Link href={option.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
+            <Link href={option.href} className="mt-6 flex items-center text-sm font-semibold text-primary stretched-link">
                 Explore {option.title} Options <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

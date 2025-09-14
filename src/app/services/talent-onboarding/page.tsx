@@ -54,7 +54,7 @@ export default function OnboardingPage() {
 
       <div className="grid md:grid-cols-2 my-16 gap-8">
         {steps.map((step) => (
-           <div key={step.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+           <div key={step.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                 <p className="text-sm font-semibold text-primary">{step.pain}</p>
                 <div className="flex items-center gap-3 mt-3">
                     {step.icon}

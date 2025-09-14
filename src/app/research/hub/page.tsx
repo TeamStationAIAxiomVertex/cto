@@ -84,7 +84,7 @@ export default async function ResearchPage() {
                     <h3 className="text-lg font-semibold text-foreground">{asset.solutionTitle}</h3>
                 </div>
               <p className="mt-4 text-sm text-muted-foreground flex-grow">{asset.solutionDescription}</p>
-               <Link href={asset.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
+               <Link href={asset.href} className="stretched-link mt-6 flex items-center text-sm font-semibold text-primary">
                 Read the Proof <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
@@ -122,5 +122,3 @@ export default async function ResearchPage() {
     </main>
   );
 }
-
-    

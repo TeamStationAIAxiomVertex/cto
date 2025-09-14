@@ -286,21 +286,17 @@ export default async function PlaybookHub() {
       </header>
 
       {categories.map(category => (
-        <section key={category} className={`my-16 rounded-xl border p-8 ${categoryColors[category] || 'bg-card'}`}>
+        <section key={category} className={`my-16 rounded-xl border p-8 shadow-lg ${categoryColors[category] || 'bg-card'}`}>
           <h2 className="text-3xl font-bold text-center mb-8">{category}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {crisisScenarios.filter(s => s.category === category).map(scenario => (
-              <div key={scenario.pain.toString()} className="group relative flex flex-col rounded-lg border bg-background/50 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-                <div className="flex items-start gap-3">
-                  <div className="text-primary">{scenario.icon}</div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-primary">The Pain</h3>
-                    <p className="text-base font-semibold text-foreground leading-snug">{scenario.pain}</p>
-                  </div>
-                </div>
-
+              <div key={scenario.pain.toString()} className="group relative flex flex-col rounded-lg border bg-background/50 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
+                <p className="text-sm font-semibold text-primary">{scenario.pain}</p>
                 <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
-                  <h4 className="text-sm font-semibold text-foreground">The Solution</h4>
+                  <h3 className="font-semibold text-foreground flex items-center gap-2">
+                    <AlertTriangle className="h-5 w-5 text-destructive" />
+                    Problem
+                  </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
                     {scenario.problem.split(' ').map((word, index) => {
                       if (word.includes('PR')) return <Tooltip key={index} text="Pull Request: A proposal to merge code changes."> {word} </Tooltip>
@@ -316,13 +312,14 @@ export default async function PlaybookHub() {
                 </div>
                 
                 <div className="mt-4 pt-4 border-t border-border/50">
-                   <h4 className="text-sm font-semibold text-foreground">The Proof</h4>
-                    <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block">{scenario.proof}</p>
-                    <div className="mt-3">
-                        <Link href={scenario.solutionHref} className="flex items-center text-sm font-semibold text-primary stretched-link">
-                        {scenario.solutionLabel} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </Link>
-                    </div>
+                   <h3 className="font-semibold text-foreground flex items-center gap-2">
+                      <Zap className="h-5 w-5 text-primary" />
+                      Solution
+                   </h3>
+                    <Link href={scenario.solutionHref} className="block text-sm font-semibold text-primary stretched-link hover:underline">
+                        {scenario.solutionLabel}
+                    </Link>
+                    <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block mt-2">{scenario.proof}</p>
                 </div>
               </div>
             ))}

@@ -100,7 +100,7 @@ export default function PlatformPage() {
          <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">Everything you need to hire, equip, secure, and run LATAM engineering teams—inside one platform and SLA.</p>
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {includedServices.map((service) => (
-                <div key={service.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+                <div key={service.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                     <p className="text-sm font-semibold text-primary">{service.pain}</p>
                     <div className="flex items-center gap-3 mt-3">
                         {service.icon}

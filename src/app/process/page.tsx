@@ -116,7 +116,7 @@ export default function ProcessPage() {
         </p>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 mt-12 gap-8 max-w-4xl mx-auto'>
             {securityPillars.map(pillar => (
-                <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col text-left">
+                <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col text-left shadow-lg">
                     <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
                     <div className="flex items-center gap-3 mt-3">
                         {pillar.icon}
@@ -138,7 +138,7 @@ export default function ProcessPage() {
         </p>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-12 gap-8 max-w-6xl mx-auto'>
             {recognitions.map(rec => (
-                 <div className="flex items-start text-left gap-4 p-4 rounded-lg" key={rec.title}>
+                 <div className="flex items-start text-left gap-4 p-4 rounded-lg bg-card shadow-lg" key={rec.title}>
                     {rec.icon}
                     <div>
                         <h3 className="font-semibold text-foreground">{rec.title}</h3>
@@ -149,7 +149,7 @@ export default function ProcessPage() {
         </div>
       </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8">
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold text-foreground">Ready to Hire Under One Accountable SLA?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
            Let's map your roles, security needs, and go-live timeline.
