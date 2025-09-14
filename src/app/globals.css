@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 222 47% 8%; /* #0A0F1E */
+    --background: 222 80% 5%; /* Slightly adjusted for better contrast */
     --foreground: 210 40% 90%;
     --muted: 215 20% 75%;
     --muted-foreground: 215 20% 75%;
@@ -39,8 +39,8 @@
     --card-foreground: 222 47% 11%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --primary: 229 80% 55%; /* Darker blue for better contrast on light bg */
-    --primary-foreground: 0 0% 100%;
+    --primary: 229 '80%' 55%;
+    --primary-foreground: 0 0% 100%; /* Changed to white for better contrast on buttons */
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222 47% 11%;
     --accent: 210 40% 96.1%;
