@@ -5,7 +5,6 @@ description: 'A CFO-grade analysis of the true Total Cost of Ownership (TCO) of 
 ---
 
 ## 1) Seat Cost Delta — Sticker vs Fully-Loaded
-
 **Problem:** U.S. senior salaries look manageable… until benefits, taxes, tools, and overhead land on the P&L.
 
 **Solution:** Replace/augment seats with nearshore seniors at $6,800/mo all-in under one SLA.
@@ -23,7 +22,6 @@ Savings = (13,000 − 6,800) × 12 = **$74,400/yr per seat.**
 ---
 
 ## 2) Team Delta — Six Seniors, One Decision
-
 **Problem:** You need a full squad; headcount is frozen.
 
 **Solution:** 6 nearshore seniors under one contract, one invoice, one SLA.
@@ -38,7 +36,6 @@ Annual savings = 6 × 74,400 = $446,400/yr (using Card #1 math).
 ---
 
 ## 3) Cost of Vacancy — The Invisible Tax
-
 **Problem:** Roles stay open; velocity stalls; opportunity cost compounds.
 
 **Solution:** Bench-ready nearshore talent; start in weeks, not quarters.
@@ -54,7 +51,6 @@ Vacancy_Cost = Daily_Value × (TTH_current − TTH_TS)
 ---
 
 ## 4) PR “LGTM” Latency — Days Lost to Time Zones
-
 **Problem:** One PR → one day lost; reviews trickle in overnight.
 
 **Solution:** Same-day PR SLAs in your timezone.
@@ -70,7 +66,6 @@ Savings_PR = PRs/mo × Δreview_hours × C_dev_hour
 ---
 
 ## 5) Faster Onboarding — Time-to-Productivity
-
 **Problem:** New engineers take weeks to add useful code.
 
 **Solution:** Playbooked onboarding with nearshore leads embedded in your rituals.
@@ -86,7 +81,6 @@ Savings_onboard = H × C_day × ΔTP
 ---
 
 ## 6) Change-Failure Rate — Fewer Hotfix Fridays
-
 **Problem:** Failed changes burn cash and trust.
 
 **Solution:** Shift-left QA + contract tests + canaries managed by our platform crew.
@@ -102,7 +96,6 @@ Savings_fc = D × (CFR₀ − CFR₁) × C_incident
 ---
 
 ## 7) Attrition & Replacement — Context Reset Penalty
-
 **Problem:** Offshore night shifts drive churn; you keep paying the knowledge tax.
 
 **Solution:** Same-day schedules + retention ladders + documented runbooks.
@@ -118,7 +111,6 @@ Savings_attrition = Team × (rate₀ − rate₁) × C_replace
 ---
 
 ## 8) Management Overhead — Meetings You Don’t Need
-
 **Problem:** EMs/PMs spend hours herding vendors across time zones.
 
 **Solution:** Single vendor, single SLA, single cadence.
@@ -127,14 +119,13 @@ Savings_attrition = Team × (rate₀ − rate₁) × C_replace
 ```
 Savings_mgmt = 12 × (EM_hrs×C_EM + PM_hrs×C_PM) × reduction
 ```
-*Example:* (30h×$120 + 20h×$95) × 12 × 0.5 ≈ **$40,200/yr freed.**
+*Example:* (30h×$120 + 20h×$95) × 12 × 0.5 ≈ **$33,000/yr freed.**
 
 **Question:** What would your EM do with 10 hours/week back?
 
 ---
 
 ## 9) Compliance & Security — Questionnaire Drag
-
 **Problem:** SOC2/ISO gaps stall enterprise deals.
 
 **Solution:** Built-in SSO/SAML/SCIM, SBOMs, audit trails—operated in-timezone.
@@ -150,7 +141,6 @@ Savings_audit = H_audit_saved × C_hour
 ---
 
 ## 10) All-in vs. “All-these-Invoices”
-
 **Problem:** Fragmented vendors → duplicated tools, travel, and shadow staffing.
 
 **Solution:** Consolidate under one SLA at $6,800/mo per senior.
