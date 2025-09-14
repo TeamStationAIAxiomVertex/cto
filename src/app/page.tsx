@@ -162,7 +162,7 @@ export default async function HomePage() {
          <h2 className="text-center text-4xl font-bold text-foreground">
             There Is a Better Way
         </h2>
-        <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">Here’s how our integrated platform solves these problems by design.</p>
+        <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">Legacy vendors promise, overcharge, and under-deliver. This Field Manual names the failure modes and instruments the fixes—cognitive hiring signals, daylight SLAs for PRs/incidents, device/MDM control, EOR & compliance, and TCO you can defend in front of Finance.</p>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {Object.entries(comparisonPoints).map(([key, value]) => (
             <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
