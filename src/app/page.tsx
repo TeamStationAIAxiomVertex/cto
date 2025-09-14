@@ -96,7 +96,6 @@ const sandlerCards = [
 
 export default async function HomePage() {
   const caseStudies = (await getAllCaseStudies()).slice(0, 3);
-  const heroImage = placeholderImages.heroTeam;
 
   return (
     <div className="container mx-auto px-4">
@@ -107,7 +106,7 @@ export default async function HomePage() {
             </h1>
         </div>
         <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-            This is not another vendor pitch. It's a series of battle-tested, data-driven guides for CTOs to de-risk their roadmap, fix delivery velocity, and gain control over their engineering organization.
+            The vendor era is over. Command an evidence-driven, daylight, secure stack you control—without the lag, fog, or hidden taxes.
         </p>
         <div className="mt-10">
             <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Strategy Call</Link>
