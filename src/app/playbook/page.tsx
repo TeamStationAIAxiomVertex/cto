@@ -269,7 +269,7 @@ export default async function PlaybookHub() {
       {categories.map(category => (
         <section key={category} className={`my-16 rounded-xl border p-8 ${categoryColors[category] || 'bg-card'}`}>
           <h2 className="text-3xl font-bold text-center mb-8">{category}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {crisisScenarios.filter(s => s.category === category).map(scenario => (
               <div key={scenario.pain} className="group flex flex-col rounded-lg border bg-background/50 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                 <div className="flex items-start justify-between">
@@ -281,7 +281,7 @@ export default async function PlaybookHub() {
                   {scenario.problem.split(' ').map((word, index) => {
                     if (word.includes('PR')) return <Tooltip key={index} text="Pull Request: A proposal to merge code changes."> {word} </Tooltip>
                     if (word.includes('SDET')) return <Tooltip key={index} text="Software Development Engineer in Test: A developer who writes testing software."> {word} </Tooltip>
-                    if (word.includes('SLO')) return <Tooltip key-={index} text="Service Level Objective: A target for system reliability."> {word} </Tooltip>
+                    if (word.includes('SLO')) return <Tooltip key={index} text="Service Level Objective: A target for system reliability."> {word} </Tooltip>
                     if (word.includes('AppSec')) return <Tooltip key={index} text="Application Security: Measures to protect applications from threats."> {word} </Tooltip>
                     if (word.includes('IaC')) return <Tooltip key={index} text="Infrastructure as Code: Managing infrastructure through code."> {word} </Tooltip>
                     if (word.includes('CI/CD')) return <Tooltip key={index} text="Continuous Integration/Continuous Deployment: Automating software release."> {word} </Tooltip>
@@ -303,5 +303,3 @@ export default async function PlaybookHub() {
     </main>
   );
 }
-
-    
