@@ -212,26 +212,34 @@ export default function TalentEvaluationClient() {
                 />
                 <Bar dataKey="candidate" name="Candidate" barSize={20} radius={[0, 8, 8, 0]}>
                     {cognitiveData.map((entry, index) => {
-                        const scoreRatio = entry.candidate / entry.ideal;
-                        const fillColor = scoreRatio >= 0.9 ? 'hsl(var(--primary))' : 'hsl(var(--destructive))';
+                        let fillColor = 'hsl(var(--destructive))';
+                        if (entry.candidate >= 4.0) {
+                            fillColor = 'hsl(var(--primary))';
+                        } else if (entry.candidate >= 3.0) {
+                            fillColor = 'hsl(var(--accent))';
+                        }
                         return <Cell key={`cell-${index}`} fill={fillColor} />;
                     })}
                 </Bar>
-                 <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="hsl(var(--accent))" radius={[0, 8, 8, 0]} />
+                 <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="hsl(var(--secondary))" radius={[0, 8, 8, 0]} />
             </DynamicBarChart>
             </ResponsiveContainer>
         </div>
-        <div className="flex justify-center items-center gap-6 mt-4 text-xs text-muted-foreground">
+        <div className="flex justify-center items-center flex-wrap gap-6 mt-4 text-xs text-muted-foreground">
             <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(var(--primary))' }}></div>
-                <span>Candidate Score (Meets/Exceeds Ideal)</span>
-            </div>
-            <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(var(--destructive))' }}></div>
-                <span>Candidate Score (Significant Gap)</span>
+                <span>Excellent (Score &gt;= 4.0)</span>
             </div>
             <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(var(--accent))' }}></div>
+                <span>Good (Score 3.0-3.9)</span>
+            </div>
+            <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(var(--destructive))' }}></div>
+                <span>Concern (Score &lt; 3.0)</span>
+            </div>
+             <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: 'hsl(var(--secondary))' }}></div>
                 <span>Ideal Profile for Role</span>
             </div>
         </div>
@@ -292,4 +300,3 @@ export default function TalentEvaluationClient() {
   );
 }
 
-    
