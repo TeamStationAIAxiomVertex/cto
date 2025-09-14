@@ -120,9 +120,9 @@ export default async function ResearchPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research</span>
       </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The pitch deck says “senior.” The sprint says “rewrite.”</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Stop Gambling on Resumes. Start De-risking Your Hires.</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-         This Playbook is the anti-theater: Axiom Cortex™ for evidence, device/MDM + EOR for control, and PR/incident SLAs for daylight operations. Replace vendor roulette with a system that ships.
+         This Playbook is the anti-theater: a system that replaces vendor roulette with evidence, control, and outcomes.
         </p>
       </header>
        <div className="my-24">
