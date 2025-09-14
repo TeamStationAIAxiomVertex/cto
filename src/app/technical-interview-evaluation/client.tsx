@@ -367,7 +367,7 @@ const evidenceLocker = [
 const glossary = [
   { term: "Axiom Cortex™", definition: "Our proprietary Cognitive AI engine that analyzes interview data to produce a scientific, evidence-based evaluation of a candidate's latent cognitive traits." },
   { term: "Cognitive Fingerprint", definition: "A visualization of a candidate's scores across four key latent traits: Architectural Instinct (AI), Problem-Solving Agility (PSA), Learning Orientation (LO), and Collaborative Mindset (CM)." },
-  { termIaC", definition: "Infrastructure as Code. The practice of managing and provisioning infrastructure through code and software development techniques, rather than through manual processes." },
+  { term: "IaC", definition: "Infrastructure as Code. The practice of managing and provisioning infrastructure through code and software development techniques, rather than through manual processes." },
   { term: "MCI", definition: "Metacognitive Conviction Index. A measure of how well a candidate's confidence is calibrated with their actual knowledge, used to assess self-awareness and coachability." },
   { term: "BARS", definition: "Behaviorally Anchored Rating Scales. A scoring method that ties numerical ratings to specific, observable behaviors, reducing subjective bias." },
   { term: "EOR", definition: "Employer of Record. A service that allows us to legally hire employees in other countries on your behalf, handling all local compliance, payroll, and taxes." },
@@ -399,9 +399,9 @@ const DynamicBarChart = dynamic(() => Promise.resolve(BarChart), { ssr: false })
 export default function TalentEvaluationClient() {
 
   const getBarColor = (score: number) => {
-    if (score >= 4.0) return 'hsl(var(--primary))'; // Excellent
-    if (score >= 3.0) return 'hsl(48, 95%, 55%)'; // Good
-    return 'hsl(var(--destructive))'; // Concern
+    if (score >= 4.0) return 'hsl(var(--primary))'; // Excellent - Blue
+    if (score >= 3.0) return 'hsl(48, 95%, 55%)'; // Good - Yellow
+    return 'hsl(var(--destructive))'; // Concern - Red
   };
 
   return (
@@ -457,6 +457,12 @@ export default function TalentEvaluationClient() {
                     </div>
                 ))}
                 
+                 <div className="my-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs">
+                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-primary"></div><span>Excellent (4.0+)</span></div>
+                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm" style={{backgroundColor: 'hsl(48, 95%, 55%)'}}></div><span>Good (3.0-3.9)</span></div>
+                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-destructive"></div><span>Concern (&lt;3.0)</span></div>
+                </div>
+                
                  <div className="mt-8 prose dark:prose-invert max-w-none text-sm">
                     <h4 className="flex items-center gap-2 text-base"><HelpCircle className="h-5 w-5 text-primary" />How is this score calculated?</h4>
                     <p>The score is a data-driven output from the Axiom Cortex™ AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary <Tooltip text="Behaviorally Anchored Rating Scales: a scoring method where each rating point is tied to a concrete, observable behavior.">BARS</Tooltip> rubric, and applies calibration layers to mitigate bias. The final score is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</p>
@@ -467,7 +473,7 @@ export default function TalentEvaluationClient() {
                     <p className="text-sm font-semibold text-primary">How self-aware is the candidate?</p>
                     <div className="flex items-center gap-3 mt-3">
                         <Zap className="h-8 w-8 text-primary" />
-                        <h3 className="text-lg font-semibold text-foreground"><Tooltip text="Metacognitive Conviction Index: Assesses how well a candidate's confidence is calibrated with their knowledge.">MCI</Tooltip> Analysis</h3>
+                        <h3 className="text-lg font-semibold text-foreground"><Tooltip text="Metacognitive Conviction Index: Assesses how well a candidate's confidence is calibrated with their actual knowledge.">MCI</Tooltip> Analysis</h3>
                     </div>
                     <div className="mt-4 text-sm text-muted-foreground">Erick operates squarely in the "Honest Self-Assessment" zone. His MCI is exceptionally high due to his repeated, voluntary admissions of his knowledge boundaries. This demonstrates a precise and accurate understanding of what he knows and what he doesn't.</div>
                     <div className="mt-4 border-t border-border pt-4">
@@ -561,3 +567,4 @@ export default function TalentEvaluationClient() {
   );
 }
 
+    
