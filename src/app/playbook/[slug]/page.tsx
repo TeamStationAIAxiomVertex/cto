@@ -27,6 +27,13 @@ export default async function PlaybookPost({ params }: { params: { slug: string 
     notFound();
   }
   
+  // This check is important because custom pages might not have markdown content
+  if (!post.content) {
+      // For pages like /tco-model, this component isn't rendered,
+      // but as a fallback, we ensure we don't process empty content.
+      notFound();
+  }
+
   const contentHtml = await markdownToHtml(post.content);
 
   return (
@@ -45,3 +52,5 @@ export default async function PlaybookPost({ params }: { params: { slug: string 
     </main>
   );
 }
+
+  

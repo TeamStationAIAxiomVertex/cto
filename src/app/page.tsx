@@ -3,6 +3,12 @@ import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { Tooltip } from '@/components/Tooltip';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
+  description: 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.',
+};
 
 function ServicePill({ icon: Icon, text }: { icon: React.ElementType, text: string }) {
     return (
@@ -230,4 +236,4 @@ export default async function HomePage() {
   );
 }
 
-    
+  
