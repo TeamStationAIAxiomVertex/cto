@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
-import { Clock, Users2, FileSearch, Briefcase, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, CheckCircle, BarChart } from 'lucide-react';
+import { Clock, Users2, FileSearch, Briefcase, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, CheckCircle, BarChart, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Nearshore vs. Offshore: The Strategic Choice for CTOs | TeamStation AI',
@@ -49,7 +49,7 @@ const hiddenTaxes = [
         icon: <Zap className="h-6 w-6 text-red-400" />,
         title: "The Human Latency Tax",
         description: "This is the most significant and most often ignored cost. Assume a team of 6 engineers. A 12-hour time difference means that for every simple question, an entire workday is lost. If each engineer loses just 2 hours per day to waiting—a conservative estimate—that's 12 hours of wasted, fully-loaded engineering time every single day. At a loaded cost of $50/hour, that's $600 per day, or",
-        impact: "$132,000 per year",
+        impact: "$132,000 per year,",
         impactColor: "text-red-400",
         afterText: "evaporated into thin air. That's the cost of a senior US engineer, spent on waiting."
     },
@@ -93,14 +93,20 @@ export default async function NearshoreVsOffshorePage() {
         <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Nearshore vs. Offshore: The Strategic Choice for CTOs</h1>
       </header>
 
-      <div className="my-16 rounded-xl border bg-card p-8 md:p-12">
+      <section className="my-16 rounded-xl border bg-card p-8 md:p-12">
         <h2 className="text-center text-3xl font-bold text-foreground">Foreword: The CTO's Dilemma</h2>
-        <div className="prose prose-lg dark:prose-invert max-w-3xl mx-auto mt-6 text-center">
-            <p>You’re here because you’re under pressure. The board wants faster feature delivery. The CFO wants to cut engineering costs. Your best engineers are threatening to quit because they’re tired of 10 PM calls with a team on the other side of the world. You’ve been told that "offshore" is the answer to your budget problem, but your gut tells you it’s a trap. Your gut is right.</p>
-            <p>The traditional offshore model, built on the simple arithmetic of lower hourly rates, is a relic of a pre-agile world. It was designed for waterfall projects with long lead times and minimal need for real-time collaboration. In today's world of two-week sprints, continuous deployment, and complex, interdependent systems, that model is not just inefficient; it is actively destructive to your velocity, your culture, and your bottom line.</p>
-            <p>This guide is not another generic blog post listing the pros and cons of global talent. This is a strategic framework—a playbook—for you, the CTO, to diagnose the hidden costs bleeding your budget and the unseen risks threatening your roadmap. It is built on the Sandler methodology: we will first amplify the pain of your current situation, quantify its true financial impact, and then present a data-driven, logical solution. This is how you build a CFO-ready case for moving from a cost-centric offshore gamble to a value-driven nearshore strategy.</p>
+        <div className="mt-8 max-w-4xl mx-auto space-y-6">
+            <div className="bg-background p-6 rounded-lg border border-border/50">
+                <p className="mt-2 text-muted-foreground">You’re here because you’re under pressure. The board wants faster feature delivery. The CFO wants to cut engineering costs. Your best engineers are threatening to quit because they’re tired of <strong className="text-foreground">10 PM calls</strong> with a team on the other side of the world. You’ve been told that "offshore" is the answer to your budget problem, but your gut tells you it’s a trap. <strong className="text-primary">Your gut is right.</strong></p>
+            </div>
+            <div className="bg-background p-6 rounded-lg border border-border/50">
+                <p className="mt-2 text-muted-foreground">The traditional offshore model, built on the simple arithmetic of lower hourly rates, is a relic of a pre-agile world. It was designed for waterfall projects with long lead times and minimal need for real-time collaboration. In today's world of two-week sprints, continuous deployment, and complex, interdependent systems, that model is not just inefficient; it is <strong className="text-red-400">actively destructive</strong> to your velocity, your culture, and your bottom line.</p>
+            </div>
+             <div className="bg-background p-6 rounded-lg border border-primary/20">
+                <p className="mt-2 text-muted-foreground">This guide is not another generic blog post. This is a <strong className="text-primary">strategic framework—a playbook—</strong>for you, the CTO, to diagnose the hidden costs bleeding your budget and the unseen risks threatening your roadmap. It is built on the <strong className="text-foreground">Sandler methodology:</strong> we will first amplify the pain, quantify its true financial impact, and then present a data-driven, logical solution. This is how you build a CFO-ready case for moving from a cost-centric offshore gamble to a value-driven nearshore strategy.</p>
+            </div>
         </div>
-      </div>
+      </section>
 
       <section className="my-24">
         <h2 className="text-center text-4xl font-bold text-foreground">Part 1 (The Pain): Diagnosing the Hidden Costs of Your Outsourcing Strategy</h2>
@@ -193,7 +199,7 @@ export default async function NearshoreVsOffshorePage() {
         <div className="mt-8 max-w-4xl mx-auto space-y-6">
             <div className="bg-background p-6 rounded-lg border border-border/50">
                 <h3 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>The Fundamental Miscalculation</h3>
-                <p className="mt-2 text-muted-foreground">Most leaders compare hourly rates without calculating the second-order effects on <strong className="text-foreground">velocity</strong> and <strong className="text-foreground">risk</strong>. An engineer who costs 30% less but delivers at 50% the speed is not a bargain; they are a net loss. The "savings" are a mirage that disappears under the harsh light of a missed product deadline or a critical production outage at 2 AM.</p>
+                <p className="mt-2 text-muted-foreground">Most leaders compare hourly rates without calculating the second-order effects on <Link href="/process" className="font-semibold text-foreground hover:underline">velocity</Link> and <Link href="/trust" className="font-semibold text-foreground hover:underline">risk</Link>. An engineer who costs 30% less but delivers at 50% the speed is not a bargain; they are a net loss. The "savings" are a mirage that disappears under the harsh light of a missed product deadline or a critical production outage at 2 AM.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -208,9 +214,9 @@ export default async function NearshoreVsOffshorePage() {
             </div>
 
             <div className="bg-background p-6 rounded-lg border border-border/50">
-                 <h3 className="font-bold text-primary flex items-center gap-2"><BarChart className="h-5 w-5"/>The Strategic Decision</h3>
+                 <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Strategic Decision</h3>
                 <p className="mt-2 text-muted-foreground">The most expensive asset in your engineering organization is not your payroll, but your <strong className="text-foreground">time</strong>. Time to market, time to recovery, and the time your best engineers spend on high-value work instead of low-value coordination.</p>
-                <p className="mt-4 text-foreground">Our platform maximizes this advantage by providing not only the talent but the entire <Link href="/trust" className="text-primary font-bold hover:underline">security and operational wrapper</Link> under a single SLA. This is not about finding cheaper developers; it's about engineering a faster, safer, and more efficient way to build software. It's a strategic decision to buy back time, reduce risk, and increase the velocity of your entire engineering organization.</p>
+                <p className="mt-4 text-foreground">Our platform maximizes this advantage by providing not only the talent but the entire <Link href="/trust" className="text-primary font-bold hover:underline">security and operational wrapper</Link> under a single SLA. This is not about finding cheaper developers; it's about engineering a faster, safer, and more efficient way to build software. It's a strategic decision to <strong className="text-primary">buy back time, reduce risk, and increase the velocity</strong> of your entire engineering organization.</p>
             </div>
         </div>
     </section>
