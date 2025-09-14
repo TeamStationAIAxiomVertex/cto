@@ -49,7 +49,7 @@ export async function getPlaybookBySlug(slug: string): Promise<PlaybookPost | nu
   if (slug === 'tco-model') {
     return {
         slug: 'tco-model',
-        title: 'The Computational Cost & TCO Playbook',
+        title: 'The Computational Cost & TCO Playbook | TeamStation AI',
         description: 'A CFO-grade analysis of the true Total Cost of Ownership (TCO) of engineering teams, presented in Sandler-style "Computational Cost" cards.',
         content: ''
     };

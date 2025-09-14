@@ -298,7 +298,7 @@ export default function TCOModelPage() {
         ))}
       </div>
 
-       <div className="my-16 rounded-lg border bg-card p-6">
+       <div className="my-16 rounded-xl border bg-card p-6">
             <h3 className="text-xl font-bold text-foreground">Variables for Estimation</h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {legend.map(item => <span key={item} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{item}</span>)}
