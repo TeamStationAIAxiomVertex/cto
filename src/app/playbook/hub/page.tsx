@@ -288,7 +288,7 @@ export default async function PlaybookHub() {
       {categories.map(category => (
         <section key={category} className={`my-16 rounded-xl border p-8 ${categoryColors[category] || 'bg-card'}`}>
           <h2 className="text-3xl font-bold text-center mb-8">{category}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-4xl mx-auto">
             {crisisScenarios.filter(s => s.category === category).map(scenario => (
               <div key={scenario.pain.toString()} className="group relative flex flex-col rounded-lg border bg-background/50 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                 <div className="flex items-start justify-between">
