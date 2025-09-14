@@ -16,7 +16,7 @@ const costCards = [
       "icon": <DollarSign className="h-8 w-8 text-primary" />,
       "problem": "U.S. senior salaries look manageable… until benefits, taxes, tools, and overhead land on the P&L.",
       "solution": "Replace/augment seats with nearshore seniors at $6,800/mo all-in under one SLA.",
-      "formula": "Savings/yr = ((Salary * (1 + burden)) / 12 - NearshoreFee) * 12",
+      "formula": "SavingsYr = ((Salary * (1 + burden)) / 12 - NearshoreFee) * 12",
       "example_inputs": {
         "Salary": 120000,
         "burden": 0.3,
@@ -225,13 +225,13 @@ export default function TCOModelPage() {
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / 
         <Link href="/playbook" className="hover:text-foreground">CTO Playbook</Link> / 
-        <span>Computational Cost & TCO Playbook</span>
+        <span>TCO Model</span>
       </div>
 
       <header className="my-8 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">The Computational Cost & TCO Playbook</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">Beyond Salary: The True Cost of Your Engineering Team</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-          A CFO-grade analysis of the true Total Cost of Ownership (TCO) of engineering teams, presented in Sandler-style "Computational Cost" cards.
+         This isn't just a cost breakdown; it's a strategic tool. Use these data-driven cards to model the hidden costs of hiring, delays, and quality issues, and build a CFO-ready business case to turn your engineering organization into a value driver.
         </p>
       </header>
       
@@ -284,13 +284,11 @@ export default function TCOModelPage() {
                             </div>
                         </div>
                         {card.proof_note && <p className="text-xs text-muted-foreground mt-3 italic">{card.proof_note}</p>}
-                         {card.learn_more_href && (
-                            <Link href={card.learn_more_href} className="text-xs text-primary hover:underline mt-3 block">
-                                Learn more <ArrowRight className="inline h-3 w-3"/>
-                            </Link>
-                        )}
                     </div>
                 </div>
+                 <Link href={card.learn_more_href} className="mt-4 flex items-center text-sm font-semibold text-primary hover:underline">
+                    Learn more <ArrowRight className="inline h-4 w-4 ml-1"/>
+                </Link>
 
                  <div className="mt-6 text-sm text-center font-semibold text-primary/90 border-t border-border/50 pt-4">
                     <span className="font-bold not-italic">Question: </span>
@@ -301,12 +299,11 @@ export default function TCOModelPage() {
       </div>
 
        <div className="my-16 rounded-lg border bg-card p-6">
-            <h3 className="text-xl font-bold text-foreground">Tiny Legend (Variables for Estimation)</h3>
+            <h3 className="text-xl font-bold text-foreground">Variables for Estimation</h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {legend.map(item => <span key={item} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{item}</span>)}
             </div>
        </div>
-
     </main>
   );
 }
