@@ -17,10 +17,10 @@ import dynamic from 'next/dynamic';
 import { Tooltip } from '@/components/Tooltip';
 
 const cognitiveData = [
-    { name: 'Architectural Instinct', pain: "Can they design for scale, or just for today?", candidate: 4.3, ideal: 4.5, stars: '★★★★☆', bar: '████████░░', rationale: "Erick's architectural instinct is strong. He correctly navigates monolith vs. microservices trade-offs (Q1), proposes a 'contract-first' API strategy (Q2), and, most impressively, demonstrated a powerful architectural mind by inventing the 'micro prompts' analogy (Q4). This shows he can apply architectural principles to novel domains like AI, even without knowing the specific terminology. His score reflects this high-level reasoning, moderated slightly by the need for some prompting on specific resiliency patterns." },
-    { name: 'Problem-Solving Agility', pain: "Do they freeze on novel problems or adapt?", candidate: 4.6, ideal: 4.0, stars: '★★★★☆', bar: '█████████░', rationale: "Erick's PSA is a significant strength. He showcased remarkable adaptability in the prompt engineering discussion (Q4), quickly grasping the interviewer's 'microservices' analogy and synthesizing it into a new, valid concept ('micro prompts'). This ability to pivot and apply existing mental models to new problems is a hallmark of agile thinking. His solution to the complex stakeholder problem (Q7) further confirms his ability to deconstruct and solve multifaceted challenges." },
-    { name: 'Learning Orientation', pain: "Are they coachable or a know-it-all?", candidate: 5.0, ideal: 5.0, stars: '★★★★★', bar: '██████████', rationale: "This is Erick's strongest trait and a powerful positive signal. His score is a perfect 5.0, supported by a high MCI score and 4 distinct authenticityIncidents. He proactively and honestly stated his limitations in error handling (Q1, Q5), creating security architecture from scratch (Q2), and Infrastructure as Code (Q6). This intellectual honesty is a critical predictor of coachability and rapid growth, making him an excellent investment." },
-    { name: 'Collaborative Mindset', pain: "Are they a team-player or a lone wolf?", candidate: 4.4, ideal: 4.0, stars: '★★★★☆', bar: '████████░░', rationale: "Erick's score is driven by the powerful behavioral example in Q7. He demonstrated extreme ownership and empathy by positioning himself as a 'bridge between the stakeholders and the developments' to protect his team and improve project outcomes. He explicitly discussed translating technical concepts for non-technical stakeholders, a key collaborative skill. His ownershipRatio was balanced, reflecting a healthy mix of individual accountability and team-oriented thinking." },
+    { name: 'Architectural Instinct', pain: "Can they design for scale, or just for today?", candidate: 4.3, ideal: 4.5, rationale: "Erick's architectural instinct is strong. He correctly navigates monolith vs. microservices trade-offs (Q1), proposes a 'contract-first' API strategy (Q2), and, most impressively, demonstrated a powerful architectural mind by inventing the 'micro prompts' analogy (Q4). This shows he can apply architectural principles to novel domains like AI, even without knowing the specific terminology. His score reflects this high-level reasoning, moderated slightly by the need for some prompting on specific resiliency patterns." },
+    { name: 'Problem-Solving Agility', pain: "Do they freeze on novel problems or adapt?", candidate: 4.6, ideal: 4.0, rationale: "Erick's PSA is a significant strength. He showcased remarkable adaptability in the prompt engineering discussion (Q4), quickly grasping the interviewer's 'microservices' analogy and synthesizing it into a new, valid concept ('micro prompts'). This ability to pivot and apply existing mental models to new problems is a hallmark of agile thinking. His solution to the complex stakeholder problem (Q7) further confirms his ability to deconstruct and solve multifaceted challenges." },
+    { name: 'Learning Orientation', pain: "Are they coachable or a know-it-all?", candidate: 5.0, ideal: 5.0, rationale: "This is Erick's strongest trait and a powerful positive signal. His score is a perfect 5.0, supported by a high MCI score and 4 distinct authenticityIncidents. He proactively and honestly stated his limitations in error handling (Q1, Q5), creating security architecture from scratch (Q2), and Infrastructure as Code (Q6). This intellectual honesty is a critical predictor of coachability and rapid growth, making him an excellent investment." },
+    { name: 'Collaborative Mindset', pain: "Are they a team-player or a lone wolf?", candidate: 4.4, ideal: 4.0, rationale: "Erick's score is driven by the powerful behavioral example in Q7. He demonstrated extreme ownership and empathy by positioning himself as a 'bridge between the stakeholders and the developments' to protect his team and improve project outcomes. He explicitly discussed translating technical concepts for non-technical stakeholders, a key collaborative skill. His ownershipRatio was balanced, reflecting a healthy mix of individual accountability and team-oriented thinking." },
 ];
 
 const risks = [
@@ -32,14 +32,14 @@ const risks = [
     },
     {
         title: 'Unfamiliarity with Standard Prompt Engineering Terminology',
-        description: 'While demonstrating strong conceptual reasoning about prompt architecture (Q4), he is not familiar with the industry-standard lexicon (e.g., Chain-of-Thought, Few-Shot). This could create a minor communication gap initially.',
-        mitigation: 'This is a low-risk factor given his strong underlying reasoning. Provide him with internal best-practice documents and playbooks on advanced prompt engineering patterns. His high LO and demonstrated ability to grasp analogies suggest he will map his innate understanding to the standard terminology very quickly.',
+        description: "While demonstrating strong conceptual reasoning about prompt architecture (Q4), he is not familiar with the industry-standard lexicon (e.g., Chain-of-Thought, Few-Shot). This could create a minor communication gap initially.",
+        mitigation: "This is a low-risk factor given his strong underlying reasoning. Provide him with internal best-practice documents and playbooks on advanced prompt engineering patterns. His high LO and demonstrated ability to grasp analogies suggest he will map his innate understanding to the standard terminology very quickly.",
         proof: "Evidence: Q4 Transcript - Initial confusion between 'training' and 'prompting'."
     },
     {
         title: 'Lack of Infrastructure as Code (IaC) Experience',
         description: 'He explicitly stated he has not had much exposure to IaC (e.g., Terraform, CloudFormation).',
-        mitigation: 'This is a lower-priority risk for a full-stack role but should be addressed for senior-level growth. Enroll him in a self-paced online course for AWS CDK or Terraform. Involve him in peer reviews of IaC changes to build familiarity.',
+        mitigation: "This is a lower-priority risk for a full-stack role but should be addressed for senior-level growth. Enroll him in a self-paced online course for AWS CDK or Terraform. Involve him in peer reviews of IaC changes to build familiarity.",
         proof: "Evidence: Q6 Transcript - 'Not so much. I want to have that exposure, that experience.'"
     }
 ]
@@ -400,7 +400,7 @@ export default function TalentEvaluationClient() {
 
   const getBarColor = (score: number) => {
     if (score >= 4.0) return 'hsl(var(--primary))'; // Excellent - Blue
-    if (score >= 3.0) return 'hsl(48, 95%, 55%)'; // Good - Yellow
+    if (score >= 3.0) return 'hsl(var(--chart-2))'; // Good - Yellow
     return 'hsl(var(--destructive))'; // Concern - Red
   };
 
@@ -428,7 +428,7 @@ export default function TalentEvaluationClient() {
             <div className="mt-4 text-sm text-muted-foreground space-y-2">
                  <p><strong>Final Score: 4.6 / 5.0</strong> (Country: Mexico)</p>
                  <p>This recommendation is based on a comprehensive analysis that reveals Erick as a high-potential senior engineer with a robust technical foundation and exceptional cognitive traits. He demonstrates deep, modern expertise in frontend performance engineering and a solid grasp of backend architectural principles.</p>
-                 <p>While he may not use standard industry jargon for every concept, particularly in prompt engineering, his ability to reason from first principles and arrive at architecturally sound, analogous solutions (e.g., "micro prompts") is a powerful indicator of a superior mental model. This, combined with a perfect score in Learning Orientation—evidenced by his consistent intellectual honesty—and a proven collaborative mindset, makes him a prime candidate. He passed all Core Competency Gates, and his profile strongly suggests he will not only excel in the role but also rapidly evolve into a key technical leader.</p>
+                 <p>While he may not use standard industry jargon for every concept, particularly in prompt engineering, his ability to reason from first principles and arrive at architecturally sound, analogous solutions is a powerful indicator of a superior mental model. This, combined with a perfect score in Learning Orientation—evidenced by his consistent intellectual honesty—and a proven collaborative mindset, makes him a prime candidate. He passed all Core Competency Gates, and his profile strongly suggests he will not only excel in the role but also rapidly evolve into a key technical leader.</p>
             </div>
              <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: All Core Competency Gates Passed</p>
         </div>
@@ -443,7 +443,10 @@ export default function TalentEvaluationClient() {
                             <BrainCircuit className="h-8 w-8 text-primary" />
                             <h3 className="text-lg font-semibold text-foreground">{trait.name}</h3>
                         </div>
-                        <div className="mt-4 text-sm text-muted-foreground">{trait.rationale}</div>
+                        <div className="mt-4 text-sm text-muted-foreground">{trait.rationale.replace('PSA', '').replace('LO', '')}
+                            {trait.rationale.includes('PSA') && <Tooltip text="Problem-Solving Agility">PSA</Tooltip>}
+                            {trait.rationale.includes('LO') && <Tooltip text="Learning Orientation">LO</Tooltip>}
+                        </div>
 
                         <div className="mt-4 border-t border-border pt-4">
                             <h4 className="font-semibold text-foreground">Proof:</h4>
@@ -459,13 +462,13 @@ export default function TalentEvaluationClient() {
                 
                  <div className="my-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs">
                     <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-primary"></div><span>Excellent (4.0+)</span></div>
-                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm" style={{backgroundColor: 'hsl(48, 95%, 55%)'}}></div><span>Good (3.0-3.9)</span></div>
+                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm" style={{backgroundColor: 'hsl(var(--chart-2))'}}></div><span>Good (3.0-3.9)</span></div>
                     <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-destructive"></div><span>Concern (&lt;3.0)</span></div>
                 </div>
                 
                  <div className="mt-8 prose dark:prose-invert max-w-none text-sm">
                     <h4 className="flex items-center gap-2 text-base"><HelpCircle className="h-5 w-5 text-primary" />How is this score calculated?</h4>
-                    <p>The score is a data-driven output from the Axiom Cortex™ AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary <Tooltip text="Behaviorally Anchored Rating Scales: a scoring method where each rating point is tied to a concrete, observable behavior.">BARS</Tooltip> rubric, and applies calibration layers to mitigate bias. The final score is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</p>
+                    <p>The score is a data-driven output from the Axiom Cortex™ AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary <Tooltip text="Behaviorally Anchored Rating Scales: a scoring method that ties numerical ratings to specific, observable behaviors.">BARS</Tooltip> rubric, and applies calibration layers to mitigate bias. The final score is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</p>
                 </div>
             </div>
             <div className="mt-8 pt-6 border-t border-border">
@@ -475,7 +478,7 @@ export default function TalentEvaluationClient() {
                         <Zap className="h-8 w-8 text-primary" />
                         <h3 className="text-lg font-semibold text-foreground"><Tooltip text="Metacognitive Conviction Index: Assesses how well a candidate's confidence is calibrated with their actual knowledge.">MCI</Tooltip> Analysis</h3>
                     </div>
-                    <div className="mt-4 text-sm text-muted-foreground">Erick operates squarely in the "Honest Self-Assessment" zone. His MCI is exceptionally high due to his repeated, voluntary admissions of his knowledge boundaries. This demonstrates a precise and accurate understanding of what he knows and what he doesn't.</div>
+                    <div className="mt-4 text-sm text-muted-foreground">Erick operates squarely in the "Honest Self-Assessment" zone. His <Tooltip text="Metacognitive Conviction Index">MCI</Tooltip> is exceptionally high due to his repeated, voluntary admissions of his knowledge boundaries. This demonstrates a precise and accurate understanding of what he knows and what he doesn't.</div>
                     <div className="mt-4 border-t border-border pt-4">
                         <h4 className="font-semibold text-foreground">Proof:</h4>
                         <div className="my-2 p-2 rounded bg-background font-mono text-xs text-center">
@@ -493,7 +496,9 @@ export default function TalentEvaluationClient() {
                 {risks.map((risk, index) => (
                      <div key={index} className="rounded-lg border bg-background p-4">
                         <p className="text-sm font-semibold text-destructive">The Pain: {risk.title}</p>
-                        <p className="mt-3 text-sm text-muted-foreground">{risk.description}</p>
+                        <p className="mt-3 text-sm text-muted-foreground">{risk.description.replace('IaC', '')}
+                            {risk.description.includes('IaC') && <Tooltip text="Infrastructure as Code">IaC</Tooltip>}
+                        </p>
                         <div className="mt-4 border-t border-border pt-4">
                            <h4 className="font-semibold text-primary">The Solution (Mitigation Plan)</h4>
                            <p className="text-sm text-foreground m-0">{risk.mitigation.replace('IaC', '').replace('LO', '')}
@@ -522,7 +527,7 @@ export default function TalentEvaluationClient() {
                 </Accordion>
              </div>
              <div className="text-center mt-8">
-                <Link href="https://teamstation.dev/technical-interview-evaluation" className="font-semibold text-primary hover:underline">
+                <Link href="https://teamstation.dev/process" className="font-semibold text-primary hover:underline">
                     Learn About Our Full Evaluation Process <ArrowRight className="inline h-4 w-4" />
                 </Link>
               </div>
@@ -547,7 +552,7 @@ export default function TalentEvaluationClient() {
               {faqs.map(faq => (
                 <div key={faq.question}>
                   <h4 className="font-semibold text-foreground">{faq.question}</h4>
-                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: faq.answer }}></p>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: faq.answer.replace('Axiom Cortex™', '<a href="/research/hub/axiom-cortex-scientific-report" class="text-primary hover:underline">Axiom Cortex™</a>').replace('Evidence Locker', '<a href="#evidence-locker" class="text-primary hover:underline">Evidence Locker</a>') }}></p>
                 </div>
               ))}
             </div>
@@ -567,4 +572,3 @@ export default function TalentEvaluationClient() {
   );
 }
 
-    
