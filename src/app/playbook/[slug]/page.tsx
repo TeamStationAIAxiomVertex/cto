@@ -39,7 +39,7 @@ export default async function PlaybookPost({ params }: { params: { slug: string 
   return (
     <main className="container max-w-4xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook" className="hover:text-foreground">CTO Playbook</Link> / <span>{post.title}</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook/hub" className="hover:text-foreground">CTO Playbook</Link> / <span>{post.title}</span>
       </div>
 
       <header className="my-8">

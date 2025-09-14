@@ -11,7 +11,7 @@ const navItems = {
     { href: '/playbook/latam-economics', title: 'LATAM Economics', description: 'A CFO-ready framework for modeling nearshore TCO.' },
     { href: '/playbook/build-vs-buy', title: 'Build vs. Buy', description: 'The trade-offs of building a nearshore operation from scratch.' },
     { href: '/playbook/bias-free-technical-hiring-axiom-cortex', title: 'Bias-Free Hiring', description: 'How to use Axiom Cortex™ for fairer, more accurate hiring.' },
-    { href: '/trust', title: 'Security & Compliance', description: 'The playbook for audit-ready nearshore operations.' },
+    { href: '/playbook/hub/vendor-risk-model', title: 'Vendor Risk Model', description: 'An objective analysis of nearshore IT staff augmentation vendors.' },
   ],
   'What\'s Included': [
     { href: '/platform', title: 'Our Platform', description: 'The Nearshore IT Co-Pilot™ Platform.'},

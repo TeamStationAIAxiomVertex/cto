@@ -17,6 +17,7 @@ export function Footer() {
         { href: '/platform', label: 'Platform' },
         { href: '/process', label: 'Our Process' },
         { href: '/technical-interview-evaluation', label: 'Talent Evaluations' },
+        { href: '/research/performance-evaluation-framework', label: 'Performance Framework' },
         { href: '/services/integrated-services', label: 'Integrated Services' },
         { href: '/services/talent-onboarding', label: 'Talent Onboarding' },
       ],
