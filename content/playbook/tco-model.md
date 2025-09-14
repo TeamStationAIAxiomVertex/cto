@@ -1,7 +1,7 @@
 ---
 slug: 'tco-model'
-title: 'The Computational Cost & TCO Playbook | TeamStation AI'
-description: 'A CFO-grade analysis of the true Total Cost of Ownership (TCO) of engineering teams, presented in Sandler-style "Computational Cost" cards.'
+title: 'CTO SEO Battle Map (v2 - Aligned with Live Site)'
+description: 'This document outlines the strategic alignment of our content with target keywords, user intent, and our current URL structure. It serves as the master plan for our organic growth initiatives.'
 ---
 
 ## SEO Battle Map (v2 - Aligned with Live Site)
