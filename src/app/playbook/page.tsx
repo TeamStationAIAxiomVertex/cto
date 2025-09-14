@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import { ArrowRight, BookOpen, GitCompare, Scale, ShieldCheck, UserCheck, Zap, Layers, TestTube2, Server, Database, BrainCircuit, GanttChartSquare, DollarSign, Users, Clock, AlertTriangle, MessageSquare, Briefcase, GitBranch, Tv, BarChart, FileLock, Users2, FileText, FileSearch } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -22,8 +23,8 @@ const crisisScenarios = [
   },
   {
     category: 'Velocity & Delivery',
-    pain: 'How many days did you burn waiting for a ‘LGTM’?',
-    problem: 'One question → one day lost. PR reviews stretch for a week, blocking progress.',
+    pain: <>How many days did you burn waiting for a ‘<Tooltip text="Looks Good To Me">LGTM</Tooltip>’?</>,
+    problem: 'One question → one day lost. PR reviews stretch a week, blocking progress.',
     solutionHref: '/process',
     solutionLabel: 'Implement same-day PR review SLAs.',
     icon: <GitCompare className="h-8 w-8" />,
@@ -289,7 +290,7 @@ export default async function PlaybookHub() {
           <h2 className="text-3xl font-bold text-center mb-8">{category}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {crisisScenarios.filter(s => s.category === category).map(scenario => (
-              <div key={scenario.pain} className="group flex flex-col rounded-lg border bg-background/50 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+              <div key={scenario.pain.toString()} className="group flex flex-col rounded-lg border bg-background/50 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                 <div className="flex items-start justify-between">
                   <div className="text-primary">{scenario.icon}</div>
                   <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1">{scenario.proof}</p>
