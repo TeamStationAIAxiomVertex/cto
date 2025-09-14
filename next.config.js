@@ -5,11 +5,7 @@
 const breakGlass = process.env.BREAK_GLASS === '1';
 
 const nextConfig = {
-    output: 'export',
-    // Optional: Add a trailing slash to all paths `/about` -> `/about/`
-    // trailingSlash: true,
-    // Optional: Change the output directory `out` -> `dist`
-    // distDir: 'dist',
+    // No 'output: "export"' here for App Hosting (SSR/ISR)
     images: {
         unoptimized: true,
         remotePatterns: [
