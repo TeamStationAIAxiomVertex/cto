@@ -17,13 +17,11 @@ import dynamic from 'next/dynamic';
 import { Tooltip } from '@/components/Tooltip';
 
 const cognitiveData = [
-    { name: 'Architectural Instinct', candidate: 4.3, ideal: 4.5, stars: '★★★★☆', bar: '████████░░' },
-    { name: 'Problem-Solving Agility', candidate: 4.6, ideal: 4.0, stars: '★★★★☆', bar: '█████████░' },
-    { name: 'Learning Orientation', candidate: 5.0, ideal: 5.0, stars: '★★★★★', bar: '██████████' },
-    { name: 'Collaborative Mindset', candidate: 4.4, ideal: 4.0, stars: '★★★★☆', bar: '████████░░' },
+    { name: 'Architectural Instinct', candidate: 4.3, ideal: 4.5, stars: '★★★★☆', bar: '████████░░', rationale: "Erick's architectural instinct is strong. He correctly navigates monolith vs. microservices trade-offs (Q1), proposes a 'contract-first' API strategy (Q2), and, most impressively, demonstrated a powerful architectural mind by inventing the 'micro prompts' analogy (Q4). This shows he can apply architectural principles to novel domains like AI, even without knowing the specific terminology. His score reflects this high-level reasoning, moderated slightly by the need for some prompting on specific resiliency patterns." },
+    { name: 'Problem-Solving Agility', candidate: 4.6, ideal: 4.0, stars: '★★★★☆', bar: '█████████░', rationale: "Erick's PSA is a significant strength. He showcased remarkable adaptability in the prompt engineering discussion (Q4), quickly grasping the interviewer's 'microservices' analogy and synthesizing it into a new, valid concept ('micro prompts'). This ability to pivot and apply existing mental models to new problems is a hallmark of agile thinking. His solution to the complex stakeholder problem (Q7) further confirms his ability to deconstruct and solve multifaceted challenges." },
+    { name: 'Learning Orientation', candidate: 5.0, ideal: 5.0, stars: '★★★★★', bar: '██████████', rationale: "This is Erick's strongest trait and a powerful positive signal. His score is a perfect 5.0, supported by a high MCI score and 4 distinct authenticityIncidents. He proactively and honestly stated his limitations in error handling (Q1, Q5), creating security architecture from scratch (Q2), and Infrastructure as Code (Q6). This intellectual honesty is a critical predictor of coachability and rapid growth, making him an excellent investment." },
+    { name: 'Collaborative Mindset', candidate: 4.4, ideal: 4.0, stars: '★★★★☆', bar: '████████░░', rationale: "Erick's score is driven by the powerful behavioral example in Q7. He demonstrated extreme ownership and empathy by positioning himself as a 'bridge between the stakeholders and the developments' to protect his team and improve project outcomes. He explicitly discussed translating technical concepts for non-technical stakeholders, a key collaborative skill. His ownershipRatio was balanced, reflecting a healthy mix of individual accountability and team-oriented thinking." },
 ];
-
-const mciScore = 3.5;
 
 const risks = [
     {
@@ -45,7 +43,7 @@ const risks = [
 
 const evidenceLocker = [
     {
-        title: 'Question 1: "Consider a high-throughput Python backend service that processes real-time ad impressions from various sources. If this service needs to perform multiple I/O-bound operations (like calling external ad exchanges, fetching user profiles from a database, and logging to an analytics service) for each impression, how would you architect this service to handle millions of requests per second efficiently? Discuss specific design patterns and Python constructs you\'d leverage, and how you\'d manage potential bottlenecks or failures in upstream/downstream services."',
+        title: 'Question 1: "Consider a high-throughput Python backend service that processes real-time ad impressions from various sources..."',
         content: (
             <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -94,7 +92,7 @@ const evidenceLocker = [
         )
     },
     {
-        title: 'Question 2: "When designing a public-facing REST API for a new media planning feature, beyond basic data validation, what are your top two strategic considerations for ensuring long-term API evolvability and robust security? How would you communicate and enforce these design principles across a team of engineers?"',
+        title: 'Question 2: "When designing a public-facing REST API for a new media planning feature..."',
         content: (
              <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -109,7 +107,7 @@ const evidenceLocker = [
 
                 <h4>Evidence Locker (Full, Untruncated Transcript Citation)</h4>
                 <blockquote>
-                "Well, there is several ways to follow, but I think you asked about my top one things to do. I will say that I have two strategies. There is contract first in backend. I mean, with compatible versioning. For example, maybe if I'm using an LLM or I'm trying to connect with some gen AI, for example, open AI, I will design or add every change in open AI spec first before of all. Also, like I mentioned before, version through media types. Like I say before, we have a version one to try to land all the ideas in our contract... and versioning across to version two with something more filter stuff... About security. There is a lot of stuff, but maybe I think that is called zero trust. Zero trust about, for example, out hand or out C or out zero... [Interviewer: I think you're talking about authorization versus authentication, right?] Yeah. Okay. Yeah, that's good... About resource level. I'm not pretty sure about that... Usually when I arrive to a new team, all of those kinds of stuff is already created because the security is the first thing that every team has first. And I choose on charge to maintain or to add, but I did not have the opportunity to create something from scratch."
+                "I will say that I have two strategies. There is contract first in backend. I mean, with compatible versioning... maybe if I'm using an LLM... I will design or add every change in open AI spec first before of all. Also, like I mentioned before, version through media types... About security. There is a lot of stuff, but maybe I think that is called zero trust. Zero trust about, for example, out hand or out C or out zero... [Interviewer: I think you're talking about authorization versus authentication, right?] Yeah. Okay. Yeah, that's good... About resource level. I'm not pretty sure about that... I did not have the opportunity to create something from scratch."
                 </blockquote>
 
                 <h4>Ghostevidence & Must-Have Alignment</h4>
@@ -138,7 +136,7 @@ const evidenceLocker = [
         )
     },
     {
-        title: 'Question 3: "Imagine our TeamStation AI frontend dashboard needs to display real-time campaign performance data, potentially involving thousands of data points and complex visualizations, while still allowing users to interact smoothly. How would you architect the React application\'s state management and component structure to ensure high performance and responsiveness, avoiding common pitfalls like unnecessary re-renders or large state objects? Discuss techniques for optimizing rendering and data flow."',
+        title: 'Question 3: "Imagine our TeamStation AI frontend dashboard needs to display real-time campaign performance data..."',
         content: (
             <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -153,7 +151,7 @@ const evidenceLocker = [
                 
                 <h4>Evidence Locker (Full, Untruncated Transcript Citation)</h4>
                 <blockquote>
-                "I think I have maybe an answer for that. The virtualization could be the key here. We could also connect to a web socket that is streaming huge data... For example, if we use Redux... I will virtualize that information. I mean, I will just show to the user the information that he just want to see in that specific moment... But using virtualization to have the data prepared before to render... I think that I will combine very good the react.memo, use memo hooks, use callback hooks, use effects dependencies and unbounce listeners to try to... I prefer to write first, maybe half second or one second, trigger the call or trigger the filter and arrive the information just to try to avoid the lockdown application... [Lazy loading?] Yeah. Lazy loading also could have a cool increase or performance... For example, in this specific case, I told you Redux for that. Redux is not a good tool for performance. I think that I could change for React Query or Sustan RTK or KTR. I don't remember, but it's Sustan."
+                "I think I have maybe an answer for that. The virtualization could be the key here. We could also connect to a web socket... I will virtualize that information. I mean, I will just show to the user the information that he just want to see... But using virtualization to have the data prepared before to render... I think that I will combine very good the react.memo, use memo hooks, use callback hooks... For example, in this specific case, I told you Redux for that. Redux is not a good tool for performance. I think that I could change for React Query or Sustan RTK or KTR. I don't remember, but it's Sustan."
                 </blockquote>
 
                 <h4>Ghostevidence & Must-Have Alignment</h4>
@@ -163,7 +161,7 @@ const evidenceLocker = [
                 <p><strong>Keen problem-solving skills:</strong> MET.<br/>
                 <strong>Ghostevidence:</strong> He immediately identifies the core problem (rendering too much data) and proposes the primary solution (virtualization) before layering on other optimizations.<br/>
                 <strong>Explanation:</strong> This demonstrates a clear, prioritized problem-solving approach, tackling the biggest issue first.</p>
-                
+
                 <h4>Linguistic & NLP Analysis (UCE v29.2 "Inquisitor Prime")</h4>
                 <p>The candidate's self-correction regarding state management ("I told you Redux for that. Redux is not a good tool for performance. I think that I could change for React Query or Sustan...") is a powerful positive signal. It shows he is thinking critically in real-time and is not afraid to refine his answer towards a better solution. His recall of "Sustan" for Zustand is a minor phonetic error that is ignored by the UCE in favor of the correct conceptual identification.</p>
                 
@@ -182,7 +180,7 @@ const evidenceLocker = [
         )
     },
     {
-        title: 'Question 4: "Our TeamStation AI leverages LLMs significantly. When integrating an LLM into a critical business workflow – for instance, automatically generating nuanced budget allocation recommendations – what advanced prompt engineering strategies would you employ to ensure not just correct, but optimal, unbiased, and contextually appropriate outputs? How would you establish and measure the \'goodness\' of these AI-generated recommendations beyond simple accuracy, and how would you iterate on the LLM\'s performance in production?"',
+        title: 'Question 4: "Our TeamStation AI leverages LLMs significantly. When integrating an LLM into a critical business workflow..."',
         content: (
             <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -226,8 +224,8 @@ const evidenceLocker = [
             </div>
         )
     },
-    {
-        title: 'Question 5: "Let\'s design a critical new capability for TeamStation AI: \'Predictive Audience Segmentation.\' ... Walk me through, conceptually, the entire full-stack system architecture – from how the user interacts with the UI, to backend processing, data storage (considering different types of data), AI model inference, and delivering insights back to the user. Focus on technical choices, inter-service communication, error handling, data consistency, and how you\'d ensure both scalability and data privacy given the sensitive nature of audience data."',
+     {
+        title: 'Question 5: "Let\'s design a critical new capability for TeamStation AI: \'Predictive Audience Segmentation\'..."',
         content: (
              <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -273,7 +271,7 @@ const evidenceLocker = [
         )
     },
     {
-        title: 'Question 6: "For a senior engineer, it\'s not just about writing tests, but strategizing them. Describe your philosophy for building a comprehensive testing suite (unit, integration, and end-to-end) for a full-stack advertising platform, and how you would integrate this into a robust CI/CD pipeline to ensure high code quality, rapid deployments, and minimal production incidents. Given our reliance on Docker and Kubernetes for deployments, what specific considerations or practices do you find most effective at a senior level for continuous delivery in such an environment?"',
+        title: 'Question 6: "For a senior engineer, it\'s not just about writing tests, but strategizing them..."',
         content: (
             <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -318,7 +316,7 @@ const evidenceLocker = [
         )
     },
     {
-        title: 'Question 7: "As a senior full-stack engineer, your role extends beyond coding to driving initiatives and mentoring. Describe a situation where you proactively identified a significant technical debt or a critical performance bottleneck in a project and led the effort to address it within an Agile framework. What was your approach to influencing the team and stakeholders, and what was the ultimate impact on the product or team?"',
+        title: 'Question 7: "As a senior full-stack engineer, your role extends beyond coding to driving initiatives and mentoring..."',
         content: (
              <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -368,20 +366,23 @@ const DynamicBarChart = dynamic(() => Promise.resolve(BarChart), { ssr: false })
 export default function TalentEvaluationClient() {
 
   const getBarColor = (score: number) => {
-    if (score >= 4.0) return 'hsl(var(--primary))'; // Excellent
-    if (score >= 3.0) return 'hsl(var(--accent))'; // Good
-    return 'hsl(var(--destructive))'; // Concern
+    if (score >= 4.0) return 'hsl(var(--primary))'; // Excellent - Blue
+    if (score >= 3.0) return 'hsl(48, 95%, 55%)'; // Good - Yellow
+    return 'hsl(var(--destructive))'; // Concern - Red
   };
 
   return (
     <main className="container max-w-4xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / 
-        <Link href="/research/hub" className="hover:text-foreground">Research</Link> / 
-        <span>Talent Evaluation Report</span>
+        <Link href="/process" className="hover:text-foreground">Process</Link> / 
+        <span>Talent Evaluations</span>
       </div>
       <header className="my-8">
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Technical Talent Evaluation Report: Erick [...] for Full-Stack Engineer</h1>
+        <p className="mt-4 text-lg text-muted-foreground">
+          This is a real (anonymized) evaluation report generated by our <Link href="/research/hub/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™ Cognitive AI</Link> engine. It's how we move beyond resumes to provide auditable proof of a candidate's ability to solve your problems.
+        </p>
       </header>
       
       <div className="my-12 space-y-8">
@@ -402,7 +403,7 @@ export default function TalentEvaluationClient() {
                 <p className="text-sm text-muted-foreground mt-2">This visualization maps the candidate's four latent traits against the ideal profile for this role.</p>
                  <div className="my-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs">
                     <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-primary"></div><span>Excellent (4.0+)</span></div>
-                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm" style={{backgroundColor: 'hsl(var(--accent))'}}></div><span>Good (3.0-3.9)</span></div>
+                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm" style={{backgroundColor: 'hsl(48, 95%, 55%)'}}></div><span>Good (3.0-3.9)</span></div>
                     <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-destructive"></div><span>Concern (&lt;3.0)</span></div>
                 </div>
                 <div style={{ height: 300 }}>
@@ -423,7 +424,17 @@ export default function TalentEvaluationClient() {
                     </DynamicBarChart>
                     </ResponsiveContainer>
                 </div>
-                <div className="mt-4 prose dark:prose-invert max-w-none">
+
+                <div className="mt-4 space-y-4">
+                  {cognitiveData.map(trait => (
+                    <div key={trait.name} className="pt-4 border-t border-border/50">
+                      <h4 className="font-bold">{trait.name}</h4>
+                      <p className="text-sm text-muted-foreground m-0">{trait.rationale}</p>
+                    </div>
+                  ))}
+                </div>
+
+                 <div className="mt-8 prose dark:prose-invert max-w-none">
                     <h4 className="flex items-center gap-2"><HelpCircle className="h-5 w-5 text-primary" />How is this score calculated?</h4>
                     <p>The score is not a subjective judgment. It's a data-driven output from the Axiom Cortex™ AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary BARS rubric (Behaviorally Anchored Rating Scales), and applies calibration layers to mitigate bias. The final score for each trait is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</p>
                 </div>
@@ -478,10 +489,18 @@ export default function TalentEvaluationClient() {
             </div>
              <div className="text-center mt-8">
                 <Link href="/process" className="font-semibold text-primary hover:underline">
-                    See Our Full Process <ArrowRight className="inline h-4 w-4" />
+                    See Our Full Evaluation Process <ArrowRight className="inline h-4 w-4" />
                 </Link>
               </div>
         </div>
+
+         <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+            <h2 className="text-2xl font-bold">Ready to De-Risk Your Hiring?</h2>
+            <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+                Stop sifting through unqualified resumes. Let us provide you with a shortlist of 2-3 elite, pre-vetted candidates ready to make an impact.
+            </p>
+            <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
+          </div>
       </div>
     </main>
   );

@@ -9,26 +9,10 @@ description: 'A detailed, CFO-grade Total Cost of Ownership (TCO) model to compa
 This model provides a comprehensive comparison between a typical multi-vendor/offshore setup and TeamStation AI's single-SLA, all-inclusive platform. It accounts for direct fees as well as the critical "hidden taxes" (management overhead, quality risk, delays) that are often missed in simpler analyses.
 
 ### Annual TCO (Current Vendor)
-```
-Annual_TCO(current) = 
-  Direct_Fees + 
-  Mgmt_Overhead + 
-  Quality_Risk + 
-  Delay_Tax + 
-  Compliance_Cost + 
-  Travel_Tooling - 
-  Attrition_Savings
-```
+`Annual_TCO(current) = Direct_Fees + Mgmt_Overhead + Quality_Risk + Delay_Tax + Compliance_Cost + Travel_Tooling - Attrition_Savings`
 
 ### Annual TCO (TeamStation AI Single SLA)
-```
-Annual_TCO(teamstation) = 
-  SLA_Fee + 
-  Residual_Mgmt + 
-  Residual_Risk + 
-  Transition_Amort - 
-  (Savings_fc + Savings_onboard + Savings_cloud + Savings_audit + Benefit_cash + Benefit_denial)
-```
+`Annual_TCO(teamstation) = SLA_Fee + Residual_Mgmt + Residual_Risk + Transition_Amort - (Savings_fc + Savings_onboard + Savings_cloud + Savings_audit + Benefit_cash + Benefit_denial)`
 
 ### Key Financial Metrics
 - **Annual Savings** = `Annual_TCO(current) - Annual_TCO(teamstation)`
