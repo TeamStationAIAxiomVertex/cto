@@ -5,8 +5,8 @@ import { BookOpen, CheckCircle, BarChart, GitCompare, ShieldCheck, Zap, Users, B
 import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
-    title: 'The TeamStation Performance & Growth Framework | TeamStation AI',
-    description: 'A data-driven approach to maximizing engineer impact and partnership success, moving beyond broken traditional performance reviews.',
+    title: 'Software Engineer Performance & Growth Framework | TeamStation AI',
+    description: 'Our data-driven performance evaluation framework for software engineers moves beyond broken traditional reviews to maximize impact and success for nearshore teams. A playbook for CTOs on technical performance review.',
 };
 
 const principles = [
@@ -85,8 +85,8 @@ export default function PerformanceEvaluationFrameworkPage() {
             </div>
             
             <header className="my-8 text-center">
-              <h1 className="text-4xl font-extrabold md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The TeamStation Performance & Growth Framework</h1>
-              <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">A Data-Driven Approach to Maximizing Engineer Impact and Partnership Success.</p>
+              <h1 className="text-4xl font-extrabold md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Performance & Growth Framework</h1>
+              <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">A data-driven software engineer performance evaluation framework designed to maximize impact and ensure partnership success.</p>
             </header>
 
             <section className="my-16">
@@ -94,7 +94,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                     <p className="text-sm font-semibold text-destructive">The Pain: Performance Management is Broken</p>
                     <div className="flex items-center gap-3 mt-3">
                          <AlertTriangle className="h-8 w-8 text-destructive" />
-                        <h2 className="text-xl font-semibold text-foreground">Traditional reviews are subjective, backward-looking, and generate zero actionable data.</h2>
+                        <h2 className="text-xl font-semibold text-foreground">Traditional technical performance reviews are subjective, backward-looking, and generate zero actionable data.</h2>
                     </div>
                     <p className="mt-4 text-sm text-muted-foreground">Let's start with the ground truth: traditional performance reviews are a broken tool. They’re a mix of subjective bias, recency effect, and goals that were irrelevant three months ago. They generate anxiety for engineers and very little useful data for leaders.</p>
 
@@ -138,9 +138,9 @@ export default function PerformanceEvaluationFrameworkPage() {
 
             <section className="my-16">
                 <h2 className="text-center text-3xl font-bold">The Core Instrument: The TeamStation-Client Diagnostic</h2>
-                <p className="text-center mt-2 text-muted-foreground">This is the engine of our entire program. It is the standardized, evidence-based tool we use at each stage of the Talent Runway. Below is the exact framework we will use with your leadership to evaluate our engineers.</p>
+                <p className="text-center mt-2 text-muted-foreground">This is the engine of our entire program—a standardized, evidence-based tool we use at each stage of the Talent Runway. Below is the exact framework we use with your leadership to evaluate our engineers.</p>
 
-                <div className="mt-12 space-y-8">
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {competencies.map((comp, index) => (
                         <div key={index} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
                             <p className="text-sm font-semibold text-destructive">The Pain</p>
@@ -152,8 +152,8 @@ export default function PerformanceEvaluationFrameworkPage() {
                                 <p className="text-sm italic text-muted-foreground">{comp.solutionDescription}</p>
                             </div>
                             
-                            <div className="mt-4 pt-4 border-t border-border">
-                                <h4 className="font-semibold text-foreground">The Proof (BARS Scale)</h4>
+                            <div className="mt-4 pt-4 border-t border-border flex-grow">
+                                <h4 className="font-semibold text-foreground">The Proof (<Tooltip text="Behaviorally Anchored Rating Scale">BARS</Tooltip> Scale)</h4>
                                 <div className="mt-2 space-y-2">
                                     {comp.proof.map(item => (
                                         <div key={item.rating} className="text-sm flex items-start gap-2">
@@ -165,6 +165,11 @@ export default function PerformanceEvaluationFrameworkPage() {
                             </div>
                         </div>
                     ))}
+                </div>
+                 <div className="text-center mt-8">
+                    <Link href="/research/performance-evaluation-report-example" className="font-semibold text-primary hover:underline">
+                        See a Real Sample Report <ArrowRight className="inline h-4 w-4" />
+                    </Link>
                 </div>
             </section>
 
