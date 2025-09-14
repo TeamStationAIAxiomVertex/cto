@@ -65,22 +65,29 @@ export default async function ResearchPage() {
       },
       {
           icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+          title: "AxiomCortex™: Scientific R&D Report — Bias-Mitigated AI Evaluation for Nearshore Software Engineering Teams",
+          description: "Our peer-reviewed paper detailing the proprietary Cognitive AI engine that powers TeamStation AI's talent evaluation, outlining its core scientific pillars and bias mitigation strategies.",
+          href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
+          label: "Read on SSRN"
+      },
+      {
+          icon: <BrainCircuit className="h-8 w-8 text-primary" />,
           title: "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation",
-          description: "Our peer-reviewed paper detailing a novel framework for predicting hiring timelines and optimizing the recruitment process, demonstrating a significant reduction in Time-to-Hire.",
+          description: "This paper introduces a novel framework for predicting hiring timelines and optimizing the recruitment process, demonstrating a significant reduction in Time-to-Hire.",
           href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433",
           label: "Read on SSRN"
       },
       {
           icon: <FileText className="h-8 w-8 text-primary" />,
-          title: "Nearshore Platformed: A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering",
-          description: "A comprehensive overview of the TeamStation AI platform architecture, its core AI technologies, integrated services, and responsible AI principles, forming the foundation of our transparent, evidence-based approach.",
+          title: "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering",
+          description: "A comprehensive overview of the TeamStation AI platform architecture, its core AI technologies, integrated services, and responsible AI principles.",
           href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490",
           label: "Read on SSRN"
       },
       {
           icon: <Beaker className="h-8 w-8 text-primary" />,
           title: "Nearshore IT Talent Performance Metrics in the Age of AI",
-          description: "This paper proposes a novel, value-centric model for assessing software engineer performance in the AI-augmented era, moving beyond outdated metrics to focus on quantifiable impact and growth potential.",
+          description: "This paper proposes a novel, value-centric model for assessing software engineer performance, moving beyond outdated metrics to focus on quantifiable impact.",
           href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470",
           label: "Read on SSRN"
       }
