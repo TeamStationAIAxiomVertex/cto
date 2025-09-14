@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, Users, Scale, ShieldCheck, Briefcase, ExternalLink } from 'lucide-react';
+import { ArrowRight, Users, Scale, ShieldCheck, Briefcase, ExternalLink, Network } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
 
@@ -34,7 +34,7 @@ const models = [
     },
     {
         name: 'The Systems Integrator (SI) Model',
-        icon: <Scale className="h-8 w-8 text-primary" />,
+        icon: <Network className="h-8 w-8 text-primary" />,
         pain: "Do you need to augment your team or outsource your brain?",
         problem: "SIs are for large-scale project outsourcing, not staff augmentation. You lose control over architecture and team culture, creating long-term dependency.",
         vendors: [
