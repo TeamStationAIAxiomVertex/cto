@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
-import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle } from 'lucide-react';
+import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
@@ -35,14 +35,24 @@ export default async function ResearchPage() {
     },
     {
       slug: 'performance-evaluation-framework',
-      title: 'Redefining Software Engineer Performance in the AI-Augmented Era',
-      description: 'Proposing a novel, value-centric, and quality-driven model for assessing software engineer performance, moving beyond outdated metrics.',
+      title: 'The Performance & Growth Framework',
+      description: 'Our data-driven model for assessing software engineer performance, moving beyond outdated metrics to focus on impact and growth.',
       href: '/research/performance-evaluation-framework',
       pain: "Are outdated metrics failing to capture true engineering value?",
       icon: <Beaker className="h-8 w-8 text-primary" />,
       solutionTitle: "Measuring What Matters",
       solutionDescription: "In the AI-augmented era, 'lines of code' and 'tickets closed' are meaningless. This research proposes a novel, value-centric framework for measuring engineering performance based on outcomes, not outputs."
-    }
+    },
+    {
+      slug: 'performance-evaluation-report-example',
+      title: 'Sample Performance Report (Day 30)',
+      description: 'A real, anonymized example of our 30-Day Onboarding Check diagnostic, demonstrating how we track performance and establish a growth baseline from the start.',
+      href: '/research/performance-evaluation-report-example',
+      pain: "Is your onboarding process a black box?",
+      icon: <BarChart className="h-8 w-8 text-primary" />,
+      solutionTitle: "Proof of Performance",
+      solutionDescription: "See how we apply our framework in the real world. This example report shows how we establish a data-driven baseline for a new engineer's performance within the first 30 days, creating an immediate, actionable growth plan."
+    },
   ];
   
   const faqs = [
@@ -74,7 +84,7 @@ export default async function ResearchPage() {
           We don't rely on buzzwords; we rely on evidence. Our platform is built on a foundation of peer-reviewed research to de-risk your most critical decisions around hiring, performance, and security. Here is the proof.
         </p>
       </header>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {researchAssets.map(asset => {
           return (
             <div key={asset.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
