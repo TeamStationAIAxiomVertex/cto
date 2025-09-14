@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
-import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Clock, MessageSquare, Users2, GitCompare, TestTube2, Layers, Server, Database, BarChart, FileLock, Tv, FileSearch } from 'lucide-react';
+import { Users2, FileSearch, Scale, Briefcase, Clock, MessageSquare, CheckCircle, ArrowRight } from 'lucide-react';
 
 
 export const metadata: Metadata = {
@@ -131,12 +131,10 @@ export default function NearshoreVsOffshorePage() {
             <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
                 Let's discuss how our nearshore talent and integrated platform can accelerate your roadmap.
             </p>
-            <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
                 Book a Strategy Call
-            </Link>
+            </a>
         </div>
     </main>
   );
 }
-
-    

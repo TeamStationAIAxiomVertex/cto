@@ -1,17 +1,23 @@
+
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export function Footer() {
-  const [year] = useState(new Date().getFullYear());
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   const links = {
       "Playbook": [
+        { href: '/playbook/hub', label: 'Playbook Hub' },
         { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs. Offshore' },
         { href: '/playbook/latam-economics', label: 'LATAM Economics' },
         { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
         { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring' },
-        { href: '/trust', label: 'Security & Compliance' },
+        { href: '/playbook/tco-model', label: 'TCO Model' },
       ],
       "What's Included": [
         { href: '/platform', label: 'Platform' },
@@ -28,7 +34,7 @@ export function Footer() {
       ],
       "Company": [
         { href: '/about', label: 'About Us' },
-        { href: '/research', label: 'Research' },
+        { href: '/research/hub', label: 'Research' },
         { href: '/trust', label: 'Trust Center' },
         { href: '/hire', label: 'Hire Talent' },
       ]
@@ -62,3 +68,5 @@ export function Footer() {
     </footer>
   );
 }
+
+    
