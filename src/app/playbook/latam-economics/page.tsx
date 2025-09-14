@@ -161,6 +161,11 @@ export default function LatamEconomicsPage() {
             </tbody>
           </table>
         </div>
+         <div className="text-center mt-8">
+            <Link href="/playbook/tco-model" className="font-semibold text-primary hover:underline">
+                See the Complete CFO-Ready TCO Model <ArrowRight className="inline h-4 w-4" />
+            </Link>
+        </div>
       </div>
 
        <div className="text-center rounded-lg bg-primary/10 p-8">

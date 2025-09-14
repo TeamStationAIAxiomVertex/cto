@@ -28,7 +28,7 @@ export async function getAllPlaybookSlugs(): Promise<string[]> {
     const markdownSlugs = filenames.map(filename => filename.replace(/\.md$/, ''));
     
     // Add slugs for custom pages. 'security-compliance' is handled as a special case now
-    const customPageSlugs = ['build-vs-buy', 'bias-free-technical-hiring-axiom-cortex', 'latam-economics', 'nearshore-vs-offshore', 'security-compliance'];
+    const customPageSlugs = ['build-vs-buy', 'bias-free-technical-hiring-axiom-cortex', 'latam-economics', 'nearshore-vs-offshore', 'security-compliance', 'tco-model'];
     
     // Combine and remove duplicates
     return [...new Set([...markdownSlugs, ...customPageSlugs])];
@@ -71,6 +71,8 @@ export async function getPlaybookBySlug(slug: string): Promise<PlaybookPost | nu
             return { slug, title: 'LATAM Economics & TCO for CTOs | Nearshore Software Development Costs', description: 'A CFO-ready framework for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, covering salaries, hidden costs of mis-hires, and security risks.', content: '' };
         case 'nearshore-vs-offshore':
             return { slug, title: 'Nearshore vs. Offshore: The Strategic Choice for CTOs | TeamStation AI', description: 'A framework for CTOs to diagnose the true cost—and risk—of their global talent strategy, moving beyond cost per hour to Total Cost of Ownership.', content: '' };
+        case 'tco-model':
+            return { slug, title: 'The Complete CFO-Ready TCO Model for Nearshore Engineering', description: 'A detailed, CFO-grade Total Cost of Ownership (TCO) model to compare a multi-vendor offshore setup vs. TeamStation AI’s single-SLA nearshore platform.', content: '' };
         default:
             return null;
     }
