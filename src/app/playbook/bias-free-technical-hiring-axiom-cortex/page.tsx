@@ -2,99 +2,78 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
-import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen } from 'lucide-react';
+import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen, UserX } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Build vs. Buy: The Definitive CTO Framework for Scaling Nearshore Teams',
   description: 'Should you build a nearshore operation from scratch or "buy" into an integrated platform? This data-driven playbook for CTOs models the trade-offs in Total Cost of Ownership (TCO), speed, and risk.',
 };
 
-const buildCosts = [
-    { 
-        area: "Recruitment & Hiring", 
-        tax: "Months of your senior engineers' time wasted on screening and interviewing instead of building product. High agency fees and a low signal-to-noise ratio make this a costly gamble.", 
-        impact: "$25,000 - $40,000", 
-        icon: <UserCheck className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
-    },
-    { 
-        area: "Legal & Entity Setup", 
-        tax: "Navigating foreign labor laws, tax codes, and corporate registration is a legal minefield that requires expensive local counsel and months of administrative delay.", 
-        impact: "$15,000 - $30,000+", 
-        icon: <FileText className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
-    },
-    { 
-        area: "HR & Payroll Admin", 
-        tax: "Managing international payroll, benefits, and compliance for each country is a full-time job you now own. This is a massive, ongoing operational drag on your internal resources.", 
-        impact: "$10,000 - $15,000 (annual)", 
-        icon: <Briefcase className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
-    },
-    { 
-        area: "IT & Security", 
-        tax: "Procuring, shipping, securing (MDM), and managing laptops globally without a dedicated international IT team is an operational nightmare and a significant security risk.", 
-        impact: "$5,000 - $8,000 (per hire)", 
-        icon: <ShieldCheck className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
-    },
-    { 
-        area: "The 'Mis-Hire Tax'", 
-        tax: "A bad hire costs 6-12 months of salary in lost productivity, team disruption, management overhead, and the cost of re-hiring. It's the most expensive mistake you can make.", 
-        impact: "$75,000 - $150,000", 
-        icon: <BrainCircuit className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
-    },
-    { 
-        area: "The 'Vacancy Tax'", 
-        tax: "Every day a critical role sits empty, your company pays a 'Vacancy Tax' in delayed features, missed revenue targets, and lost market share. The industry average is 45-60 days.", 
-        impact: "≈$160,000 per $1M ARR", 
-        icon: <DollarSign className="h-8 w-8 text-yellow-400" />,
-        impactColor: "text-red-400"
-    },
-];
-
-const buySolutions = [
-    { 
-        pain: "Is your recruiting process a high-risk gamble?", 
+const hiringPains = [
+    {
+        icon: <UserX className="h-8 w-8 text-yellow-400" />,
+        pain: "Hiring process is a high-risk gamble",
+        question: "Is your hiring process a high-risk gamble?",
         solutionTitle: "From Resume Keywords to Cognitive Proof",
-        solution: "Our Axiom Cortex™ engine provides scientifically-vetted shortlists, cutting your team's interview time by >80%. We find candidates with the right 'mental shape' for the role, not just the right keywords.", 
-        proof: "Mismatch Rate ≤ 10%",
+        problem: "Traditional hiring relies on resume keywords and unstructured interviews—a biased, low-signal process that tells you nothing about a candidate's actual problem-solving ability.",
+        solution: "Our Axiom Cortex™ Cognitive AI engine synthesizes the interview conversation, using over 44 proprietary algorithms to provide scientific, evidence-based proof of a candidate's cognitive traits and mental shape.",
+        kpi: "Mismatch Rate ≤ 10%",
         href: "/technical-interview-evaluation",
-        linkLabel: "See Our Vetting Process",
-        icon: <UserCheck className="h-8 w-8 text-primary" />
+        linkLabel: "See a Real Evaluation Report"
+    },
+    {
+        icon: <UserCheck className="h-8 w-8 text-primary" />,
+        pain: "Losing top talent to a slow, biased process",
+        question: "Are you losing top talent to a slow, biased process?",
+        solutionTitle: "From Subjective Interviews to Objective Evidence",
+        problem: "Unstructured interviews favor charismatic speakers over the best engineers and are notoriously prone to interviewer bias, especially against non-native English speakers.",
+        solution: "A human expert conducts a structured, bias-aware interview. Our Cognitive AI then provides a Cortex Calibration Layer to ensure we evaluate pure technical and logical signals, not just linguistic fluency or presentation style.",
+        kpi: "Time-to-Offer ≈ 9 days",
+        href: "/research/axiom-cortex-scientific-report",
+        linkLabel: "Read the Scientific Paper"
+    },
+    {
+        icon: <FileText className="h-8 w-8 text-primary" />,
+        pain: "Cannot defend hiring decisions with data",
+        question: "Can you defend your hiring decisions with data?",
+        solutionTitle: "From Gut-Feel to Auditable Proof",
+        problem: "When a hire fails, there's often no data to explain why the decision was made. The process is a black box, making it impossible to learn from mistakes.",
+        solution: "Every evaluation generates a complete 'Evidence Locker' with transcripts, scores, and an explainable hiring signal. You get a fully auditable evidence trail for every candidate, turning hiring into a science.",
+        kpi: "100% Auditable Evidence Trail",
+        href: "/process",
+        linkLabel: "Explore Our Full Process"
+    }
+];
+
+const hiddenTaxes = [
+    { 
+        title: "The 'Mis-Hire Tax'",
+        description: "The cost of a bad hire is 6-12 months of salary in lost productivity, team disruption, management overhead, and the cost of re-hiring. For a $150k engineer, that's a",
+        impact: "$75,000 - $150,000",
+        afterText: "direct hit to your P&L.",
+        icon: <BrainCircuit className="h-8 w-8 text-red-400" />,
+        impactColor: "text-red-400"
+    },
+     { 
+        title: "The 'Vacancy Tax'",
+        description: "Every day a critical role sits empty, you pay a 'Vacancy Tax' in delayed features and lost market share. A 60-day hiring cycle for a feature worth $1M ARR costs you over",
+        impact: "$160,000",
+        afterText: "in lost opportunity.",
+        icon: <DollarSign className="h-8 w-8 text-red-400" />,
+        impactColor: "text-red-400"
     },
     { 
-        pain: "Are you drowning in legal and HR complexity?",
-        solutionTitle: "From Multi-Vendor Chaos to One SLA",
-        solution: "Our platform includes full Employer of Record (EOR) services. We handle all contracts, payroll, taxes, and benefits, ensuring full compliance in every LATAM country and eliminating your administrative burden.", 
-        proof: "Zero legal or HR overhead",
-        href: "/services/integrated-services",
-        linkLabel: "Explore Integrated Services",
-        icon: <FileText className="h-8 w-8 text-primary" />
-    },
-    { 
-        pain: "Is your security posture full of holes?",
-        solutionTitle: "From 'Bring Your Own Device' to Audit-Ready",
-        solution: "We provide secure, MDM-managed devices and comprehensive Cyber/E&O insurance. Your security posture is audit-ready from Day 1, with no work from your IT team. We own the risk.", 
-        proof: "SOC 2 & ISO Aligned posture",
-        href: "/trust",
-        linkLabel: "Visit Our Trust Center",
-        icon: <ShieldCheck className="h-8 w-8 text-primary" />
-    },
-    { 
-        pain: "Are you paying for vendors or for outcomes?",
-        solutionTitle: "From Hidden Fees to Predictable TCO",
-        solution: "Our all-inclusive pricing eliminates surprise fees. You get a predictable, CFO-ready Total Cost of Ownership that is often 40-60% lower than the fully-loaded cost of the 'Build' model.", 
-        proof: "40-60% Lower TCO",
-        href: "/playbook/latam-economics",
-        linkLabel: "See the TCO Framework",
-        icon: <Scale className="h-8 w-8 text-primary" />
+        title: "The Management Overhead Tax",
+        description: "Your engineering managers are expensive resources. A flawed hiring process forces them into endless screening and interviewing cycles. If an EM spends 25% of their time on this, that's a quarter of their salary—",
+        impact: "$50,000+ per year",
+        afterText: "—dedicated to a problem that shouldn't exist.",
+        icon: <Briefcase className="h-8 w-8 text-red-400" />,
+        impactColor: "text-red-400"
     },
 ];
 
 
-export default function BuildVsBuyPage() {
+export default function BiasFreeHiringAxiomCortexPage() {
   return (
     <main className="container max-w-5xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
@@ -151,7 +130,7 @@ export default function BuildVsBuyPage() {
         <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
          A bad hire isn't just a personnel problem; it's a significant financial event. This is the CFO-ready math to justify investing in a scientific hiring process. The "cheaper" ad-hoc approach is costing you a fortune.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {hiddenTaxes.map((tax, index) => (
                 <div key={index} className="bg-background/50 rounded-lg border border-red-500/20 p-6">
                     <div className="flex items-center gap-3">
@@ -251,5 +230,3 @@ export default function BuildVsBuyPage() {
     </main>
   );
 }
-
-    
