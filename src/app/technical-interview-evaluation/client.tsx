@@ -199,7 +199,7 @@ export default function TalentEvaluationClient() {
       <div className="my-12 rounded-lg border bg-card p-6 shadow-lg">
         <h2 className="text-xl font-bold text-foreground flex items-center gap-2"><BrainCircuit className="h-6 w-6 text-primary" /> Cognitive Fingerprint 4.0</h2>
         <p className="text-sm text-muted-foreground">
-            Maps the candidate's four latent traits against the ideal profile for the role. See our research paper on <Link href="/playbook/hub/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">bias-free hiring</Link> to learn more.
+            Maps the candidate's four latent traits against the ideal profile for the role. See our research paper on <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">bias-free hiring</Link> to learn more.
         </p>
         <div style={{ height: 300 }} className='mt-4'>
             <ResponsiveContainer width="100%" height="100%">
@@ -300,3 +300,5 @@ export default function TalentEvaluationClient() {
   );
 }
 
+
+    
