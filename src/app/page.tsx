@@ -1,10 +1,12 @@
 
 import Link from 'next/link';
-import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers } from 'lucide-react';
+import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
+import Image from 'next/image';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
@@ -94,6 +96,7 @@ const sandlerCards = [
 
 export default async function HomePage() {
   const caseStudies = (await getAllCaseStudies()).slice(0, 3);
+  const heroImage = placeholderImages.heroTeam;
 
   return (
     <div className="container mx-auto px-4">
@@ -102,7 +105,16 @@ export default async function HomePage() {
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent px-2 py-4">
                 Nearshore Software Development: The CTO IT Co-Pilot Field Manual
             </h1>
-            <Layers className="hidden lg:block h-32 w-32 text-primary/50" />
+            <div className="hidden lg:block h-64 w-64 relative flex-shrink-0">
+                <Image 
+                    src={heroImage.src.url}
+                    alt={heroImage.alt}
+                    width={heroImage.src.width}
+                    height={heroImage.src.height}
+                    className="rounded-full object-cover shadow-lg"
+                    data-ai-hint={heroImage.aiHint}
+                />
+            </div>
         </div>
         <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
             This is not another vendor pitch. It's a series of battle-tested, data-driven guides for CTOs to de-risk their roadmap, fix delivery velocity, and gain control over their engineering organization.
