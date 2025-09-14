@@ -91,9 +91,9 @@ export default function PerformanceEvaluationFrameworkPage() {
 
             <section className="my-16">
                  <div className="rounded-lg border bg-card p-6 shadow-lg">
-                    <p className="text-sm font-semibold text-destructive">The Pain: Performance Management is Broken</p>
+                    <p className="text-sm font-semibold text-primary">The Pain: Performance Management is Broken</p>
                     <div className="flex items-center gap-3 mt-3">
-                         <AlertTriangle className="h-8 w-8 text-destructive" />
+                         <AlertTriangle className="h-8 w-8 text-primary" />
                         <h2 className="text-xl font-semibold text-foreground">Traditional technical performance reviews are subjective, backward-looking, and generate zero actionable data.</h2>
                     </div>
                     <p className="mt-4 text-sm text-muted-foreground">Let's start with the ground truth: traditional performance reviews are a broken tool. They’re a mix of subjective bias, recency effect, and goals that were irrelevant three months ago. They generate anxiety for engineers and very little useful data for leaders.</p>
@@ -152,7 +152,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {competencies.map((comp, index) => (
                         <div key={index} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
-                            <p className="text-sm font-semibold text-destructive">{comp.pain}</p>
+                            <p className="text-sm font-semibold text-primary">{comp.pain}</p>
 
                             <div className="mt-4 pt-4 border-t border-border">
                                 <h4 className="font-semibold text-primary">{comp.solutionTitle}</h4>
@@ -207,5 +207,3 @@ export default function PerformanceEvaluationFrameworkPage() {
         </main>
     );
 }
-
-    
