@@ -1,23 +1,21 @@
 
 'use client';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export function Footer() {
-  const [year, setYear] = useState(new Date().getFullYear());
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+  const [year] = useState(new Date().getFullYear());
 
   const links = {
       "Playbook": [
         { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs. Offshore' },
         { href: '/playbook/latam-economics', label: 'LATAM Economics' },
         { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
-        { href: '/playbook/security-compliance', label: 'Security & Compliance' },
+        { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring' },
+        { href: '/trust', label: 'Security & Compliance' },
       ],
-      "Services": [
+      "What's Included": [
+        { href: '/platform', label: 'Platform' },
         { href: '/process', label: 'Our Process' },
         { href: '/technical-interview-evaluation', label: 'Talent Evaluations' },
         { href: '/services/integrated-services', label: 'Integrated Services' },
