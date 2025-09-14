@@ -15,13 +15,13 @@ export default async function ResearchPage() {
   const researchAssets = [
     {
       slug: 'axiom-cortex-scientific-report',
-      title: 'AxiomCortex™ Scientific R&D Report',
-      description: 'A deep dive into the proprietary Cognitive AI engine that powers TeamStation AI\'s talent evaluation, outlining its core scientific pillars and bias mitigation strategies.',
+      title: 'The AxiomCortex™ Scientific Framework',
+      description: 'The definitive scientific and mathematical framework for the AxiomCortex™ engine, detailing the proprietary algorithms and psychometric models used for bias-free technical talent evaluation.',
       href: '/research/axiom-cortex-scientific-report',
       pain: "Is your hiring process a high-risk gamble on resumes?",
       icon: <BrainCircuit className="h-8 w-8 text-primary" />,
       solutionTitle: "The Science of De-Risking Talent",
-      solutionDescription: "This peer-reviewed paper details the proprietary Cognitive AI engine that powers our talent evaluation. It's the science behind how we provide evidence-based proof of a candidate's problem-solving ability, not just their credentials."
+      solutionDescription: "This is the definitive public documentation of the proprietary Cognitive AI engine that powers our talent evaluation. It's the science behind how we provide evidence-based proof of a candidate's problem-solving ability, not just their credentials."
     },
      {
       slug: 'technical-interview-evaluation',
