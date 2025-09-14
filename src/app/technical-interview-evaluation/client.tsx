@@ -10,9 +10,12 @@ import {
   ResponsiveContainer,
   Cell,
 } from 'recharts';
-import { Accordion, AccordionItem } from '@/components/Accordion';
 import { ShieldCheck, BrainCircuit, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import type { ReactNode } from 'react';
+
+const AccordionItem = dynamic(() => import('@/components/Accordion').then(mod => mod.AccordionItem), { ssr: false });
 
 const cognitiveData = [
     { name: 'Architectural Instinct', candidate: 4.3, ideal: 4.5 },
@@ -143,6 +146,7 @@ const evidenceLocker = [
     },
 ]
 
+const DynamicBarChart = dynamic(() => Promise.resolve(BarChart), { ssr: false });
 
 export default function TalentEvaluationClient() {
   return (
@@ -159,7 +163,7 @@ export default function TalentEvaluationClient() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 my-12 gap-8">
         <div className="rounded-lg border bg-card p-6">
-            <h2 className="text-xl font-bold">Executive Summary</h2>
+            <h2 className="text-xl font-bold text-foreground">Executive Summary</h2>
             <div className="flex items-center gap-4 my-4">
                 <div className="text-center">
                     <div className="text-4xl font-bold text-primary">4.6<span className="text-2xl text-muted-foreground">/5.0</span></div>
@@ -174,7 +178,7 @@ export default function TalentEvaluationClient() {
              <p className="text-sm text-muted-foreground">He demonstrates deep, modern expertise in frontend performance engineering and a solid grasp of backend architectural principles. His ability to reason from first principles is a powerful indicator of a superior mental model.</p>
         </div>
         <div className="rounded-lg border bg-card p-6">
-            <h2 className="text-xl font-bold">Metacognitive Conviction Index (MCI)</h2>
+            <h2 className="text-xl font-bold text-foreground">Metacognitive Conviction Index (MCI)</h2>
             <p className="text-sm text-muted-foreground">Assesses how well a candidate's confidence is calibrated with their knowledge.</p>
             <div className="w-full bg-background rounded-full h-2.5 my-4 relative border">
                  <div className="h-2.5 rounded-full" style={{ 
@@ -194,13 +198,13 @@ export default function TalentEvaluationClient() {
       </div>
 
       <div className="my-12 rounded-lg border bg-card p-6">
-        <h2 className="text-xl font-bold flex items-center gap-2"><BrainCircuit className="h-6 w-6 text-primary" /> Cognitive Fingerprint 4.0</h2>
+        <h2 className="text-xl font-bold text-foreground flex items-center gap-2"><BrainCircuit className="h-6 w-6 text-primary" /> Cognitive Fingerprint 4.0</h2>
         <p className="text-sm text-muted-foreground">
             Maps the candidate's four latent traits against the ideal profile for the role. See our research paper on <Link href="/playbook/hub/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">bias-free hiring</Link> to learn more.
         </p>
         <div style={{ height: 300 }} className='mt-4'>
             <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={cognitiveData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+            <DynamicBarChart data={cognitiveData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 <XAxis type="number" domain={[0, 5]} hide />
                 <YAxis type="category" dataKey="name" width={150} tick={{ fill: 'hsl(var(--muted-foreground))' }} axisLine={false} tickLine={false} />
                 <RechartsTooltip 
@@ -213,14 +217,14 @@ export default function TalentEvaluationClient() {
                     ))}
                 </Bar>
                  <Bar dataKey="ideal" name="Ideal Profile" barSize={20} fill="hsl(var(--accent))" radius={[0, 8, 8, 0]} />
-            </BarChart>
+            </DynamicBarChart>
             </ResponsiveContainer>
         </div>
       </div>
 
         <div className='my-12'>
-            <h2 className="text-3xl font-bold">Risk Factors & Mitigation Plan</h2>
-             <p className='text-muted-foreground mt-2'>
+            <h2 className="text-3xl font-bold text-center text-foreground">Risk Factors & Mitigation Plan</h2>
+             <p className='text-muted-foreground mt-2 text-center'>
                 Every hire has risks. Our process identifies them and provides a concrete, actionable plan to mitigate them from Day 1, turning potential weaknesses into strengths.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
@@ -242,8 +246,8 @@ export default function TalentEvaluationClient() {
         </div>
 
         <div className='my-12'>
-            <h2 className="text-3xl font-bold">Evidence Locker (Proof)</h2>
-            <p className='text-muted-foreground mt-2'>
+            <h2 className="text-3xl font-bold text-center text-foreground">Evidence Locker (Proof)</h2>
+            <p className='text-muted-foreground mt-2 text-center'>
                 This is the raw data—the proof behind our analysis. A human expert interviews the candidate, and our Cognitive AI synthesizes the conversation, comparing responses against ideal answer blueprints to provide an objective score.
             </p>
             <div className="mt-4 space-y-2">

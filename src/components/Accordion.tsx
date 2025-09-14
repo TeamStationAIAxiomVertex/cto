@@ -9,7 +9,7 @@ type AccordionItemProps = {
   children: ReactNode;
 };
 
-const AccordionItem = ({ title, children }: AccordionItemProps) => {
+export const AccordionItem = ({ title, children }: AccordionItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -47,9 +47,6 @@ const AccordionItem = ({ title, children }: AccordionItemProps) => {
   );
 };
 
-const Accordion = ({ children }: { children: ReactNode }) => {
+export const Accordion = ({ children }: { children: ReactNode }) => {
     return <div className="space-y-2">{children}</div>;
 };
-
-
-export { Accordion, AccordionItem };
