@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap } from 'lucide-react';
+import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Component } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -98,9 +98,12 @@ export default async function HomePage() {
   return (
     <div className="container mx-auto px-4">
       <section className="text-center py-16 md:py-24">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent px-2 py-4">
-            Nearshore Software Development: The CTO IT Co-Pilot Field Manual
-        </h1>
+        <div className="flex justify-center items-center gap-8">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent px-2 py-4">
+                Nearshore Software Development: The CTO IT Co-Pilot Field Manual
+            </h1>
+            <Component className="hidden lg:block h-32 w-32 text-primary/50" />
+        </div>
         <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
             This is not another vendor pitch. It's a series of battle-tested, data-driven guides for CTOs to de-risk their roadmap, fix delivery velocity, and gain control over their engineering organization.
         </p>
