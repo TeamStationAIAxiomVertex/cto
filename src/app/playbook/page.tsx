@@ -238,9 +238,7 @@ export default async function PlaybookHub() {
               <div key={scenario.pain} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                 <div className="flex items-start gap-3">
                   {scenario.icon}
-                  <div>
-                    <p className="text-sm font-semibold text-primary">{scenario.pain}</p>
-                  </div>
+                  <h3 className="text-lg font-semibold text-foreground leading-snug">{scenario.pain}</h3>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground flex-grow">{scenario.problem}</p>
                 <div className="mt-4">
