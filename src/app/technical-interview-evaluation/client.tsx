@@ -1,3 +1,4 @@
+
 'use client'
 
 import {
@@ -16,13 +17,11 @@ import dynamic from 'next/dynamic';
 import { Tooltip } from '@/components/Tooltip';
 
 const cognitiveData = [
-    { name: 'Architectural Instinct', candidate: 4.3, ideal: 4.5, stars: '★★★★☆', bar: '████████░░' },
-    { name: 'Problem-Solving Agility', candidate: 4.6, ideal: 4.0, stars: '★★★★☆', bar: '█████████░' },
-    { name: 'Learning Orientation', candidate: 5.0, ideal: 5.0, stars: '★★★★★', bar: '██████████' },
-    { name: 'Collaborative Mindset', candidate: 4.4, ideal: 4.0, stars: '★★★★☆', bar: '████████░░' },
+    { name: 'Architectural Instinct', candidate: 4.3, ideal: 4.5, stars: '★★★★☆', bar: '████████░░', rationale: "Erick's architectural instinct is strong. He correctly navigates monolith vs. microservices trade-offs (Q1), proposes a 'contract-first' API strategy (Q2), and, most impressively, demonstrated a powerful architectural mind by inventing the 'micro prompts' analogy (Q4). This shows he can apply architectural principles to novel domains like AI, even without knowing the specific terminology. His score reflects this high-level reasoning, moderated slightly by the need for some prompting on specific resiliency patterns." },
+    { name: 'Problem-Solving Agility', candidate: 4.6, ideal: 4.0, stars: '★★★★☆', bar: '█████████░', rationale: "Erick's PSA is a significant strength. He showcased remarkable adaptability in the prompt engineering discussion (Q4), quickly grasping the interviewer's 'microservices' analogy and synthesizing it into a new, valid concept ('micro prompts'). This ability to pivot and apply existing mental models to new problems is a hallmark of agile thinking. His solution to the complex stakeholder problem (Q7) further confirms his ability to deconstruct and solve multifaceted challenges." },
+    { name: 'Learning Orientation', candidate: 5.0, ideal: 5.0, stars: '★★★★★', bar: '██████████', rationale: "This is Erick's strongest trait and a powerful positive signal. His score is a perfect 5.0, supported by a high MCI score and 4 distinct authenticityIncidents. He proactively and honestly stated his limitations in error handling (Q1, Q5), creating security architecture from scratch (Q2), and Infrastructure as Code (Q6). This intellectual honesty is a critical predictor of coachability and rapid growth, making him an excellent investment." },
+    { name: 'Collaborative Mindset', candidate: 4.4, ideal: 4.0, stars: '★★★★☆', bar: '████████░░', rationale: "Erick's score is driven by the powerful behavioral example in Q7. He demonstrated extreme ownership and empathy by positioning himself as a 'bridge between the stakeholders and the developments' to protect his team and improve project outcomes. He explicitly discussed translating technical concepts for non-technical stakeholders, a key collaborative skill. His ownershipRatio was balanced, reflecting a healthy mix of individual accountability and team-oriented thinking." },
 ];
-
-const mciScore = 3.5;
 
 const risks = [
     {
@@ -44,7 +43,7 @@ const risks = [
 
 const evidenceLocker = [
     {
-        title: 'Question 1: "Consider a high-throughput Python backend service that processes real-time ad impressions from various sources. If this service needs to perform multiple I/O-bound operations (like calling external ad exchanges, fetching user profiles from a database, and logging to an analytics service) for each impression, how would you architect this service to handle millions of requests per second efficiently? Discuss specific design patterns and Python constructs you\'d leverage, and how you\'d manage potential bottlenecks or failures in upstream/downstream services."',
+        title: 'Question 1: "Consider a high-throughput Python backend service that processes real-time ad impressions from various sources..."',
         content: (
             <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -93,7 +92,7 @@ const evidenceLocker = [
         )
     },
     {
-        title: 'Question 2: "When designing a public-facing REST API for a new media planning feature, beyond basic data validation, what are your top two strategic considerations for ensuring long-term API evolvability and robust security? How would you communicate and enforce these design principles across a team of engineers?"',
+        title: 'Question 2: "When designing a public-facing REST API for a new media planning feature..."',
         content: (
              <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -137,7 +136,7 @@ const evidenceLocker = [
         )
     },
     {
-        title: 'Question 3: "Imagine our TeamStation AI frontend dashboard needs to display real-time campaign performance data, potentially involving thousands of data points and complex visualizations, while still allowing users to interact smoothly. How would you architect the React application\'s state management and component structure to ensure high performance and responsiveness, avoiding common pitfalls like unnecessary re-renders or large state objects? Discuss techniques for optimizing rendering and data flow."',
+        title: 'Question 3: "Imagine our TeamStation AI frontend dashboard needs to display real-time campaign performance data..."',
         content: (
             <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -181,7 +180,7 @@ const evidenceLocker = [
         )
     },
     {
-        title: 'Question 4: "Our TeamStation AI leverages LLMs significantly. When integrating an LLM into a critical business workflow – for instance, automatically generating nuanced budget allocation recommendations – what advanced prompt engineering strategies would you employ to ensure not just correct, but optimal, unbiased, and contextually appropriate outputs? How would you establish and measure the \'goodness\' of these AI-generated recommendations beyond simple accuracy, and how would you iterate on the LLM\'s performance in production?"',
+        title: 'Question 4: "Our TeamStation AI leverages LLMs significantly. When integrating an LLM into a critical business workflow..."',
         content: (
             <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -225,8 +224,99 @@ const evidenceLocker = [
             </div>
         )
     },
+     {
+        title: 'Question 5: "Let\'s design a critical new capability for TeamStation AI: \'Predictive Audience Segmentation\'..."',
+        content: (
+             <div className="prose dark:prose-invert max-w-none">
+                <h4>Ideal Answer Blueprint</h4>
+                <p><strong>First Principles:</strong> This is a complex data processing pipeline that requires separating concerns (UI, API, data processing, AI inference) and using the right tool for each job (e.g., right database for the right data shape). Asynchronous processing is key to a responsive user experience.</p>
+                <p><strong>Key Concepts:</strong></p>
+                <ul>
+                    <li><strong>Architecture:</strong> A microservices-based approach is ideal. An API Gateway receives requests, which trigger a series of backend services.</li>
+                    <li><strong>Data Flow:</strong> 1. User submits goals via React UI. 2. API Gateway passes to a CampaignService. 3. CampaignService places a "segmentation job" onto a message queue (SQS/Kafka). 4. A PredictionWorker service picks up the job, gathers historical data from a data warehouse (Redshift/BigQuery), calls the AI model inference endpoint (e.g., SageMaker). 5. The results are stored in a suitable database (e.g., DynamoDB for JSON blobs). 6. The UI polls an endpoint or uses WebSockets to get the results when ready.</li>
+                    <li><strong>Data Storage:</strong> Use a relational DB (Postgres) for user/campaign metadata, a data warehouse for historical analytics, and a NoSQL DB for the semi-structured AI output.</li>
+                    <li><strong>Communication:</strong> Asynchronous via message queues for decoupling and scalability.</li>
+                    <li><strong>Privacy/Security:</strong> Data anonymization before sending to the model, encryption at rest and in transit, strict IAM roles (ABAC/RBAC), audit trails.</li>
+                </ul>
+                <p><strong>Negative Indicators:</strong> Proposing a single monolithic service to do everything. Using a single SQL database for all data types. A purely synchronous request/response flow. Vague privacy measures.</p>
+                
+                <h4>Evidence Locker (Full, Untruncated Transcript Citation)</h4>
+                <blockquote>
+                "Yeah, I think for this case, maybe a split this this part in microservices or microphones will be a better idea because we need a lot of inputs there... I will add the behavioral behavioral input, user behavioral input and maybe contextual input about the hour, the new localization device channels, all those stuff and metadata information like campaigns and marketing stuffs... I think that Google Maps for all the cultural, the cultural information, the context information, Google Maps will be better... A combination of both hybrid, because maybe there is information more simply than other. And the simple the simple information could be synchronous and more tricky information could be asynchronous... [Error handling?] Yeah, I'm pretty weak in that. Yeah, yeah... About the data privacy... Yeah, obviously the tokenization access control with AM maybe attribute based access service to service out course also headings, encryptions."
+                </blockquote>
+
+                <h4>Ghostevidence & Must-Have Alignment</h4>
+                <p><strong>Strong knowledge of architecture & design patterns:</strong> MET.<br/>
+                <strong>Ghostevidence:</strong> "...split this this part in microservices or microphones will be a better idea..."; "...decoupling, maybe for events, use events for this."<br/>
+                <strong>Explanation:</strong> He correctly identifies a microservices architecture and event-driven decoupling as appropriate patterns for this complex system.</p>
+                <p><strong>Keen problem-solving skills:</strong> MET.<br/>
+                <strong>Ghostevidence:</strong> "...I will add the behavioral behavioral input, user behavioral input and maybe contextual input about the hour, the new localization device channels, all those stuff and metadata information like campaigns..."<br/>
+                <strong>Explanation:</strong> He effectively deconstructs the problem by first identifying the various types of data inputs required to make the system work, showing he thinks about the data foundation first.</p>
+                
+                <h4>Linguistic & NLP Analysis (UCE v29.2 "Inquisitor Prime")</h4>
+                <p>The candidate again honestly admits his weakness in error handling ("Yeah, I'm pretty weak in that"), which is flagged as the third authenticityIncident. His reference to "AM maybe attribute based access" is correctly interpreted as "IAM and Attribute-Based Access Control," crediting the concept over the precise phrasing.</p>
+                
+                <h4>UCE Axiom Scoring (B-Axioms)</h4>
+                <ul>
+                    <li>B_P (Procedural Knowledge): ★★★☆☆ (3.0) - He outlines a conceptual procedure (gather inputs, split into microservices, use hybrid communication) but is light on specific implementation details like which database to use for which data type.</li>
+                    <li>B_M (Mental Model): ★★★★☆ (4.0) - His mental model is strong. He correctly intuits that this is a complex system needing to be broken down (microservices), that it requires diverse data inputs, and that privacy is a key concern.</li>
+                    <li>B_A (Accuracy): ★★★★☆ (4.0) - The architectural choices he makes (microservices, events, hybrid communication, ABAC) are all accurate and appropriate for the problem. The score is boosted by his honest admission of weakness.</li>
+                    <li>B_C (Clarity): ★★★☆☆ (3.5) - His explanation was high-level and conceptual. While the core ideas were clear, it lacked the granular detail of a fully fleshed-out design.</li>
+                    <li>B_L (Cognitive Load): ★★★☆☆ (3.5) - He handled the very large scope of the question reasonably well, but the breadth of the topic seemed to prevent him from diving deep into any single area.</li>
+                </ul>
+
+                <h4>Key Insights</h4>
+                <p>Erick is comfortable thinking at a high architectural level. He correctly identifies the major components and concerns of a complex full-stack AI system. His approach is more conceptual than deeply technical, focusing on the "what" and "why" more than the specific "how."</p>
+            </div>
+        )
+    },
     {
-        title: 'Question 7: "As a senior full-stack engineer, your role extends beyond coding to driving initiatives and mentoring. Describe a situation where you proactively identified a significant technical debt or a critical performance bottleneck in a project and led the effort to address it within an Agile framework. What was your approach to influencing the team and stakeholders, and what was the ultimate impact on the product or team?"',
+        title: 'Question 6: "For a senior engineer, it\'s not just about writing tests, but strategizing them..."',
+        content: (
+            <div className="prose dark:prose-invert max-w-none">
+                <h4>Ideal Answer Blueprint</h4>
+                <p><strong>First Principles:</strong> A testing strategy is a risk management strategy. The goal is to get the highest confidence for the lowest cost (time/effort). The "Testing Pyramid" is the guiding principle.</p>
+                <p><strong>Key Concepts:</strong></p>
+                <ul>
+                    <li><strong>Testing Philosophy:</strong> Emphasize the testing pyramid: a large base of fast, cheap unit tests; a smaller layer of integration tests; and a very small peak of slow, expensive E2E tests.</li>
+                    <li><strong>CI/CD Integration:</strong> On every commit/PR: Run linters, static analysis, and all unit tests. On merge to main: Build Docker images, run integration tests (using Docker Compose to spin up dependencies).</li>
+                    <li><strong>Deployment:</strong> Use canary or blue-green deployments in Kubernetes to roll out changes safely. Use GitOps (ArgoCD/Flux) for declarative, auditable deployments.</li>
+                    <li><strong>K8s/Docker Practices:</strong> Define clear readinessProbes and livenessProbes. Use feature flags to decouple deployment from release. Implement automated rollbacks on metric thresholds.</li>
+                </ul>
+                <p><strong>Negative Indicators:</strong> A flat testing strategy (e.g., "test everything with E2E tests"). No clear integration into a CI/CD pipeline. Not mentioning K8s-specific practices like health probes or deployment strategies.</p>
+                
+                <h4>Evidence Locker (Full, Untruncated Transcript Citation)</h4>
+                <blockquote>
+                "Well, for example, in this case, I remember that I participate in a project with Jenkins... I could translate Jenkins stuff to GitHub actions... I prefer to use unit testing to ensure the testing for each piece, each small piece of code in state end-to-end testing... We have 60 or to 60 or 80% successful tests. Once go to GitHub actions, maybe it's a good idea to, I don't know, what about, well, something to have performance or code health in our pipelines... one step before to deploy, it could be a great idea to create bundles to test manually... [Infrastructure as Code?] Not so much. I want to have that exposure, that experience."
+                </blockquote>
+
+                <h4>Ghostevidence & Must-Have Alignment</h4>
+                <p><strong>Strong understanding of software development best practices:</strong> MET.<br/>
+                <strong>Ghostevidence:</strong> "I prefer to use unit testing to ensure the testing for each piece, each small piece of code in state end-to-end testing."<br/>
+                <strong>Explanation:</strong> This statement perfectly encapsulates the philosophy of the testing pyramid, a core best practice. He prioritizes fast, focused unit tests over slower, broader tests.</p>
+                <p><strong>Proficiency with team development, source control (Git), and continuous integration/continuous delivery (CI/CD) best practices:</strong> PARTIALLY MET.<br/>
+                <strong>Ghostevidence:</strong> "...translate Jenkins stuff to GitHub actions... have performance or code health in our pipelines..."<br/>
+                <strong>Explanation:</strong> He is familiar with modern CI/CD tools (GitHub Actions) and the concept of having quality gates in the pipeline. However, his knowledge doesn't extend to advanced K8s deployment strategies or IaC, which he honestly admits.</p>
+                
+                <h4>Linguistic & NLP Analysis (UCE v29.2 "Inquisitor Prime")</h4>
+                <p>The candidate's final statement, "Not so much. I want to have that exposure, that experience," is the fourth distinct authenticityIncident. This consistent pattern of intellectual honesty is a very strong signal for his Learning Orientation (LO) score.</p>
+                
+                <h4>UCE Axiom Scoring (B-Axioms)</h4>
+                <ul>
+                    <li>B_P (Procedural Knowledge): ★★★☆☆ (3.0) - He describes a solid but somewhat basic CI/CD procedure: run unit tests, check code health, create a bundle for manual testing, then deploy. It lacks more advanced automation steps like automated integration/E2E tests or canary deployments.</li>
+                    <li>B_M (Mental Model): ★★★★☆ (4.0) - His mental model for testing strategy is excellent ("unit testing first"). His model for CI/CD is functional but not as mature or automated as a modern GitOps approach.</li>
+                    <li>B_A (Accuracy): ★★★★★ (4.8) - Everything he stated is accurate and valid. His testing philosophy is spot-on. The score is high due to the powerful authenticityIncident where he clearly stated his IaC knowledge gap.</li>
+                    <li>B_C (Clarity): ★★★★☆ (4.0) - His explanation of his testing philosophy was very clear. The CI/CD part was also clear, just not as detailed.</li>
+                    <li>B_L (Cognitive Load): ★★★★☆ (4.0) - He appeared comfortable discussing this topic, answering with low cognitive load and a clear structure.</li>
+                </ul>
+
+                <h4>Key Insights</h4>
+                <p>Erick has a strong and correct philosophy on testing strategy. His practical CI/CD experience seems more traditional (manual testing gates) but is built on a solid foundation. His lack of IaC experience is a known, and coachable, gap.</p>
+            </div>
+        )
+    },
+    {
+        title: 'Question 7: "As a senior full-stack engineer, your role extends beyond coding to driving initiatives and mentoring..."',
         content: (
              <div className="prose dark:prose-invert max-w-none">
                 <h4>Ideal Answer Blueprint</h4>
@@ -251,7 +341,7 @@ const evidenceLocker = [
                 <strong>Excellent communication and problem-solving skills:</strong> MET.<br/>
                 <strong>Ghostevidence:</strong> "I needed to translate the non-technical language, sorry, the technical language to non-technical language... I was the bridge between the stakeholders and the developments."<br/>
                 <strong>Explanation:</strong> This is the definition of excellent communication. He identified the root cause of the technical debt as a communication and process failure, and solved it by taking ownership of that communication.</p>
-
+                
                 <h4>Linguistic & NLP Analysis (UCE v29.2 "Inquisitor Prime")</h4>
                 <p>This narrative is powerful and coherent. The candidate's use of emotional language ("afraid," "rude people," "yells") is authentic and effectively conveys the severity of the situation. The ownershipRatio is high here, but it is contextually appropriate as he is describing a situation where he took personal initiative ("I was the bridge," "I received all the yells"). This is correctly interpreted as leadership, not ego.</p>
 
@@ -276,15 +366,17 @@ const DynamicBarChart = dynamic(() => Promise.resolve(BarChart), { ssr: false })
 export default function TalentEvaluationClient() {
 
   const getBarColor = (score: number) => {
-    if (score >= 4.0) return 'hsl(var(--primary))'; // Excellent
-    if (score >= 3.0) return 'hsl(215 28% 25%)'; // Good (using accent color)
-    return 'hsl(var(--destructive))'; // Concern
+    if (score >= 4.0) return 'hsl(var(--primary))'; // Excellent - Blue
+    if (score >= 3.0) return 'hsl(48, 95%, 55%)'; // Good - Yellow
+    return 'hsl(var(--destructive))'; // Concern - Red
   };
 
   return (
     <main className="container max-w-4xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/process" className="hover:text-foreground">Process</Link> / <span>Talent Evaluations</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / 
+        <Link href="/process" className="hover:text-foreground">Process</Link> / 
+        <span>Talent Evaluations</span>
       </div>
       <header className="my-8">
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Technical Talent Evaluation Report: Erick [...] for Full-Stack Engineer</h1>
@@ -309,9 +401,9 @@ export default function TalentEvaluationClient() {
             <div className="mt-6">
                 <h3 className="text-xl font-bold text-foreground flex items-center gap-2"><BrainCircuit className="h-6 w-6 text-primary" /> Cognitive Fingerprint 4.0</h3>
                 <p className="text-sm text-muted-foreground mt-2">This visualization maps the candidate's four latent traits against the ideal profile for this role.</p>
-                 <div className="my-4 flex justify-center gap-4 text-xs">
-                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-primary"></div><span>Excellent (≥4.0)</span></div>
-                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm" style={{backgroundColor: 'hsl(215 28% 25%)'}}></div><span>Good (3.0-3.9)</span></div>
+                 <div className="my-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs">
+                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-primary"></div><span>Excellent (4.0+)</span></div>
+                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm" style={{backgroundColor: 'hsl(48, 95%, 55%)'}}></div><span>Good (3.0-3.9)</span></div>
                     <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-sm bg-destructive"></div><span>Concern (&lt;3.0)</span></div>
                 </div>
                 <div style={{ height: 300 }}>
@@ -332,9 +424,19 @@ export default function TalentEvaluationClient() {
                     </DynamicBarChart>
                     </ResponsiveContainer>
                 </div>
-                 <div className="mt-4 prose dark:prose-invert max-w-none">
+
+                <div className="mt-4 space-y-4">
+                  {cognitiveData.map(trait => (
+                    <div key={trait.name} className="pt-4 border-t border-border/50">
+                      <h4 className="font-bold">{trait.name}</h4>
+                      <p className="text-sm text-muted-foreground m-0">{trait.rationale}</p>
+                    </div>
+                  ))}
+                </div>
+
+                 <div className="mt-8 prose dark:prose-invert max-w-none">
                     <h4 className="flex items-center gap-2"><HelpCircle className="h-5 w-5 text-primary" />How is this score calculated?</h4>
-                    <p>The score is not a subjective judgment. It's a data-driven output from the Axiom Cortex™ AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary BARS rubric, and applies calibration layers to mitigate bias. The final score for each trait is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</p>
+                    <p>The score is not a subjective judgment. It's a data-driven output from the Axiom Cortex™ AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary BARS rubric (Behaviorally Anchored Rating Scales), and applies calibration layers to mitigate bias. The final score for each trait is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</p>
                 </div>
             </div>
             <div className="mt-8 pt-6 border-t border-border">
@@ -386,12 +488,21 @@ export default function TalentEvaluationClient() {
                 ))}
             </div>
              <div className="text-center mt-8">
-                <Link href="/technical-interview-evaluation" className="font-semibold text-primary hover:underline">
-                    Learn about the Full Evaluation Process <ArrowRight className="inline h-4 w-4" />
+                <Link href="/process" className="font-semibold text-primary hover:underline">
+                    See Our Full Evaluation Process <ArrowRight className="inline h-4 w-4" />
                 </Link>
               </div>
         </div>
+
+         <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+            <h2 className="text-2xl font-bold">Ready to De-Risk Your Hiring?</h2>
+            <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+                Stop sifting through unqualified resumes. Let us provide you with a shortlist of 2-3 elite, pre-vetted candidates ready to make an impact.
+            </p>
+            <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
+          </div>
       </div>
     </main>
   );
 }
+
