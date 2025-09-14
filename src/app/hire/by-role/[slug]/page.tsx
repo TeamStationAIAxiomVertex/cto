@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -20,7 +21,7 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
         { name: 'Istio/Linkerd', slug: 'istio' }, 
         { name: 'Prometheus/Grafana', slug: 'prometheus' }, 
         { name: 'OpenTelemetry', slug: 'opentelemetry' },
-        { name: 'ELK/EFK/Loki/Jaeger', slug: 'jaeger' },
+        { name: 'Jaeger/Loki', slug: 'jaeger' },
         { name: 'Vault', slug: 'vault' },
         { name: 'External Secrets', slug: 'external-secrets' },
         { name: 'LaunchDarkly/OpenFeature', slug: 'launchdarkly' }
@@ -143,10 +144,10 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
     roles: ['Head of Data', 'Analytics Eng (dbt)', 'Data Platform Eng', 'BI Developer'],
     skills: ['ELT', 'modeling', 'governance', 'streaming', 'DataOps', 'experimentation'],
     tech: [
-        { name: 'Snowflake/BigQuery/Redshift/ClickHouse', slug: 'snowflake' }, 
+        { name: 'Snowflake/BigQuery/Redshift', slug: 'snowflake' }, 
         { name: 'dbt', slug: 'dbt' }, 
-        { name: 'Airflow/Prefect/Dagster', slug: 'airflow' }, 
-        { name: 'Fivetran/Airbyte/Stitch', slug: 'fivetran' }, 
+        { name: 'Airflow/Prefect', slug: 'airflow' }, 
+        { name: 'Fivetran/Airbyte', slug: 'fivetran' }, 
         { name: 'Kafka/PubSub/Kinesis', slug: 'kafka' }, 
         { name: 'Spark/Flink', slug: 'spark' }, 
         { name: 'Looker/Tableau/Power BI/Metabase/Superset', slug: 'looker' }, 
@@ -170,7 +171,7 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
         { name: 'PyTorch/TensorFlow/JAX', slug: 'pytorch' }, 
         { name: 'scikit-learn', slug: 'scikit-learn' }, 
         { name: 'Transformers (HF)', slug: 'transformers' }, 
-        { name: 'OpenAI/Anthropic/Cohere SDKs', slug: 'openai' }, 
+        { name: 'OpenAI/Anthropic SDKs', slug: 'openai' }, 
         { name: 'vLLM/TensorRT-LLM', slug: 'vllm' }, 
         { name: 'Ray Serve', slug: 'ray' }, 
         { name: 'LangChain/LlamaIndex', slug: 'langchain' }, 
@@ -236,7 +237,7 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
     tech: [
         { name: 'Google Workspace/Microsoft 365', slug: 'google-workspace' }, 
         { name: 'Intune/Jamf/Kandji', slug: 'jamf' }, 
-        { name: 'ServiceNow/JSM', slug: 'servicenow' }, 
+        { name: 'ServiceNow/JSM', slug: 'jira-service-management' }, 
         { name: 'Okta/JumpCloud', slug: 'okta' }, 
         { name: 'CrowdStrike/SentinelOne', slug: 'crowdstrike' }, 
         { name: 'Proofpoint', slug: 'proofpoint' }, 
@@ -387,8 +388,3 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
 export async function generateStaticParams() {
   return Object.keys(roleData).map(slug => ({ slug }));
 }
-
-    
-    
-
-    

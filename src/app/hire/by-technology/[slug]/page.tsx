@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle } from 'lucide-react';
@@ -227,7 +228,7 @@ const allTech: {
     evaluation: ['Integration with KMS providers (AWS, GCP)', 'Key management and rotation strategies', 'Git integration and pre-commit hooks', 'CI/CD decryption workflows', 'User access control with GPG or age']
   },
   'codeql': { 
-    name: 'CodeQL/SonarQube/Snyk', 
+    name: 'CodeQL/Snyk', 
     category: 'Security & GRC', 
     categorySlug: 'security-grc', 
     intro: "Your security vulnerabilities are being discovered in production, not in the pull request. You're here because you need to 'shift left' and integrate security into your CI/CD pipeline. You need an AppSec engineer who can implement SAST/DAST tools like CodeQL, SonarQube, or Snyk to find and fix vulnerabilities before they ever reach production.",
@@ -307,7 +308,7 @@ const allTech: {
     evaluation: ['Schema design principles', 'Resolvers and data loader patterns (to solve N+1)', 'Apollo Federation/stitching for microservices', 'Caching strategies (client and server-side)', 'Security (depth limiting, query cost analysis)'] 
   },
   'tailwind': { 
-    name: 'Tailwind/shadcn/MUI', 
+    name: 'Tailwind/shadcn', 
     category: 'Frontend & UI/UX', 
     categorySlug: 'frontend-web', 
     intro: "Your UI is an inconsistent collection of custom CSS and one-off components. You need an engineer who can build a scalable and maintainable design system. You're looking for an expert in utility-first CSS and component libraries like shadcn/ui or MUI who can create a consistent, beautiful, and accessible user experience.",
@@ -322,7 +323,7 @@ const allTech: {
     pains: [],
     evaluation: ['Component Story Format (CSF)', 'Controls, args, and mocking data', 'Addons for accessibility, testing, and documentation', 'Visual regression testing integration', 'Publishing and versioning a Storybook instance']
   },
-  'testing': { 
+  'testing': { g
     name: 'Testing Library', 
     category: 'Frontend & UI/UX', 
     categorySlug: 'frontend-web', 
@@ -491,7 +492,7 @@ const allTech: {
     evaluation: ['Data modeling for analytics (Kimball, dimensional modeling)', 'Advanced Jinja and macro usage for DRY code', 'dbt testing (generic, singular, custom)', 'Materialization strategies and performance tuning', 'Deployment, orchestration, and CI/CD for dbt projects'] 
   },
   'airflow': { 
-    name: 'Airflow/Prefect/Dagster', 
+    name: 'Airflow/Prefect', 
     category: 'Pipelines & Orchestration', 
     categorySlug: 'data-engineering-analytics', 
     intro: "Your data pipelines are a collection of fragile cron jobs and shell scripts that fail silently in the middle of the night. You're here because you need to build a reliable, observable, and maintainable data orchestration platform. You need an engineer who is an expert in modern workflow orchestrators like Airflow, Prefect, or Dagster to turn your pipeline chaos into a production-grade system.",
@@ -507,7 +508,7 @@ const allTech: {
     evaluation: ['Connector configuration and troubleshooting', 'Data replication strategies (incremental, full)', 'Handling schema changes and drift', 'Custom connector development (Airbyte)', 'Monitoring and alerting for sync failures']
   },
   'kafka': { 
-    name: 'Kafka/RabbitMQ/NATS', 
+    name: 'Kafka/RabbitMQ', 
     category: 'Pipelines & Orchestration', 
     categorySlug: 'data-engineering-analytics', 
     intro: "Your services are either tightly coupled and fragile, or you're losing data between asynchronous processes. You need an engineer who understands how to build resilient, event-driven systems with a message broker. You're here to find an expert in Kafka, RabbitMQ, or NATS who can design a robust messaging architecture that guarantees delivery and enables your system to scale.",
@@ -786,7 +787,7 @@ const allTech: {
     pains: [],
     evaluation: ['Zero-touch deployment and enrollment', 'Policy and configuration profile management', 'Software deployment and patching', 'Compliance reporting and enforcement', 'Scripting and automation']
   },
-  'servicenow': {
+  'jira-service-management': {
     name: 'ServiceNow/JSM',
     category: 'IT / Enterprise Ops',
     categorySlug: 'it-enterprise-ops',
@@ -865,6 +866,54 @@ const allTech: {
     intro: "You're building a subscription business and need a powerful, developer-friendly billing system. You need an expert in Stripe Billing who can integrate the API, manage subscription lifecycles, and handle complex scenarios like metered billing and coupons.",
     pains: [],
     evaluation: ['Subscription and customer API integration', 'Webhook handling for lifecycle events', 'Metered billing and usage reporting', 'Invoice and tax management', 'Checkout and Payment Element customization']
+  },
+  'grafana': {
+    name: 'Grafana',
+    category: 'Observability & SRE',
+    categorySlug: 'platform-infra-sre',
+    intro: "Your dashboards are a mess, and you can't visualize your system's health effectively. You need a Grafana expert who can build insightful, actionable dashboards that correlate metrics, logs, and traces to give you a complete picture of your system's performance.",
+    pains: [],
+    evaluation: ['Advanced dashboard design and visualization techniques', 'Data source integration (Prometheus, Loki, etc.)', 'Templating and variables for dynamic dashboards', 'Alerting configuration and integration', 'Plugin development and usage']
+  },
+  'trivy': {
+    name: 'Trivy',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
+    intro: "You need a simple, fast, and comprehensive vulnerability scanner for your container images and other artifacts. You need an expert in Trivy who can integrate it into your CI/CD pipeline to find vulnerabilities before they reach production.",
+    pains: [],
+    evaluation: ['CI/CD integration for automated scanning', 'Vulnerability database management and updates', 'Image, filesystem, and Git repository scanning', 'Filtering and ignoring vulnerabilities', 'Output formatting for reporting and alerting']
+  },
+  'opa': {
+    name: 'OPA',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
+    intro: "You need a unified way to enforce policies across your entire stack, from microservices to Kubernetes. You need an expert in Open Policy Agent (OPA) who can write declarative policies in Rego to decouple policy from your application logic.",
+    pains: [],
+    evaluation: ['Rego policy language proficiency', 'Integration with Kubernetes via Gatekeeper', 'API authorization use cases', 'Testing and debugging policies', 'Performance considerations for the OPA agent']
+  },
+  'iso': {
+    name: 'ISO 27001',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
+    intro: "You need to demonstrate a commitment to information security management to your enterprise customers and partners. You need an expert who understands the ISO 27001 framework and can help you build an Information Security Management System (ISMS) that meets international standards.",
+    pains: [],
+    evaluation: ['Understanding of ISMS scope and context', 'Annex A controls and their implementation', 'Risk assessment and treatment methodologies', 'Internal audit and management review processes', 'Continuous improvement and certification lifecycle']
+  },
+  'hipaa': {
+    name: 'HIPAA',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
+    intro: "You're handling protected health information (PHI) and need to ensure your systems are HIPAA compliant. You need an expert who understands the Security Rule, Privacy Rule, and Breach Notification Rule, and can translate those requirements into technical and administrative controls.",
+    pains: [],
+    evaluation: ['Technical safeguards (access control, encryption)', 'Physical and administrative safeguards', 'Business Associate Agreements (BAAs)', 'Risk analysis and management', 'Breach notification procedures']
+  },
+  'grpc': {
+    name: 'gRPC',
+    category: 'APIs & Backend Services',
+    categorySlug: 'backend-services',
+    intro: "You need high-performance, low-latency communication between your microservices. You need a gRPC expert who can design efficient Protobuf schemas, leverage different RPC types (unary, streaming), and handle metadata and error handling effectively.",
+    pains: [],
+    evaluation: ['Protobuf schema design and best practices', 'Unary vs. streaming RPCs', 'Interceptors for middleware (logging, auth)', 'Error handling and status codes', 'Performance tuning and load balancing']
   }
 };
 
