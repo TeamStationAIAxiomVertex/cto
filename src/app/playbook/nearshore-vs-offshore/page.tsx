@@ -3,10 +3,6 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
 import { Users2, FileSearch, Scale, Briefcase, Clock, ArrowRight, Zap } from 'lucide-react';
-import { getPlaybookBySlug } from '@/lib/playbook';
-import { markdownToHtml } from '@/lib/markdown-parser';
-import { notFound } from 'next/navigation';
-
 
 export const metadata: Metadata = {
   title: 'Nearshore vs. Offshore: The Strategic Choice for CTOs',
@@ -73,10 +69,7 @@ const hiddenTaxes = [
     {
         icon: <FileSearch className="h-6 w-6 text-red-400" />,
         title: "The Compliance & Security Risk Multiplier",
-        description: "What is the cost of a single data breach? For a mid-stage startup, it's not just the fines; it's existential. Relying on an offshore vendor who allows engineers to use personal laptops without",
-        tooltipTerm: "MDM",
-        tooltipText: "Mobile Device Management: Software that secures, monitors, and manages devices like laptops.",
-        afterTooltipText: "isn't a cost-saving measure; it's a multi-million dollar liability waiting to happen. The cost is not a line item until it is, at which point it's too late. An integrated nearshore model with full device control and contractual liability shifts this risk from your books to ours."
+        description: "What is the cost of a single data breach? For a mid-stage startup, it's not just the fines; it's existential. Relying on an offshore vendor who allows engineers to use personal laptops without MDM isn't a cost-saving measure; it's a multi-million dollar liability waiting to happen. The cost is not a line item until it is, at which point it's too late. An integrated nearshore model with full device control and contractual liability shifts this risk from your books to ours."
     }
 ];
 
@@ -90,12 +83,6 @@ const comparisonTable = [
 ];
 
 export default async function NearshoreVsOffshorePage() {
-  const post = await getPlaybookBySlug('nearshore-vs-offshore');
-  if (!post) {
-    notFound();
-  }
-  const contentHtml = await markdownToHtml(post.content || '');
-
   return (
     <main className="container max-w-5xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
@@ -108,8 +95,8 @@ export default async function NearshoreVsOffshorePage() {
           Your choice between nearshore and offshore is not a line item; it's a strategic bet on how your company will innovate. While offshore lures with low hourly rates, this sticker price masks a cascade of hidden costs that inflate your <Tooltip text="Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">Total Cost of Ownership (TCO)</Tooltip> and silently sabotage your roadmap.
         </p>
       </header>
-      
-       <div className="my-16 rounded-xl border bg-card p-8 md:p-12">
+
+      <div className="my-16 rounded-xl border bg-card p-8 md:p-12">
         <h2 className="text-center text-3xl font-bold">Foreword: The CTO's Dilemma</h2>
         <div className="prose dark:prose-invert max-w-2xl mx-auto mt-6 text-center">
             <p>You’re here because you’re under pressure. The board wants faster feature delivery. The CFO wants to cut engineering costs. Your best engineers are threatening to quit because they’re tired of 10 PM calls with a team on the other side of the world. You’ve been told that "offshore" is the answer to your budget problem, but your gut tells you it’s a trap. Your gut is right.</p>
@@ -161,18 +148,7 @@ export default async function NearshoreVsOffshorePage() {
                              <strong className={`font-bold ${tax.impactColor}`}> {tax.impact} </strong>
                         )}
                         {tax.afterText}
-                         {tax.tooltipTerm && (
-                            <>
-                                {' '}<Tooltip text={tax.tooltipText || ''}>{tax.tooltipTerm}</Tooltip>{' '}
-                            </>
-                         )}
-                         {tax.afterTooltipText && (
-                            <>
-                                {tax.afterTooltipText.split('MDM')[0]}
-                                <Tooltip text="Mobile Device Management: Software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>
-                                {tax.afterTooltipText.split('MDM')[1]}
-                            </>
-                         )}
+                         {tax.description.includes('MDM') && <Tooltip text="Mobile Device Management: Software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
                     </p>
                 </div>
             ))}
@@ -215,7 +191,11 @@ export default async function NearshoreVsOffshorePage() {
         </div>
       </section>
 
-      <article className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      <div className="prose dark:prose-invert max-w-none text-center">
+        <h2 className="mt-12">The Verdict: Choose Velocity and Control, Not Just Cost</h2>
+        <p>For startups and growth-stage companies where speed and agility are paramount, the choice is clear. The hidden "latency tax" of the offshore model is a risk most cannot afford. While large enterprises with waterfall-style projects may tolerate asynchronous workflows, any organization practicing agile will see a dramatic ROI from the real-time collaboration enabled by a nearshore team.</p>
+        <p>Our platform maximizes this advantage by providing not only the talent but the entire security and operational wrapper under a single SLA. This is not about finding cheaper developers; it's about engineering a faster, safer, and more efficient way to build software. It's a strategic decision to buy back time, reduce risk, and increase the velocity of your entire engineering organization.</p>
+      </div>
 
        <div className="text-center rounded-lg bg-primary/10 p-8 mt-12">
             <h2 className="text-2xl font-bold">Ready to Eliminate the Latency Tax?</h2>
@@ -229,3 +209,5 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
+
+    
