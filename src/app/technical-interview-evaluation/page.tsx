@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: 'Our evidence-based technical interview process for LATAM engineers uses Cognitive AI, semantic RAG, and expert review to de-risk your hiring. Learn more.',
 };
 
-// This page now correctly renders the client component from its new location.
+// This page now correctly renders the client component.
 export default function TechnicalInterviewEvaluationPage() {
   return <TalentEvaluationClient />;
 }
