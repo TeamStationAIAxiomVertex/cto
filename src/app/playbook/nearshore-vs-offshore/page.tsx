@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
-import { Clock, Users2, FileSearch, Briefcase, Zap, Scale, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Clock, Users2, FileSearch, Briefcase, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, CheckCircle, BarChart } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Nearshore vs. Offshore: The Strategic Choice for CTOs | TeamStation AI',
@@ -74,12 +74,12 @@ const hiddenTaxes = [
 ];
 
 const comparisonTable = [
-  { factor: 'Time-Zone Overlap', nearshore: 'High (4-8 hours)', offshore: 'Low (0-2 hours)', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Enables real-time pairing, ad-hoc problem-solving, and same-day PR reviews. This is the fundamental driver of agile velocity.', offshore_detail: 'Forces asynchronous handoffs, late-night calls, and 24-hour feedback cycles. This systematically destroys agile workflows.' },
+  { factor: 'Time-Zone Overlap', nearshore: 'High (4-8 hours)', offshore: 'Low (0-2 hours)', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Enables real-time pairing and same-day PR reviews. This is the fundamental driver of agile velocity.', offshore_detail: 'Forces asynchronous handoffs, late-night calls, and 24-hour feedback cycles. This systematically destroys agile workflows.' },
   { factor: 'Collaboration Fidelity', nearshore: 'High', offshore: 'Low', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Nuanced, high-context conversations are possible, reducing ambiguity and expensive rework. Fosters a single, unified team culture.', offshore_detail: 'Communication is often formal, ticket-based, and prone to misunderstanding due to cultural and linguistic gaps. It creates an "us vs. them" dynamic.' },
-  { factor: 'Cultural & Language Alignment', nearshore: 'High', offshore: 'Medium-High', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Strong affinity with U.S. work culture and business practices reduces friction and allows for direct, candid feedback. The talent is trained to challenge assumptions and surface risks early.', offshore_detail: 'Varies by country, but even with excellent English, cultural differences can lead to a "yes-man" culture where problems are not surfaced until it\'s too late.' },
-  { factor: 'Travel & On-Site Escalation', nearshore: 'Simple & Cost-Effective', offshore: 'Complex & Expensive', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'Same-day or next-day travel is feasible for critical architectural workshops, quarterly planning, or crisis resolution. This is your strategic escape hatch.', offshore_detail: 'Requires multi-day travel, visas, and significant expense, making it impractical for anything other than a major, pre-planned event.' },
-  { factor: 'Compliance & Legal Risk', nearshore: 'Lower (Contractually Managed)', offshore: 'Higher (Fragmented)', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'Our integrated EOR model contractually handles compliance with data privacy laws (GDPR/LGPD) and local labor regulations. We own the risk.', offshore_detail: 'Navigating disparate legal frameworks, data residency laws, and labor regulations across multiple vendors is complex and introduces significant, often uninsurable, risk to your business.' },
-  { factor: 'Total Cost of Ownership (TCO)', nearshore: 'Predictable & Lower', offshore: 'Unpredictable & Higher', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'An all-inclusive rate with no hidden fees. Higher productivity and lower risk lead to a demonstrably lower true cost.', offshore_detail: 'Low hourly rates are a siren song that lures you into a sea of hidden costs from management overhead, lost productivity, rework, and compliance failures.' },
+  { factor: 'Cultural Alignment', nearshore: 'High', offshore: 'Medium', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'Strong affinity with U.S. work culture and business practices reduces friction and allows for direct, candid feedback. The talent is trained to challenge assumptions and surface risks early.', offshore_detail: 'Varies by country; even with excellent English, cultural differences can lead to a "yes-man" culture where problems are not surfaced until it\'s too late.' },
+  { factor: 'Travel & Escalation', nearshore: 'Simple & Cost-Effective', offshore: 'Complex & Expensive', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'Same-day or next-day travel is feasible for critical architectural workshops, quarterly planning, or crisis resolution. This is your strategic escape hatch.', offshore_detail: 'Requires multi-day travel, visas, and significant expense, making it impractical for anything other than a major, pre-planned event.' },
+  { factor: 'Compliance & Risk', nearshore: 'Lower (Contractually Managed)', offshore: 'Higher (Fragmented)', nearshore_color: 'text-green-400', offshore_color: 'text-red-400', nearshore_detail: 'An integrated EOR model handles all local labor and data laws.', offshore_detail: 'Navigating disparate legal frameworks is complex and risky.' },
+  { factor: 'Total Cost of Ownership', nearshore: 'Predictable & Lower', offshore: 'Unpredictable & Higher', nearshore_color: 'text-green-400', offshore_color: 'text-yellow-400', nearshore_detail: 'An all-inclusive rate eliminates hidden fees.', offshore_detail: 'Low hourly rates are inflated by massive hidden costs.' },
 ];
 
 export default async function NearshoreVsOffshorePage() {
@@ -94,7 +94,7 @@ export default async function NearshoreVsOffshorePage() {
       </header>
 
       <div className="my-16 rounded-xl border bg-card p-8 md:p-12">
-        <h2 className="text-center text-3xl font-bold">Foreword: The CTO's Dilemma</h2>
+        <h2 className="text-center text-3xl font-bold text-foreground">Foreword: The CTO's Dilemma</h2>
         <div className="prose prose-lg dark:prose-invert max-w-3xl mx-auto mt-6 text-center">
             <p>You’re here because you’re under pressure. The board wants faster feature delivery. The CFO wants to cut engineering costs. Your best engineers are threatening to quit because they’re tired of 10 PM calls with a team on the other side of the world. You’ve been told that "offshore" is the answer to your budget problem, but your gut tells you it’s a trap. Your gut is right.</p>
             <p>The traditional offshore model, built on the simple arithmetic of lower hourly rates, is a relic of a pre-agile world. It was designed for waterfall projects with long lead times and minimal need for real-time collaboration. In today's world of two-week sprints, continuous deployment, and complex, interdependent systems, that model is not just inefficient; it is actively destructive to your velocity, your culture, and your bottom line.</p>
@@ -137,7 +137,7 @@ export default async function NearshoreVsOffshorePage() {
                 <div key={index} className="bg-background/50 rounded-lg border border-red-500/20 p-6">
                     <div className="flex items-center gap-3">
                         {tax.icon}
-                        <h3 className="text-lg font-bold">{tax.title}</h3>
+                        <h3 className="text-lg font-bold text-foreground">{tax.title}</h3>
                     </div>
                     <p className="text-sm text-muted-foreground mt-4">
                         {tax.description}
@@ -188,13 +188,32 @@ export default async function NearshoreVsOffshorePage() {
         </div>
       </section>
 
-      <div className="prose dark:prose-invert max-w-none my-16">
-        <h2 className="mt-12 text-center text-4xl font-bold text-foreground">The Verdict: Choose Velocity and Control, Not Just Cost</h2>
-        <p className="text-center max-w-3xl mx-auto text-lg text-muted-foreground">For startups and growth-stage companies where speed and agility are paramount, the choice is clear. The hidden "latency tax" of the offshore model is a risk most cannot afford. While large enterprises with waterfall-style projects may tolerate asynchronous workflows, any organization practicing agile will see a dramatic ROI from the real-time collaboration enabled by a nearshore team.</p>
-        <p>This is the fundamental miscalculation that most leaders make: they compare hourly rates without calculating the second-order effects on velocity and risk. An engineer who costs 30% less but delivers at 50% the speed is not a bargain; they are a net loss. The "savings" are a mirage that disappears under the harsh light of a missed product deadline or a critical production outage at 2 AM.</p>
-        <p>The offshore model optimizes for a single, flawed metric: cost per hour. The integrated nearshore model optimizes for what actually matters: **Total Cost of Ownership**, **velocity**, and **risk mitigation**. It recognizes that the most expensive asset in your engineering organization is not your payroll, but your time. Time to market, time to recovery, and the time your best engineers spend on high-value work instead of low-value coordination.</p>
-        <p>Our platform maximizes this advantage by providing not only the talent but the entire security and operational wrapper under a single SLA. This is not about finding cheaper developers; it's about engineering a faster, safer, and more efficient way to build software. It's a strategic decision to buy back time, reduce risk, and increase the velocity of your entire engineering organization.</p>
-      </div>
+      <section className="my-24 rounded-lg border bg-card p-8 md:p-12">
+        <h2 className="text-4xl font-bold text-center text-foreground">The Verdict: Choose Velocity and Control, Not Just Cost</h2>
+        <div className="mt-8 max-w-4xl mx-auto space-y-6">
+            <div className="bg-background p-6 rounded-lg border border-border/50">
+                <h3 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>The Fundamental Miscalculation</h3>
+                <p className="mt-2 text-muted-foreground">Most leaders compare hourly rates without calculating the second-order effects on <strong className="text-foreground">velocity</strong> and <strong className="text-foreground">risk</strong>. An engineer who costs 30% less but delivers at 50% the speed is not a bargain; they are a net loss. The "savings" are a mirage that disappears under the harsh light of a missed product deadline or a critical production outage at 2 AM.</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-background p-6 rounded-lg border border-red-500/20">
+                    <h3 className="font-bold text-red-400">Offshore Model Optimization</h3>
+                     <p className="mt-2 text-muted-foreground">Optimizes for a single, flawed metric: <strong className="text-foreground">cost per hour.</strong></p>
+                </div>
+                 <div className="bg-background p-6 rounded-lg border border-green-500/20">
+                    <h3 className="font-bold text-green-400">Integrated Nearshore Model Optimization</h3>
+                    <p className="mt-2 text-muted-foreground">Optimizes for what actually matters: <Link href="/playbook/tco-model" className="text-primary font-bold hover:underline">Total Cost of Ownership</Link>, <strong className="text-foreground">velocity</strong>, and <strong className="text-foreground">risk mitigation.</strong></p>
+                </div>
+            </div>
+
+            <div className="bg-background p-6 rounded-lg border border-border/50">
+                 <h3 className="font-bold text-primary flex items-center gap-2"><BarChart className="h-5 w-5"/>The Strategic Decision</h3>
+                <p className="mt-2 text-muted-foreground">The most expensive asset in your engineering organization is not your payroll, but your <strong className="text-foreground">time</strong>. Time to market, time to recovery, and the time your best engineers spend on high-value work instead of low-value coordination.</p>
+                <p className="mt-4 text-foreground">Our platform maximizes this advantage by providing not only the talent but the entire <Link href="/trust" className="text-primary font-bold hover:underline">security and operational wrapper</Link> under a single SLA. This is not about finding cheaper developers; it's about engineering a faster, safer, and more efficient way to build software. It's a strategic decision to buy back time, reduce risk, and increase the velocity of your entire engineering organization.</p>
+            </div>
+        </div>
+    </section>
 
        <div className="text-center rounded-lg bg-primary/10 p-8 mt-12">
             <h2 className="text-2xl font-bold">Ready to Eliminate the Latency Tax?</h2>
