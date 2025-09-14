@@ -87,6 +87,12 @@ export default function PerformanceEvaluationFrameworkPage() {
             <header className="my-8 text-center">
               <h1 className="text-4xl font-extrabold md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Performance & Growth Framework</h1>
               <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">A data-driven software engineer performance evaluation framework designed to maximize impact and ensure partnership success.</p>
+              <div className="mt-6">
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4749129" target="_blank" rel="noopener noreferrer" className="cta-button">
+                    <BookOpen className="mr-2 h-4 w-4" />
+                    Read the Peer-Reviewed Paper on SSRN
+                </a>
+              </div>
             </header>
 
             <section className="my-16">

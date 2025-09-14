@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
-import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart } from 'lucide-react';
+import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart, BookOpen, Star, Trophy } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
@@ -54,6 +54,30 @@ export default async function ResearchPage() {
       solutionDescription: "See how we apply our framework in the real world. This example report shows how we establish a data-driven baseline for a new engineer's performance within the first 30 days, creating an immediate, actionable growth plan."
     },
   ];
+
+  const publications = [
+      {
+          icon: <BookOpen className="h-8 w-8 text-primary" />,
+          title: "The Nearshore Revolution: A CEO's guide to scaling with LATAM pods and squads",
+          description: "This Amazon-published book is a strategic guide for executives on how to leverage nearshore teams to accelerate growth, innovate faster, and build a more resilient organization. It provides a practical framework for navigating the challenges and capitalizing on the opportunities of the modern global talent landscape.",
+          href: "https://www.amazon.com/dp/B0D5B3J539",
+          label: "View on Amazon"
+      },
+      {
+          icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+          title: "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation",
+          description: "Our first peer-reviewed paper detailing the AxiomCortex™ v1 architecture. This work outlines the foundational algorithms and bias-mitigation techniques that allow us to move beyond resume-scanning to a scientific model of talent evaluation. Published on the Social Science Research Network (SSRN).",
+          href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4533476",
+          label: "Read on SSRN"
+      },
+      {
+          icon: <Beaker className="h-8 w-8 text-primary" />,
+          title: "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering",
+          description: "Our second peer-reviewed paper, which proposes a novel, value-centric model for assessing software engineer performance in the AI-augmented era. It provides the scientific underpinning for our Performance & Growth Framework, moving beyond outdated metrics to focus on quantifiable impact and growth potential.",
+          href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4749129",
+          label: "Read on SSRN"
+      }
+  ]
   
   const faqs = [
     {
@@ -84,6 +108,27 @@ export default async function ResearchPage() {
           We don't rely on buzzwords; we rely on evidence. Our platform is built on a foundation of peer-reviewed research to de-risk your most critical decisions around hiring, performance, and security. Here is the proof.
         </p>
       </header>
+       <div className="my-24">
+        <h2 className="text-center text-4xl font-bold">Key Publications</h2>
+         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Our foundational, peer-reviewed research and strategic guides that underpin our entire methodology.</p>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-1 gap-8">
+          {publications.map(pub => (
+            <div key={pub.title} className="rounded-lg border bg-card p-6 flex flex-col md:flex-row gap-6 shadow-lg">
+                <div className="flex-shrink-0">{pub.icon}</div>
+                <div className="flex-grow">
+                  <h3 className="font-semibold text-foreground">{pub.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-2">{pub.description}</p>
+                </div>
+                 <div className="flex-shrink-0 self-center">
+                    <Link href={pub.href} target="_blank" rel="noopener noreferrer" className="cta-button">
+                        {pub.label} <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {researchAssets.map(asset => {
           return (
