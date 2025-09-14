@@ -202,7 +202,12 @@ const costCards = [
     }
   ];
 
-const legend = "Salary (US), burden (e.g., 0.30), US_FLC (fully loaded), PRs/mo, Δreview_hours, C_dev_hour, D (deploys/mo), CFR₀/CFR₁, C_incident, H (hires in wave), C_day, ΔTP, Team, attrition rates, C_replace, EM_hrs/PM_hrs, C_EM/C_PM, reduction, H_audit_saved, C_hour, Travel, Duplicate_Tools, Credits.";
+const legend = [
+    "Salary (US)", "burden (e.g., 0.30)", "US_FLC (fully loaded)", "PRs/mo", "Δreview_hours", "C_dev_hour", "D (deploys/mo)",
+    "CFR₀/CFR₁", "C_incident", "H (hires in wave)", "C_day", "ΔTP", "Team", "attrition rates", "C_replace",
+    "EM_hrs/PM_hrs", "C_EM/C_PM", "reduction", "H_audit_saved", "C_hour", "Travel", "Duplicate_Tools", "Credits"
+];
+
 
 export default function TCOModelPage() {
   return (
@@ -281,11 +286,11 @@ export default function TCOModelPage() {
 
        <div className="my-16 rounded-lg border bg-card p-6">
             <h3 className="text-xl font-bold text-foreground">Tiny Legend (Variables for Estimation)</h3>
-            <p className="mt-2 text-sm text-muted-foreground font-mono">{legend}</p>
+            <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-2 text-sm text-muted-foreground font-mono">
+              {legend.map(item => <span key={item}>{item}</span>)}
+            </div>
        </div>
 
     </main>
   );
 }
-
-    
