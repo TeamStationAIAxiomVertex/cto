@@ -20,28 +20,28 @@ export default async function PlaybookHub() {
 
   const playbookData = {
     'nearshore-vs-offshore': {
-      title: 'Nearshore vs. Offshore: The Strategic Choice for CTOs | TeamStation AI',
+      title: 'Nearshore vs. Offshore',
       pain: "Is time-zone lag killing your productivity?",
       icon: <GitCompare className="h-8 w-8 text-primary" />,
       kpi: "4-8 hour daily overlap",
       description: "A framework for CTOs to diagnose the true cost—and risk—of their global talent strategy, moving beyond cost per hour to Total Cost of Ownership."
     },
     'latam-economics': {
-      title: 'LATAM Economics & TCO for CTOs | Nearshore Software Development Costs',
+      title: 'LATAM Economics & TCO',
       pain: "Are you struggling to justify your budget?",
       icon: <Scale className="h-8 w-8 text-primary" />,
       kpi: "40-60% lower TCO",
       description: "A CFO-ready framework for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, covering salaries, hidden costs of mis-hires, and security risks."
     },
     'build-vs-buy': {
-      title: 'Build vs. Buy: A CTO’s Framework for Scaling Nearshore Teams',
+      title: 'Build vs. Buy Framework',
       pain: "Are hidden costs making your 'cheaper' option more expensive?",
       icon: <Zap className="h-8 w-8 text-primary" />,
       kpi: "1 accountable SLA",
        description: "Should you build a nearshore operation from scratch or 'buy' into an integrated platform? This playbook models the trade-offs in terms of Total Cost of Ownership (TCO), speed, and risk."
     },
     'bias-free-technical-hiring-axiom-cortex': {
-      title: 'Stop Gambling on Resumes. Start De-risking Your Hires.',
+      title: 'Bias-Free Hiring',
       pain: "Is your hiring process a high-risk gamble?",
       icon: <UserCheck className="h-8 w-8 text-primary" />,
       kpi: "Mismatch rate ≤ 10%",
