@@ -28,7 +28,7 @@ export async function getAllPlaybookSlugs(): Promise<string[]> {
     const markdownSlugs = filenames.map(filename => filename.replace(/\.md$/, ''));
     
     // Add slugs for custom React pages manually
-    const customPageSlugs = ['build-vs-buy', 'bias-free-technical-hiring-axiom-cortex', 'latam-economics', 'nearshore-vs-offshore', 'security-compliance', 'tco-model'];
+    const customPageSlugs = ['build-vs-buy', 'bias-free-technical-hiring-axiom-cortex', 'latam-economics', 'tco-model'];
     
     // Combine and remove duplicates
     return [...new Set([...markdownSlugs, ...customPageSlugs])];
@@ -58,10 +58,6 @@ export async function getPlaybookBySlug(slug: string): Promise<PlaybookPost | nu
                     return { slug, title: 'Stop Gambling on Resumes. Start De-risking Your Hires.', description: 'A playbook for replacing your broken, high-risk hiring process with a faster, fairer, and more accurate hiring engine powered by cognitive science.', content: '' };
                 case 'latam-economics':
                     return { slug, title: 'LATAM Economics & TCO for CTOs | Nearshore Software Development Costs', description: 'A CFO-ready framework for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, covering salaries, hidden costs of mis-hires, and security risks.', content: '' };
-                case 'nearshore-vs-offshore':
-                    return { slug, title: 'Nearshore vs. Offshore: The Strategic Choice for CTOs | TeamStation AI', description: 'A framework for CTOs to diagnose the true cost—and risk—of their global talent strategy, moving beyond cost per hour to Total Cost of Ownership.', content: '' };
-                case 'security-compliance':
-                    return { slug, title: 'Security & Compliance', description: 'The playbook for audit-ready nearshore operations. Learn about our nearshore compliance for GDPR, SSO, MDM & device control for LATAM teams.', content: '' };
                 case 'tco-model':
                     return { slug: 'tco-model', title: 'The Computational Cost & TCO Playbook | TeamStation AI', description: 'A CFO-grade analysis of the true Total Cost of Ownership (TCO) of engineering teams, presented in Sandler-style "Computational Cost" cards.', content: '' };
                 default:
@@ -73,5 +69,3 @@ export async function getPlaybookBySlug(slug: string): Promise<PlaybookPost | nu
         return null;
     }
 }
-
-  
