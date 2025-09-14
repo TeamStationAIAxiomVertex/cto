@@ -96,13 +96,13 @@ export default async function HomePage() {
     <div className="container mx-auto px-4">
       <section className="text-center py-16 md:py-24">
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent px-2 py-4">
-          Nearshore Software Development, Or Another Crisis?
+          Your Roadmap is a Minefield. De-Risk It with the Nearshore IT Co-Pilot™.
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-         We transformed and intelligently platformed the industry into a highly controllable box that our mission partners access to stay ahead of crisis and deliver certainty, continuity, and predictability to their clients.
+            For a US-based CTO in the Agentic Era, managing a dozen nearshore vendors is not a strategy—it's a liability. We provide a single, scientifically-proven platform that gives you elite LATAM talent, audit-ready security, and predictable costs under one accountable SLA.
         </p>
         <div className="mt-10">
-            <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Strategy Call</Link>
+            <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Co-Pilot Demo</Link>
         </div>
       </section>
 
