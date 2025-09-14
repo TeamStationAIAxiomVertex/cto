@@ -1,3 +1,4 @@
+
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
@@ -17,7 +18,7 @@ const navItems = {
     { href: '/platform', title: 'Our Platform'},
     { href: '/process', title: 'Our Process' },
     { href: '/technical-interview-evaluation', title: 'Talent Evaluations' },
-    { href: '/research/performance-evaluation-framework', title: 'Performance' },
+    { href: '/research/performance-evaluation-framework', title: 'Performance Framework' },
     { href: '/services/talent-onboarding', title: 'Talent Onboarding' },
     { href: '/services/integrated-services', title: 'Integrated Services' },
     { href: '/trust', title: 'Trust Center' },
@@ -81,3 +82,5 @@ export function MobileNav() {
     </div>
   );
 }
+
+    

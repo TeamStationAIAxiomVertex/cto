@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
@@ -16,7 +17,7 @@ const navItems = {
     { href: '/platform', title: 'Our Platform', description: 'The Nearshore IT Co-Pilot™ Platform.'},
     { href: '/process', title: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
     { href: '/technical-interview-evaluation', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
-    { href: '/research/performance-evaluation-framework', title: 'Performance', description: 'A data-driven framework for performance and growth.' },
+    { href: '/research/performance-evaluation-framework', title: 'Performance Framework', description: 'A data-driven framework for performance and growth.' },
     { href: '/services/talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
     { href: '/services/integrated-services', title: 'Integrated Services', description: 'A single SLA for your entire nearshore operation.' },
     { href: '/trust', title: 'Trust Center', description: 'Our commitment to security, compliance, and governance.' },
@@ -72,3 +73,5 @@ export function DesktopNav() {
     </nav>
   );
 }
+
+    
