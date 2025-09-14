@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
-import { SpotifyIcon } from './SpotifyIcon';
 import type { ReactNode } from 'react';
+import { SpotifyIcon } from '@/components/SpotifyIcon';
 
 type LinkItem = {
   href: string;
