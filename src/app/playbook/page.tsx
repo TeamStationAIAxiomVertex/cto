@@ -12,12 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default async function PlaybookHub() {
-  const allPosts = await Promise.all(
-    (await getAllPlaybookSlugs()).map(slug => getPlaybookBySlug(slug))
-  );
-  const posts = allPosts.filter(Boolean) as Awaited<ReturnType<typeof getPlaybookBySlug>>[];
-
-
   const playbookData = {
     'nearshore-vs-offshore': {
       title: 'Nearshore vs. Offshore',
@@ -41,7 +35,7 @@ export default async function PlaybookHub() {
        description: "Should you build a nearshore operation from scratch or 'buy' into an integrated platform? This playbook models the trade-offs in terms of Total Cost of Ownership (TCO), speed, and risk."
     },
     'bias-free-technical-hiring-axiom-cortex': {
-      title: 'Bias-Free Hiring',
+      title: 'Bias-Free Technical Hiring',
       pain: "Is your hiring process a high-risk gamble?",
       icon: <UserCheck className="h-8 w-8 text-primary" />,
       kpi: "Mismatch rate ≤ 10%",
@@ -71,7 +65,7 @@ export default async function PlaybookHub() {
       </div>
       <header className="text-center mb-16">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The CTO Playbook</h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">A series of battle-tested, data-driven guides for building and scaling high-performance nearshore engineering teams. This is the strategic framework for de-risking your roadmap and out-maneuvering the competition.</p>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">You’re here because something is broken. Your offshore team is a black hole for productivity, you just burned 60 days on a bad hire, or your CFO is questioning your budget. You’re in crisis mode. This isn't just a playbook; it's a series of battle-tested, data-driven guides to de-risk your roadmap and give you back control.</p>
       </header>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {orderedSlugs.map(slug => {
