@@ -60,23 +60,9 @@ export default async function NearshoreVsOffshorePage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook/hub" className="hover:text-foreground">CTO Playbook</Link> / <span>Nearshore vs. Offshore</span>
       </div>
 
-       <header className="my-8">
-          <div className="rounded-lg border bg-card p-8 md:p-12">
-              <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Nearshore vs. Offshore: The Strategic Choice for CTOs</h1>
-              <div className="mt-8 max-w-4xl grid gap-6">
-                  <div className="bg-background p-6 rounded-lg border border-primary/20">
-                      <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>Foreword: The CTO's Dilemma</h2>
-                      <p className="mt-2 text-muted-foreground">You’re here because you’re under pressure. The board wants faster feature delivery. The CFO wants to cut engineering costs. Your best engineers are threatening to quit because they’re tired of <strong className="text-foreground">10 PM calls</strong> with a team on the other side of the world. You’ve been told that "offshore" is the answer to your budget problem, but your gut tells you it’s a trap. <strong className="text-primary">Your gut is right.</strong></p>
-                  </div>
-                  <div className="bg-background p-6 rounded-lg border border-border/50">
-                       <p className="mt-2 text-muted-foreground">The traditional offshore model, built on the simple arithmetic of lower hourly rates, is a relic of a pre-agile world. It was designed for waterfall projects with long lead times and minimal need for real-time collaboration. In today's world of two-week sprints, continuous deployment, and complex, interdependent systems, that model is not just inefficient; it is <strong className="text-destructive">actively destructive</strong> to your velocity, your culture, and your bottom line.</p>
-                  </div>
-                   <div className="bg-background p-6 rounded-lg border border-border/50">
-                       <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Playbook's Purpose</h3>
-                      <p className="mt-2 text-muted-foreground">This guide is not another generic blog post. This is a <strong className="text-primary">strategic framework—a playbook—</strong>for you, the CTO, to diagnose the hidden costs bleeding your budget and the unseen risks threatening your roadmap. It is built on the <strong className="text-foreground">Sandler methodology:</strong> we will first amplify the pain of your current situation, quantify its true financial impact, and then present a data-driven, logical solution. This is how you build a CFO-ready case for moving from a cost-centric offshore gamble to a value-driven nearshore strategy.</p>
-                  </div>
-              </div>
-          </div>
+       <header className="my-8 text-center">
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Nearshore Software Development vs Offshore: The Physics of Lag</h1>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Pain: 24-hour ping-pong. Implication: lost quarters. Solution: nearshore software development with overlap hours and review SLAs; compare side-by-side and measure the delta.</p>
       </header>
 
       <section className="my-24">
