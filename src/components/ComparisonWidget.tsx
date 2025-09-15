@@ -111,7 +111,7 @@ export function ComparisonWidget() {
         calculate();
     }, [basisHours, offshoreOverhead, nearshoreLegacyOverhead, onshoreOverhead]);
 
-    if (!data) return <div>Loading...</div>;
+    if (!data) return <div className="text-center p-8">Loading Comparison Widget...</div>;
 
     const columns = [
         "Build-In (In-House)", "Onshore (US)", "Offshore (Legacy)", "Nearshore (Legacy)", "Nearshore IT Co-Pilot (New Gen)"
@@ -152,57 +152,57 @@ export function ComparisonWidget() {
 
 
   return (
-    <section className="my-16" id="comparison-widget">
-        <h2 className="text-3xl font-bold text-center">New-Gen Nearshore vs Onshore, Offshore, and Legacy Nearshore</h2>
+    <section className="my-16 rounded-xl border bg-card p-6 md:p-8 shadow-lg" id="comparison-widget">
+        <h2 className="text-3xl font-bold text-center text-foreground">New-Gen Nearshore vs Onshore, Offshore, and Legacy Nearshore</h2>
         <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
             We count the hidden taxes—PR latency, vacancy days, failed-change costs, and management overhead—not just the sticker. The Nearshore IT Co-Pilot wins because it removes lag and makes outcomes observable.
         </p>
 
-        <div className="flex flex-wrap justify-end items-center gap-4 my-4 text-sm">
+        <div className="mt-6 flex flex-wrap justify-center md:justify-end items-center gap-4 rounded-lg bg-background p-4 border text-sm">
              <div className="flex items-center gap-2">
-                <label htmlFor="basis-hours" className="font-medium">Basis Hours:</label>
-                <select id="basis-hours" value={basisHours} onChange={e => setBasisHours(Number(e.target.value))} className="bg-background border border-border rounded-md px-2 py-1">
+                <label htmlFor="basis-hours" className="font-medium text-muted-foreground">Basis Hours:</label>
+                <select id="basis-hours" value={basisHours} onChange={e => setBasisHours(Number(e.target.value))} className="bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary">
                     <option value="173">173</option>
                     <option value="160">160</option>
                 </select>
             </div>
              <div className="flex items-center gap-2">
-                <label htmlFor="onshore-overhead" className="font-medium">Onshore Overhead:</label>
-                <input type="number" id="onshore-overhead" value={onshoreOverhead * 100} onChange={e => setOnshoreOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1" />
-                <span>%</span>
+                <label htmlFor="onshore-overhead" className="font-medium text-muted-foreground">Onshore Overhead:</label>
+                <input type="number" id="onshore-overhead" value={onshoreOverhead * 100} onChange={e => setOnshoreOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
+                <span className='text-muted-foreground'>%</span>
             </div>
              <div className="flex items-center gap-2">
-                <label htmlFor="offshore-overhead" className="font-medium">Offshore Overhead:</label>
-                <input type="number" id="offshore-overhead" value={offshoreOverhead * 100} onChange={e => setOffshoreOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1" />
-                <span>%</span>
+                <label htmlFor="offshore-overhead" className="font-medium text-muted-foreground">Offshore Overhead:</label>
+                <input type="number" id="offshore-overhead" value={offshoreOverhead * 100} onChange={e => setOffshoreOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
+                <span className='text-muted-foreground'>%</span>
             </div>
              <div className="flex items-center gap-2">
-                <label htmlFor="legacy-overhead" className="font-medium">Legacy Nearshore Overhead:</label>
-                <input type="number" id="legacy-overhead" value={nearshoreLegacyOverhead * 100} onChange={e => setNearshoreLegacyOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1" />
-                 <span>%</span>
+                <label htmlFor="legacy-overhead" className="font-medium text-muted-foreground">Legacy Nearshore Overhead:</label>
+                <input type="number" id="legacy-overhead" value={nearshoreLegacyOverhead * 100} onChange={e => setNearshoreLegacyOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
+                 <span className='text-muted-foreground'>%</span>
             </div>
         </div>
       
-        <div className="overflow-x-auto">
-            <table className="w-full min-w-[1000px] text-sm text-left border-collapse">
+        <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[1200px] text-sm text-left border-collapse">
                 <caption className="sr-only">Comparison of different software development engagement models.</caption>
                 <thead>
                     <tr>
-                        <th scope="col" className="p-2 border-b border-border font-semibold text-foreground sticky left-0 bg-background w-[200px]">Metric</th>
+                        <th scope="col" className="p-3 border-b-2 border-border font-semibold text-foreground sticky left-0 bg-card w-[200px] z-10">Metric</th>
                         {columns.map((col, i) => (
-                            <th key={i} scope="col" className={`p-2 border-b border-border font-semibold text-center ${i === 4 ? 'text-primary' : 'text-foreground'}`}>
+                            <th key={i} scope="col" className={`p-3 border-b-2 border-border font-semibold text-center ${i === 4 ? 'text-primary' : 'text-foreground'}`}>
                                 {col}
                                 {i === 4 && <div className="text-xs font-normal bg-primary/10 text-primary rounded-full px-2 py-0.5 mt-1 inline-block">Includes EOR • Devices/MDM • SSO/SAML/SCIM • Compliance</div>}
                             </th>
                         ))}
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className='divide-y divide-border'>
                     {rows.map((row, rowIndex) => (
-                        <tr key={rowIndex} className="hover:bg-card/50">
-                            <th scope="row" className="p-2 border-b border-border font-medium text-muted-foreground sticky left-0 bg-background w-[200px]">{row.label}</th>
+                        <tr key={rowIndex} className="hover:bg-background/50">
+                            <th scope="row" className="p-3 font-medium text-muted-foreground sticky left-0 bg-card w-[200px] z-10">{row.label}</th>
                             {row.data.map((cell, cellIndex) => (
-                                <td key={cellIndex} className={`p-2 border-b border-border text-center font-mono ${cellIndex === 4 ? 'text-primary font-bold' : 'text-foreground'}`}>
+                                <td key={cellIndex} className={`p-3 text-center font-mono ${cellIndex === 4 ? 'text-primary font-bold' : 'text-foreground'}`}>
                                     {cell}
                                 </td>
                             ))}
