@@ -1,12 +1,9 @@
+
 'use client';
 
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
-import { assertComponent } from '@/lib/assertComponent';
-
-assertComponent('SpotifyIcon', SpotifyIcon);
-
 
 type LinkItem = {
   href: string;
