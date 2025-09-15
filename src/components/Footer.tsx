@@ -34,6 +34,13 @@ const links = Object.freeze({
     { href: '/comparisons/globant', label: 'vs. Globant' },
     { href: '/comparisons/toptal', label: 'vs. Toptal' },
   ],
+  Company: [
+    { href: '/about', label: 'About Us' },
+    { href: '/research/hub', label: 'Research' },
+    { href: '/trust', label: 'Trust Center' },
+    { href: '/hire', label: 'Hire Talent' },
+    { href: '/research/hub#podcast', label: 'Podcast', icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1" /> },
+  ],
 } satisfies Record<string, LinkItem[]>);
 
 // Runtime: guarantee array-ness before .map()
