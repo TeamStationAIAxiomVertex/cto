@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { ArrowRight, BarChart, DollarSign, Globe, Scale, ShieldCheck } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -94,7 +93,7 @@ export default function PlaybookHubPage() {
               <div className="flex-grow" />
               <div className="mt-4 border-t border-border/50 pt-4">
                 <p className="inline-block rounded bg-primary/10 px-2 py-1 text-xs font-mono text-primary">Proof: {entry.proof}</p>
-                <Link href={entry.href} className="stretched-link mt-4 flex items-center text-sm font-semibold text-primary">
+                <Link href={entry.href} className="mt-4 flex items-center text-sm font-semibold text-primary">
                   Read the Playbook <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>

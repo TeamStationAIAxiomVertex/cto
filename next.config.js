@@ -21,6 +21,15 @@ const nextConfig = {
     },
   eslint: { ignoreDuringBuilds: breakGlass ? true : false },
   typescript: { ignoreBuildErrors: breakGlass ? true : false },
+  async redirects() {
+    return [
+      {
+        source: '/cto-playbook',
+        destination: '/playbook/hub',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
