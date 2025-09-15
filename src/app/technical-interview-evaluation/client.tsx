@@ -19,10 +19,10 @@ const renderTextWithTooltip = (
   term: string,
   tooltipText: string
 ): React.ReactNode => {
+  // Seatbelt: empty term would match everything and split into characters.
   if (!term) return raw;
   const text = safeToString(raw);
-  if (!text || !text.includes(term)) return raw;
-
+  if (!text.includes(term)) return raw;
   const parts = text.split(term);
   return parts.map((part, index) => (
     <React.Fragment key={`${term}-${index}`}>
@@ -40,10 +40,12 @@ const renderWithMany = (
   raw: React.ReactNode,
   items: Array<{ term: string; tooltip: string }>
 ): React.ReactNode =>
-  items.reduce<React.ReactNode>(
-    (acc, it) => renderTextWithTooltip(acc, it.term, it.tooltip),
-    raw
-  );
+  items
+    .filter((it) => typeof it.term === 'string' && it.term.length > 0)
+    .reduce<React.ReactNode>(
+      (acc, it) => renderTextWithTooltip(acc, it.term, it.tooltip),
+      raw
+    );
 
 
 const cognitiveData = [
@@ -615,12 +617,16 @@ export default function TalentEvaluationClient() {
             <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
                 Stop sifting through unqualified resumes. Let us provide you with a shortlist of 2-3 elite, pre-vetted candidates ready to make an impact.
             </p>
-            <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
+            <a
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button mt-6"
+            >
+              Book a No-Obligation Strategy Call
+            </a>
           </div>
       </div>
     </main>
   );
 }
-
-
-    
