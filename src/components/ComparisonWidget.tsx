@@ -9,7 +9,7 @@ export function ComparisonWidget() {
     const [data, setData] = useState<any>(null);
 
     const inputs = {
-        onshore: { salaryAnnual: 120000, burdenPct: 0.30 },
+        onshore: { salaryAnnual: 180000, burdenPct: 0.30 },
         offshoreLegacy: { hourlyLow: 45, hourlyHigh: 65 },
         nearshoreLegacy: { hourlyLow: 45, hourlyHigh: 65 },
         nearshoreCoPilot: { hourlyMin: 40, hourlyCap: 47, includes: ["EOR","Devices/MDM","SSO/SAML/SCIM","Compliance"] },
@@ -206,5 +206,3 @@ export function ComparisonWidget() {
     </section>
   );
 }
-
-
