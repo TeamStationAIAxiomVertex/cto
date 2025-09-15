@@ -119,22 +119,21 @@ export default async function HomePage() {
         "name": "TeamStation AI",
         "url": siteUrl,
         "legalName": "TeamStation, Inc.",
-        "description": "Instruction-first Nearshore software development platform, Nearshore IT Co-Pilot™. Proprietary Cognitive AI (Axiom Cortex™) + Nebula Neural Search matching across Latin America.",
-        "slogan": "Instruction-First Nearshore. Outcomes You Can Observe.",
+        "description": "The integrated platform for building and managing elite nearshore engineering teams in Latin America, powered by proprietary Cognitive AI for talent evaluation.",
+        "slogan": "The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.",
         "logo": {
           "@type": "ImageObject",
           "@id": `${siteUrl}/#logo`,
           "url": `${siteUrl}/apple-touch-icon.png`,
           "width": 180,
           "height": 180,
-          "caption": "TeamStation AI"
+          "caption": "TeamStation AI Logo"
         },
         "image": { "@id": `${siteUrl}/#logo` },
         "foundingDate": "2017-01-01",
         "founders": [
           {
             "@type": "Person",
-            "@id": `${siteUrl}/#lonnie-mcrorey`,
             "name": "Lonnie McRorey",
             "jobTitle": "Co-Founder & CEO",
             "url": `${siteUrl}/about`,
@@ -142,7 +141,6 @@ export default async function HomePage() {
           },
           {
             "@type": "Person",
-            "@id": `${siteUrl}/#dan-diachenko`,
             "name": "Dan Diachenko",
             "jobTitle": "Co-Founder",
             "url": `${siteUrl}/about`,
@@ -158,7 +156,7 @@ export default async function HomePage() {
         "contactPoint": [{
           "@type": "ContactPoint",
           "contactType": "Sales",
-          "email": "sales@teamstation.ai",
+          "url": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq",
           "availableLanguage": ["en","es"],
           "areaServed": "Latin America"
         }],
@@ -168,28 +166,19 @@ export default async function HomePage() {
           "IT Staff Augmentation",
           "Cognitive AI for talent alignment",
           "Technical interview science",
-          "Talent intelligence",
-          "Latin America engineering market"
+          "Total Cost of Ownership (TCO) modeling for engineering teams"
         ],
         "subjectOf": [
            { "@type": "Book", "name": "Platforming the Nearshore IT Staff Augmentation Industry", "url": "https://www.amazon.com/dp/B0F4TF6TWD" },
-           { "@type": "ScholarlyArticle", "name": "AxiomCortex™: Scientific R&D Report", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397" },
-           { "@type": "ScholarlyArticle", "name": "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433" },
-           { "@type": "ScholarlyArticle", "name": "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490" },
-           { "@type": "ScholarlyArticle", "name": "Nearshore IT Talent Performance Metrics in the Age of AI", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470" }
-        ],
-        "owns": [
-          { "@id": `${siteUrl}/#axiom-cortex` },
-          { "@id": `${siteUrl}/#nebula` }
-        ],
-        "brand": { "@id": `${siteUrl}/#product` }
+           { "@type": "ScholarlyArticle", "name": "AxiomCortex™: Scientific R&D Report", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397" }
+        ]
       },
       {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
         "url": siteUrl,
         "name": "TeamStation AI CTO Playbook",
-        "inLanguage": "en",
+        "inLanguage": "en-US",
         "publisher": { "@id": `${siteUrl}/#org` },
         "potentialAction": {
           "@type": "SearchAction",
@@ -201,17 +190,12 @@ export default async function HomePage() {
         "@type": "WebPage",
         "@id": `${siteUrl}/#webpage`,
         "url": siteUrl,
-        "name": "Nearshore IT Co-Pilot™ — The CTO's Field Manual for Nearshore Success",
+        "name": "Nearshore Software Development & Staff Augmentation | TeamStation AI",
         "isPartOf": { "@id": `${siteUrl}/#website` },
-        "about": [
-          { "@id": `${siteUrl}/#product` },
-          { "@id": `${siteUrl}/#axiom-cortex` },
-          { "@id": `${siteUrl}/#nebula` }
-        ],
+        "about": { "@id": `${siteUrl}/#org` },
         "primaryImageOfPage": { "@id": `${placeholderImages.metaCard.src.url}` },
         "breadcrumb": {
           "@type": "BreadcrumbList",
-          "@id": `${siteUrl}/#breadcrumbs`,
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl }
           ]
@@ -226,77 +210,44 @@ export default async function HomePage() {
         "description": "An integrated platform for building and managing elite nearshore engineering teams. Includes EOR, Devices/MDM, SSO/SAML/SCIM, and Compliance, powered by Axiom Cortex™ Cognitive AI.",
         "image": `${placeholderImages.heroTeam.src.url}`,
         "isRelatedTo": [
-          { "@id": `${siteUrl}/#service` },
-          { "@id": `${siteUrl}/#software-app` },
-          { "@id": `${siteUrl}/#axiom-cortex` },
-          { "@id": `${siteUrl}/#nebula` }
+          { "@id": `${siteUrl}/#service-eor` },
+          { "@id": `${siteUrl}/#service-vetting` },
+          { "@id": `${siteUrl}/#service-security` }
         ],
         "featureList": [
           "Employer of Record (EOR)",
           "Secure Devices & MDM",
           "SSO/SAML/SCIM Integration",
           "Compliance readiness (SOC 2, ISO 27001)",
-          "Cognitive AI talent alignment (Axiom Cortex™)",
-          "Nebula Neural Search across LATAM engineers"
+          "Cognitive AI talent alignment (Axiom Cortex™)"
         ],
         "audience": {
           "@type": "BusinessAudience",
-          "audienceType": "Mid-market & Enterprise Engineering Leaders"
+          "audienceType": "Mid-market & Enterprise Engineering Leaders (CTOs, VPs of Engineering)"
         },
         "manufacturer": { "@id": `${siteUrl}/#org` }
       },
       {
         "@type": "Service",
-        "@id": `${siteUrl}/#service`,
-        "serviceType": "Nearshore Software Development Platform",
+        "@id": `${siteUrl}/#service-eor`,
+        "serviceType": "Employer of Record (EOR) for IT Talent",
         "provider": { "@id": `${siteUrl}/#org` },
-        "areaServed": ["Latin America","United States"],
-        "termsOfService": `${siteUrl}/trust`,
-        "isRelatedTo": { "@id": `${siteUrl}/#product` }
+        "areaServed": "Latin America",
+        "description": "Full compliance with local labor laws, payroll, taxes, and benefits for nearshore engineers."
       },
       {
-        "@type": "SoftwareApplication",
-        "@id": `${siteUrl}/#software-app`,
-        "name": "Nearshore IT Co-Pilot™ App",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "softwareVersion": "v1.x",
-        "creator": { "@id": `${siteUrl}/#org` },
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "url": `${siteUrl}/pricing`
-        },
-        "isPartOf": { "@id": `${siteUrl}/#product` }
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-vetting`,
+        "serviceType": "AI-Powered Technical Talent Evaluation",
+        "provider": { "@id": `${siteUrl}/#org` },
+        "description": "Scientific, evidence-based evaluation of software engineers using the Axiom Cortex™ Cognitive AI to measure problem-solving ability and mitigate bias."
       },
       {
-        "@type": "SoftwareApplication",
-        "@id": `${siteUrl}/#axiom-cortex`,
-        "name": "Axiom Cortex™",
-        "applicationCategory": "AIApplication",
-        "operatingSystem": "Cloud",
-        "description": "Proprietary Cognitive AI that evaluates and aligns talent via evidence-based signals (interview science, prompt architecture, and cognitive traits).",
-        "creator": { "@id": `${siteUrl}/#org` },
-        "about": [
-          "technical interview analysis",
-          "cognitive trait estimation",
-          "prompt architecture evaluation",
-          "talent/job alignment"
-        ],
-        "isRelatedTo": { "@id": `${siteUrl}/#product` }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": `${siteUrl}/#nebula`,
-        "name": "Nebula Neural Search",
-        "applicationCategory": "SearchApplication",
-        "operatingSystem": "Cloud",
-        "description": "Neural search & retrieval across Latin America IT talent.",
-        "creator": { "@id": `${siteUrl}/#org` },
-        "isRelatedTo": [
-          { "@id": `${siteUrl}/#product` }
-        ]
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-security`,
+        "serviceType": "Managed Device & Endpoint Security (MDM)",
+        "provider": { "@id": `${siteUrl}/#org` },
+        "description": "Provisioning and management of secure, MDM-enrolled laptops for all nearshore team members to ensure enterprise-grade compliance."
       }
     ]
   };
