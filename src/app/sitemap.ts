@@ -40,10 +40,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/services/integrated-services',
     '/services/talent-onboarding',
     '/trust',
-    '/technical-interview-evaluation',
-    '/research/axiom-cortex-scientific-report',
-    '/research/performance-evaluation-framework',
-    '/research/performance-evaluation-report-example',
     '/sitemap',
   ].map(route => ({
     url: `${siteUrl}${route}`,
@@ -65,6 +61,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
+  }));
+
+  const researchPages = [
+    '/research/axiom-cortex-scientific-report',
+    '/research/performance-evaluation-framework',
+    '/research/performance-evaluation-report-example',
+    '/technical-interview-evaluation'
+  ].map(route => ({
+      url: `${siteUrl}${route}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8
   }));
 
   const rolePages = roleCategories.map(role => ({
@@ -92,6 +100,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticPages,
     ...caseStudyPages,
     ...playbookPages,
+    ...researchPages,
     ...rolePages,
     ...countryPages,
     ...techPages,

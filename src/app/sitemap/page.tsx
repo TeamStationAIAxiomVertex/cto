@@ -25,7 +25,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 function PageLink({ href, title }: { href: string; title: string }) {
     return (
-        <Link href={href} className="text-muted-foreground hover:text-foreground hover:underline text-sm">
+        <Link href={href} className="text-muted-foreground hover:text-foreground hover:underline text-sm break-words">
             {title}
         </Link>
     );
@@ -35,6 +35,12 @@ function PageLink({ href, title }: { href: string; title: string }) {
 export default async function SitemapPage() {
     const caseStudies = await getAllCaseStudies();
     const playbookSlugs = await getAllPlaybookSlugs();
+    const researchPages = [
+        { href: '/research/axiom-cortex-scientific-report', title: 'AxiomCortex Scientific Report' },
+        { href: '/research/performance-evaluation-framework', title: 'Performance Evaluation Framework' },
+        { href: '/research/performance-evaluation-report-example', title: 'Performance Evaluation Report Example' },
+        { href: '/technical-interview-evaluation', title: 'Technical Interview Evaluation' },
+    ];
 
     const staticPages = [
       '/',
@@ -63,10 +69,6 @@ export default async function SitemapPage() {
       '/pricing',
       '/process',
       '/research/hub',
-      '/research/axiom-cortex-scientific-report',
-      '/research/performance-evaluation-framework',
-      '/research/performance-evaluation-report-example',
-      '/technical-interview-evaluation',
       '/services/integrated-services',
       '/services/talent-onboarding',
       '/trust',
@@ -76,6 +78,7 @@ export default async function SitemapPage() {
     const hireByRolePages = roleCategories.map(r => ({ href: `/hire/by-role/${r.slug}`, title: r.name }));
     const hireByCountryPages = countries.map(c => ({ href: `/hire/by-country/${c.slug}`, title: c.name }));
     const hireByTechPages = techCategories.flatMap(cat => cat.tech).map(t => ({ href: `/hire/by-technology/${t.slug}`, title: t.name }));
+    const playbookPages = playbookSlugs.map(slug => ({ href: `/playbook/${slug}`, title: slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}));
 
     return (
         <main className="container max-w-7xl py-12">
@@ -94,14 +97,20 @@ export default async function SitemapPage() {
             </Section>
 
             <Section title="CTO Playbook">
-                {playbookSlugs.map(slug => (
-                    <PageLink key={slug} href={`/playbook/${slug}`} title={slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} />
+                {playbookPages.map(page => (
+                    <PageLink key={page.href} href={page.href} title={page.title} />
                 ))}
             </Section>
 
              <Section title="Case Studies">
                 {caseStudies.map(study => (
                     <PageLink key={study.slug} href={`/case-studies/${study.slug}`} title={study.clientName} />
+                ))}
+            </Section>
+
+             <Section title="Research & Evaluations">
+                {researchPages.map(page => (
+                    <PageLink key={page.href} href={page.href} title={page.title} />
                 ))}
             </Section>
 
