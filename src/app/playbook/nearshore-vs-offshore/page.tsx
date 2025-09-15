@@ -95,24 +95,25 @@ export default async function NearshoreVsOffshorePage() {
                         {option.icon}
                         <h3 className={`font-bold ${index === 4 ? 'text-primary' : 'text-foreground'}`}>{option.title}</h3>
                     </div>
-                    {option.pain && <p className="text-xs mt-2"><strong className="text-destructive">Pain:</strong> <span className="text-muted-foreground">{option.pain}</span></p>}
-                    {option.implication && <p className="text-xs mt-1"><strong className="text-foreground">Implication:</strong> <span className="text-muted-foreground">{option.implication.replace('TTO', '').replace('EOR', '')}
-                     {option.implication.includes("TTO") && <Tooltip text="Time to Offer">TTO</Tooltip>}
-                     {option.implication.includes("EOR") && <Tooltip text="Employer of Record">EOR</Tooltip>}
-                    </span></p>}
-                    {option.useWhen && <p className="text-xs mt-1"><strong className="text-foreground">Use when:</strong> <span className="text-muted-foreground">{option.useWhen}</span></p>}
+                    <div className="space-y-2 text-xs mt-3 flex-grow">
+                        {option.pain && <div><strong className="text-destructive">Pain:</strong> <span className="text-muted-foreground">{option.pain}</span></div>}
+                        {option.implication && <div><strong className="text-foreground">Implication:</strong> <span className="text-muted-foreground">{option.implication.replace('TTO', '').replace('EOR', '')}
+                         {option.implication.includes("TTO") && <Tooltip text="Time to Offer">TTO</Tooltip>}
+                         {option.implication.includes("EOR") && <Tooltip text="Employer of Record">EOR</Tooltip>}
+                        </span></div>}
+                        {option.useWhen && <div><strong className="text-foreground">Use when:</strong> <span className="text-muted-foreground">{option.useWhen}</span></div>}
 
-                    {option.painRemoved && <p className="text-xs mt-2"><strong className="text-green-500">Pain removed:</strong> <span className="text-muted-foreground">{option.painRemoved}</span></p>}
-                    {option.mechanism && <p className="text-xs mt-1"><strong className="text-foreground">Mechanism:</strong> <span className="text-muted-foreground">{option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
-                        <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>
-                        &nbsp;cognitive vetting,&nbsp;
-                        <Tooltip text="Mobile Device Management">MDM</Tooltip>-secured devices, SSO/SAML/SCIM, single SLA.
-                    </span></p>}
-                    {option.outcome && <p className="text-xs mt-1"><strong className="text-foreground">Outcome:</strong> <span className="text-muted-foreground">{option.outcome.replace('TCO', '')}
-                         <Link href="/playbook/latam-economics" className="text-primary hover:underline"><Tooltip text="Total Cost of Ownership">TCO</Tooltip></Link>
-                         , faster time-to-useful PR.
-                    </span></p>}
-                    
+                        {option.painRemoved && <div><strong className="text-green-500">Pain removed:</strong> <span className="text-muted-foreground">{option.painRemoved}</span></div>}
+                        {option.mechanism && <div><strong className="text-foreground">Mechanism:</strong> <span className="text-muted-foreground">{option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
+                            <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>
+                            &nbsp;cognitive vetting,&nbsp;
+                            <Tooltip text="Mobile Device Management">MDM</Tooltip>-secured devices, SSO/SAML/SCIM, single SLA.
+                        </span></div>}
+                        {option.outcome && <div><strong className="text-foreground">Outcome:</strong> <span className="text-muted-foreground">{option.outcome.replace('TCO', '')}
+                             <Link href="/playbook/latam-economics" className="text-primary hover:underline"><Tooltip text="Total Cost of Ownership">TCO</Tooltip></Link>
+                             , faster time-to-useful PR.
+                        </span></div>}
+                    </div>
                     <div className="flex-grow"></div>
                     <p className="text-xs mt-4 pt-2 border-t border-border italic text-primary/80">"{option.wtfCheck}"</p>
                 </div>
