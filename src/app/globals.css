@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -79,8 +80,7 @@
     @apply relative inline-block cursor-pointer border-b border-dashed border-primary;
   }
   .tooltip .tooltiptext {
-    @apply invisible absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-normal rounded-md bg-card p-3 text-left text-sm leading-relaxed text-foreground shadow-lg transition-opacity;
-    width: max-content;
+    @apply invisible absolute bottom-full left-1/2 z-10 mb-2 w-64 -translate-x-1/2 whitespace-normal rounded-md bg-card p-3 text-left text-sm leading-relaxed text-foreground shadow-lg transition-opacity;
     max-width: 20rem; /* 320px */
   }
   .tooltip:hover .tooltiptext {
@@ -113,3 +113,4 @@ h3 {
 p {
     @apply text-lg text-muted-foreground;
 }
+
