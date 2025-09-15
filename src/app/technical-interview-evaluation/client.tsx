@@ -19,10 +19,10 @@ const renderTextWithTooltip = (
   term: string,
   tooltipText: string
 ): React.ReactNode => {
+  // Seatbelt: empty term would match everything and split into characters.
   if (!term) return raw;
   const text = safeToString(raw);
-  if (!text || !text.includes(term)) return raw;
-
+  if (!text.includes(term)) return raw;
   const parts = text.split(term);
   return parts.map((part, index) => (
     <React.Fragment key={`${term}-${index}`}>
