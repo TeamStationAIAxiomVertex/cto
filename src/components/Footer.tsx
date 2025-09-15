@@ -18,6 +18,8 @@ type FooterLinks = {
 
 export default function Footer() {
   const year = new Date().getFullYear();
+
+  // EXPLICIT annotation prevents per-array union inference
   const links: FooterLinks = {
     "Playbook": [
       { href: '/playbook/hub', label: 'Playbook Hub' },
@@ -58,6 +60,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-foreground">TeamStation AI</h3>
             <p className="mt-2 text-sm">The integrated platform for building and scaling elite nearshore engineering teams.</p>
           </div>
+
           {Object.entries(links).map(([title, linkItems]) => (
             <div key={title}>
               <h4 className="font-semibold text-foreground">{title}</h4>
@@ -66,7 +69,9 @@ export default function Footer() {
                   <li key={i} className="text-sm">
                     <Link href={link.href} className="transition-colors hover:text-foreground flex items-center">
                       <span>{link.label}</span>
-                      {link.icon ? <span aria-hidden="true" className="ml-1">{link.icon}</span> : null}
+                      {link.icon ? (
+                        <span aria-hidden="true" className="ml-1">{link.icon}</span>
+                      ) : null}
                     </Link>
                   </li>
                 ))}
@@ -74,6 +79,7 @@ export default function Footer() {
             </div>
           ))}
         </div>
+
         <div className="mt-16 border-t border-border pt-8 text-center text-sm">
           <p>© {year} TeamStation AI — All rights reserved.</p>
         </div>
