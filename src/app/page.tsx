@@ -11,6 +11,16 @@ import placeholderImages from '@/app/lib/placeholder-images.json';
 export const metadata: Metadata = {
   title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
   description: 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.',
+  openGraph: {
+      images: [
+          {
+              url: placeholderImages.heroTeam.src.url,
+              width: placeholderImages.heroTeam.src.width,
+              height: placeholderImages.heroTeam.src.height,
+              alt: placeholderImages.heroTeam.alt,
+          }
+      ]
+  }
 };
 
 function ServicePill({ icon: Icon, text }: { icon: React.ElementType, text: string }) {

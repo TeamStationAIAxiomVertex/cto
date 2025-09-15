@@ -12,16 +12,19 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!study) {
     return {
       title: 'Case Study Not Found',
-      description: 'The requested case study could not be found.',
     };
   }
 
   return {
     title: study.title,
     description: study.summary,
+    alternates: {
+      canonical: study.canonical,
+    },
     openGraph: {
       title: study.title,
       description: study.summary,
+      url: study.canonical,
       images: [
         {
           url: study.ogImage.src.url,
@@ -30,6 +33,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
           alt: study.title,
         },
       ],
+    },
+     twitter: {
+      card: 'summary_large_image',
+      title: study.title,
+      description: study.summary,
+      images: [study.ogImage.src.url],
     },
   };
 }

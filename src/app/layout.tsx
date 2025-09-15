@@ -13,9 +13,44 @@ const poppins = Poppins({
   display: 'swap',
 });
 
+const siteName = 'TeamStation AI';
+const siteDescription = 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.';
+const siteUrl = 'https://cto.teamstation.dev'; // Replace with your actual domain
+
 export const metadata: Metadata = {
-  title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
-  description: 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: `${siteName} | Nearshore Software Development & Staff Augmentation`,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  openGraph: {
+    title: siteName,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: siteName,
+    images: [
+      {
+        url: '/og-image.png', // Must be an absolute URL
+        width: 1200,
+        height: 630,
+        alt: siteName,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteName,
+    description: siteDescription,
+    images: ['/og-image.png'], // Must be an absolute URL
+  },
+  icons: {
+    icon: '/icon.tsx',
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.tsx',
+  },
 };
 
 export default function RootLayout({

@@ -27,6 +27,7 @@ export type CaseStudy = {
   outcomes: string;
   ogImage: PlaceholderImage;
   techStack: { name: string; link: string }[];
+  canonical: string;
 };
 
 // A more robust function to extract a section based on a heading
@@ -67,6 +68,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
           outcomes: extractSection(mainContent, 'Outcomes') || extractSection(mainContent, 'Results'),
           ogImage: imageInfo,
           techStack: data.techStack || [],
+          canonical: data.canonical,
         } as CaseStudy;
       })
     );
