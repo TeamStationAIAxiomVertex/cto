@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { getAllPlaybookSlugs } from '@/lib/playbook';
@@ -26,7 +25,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 function PageLink({ href, title }: { href: string; title: string }) {
     return (
-        <Link href={href} className="text-muted-foreground hover:text-foreground hover:underline">
+        <Link href={href} className="text-muted-foreground hover:text-foreground hover:underline text-sm">
             {title}
         </Link>
     );
@@ -38,6 +37,7 @@ export default async function SitemapPage() {
     const playbookSlugs = await getAllPlaybookSlugs();
 
     const mainPages = [
+        { href: '/', title: 'Home' },
         ...Object.values(NAV).flat().map(item => ({ href: item.href, title: item.label })),
         ...simpleNavItems,
     ];
@@ -62,15 +62,15 @@ export default async function SitemapPage() {
                 {mainPages.map(page => <PageLink key={page.href} href={page.href} title={page.title} />)}
             </Section>
 
-            <Section title="Case Studies">
-                {caseStudies.map(study => (
-                    <PageLink key={study.slug} href={`/case-studies/${study.slug}`} title={study.clientName} />
-                ))}
-            </Section>
-            
             <Section title="CTO Playbook">
                 {playbookSlugs.map(slug => (
-                    <PageLink key={slug} href={`/playbook/${slug}`} title={slug.replace(/-/g, ' ')} />
+                    <PageLink key={slug} href={`/playbook/${slug}`} title={slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} />
+                ))}
+            </Section>
+
+             <Section title="Case Studies">
+                {caseStudies.map(study => (
+                    <PageLink key={study.slug} href={`/case-studies/${study.slug}`} title={study.clientName} />
                 ))}
             </Section>
 
