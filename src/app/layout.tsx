@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
-import { AppProviders } from '@/components/providers';
+import AppProviders from '@/providers/app-providers';
 import './globals.css';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 

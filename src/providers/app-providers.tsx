@@ -1,12 +1,16 @@
-
 'use client';
+
 import { ThemeProvider } from 'next-themes';
 import { TooltipProvider } from '@/components/ui/tooltip';
 
-export function AppProviders({ children }: { children: React.ReactNode }) {
+type Props = { children: React.ReactNode };
+
+export default function AppProviders({ children }: Props) {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-      <TooltipProvider delayDuration={150}>{children}</TooltipProvider>
+      <TooltipProvider delayDuration={150}>
+        {children}
+      </TooltipProvider>
     </ThemeProvider>
   );
 }
