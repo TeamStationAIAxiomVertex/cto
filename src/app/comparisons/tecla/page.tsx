@@ -42,6 +42,11 @@ export default function TeclaComparisonPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           A comparison between TeamStation AI’s integrated platform and TECLA’s talent marketplace model for hiring developers in Latin America.
         </p>
+         <div className="mt-4 text-sm">
+            <a href="https://www.tecla.io/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                Vendor home: tecla.io <ExternalLink className="h-4 w-4" />
+            </a>
+        </div>
       </header>
 
        <div className="my-12">

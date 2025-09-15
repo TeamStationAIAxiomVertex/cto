@@ -42,6 +42,11 @@ export default function BairesDevComparisonPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           An objective comparison between TeamStation AI's integrated, science-driven platform and BairesDev's traditional nearshore staff augmentation model.
         </p>
+         <div className="mt-4 text-sm">
+            <a href="https://www.bairesdev.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                Vendor home: bairesdev.com <ExternalLink className="h-4 w-4" />
+            </a>
+        </div>
       </header>
       
       <div className="my-12">

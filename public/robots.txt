@@ -1,8 +1,3 @@
-# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
-#
-# To allow all crawlers to crawl your entire site, use the following:
 User-agent: *
 Allow: /
-
-# To tell crawlers where your sitemap is located
 Sitemap: https://cto.teamstation.dev/sitemap.xml

@@ -42,6 +42,11 @@ export default function DeelComparisonPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           This isn't a direct comparison, but a clarification of two very different—and potentially complementary—models.
         </p>
+         <div className="mt-4 text-sm">
+            <a href="https://www.deel.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                Vendor home: deel.com <ExternalLink className="h-4 w-4" />
+            </a>
+        </div>
       </header>
 
        <div className="my-12">

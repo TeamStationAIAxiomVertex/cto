@@ -42,6 +42,11 @@ export default function ParallelStaffComparisonPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           A comparison between TeamStation AI’s integrated platform and ParallelStaff’s Talent-as-a-Service (TaaS) model.
         </p>
+         <div className="mt-4 text-sm">
+            <a href="https://www.parallelstaff.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                Vendor home: parallelstaff.com <ExternalLink className="h-4 w-4" />
+            </a>
+        </div>
       </header>
 
       <div className="my-12">

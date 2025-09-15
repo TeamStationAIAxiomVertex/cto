@@ -42,6 +42,11 @@ export default function UnosquareComparisonPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           A comparison between TeamStation AI’s integrated team-building platform and Unosquare’s traditional staff augmentation and consulting services.
         </p>
+         <div className="mt-4 text-sm">
+            <a href="https://www.unosquare.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                Vendor home: unosquare.com <ExternalLink className="h-4 w-4" />
+            </a>
+        </div>
       </header>
 
       <div className="my-12">

@@ -28,6 +28,16 @@ const nextConfig = {
         destination: '/playbook/hub',
         permanent: true,
       },
+      {
+        source: '/playbook',
+        destination: '/playbook/hub',
+        permanent: true,
+      },
+      {
+        source: '/research',
+        destination: '/research/hub',
+        permanent: true,
+      },
     ];
   },
 };
