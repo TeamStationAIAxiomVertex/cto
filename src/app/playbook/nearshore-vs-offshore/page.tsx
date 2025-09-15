@@ -45,7 +45,7 @@ const options = [
         wtfCheck: "Who can read prod today—and how fast can you revoke it?"
     },
     {
-        title: "Nearshore IT Co-Pilot (New-Gen)",
+        title: "Nearshore IT Co-Pilot (New Gen)",
         icon: <Zap className="h-8 w-8 text-primary" />,
         painRemoved: "PR latency, vacancy drag, audit friction, vendor sprawl.",
         mechanism: "Daylight review SLAs, Axiom Cortex™ cognitive vetting, MDM-secured devices, SSO/SAML/SCIM, single SLA.",
@@ -152,8 +152,8 @@ export default async function NearshoreVsOffshorePage() {
                     <div className="mt-4 pt-4 border-t border-border">
                         <div className="text-sm italic text-primary/80">
                            {option.title === 'Offshore (Legacy)' ? 
-                                <p>"How many quarters died waiting for “<InfoDropdown title={<span className="border-b border-dashed">LGTM</span>}><p className="text-sm">Looks Good To Me</p></InfoDropdown>”?</p> :
-                                <p>"{option.wtfCheck}"</p>
+                                <div className="inline">"How many quarters died waiting for “<InfoDropdown title={<span className="border-b border-dashed">LGTM</span>}><p className="text-sm">Looks Good To Me</p></InfoDropdown>”?"</div> :
+                                `"${option.wtfCheck}"`
                             }
                         </div>
                     </div>
@@ -192,4 +192,3 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
-
