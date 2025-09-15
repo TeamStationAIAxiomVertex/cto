@@ -30,7 +30,7 @@ export function ComparisonWidget() {
               onshore: { EM: 15, PM: 10 },
               offshoreLegacy: { EM: 30, PM: 20 },
               nearshoreLegacy: { EM: 18, PM: 12 },
-              nearshoreCoPilot: { EM: 12, PM: 8 }
+              nearshoreCoPilot: { EM: 0, PM: 0 }
             },
             mgmtRatesUSD: { EM: 120, PM: 95 },
             auditHoursSavedPerYear: { buildIn: 80, onshore: 80, offshoreLegacy: 20, nearshoreLegacy: 120, nearshoreCoPilot: 250 },
@@ -206,4 +206,5 @@ export function ComparisonWidget() {
     </section>
   );
 }
+
 
