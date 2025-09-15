@@ -1,40 +1,19 @@
-
 {
   "hosting": {
     "public": "out",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
     "headers": [
-      {
-        "source": "**/*.html",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=60, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "/sitemap.xml",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=300, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "**/*.{js,css,ico,png,jpg,jpeg,gif,svg,webp,woff,woff2}",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, immutable"
-          }
-        ]
-      }
+      { "source": "**/*.html", "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=60, must-revalidate" },
+        { "key": "Clear-Site-Data", "value": "\"cache\", \"storage\"" }
+      ]},
+      { "source": "/sitemap.xml", "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }
+      ]},
+      { "source": "**/*.{js,css,ico,png,jpg,jpeg,gif,svg,webp,woff,woff2}", "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]}
     ]
   }
 }
