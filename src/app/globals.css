@@ -75,19 +75,6 @@
   }
 }
 
-@layer utilities {
-  .tooltip {
-    @apply relative inline-block cursor-pointer border-b border-dashed border-primary;
-  }
-  .tooltip .tooltiptext {
-    @apply invisible absolute bottom-full left-1/2 z-10 mb-2 w-64 -translate-x-1/2 whitespace-normal rounded-md bg-card p-3 text-left text-sm leading-relaxed text-foreground shadow-lg transition-opacity;
-    max-width: 20rem; /* 320px */
-  }
-  .tooltip:hover .tooltiptext {
-    @apply visible opacity-100;
-  }
-}
-
 .cta-button {
     @apply inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
 }
@@ -114,3 +101,5 @@ p {
     @apply text-lg text-muted-foreground;
 }
 
+
+    

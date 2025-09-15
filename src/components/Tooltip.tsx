@@ -6,11 +6,14 @@ type TooltipProps = {
   text: string;
 };
 
+// This component is deprecated and will be removed. Use InfoDropdown from @/components/Accordion instead.
 export function Tooltip({ children, text }: TooltipProps) {
   return (
-    <span className="tooltip inline-block">
+    <span className="relative inline-block cursor-pointer border-b border-dashed border-primary">
       {children}
-      <span className="tooltiptext">{text}</span>
+      <span className="invisible absolute bottom-full left-1/2 z-10 mb-2 w-64 max-w-xs -translate-x-1/2 whitespace-normal rounded-md bg-card p-3 text-left text-sm leading-relaxed text-foreground opacity-0 shadow-lg transition-opacity group-hover:visible group-hover:opacity-100">{text}</span>
     </span>
   );
 };
+
+    
