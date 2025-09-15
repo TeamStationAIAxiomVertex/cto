@@ -1,6 +1,6 @@
 
 'use client';
-import { useState, useMemo, type ReactNode } from 'react';
+import { useState, useMemo, type ReactNode, useId } from 'react';
 import { WithTooltip } from '@/components/ui/tooltip';
 
 const inputs = {
@@ -59,6 +59,12 @@ export function ComparisonWidget() {
   const [offshoreOverhead, setOffshoreOverhead] = useState(0.25);
   const [nearshoreLegacyOverhead, setNearshoreLegacyOverhead] = useState(0.10);
   const [onshoreOverhead, setOnshoreOverhead] = useState(0.20);
+
+  const baseId = useId();
+  const basisHoursId = `${baseId}-basis-hours`;
+  const onshoreOverheadId = `${baseId}-onshore-overhead`;
+  const offshoreOverheadId = `${baseId}-offshore-overhead`;
+  const legacyOverheadId = `${baseId}-legacy-overhead`;
 
   // Stable formatter, created once.
   const currency = useMemo(
@@ -305,7 +311,7 @@ export function ComparisonWidget() {
           'The cost of engineering/product management time spent on vendor coordination, rework, and other non-value-add activities.',
       },
       {
-        label: 'Compliance readiness (audit hours saved / $)',
+        label: 'Compliance readiness (audit hrs saved / $)',
         data: data.complianceSavings,
         description:
           'The value of engineering/security time saved by having an audit-ready, compliant posture from day one, avoiding questionnaire fire-drills.',
@@ -323,11 +329,11 @@ export function ComparisonWidget() {
 
       <div className="mt-6 flex flex-wrap justify-center md:justify-end items-center gap-4 rounded-lg bg-background p-4 border text-sm">
         <div className="flex items-center gap-2">
-          <label htmlFor="basis-hours" className="font-medium text-muted-foreground">
+          <label htmlFor={basisHoursId} className="font-medium text-muted-foreground">
             Basis Hours:
           </label>
           <select
-            id="basis-hours"
+            id={basisHoursId}
             value={basisHours}
             onChange={(e) => setBasisHours(Number(e.target.value))}
             className="bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary"
@@ -339,7 +345,7 @@ export function ComparisonWidget() {
         <div className="flex items-center gap-2">
           <WithTooltip label="Estimated management and administrative overhead for onshore vendors.">
             <label
-              htmlFor="onshore-overhead"
+              htmlFor={onshoreOverheadId}
               className="font-medium text-muted-foreground border-b border-dashed"
             >
               Onshore Overhead:
@@ -347,10 +353,11 @@ export function ComparisonWidget() {
           </WithTooltip>
           <input
             type="number"
-            id="onshore-overhead"
+            id={onshoreOverheadId}
             min={0}
             max={100}
             step={1}
+            inputMode="decimal"
             value={onshoreOverhead * 100}
             onChange={(e) =>
               setOnshoreOverhead(clamp(Number(e.target.value), 0, 100) / 100)
@@ -362,7 +369,7 @@ export function ComparisonWidget() {
         <div className="flex items-center gap-2">
           <WithTooltip label="Estimated management, communication, and rework overhead for offshore vendors.">
             <label
-              htmlFor="offshore-overhead"
+              htmlFor={offshoreOverheadId}
               className="font-medium text-muted-foreground border-b border-dashed"
             >
               Offshore Overhead:
@@ -370,10 +377,11 @@ export function ComparisonWidget() {
           </WithTooltip>
           <input
             type="number"
-            id="offshore-overhead"
+            id={offshoreOverheadId}
             min={0}
             max={100}
             step={1}
+            inputMode="decimal"
             value={offshoreOverhead * 100}
             onChange={(e) =>
               setOffshoreOverhead(clamp(Number(e.target.value), 0, 100) / 100)
@@ -385,7 +393,7 @@ export function ComparisonWidget() {
         <div className="flex items-center gap-2">
           <WithTooltip label="Estimated management and administrative overhead for legacy nearshore vendors.">
             <label
-              htmlFor="legacy-overhead"
+              htmlFor={legacyOverheadId}
               className="font-medium text-muted-foreground border-b border-dashed"
             >
               Legacy Nearshore Overhead:
@@ -393,10 +401,11 @@ export function ComparisonWidget() {
           </WithTooltip>
           <input
             type="number"
-            id="legacy-overhead"
+            id={legacyOverheadId}
             min={0}
             max={100}
             step={1}
+            inputMode="decimal"
             value={nearshoreLegacyOverhead * 100}
             onChange={(e) =>
               setNearshoreLegacyOverhead(clamp(Number(e.target.value), 0, 100) / 100)
@@ -431,7 +440,7 @@ export function ComparisonWidget() {
                   {col}
                   {col.includes('Co-Pilot') && (
                     <div className="text-xs font-normal bg-primary/10 text-primary rounded-full px-2 py-0.5 mt-1 inline-block">
-                      Includes EOR • Devices/MDM • SSO/SAML/SCIM • Compliance
+                      Includes {inputs.nearshoreCoPilot.includes.join(' • ')}
                     </div>
                   )}
                 </th>
@@ -451,7 +460,7 @@ export function ComparisonWidget() {
                 </th>
                 {row.data.map((cell, cellIndex) => (
                   <td
-                    key={columns[cellIndex]}
+                    key={`${row.label}:${columns[cellIndex]}`}
                     className={`p-3 text-center font-mono ${
                       cellIndex === 4 ? 'text-primary font-bold' : 'text-foreground'
                     }`}
