@@ -80,9 +80,9 @@ export default async function NearshoreVsOffshorePage() {
       </div>
 
        <header className="my-8 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Fire offshore & legacy nearshore—run an IT Co-Pilot in daylight.</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Which path ships this quarter without blowing up Finance?</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            Evidence, not theater. Day-one security, daylight shipping.
+            Build in-house, go onshore, take the offshore lag, try legacy nearshore—or run a Nearshore IT Co-Pilot you actually command.
           </p>
       </header>
 
@@ -95,27 +95,27 @@ export default async function NearshoreVsOffshorePage() {
                         {option.icon}
                         <h3 className={`font-bold ${index === 4 ? 'text-primary' : 'text-foreground'}`}>{option.title}</h3>
                     </div>
-                    <div className="space-y-2 text-xs mt-3 flex-grow">
-                        {option.pain && <div><strong className="text-destructive">Pain:</strong> <span className="text-muted-foreground">{option.pain}</span></div>}
-                        {option.implication && <div><strong className="text-foreground">Implication:</strong> <span className="text-muted-foreground">{option.implication.replace('TTO', '').replace('EOR', '')}
+                    <div className="space-y-3 mt-4 flex-grow">
+                        {option.pain && <div><p className="text-sm font-semibold text-destructive">{option.pain}</p></div>}
+                        {option.implication && <div><p className="text-sm text-muted-foreground"><strong className="text-foreground block">Implication:</strong> {option.implication.replace('TTO', '').replace('EOR', '')}
                          {option.implication.includes("TTO") && <Tooltip text="Time to Offer">TTO</Tooltip>}
                          {option.implication.includes("EOR") && <Tooltip text="Employer of Record">EOR</Tooltip>}
-                        </span></div>}
-                        {option.useWhen && <div><strong className="text-foreground">Use when:</strong> <span className="text-muted-foreground">{option.useWhen}</span></div>}
+                        </p></div>}
+                        {option.useWhen && <div><p className="text-sm text-muted-foreground"><strong className="text-foreground block">Use when:</strong> {option.useWhen}</p></div>}
 
-                        {option.painRemoved && <div><strong className="text-green-500">Pain removed:</strong> <span className="text-muted-foreground">{option.painRemoved}</span></div>}
-                        {option.mechanism && <div><strong className="text-foreground">Mechanism:</strong> <span className="text-muted-foreground">{option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
+                        {option.painRemoved && <div><p className="text-sm text-green-400"><strong className="text-foreground block">Pain removed:</strong> {option.painRemoved}</p></div>}
+                        {option.mechanism && <div><p className="text-sm text-muted-foreground"><strong className="text-foreground block">Mechanism:</strong> {option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
                             <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>
                             &nbsp;cognitive vetting,&nbsp;
                             <Tooltip text="Mobile Device Management">MDM</Tooltip>-secured devices, SSO/SAML/SCIM, single SLA.
-                        </span></div>}
-                        {option.outcome && <div><strong className="text-foreground">Outcome:</strong> <span className="text-muted-foreground">{option.outcome.replace('TCO', '')}
+                        </p></div>}
+                        {option.outcome && <div><p className="text-sm text-muted-foreground"><strong className="text-foreground block">Outcome:</strong> {option.outcome.replace('TCO', '')}
                              <Link href="/playbook/latam-economics" className="text-primary hover:underline"><Tooltip text="Total Cost of Ownership">TCO</Tooltip></Link>
                              , faster time-to-useful PR.
-                        </span></div>}
+                        </p></div>}
                     </div>
                     <div className="flex-grow"></div>
-                    <p className="text-xs mt-4 pt-2 border-t border-border italic text-primary/80">"{option.wtfCheck}"</p>
+                    <p className="text-xs mt-4 pt-4 border-t border-border italic text-primary/80">"{option.wtfCheck}"</p>
                 </div>
             ))}
         </div>
@@ -153,3 +153,5 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
+
+    
