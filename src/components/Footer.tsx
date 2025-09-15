@@ -51,7 +51,6 @@ const hireByCountryLinks: LinkItem[] = countries.map(c => ({
     href: `/hire/by-country/${c.slug}`, 
     label: (
         <span className="flex items-center gap-2">
-            <span className="h-4 w-4 rounded-sm overflow-hidden flex-shrink-0">{c.flag}</span>
             {c.name}
         </span>
     )
@@ -114,6 +113,9 @@ export default function Footer() {
              <div className="mt-4">
               <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80">Sign In to Platform</Link>
             </div>
+             <div className="mt-8">
+                <LinkColumn title="Scientific Research" links={researchLinks} />
+             </div>
           </div>
           
           <div className="col-span-1 md:col-span-2">
@@ -123,16 +125,14 @@ export default function Footer() {
             </div>
           </div>
           <div className="col-span-1 md:col-span-2">
-            <LinkColumn title="Hire by Role" links={hireByRoleLinks.slice(0, 7)} />
+            <LinkColumn title="Hire by Role" links={hireByRoleLinks.slice(0, 11)} />
           </div>
           <div className="col-span-1 md:col-span-2">
             <LinkColumn title="Hire by Country" links={hireByCountryLinks} />
           </div>
           <div className="col-span-1 md:col-span-3">
              <LinkColumn title="Popular Technologies" links={popularTechLinks} />
-             <div className="mt-8">
-                <LinkColumn title="Scientific Research" links={researchLinks} />
-             </div>
+             
           </div>
         </div>
 

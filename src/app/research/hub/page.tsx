@@ -138,7 +138,7 @@ export default async function ResearchPage() {
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer.replace(/<a href/g, ' <a href').replace(/<\/a>/g, '</a> ') // Add spaces for better parsing
+        "text": faq.answer.replace(/<a href/g, ' <a href').replace(/<\/a>/g, '</a> ')
       }
     }))
   };
