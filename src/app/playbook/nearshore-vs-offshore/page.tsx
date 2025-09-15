@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
@@ -150,7 +151,12 @@ export default async function NearshoreVsOffshorePage() {
                     </div>
                     
                     <div className="mt-4 pt-4 border-t border-border">
-                        <p className="text-sm italic text-primary/80">"{option.wtfCheck}"</p>
+                        <p className="text-sm italic text-primary/80">
+                           "{option.title === 'Offshore (Legacy)' ? 
+                                <>How many quarters died waiting for “<Tooltip text="Looks Good To Me">LGTM</Tooltip>”?</> :
+                                <>{option.wtfCheck}</>
+                            }"
+                        </p>
                     </div>
                 </div>
             ))}
