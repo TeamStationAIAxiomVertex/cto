@@ -1,15 +1,7 @@
 
-'use client'
+'use client';
 
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip as RechartsTooltip,
-  ResponsiveContainer,
-  Cell,
-} from 'recharts';
+import React, { type ReactNode } from 'react';
 import { Accordion, AccordionItem } from '@/components/Accordion';
 import { ShieldCheck, BrainCircuit, ArrowRight, HelpCircle, FileText, UserCheck, Scale, Zap } from 'lucide-react';
 import Link from 'next/link';
@@ -393,6 +385,37 @@ const faqs = [
   }
 ];
 
+const renderTextWithTooltip = (
+  raw: React.ReactNode,
+  term: string,
+  tooltipText: string
+): React.ReactNode => {
+  const text = typeof raw === 'string' ? raw : '';
+  if (!text || !text.includes(term)) return raw;
+
+  const parts = text.split(term);
+  return parts.map((part, index) => (
+    <React.Fragment key={`${term}-${index}`}>
+      {part}
+      {index < parts.length - 1 && (
+        <WithTooltip label={tooltipText}>
+          <span className="text-primary border-b border-dashed">{term}</span>
+        </WithTooltip>
+      )}
+    </React.Fragment>
+  ));
+};
+
+const renderWithMany = (
+  text: string,
+  items: Array<{ term: string; tooltip: string }>
+): React.ReactNode =>
+  items.reduce<React.ReactNode>(
+    (acc, it) => renderTextWithTooltip(acc, it.term, it.tooltip),
+    text
+  );
+
+
 export default function TalentEvaluationClient() {
 
   const getBarColor = (score: number) => {
@@ -400,23 +423,6 @@ export default function TalentEvaluationClient() {
     if (score >= 3.0) return 'hsl(var(--chart-2))'; // Good - Yellow
     return 'hsl(var(--destructive))'; // Concern - Red
   };
-
-    const renderTextWithTooltip = (text: string, term: string, tooltipText: string) => {
-        if (!text || typeof text !== 'string' || !text.includes(term)) {
-            return text;
-        }
-        const parts = text.split(term);
-        return parts.map((part, index) => (
-            <React.Fragment key={index}>
-                {part}
-                {index < parts.length - 1 && (
-                    <WithTooltip label={tooltipText}>
-                        <span className="text-primary border-b border-dashed">{term}</span>
-                    </WithTooltip>
-                )}
-            </React.Fragment>
-        ));
-    };
 
   return (
     <main className="container max-w-5xl py-12">
@@ -457,7 +463,7 @@ export default function TalentEvaluationClient() {
                             <h3 className="text-lg font-semibold text-foreground">{trait.name}</h3>
                         </div>
                         <div className="mt-4 text-sm text-muted-foreground flex-grow">
-                           {renderTextWithTooltip(renderTextWithTooltip(trait.rationale, 'PSA', "Problem-Solving Agility"), 'LO', "Learning Orientation")}
+                           {renderWithMany(trait.rationale, [{term: 'PSA', tooltip: 'Problem-Solving Agility'}, {term: 'LO', tooltip: 'Learning Orientation'}])}
                         </div>
 
                         <div className="mt-4 border-t border-border pt-4">
@@ -490,7 +496,7 @@ export default function TalentEvaluationClient() {
                         <Link href="/research/axiom-cortex-scientific-report" className="text-primary border-b border-dashed">Axiom Cortex™</Link>
                     </WithTooltip>
                     <span> AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary </span>
-                    <WithTooltip label="Behaviorally Anchored Rating Scales: a scoring method that ties numerical ratings to specific, observable behaviors.">
+                    <WithTooltip label="Behaviorally Anchored Rating Scales: a scoring method that ties ratings to specific, observable behaviors.">
                          <span className="text-primary border-b border-dashed">BARS</span>
                     </WithTooltip>
                     <span> rubric, and applies calibration layers to mitigate bias. The final score is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</span>
@@ -533,12 +539,12 @@ export default function TalentEvaluationClient() {
                      <div key={index} className="rounded-lg border bg-background p-4">
                         <p className="text-sm font-semibold text-destructive">The Pain: {risk.title}</p>
                         <p className="mt-3 text-sm text-muted-foreground">
-                            {renderTextWithTooltip(risk.description, 'IaC', "Infrastructure as Code")}
+                            {renderWithMany(risk.description, [{term: 'IaC', tooltip: 'Infrastructure as Code'}])}
                         </p>
                         <div className="mt-4 border-t border-border pt-4">
                            <h4 className="font-semibold text-primary">The Solution (Mitigation Plan)</h4>
                            <p className="text-sm text-foreground m-0">
-                             {renderTextWithTooltip(renderTextWithTooltip(risk.mitigation, 'IaC', "Infrastructure as Code"), 'LO', "Learning Orientation")}
+                             {renderWithMany(risk.mitigation, [{term: 'IaC', tooltip: 'Infrastructure as Code'}, {term: 'LO', tooltip: 'Learning Orientation'}])}
                            </p>
                         </div>
                         <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{risk.proof}</p>
@@ -548,7 +554,7 @@ export default function TalentEvaluationClient() {
         </div>
 
         <div className='my-12'>
-            <h2 className="text-3xl font-bold text-center text-foreground">Evidence Locker</h2>
+            <h2 id="evidence-locker" className="text-3xl font-bold text-center text-foreground">Evidence Locker</h2>
             <p className='text-muted-foreground mt-2 text-center'>
                 This is the raw data—the proof behind our analysis. A human expert interviews the candidate, and our Cognitive AI synthesizes the conversation, comparing responses against ideal answer blueprints to provide an objective score.
             </p>
@@ -587,7 +593,7 @@ export default function TalentEvaluationClient() {
               {faqs.map(faq => (
                 <div key={faq.question}>
                   <h4 className="font-semibold text-foreground">{faq.question}</h4>
-                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: faq.answer.replace('Axiom Cortex™', '<a href="/research/axiom-cortex-scientific-report" class="text-primary hover:underline">Axiom Cortex™</a>').replace('Evidence Locker', '<a href="#evidence-locker" class="text-primary hover:underline">Evidence Locker</a>') }}></p>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: String(faq.answer ?? '').replaceAll('Axiom Cortex™', '<a href="/research/axiom-cortex-scientific-report" class="text-primary hover:underline">Axiom Cortex™</a>').replaceAll('Evidence Locker', '<a href="#evidence-locker" class="text-primary hover:underline">Evidence Locker</a>') }}></p>
                 </div>
               ))}
             </div>
@@ -606,3 +612,5 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
+
+    
