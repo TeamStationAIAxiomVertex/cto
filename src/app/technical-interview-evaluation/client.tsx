@@ -13,7 +13,6 @@ import {
 import { Accordion, AccordionItem } from '@/components/Accordion';
 import { ShieldCheck, BrainCircuit, ArrowRight, HelpCircle, FileText, UserCheck, Scale, Zap } from 'lucide-react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { WithTooltip } from '@/components/ui/tooltip';
 
 const cognitiveData = [
@@ -393,8 +392,6 @@ const faqs = [
     answer: "Yes. The 'Evidence Locker' section provides full, untruncated transcript citations for every key question, along with the ideal answer blueprint and the detailed scoring breakdown. We provide radical transparency so you can see the proof behind the score."
   }
 ];
-
-const DynamicBarChart = dynamic(() => Promise.resolve(BarChart), { ssr: false });
 
 export default function TalentEvaluationClient() {
 
