@@ -56,10 +56,10 @@ export default function ProcessPage() {
     ];
 
     const recognitions = [
-        { icon: <Trophy className="h-6 w-6 text-yellow-400" />, title: 'Market Leader Award', source: 'Recognized for Cognitive AI innovation in nearshore IT delivery.' },
-        { icon: <Star className="h-6 w-6 text-yellow-400" />, title: 'Service Excellence', source: 'Selected for service excellence and trust signals.' },
-        { icon: <BookOpen className="h-6 w-6 text-yellow-400" />, title: 'Peer-Reviewed Research', source: 'Scientific papers on Cognitive AI in talent evaluation and performance.' },
-        { icon: <Beaker className="h-6 w-6 text-yellow-400" />, title: 'Field-Proven', source: '2.6M+ profiles, ≈9-day TTO, 96% retention.' },
+        { icon: <Trophy className="h-8 w-8 text-yellow-400" />, title: 'Market Leader Award', source: 'Recognized for Cognitive AI innovation in nearshore IT delivery.' },
+        { icon: <Star className="h-8 w-8 text-yellow-400" />, title: 'Service Excellence', source: 'Selected for service excellence and trust signals.' },
+        { icon: <BookOpen className="h-8 w-8 text-yellow-400" />, title: 'Peer-Reviewed Research', source: 'Scientific papers on Cognitive AI in talent evaluation and performance.' },
+        { icon: <Beaker className="h-8 w-8 text-yellow-400" />, title: 'Field-Proven', source: '2.6M+ profiles, ≈9-day TTO, 96% retention.' },
     ]
 
   return (
@@ -70,10 +70,10 @@ export default function ProcessPage() {
       <header className="text-center my-12">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">One Accountable Process, Guaranteed by Contract</h1>
         <div className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
-          This isn't a checklist; it's an engineered system. Our Nearshore IT Co-Pilot™ provides one accountable workflow for hiring, compliance, and secure devices, governed by a single
-          <InfoDropdown label="Master Services Agreement/Statement of Work" className="ml-1">
+          This isn't a checklist; it's an engineered system. Our Nearshore IT Co-Pilot™ provides one accountable workflow for hiring, compliance, and secure devices, governed by a single MSA/SOW. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
+          <InfoDropdown label="A Master Services Agreement (MSA) and Statement of Work (SOW) form a legally binding contract for our services." className="ml-1">
             <p className="text-sm">A Master Services Agreement (MSA) and Statement of Work (SOW) form a legally binding contract for our services.</p>
-          </InfoDropdown>. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
+          </InfoDropdown>
         </div>
          <div className="mt-6 font-semibold text-primary">
             Time-to-Offer ≈ 9 days • Day-1 Tool Readiness ≥ 95% • First PR in 7–14 days
@@ -97,7 +97,13 @@ export default function ProcessPage() {
                           <span className="text-primary font-bold">{stepIdx + 1}</span>
                         </div>
                       <div className="min-w-0 flex-1 pt-1.5">
-                        <div className="text-lg font-semibold text-foreground">{step.title}</div>
+                        {stepIdx === 0 ? (
+                            <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">
+                                Book a Demo Call
+                            </Link>
+                        ) : (
+                            <div className="text-lg font-semibold text-foreground">{step.title}</div>
+                        )}
                         <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
                         <p className="mt-2 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block">
                           <span className="font-bold">Artifact:</span> {step.artifact}
