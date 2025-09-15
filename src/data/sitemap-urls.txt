@@ -175,3 +175,5 @@ https://cto.teamstation.dev/hire/by-technology/sops
 https://cto.teamstation.dev/hire/by-technology/crowdstrike
 https://cto.teamstation.dev/sitemap
 https://cto.teamstation.dev/sitemap.xml
+https://cto.teamstation.dev/playbook
+https://cto.teamstation.dev/research
