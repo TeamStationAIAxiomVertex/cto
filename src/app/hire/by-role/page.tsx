@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane } from 'lucide-react';
 import type { Metadata } from 'next';
-import { Tooltip } from '@/components/Tooltip';
+import { InfoDropdown } from '@/components/Accordion';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Role | LATAM Staff Augmentation',
@@ -152,9 +152,7 @@ export default function HireByRolePage() {
                     {details.icon}
                     <h2 className="text-xl font-bold text-foreground">{details.name}</h2>
                 </div>
-                <Tooltip text={details.priorityTooltip}>
-                    <span className={`rounded-full px-3 py-1 text-xs font-medium ${getPriorityColor(details.priority)}`}>{details.priority}</span>
-                </Tooltip>
+                <InfoDropdown title={<span className={`rounded-full px-3 py-1 text-xs font-medium ${getPriorityColor(details.priority)}`}>{details.priority}</span>}><p className="text-sm text-muted-foreground">{details.priorityTooltip}</p></InfoDropdown>
               </div>
               <p className="mt-4 text-sm text-muted-foreground flex-grow">
                 {details.description}

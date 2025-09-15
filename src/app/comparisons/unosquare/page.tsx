@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { Tooltip } from '@/components/Tooltip';
+import { InfoDropdown } from '@/components/Accordion';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -24,8 +24,8 @@ const comparisonPoints = {
     },
     "Operations": {
         pain: "Is your staff-aug partner also your security and compliance partner?",
-        traditional: "Like most traditional firms, their model leaves you to manage the critical and risky operational components: secure devices, <a href='/trust' class='text-primary hover:underline'><Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip></a>, compliance, and insurance.",
-        teamstation: "Our integrated platform absorbs all of this risk and complexity. We bundle <a href='/services/integrated-services' class='text-primary hover:underline'><Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip></a>, secure devices, and insurance under one accountable SLA.",
+        traditional: "Like most traditional firms, their model leaves you to manage the critical and risky operational components: secure devices, <InfoDropdown title={<span class='border-b border-dashed'>MDM</span>}><p class='text-sm text-muted-foreground'>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>, compliance, and insurance.",
+        teamstation: "Our integrated platform absorbs all of this risk and complexity. We bundle <InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}><p class='text-sm text-muted-foreground'>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>, secure devices, and insurance under one accountable SLA.",
         proof: "SOC 2 & ISO Aligned"
     }
 }
@@ -80,7 +80,7 @@ export default function UnosquareComparisonPage() {
             <a href="https://www.unosquare.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Unosquare <ExternalLink className="h-4 w-4" /></a> is a well-established provider of both staff augmentation and custom software development services. This hybrid model allows them to either supplement a client's team or take on entire projects as a consulting engagement.
         </p>
         <p>
-           This differs significantly from TeamStation AI's singular focus: providing a complete platform for you to build and run your own elite nearshore team. We don't do project-based consulting; instead, we provide the talent and the entire operational infrastructure—<Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>, devices, security, insurance—for you to manage your team as a direct extension of your own. Our model is about empowerment and integration, not outsourcing.
+           This differs significantly from TeamStation AI's singular focus: providing a complete platform for you to build and run your own elite nearshore team. We don't do project-based consulting; instead, we provide the talent and the entire operational infrastructure—<InfoDropdown title={<span className="border-b border-dashed">EOR</span>}><p className="text-sm text-muted-foreground">Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>, devices, security, insurance—for you to manage your team as a direct extension of your own. Our model is about empowerment and integration, not outsourcing.
         </p>
         <h3>Talent Pool, Vetting, and Risk</h3>
         <p>

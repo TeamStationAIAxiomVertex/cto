@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { Tooltip } from '@/components/Tooltip';
+import { InfoDropdown } from '@/components/Accordion';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 const comparisonPoints = {
     "Operations": {
         pain: "Are you equipped to be a global employer?",
-        traditional: "TECLA is a talent marketplace. They connect you with talent, but the significant burden of compliance, payroll (<a href='/services/integrated-services' class='text-primary hover:underline'><Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip></a>), and IT security falls squarely on you.",
-        teamstation: "We are your global employer platform. We absorb all operational complexity—EOR, secure devices (<a href='/trust' class='text-primary hover:underline'><Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip></a>), and insurance—into one accountable SLA.",
+        traditional: "TECLA is a talent marketplace. They connect you with talent, but the significant burden of compliance, payroll (<InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}><p class='text-sm text-muted-foreground'>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>), and IT security falls squarely on you.",
+        teamstation: "We are your global employer platform. We absorb all operational complexity—EOR, secure devices (<InfoDropdown title={<span class='border-b border-dashed'>MDM</span>}><p class='text-sm text-muted-foreground'>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>), and insurance—into one accountable SLA.",
         proof: "1 accountable SLA"
     },
     "Vetting": {
@@ -24,7 +24,7 @@ const comparisonPoints = {
     },
     "Cost": {
         pain: "Is a placement fee the real cost?",
-        traditional: "A marketplace model seems cheap upfront, but the 'hidden costs' of setting up your own EOR, IT, and legal frameworks create a massive, unpredictable <a href='/playbook/latam-economics' class='text-primary hover:underline'><Tooltip text='Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.'>TCO</Tooltip></a>.",
+        traditional: "A marketplace model seems cheap upfront, but the 'hidden costs' of setting up your own EOR, IT, and legal frameworks create a massive, unpredictable <a href='/playbook/latam-economics' class='text-primary hover:underline'><InfoDropdown title={<span class='border-b border-dashed'>TCO</span>}><p class='text-sm text-muted-foreground'>Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.</p></InfoDropdown></a>.",
         teamstation: "Our <a href='/pricing' class='text-primary hover:underline'>all-inclusive pricing</a> eliminates surprises. You get a predictable, CFO-ready TCO that is often 40-60% lower than the fully-loaded cost of the marketplace model.",
         proof: "40-60% Lower TCO"
     }
@@ -80,7 +80,7 @@ export default function TeclaComparisonPage() {
             <a href="https://www.tecla.io/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">TECLA <ExternalLink className="h-4 w-4" /></a> operates as a talent marketplace, connecting companies with a network of developers across Latin America. While effective for sourcing candidates, their model places the significant burden of compliance, payroll, device security, and HR management squarely on the client.
         </p>
         <p>
-           As a TECLA alternative, TeamStation AI provides a fully integrated platform. We don't just find talent; we provide the entire operational infrastructure. This includes <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>, secure device provisioning (<Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>), and comprehensive insurance, all bundled into a single, predictable rate. Our{' '}
+           As a TECLA alternative, TeamStation AI provides a fully integrated platform. We don't just find talent; we provide the entire operational infrastructure. This includes <InfoDropdown title={<span className="border-b border-dashed">EOR</span>}><p className="text-sm text-muted-foreground">Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>, secure device provisioning (<InfoDropdown title={<span className="border-b border-dashed">MDM</span>}><p className="text-sm text-muted-foreground">Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>), and comprehensive insurance, all bundled into a single, predictable rate. Our{' '}
             <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link>
             {' '} engine also provides a layer of cognitive and bias-aware vetting that goes far beyond traditional screening.
         </p>

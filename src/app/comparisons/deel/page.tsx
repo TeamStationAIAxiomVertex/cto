@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { Tooltip } from '@/components/Tooltip';
+import { InfoDropdown } from '@/components/Accordion';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,8 +18,8 @@ const comparisonPoints = {
     },
     "Operations": {
         pain: "Who manages the hardware and security?",
-        traditional: "Deel handles payroll and compliance. They do not provide or manage secure laptops, <a href='/trust' class='text-primary hover:underline'><Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip></a>, or insurance. This is a major operational and security gap you must fill.",
-        teamstation: "Our platform is a complete operational wrapper. We bundle <a href='/services/integrated-services' class='text-primary hover:underline'><Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip></a>, MDM-secured devices, and insurance under one accountable SLA.",
+        traditional: "Deel handles payroll and compliance. They do not provide or manage secure laptops, <a href='/trust' class='text-primary hover:underline'><InfoDropdown title={<span class='border-b border-dashed'>MDM</span>}><p class='text-sm text-muted-foreground'>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown></a>, or insurance. This is a major operational and security gap you must fill.",
+        teamstation: "Our platform is a complete operational wrapper. We bundle <a href='/services/integrated-services' class='text-primary hover:underline'><InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}><p class='text-sm text-muted-foreground'>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown></a>, MDM-secured devices, and insurance under one accountable SLA.",
         proof: "SOC 2 & ISO Aligned"
     },
     "Model": {
@@ -80,7 +80,7 @@ export default function DeelComparisonPage() {
             <a href="https://www.deel.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Deel <ExternalLink className="h-4 w-4" /></a> is a world-class global payroll and compliance engine. They solve the critical problem of how to legally hire and pay people almost anywhere in the world. However, Deel is not a talent platform. They do not source, vet, or manage talent. You must bring your own candidates to their platform.
         </p>
         <p>
-           TeamStation AI, on the other hand, is an end-to-end talent and operations platform. Our primary function is to find, vet, and deliver elite LATAM engineering talent. Our platform then provides the entire operational wrapper—including <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>/payroll (which could even be powered by a platform like Deel), secure devices, and insurance—to run that team effectively.
+           TeamStation AI, on the other hand, is an end-to-end talent and operations platform. Our primary function is to find, vet, and deliver elite LATAM engineering talent. Our platform then provides the entire operational wrapper—including <InfoDropdown title={<span className="border-b border-dashed">EOR</span>}><p className="text-sm text-muted-foreground">Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>/payroll (which could even be powered by a platform like Deel), secure devices, and insurance—to run that team effectively.
         </p>
         <h3>Two Sides of the Same Coin</h3>
         <ul>

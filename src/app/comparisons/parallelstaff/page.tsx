@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { Tooltip } from '@/components/Tooltip';
+import { InfoDropdown } from '@/components/Accordion';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ const comparisonPoints = {
     },
     "Operations": {
         pain: "Who handles the operational complexity after the trial?",
-        traditional: "Their model still leaves the client to manage critical components like compliant hiring (<a href='/services/integrated-services' class='text-primary hover:underline'><Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip></a>), secure device management (<a href='/trust' class='text-primary hover:underline'><Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip></a>), and insurance.",
+        traditional: "Their model still leaves the client to manage critical components like compliant hiring (<InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}><p class='text-sm text-muted-foreground'>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>), secure device management (<InfoDropdown title={<span class='border-b border-dashed'>MDM</span>}><p class='text-sm text-muted-foreground'>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>), and insurance.",
         teamstation: "We provide a complete, end-to-end operating system. Our platform unifies hiring, legal/EOR, compliance, devices, security, and insurance under a single contract and a single SLA.",
         proof: "1 accountable SLA"
     },
@@ -80,7 +80,7 @@ export default function ParallelStaffComparisonPage() {
             <a href="https://www.parallelstaff.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">ParallelStaff's <ExternalLink className="h-4 w-4" /></a> Talent-as-a-Service (TaaS) model, with its "try-before-you-buy" evaluation period, is a smart evolution of traditional staff augmentation. It rightly identifies the need for structured onboarding and aims to reduce mis-hire risk.
         </p>
         <p>
-           However, their model still leaves the client to manage critical operational components. <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>, secure device provisioning with <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>, and cybersecurity insurance are not bundled into a unified offering. Furthermore, while a two-week trial is better than nothing, it is not a substitute for the deep, scientific validation provided by TeamStation AI's{' '}
+           However, their model still leaves the client to manage critical operational components. <InfoDropdown title={<span className="border-b border-dashed">EOR</span>}><p className="text-sm text-muted-foreground">Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>, secure device provisioning with <InfoDropdown title={<span className="border-b border-dashed">MDM</span>}><p className="text-sm text-muted-foreground">Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>, and cybersecurity insurance are not bundled into a unified offering. Furthermore, while a two-week trial is better than nothing, it is not a substitute for the deep, scientific validation provided by TeamStation AI's{' '}
            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>. A trial period can be influenced by project simplicity or short-term charisma, while our engine provides an objective, evidence-based measure of long-term capability.
         </p>
         <h3>The Unification Difference</h3>

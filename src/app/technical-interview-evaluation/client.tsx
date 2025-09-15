@@ -380,7 +380,7 @@ const faqs = [
   },
   {
     question: "What do the Cognitive Fingerprint scores mean?",
-    answer: "They measure four key latent traits that predict success in a senior engineering role: Architectural Instinct (AI), Problem-Solving Agility (PSA), Learning Orientation (LO), and Collaborative Mindset (CM). Each score is benchmarked against an ideal profile for the specific role."
+    answer: "They measure four key latent traits that predict success in a senior engineering role: Architectural Instinct (systems thinking), Problem-Solving Agility (adapting to new challenges), Learning Orientation (coachability), and Collaborative Mindset (teamwork). Each score is benchmarked against an ideal profile for the specific role."
   },
   {
     question: "How do you mitigate bias, especially for non-native English speakers?",
@@ -440,7 +440,12 @@ export default function TalentEvaluationClient() {
                             <BrainCircuit className="h-8 w-8 text-primary" />
                             <h3 className="text-lg font-semibold text-foreground">{trait.name}</h3>
                         </div>
-                        <div className="mt-4 text-sm text-muted-foreground flex-grow">{trait.rationale.replace('PSA', 'Problem-Solving Agility').replace('LO', 'Learning Orientation')}
+                        <div className="mt-4 text-sm text-muted-foreground flex-grow">
+                           {trait.rationale.split('PSA')[0]}
+                           {trait.rationale.includes('PSA') && <InfoDropdown title={<span className="border-b border-dashed">PSA</span>}><p className="text-sm">Problem-Solving Agility</p></InfoDropdown>}
+                           {trait.rationale.split('PSA')[1] && trait.rationale.split('PSA')[1].split('LO')[0]}
+                           {trait.rationale.includes('LO') && <InfoDropdown title={<span className="border-b border-dashed">LO</span>}><p className="text-sm">Learning Orientation</p></InfoDropdown>}
+                           {trait.rationale.split('LO')[1]}
                         </div>
 
                         <div className="mt-4 border-t border-border pt-4">
@@ -493,11 +498,19 @@ export default function TalentEvaluationClient() {
                 {risks.map((risk, index) => (
                      <div key={index} className="rounded-lg border bg-background p-4">
                         <p className="text-sm font-semibold text-destructive">The Pain: {risk.title}</p>
-                        <p className="mt-3 text-sm text-muted-foreground">{risk.description.replace('IaC', 'Infrastructure as Code')}
+                        <p className="mt-3 text-sm text-muted-foreground">
+                            {risk.description.split('IaC')[0]}
+                            {risk.description.includes('IaC') && <InfoDropdown title={<span className="border-b border-dashed">IaC</span>}><p className="text-sm">Infrastructure as Code</p></InfoDropdown>}
+                            {risk.description.split('IaC')[1]}
                         </p>
                         <div className="mt-4 border-t border-border pt-4">
                            <h4 className="font-semibold text-primary">The Solution (Mitigation Plan)</h4>
-                           <p className="text-sm text-foreground m-0">{risk.mitigation.replace('IaC', 'Infrastructure as Code').replace('LO', 'Learning Orientation')}
+                           <p className="text-sm text-foreground m-0">
+                             {risk.mitigation.split('IaC')[0]}
+                             {risk.mitigation.includes('IaC') && <InfoDropdown title={<span className="border-b border-dashed">IaC</span>}><p className="text-sm">Infrastructure as Code</p></InfoDropdown>}
+                             {risk.mitigation.split('IaC')[1] && risk.mitigation.split('IaC')[1].split('LO')[0]}
+                             {risk.mitigation.includes('LO') && <InfoDropdown title={<span className="border-b border-dashed">LO</span>}><p className="text-sm">Learning Orientation</p></InfoDropdown>}
+                             {risk.mitigation.split('LO')[1]}
                            </p>
                         </div>
                         <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{risk.proof}</p>
@@ -565,5 +578,3 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
-
-    
