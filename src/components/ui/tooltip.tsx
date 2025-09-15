@@ -2,47 +2,62 @@
 'use client';
 
 import * as React from 'react';
-import {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from '@/components/ui/tooltip-primitives';
+import * as RadixTooltip from '@radix-ui/react-tooltip';
 
-type WithTooltipProps = {
-  label: React.ReactNode;
-  side?: 'top' | 'right' | 'bottom' | 'left';
-  align?: 'start' | 'center' | 'end';
-  children: React.ReactNode;
-};
+function cx(...parts: Array<string | false | null | undefined>) {
+  return parts.filter(Boolean).join(' ');
+}
 
+/** Primitives (Radix-style) */
+export const TooltipProvider = RadixTooltip.Provider;
+export const TooltipRoot = RadixTooltip.Root;
+export const TooltipTrigger = RadixTooltip.Trigger;
+export const TooltipPortal = RadixTooltip.Portal;
+
+export const TooltipContent = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentPropsWithoutRef<typeof RadixTooltip.Content> & { className?: string }
+>(function TooltipContent({ className, sideOffset = 6, ...props }, ref) {
+  return (
+    <RadixTooltip.Content
+      ref={ref}
+      sideOffset={sideOffset}
+      className={cx(
+        'z-50 rounded-lg border bg-black/90 text-white px-3 py-2 text-xs shadow-md',
+        'backdrop-blur supports-[backdrop-filter]:bg-black/70',
+        className
+      )}
+      {...props}
+    />
+  );
+});
+
+/** Friendly wrapper: <WithTooltip content="...">{child}</WithTooltip> */
 export function WithTooltip({
-  label,
+  content,
+  children,
   side = 'top',
   align = 'center',
-  children,
-}: WithTooltipProps) {
+}: {
+  content: React.ReactNode;
+  children: React.ReactNode;
+  side?: React.ComponentProps<typeof TooltipContent>['side'];
+  align?: React.ComponentProps<typeof TooltipContent>['align'];
+}) {
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <span
-          className="inline-flex items-center cursor-help focus:outline-none focus:ring-2 focus:ring-primary/40"
-          tabIndex={0}
-        >
-          {children}
-        </span>
-      </TooltipTrigger>
-      {/* shadcn/Radix portals to <body> by default */}
-      <TooltipContent
-        side={side}
-        align={align}
-        sideOffset={6}
-        className="z-[1000] rounded-md border bg-popover px-2 py-1 text-xs text-popover-foreground shadow-md"
-      >
-        {label}
-      </TooltipContent>
-    </Tooltip>
+    <TooltipProvider>
+      <TooltipRoot>
+        <TooltipTrigger asChild>{children}</TooltipTrigger>
+        <TooltipPortal>
+          <TooltipContent side={side} align={align}>
+            {content}
+          </TooltipContent>
+        </TooltipPortal>
+      </TooltipRoot>
+    </TooltipProvider>
   );
 }
 
-// Optional: re-export provider so callers don't import primitives directly
-export { TooltipProvider } from '@/components/ui/tooltip-primitives';
+/** Back-compat sugar: <Tooltip content="...">{child}</Tooltip> */
+export const Tooltip = WithTooltip;
+export default WithTooltip;

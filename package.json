@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "22.x"
+    "node": "20.x"
   },
   "packageManager": "npm@10",
   "scripts": {
@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit",
     "build:strict": "npm run typecheck && npm run lint && npm run build:production",
     "build:fast": "next build --no-lint",
-    "export": "next build && next export",
+    "export": "next build",
     "seo:xray": "node scripts/seo-xray.mjs"
   },
   "dependencies": {

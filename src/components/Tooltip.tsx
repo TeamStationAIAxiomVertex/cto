@@ -1,5 +1,12 @@
-'use client';
 
-// Re-export default and named APIs from the new location
-export { default } from './ui/tooltip';
-export * from './ui/tooltip';
+export {
+  TooltipProvider,
+  TooltipRoot,
+  TooltipTrigger,
+  TooltipPortal,
+  TooltipContent,
+  WithTooltip,
+  Tooltip,
+} from '@/components/ui/tooltip';
+
+export { default } from '@/components/ui/tooltip';
