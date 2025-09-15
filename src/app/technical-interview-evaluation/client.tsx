@@ -7,41 +7,12 @@ import { BrainCircuit, ArrowRight, HelpCircle, UserCheck, Zap } from 'lucide-rea
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 
-const safeToString = (v: unknown) =>
-  typeof v === 'string'
-    ? v
-    : typeof v === 'number' || typeof v === 'boolean'
-    ? String(v)
-    : '';
-
-const renderTextWithTooltip = (
-  raw: ReactNode,
-  term: string,
-  tooltipText: string
-): ReactNode => {
-  // Seatbelt: empty term would match everything and split into characters.
-  if (!term) return raw;
-  const text = safeToString(raw);
-  if (!text.includes(term)) return raw;
-  const parts = text.split(term);
-  return parts.map((part, index) => (
-    <React.Fragment key={`${term}-${index}`}>
-      {part}
-      {index < parts.length - 1 && (
-        <WithTooltip label={tooltipText}>
-          <span className="text-primary border-b border-dashed">{term}</span>
-        </WithTooltip>
-      )}
-    </React.Fragment>
-  ));
-};
-
 const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const renderWithMany = (
-  raw: ReactNode,
+  raw: React.ReactNode,
   items: Array<{ term: string; tooltip: string }>
-): ReactNode => {
+): React.ReactNode => {
   const text = typeof raw === 'string' ? raw : '';
   const active = items.filter(i => i.term && text.includes(i.term));
   if (!text || active.length === 0) return raw;
