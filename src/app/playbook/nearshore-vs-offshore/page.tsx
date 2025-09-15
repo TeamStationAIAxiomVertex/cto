@@ -55,19 +55,19 @@ const options = [
 
 const microPSPs = [
     {
-        icon: <Users className="h-8 w-8 text-primary" />,
+        icon: <Users className="h-6 w-6 text-primary" />,
         problem: "Five invoices, zero ownership.",
         solution: "One governed stack (hiring → devices/MDM → access → EOR → SLAs).",
         proof: "Forecast vs actual variance drops under 10%; fewer reopenings."
     },
     {
-        icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+        icon: <BrainCircuit className="h-6 w-6 text-primary" />,
         problem: "“Senior” on the slide, junior in the repo.",
         solution: "Axiom Cortex™ cognitive evidence + structured rubrics.",
         proof: "Mismatch rate ≤10%; rewrite ADRs trend down."
     },
     {
-        icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+        icon: <ShieldCheck className="h-6 w-6 text-primary" />,
         problem: "Audit freeze and unmanaged laptops.",
         solution: "SSO/SAML/SCIM + MDM devices + revocation on demand.",
         proof: "Zero criticals in quarterly scans; questionnaires stop blocking deals."
@@ -98,27 +98,27 @@ export default async function NearshoreVsOffshorePage() {
                         {option.icon}
                         <h3 className={`font-bold text-lg ${index === 4 ? 'text-primary' : 'text-foreground'}`}>{option.title}</h3>
                     </div>
-                    <div className="space-y-4 mt-4 flex-grow text-sm">
-                        {option.pain && <div className="border-t border-border pt-2"><p><strong className="text-destructive block">Pain:</strong> <span className="text-muted-foreground">{option.pain}</span></p></div>}
-                        {option.implication && <div className="border-t border-border pt-2"><p><strong className="text-foreground block">Implication:</strong> <span className="text-muted-foreground">{option.implication.replace('TTO', '').replace('EOR', '')}
+                    <div className="space-y-2 mt-4 flex-grow text-sm">
+                        {option.pain && <p><strong className="text-destructive">Pain:</strong> <span className="text-muted-foreground">{option.pain}</span></p>}
+                        {option.implication && <p><strong className="text-foreground">Implication:</strong> <span className="text-muted-foreground">{option.implication.replace('TTO', '').replace('EOR', '')}
                          {option.implication.includes("TTO") && <Tooltip text="Time to Offer">TTO</Tooltip>}
                          {option.implication.includes("EOR") && <Tooltip text="Employer of Record">EOR</Tooltip>}
-                        </span></p></div>}
-                        {option.useWhen && <div className="border-t border-border pt-2"><p><strong className="text-foreground block">Use when:</strong> <span className="text-muted-foreground">{option.useWhen}</span></p></div>}
+                        </span></p>}
+                        {option.useWhen && <p><strong className="text-foreground">Use when:</strong> <span className="text-muted-foreground">{option.useWhen}</span></p>}
 
-                        {option.painRemoved && <div className="border-t border-border pt-2"><p><strong className="text-green-400 block">Pain removed:</strong> <span className="text-muted-foreground">{option.painRemoved}</span></p></div>}
-                        {option.mechanism && <div className="border-t border-border pt-2"><p><strong className="text-foreground block">Mechanism:</strong> <span className="text-muted-foreground">{option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
+                        {option.painRemoved && <p><strong className="text-green-400">Pain removed:</strong> <span className="text-muted-foreground">{option.painRemoved}</span></p>}
+                        {option.mechanism && <p><strong className="text-foreground">Mechanism:</strong> <span className="text-muted-foreground">{option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
                             <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>
                             &nbsp;cognitive vetting,&nbsp;
                             <Tooltip text="Mobile Device Management">MDM</Tooltip>-secured devices, SSO/SAML/SCIM, single SLA.
-                        </span></p></div>}
-                        {option.outcome && <div className="border-t border-border pt-2"><p><strong className="text-foreground block">Outcome:</strong> <span className="text-muted-foreground">{option.outcome.replace('TCO', '')}
+                        </span></p>}
+                        {option.outcome && <p><strong className="text-foreground">Outcome:</strong> <span className="text-muted-foreground">{option.outcome.replace('TCO', '')}
                              <Link href="/playbook/latam-economics" className="text-primary hover:underline"><Tooltip text="Total Cost of Ownership">TCO</Tooltip></Link>
                              , faster time-to-useful PR.
-                        </span></p></div>}
+                        </span></p>}
                     </div>
                     <div className="flex-grow"></div>
-                    <div className="mt-4 pt-4 border-t border-border">
+                    <div className="mt-4 pt-2 border-t border-border">
                         <p className="text-xs italic text-primary/80">"{option.wtfCheck}"</p>
                     </div>
                 </div>
