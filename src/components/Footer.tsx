@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
-import { NAV, type NavItem } from '@/config/nav';
+import { NAV } from '@/config/nav';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -16,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="mt-32 border-t border-border py-16 text-muted-foreground">
+    <footer className="mt-32 border-t border-border bg-card py-16 text-muted-foreground">
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           <div className="col-span-2 md:col-span-1">

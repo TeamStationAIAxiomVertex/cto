@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
 
+// Note: NavItem href is now a string to allow external links
 export type NavItem = {
-  href: `/${string}`;        // forces relative app routes at compile time
+  href: string;
   label: string;
-  icon?: ReactNode;
+  icon?: React.ReactNode;
   description?: string;
   isHubLink?: boolean;
 };

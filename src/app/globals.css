@@ -75,31 +75,14 @@
   }
 }
 
-.cta-button {
-    @apply inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+@layer components {
+    .cta-button {
+        @apply inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+    }
+    .light .cta-button {
+      @apply bg-blue-600 hover:bg-blue-700;
+    }
+    .dark .cta-button {
+      @apply bg-blue-500 hover:bg-blue-600;
+    }
 }
-.light .cta-button {
-  background-color: hsl(229 80% 55%);
-}
-.light .cta-button:hover {
-  background-color: hsl(229 80% 50%);
-}
-
-h1 {
-  @apply text-5xl font-extrabold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent;
-}
-
-h2 {
-    @apply text-4xl font-bold text-center text-foreground;
-}
-
-h3 {
-    @apply text-2xl;
-}
-
-p {
-    @apply text-lg text-muted-foreground;
-}
-
-
-    

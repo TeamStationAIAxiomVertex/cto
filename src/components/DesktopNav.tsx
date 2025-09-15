@@ -30,7 +30,7 @@ export function DesktopNav() {
           </PopoverTrigger>
           <PopoverContent className="w-80">
             <div className="grid gap-4">
-              {items.map(item => <NavLink key={item.href} {...item} label={item.label} />)}
+              {items.map(item => <NavLink key={item.href} {...item} />)}
             </div>
           </PopoverContent>
         </Popover>
