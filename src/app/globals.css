@@ -79,7 +79,7 @@
     @apply relative inline-block cursor-pointer border-b border-dashed border-primary;
   }
   .tooltip .tooltiptext {
-    @apply invisible absolute bottom-full left-1/2 z-10 w-48 -translate-x-1/2 rounded-md bg-card p-2 text-center text-sm text-foreground shadow-lg transition-opacity;
+    @apply invisible absolute bottom-full left-1/2 z-10 w-64 max-w-xs -translate-x-1/2 rounded-md bg-card p-3 text-left text-sm text-foreground shadow-lg transition-opacity;
   }
   .tooltip:hover .tooltiptext {
     @apply visible opacity-100;
