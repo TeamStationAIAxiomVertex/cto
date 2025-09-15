@@ -401,6 +401,23 @@ export default function TalentEvaluationClient() {
     return 'hsl(var(--destructive))'; // Concern - Red
   };
 
+    const renderTextWithTooltip = (text: string, term: string, tooltipText: string) => {
+        if (!text || typeof text !== 'string' || !text.includes(term)) {
+            return text;
+        }
+        const parts = text.split(term);
+        return parts.map((part, index) => (
+            <React.Fragment key={index}>
+                {part}
+                {index < parts.length - 1 && (
+                    <WithTooltip label={tooltipText}>
+                        <span className="text-primary border-b border-dashed">{term}</span>
+                    </WithTooltip>
+                )}
+            </React.Fragment>
+        ));
+    };
+
   return (
     <main className="container max-w-5xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
@@ -440,9 +457,7 @@ export default function TalentEvaluationClient() {
                             <h3 className="text-lg font-semibold text-foreground">{trait.name}</h3>
                         </div>
                         <div className="mt-4 text-sm text-muted-foreground flex-grow">
-                            {trait.rationale.includes('PSA') && <>Erick's <WithTooltip label="Problem-Solving Agility"><span className="text-primary border-b border-dashed">PSA</span></WithTooltip> is a significant strength. He showcased remarkable adaptability in the prompt engineering discussion (Q4), quickly grasping the interviewer's 'microservices' analogy and synthesizing it into a new, valid concept ('micro prompts'). This ability to pivot and apply existing mental models to new problems is a hallmark of agile thinking. His solution to the complex stakeholder problem (Q7) further confirms his ability to deconstruct and solve multifaceted challenges.</>}
-                            {trait.rationale.includes('LO') && <>This is Erick's strongest trait and a powerful positive signal. His score is a perfect 5.0, supported by a high <WithTooltip label="Metacognitive Conviction Index"><span className="text-primary border-b border-dashed">MCI</span></WithTooltip> score and 4 distinct authenticityIncidents. He proactively and honestly stated his limitations in error handling (Q1, Q5), creating security architecture from scratch (Q2), and Infrastructure as Code (Q6). This intellectual honesty is a critical predictor of coachability and rapid growth, making him an excellent investment.</>}
-                            {!trait.rationale.includes('PSA') && !trait.rationale.includes('LO') && trait.rationale}
+                           {renderTextWithTooltip(renderTextWithTooltip(trait.rationale, 'PSA', "Problem-Solving Agility"), 'LO', "Learning Orientation")}
                         </div>
 
                         <div className="mt-4 border-t border-border pt-4">
@@ -518,16 +533,12 @@ export default function TalentEvaluationClient() {
                      <div key={index} className="rounded-lg border bg-background p-4">
                         <p className="text-sm font-semibold text-destructive">The Pain: {risk.title}</p>
                         <p className="mt-3 text-sm text-muted-foreground">
-                            {risk.description.split('IaC')[0]}
-                            {risk.description.includes('IaC') && <WithTooltip label="Infrastructure as Code"><span className="border-b border-dashed">IaC</span></WithTooltip>}
-                            {risk.description.split('IaC')[1]}
+                            {renderTextWithTooltip(risk.description, 'IaC', "Infrastructure as Code")}
                         </p>
                         <div className="mt-4 border-t border-border pt-4">
                            <h4 className="font-semibold text-primary">The Solution (Mitigation Plan)</h4>
                            <p className="text-sm text-foreground m-0">
-                             {risk.mitigation.split('IaC')[0]}
-                             {risk.mitigation.includes('IaC') && <WithTooltip label="Infrastructure as Code"><span className="border-b border-dashed">IaC</span></WithTooltip>}
-                             {risk.mitigation.includes('LO') && <>{risk.mitigation.split('IaC')[1].split('LO')[0]}<WithTooltip label="Learning Orientation"><span className="border-b border-dashed">LO</span></WithTooltip>{risk.mitigation.split('LO')[1]}</>}
+                             {renderTextWithTooltip(renderTextWithTooltip(risk.mitigation, 'IaC', "Infrastructure as Code"), 'LO', "Learning Orientation")}
                            </p>
                         </div>
                         <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{risk.proof}</p>
