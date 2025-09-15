@@ -1,8 +1,16 @@
 'use client';
 import * as React from 'react';
+import type { ReactNode } from 'react';
 
 // Types
-type TooltipRootProps = { children: React.ReactNode };
+type TooltipRootProps = {
+  children: React.ReactNode;
+  // Accept shadcn/Radix-style provider props (no-ops in this shim)
+  delayDuration?: number;
+  skipDelayDuration?: number;
+  disableHoverableContent?: boolean;
+} & Record<string, unknown>;
+
 
 // Allow both patterns:
 // 1) Named <Tooltip text|label|content|title="...">children</Tooltip>
@@ -32,10 +40,11 @@ type TooltipContentProps = {
 const toTitle = (v: unknown): string | undefined =>
   typeof v === 'string' ? v : typeof v === 'number' ? String(v) : undefined;
 
-// Provider (no-op placeholder)
-export function TooltipProvider({ children }: TooltipRootProps) {
+// Provider (no-op placeholder, props accepted for compatibility)
+export function TooltipProvider({ children, ..._rest }: TooltipRootProps) {
   return <>{children}</>;
 }
+
 
 // Named Tooltip: container that also supports title-based tips via props
 export function Tooltip({
