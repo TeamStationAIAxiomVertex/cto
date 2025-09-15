@@ -71,8 +71,8 @@ export default function NewGenNearshoreComparisonPage() {
         </div>
 
         <header className="my-8 text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Nearshore Software Development: The New Stack Beats Onshore, Offshore, and Legacy Nearshore</h1>
-            <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Cheaper than “cheap” offshore—because we count the hidden taxes and run in daylight.</p>
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Fire offshore & legacy nearshore—run an IT Co-Pilot in daylight.</h1>
+            <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Evidence, not theater. Day-one security, daylight shipping.</p>
         </header>
 
         <ComparisonWidget />
