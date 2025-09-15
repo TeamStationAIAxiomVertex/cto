@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: siteName,
     images: [
       {
-        url: '/og-image.png', // Must be an absolute URL
+        url: '/og-image.tsx', // Must be an absolute URL
         width: 1200,
         height: 630,
         alt: siteName,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteName,
     description: siteDescription,
-    images: ['/og-image.png'], // Must be an absolute URL
+    images: ['/og-image.tsx'], // Must be an absolute URL
   },
   icons: {
     icon: '/icon.tsx',
