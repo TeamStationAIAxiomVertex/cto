@@ -11,6 +11,35 @@ type LinkItem = {
   icon?: ReactNode;
 };
 
+// Data sourced from the hire pages to avoid duplication
+const roleCategories = [
+  { name: 'Platform / Infra / SRE', slug: 'platform-infra-sre' },
+  { name: 'Security & GRC', slug: 'security-grc' },
+  { name: 'Backend / Services', slug: 'backend-services' },
+  { name: 'Frontend / Web', slug: 'frontend-web' },
+  { name: 'Data Engineering / Analytics', slug: 'data-engineering-analytics' },
+  { name: 'ML/AI & LLM Ops', slug: 'ml-ai-llm-ops' },
+  { name: 'Product, Design & Growth', slug: 'product-design-growth' },
+  { name: 'QA / Quality Engineering', slug: 'qa-quality-engineering' },
+  { name: 'Mobile / Cross-Platform', slug: 'mobile-cross-platform' },
+  { name: 'IT / Enterprise Ops', slug: 'it-enterprise-ops' },
+  { name: 'FinOps / BizTech', slug: 'finops-biztech' }
+];
+
+const countries = [
+    { name: 'Mexico', slug: 'mexico' },
+    { name: 'Colombia', slug: 'colombia' },
+    { name: 'Brazil', slug: 'brazil' },
+    { name: 'Argentina', slug: 'argentina' },
+    { name: 'Chile', slug: 'chile' },
+    { name: 'Peru', slug: 'peru' },
+    { name: 'Costa Rica', slug: 'costa-rica' },
+    { name: 'Uruguay', slug: 'uruguay' },
+    { name: 'Ecuador', slug: 'ecuador' },
+    { name: 'Guatemala', slug: 'guatemala' },
+];
+
+
 // Compile-time: enforce exactly "string -> LinkItem[]" and make it immutable.
 const links = Object.freeze({
   Playbook: [
@@ -21,20 +50,8 @@ const links = Object.freeze({
     { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring' },
     { href: '/playbook/tco-model', label: 'TCO Model' },
   ],
-  "What's Included": [
-    { href: '/platform', label: 'Platform' },
-    { href: '/process', label: 'Our Process' },
-    { href: '/technical-interview-evaluation', label: 'Talent Evaluations' },
-    { href: '/research/performance-evaluation-framework', label: 'Performance Framework' },
-    { href: '/services/integrated-services', label: 'Integrated Services' },
-    { href: '/services/talent-onboarding', label: 'Talent Onboarding' },
-  ],
-  Comparisons: [
-    { href: '/comparisons', label: 'All Comparisons' },
-    { href: '/comparisons/bairesdev', label: 'vs. BairesDev' },
-    { href: '/comparisons/globant', label: 'vs. Globant' },
-    { href: '/comparisons/toptal', label: 'vs. Toptal' },
-  ],
+  "Hire by Role": roleCategories.map(role => ({ href: `/hire/by-role/${role.slug}`, label: role.name })),
+  "Hire by Country": countries.map(country => ({ href: `/hire/by-country/${country.slug}`, label: country.name })),
   Company: [
     { href: '/about', label: 'About Us' },
     { href: '/research/hub', label: 'Research Hub' },
@@ -77,7 +94,7 @@ export default function Footer() {
     <footer className="mt-32 border-t border-border bg-card py-16 text-muted-foreground">
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-2 md:col-span-6 lg:col-span-1">
             <h3 className="text-lg font-bold text-foreground">TeamStation AI</h3>
             <p className="mt-2 text-sm">
               The integrated platform for building and scaling elite nearshore engineering teams.
@@ -86,8 +103,10 @@ export default function Footer() {
 
           {Object.entries(links).map(([title, maybeList]) => {
             const list = toSafeList(maybeList, title);
+            // Don't render empty sections
+            if (list.length === 0) return null;
             return (
-              <div key={title}>
+              <div key={title} className="col-span-1">
                 <h4 className="font-semibold text-foreground">{title}</h4>
                 <ul className="mt-4 space-y-3">
                   {list.map((link, i) => (
