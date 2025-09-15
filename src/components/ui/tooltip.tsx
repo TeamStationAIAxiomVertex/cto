@@ -1,47 +1,82 @@
 'use client';
-
 import * as React from 'react';
-import * as TooltipPrimitive from '@radix-ui/react-tooltip';
-import { cn } from '@/lib/utils';
 
-export const TooltipProvider = TooltipPrimitive.Provider;
-export const Tooltip = TooltipPrimitive.Root;
-export const TooltipTrigger = TooltipPrimitive.Trigger;
+// Types
+type TooltipRootProps = { children: React.ReactNode };
+type TooltipProps = { children: React.ReactNode };
+type TooltipTriggerProps = {
+  asChild?: boolean;
+  children: React.ReactElement;
+} & React.HTMLAttributes<HTMLElement>;
+type TooltipContentProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+type WithTooltipProps = {
+  label?: React.ReactNode;       // string/number -> native title
+  title?: string;                // alias for label
+  children: React.ReactNode;
+  asChild?: boolean;             // if true, clone child instead of wrapping
+  className?: string;
+};
 
-export const TooltipContent = React.forwardRef<
-  React.ElementRef<typeof TooltipPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> & { fallbackTitle?: string }
->(function TooltipContent({ className, sideOffset = 6, fallbackTitle, ...props }, ref) {
+// Named API (shadcn-compatible skeleton)
+export function TooltipProvider({ children }: TooltipRootProps) {
+  return <>{children}</>;
+}
+export function Tooltip({ children }: TooltipProps) {
+  return <span className="inline-block">{children}</span>;
+}
+export function TooltipTrigger({ children, ...rest }: TooltipTriggerProps) {
+  return React.cloneElement(children, { ...rest });
+}
+export function TooltipContent({ children, className }: TooltipContentProps) {
+  // screen-reader only; avoids popper deps and SSR issues
   return (
-    <TooltipPrimitive.Portal>
-      <TooltipPrimitive.Content
-        ref={ref}
-        sideOffset={sideOffset}
-        className={
-          cn('z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2', className)
-        }
-        {...props}
-      >
-        {props.children ?? (fallbackTitle ? <span>{fallbackTitle}</span> : null)}
-        <TooltipPrimitive.Arrow className="fill-border" width={8} height={4} />
-      </TooltipPrimitive.Content>
-    </TooltipPrimitive.Portal>
+    <span role="tooltip" aria-hidden className={['sr-only', className].filter(Boolean).join(' ')}>
+      {children}
+    </span>
   );
-});
+}
 
-/** Convenience wrapper: if JS/provider fails, the trigger still shows a native title tooltip. */
-export function WithTooltip({
-  label,
+// Default export: <TooltipDefault content="...">child</TooltipDefault>
+const TooltipDefault = ({
   children,
-}: {
-  label: string;
-  children: React.ReactElement<{ title?: string }>;
-}) {
-  const child = React.cloneElement(children, { title: label });
+  content,
+  ...rest
+}: { children: React.ReactNode; content?: React.ReactNode } & React.HTMLAttributes<HTMLSpanElement>) => {
+  const title =
+    typeof content === 'string' ? content
+    : typeof content === 'number' ? String(content)
+    : undefined;
+
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>{child}</TooltipTrigger>
-      <TooltipContent fallbackTitle={label}>{label}</TooltipContent>
-    </Tooltip>
+    <span title={title} {...rest}>
+      {children}
+    </span>
+  );
+};
+export default TooltipDefault;
+
+// Convenience helper used by your page: <WithTooltip label="...">child</WithTooltip>
+export function WithTooltip({ label, title, children, asChild, className }: WithTooltipProps) {
+  const tip =
+    typeof label === 'string' ? label
+    : typeof label === 'number' ? String(label)
+    : typeof title === 'string' ? title
+    : undefined;
+
+  if (asChild && React.isValidElement(children)) {
+    const prev = (children.props?.className as string) || '';
+    return React.cloneElement(children as React.ReactElement, {
+      title: tip,
+      className: [prev, className].filter(Boolean).join(' '),
+    });
+  }
+
+  return (
+    <span title={tip} className={className}>
+      {children}
+    </span>
   );
 }
