@@ -5,6 +5,7 @@ import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart, BookOpen, Star, Trophy } from 'lucide-react';
 import type { Metadata } from 'next';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
+import dynamic from 'next/dynamic';
 
 
 export const dynamic = 'force-static';
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
   title: 'Research Hub: The Science of Predictable Nearshore Results | TeamStation AI',
   description: 'Explore our peer-reviewed research on AI technical interviews, software engineering performance telemetry, and bias-free hiring for LATAM engineering teams.',
 };
+
+const PodcastEmbed = dynamic(() => import('@/components/PodcastEmbed'), { ssr: false });
 
 export default async function ResearchPage() {
   const researchAssets = [
@@ -150,7 +153,7 @@ export default async function ResearchPage() {
         <h2 className="text-center text-4xl font-bold">Listen to the Platform Vision</h2>
         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Hear directly from our founders and technical leaders about the science and strategy behind TeamStation AI.</p>
         <div className="mt-8 max-w-2xl mx-auto">
-          <iframe data-testid="embed-iframe" style={{borderRadius: "12px"}} src="https://open.spotify.com/embed/episode/7EwovXvoVFIGLJDwqTZFUE?utm_source=generator" width="100%" height="352" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <PodcastEmbed />
         </div>
       </section>
 
