@@ -202,6 +202,13 @@ export default function BiasFreeHiringAxiomCortexPage() {
             </tbody>
           </table>
         </div>
+        <div className="mt-8 not-prose">
+            <h4 className="font-bold text-foreground text-center">Further Reading:</h4>
+            <div className="flex justify-center space-x-4">
+                <Link href="/comparisons/bairesdev" className="text-primary hover:underline">vs. Bairesdev</Link>
+                <Link href="/research/hub" className="text-primary hover:underline">Research Hub</Link>
+            </div>
+        </div>
       </section>
 
       <section className="my-24">

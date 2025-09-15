@@ -21,6 +21,7 @@ const playbookLinks: LinkItem[] = [
   { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
   { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring' },
   { href: '/playbook/tco-model', label: 'TCO Model' },
+  { href: '/faq', label: 'FAQ for CTOs' },
 ];
 
 const companyLinks: LinkItem[] = [
@@ -64,6 +65,7 @@ const popularTechLinks: LinkItem[] = [
 });
 
 const utilityLinks: LinkItem[] = [
+    { href: '/faq', label: 'FAQ' },
     { href: '/sitemap', label: 'HTML Sitemap' },
     { href: '/sitemap.xml', label: 'XML Sitemap' },
     { href: 'https://teamstation.dev/privacy-policy', label: 'Privacy Policy' },
@@ -148,5 +150,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-    

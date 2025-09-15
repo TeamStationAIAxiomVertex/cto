@@ -1,0 +1,23 @@
+
+[
+  {
+    "q": "What makes TeamStation AI different from traditional nearshore vendors?",
+    "a": "It’s an integrated platform: hiring + EOR/payroll + devices/MDM + secure workspaces + compliance/insurance, with public SLAs and cognitive evaluations."
+  },
+  {
+    "q": "Do you provide devices and MDM on day one?",
+    "a": "Yes. Device MTPD ≤ 5 days, and MDM enrollment ≥ 99% within 24 hours. Every engagement includes cybersecurity & E&O insurance."
+  },
+  {
+    "q": "How do you reduce interview bias?",
+    "a": "Axiom Cortex combines 44 psychometric + NLP signals with a language-fairness calibration layer, producing explainable BARS-mapped evaluations."
+  },
+  {
+    "q": "How fast can we hire?",
+    "a": "Median Time-to-Offer is about 9 days, with day-one onboarding and performance diagnostics under a single SLA."
+  },
+  {
+    "q": "Do you operate across LATAM?",
+    "a": "Yes—45+ hubs. Programmatic pages cover country services and city/role templates; device provisioning and workspace SLAs apply region-wide."
+  }
+]

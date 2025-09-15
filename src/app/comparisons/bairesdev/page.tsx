@@ -92,6 +92,15 @@ export default function BairesDevComparisonPage() {
         <p>
             With BairesDev, companies must budget for separate vendors to handle <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
         </p>
+        <div className="mt-8 not-prose">
+            <h4 className="font-bold text-foreground">Further Reading:</h4>
+            <div className="flex flex-col space-y-2">
+                <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook Hub</Link>
+                <Link href="/research/hub" className="text-primary hover:underline">Research Hub</Link>
+                <Link href="/hire/by-technology/react" className="text-primary hover:underline">Hire React Developers</Link>
+                <Link href="/hire/by-country/mexico" className="text-primary hover:underline">Hire Developers in Mexico</Link>
+            </div>
+        </div>
       </div>
 
       <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">

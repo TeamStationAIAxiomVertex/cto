@@ -15,7 +15,9 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "build:strict": "npm run typecheck && npm run lint && npm run build:production",
-    "build:fast": "next build --no-lint"
+    "build:fast": "next build --no-lint",
+    "export": "next build && next export",
+    "seo:xray": "node scripts/seo-xray.mjs"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.7",
@@ -41,8 +43,11 @@
     "@types/react-dom": "^18",
     "@types/recharts": "^1.8.29",
     "autoprefixer": "^10.4.19",
+    "cheerio": "^1.0.0-rc.12",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
+    "fast-glob": "^3.3.2",
+    "kleur": "^4.1.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
