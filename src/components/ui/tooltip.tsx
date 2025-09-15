@@ -83,6 +83,11 @@ export function TooltipContent({ children, className }: TooltipContentProps) {
   );
 }
 
+// No-op for API compatibility
+export function TooltipArrow() {
+    return null;
+}
+
 // Default export: <TooltipDefault content="...">child</TooltipDefault>
 const TooltipDefault = ({
   children,
