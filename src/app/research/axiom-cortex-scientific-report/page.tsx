@@ -82,8 +82,7 @@ export default function AxiomCortexReportPage() {
         <div className="space-y-8">
             <div>
                 <h4 className="flex items-center gap-2"><FunctionSquare className="h-5 w-5 text-primary" />Function: Transcript Ingestion & Pre-processing</h4>
-                <p className="text-sm">The initial phase where the raw video interview transcript is cleaned, speaker-diarized, and segmented into question-answer pairs.</p>
-                <ul>
+                <p className="text-sm">The initial phase where the raw video interview transcript is cleaned, speaker-diarized, and segmented into question-answer pairs.</p><ul>
                     <li><strong>Algorithm 1: Utterance Normalization:</strong> Removes filler words, and standardizes punctuation.</li>
                     <li><strong>Algorithm 2: Speaker Diarization:</strong> Correctly attributes text to 'Interviewer' or 'Candidate'.</li>
                     <li><strong>Algorithm 3: Q/A Segmentation:</strong> Identifies and isolates discrete question and answer blocks for individual analysis.</li>
@@ -109,8 +108,9 @@ export default function AxiomCortexReportPage() {
                     <li><strong>Algorithm 9 (B_A - Accuracy):</strong> Scores the factual correctness of the technical statements.</li>
                     <li><strong>Algorithm 10 (B_C - Clarity):</strong> Scores the clarity and conciseness of the explanation, after calibration for linguistic factors.</li>
                      <li><strong>Algorithm 11 (B_L - Cognitive Load):</strong> Measures linguistic markers of cognitive strain (hesitations, restarts) to assess difficulty.</li>
-                     <li><strong>Formula: <WithTooltip label="Behaviorally Anchored Rating Scales: A scoring method that ties ratings to specific behaviors."><span className="border-b border-dashed">B-Axiom</span></WithTooltip> Score (BAS_q)</strong> for a given question `q`:</li>
+                     <li><p><strong>Formula: <WithTooltip label="Behaviorally Anchored Rating Scales: A scoring method that ties ratings to specific behaviors."><span className="border-b border-dashed">B-Axiom</span></WithTooltip> Score (BAS_q)</strong> for a given question `q`:</p>
                     <pre className="text-xs">{`BAS_q = (w_p*B_P) + (w_m*B_M) + (w_a*B_A) + (w_c*B_C) - (w_l*B_L)`}</pre>
+                    </li>
                     <li><small>Where `w` denotes the weight for each axiom.</small></li>
                 </ul>
             </div>
@@ -122,8 +122,9 @@ export default function AxiomCortexReportPage() {
                     <li><strong>Algorithm 20-24 (Architectural Instinct):</strong> Aggregates scores from systems design questions, focusing on B_M (Mental Model).</li>
                     <li><strong>Algorithm 25-29 (Problem-Solving Agility):</strong> Aggregates scores from novel or unexpected questions, focusing on the ability to adapt.</li>
                     <li><strong>Algorithm 30-35 (Learning Orientation & Collaborative Mindset):</strong> Analyzes behavioral questions and "authenticityIncidents" across the entire transcript.</li>
-                    <li><strong>Formula: Latent Trait Inference Score (LTIS_trait)</strong></li>
+                    <li><p><strong>Formula: Latent Trait Inference Score (LTIS_trait)</strong></p>
                     <pre className="text-xs">{`LTIS_trait = Σ(w_q * BAS_q) * λ_ccl`}</pre>
+                    </li>
                     <li><small>Where `w_q` is the relevance weight of question `q` for the trait, `BAS_q` is the overall B-Axiom score for that question, and `λ_ccl` is the Cortex Calibration Layer coefficient.</small></li>
                 </ul>
             </div>
@@ -135,17 +136,19 @@ export default function AxiomCortexReportPage() {
                     <li><strong>Algorithm 36: Linguistic Fluency Normalization:</strong> Identifies non-native speaker patterns (e.g., grammatical errors, phonetic approximations) and instructs the scoring model to focus on the conceptual content, not the delivery. Generates the `λ_ccl` coefficient.</li>
                     <li><strong>Algorithm 37: Authenticity Incident Detection:</strong> Flags instances of intellectual honesty (e.g., "I don't know," "I'm not the best at that"). This positively weights the Learning Orientation score.</li>
                     <li><strong>Algorithm 38: Jargon vs. First-Principles Detection:</strong> Determines if a candidate is using buzzwords without understanding (negative signal) or explaining concepts from fundamentals (positive signal).</li>
-                    <li><strong>Formula: Conceptual Fidelity Score (<WithTooltip label="Conceptual Fidelity Score"><span className="border-b border-dashed">CFS</span></WithTooltip>)</strong></li>
+                    <li><p><strong>Formula: Conceptual Fidelity Score (<WithTooltip label="Conceptual Fidelity Score"><span className="border-b border-dashed">CFS</span></WithTooltip>)</strong></p>
                     <pre className="text-xs">{`CFS = S_sem * (1 - P_jargon)`}</pre>
-                     <li><small>Where `S_sem` is semantic similarity and `P_jargon` is a penalty for over-reliance on jargon.</small></li>
+                     </li>
+                    <li><small>Where `S_sem` is semantic similarity and `P_jargon` is a penalty for over-reliance on jargon.</small></li>
                 </ul>
             </div>
              <div>
                 <h4 className="flex items-center gap-2"><Sigma className="h-5 w-5 text-primary" />Formulas: Final Synthesis & Risk Analysis</h4>
                 <p className="text-sm">The final algorithms (42-44) synthesize all data into the executive summary and risk mitigation plan.</p>
                 <ul>
-                    <li><strong>Algorithm 42: Metacognitive Conviction Index (<WithTooltip label="Metacognitive Conviction Index: Measures how well a candidate's self-assessed confidence aligns with their measured accuracy."><span className="border-b border-dashed">MCI</span></WithTooltip>):</strong> Correlates a candidate's self-assessed confidence with their measured accuracy to gauge self-awareness.</li>
+                    <li><p><strong>Algorithm 42: Metacognitive Conviction Index (<WithTooltip label="Metacognitive Conviction Index: Measures how well a candidate's self-assessed confidence aligns with their measured accuracy."><span className="border-b border-dashed">MCI</span></WithTooltip>):</strong> Correlates a candidate's self-assessed confidence with their measured accuracy to gauge self-awareness.</p>
                      <pre className="text-xs">{`MCI = 1 - |(C_self - A_norm) / (C_self + A_norm)|`}</pre>
+                    </li>
                     <li><small>Where `C_self` is self-assessed confidence and `A_norm` is normalized accuracy. An <WithTooltip label="Metacognitive Conviction Index"><span className="border-b border-dashed">MCI</span></WithTooltip> close to 1 is a strong positive signal.</small></li>
                     <li><strong>Algorithm 43: Risk Triangulation:</strong> Identifies areas where a candidate's scores fall below the ideal profile for a specific trait and cross-references this with admissions of weakness (authenticityIncidents) to generate a specific, evidence-backed risk factor.</li>
                      <li><strong>Algorithm 44: Final Score Aggregation:</strong> Computes the final weighted average score based on all latent traits, providing the top-line "Strong Hire / Hire / No Hire" recommendation.</li>

@@ -441,9 +441,10 @@ export default function TalentEvaluationClient() {
                             <BrainCircuit className="h-8 w-8 text-primary" />
                             <h3 className="text-lg font-semibold text-foreground">{trait.name}</h3>
                         </div>
-                        <div className="mt-4 text-sm text-muted-foreground flex-grow">{trait.rationale.replace('PSA', 'PSA').replace('LO', 'LO')}
-                            {trait.rationale.includes('PSA') && <WithTooltip label="Problem-Solving Agility"><span>PSA</span></WithTooltip>}
-                            {trait.rationale.includes('LO') && <WithTooltip label="Learning Orientation"><span>LO</span></WithTooltip>}
+                        <div className="mt-4 text-sm text-muted-foreground flex-grow">
+                            {trait.rationale.includes('PSA') && <>Erick's <WithTooltip label="Problem-Solving Agility">PSA</WithTooltip> is a significant strength... </>}
+                            {trait.rationale.includes('LO') && <>This is Erick's strongest trait... His high <WithTooltip label="Learning Orientation">LO</WithTooltip> and...</>}
+                            {!trait.rationale.includes('PSA') && !trait.rationale.includes('LO') && trait.rationale}
                         </div>
 
                         <div className="mt-4 border-t border-border pt-4">
@@ -475,7 +476,7 @@ export default function TalentEvaluationClient() {
                 <div className="text-muted-foreground">
                     <span>The score is a data-driven output from the </span>
                     <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation.">
-                        <span className="text-primary border-b border-dashed">Axiom Cortex™</span>
+                        <Link href="/research/axiom-cortex-scientific-report"><span className="text-primary border-b border-dashed">Axiom Cortex™</span></Link>
                     </WithTooltip>
                     <span> AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary </span>
                     <WithTooltip label="Behaviorally Anchored Rating Scales: a scoring method that ties numerical ratings to specific, observable behaviors.">
@@ -492,8 +493,8 @@ export default function TalentEvaluationClient() {
                         <Zap className="h-8 w-8 text-primary" />
                         <h3 className="text-lg font-semibold text-foreground">
                             <WithTooltip label="Metacognitive Conviction Index: Assesses how well a candidate's confidence is calibrated with their actual knowledge.">
-                                <span>MCI</span>
-                            </WithTooltip> Analysis
+                                <span>MCI Analysis</span>
+                            </WithTooltip>
                         </h3>
                     </div>
                     <div className="mt-4 text-sm text-muted-foreground">

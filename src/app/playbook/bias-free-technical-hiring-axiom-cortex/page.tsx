@@ -196,8 +196,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
                   <p className="text-xs text-muted-foreground m-0">A meeting where the loudest voice or most senior person often wins. Decisions are based on memory and opinion, not data. The process is a black box.</p>
                 </td>
                 <td className="px-4 py-4">
-                   <p className="font-bold text-primary">Data-Driven Go/No-Go</p>
-                   <p className="text-xs text-foreground m-0">The hiring decision is made based on the auditable Evidence Locker, comparing the candidate's Cognitive Fingerprint against the role's ideal profile. The decision is transparent, defensible, and based on objective data.</p>
+                   <p className="font-bold text-primary">Data-Driven Go/No-Go</p>                   <p className="text-xs text-foreground m-0">The hiring decision is made based on the auditable Evidence Locker, comparing the candidate's Cognitive Fingerprint against the role's ideal profile. The decision is transparent, defensible, and based on objective data.</p>
                 </td>
               </tr>
             </tbody>
