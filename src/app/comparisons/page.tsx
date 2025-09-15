@@ -29,6 +29,7 @@ const models = [
         problem: "Elite talent, but at a premium price. The freelance model creates continuity risk and leaves you with the entire burden of security, compliance, and management.",
         vendors: [
             { name: "Toptal", href: "/comparisons/toptal", website: "https://www.toptal.com/" },
+            { name: "Andela", href: "/comparisons/andela", website: "https://www.andela.com/" },
         ],
         solution: "We build dedicated, long-term teams of full-time employees, ensuring knowledge retention and deep integration, all at a sustainable cost."
     },
@@ -89,7 +90,7 @@ export default function ComparisonsPage() {
                                     <Link href={vendor.href} className="text-sm font-medium text-primary hover:underline">
                                         {vendor.name}
                                     </Link>
-                                    <a href={vendor.website} target="_blank" rel="noopener noreferrer" className="text-primary/70 hover:text-primary">
+                                    <a href={vendor.website} target="_blank" rel="nofollow noopener noreferrer" className="text-primary/70 hover:text-primary">
                                         <ExternalLink className="h-3 w-3" />
                                     </a>
                                 </div>

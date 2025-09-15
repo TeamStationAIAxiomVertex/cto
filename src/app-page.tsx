@@ -125,11 +125,26 @@ export default async function HomePage() {
     }
   };
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TeamStation AI",
+    "url": siteUrl,
+    "logo": `${siteUrl}/apple-touch-icon.png`,
+    "sameAs": [
+        "https://www.linkedin.com/company/teamstation"
+    ]
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <div className="container mx-auto px-4">
         <section className="text-center py-16 md:py-24">

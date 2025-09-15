@@ -84,6 +84,14 @@ export default function LatamEconomicsPage() {
                   <div className="bg-background p-6 rounded-lg border border-primary/20">
                       <p className="mt-2 text-muted-foreground">This CTO Playbook gives you a measured nearshore system: cognition-first hiring, secure-by-default devices, real SLAs for PRs and incidents, and a TCO model Finance signs without flinching.</p>
                   </div>
+                   <div className="mt-8 not-prose">
+                        <h4 className="font-bold text-foreground">Related Frameworks:</h4>
+                        <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4">
+                            <Link href="/playbook/build-vs-buy" className="text-primary hover:underline">Build vs. Buy Framework</Link>
+                            <Link href="/playbook/tco-model" className="text-primary hover:underline">TCO Model Cards</Link>
+                            <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+                        </div>
+                    </div>
               </div>
           </div>
       </header>
@@ -209,7 +217,7 @@ export default function LatamEconomicsPage() {
                 <p className="mt-4 text-foreground">By presenting this framework, you are no longer just a technical leader asking for budget. You are a business partner demonstrating financial acumen and a clear-eyed understanding of risk. This is how you get your budget approved and build an engineering organization that drives, rather than drains, value.</p>
             </div>
         </div>
-    </section>
+       </section>
 
        <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Ready to Build Your CFO-Ready Business Case?</h2>
