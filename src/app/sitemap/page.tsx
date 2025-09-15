@@ -35,6 +35,7 @@ function PageLink({ href, title }: { href: string; title: string }) {
 export default async function SitemapPage() {
     const caseStudies = await getAllCaseStudies();
     const playbookSlugs = await getAllPlaybookSlugs();
+    
     const researchPages = [
         { href: '/research/axiom-cortex-scientific-report', title: 'AxiomCortex Scientific Report' },
         { href: '/research/performance-evaluation-framework', title: 'Performance Evaluation Framework' },

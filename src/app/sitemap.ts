@@ -9,7 +9,7 @@ import { techCategories } from '@/lib/tech';
 const siteUrl = 'https://cto.teamstation.dev';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Comprehensive list of all static pages
+  // Main & Top-Level Pages (29 URLs)
   const staticPages = [
     '/',
     '/about',
@@ -40,7 +40,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/services/integrated-services',
     '/services/talent-onboarding',
     '/trust',
-    '/sitemap',
   ].map(route => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date(),
@@ -48,6 +47,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === '/' ? 1.0 : 0.8,
   }));
 
+  // Case Studies (6 URLs)
   const caseStudies = await getAllCaseStudies();
   const caseStudyPages = caseStudies.map(study => ({
     url: `${siteUrl}/case-studies/${study.slug}`,
@@ -56,13 +56,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  const playbookPages = (await getAllPlaybookSlugs()).map(slug => ({
+  // Playbook & Research Pages (9 URLs)
+  const playbookSlugs = await getAllPlaybookSlugs();
+  const playbookPages = playbookSlugs.map(slug => ({
       url: `${siteUrl}/playbook/${slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
   }));
-
+  
   const researchPages = [
     '/research/axiom-cortex-scientific-report',
     '/research/performance-evaluation-framework',
@@ -75,6 +77,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8
   }));
 
+  // Hire by Role (11 URLs)
   const rolePages = roleCategories.map(role => ({
     url: `${siteUrl}/hire/by-role/${role.slug}`,
     lastModified: new Date(),
@@ -82,6 +85,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Hire by Country (10 URLs)
   const countryPages = countries.map(country => ({
     url: `${siteUrl}/hire/by-country/${country.slug}`,
     lastModified: new Date(),
@@ -89,12 +93,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Hire by Technology (103 URLs)
   const techPages = techCategories.flatMap(category => category.tech).map(tech => ({
     url: `${siteUrl}/hire/by-technology/${tech.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.6,
   }));
+
+  const sitemapPage = {
+    url: `${siteUrl}/sitemap`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }
 
   return [
     ...staticPages,
@@ -104,5 +116,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...rolePages,
     ...countryPages,
     ...techPages,
+    sitemapPage
   ];
 }
