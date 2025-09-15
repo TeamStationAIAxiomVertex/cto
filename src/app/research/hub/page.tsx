@@ -4,7 +4,7 @@ import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart, BookOpen, Star, Trophy } from 'lucide-react';
 import type { Metadata } from 'next';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
-import dynamic from 'next/dynamic';
+import dynamicImport from 'next/dynamic';
 
 
 export const dynamic = 'force-static';
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   keywords: 'nearshore research, ai technical interviews, software engineering performance, bias-free hiring, latam engineering',
 };
 
-const PodcastEmbed = dynamic(() => import('@/components/PodcastEmbed'), { ssr: false });
+const PodcastEmbed = dynamicImport(() => import('@/components/PodcastEmbed'), { ssr: false });
 
 export default async function ResearchPage() {
   const researchAssets = [

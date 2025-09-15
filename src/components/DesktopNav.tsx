@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
@@ -13,12 +14,12 @@ const navItems = {
     { href: '/playbook/tco-model', title: 'TCO Model', description: 'A CFO-ready model for the Total Cost of Ownership.' },
   ],
   'What\'s Included': [
-    { href: 'https://teamstation.dev/platform', title: 'Our Platform', description: 'The Nearshore IT Co-Pilot™ Platform.'},
+    { href: '/platform', title: 'Our Platform', description: 'The Nearshore IT Co-Pilot™ Platform.' },
     { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-process', title: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
-    { href: 'https://teamstation.dev/technical-interview-evaluation', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
-    { href: 'https://teamstation.dev/talent-performance-evaluations', title: 'Performance Framework', description: 'A data-driven framework for performance and growth.' },
-    { href: 'https://teamstation.dev/nearshore-it-talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
-    { href: 'https://teamstation.dev/nearshore-integrated-services', title: 'Integrated Services', description: 'A single SLA for your entire nearshore operation.' },
+    { href: '/technical-interview-evaluation', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
+    { href: '/research/performance-evaluation-framework', title: 'Performance Framework', description: 'A data-driven framework for performance and growth.' },
+    { href: '/services/talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
+    { href: '/services/integrated-services', title: 'Integrated Services', description: 'A single SLA for your entire nearshore operation.' },
     { href: '/trust', title: 'Trust Center', description: 'Our commitment to security, compliance, and governance.' },
   ],
   'Comparisons': [
@@ -31,8 +32,8 @@ const navItems = {
 
 const simpleNavItems = [
     { href: '/case-studies', title: 'Case Studies' },
-    { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-pricing', title: 'Pricing' },
-    { href: 'https://teamstation.dev/latam-talent', title: 'Hire' },
+    { href: '/pricing', title: 'Pricing' },
+    { href: '/hire', title: 'Hire' },
     { href: '/research/hub', title: 'Research'},
     { href: '/about', title: 'About' },
 ];
