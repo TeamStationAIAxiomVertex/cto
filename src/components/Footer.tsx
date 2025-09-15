@@ -42,6 +42,12 @@ const links = Object.freeze({
     { href: '/hire', label: 'Hire Talent' },
     { href: '/research/hub#podcast', label: 'Podcast', icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1" /> },
   ],
+  'Main Site': [
+    { href: 'https://teamstation.dev', label: 'Main Home' },
+    { href: 'https://teamstation.dev/pricing', label: 'Main Site Pricing' },
+    { href: 'https://teamstation.dev/platform', label: 'Main Site Platform' },
+    { href: 'https://app.teamstation.dev', label: 'Sign In' },
+  ]
 } satisfies Record<string, LinkItem[]>);
 
 // Runtime: guarantee array-ness before .map()

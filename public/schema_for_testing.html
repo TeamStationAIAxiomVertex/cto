@@ -1,13 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schema Test Page</title>
-</head>
-<body>
-    <h1>TeamStation AI Schema for Validation</h1>
-    <p>Copy the content of the script tag below and paste it into the <a href="https://validator.schema.org/" target="_blank" rel="noopener noreferrer">Schema Markup Validator</a>.</p>
+    <title>Homepage Schema for Testing</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -16,7 +13,7 @@
       "@type": "Organization",
       "@id": "https://cto.teamstation.dev/#org",
       "name": "TeamStation AI",
-      "url": "https://cto.teamstation.dev/",
+      "url": "https://cto.teamstation.dev",
       "legalName": "TeamStation, Inc.",
       "description": "Instruction-first Nearshore software development platform, Nearshore IT Co-Pilot™. Proprietary Cognitive AI (Axiom Cortex™) + Nebula Neural Search matching across Latin America.",
       "slogan": "Instruction-First Nearshore. Outcomes You Can Observe.",
@@ -70,11 +67,11 @@
         "Latin America engineering market"
       ],
       "subjectOf": [
-        { "@id": "https://cto.teamstation.dev/#book" },
-        { "@id": "https://cto.teamstation.dev/#paper-axiom-cortex" },
-        { "@id": "https://cto.teamstation.dev/#paper-neural-ai" },
-        { "@id": "https://cto.teamstation.dev/#paper-human-capacity" },
-        { "@id": "https://cto.teamstation.dev/#paper-performance-metrics" }
+         { "@type": "Book", "@id": "https://www.amazon.com/dp/B0F4TF6TWD" },
+         { "@type": "ScholarlyArticle", "@id": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397" },
+         { "@type": "ScholarlyArticle", "@id": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433" },
+         { "@type": "ScholarlyArticle", "@id": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490" },
+         { "@type": "ScholarlyArticle", "@id": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470" }
       ],
       "owns": [
         { "@id": "https://cto.teamstation.dev/#axiom-cortex" },
@@ -85,7 +82,7 @@
     {
       "@type": "WebSite",
       "@id": "https://cto.teamstation.dev/#website",
-      "url": "https://cto.teamstation.dev/",
+      "url": "https://cto.teamstation.dev",
       "name": "TeamStation AI CTO Playbook",
       "inLanguage": "en",
       "publisher": { "@id": "https://cto.teamstation.dev/#org" },
@@ -98,7 +95,7 @@
     {
       "@type": "WebPage",
       "@id": "https://cto.teamstation.dev/#webpage",
-      "url": "https://cto.teamstation.dev/",
+      "url": "https://cto.teamstation.dev",
       "name": "Nearshore IT Co-Pilot™ — The CTO's Field Manual for Nearshore Success",
       "isPartOf": { "@id": "https://cto.teamstation.dev/#website" },
       "about": [
@@ -111,7 +108,7 @@
         "@type": "BreadcrumbList",
         "@id": "https://cto.teamstation.dev/#breadcrumbs",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cto.teamstation.dev/" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cto.teamstation.dev" }
         ]
       }
     },
@@ -195,71 +192,13 @@
       "isRelatedTo": [
         { "@id": "https://cto.teamstation.dev/#product" }
       ]
-    },
-    {
-      "@type": "Book",
-      "@id": "https://cto.teamstation.dev/#book",
-      "name": "Platforming the Nearshore IT Staff Augmentation Industry",
-      "url": "https://www.amazon.com/dp/B0F4TF6TWD",
-      "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
-      "publisher": { "@id": "https://cto.teamstation.dev/#org" },
-      "datePublished": "2024-05-23",
-      "bookEdition": "1st",
-      "inLanguage": "en",
-      "about": ["Nearshore Platform Design", "Cognitive AI for Hiring"],
-      "isPartOf": { "@id": "https://cto.teamstation.dev/#website" }
-    },
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://cto.teamstation.dev/#paper-axiom-cortex",
-      "headline": "AxiomCortex™: Scientific R&D Report — Bias-Mitigated AI Evaluation for Nearshore Software Engineering Teams",
-      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
-      "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
-      "publisher": { "@id": "https://cto.teamstation.dev/#org" },
-      "datePublished": "2024-05-15",
-      "inLanguage": "en",
-      "about": ["interview science","prompt engineering","cognitive modeling"],
-      "isPartOf": { "@id": "https://cto.teamstation.dev/#website" }
-    },
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://cto.teamstation.dev/#paper-neural-ai",
-      "headline": "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation",
-      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433",
-      "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
-      "publisher": { "@id": "https://cto.teamstation.dev/#org" },
-      "datePublished": "2024-02-15",
-      "inLanguage": "en",
-      "about": ["Recruitment AI", "Time-to-Hire Optimization"],
-      "isPartOf": { "@id": "https://cto.teamstation.dev/#website" }
-    },
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://cto.teamstation.dev/#paper-human-capacity",
-      "headline": "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering",
-      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490",
-      "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
-      "publisher": { "@id": "https://cto.teamstation.dev/#org" },
-      "datePublished": "2024-02-22",
-      "inLanguage": "en",
-      "about": ["Platform Architecture", "AI Governance"],
-      "isPartOf": { "@id": "https://cto.teamstation.dev/#website" }
-    },
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://cto.teamstation.dev/#paper-performance-metrics",
-      "headline": "Nearshore IT Talent Performance Metrics in the Age of AI",
-      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470",
-      "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
-      "publisher": { "@id": "https://cto.teamstation.dev/#org" },
-      "datePublished": "2024-03-12",
-      "inLanguage": "en",
-      "about": ["Performance Metrics", "Value-Centric Evaluation"],
-      "isPartOf": { "@id": "https://cto.teamstation.dev/#website" }
     }
   ]
 }
 </script>
-
+</head>
+<body>
+    <h1>Schema for Testing</h1>
+    <p>This page contains the JSON-LD schema for the homepage. You can copy its contents and paste it into the <a href="https://validator.schema.org/">Schema.org Validator</a> or Google's <a href="https://search.google.com/test/rich-results">Rich Results Test</a>.</p>
 </body>
 </html>

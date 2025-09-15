@@ -56,7 +56,7 @@ const corePillars = [
         pain: "Drowning in vendor management?",
         title: "Eliminate Vendor Chaos with One SLA",
         description: "Stop juggling 5+ vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
-        href: "https://teamstation.dev/nearshore-integrated-services",
+        href: "/services/integrated-services",
         linkLabel: "See Our Integrated Services",
         kpi: "1 contract, 1 invoice"
     },
@@ -117,7 +117,7 @@ export default async function HomePage() {
         "@type": "Organization",
         "@id": `${siteUrl}/#org`,
         "name": "TeamStation AI",
-        "url": `${siteUrl}/`,
+        "url": siteUrl,
         "legalName": "TeamStation, Inc.",
         "description": "Instruction-first Nearshore software development platform, Nearshore IT Co-Pilot™. Proprietary Cognitive AI (Axiom Cortex™) + Nebula Neural Search matching across Latin America.",
         "slogan": "Instruction-First Nearshore. Outcomes You Can Observe.",
@@ -171,11 +171,11 @@ export default async function HomePage() {
           "Latin America engineering market"
         ],
         "subjectOf": [
-          { "@id": `${siteUrl}/#book` },
-          { "@id": `${siteUrl}/#paper-axiom-cortex` },
-          { "@id": `${siteUrl}/#paper-neural-ai` },
-          { "@id": `${siteUrl}/#paper-human-capacity` },
-          { "@id": `${siteUrl}/#paper-performance-metrics` }
+           { "@type": "Book", "@id": "https://www.amazon.com/dp/B0F4TF6TWD" },
+           { "@type": "ScholarlyArticle", "@id": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397" },
+           { "@type": "ScholarlyArticle", "@id": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433" },
+           { "@type": "ScholarlyArticle", "@id": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490" },
+           { "@type": "ScholarlyArticle", "@id": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470" }
         ],
         "owns": [
           { "@id": `${siteUrl}/#axiom-cortex` },
@@ -186,7 +186,7 @@ export default async function HomePage() {
       {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
-        "url": `${siteUrl}/`,
+        "url": siteUrl,
         "name": "TeamStation AI CTO Playbook",
         "inLanguage": "en",
         "publisher": { "@id": `${siteUrl}/#org` },
@@ -199,7 +199,7 @@ export default async function HomePage() {
       {
         "@type": "WebPage",
         "@id": `${siteUrl}/#webpage`,
-        "url": `${siteUrl}/`,
+        "url": siteUrl,
         "name": "Nearshore IT Co-Pilot™ — The CTO's Field Manual for Nearshore Success",
         "isPartOf": { "@id": `${siteUrl}/#website` },
         "about": [
@@ -212,7 +212,7 @@ export default async function HomePage() {
           "@type": "BreadcrumbList",
           "@id": `${siteUrl}/#breadcrumbs`,
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteUrl}/` }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl }
           ]
         }
       },
@@ -296,67 +296,6 @@ export default async function HomePage() {
         "isRelatedTo": [
           { "@id": `${siteUrl}/#product` }
         ]
-      },
-      {
-        "@type": "Book",
-        "@id": `${siteUrl}/#book`,
-        "name": "Platforming the Nearshore IT Staff Augmentation Industry",
-        "url": "https://www.amazon.com/dp/B0F4TF6TWD",
-        "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
-        "publisher": { "@id": `${siteUrl}/#org` },
-        "datePublished": "2024-05-23",
-        "bookEdition": "1st",
-        "inLanguage": "en",
-        "about": ["Nearshore Platform Design", "Cognitive AI for Hiring"],
-        "isPartOf": { "@id": `${siteUrl}/#website` }
-      },
-      {
-        "@type": "ScholarlyArticle",
-        "@id": `${siteUrl}/#paper-axiom-cortex`,
-        "headline": "AxiomCortex™: Scientific R&D Report — Bias-Mitigated AI Evaluation for Nearshore Software Engineering Teams",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
-        "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
-        "publisher": { "@id": `${siteUrl}/#org` },
-        "datePublished": "2024-05-15",
-        "inLanguage": "en",
-        "about": ["interview science","prompt engineering","cognitive modeling"],
-        "isPartOf": { "@id": `${siteUrl}/#website` }
-      },
-      {
-        "@type": "ScholarlyArticle",
-        "@id": `${siteUrl}/#paper-neural-ai`,
-        "headline": "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433",
-        "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
-        "publisher": { "@id": `${siteUrl}/#org` },
-        "datePublished": "2024-02-15",
-        "inLanguage": "en",
-        "about": ["Recruitment AI", "Time-to-Hire Optimization"],
-        "isPartOf": { "@id": `${siteUrl}/#website` }
-      },
-      {
-        "@type": "ScholarlyArticle",
-        "@id": `${siteUrl}/#paper-human-capacity`,
-        "headline": "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490",
-        "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
-        "publisher": { "@id": `${siteUrl}/#org` },
-        "datePublished": "2024-02-22",
-        "inLanguage": "en",
-        "about": ["Platform Architecture", "AI Governance"],
-        "isPartOf": { "@id": `${siteUrl}/#website` }
-      },
-      {
-        "@type": "ScholarlyArticle",
-        "@id": `${siteUrl}/#paper-performance-metrics`,
-        "headline": "Nearshore IT Talent Performance Metrics in the Age of AI",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470",
-        "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
-        "publisher": { "@id": `${siteUrl}/#org` },
-        "datePublished": "2024-03-12",
-        "inLanguage": "en",
-        "about": ["Performance Metrics", "Value-Centric Evaluation"],
-        "isPartOf": { "@id": `${siteUrl}/#website` }
       }
     ]
   };
@@ -406,23 +345,21 @@ export default async function HomePage() {
                           {pillar.icon}
                           <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
                       </div>
-                      <p className="mt-4 text-sm text-muted-foreground flex-grow">
-                          {pillar.description.includes("Axiom Cortex™") && 
+                      <div className="mt-4 text-sm text-muted-foreground flex-grow">
+                          {pillar.description.includes("Axiom Cortex™") ?
                               <>
                                   Stop gambling on resumes. Our <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
                               </>
-                          }
-                          {pillar.description.includes("EOR") &&
+                          : pillar.description.includes("EOR") ?
                             <>
                                 Stop juggling 5+ vendors. We bundle <WithTooltip label="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip label="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip label="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
                             </>
-                          }
-                           {pillar.description.includes("TCO") &&
+                          :
                             <>
                                 We provide a predictable, all-inclusive <WithTooltip label="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
                             </>
                           }
-                      </p>
+                      </div>
                       <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
                       <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary" target={pillar.href.startsWith('http') ? '_blank' : '_self'} rel={pillar.href.startsWith('http') ? 'noopener noreferrer' : ''}>
                           {pillar.linkLabel} <ArrowRight className="ml-2 h-4 w-4" />
@@ -537,7 +474,7 @@ export default async function HomePage() {
               <h2 className="text-3xl font-bold text-foreground">Stop Patching a Broken System. Build a Better One.</h2>
               <p className="mt-3 text-muted-foreground">In a 15-minute call, we won't give you a sales pitch. We'll give you a concrete plan to fix your hiring process, consolidate your vendors, and get a predictable, CFO-ready budget for your nearshore team. You will walk away with actionable advice, whether you work with us or not.</p>
               <div className="mt-6">
-                  <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a No-Obligation Strategy Call</Link>
+                  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a No-Obligation Strategy Call</a>
               </div>
           </div>
         </section>
