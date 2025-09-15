@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
-import { CheckCircle, ArrowRight, Shield, Bug, CloudCog } from 'lucide-react';
+import { CheckCircle, ArrowRight, Shield, Bug, CloudCog, AlertTriangle, Key } from 'lucide-react';
 
 
-const roleData: { [key: string]: { name: string; intro: string; roles: string[]; skills: string[]; tech: { name: string, slug: string }[]; evaluation: string[] } } = {
+const roleData: { [key: string]: { name: string; intro: string; roles: string[]; skills: string[]; tech: { name: string, slug: string }[]; evaluation: string[]; problems?: { pain: string; roles: string[]; skills: string[] }[] } } = {
   'platform-infra-sre': {
     name: 'Platform / Infra / SRE',
     intro: "You're here because system downtime, slow deployments, and runaway cloud bills are direct threats to your business. You need engineers who build resilient, observable, and cost-efficient platforms. That's a high-stakes role, and a mis-hire is not an option.",
@@ -32,6 +32,28 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
         'Scenario-based questions on incident response, debugging complex failures, and establishing SLOs/SLIs.',
         'Assessment of cost-consciousness and ability to analyze and optimize cloud spend.',
     ],
+    problems: [
+      {
+        pain: "System downtime is a direct threat to revenue and reputation.",
+        roles: ['SRE/DevOps', 'Cloud Architect'],
+        skills: ['Resilience architecture', 'Incident management', 'SLO/SLI definition']
+      },
+      {
+        pain: "Slow, manual deployments are killing our velocity.",
+        roles: ['Head of Platform', 'SRE/DevOps'],
+        skills: ['CI/CD automation', 'Infrastructure as Code (IaC)', 'GitOps']
+      },
+      {
+        pain: "We're flying blind with no visibility into system performance.",
+        roles: ['SRE/DevOps', 'Infra Sec Engineer'],
+        skills: ['Observability stacks (metrics, logs, traces)', 'Monitoring & alerting']
+      },
+      {
+        pain: "Our cloud bill is out of control and impossible to predict.",
+        roles: ['FinOps Lead', 'Cloud Architect'],
+        skills: ['Cloud cost optimization', 'FinOps principles', 'Capacity planning']
+      }
+    ]
   },
    'security-grc': {
     name: 'Security & GRC',
@@ -85,6 +107,23 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
         'Assessment of asynchronous processing and event-driven architecture patterns.',
         'Emphasis on writing clean, testable code with robust unit and integration test coverage.',
     ],
+     problems: [
+      {
+        pain: "Our API is slow, inconsistent, and hard for clients to use.",
+        roles: ['API Platform Eng', 'Principal Backend'],
+        skills: ['API design (REST/gRPC/GraphQL)', 'Domain modeling', 'Performance tuning']
+      },
+      {
+        pain: "The backend can't handle traffic spikes and frequently crashes.",
+        roles: ['Principal/Staff Backend', 'Data Services Eng'],
+        skills: ['Scalable architecture', 'Event-driven patterns', 'Caching strategies']
+      },
+      {
+        pain: "Shipping new features is slow and risky due to a complex monolith.",
+        roles: ['Principal/Staff Backend'],
+        skills: ['Microservices architecture', 'Decoupling strategies', 'Comprehensive testing']
+      }
+    ]
   },
   'frontend-web': {
     name: 'Frontend / Web',
@@ -112,6 +151,23 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
         'Evaluation of component design and API choices, with an emphasis on reusability and accessibility (ARIA).',
         'Scenario-based questions on data fetching strategies, caching (client and server), and managing server state.',
     ],
+    problems: [
+      {
+        pain: "Our website is slow and scores poorly on Core Web Vitals.",
+        roles: ['Staff Frontend', 'Web Platform Eng'],
+        skills: ['Performance optimization (CWV)', 'Modern rendering patterns (SSR/ISR)', 'Bundle analysis']
+      },
+      {
+        pain: "The UI is inconsistent and our design system is a mess.",
+        roles: ['Design Systems Eng', 'Staff Frontend'],
+        skills: ['Component library architecture', 'Accessibility (ARIA)', 'Theming']
+      },
+      {
+        pain: "State management is complex and leads to constant bugs.",
+        roles: ['Staff Frontend'],
+        skills: ['Server state management (TanStack Query)', 'Client state strategies (Zustand/Redux)', 'Data fetching patterns']
+      }
+    ]
   },
    'mobile-cross-platform': {
     name: 'Mobile / Cross-Platform',
@@ -160,6 +216,23 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
         'Scenario-based questions on data pipeline architecture, choice of batch vs. streaming, and orchestration best practices.',
         'Assessment of data governance and data quality concepts, including lineage and anomaly detection.',
     ],
+     problems: [
+      {
+        pain: "Our data is unreliable and business decisions are based on stale reports.",
+        roles: ['Data Platform Eng', 'Analytics Eng (dbt)'],
+        skills: ['Data modeling (dbt)', 'Data pipeline orchestration (Airflow)', 'Data quality testing']
+      },
+      {
+        pain: "We can't get data from our various SaaS tools into one place.",
+        roles: ['Data Platform Eng'],
+        skills: ['ELT processes (Fivetran/Airbyte)', 'Data warehousing (Snowflake/BigQuery)']
+      },
+      {
+        pain: "No one trusts the data because there's no documentation or governance.",
+        roles: ['Head of Data', 'BI Developer'],
+        skills: ['Data governance', 'Data cataloging (DataHub)', 'BI platform management']
+      }
+    ]
   },
   'ml-ai-llm-ops': {
     name: 'ML/AI & LLM Ops',
@@ -369,7 +442,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
     )
   }
 
-  const { name, intro, roles, skills, tech, evaluation } = category;
+  const { name, intro, roles, skills, tech, evaluation, problems } = category;
 
   return (
     <main className="container max-w-5xl py-12">
@@ -384,39 +457,62 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
       {name === 'Security & GRC' ? (
         <SecurityContent />
       ) : (
-        <div className="my-16 grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="md:col-span-1">
-              <h2 className="text-2xl font-bold border-b pb-2">Key Roles</h2>
-              <ul className="mt-4 space-y-2 list-none p-0">
-                  {roles.map(role => <li key={role} className='text-muted-foreground'>{role}</li>)}
-              </ul>
-          </div>
-          <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold border-b pb-2">Core Skills & Technologies</h2>
-              <div className='mt-4'>
-                  <h3 className='font-semibold text-foreground'>Skills</h3>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                      {skills.map(skill => (
-                           <span key={skill} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-                              {skill.includes('IaC') ? <WithTooltip label="Infrastructure as Code: Managing infrastructure through code instead of manual processes."><span className="border-b border-dashed">IaC</span></WithTooltip> : 
-                               skill.includes('SLO/SLI') ? <WithTooltip label="Service Level Objectives/Indicators: A framework for defining and measuring reliability."><span className="border-b border-dashed">SLO/SLI/error budgets</span></WithTooltip> :
-                               skill.includes('ELT') ? <WithTooltip label="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation."><span className="border-b border-dashed">ELT</span></WithTooltip> :
-                               skill.includes('retrieval') ? <WithTooltip label="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database."><span className="border-b border-dashed">retrieval design</span></WithTooltip> :
-                               skill}
-                           </span>
-                      ))}
+        <div className="my-16">
+          {problems && problems.length > 0 && (
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-center">Problems We Solve</h2>
+              <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">We provide experts who solve these specific, high-stakes business problems.</p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                {problems.map(problem => (
+                  <div key={problem.pain} className="rounded-lg border bg-card p-6 shadow-lg">
+                    <p className="font-semibold text-primary flex items-start gap-2"><AlertTriangle className="h-5 w-5 mt-1 shrink-0" />{problem.pain}</p>
+                    <div className="mt-4 border-t pt-4">
+                      <h4 className="font-semibold text-foreground text-sm flex items-center gap-2"><Key className="h-4 w-4"/>Relevant Roles & Skills</h4>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {problem.roles.map(r => <span key={r} className="text-xs font-medium bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{r}</span>)}
+                        {problem.skills.map(s => <span key={s} className="text-xs font-medium bg-background px-2 py-1 rounded-full">{s}</span>)}
+                      </div>
+                    </div>
                   </div>
+                ))}
               </div>
-               <div className='mt-6'>
-                  <h3 className='font-semibold text-foreground'>Technologies & Libraries</h3>
-                  <div className="flex flex-wrap gap-2 mt-2 items-center">
-                      {tech.map((t, i) => (
-                           <Link href={`/hire/by-technology/${t.slug}`} key={t.slug} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors">
-                              {t.name}
-                           </Link>
-                      ))}
-                  </div>
-              </div>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="md:col-span-1">
+                <h2 className="text-2xl font-bold border-b pb-2">Key Roles</h2>
+                <ul className="mt-4 space-y-2 list-none p-0">
+                    {roles.map(role => <li key={role} className='text-muted-foreground'>{role}</li>)}
+                </ul>
+            </div>
+            <div className="md:col-span-2">
+                <h2 className="text-2xl font-bold border-b pb-2">Core Skills & Technologies</h2>
+                <div className='mt-4'>
+                    <h3 className='font-semibold text-foreground'>Skills</h3>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                        {skills.map(skill => (
+                             <span key={skill} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+                                {skill.includes('IaC') ? <WithTooltip label="Infrastructure as Code: Managing infrastructure through code instead of manual processes."><span className="border-b border-dashed">IaC</span></WithTooltip> : 
+                                 skill.includes('SLO/SLI') ? <WithTooltip label="Service Level Objectives/Indicators: A framework for defining and measuring reliability."><span className="border-b border-dashed">SLO/SLI/error budgets</span></WithTooltip> :
+                                 skill.includes('ELT') ? <WithTooltip label="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation."><span className="border-b border-dashed">ELT</span></WithTooltip> :
+                                 skill.includes('retrieval') ? <WithTooltip label="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database."><span className="border-b border-dashed">retrieval design</span></WithTooltip> :
+                                 skill}
+                             </span>
+                        ))}
+                    </div>
+                </div>
+                 <div className='mt-6'>
+                    <h3 className='font-semibold text-foreground'>Technologies & Libraries</h3>
+                    <div className="flex flex-wrap gap-2 mt-2 items-center">
+                        {tech.map((t, i) => (
+                             <Link href={`/hire/by-technology/${t.slug}`} key={t.slug} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors">
+                                {t.name}
+                             </Link>
+                        ))}
+                    </div>
+                </div>
+            </div>
           </div>
         </div>
       )}
@@ -454,4 +550,5 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
 export async function generateStaticParams() {
   return Object.keys(roleData).map(slug => ({ slug }));
 }
+
 
