@@ -37,6 +37,8 @@ const techCategories = [
       { name: 'React/TypeScript', slug: 'react', icon: <SiReact /> },
       { name: 'Next.js', slug: 'nextjs', icon: <SiNextdotjs /> },
       { name: 'Vite', slug: 'vite', icon: <SiVite /> },
+      { name: 'Angular', slug: 'angular', icon: <SiAngular /> },
+      { name: 'Vue.js', slug: 'vue', icon: <SiVuedotjs /> },
       { name: 'TanStack Query', slug: 'tanstack', icon: <SiReact /> },
       { name: 'Redux/Zustand', slug: 'redux', icon: <SiRedux /> },
       { name: 'Tailwind/shadcn', slug: 'tailwind', icon: <SiTailwindcss /> },
@@ -50,9 +52,9 @@ const techCategories = [
     icon: <Plane className="h-6 w-6 text-primary" />,
     tech: [
         { name: 'React Native', slug: 'react-native', icon: <SiReact /> },
-        { name: 'Flutter', slug: 'flutter', icon: <SiReact /> },
-        { name: 'Swift', slug: 'swift', icon: <SiReact /> },
-        { name: 'Kotlin', slug: 'kotlin', icon: <SiReact /> },
+        { name: 'Flutter', slug: 'flutter', icon: <Plane /> },
+        { name: 'Swift', slug: 'swift', icon: <Plane /> },
+        { name: 'Kotlin', slug: 'kotlin', icon: <Plane /> },
         { name: 'Socket.IO', slug: 'socketio', icon: <SiSocketdotio /> },
     ],
   },
@@ -71,6 +73,7 @@ const techCategories = [
       { name: 'Hibernate', slug: 'hibernate', icon: <SiJava /> },
       { name: 'Redis', slug: 'redis', icon: <SiRedis /> },
       { name: 'Memcached', slug: 'memcached', icon: <SiMemcached /> },
+      { name: 'DynamoDB', slug: 'dynamodb', icon: <SiAmazondynamodb /> },
     ],
   },
   {
@@ -211,5 +214,3 @@ export default function HireByTechnologyPage() {
     </main>
   );
 }
-
-    

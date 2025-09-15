@@ -1,7 +1,8 @@
 
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle } from 'lucide-react';
+import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle, Plane } from 'lucide-react';
 import { Tooltip } from '@/components/Tooltip';
 
 const allTech: { 
@@ -441,6 +442,14 @@ const allTech: {
     intro: "Your enterprise relies on SQL Server, but performance is suffering and technical debt is mounting. You need an engineer with deep T-SQL knowledge who can write optimized queries, design robust stored procedures, and analyze execution plans to solve complex performance problems. You're here to find an expert who can manage your mission-critical data layer.",
     pains: [], 
     evaluation: ['Deep T-SQL proficiency, including window functions', 'Analyzing query execution plans and using hints', 'Indexing strategies (clustered vs. non-clustered, columnstore)', 'Stored procedure design and optimization', 'Transaction management and isolation levels'] 
+  },
+    'dynamodb': {
+    name: 'DynamoDB',
+    category: 'Data Modeling & Databases',
+    categorySlug: 'data-engineering-analytics',
+    intro: "You need a fast, scalable NoSQL database, but your data model is inefficient and your costs are spiraling. You need a DynamoDB expert who understands single-table design, can choose the right keys and indexes, and can optimize for both performance and cost.",
+    pains: [],
+    evaluation: ['Single-table vs. multi-table design trade-offs', 'Primary key and secondary index selection', 'Query vs. scan operations and performance', 'Capacity management (provisioned vs. on-demand)', 'Advanced features (streams, transactions, TTL)']
   },
   'redis': { 
     name: 'Redis', 
@@ -913,6 +922,14 @@ const allTech: {
     intro: "You need high-performance, low-latency communication between your microservices. You need a gRPC expert who can design efficient Protobuf schemas, leverage different RPC types (unary, streaming), and handle metadata and error handling effectively.",
     pains: [],
     evaluation: ['Protobuf schema design and best practices', 'Unary vs. streaming RPCs', 'Interceptors for middleware (logging, auth)', 'Error handling and status codes', 'Performance tuning and load balancing']
+  },
+  'socketio': {
+    name: 'Socket.IO',
+    category: 'Mobile / Cross-Platform',
+    categorySlug: 'mobile-cross-platform',
+    intro: "You need to build real-time features like chat, notifications, or live updates. You need a Socket.IO expert who understands how to manage connections, handle events, and scale a real-time communication server.",
+    pains: [],
+    evaluation: ['Event handling and emission', 'Room and namespace management', 'Scaling with Redis adapter', 'Authentication and middleware', 'Reconnection logic and reliability']
   }
 };
 
@@ -1018,3 +1035,4 @@ export default function TechPage({ params }: { params: { slug: string } }) {
 export async function generateStaticParams() {
   return Object.keys(allTech).map(slug => ({ slug }));
 }
+
