@@ -86,9 +86,14 @@ export default function PlatformPage() {
         </div>
       <header className="text-center my-12">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Nearshore IT Co-Pilot™ Platform</h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable <InfoDropdown title={<span className="border-b border-dashed">SLA</span>}><p className="text-sm text-muted-foreground">Service Level Agreement: A contract defining the level of service you can expect, backed by our MSA.</p></InfoDropdown>.
-        </p>
+        <div className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          <p>
+            Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable{' '}
+            <InfoDropdown title={<span className="border-b border-dashed">SLA</span>}>
+              <p className="text-sm text-muted-foreground">Service Level Agreement: A contract defining the level of service you can expect, backed by our MSA.</p>
+            </InfoDropdown>.
+          </p>
+        </div>
          <div className="mt-8">
             <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="cta-button">
                 See the Platform in Action
@@ -107,9 +112,9 @@ export default function PlatformPage() {
                         {service.icon}
                         <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
                     </div>
-                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{service.description.replace('MDM', 'MDM').replace('EOR', 'EOR')}
+                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{service.description}
                     </p>
-                    <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {service.kpi.replace('MDM', 'MDM')}
+                    <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {service.kpi}
                     </p>
                 </div>
             ))}
@@ -161,7 +166,7 @@ export default function PlatformPage() {
                         {item.details.map(detail => (
                             <li key={detail} className="flex items-start gap-2 text-sm text-muted-foreground">
                                 <CheckCircle className="h-4 w-4 shrink-0 mt-0.5 text-green-500" />
-                                <span>{detail.replace('MDM', 'MDM')}
+                                <span>{detail}
                                 </span>
                             </li>
                         ))}
