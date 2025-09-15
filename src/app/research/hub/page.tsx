@@ -111,10 +111,48 @@ export default async function ResearchPage() {
       subQuestion: "My current performance reviews feel subjective.",
       answer: "Our research into a <a href='/research/performance-evaluation-framework' class='text-primary hover:underline'>Performance Evaluation Framework</a> directly tackles this. We're building a system that moves beyond 'tickets closed' to measure true value creation. It correlates engineering activity with business outcomes. It's about shifting the conversation from 'How busy are you?' to 'What impact did you have?'"
     }
-  ]
+  ];
+
+  const pageSchema = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Research Hub: The Science of Predictable Nearshore Results | TeamStation AI",
+      "description": "Explore our peer-reviewed research on AI technical interviews, software engineering performance telemetry, and bias-free hiring for LATAM engineering teams.",
+      "url": "https://cto.teamstation.dev/research/hub",
+      "hasPart": publications.map(pub => ({
+          "@type": pub.href.includes('amazon.com') ? "Book" : "ScholarlyArticle",
+          "name": pub.title,
+          "url": pub.href,
+          "author": {
+              "@type": "Organization",
+              "name": "TeamStation AI"
+          }
+      }))
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer.replace(/<a href/g, ' <a href').replace(/<\/a>/g, '</a> ') // Add spaces for better parsing
+      }
+    }))
+  };
 
   return (
     <main className="container max-w-6xl py-12">
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
        <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research</span>
       </div>

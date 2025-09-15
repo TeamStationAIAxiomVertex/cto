@@ -67,12 +67,40 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     '@type': 'Organization',
     name: 'TeamStation AI',
     url: siteUrl,
-    // point to a static file you actually ship
     logo: `${siteUrl}/apple-touch-icon.png`,
     sameAs: [
       'https://www.linkedin.com/company/teamstation/',
       'https://twitter.com/teamstation',
     ],
+    founder: [
+        {
+            "@type": "Person",
+            "name": "Lonnie McRorey",
+            "jobTitle": "Co-Founder & CEO",
+            "alumniOf": "Temple University"
+        },
+        {
+            "@type": "Person",
+            "name": "Dan Diachenko",
+            "jobTitle": "Co-Founder",
+            "alumniOf": "Universidad Torcuato Di Tella"
+        }
+    ],
+    knowsAbout: [
+        "Nearshore Software Development",
+        "IT Staff Augmentation",
+        "Cognitive AI",
+        "Talent Evaluation",
+        "Software Engineering Performance Metrics",
+        "Bias-Free Hiring"
+    ],
+     publication: [
+      { "@type": "Book", "name": "Platforming the Nearshore IT Staff Augmentation Industry", "url": "https://www.amazon.com/dp/B0F4TF6TWD" },
+      { "@type": "ScholarlyArticle", "name": "AxiomCortex™: Scientific R&D Report — Bias-Mitigated AI Evaluation for Nearshore Software Engineering Teams", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397" },
+      { "@type": "ScholarlyArticle", "name": "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433" },
+      { "@type": "ScholarlyArticle", "name": "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490" },
+      { "@type": "ScholarlyArticle", "name": "Nearshore IT Talent Performance Metrics in the Age of AI", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470" }
+    ]
   };
 
   return (
