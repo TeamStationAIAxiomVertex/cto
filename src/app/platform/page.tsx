@@ -107,15 +107,15 @@ export default function PlatformPage() {
                         {service.icon}
                         <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
                     </div>
-                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{service.description.replace('MDM', 'Mobile Device Management').replace('EOR', 'Employer of Record')}
+                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{service.description.replace('MDM', 'MDM').replace('EOR', 'EOR')}
                     </p>
-                    <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {service.kpi.replace('MDM', 'Mobile Device Management')}
+                    <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {service.kpi.replace('MDM', 'MDM')}
                     </p>
                 </div>
             ))}
         </div>
         <div className="text-center mt-12">
-            <Link href="https://teamstation.dev/nearshore-integrated-services" target="_blank" rel="noopener noreferrer" className="cta-button">See All Included Services <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            <Link href="/services/integrated-services" className="cta-button">See All Included Services <ArrowRight className="ml-2 h-4 w-4" /></Link>
         </div>
       </section>
 
@@ -170,7 +170,7 @@ export default function PlatformPage() {
             ))}
         </div>
          <div className="text-center mt-8">
-            <Link href="https://teamstation.dev/nearshore-it-staff-augmentation-process" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">See the Full Process →</Link>
+            <Link href="/process" className="font-semibold text-primary hover:underline">See the Full Process →</Link>
         </div>
       </section>
 

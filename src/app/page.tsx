@@ -171,15 +171,7 @@ export default async function HomePage() {
                           <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
                       </div>
                       <p className="mt-4 text-sm text-muted-foreground flex-grow">
-                        {pillar.description.split('Axiom Cortex™')[0]}
-                        {pillar.title.includes("Cognitive AI") && <InfoDropdown title={<span className="text-primary border-b border-dashed">Axiom Cortex™</span>}><p className="text-sm text-muted-foreground">Our proprietary Cognitive AI engine for talent evaluation.</p></InfoDropdown>}
-                        {pillar.description.split('Axiom Cortex™')[1] && pillar.description.split('Axiom Cortex™')[1].split('MDM')[0]}
-                         {pillar.description.includes("MDM") && <InfoDropdown title={<span className="border-b border-dashed">MDM</span>}><p className="text-sm text-muted-foreground">Mobile Device Management: Software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>}
-                         {pillar.description.split('MDM')[1] && pillar.description.split('MDM')[1].split('EOR')[0]}
-                         {pillar.description.includes("EOR") && <InfoDropdown title={<span className="border-b border-dashed">EOR</span>}><p className="text-sm text-muted-foreground">Employer of Record: A third-party organization that legally employs workers on behalf of another company.</p></InfoDropdown>}
-                         {pillar.description.split('EOR')[1] && pillar.description.split('EOR')[1].split('TCO')[0]}
-                         {pillar.description.includes("TCO") && <InfoDropdown title={<span className="border-b border-dashed">TCO</span>}><p className="text-sm text-muted-foreground">Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.</p></InfoDropdown>}
-                         {pillar.description.split('TCO')[1]}
+                        {pillar.description}
                       </p>
                       <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
                       <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
@@ -224,13 +216,7 @@ export default async function HomePage() {
                   <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
                       <h4 className="font-semibold text-primary text-sm">Solution (Next-Gen)</h4>
                       <p className="text-sm text-foreground m-0">
-                        {card.solution.split('Axiom Cortex™')[0]}
-                        {card.solution.includes("Axiom Cortex") && <InfoDropdown title={<span className="text-primary border-b border-dashed">Axiom Cortex™</span>}><p className="text-sm text-muted-foreground">Our proprietary Cognitive AI engine for talent evaluation.</p></InfoDropdown>}
-                        {card.solution.split('Axiom Cortex™')[1] && card.solution.split('Axiom Cortex™')[1].split('MDM')[0]}
-                        {card.solution.includes("MDM") && <InfoDropdown title={<span className="border-b border-dashed">MDM</span>}><p className="text-sm text-muted-foreground">Mobile Device Management: Software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>}
-                        {card.solution.split('MDM')[1] && card.solution.split('MDM')[1].split('EOR')[0]}
-                        {card.solution.includes("EOR") && <InfoDropdown title={<span className="border-b border-dashed">EOR</span>}><p className="text-sm text-muted-foreground">Employer of Record: A third-party organization that legally employs workers on behalf of another company.</p></InfoDropdown>}
-                        {card.solution.split('EOR')[1]}
+                        {card.solution}
                       </p>
                   </div>
                   <div className="mt-4 pt-4 border-t border-border/50">

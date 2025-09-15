@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
@@ -30,12 +31,12 @@ export default function Footer() {
       { href: '/playbook/tco-model', label: 'TCO Model' },
     ],
     "What's Included": [
-      { href: 'https://teamstation.dev/platform', label: 'Platform', isExternal: true },
-      { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-process', label: 'Our Process', isExternal: true },
-      { href: 'https://teamstation.dev/technical-interview-evaluation', label: 'Talent Evaluations', isExternal: true },
-      { href: 'https://teamstation.dev/talent-performance-evaluations', label: 'Performance Framework', isExternal: true },
-      { href: 'https://teamstation.dev/nearshore-integrated-services', label: 'Integrated Services', isExternal: true },
-      { href: 'https://teamstation.dev/nearshore-it-talent-onboarding', label: 'Talent Onboarding', isExternal: true },
+      { href: '/platform', label: 'Platform' },
+      { href: '/process', label: 'Our Process' },
+      { href: '/technical-interview-evaluation', label: 'Talent Evaluations' },
+      { href: '/research/performance-evaluation-framework', label: 'Performance Framework' },
+      { href: '/services/integrated-services', label: 'Integrated Services' },
+      { href: '/services/talent-onboarding', label: 'Talent Onboarding' },
     ],
     "Comparisons": [
       { href: '/comparisons', label: 'All Comparisons' },
@@ -47,7 +48,7 @@ export default function Footer() {
       { href: '/about', label: 'About Us' },
       { href: '/research/hub', label: 'Research' },
       { href: '/trust', label: 'Trust Center' },
-      { href: 'https://teamstation.dev/latam-talent', label: 'Hire Talent', isExternal: true },
+      { href: '/hire', label: 'Hire Talent' },
       { href: '/research/hub#podcast', label: 'Podcast', icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1" /> },
     ]
   };
