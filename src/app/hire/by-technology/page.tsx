@@ -1,8 +1,8 @@
 
 import Link from 'next/link';
-import { ArrowRight, Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component } from 'lucide-react';
+import { ArrowRight, Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane } from 'lucide-react';
 import type { Metadata } from 'next';
-import { SiReact, SiNodedotjs, SiPython, SiGo, SiDotnet, SiRubyonrails, SiPhp, SiGraphql, SiAmazonaws, SiKubernetes, SiDocker, SiTerraform, SiGithubactions, SiIstio, SiPrometheus, SiOpentelemetry, SiJaeger, SiHashicorp, SiNextdotjs, SiVite, SiAngular, SiVuedotjs, SiRedux, SiApollographql, SiTailwindcss, SiStorybook, SiTestinglibrary, SiCypress, SiPostgresql, SiMysql, SiMicrosoftsqlserver, SiRedis, SiMemcached, SiTypescript, SiPrisma, SiAmazondynamodb, SiSnowflake, SiGooglebigquery, SiAmazonredshift, SiDbt, SiApacheairflow, SiFivetran, SiApachekafka, SiApachespark, SiLooker, SiTableau, SiPowerbi, SiDatadog, SiNewrelic, SiSentry, SiPytorch, SiTensorflow, SiHuggingface, SiOpenai, SiVercel, SiLangchain, SiWeaviate, SiPinecone, SiMlflow, SiJira, SiNotion, SiFigma, SiGoogleanalytics, SiAmplitude, SiMixpanel, SiJest, SiVitest, SiJunit5, SiK6, SiGremlin, SiOkta, SiAuth0, SiVault, SiSnyk, SiTrivy, SiOpenpolicyagent, SiSocketdotio, SiStripe, SiSalesforce, SiHubspot, SiNginx, SiAirtable, SiZapier, SiGrafana } from 'react-icons/si';
+import { SiReact, SiNodedotjs, SiPython, SiGo, SiDotnet, SiRubyonrails, SiPhp, SiGraphql, SiAmazonaws, SiKubernetes, SiDocker, SiTerraform, SiGithubactions, SiIstio, SiPrometheus, SiOpentelemetry, SiJaeger, SiHashicorp, SiNextdotjs, SiVite, SiAngular, SiVuedotjs, SiRedux, SiApollographql, SiTailwindcss, SiStorybook, SiTestinglibrary, SiCypress, SiPostgresql, SiMysql, SiMicrosoftsqlserver, SiRedis, SiMemcached, SiTypescript, SiPrisma, SiAmazondynamodb, SiSnowflake, SiGooglebigquery, SiAmazonredshift, SiDbt, SiApacheairflow, SiFivetran, SiApachekafka, SiApachespark, SiLooker, SiTableau, SiPowerbi, SiDatadog, SiNewrelic, SiSentry, SiPytorch, SiTensorflow, SiHuggingface, SiOpenai, SiVercel, SiLangchain, SiWeaviate, SiPinecone, SiMlflow, SiJira, SiNotion, SiFigma, SiGoogleanalytics, SiAmplitude, SiMixpanel, SiJest, SiVitest, SiJunit5, SiK6, SiGremlin, SiOkta, SiAuth0, SiVault, SiSnyk, SiTrivy, SiOpenpolicyagent, SiSocketdotio, SiStripe, SiSalesforce, SiHubspot, SiNginx, SiAirtable, SiZapier, SiGrafana, SiJava } from 'react-icons/si';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Developers by Technology | TeamStation AI',
@@ -19,7 +19,7 @@ const techCategories = [
     tech: [
       { name: 'Node.js', slug: 'node', icon: <SiNodedotjs /> },
       { name: 'Python', slug: 'python', icon: <SiPython /> },
-      { name: 'Java', slug: 'java', icon: <SiPython /> },
+      { name: 'Java', slug: 'java', icon: <SiJava /> },
       { name: 'Go', slug: 'go', icon: <SiGo /> },
       { name: '.NET', slug: 'net', icon: <SiDotnet /> },
       { name: 'Ruby on Rails', slug: 'ruby', icon: <SiRubyonrails /> },
@@ -43,6 +43,19 @@ const techCategories = [
       { name: 'Testing Library', slug: 'testing', icon: <SiTestinglibrary /> },
     ],
   },
+    {
+    name: 'Mobile & Cross-Platform',
+    slug: 'mobile-cross-platform',
+    pain: "Is your mobile experience falling behind?",
+    icon: <Plane className="h-6 w-6 text-primary" />,
+    tech: [
+        { name: 'React Native', slug: 'react-native', icon: <SiReact /> },
+        { name: 'Flutter', slug: 'flutter', icon: <SiReact /> },
+        { name: 'Swift', slug: 'swift', icon: <SiReact /> },
+        { name: 'Kotlin', slug: 'kotlin', icon: <SiReact /> },
+        { name: 'Socket.IO', slug: 'socketio', icon: <SiSocketdotio /> },
+    ],
+  },
   {
     name: 'Data Modeling & Databases',
     slug: 'data-engineering-analytics',
@@ -55,7 +68,7 @@ const techCategories = [
       { name: 'dbt', slug: 'dbt', icon: <SiDbt /> },
       { name: 'Prisma', slug: 'prisma', icon: <SiPrisma /> },
       { name: 'SQLAlchemy', slug: 'sqlalchemy', icon: <SiPython /> },
-      { name: 'Hibernate', slug: 'hibernate', icon: <SiPython /> },
+      { name: 'Hibernate', slug: 'hibernate', icon: <SiJava /> },
       { name: 'Redis', slug: 'redis', icon: <SiRedis /> },
       { name: 'Memcached', slug: 'memcached', icon: <SiMemcached /> },
     ],
@@ -198,3 +211,5 @@ export default function HireByTechnologyPage() {
     </main>
   );
 }
+
+    
