@@ -356,12 +356,14 @@ export function ComparisonWidget() {
             id={onshoreOverheadId}
             min={0}
             max={100}
-            step={1}
+            step={0.1}
             inputMode="decimal"
             value={onshoreOverhead * 100}
-            onChange={(e) =>
-              setOnshoreOverhead(clamp(Number(e.target.value), 0, 100) / 100)
-            }
+            onChange={(e) => {
+              const v = e.currentTarget.valueAsNumber;
+              if (!Number.isFinite(v)) return;
+              setOnshoreOverhead(clamp(v, 0, 100) / 100);
+            }}
             className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary"
           />
           <span className="text-muted-foreground">%</span>
@@ -380,12 +382,14 @@ export function ComparisonWidget() {
             id={offshoreOverheadId}
             min={0}
             max={100}
-            step={1}
+            step={0.1}
             inputMode="decimal"
             value={offshoreOverhead * 100}
-            onChange={(e) =>
-              setOffshoreOverhead(clamp(Number(e.target.value), 0, 100) / 100)
-            }
+            onChange={(e) => {
+              const v = e.currentTarget.valueAsNumber;
+              if (!Number.isFinite(v)) return;
+              setOffshoreOverhead(clamp(v, 0, 100) / 100);
+            }}
             className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary"
           />
           <span className="text-muted-foreground">%</span>
@@ -404,12 +408,14 @@ export function ComparisonWidget() {
             id={legacyOverheadId}
             min={0}
             max={100}
-            step={1}
+            step={0.1}
             inputMode="decimal"
             value={nearshoreLegacyOverhead * 100}
-            onChange={(e) =>
-              setNearshoreLegacyOverhead(clamp(Number(e.target.value), 0, 100) / 100)
-            }
+            onChange={(e) => {
+              const v = e.currentTarget.valueAsNumber;
+              if (!Number.isFinite(v)) return;
+              setNearshoreLegacyOverhead(clamp(v, 0, 100) / 100);
+            }}
             className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary"
           />
           <span className="text-muted-foreground">%</span>
