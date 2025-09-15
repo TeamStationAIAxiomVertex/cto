@@ -57,7 +57,12 @@ const links = Object.freeze({
     { href: '/about', label: 'About Us' },
     { href: '/research/hub', label: 'Research Hub' },
     { href: '/trust', label: 'Trust Center' },
-    { href: 'https://teamstation.dev', label: 'Main Site' },
+  ],
+  'Main Site': [
+    { href: 'https://teamstation.dev', label: 'TeamStation.dev Home' },
+    { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-pricing', label: 'Main Site Pricing' },
+    { href: 'https://teamstation.dev/nearshore-integrated-services', label: 'Main Site Platform' },
+    { href: "https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book", label: "Nearshore IT Platformed Book"},
     { href: '/research/hub#podcast', label: 'Podcast', icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1" /> },
   ],
   'Scientific Research': [
@@ -94,19 +99,23 @@ export default function Footer() {
             <p className="mt-2 text-sm">
               The integrated platform for building and scaling elite nearshore engineering teams.
             </p>
+            <address className="mt-4 text-sm not-italic">
+                One Seaport Square, 77 Sleeper St<br />
+                5830 E 2nd, St Ste 7000 #14687<br />
+                Boston, MA 02210
+            </address>
             <div className="mt-4">
               <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80">Sign In</Link>
             </div>
           </div>
 
-          {(['Playbook', 'Hire by Role', 'Hire by Technology', 'Hire by Country', 'Company', 'Scientific Research'] as const).map(title => {
+          {(['Playbook', 'Hire by Role', 'Hire by Technology', 'Hire by Country', 'Company', 'Main Site', 'Scientific Research'] as const).map(title => {
               const list = toSafeList(links[title], title);
               if (list.length === 0) return null;
               
-              const isHireSection = title.startsWith('Hire');
               let columnSpan = 'col-span-1 md:col-span-2';
-              if (title === 'Playbook') columnSpan = 'col-span-2 md:col-span-3';
-              if (title === 'Company' || title === 'Scientific Research') columnSpan = 'col-span-1 md:col-span-2';
+               if (title === 'Playbook') columnSpan = 'col-span-2 md:col-span-3';
+              if (title === 'Company' || title === 'Scientific Research' || title === 'Main Site') columnSpan = 'col-span-1 md:col-span-2';
 
               return (
                   <div key={title} className={columnSpan}>
