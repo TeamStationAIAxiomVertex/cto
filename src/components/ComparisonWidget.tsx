@@ -21,43 +21,44 @@ type Row = {
   data: Cell[];
 };
 
+const inputs = {
+    buildIn: { salaryAnnual: 180000, burdenPct: 0.30 },
+    onshore: { hourlyLow: 120, hourlyHigh: 150 },
+    offshoreLegacy: { hourlyLow: 45, hourlyHigh: 65 },
+    nearshoreLegacy: { hourlyLow: 45, hourlyHigh: 65 },
+    nearshoreCoPilot: { hourlyMin: 40, hourlyCap: 47, includes: ["EOR","Devices/MDM","SSO/SAML/SCIM","Compliance"] },
+    ops: {
+        prsPerMonth: 120,
+        devHourBlended: 85,
+        reviewHours: { buildIn: 2.0, onshore: 2.0, offshoreLegacy: 4.0, nearshoreLegacy: 2.0, nearshoreCoPilot: 1.0 },
+        ttoDays: { buildIn: 60, onshore: 60, offshoreLegacy: 45, nearshoreLegacy: 30, nearshoreCoPilot: 14 },
+        dailyValueUSD: 3000,
+        deploysPerMonth: 60,
+        incidentCostUSD: 12000,
+        cfr: { buildIn: 0.06, onshore: 0.06, offshoreLegacy: 0.08, nearshoreLegacy: 0.06, nearshoreCoPilot: 0.04 },
+        teamSize: 12,
+        attrition: { buildIn: 0.15, onshore: 0.15, offshoreLegacy: 0.20, nearshoreLegacy: 0.16, nearshoreCoPilot: 0.12 },
+        replaceCostUSD: 25000,
+        mgmtHoursMonth: {
+          buildIn: { EM: 15, PM: 10 },
+          onshore: { EM: 18, PM: 12 },
+          offshoreLegacy: { EM: 30, PM: 20 },
+          nearshoreLegacy: { EM: 18, PM: 12 },
+          nearshoreCoPilot: { EM: 0, PM: 0 }
+        },
+        mgmtRatesUSD: { EM: 120, PM: 95 },
+        auditHoursSavedPerYear: { buildIn: 80, onshore: 80, offshoreLegacy: 20, nearshoreLegacy: 120, nearshoreCoPilot: 250 },
+        complianceHourRateUSD: 110
+    }
+} as const;
+
+
 export function ComparisonWidget() {
     const [basisHours, setBasisHours] = useState(173);
     const [offshoreOverhead, setOffshoreOverhead] = useState(0.25);
     const [nearshoreLegacyOverhead, setNearshoreLegacyOverhead] = useState(0.10);
     const [onshoreOverhead, setOnshoreOverhead] = useState(0.20);
     const [data, setData] = useState<Results | null>(null);
-
-    const inputs = {
-        buildIn: { salaryAnnual: 180000, burdenPct: 0.30 },
-        onshore: { hourlyLow: 120, hourlyHigh: 150 },
-        offshoreLegacy: { hourlyLow: 45, hourlyHigh: 65 },
-        nearshoreLegacy: { hourlyLow: 45, hourlyHigh: 65 },
-        nearshoreCoPilot: { hourlyMin: 40, hourlyCap: 47, includes: ["EOR","Devices/MDM","SSO/SAML/SCIM","Compliance"] },
-        ops: {
-            prsPerMonth: 120,
-            devHourBlended: 85,
-            reviewHours: { buildIn: 2.0, onshore: 2.0, offshoreLegacy: 4.0, nearshoreLegacy: 2.0, nearshoreCoPilot: 1.0 },
-            ttoDays: { buildIn: 60, onshore: 60, offshoreLegacy: 45, nearshoreLegacy: 30, nearshoreCoPilot: 14 },
-            dailyValueUSD: 3000,
-            deploysPerMonth: 60,
-            incidentCostUSD: 12000,
-            cfr: { buildIn: 0.06, onshore: 0.06, offshoreLegacy: 0.08, nearshoreLegacy: 0.06, nearshoreCoPilot: 0.04 },
-            teamSize: 12,
-            attrition: { buildIn: 0.15, onshore: 0.15, offshoreLegacy: 0.20, nearshoreLegacy: 0.16, nearshoreCoPilot: 0.12 },
-            replaceCostUSD: 25000,
-            mgmtHoursMonth: {
-              buildIn: { EM: 15, PM: 10 },
-              onshore: { EM: 18, PM: 12 },
-              offshoreLegacy: { EM: 30, PM: 20 },
-              nearshoreLegacy: { EM: 18, PM: 12 },
-              nearshoreCoPilot: { EM: 0, PM: 0 }
-            },
-            mgmtRatesUSD: { EM: 120, PM: 95 },
-            auditHoursSavedPerYear: { buildIn: 80, onshore: 80, offshoreLegacy: 20, nearshoreLegacy: 120, nearshoreCoPilot: 250 },
-            complianceHourRateUSD: 110
-        }
-    };
 
     useEffect(() => {
         function calculate() {
@@ -128,7 +129,7 @@ export function ComparisonWidget() {
             setData(results);
         }
         calculate();
-    }, [basisHours, offshoreOverhead, nearshoreLegacyOverhead, onshoreOverhead, inputs]);
+    }, [basisHours, offshoreOverhead, nearshoreLegacyOverhead, onshoreOverhead]);
 
     if (!data) return <div className="text-center p-8">Loading Comparison Widget...</div>;
 
