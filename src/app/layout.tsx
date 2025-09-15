@@ -5,6 +5,7 @@ import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import './globals.css';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 const poppins = Poppins({ 
   subsets: ['latin'], 
@@ -15,7 +16,7 @@ const poppins = Poppins({
 
 const siteName = 'TeamStation AI';
 const siteDescription = 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.';
-const siteUrl = 'https://cto.teamstation.dev'; // Replace with your actual domain
+const siteUrl = 'https://cto.teamstation.dev'; 
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,9 +32,9 @@ export const metadata: Metadata = {
     siteName: siteName,
     images: [
       {
-        url: '/og-image.tsx', // Must be an absolute URL
-        width: 1200,
-        height: 630,
+        url: placeholderImages.metaCard.src.url,
+        width: placeholderImages.metaCard.src.width,
+        height: placeholderImages.metaCard.src.height,
         alt: siteName,
       },
     ],
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteName,
     description: siteDescription,
-    images: ['/og-image.tsx'], // Must be an absolute URL
+    images: [placeholderImages.metaCard.src.url], 
   },
   icons: {
     icon: '/icon.tsx',
