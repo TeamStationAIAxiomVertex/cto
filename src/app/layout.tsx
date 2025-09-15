@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     images: [placeholderImages.metaCard.src.url], 
   },
   icons: {
-    icon: '/icon.tsx',
+    icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-    apple: '/apple-icon.tsx',
+    apple: '/apple-touch-icon.png',
   },
 };
 
