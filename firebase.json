@@ -36,15 +36,6 @@
               "value": "public, max-age=31536000, immutable"
             }
           ]
-        },
-        {
-          "source": "**",
-          "headers": [
-            {
-              "key": "Content-Security-Policy-Report-Only",
-              "value": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://calendar.google.com; img-src 'self' data: blob: https://www.google-analytics.com https://teamstation.dev https://*.teamstation.dev https://images.unsplash.com https://picsum.photos; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
-            }
-          ]
         }
       ]
     },
