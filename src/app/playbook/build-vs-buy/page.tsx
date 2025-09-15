@@ -126,7 +126,7 @@ export default function BuildVsBuyPage() {
             <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Building your own nearshore operation seems like it offers more control, but it's a trap. You become responsible for a mountain of non-core activities, each with hidden costs and significant risks. Your finance team sees a lower salary; you, the CTO, are saddled with a dozen hidden "taxes" on your time and budget.</p>
         </div>
 
-        <div className="my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
             {buildCosts.map((item) => (
                 <div key={item.area} className="rounded-lg border border-destructive/20 bg-card p-6 flex flex-col">
                     <div className="flex items-center gap-3">
