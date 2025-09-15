@@ -1,9 +1,9 @@
 
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import { WithTooltip } from '@/components/ui/tooltip';
 
-type Cell = React.ReactNode | string | number;
+type Cell = ReactNode | string | number;
 
 export function ComparisonWidget() {
     const [basisHours, setBasisHours] = useState(173);
