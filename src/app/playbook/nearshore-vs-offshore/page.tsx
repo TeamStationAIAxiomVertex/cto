@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Tooltip } from '@/components/Tooltip';
+import { InfoDropdown } from '@/components/Accordion';
 import { Clock, Users, FileSearch, Building, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, BookOpen, BrainCircuit, GitCompare } from 'lucide-react';
 import { ComparisonWidget } from '@/components/ComparisonWidget';
 
@@ -111,9 +111,7 @@ export default async function NearshoreVsOffshorePage() {
                         <div>
                           <dt className="text-foreground text-xs uppercase tracking-wider font-bold">Implication</dt>
                           <dd className="text-sm text-muted-foreground mt-1">
-                            {option.implication.replace('TTO', '').replace('EOR', '')}
-                            {option.implication.includes("TTO") && <Tooltip text="Time to Offer">TTO</Tooltip>}
-                            {option.implication.includes("EOR") && <Tooltip text="Employer of Record">EOR</Tooltip>}
+                            {option.implication.replace('TTO', 'Time to Offer').replace('EOR', 'Employer of Record')}
                           </dd>
                         </div>
                       )}
@@ -133,10 +131,9 @@ export default async function NearshoreVsOffshorePage() {
                         <div>
                           <dt className="text-foreground text-xs uppercase tracking-wider font-bold">Mechanism</dt>
                           <dd className="text-sm text-muted-foreground mt-1">
-                            {option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
-                            <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>
+                            <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</Link>
                             &nbsp;cognitive vetting,&nbsp;
-                            <Tooltip text="Mobile Device Management">MDM</Tooltip>-secured devices, SSO/SAML/SCIM, single SLA.
+                            MDM-secured devices, SSO/SAML/SCIM, single SLA.
                           </dd>
                         </div>
                       )}
@@ -144,8 +141,8 @@ export default async function NearshoreVsOffshorePage() {
                         <div>
                           <dt className="text-foreground text-xs uppercase tracking-wider font-bold">Outcome</dt>
                           <dd className="text-sm text-muted-foreground mt-1">
-                            {option.outcome.replace('TCO', '')}
-                            <Link href="/playbook/latam-economics" className="text-primary hover:underline"><Tooltip text="Total Cost of Ownership">TCO</Tooltip></Link>
+                            Observable cadence, defensible&nbsp;
+                            <Link href="/playbook/latam-economics" className="text-primary hover:underline">TCO</Link>
                             , faster time-to-useful PR.
                           </dd>
                         </div>
@@ -155,7 +152,7 @@ export default async function NearshoreVsOffshorePage() {
                     <div className="mt-4 pt-4 border-t border-border">
                         <p className="text-sm italic text-primary/80">
                            "{option.title === 'Offshore (Legacy)' ? 
-                                <>How many quarters died waiting for “<Tooltip text="Looks Good To Me">LGTM</Tooltip>”?</> :
+                                <>How many quarters died waiting for “<InfoDropdown title={<span className="border-b border-dashed">LGTM</span>}><p className="text-sm">Looks Good To Me</p></InfoDropdown>”?</> :
                                 <>{option.wtfCheck}</>
                             }"
                         </p>
@@ -173,10 +170,7 @@ export default async function NearshoreVsOffshorePage() {
                 <div key={psp.problem} className="rounded-lg border bg-card p-6 flex flex-col text-center shadow-lg">
                     <div className="flex justify-center">{psp.icon}</div>
                     <p className="font-semibold text-destructive mt-4">Problem: {psp.problem}</p>
-                    <p className="mt-2 text-sm text-foreground flex-grow"><strong className="text-primary">Solution:</strong> {psp.solution.replace('Axiom Cortex™', '').replace('MDM', '').replace('EOR', '')}
-                        {psp.solution.includes('Axiom Cortex') && <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>}
-                        {psp.solution.includes('MDM') && <Tooltip text="Mobile Device Management">MDM</Tooltip>}
-                        {psp.solution.includes('EOR') && <Tooltip text="Employer of Record">EOR</Tooltip>}
+                    <p className="mt-2 text-sm text-foreground flex-grow"><strong className="text-primary">Solution:</strong> {psp.solution.replace('Axiom Cortex™', 'Axiom Cortex™').replace('MDM', 'MDM').replace('EOR', 'EOR')}
                     </p>
                     <div className="mt-4 pt-4 border-t border-border/50">
                         <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {psp.proof}</p>
@@ -198,4 +192,3 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
-
