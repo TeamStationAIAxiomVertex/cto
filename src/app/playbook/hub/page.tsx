@@ -14,35 +14,40 @@ const playbookEntries = [
         icon: <Globe className="h-8 w-8 text-primary" />,
         title: 'Nearshore vs. Offshore',
         pain: "Is your velocity dying in a 12-hour feedback loop?",
-        description: 'A data-driven analysis for CTOs on nearshore vs. offshore software development, diagnosing the true cost and risk of your global talent strategy.'
+        solution: 'Replace 24-hour ping-pong with a daylight-native cadence. Our nearshore model provides 4-8 hours of daily overlap, eliminating the "human latency tax" that kills agile workflows.',
+        proof: 'PR turnaround drops from 36-72h to <8h in the first two sprints.'
     },
     {
         href: '/playbook/latam-economics',
         icon: <DollarSign className="h-8 w-8 text-primary" />,
         title: 'LATAM Economics',
         pain: "Is your budget based on misleading hourly rates?",
-        description: 'A CFO-ready framework for modeling the Total Cost of Ownership (TCO) of a nearshore engineering team, covering salaries, hidden costs, and risks.'
+        solution: 'Move beyond salary-only math. Our TCO model includes the hidden costs of hiring, management overhead, and productivity loss, giving you a CFO-ready business case.',
+        proof: 'Our all-inclusive model is often 40-60% cheaper than a fully-loaded US hire.'
     },
      {
         href: '/playbook/build-vs-buy',
         icon: <Scale className="h-8 w-8 text-primary" />,
         title: 'Build vs. Buy',
         pain: "Are you prepared to be a global payroll and IT expert?",
-        description: 'The data-driven playbook for modeling the trade-offs in TCO, speed, and risk between building a nearshore operation from scratch vs. "buying" into an integrated platform.'
+        solution: 'Stop building non-core competencies. Our integrated platform absorbs the immense operational load of legal, HR, and IT, letting you focus on building product, not a foreign subsidiary.',
+        proof: 'Eliminate the $97k+ in hidden first-year costs of the "Build" model.'
     },
     {
         href: '/playbook/bias-free-technical-hiring-axiom-cortex',
         icon: <ShieldCheck className="h-8 w-8 text-primary" />,
         title: 'Bias-Free Technical Hiring',
         pain: "Is your hiring process a high-risk gamble on resumes?",
-        description: 'A strategic framework for CTOs to transform hiring from a subjective art into a data-driven science, powered by our Axiom Cortex™ Cognitive AI.'
+        solution: 'Replace gut-feel with auditable proof. Our Axiom Cortex™ AI provides a scientific, evidence-based "Cognitive Fingerprint" of a candidate’s problem-solving ability, not just their credentials.',
+        proof: 'Reduce mis-hire risk by >90% with a mismatch rate of ≤ 10%.'
     },
     {
         href: '/playbook/tco-model',
         icon: <BarChart className="h-8 w-8 text-primary" />,
         title: 'TCO Model: The Computational Cards',
         pain: "Can you defend your engineering budget with data?",
-        description: 'A strategic tool for CTOs to model the hidden costs of hiring, delays, and quality issues, and build a CFO-ready business case to turn your engineering organization into a value driver.'
+        solution: 'Use our "Computational Cost Cards" to model the hidden financial impact of slow hiring, poor quality, and operational drag. Turn your engineering org into a quantifiable value driver.',
+        proof: 'Calculate metrics like "Revenue Recaptured" and "Cost of Vacancy".'
     }
 ];
 
@@ -69,10 +74,17 @@ export default function PlaybookHubPage() {
                     {entry.icon}
                     <h2 className="text-xl font-bold text-foreground">{entry.title}</h2>
                 </div>
-              <p className="mt-4 text-sm text-muted-foreground flex-grow">{entry.description}</p>
-              <Link href={entry.href} className="stretched-link mt-6 flex items-center text-sm font-semibold text-primary">
-                Read the Playbook <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              <div className="mt-4 border-t border-border/50 pt-4">
+                <h3 className="font-semibold text-primary text-sm">Solution:</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{entry.solution}</p>
+              </div>
+              <div className="flex-grow"></div>
+              <div className="mt-4 border-t border-border/50 pt-4">
+                <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {entry.proof}</p>
+                <Link href={entry.href} className="stretched-link mt-4 flex items-center text-sm font-semibold text-primary">
+                  Read the Playbook <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
             </div>
           ))}
         </div>
