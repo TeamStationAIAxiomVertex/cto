@@ -7,6 +7,7 @@ import { Tooltip } from '@/components/Tooltip';
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Role | LATAM Staff Augmentation',
   description: 'Find elite, pre-vetted LATAM talent for your specific needs. Hire by role: Backend, Frontend, SRE, Security, Data, AI/ML, and more.',
+  keywords: 'hire by role, nearshore engineers, latam staff augmentation, hire backend developers, hire frontend developers, hire sre, hire security engineer, hire data engineer, hire ai/ml engineer',
 };
 
 const roleCategories = [

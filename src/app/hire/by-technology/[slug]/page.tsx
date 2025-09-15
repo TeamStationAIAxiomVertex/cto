@@ -1,5 +1,4 @@
 
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle } from 'lucide-react';
@@ -925,6 +924,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `Hire Nearshore ${techName} Developers | TeamStation AI`,
     description: `Hire elite, pre-vetted LATAM engineers with expertise in ${techName}. Our scientific evaluation process de-risks hiring for critical roles in your tech stack.`,
+    keywords: `hire nearshore ${techName} developers, latam ${techName} engineers, ${techName} staff augmentation`,
   };
 }
 

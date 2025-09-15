@@ -8,6 +8,7 @@ import { DisclosureDrawer } from "@/components/DisclosureDrawer";
 export const metadata: Metadata = {
   title: 'Nearshore IT Co-Pilot™ Platform | TeamStation AI',
   description: 'Run your entire LATAM engineering operation in one platform. Hire, equip, secure, and manage nearshore teams under one accountable SLA with TeamStation AI.',
+  keywords: 'nearshore it platform, nearshore co-pilot, latam engineering platform, hire nearshore developers, manage nearshore teams',
 };
 
 const includedServices = [

@@ -6,6 +6,7 @@ import { ArrowRight, UserCheck, FileText, ShieldCheck } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Nearshore IT Staff Augmentation Pricing | TeamStation AI',
   description: 'Transparent, all-inclusive pricing for nearshore LATAM developers. See our TCO analysis and how we provide a CFO-ready business case for your engineering team.',
+  keywords: 'nearshore pricing, it staff augmentation pricing, latam developers cost, nearshore software development cost',
 };
 
 const levels = [

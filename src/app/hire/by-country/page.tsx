@@ -7,6 +7,7 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Country | Top LATAM Tech Hubs',
   description: 'Stop losing a day to time zones. Hire elite, vetted engineers from top LATAM tech hubs like Mexico, Brazil, Colombia, and Argentina. Real-time collaboration, secure workspaces.',
+  keywords: 'hire nearshore by country, latam tech hubs, hire mexico developers, hire colombia developers, hire brazil developers, hire argentina developers',
 };
 
 const countries = [

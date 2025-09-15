@@ -1,5 +1,4 @@
 
-
 import Link from 'next/link';
 import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
@@ -277,6 +276,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `Hire Nearshore ${roleName} | TeamStation AI`,
     description: `Hire elite, pre-vetted LATAM ${roleName} engineers. Our scientific evaluation process de-risks hiring for critical roles in your tech stack.`,
+    keywords: `hire nearshore ${roleName}, latam ${roleName}, ${roleName} staff augmentation`,
   };
 }
 

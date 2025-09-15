@@ -1,5 +1,4 @@
 
-
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart, BookOpen, Star, Trophy } from 'lucide-react';
@@ -13,6 +12,7 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Research Hub: The Science of Predictable Nearshore Results | TeamStation AI',
   description: 'Explore our peer-reviewed research on AI technical interviews, software engineering performance telemetry, and bias-free hiring for LATAM engineering teams.',
+  keywords: 'nearshore research, ai technical interviews, software engineering performance, bias-free hiring, latam engineering',
 };
 
 const PodcastEmbed = dynamic(() => import('@/components/PodcastEmbed'), { ssr: false });

@@ -7,6 +7,7 @@ import { SpotifyIcon } from '@/components/SpotifyIcon';
 export const metadata: Metadata = {
   title: 'About TeamStation AI | Nearshore Software Development with LATAM Teams',
   description: 'Learn about TeamStation AI\'s mission to provide an integrated platform for building elite nearshore software development teams in Latin America. We are the top Bairesdev alternative.',
+  keywords: 'about teamstation ai, nearshore software development, latam teams, bairesdev alternative, cognitive science hiring',
 };
 
 export default function AboutPage() {

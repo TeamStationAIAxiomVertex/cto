@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Nearshore Compliance: GDPR, SSO, MDM & Device Control | Trust Center',
   description: 'Security and compliance are the foundation of our nearshore platform. Learn about our nearshore compliance for GDPR, SSO, MDM & device control for LATAM teams.',
+  keywords: 'nearshore compliance, gdpr compliance, nearshore sso, nearshore mdm, latam device control, soc 2 nearshore',
 };
 
 export default function TrustPage() {

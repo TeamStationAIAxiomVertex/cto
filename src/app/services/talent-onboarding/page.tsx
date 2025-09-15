@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Secure & Auditable Nearshore Talent Onboarding | TeamStation AI',
   description: 'Our evidence-backed onboarding for LATAM engineers ensures Day-1 productivity. We handle contracts, secure devices, access, and 30-60-90 day plans.',
+  keywords: 'nearshore talent onboarding, secure onboarding, auditable onboarding, latam engineer onboarding, day-1 productivity',
 };
 
 export default function OnboardingPage() {

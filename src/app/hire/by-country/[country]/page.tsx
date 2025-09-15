@@ -98,9 +98,11 @@ const countries: { [key: string]: { name: string; flag: React.ReactNode; psp: { 
 
 export async function generateMetadata({ params }: { params: { country: string } }): Promise<Metadata> {
   const countryName = countries[params.country]?.name || 'LATAM';
+  const capitalCountryName = countryName.charAt(0).toUpperCase() + countryName.slice(1);
   return {
-    title: `Hire Nearshore Developers in ${countryName} | TeamStation AI`,
-    description: `Access elite, pre-vetted software engineers in ${countryName}. TeamStation AI provides a fully compliant platform for hiring nearshore talent in your time zone.`,
+    title: `Hire Nearshore Developers in ${capitalCountryName} | TeamStation AI`,
+    description: `Access elite, pre-vetted software engineers in ${capitalCountryName}. TeamStation AI provides a fully compliant platform for hiring nearshore talent in your time zone.`,
+    keywords: `hire nearshore developers in ${countryName}, hire ${countryName} developers, ${countryName} it staff augmentation, ${countryName} software engineers`,
   };
 }
 
@@ -248,5 +250,3 @@ export default function CountryRolesPage({ params }: { params: { country: string
 export async function generateStaticParams() {
   return Object.keys(countries).map(country => ({ country }));
 }
-
-    

@@ -7,6 +7,7 @@ import { Tooltip } from '@/components/Tooltip';
 export const metadata: Metadata = {
   title: 'Hire Nearshore IT Teams by Topology | TeamStation AI',
   description: 'We build scalable nearshore IT team topologies from LATAM talent. Hire stream-aligned, platform, or enabling teams to accelerate your US company\'s roadmap with absolute control.',
+  keywords: 'team topologies, nearshore it teams, stream-aligned teams, platform teams, enabling teams, latam engineering teams',
 };
 
 const topologies = [

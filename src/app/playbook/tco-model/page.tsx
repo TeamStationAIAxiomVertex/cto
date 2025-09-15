@@ -5,8 +5,9 @@ import { ArrowRight, DollarSign, Zap, TestTube2, Users, Briefcase, ShieldCheck, 
 import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
-  title: 'Beyond Salary: The True Cost of Your Engineering Team | TCO Model',
+  title: 'TCO Model for Nearshore Engineering Teams | TeamStation AI',
   description: 'A strategic tool for CTOs to model the hidden costs of hiring, delays, and quality issues, and build a CFO-ready business case to turn your engineering organization into a value driver.',
+  keywords: 'tco model, total cost of ownership, nearshore engineering cost, cfo business case, engineering budget',
 };
 
 const costCards = [
@@ -224,7 +225,7 @@ export default function TCOModelPage() {
     <main className="container max-w-5xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / 
-        <Link href="/playbook/hub" className="hover:text-foreground">CTO Playbook</Link> / 
+        <Link href="/playbook/hub" className="hover:text-foreground">Playbook</Link> / 
         <span>TCO Model</span>
       </div>
 
