@@ -95,27 +95,29 @@ export default async function NearshoreVsOffshorePage() {
                         {option.icon}
                         <h3 className={`font-bold ${index === 4 ? 'text-primary' : 'text-foreground'}`}>{option.title}</h3>
                     </div>
-                    <div className="space-y-3 mt-4 flex-grow">
-                        {option.pain && <div><p className="text-sm font-semibold text-destructive">{option.pain}</p></div>}
-                        {option.implication && <div><p className="text-sm text-muted-foreground"><strong className="text-foreground block">Implication:</strong> {option.implication.replace('TTO', '').replace('EOR', '')}
+                    <div className="space-y-4 mt-4 flex-grow text-sm">
+                        {option.pain && <div><p><strong className="text-destructive block">Pain:</strong> <span className="text-muted-foreground">{option.pain}</span></p></div>}
+                        {option.implication && <div><p><strong className="text-foreground block">Implication:</strong> <span className="text-muted-foreground">{option.implication.replace('TTO', '').replace('EOR', '')}
                          {option.implication.includes("TTO") && <Tooltip text="Time to Offer">TTO</Tooltip>}
                          {option.implication.includes("EOR") && <Tooltip text="Employer of Record">EOR</Tooltip>}
-                        </p></div>}
-                        {option.useWhen && <div><p className="text-sm text-muted-foreground"><strong className="text-foreground block">Use when:</strong> {option.useWhen}</p></div>}
+                        </span></p></div>}
+                        {option.useWhen && <div><p><strong className="text-foreground block">Use when:</strong> <span className="text-muted-foreground">{option.useWhen}</span></p></div>}
 
-                        {option.painRemoved && <div><p className="text-sm text-green-400"><strong className="text-foreground block">Pain removed:</strong> {option.painRemoved}</p></div>}
-                        {option.mechanism && <div><p className="text-sm text-muted-foreground"><strong className="text-foreground block">Mechanism:</strong> {option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
+                        {option.painRemoved && <div><p><strong className="text-green-400 block">Pain removed:</strong> <span className="text-muted-foreground">{option.painRemoved}</span></p></div>}
+                        {option.mechanism && <div><p><strong className="text-foreground block">Mechanism:</strong> <span className="text-muted-foreground">{option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
                             <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>
                             &nbsp;cognitive vetting,&nbsp;
                             <Tooltip text="Mobile Device Management">MDM</Tooltip>-secured devices, SSO/SAML/SCIM, single SLA.
-                        </p></div>}
-                        {option.outcome && <div><p className="text-sm text-muted-foreground"><strong className="text-foreground block">Outcome:</strong> {option.outcome.replace('TCO', '')}
+                        </span></p></div>}
+                        {option.outcome && <div><p><strong className="text-foreground block">Outcome:</strong> <span className="text-muted-foreground">{option.outcome.replace('TCO', '')}
                              <Link href="/playbook/latam-economics" className="text-primary hover:underline"><Tooltip text="Total Cost of Ownership">TCO</Tooltip></Link>
                              , faster time-to-useful PR.
-                        </p></div>}
+                        </span></p></div>}
                     </div>
                     <div className="flex-grow"></div>
-                    <p className="text-xs mt-4 pt-4 border-t border-border italic text-primary/80">"{option.wtfCheck}"</p>
+                    <div className="mt-4 pt-4 border-t border-border">
+                        <p className="text-xs italic text-primary/80">"{option.wtfCheck}"</p>
+                    </div>
                 </div>
             ))}
         </div>
@@ -153,5 +155,7 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
+
+    
 
     
