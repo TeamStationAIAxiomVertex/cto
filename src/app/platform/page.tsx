@@ -88,10 +88,10 @@ export default function PlatformPage() {
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Nearshore IT Co-Pilot™ Platform</h1>
         <div className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           <span>
-            Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable{' '}
+            Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable SLA
           </span>
           <InfoDropdown label="Service Level Agreement" className="ml-1">
-            <p className="text-sm">Service Level Agreement: A contract defining the level of service you can expect, backed by our MSA.</p>
+            <p className="text-sm">A contract defining the level of service you can expect, backed by our MSA.</p>
           </InfoDropdown>
           <span>.</span>
         </div>
