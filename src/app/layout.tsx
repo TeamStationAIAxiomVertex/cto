@@ -88,7 +88,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} font-sans bg-background text-foreground`}>
         <AppProviders>
           <Header />
-          <main className="pt-16">
+          <main id="main-content" className="pt-16">
             {children}
           </main>
           <Footer />
