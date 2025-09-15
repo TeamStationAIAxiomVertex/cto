@@ -5,6 +5,7 @@ import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import './globals.css';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 const poppins = Poppins({ 
   subsets: ['latin'], 
@@ -31,10 +32,10 @@ export const metadata: Metadata = {
     siteName: siteName,
     images: [
       {
-        url: '/og-image.tsx',
-        width: 1200,
-        height: 630,
-        alt: siteName,
+        url: placeholderImages.metaCard.src.url,
+        width: placeholderImages.metaCard.src.width,
+        height: placeholderImages.metaCard.src.height,
+        alt: placeholderImages.metaCard.alt,
       },
     ],
     locale: 'en_US',
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteName,
     description: siteDescription,
-    images: ['/og-image.tsx'], 
+    images: [placeholderImages.metaCard.src.url], 
   },
   icons: {
     icon: '/icon.tsx',
