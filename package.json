@@ -14,7 +14,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "build:strict": "npm run typecheck && npm run lint && next build",
+    "build:strict": "npm run typecheck && npm run lint && npm run build:production",
     "build:fast": "next build --no-lint"
   },
   "dependencies": {
@@ -32,7 +32,7 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",

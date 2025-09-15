@@ -13,6 +13,16 @@ env:
       - BUILD
       - RUNTIME
 
+  # Production environment settings
+  - variable: NODE_ENV
+    value: "production"
+    availability:
+      - RUNTIME
+  - variable: LOG_LEVEL
+    value: "warn"
+    availability:
+      - RUNTIME
+
   # BREAK-GLASS to force a build even if TS/ESLint fail (BUILD only)
   - variable: BREAK_GLASS
     value: "0"   # set "1" TEMPORARILY only if you must bypass lint/type errors
