@@ -1,3 +1,4 @@
+
 import { MetadataRoute } from 'next';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { getAllPlaybookSlugs } from '@/lib/playbook';
@@ -37,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/research/hub',
     '/research/axiom-cortex-scientific-report',
     '/research/performance-evaluation-framework',
-    '/research/technical-talent-evaluation-system',
+    '/technical-interview-evaluation',
     '/services/integrated-services',
     '/services/talent-onboarding',
     '/trust',

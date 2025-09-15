@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { getAllPlaybookSlugs } from '@/lib/playbook';
@@ -40,7 +41,9 @@ export default async function SitemapPage() {
         { href: '/', title: 'Home' },
         ...Object.values(NAV).flat().map(item => ({ href: item.href, title: item.label })),
         ...simpleNavItems,
-    ];
+         { href: '/sitemap', title: 'Sitemap' }
+    ].filter((item, index, self) => self.findIndex(t => t.href === item.href) === index);
+
 
     const hireByRolePages = roleCategories.map(r => ({ href: `/hire/by-role/${r.slug}`, title: r.name }));
     const hireByCountryPages = countries.map(c => ({ href: `/hire/by-country/${c.slug}`, title: c.name }));
@@ -83,7 +86,7 @@ export default async function SitemapPage() {
             </Section>
 
             <Section title="Hire by Technology">
-                {hireByTechPages.map(page => <PageLink key={page.href} href={page.href} title={page.title} />)}
+                {hireByTechPages.sort((a, b) => a.title.localeCompare(b.title)).map(page => <PageLink key={page.href} href={page.href} title={page.title} />)}
             </Section>
             
         </main>
