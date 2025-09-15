@@ -21,7 +21,6 @@ const playbookLinks: LinkItem[] = [
   { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
   { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring' },
   { href: '/playbook/tco-model', label: 'TCO Model' },
-  { href: '/faq', label: 'FAQ for CTOs' },
 ];
 
 const companyLinks: LinkItem[] = [
@@ -115,7 +114,7 @@ export default function Footer() {
               <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80">Sign In to Platform</Link>
             </div>
              <div className="mt-8">
-                <LinkColumn title="Scientific Research" links={researchLinks} />
+              <LinkColumn title="Scientific Research" links={researchLinks} />
              </div>
           </div>
           
@@ -149,3 +148,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+    

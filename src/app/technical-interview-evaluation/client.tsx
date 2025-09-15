@@ -590,7 +590,7 @@ export default function TalentEvaluationClient() {
               {faqs.map(faq => (
                 <div key={faq.question}>
                   <h4 className="font-semibold text-foreground">{faq.question}</h4>
-                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: String(faq.answer ?? '').replaceAll('Axiom Cortex™', '<a href="/research/axiom-cortex-scientific-report" class="text-primary hover:underline">Axiom Cortex™</a>').replaceAll('Evidence Locker', '<a href="#evidence-locker" class="text-primary hover:underline">Evidence Locker</a>') }}></p>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: faq.answer.replace('Axiom Cortex™', '<a href="/research/axiom-cortex-scientific-report" class="text-primary hover:underline">Axiom Cortex™</a>').replace('Evidence Locker', '<a href="#evidence-locker" class="text-primary hover:underline">Evidence Locker</a>') }}></p>
                 </div>
               ))}
             </div>
@@ -616,3 +616,5 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
+
+    
