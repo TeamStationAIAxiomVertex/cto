@@ -15,9 +15,9 @@ export default function ProcessPage() {
         { title: "Book a Demo", description: "See the live console: jobs, short-lists, devices/MDM, compliance, KPIs.", artifact: "Demo environment + sample dashboards." },
         { title: "Platform Onboarding", description: "Create your org, users, roles, and legal entity; connect tools (Slack/Jira/GitHub/IdP).", artifact: "Org workspace, SSO, billing & DPA on file." },
         { title: "Add Jobs & Calibrate Success", description: "Define stack, level (L1–L4), ownership scope, and the 90-day outcome you need.", artifact: "Role profile + 'Success at 90 Days' spec." },
-        { title: "Country Targeting & Market Bands", description: <>Pick <Link href="/hire/by-country" className="text-primary hover:underline">LATAM cities</Link>; align salary bands, benefits norms, and hiring constraints.</>, artifact: "Country shortlist + comp/benefit bands." },
-        { title: "Cognitive AI Sourcing & Short-List", description: <>Our <Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Cognitive AI</Link> is always-on sourcing; candidates are scored against your role profile to find the ideal mental shape.</>, artifact: "5–8 candidate short-list (relevance ≥ 85%)." },
-        { title: "Technical Evaluation (Bias-Aware)", description: "A human expert conducts a structured, evidence-based interview. Our Cognitive AI then synthesizes the conversation to generate an 'Evidence Locker' with explainable scoring.", artifact: "Scorecards + hiring signal; mismatch rate ≤ 10%." },
+        { title: <>Pick <Link href="/hire/by-country" className="text-primary hover:underline">LATAM cities</Link>; align salary bands, benefits norms, and hiring constraints.</>, artifact: "Country shortlist + comp/benefit bands.", stepTitle: "Country Targeting & Market Bands" },
+        { title: <>Our <Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Cognitive AI</Link> is always-on sourcing; candidates are scored against your role profile to find the ideal mental shape.</>, artifact: "5–8 candidate short-list (relevance ≥ 85%).", stepTitle: "Cognitive AI Sourcing & Short-List" },
+        { title: <Link href="/technical-interview-evaluation" className="hover:underline">Technical Evaluation (Bias-Aware)</Link>, description: "A human expert conducts a structured, evidence-based interview. Our Cognitive AI then synthesizes the conversation to generate an 'Evidence Locker' with explainable scoring.", artifact: "Scorecards + hiring signal; mismatch rate ≤ 10%." },
         { title: "Client Interview Loop", description: "Calibrated panel agenda; consolidate notes and go/no-go in the platform.", artifact: "Finalist(s) + reference checks." },
         { title: "Offer, EOR & Compliance", description: "We issue enforceable contracts, handle payroll, taxes, and statutory benefits.", artifact: "Signed offer; compliant start date set." },
         { title: "Devices, MDM & Day-1 Access", description: "Procure/ship device, enroll MDM, verify tool/account access before Day-1.", artifact: "Device MTPD ≤ 5 days, MDM enrollment ≥ 99%." },
@@ -69,12 +69,12 @@ export default function ProcessPage() {
         </div>
       <header className="text-center my-12">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">One Accountable Process, Guaranteed by Contract</h1>
-        <div className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
+        <p className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
           This isn't a checklist; it's an engineered system. Our Nearshore IT Co-Pilot™ provides one accountable workflow for hiring, compliance, and secure devices, governed by a single MSA/SOW. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
           <InfoDropdown label="A Master Services Agreement (MSA) and Statement of Work (SOW) form a legally binding contract for our services." className="ml-1">
             <p className="text-sm">A Master Services Agreement (MSA) and Statement of Work (SOW) form a legally binding contract for our services.</p>
           </InfoDropdown>
-        </div>
+        </p>
          <div className="mt-6 font-semibold text-primary">
             Time-to-Offer ≈ 9 days • Day-1 Tool Readiness ≥ 95% • First PR in 7–14 days
           </div>
@@ -87,7 +87,7 @@ export default function ProcessPage() {
           <div className="max-w-3xl mx-auto">
             <ul className="-mb-8">
               {processSteps.map((step, stepIdx) => (
-                <li key={step.title}>
+                <li key={step.title?.toString() || step.stepTitle}>
                   <div className="relative pb-8">
                     {stepIdx !== processSteps.length - 1 ? (
                       <span className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-border" aria-hidden="true" />
@@ -102,9 +102,9 @@ export default function ProcessPage() {
                                 Book a Demo Call
                             </Link>
                         ) : (
-                            <div className="text-lg font-semibold text-foreground">{step.title}</div>
+                            <div className="text-lg font-semibold text-foreground">{step.stepTitle || step.title}</div>
                         )}
-                        <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{step.description || step.title}</p>
                         <p className="mt-2 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block">
                           <span className="font-bold">Artifact:</span> {step.artifact}
                           </p>
