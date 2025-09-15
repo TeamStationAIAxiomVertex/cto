@@ -2,7 +2,7 @@
 'use client';
 
 import { ThemeProvider } from 'next-themes';
-import { TooltipProvider } from '@/components/ui/tooltip-primitives';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 type Props = { children: React.ReactNode };
 

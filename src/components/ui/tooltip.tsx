@@ -2,13 +2,11 @@
 'use client';
 
 import * as React from 'react';
-import * as TooltipPrimitive from '@radix-ui/react-popover';
 import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
-  TooltipProvider,
-} from '@/components/ui/tooltip-primitives'; 
+} from '@/components/ui/tooltip-primitives';
 
 type WithTooltipProps = {
   label: React.ReactNode;
@@ -33,6 +31,7 @@ export function WithTooltip({
           {children}
         </span>
       </TooltipTrigger>
+      {/* shadcn/Radix portals to <body> by default */}
       <TooltipContent
         side={side}
         align={align}
@@ -45,20 +44,5 @@ export function WithTooltip({
   );
 }
 
-// Forwarding exports for direct use if needed
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };
-export { Popover as TooltipArrow } from '@radix-ui/react-popover';
-
-const TooltipDefault = ({
-  children,
-  content,
-  ...rest
-}: { children: React.ReactNode; content?: React.ReactNode } & React.HTMLAttributes<HTMLSpanElement>) => {
-  const titleAttr = typeof content === 'string' ? content : undefined;
-  return (
-    <span title={titleAttr} {...rest}>
-      {children}
-    </span>
-  );
-};
-export default TooltipDefault;
+// Optional: re-export provider so callers don't import primitives directly
+export { TooltipProvider } from '@/components/ui/tooltip-primitives';
