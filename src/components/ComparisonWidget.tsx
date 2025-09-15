@@ -6,10 +6,12 @@ export function ComparisonWidget() {
     const [basisHours, setBasisHours] = useState(173);
     const [offshoreOverhead, setOffshoreOverhead] = useState(0.25);
     const [nearshoreLegacyOverhead, setNearshoreLegacyOverhead] = useState(0.10);
+    const [onshoreOverhead, setOnshoreOverhead] = useState(0.20);
     const [data, setData] = useState<any>(null);
 
     const inputs = {
-        onshore: { salaryAnnual: 180000, burdenPct: 0.30 },
+        buildIn: { salaryAnnual: 180000, burdenPct: 0.30 },
+        onshore: { hourlyLow: 120, hourlyHigh: 150 },
         offshoreLegacy: { hourlyLow: 45, hourlyHigh: 65 },
         nearshoreLegacy: { hourlyLow: 45, hourlyHigh: 65 },
         nearshoreCoPilot: { hourlyMin: 40, hourlyCap: 47, includes: ["EOR","Devices/MDM","SSO/SAML/SCIM","Compliance"] },
@@ -27,7 +29,7 @@ export function ComparisonWidget() {
             replaceCostUSD: 25000,
             mgmtHoursMonth: {
               buildIn: { EM: 15, PM: 10 },
-              onshore: { EM: 15, PM: 10 },
+              onshore: { EM: 18, PM: 12 },
               offshoreLegacy: { EM: 30, PM: 20 },
               nearshoreLegacy: { EM: 18, PM: 12 },
               nearshoreCoPilot: { EM: 0, PM: 0 }
@@ -43,8 +45,9 @@ export function ComparisonWidget() {
             const f = (n: number | undefined) => n ? n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }) : '$0';
             const fRange = (low: number | undefined, high: number | undefined) => `${f(low)} – ${f(high)}`;
 
-            const buildInMonthly = ((inputs.onshore.salaryAnnual * (1 + inputs.onshore.burdenPct)) / 12);
-            const onshoreMonthly = buildInMonthly;
+            const buildInMonthly = ((inputs.buildIn.salaryAnnual * (1 + inputs.buildIn.burdenPct)) / 12);
+            const onshoreMonthlyLow = (inputs.onshore.hourlyLow * basisHours * (1 + onshoreOverhead));
+            const onshoreMonthlyHigh = (inputs.onshore.hourlyHigh * basisHours * (1 + onshoreOverhead));
             const offshoreLegacyMonthlyLow = (inputs.offshoreLegacy.hourlyLow * basisHours * (1 + offshoreOverhead));
             const offshoreLegacyMonthlyHigh = (inputs.offshoreLegacy.hourlyHigh * basisHours * (1 + offshoreOverhead));
             const nearshoreLegacyMonthlyLow = (inputs.nearshoreLegacy.hourlyLow * basisHours * (1 + nearshoreLegacyOverhead));
@@ -55,14 +58,14 @@ export function ComparisonWidget() {
             const results = {
                 seatCost: [
                     f(buildInMonthly),
-                    f(onshoreMonthly),
+                    fRange(onshoreMonthlyLow, onshoreMonthlyHigh),
                     fRange(offshoreLegacyMonthlyLow, offshoreLegacyMonthlyHigh),
                     fRange(nearshoreLegacyMonthlyLow, nearshoreLegacyMonthlyHigh),
                     fRange(nearshoreCoPilotMonthlyLow, nearshoreCoPilotMonthlyHigh),
                 ],
                 effectiveHourly: [
                     f(buildInMonthly / basisHours),
-                    f(onshoreMonthly / basisHours),
+                    fRange(onshoreMonthlyLow / basisHours, onshoreMonthlyHigh / basisHours),
                     fRange(offshoreLegacyMonthlyLow / basisHours, offshoreLegacyMonthlyHigh / basisHours),
                     fRange(nearshoreLegacyMonthlyLow / basisHours, nearshoreLegacyMonthlyHigh / basisHours),
                     fRange(nearshoreCoPilotMonthlyLow / basisHours, nearshoreCoPilotMonthlyHigh / basisHours),
@@ -106,7 +109,7 @@ export function ComparisonWidget() {
             setData(results);
         }
         calculate();
-    }, [basisHours, offshoreOverhead, nearshoreLegacyOverhead]);
+    }, [basisHours, offshoreOverhead, nearshoreLegacyOverhead, onshoreOverhead]);
 
     if (!data) return <div>Loading...</div>;
 
@@ -155,13 +158,18 @@ export function ComparisonWidget() {
             We count the hidden taxes—PR latency, vacancy days, failed-change costs, and management overhead—not just the sticker. The Nearshore IT Co-Pilot wins because it removes lag and makes outcomes observable.
         </p>
 
-        <div className="flex justify-end items-center gap-4 my-4 text-sm">
+        <div className="flex flex-wrap justify-end items-center gap-4 my-4 text-sm">
              <div className="flex items-center gap-2">
                 <label htmlFor="basis-hours" className="font-medium">Basis Hours:</label>
                 <select id="basis-hours" value={basisHours} onChange={e => setBasisHours(Number(e.target.value))} className="bg-background border border-border rounded-md px-2 py-1">
                     <option value="173">173</option>
                     <option value="160">160</option>
                 </select>
+            </div>
+             <div className="flex items-center gap-2">
+                <label htmlFor="onshore-overhead" className="font-medium">Onshore Overhead:</label>
+                <input type="number" id="onshore-overhead" value={onshoreOverhead * 100} onChange={e => setOnshoreOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1" />
+                <span>%</span>
             </div>
              <div className="flex items-center gap-2">
                 <label htmlFor="offshore-overhead" className="font-medium">Offshore Overhead:</label>
