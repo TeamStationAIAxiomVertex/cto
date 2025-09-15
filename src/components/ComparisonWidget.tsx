@@ -2,7 +2,7 @@
 
 'use client';
 import { useState, useEffect } from 'react';
-import { InfoDropdown } from '@/components/Accordion';
+import { WithTooltip } from '@/components/ui/tooltip';
 
 
 export function ComparisonWidget() {
@@ -204,9 +204,9 @@ export function ComparisonWidget() {
                     {rows.map((row, rowIndex) => (
                         <tr key={rowIndex} className="hover:bg-background/50">
                             <th scope="row" className="p-3 font-medium text-muted-foreground sticky left-0 bg-card w-[200px] z-10">
-                                <InfoDropdown title={row.label}>
-                                  <p className="text-sm text-muted-foreground">{row.description}</p>
-                                </InfoDropdown>
+                                <WithTooltip label={row.description}>
+                                    <span className='border-b border-dashed cursor-help'>{row.label}</span>
+                                </WithTooltip>
                             </th>
                             {row.data.map((cell, cellIndex) => (
                                 <td key={cellIndex} className={`p-3 text-center font-mono ${cellIndex === 4 ? 'text-primary font-bold' : 'text-foreground'}`}>
@@ -221,5 +221,3 @@ export function ComparisonWidget() {
     </section>
   );
 }
-
-    
