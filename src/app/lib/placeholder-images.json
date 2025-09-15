@@ -2,12 +2,12 @@
 {
     "metaCard": {
         "src": {
-            "url": "https://images.unsplash.com/photo-1721586235129-c73c8e311a21?ixid=M3w3NDE5ODJ8MHwxfGFsbHx8fHx8fHx8fDE3MjE2Nzc0ODF8&ixlib=rb-4.0.3",
+            "url": "https://picsum.photos/seed/metacard/1200/630",
             "width": 1200,
             "height": 630
         },
         "alt": "TeamStation AI CTO Playbook",
-        "aiHint": "CTO Playbook astronaut"
+        "aiHint": "abstract technology"
     },
     "heroTeam": {
         "src": {
