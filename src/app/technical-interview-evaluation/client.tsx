@@ -19,10 +19,10 @@ const renderTextWithTooltip = (
   term: string,
   tooltipText: string
 ): React.ReactNode => {
-  // Seatbelt: empty term would match everything and split into characters.
   if (!term) return raw;
   const text = safeToString(raw);
-  if (!text.includes(term)) return raw;
+  if (!text || !text.includes(term)) return raw;
+
   const parts = text.split(term);
   return parts.map((part, index) => (
     <React.Fragment key={`${term}-${index}`}>
@@ -500,11 +500,11 @@ export default function TalentEvaluationClient() {
                     How is this score calculated?
                 </h4>
                 <div className="text-muted-foreground">
-                    <span>The score is a data-driven output from the </span>
+                    <span>The score is a data-driven output from the </span> 
                     <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation.">
                         <Link href="/research/axiom-cortex-scientific-report" className="text-primary border-b border-dashed">Axiom Cortex™</Link>
                     </WithTooltip>
-                    <span> AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary </span>
+                    <span> AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary </span> 
                     <WithTooltip label="Behaviorally Anchored Rating Scales: a scoring method that ties ratings to specific, observable behaviors.">
                          <span className="text-primary border-b border-dashed">BARS</span>
                     </WithTooltip>
@@ -524,7 +524,7 @@ export default function TalentEvaluationClient() {
                         </h3>
                     </div>
                     <div className="mt-4 text-sm text-muted-foreground">
-                        <span>Erick operates squarely in the "Honest Self-Assessment" zone. His </span>
+                        <span>Erick operates squarely in the "Honest Self-Assessment" zone. His </span> 
                         <WithTooltip label="Metacognitive Conviction Index">
                              <span className="text-primary border-b border-dashed">MCI</span>
                         </WithTooltip>
@@ -621,3 +621,6 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
+
+
+    
