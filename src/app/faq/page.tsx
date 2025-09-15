@@ -1,21 +1,34 @@
 
 export const dynamic = "force-static";
 
-import faq from "@/data/faq.json";
+import faqData from "@/data/faq.json";
 import Link from "next/link";
+import type { Metadata } from 'next';
+import { HelpCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: 'Frequently Asked Questions for CTOs | TeamStation AI',
+    description: 'Key questions for CTOs on nearshore talent, TCO, security, and operations. Learn how our platform de-risks hiring and provides a predictable cost model.',
+    keywords: 'cto faq, nearshore faq, technical hiring faq, nearshore tco, teamstation ai faq',
+};
 
 const SITE = "https://cto.teamstation.dev";
 
 function JsonLd() {
-  const ld = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faq.map((item) => ({
+  const allQuestions = faqData.flatMap(category => 
+    category.questions.map(item => ({
       "@type": "Question",
       "name": item.q,
       "acceptedAnswer": { "@type": "Answer", "text": item.a }
     }))
+  );
+
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": allQuestions
   };
+
   return (
     <script
       type="application/ld+json"
@@ -26,26 +39,38 @@ function JsonLd() {
 
 export default function FAQPage() {
   return (
-    <main className="container max-w-3xl py-12">
-      <div className="text-sm text-muted-foreground mb-8">
+    <main className="container max-w-4xl py-12">
+       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>FAQ</span>
       </div>
-      <h1 className="text-3xl font-bold mb-4">Frequently Asked Questions</h1>
-      <p className="text-muted-foreground mb-8">
-        Answers for CTOs evaluating nearshore LATAM engineering with TeamStation AI.
-      </p>
+      <header className="text-center my-12">
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Frequently Asked Questions for CTOs</h1>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          Real questions, direct answers. This is a playbook for navigating the strategic decisions around building a high-performance nearshore engineering team.
+        </p>
+      </header>
 
-      <div className="space-y-6">
-        {faq.map((item, i) => (
-          <section key={i} className="border rounded-2xl p-6 bg-card shadow-lg">
-            <h2 className="text-lg font-semibold mb-2 text-primary">{item.q}</h2>
-            <p className="text-muted-foreground">{item.a}</p>
+      <div className="space-y-12">
+        {faqData.map((category) => (
+          <section key={category.category}>
+            <h2 className="text-3xl font-bold text-center text-foreground">{category.category}</h2>
+            <div className="mt-8 space-y-6">
+              {category.questions.map((item, i) => (
+                <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
+                    <h3 className="font-semibold text-primary flex items-start gap-3">
+                        <HelpCircle className="h-6 w-6 mt-1 shrink-0"/>
+                        <span>{item.q}</span>
+                    </h3>
+                    <p className="text-muted-foreground mt-4 border-t border-border pt-4">{item.a}</p>
+                </div>
+              ))}
+            </div>
           </section>
         ))}
       </div>
 
-      <hr className="my-8" />
-      <nav className="text-sm space-x-4">
+      <hr className="my-12 border-border" />
+      <nav className="text-center text-sm space-x-4">
         <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
         <Link href="/research/hub" className="text-primary hover:underline">Research</Link>
         <Link href="/comparisons" className="text-primary hover:underline">Comparisons</Link>

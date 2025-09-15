@@ -1,23 +1,59 @@
 
 [
   {
-    "q": "What makes TeamStation AI different from traditional nearshore vendors?",
-    "a": "It’s an integrated platform: hiring + EOR/payroll + devices/MDM + secure workspaces + compliance/insurance, with public SLAs and cognitive evaluations."
+    "category": "Hiring & Talent",
+    "questions": [
+      {
+        "q": "How can I be sure a candidate who interviews well will actually perform?",
+        "a": "Traditional interviews are flawed. Our Axiom Cortex™ AI provides auditable, scientific proof of a candidate's problem-solving ability, not just their credentials. We provide an Evidence Locker, not just a gut feeling, to de-risk your hiring decision. This reduces mis-hire risk by over 90%."
+      },
+      {
+        "q": "Are we losing good candidates because our hiring process is too slow and biased?",
+        "a": "Yes. A slow process costs you top talent. Our platform-driven process reduces Time-to-Offer to a median of 9 days. The Cortex Calibration Layer in our AI ensures we evaluate pure technical skill, not just linguistic fluency, mitigating bias against non-native English speakers."
+      },
+      {
+        "q": "Why do we keep hiring 'senior' developers who can't architect a scalable system?",
+        "a": "Because resumes don't measure cognitive traits. Our evaluation specifically scores for 'Architectural Instinct,' ensuring you hire engineers who can think in systems, not just write code."
+      }
+    ]
   },
   {
-    "q": "Do you provide devices and MDM on day one?",
-    "a": "Yes. Device MTPD ≤ 5 days, and MDM enrollment ≥ 99% within 24 hours. Every engagement includes cybersecurity & E&O insurance."
+    "category": "Operations & Security",
+    "questions": [
+      {
+        "q": "How do I avoid the security nightmare of unmanaged remote devices?",
+        "a": "You don't. We provide every engineer with a corporate-owned, MDM-enrolled laptop, enforcing security policies, encryption, and auto-patching from day one. This provides an audit-ready security posture and eliminates a massive compliance risk."
+      },
+      {
+        "q": "Is my engineering manager spending more time managing vendors than managing engineers?",
+        "a": "This is a common 'hidden tax.' Our integrated platform eliminates vendor chaos by bundling EOR, payroll, devices, and compliance into a single accountable SLA. We give your managers their time back to focus on building product."
+      },
+      {
+        "q": "How do we handle the legal and compliance complexities of hiring in multiple LATAM countries?",
+        "a": "You don't have to. As the Employer of Record (EOR), we handle all country-specific contracts, payroll, taxes, and statutory benefits. We absorb the legal complexity so you can scale without building a global HR department."
+      }
+    ]
   },
   {
-    "q": "How do you reduce interview bias?",
-    "a": "Axiom Cortex combines 44 psychometric + NLP signals with a language-fairness calibration layer, producing explainable BARS-mapped evaluations."
+    "category": "Cost & TCO",
+    "questions": [
+      {
+        "q": "My CFO sees a lower hourly rate from another vendor. How do I prove the real cost is higher?",
+        "a": "Use our TCO Model. We help you quantify the massive hidden costs traditional vendors don't mention: management overhead, productivity loss from time-zone lag, and the financial impact of mis-hires. Our all-inclusive rate provides a predictable, CFO-ready TCO that is often 40-60% lower."
+      },
+      {
+        "q": "How do I quantify the cost of a role sitting empty for 60 days?",
+        "a": "This is the 'Vacancy Tax.' A delayed feature worth $1M in ARR costs you over $160,000 in lost opportunity for a 60-day delay. Our 9-day Time-to-Offer pulls that future revenue forward, providing a clear ROI on hiring velocity."
+      }
+    ]
   },
   {
-    "q": "How fast can we hire?",
-    "a": "Median Time-to-Offer is about 9 days, with day-one onboarding and performance diagnostics under a single SLA."
-  },
-  {
-    "q": "Do you operate across LATAM?",
-    "a": "Yes—45+ hubs. Programmatic pages cover country services and city/role templates; device provisioning and workspace SLAs apply region-wide."
+    "category": "Nearshore vs. Offshore",
+    "questions": [
+      {
+        "q": "Is the 12-hour time difference with my offshore team really hurting us?",
+        "a": "Yes. It's the 'human latency tax.' Every simple question requires a 24-hour round trip, killing agile workflows. Our nearshore model provides 4-8 hours of daily overlap, enabling the real-time collaboration needed to ship fast."
+      }
+    ]
   }
 ]
