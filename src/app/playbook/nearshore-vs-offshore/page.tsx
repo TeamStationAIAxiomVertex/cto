@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
-import { Clock, Users2, FileSearch, Briefcase, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, CheckCircle, BarChart, BookOpen, Layers, GitCompare, UserCheck, DollarSign } from 'lucide-react';
+import { Clock, Users2, FileSearch, Briefcase, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, CheckCircle, BarChart, BookOpen, Layers, GitCompare, UserCheck, DollarSign, Building } from 'lucide-react';
 import { ComparisonWidget } from '@/components/ComparisonWidget';
 
 export const metadata: Metadata = {
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 const options = [
     {
         title: "Build In-House (Core IP)",
+        icon: <Building className="h-8 w-8 text-primary" />,
         pain: "Headcount freeze vs critical path.",
         implication: "60-day TTO; vacancy tax compounds.",
         useWhen: "Staff-plus roles, proprietary domains, long horizon.",
@@ -20,6 +21,7 @@ const options = [
     },
     {
         title: "Onshore (US)",
+        icon: <Users2 className="h-8 w-8 text-primary" />,
         pain: "Fully-loaded cost and scarce supply.",
         implication: "Great overlap; brutal budget pressure.",
         useWhen: "High-stakes discovery, exec adjacency, regulated data.",
@@ -27,6 +29,7 @@ const options = [
     },
     {
         title: "Offshore (Legacy)",
+        icon: <Clock className="h-8 w-8 text-primary" />,
         pain: "Overnight PRs = one day lost per question.",
         implication: "Latency, rework, hidden EOR/devices/coordination taxes.",
         useWhen: "Backlog is simple, latency is tolerable, price optics matter.",
@@ -34,6 +37,7 @@ const options = [
     },
     {
         title: "Nearshore (Legacy)",
+        icon: <FileSearch className="h-8 w-8 text-primary" />,
         pain: "Better hours, same vendor theater.",
         implication: "Soft SLAs, resume theater, unmanaged devices.",
         useWhen: "You need overlap but can tolerate weak governance.",
@@ -41,6 +45,7 @@ const options = [
     },
     {
         title: "Nearshore IT Co-Pilot (New-Gen)",
+        icon: <Zap className="h-8 w-8 text-primary" />,
         painRemoved: "PR latency, vacancy drag, audit friction, vendor sprawl.",
         mechanism: "Daylight review SLAs, Axiom Cortex™ cognitive vetting, MDM-secured devices, SSO/SAML/SCIM, single SLA.",
         outcome: "Observable cadence, defensible TCO, faster time-to-useful PR.",
@@ -75,9 +80,9 @@ export default async function NearshoreVsOffshorePage() {
       </div>
 
        <header className="my-8 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">What’s killing your roadmap—PR latency, vacancy days, or vendor fog?</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Fire offshore & legacy nearshore—run an IT Co-Pilot in daylight.</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            You can build, go onshore, gamble offshore, repeat legacy nearshore…or cut the hidden taxes with a Nearshore IT Co-Pilot. One PR shouldn’t cost a day—overnight queues kill quarters. Daylight SLAs and telemetry turn latency into throughput.
+            Evidence, not theater. Day-one security, daylight shipping.
           </p>
       </header>
 
@@ -85,16 +90,29 @@ export default async function NearshoreVsOffshorePage() {
         <h2 className="text-center text-4xl font-bold text-foreground">Compare the Five Paths to Scaling Your Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mt-12 items-stretch">
             {options.map((option, index) => (
-                <div key={option.title} className={`rounded-lg border p-4 flex flex-col ${index === 4 ? 'bg-primary/10 border-primary' : 'bg-card'}`}>
-                    <h3 className={`font-bold ${index === 4 ? 'text-primary' : 'text-foreground'}`}>{option.title}</h3>
+                <div key={option.title} className={`rounded-lg border p-4 flex flex-col shadow-lg ${index === 4 ? 'bg-primary/10 border-primary' : 'bg-card'}`}>
+                    <div className="flex items-start gap-3">
+                        {option.icon}
+                        <h3 className={`font-bold ${index === 4 ? 'text-primary' : 'text-foreground'}`}>{option.title}</h3>
+                    </div>
                     {option.pain && <p className="text-xs mt-2"><strong className="text-destructive">Pain:</strong> <span className="text-muted-foreground">{option.pain}</span></p>}
-                    {option.implication && <p className="text-xs mt-1"><strong className="text-foreground">Implication:</strong> <span className="text-muted-foreground">{option.implication}</span></p>}
+                    {option.implication && <p className="text-xs mt-1"><strong className="text-foreground">Implication:</strong> <span className="text-muted-foreground">{option.implication.replace('TTO', '').replace('EOR', '')}
+                     {option.implication.includes("TTO") && <Tooltip text="Time to Offer">TTO</Tooltip>}
+                     {option.implication.includes("EOR") && <Tooltip text="Employer of Record">EOR</Tooltip>}
+                    </span></p>}
                     {option.useWhen && <p className="text-xs mt-1"><strong className="text-foreground">Use when:</strong> <span className="text-muted-foreground">{option.useWhen}</span></p>}
 
                     {option.painRemoved && <p className="text-xs mt-2"><strong className="text-green-500">Pain removed:</strong> <span className="text-muted-foreground">{option.painRemoved}</span></p>}
-                    {option.mechanism && <p className="text-xs mt-1"><strong className="text-foreground">Mechanism:</strong> <span className="text-muted-foreground">{option.mechanism}</span></p>}
-                    {option.outcome && <p className="text-xs mt-1"><strong className="text-foreground">Outcome:</strong> <span className="text-muted-foreground">{option.outcome}</span></p>}
-
+                    {option.mechanism && <p className="text-xs mt-1"><strong className="text-foreground">Mechanism:</strong> <span className="text-muted-foreground">{option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
+                        <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>
+                        &nbsp;cognitive vetting,&nbsp;
+                        <Tooltip text="Mobile Device Management">MDM</Tooltip>-secured devices, SSO/SAML/SCIM, single SLA.
+                    </span></p>}
+                    {option.outcome && <p className="text-xs mt-1"><strong className="text-foreground">Outcome:</strong> <span className="text-muted-foreground">{option.outcome.replace('TCO', '')}
+                         <Link href="/playbook/latam-economics" className="text-primary hover:underline"><Tooltip text="Total Cost of Ownership">TCO</Tooltip></Link>
+                         , faster time-to-useful PR.
+                    </span></p>}
+                    
                     <div className="flex-grow"></div>
                     <p className="text-xs mt-4 pt-2 border-t border-border italic text-primary/80">"{option.wtfCheck}"</p>
                 </div>
@@ -109,7 +127,11 @@ export default async function NearshoreVsOffshorePage() {
             {microPSPs.map((psp) => (
                 <div key={psp.problem} className="rounded-lg border bg-card p-6 flex flex-col text-center shadow-lg">
                     <p className="font-semibold text-destructive">Problem: {psp.problem}</p>
-                    <p className="mt-2 text-sm text-foreground flex-grow"><strong className="text-primary">Solution:</strong> {psp.solution}</p>
+                    <p className="mt-2 text-sm text-foreground flex-grow"><strong className="text-primary">Solution:</strong> {psp.solution.replace('Axiom Cortex™', '').replace('MDM', '').replace('EOR', '')}
+                        {psp.solution.includes('Axiom Cortex') && <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>}
+                        {psp.solution.includes('MDM') && <Tooltip text="Mobile Device Management">MDM</Tooltip>}
+                        {psp.solution.includes('EOR') && <Tooltip text="Employer of Record">EOR</Tooltip>}
+                    </p>
                     <div className="mt-4 pt-4 border-t border-border/50">
                         <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {psp.proof}</p>
                     </div>
