@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
-import { InfoDropdown } from '@/components/Accordion';
+import { InfoDropdown } from '@/components/ui/info-dropdown';
 import type { Metadata } from 'next';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
 import Image from 'next/image';
@@ -172,12 +172,13 @@ export default async function HomePage() {
                       </div>
                       <div className="mt-4 text-sm text-muted-foreground flex-grow">
                           <p className="m-0">
-                              {pillar.description.replace('Axiom Cortex™', '')}
-                              {pillar.title.includes("Cognitive AI") && 
-                                <InfoDropdown title={<span className="text-primary border-b border-dashed">Axiom Cortex™</span>}>
-                                    <p className="text-sm text-muted-foreground">Our proprietary Cognitive AI engine for talent evaluation.</p>
-                                </InfoDropdown>
-                              }
+                              <span>
+                                  Stop gambling on resumes. Our{' '}
+                                  <InfoDropdown label="Axiom Cortex™" className="ml-1 -translate-y-0.5">
+                                      <p className="text-sm">Our proprietary Cognitive AI engine for talent evaluation.</p>
+                                  </InfoDropdown>
+                                  {' '}Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
+                              </span>
                           </p>
                       </div>
                       <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>

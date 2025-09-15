@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { InfoDropdown } from '@/components/Accordion';
+import { InfoDropdown } from '@/components/ui/info-dropdown';
 import { Clock, Users, FileSearch, Building, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, BookOpen, BrainCircuit, GitCompare } from 'lucide-react';
 import { ComparisonWidget } from '@/components/ComparisonWidget';
 
@@ -152,7 +152,7 @@ export default async function NearshoreVsOffshorePage() {
                     <div className="mt-4 pt-4 border-t border-border">
                         <div className="text-sm italic text-primary/80">
                            {option.title === 'Offshore (Legacy)' ? 
-                                <div className="inline">"How many quarters died waiting for “<InfoDropdown title={<span className="border-b border-dashed">LGTM</span>}><p className="text-sm">Looks Good To Me</p></InfoDropdown>”?"</div> :
+                                <div className="inline">How many quarters died waiting for “<InfoDropdown label="Looks Good To Me" className="ml-1"><p className="text-sm">Looks Good To Me</p></InfoDropdown>”?</div> :
                                 `"${option.wtfCheck}"`
                             }
                         </div>
@@ -170,7 +170,7 @@ export default async function NearshoreVsOffshorePage() {
                 <div key={psp.problem} className="rounded-lg border bg-card p-6 flex flex-col text-center shadow-lg">
                     <div className="flex justify-center">{psp.icon}</div>
                     <p className="font-semibold text-destructive mt-4">Problem: {psp.problem}</p>
-                    <p className="mt-2 text-sm text-foreground flex-grow"><strong className="text-primary">Solution:</strong> {psp.solution.replace('Axiom Cortex™', 'Axiom Cortex™').replace('MDM', 'MDM').replace('EOR', 'EOR')}
+                    <p className="mt-2 text-sm text-foreground flex-grow"><strong className="text-primary">Solution:</strong> {psp.solution}
                     </p>
                     <div className="mt-4 pt-4 border-t border-border/50">
                         <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {psp.proof}</p>

@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { InfoDropdown } from '@/components/Accordion';
+import { InfoDropdown } from '@/components/ui/info-dropdown';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -19,13 +19,13 @@ const comparisonPoints = {
     },
     "Security": {
         pain: "Is your vendor creating massive security holes?",
-        traditional: "Traditional staff augmentation leaves security to you. Unmanaged devices, no <InfoDropdown title={<span class='border-b border-dashed'>MDM</span>}>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</InfoDropdown>, and no compliance framework expose you to catastrophic risk.",
-        teamstation: "Our integrated platform is <a href='/trust' class='text-primary hover:underline'>secure by default</a>. We provide MDM-secured devices, <InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</InfoDropdown>, and insurance under one SLA.",
+        traditional: "Traditional staff augmentation leaves security to you. Unmanaged devices, no <span class='border-b border-dashed'>MDM</span>, and no compliance framework expose you to catastrophic risk.",
+        teamstation: "Our integrated platform is <a href='/trust' class='text-primary hover:underline'>secure by default</a>. We provide MDM-secured devices, <span class='border-b border-dashed'>EOR</span>, and insurance under one SLA.",
         proof: "SOC 2 & ISO Aligned"
     },
     "Cost": {
         pain: "Are hidden fees killing your budget?",
-        traditional: "A low hourly rate hides a mountain of extra costs for EOR, IT, legal, and vendor management, inflating your <a href='/playbook/latam-economics' class='text-primary hover:underline'><InfoDropdown title={<span class='border-b border-dashed'>TCO</span>}>Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.</InfoDropdown></a>.",
+        traditional: "A low hourly rate hides a mountain of extra costs for EOR, IT, legal, and vendor management, inflating your <a href='/playbook/latam-economics' class='text-primary hover:underline'><span class='border-b border-dashed'>TCO</span></a>.",
         teamstation: "Our all-inclusive <a href='/pricing' class='text-primary hover:underline'>pricing</a> provides a predictable, CFO-ready TCO that is often 40-60% lower than the fully-loaded cost of other models.",
         proof: "40-60% Lower TCO"
     }
@@ -58,14 +58,18 @@ export default function BairesDevComparisonPage() {
                     <XCircle className="h-5 w-5 text-destructive" />
                     BairesDev Model
                   </h4>
-                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                  <p className="text-sm text-muted-foreground m-0">
+                    {value.traditional.includes('MDM') ? <>Traditional staff augmentation leaves security to you. Unmanaged devices, no <InfoDropdown label="Mobile Device Management" className="ml-1"><p className='text-sm'>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>, and no compliance framework expose you to catastrophic risk.</> : value.traditional}
+                  </p>
                 </div>
                 <div className="mt-4 border-t border-border pt-4">
                   <h4 className="font-semibold text-foreground flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-primary" />
                     TeamStation AI Solution
                   </h4>
-                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation.replace('EOR', 'EOR') }}></p>
+                    <InfoDropdown label="Employer of Record" className="ml-1 -translate-y-0.5"><p className='text-sm'>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>
+                    <InfoDropdown label="Total Cost of Ownership" className="ml-1 -translate-y-0.5"><p className='text-sm'>Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.</p></InfoDropdown>
                 </div>
               </div>
               <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
@@ -85,7 +89,7 @@ export default function BairesDevComparisonPage() {
         </p>
         <h3>Cost & Risk: Predictable TCO vs. Hidden Fees</h3>
         <p>
-            With BairesDev, companies must budget for separate vendors to handle <InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</InfoDropdown>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
+            With BairesDev, companies must budget for separate vendors to handle <InfoDropdown label="Employer of Record" className="ml-1"><p className='text-sm'>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
         </p>
       </div>
 

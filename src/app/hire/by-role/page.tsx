@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane } from 'lucide-react';
 import type { Metadata } from 'next';
-import { InfoDropdown } from '@/components/Accordion';
+import { InfoDropdown } from '@/components/ui/info-dropdown';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Role | LATAM Staff Augmentation',
@@ -153,9 +153,9 @@ export default function HireByRolePage() {
                     <h2 className="text-xl font-bold text-foreground">{details.name}</h2>
                 </div>
                 <div className="relative z-20">
-                    <InfoDropdown title={<span className={`rounded-full px-3 py-1 text-xs font-medium ${getPriorityColor(details.priority)}`}>{details.priority}</span>}>
-                      <p className="text-sm text-muted-foreground">{details.priorityTooltip}</p>
-                    </InfoDropdown>
+                   <InfoDropdown label={details.priorityTooltip} className="ml-1">
+                      <p className="text-sm">{details.priorityTooltip}</p>
+                   </InfoDropdown>
                 </div>
               </div>
               <p className="mt-4 text-sm text-muted-foreground flex-grow">

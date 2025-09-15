@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { InfoDropdown } from '@/components/Accordion';
+import { InfoDropdown } from '@/components/ui/info-dropdown';
 import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -115,7 +115,10 @@ export default function BuildVsBuyPage() {
                 </div>
                 <div className="bg-background p-6 rounded-lg border border-border/50">
                     <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Playbook's Purpose</h3>
-                    <p className="mt-2 text-muted-foreground">This guide is your strategic ammunition. It is a CFO-ready framework, built on the Sandler methodology, to move the conversation beyond misleading salary comparisons to the only metric that matters: <strong className="text-foreground"><InfoDropdown title={<span class="border-b border-dashed">Total Cost of Ownership (TCO)</span>}>Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.</InfoDropdown></strong>. We will diagnose the pain of the "Build" model, quantify its true cost, and present the data-driven case for the "Buy" model as a faster, safer, and more capital-efficient path to scaling your engineering team.</p>
+                    <div className="mt-2 text-muted-foreground">
+                        <p>This guide is your strategic ammunition. It is a CFO-ready framework, built on the Sandler methodology, to move the conversation beyond misleading salary comparisons to the only metric that matters: <strong>Total Cost of Ownership (TCO)</strong>. We will diagnose the pain of the "Build" model, quantify its true cost, and present the data-driven case for the "Buy" model as a faster, safer, and more capital-efficient path to scaling your engineering team.</p>
+                        <InfoDropdown label="Total Cost of Ownership" className="ml-1 -translate-y-0.5"><p>Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.</p></InfoDropdown>
+                    </div>
                 </div>
             </div>
         </div>
@@ -136,7 +139,7 @@ export default function BuildVsBuyPage() {
                     </div>
                     <p className="mt-4 text-sm text-muted-foreground flex-grow">
                         {item.tax.includes("MDM") ? 
-                        <>{item.tax.split('MDM')[0]}<InfoDropdown title={<span class="border-b border-dashed">MDM</span>}>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</InfoDropdown>{item.tax.split('MDM')[1]}</>
+                        <>Procuring, shipping, securing (<InfoDropdown label="Mobile Device Management" className="ml-1"><p>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>), and managing laptops globally without a dedicated international IT team is an operational nightmare and a significant security risk.</>
                         : item.tax
                     }</p>
                     <p className={`mt-4 text-base font-mono bg-destructive/10 rounded px-3 py-2 inline-block self-start ${item.impactColor}`}>

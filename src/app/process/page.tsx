@@ -2,7 +2,7 @@
 import { Search, BrainCircuit, Handshake, Rocket, ShieldCheck, UserCheck, FileSearch, GanttChartSquare, Check, BookOpen, Star, Trophy, Beaker } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { InfoDropdown } from '@/components/Accordion';
+import { InfoDropdown } from '@/components/ui/info-dropdown';
 
 export const metadata: Metadata = {
   title: 'Our Nearshore IT Process: One Accountable SLA | TeamStation AI',
@@ -69,9 +69,12 @@ export default function ProcessPage() {
         </div>
       <header className="text-center my-12">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">One Accountable Process, Guaranteed by Contract</h1>
-        <p className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
-          This isn't a checklist; it's an engineered system. Our Nearshore IT Co-Pilot™ provides one accountable workflow for hiring, compliance, and secure devices, governed by a single <InfoDropdown title={<span className="border-b border-dashed">MSA/SOW</span>}><p className="text-sm text-muted-foreground">A Master Services Agreement (MSA) and Statement of Work (SOW) form a legally binding contract for our services.</p></InfoDropdown>. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
-        </p>
+        <div className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
+          This isn't a checklist; it's an engineered system. Our Nearshore IT Co-Pilot™ provides one accountable workflow for hiring, compliance, and secure devices, governed by a single
+          <InfoDropdown label="Master Services Agreement/Statement of Work" className="ml-1">
+            <p className="text-sm">A Master Services Agreement (MSA) and Statement of Work (SOW) form a legally binding contract for our services.</p>
+          </InfoDropdown>. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
+        </div>
          <div className="mt-6 font-semibold text-primary">
             Time-to-Offer ≈ 9 days • Day-1 Tool Readiness ≥ 95% • First PR in 7–14 days
           </div>
