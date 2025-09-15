@@ -94,13 +94,13 @@ export default async function NearshoreVsOffshorePage() {
         <h2 className="text-center text-4xl font-bold text-foreground">Compare the Five Paths to Scaling Your Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mt-12 items-stretch">
             {options.map((option, index) => (
-                <div key={option.title} className={`rounded-lg border p-4 flex flex-col shadow-lg ${index === 4 ? 'bg-primary/10 border-primary' : 'bg-card'}`}>
+                <div key={option.title} className={`rounded-lg border p-6 flex flex-col shadow-lg ${index === 4 ? 'bg-primary/10 border-primary' : 'bg-card'}`}>
                     <div className="flex items-start gap-3">
                         {option.icon}
                         <h3 className={`font-bold text-lg ${index === 4 ? 'text-primary' : 'text-foreground'}`}>{option.title}</h3>
                     </div>
                     
-                    <dl className="mt-4 flex-grow space-y-4">
+                    <dl className="mt-4 space-y-4 flex-grow">
                       {option.pain && (
                         <div>
                           <dt className="text-destructive text-xs uppercase tracking-wider font-bold">Pain</dt>
@@ -150,12 +150,12 @@ export default async function NearshoreVsOffshorePage() {
                     </dl>
                     
                     <div className="mt-4 pt-4 border-t border-border">
-                        <p className="text-sm italic text-primary/80">
-                           "{option.title === 'Offshore (Legacy)' ? 
-                                <>How many quarters died waiting for “<InfoDropdown title={<span className="border-b border-dashed">LGTM</span>}><p className="text-sm">Looks Good To Me</p></InfoDropdown>”?</> :
-                                <>{option.wtfCheck}</>
-                            }"
-                        </p>
+                        <div className="text-sm italic text-primary/80">
+                           {option.title === 'Offshore (Legacy)' ? 
+                                <p>"How many quarters died waiting for “<InfoDropdown title={<span className="border-b border-dashed">LGTM</span>}><p className="text-sm">Looks Good To Me</p></InfoDropdown>”?</p> :
+                                <p>"{option.wtfCheck}"</p>
+                            }
+                        </div>
                     </div>
                 </div>
             ))}
@@ -192,3 +192,4 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
+
