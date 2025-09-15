@@ -170,23 +170,21 @@ export default async function HomePage() {
                           {pillar.icon}
                           <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
                       </div>
-                      <p className="mt-4 text-sm text-muted-foreground flex-grow">
-                          {pillar.description.includes("Axiom Cortex™") && 
-                              <>
+                      <div className="mt-4 text-sm text-muted-foreground flex-grow">
+                          {pillar.description.includes("Axiom Cortex™") ?
+                              (<>
                                   Stop gambling on resumes. Our <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
-                              </>
-                          }
-                          {pillar.description.includes("EOR") &&
-                            <>
+                              </>) :
+                           pillar.description.includes("EOR") ?
+                            (<>
                                 Stop juggling 5+ vendors. We bundle <WithTooltip label="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip label="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip label="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
-                            </>
-                          }
-                           {pillar.description.includes("TCO") &&
-                            <>
+                            </>) :
+                           pillar.description.includes("TCO") ?
+                            (<>
                                 We provide a predictable, all-inclusive <WithTooltip label="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
-                            </>
+                            </>) : pillar.description
                           }
-                      </p>
+                      </div>
                       <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
                       <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary" target={pillar.href.startsWith('http') ? '_blank' : '_self'} rel={pillar.href.startsWith('http') ? 'noopener noreferrer' : ''}>
                           {pillar.linkLabel} <ArrowRight className="ml-2 h-4 w-4" />

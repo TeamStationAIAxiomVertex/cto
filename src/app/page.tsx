@@ -56,7 +56,7 @@ const corePillars = [
         pain: "Drowning in vendor management?",
         title: "Eliminate Vendor Chaos with One SLA",
         description: "Stop juggling 5+ vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
-        href: "/services/integrated-services",
+        href: "https://teamstation.dev/nearshore-integrated-services",
         linkLabel: "See Our Integrated Services",
         kpi: "1 contract, 1 invoice"
     },
@@ -110,153 +110,26 @@ export default async function HomePage() {
   const caseStudies = (await getAllCaseStudies()).slice(0, 3);
   const siteUrl = 'https://cto.teamstation.dev';
 
-  const comprehensiveSchema = {
+  const websiteSchema = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": `${siteUrl}/#org`,
-        "name": "TeamStation AI",
-        "url": siteUrl,
-        "legalName": "TeamStation, Inc.",
-        "description": "The integrated platform for building and managing elite nearshore engineering teams in Latin America, powered by proprietary Cognitive AI for talent evaluation.",
-        "slogan": "The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.",
-        "logo": {
-          "@type": "ImageObject",
-          "@id": `${siteUrl}/#logo`,
-          "url": `${siteUrl}/apple-touch-icon.png`,
-          "width": 180,
-          "height": 180,
-          "caption": "TeamStation AI Logo"
-        },
-        "image": { "@id": `${siteUrl}/#logo` },
-        "foundingDate": "2017-01-01",
-        "founders": [
-          {
-            "@type": "Person",
-            "name": "Lonnie McRorey",
-            "jobTitle": "Co-Founder & CEO",
-            "url": `${siteUrl}/about`,
-            "alumniOf": "Temple University"
-          },
-          {
-            "@type": "Person",
-            "name": "Dan Diachenko",
-            "jobTitle": "Co-Founder",
-            "url": `${siteUrl}/about`,
-            "alumniOf": "Universidad Torcuato Di Tella"
-          }
-        ],
-        "sameAs": [
-          "https://www.linkedin.com/company/teamstation/",
-          "https://twitter.com/teamstationai",
-          "https://www.crunchbase.com/organization/teamstation-ai",
-          "https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en"
-        ],
-        "contactPoint": [{
-          "@type": "ContactPoint",
-          "contactType": "Sales",
-          "url": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq",
-          "availableLanguage": ["en","es"],
-          "areaServed": "Latin America"
-        }],
-        "areaServed": ["Latin America","United States"],
-        "knowsAbout": [
-          "Nearshore software development",
-          "IT Staff Augmentation",
-          "Cognitive AI for talent alignment",
-          "Technical interview science",
-          "Total Cost of Ownership (TCO) modeling for engineering teams"
-        ],
-        "subjectOf": [
-           { "@type": "Book", "name": "Platforming the Nearshore IT Staff Augmentation Industry", "url": "https://www.amazon.com/dp/B0F4TF6TWD" },
-           { "@type": "ScholarlyArticle", "name": "AxiomCortex™: Scientific R&D Report", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397" }
-        ]
+    "@type": "WebSite",
+    "url": siteUrl,
+    "name": "TeamStation AI",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${siteUrl}/search?q={search_term_string}`
       },
-      {
-        "@type": "WebSite",
-        "@id": `${siteUrl}/#website`,
-        "url": siteUrl,
-        "name": "TeamStation AI CTO Playbook",
-        "inLanguage": "en-US",
-        "publisher": { "@id": `${siteUrl}/#org` },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": `${siteUrl}/search?q={search_term_string}`,
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${siteUrl}/#webpage`,
-        "url": siteUrl,
-        "name": "Nearshore Software Development & Staff Augmentation | TeamStation AI",
-        "isPartOf": { "@id": `${siteUrl}/#website` },
-        "about": { "@id": `${siteUrl}/#org` },
-        "primaryImageOfPage": { "@id": `${placeholderImages.metaCard.src.url}` },
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl }
-          ]
-        }
-      },
-      {
-        "@type": "Product",
-        "@id": `${siteUrl}/#product`,
-        "name": "Nearshore IT Co-Pilot™",
-        "brand": { "@id": `${siteUrl}/#org` },
-        "category": "BusinessApplication",
-        "description": "An integrated platform for building and managing elite nearshore engineering teams. Includes EOR, Devices/MDM, SSO/SAML/SCIM, and Compliance, powered by Axiom Cortex™ Cognitive AI.",
-        "image": `${placeholderImages.heroTeam.src.url}`,
-        "isRelatedTo": [
-          { "@id": `${siteUrl}/#service-eor` },
-          { "@id": `${siteUrl}/#service-vetting` },
-          { "@id": `${siteUrl}/#service-security` }
-        ],
-        "featureList": [
-          "Employer of Record (EOR)",
-          "Secure Devices & MDM",
-          "SSO/SAML/SCIM Integration",
-          "Compliance readiness (SOC 2, ISO 27001)",
-          "Cognitive AI talent alignment (Axiom Cortex™)"
-        ],
-        "audience": {
-          "@type": "BusinessAudience",
-          "audienceType": "Mid-market & Enterprise Engineering Leaders (CTOs, VPs of Engineering)"
-        },
-        "manufacturer": { "@id": `${siteUrl}/#org` }
-      },
-      {
-        "@type": "Service",
-        "@id": `${siteUrl}/#service-eor`,
-        "serviceType": "Employer of Record (EOR) for IT Talent",
-        "provider": { "@id": `${siteUrl}/#org` },
-        "areaServed": "Latin America",
-        "description": "Full compliance with local labor laws, payroll, taxes, and benefits for nearshore engineers."
-      },
-      {
-        "@type": "Service",
-        "@id": `${siteUrl}/#service-vetting`,
-        "serviceType": "AI-Powered Technical Talent Evaluation",
-        "provider": { "@id": `${siteUrl}/#org` },
-        "description": "Scientific, evidence-based evaluation of software engineers using the Axiom Cortex™ Cognitive AI to measure problem-solving ability and mitigate bias."
-      },
-      {
-        "@type": "Service",
-        "@id": `${siteUrl}/#service-security`,
-        "serviceType": "Managed Device & Endpoint Security (MDM)",
-        "provider": { "@id": `${siteUrl}/#org` },
-        "description": "Provisioning and management of secure, MDM-enrolled laptops for all nearshore team members to ensure enterprise-grade compliance."
-      }
-    ]
+      "query-input": "required name=search_term_string"
+    }
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(comprehensiveSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <div className="container mx-auto px-4">
         <section className="text-center py-16 md:py-24">
@@ -269,7 +142,7 @@ export default async function HomePage() {
               The vendor era is over. Command an evidence-driven, daylight, secure stack you control—without the lag, fog, or hidden taxes.
           </p>
           <div className="mt-10">
-              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Strategy Call</a>
+              <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Strategy Call</Link>
           </div>
         </section>
 
@@ -299,17 +172,17 @@ export default async function HomePage() {
                       </div>
                       <div className="mt-4 text-sm text-muted-foreground flex-grow">
                           {pillar.description.includes("Axiom Cortex™") ?
-                              <>
+                              (<>
                                   Stop gambling on resumes. Our <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
-                              </>
-                          : pillar.description.includes("EOR") ?
-                            <>
+                              </>) :
+                           pillar.description.includes("EOR") ?
+                            (<>
                                 Stop juggling 5+ vendors. We bundle <WithTooltip label="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip label="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip label="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
-                            </>
-                          :
-                            <>
+                            </>) :
+                           pillar.description.includes("TCO") ?
+                            (<>
                                 We provide a predictable, all-inclusive <WithTooltip label="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
-                            </>
+                            </>) : pillar.description
                           }
                       </div>
                       <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
@@ -426,7 +299,7 @@ export default async function HomePage() {
               <h2 className="text-3xl font-bold text-foreground">Stop Patching a Broken System. Build a Better One.</h2>
               <p className="mt-3 text-muted-foreground">In a 15-minute call, we won't give you a sales pitch. We'll give you a concrete plan to fix your hiring process, consolidate your vendors, and get a predictable, CFO-ready budget for your nearshore team. You will walk away with actionable advice, whether you work with us or not.</p>
               <div className="mt-6">
-                  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a No-Obligation Strategy Call</a>
+                  <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a No-Obligation Strategy Call</Link>
               </div>
           </div>
         </section>
