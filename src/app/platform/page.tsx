@@ -87,16 +87,16 @@ export default function PlatformPage() {
       <header className="text-center my-12">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Nearshore IT Co-Pilot™ Platform</h1>
         <div className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          <p>
+          <div className="inline">
             Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable{' '}
             <InfoDropdown title={<span className="border-b border-dashed">SLA</span>}>
               <p className="text-sm text-muted-foreground">Service Level Agreement: A contract defining the level of service you can expect, backed by our MSA.</p>
             </InfoDropdown>.
-          </p>
+          </div>
         </div>
          <div className="mt-8">
-            <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="cta-button">
-                See the Platform in Action
+            <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">
+                Book a 15-Minute Platform Demo
             </Link>
         </div>
       </header>
