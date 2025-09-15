@@ -26,7 +26,7 @@ export default function IntegratedServicesPage() {
       description:
         "Our Axiom Cortex™ Cognitive AI engine validates problem-solving ability, not just credentials. A human expert interviews, and our system synthesizes the conversation to determine the candidate's mental shape. We then run a structured, auditable onboarding process to ensure Day-1 readiness.",
       kpi: "Mismatch Rate ≤10%",
-      href: "/technical-interview-evaluation"
+      href: "https://teamstation.dev/technical-interview-evaluation"
     },
     {
       icon: <FileText className="h-8 w-8 text-primary" />,
@@ -98,7 +98,7 @@ export default function IntegratedServicesPage() {
               <p className="mt-4 text-sm text-muted-foreground flex-grow">{service.description}</p>
               <div className="mt-6 border-t border-border pt-4">
                 <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {service.kpi}</p>
-                <Link href={service.href} className="stretched-link mt-4 flex items-center text-sm font-semibold text-primary">
+                <Link href={service.href} className="stretched-link mt-4 flex items-center text-sm font-semibold text-primary" target={service.href.startsWith('http') ? '_blank' : '_self'} rel={service.href.startsWith('http') ? 'noopener noreferrer' : ''}>
                     Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>

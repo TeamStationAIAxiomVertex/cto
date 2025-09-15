@@ -82,7 +82,7 @@ export default function OnboardingPage() {
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             See how our integrated platform and structured onboarding can accelerate your team's productivity.
         </p>
-        <Link href="/process" className="cta-button mt-6">Explore Our Full Process <ArrowRight className="ml-2 h-4 w-4"/></Link>
+        <Link href="https://teamstation.dev/nearshore-it-staff-augmentation-process" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Explore Our Full Process <ArrowRight className="ml-2 h-4 w-4"/></Link>
       </div>
     </main>
   );

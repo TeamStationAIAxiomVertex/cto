@@ -41,17 +41,17 @@ const levels = [
 ];
 
 const includedItems = [
-    { title: 'LATAM Employer of Record (EOR)', href: "/services/integrated-services" },
-    { title: 'AI-Powered Vetting & Onboarding', href: "/process" },
+    { title: 'LATAM Employer of Record (EOR)', href: "https://teamstation.dev/nearshore-integrated-services" },
+    { title: 'AI-Powered Vetting & Onboarding', href: "https://teamstation.dev/nearshore-it-staff-augmentation-process" },
     { title: 'Secure Devices & MDM', href: "/trust" },
     { title: 'Cybersecurity & E&O Insurance', href: "/trust" },
     { title: 'LATAM Office Network Access', href: "/hire/by-country" },
-    { title: 'Performance & Documentation Platform', href: "/research/performance-evaluation-framework" },
+    { title: 'Performance & Documentation Platform', href: "https://teamstation.dev/talent-performance-evaluations" },
     { title: 'Compliance & IP Protection', href: "/trust" },
-    { title: 'Rapid Scaling & Backfill', href: "/process" },
-    { title: 'Advanced Talent Retention', href: "/process" },
+    { title: 'Rapid Scaling & Backfill', href: "https://teamstation.dev/nearshore-it-staff-augmentation-process" },
+    { title: 'Advanced Talent Retention', href: "https://teamstation.dev/nearshore-it-staff-augmentation-process" },
     { title: 'Dedicated Account Manager', href: "/about" },
-    { title: 'Unified Billing Support', href: "/pricing" },
+    { title: 'Unified Billing Support', href: "https://teamstation.dev/nearshore-it-staff-augmentation-pricing" },
 ];
 
 const pricingFactors = [
@@ -123,7 +123,7 @@ export default function PricingPage() {
               <p><span className="font-semibold text-foreground">${(level.rate * 173 * 12).toLocaleString()}</span>/yr</p>
             </div>
              <p className="text-xs text-center text-muted-foreground mt-2">± ${level.margin} USD</p>
-             <Link href="/hire" className="cta-button w-full mt-6">
+             <Link href="https://teamstation.dev/latam-talent" target="_blank" rel="noopener noreferrer" className="cta-button w-full mt-6">
                 Find Talent
              </Link>
           </div>
@@ -141,7 +141,7 @@ export default function PricingPage() {
                 <span>=</span>
                 <span className="font-bold text-primary">$98,630</span>
             </div>
-            <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in <Link href="/process" className='text-primary hover:underline'>≈9 days</Link> vs. the industry average of 45.</p>
+            <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in <Link href="https://teamstation.dev/nearshore-it-staff-augmentation-process" target="_blank" rel="noopener noreferrer" className='text-primary hover:underline'>≈9 days</Link> vs. the industry average of 45.</p>
          </div>
       </div>
 
@@ -152,7 +152,7 @@ export default function PricingPage() {
             {includedItems.map(item => (
                 <div key={item.title} className="flex items-start gap-3">
                     <span className="h-5 w-5 shrink-0 mt-0.5 text-primary">✓</span>
-                    <Link href={item.href} className="text-muted-foreground hover:text-foreground">{item.title}</Link>
+                    <Link href={item.href} className="text-muted-foreground hover:text-foreground" target={item.href.startsWith('http') ? '_blank' : '_self'} rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}>{item.title}</Link>
                 </div>
             ))}
         </div>

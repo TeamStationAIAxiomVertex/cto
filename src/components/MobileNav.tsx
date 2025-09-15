@@ -14,12 +14,12 @@ const navItems = {
     { href: '/playbook/tco-model', title: 'TCO Model' },
   ],
   'What\'s Included': [
-    { href: '/platform', title: 'Our Platform'},
-    { href: '/process', title: 'Our Process' },
-    { href: '/technical-interview-evaluation', title: 'Talent Evaluations' },
-    { href: '/research/performance-evaluation-framework', title: 'Performance Framework' },
-    { href: '/services/talent-onboarding', title: 'Talent Onboarding' },
-    { href: '/services/integrated-services', title: 'Integrated Services' },
+    { href: 'https://teamstation.dev/platform', title: 'Our Platform'},
+    { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-process', title: 'Our Process' },
+    { href: 'https://teamstation.dev/technical-interview-evaluation', title: 'Talent Evaluations' },
+    { href: 'https://teamstation.dev/talent-performance-evaluations', title: 'Performance Framework' },
+    { href: 'https://teamstation.dev/nearshore-it-talent-onboarding', title: 'Talent Onboarding' },
+    { href: 'https://teamstation.dev/nearshore-integrated-services', title: 'Integrated Services' },
     { href: '/trust', title: 'Trust Center' },
   ],
   'Comparisons': [
@@ -32,8 +32,8 @@ const navItems = {
 
 const simpleNavItems = [
     { href: '/case-studies', title: 'Case Studies' },
-    { href: '/pricing', title: 'Pricing' },
-    { href: '/hire', title: 'Hire' },
+    { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-pricing', title: 'Pricing' },
+    { href: 'https://teamstation.dev/latam-talent', title: 'Hire' },
     { href: '/research/hub', title: 'Research'},
     { href: '/about', title: 'About' },
 ];
@@ -66,7 +66,7 @@ export function MobileNav() {
                   />
                 ))}
                 {simpleNavItems.map(item => (
-                    <Link key={item.href} href={item.href} className="block py-2 text-lg font-semibold text-foreground hover:text-primary" onClick={handleLinkClick}>
+                    <Link key={item.href} href={item.href} className="block py-2 text-lg font-semibold text-foreground hover:text-primary" onClick={handleLinkClick} target={item.href.startsWith('http') ? '_blank' : '_self'} rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}>
                         {item.title}
                     </Link>
                 ))}

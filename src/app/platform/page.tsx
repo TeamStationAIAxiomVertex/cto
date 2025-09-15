@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { CheckCircle, Trophy, Star, BookOpen, Beaker, GitCommit, Search, Users, BrainCircuit, FileCheck, Laptop, Gauge, ShieldCheck, FileText, Building, Scale, ArrowRight } from "lucide-react";
 import type { Metadata } from 'next';
-import { Tooltip } from "@/components/Tooltip";
+import { InfoDropdown } from "@/components/Accordion";
 import { DisclosureDrawer } from "@/components/DisclosureDrawer";
 
 export const metadata: Metadata = {
@@ -87,7 +87,7 @@ export default function PlatformPage() {
       <header className="text-center my-12">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Nearshore IT Co-Pilot™ Platform</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable <Tooltip text="Service Level Agreement: A contract defining the level of service you can expect, backed by our MSA.">SLA</Tooltip>.
+          Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable <InfoDropdown title={<span className="border-b border-dashed">SLA</span>}><p className="text-sm text-muted-foreground">Service Level Agreement: A contract defining the level of service you can expect, backed by our MSA.</p></InfoDropdown>.
         </p>
          <div className="mt-8">
             <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="cta-button">
@@ -107,18 +107,15 @@ export default function PlatformPage() {
                         {service.icon}
                         <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
                     </div>
-                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{service.description.replace('MDM', '').replace('EOR', '')}
-                    {service.title.includes("EOR") && <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>}
-                    {service.title.includes("MDM") && <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
+                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{service.description.replace('MDM', 'Mobile Device Management').replace('EOR', 'Employer of Record')}
                     </p>
-                    <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {service.kpi.replace('MDM', '')}
-                     {service.kpi.includes("MDM") && <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
+                    <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {service.kpi.replace('MDM', 'Mobile Device Management')}
                     </p>
                 </div>
             ))}
         </div>
         <div className="text-center mt-12">
-            <Link href="/services/integrated-services" className="cta-button">See All Included Services <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            <Link href="https://teamstation.dev/nearshore-integrated-services" target="_blank" rel="noopener noreferrer" className="cta-button">See All Included Services <ArrowRight className="ml-2 h-4 w-4" /></Link>
         </div>
       </section>
 
@@ -164,9 +161,7 @@ export default function PlatformPage() {
                         {item.details.map(detail => (
                             <li key={detail} className="flex items-start gap-2 text-sm text-muted-foreground">
                                 <CheckCircle className="h-4 w-4 shrink-0 mt-0.5 text-green-500" />
-                                <span>{detail.replace('MDM', '')}
-                                {detail.includes("EOR") && <Tooltip text="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</Tooltip>}
-                                {detail.includes("MDM") && <Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
+                                <span>{detail.replace('MDM', 'MDM')}
                                 </span>
                             </li>
                         ))}
@@ -175,7 +170,7 @@ export default function PlatformPage() {
             ))}
         </div>
          <div className="text-center mt-8">
-            <Link href="/process" className="font-semibold text-primary hover:underline">See the Full Process →</Link>
+            <Link href="https://teamstation.dev/nearshore-it-staff-augmentation-process" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">See the Full Process →</Link>
         </div>
       </section>
 

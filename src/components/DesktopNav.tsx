@@ -13,12 +13,12 @@ const navItems = {
     { href: '/playbook/tco-model', title: 'TCO Model', description: 'A CFO-ready model for the Total Cost of Ownership.' },
   ],
   'What\'s Included': [
-    { href: '/platform', title: 'Our Platform', description: 'The Nearshore IT Co-Pilot™ Platform.'},
-    { href: '/process', title: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
-    { href: '/technical-interview-evaluation', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
-    { href: '/research/performance-evaluation-framework', title: 'Performance Framework', description: 'A data-driven framework for performance and growth.' },
-    { href: '/services/talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
-    { href: '/services/integrated-services', title: 'Integrated Services', description: 'A single SLA for your entire nearshore operation.' },
+    { href: 'https://teamstation.dev/platform', title: 'Our Platform', description: 'The Nearshore IT Co-Pilot™ Platform.'},
+    { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-process', title: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
+    { href: 'https://teamstation.dev/technical-interview-evaluation', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
+    { href: 'https://teamstation.dev/talent-performance-evaluations', title: 'Performance Framework', description: 'A data-driven framework for performance and growth.' },
+    { href: 'https://teamstation.dev/nearshore-it-talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
+    { href: 'https://teamstation.dev/nearshore-integrated-services', title: 'Integrated Services', description: 'A single SLA for your entire nearshore operation.' },
     { href: '/trust', title: 'Trust Center', description: 'Our commitment to security, compliance, and governance.' },
   ],
   'Comparisons': [
@@ -31,15 +31,18 @@ const navItems = {
 
 const simpleNavItems = [
     { href: '/case-studies', title: 'Case Studies' },
-    { href: '/pricing', title: 'Pricing' },
-    { href: '/hire', title: 'Hire' },
+    { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-pricing', title: 'Pricing' },
+    { href: 'https://teamstation.dev/latam-talent', title: 'Hire' },
     { href: '/research/hub', title: 'Research'},
     { href: '/about', title: 'About' },
 ];
 
 function NavLink({ href, title, description, isHubLink }: { href: string, title: string, description: string, isHubLink?: boolean }) {
+    const isExternal = href.startsWith('http');
+    const linkProps = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+
     return (
-        <Link href={href} className="-m-3 flex flex-col rounded-lg p-3 hover:bg-accent">
+        <Link href={href} {...linkProps} className="-m-3 flex flex-col rounded-lg p-3 hover:bg-accent">
             <p className="text-sm font-medium text-foreground flex items-center">
                 {isHubLink && <BookOpen className="mr-2 h-4 w-4" />}
                 {title}
@@ -64,11 +67,15 @@ export function DesktopNav() {
           </PopoverContent>
         </Popover>
       ))}
-      {simpleNavItems.map(item => (
-          <Link key={item.href} href={item.href} className="text-muted-foreground transition-colors hover:text-foreground">
-            {item.title}
-          </Link>
-      ))}
+      {simpleNavItems.map(item => {
+          const isExternal = item.href.startsWith('http');
+          const linkProps = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+          return (
+            <Link key={item.href} href={item.href} {...linkProps} className="text-muted-foreground transition-colors hover:text-foreground">
+              {item.title}
+            </Link>
+          )
+      })}
     </nav>
   );
 }

@@ -6,7 +6,8 @@ import { SpotifyIcon } from '@/components/SpotifyIcon';
 type LinkItem = {
   href: string;
   label: string;
-  icon?: ReactNode;           // <- optional field, single shape
+  icon?: ReactNode;
+  isExternal?: boolean;
 };
 
 type FooterLinks = {
@@ -19,7 +20,6 @@ type FooterLinks = {
 export default function Footer() {
   const year = new Date().getFullYear();
 
-  // EXPLICIT annotation prevents per-array union inference
   const links: FooterLinks = {
     "Playbook": [
       { href: '/playbook/hub', label: 'Playbook Hub' },
@@ -30,12 +30,12 @@ export default function Footer() {
       { href: '/playbook/tco-model', label: 'TCO Model' },
     ],
     "What's Included": [
-      { href: '/platform', label: 'Platform' },
-      { href: '/process', label: 'Our Process' },
-      { href: '/technical-interview-evaluation', label: 'Talent Evaluations' },
-      { href: '/research/performance-evaluation-framework', label: 'Performance Framework' },
-      { href: '/services/integrated-services', label: 'Integrated Services' },
-      { href: '/services/talent-onboarding', label: 'Talent Onboarding' },
+      { href: 'https://teamstation.dev/platform', label: 'Platform', isExternal: true },
+      { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-process', label: 'Our Process', isExternal: true },
+      { href: 'https://teamstation.dev/technical-interview-evaluation', label: 'Talent Evaluations', isExternal: true },
+      { href: 'https://teamstation.dev/talent-performance-evaluations', label: 'Performance Framework', isExternal: true },
+      { href: 'https://teamstation.dev/nearshore-integrated-services', label: 'Integrated Services', isExternal: true },
+      { href: 'https://teamstation.dev/nearshore-it-talent-onboarding', label: 'Talent Onboarding', isExternal: true },
     ],
     "Comparisons": [
       { href: '/comparisons', label: 'All Comparisons' },
@@ -47,7 +47,7 @@ export default function Footer() {
       { href: '/about', label: 'About Us' },
       { href: '/research/hub', label: 'Research' },
       { href: '/trust', label: 'Trust Center' },
-      { href: '/hire', label: 'Hire Talent' },
+      { href: 'https://teamstation.dev/latam-talent', label: 'Hire Talent', isExternal: true },
       { href: '/research/hub#podcast', label: 'Podcast', icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1" /> },
     ]
   };
@@ -67,7 +67,7 @@ export default function Footer() {
               <ul className="mt-4 space-y-3">
                 {linkItems.map((link, i) => (
                   <li key={i} className="text-sm">
-                    <Link href={link.href} className="transition-colors hover:text-foreground flex items-center">
+                    <Link href={link.href} className="transition-colors hover:text-foreground flex items-center" target={link.isExternal ? '_blank' : '_self'} rel={link.isExternal ? 'noopener noreferrer' : ''}>
                       <span>{link.label}</span>
                       {link.icon ? (
                         <span aria-hidden="true" className="ml-1">{link.icon}</span>
