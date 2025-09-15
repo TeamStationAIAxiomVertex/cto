@@ -1,3 +1,4 @@
+
 # Firebase App Hosting configuration
 runConfig:
   minInstances: 1
@@ -7,19 +8,11 @@ runConfig:
   memoryMiB: 1024
 
 env:
-  # Public env example (available at BUILD and RUNTIME)
   - variable: NEXT_PUBLIC_SITE_NAME
     value: "TeamStation AI"
-    availability:
-      - BUILD
-      - RUNTIME
+    availability: [BUILD, RUNTIME]
 
   # BREAK-GLASS to force a build even if TS/ESLint fail (BUILD only)
   - variable: BREAK_GLASS
-    value: "0" # set to "1" temporarily to push through a build
-    availability:
-      - BUILD
-
-# Optional: force a faster build when you must publish despite lint (uncomment in an emergency)
-# scripts:
-#   buildCommand: npm run build:fast
+    value: "0"   # set "1" temporarily only if you must bypass lint/type errors
+    availability: [BUILD]
