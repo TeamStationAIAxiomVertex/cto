@@ -4,8 +4,8 @@ import { getAllCaseStudies } from '@/lib/case-studies';
 import { getAllPlaybookSlugs } from '@/lib/playbook';
 import { NAV, simpleNavItems } from '@/config/nav';
 import { countries } from '@/lib/countries';
-import { roleCategories } from '@/app/hire/by-role/page';
-import { techCategories } from '@/app/hire/by-technology/page';
+import { roleCategories } from '@/lib/roles';
+import { techCategories } from '@/lib/tech';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
