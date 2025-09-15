@@ -3,7 +3,7 @@
 import { useState, useEffect, type ReactNode } from 'react';
 import { WithTooltip } from '@/components/ui/tooltip';
 
-type Cell = ReactNode | string | number;
+type Cell = ReactNode;
 
 type Results = {
   seatCost: string[];
