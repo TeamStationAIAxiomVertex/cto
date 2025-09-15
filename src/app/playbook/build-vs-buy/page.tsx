@@ -202,6 +202,9 @@ export default function BuildVsBuyPage() {
             <div className="bg-background p-6 rounded-lg border border-primary/20">
                  <h3 className="font-bold text-primary flex items-center gap-2"><CheckCircle className="h-5 w-5"/>The Conclusion</h3>
                 <p className="mt-2 text-foreground">By presenting this TCO framework, you are demonstrating to your CFO and your board that you are not just a technical manager but a strategic business partner. You are making a capital allocation decision based on a clear-eyed assessment of total cost and risk. For most growth-stage companies, the "Build" model is a financially and operationally reckless gamble. The "Buy" model, offered by an integrated platform like TeamStation AI, is the only logical choice to scale with speed and safety.</p>
+                <div className="mt-6 text-center">
+                   <Link href="/playbook/latam-economics#tco-knockout" className="cta-button">See the CFO-Ready Cost Breakdown</Link>
+                </div>
             </div>
         </div>
     </section>

@@ -138,7 +138,7 @@ export default function LatamEconomicsPage() {
         </div>
       </section>
 
-      <section className="my-24">
+      <section id="tco-knockout" className="my-24 scroll-mt-20">
         <h2 className="text-4xl font-bold text-center">Part 3: The TCO Knockout Slide for Your CFO</h2>
          <p className="mt-4 max-w-3xl mx-auto text-center text-muted-foreground">This is the slide that wins your budget. It's a simple, powerful comparison of the true first-year cost of acquiring talent, contrasting a typical US hire with our fully-burdened, all-inclusive nearshore platform.</p>
         <div className="overflow-x-auto mt-8">
