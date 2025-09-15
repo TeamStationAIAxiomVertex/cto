@@ -1,100 +1,60 @@
+
 'use client';
+
 import * as React from 'react';
-import type { ReactNode } from 'react';
+import * as TooltipPrimitive from '@radix-ui/react-popover';
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+} from '@/components/ui/tooltip-primitives'; 
 
-// Types
-type TooltipRootProps = {
+type WithTooltipProps = {
+  label: React.ReactNode;
+  side?: 'top' | 'right' | 'bottom' | 'left';
+  align?: 'start' | 'center' | 'end';
   children: React.ReactNode;
-  // Accept shadcn/Radix-style provider props (no-ops in this shim)
-  delayDuration?: number;
-  skipDelayDuration?: number;
-  disableHoverableContent?: boolean;
-} & Record<string, unknown>;
+};
 
-
-// Allow both patterns:
-// 1) Named <Tooltip text|label|content|title="...">children</Tooltip>
-// 2) Shadcn-style <Tooltip><TooltipTrigger/><TooltipContent/></Tooltip>
-type TooltipProps = {
-  children: React.ReactNode;
-  className?: string;
-
-  // Back-compat aliases accepted anywhere:
-  text?: React.ReactNode;
-  label?: React.ReactNode;
-  content?: React.ReactNode;
-  title?: string;
-} & React.HTMLAttributes<HTMLSpanElement>;
-
-type TooltipTriggerProps = {
-  asChild?: boolean;
-  children: React.ReactElement;
-} & React.HTMLAttributes<HTMLElement>;
-
-type TooltipContentProps = {
-  children: React.ReactNode;
-  className?: string;
-} & React.HTMLAttributes<HTMLSpanElement> & Record<string, unknown>;
-
-// Helpers
-const toTitle = (v: unknown): string | undefined =>
-  typeof v === 'string' ? v : typeof v === 'number' ? String(v) : undefined;
-
-// Provider (no-op placeholder, props accepted for compatibility)
-export function TooltipProvider({ children, ..._rest }: TooltipRootProps) {
-  return <>{children}</>;
-}
-
-
-// Named Tooltip: container that also supports title-based tips via props
-export function Tooltip({
-  children,
-  className,
-  text,
+export function WithTooltip({
   label,
-  content,
-  title,
-  ...rest
-}: TooltipProps) {
-  const tip =
-    toTitle(text) ??
-    toTitle(label) ??
-    toTitle(content) ??
-    (typeof title === 'string' ? title : undefined);
-
+  side = 'top',
+  align = 'center',
+  children,
+}: WithTooltipProps) {
   return (
-    <span title={tip} className={className ? String(className) : undefined} {...rest}>
-      {children}
-    </span>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <span
+          className="inline-flex items-center cursor-help focus:outline-none focus:ring-2 focus:ring-primary/40"
+          tabIndex={0}
+        >
+          {children}
+        </span>
+      </TooltipTrigger>
+      <TooltipContent
+        side={side}
+        align={align}
+        sideOffset={6}
+        className="z-[1000] rounded-md border bg-popover px-2 py-1 text-xs text-popover-foreground shadow-md"
+      >
+        {label}
+      </TooltipContent>
+    </Tooltip>
   );
 }
 
-// Trigger passthrough (shadcn-compatible)
-export function TooltipTrigger({ children, ...rest }: TooltipTriggerProps) {
-  return React.cloneElement(children, { ...rest });
-}
+// Forwarding exports for direct use if needed
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };
+export { Popover as TooltipArrow } from '@radix-ui/react-popover';
 
-// Content placeholder: screen-reader only (no popper deps)
-export function TooltipContent({ children, className, ...rest }: TooltipContentProps) {
-  return (
-    <span role="tooltip" aria-hidden className={['sr-only', className].filter(Boolean).join(' ')} {...rest}>
-      {children}
-    </span>
-  );
-}
-
-// No-op for API compatibility
-export function TooltipArrow() {
-    return null;
-}
-
-// Default export: <TooltipDefault content="...">child</TooltipDefault>
 const TooltipDefault = ({
   children,
   content,
   ...rest
 }: { children: React.ReactNode; content?: React.ReactNode } & React.HTMLAttributes<HTMLSpanElement>) => {
-  const titleAttr = toTitle(content);
+  const titleAttr = typeof content === 'string' ? content : undefined;
   return (
     <span title={titleAttr} {...rest}>
       {children}
@@ -102,34 +62,3 @@ const TooltipDefault = ({
   );
 };
 export default TooltipDefault;
-
-// Convenience helper: <WithTooltip label="...">child</WithTooltip>
-export function WithTooltip({
-  label,
-  title,
-  children,
-  asChild,
-  className,
-}: {
-  label?: React.ReactNode;
-  title?: string;
-  children: React.ReactNode;
-  asChild?: boolean;
-  className?: string;
-}) {
-  const tip = toTitle(label) ?? (typeof title === 'string' ? title : undefined);
-
-  if (asChild && React.isValidElement(children)) {
-    const prev = (children.props?.className as string) || '';
-    return React.cloneElement(children as React.ReactElement, {
-      title: tip,
-      className: [prev, className].filter(Boolean).join(' '),
-    });
-  }
-
-  return (
-    <span title={tip} className={className}>
-      {children}
-    </span>
-  );
-}
