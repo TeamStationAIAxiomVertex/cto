@@ -26,7 +26,10 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   openGraph: {
-    title: siteName,
+    title: {
+        default: `${siteName} | Nearshore Software Development & Staff Augmentation`,
+        template: `%s | ${siteName}`,
+    },
     description: siteDescription,
     url: siteUrl,
     siteName: siteName,
@@ -43,7 +46,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteName,
+    title: {
+        default: `${siteName} | Nearshore Software Development & Staff Augmentation`,
+        template: `%s | ${siteName}`,
+    },
     description: siteDescription,
     images: [placeholderImages.metaCard.src.url], 
   },
@@ -59,8 +65,26 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'TeamStation AI',
+    url: siteUrl,
+    logo: 'https://cto.teamstation.dev/apple-icon.png',
+    sameAs: [
+        'https://www.linkedin.com/company/teamstation/',
+        'https://twitter.com/teamstation'
+    ]
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
+       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
       <body className={`${poppins.variable} font-sans bg-background text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />

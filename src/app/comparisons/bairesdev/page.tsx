@@ -5,8 +5,9 @@ import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'BairesDev Alternative: TeamStation AI vs. BairesDev',
+  title: 'BairesDev Alternative: TeamStation AI vs. BairesDev | 2024 Comparison',
   description: 'An objective comparison for CTOs looking for a BairesDev alternative. Compare TeamStation AI\'s integrated platform and Cognitive AI vetting with BairesDev\'s traditional staff augmentation.',
+  keywords: 'BairesDev alternative, BairesDev vs, nearshore software development, LATAM staff augmentation, IT outsourcing comparison',
 };
 
 const comparisonPoints = {
@@ -59,7 +60,7 @@ export default function BairesDevComparisonPage() {
                   </h4>
                   <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
                 </div>
-                <div className="border-t border-border pt-4">
+                <div className="mt-4 border-t border-border pt-4">
                   <h4 className="font-semibold text-foreground flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-primary" />
                     TeamStation AI Solution
