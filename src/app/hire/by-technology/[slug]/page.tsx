@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle, Plane } from 'lucide-react';
-import { Tooltip } from '@/components/Tooltip';
+import { WithTooltip } from '@/components/ui/tooltip';
 
 const allTech: { 
     [key: string]: { 
@@ -555,7 +555,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is your secrets management system a single point of failure?",
             problem: "Running a single Vault server is not suitable for production and puts your entire infrastructure at risk if it fails.",
-            solution: "We vet for engineers with experience in setting up and managing a high-availability Vault cluster, ensuring your secrets management is as resilient as the rest of your infrastructure.",
+            solution: "We vet for engineers with experience in set-ting up and managing a high-availability Vault cluster, ensuring your secrets management is as resilient as the rest of your infrastructure.",
             kpi: "Experience with high-availability Vault clusters"
         }
     ], 
@@ -1298,7 +1298,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "How do you roll back a bad update that you pushed via OTA?",
             problem: "Pushing a bad update directly to users can be disastrous if you don't have a rollback plan.",
-            solution: "Our engineers are experienced in setting up staged rollouts and automated rollbacks with CodePush, ensuring that you can release with confidence.",
+            solution: "Our engineers are experienced in set-ting up staged rollouts and automated rollbacks with CodePush, ensuring that you can release with confidence.",
             kpi: "Reliable rollbacks and staged rollouts"
         },
         {
@@ -1478,7 +1478,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is your single database server a single point of failure?",
             problem: "Without a replication strategy, the failure of your primary database server means a full outage and potential data loss.",
-            solution: "Our engineers are experienced in setting up and managing MySQL replication (primary-replica), ensuring high availability for reads and a solid disaster recovery strategy.",
+            solution: "Our engineers are experienced in set-ting up and managing MySQL replication (primary-replica), ensuring high availability for reads and a solid disaster recovery strategy.",
             kpi: "Experience with MySQL replication for high availability"
         },
         {
@@ -1575,7 +1575,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is your Redis cache a single point of failure?",
             problem: "A single Redis instance is not highly available. If it fails, your application's performance will degrade significantly as all traffic hits the primary database.",
-            solution: "We look for engineers with experience in setting up high-availability Redis with Sentinel or Redis Cluster, ensuring your caching layer is as resilient as your database.",
+            solution: "We look for engineers with experience in set-ting up high-availability Redis with Sentinel or Redis Cluster, ensuring your caching layer is as resilient as your database.",
             kpi: "Experience with high-availability Redis (Sentinel/Cluster)"
         }
     ], 
@@ -2355,7 +2355,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Are your data scientists stepping on each other's toes in a shared cluster?",
             problem: "Without multi-user isolation, it's impossible to securely manage resources and experiments for a team of data scientists.",
-            solution: "We look for engineers with experience in setting up multi-user isolation in Kubeflow, providing each user with their own secure namespace for notebooks, pipelines, and models.",
+            solution: "We look for engineers with experience in set-ting up multi-user isolation in Kubeflow, providing each user with their own secure namespace for notebooks, pipelines, and models.",
             kpi: "Secure, multi-tenant environments for data science"
         }
     ],
@@ -3455,6 +3455,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
 export async function generateStaticParams() {
   return Object.keys(allTech).map(slug => ({ slug }));
 }
+
 
 
 
