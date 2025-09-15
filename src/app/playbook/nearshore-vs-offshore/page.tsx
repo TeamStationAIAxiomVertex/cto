@@ -110,9 +110,12 @@ export default async function NearshoreVsOffshorePage() {
                       {option.implication && (
                         <div>
                           <dt className="text-foreground text-xs uppercase tracking-wider font-bold">Implication</dt>
-                          <dd className="text-sm text-muted-foreground mt-1">
-                            <WithTooltip label="Time to Offer"><span className="border-b border-dashed">TTO</span></WithTooltip>; vacancy tax compounds.
-                          </dd>
+                           <dd className="text-sm text-muted-foreground mt-1">
+                                <WithTooltip label="Time to Offer">
+                                    <span className="border-b border-dashed">TTO</span>
+                                </WithTooltip>
+                                ; vacancy tax compounds.
+                            </dd>
                         </div>
                       )}
                       {option.useWhen && (
@@ -130,11 +133,11 @@ export default async function NearshoreVsOffshorePage() {
                       {option.mechanism && (
                         <div>
                           <dt className="text-foreground text-xs uppercase tracking-wider font-bold">Mechanism</dt>
-                          <dd className="text-sm text-muted-foreground mt-1">
-                            <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</Link>
-                            &nbsp;cognitive vetting,&nbsp;
-                            <WithTooltip label="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>-secured devices, <WithTooltip label="Single Sign-On/System for Cross-domain Identity Management"><span className="border-b border-dashed">SSO/SAML/SCIM</span></WithTooltip>, single <WithTooltip label="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>.
-                          </dd>
+                           <dd className="text-sm text-muted-foreground mt-1">
+                                <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</Link>
+                                &nbsp;cognitive vetting,&nbsp;
+                                <WithTooltip label="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>-secured devices, <WithTooltip label="Single Sign-On/System for Cross-domain Identity Management"><span className="border-b border-dashed">SSO/SAML/SCIM</span></WithTooltip>, single <WithTooltip label="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>.
+                            </dd>
                         </div>
                       )}
                       {option.outcome && (

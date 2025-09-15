@@ -122,8 +122,14 @@ export default function LatamEconomicsPage() {
                         {point.icon}
                         <h3 className="text-lg font-semibold text-foreground">{point.title}</h3>
                     </div>
-                    <p className="mt-4 text-sm text-muted-foreground flex-grow">
-                        {point.description}
+                     <p className="mt-4 text-sm text-muted-foreground flex-grow">
+                        {point.description.includes('EOR, MDM') ? (
+                            <>
+                                Using a vendor without integrated security is a catastrophic liability. A single breach from an unmanaged device can lead to devastating financial and legal consequences. Our platform provides a complete risk shield: <WithTooltip label="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, <WithTooltip label="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>-secured devices, and Cyber/E&O insurance are all included.
+                            </>
+                        ) : (
+                            point.description
+                        )}
                     </p>
                     <div className="mt-6 border-t border-border pt-4">
                         <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {point.kpi}</p>
