@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { InfoDropdown } from '@/components/Accordion';
+import { WithTooltip } from '@/components/ui/tooltip';
 import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen, UserX } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -89,7 +89,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
                       <p className="mt-2 text-muted-foreground">You’re here because your hiring process feels like a high-stakes gamble. You've been burned by charismatic candidates who aced the interview but couldn't write production-ready code. You're losing your best engineers to a slow, frustrating hiring loop. Your board is asking why head-count is up but velocity is down. You know your current process is broken, but you lack the data to prove it and a system to fix it.</p>
                   </div>
                   <div className="bg-background p-6 rounded-lg border border-border/50">
-                       <p className="mt-2 text-muted-foreground">This guide is not another list of interview questions. This is a <strong className="text-primary">strategic framework</strong> for you, the CTO, to transform your hiring process from a subjective, high-risk art form into a data-driven, low-risk science. We will diagnose the hidden costs bleeding your budget, quantify the financial impact, and provide a concrete system—powered by our <InfoDropdown title={<span className="border-b border-dashed">Axiom Cortex™</span>}><p className="text-sm text-muted-foreground">Our proprietary Cognitive AI engine for talent evaluation.</p></InfoDropdown>—to build a high-performance team you can bet your roadmap on.</p>
+                       <p className="mt-2 text-muted-foreground">This guide is not another list of interview questions. This is a <strong className="text-primary">strategic framework</strong> for you, the CTO, to transform your hiring process from a subjective, high-risk art form into a data-driven, low-risk science. We will diagnose the hidden costs bleeding your budget, quantify the financial impact, and provide a concrete system—powered by our <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation."><span className="border-b border-dashed">Axiom Cortex™</span></WithTooltip>—to build a high-performance team you can bet your roadmap on.</p>
                   </div>
               </div>
         </div>
@@ -186,7 +186,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
                 </td>
                 <td className="px-4 py-4">
                    <p className="font-bold text-primary">Evidence-Based Evaluation</p>
-                   <p className="text-xs text-foreground m-0">A human expert conducts a structured, bias-aware interview. Our <InfoDropdown title={<span className="border-b border-dashed">Axiom Cortex™</span>}><p className="text-sm text-muted-foreground">Our proprietary Cognitive AI engine for talent evaluation.</p></InfoDropdown> AI synthesizes the conversation, providing a "Cognitive Fingerprint" and a full <InfoDropdown title={<span className="border-b border-dashed">Evidence Locker</span>}><p className="text-sm text-muted-foreground">Every evaluation generates a complete 'Evidence Locker' with transcripts, scores, and an explainable hiring signal.</p></InfoDropdown> to prove a candidate's abilities.</p>
+                   <p className="text-xs text-foreground m-0">A human expert conducts a structured, bias-aware interview. Our <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation."><span className="border-b border-dashed">Axiom Cortex™</span></WithTooltip> AI synthesizes the conversation, providing a "Cognitive Fingerprint" and a full <WithTooltip label="Every evaluation generates a complete 'Evidence Locker' with transcripts, scores, and an explainable hiring signal."><span className="border-b border-dashed">Evidence Locker</span></WithTooltip> to prove a candidate's abilities.</p>
                 </td>
               </tr>
                 <tr className="border-b border-border/50">

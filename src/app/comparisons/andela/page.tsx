@@ -1,6 +1,6 @@
 
 import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck, ExternalLink } from 'lucide-react';
-import { InfoDropdown } from '@/components/Accordion';
+import { WithTooltip } from '@/components/ui/tooltip';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -18,8 +18,8 @@ const comparisonPoints = {
     },
     "Operations": {
         pain: "Are you prepared to manage global compliance and IT?",
-        traditional: "Andela's model leaves the client responsible for critical operational components like device security, <InfoDropdown title={<span class='border-b border-dashed'>MDM</span>}>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</InfoDropdown>, and insurance, creating hidden costs and risks.",
-        teamstation: "Our integrated platform is <a href='/trust' class='text-primary hover:underline'>secure by default</a>. We bundle <InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</InfoDropdown>, MDM-secured devices, and insurance under one SLA.",
+        traditional: "Andela's model leaves the client responsible for critical operational components like device security, <span class='border-b border-dashed'>MDM</span>, and insurance, creating hidden costs and risks.",
+        teamstation: "Our integrated platform is <a href='/trust' class='text-primary hover:underline'>secure by default</a>. We bundle <span class='border-b border-dashed'>EOR</span>, MDM-secured devices, and insurance under one SLA.",
         proof: "SOC 2 & ISO Aligned"
     },
     "Focus": {
@@ -76,10 +76,10 @@ export default function AndelaComparisonPage() {
       <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
         <h2 className="text-center">Analysis: The Nearshore Specialist vs. The Global Generalist</h2>
         <p>
-            <a href="https://andela.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Andela <ExternalLink className="h-4 w-4" /></a> operates a large, global "talent cloud" that connects companies with technologists from around the world. Their strength is their breadth and scale. However, their model does not include bundled <InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</InfoDropdown>, devices, or insurance, leaving the client to manage these critical operational components.
+            <a href="https://andela.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Andela <ExternalLink className="h-4 w-4" /></a> operates a large, global "talent cloud" that connects companies with technologists from around the world. Their strength is their breadth and scale. However, their model does not include bundled <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, devices, or insurance, leaving the client to manage these critical operational components.
         </p>
         <p>
-           TeamStation AI has a more specialized focus: building elite nearshore engineering teams specifically within Latin America. This focus allows us to provide a deeply integrated operational platform that is tailored to the unique legal, cultural, and logistical nuances of the region. While Andela helps you find talent, our platform provides the entire security and compliance wrapper—EOR, <InfoDropdown title={<span class='border-b border-dashed'>MDM</span>}>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</InfoDropdown>-managed devices, insurance—that is critical for a secure nearshore operation.
+           TeamStation AI has a more specialized focus: building elite nearshore engineering teams specifically within Latin America. This focus allows us to provide a deeply integrated operational platform that is tailored to the unique legal, cultural, and logistical nuances of the region. While Andela helps you find talent, our platform provides the entire security and compliance wrapper—EOR, <WithTooltip label="Mobile Device Management: software that secures, monitors, and manages devices like laptops."><span className="border-b border-dashed">MDM</span></WithTooltip>-managed devices, insurance—that is critical for a secure nearshore operation.
         </p>
         <h3>Depth vs. Breadth</h3>
         <p>

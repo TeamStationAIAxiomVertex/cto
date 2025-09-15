@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { InfoDropdown } from '@/components/ui/info-dropdown';
+import { WithTooltip } from '@/components/ui/tooltip';
 import { Clock, Users, FileSearch, Building, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, BookOpen, BrainCircuit, GitCompare } from 'lucide-react';
 import { ComparisonWidget } from '@/components/ComparisonWidget';
 
@@ -111,7 +111,7 @@ export default async function NearshoreVsOffshorePage() {
                         <div>
                           <dt className="text-foreground text-xs uppercase tracking-wider font-bold">Implication</dt>
                           <dd className="text-sm text-muted-foreground mt-1">
-                            {option.implication.replace('TTO', 'Time to Offer').replace('EOR', 'Employer of Record')}
+                            <WithTooltip label="Time to Offer"><span className="border-b border-dashed">TTO</span></WithTooltip>; vacancy tax compounds.
                           </dd>
                         </div>
                       )}
@@ -133,7 +133,7 @@ export default async function NearshoreVsOffshorePage() {
                           <dd className="text-sm text-muted-foreground mt-1">
                             <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</Link>
                             &nbsp;cognitive vetting,&nbsp;
-                            MDM-secured devices, SSO/SAML/SCIM, single SLA.
+                            <WithTooltip label="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>-secured devices, <WithTooltip label="Single Sign-On/System for Cross-domain Identity Management"><span className="border-b border-dashed">SSO/SAML/SCIM</span></WithTooltip>, single <WithTooltip label="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>.
                           </dd>
                         </div>
                       )}
@@ -152,7 +152,7 @@ export default async function NearshoreVsOffshorePage() {
                     <div className="mt-4 pt-4 border-t border-border">
                         <div className="text-sm italic text-primary/80">
                            {option.title === 'Offshore (Legacy)' ? 
-                                <div className="inline">How many quarters died waiting for “<InfoDropdown label="Looks Good To Me" className="ml-1"><p className="text-sm">Looks Good To Me</p></InfoDropdown>”?</div> :
+                                <div className="inline">How many quarters died waiting for “<WithTooltip label="Looks Good To Me"><span className="border-b border-dashed">LGTM</span></WithTooltip>”?</div> :
                                 `"${option.wtfCheck}"`
                             }
                         </div>

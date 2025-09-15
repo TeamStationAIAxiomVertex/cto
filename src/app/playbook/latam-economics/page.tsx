@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, TrendingUp, DollarSign, Zap, AlertTriangle, BrainCircuit, ShieldCheck, HelpCircle, Scale, Briefcase, BarChart, BookOpen, UserCheck, FileText } from 'lucide-react';
 import type { Metadata } from 'next';
-import { InfoDropdown } from '@/components/Accordion';
+import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
   title: 'LATAM Economics & TCO for CTOs | Nearshore Software Development Costs',

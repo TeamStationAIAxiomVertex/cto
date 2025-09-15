@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { InfoDropdown } from '@/components/ui/info-dropdown';
+import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -58,18 +58,14 @@ export default function BairesDevComparisonPage() {
                     <XCircle className="h-5 w-5 text-destructive" />
                     BairesDev Model
                   </h4>
-                  <p className="text-sm text-muted-foreground m-0">
-                    {value.traditional.includes('MDM') ? <>Traditional staff augmentation leaves security to you. Unmanaged devices, no <InfoDropdown label="Mobile Device Management" className="ml-1"><p className='text-sm'>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>, and no compliance framework expose you to catastrophic risk.</> : value.traditional}
-                  </p>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional.replace("<span class='border-b border-dashed'>MDM</span>", '<span class="border-b border-dashed">MDM</span>') }} />
                 </div>
                 <div className="mt-4 border-t border-border pt-4">
                   <h4 className="font-semibold text-foreground flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-primary" />
                     TeamStation AI Solution
                   </h4>
-                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation.replace('EOR', 'EOR') }}></p>
-                    <InfoDropdown label="Employer of Record" className="ml-1 -translate-y-0.5"><p className='text-sm'>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>
-                    <InfoDropdown label="Total Cost of Ownership" className="ml-1 -translate-y-0.5"><p className='text-sm'>Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.</p></InfoDropdown>
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation.replace("<span class='border-b border-dashed'>EOR</span>", '<span class="border-b border-dashed">EOR</span>') }}></p>
                 </div>
               </div>
               <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
@@ -89,7 +85,7 @@ export default function BairesDevComparisonPage() {
         </p>
         <h3>Cost & Risk: Predictable TCO vs. Hidden Fees</h3>
         <p>
-            With BairesDev, companies must budget for separate vendors to handle <InfoDropdown label="Employer of Record" className="ml-1"><p className='text-sm'>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
+            With BairesDev, companies must budget for separate vendors to handle <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
         </p>
       </div>
 

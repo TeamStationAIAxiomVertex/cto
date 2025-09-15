@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
-import { InfoDropdown } from '@/components/ui/info-dropdown';
+import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
 import Image from 'next/image';
@@ -56,8 +56,8 @@ const corePillars = [
         pain: "Drowning in vendor management?",
         title: "Eliminate Vendor Chaos with One SLA",
         description: "Stop juggling 5+ vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
-        href: "/platform",
-        linkLabel: "Explore The Platform",
+        href: "https://teamstation.dev/nearshore-integrated-services",
+        linkLabel: "See Our Integrated Services",
         kpi: "1 contract, 1 invoice"
     },
     {
@@ -170,17 +170,23 @@ export default async function HomePage() {
                           {pillar.icon}
                           <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
                       </div>
-                      <div className="mt-4 text-sm text-muted-foreground flex-grow">
-                          <p className="m-0">
-                              <span>
-                                  Stop gambling on resumes. Our{' '}
-                                  <InfoDropdown label="Axiom Cortex™" className="ml-1 -translate-y-0.5">
-                                      <p className="text-sm">Our proprietary Cognitive AI engine for talent evaluation.</p>
-                                  </InfoDropdown>
-                                  {' '}Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
-                              </span>
-                          </p>
-                      </div>
+                      <p className="mt-4 text-sm text-muted-foreground flex-grow">
+                          {pillar.description.includes("Axiom Cortex™") && 
+                              <>
+                                  Stop gambling on resumes. Our <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
+                              </>
+                          }
+                          {pillar.description.includes("EOR") &&
+                            <>
+                                Stop juggling 5+ vendors. We bundle <WithTooltip label="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip label="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip label="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
+                            </>
+                          }
+                           {pillar.description.includes("TCO") &&
+                            <>
+                                We provide a predictable, all-inclusive <WithTooltip label="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
+                            </>
+                          }
+                      </p>
                       <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
                       <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary" target={pillar.href.startsWith('http') ? '_blank' : '_self'} rel={pillar.href.startsWith('http') ? 'noopener noreferrer' : ''}>
                           {pillar.linkLabel} <ArrowRight className="ml-2 h-4 w-4" />
@@ -223,7 +229,8 @@ export default async function HomePage() {
                   </div>
                   <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
                       <h4 className="font-semibold text-primary text-sm">Solution (Next-Gen)</h4>
-                      <p className="text-sm text-foreground m-0">{card.solution}
+                      <p className="text-sm text-foreground m-0">
+                        {card.solution}
                       </p>
                   </div>
                   <div className="mt-4 pt-4 border-t border-border/50">
