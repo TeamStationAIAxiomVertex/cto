@@ -9,9 +9,12 @@ runConfig:
 env:
   - variable: NEXT_PUBLIC_SITE_NAME
     value: "TeamStation AI"
-    availability: [BUILD, RUNTIME]
+    availability:
+      - BUILD
+      - RUNTIME
 
   # BREAK-GLASS to force a build even if TS/ESLint fail (BUILD only)
   - variable: BREAK_GLASS
-    value: "0"   # set "1" temporarily only if you must bypass lint/type errors
-    availability: [BUILD]
+    value: "0"   # set "1" TEMPORARILY only if you must bypass lint/type errors
+    availability:
+      - BUILD
