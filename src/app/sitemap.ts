@@ -5,11 +5,11 @@ import { getAllPlaybookSlugs } from '@/lib/playbook';
 import { roleCategories } from '@/lib/roles';
 import { countries } from '@/lib/countries';
 import { techCategories } from '@/lib/tech';
-import { simpleNavItems, NAV } from '@/config/nav';
 
 const siteUrl = 'https://cto.teamstation.dev';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Comprehensive list of all static pages
   const staticPages = [
     '/',
     '/about',
@@ -37,13 +37,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/pricing',
     '/process',
     '/research/hub',
-    '/research/axiom-cortex-scientific-report',
-    '/research/performance-evaluation-framework',
-    '/research/performance-evaluation-report-example',
-    '/technical-interview-evaluation',
     '/services/integrated-services',
     '/services/talent-onboarding',
     '/trust',
+    '/technical-interview-evaluation',
+    '/research/axiom-cortex-scientific-report',
+    '/research/performance-evaluation-framework',
+    '/research/performance-evaluation-report-example',
     '/sitemap',
   ].map(route => ({
     url: `${siteUrl}${route}`,
