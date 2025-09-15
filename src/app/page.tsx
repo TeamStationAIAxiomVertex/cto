@@ -110,26 +110,262 @@ export default async function HomePage() {
   const caseStudies = (await getAllCaseStudies()).slice(0, 3);
   const siteUrl = 'https://cto.teamstation.dev';
 
-  const websiteSchema = {
+  const comprehensiveSchema = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": siteUrl,
-    "name": "TeamStation AI",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${siteUrl}/search?q={search_term_string}`
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#org`,
+        "name": "TeamStation AI",
+        "url": `${siteUrl}/`,
+        "legalName": "TeamStation, Inc.",
+        "description": "Instruction-first Nearshore software development platform, Nearshore IT Co-Pilot™. Proprietary Cognitive AI (Axiom Cortex™) + Nebula Neural Search matching across Latin America.",
+        "slogan": "Instruction-First Nearshore. Outcomes You Can Observe.",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": `${siteUrl}/#logo`,
+          "url": `${siteUrl}/apple-touch-icon.png`,
+          "width": 180,
+          "height": 180,
+          "caption": "TeamStation AI"
+        },
+        "image": { "@id": `${siteUrl}/#logo` },
+        "foundingDate": "2017-01-01",
+        "founders": [
+          {
+            "@type": "Person",
+            "@id": `${siteUrl}/#lonnie-mcrorey`,
+            "name": "Lonnie McRorey",
+            "jobTitle": "Co-Founder & CEO",
+            "url": `${siteUrl}/about`,
+            "alumniOf": "Temple University"
+          },
+          {
+            "@type": "Person",
+            "@id": `${siteUrl}/#dan-diachenko`,
+            "name": "Dan Diachenko",
+            "jobTitle": "Co-Founder",
+            "url": `${siteUrl}/about`,
+            "alumniOf": "Universidad Torcuato Di Tella"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/company/teamstation/",
+          "https://twitter.com/teamstationai",
+          "https://www.crunchbase.com/organization/teamstation-ai"
+        ],
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "contactType": "Sales",
+          "email": "sales@teamstation.ai",
+          "availableLanguage": ["en","es"],
+          "areaServed": "Latin America"
+        }],
+        "areaServed": ["Latin America","United States"],
+        "knowsAbout": [
+          "Nearshore software development",
+          "IT Staff Augmentation",
+          "Cognitive AI for talent alignment",
+          "Technical interview science",
+          "Talent intelligence",
+          "Latin America engineering market"
+        ],
+        "subjectOf": [
+          { "@id": `${siteUrl}/#book` },
+          { "@id": `${siteUrl}/#paper-axiom-cortex` },
+          { "@id": `${siteUrl}/#paper-neural-ai` },
+          { "@id": `${siteUrl}/#paper-human-capacity` },
+          { "@id": `${siteUrl}/#paper-performance-metrics` }
+        ],
+        "owns": [
+          { "@id": `${siteUrl}/#axiom-cortex` },
+          { "@id": `${siteUrl}/#nebula` }
+        ],
+        "brand": { "@id": `${siteUrl}/#product` }
       },
-      "query-input": "required name=search_term_string"
-    }
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        "url": `${siteUrl}/`,
+        "name": "TeamStation AI CTO Playbook",
+        "inLanguage": "en",
+        "publisher": { "@id": `${siteUrl}/#org` },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": `${siteUrl}/search?q={search_term_string}`,
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/#webpage`,
+        "url": `${siteUrl}/`,
+        "name": "Nearshore IT Co-Pilot™ — The CTO's Field Manual for Nearshore Success",
+        "isPartOf": { "@id": `${siteUrl}/#website` },
+        "about": [
+          { "@id": `${siteUrl}/#product` },
+          { "@id": `${siteUrl}/#axiom-cortex` },
+          { "@id": `${siteUrl}/#nebula` }
+        ],
+        "primaryImageOfPage": { "@id": `${placeholderImages.metaCard.src.url}` },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "@id": `${siteUrl}/#breadcrumbs`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteUrl}/` }
+          ]
+        }
+      },
+      {
+        "@type": "Product",
+        "@id": `${siteUrl}/#product`,
+        "name": "Nearshore IT Co-Pilot™",
+        "brand": { "@id": `${siteUrl}/#org` },
+        "category": "BusinessApplication",
+        "description": "An integrated platform for building and managing elite nearshore engineering teams. Includes EOR, Devices/MDM, SSO/SAML/SCIM, and Compliance, powered by Axiom Cortex™ Cognitive AI.",
+        "image": `${placeholderImages.heroTeam.src.url}`,
+        "isRelatedTo": [
+          { "@id": `${siteUrl}/#service` },
+          { "@id": `${siteUrl}/#software-app` },
+          { "@id": `${siteUrl}/#axiom-cortex` },
+          { "@id": `${siteUrl}/#nebula` }
+        ],
+        "featureList": [
+          "Employer of Record (EOR)",
+          "Secure Devices & MDM",
+          "SSO/SAML/SCIM Integration",
+          "Compliance readiness (SOC 2, ISO 27001)",
+          "Cognitive AI talent alignment (Axiom Cortex™)",
+          "Nebula Neural Search across LATAM engineers"
+        ],
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Mid-market & Enterprise Engineering Leaders"
+        },
+        "manufacturer": { "@id": `${siteUrl}/#org` }
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service`,
+        "serviceType": "Nearshore Software Development Platform",
+        "provider": { "@id": `${siteUrl}/#org` },
+        "areaServed": ["Latin America","United States"],
+        "termsOfService": `${siteUrl}/trust`,
+        "isRelatedTo": { "@id": `${siteUrl}/#product` }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${siteUrl}/#software-app`,
+        "name": "Nearshore IT Co-Pilot™ App",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "softwareVersion": "v1.x",
+        "creator": { "@id": `${siteUrl}/#org` },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": `${siteUrl}/pricing`
+        },
+        "isPartOf": { "@id": `${siteUrl}/#product` }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${siteUrl}/#axiom-cortex`,
+        "name": "Axiom Cortex™",
+        "applicationCategory": "AIApplication",
+        "operatingSystem": "Cloud",
+        "description": "Proprietary Cognitive AI that evaluates and aligns talent via evidence-based signals (interview science, prompt architecture, and cognitive traits).",
+        "creator": { "@id": `${siteUrl}/#org` },
+        "about": [
+          "technical interview analysis",
+          "cognitive trait estimation",
+          "prompt architecture evaluation",
+          "talent/job alignment"
+        ],
+        "isRelatedTo": { "@id": `${siteUrl}/#product` }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${siteUrl}/#nebula`,
+        "name": "Nebula Neural Search",
+        "applicationCategory": "SearchApplication",
+        "operatingSystem": "Cloud",
+        "description": "Neural search & retrieval across Latin America IT talent.",
+        "creator": { "@id": `${siteUrl}/#org` },
+        "isRelatedTo": [
+          { "@id": `${siteUrl}/#product` }
+        ]
+      },
+      {
+        "@type": "Book",
+        "@id": `${siteUrl}/#book`,
+        "name": "Platforming the Nearshore IT Staff Augmentation Industry",
+        "url": "https://www.amazon.com/dp/B0F4TF6TWD",
+        "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
+        "publisher": { "@id": `${siteUrl}/#org` },
+        "datePublished": "2024-05-23",
+        "bookEdition": "1st",
+        "inLanguage": "en",
+        "about": ["Nearshore Platform Design", "Cognitive AI for Hiring"],
+        "isPartOf": { "@id": `${siteUrl}/#website` }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": `${siteUrl}/#paper-axiom-cortex`,
+        "headline": "AxiomCortex™: Scientific R&D Report — Bias-Mitigated AI Evaluation for Nearshore Software Engineering Teams",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
+        "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
+        "publisher": { "@id": `${siteUrl}/#org` },
+        "datePublished": "2024-05-15",
+        "inLanguage": "en",
+        "about": ["interview science","prompt engineering","cognitive modeling"],
+        "isPartOf": { "@id": `${siteUrl}/#website` }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": `${siteUrl}/#paper-neural-ai`,
+        "headline": "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433",
+        "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
+        "publisher": { "@id": `${siteUrl}/#org` },
+        "datePublished": "2024-02-15",
+        "inLanguage": "en",
+        "about": ["Recruitment AI", "Time-to-Hire Optimization"],
+        "isPartOf": { "@id": `${siteUrl}/#website` }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": `${siteUrl}/#paper-human-capacity`,
+        "headline": "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490",
+        "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
+        "publisher": { "@id": `${siteUrl}/#org` },
+        "datePublished": "2024-02-22",
+        "inLanguage": "en",
+        "about": ["Platform Architecture", "AI Governance"],
+        "isPartOf": { "@id": `${siteUrl}/#website` }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": `${siteUrl}/#paper-performance-metrics`,
+        "headline": "Nearshore IT Talent Performance Metrics in the Age of AI",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470",
+        "author": [{ "@type": "Person", "name": "Lonnie McRorey" }],
+        "publisher": { "@id": `${siteUrl}/#org` },
+        "datePublished": "2024-03-12",
+        "inLanguage": "en",
+        "about": ["Performance Metrics", "Value-Centric Evaluation"],
+        "isPartOf": { "@id": `${siteUrl}/#website` }
+      }
+    ]
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(comprehensiveSchema) }}
       />
       <div className="container mx-auto px-4">
         <section className="text-center py-16 md:py-24">

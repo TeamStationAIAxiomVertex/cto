@@ -62,74 +62,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'TeamStation AI',
-    url: siteUrl,
-    logo: `${siteUrl}/apple-touch-icon.png`,
-    sameAs: [
-      'https://www.linkedin.com/company/teamstation/',
-      'https://twitter.com/teamstation',
-    ],
-    founder: [
-        {
-            "@type": "Person",
-            "name": "Lonnie McRorey",
-            "jobTitle": "Co-Founder & CEO",
-            "alumniOf": "Temple University"
-        },
-        {
-            "@type": "Person",
-            "name": "Dan Diachenko",
-            "jobTitle": "Co-Founder",
-            "alumniOf": "Universidad Torcuato Di Tella"
-        }
-    ],
-    knowsAbout: [
-        "Nearshore Software Development",
-        "IT Staff Augmentation",
-        "Cognitive AI",
-        "Talent Evaluation",
-        "Software Engineering Performance Metrics",
-        "Bias-Free Hiring"
-    ],
-     publication: [
-      { "@type": "Book", "name": "Platforming the Nearshore IT Staff Augmentation Industry", "url": "https://www.amazon.com/dp/B0F4TF6TWD" },
-      { "@type": "ScholarlyArticle", "name": "AxiomCortex™: Scientific R&D Report — Bias-Mitigated AI Evaluation for Nearshore Software Engineering Teams", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397" },
-      { "@type": "ScholarlyArticle", "name": "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433" },
-      { "@type": "ScholarlyArticle", "name": "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490" },
-      { "@type": "ScholarlyArticle", "name": "Nearshore IT Talent Performance Metrics in the Age of AI", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470" }
-    ]
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": siteUrl,
-    "name": "TeamStation AI",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${siteUrl}/search?q={search_term_string}`
-      },
-      "query-input": "required name=search_term_string"
-    }
-  };
-
+  
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-         <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
       </head>
       <body className={`${poppins.variable} font-sans bg-background text-foreground`}>
         <AppProviders>
