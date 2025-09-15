@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { ArrowRight, Users, Scale, ShieldCheck, Briefcase, ExternalLink, Network } from 'lucide-react';
 import type { Metadata } from 'next';
-import { Tooltip } from '@/components/Tooltip';
+import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
   title: 'Nearshore Vendor Comparisons: BairesDev, Globant, Toptal Alternatives | TeamStation AI',
