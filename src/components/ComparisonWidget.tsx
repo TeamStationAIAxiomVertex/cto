@@ -1,9 +1,9 @@
 
-
 'use client';
 import { useState, useEffect } from 'react';
 import { WithTooltip } from '@/components/ui/tooltip';
 
+type Cell = React.ReactNode | string | number;
 
 export function ComparisonWidget() {
     const [basisHours, setBasisHours] = useState(173);
@@ -214,7 +214,7 @@ export function ComparisonWidget() {
                                     <span className='border-b border-dashed cursor-help'>{row.label}</span>
                                 </WithTooltip>
                             </th>
-                            {row.data.map((cell, cellIndex) => (
+                            {(row.data as Cell[]).map((cell: Cell, cellIndex: number) => (
                                 <td key={cellIndex} className={`p-3 text-center font-mono ${cellIndex === 4 ? 'text-primary font-bold' : 'text-foreground'}`}>
                                     {cell}
                                 </td>
