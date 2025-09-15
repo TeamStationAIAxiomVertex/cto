@@ -1,3 +1,4 @@
+
 /** @type {import('next').NextConfig} */
 
 // BREAK-GLASS: set BREAK_GLASS=1 to ignore TS/ESLint errors during build.
