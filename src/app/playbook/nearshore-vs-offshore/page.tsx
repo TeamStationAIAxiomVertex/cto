@@ -6,7 +6,7 @@ import { Clock, Users, FileSearch, Building, Zap, Scale, ShieldCheck, ArrowRight
 import { ComparisonWidget } from '@/components/ComparisonWidget';
 
 export const metadata: Metadata = {
-  title: 'Nearshore vs. Offshore: The Strategic Choice for CTOs | TeamStation AI',
+  title: 'Which path ships this quarter without blowing up Finance? | TeamStation AI',
   description: 'The definitive, data-driven analysis for CTOs on nearshore vs. offshore software development. A playbook for diagnosing the true cost and risk of your global talent strategy.',
 };
 
@@ -55,19 +55,19 @@ const options = [
 
 const microPSPs = [
     {
-        icon: <Users className="h-6 w-6 text-primary" />,
+        icon: <Users className="h-8 w-8 text-primary" />,
         problem: "Five invoices, zero ownership.",
         solution: "One governed stack (hiring → devices/MDM → access → EOR → SLAs).",
         proof: "Forecast vs actual variance drops under 10%; fewer reopenings."
     },
     {
-        icon: <BrainCircuit className="h-6 w-6 text-primary" />,
+        icon: <BrainCircuit className="h-8 w-8 text-primary" />,
         problem: "“Senior” on the slide, junior in the repo.",
         solution: "Axiom Cortex™ cognitive evidence + structured rubrics.",
         proof: "Mismatch rate ≤10%; rewrite ADRs trend down."
     },
     {
-        icon: <ShieldCheck className="h-6 w-6 text-primary" />,
+        icon: <ShieldCheck className="h-8 w-8 text-primary" />,
         problem: "Audit freeze and unmanaged laptops.",
         solution: "SSO/SAML/SCIM + MDM devices + revocation on demand.",
         proof: "Zero criticals in quarterly scans; questionnaires stop blocking deals."
@@ -98,28 +98,27 @@ export default async function NearshoreVsOffshorePage() {
                         {option.icon}
                         <h3 className={`font-bold text-lg ${index === 4 ? 'text-primary' : 'text-foreground'}`}>{option.title}</h3>
                     </div>
-                    <div className="space-y-2 mt-4 flex-grow text-sm">
-                        {option.pain && <p><strong className="text-destructive">Pain:</strong> <span className="text-muted-foreground">{option.pain}</span></p>}
-                        {option.implication && <p><strong className="text-foreground">Implication:</strong> <span className="text-muted-foreground">{option.implication.replace('TTO', '').replace('EOR', '')}
+                    <div className="space-y-3 mt-4 flex-grow">
+                        {option.pain && <div><strong className="text-destructive text-sm">Pain:</strong> <span className="text-sm text-muted-foreground">{option.pain}</span></div>}
+                        {option.implication && <div><strong className="text-foreground text-sm">Implication:</strong> <span className="text-sm text-muted-foreground">{option.implication.replace('TTO', '').replace('EOR', '')}
                          {option.implication.includes("TTO") && <Tooltip text="Time to Offer">TTO</Tooltip>}
                          {option.implication.includes("EOR") && <Tooltip text="Employer of Record">EOR</Tooltip>}
-                        </span></p>}
-                        {option.useWhen && <p><strong className="text-foreground">Use when:</strong> <span className="text-muted-foreground">{option.useWhen}</span></p>}
+                        </span></div>}
+                        {option.useWhen && <div><strong className="text-foreground text-sm">Use when:</strong> <span className="text-sm text-muted-foreground">{option.useWhen}</span></div>}
 
-                        {option.painRemoved && <p><strong className="text-green-400">Pain removed:</strong> <span className="text-muted-foreground">{option.painRemoved}</span></p>}
-                        {option.mechanism && <p><strong className="text-foreground">Mechanism:</strong> <span className="text-muted-foreground">{option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
+                        {option.painRemoved && <div><strong className="text-green-400 text-sm">Pain removed:</strong> <span className="text-sm text-muted-foreground">{option.painRemoved}</span></div>}
+                        {option.mechanism && <div><strong className="text-foreground text-sm">Mechanism:</strong> <span className="text-sm text-muted-foreground">{option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
                             <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>
                             &nbsp;cognitive vetting,&nbsp;
                             <Tooltip text="Mobile Device Management">MDM</Tooltip>-secured devices, SSO/SAML/SCIM, single SLA.
-                        </span></p>}
-                        {option.outcome && <p><strong className="text-foreground">Outcome:</strong> <span className="text-muted-foreground">{option.outcome.replace('TCO', '')}
+                        </span></div>}
+                        {option.outcome && <div><strong className="text-foreground text-sm">Outcome:</strong> <span className="text-sm text-muted-foreground">{option.outcome.replace('TCO', '')}
                              <Link href="/playbook/latam-economics" className="text-primary hover:underline"><Tooltip text="Total Cost of Ownership">TCO</Tooltip></Link>
                              , faster time-to-useful PR.
-                        </span></p>}
+                        </span></div>}
                     </div>
-                    <div className="flex-grow"></div>
-                    <div className="mt-4 pt-2 border-t border-border">
-                        <p className="text-xs italic text-primary/80">"{option.wtfCheck}"</p>
+                    <div className="mt-4 pt-4 border-t border-border">
+                        <p className="text-sm italic text-primary/80">"{option.wtfCheck}"</p>
                     </div>
                 </div>
             ))}
@@ -132,7 +131,7 @@ export default async function NearshoreVsOffshorePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {microPSPs.map((psp) => (
                 <div key={psp.problem} className="rounded-lg border bg-card p-6 flex flex-col text-center shadow-lg">
-                    {psp.icon}
+                    <div className="flex justify-center">{psp.icon}</div>
                     <p className="font-semibold text-destructive mt-4">Problem: {psp.problem}</p>
                     <p className="mt-2 text-sm text-foreground flex-grow"><strong className="text-primary">Solution:</strong> {psp.solution.replace('Axiom Cortex™', '').replace('MDM', '').replace('EOR', '')}
                         {psp.solution.includes('Axiom Cortex') && <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>}
