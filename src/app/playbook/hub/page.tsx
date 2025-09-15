@@ -1,8 +1,9 @@
 
 import Link from 'next/link';
-import { ArrowRight, BarChart, DollarSign, Globe, Scale, ShieldCheck } from 'lucide-react';
+import { ArrowRight, BarChart, DollarSign, Globe, Scale, ShieldCheck, Zap, BrainCircuit, Users } from 'lucide-react';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
   title: 'The CTO Playbook for Nearshore Engineering Success | TeamStation AI',
@@ -68,6 +69,33 @@ const playbookEntries: Entry[] = [
   },
 ];
 
+const sandlerCards = [
+    {
+        title: 'Velocity: 24-Hour Ping-Pong vs Daylight Cadence',
+        question: 'How many releases died waiting for “LGTM”?',
+        problem: 'PRs sleep overnight; one question = one day lost.',
+        solution: 'Daylight overlap + same-day review SLAs with telemetry.',
+        proof: 'PR turnaround 36–72h → <8h; cycle time drops in 2 sprints.',
+        icon: <Zap className="h-8 w-8 text-primary" />,
+    },
+    {
+        title: 'Seniority: Resume Theater vs Cognitive Evidence',
+        question: 'Who last vetoed a bad pattern before it shipped?',
+        problem: '“Senior” in the deck, junior in the repo.',
+        solution: 'Axiom Cortex™ cognitive signals + structured rubrics + recorded panels.',
+        proof: 'Mismatch rate ≤10%; rewrite ADRs down.',
+        icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+    },
+    {
+        title: 'Governance: Five Invoices vs One Operating Rhythm',
+        question: 'How many vendors does it take to ship one roadmap?',
+        problem: 'Vendor sprawl; shadow staffing; no single throat to choke.',
+        solution: 'One governed system: hiring → devices/MDM → access → payroll/EOR → SLAs.',
+        proof: 'Forecast vs actual variance <10%; fewer reopenings.',
+        icon: <Users className="h-8 w-8 text-primary" />,
+    }
+];
+
 export default function PlaybookHubPage() {
   return (
     <main className="container max-w-5xl py-12">
@@ -115,6 +143,43 @@ export default function PlaybookHubPage() {
           ))}
         </div>
       </section>
+
+      <section className="my-24">
+          <h2 className="text-center text-4xl font-bold text-foreground">
+              Key Frameworks & Mental Models
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">Core concepts from the Sandler selling system, adapted for CTOs. Each card isolates a common pain point, presents our solution, and offers quantifiable proof.</p>
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {sandlerCards.map((card) => (
+              <div key={card.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+                  <div className="flex items-start gap-4">
+                      {card.icon}
+                      <div>
+                          <h3 className="text-lg font-bold text-foreground">{card.title}</h3>
+                      </div>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-border/50">
+                      <h4 className="font-semibold text-destructive text-sm">Problem (Legacy)</h4>
+                      <p className="text-sm text-muted-foreground m-0">{card.problem}</p>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
+                      <h4 className="font-semibold text-primary text-sm">Solution (Next-Gen)</h4>
+                      <p className="text-sm text-foreground m-0">{card.solution.replace('Axiom Cortex™', '').replace('MDM', '').replace('EOR', '')}
+                      {card.solution.includes("Axiom Cortex") && <Tooltip text="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Axiom Cortex™</Link></Tooltip>}
+                        {card.solution.includes("MDM") && <Tooltip text="Mobile Device Management: Software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>}
+                        {card.solution.includes("EOR") && <Tooltip text="Employer of Record: A third-party organization that legally employs workers on behalf of another company.">EOR</Tooltip>}
+                      </p>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-border/50">
+                      <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {card.proof}</p>
+                  </div>
+                  <div className="mt-6 text-sm text-center font-semibold text-primary/90 border-t border-border/50 pt-4">
+                      <span className="italic">{card.question}</span>
+                  </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
       <div className="mt-12 rounded-lg bg-primary/10 p-8 text-center shadow-lg">
         <h2 className="text-2xl font-bold">Ready to Build Your Business Case?</h2>
