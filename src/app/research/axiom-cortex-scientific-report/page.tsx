@@ -1,7 +1,9 @@
 
+
 import { BrainCircuit, FileText, ShieldCheck, Scale, BookOpen, CheckCircle, FunctionSquare, Pilcrow, Sigma, GitBranch } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
   title: 'The AxiomCortex™ Scientific Framework | AI Talent Evaluation',
@@ -53,7 +55,18 @@ export default function AxiomCortexReportPage() {
                     {pillar.icon}
                     <div>
                         <h3 className="font-semibold text-foreground">{pillar.title}</h3>
-                        <p className="text-sm text-muted-foreground m-0">{pillar.description}</p>
+                        <p className="text-sm text-muted-foreground m-0">
+                          {pillar.description.includes('LTIE') && 
+                            <>Utilizes a <WithTooltip label="Latent Trait Inference Engine: A model that infers unobservable psychological traits from observable data."><span className="border-b border-dashed">LTIE</span></WithTooltip> to quantify traits like Architectural Instinct and Problem-Solving Agility from conversational data.</>
+                          }
+                           {pillar.description.includes('NLP') && 
+                            <>Employs a suite of <WithTooltip label="Natural Language Processing: AI techniques to understand and interpret human language."><span className="border-b border-dashed">NLP</span></WithTooltip> techniques to analyze language patterns, semantic meaning, and conceptual understanding, independent of jargon.</>
+                          }
+                          {pillar.description.includes('Cortex') && pillar.description}
+                           {pillar.description.includes('STAR') && 
+                            <>Deconstructs answers into core conceptual components and validated behavioral markers, avoiding rigid frameworks like <WithTooltip label="Situation, Task, Action, Result: A common, but often rigid, behavioral interview framework."><span className="border-b border-dashed">STAR</span></WithTooltip> to eliminate presentation bias.</>
+                          }
+                        </p>
                     </div>
                 </div>
             ))}
@@ -62,7 +75,7 @@ export default function AxiomCortexReportPage() {
 
       <section className="prose dark:prose-invert mx-auto my-16 max-w-none">
         <h2 className="text-center">Methodology: Self-Governing NLP & Phasic Micro-Chunking</h2>
-        <p>The operational backbone of Axiom Cortex is its novel approach to executing complex NLP tasks: a <strong>Self-Governing, Self-Learning Phasic Micro-Chunking NLP-based Prompt Engineering</strong> technique. This methodology is designed for maximum accuracy, token efficiency, and minimal external dependencies, allowing the LLM itself to perform the core analytical heavy lifting across 44 distinct algorithmic passes.</p>
+        <p>The operational backbone of Axiom Cortex is its novel approach to executing complex <WithTooltip label="Natural Language Processing"><span className="border-b border-dashed">NLP</span></WithTooltip> tasks: a <strong>Self-Governing, Self-Learning Phasic Micro-Chunking NLP-based Prompt Engineering</strong> technique. This methodology is designed for maximum accuracy, token efficiency, and minimal external dependencies, allowing the LLM itself to perform the core analytical heavy lifting across 44 distinct algorithmic passes.</p>
         
         <h3 className='text-center'>Comprehensive Review of Core Functions, Formulas, and Algorithms</h3>
 
@@ -81,7 +94,7 @@ export default function AxiomCortexReportPage() {
                 <h4 className="flex items-center gap-2"><Pilcrow className="h-5 w-5 text-primary" />Protocol: Phasic Micro-Chunking Analysis</h4>
                 <p className="text-sm">For each Q/A pair, the system performs a multi-pass analysis. This involves breaking the answer down into "micro-chunks" (individual sentences or clauses) and analyzing them for specific signals.</p>
                 <ul>
-                    <li><strong>Algorithm 4: Key Concept Extraction:</strong> Uses NER (Named Entity Recognition) to identify technical terms and concepts.</li>
+                    <li><strong>Algorithm 4: Key Concept Extraction:</strong> Uses <WithTooltip label="Named Entity Recognition: An NLP technique to identify and classify named entities in text."><span className="border-b border-dashed">NER</span></WithTooltip> (Named Entity Recognition) to identify technical terms and concepts.</li>
                     <li><strong>Algorithm 5: Argument Structure Mapping:</strong> Maps the logical flow of the candidate's explanation.</li>
                     <li><strong>Algorithm 6: Evidence-to-Blueprint Comparison:</strong> Compares extracted concepts against a pre-defined "ideal answer blueprint" for the question.</li>
                 </ul>
@@ -96,7 +109,7 @@ export default function AxiomCortexReportPage() {
                     <li><strong>Algorithm 9 (B_A - Accuracy):</strong> Scores the factual correctness of the technical statements.</li>
                     <li><strong>Algorithm 10 (B_C - Clarity):</strong> Scores the clarity and conciseness of the explanation, after calibration for linguistic factors.</li>
                      <li><strong>Algorithm 11 (B_L - Cognitive Load):</strong> Measures linguistic markers of cognitive strain (hesitations, restarts) to assess difficulty.</li>
-                     <li><strong>Formula: B-Axiom Score (BAS_q)</strong> for a given question `q`:</li>
+                     <li><strong>Formula: <WithTooltip label="Behaviorally Anchored Rating Scales: A scoring method that ties ratings to specific behaviors."><span className="border-b border-dashed">B-Axiom</span></WithTooltip> Score (BAS_q)</strong> for a given question `q`:</li>
                     <pre className="text-xs">{`BAS_q = (w_p*B_P) + (w_m*B_M) + (w_a*B_A) + (w_c*B_C) - (w_l*B_L)`}</pre>
                     <li><small>Where `w` denotes the weight for each axiom.</small></li>
                 </ul>
@@ -122,7 +135,7 @@ export default function AxiomCortexReportPage() {
                     <li><strong>Algorithm 36: Linguistic Fluency Normalization:</strong> Identifies non-native speaker patterns (e.g., grammatical errors, phonetic approximations) and instructs the scoring model to focus on the conceptual content, not the delivery. Generates the `λ_ccl` coefficient.</li>
                     <li><strong>Algorithm 37: Authenticity Incident Detection:</strong> Flags instances of intellectual honesty (e.g., "I don't know," "I'm not the best at that"). This positively weights the Learning Orientation score.</li>
                     <li><strong>Algorithm 38: Jargon vs. First-Principles Detection:</strong> Determines if a candidate is using buzzwords without understanding (negative signal) or explaining concepts from fundamentals (positive signal).</li>
-                    <li><strong>Formula: Conceptual Fidelity Score (CFS)</strong></li>
+                    <li><strong>Formula: Conceptual Fidelity Score (<WithTooltip label="Conceptual Fidelity Score"><span className="border-b border-dashed">CFS</span></WithTooltip>)</strong></li>
                     <pre className="text-xs">{`CFS = S_sem * (1 - P_jargon)`}</pre>
                      <li><small>Where `S_sem` is semantic similarity and `P_jargon` is a penalty for over-reliance on jargon.</small></li>
                 </ul>
@@ -131,9 +144,9 @@ export default function AxiomCortexReportPage() {
                 <h4 className="flex items-center gap-2"><Sigma className="h-5 w-5 text-primary" />Formulas: Final Synthesis & Risk Analysis</h4>
                 <p className="text-sm">The final algorithms (42-44) synthesize all data into the executive summary and risk mitigation plan.</p>
                 <ul>
-                    <li><strong>Algorithm 42: Metacognitive Conviction Index (MCI):</strong> Correlates a candidate's self-assessed confidence with their measured accuracy to gauge self-awareness.</li>
+                    <li><strong>Algorithm 42: Metacognitive Conviction Index (<WithTooltip label="Metacognitive Conviction Index: Measures how well a candidate's self-assessed confidence aligns with their measured accuracy."><span className="border-b border-dashed">MCI</span></WithTooltip>):</strong> Correlates a candidate's self-assessed confidence with their measured accuracy to gauge self-awareness.</li>
                      <pre className="text-xs">{`MCI = 1 - |(C_self - A_norm) / (C_self + A_norm)|`}</pre>
-                    <li><small>Where `C_self` is self-assessed confidence and `A_norm` is normalized accuracy. An MCI close to 1 is a strong positive signal.</small></li>
+                    <li><small>Where `C_self` is self-assessed confidence and `A_norm` is normalized accuracy. An <WithTooltip label="Metacognitive Conviction Index"><span className="border-b border-dashed">MCI</span></WithTooltip> close to 1 is a strong positive signal.</small></li>
                     <li><strong>Algorithm 43: Risk Triangulation:</strong> Identifies areas where a candidate's scores fall below the ideal profile for a specific trait and cross-references this with admissions of weakness (authenticityIncidents) to generate a specific, evidence-backed risk factor.</li>
                      <li><strong>Algorithm 44: Final Score Aggregation:</strong> Computes the final weighted average score based on all latent traits, providing the top-line "Strong Hire / Hire / No Hire" recommendation.</li>
                 </ul>
@@ -145,7 +158,7 @@ export default function AxiomCortexReportPage() {
         <div className="text-center rounded-lg bg-primary/10 p-6 my-8">
             <h2 className="text-2xl font-bold">Read the Full Peer-Reviewed Paper</h2>
             <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-                For a deeper academic analysis of the foundational principles, access the complete research paper on the Social Science Research Network (SSRN).
+                For a deeper academic analysis of the foundational principles, access the complete research paper on the Social Science Research Network (<WithTooltip label="Social Science Research Network: A repository for preprints of scholarly research."><span className="border-b border-dashed">SSRN</span></WithTooltip>).
             </p>
             <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397" target="_blank" rel="noopener noreferrer" className="cta-button mt-4">
                 <BookOpen className="mr-2 h-4 w-4" />
