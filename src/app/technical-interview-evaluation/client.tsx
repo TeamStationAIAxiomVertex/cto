@@ -7,6 +7,36 @@ import { ShieldCheck, BrainCircuit, ArrowRight, HelpCircle, FileText, UserCheck,
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 
+const renderTextWithTooltip = (
+  raw: React.ReactNode,
+  term: string,
+  tooltipText: string
+): React.ReactNode => {
+  const text = typeof raw === 'string' ? raw : '';
+  if (!text || !text.includes(term)) return raw;
+
+  const parts = text.split(term);
+  return parts.map((part, index) => (
+    <React.Fragment key={`${term}-${index}`}>
+      {part}
+      {index < parts.length - 1 && (
+        <WithTooltip label={tooltipText}>
+          <span className="text-primary border-b border-dashed">{term}</span>
+        </WithTooltip>
+      )}
+    </React.Fragment>
+  ));
+};
+
+const renderWithMany = (
+  text: string,
+  items: Array<{ term: string; tooltip: string }>
+): React.ReactNode =>
+  items.reduce<React.ReactNode>(
+    (acc, it) => renderTextWithTooltip(acc, it.term, it.tooltip),
+    text
+  );
+
 const cognitiveData = [
     { name: 'Architectural Instinct', pain: "Can they design for scale, or just for today?", candidate: 4.3, ideal: 4.5, rationale: "Erick's architectural instinct is strong. He correctly navigates monolith vs. microservices trade-offs (Q1), proposes a 'contract-first' API strategy (Q2), and, most impressively, demonstrated a powerful architectural mind by inventing the 'micro prompts' analogy (Q4). This shows he can apply architectural principles to novel domains like AI, even without knowing the specific terminology. His score reflects this high-level reasoning, moderated slightly by the need for some prompting on specific resiliency patterns." },
     { name: 'Problem-Solving Agility', pain: "Do they freeze on novel problems or adapt?", candidate: 4.6, ideal: 4.0, rationale: "Erick's PSA is a significant strength. He showcased remarkable adaptability in the prompt engineering discussion (Q4), quickly grasping the interviewer's 'microservices' analogy and synthesizing it into a new, valid concept ('micro prompts'). This ability to pivot and apply existing mental models to new problems is a hallmark of agile thinking. His solution to the complex stakeholder problem (Q7) further confirms his ability to deconstruct and solve multifaceted challenges." },
@@ -385,36 +415,6 @@ const faqs = [
   }
 ];
 
-const renderTextWithTooltip = (
-  raw: React.ReactNode,
-  term: string,
-  tooltipText: string
-): React.ReactNode => {
-  const text = typeof raw === 'string' ? raw : '';
-  if (!text || !text.includes(term)) return raw;
-
-  const parts = text.split(term);
-  return parts.map((part, index) => (
-    <React.Fragment key={`${term}-${index}`}>
-      {part}
-      {index < parts.length - 1 && (
-        <WithTooltip label={tooltipText}>
-          <span className="text-primary border-b border-dashed">{term}</span>
-        </WithTooltip>
-      )}
-    </React.Fragment>
-  ));
-};
-
-const renderWithMany = (
-  text: string,
-  items: Array<{ term: string; tooltip: string }>
-): React.ReactNode =>
-  items.reduce<React.ReactNode>(
-    (acc, it) => renderTextWithTooltip(acc, it.term, it.tooltip),
-    text
-  );
-
 
 export default function TalentEvaluationClient() {
 
@@ -612,5 +612,7 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
+
+    
 
     
