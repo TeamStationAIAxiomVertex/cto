@@ -5,12 +5,28 @@ import { WithTooltip } from '@/components/ui/tooltip';
 
 type Cell = ReactNode | string | number;
 
+type Results = {
+  seatCost: string[];
+  effectiveHourly: string[];
+  prLatencyCost: string[];
+  vacancyCost: string[];
+  cfrLoss: string[];
+  mgmtOverhead: string[];
+  complianceSavings: string[];
+};
+
+type Row = {
+  label: string;
+  description: string;
+  data: Cell[];
+};
+
 export function ComparisonWidget() {
     const [basisHours, setBasisHours] = useState(173);
     const [offshoreOverhead, setOffshoreOverhead] = useState(0.25);
     const [nearshoreLegacyOverhead, setNearshoreLegacyOverhead] = useState(0.10);
     const [onshoreOverhead, setOnshoreOverhead] = useState(0.20);
-    const [data, setData] = useState<any>(null);
+    const [data, setData] = useState<Results | null>(null);
 
     const inputs = {
         buildIn: { salaryAnnual: 180000, burdenPct: 0.30 },
@@ -58,7 +74,7 @@ export function ComparisonWidget() {
             const nearshoreCoPilotMonthlyLow = (inputs.nearshoreCoPilot.hourlyMin * basisHours);
             const nearshoreCoPilotMonthlyHigh = (inputs.nearshoreCoPilot.hourlyCap * basisHours);
 
-            const results = {
+            const results: Results = {
                 seatCost: [
                     f(buildInMonthly),
                     fRange(onshoreMonthlyLow, onshoreMonthlyHigh),
@@ -112,7 +128,7 @@ export function ComparisonWidget() {
             setData(results);
         }
         calculate();
-    }, [basisHours, offshoreOverhead, nearshoreLegacyOverhead, onshoreOverhead]);
+    }, [basisHours, offshoreOverhead, nearshoreLegacyOverhead, onshoreOverhead, inputs]);
 
     if (!data) return <div className="text-center p-8">Loading Comparison Widget...</div>;
 
@@ -120,7 +136,7 @@ export function ComparisonWidget() {
         "Build-In (In-House)", "Onshore (US)", "Offshore (Legacy)", "Nearshore (Legacy)", "Nearshore IT Co-Pilot (New Gen)"
     ];
 
-    const rows = [
+    const rows: Row[] = [
         { label: "Fully-loaded seat cost (monthly)", data: data.seatCost, description: "The total monthly cost per engineer, including salary, benefits, taxes, and all vendor overhead." },
         { label: "Effective hourly", data: data.effectiveHourly, description: "The fully-loaded monthly cost divided by the basis hours, representing the true hourly rate." },
         { label: "Time-zone overlap (hrs/day)", data: ["8+", "8+", "0-2", "4-8", "4-8"], description: "The number of daily working hours that overlap with a standard US time zone (e.g., PST/EST)." },
@@ -214,7 +230,7 @@ export function ComparisonWidget() {
                                     <span className='border-b border-dashed cursor-help'>{row.label}</span>
                                 </WithTooltip>
                             </th>
-                            {(row.data as Cell[]).map((cell: Cell, cellIndex: number) => (
+                            {row.data.map((cell, cellIndex) => (
                                 <td key={cellIndex} className={`p-3 text-center font-mono ${cellIndex === 4 ? 'text-primary font-bold' : 'text-foreground'}`}>
                                     {cell}
                                 </td>

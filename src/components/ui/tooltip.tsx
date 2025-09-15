@@ -34,7 +34,7 @@ type TooltipTriggerProps = {
 type TooltipContentProps = {
   children: React.ReactNode;
   className?: string;
-};
+} & React.HTMLAttributes<HTMLSpanElement> & Record<string, unknown>;
 
 // Helpers
 const toTitle = (v: unknown): string | undefined =>
@@ -75,9 +75,9 @@ export function TooltipTrigger({ children, ...rest }: TooltipTriggerProps) {
 }
 
 // Content placeholder: screen-reader only (no popper deps)
-export function TooltipContent({ children, className }: TooltipContentProps) {
+export function TooltipContent({ children, className, ...rest }: TooltipContentProps) {
   return (
-    <span role="tooltip" aria-hidden className={['sr-only', className].filter(Boolean).join(' ')}>
+    <span role="tooltip" aria-hidden className={['sr-only', className].filter(Boolean).join(' ')} {...rest}>
       {children}
     </span>
   );
