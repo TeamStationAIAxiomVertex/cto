@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
-import { Clock, Users2, FileSearch, Briefcase, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, CheckCircle, BarChart, BookOpen } from 'lucide-react';
+import { Clock, Users2, FileSearch, Briefcase, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, CheckCircle, BarChart, BookOpen, Layers, GitCompare, UserCheck, DollarSign } from 'lucide-react';
+import { ComparisonWidget } from '@/components/ComparisonWidget';
 
 export const metadata: Metadata = {
   title: 'Nearshore vs. Offshore: The Strategic Choice for CTOs | TeamStation AI',
@@ -53,17 +54,54 @@ const comparisonTable = [
   { factor: 'Total Cost of Ownership', nearshore: 'Predictable & Lower', offshore: 'Unpredictable & Higher', nearshore_color: 'text-primary', offshore_color: 'text-primary', nearshore_detail: 'An all-inclusive rate eliminates hidden fees.', offshore_detail: 'Low hourly rates are inflated by massive hidden costs.' },
 ];
 
+const sandlerCards = [
+    {
+        title: 'Cheap Hourly → Expensive Month',
+        question: 'Why is the “cheap” option $5k+/mo more after overhead?',
+        proof: 'Proof: $55/h offshore @173h with 25% overhead ≈ $11.9k/mo vs Co-Pilot Senior $6.9–$8.1k/mo.',
+        icon: <DollarSign className="h-8 w-8 text-primary" />,
+    },
+    {
+        title: 'Overnight PRs → Daylight Cadence',
+        question: 'How many releases died waiting for “LGTM”?',
+        proof: 'Proof: 120 PRs × (4h−1h) × $85 = $30,600/mo burned.',
+        icon: <GitCompare className="h-8 w-8 text-primary" />,
+    },
+    {
+        title: 'Sprawl → System',
+        question: 'How many vendors does it take to ship one roadmap?',
+        proof: 'Proof: Forecast vs actual variance <10%; fewer reopenings.',
+        icon: <Layers className="h-8 w-8 text-primary" />,
+    }
+];
+
 export default async function NearshoreVsOffshorePage() {
   return (
-    <main className="container max-w-5xl py-12">
+    <main className="container max-w-7xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook/hub" className="hover:text-foreground">CTO Playbook</Link> / <span>Nearshore vs. Offshore</span>
       </div>
 
        <header className="my-8 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Nearshore Software Development vs Offshore: The Physics of Lag</h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Pain: 24-hour ping-pong. Implication: lost quarters. Solution: nearshore software development with overlap hours and review SLAs; compare side-by-side and measure the delta.</p>
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Nearshore Software Development: The New Stack Beats Onshore, Offshore, and Legacy Nearshore</h1>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Cheaper than “cheap” offshore—because we count the hidden taxes and run in daylight.</p>
       </header>
+
+      <ComparisonWidget />
+
+      <div className="my-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {sandlerCards.map((card) => (
+          <div key={card.title} className="rounded-lg border bg-card p-6 flex flex-col text-center shadow-lg">
+              <div className="flex justify-center">{card.icon}</div>
+              <h3 className="text-lg font-bold text-foreground mt-4">{card.title}</h3>
+              <p className="text-sm text-muted-foreground mt-2 flex-grow">{card.proof}</p>
+              <div className="mt-4 pt-4 border-t border-border/50">
+                  <p className="text-sm font-semibold text-primary/90 italic">{card.question}</p>
+              </div>
+          </div>
+        ))}
+      </div>
+
 
       <section className="my-24">
         <h2 className="text-center text-4xl font-bold text-foreground">Part 1 (The Pain): Diagnosing the Hidden Costs of Your Outsourcing Strategy</h2>
@@ -209,3 +247,4 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
+

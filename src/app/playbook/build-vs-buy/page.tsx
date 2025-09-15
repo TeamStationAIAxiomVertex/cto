@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
@@ -196,7 +197,7 @@ export default function BuildVsBuyPage() {
                 </div>
                  <div className="bg-background p-6 rounded-lg border border-primary/20">
                     <h3 className="font-bold text-primary flex items-center gap-2"><Zap className="h-5 w-5"/>The "Buy" Model (Integrated Platform)</h3>
-                    <p className="mt-2 text-muted-foreground">Optimizes for what actually matters: <Link href="/playbook/tco-model" className="text-primary font-bold hover:underline">predictable TCO</Link>, <strong className="text-foreground">speed-to-market</strong>, and <strong className="text-foreground">enterprise-grade risk management.</strong></p>
+                    <p className="mt-2 text-muted-foreground">Optimizes for what actually matters: <Link href="/playbook/latam-economics#tco-knockout" className="text-primary font-bold hover:underline">predictable TCO</Link>, <strong className="text-foreground">speed-to-market</strong>, and <strong className="text-foreground">enterprise-grade risk management.</strong></p>
                 </div>
             </div>
             <div className="bg-background p-6 rounded-lg border border-primary/20">
@@ -221,3 +222,4 @@ export default function BuildVsBuyPage() {
   </main>
   );
 }
+
