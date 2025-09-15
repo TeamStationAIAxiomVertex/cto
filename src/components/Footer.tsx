@@ -46,6 +46,7 @@ const links = Object.freeze({
     { href: 'https://teamstation.dev', label: 'Main Home' },
     { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-pricing', label: 'Main Site Pricing' },
     { href: 'https://teamstation.dev/nearshore-integrated-services', label: 'Main Site Platform' },
+    { href: 'https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book', label: 'Book' },
     { href: 'https://app.teamstation.dev', label: 'Sign In' },
   ]
 } satisfies Record<string, LinkItem[]>);
