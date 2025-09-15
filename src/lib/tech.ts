@@ -1,4 +1,5 @@
 
+
 import { Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane } from 'lucide-react';
 
 export const techCategories = [
@@ -6,7 +7,7 @@ export const techCategories = [
     name: 'APIs & Backend Services',
     slug: 'backend-services',
     pain: "Is your backend a bottleneck or a force multiplier?",
-    icon: <Server className="h-6 w-6 text-primary" />,
+    icon: Server,
     tech: [
       { name: 'Node.js', slug: 'node' },
       { name: 'Python', slug: 'python' },
@@ -23,7 +24,7 @@ export const techCategories = [
     name: 'Frontend & UI/UX',
     slug: 'frontend-web',
     pain: "Is a slow, buggy UI costing you customers?",
-    icon: <Layers className="h-6 w-6 text-primary" />,
+    icon: Layers,
     tech: [
       { name: 'React/TypeScript', slug: 'react' },
       { name: 'Next.js', slug: 'nextjs' },
@@ -40,7 +41,7 @@ export const techCategories = [
     name: 'Mobile & Cross-Platform',
     slug: 'mobile-cross-platform',
     pain: "Is your mobile experience falling behind?",
-    icon: <Plane className="h-6 w-6 text-primary" />,
+    icon: Plane,
     tech: [
         { name: 'React Native', slug: 'react-native' },
         { name: 'Flutter', slug: 'flutter' },
@@ -53,7 +54,7 @@ export const techCategories = [
     name: 'Data Modeling & Databases',
     slug: 'data-engineering-analytics',
     pain: "Is your data model built for scale or for future refactors?",
-    icon: <Database className="h-6 w-6 text-primary" />,
+    icon: Database,
     tech: [
       { name: 'PostgreSQL', slug: 'postgresql' },
       { name: 'MySQL', slug: 'mysql' },
@@ -71,7 +72,7 @@ export const techCategories = [
     name: 'Pipelines & Orchestration',
     slug: 'data-engineering-analytics',
     pain: "Are your data pipelines brittle and unreliable?",
-    icon: <Component className="h-6 w-6 text-primary" />,
+    icon: Component,
     tech: [
       { name: 'Airflow/Prefect', slug: 'airflow' },
       { name: 'Kafka/RabbitMQ', slug: 'kafka' },
@@ -84,7 +85,7 @@ export const techCategories = [
     name: 'ML/AI & LLM Ops',
     slug: 'ml-ai-llm-ops',
     pain: "Struggling to move AI from a notebook to production?",
-    icon: <BrainCircuit className="h-6 w-6 text-primary" />,
+    icon: BrainCircuit,
     tech: [
       { name: 'PyTorch', slug: 'pytorch' },
       { name: 'Transformers', slug: 'transformers' },
@@ -100,7 +101,7 @@ export const techCategories = [
     name: 'Observability & SRE',
     slug: 'platform-infra-sre',
     pain: "Are you debugging in the dark when systems fail?",
-    icon: <GanttChartSquare className="h-6 w-6 text-primary" />,
+    icon: GanttChartSquare,
     tech: [
       { name: 'Prometheus', slug: 'prometheus' },
       { name: 'Grafana', slug: 'grafana' },
@@ -114,7 +115,7 @@ export const techCategories = [
     name: 'Security & GRC',
     slug: 'security-grc',
     pain: "Is compliance an afterthought or built into your stack?",
-    icon: <ShieldCheck className="h-6 w-6 text-primary" />,
+    icon: ShieldCheck,
     tech: [
       { name: 'Vault', slug: 'vault' },
       { name: 'Okta/Auth0', slug: 'okta' },
@@ -130,7 +131,7 @@ export const techCategories = [
     name: 'Testing & Quality Engineering',
     slug: 'qa-quality-engineering',
     pain: "Does 'shipping fast' also mean 'shipping bugs'?",
-    icon: <TestTube2 className="h-6 w-6 text-primary" />,
+    icon: TestTube2,
     tech: [
       { name: 'Playwright/Cypress', slug: 'playwright' },
       { name: 'Jest/Vitest', slug: 'jest' },
@@ -144,7 +145,7 @@ export const techCategories = [
     name: 'Cloud FinOps & BizTech',
     slug: 'finops-biztech',
     pain: "Are runaway cloud costs eating into your margins?",
-    icon: <Wallet className="h-6 w-6 text-primary" />,
+    icon: Wallet,
     tech: [
       { name: 'CloudZero/Infracost', slug: 'cloudzero' },
       { name: 'AWS Cost Explorer', slug: 'aws' },

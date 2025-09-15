@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import { ArrowRight, Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -28,7 +29,7 @@ export default function HireByTechnologyPage() {
           <div key={category.name} className="group rounded-lg border bg-card p-6 flex flex-col">
              <p className="text-sm font-semibold text-primary">{category.pain}</p>
             <div className="flex items-center gap-3 mt-3">
-              {category.icon}
+              <category.icon className="h-6 w-6 text-primary" />
               <h2 className="text-xl font-bold text-foreground">{category.name}</h2>
             </div>
             <div className="flex flex-wrap gap-2 my-4">

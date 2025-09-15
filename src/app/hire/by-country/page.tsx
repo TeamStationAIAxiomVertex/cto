@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import { ArrowRight, Building, Check, Languages, School, UserCheck } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -61,7 +62,7 @@ export default function HireByCountryPage() {
                 <div key={country.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
                     <p className="text-sm font-semibold text-primary">{country.pain}</p>
                     <div className="mt-3 flex items-center gap-3">
-                        <span className="h-6 w-6 rounded-sm overflow-hidden flex-shrink-0">{country.icon}</span>
+                        <span className="h-6 w-6 rounded-sm overflow-hidden flex-shrink-0">{country.flag}</span>
                         <h3 className="text-xl font-bold text-foreground">{country.name}</h3>
                     </div>
                     <p className="mt-2 text-sm text-muted-foreground flex-grow">{country.solution}</p>

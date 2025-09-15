@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -36,7 +37,7 @@ export default function HireByRolePage() {
               <p className="text-sm font-semibold text-primary">{details.pain}</p>
               <div className='flex justify-between items-start mt-3'>
                 <div className="flex items-center gap-3">
-                    {details.icon}
+                    <details.icon className="h-8 w-8 text-primary" />
                     <h2 className="text-xl font-bold text-foreground">{details.name}</h2>
                 </div>
                 <div className="relative z-20">
