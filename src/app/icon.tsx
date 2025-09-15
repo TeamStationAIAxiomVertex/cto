@@ -5,6 +5,9 @@ export const size = { width: 64, height: 64 }; // favicon base size
 export const contentType = 'image/png';
 
 export default function Icon() {
+  const brandBlue = '#0000f0';
+  const brandWhite = '#ffffff';
+
   return new ImageResponse(
     (
       <div
@@ -14,15 +17,29 @@ export default function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          borderRadius: 12,
-          background: '#0ea5e9', // brand color
-          color: '#fff',
-          fontSize: 38,
-          fontWeight: 700,
-          fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, sans-serif',
+          background: brandBlue,
         }}
       >
-        TS
+        <svg
+          width="44"
+          height="44"
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Top-left white square */}
+          <rect x="25" y="15" width="25" height="25" fill={brandWhite} />
+          {/* Top-right blue square (background shows through) */}
+
+          {/* Bottom-left blue square (background shows through) */}
+          <rect x="25" y="40" width="25" height="25" fill={brandBlue} />
+
+          {/* Bottom-right white square */}
+          <rect x="50" y="40" width="25" height="25" fill={brandWhite} />
+          
+          {/* Main vertical stem of 't' */}
+          <path d="M50 40 H75 V85 A25 25 0 0 1 50 65 V40 Z" fill={brandWhite} />
+        </svg>
       </div>
     ),
     size
