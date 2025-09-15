@@ -295,6 +295,15 @@ export default async function HomePage() {
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {caseStudies.map(study => (
               <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
+                  <div className="relative h-40 w-full mb-4 rounded-lg overflow-hidden border">
+                       <Image 
+                          src={study.ogImage.src.url}
+                          alt={`Hero image for ${study.clientName} case study`}
+                          fill
+                          className="object-cover"
+                          data-ai-hint={study.ogImage.aiHint}
+                      />
+                  </div>
                   <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{study.clientName}</h3>
                   <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary my-3">{study.industry}</span>
                   <p className="text-sm text-muted-foreground flex-grow">{study.summary}</p>
