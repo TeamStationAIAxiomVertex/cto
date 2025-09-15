@@ -37,7 +37,7 @@ const links = Object.freeze({
   ],
   Company: [
     { href: '/about', label: 'About Us' },
-    { href: '/research/hub', label: 'Research' },
+    { href: '/research/hub', label: 'Research Hub' },
     { href: '/trust', label: 'Trust Center' },
     { href: '/hire', label: 'Hire Talent' },
     { href: '/research/hub#podcast', label: 'Podcast', icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1" /> },
@@ -48,6 +48,12 @@ const links = Object.freeze({
     { href: 'https://teamstation.dev/nearshore-integrated-services', label: 'Main Site Platform' },
     { href: 'https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book', label: 'Book' },
     { href: 'https://app.teamstation.dev', label: 'Sign In' },
+  ],
+  'Scientific Research': [
+      { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397", label: "AxiomCortex™ R&D Report" },
+      { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433", label: "Heuristically Trained AI" },
+      { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490", label: "Framework for Measuring Capacity" },
+      { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470", label: "Performance Metrics in AI Age" },
   ]
 } satisfies Record<string, LinkItem[]>);
 
@@ -70,7 +76,7 @@ export default function Footer() {
   return (
     <footer className="mt-32 border-t border-border bg-card py-16 text-muted-foreground">
       <div className="container mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
           <div className="col-span-2 md:col-span-1">
             <h3 className="text-lg font-bold text-foreground">TeamStation AI</h3>
             <p className="mt-2 text-sm">

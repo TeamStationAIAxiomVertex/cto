@@ -8,9 +8,9 @@ import { SpotifyIcon } from '@/components/SpotifyIcon';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Research Hub: The Science of Predictable Nearshore Results | TeamStation AI',
+  title: 'Platforming Nearshore IT: The Science of Predictable Results | TeamStation AI',
   description: 'Explore our peer-reviewed research on AI technical interviews, software engineering performance telemetry, and bias-free hiring for LATAM engineering teams.',
-  keywords: 'nearshore research, ai technical interviews, software engineering performance, bias-free hiring, latam engineering',
+  keywords: 'nearshore research, ai technical interviews, software engineering performance, bias-free hiring, latam engineering, nearshore it platform',
 };
 
 export default async function ResearchPage() {
@@ -157,7 +157,7 @@ export default async function ResearchPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research</span>
       </div>
       <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Our Research: The Science Behind Predictable Results</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Platforming Nearshore IT: The Science of Predictable Results</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           We don't rely on buzzwords; we rely on evidence. Our platform is built on a foundation of peer-reviewed research to de-risk your most critical decisions around hiring, performance, and security. Here is the proof.
         </p>
