@@ -4,8 +4,6 @@ import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart, BookOpen, Star, Trophy } from 'lucide-react';
 import type { Metadata } from 'next';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
-import dynamicImport from 'next/dynamic';
-
 
 export const dynamic = 'force-static';
 
@@ -14,8 +12,6 @@ export const metadata: Metadata = {
   description: 'Explore our peer-reviewed research on AI technical interviews, software engineering performance telemetry, and bias-free hiring for LATAM engineering teams.',
   keywords: 'nearshore research, ai technical interviews, software engineering performance, bias-free hiring, latam engineering',
 };
-
-const PodcastEmbed = dynamicImport(() => import('@/components/PodcastEmbed'), { ssr: false });
 
 export default async function ResearchPage() {
   const researchAssets = [
@@ -153,7 +149,14 @@ export default async function ResearchPage() {
         <h2 className="text-center text-4xl font-bold">Listen to the Platform Vision</h2>
         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Hear directly from our founders and technical leaders about the science and strategy behind TeamStation AI.</p>
         <div className="mt-8 max-w-2xl mx-auto">
-          <PodcastEmbed />
+           <div className="rounded-lg border bg-card p-6 flex flex-col items-center text-center shadow-lg">
+                <SpotifyIcon className="h-12 w-12 text-[#1DB954]" />
+                <h3 className="text-2xl font-bold mt-4 text-foreground">The Nearshore IT Co-Pilot™</h3>
+                <p className="mt-2 text-sm text-muted-foreground">Listen on Spotify to learn about the platform vision from our leadership.</p>
+                <a href="https://open.spotify.com/episode/7EwovXvoVFIGLJDwqTZFUE?utm_source=generator" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
+                    Listen Now on Spotify <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+            </div>
         </div>
       </section>
 
