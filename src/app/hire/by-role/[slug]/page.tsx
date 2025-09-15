@@ -1,8 +1,9 @@
 
+
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
-import { CheckCircle, ArrowRight } from 'lucide-react';
+import { CheckCircle, ArrowRight, Shield, Bug, CloudCog } from 'lucide-react';
 
 
 const roleData: { [key: string]: { name: string; intro: string; roles: string[]; skills: string[]; tech: { name: string, slug: string }[]; evaluation: string[] } } = {
@@ -280,6 +281,82 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
+const SecurityContent = () => (
+    <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* AppSec Pillar */}
+        <div className="rounded-lg border bg-card p-6 shadow-inner">
+            <h3 className="text-xl font-bold flex items-center gap-3"><Bug className="h-6 w-6 text-primary" />Application Security</h3>
+            <p className="text-sm text-muted-foreground mt-2"><strong>Problem Solved:</strong> Preventing vulnerabilities in your own code before they reach production.</p>
+            <div className="mt-4 pt-4 border-t">
+                <h4 className="font-semibold text-foreground">Key Roles</h4>
+                <ul className="list-disc list-inside text-sm text-muted-foreground mt-2">
+                    <li>AppSec Engineer</li>
+                    <li>Security Champion (embedded in dev team)</li>
+                </ul>
+            </div>
+            <div className="mt-4 pt-4 border-t">
+                <h4 className="font-semibold text-foreground">Core Skills</h4>
+                <div className="flex flex-wrap gap-2 mt-2">
+                    {['Threat modeling', 'Secure SDLC', 'SAST/DAST', 'Secrets management'].map(skill => (
+                        <span key={skill} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{skill}</span>
+                    ))}
+                </div>
+            </div>
+            <div className="mt-4 pt-4 border-t">
+                <h4 className="font-semibold text-foreground">Key Technologies</h4>
+                 <div className="flex flex-wrap gap-2 mt-2">
+                    {['CodeQL', 'Snyk', 'SonarQube', 'OWASP ZAP', 'Vault', 'SOPS'].map(tech => (
+                        <span key={tech} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{tech}</span>
+                    ))}
+                </div>
+            </div>
+        </div>
+
+        {/* CloudSec / GRC Pillar */}
+        <div className="space-y-8">
+            <div className="rounded-lg border bg-card p-6 shadow-inner">
+                <h3 className="text-xl font-bold flex items-center gap-3"><CloudCog className="h-6 w-6 text-primary" />Cloud Security</h3>
+                <p className="text-sm text-muted-foreground mt-2"><strong>Problem Solved:</strong> Securing your cloud infrastructure and managing identities.</p>
+                <div className="mt-4 pt-4 border-t">
+                    <h4 className="font-semibold text-foreground">Key Roles</h4>
+                    <ul className="list-disc list-inside text-sm text-muted-foreground mt-2">
+                        <li>Cloud Security Engineer</li>
+                        <li>Identity & Access Management (IAM) Engineer</li>
+                    </ul>
+                </div>
+                <div className="mt-4 pt-4 border-t">
+                    <h4 className="font-semibold text-foreground">Key Technologies</h4>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                        {['Okta', 'Auth0', 'OIDC/SAML', 'CrowdStrike', 'AWS IAM'].map(tech => (
+                            <span key={tech} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+            <div className="rounded-lg border bg-card p-6 shadow-inner">
+                <h3 className="text-xl font-bold flex items-center gap-3"><Shield className="h-6 w-6 text-primary" />Governance, Risk & Compliance (GRC)</h3>
+                <p className="text-sm text-muted-foreground mt-2"><strong>Problem Solved:</strong> Passing audits and proving your security posture to enterprise customers.</p>
+                 <div className="mt-4 pt-4 border-t">
+                    <h4 className="font-semibold text-foreground">Key Roles</h4>
+                    <ul className="list-disc list-inside text-sm text-muted-foreground mt-2">
+                        <li>CISO / Head of Security</li>
+                        <li>GRC Lead</li>
+                        <li>Privacy Lead (DPO)</li>
+                    </ul>
+                </div>
+                <div className="mt-4 pt-4 border-t">
+                    <h4 className="font-semibold text-foreground">Key Frameworks</h4>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                        {['SOC 2', 'ISO 27001', 'HIPAA', 'PCI DSS', 'GDPR/CCPA'].map(tech => (
+                            <span key={tech} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
 
 export default function RoleCategoryPage({ params }: { params: { slug: string } }) {
   const category = roleData[params.slug];
@@ -304,41 +381,45 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
         <p className="mt-4 text-lg text-muted-foreground">{intro}</p>
       </header>
       
-      <div className="my-16 grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div className="md:col-span-1">
-            <h2 className="text-2xl font-bold border-b pb-2">Key Roles</h2>
-            <ul className="mt-4 space-y-2 list-none p-0">
-                {roles.map(role => <li key={role} className='text-muted-foreground'>{role}</li>)}
-            </ul>
+      {name === 'Security & GRC' ? (
+        <SecurityContent />
+      ) : (
+        <div className="my-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="md:col-span-1">
+              <h2 className="text-2xl font-bold border-b pb-2">Key Roles</h2>
+              <ul className="mt-4 space-y-2 list-none p-0">
+                  {roles.map(role => <li key={role} className='text-muted-foreground'>{role}</li>)}
+              </ul>
+          </div>
+          <div className="md:col-span-2">
+              <h2 className="text-2xl font-bold border-b pb-2">Core Skills & Technologies</h2>
+              <div className='mt-4'>
+                  <h3 className='font-semibold text-foreground'>Skills</h3>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                      {skills.map(skill => (
+                           <span key={skill} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+                              {skill.includes('IaC') ? <WithTooltip label="Infrastructure as Code: Managing infrastructure through code instead of manual processes."><span className="border-b border-dashed">IaC</span></WithTooltip> : 
+                               skill.includes('SLO/SLI') ? <WithTooltip label="Service Level Objectives/Indicators: A framework for defining and measuring reliability."><span className="border-b border-dashed">SLO/SLI/error budgets</span></WithTooltip> :
+                               skill.includes('ELT') ? <WithTooltip label="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation."><span className="border-b border-dashed">ELT</span></WithTooltip> :
+                               skill.includes('retrieval') ? <WithTooltip label="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database."><span className="border-b border-dashed">retrieval design</span></WithTooltip> :
+                               skill}
+                           </span>
+                      ))}
+                  </div>
+              </div>
+               <div className='mt-6'>
+                  <h3 className='font-semibold text-foreground'>Technologies & Libraries</h3>
+                  <div className="flex flex-wrap gap-2 mt-2 items-center">
+                      {tech.map((t, i) => (
+                           <Link href={`/hire/by-technology/${t.slug}`} key={t.slug} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors">
+                              {t.name}
+                           </Link>
+                      ))}
+                  </div>
+              </div>
+          </div>
         </div>
-        <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold border-b pb-2">Core Skills & Technologies</h2>
-            <div className='mt-4'>
-                <h3 className='font-semibold text-foreground'>Skills</h3>
-                <div className="flex flex-wrap gap-2 mt-2">
-                    {skills.map(skill => (
-                         <span key={skill} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-                            {skill.includes('IaC') ? <WithTooltip label="Infrastructure as Code: Managing infrastructure through code instead of manual processes."><span className="border-b border-dashed">IaC</span></WithTooltip> : 
-                             skill.includes('SLO/SLI') ? <WithTooltip label="Service Level Objectives/Indicators: A framework for defining and measuring reliability."><span className="border-b border-dashed">SLO/SLI/error budgets</span></WithTooltip> :
-                             skill.includes('ELT') ? <WithTooltip label="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation."><span className="border-b border-dashed">ELT</span></WithTooltip> :
-                             skill.includes('retrieval') ? <WithTooltip label="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database."><span className="border-b border-dashed">retrieval design</span></WithTooltip> :
-                             skill}
-                         </span>
-                    ))}
-                </div>
-            </div>
-             <div className='mt-6'>
-                <h3 className='font-semibold text-foreground'>Technologies & Libraries</h3>
-                <div className="flex flex-wrap gap-2 mt-2 items-center">
-                    {tech.map((t, i) => (
-                         <Link href={`/hire/by-technology/${t.slug}`} key={t.slug} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors">
-                            {t.name}
-                         </Link>
-                    ))}
-                </div>
-            </div>
-        </div>
-      </div>
+      )}
 
 
       <div className="my-16 rounded-lg border bg-card p-8 shadow-lg">
@@ -373,3 +454,4 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
 export async function generateStaticParams() {
   return Object.keys(roleData).map(slug => ({ slug }));
 }
+
