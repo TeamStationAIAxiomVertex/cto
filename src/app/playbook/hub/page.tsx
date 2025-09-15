@@ -88,10 +88,12 @@ export default function PlaybookHubPage() {
 
       <section className="my-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {playbookEntries.map((entry) => (
+          {playbookEntries.map((entry, index) => (
             <div
               key={entry.href}
-              className="group relative flex flex-col rounded-lg border bg-card p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
+              className={`group relative flex flex-col rounded-lg border bg-card p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 ${
+                playbookEntries.length % 2 !== 0 && index === playbookEntries.length - 1 ? 'md:col-span-2' : ''
+              }`}
             >
               <p className="text-sm font-semibold text-primary">{entry.pain}</p>
               <div className="mt-3 flex items-center gap-3">
