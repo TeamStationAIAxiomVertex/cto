@@ -7,16 +7,17 @@ import AppProviders from '@/providers/app-providers';
 import './globals.css';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 
-const poppins = Poppins({ 
-  subsets: ['latin'], 
-  weight: ['400', '600', '700', '800'], 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
   variable: '--font-poppins',
   display: 'swap',
 });
 
 const siteName = 'TeamStation AI';
-const siteDescription = 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.';
-const siteUrl = 'https://cto.teamstation.dev'; 
+const siteDescription =
+  'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.';
+const siteUrl = 'https://cto.teamstation.dev';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -27,12 +28,12 @@ export const metadata: Metadata = {
   description: siteDescription,
   openGraph: {
     title: {
-        default: `${siteName} | Nearshore Software Development & Staff Augmentation`,
-        template: `%s | ${siteName}`,
+      default: `${siteName} | Nearshore Software Development & Staff Augmentation`,
+      template: `%s | ${siteName}`,
     },
     description: siteDescription,
     url: siteUrl,
-    siteName: siteName,
+    siteName,
     images: [
       {
         url: placeholderImages.metaCard.src.url,
@@ -47,11 +48,11 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: {
-        default: `${siteName} | Nearshore Software Development & Staff Augmentation`,
-        template: `%s | ${siteName}`,
+      default: `${siteName} | Nearshore Software Development & Staff Augmentation`,
+      template: `%s | ${siteName}`,
     },
     description: siteDescription,
-    images: [placeholderImages.metaCard.src.url], 
+    images: [placeholderImages.metaCard.src.url],
   },
   icons: {
     icon: '/favicon.ico',
@@ -60,37 +61,33 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'TeamStation AI',
     url: siteUrl,
-    logo: 'https://cto.teamstation.dev/apple-icon.png',
+    // point to a static file you actually ship
+    logo: `${siteUrl}/apple-touch-icon.png`,
     sameAs: [
-        'https://www.linkedin.com/company/teamstation/',
-        'https://twitter.com/teamstation'
-    ]
+      'https://www.linkedin.com/company/teamstation/',
+      'https://twitter.com/teamstation',
+    ],
   };
 
   return (
     <html lang="en" suppressHydrationWarning>
-       <head>
+      <head>
         <script
           type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       <body className={`${poppins.variable} font-sans bg-background text-foreground`}>
         <AppProviders>
           <Header />
-          <main id="main-content" className="pt-16">
-            {children}
-          </main>
+          <main id="main-content" className="pt-16">{children}</main>
           <Footer />
         </AppProviders>
       </body>
