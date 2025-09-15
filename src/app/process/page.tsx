@@ -1,5 +1,5 @@
 
-import { Search, BrainCircuit, Handshake, Rocket, ShieldCheck, UserCheck, FileSearch, GanttChartSquare, Check, BookOpen, Star, Trophy, Beaker } from 'lucide-react';
+import { Search, BrainCircuit, Handshake, Rocket, ShieldCheck, UserCheck, FileSearch, GanttChartSquare, Check, BookOpen, Star, Trophy, Beaker, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { InfoDropdown } from '@/components/ui/info-dropdown';
@@ -15,7 +15,7 @@ export default function ProcessPage() {
         { title: "Book a Demo", description: "See the live console: jobs, short-lists, devices/MDM, compliance, KPIs.", artifact: "Demo environment + sample dashboards." },
         { title: "Platform Onboarding", description: "Create your org, users, roles, and legal entity; connect tools (Slack/Jira/GitHub/IdP).", artifact: "Org workspace, SSO, billing & DPA on file." },
         { title: "Add Jobs & Calibrate Success", description: "Define stack, level (L1–L4), ownership scope, and the 90-day outcome you need.", artifact: "Role profile + 'Success at 90 Days' spec." },
-        { title: "Country Targeting & Market Bands", description: "Pick LATAM cities; align salary bands, benefits norms, and hiring constraints.", artifact: "Country shortlist + comp/benefit bands." },
+        { title: "Country Targeting & Market Bands", description: <>Pick <Link href="/hire/by-country" className="text-primary hover:underline">LATAM cities</Link>; align salary bands, benefits norms, and hiring constraints.</>, artifact: "Country shortlist + comp/benefit bands." },
         { title: "Cognitive AI Sourcing & Short-List", description: "Our Cognitive AI is always-on sourcing; candidates are scored against your role profile to find the ideal mental shape.", artifact: "5–8 candidate short-list (relevance ≥ 85%)." },
         { title: "Technical Evaluation (Bias-Aware)", description: "A human expert conducts a structured, evidence-based interview. Our Cognitive AI then synthesizes the conversation to generate an 'Evidence Locker' with explainable scoring.", artifact: "Scorecards + hiring signal; mismatch rate ≤ 10%." },
         { title: "Client Interview Loop", description: "Calibrated panel agenda; consolidate notes and go/no-go in the platform.", artifact: "Finalist(s) + reference checks." },
