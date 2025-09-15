@@ -3,24 +3,6 @@
 import { useState, useEffect, type ReactNode } from 'react';
 import { WithTooltip } from '@/components/ui/tooltip';
 
-type Cell = ReactNode;
-
-type Results = {
-  seatCost: string[];
-  effectiveHourly: string[];
-  prLatencyCost: string[];
-  vacancyCost: string[];
-  cfrLoss: string[];
-  mgmtOverhead: string[];
-  complianceSavings: string[];
-};
-
-type Row = {
-  label: string;
-  description: string;
-  data: Cell[];
-};
-
 const inputs = {
     buildIn: { salaryAnnual: 180000, burdenPct: 0.30 },
     onshore: { hourlyLow: 120, hourlyHigh: 150 },
@@ -52,6 +34,23 @@ const inputs = {
     }
 } as const;
 
+type Cell = ReactNode;
+
+type Results = {
+  seatCost: string[];
+  effectiveHourly: string[];
+  prLatencyCost: string[];
+  vacancyCost: string[];
+  cfrLoss: string[];
+  mgmtOverhead: string[];
+  complianceSavings: string[];
+};
+
+type Row = {
+  label: string;
+  description: string;
+  data: Cell[];
+};
 
 export function ComparisonWidget() {
     const [basisHours, setBasisHours] = useState(173);
@@ -62,8 +61,8 @@ export function ComparisonWidget() {
 
     useEffect(() => {
         function calculate() {
-            const f = (n: number | undefined) => n ? n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }) : '$0';
-            const fRange = (low: number | undefined, high: number | undefined) => `${f(low)} – ${f(high)}`;
+            const f = (n?: number) => typeof n === 'number' ? n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }) : '$0';
+            const fRange = (low?: number, high?: number) => `${f(low)} – ${f(high)}`;
 
             const buildInMonthly = ((inputs.buildIn.salaryAnnual * (1 + inputs.buildIn.burdenPct)) / 12);
             const onshoreMonthlyLow = (inputs.onshore.hourlyLow * basisHours * (1 + onshoreOverhead));
@@ -244,3 +243,5 @@ export function ComparisonWidget() {
     </section>
   );
 }
+
+  
