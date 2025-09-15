@@ -57,13 +57,13 @@ const includedServices = [
 ];
 
 const recognitions = [
-    { icon: <Trophy className="h-6 w-6 text-yellow-400" />, title: 'Market Leader', source: 'Recognized for Cognitive AI innovation in nearshore IT delivery.' },
-    { icon: <Star className="h-6 w-6 text-yellow-400" />, title: 'Service Excellence', source: 'Independent market leader for nearshore staffing.' },
-    { icon: <BookOpen className="h-6 w-6 text-yellow-400" />, title: 'Peer-Reviewed Research', papers: [
+    { icon: <Trophy className="h-8 w-8 text-yellow-400" />, title: 'Market Leader', source: 'Recognized for Cognitive AI innovation in nearshore IT delivery.' },
+    { icon: <Star className="h-8 w-8 text-yellow-400" />, title: 'Service Excellence', source: 'Independent market leader for nearshore staffing.' },
+    { icon: <BookOpen className="h-8 w-8 text-yellow-400" />, title: 'Peer-Reviewed Research', papers: [
         { title: "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation", href: "/research/axiom-cortex-scientific-report" },
         { title: "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering", href: "/research/performance-evaluation-framework" },
     ]},
-    { icon: <Beaker className="h-6 w-6 text-yellow-400" />, title: 'Platform KPIs', kpis: [
+    { icon: <Beaker className="h-8 w-8 text-yellow-400" />, title: 'Platform KPIs', kpis: [
         '2.6M+ LATAM IT profiles',
         'Time-to-Offer ≈ 9 days',
         '90-day retention ≥96%',
