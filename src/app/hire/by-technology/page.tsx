@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { ArrowRight, Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component } from 'lucide-react';
 import type { Metadata } from 'next';
+import { SiReact, SiNodedotjs, SiPython, SiGo, SiDotnet, SiRubyonrails, SiPhp, SiGraphql, SiAmazonaws, SiKubernetes, SiDocker, SiTerraform, SiGithubactions, SiIstio, SiPrometheus, SiOpentelemetry, SiJaeger, SiHashicorp, SiNextdotjs, SiVite, SiAngular, SiVuedotjs, SiRedux, SiApollographql, SiTailwindcss, SiStorybook, SiTestinglibrary, SiCypress, SiPostgresql, SiMysql, SiMicrosoftsqlserver, SiRedis, SiMemcached, SiTypescript, SiPrisma, SiAmazondynamodb, SiSnowflake, SiGooglebigquery, SiAmazonredshift, SiDbt, SiApacheairflow, SiFivetran, SiApachekafka, SiApachespark, SiLooker, SiTableau, SiPowerbi, SiDatadog, SiNewrelic, SiSentry, SiPytorch, SiTensorflow, SiHuggingface, SiOpenai, SiVercel, SiLangchain, SiWeaviate, SiPinecone, SiMlflow, SiJira, SiNotion, SiFigma, SiGoogleanalytics, SiAmplitude, SiMixpanel, SiJest, SiVitest, SiJunit5, SiK6, SiGremlin, SiOkta, SiAuth0, SiVault, SiSnyk, SiTrivy, SiOpenpolicyagent, SiSocketdotio, SiStripe, SiSalesforce, SiHubspot, SiNginx, SiAirtable, SiZapier } from 'react-icons/si';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Developers by Technology | TeamStation AI',
@@ -16,15 +17,15 @@ const techCategories = [
     pain: "Is your backend a bottleneck or a force multiplier?",
     icon: <Server className="h-6 w-6 text-primary" />,
     tech: [
-      { name: 'Node.js', slug: 'node' },
-      { name: 'Python', slug: 'python' },
-      { name: 'Java', slug: 'java' },
-      { name: 'Go', slug: 'go' },
-      { name: '.NET', slug: 'net' },
-      { name: 'Ruby on Rails', slug: 'ruby' },
-      { name: 'PHP (Laravel/Symphony)', slug: 'php' },
-      { name: 'gRPC', slug: 'grpc' },
-      { name: 'GraphQL', slug: 'graphql' },
+      { name: 'Node.js', slug: 'node', icon: <SiNodedotjs /> },
+      { name: 'Python', slug: 'python', icon: <SiPython /> },
+      { name: 'Java', slug: 'java', icon: <SiPython /> },
+      { name: 'Go', slug: 'go', icon: <SiGo /> },
+      { name: '.NET', slug: 'net', icon: <SiDotnet /> },
+      { name: 'Ruby on Rails', slug: 'ruby', icon: <SiRubyonrails /> },
+      { name: 'PHP (Laravel/Symphony)', slug: 'php', icon: <SiPhp /> },
+      { name: 'gRPC', slug: 'grpc', icon: <SiGo /> },
+      { name: 'GraphQL', slug: 'graphql', icon: <SiGraphql /> },
     ],
   },
   {
@@ -33,13 +34,13 @@ const techCategories = [
     pain: "Is a slow, buggy UI costing you customers?",
     icon: <Layers className="h-6 w-6 text-primary" />,
     tech: [
-      { name: 'React/TypeScript', slug: 'react' },
-      { name: 'Next.js', slug: 'nextjs' },
-      { name: 'Vite', slug: 'vite' },
-      { name: 'TanStack Query', slug: 'tanstack' },
-      { name: 'Redux/Zustand', slug: 'redux' },
-      { name: 'Tailwind/shadcn', slug: 'tailwind' },
-      { name: 'Testing Library', slug: 'testing' },
+      { name: 'React/TypeScript', slug: 'react', icon: <SiReact /> },
+      { name: 'Next.js', slug: 'nextjs', icon: <SiNextdotjs /> },
+      { name: 'Vite', slug: 'vite', icon: <SiVite /> },
+      { name: 'TanStack Query', slug: 'tanstack', icon: <SiReact /> },
+      { name: 'Redux/Zustand', slug: 'redux', icon: <SiRedux /> },
+      { name: 'Tailwind/shadcn', slug: 'tailwind', icon: <SiTailwindcss /> },
+      { name: 'Testing Library', slug: 'testing', icon: <SiTestinglibrary /> },
     ],
   },
   {
@@ -48,15 +49,15 @@ const techCategories = [
     pain: "Is your data model built for scale or for future refactors?",
     icon: <Database className="h-6 w-6 text-primary" />,
     tech: [
-      { name: 'PostgreSQL', slug: 'postgresql' },
-      { name: 'MySQL', slug: 'mysql' },
-      { name: 'SQL Server', slug: 'sql' },
-      { name: 'dbt', slug: 'dbt' },
-      { name: 'Prisma', slug: 'prisma' },
-      { name: 'SQLAlchemy', slug: 'sqlalchemy' },
-      { name: 'Hibernate', slug: 'hibernate' },
-      { name: 'Redis', slug: 'redis' },
-      { name: 'Memcached', slug: 'memcached' },
+      { name: 'PostgreSQL', slug: 'postgresql', icon: <SiPostgresql /> },
+      { name: 'MySQL', slug: 'mysql', icon: <SiMysql /> },
+      { name: 'SQL Server', slug: 'sql', icon: <SiMicrosoftsqlserver /> },
+      { name: 'dbt', slug: 'dbt', icon: <SiDbt /> },
+      { name: 'Prisma', slug: 'prisma', icon: <SiPrisma /> },
+      { name: 'SQLAlchemy', slug: 'sqlalchemy', icon: <SiPython /> },
+      { name: 'Hibernate', slug: 'hibernate', icon: <SiPython /> },
+      { name: 'Redis', slug: 'redis', icon: <SiRedis /> },
+      { name: 'Memcached', slug: 'memcached', icon: <SiMemcached /> },
     ],
   },
   {
@@ -65,11 +66,11 @@ const techCategories = [
     pain: "Are your data pipelines brittle and unreliable?",
     icon: <Component className="h-6 w-6 text-primary" />,
     tech: [
-      { name: 'Airflow/Prefect', slug: 'airflow' },
-      { name: 'Kafka/RabbitMQ', slug: 'kafka' },
-      { name: 'Flink/Beam', slug: 'flink' },
-      { name: 'Kubernetes', slug: 'kubernetes' },
-      { name: 'Docker', slug: 'docker' },
+      { name: 'Airflow/Prefect', slug: 'airflow', icon: <SiApacheairflow /> },
+      { name: 'Kafka/RabbitMQ', slug: 'kafka', icon: <SiApachekafka /> },
+      { name: 'Flink/Beam', slug: 'flink', icon: <SiApachespark /> },
+      { name: 'Kubernetes', slug: 'kubernetes', icon: <SiKubernetes /> },
+      { name: 'Docker', slug: 'docker', icon: <SiDocker /> },
     ],
   },
   {
@@ -78,14 +79,14 @@ const techCategories = [
     pain: "Struggling to move AI from a notebook to production?",
     icon: <BrainCircuit className="h-6 w-6 text-primary" />,
     tech: [
-      { name: 'PyTorch', slug: 'pytorch' },
-      { name: 'Transformers', slug: 'transformers' },
-      { name: 'vLLM', slug: 'vllm' },
-      { name: 'Ray Serve', slug: 'ray' },
-      { name: 'LangChain', slug: 'langchain' },
-      { name: 'pgvector/Pinecone', slug: 'pgvector' },
-      { name: 'MLflow/W&B', slug: 'mlflow' },
-      { name: 'Ragas', slug: 'ragas' },
+      { name: 'PyTorch', slug: 'pytorch', icon: <SiPytorch /> },
+      { name: 'Transformers', slug: 'transformers', icon: <SiHuggingface /> },
+      { name: 'vLLM', slug: 'vllm', icon: <SiVercel /> },
+      { name: 'Ray Serve', slug: 'ray', icon: <SiDatadog /> },
+      { name: 'LangChain', slug: 'langchain', icon: <SiLangchain /> },
+      { name: 'pgvector/Pinecone', slug: 'pgvector', icon: <SiPinecone /> },
+      { name: 'MLflow/W&B', slug: 'mlflow', icon: <SiMlflow /> },
+      { name: 'Ragas', slug: 'ragas', icon: <SiPython /> },
     ],
   },
   {
@@ -94,12 +95,12 @@ const techCategories = [
     pain: "Are you debugging in the dark when systems fail?",
     icon: <GanttChartSquare className="h-6 w-6 text-primary" />,
     tech: [
-      { name: 'Prometheus', slug: 'prometheus' },
-      { name: 'Grafana', slug: 'grafana' },
-      { name: 'OpenTelemetry', slug: 'opentelemetry' },
-      { name: 'Jaeger/Loki', slug: 'jaeger' },
-      { name: 'Terraform/Pulumi', slug: 'terraform' },
-      { name: 'Istio/Linkerd', slug: 'istio' },
+      { name: 'Prometheus', slug: 'prometheus', icon: <SiPrometheus /> },
+      { name: 'Grafana', slug: 'grafana', icon: <SiGrafana /> },
+      { name: 'OpenTelemetry', slug: 'opentelemetry', icon: <SiOpentelemetry /> },
+      { name: 'Jaeger/Loki', slug: 'jaeger', icon: <SiJaeger /> },
+      { name: 'Terraform/Pulumi', slug: 'terraform', icon: <SiTerraform /> },
+      { name: 'Istio/Linkerd', slug: 'istio', icon: <SiIstio /> },
     ],
   },
   {
@@ -108,14 +109,14 @@ const techCategories = [
     pain: "Is compliance an afterthought or built into your stack?",
     icon: <ShieldCheck className="h-6 w-6 text-primary" />,
     tech: [
-      { name: 'Vault', slug: 'vault' },
-      { name: 'Okta/Auth0', slug: 'okta' },
-      { name: 'CodeQL/Snyk', slug: 'codeql' },
-      { name: 'Trivy', slug: 'trivy' },
-      { name: 'OPA', slug: 'opa' },
-      { name: 'SOC 2', slug: 'soc' },
-      { name: 'ISO 27001', slug: 'iso' },
-      { name: 'HIPAA', slug: 'hipaa' },
+      { name: 'Vault', slug: 'vault', icon: <SiVault /> },
+      { name: 'Okta/Auth0', slug: 'okta', icon: <SiOkta /> },
+      { name: 'CodeQL/Snyk', slug: 'codeql', icon: <SiSnyk /> },
+      { name: 'Trivy', slug: 'trivy', icon: <SiTrivy /> },
+      { name: 'OPA', slug: 'opa', icon: <SiOpenpolicyagent /> },
+      { name: 'SOC 2', slug: 'soc', icon: <SiJira /> },
+      { name: 'ISO 27001', slug: 'iso', icon: <SiJira /> },
+      { name: 'HIPAA', slug: 'hipaa', icon: <SiJira /> },
     ],
   },
   {
@@ -124,12 +125,12 @@ const techCategories = [
     pain: "Does 'shipping fast' also mean 'shipping bugs'?",
     icon: <TestTube2 className="h-6 w-6 text-primary" />,
     tech: [
-      { name: 'Playwright/Cypress', slug: 'playwright' },
-      { name: 'Jest/Vitest', slug: 'jest' },
-      { name: 'PyTest/JUnit', slug: 'pytest' },
-      { name: 'k6/Locust', slug: 'k6' },
-      { name: 'Pact', slug: 'pact' },
-      { name: 'Gremlin/Litmus', slug: 'gremlin' },
+      { name: 'Playwright/Cypress', slug: 'playwright', icon: <SiCypress /> },
+      { name: 'Jest/Vitest', slug: 'jest', icon: <SiJest /> },
+      { name: 'PyTest/JUnit', slug: 'pytest', icon: <SiJunit5 /> },
+      { name: 'k6/Locust', slug: 'k6', icon: <SiK6 /> },
+      { name: 'Pact', slug: 'pact', icon: <SiJira /> },
+      { name: 'Gremlin/Litmus', slug: 'gremlin', icon: <SiGremlin /> },
     ],
   },
   {
@@ -138,11 +139,11 @@ const techCategories = [
     pain: "Are runaway cloud costs eating into your margins?",
     icon: <Wallet className="h-6 w-6 text-primary" />,
     tech: [
-      { name: 'CloudZero/Infracost', slug: 'cloudzero' },
-      { name: 'AWS Cost Explorer', slug: 'aws' },
-      { name: 'Salesforce', slug: 'salesforce' },
-      { name: 'HubSpot', slug: 'hubspot' },
-      { name: 'Hightouch/Census', slug: 'hightouch' },
+      { name: 'CloudZero/Infracost', slug: 'cloudzero', icon: <SiAmazonaws /> },
+      { name: 'AWS Cost Explorer', slug: 'aws', icon: <SiAmazonaws /> },
+      { name: 'Salesforce', slug: 'salesforce', icon: <SiSalesforce /> },
+      { name: 'HubSpot', slug: 'hubspot', icon: <SiHubspot /> },
+      { name: 'Hightouch/Census', slug: 'hightouch', icon: <SiAirtable /> },
     ],
   }
 ];
@@ -171,8 +172,9 @@ export default function HireByTechnologyPage() {
             </div>
             <div className="flex flex-wrap gap-2 my-4">
               {category.tech.map(tech => (
-                  <Link href={`/hire/by-technology/${tech.slug}`} key={tech.slug} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary">
-                    {tech.name}
+                  <Link href={`/hire/by-technology/${tech.slug}`} key={tech.slug} className="flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors">
+                    <span className="text-base">{tech.icon}</span>
+                    <span>{tech.name}</span>
                   </Link>
                 )
               )}
