@@ -21,6 +21,7 @@ https://cto.teamstation.dev/comparisons/tecla
 https://cto.teamstation.dev/comparisons/terminal
 https://cto.teamstation.dev/comparisons/toptal
 https://cto.teamstation.dev/comparisons/unosquare
+https://cto.teamstation.dev/faq
 https://cto.teamstation.dev/hire
 https://cto.teamstation.dev/hire/by-country
 https://cto.teamstation.dev/hire/by-country/argentina

@@ -25,6 +25,7 @@ export const NAV: NavSections = {
     { href: '/playbook/build-vs-buy', label: 'Build vs. Buy', description: 'The trade-offs of building a nearshore operation from scratch.' },
     { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring', description: 'How to use Axiom Cortex™ for fairer, more accurate hiring.' },
     { href: '/playbook/tco-model', label: 'TCO Model', description: 'A CFO-ready model for the Total Cost of Ownership.' },
+    { href: '/faq', label: 'FAQ for CTOs', description: 'Get answers to key questions on security, TCO, and vetting.' },
   ],
   "What's Included": [
     { href: '/platform', label: 'Platform', description: 'The Nearshore IT Co-Pilot™ Platform.' },
