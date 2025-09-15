@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Tooltip } from '@/components/Tooltip';
-import { Clock, Users2, FileSearch, Briefcase, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, CheckCircle, BarChart, BookOpen, Layers, GitCompare, UserCheck, DollarSign, Building } from 'lucide-react';
+import { Clock, Users, FileSearch, Building, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, BookOpen, BrainCircuit, GitCompare } from 'lucide-react';
 import { ComparisonWidget } from '@/components/ComparisonWidget';
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ const options = [
     },
     {
         title: "Onshore (US)",
-        icon: <Users2 className="h-8 w-8 text-primary" />,
+        icon: <Users className="h-8 w-8 text-primary" />,
         pain: "Fully-loaded cost and scarce supply.",
         implication: "Great overlap; brutal budget pressure.",
         useWhen: "High-stakes discovery, exec adjacency, regulated data.",
@@ -55,16 +55,19 @@ const options = [
 
 const microPSPs = [
     {
+        icon: <Users className="h-8 w-8 text-primary" />,
         problem: "Five invoices, zero ownership.",
         solution: "One governed stack (hiring → devices/MDM → access → EOR → SLAs).",
         proof: "Forecast vs actual variance drops under 10%; fewer reopenings."
     },
     {
+        icon: <BrainCircuit className="h-8 w-8 text-primary" />,
         problem: "“Senior” on the slide, junior in the repo.",
         solution: "Axiom Cortex™ cognitive evidence + structured rubrics.",
         proof: "Mismatch rate ≤10%; rewrite ADRs trend down."
     },
     {
+        icon: <ShieldCheck className="h-8 w-8 text-primary" />,
         problem: "Audit freeze and unmanaged laptops.",
         solution: "SSO/SAML/SCIM + MDM devices + revocation on demand.",
         proof: "Zero criticals in quarterly scans; questionnaires stop blocking deals."
@@ -93,23 +96,23 @@ export default async function NearshoreVsOffshorePage() {
                 <div key={option.title} className={`rounded-lg border p-4 flex flex-col shadow-lg ${index === 4 ? 'bg-primary/10 border-primary' : 'bg-card'}`}>
                     <div className="flex items-start gap-3">
                         {option.icon}
-                        <h3 className={`font-bold ${index === 4 ? 'text-primary' : 'text-foreground'}`}>{option.title}</h3>
+                        <h3 className={`font-bold text-lg ${index === 4 ? 'text-primary' : 'text-foreground'}`}>{option.title}</h3>
                     </div>
                     <div className="space-y-4 mt-4 flex-grow text-sm">
-                        {option.pain && <div><p><strong className="text-destructive block">Pain:</strong> <span className="text-muted-foreground">{option.pain}</span></p></div>}
-                        {option.implication && <div><p><strong className="text-foreground block">Implication:</strong> <span className="text-muted-foreground">{option.implication.replace('TTO', '').replace('EOR', '')}
+                        {option.pain && <div className="border-t border-border pt-2"><p><strong className="text-destructive block">Pain:</strong> <span className="text-muted-foreground">{option.pain}</span></p></div>}
+                        {option.implication && <div className="border-t border-border pt-2"><p><strong className="text-foreground block">Implication:</strong> <span className="text-muted-foreground">{option.implication.replace('TTO', '').replace('EOR', '')}
                          {option.implication.includes("TTO") && <Tooltip text="Time to Offer">TTO</Tooltip>}
                          {option.implication.includes("EOR") && <Tooltip text="Employer of Record">EOR</Tooltip>}
                         </span></p></div>}
-                        {option.useWhen && <div><p><strong className="text-foreground block">Use when:</strong> <span className="text-muted-foreground">{option.useWhen}</span></p></div>}
+                        {option.useWhen && <div className="border-t border-border pt-2"><p><strong className="text-foreground block">Use when:</strong> <span className="text-muted-foreground">{option.useWhen}</span></p></div>}
 
-                        {option.painRemoved && <div><p><strong className="text-green-400 block">Pain removed:</strong> <span className="text-muted-foreground">{option.painRemoved}</span></p></div>}
-                        {option.mechanism && <div><p><strong className="text-foreground block">Mechanism:</strong> <span className="text-muted-foreground">{option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
+                        {option.painRemoved && <div className="border-t border-border pt-2"><p><strong className="text-green-400 block">Pain removed:</strong> <span className="text-muted-foreground">{option.painRemoved}</span></p></div>}
+                        {option.mechanism && <div className="border-t border-border pt-2"><p><strong className="text-foreground block">Mechanism:</strong> <span className="text-muted-foreground">{option.mechanism.replace('Axiom Cortex™', '').replace('MDM', '').replace('TCO', '')}
                             <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>
                             &nbsp;cognitive vetting,&nbsp;
                             <Tooltip text="Mobile Device Management">MDM</Tooltip>-secured devices, SSO/SAML/SCIM, single SLA.
                         </span></p></div>}
-                        {option.outcome && <div><p><strong className="text-foreground block">Outcome:</strong> <span className="text-muted-foreground">{option.outcome.replace('TCO', '')}
+                        {option.outcome && <div className="border-t border-border pt-2"><p><strong className="text-foreground block">Outcome:</strong> <span className="text-muted-foreground">{option.outcome.replace('TCO', '')}
                              <Link href="/playbook/latam-economics" className="text-primary hover:underline"><Tooltip text="Total Cost of Ownership">TCO</Tooltip></Link>
                              , faster time-to-useful PR.
                         </span></p></div>}
@@ -129,7 +132,8 @@ export default async function NearshoreVsOffshorePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {microPSPs.map((psp) => (
                 <div key={psp.problem} className="rounded-lg border bg-card p-6 flex flex-col text-center shadow-lg">
-                    <p className="font-semibold text-destructive">Problem: {psp.problem}</p>
+                    {psp.icon}
+                    <p className="font-semibold text-destructive mt-4">Problem: {psp.problem}</p>
                     <p className="mt-2 text-sm text-foreground flex-grow"><strong className="text-primary">Solution:</strong> {psp.solution.replace('Axiom Cortex™', '').replace('MDM', '').replace('EOR', '')}
                         {psp.solution.includes('Axiom Cortex') && <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline"><Tooltip text="Our proprietary Cognitive AI engine for talent evaluation.">Axiom Cortex™</Tooltip></Link>}
                         {psp.solution.includes('MDM') && <Tooltip text="Mobile Device Management">MDM</Tooltip>}
@@ -155,7 +159,3 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
-
-    
-
-    
