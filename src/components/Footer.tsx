@@ -3,54 +3,16 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
-
-type LinkItem = {
-  href: string;
-  label: string;
-  icon?: ReactNode;
-  isExternal?: boolean;
-};
-
-type FooterLinks = {
-  "Playbook": LinkItem[];
-  "What's Included": LinkItem[];
-  "Comparisons": LinkItem[];
-  "Company": LinkItem[];
-};
+import { NAV, type NavItem } from '@/config/nav';
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
-  const links: FooterLinks = {
-    "Playbook": [
-      { href: '/playbook/hub', label: 'Playbook Hub' },
-      { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs. Offshore' },
-      { href: '/playbook/latam-economics', label: 'LATAM Economics' },
-      { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
-      { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring' },
-      { href: '/playbook/tco-model', label: 'TCO Model' },
-    ],
-    "What's Included": [
-      { href: '/platform', label: 'Platform' },
-      { href: '/process', label: 'Our Process' },
-      { href: '/technical-interview-evaluation', label: 'Talent Evaluations' },
-      { href: '/research/performance-evaluation-framework', label: 'Performance Framework' },
-      { href: '/services/integrated-services', label: 'Integrated Services' },
-      { href: '/services/talent-onboarding', label: 'Talent Onboarding' },
-    ],
-    "Comparisons": [
-      { href: '/comparisons', label: 'All Comparisons' },
-      { href: '/comparisons/bairesdev', label: 'vs. BairesDev' },
-      { href: '/comparisons/globant', label: 'vs. Globant' },
-      { href: '/comparisons/toptal', label: 'vs. Toptal' },
-    ],
-    "Company": [
-      { href: '/about', label: 'About Us' },
-      { href: '/research/hub', label: 'Research' },
-      { href: '/trust', label: 'Trust Center' },
-      { href: '/hire', label: 'Hire Talent' },
-      { href: '/research/hub#podcast', label: 'Podcast', icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1" /> },
-    ]
+  const links = {
+    "Playbook": NAV.Playbook,
+    "What's Included": NAV["What's Included"],
+    "Comparisons": NAV.Comparisons,
+    "Company": NAV.Company,
   };
 
   return (
@@ -68,10 +30,12 @@ export default function Footer() {
               <ul className="mt-4 space-y-3">
                 {linkItems.map((link, i) => (
                   <li key={i} className="text-sm">
-                    <Link href={link.href} className="transition-colors hover:text-foreground flex items-center" target={link.isExternal ? '_blank' : '_self'} rel={link.isExternal ? 'noopener noreferrer' : ''}>
+                    <Link href={link.href} className="transition-colors hover:text-foreground flex items-center" target={link.href.startsWith('http') ? '_blank' : '_self'} rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}>
                       <span>{link.label}</span>
                       {link.icon ? (
-                        <span aria-hidden="true" className="ml-1">{link.icon}</span>
+                        <span aria-hidden="true" className="ml-1">
+                          <link.icon className="h-4 w-4 inline-block" />
+                        </span>
                       ) : null}
                     </Link>
                   </li>

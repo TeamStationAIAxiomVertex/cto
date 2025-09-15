@@ -1,8 +1,2 @@
-"use client"
-import * as React from "react"
-import { ThemeProvider as NextThemesProvider } from "next-themes"
-import { type ThemeProviderProps } from "next-themes/dist/types"
-
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
-}
+// This component is no longer needed as the logic has been moved to src/components/providers.tsx
+// This file can be deleted.

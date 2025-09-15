@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BookOpen, CheckCircle, BarChart, GitCompare, ShieldCheck, Zap, Users, Briefcase, ArrowRight, AlertTriangle } from 'lucide-react';
-import { Tooltip } from '@/components/Tooltip';
+import { InfoDropdown } from '@/components/Accordion';
 
 export const metadata: Metadata = {
     title: 'Software Engineer Performance & Growth Framework | TeamStation AI',
@@ -114,13 +114,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                                     <h4 className="font-bold text-foreground text-base">{p.title}</h4>
                                     <p className="text-xs text-muted-foreground mt-1">
                                         {p.description.includes("BARS") ? 
-                                          <>
-                                            {p.description.split('BARS')[0]}
-                                            <Tooltip text="Behaviorally Anchored Rating Scale: A method that ties ratings to specific, observable behaviors to reduce subjectivity.">
-                                                BARS
-                                            </Tooltip>
-                                            {p.description.split('BARS')[1]}
-                                          </> 
+                                          <>{p.description.split('BARS')[0]}<InfoDropdown title={<span class="border-b border-dashed">BARS</span>}>Behaviorally Anchored Rating Scale: A method that ties ratings to specific, observable behaviors to reduce subjectivity.</InfoDropdown>{p.description.split('BARS')[1]}</> 
                                           : p.description
                                         }
                                     </p>

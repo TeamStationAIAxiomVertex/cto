@@ -56,8 +56,8 @@ const corePillars = [
         pain: "Drowning in vendor management?",
         title: "Eliminate Vendor Chaos with One SLA",
         description: "Stop juggling 5+ vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
-        href: "/services/integrated-services",
-        linkLabel: "See Our Integrated Services",
+        href: "/platform",
+        linkLabel: "Explore The Platform",
         kpi: "1 contract, 1 invoice"
     },
     {
@@ -181,7 +181,7 @@ export default async function HomePage() {
                           </p>
                       </div>
                       <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
-                      <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
+                      <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary" target={pillar.href.startsWith('http') ? '_blank' : '_self'} rel={pillar.href.startsWith('http') ? 'noopener noreferrer' : ''}>
                           {pillar.linkLabel} <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                   </div>
@@ -222,7 +222,7 @@ export default async function HomePage() {
                   </div>
                   <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
                       <h4 className="font-semibold text-primary text-sm">Solution (Next-Gen)</h4>
-                      <p className="text-sm text-foreground m-0">{card.solution.replace('Axiom Cortex™', 'Axiom Cortex™').replace('MDM', 'MDM').replace('EOR', 'EOR')}
+                      <p className="text-sm text-foreground m-0">{card.solution}
                       </p>
                   </div>
                   <div className="mt-4 pt-4 border-t border-border/50">

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import { AppProviders } from '@/components/providers';
 import './globals.css';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 
@@ -86,13 +86,13 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.variable} font-sans bg-background text-foreground`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <AppProviders>
           <Header />
           <main className="pt-16">
             {children}
           </main>
           <Footer />
-        </ThemeProvider>
+        </AppProviders>
       </body>
     </html>
   );

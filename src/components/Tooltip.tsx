@@ -1,4 +1,5 @@
-
+// This component is deprecated and will be removed. 
+// It is replaced by the new tooltip at src/components/ui/tooltip.tsx
 import React, { type ReactNode } from 'react';
 
 type TooltipProps = {
@@ -6,7 +7,6 @@ type TooltipProps = {
   text: string;
 };
 
-// This component is deprecated and will be removed. Use InfoDropdown from @/components/Accordion instead.
 export function Tooltip({ children, text }: TooltipProps) {
   return (
     <span className="relative inline-block cursor-pointer border-b border-dashed border-primary">
@@ -15,5 +15,3 @@ export function Tooltip({ children, text }: TooltipProps) {
     </span>
   );
 };
-
-    

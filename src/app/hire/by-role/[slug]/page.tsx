@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { Tooltip } from '@/components/Tooltip';
+import { InfoDropdown } from '@/components/Accordion';
 import type { Metadata } from 'next';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 
@@ -318,10 +318,10 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
                 <div className="flex flex-wrap gap-2 mt-2">
                     {skills.map(skill => (
                          <span key={skill} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-                            {skill.includes('IaC') ? <Tooltip text="Infrastructure as Code: Managing infrastructure through code instead of manual processes.">IaC</Tooltip> : 
-                             skill.includes('SLO/SLI') ? <Tooltip text="Service Level Objectives/Indicators: A framework for defining and measuring reliability.">SLO/SLI/error budgets</Tooltip> :
-                             skill.includes('ELT') ? <Tooltip text="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation.">ELT</Tooltip> :
-                             skill.includes('retrieval') ? <Tooltip text="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database.">retrieval design</Tooltip> :
+                            {skill.includes('IaC') ? <InfoDropdown title={<span class="border-b border-dashed">IaC</span>}>Infrastructure as Code: Managing infrastructure through code instead of manual processes.</InfoDropdown> : 
+                             skill.includes('SLO/SLI') ? <InfoDropdown title={<span class="border-b border-dashed">SLO/SLI/error budgets</span>}>Service Level Objectives/Indicators: A framework for defining and measuring reliability.</InfoDropdown> :
+                             skill.includes('ELT') ? <InfoDropdown title={<span class="border-b border-dashed">ELT</span>}>Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation.</InfoDropdown> :
+                             skill.includes('retrieval') ? <InfoDropdown title={<span class="border-b border-dashed">retrieval design</span>}>In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database.</InfoDropdown> :
                              skill}
                          </span>
                     ))}

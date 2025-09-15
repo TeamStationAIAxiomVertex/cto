@@ -4,40 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { DisclosureDrawer } from './DisclosureDrawer';
-
-const navItems = {
-  'CTO Playbook': [
-    { href: '/playbook/hub', title: 'The CTO Playbook' },
-    { href: '/playbook/nearshore-vs-offshore', title: 'Nearshore vs. Offshore' },
-    { href: '/playbook/latam-economics', title: 'LATAM Economics' },
-    { href: '/playbook/build-vs-buy', title: 'Build vs. Buy' },
-    { href: '/playbook/bias-free-technical-hiring-axiom-cortex', title: 'Bias-Free Hiring' },
-    { href: '/playbook/tco-model', title: 'TCO Model' },
-  ],
-  'What\'s Included': [
-    { href: '/platform', title: 'Our Platform' },
-    { href: '/process', title: 'Our Process' },
-    { href: '/technical-interview-evaluation', title: 'Talent Evaluations' },
-    { href: '/research/performance-evaluation-framework', title: 'Performance Framework' },
-    { href: '/services/talent-onboarding', title: 'Talent Onboarding' },
-    { href: '/services/integrated-services', title: 'Integrated Services' },
-    { href: '/trust', title: 'Trust Center' },
-  ],
-  'Comparisons': [
-      { href: '/comparisons', title: 'All Comparisons' },
-      { href: '/comparisons/bairesdev', title: 'vs. BairesDev' },
-      { href: '/comparisons/globant', title: 'vs. Globant' },
-      { href: '/comparisons/toptal', title: 'vs. Toptal' },
-  ],
-};
-
-const simpleNavItems = [
-    { href: '/case-studies', title: 'Case Studies' },
-    { href: '/pricing', title: 'Pricing' },
-    { href: '/hire', title: 'Hire' },
-    { href: '/research/hub', title: 'Research'},
-    { href: '/about', title: 'About' },
-];
+import { NAV, simpleNavItems } from '@/config/nav';
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,17 +25,17 @@ export function MobileNav() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col space-y-2">
-                {Object.entries(navItems).map(([title, items]) => (
+                {Object.entries(NAV).map(([title, items]) => (
                   <DisclosureDrawer
                     key={title}
                     title={title}
-                    items={items.map(({ href, title }) => ({ href, title }))}
+                    items={items.map(({ href, label }) => ({ href, title: label }))}
                     onLinkClick={handleLinkClick}
                   />
                 ))}
                 {simpleNavItems.map(item => (
                     <Link key={item.href} href={item.href} className="block py-2 text-lg font-semibold text-foreground hover:text-primary" onClick={handleLinkClick} target={item.href.startsWith('http') ? '_blank' : '_self'} rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}>
-                        {item.title}
+                        {item.label}
                     </Link>
                 ))}
                 <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="block py-2 text-lg font-semibold text-foreground hover:text-primary" onClick={handleLinkClick}>

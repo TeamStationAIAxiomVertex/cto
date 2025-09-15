@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { Tooltip } from '@/components/Tooltip';
+import { InfoDropdown } from '@/components/Accordion';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -19,13 +19,13 @@ const comparisonPoints = {
     "Cost": {
         pain: "Is a premium hourly rate sustainable for your budget?",
         traditional: "Toptal's premium positioning comes with high hourly rates ($60-$150+) plus subscription fees. This is expensive for building full-time capacity.",
-        teamstation: "Our <a href='/pricing' class='text-primary hover:underline'>all-inclusive pricing</a> provides a predictable, CFO-ready <a href='/playbook/latam-economics' class='text-primary hover:underline'><Tooltip text='Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.'>TCO</Tooltip></a> that is significantly lower and more sustainable for building full-time teams.",
+        teamstation: "Our <a href='/pricing' class='text-primary hover:underline'>all-inclusive pricing</a> provides a predictable, CFO-ready <a href='/playbook/latam-economics' class='text-primary hover:underline'><InfoDropdown title={<span class='border-b border-dashed'>TCO</span>}>Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.</InfoDropdown></a> that is significantly lower and more sustainable for building full-time teams.",
         proof: "40-60% Lower TCO"
     },
     "Operations": {
         pain: "Are you prepared to manage compliance and security for freelancers?",
         traditional: "The freelance model leaves all operational burdens—compliance, security, device management—on you. This creates risk and administrative overhead.",
-        teamstation: "Our integrated platform is a complete operational wrapper. We handle <Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip>, <Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip>-secured devices, and insurance, so you can focus on your product.",
+        teamstation: "Our integrated platform is a complete operational wrapper. We handle <InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</InfoDropdown>, <InfoDropdown title={<span class='border-b border-dashed'>MDM</span>}>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</InfoDropdown>-secured devices, and insurance, so you can focus on your product.",
         proof: "SOC 2 & ISO Aligned"
     }
 }

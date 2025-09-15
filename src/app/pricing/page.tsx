@@ -41,17 +41,17 @@ const levels = [
 ];
 
 const includedItems = [
-    { title: 'LATAM Employer of Record (EOR)', href: "https://teamstation.dev/nearshore-integrated-services" },
-    { title: 'AI-Powered Vetting & Onboarding', href: "https://teamstation.dev/nearshore-it-staff-augmentation-process" },
+    { title: 'LATAM Employer of Record (EOR)', href: "/services/integrated-services" },
+    { title: 'AI-Powered Vetting & Onboarding', href: "/process" },
     { title: 'Secure Devices & MDM', href: "/trust" },
     { title: 'Cybersecurity & E&O Insurance', href: "/trust" },
     { title: 'LATAM Office Network Access', href: "/hire/by-country" },
-    { title: 'Performance & Documentation Platform', href: "https://teamstation.dev/talent-performance-evaluations" },
+    { title: 'Performance & Documentation Platform', href: "/research/performance-evaluation-framework" },
     { title: 'Compliance & IP Protection', href: "/trust" },
-    { title: 'Rapid Scaling & Backfill', href: "https://teamstation.dev/nearshore-it-staff-augmentation-process" },
-    { title: 'Advanced Talent Retention', href: "https://teamstation.dev/nearshore-it-staff-augmentation-process" },
+    { title: 'Rapid Scaling & Backfill', href: "/process" },
+    { title: 'Advanced Talent Retention', href: "/process" },
     { title: 'Dedicated Account Manager', href: "/about" },
-    { title: 'Unified Billing Support', href: "https://teamstation.dev/nearshore-it-staff-augmentation-pricing" },
+    { title: 'Unified Billing Support', href: "/pricing" },
 ];
 
 const pricingFactors = [
@@ -123,7 +123,7 @@ export default function PricingPage() {
               <p><span className="font-semibold text-foreground">${(level.rate * 173 * 12).toLocaleString()}</span>/yr</p>
             </div>
              <p className="text-xs text-center text-muted-foreground mt-2">± ${level.margin} USD</p>
-             <Link href="https://teamstation.dev/latam-talent" target="_blank" rel="noopener noreferrer" className="cta-button w-full mt-6">
+             <Link href="/hire" className="cta-button w-full mt-6">
                 Find Talent
              </Link>
           </div>
@@ -141,7 +141,7 @@ export default function PricingPage() {
                 <span>=</span>
                 <span className="font-bold text-primary">$98,630</span>
             </div>
-            <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in <Link href="https://teamstation.dev/nearshore-it-staff-augmentation-process" target="_blank" rel="noopener noreferrer" className='text-primary hover:underline'>≈9 days</Link> vs. the industry average of 45.</p>
+            <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in <Link href="/process" className='text-primary hover:underline'>≈9 days</Link> vs. the industry average of 45.</p>
          </div>
       </div>
 

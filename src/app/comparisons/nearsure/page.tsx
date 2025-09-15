@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { Tooltip } from '@/components/Tooltip';
+import { InfoDropdown } from '@/components/Accordion';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 const comparisonPoints = {
     "Operations": {
         pain: "Are you prepared to manage compliance, IT, and security?",
-        traditional: "Nearsure is a recruiting partner. They find talent, but the client is left to manage compliant hiring (<Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip>), payroll, secure devices, and insurance.",
-        teamstation: "We provide the complete, managed operating system. Our platform includes EOR, <Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip>-secured devices, and insurance under a single, predictable SLA.",
+        traditional: "Nearsure is a recruiting partner. They find talent, but the client is left to manage compliant hiring (<InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</InfoDropdown>), payroll, secure devices, and insurance.",
+        teamstation: "We provide the complete, managed operating system. Our platform includes EOR, <InfoDropdown title={<span class='border-b border-dashed'>MDM</span>}>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</InfoDropdown>-secured devices, and insurance under a single, predictable SLA.",
         proof: "1 accountable SLA"
     },
     "Cost": {
         pain: "Is a low hourly rate hiding your true Total Cost of Ownership (TCO)?",
-        traditional: "The quoted rate from traditional vendors excludes the significant 'hidden costs' of EOR, IT, legal, and management overhead, which can inflate your <a href='/playbook/latam-economics' class='text-primary hover:underline'><Tooltip text='Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.'>TCO</Tooltip></a>.",
+        traditional: "The quoted rate from traditional vendors excludes the significant 'hidden costs' of EOR, IT, legal, and management overhead, which can inflate your <a href='/playbook/latam-economics' class='text-primary hover:underline'><InfoDropdown title={<span class='border-b border-dashed'>TCO</span>}>Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.</InfoDropdown></a>.",
         teamstation: "Our <a href='/pricing' class='text-primary hover:underline'>all-inclusive pricing</a> is transparent and predictable. It bundles all operational costs, leading to a lower, CFO-ready TCO.",
         proof: "40-60% Lower TCO"
     },
@@ -80,7 +80,7 @@ export default function NearsureComparisonPage() {
             <a href="https://nearsure.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Nearsure <ExternalLink className="h-4 w-4" /></a> operates on a classic staff augmentation model. They are experts at sourcing and placing nearshore talent, and their AI recruiter has improved their hiring time. However, their model leaves significant operational, legal, and security burdens on the client.
         </p>
         <p>
-           Issues like compliant hiring (<Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip>), payroll, secure device management, and insurance are outside their scope. TeamStation AI was created to solve this exact problem. We provide an integrated platform that handles not only sourcing (powered by our{' '}
+           Issues like compliant hiring (<InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</InfoDropdown>), payroll, secure device management, and insurance are outside their scope. TeamStation AI was created to solve this exact problem. We provide an integrated platform that handles not only sourcing (powered by our{' '}
             <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>
             ) but also the entire operational infrastructure, all under a single, predictable SLA.
         </p>
