@@ -170,17 +170,23 @@ export function ComparisonWidget() {
                 </select>
             </div>
              <div className="flex items-center gap-2">
-                <label htmlFor="onshore-overhead" className="font-medium text-muted-foreground">Onshore Overhead:</label>
+                <WithTooltip label="Estimated management and administrative overhead for onshore vendors.">
+                    <label htmlFor="onshore-overhead" className="font-medium text-muted-foreground border-b border-dashed">Onshore Overhead:</label>
+                </WithTooltip>
                 <input type="number" id="onshore-overhead" value={onshoreOverhead * 100} onChange={e => setOnshoreOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
                 <span className='text-muted-foreground'>%</span>
             </div>
              <div className="flex items-center gap-2">
-                <label htmlFor="offshore-overhead" className="font-medium text-muted-foreground">Offshore Overhead:</label>
+                 <WithTooltip label="Estimated management, communication, and rework overhead for offshore vendors.">
+                    <label htmlFor="offshore-overhead" className="font-medium text-muted-foreground border-b border-dashed">Offshore Overhead:</label>
+                 </WithTooltip>
                 <input type="number" id="offshore-overhead" value={offshoreOverhead * 100} onChange={e => setOffshoreOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
                 <span className='text-muted-foreground'>%</span>
             </div>
              <div className="flex items-center gap-2">
-                <label htmlFor="legacy-overhead" className="font-medium text-muted-foreground">Legacy Nearshore Overhead:</label>
+                <WithTooltip label="Estimated management and administrative overhead for legacy nearshore vendors.">
+                    <label htmlFor="legacy-overhead" className="font-medium text-muted-foreground border-b border-dashed">Legacy Nearshore Overhead:</label>
+                </WithTooltip>
                 <input type="number" id="legacy-overhead" value={nearshoreLegacyOverhead * 100} onChange={e => setNearshoreLegacyOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
                  <span className='text-muted-foreground'>%</span>
             </div>

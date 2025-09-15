@@ -1,3 +1,4 @@
+
 import type { ReactNode } from 'react';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
 
@@ -14,7 +15,6 @@ export type NavSections = {
   Playbook: NavItem[];
   "What's Included": NavItem[];
   Comparisons: NavItem[];
-  Company: NavItem[];
 };
 
 export const NAV: NavSections = {
@@ -40,12 +40,6 @@ export const NAV: NavSections = {
       { href: '/comparisons/bairesdev', label: 'vs. BairesDev', description: 'The Co-Pilot vs. The "Top 1%" Vendor.' },
       { href: '/comparisons/globant', label: 'vs. Globant', description: 'The Co-Pilot vs. The Systems Integrator.' },
       { href: '/comparisons/toptal', label: 'vs. Toptal', description: 'Integrated Teams vs. Elite Freelancers.' },
-  ],
-  Company: [
-    { href: '/about', label: 'About Us' },
-    { href: '/research/hub', label: 'Research' },
-    { href: '/hire', label: 'Hire Talent' },
-    { href: '/research/hub#podcast', label: 'Podcast', icon: SpotifyIcon },
   ],
 };
 
