@@ -1,6 +1,8 @@
 
 'use client';
 import { useState, useEffect } from 'react';
+import { Tooltip } from '@/components/Tooltip';
+
 
 export function ComparisonWidget() {
     const [basisHours, setBasisHours] = useState(173);
@@ -118,36 +120,36 @@ export function ComparisonWidget() {
     ];
 
     const rows = [
-        { label: "Fully-loaded seat cost (monthly)", data: data.seatCost },
-        { label: "Effective hourly", data: data.effectiveHourly },
-        { label: "Time-zone overlap (hrs/day)", data: ["8+", "8+", "0-2", "4-8", "4-8"] },
-        { label: "PR review median (hrs)", data: ["2", "2", "4", "2", "1"] },
-        { label: "PR latency cost vs 1h (monthly)", data: data.prLatencyCost },
+        { label: "Fully-loaded seat cost (monthly)", data: data.seatCost, description: "The total monthly cost per engineer, including salary, benefits, taxes, and all vendor overhead." },
+        { label: "Effective hourly", data: data.effectiveHourly, description: "The fully-loaded monthly cost divided by the basis hours, representing the true hourly rate." },
+        { label: "Time-zone overlap (hrs/day)", data: ["8+", "8+", "0-2", "4-8", "4-8"], description: "The number of daily working hours that overlap with a standard US time zone (e.g., PST/EST)." },
+        { label: "PR review median (hrs)", data: ["2", "2", "4", "2", "1"], description: "The median time a developer's Pull Request waits for a code review. Higher latency directly delays feature delivery." },
+        { label: "PR latency cost vs 1h (monthly)", data: data.prLatencyCost, description: "The monthly cost of developer time wasted waiting for code reviews, calculated against a 1-hour ideal." },
         { label: "Time-to-offer (days)", data: [
             inputs.ops.ttoDays.buildIn, 
             inputs.ops.ttoDays.onshore, 
             inputs.ops.ttoDays.offshoreLegacy, 
             inputs.ops.ttoDays.nearshoreLegacy, 
             inputs.ops.ttoDays.nearshoreCoPilot
-        ] },
-        { label: "Vacancy cost vs Co-Pilot (one role)", data: data.vacancyCost },
+        ], description: "The number of days from opening a role to a signed offer. Shorter times reduce the 'Vacancy Tax'." },
+        { label: "Vacancy cost vs Co-Pilot (one role)", data: data.vacancyCost, description: "The opportunity cost (lost revenue/value) incurred by a role remaining empty, calculated against the Co-Pilot's faster hiring time." },
         { label: "Change failure rate (CFR)", data: [
             `${(inputs.ops.cfr.buildIn * 100).toFixed(0)}%`,
             `${(inputs.ops.cfr.onshore * 100).toFixed(0)}%`,
             `${(inputs.ops.cfr.offshoreLegacy * 100).toFixed(0)}%`,
             `${(inputs.ops.cfr.nearshoreLegacy * 100).toFixed(0)}%`,
             `${(inputs.ops.cfr.nearshoreCoPilot * 100).toFixed(0)}%`
-        ] },
-        { label: "$ loss vs Co-Pilot from CFR (monthly)", data: data.cfrLoss },
+        ], description: "The percentage of deployments that cause a failure in production (a core DORA metric)." },
+        { label: "$ loss vs Co-Pilot from CFR (monthly)", data: data.cfrLoss, description: "The monthly financial impact of failed changes, based on the cost of each incident, compared to the Co-Pilot's lower CFR." },
         { label: "Attrition (annual)", data: [
             `${(inputs.ops.attrition.buildIn * 100).toFixed(0)}%`,
             `${(inputs.ops.attrition.onshore * 100).toFixed(0)}%`,
             `${(inputs.ops.attrition.offshoreLegacy * 100).toFixed(0)}%`,
             `${(inputs.ops.attrition.nearshoreLegacy * 100).toFixed(0)}%`,
             `${(inputs.ops.attrition.nearshoreCoPilot * 100).toFixed(0)}%`
-        ] },
-        { label: "Mgmt overhead (annual)", data: data.mgmtOverhead },
-        { label: "Compliance readiness (audit hours saved / $)", data: data.complianceSavings },
+        ], description: "The annual percentage of engineers who leave, creating high replacement and knowledge transfer costs." },
+        { label: "Mgmt overhead (annual)", data: data.mgmtOverhead, description: "The cost of engineering/product management time spent on vendor coordination, rework, and other non-value-add activities." },
+        { label: "Compliance readiness (audit hours saved / $)", data: data.complianceSavings, description: "The value of engineering/security time saved by having an audit-ready, compliant posture from day one, avoiding questionnaire fire-drills." },
     ];
 
 
@@ -200,7 +202,11 @@ export function ComparisonWidget() {
                 <tbody className='divide-y divide-border'>
                     {rows.map((row, rowIndex) => (
                         <tr key={rowIndex} className="hover:bg-background/50">
-                            <th scope="row" className="p-3 font-medium text-muted-foreground sticky left-0 bg-card w-[200px] z-10">{row.label}</th>
+                            <th scope="row" className="p-3 font-medium text-muted-foreground sticky left-0 bg-card w-[200px] z-10">
+                                <Tooltip text={row.description}>
+                                  {row.label}
+                                </Tooltip>
+                            </th>
                             {row.data.map((cell, cellIndex) => (
                                 <td key={cellIndex} className={`p-3 text-center font-mono ${cellIndex === 4 ? 'text-primary font-bold' : 'text-foreground'}`}>
                                     {cell}
