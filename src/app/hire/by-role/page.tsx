@@ -145,27 +145,31 @@ export default function HireByRolePage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {roleCategories.map((details) => (
-          <Link href={`/hire/by-role/${details.slug}`} key={details.slug} className="group relative flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
+          <div key={details.slug} className="group relative flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
               <p className="text-sm font-semibold text-primary">{details.pain}</p>
               <div className='flex justify-between items-start mt-3'>
                 <div className="flex items-center gap-3">
                     {details.icon}
                     <h2 className="text-xl font-bold text-foreground">{details.name}</h2>
                 </div>
-                <InfoDropdown title={<span className={`rounded-full px-3 py-1 text-xs font-medium ${getPriorityColor(details.priority)}`}>{details.priority}</span>}><p className="text-sm text-muted-foreground">{details.priorityTooltip}</p></InfoDropdown>
+                <div className="relative z-20">
+                    <InfoDropdown title={<span className={`rounded-full px-3 py-1 text-xs font-medium ${getPriorityColor(details.priority)}`}>{details.priority}</span>}>
+                      <p className="text-sm text-muted-foreground">{details.priorityTooltip}</p>
+                    </InfoDropdown>
+                </div>
               </div>
               <p className="mt-4 text-sm text-muted-foreground flex-grow">
                 {details.description}
               </p>
               <div className="mt-6 space-y-4">
-                <div className="flex items-center text-sm font-semibold text-primary">
-                    Explore Roles & Evaluation <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </div>
+                  <Link href={`/hire/by-role/${details.slug}`} className="z-10 relative flex items-center text-sm font-semibold text-primary stretched-link">
+                      Explore Roles & Evaluation <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 <Link href={details.proof.href} className="z-10 relative flex items-center text-xs font-semibold text-muted-foreground hover:text-primary">
                     {details.proof.label} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
-          </Link>
+          </div>
         ))}
       </div>
       

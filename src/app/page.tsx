@@ -170,9 +170,16 @@ export default async function HomePage() {
                           {pillar.icon}
                           <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
                       </div>
-                      <p className="mt-4 text-sm text-muted-foreground flex-grow">
-                        {pillar.description}
-                      </p>
+                      <div className="mt-4 text-sm text-muted-foreground flex-grow">
+                          <p className="m-0">
+                              {pillar.description.replace('Axiom Cortex™', '')}
+                              {pillar.title.includes("Cognitive AI") && 
+                                <InfoDropdown title={<span className="text-primary border-b border-dashed">Axiom Cortex™</span>}>
+                                    <p className="text-sm text-muted-foreground">Our proprietary Cognitive AI engine for talent evaluation.</p>
+                                </InfoDropdown>
+                              }
+                          </p>
+                      </div>
                       <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
                       <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
                           {pillar.linkLabel} <ArrowRight className="ml-2 h-4 w-4" />
@@ -215,8 +222,7 @@ export default async function HomePage() {
                   </div>
                   <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
                       <h4 className="font-semibold text-primary text-sm">Solution (Next-Gen)</h4>
-                      <p className="text-sm text-foreground m-0">
-                        {card.solution}
+                      <p className="text-sm text-foreground m-0">{card.solution.replace('Axiom Cortex™', 'Axiom Cortex™').replace('MDM', 'MDM').replace('EOR', 'EOR')}
                       </p>
                   </div>
                   <div className="mt-4 pt-4 border-t border-border/50">
