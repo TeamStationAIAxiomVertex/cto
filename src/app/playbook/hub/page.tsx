@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, BarChart, DollarSign, Globe, Scale, ShieldCheck } from 'lucide-react';
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: 'The CTO Playbook for Nearshore Engineering | TeamStation AI',
@@ -8,7 +9,16 @@ export const metadata: Metadata = {
     'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.',
 };
 
-const playbookEntries = [
+type Entry = {
+  href: string;
+  icon: ReactNode;
+  title: string;
+  pain: string;
+  solution: string;
+  proof: string;
+};
+
+const playbookEntries: Entry[] = [
   {
     href: '/playbook/nearshore-vs-offshore',
     icon: <Globe className="h-8 w-8 text-primary" />,
