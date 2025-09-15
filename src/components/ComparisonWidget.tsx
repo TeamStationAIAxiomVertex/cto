@@ -1,6 +1,6 @@
 
 'use client';
-import { useState, useEffect, type ReactNode } from 'react';
+import { useState, useMemo, type ReactNode } from 'react';
 import { WithTooltip } from '@/components/ui/tooltip';
 
 const inputs = {
@@ -57,81 +57,75 @@ export function ComparisonWidget() {
     const [offshoreOverhead, setOffshoreOverhead] = useState(0.25);
     const [nearshoreLegacyOverhead, setNearshoreLegacyOverhead] = useState(0.10);
     const [onshoreOverhead, setOnshoreOverhead] = useState(0.20);
-    const [data, setData] = useState<Results | null>(null);
 
-    useEffect(() => {
-        function calculate() {
-            const f = (n?: number) => typeof n === 'number' ? n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }) : '$0';
-            const fRange = (low?: number, high?: number) => `${f(low)} – ${f(high)}`;
+    const data = useMemo<Results>(() => {
+        const f = (n?: number) => typeof n === 'number' ? n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }) : '$0';
+        const fRange = (low?: number, high?: number) => `${f(low)} – ${f(high)}`;
 
-            const buildInMonthly = ((inputs.buildIn.salaryAnnual * (1 + inputs.buildIn.burdenPct)) / 12);
-            const onshoreMonthlyLow = (inputs.onshore.hourlyLow * basisHours * (1 + onshoreOverhead));
-            const onshoreMonthlyHigh = (inputs.onshore.hourlyHigh * basisHours * (1 + onshoreOverhead));
-            const offshoreLegacyMonthlyLow = (inputs.offshoreLegacy.hourlyLow * basisHours * (1 + offshoreOverhead));
-            const offshoreLegacyMonthlyHigh = (inputs.offshoreLegacy.hourlyHigh * basisHours * (1 + offshoreOverhead));
-            const nearshoreLegacyMonthlyLow = (inputs.nearshoreLegacy.hourlyLow * basisHours * (1 + nearshoreLegacyOverhead));
-            const nearshoreLegacyMonthlyHigh = (inputs.nearshoreLegacy.hourlyHigh * basisHours * (1 + nearshoreLegacyOverhead));
-            const nearshoreCoPilotMonthlyLow = (inputs.nearshoreCoPilot.hourlyMin * basisHours);
-            const nearshoreCoPilotMonthlyHigh = (inputs.nearshoreCoPilot.hourlyCap * basisHours);
+        const buildInMonthly = ((inputs.buildIn.salaryAnnual * (1 + inputs.buildIn.burdenPct)) / 12);
+        const onshoreMonthlyLow = (inputs.onshore.hourlyLow * basisHours * (1 + onshoreOverhead));
+        const onshoreMonthlyHigh = (inputs.onshore.hourlyHigh * basisHours * (1 + onshoreOverhead));
+        const offshoreLegacyMonthlyLow = (inputs.offshoreLegacy.hourlyLow * basisHours * (1 + offshoreOverhead));
+        const offshoreLegacyMonthlyHigh = (inputs.offshoreLegacy.hourlyHigh * basisHours * (1 + offshoreOverhead));
+        const nearshoreLegacyMonthlyLow = (inputs.nearshoreLegacy.hourlyLow * basisHours * (1 + nearshoreLegacyOverhead));
+        const nearshoreLegacyMonthlyHigh = (inputs.nearshoreLegacy.hourlyHigh * basisHours * (1 + nearshoreLegacyOverhead));
+        const nearshoreCoPilotMonthlyLow = (inputs.nearshoreCoPilot.hourlyMin * basisHours);
+        const nearshoreCoPilotMonthlyHigh = (inputs.nearshoreCoPilot.hourlyCap * basisHours);
 
-            const results: Results = {
-                seatCost: [
-                    f(buildInMonthly),
-                    fRange(onshoreMonthlyLow, onshoreMonthlyHigh),
-                    fRange(offshoreLegacyMonthlyLow, offshoreLegacyMonthlyHigh),
-                    fRange(nearshoreLegacyMonthlyLow, nearshoreLegacyMonthlyHigh),
-                    fRange(nearshoreCoPilotMonthlyLow, nearshoreCoPilotMonthlyHigh),
-                ],
-                effectiveHourly: [
-                    f(buildInMonthly / basisHours),
-                    fRange(onshoreMonthlyLow / basisHours, onshoreMonthlyHigh / basisHours),
-                    fRange(offshoreLegacyMonthlyLow / basisHours, offshoreLegacyMonthlyHigh / basisHours),
-                    fRange(nearshoreLegacyMonthlyLow / basisHours, nearshoreLegacyMonthlyHigh / basisHours),
-                    fRange(nearshoreCoPilotMonthlyLow / basisHours, nearshoreCoPilotMonthlyHigh / basisHours),
-                ],
-                prLatencyCost: [
-                    f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.buildIn - 1.0) * inputs.ops.devHourBlended),
-                    f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.onshore - 1.0) * inputs.ops.devHourBlended),
-                    f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.offshoreLegacy - 1.0) * inputs.ops.devHourBlended),
-                    f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.nearshoreLegacy - 1.0) * inputs.ops.devHourBlended),
-                    f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.nearshoreCoPilot - 1.0) * inputs.ops.devHourBlended),
-                ],
-                vacancyCost: [
-                    f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.buildIn - inputs.ops.ttoDays.nearshoreCoPilot)),
-                    f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.onshore - inputs.ops.ttoDays.nearshoreCoPilot)),
-                    f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.offshoreLegacy - inputs.ops.ttoDays.nearshoreCoPilot)),
-                    f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.nearshoreLegacy - inputs.ops.ttoDays.nearshoreCoPilot)),
-                    f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.nearshoreCoPilot - inputs.ops.ttoDays.nearshoreCoPilot)),
-                ],
-                cfrLoss: [
-                    f(inputs.ops.deploysPerMonth * (inputs.ops.cfr.buildIn - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD),
-                    f(inputs.ops.deploysPerMonth * (inputs.ops.cfr.onshore - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD),
-                    f(inputs.ops.deploysPerMonth * (inputs.ops.cfr.offshoreLegacy - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD),
-                    f(inputs.ops.deploysPerMonth * (inputs.ops.cfr.nearshoreLegacy - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD),
-                    f(inputs.ops.deploysPerMonth * (inputs.ops.cfr.nearshoreCoPilot - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD),
-                ],
-                mgmtOverhead: [
-                    f(12 * (inputs.ops.mgmtHoursMonth.buildIn.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.buildIn.PM * inputs.ops.mgmtRatesUSD.PM)),
-                    f(12 * (inputs.ops.mgmtHoursMonth.onshore.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.onshore.PM * inputs.ops.mgmtRatesUSD.PM)),
-                    f(12 * (inputs.ops.mgmtHoursMonth.offshoreLegacy.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.offshoreLegacy.PM * inputs.ops.mgmtRatesUSD.PM)),
-                    f(12 * (inputs.ops.mgmtHoursMonth.nearshoreLegacy.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.nearshoreLegacy.PM * inputs.ops.mgmtRatesUSD.PM)),
-                    f(12 * (inputs.ops.mgmtHoursMonth.nearshoreCoPilot.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.nearshoreCoPilot.PM * inputs.ops.mgmtRatesUSD.PM)),
-                ],
-                complianceSavings: [
-                    f(inputs.ops.auditHoursSavedPerYear.buildIn * inputs.ops.complianceHourRateUSD),
-                    f(inputs.ops.auditHoursSavedPerYear.onshore * inputs.ops.complianceHourRateUSD),
-                    f(inputs.ops.auditHoursSavedPerYear.offshoreLegacy * inputs.ops.complianceHourRateUSD),
-                    f(inputs.ops.auditHoursSavedPerYear.nearshoreLegacy * inputs.ops.complianceHourRateUSD),
-                    f(inputs.ops.auditHoursSavedPerYear.nearshoreCoPilot * inputs.ops.complianceHourRateUSD),
-                ]
-            };
-            setData(results);
-        }
-        calculate();
+        const results: Results = {
+            seatCost: [
+                f(buildInMonthly),
+                fRange(onshoreMonthlyLow, onshoreMonthlyHigh),
+                fRange(offshoreLegacyMonthlyLow, offshoreLegacyMonthlyHigh),
+                fRange(nearshoreLegacyMonthlyLow, nearshoreLegacyMonthlyHigh),
+                fRange(nearshoreCoPilotMonthlyLow, nearshoreCoPilotMonthlyHigh),
+            ],
+            effectiveHourly: [
+                f(buildInMonthly / basisHours),
+                fRange(onshoreMonthlyLow / basisHours, onshoreMonthlyHigh / basisHours),
+                fRange(offshoreLegacyMonthlyLow / basisHours, offshoreLegacyMonthlyHigh / basisHours),
+                fRange(nearshoreLegacyMonthlyLow / basisHours, nearshoreLegacyMonthlyHigh / basisHours),
+                fRange(nearshoreCoPilotMonthlyLow / basisHours, nearshoreCoPilotMonthlyHigh / basisHours),
+            ],
+            prLatencyCost: [
+                f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.buildIn - 1.0) * inputs.ops.devHourBlended),
+                f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.onshore - 1.0) * inputs.ops.devHourBlended),
+                f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.offshoreLegacy - 1.0) * inputs.ops.devHourBlended),
+                f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.nearshoreLegacy - 1.0) * inputs.ops.devHourBlended),
+                f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.nearshoreCoPilot - 1.0) * inputs.ops.devHourBlended),
+            ],
+            vacancyCost: [
+                f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.buildIn - inputs.ops.ttoDays.nearshoreCoPilot)),
+                f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.onshore - inputs.ops.ttoDays.nearshoreCoPilot)),
+                f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.offshoreLegacy - inputs.ops.ttoDays.nearshoreCoPilot)),
+                f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.nearshoreLegacy - inputs.ops.ttoDays.nearshoreCoPilot)),
+                f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.nearshoreCoPilot - inputs.ops.ttoDays.nearshoreCoPilot)),
+            ],
+            cfrLoss: [
+                f(inputs.ops.deploysPerMonth * (inputs.ops.cfr.buildIn - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD),
+                f(inputs.ops.deploysPerMonth * (inputs.ops.cfr.onshore - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD),
+                f(inputs.ops.deploysPerMonth * (inputs.ops.cfr.offshoreLegacy - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD),
+                f(inputs.ops.deploysPerMonth * (inputs.ops.cfr.nearshoreLegacy - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD),
+                f(inputs.ops.deploysPerMonth * (inputs.ops.cfr.nearshoreCoPilot - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD),
+            ],
+            mgmtOverhead: [
+                f(12 * (inputs.ops.mgmtHoursMonth.buildIn.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.buildIn.PM * inputs.ops.mgmtRatesUSD.PM)),
+                f(12 * (inputs.ops.mgmtHoursMonth.onshore.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.onshore.PM * inputs.ops.mgmtRatesUSD.PM)),
+                f(12 * (inputs.ops.mgmtHoursMonth.offshoreLegacy.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.offshoreLegacy.PM * inputs.ops.mgmtRatesUSD.PM)),
+                f(12 * (inputs.ops.mgmtHoursMonth.nearshoreLegacy.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.nearshoreLegacy.PM * inputs.ops.mgmtRatesUSD.PM)),
+                f(12 * (inputs.ops.mgmtHoursMonth.nearshoreCoPilot.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.nearshoreCoPilot.PM * inputs.ops.mgmtRatesUSD.PM)),
+            ],
+            complianceSavings: [
+                f(inputs.ops.auditHoursSavedPerYear.buildIn * inputs.ops.complianceHourRateUSD),
+                f(inputs.ops.auditHoursSavedPerYear.onshore * inputs.ops.complianceHourRateUSD),
+                f(inputs.ops.auditHoursSavedPerYear.offshoreLegacy * inputs.ops.complianceHourRateUSD),
+                f(inputs.ops.auditHoursSavedPerYear.nearshoreLegacy * inputs.ops.complianceHourRateUSD),
+                f(inputs.ops.auditHoursSavedPerYear.nearshoreCoPilot * inputs.ops.complianceHourRateUSD),
+            ]
+        };
+        return results;
     }, [basisHours, offshoreOverhead, nearshoreLegacyOverhead, onshoreOverhead]);
-
-    if (!data) return <div className="text-center p-8">Loading Comparison Widget...</div>;
-
+    
     const columns = [
         "Build-In (In-House)", "Onshore (US)", "Offshore (Legacy)", "Nearshore (Legacy)", "Nearshore IT Co-Pilot (New Gen)"
     ];
@@ -189,21 +183,21 @@ export function ComparisonWidget() {
                 <WithTooltip label="Estimated management and administrative overhead for onshore vendors.">
                     <label htmlFor="onshore-overhead" className="font-medium text-muted-foreground border-b border-dashed">Onshore Overhead:</label>
                 </WithTooltip>
-                <input type="number" id="onshore-overhead" value={onshoreOverhead * 100} onChange={e => setOnshoreOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
+                <input type="number" id="onshore-overhead" min={0} max={100} step={1} value={onshoreOverhead * 100} onChange={e => setOnshoreOverhead(Math.min(100, Math.max(0, Number(e.target.value))) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
                 <span className='text-muted-foreground'>%</span>
             </div>
              <div className="flex items-center gap-2">
                  <WithTooltip label="Estimated management, communication, and rework overhead for offshore vendors.">
                     <label htmlFor="offshore-overhead" className="font-medium text-muted-foreground border-b border-dashed">Offshore Overhead:</label>
                  </WithTooltip>
-                <input type="number" id="offshore-overhead" value={offshoreOverhead * 100} onChange={e => setOffshoreOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
+                <input type="number" id="offshore-overhead" min={0} max={100} step={1} value={offshoreOverhead * 100} onChange={e => setOffshoreOverhead(Math.min(100, Math.max(0, Number(e.target.value))) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
                 <span className='text-muted-foreground'>%</span>
             </div>
              <div className="flex items-center gap-2">
                 <WithTooltip label="Estimated management and administrative overhead for legacy nearshore vendors.">
                     <label htmlFor="legacy-overhead" className="font-medium text-muted-foreground border-b border-dashed">Legacy Nearshore Overhead:</label>
                 </WithTooltip>
-                <input type="number" id="legacy-overhead" value={nearshoreLegacyOverhead * 100} onChange={e => setNearshoreLegacyOverhead(Number(e.target.value) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
+                <input type="number" id="legacy-overhead" min={0} max={100} step={1} value={nearshoreLegacyOverhead * 100} onChange={e => setNearshoreLegacyOverhead(Math.min(100, Math.max(0, Number(e.target.value))) / 100)} className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary" />
                  <span className='text-muted-foreground'>%</span>
             </div>
         </div>
@@ -214,10 +208,10 @@ export function ComparisonWidget() {
                 <thead>
                     <tr>
                         <th scope="col" className="p-3 border-b-2 border-border font-semibold text-foreground sticky left-0 bg-card w-[200px] z-10">Metric</th>
-                        {columns.map((col, i) => (
-                            <th key={i} scope="col" className={`p-3 border-b-2 border-border font-semibold text-center ${i === 4 ? 'text-primary' : 'text-foreground'}`}>
+                        {columns.map((col) => (
+                            <th key={col} scope="col" className={`p-3 border-b-2 border-border font-semibold text-center ${col.includes('Co-Pilot') ? 'text-primary' : 'text-foreground'}`}>
                                 {col}
-                                {i === 4 && <div className="text-xs font-normal bg-primary/10 text-primary rounded-full px-2 py-0.5 mt-1 inline-block">Includes EOR • Devices/MDM • SSO/SAML/SCIM • Compliance</div>}
+                                {col.includes('Co-Pilot') && <div className="text-xs font-normal bg-primary/10 text-primary rounded-full px-2 py-0.5 mt-1 inline-block">Includes EOR • Devices/MDM • SSO/SAML/SCIM • Compliance</div>}
                             </th>
                         ))}
                     </tr>
@@ -245,5 +239,7 @@ export function ComparisonWidget() {
 }
 
   
+
+    
 
     
