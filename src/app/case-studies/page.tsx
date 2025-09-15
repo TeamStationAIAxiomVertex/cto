@@ -15,7 +15,7 @@ export default async function CaseStudiesPage() {
   return (
     <main className="container py-12">
       <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover.text-foreground">Home</Link> / <span>Case Studies</span>
+        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Case Studies</span>
       </div>
       <header className="text-center my-12">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Evidence of Impact</h1>
@@ -55,7 +55,7 @@ export default async function CaseStudiesPage() {
                   </div>
                   {study.outcomes && (
                     <div>
-                       <h4 className="font-semibold text-sm flex items-center gap-2 text-primary">
+                       <h4 className="font-semibold text-sm flex items-center gap-2 text-green-500">
                         <CheckCircle className="h-4 w-4" />
                         Proof
                       </h4>

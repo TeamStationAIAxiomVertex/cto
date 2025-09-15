@@ -2,7 +2,7 @@
 import { getCaseStudyBySlug, getAllCaseStudies } from '@/lib/case-studies';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowRight, Briefcase, Award, CheckCircle } from 'lucide-react';
+import { ArrowRight, Briefcase, Award, CheckCircle, AlertTriangle, Shield } from 'lucide-react';
 import { markdownToHtml } from '@/lib/markdown-parser';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -164,33 +164,27 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                           <p><strong>Industry:</strong> {study.industry}</p>
                       </div>
                   </div>
-                  <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
-                      <h3 className="text-xl font-bold flex items-center gap-3"><Award className="h-6 w-6 text-primary" />Key Summary</h3>
-                      <p className="mt-4 text-sm text-muted-foreground">{study.summary}</p>
-                  </div>
                   
                   {study.challenge && (
                       <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
-                          <h3 className="text-xl font-bold flex items-center gap-3">The Challenge</h3>
+                          <h3 className="text-xl font-bold flex items-center gap-3 text-destructive"><AlertTriangle className="h-6 w-6" />The Challenge</h3>
                           <p className="mt-4 text-sm text-muted-foreground">{study.challenge}</p>
                       </div>
                   )}
                   
-                  {study.why && (
-                      <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
-                          <h3 className="text-xl font-bold flex items-center gap-3">Why TeamStation AI</h3>
-                          <p className="mt-4 text-sm text-muted-foreground">{study.why}</p>
-                      </div>
-                  )}
+                  <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
+                      <h3 className="text-xl font-bold flex items-center gap-3 text-primary"><Shield className="h-6 w-6" />The Solution</h3>
+                      <p className="mt-4 text-sm text-foreground">{study.summary}</p>
+                  </div>
 
                   {study.outcomes && (
                       <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
-                          <h3 className="text-xl font-bold flex items-center gap-3">Outcomes</h3>
+                          <h3 className="text-xl font-bold flex items-center gap-3 text-green-500"><CheckCircle className="h-6 w-6" />The Proof (Outcomes)</h3>
                           <div className="mt-4 space-y-2 text-sm text-muted-foreground">
                               {study.outcomes.split('\n').map((item, index) => (
                                   item.trim() && (
                                       <div key={index} className="flex items-start gap-2">
-                                          <CheckCircle className="h-4 w-4 mt-1 shrink-0 text-primary"/>
+                                          <CheckCircle className="h-4 w-4 mt-1 shrink-0 text-green-500"/>
                                           <span>{item.replace(/^-/, '').trim()}</span>
                                       </div>
                                   )
