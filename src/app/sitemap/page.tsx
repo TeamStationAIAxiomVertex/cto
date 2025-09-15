@@ -1,132 +1,59 @@
 
+import fs from 'node:fs/promises';
 import Link from 'next/link';
-import { getAllCaseStudies } from '@/lib/case-studies';
-import { getAllPlaybookSlugs } from '@/lib/playbook';
-import { countries } from '@/lib/countries';
-import { roleCategories } from '@/lib/roles';
-import { techCategories } from '@/lib/tech';
 import type { Metadata } from 'next';
+
+export const dynamic = 'force-static';
+const SITE = 'https://cto.teamstation.dev';
 
 export const metadata: Metadata = {
   title: 'Sitemap | TeamStation AI',
   description: 'A complete sitemap of the TeamStation AI CTO Playbook, including all playbooks, services, comparisons, and hiring options.',
 };
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-    return (
-        <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">{title}</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {children}
-            </div>
-        </section>
-    );
+function toPath(url: string): string | null {
+  const u = new URL(url, SITE);
+  if (u.origin !== SITE) return null;
+  let path = u.pathname || '/';
+  if (path !== '/' && path.endsWith('/')) path = path.slice(0, -1);
+  if (path === '/sitemap.xml') return null;
+  return path;
 }
 
-function PageLink({ href, title }: { href: string; title: string }) {
-    return (
-        <Link href={href} className="text-muted-foreground hover:text-foreground hover:underline text-sm break-words">
-            {title}
-        </Link>
-    );
-}
+export default async function HtmlSitemap() {
+  const raw = await fs.readFile(
+    `${process.cwd()}/src/data/sitemap-urls.txt`,
+    'utf8'
+  ).catch(() => '');
+  const paths = Array.from(
+    new Set(
+      raw
+        .split(/\r?\n/)
+        .map((l) => l.trim())
+        .filter(Boolean)
+        .map((l) => toPath(l))
+        .filter(Boolean) as string[]
+    )
+  ).sort((a, b) => a.localeCompare(b));
 
-
-export default async function SitemapPage() {
-    const caseStudies = await getAllCaseStudies();
-    const playbookSlugs = await getAllPlaybookSlugs();
-    
-    const researchPages = [
-        { href: '/research/axiom-cortex-scientific-report', title: 'AxiomCortex Scientific Report' },
-        { href: '/research/performance-evaluation-framework', title: 'Performance Evaluation Framework' },
-        { href: '/research/performance-evaluation-report-example', title: 'Performance Evaluation Report Example' },
-        { href: '/technical-interview-evaluation', title: 'Technical Interview Evaluation' },
-    ];
-
-    const staticPages = [
-      '/',
-      '/about',
-      '/case-studies',
-      '/comparisons',
-      '/comparisons/andela',
-      '/comparisons/bairesdev',
-      '/comparisons/deel',
-      '/comparisons/globant',
-      '/comparisons/nearsure',
-      '/comparisons/new-gen-nearshore',
-      '/comparisons/parallelstaff',
-      '/comparisons/revelo',
-      '/comparisons/tecla',
-      '/comparisons/terminal',
-      '/comparisons/toptal',
-      '/comparisons/unosquare',
-      '/hire',
-      '/hire/by-country',
-      '/hire/by-role',
-      '/hire/by-team-topologies',
-      '/hire/by-technology',
-      '/platform',
-      '/playbook/hub',
-      '/pricing',
-      '/process',
-      '/research/hub',
-      '/services/integrated-services',
-      '/services/talent-onboarding',
-      '/trust',
-      '/sitemap',
-    ];
-
-    const hireByRolePages = roleCategories.map(r => ({ href: `/hire/by-role/${r.slug}`, title: r.name }));
-    const hireByCountryPages = countries.map(c => ({ href: `/hire/by-country/${c.slug}`, title: c.name }));
-    const hireByTechPages = techCategories.flatMap(cat => cat.tech).map(t => ({ href: `/hire/by-technology/${t.slug}`, title: t.name }));
-    const playbookPages = playbookSlugs.map(slug => ({ href: `/playbook/${slug}`, title: slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}));
-
-    return (
-        <main className="container max-w-7xl py-12">
-            <div className="text-sm text-muted-foreground mb-8">
-                <Link href="/" className="hover:text-foreground">Home</Link> / <span>Sitemap</span>
-            </div>
-            <header className="text-center my-12">
-                <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Sitemap</h1>
-                <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-                    A complete overview of the TeamStation AI CTO Playbook and all available resources.
-                </p>
-            </header>
-
-            <Section title="Main Pages">
-                {staticPages.map(page => <PageLink key={page} href={page} title={page === '/' ? 'Home' : page.substring(1).replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} />)}
-            </Section>
-
-            <Section title="CTO Playbook">
-                {playbookPages.map(page => (
-                    <PageLink key={page.href} href={page.href} title={page.title} />
-                ))}
-            </Section>
-
-             <Section title="Case Studies">
-                {caseStudies.map(study => (
-                    <PageLink key={study.slug} href={`/case-studies/${study.slug}`} title={study.clientName} />
-                ))}
-            </Section>
-
-             <Section title="Research & Evaluations">
-                {researchPages.map(page => (
-                    <PageLink key={page.href} href={page.href} title={page.title} />
-                ))}
-            </Section>
-
-            <Section title="Hire by Role">
-                {hireByRolePages.map(page => <PageLink key={page.href} href={page.href} title={page.title} />)}
-            </Section>
-
-            <Section title="Hire by Country">
-                {hireByCountryPages.map(page => <PageLink key={page.href} href={page.href} title={page.title} />)}
-            </Section>
-
-            <Section title="Hire by Technology">
-                {hireByTechPages.sort((a, b) => a.title.localeCompare(b.title)).map(page => <PageLink key={page.href} href={page.href} title={page.title} />)}
-            </Section>
-            
-        </main>
-    );
+  return (
+    <main className="container max-w-4xl py-12">
+       <div className="text-sm text-muted-foreground mb-8">
+            <Link href="/" className="hover:text-foreground">Home</Link> / <span>Sitemap</span>
+        </div>
+      <h1 className="text-3xl font-bold mb-6">HTML Sitemap</h1>
+      <p className="text-muted-foreground mb-4">
+        {paths.length} URLs
+      </p>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+        {paths.map((p) => (
+          <li key={p}>
+            <Link className="text-primary hover:underline break-words" href={p || '/'}>
+              {p || '/ (Home)'}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
 }

@@ -1,121 +1,57 @@
 
-import { MetadataRoute } from 'next';
-import { getAllCaseStudies } from '@/lib/case-studies';
-import { getAllPlaybookSlugs } from '@/lib/playbook';
-import { roleCategories } from '@/lib/roles';
-import { countries } from '@/lib/countries';
-import { techCategories } from '@/lib/tech';
+import type { MetadataRoute } from 'next';
+import fs from 'node:fs/promises';
 
-const siteUrl = 'https://cto.teamstation.dev';
+export const dynamic = 'force-static'; // static at build
+const SITE = 'https://cto.teamstation.dev';
+
+function normalize(raw: string): string | null {
+  const t = raw.trim();
+  if (!t) return null;
+
+  // Ensure absolute using SITE as base.
+  const u = new URL(t, SITE);
+
+  // Keep only our domain.
+  if (u.origin !== SITE) return null;
+
+  // Drop query/hash; normalize trailing slash (except root).
+  let path = u.pathname || '/';
+  if (path !== '/' && path.endsWith('/')) path = path.slice(0, -1);
+
+  // Exclude the XML sitemap itself.
+  if (path === '/sitemap.xml') return null;
+
+  return `${SITE}${path}`;
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Main & Top-Level Pages (29 URLs)
-  const staticPages = [
-    '/',
-    '/about',
-    '/case-studies',
-    '/comparisons',
-    '/comparisons/andela',
-    '/comparisons/bairesdev',
-    '/comparisons/deel',
-    '/comparisons/globant',
-    '/comparisons/nearsure',
-    '/comparisons/new-gen-nearshore',
-    '/comparisons/parallelstaff',
-    '/comparisons/revelo',
-    '/comparisons/tecla',
-    '/comparisons/terminal',
-    '/comparisons/toptal',
-    '/comparisons/unosquare',
-    '/hire',
-    '/hire/by-country',
-    '/hire/by-role',
-    '/hire/by-team-topologies',
-    '/hire/by-technology',
-    '/platform',
-    '/playbook/hub',
-    '/pricing',
-    '/process',
-    '/research/hub',
-    '/services/integrated-services',
-    '/services/talent-onboarding',
-    '/trust',
-  ].map(route => ({
-    url: `${siteUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: route === '/' ? 1.0 : 0.8,
-  }));
+  // 1) Read canonical list (one per line).
+  const raw = await fs.readFile(
+    `${process.cwd()}/src/data/sitemap-urls.txt`,
+    'utf8'
+  ).catch(() => '');
 
-  // Case Studies (6 URLs)
-  const caseStudies = await getAllCaseStudies();
-  const caseStudyPages = caseStudies.map(study => ({
-    url: `${siteUrl}/case-studies/${study.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
-
-  // Playbook & Research Pages (9 URLs)
-  const playbookSlugs = await getAllPlaybookSlugs();
-  const playbookPages = playbookSlugs.map(slug => ({
-      url: `${siteUrl}/playbook/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-  }));
-  
-  const researchPages = [
-    '/research/axiom-cortex-scientific-report',
-    '/research/performance-evaluation-framework',
-    '/research/performance-evaluation-report-example',
-    '/technical-interview-evaluation'
-  ].map(route => ({
-      url: `${siteUrl}${route}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8
-  }));
-
-  // Hire by Role (11 URLs)
-  const rolePages = roleCategories.map(role => ({
-    url: `${siteUrl}/hire/by-role/${role.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
-
-  // Hire by Country (10 URLs)
-  const countryPages = countries.map(country => ({
-    url: `${siteUrl}/hire/by-country/${country.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
-
-  // Hire by Technology (103 URLs)
-  const techPages = techCategories.flatMap(category => category.tech).map(tech => ({
-    url: `${siteUrl}/hire/by-technology/${tech.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.6,
-  }));
-
-  const sitemapPage = {
-    url: `${siteUrl}/sitemap`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.5,
+  // 2) Normalize + de-dupe.
+  const set = new Set<string>();
+  for (const line of raw.split(/\r?\n/)) {
+    const n = normalize(line);
+    if (n) set.add(n);
   }
 
-  return [
-    ...staticPages,
-    ...caseStudyPages,
-    ...playbookPages,
-    ...researchPages,
-    ...rolePages,
-    ...countryPages,
-    ...techPages,
-    sitemapPage
-  ];
+  // 3) Sort for stable output.
+  const urls = Array.from(set).sort((a, b) => a.localeCompare(b));
+
+  // Helpful: count in build logs
+  console.log(`[sitemap] Emitting ${urls.length} URLs`);
+
+  const now = new Date();
+
+  // 4) Emit MetadataRoute.Sitemap entries.
+  return urls.map((url) => ({
+    url,
+    lastModified: now,
+    changeFrequency: 'weekly',
+    priority: url === SITE ? 1 : 0.7,
+  }));
 }
