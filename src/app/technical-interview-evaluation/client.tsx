@@ -3,16 +3,24 @@
 
 import React, { type ReactNode } from 'react';
 import { Accordion, AccordionItem } from '@/components/Accordion';
-import { ShieldCheck, BrainCircuit, ArrowRight, HelpCircle, FileText, UserCheck, Scale, Zap } from 'lucide-react';
+import { BrainCircuit, ArrowRight, HelpCircle, UserCheck, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
+
+const safeToString = (v: unknown) =>
+  typeof v === 'string'
+    ? v
+    : typeof v === 'number' || typeof v === 'boolean'
+    ? String(v)
+    : '';
 
 const renderTextWithTooltip = (
   raw: React.ReactNode,
   term: string,
   tooltipText: string
 ): React.ReactNode => {
-  const text = typeof raw === 'string' ? raw : '';
+  if (!term) return raw;
+  const text = safeToString(raw);
   if (!text || !text.includes(term)) return raw;
 
   const parts = text.split(term);
@@ -29,13 +37,14 @@ const renderTextWithTooltip = (
 };
 
 const renderWithMany = (
-  text: string,
+  raw: React.ReactNode,
   items: Array<{ term: string; tooltip: string }>
 ): React.ReactNode =>
   items.reduce<React.ReactNode>(
     (acc, it) => renderTextWithTooltip(acc, it.term, it.tooltip),
-    text
+    raw
   );
+
 
 const cognitiveData = [
     { name: 'Architectural Instinct', pain: "Can they design for scale, or just for today?", candidate: 4.3, ideal: 4.5, rationale: "Erick's architectural instinct is strong. He correctly navigates monolith vs. microservices trade-offs (Q1), proposes a 'contract-first' API strategy (Q2), and, most impressively, demonstrated a powerful architectural mind by inventing the 'micro prompts' analogy (Q4). This shows he can apply architectural principles to novel domains like AI, even without knowing the specific terminology. His score reflects this high-level reasoning, moderated slightly by the need for some prompting on specific resiliency patterns." },
@@ -612,7 +621,3 @@ export default function TalentEvaluationClient() {
     </main>
   );
 }
-
-    
-
-    
