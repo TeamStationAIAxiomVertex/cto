@@ -15,10 +15,10 @@ const safeToString = (v: unknown) =>
     : '';
 
 const renderTextWithTooltip = (
-  raw: React.ReactNode,
+  raw: ReactNode,
   term: string,
   tooltipText: string
-): React.ReactNode => {
+): ReactNode => {
   // Seatbelt: empty term would match everything and split into characters.
   if (!term) return raw;
   const text = safeToString(raw);
@@ -36,16 +36,31 @@ const renderTextWithTooltip = (
   ));
 };
 
+const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
 const renderWithMany = (
-  raw: React.ReactNode,
+  raw: ReactNode,
   items: Array<{ term: string; tooltip: string }>
-): React.ReactNode =>
-  items
-    .filter((it) => typeof it.term === 'string' && it.term.length > 0)
-    .reduce<React.ReactNode>(
-      (acc, it) => renderTextWithTooltip(acc, it.term, it.tooltip),
-      raw
+): ReactNode => {
+  const text = typeof raw === 'string' ? raw : '';
+  const active = items.filter(i => i.term && text.includes(i.term));
+  if (!text || active.length === 0) return raw;
+
+  const byTerm = new Map(active.map(i => [i.term, i.tooltip]));
+  const pattern = new RegExp(`(${active.map(i => escapeRegExp(i.term)).join('|')})`, 'g');
+  const parts = text.split(pattern);
+
+  return parts.map((part, idx) => {
+    const tip = byTerm.get(part);
+    return tip ? (
+      <WithTooltip key={`hl-${idx}`} label={tip}>
+        <span className="text-primary border-b border-dashed">{part}</span>
+      </WithTooltip>
+    ) : (
+      <React.Fragment key={`txt-${idx}`}>{part}</React.Fragment>
     );
+  });
+};
 
 
 const cognitiveData = [
@@ -474,7 +489,7 @@ export default function TalentEvaluationClient() {
                             <h3 className="text-lg font-semibold text-foreground">{trait.name}</h3>
                         </div>
                         <div className="mt-4 text-sm text-muted-foreground flex-grow">
-                           {renderWithMany(trait.rationale, [{term: 'PSA', tooltip: 'Problem-Solving Agility'}, {term: 'LO', tooltip: 'Learning Orientation'}])}
+                           {renderWithMany(trait.rationale, [{term: 'PSA', tooltip: 'Problem-Solving Agility'}, {term: 'LO', tooltip: 'Learning Orientation'}, {term: 'MCI', tooltip: 'Metacognitive Conviction Index'}])}
                         </div>
 
                         <div className="mt-4 border-t border-border pt-4">
@@ -546,8 +561,8 @@ export default function TalentEvaluationClient() {
         <div className='my-12 rounded-lg border bg-card p-6 shadow-lg'>
             <h2 className="text-2xl font-bold text-foreground">Risk Factors & Mitigation Plan</h2>
              <div className="mt-4 space-y-4">
-                {risks.map((risk, index) => (
-                     <div key={index} className="rounded-lg border bg-background p-4">
+                {risks.map((risk) => (
+                     <div key={risk.title} className="rounded-lg border bg-background p-4">
                         <p className="text-sm font-semibold text-destructive">The Pain: {risk.title}</p>
                         <p className="mt-3 text-sm text-muted-foreground">
                             {renderWithMany(risk.description, [{term: 'IaC', tooltip: 'Infrastructure as Code'}])}
@@ -565,7 +580,7 @@ export default function TalentEvaluationClient() {
         </div>
 
         <div className='my-12'>
-            <h2 id="evidence-locker" className="text-3xl font-bold text-center text-foreground">Evidence Locker</h2>
+            <h2 id="evidence-locker" className="text-3xl font-bold text-center text-foreground scroll-mt-20">Evidence Locker</h2>
             <p className='text-muted-foreground mt-2 text-center'>
                 This is the raw data—the proof behind our analysis. A human expert interviews the candidate, and our Cognitive AI synthesizes the conversation, comparing responses against ideal answer blueprints to provide an objective score.
             </p>
