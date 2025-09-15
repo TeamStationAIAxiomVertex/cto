@@ -1,59 +1,40 @@
 
 {
-  "hosting": [
-    {
-      "site": "teamstation-ai-cto-hub",
-      "public": "out",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "headers": [
-        {
-          "source": "**/*.html",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "public, max-age=60, must-revalidate"
-            }
-          ]
-        },
-        {
-          "source": "/sitemap.xml",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "public, max-age=300, must-revalidate"
-            }
-          ]
-        },
-        {
-          "source": "**/*.{js,css,ico,png,jpg,jpeg,gif,svg,webp,woff,woff2}",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "public, max-age=31536000, immutable"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "site": "failsafe",
-      "public": "failsafe",
-      "ignore": ["**/.*", "**/node_modules/**"],
-      "headers": [
-        {
-          "source": "**/*.html",
-          "headers": [
-            {
-              "key": "Content-Security-Policy",
-              "value": "default-src 'self'; script-src 'self' https:; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'none'; form-action 'self';"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  "hosting": {
+    "public": "out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "headers": [
+      {
+        "source": "**/*.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=60, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "/sitemap.xml",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=300, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "**/*.{js,css,ico,png,jpg,jpeg,gif,svg,webp,woff,woff2}",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ]
+  }
 }
