@@ -34,7 +34,12 @@ export type CaseStudy = {
 function extractSection(content: string, heading: string): string {
     const regex = new RegExp(`## ${heading}[\\s\\S]*?((?:\\n(?:- |\\* |\\d+\\.)[\\s\\S]*?)*)(?=\\n##|$)`, 'i');
     const match = content.match(regex);
-    return match ? match[1].trim() : '';
+    if (match && match[1]) return match[1].trim();
+
+    // Fallback for sections that are just a single paragraph without lists
+    const paraRegex = new RegExp(`## ${heading}\\n\\n([\\s\\S]+?)(?=\\n\\n##|$)`, 'i');
+    const paraMatch = content.match(paraRegex);
+    return paraMatch ? paraMatch[1].trim() : '';
 }
 
 export async function getAllCaseStudies(): Promise<CaseStudy[]> {
@@ -46,9 +51,6 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
         const fileContents = await fs.readFile(filePath, 'utf8');
         const { data, content } = matter(fileContents);
 
-        // Remove frontmatter from content before parsing sections
-        const mainContent = content;
-        
         const slug = data.slug as keyof typeof placeholderImages.caseStudies;
         const imageInfo = placeholderImages.caseStudies[slug] || { 
             src: { url: 'https://picsum.photos/seed/default/600/400', width: 600, height: 400 },
@@ -62,10 +64,10 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
           clientName: data.clientName,
           industry: data.industry,
           summary: data.summary,
-          content: mainContent, // Pass the full content to be rendered as HTML
-          challenge: extractSection(mainContent, 'The Challenge'),
-          why: extractSection(mainContent, 'Why TeamStation AI'),
-          outcomes: extractSection(mainContent, 'Outcomes') || extractSection(mainContent, 'Results'),
+          content: content, 
+          challenge: extractSection(content, 'The Challenge'),
+          why: extractSection(content, 'Why TeamStation AI'),
+          outcomes: extractSection(content, 'Outcomes') || extractSection(content, 'Results'),
           ogImage: imageInfo,
           techStack: data.techStack || [],
           canonical: data.canonical,
