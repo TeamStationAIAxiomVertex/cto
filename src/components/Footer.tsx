@@ -4,14 +4,17 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
+import { roleCategories } from '@/lib/roles';
+import { techCategories } from '@/lib/tech';
+import { countries } from '@/lib/countries';
 
 type LinkItem = {
   href: string;
-  label: string;
+  label: string | ReactNode;
   icon?: ReactNode;
 };
 
-const playbookLinks = [
+const playbookLinks: LinkItem[] = [
   { href: '/playbook/hub', label: 'Playbook Hub' },
   { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs. Offshore' },
   { href: '/playbook/latam-economics', label: 'LATAM Economics' },
@@ -20,51 +23,68 @@ const playbookLinks = [
   { href: '/playbook/tco-model', label: 'TCO Model' },
 ];
 
-const hireLinks = [
-    { href: '/hire/by-role', label: 'By Role' },
-    { href: '/hire/by-technology', label: 'By Technology' },
-    { href: '/hire/by-country', label: 'By Country' },
-    { href: '/hire/by-team-topologies', label: 'By Team Topologies' }
-];
-
-const companyLinks = [
+const companyLinks: LinkItem[] = [
     { href: '/about', label: 'About Us' },
     { href: '/research/hub', label: 'Research Hub' },
     { href: '/trust', label: 'Trust Center' },
     { href: '/case-studies', label: 'Case Studies' },
     { href: '/pricing', label: 'Pricing' },
+    { href: "https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book", label: "Nearshore IT Platformed Book"},
 ];
 
-const mainSiteLinks = [
+const mainSiteLinks: LinkItem[] = [
     { href: 'https://teamstation.dev', label: 'TeamStation.dev Home' },
     { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-pricing', label: 'Main Site Pricing' },
     { href: 'https://teamstation.dev/nearshore-integrated-services', label: 'Main Site Platform' },
-    { href: "https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book", label: "Nearshore IT Platformed Book"},
     { href: '/research/hub#podcast', label: 'Podcast', icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1" /> },
 ];
 
-const researchLinks = [
+const researchLinks: LinkItem[] = [
     { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397", label: "AxiomCortex™ R&D Report" },
     { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433", label: "Heuristically Trained AI" },
     { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490", label: "Framework for Measuring Capacity" },
     { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470", label: "Performance Metrics in AI Age" },
 ];
 
+const hireByRoleLinks: LinkItem[] = roleCategories.map(r => ({ href: `/hire/by-role/${r.slug}`, label: r.name }));
+const hireByCountryLinks: LinkItem[] = countries.map(c => ({ 
+    href: `/hire/by-country/${c.slug}`, 
+    label: (
+        <span className="flex items-center gap-2">
+            <span className="h-4 w-4 rounded-sm overflow-hidden flex-shrink-0">{c.icon}</span>
+            {c.name}
+        </span>
+    )
+}));
+
+const popularTechLinks: LinkItem[] = [
+    'react', 'node', 'python', 'java', 'go', 'net', 'aws', 'kubernetes', 'dbt', 'snowflake', 'pytorch', 'transformers', 'langchain', 'nextjs'
+].map(slug => {
+    const tech = techCategories.flatMap(c => c.tech).find(t => t.slug === slug);
+    return { href: `/hire/by-technology/${slug}`, label: tech?.name || slug };
+});
+
+const utilityLinks: LinkItem[] = [
+    { href: '/sitemap', label: 'HTML Sitemap' },
+    { href: '/sitemap.xml', label: 'XML Sitemap' },
+    { href: 'https://teamstation.dev/privacy-policy', label: 'Privacy Policy' },
+    { href: 'https://teamstation.dev/terms-of-service', label: 'Terms of Service' },
+]
 
 function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
   return (
     <div>
-      <h4 className="font-semibold text-foreground">{title}</h4>
+      <h4 className="font-semibold text-foreground tracking-wider uppercase text-sm">{title}</h4>
       <ul className="mt-4 space-y-3">
         {links.map((link) => (
           <li key={link.href} className="text-sm">
             <Link
               href={link.href}
-              className="transition-colors hover:text-foreground flex items-center"
+              className="text-muted-foreground transition-colors hover:text-foreground flex items-center"
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             >
-              <span>{link.label}</span>
+              {link.label}
               {link.icon && <span aria-hidden="true" className="ml-1">{link.icon}</span>}
             </Link>
           </li>
@@ -81,7 +101,7 @@ export default function Footer() {
     <footer className="mt-32 border-t border-border bg-card py-16 text-muted-foreground">
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-y-10 gap-x-8 md:grid-cols-12">
-          <div className="col-span-2 md:col-span-4">
+          <div className="col-span-2 md:col-span-3">
             <h3 className="text-lg font-bold text-foreground">TeamStation AI</h3>
             <p className="mt-2 text-sm">
               The integrated platform for building and scaling elite nearshore engineering teams.
@@ -91,31 +111,38 @@ export default function Footer() {
                 5830 E 2nd, St Ste 7000 #14687<br />
                 Boston, MA 02210
             </address>
-            <div className="mt-4">
-              <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80">Sign In</Link>
+             <div className="mt-4">
+              <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80">Sign In to Platform</Link>
             </div>
           </div>
           
           <div className="col-span-1 md:col-span-2">
             <LinkColumn title="Playbook" links={playbookLinks} />
-          </div>
-          <div className="col-span-1 md:col-span-2">
-            <LinkColumn title="Hire" links={hireLinks} />
-             <div className="mt-6">
+             <div className="mt-8">
                 <LinkColumn title="Company" links={companyLinks} />
             </div>
           </div>
-          <div className="col-span-2 md:col-span-2">
-            <LinkColumn title="Main Site" links={mainSiteLinks} />
+          <div className="col-span-1 md:col-span-2">
+            <LinkColumn title="Hire by Role" links={hireByRoleLinks.slice(0, 7)} />
           </div>
-          <div className="col-span-2 md:col-span-2">
-            <LinkColumn title="Scientific Research" links={researchLinks} />
+          <div className="col-span-1 md:col-span-2">
+            <LinkColumn title="Hire by Country" links={hireByCountryLinks} />
           </div>
-
+          <div className="col-span-1 md:col-span-3">
+             <LinkColumn title="Popular Technologies" links={popularTechLinks} />
+             <div className="mt-8">
+                <LinkColumn title="Scientific Research" links={researchLinks} />
+             </div>
+          </div>
         </div>
 
-        <div className="mt-16 border-t border-border pt-8 text-center text-sm">
+        <div className="mt-16 border-t border-border pt-8 text-center text-sm flex flex-col sm:flex-row justify-between items-center">
           <p>© {year} TeamStation AI — All rights reserved.</p>
+           <div className="flex gap-4 mt-4 sm:mt-0">
+               {utilityLinks.map(link => (
+                    <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground">{link.label}</Link>
+               ))}
+           </div>
         </div>
       </div>
     </footer>
