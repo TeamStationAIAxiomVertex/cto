@@ -37,13 +37,42 @@ export default async function SitemapPage() {
     const caseStudies = await getAllCaseStudies();
     const playbookSlugs = await getAllPlaybookSlugs();
 
-    const mainPages = [
-        { href: '/', title: 'Home' },
-        ...Object.values(NAV).flat().map(item => ({ href: item.href, title: item.label })),
-        ...simpleNavItems,
-         { href: '/sitemap', title: 'Sitemap' }
-    ].filter((item, index, self) => self.findIndex(t => t.href === item.href) === index);
-
+    const staticPages = [
+        '/',
+        '/about',
+        '/case-studies',
+        '/comparisons',
+        '/comparisons/andela',
+        '/comparisons/bairesdev',
+        '/comparisons/deel',
+        '/comparisons/globant',
+        '/comparisons/nearsure',
+        '/comparisons/new-gen-nearshore',
+        '/comparisons/parallelstaff',
+        '/comparisons/revelo',
+        '/comparisons/tecla',
+        '/comparisons/terminal',
+        '/comparisons/toptal',
+        '/comparisons/unosquare',
+        '/hire',
+        '/hire/by-country',
+        '/hire/by-role',
+        '/hire/by-team-topologies',
+        '/hire/by-technology',
+        '/platform',
+        '/playbook/hub',
+        '/pricing',
+        '/process',
+        '/research/hub',
+        '/research/axiom-cortex-scientific-report',
+        '/research/performance-evaluation-framework',
+        '/research/performance-evaluation-report-example',
+        '/technical-interview-evaluation',
+        '/services/integrated-services',
+        '/services/talent-onboarding',
+        '/trust',
+        '/sitemap',
+    ];
 
     const hireByRolePages = roleCategories.map(r => ({ href: `/hire/by-role/${r.slug}`, title: r.name }));
     const hireByCountryPages = countries.map(c => ({ href: `/hire/by-country/${c.slug}`, title: c.name }));
@@ -61,8 +90,8 @@ export default async function SitemapPage() {
                 </p>
             </header>
 
-            <Section title="Main Navigation">
-                {mainPages.map(page => <PageLink key={page.href} href={page.href} title={page.title} />)}
+            <Section title="Main Pages">
+                {staticPages.map(page => <PageLink key={page} href={page} title={page === '/' ? 'Home' : page.substring(1).replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} />)}
             </Section>
 
             <Section title="CTO Playbook">

@@ -5,12 +5,13 @@ import { getAllPlaybookSlugs } from '@/lib/playbook';
 import { roleCategories } from '@/lib/roles';
 import { countries } from '@/lib/countries';
 import { techCategories } from '@/lib/tech';
+import { simpleNavItems, NAV } from '@/config/nav';
 
 const siteUrl = 'https://cto.teamstation.dev';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages = [
-    '',
+    '/',
     '/about',
     '/case-studies',
     '/comparisons',
@@ -38,6 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/research/hub',
     '/research/axiom-cortex-scientific-report',
     '/research/performance-evaluation-framework',
+    '/research/performance-evaluation-report-example',
     '/technical-interview-evaluation',
     '/services/integrated-services',
     '/services/talent-onboarding',
@@ -47,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${siteUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1.0 : 0.8,
+    priority: route === '/' ? 1.0 : 0.8,
   }));
 
   const caseStudies = await getAllCaseStudies();
