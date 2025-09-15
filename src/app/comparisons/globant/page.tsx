@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { InfoDropdown } from '@/components/Accordion';
+import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -80,9 +80,9 @@ export default function GlobantComparisonPage() {
         </p>
         <p>
             As a Globant alternative, TeamStation AI operates on a fundamentally different premise. We are your{' '}
-            <InfoDropdown title={<span className="border-b border-dashed">Nearshore IT Co-Pilot™</span>}>
-                <p className="text-sm text-muted-foreground">An integrated platform for CTOs who need to ship faster without sacrificing security or quality. We provide the talent, governance, and infrastructure.</p>
-            </InfoDropdown>. Our entire platform is purpose-built for staff augmentation, providing you with elite, mission-fit LATAM engineering talent that integrates directly into your existing teams.
+            <Tooltip text="An integrated platform for CTOs who need to ship faster without sacrificing security or quality. We provide the talent, governance, and infrastructure.">
+                Nearshore IT Co-Pilot™
+            </Tooltip>. Our entire platform is purpose-built for staff augmentation, providing you with elite, mission-fit LATAM engineering talent that integrates directly into your existing teams.
         </p>
         <h3>Talent vs. Projects: Where Do You Need Control?</h3>
         <p>

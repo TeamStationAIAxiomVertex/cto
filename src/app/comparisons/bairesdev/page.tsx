@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { InfoDropdown } from '@/components/Accordion';
+import { Tooltip } from '@/components/Tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -19,13 +19,13 @@ const comparisonPoints = {
     },
     "Security": {
         pain: "Is your vendor creating massive security holes?",
-        traditional: "Traditional staff augmentation leaves security to you. Unmanaged devices, no <InfoDropdown title={<span class='border-b border-dashed'>MDM</span>}><p class='text-sm text-muted-foreground'>Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>, and no compliance framework expose you to catastrophic risk.",
-        teamstation: "Our integrated platform is <a href='/trust' class='text-primary hover:underline'>secure by default</a>. We provide MDM-secured devices, <InfoDropdown title={<span class='border-b border-dashed'>EOR</span>}><p class='text-sm text-muted-foreground'>Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>, and insurance under one SLA.",
+        traditional: "Traditional staff augmentation leaves security to you. Unmanaged devices, no <Tooltip text='Mobile Device Management: software that secures, monitors, and manages devices like laptops.'>MDM</Tooltip>, and no compliance framework expose you to catastrophic risk.",
+        teamstation: "Our integrated platform is <a href='/trust' class='text-primary hover:underline'>secure by default</a>. We provide MDM-secured devices, <Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip>, and insurance under one SLA.",
         proof: "SOC 2 & ISO Aligned"
     },
     "Cost": {
         pain: "Are hidden fees killing your budget?",
-        traditional: "A low hourly rate hides a mountain of extra costs for EOR, IT, legal, and vendor management, inflating your <a href='/playbook/latam-economics' class='text-primary hover:underline'><InfoDropdown title={<span class='border-b border-dashed'>TCO</span>}><p class='text-sm text-muted-foreground'>Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.</p></InfoDropdown></a>.",
+        traditional: "A low hourly rate hides a mountain of extra costs for EOR, IT, legal, and vendor management, inflating your <a href='/playbook/latam-economics' class='text-primary hover:underline'><Tooltip text='Total Cost of Ownership: Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.'>TCO</Tooltip></a>.",
         teamstation: "Our all-inclusive <a href='/pricing' class='text-primary hover:underline'>pricing</a> provides a predictable, CFO-ready TCO that is often 40-60% lower than the fully-loaded cost of other models.",
         proof: "40-60% Lower TCO"
     }
@@ -85,7 +85,7 @@ export default function BairesDevComparisonPage() {
         </p>
         <h3>Cost & Risk: Predictable TCO vs. Hidden Fees</h3>
         <p>
-            With BairesDev, companies must budget for separate vendors to handle <InfoDropdown title={<span className="border-b border-dashed">EOR</span>}><p className="text-sm text-muted-foreground">Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
+            With BairesDev, companies must budget for separate vendors to handle <Tooltip text='Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.'>EOR</Tooltip>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
         </p>
       </div>
 

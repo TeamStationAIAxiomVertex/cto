@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, DollarSign, Zap, TestTube2, Users, Briefcase, ShieldCheck, Layers, GitCompare, UserCheck, HelpCircle, BookOpen, AlertTriangle, Scale } from 'lucide-react';
-import { InfoDropdown } from '@/components/Accordion';
+import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
   title: 'TCO Model for Nearshore Engineering Teams | TeamStation AI',
@@ -238,7 +238,7 @@ export default function TCOModelPage() {
                       <p className="mt-2 text-muted-foreground">The conversation about engineering cost is fundamentally broken. It revolves around a single, dangerously misleading number: the hourly rate or the base salary. Your CFO sees a lower number on a spreadsheet from an offshore vendor and calls it a "win," while you, the CTO, are left to deal with the catastrophic second-order effects: delayed timelines, burned-out senior engineers, and a constant state of fire-fighting.</p>
                   </div>
                   <div className="bg-background p-6 rounded-lg border border-border/50">
-                      <p className="mt-2 text-muted-foreground">This is not a sustainable way to build a high-performance engineering organization. A true financial analysis must account for the <strong className="text-foreground"><InfoDropdown title={<span className="border-b border-dashed">Total Cost of Ownership (TCO)</span>}><p className="text-sm text-muted-foreground">Includes not just salary, but all direct and indirect costs like hiring, legal, IT, and management overhead.</p></InfoDropdown></strong>, a model that includes not just direct costs, but also the massive, often unmeasured "hidden taxes" on your budget: the cost of slow hiring, the penalty for poor quality, and the operational drag of managing a fragmented, global team.</p>
+                      <p className="mt-2 text-muted-foreground">This is not a sustainable way to build a high-performance engineering organization. A true financial analysis must account for the <strong className="text-foreground"><Tooltip text="Includes not just salary, but all direct and indirect costs like hiring, legal, IT, and management overhead.">Total Cost of Ownership (TCO)</Tooltip></strong>, a model that includes not just direct costs, but also the massive, often unmeasured "hidden taxes" on your budget: the cost of slow hiring, the penalty for poor quality, and the operational drag of managing a fragmented, global team.</p>
                   </div>
                   <div className="bg-background p-6 rounded-lg border border-border/50">
                       <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Playbook's Purpose</h3>

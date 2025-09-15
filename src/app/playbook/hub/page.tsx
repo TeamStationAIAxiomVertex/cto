@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, BarChart, DollarSign, Globe, Scale, ShieldCheck, Zap, BrainCircuit, Users } from 'lucide-react';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { InfoDropdown } from '@/components/Accordion';
+import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
   title: 'The CTO Playbook for Nearshore Engineering Success | TeamStation AI',
@@ -165,13 +165,7 @@ export default function PlaybookHubPage() {
                   <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
                       <h4 className="font-semibold text-primary text-sm">Solution (Next-Gen)</h4>
                       <p className="text-sm text-foreground m-0">
-                        {card.solution.split('Axiom Cortex™')[0]}
-                        {card.solution.includes("Axiom Cortex") && <InfoDropdown title={<span className="text-primary border-b border-dashed">Axiom Cortex™</span>}><p className="text-sm text-muted-foreground">Our proprietary Cognitive AI engine for talent evaluation.</p></InfoDropdown>}
-                        {card.solution.split('Axiom Cortex™')[1] && card.solution.split('Axiom Cortex™')[1].split('MDM')[0]}
-                         {card.solution.includes("MDM") && <InfoDropdown title={<span className="border-b border-dashed">MDM</span>}><p className="text-sm text-muted-foreground">Mobile Device Management: Software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>}
-                         {card.solution.split('MDM')[1] && card.solution.split('MDM')[1].split('EOR')[0]}
-                         {card.solution.includes("EOR") && <InfoDropdown title={<span className="border-b border-dashed">EOR</span>}><p className="text-sm text-muted-foreground">Employer of Record: A third-party organization that legally employs workers on behalf of another company.</p></InfoDropdown>}
-                         {card.solution.split('EOR')[1]}
+                        {card.solution}
                       </p>
                   </div>
                   <div className="mt-4 pt-4 border-t border-border/50">

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { InfoDropdown } from '@/components/Accordion';
+import { Tooltip } from '@/components/Tooltip';
 import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -115,7 +115,7 @@ export default function BuildVsBuyPage() {
                 </div>
                 <div className="bg-background p-6 rounded-lg border border-border/50">
                     <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Playbook's Purpose</h3>
-                    <p className="mt-2 text-muted-foreground">This guide is your strategic ammunition. It is a CFO-ready framework, built on the Sandler methodology, to move the conversation beyond misleading salary comparisons to the only metric that matters: <strong className="text-foreground"><InfoDropdown title={<span className="border-b border-dashed">Total Cost of Ownership (TCO)</span>}><p className="text-sm text-muted-foreground">Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.</p></InfoDropdown></strong>. We will diagnose the pain of the "Build" model, quantify its true cost, and present the data-driven case for the "Buy" model as a faster, safer, and more capital-efficient path to scaling your engineering team.</p>
+                    <p className="mt-2 text-muted-foreground">This guide is your strategic ammunition. It is a CFO-ready framework, built on the Sandler methodology, to move the conversation beyond misleading salary comparisons to the only metric that matters: <strong className="text-foreground"><Tooltip text="Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead.">Total Cost of Ownership (TCO)</Tooltip></strong>. We will diagnose the pain of the "Build" model, quantify its true cost, and present the data-driven case for the "Buy" model as a faster, safer, and more capital-efficient path to scaling your engineering team.</p>
                 </div>
             </div>
         </div>
@@ -136,7 +136,7 @@ export default function BuildVsBuyPage() {
                     </div>
                     <p className="mt-4 text-sm text-muted-foreground flex-grow">{
                         item.tax.includes("MDM") ? 
-                        <>{item.tax.split('MDM')[0]}<InfoDropdown title={<span className="border-b border-dashed">MDM</span>}><p className="text-sm text-muted-foreground">Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>{item.tax.split('MDM')[1]}</>
+                        <>{item.tax.split('MDM')[0]}<Tooltip text="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</Tooltip>{item.tax.split('MDM')[1]}</>
                         : item.tax
                     }</p>
                     <p className={`mt-4 text-base font-mono bg-destructive/10 rounded px-3 py-2 inline-block self-start ${item.impactColor}`}>
@@ -169,13 +169,7 @@ export default function BuildVsBuyPage() {
                             <h3 className="text-lg font-semibold text-foreground">{item.solutionTitle}</h3>
                         </div>
                         <p className="mt-4 text-sm text-muted-foreground flex-grow">
-                            {item.solution.split('Axiom Cortex™')[0]}
-                            {item.solution.includes("Axiom Cortex") && <InfoDropdown title={<span className="text-primary border-b border-dashed">Axiom Cortex™</span>}><p className="text-sm text-muted-foreground">Our proprietary Cognitive AI engine for talent evaluation.</p></InfoDropdown>}
-                            {item.solution.split('Axiom Cortex™')[1] && item.solution.split('Axiom Cortex™')[1].split('Employer of Record (EOR)')[0]}
-                            {item.solution.includes("Employer of Record (EOR)") && <InfoDropdown title={<span className="border-b border-dashed">Employer of Record (EOR)</span>}><p className="text-sm text-muted-foreground">A service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>}
-                            {item.solution.split('Employer of Record (EOR)')[1] && item.solution.split('Employer of Record (EOR)')[1].split('MDM')[0]}
-                             {item.solution.includes("MDM") && <InfoDropdown title={<span className="border-b border-dashed">MDM</span>}><p className="text-sm text-muted-foreground">Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>}
-                             {item.solution.split('MDM')[1]}
+                            {item.solution}
                         </p>
                         <div className="mt-6 border-t border-border pt-4">
                            <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {item.proof}</p>
@@ -228,4 +222,3 @@ export default function BuildVsBuyPage() {
   </main>
   );
 }
-

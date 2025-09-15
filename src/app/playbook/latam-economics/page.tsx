@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, TrendingUp, DollarSign, Zap, AlertTriangle, BrainCircuit, ShieldCheck, HelpCircle, Scale, Briefcase, BarChart, BookOpen, UserCheck, FileText } from 'lucide-react';
 import type { Metadata } from 'next';
-import { InfoDropdown } from '@/components/Accordion';
+import { Tooltip } from '@/components/Tooltip';
 
 export const metadata: Metadata = {
   title: 'LATAM Economics & TCO for CTOs | Nearshore Software Development Costs',
@@ -123,11 +123,7 @@ export default function LatamEconomicsPage() {
                         <h3 className="text-lg font-semibold text-foreground">{point.title}</h3>
                     </div>
                     <p className="mt-4 text-sm text-muted-foreground flex-grow">
-                        {point.description.split('Axiom Cortex™')[0]}
-                        {point.description.includes("Axiom Cortex") && <InfoDropdown title={<span className="text-primary font-semibold border-b border-dashed">Axiom Cortex™</span>}><p className="text-sm text-muted-foreground">Our proprietary Cognitive AI engine for talent evaluation.</p></InfoDropdown>}
-                        {point.description.split('Axiom Cortex™')[1]}
-                        {point.description.includes("EOR") && <InfoDropdown title={<span className="border-b border-dashed">EOR</span>}><p className="text-sm text-muted-foreground">Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.</p></InfoDropdown>}
-                        {point.description.includes("MDM") && <InfoDropdown title={<span className="border-b border-dashed">MDM</span>}><p className="text-sm text-muted-foreground">Mobile Device Management: software that secures, monitors, and manages devices like laptops.</p></InfoDropdown>}
+                        {point.description}
                     </p>
                     <div className="mt-6 border-t border-border pt-4">
                         <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {point.kpi}</p>

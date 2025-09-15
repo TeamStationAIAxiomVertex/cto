@@ -16,7 +16,7 @@ const navItems = {
   ],
   'What\'s Included': [
     { href: '/platform', title: 'Our Platform' },
-    { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-process', title: 'Our Process' },
+    { href: '/process', title: 'Our Process' },
     { href: '/technical-interview-evaluation', title: 'Talent Evaluations' },
     { href: '/research/performance-evaluation-framework', title: 'Performance Framework' },
     { href: '/services/talent-onboarding', title: 'Talent Onboarding' },

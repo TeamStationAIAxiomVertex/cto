@@ -15,7 +15,7 @@ const navItems = {
   ],
   'What\'s Included': [
     { href: '/platform', title: 'Our Platform', description: 'The Nearshore IT Co-Pilot™ Platform.' },
-    { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-process', title: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
+    { href: '/process', title: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
     { href: '/technical-interview-evaluation', title: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
     { href: '/research/performance-evaluation-framework', title: 'Performance Framework', description: 'A data-driven framework for performance and growth.' },
     { href: '/services/talent-onboarding', title: 'Talent Onboarding', description: 'How we ensure new hires are productive from day one.' },
