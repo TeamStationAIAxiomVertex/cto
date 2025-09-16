@@ -37,6 +37,7 @@
     "tailwindcss-animate": "^1.0.0"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.13.0",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -47,7 +48,6 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "fast-glob": "^3.3.2",
-    "jq": "^1.6",
     "kleur": "^4.1.5",
     "linkinator": "^4.0.0",
     "postcss": "^8",

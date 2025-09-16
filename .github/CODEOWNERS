@@ -1,4 +1,3 @@
-# Server/client boundaries & platform
 src/components/**   @release-eng @web-arch
 src/app/**          @release-eng @web-arch
 firebase.json       @release-eng

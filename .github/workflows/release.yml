@@ -13,17 +13,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: '20', cache: 'npm' }
+        with:
+          node-version: '20'
+          cache: 'npm'
       - run: npm ci
 
-      # Run nuclear review
-      - name: Nuclear Review
+      - name: Nuclear review
         run: npm run nuclear
 
-      # Optional: Firebase preview channel (requires secrets)
-      - name: Firebase Preview
+      - name: Firebase preview channel
         if: github.event_name == 'pull_request'
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
-          npx firebase-tools hosting:channel:deploy "pr-${{ github.event.number }}" --json
+          npx firebase-tools hosting:channel:deploy "pr-${{ github.event.number }}" --json > preview.json
+          URL=$(node -e "console.log(JSON.parse(require('fs').readFileSync('preview.json','utf8')).result[0].url)")
+          echo "PREVIEW_URL=$URL" >> $GITHUB_ENV
+          echo "Preview: $URL"
+
+      - name: Lighthouse CI (mobile thresholds)
+        if: env.PREVIEW_URL != ''
+        run: |
+          npx lhci autorun \
+            --collect.url="${PREVIEW_URL}" \
+            --collect.numberOfRuns=2 \
+            --assert.preset=lighthouse:recommended \
+            --assert.assertions.performance="error:>=0.90" \
+            --assert.assertions['first-contentful-paint']="error:<=1200" \
+            --assert.assertions['largest-contentful-paint']="error:<=2500" \
+            --assert.assertions['total-blocking-time']="error:<=150" \
+            --assert.assertions['cumulative-layout-shift']="error:<=0.1"

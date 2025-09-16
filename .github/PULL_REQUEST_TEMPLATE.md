@@ -1,7 +1,7 @@
-## Nuclear Checklist (must all be ✅)
-- [ ] `npm run nuclear` passes locally (typecheck, lint, build, export, link/robots checks)
-- [ ] No `'use client'` added outside whitelisted paths
+## Nuclear Checklist (must be ✅)
+- [ ] `npm run nuclear` passes locally
+- [ ] No new `'use client'` outside allowed paths
 - [ ] No static imports from `@/components/client/*` in server files
-- [ ] Tooltip imports use `@/components/ui/tooltip` (no legacy paths)
-- [ ] Firebase redirects updated if new routes moved/renamed
-- [ ] Lighthouse Mobile Perf >= 90 on preview (attach LHCI URL/screenshot)
+- [ ] Tooltip imports use `@/components/ui/tooltip` only
+- [ ] Firebase redirects updated if routes moved/renamed
+- [ ] Lighthouse on preview ≥ 0.90 Mobile Perf (attach link/screenshot)

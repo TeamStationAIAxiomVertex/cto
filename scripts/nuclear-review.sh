@@ -3,67 +3,79 @@ set -euo pipefail
 
 echo "▶ Nuclear Review starting…"
 
-# 1) Clean & env sanity
+# 0) Clean
 rm -rf .next out
-node -v
-npm -v
 
-# 2) Static guards: boundary & imports
-echo "▶ Boundary checks…"
-# Only allow 'use client' in whitelisted paths
-# (adjust whitelist as needed)
-WHITELIST='^src/components/client/|^src/app/.*/client(\.|/)|^src/components/ui/.*\.client\.tsx$'
-if rg -n --hidden --no-messages "^'use client'|^\"use client\"" src | awk -F: '{print $1}' | sort -u | grep -vE "$WHITELIST"; then
-  echo "✖ Found 'use client' outside allowed locations. Move it to a client island."; exit 1
+# 1) Boundary & import guards (pure grep + bash)
+echo "▶ Checking 'use client' locations…"
+# Grab files that declare 'use client'
+mapfile -t UC_FILES < <(grep -RIl --include='*.{ts,tsx,js,jsx}' -e "^'use client'\|^\"use client\"" src || true)
+
+WHITELIST_REGEX='^(src/components/client/|src/app/.+/client(\.|/)|src/components/ui/.+\.client\.tsx$)'
+if ((${#UC_FILES[@]})); then
+  BAD=()
+  for f in "${UC_FILES[@]}"; do
+    if [[ ! $f =~ $WHITELIST_REGEX ]]; then BAD+=("$f"); fi
+  done
+  if ((${#BAD[@]})); then
+    echo "✖ 'use client' found outside allowed locations:"
+    printf ' - %s\n' "${BAD[@]}"
+    echo "Move client code into a client island (e.g. src/components/client/*)."
+    exit 1
+  fi
 fi
 
-# No client-only islands imported statically by server components
-echo "▶ Disallow static imports from client islands in server code…"
-if rg -n --hidden --no-messages "from ['\"]@/components/client/" src | grep -vE "\.client\.tsx"; then
-  echo "✖ Server file statically imports a client island. Use dynamic(() => import(...), { ssr:false }) or pass as child."; exit 1
+echo "▶ Disallow static imports of client islands from server files…"
+if grep -RIn --include='*.{ts,tsx}' "from ['\"]@/components/client/" src | grep -v "\.client\.tsx" >/dev/null 2>&1; then
+  echo "✖ Server file statically imports a client island."
+  echo "Use: dynamic(() => import('...'), { ssr:false }) or pass the island as a child."
+  exit 1
 fi
 
-# Tooltip import correctness
 echo "▶ Tooltip import guards…"
-if rg -n --hidden --no-messages "from ['\"]@/components/Tooltip['\"]" src; then
-  echo "✖ Import from '@/components/Tooltip' found. Use '@/components/ui/tooltip' only."; exit 1
+if grep -RIn --include='*.{ts,tsx}' "from ['\"]@/components/Tooltip['\"]" src >/dev/null 2>&1; then
+  echo "✖ Found legacy '@/components/Tooltip' import. Use '@/components/ui/tooltip'."
+  exit 1
 fi
 
-# Duplicate or shadowed constants (common crashers)
-echo "▶ Shadow/duplication sanity checks…"
-rg -n --hidden --no-messages "const countries\s*=" src/components && { echo "✖ Inline countries const inside components. Import from '@/lib/countries'."; exit 1; } || true
+echo "▶ Inline data dupes (common crashers)…"
+if grep -RIn --include='*.{ts,tsx}' "const countries\s*=" src/components >/dev/null 2>&1; then
+  echo "✖ Inline 'countries' detected in components. Import from '@/lib/countries'."
+  exit 1
+fi
 
-# 3) Types & lint (strict)
+# 2) Typecheck & lint (strict)
 echo "▶ Typecheck & lint…"
 npm run typecheck
 npm run lint
 
-# 4) Build & export
-echo "▶ Next.js build (strict) & export…"
+# 3) Build (Next output:export writes to out/)
+echo "▶ Building (strict)…"
 npm run build:strict
-npm run export
 
-# 5) Link integrity (out/), redirects existence, robots sanity
-echo "▶ Link & redirect checks…"
+# 4) Static export checks
+echo "▶ Link integrity (out/)…"
 npx --yes linkinator out --skip "mailto:,tel:,^/api" --recurse
 
-# Ensure firebase.json has static redirects for a static export
-jq '.hosting.redirects' firebase.json >/dev/null || { echo "✖ firebase.json missing hosting.redirects block."; exit 1; }
+echo "▶ firebase.json redirects presence…"
+node -e "const f=require('fs');const j=JSON.parse(f.readFileSync('firebase.json','utf8')); if(!j.hosting||!Array.isArray(j.hosting.redirects)) { throw new Error('firebase.json missing hosting.redirects'); }"
 
-# Legal pages: confirm noindex
 echo "▶ robots noindex for legal pages…"
 for f in out/privacy-policy/index.html out/terms-of-service/index.html; do
-  test -f "$f" || continue
-  rg -n --no-messages "noindex" "$f" >/dev/null || { echo "✖ $f missing noindex."; exit 1; }
+  if [ -f "$f" ] && ! grep -qi "noindex" "$f"; then
+    echo "✖ $f missing 'noindex' robots meta."
+    exit 1
+  fi
 done
 
-# 6) Bundle budget smoke (report only; fail if huge)
-echo "▶ Bundle size budget…"
+# 5) Size budget (simple sanity)
+echo "▶ Export size budget…"
 TOTAL_KB=$(du -sk out | awk '{print $1}')
 echo "Total export size (KB): $TOTAL_KB"
-MAX_KB=25000 # ~25MB export budget; tune for your site
+MAX_KB=25000
 if [ "$TOTAL_KB" -gt "$MAX_KB" ]; then
-  echo "✖ Export too large ($TOTAL_KB KB > $MAX_KB KB). Check tree-shaking, images, or bundles."; exit 1
+  echo "✖ Export too large ($TOTAL_KB KB > $MAX_KB KB). Review bundles/images."
+  exit 1
 fi
 
 echo "✔ Nuclear Review passed."
