@@ -1,14 +1,11 @@
-// no 'use client' here — this stays a Server Component
-
+// NO 'use client' — Footer stays a Server Component
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import dynamic from 'next/dynamic';
 
 import { roleCategories } from '@/lib/roles';
 import { techCategories } from '@/lib/tech';
 import { countries } from '@/lib/countries';
 import { SpotifyIcon } from '@/components/SpotifyIcon';
-
 
 type LinkItem = {
   href: string;
