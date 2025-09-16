@@ -1,4 +1,5 @@
 
+'use client';
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
@@ -12,7 +13,7 @@ import type { KpiItem } from '@/components/charts/HeroKpiBoard';
 const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon), { ssr: false });
 const HeroKpiBoard = dynamic(
   () => import('@/components/charts/HeroKpiBoard').then(m => m.HeroKpiBoard),
-  { ssr: false }
+  { ssr: false, loading: () => <div className="h-[464px] w-full animate-pulse rounded-xl bg-muted" /> }
 );
 
 const kpis: KpiItem[] = [
@@ -345,3 +346,5 @@ export default async function HomePage() {
     </>
   );
 }
+
+    

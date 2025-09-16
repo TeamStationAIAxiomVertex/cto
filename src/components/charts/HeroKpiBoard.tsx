@@ -203,42 +203,20 @@ function DonutTile({ item }: { item: KpiItem }) {
   );
 }
 
-export function HeroKpiBoard({
-  items,
-  rotateEveryMs = 6000,
-  maxVisible = 6,
-}: {
-  items: KpiItem[];
-  rotateEveryMs?: number;
-  maxVisible?: number;
-}) {
-  const [offset, setOffset] = React.useState(0);
-  const pages = Math.max(1, Math.ceil(items.length / maxVisible));
-  React.useEffect(() => {
-    if (pages <= 1) return;
-    const t = setInterval(
-      () => setOffset((o) => (o + 1) % pages),
-      rotateEveryMs
-    );
-    return () => clearInterval(t);
-  }, [pages, rotateEveryMs]);
-
-  const start = offset * maxVisible;
-  const slice = items.slice(start, start + maxVisible);
-
+export function HeroKpiBoard({ items }: { items: KpiItem[] }) {
   return (
     <div className="w-full">
       {/* Desktop: grid of donuts */}
       <div className="hidden md:grid grid-cols-3 gap-4">
-        {slice.map((k) => (
+        {items.map((k) => (
           <DonutTile key={k.id} item={k} />
         ))}
       </div>
 
       {/* Mobile: bars for readability */}
       <div className="md:hidden">
-        <ResponsiveContainer width="100%" height={Math.max(140, slice.length * 46)}>
-          <BarChart layout="vertical" data={slice}>
+        <ResponsiveContainer width="100%" height={Math.max(140, items.length * 46)}>
+          <BarChart layout="vertical" data={items}>
             <XAxis type="number" hide />
             <YAxis
               type="category"
@@ -264,7 +242,7 @@ export function HeroKpiBoard({
           </BarChart>
         </ResponsiveContainer>
         <ul className="mt-2 space-y-1">
-          {slice.map((s) => (
+          {items.map((s) => (
             <li key={s.id} className="flex items-center justify-between text-sm">
               <span className="text-muted-foreground">{s.label}</span>
               <span className="tabular-nums">
@@ -276,24 +254,10 @@ export function HeroKpiBoard({
           ))}
         </ul>
       </div>
-
-      {/* Pager dots (desktop only when multiple pages) */}
-      {pages > 1 && (
-        <div className="hidden md:flex items-center justify-center gap-2 mt-3">
-          {Array.from({ length: pages }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setOffset(i)}
-              aria-label={`Show KPI page ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all ${
-                i === offset ? 'w-6 bg-foreground' : 'w-2 bg-border'
-              }`}
-            />
-          ))}
-        </div>
-      )}
     </div>
   );
 }
 
 export default HeroKpiBoard;
+
+    
