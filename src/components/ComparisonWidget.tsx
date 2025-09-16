@@ -327,7 +327,7 @@ export function ComparisonWidget() {
         We count the hidden taxes—PR latency, vacancy days, failed-change costs, and management overhead—not just the sticker. The Nearshore IT Co-Pilot wins because it removes lag and makes outcomes observable.
       </p>
 
-      <div className="mt-6 flex flex-wrap justify-center md:justify-end items-center gap-4 rounded-lg bg-background p-4 border text-sm">
+      <div className="mt-6 flex flex-wrap justify-start items-center gap-4 rounded-lg bg-background p-4 border text-sm">
         <div className="flex items-center gap-2">
           <label htmlFor={basisHoursId} className="font-medium text-muted-foreground">
             Basis Hours:
