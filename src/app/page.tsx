@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component, Trophy } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
@@ -100,12 +98,8 @@ const sandlerCards = [
 ];
 
 
-export default function HomePage() {
-  const caseStudies = [
-      { slug: 'atticus', clientName: 'Atticus', industry: 'Estate Settlement', summary: 'Shipped a production-ready web and iOS estate settlement MVP in under 3 months, saving an estimated $550,000 in development costs.', ogImage: { src: { url: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzYWFzfGVufDB8fHx8MTc1Nzc5ODgzOHww&ixlib=rb-4.1.0&q=80&w=1080' }, aiHint: 'legal tech' } },
-      { slug: 'global-entertainment-platform', clientName: 'Global Entertainment Platform', industry: 'Media', summary: 'Replaced an incumbent offshore QA vendor with a 10+ engineer LATAM squad in <30 days, stabilizing releases and reducing defect leakage for a billion-dollar product.', ogImage: { src: { url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtdXNpYyUyMGluZHVzdHJ5fGVufDB8fHx8MTc1Nzc5ODM4OHww&ixlib=rb-4.1.0&q=80&w=1080' }, aiHint: 'media platform' } },
-      { slug: 'rmj-technologies', clientName: 'RMJ Technologies', industry: 'Automotive', summary: 'Stabilized a monolithic platform and launched a microservices program, scaling to 15,000 users and enabling multi-million-dollar revenue expansion.', ogImage: { src: { url: 'https://images.unsplash.com/photo-1631798262744-5c15818c2e92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8dHJ1Y2slMjBkcml2ZXIlMjBtYXB8ZW58MHx8fHwxNzU3ODAwMDA5fDA&ixlib=rb-4.1.0&q=80&w=1080' }, aiHint: 'fleet trucks' } }
-  ];
+export default async function HomePage() {
+  const caseStudies = await getAllCaseStudies();
 
   const siteUrl = 'https://cto.teamstation.dev';
 
@@ -202,15 +196,15 @@ export default function HomePage() {
                       <div className="mt-4 text-sm text-muted-foreground flex-grow">
                           {pillar.description.includes("Axiom Cortex™") ?
                               (<>
-                                  Stop gambling on resumes. Our <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
+                                  Stop gambling on resumes. Our <WithTooltip content="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
                               </>) :
                            pillar.description.includes("EOR") ?
                             (<>
-                                Stop juggling 5+ vendors. We bundle <WithTooltip label="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip label="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip label="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
+                                Stop juggling 5+ vendors. We bundle <WithTooltip content="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip content="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip content="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
                             </>) :
                            pillar.description.includes("TCO") ?
                             (<>
-                                We provide a predictable, all-inclusive <WithTooltip label="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
+                                We provide a predictable, all-inclusive <WithTooltip content="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
                             </>) : pillar.description
                           }
                       </div>

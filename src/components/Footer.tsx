@@ -77,8 +77,8 @@ function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             >
+              {link.icon ? <span aria-hidden="true" className="mr-1">{link.icon}</span> : null}
               {link.label}
-              {link.icon && <span aria-hidden="true" className="ml-1">{link.icon}</span>}
             </Link>
           </li>
         ))}
@@ -114,11 +114,8 @@ export default function Footer() {
                   ...researchLinks,
                   {
                     href: '/research/hub#podcast',
-                    label: (
-                      <>
-                        Podcast <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
-                      </>
-                    ),
+                    label: "Podcast",
+                    icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
                   },
                 ]}
               />
