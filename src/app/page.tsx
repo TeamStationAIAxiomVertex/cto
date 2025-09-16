@@ -165,7 +165,7 @@ export default async function HomePage() {
         <section className="py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="text-center md:text-left">
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent px-2 py-4">
+              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 Nearshore Software Development: The CTO Co-Pilot Field Manual
               </h1>
               <p className="mx-auto md:mx-0 mt-6 max-w-3xl text-lg text-muted-foreground">
