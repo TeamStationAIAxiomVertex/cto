@@ -1,11 +1,15 @@
-'use client';
+// no 'use client' here — this stays a Server Component
 
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { SpotifyIcon } from '@/components/SpotifyIcon';
+import dynamic from 'next/dynamic';
+
 import { roleCategories } from '@/lib/roles';
 import { techCategories } from '@/lib/tech';
 import { countries } from '@/lib/countries';
+
+// Load the tiny client island lazily (never pulls Footer into the client bundle)
+const SpotifyIconIsland = dynamic(() => import('@/components/client/SpotifyIconIsland'), { ssr: false });
 
 type LinkItem = {
   href: string;
@@ -24,45 +28,50 @@ const playbookLinks: LinkItem[] = [
 ];
 
 const companyLinks: LinkItem[] = [
-    { href: '/about', label: 'About Us' },
-    { href: '/research/hub', label: 'Research Hub' },
-    { href: '/trust', label: 'Trust Center' },
-    { href: '/case-studies', label: 'Case Studies' },
-    { href: '/pricing', label: 'Pricing' },
-    { href: "https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book", label: "Nearshore IT Platformed Book"},
+  { href: '/about', label: 'About Us' },
+  { href: '/research/hub', label: 'Research Hub' },
+  { href: '/trust', label: 'Trust Center' },
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: 'https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book', label: 'Nearshore IT Platformed Book' },
 ];
 
 const researchLinks: LinkItem[] = [
-    { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397", label: "AxiomCortex™ R&D Report" },
-    { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433", label: "Heuristically Trained AI" },
-    { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490", label: "Framework for Measuring Capacity" },
-    { href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470", label: "Performance Metrics in AI Age" },
+  { href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397', label: 'AxiomCortex™ R&D Report' },
+  { href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433', label: 'Heuristically Trained AI' },
+  { href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490', label: 'Framework for Measuring Capacity' },
+  { href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470', label: 'Performance Metrics in AI Age' },
+  {
+    href: '/research/hub#podcast',
+    label: (
+      <>
+        Podcast <SpotifyIconIsland className="h-4 w-4 inline-block ml-1 align-text-bottom" />
+      </>
+    ),
+  },
 ];
 
-const hireByRoleLinks: LinkItem[] = roleCategories.map(r => ({ href: `/hire/by-role/${r.slug}`, label: r.name }));
-const hireByCountryLinks: LinkItem[] = countries.map(c => ({ 
-    href: `/hire/by-country/${c.slug}`, 
-    label: (
-        <span className="flex items-center gap-2">
-            {c.name}
-        </span>
-    )
+const hireByRoleLinks: LinkItem[] = roleCategories.map((r) => ({ href: `/hire/by-role/${r.slug}`, label: r.name }));
+
+const hireByCountryLinks: LinkItem[] = countries.map((c) => ({
+  href: `/hire/by-country/${c.slug}`,
+  label: <span className="flex items-center gap-2">{c.name}</span>,
 }));
 
 const popularTechLinks: LinkItem[] = [
-    'react', 'node', 'python', 'java', 'go', 'net', 'aws', 'kubernetes', 'dbt', 'snowflake', 'pytorch', 'transformers', 'langchain', 'nextjs'
-].map(slug => {
-    const tech = techCategories.flatMap(c => c.tech).find(t => t.slug === slug);
-    return { href: `/hire/by-technology/${slug}`, label: tech?.name || slug };
+  'react','node','python','java','go','net','aws','kubernetes','dbt','snowflake','pytorch','transformers','langchain','nextjs',
+].map((slug) => {
+  const tech = techCategories.flatMap((c) => c.tech).find((t) => t.slug === slug);
+  return { href: `/hire/by-technology/${slug}`, label: tech?.name || slug };
 });
 
 const utilityLinks: LinkItem[] = [
-    { href: '/faq', label: 'FAQ' },
-    { href: '/sitemap', label: 'HTML Sitemap' },
-    { href: '/sitemap.xml', label: 'XML Sitemap' },
-    { href: '/privacy-policy', label: 'Privacy Policy' },
-    { href: '/terms-of-service', label: 'Terms of Service' },
-]
+  { href: '/faq', label: 'FAQ' },
+  { href: '/sitemap', label: 'HTML Sitemap' },
+  { href: '/sitemap.xml', label: 'XML Sitemap' },
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/terms-of-service', label: 'Terms of Service' },
+];
 
 function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
   return (
@@ -77,7 +86,6 @@ function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             >
-              {link.icon ? <span aria-hidden="true" className="mr-1">{link.icon}</span> : null}
               {link.label}
             </Link>
           </li>
@@ -96,57 +104,53 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-y-10 gap-x-8 md:grid-cols-12">
           <div className="col-span-2 md:col-span-3">
             <h3 className="text-lg font-bold text-foreground">TeamStation AI</h3>
-            <p className="mt-2 text-sm">
-              The integrated platform for building and scaling elite nearshore engineering teams.
-            </p>
+            <p className="mt-2 text-sm">The integrated platform for building and scaling elite nearshore engineering teams.</p>
             <address className="mt-4 text-sm not-italic">
-                One Seaport Square, 77 Sleeper St<br />
-                5830 E 2nd, St Ste 7000 #14687<br />
-                Boston, MA 02210
+              One Seaport Square, 77 Sleeper St
+              <br />
+              5830 E 2nd St, Ste 7000 #14687
+              <br />
+              Boston, MA 02210
             </address>
-             <div className="mt-4">
-              <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80">Sign In to Platform</Link>
+            <div className="mt-4">
+              <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80">
+                Sign In to Platform
+              </Link>
             </div>
-             <div className="mt-8">
-               <LinkColumn
-                title="Scientific Research"
-                links={[
-                  ...researchLinks,
-                  {
-                    href: '/research/hub#podcast',
-                    label: "Podcast",
-                    icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
-                  },
-                ]}
-              />
-             </div>
+            <div className="mt-8">
+              <LinkColumn title="Scientific Research" links={researchLinks} />
+            </div>
           </div>
-          
+
           <div className="col-span-1 md:col-span-2">
             <LinkColumn title="Playbook" links={playbookLinks} />
-             <div className="mt-8">
-                <LinkColumn title="Company" links={companyLinks} />
+            <div className="mt-8">
+              <LinkColumn title="Company" links={companyLinks} />
             </div>
           </div>
+
           <div className="col-span-1 md:col-span-2">
             <LinkColumn title="Hire by Role" links={hireByRoleLinks.slice(0, 11)} />
           </div>
+
           <div className="col-span-1 md:col-span-2">
             <LinkColumn title="Hire by Country" links={hireByCountryLinks} />
           </div>
+
           <div className="col-span-1 md:col-span-3">
-             <LinkColumn title="Popular Technologies" links={popularTechLinks} />
-             
+            <LinkColumn title="Popular Technologies" links={popularTechLinks} />
           </div>
         </div>
 
         <div className="mt-16 border-t border-border pt-8 text-center text-sm flex flex-col sm:flex-row justify-between items-center">
           <p>© {year} TeamStation AI — All rights reserved.</p>
-           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4 sm:mt-0">
-               {utilityLinks.map(link => (
-                    <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground">{link.label}</Link>
-               ))}
-           </div>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4 sm:mt-0">
+            {utilityLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground">
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
