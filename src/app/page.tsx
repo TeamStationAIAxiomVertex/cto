@@ -1,6 +1,8 @@
 
+'use client';
+
 import Link from 'next/link';
-import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component } from 'lucide-react';
+import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component, Trophy } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
@@ -9,24 +11,7 @@ import placeholderImages from '@/app/lib/placeholder-images.json';
 import HeroKpis, { type HeroKpi } from '@/components/metrics/HeroKpis';
 import dynamic from 'next/dynamic';
 
-const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon), { ssr: false });
-
-export const metadata: Metadata = {
-  title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
-  description: 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.',
-  openGraph: {
-      title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
-      description: 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.',
-      images: [
-          {
-              url: placeholderImages.heroTeam.src.url,
-              width: placeholderImages.heroTeam.src.width,
-              height: placeholderImages.heroTeam.src.height,
-              alt: placeholderImages.heroTeam.alt,
-          }
-      ]
-  }
-};
+const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon ?? mod.default), { ssr: false });
 
 const heroKpis: HeroKpi[] = [
   { id: 'compliance', label: 'Audit-Ready Compliance', value: 100, unit: '%', target: 100, desire: 'up' },
@@ -45,11 +30,11 @@ function ServicePill({ icon: Icon, text }: { icon: React.ElementType, text: stri
 }
 
 const trustNumbers = [
-    { value: '≈9 days', label: 'Time-to-Offer' },
-    { value: '2.6M+', label: 'Talent Graph Profiles' },
-    { value: '≥95%', label: 'Day-1 Tool Readiness' },
-    { value: '100%', label: 'Audit-Ready Compliance' }
-]
+    { value: '≈9 days', label: 'Time-to-Offer', icon: Zap },
+    { value: '2.6M+', label: 'Talent Graph Profiles', icon: Users },
+    { value: '≥95%', label: 'Day-1 Tool Readiness', icon: CheckCircle },
+    { value: '100%', label: 'Audit-Ready Compliance', icon: ShieldCheck }
+];
 
 const corePillars = [
     {
@@ -116,8 +101,12 @@ const sandlerCards = [
 ];
 
 
-export default async function HomePage() {
-  const caseStudies = (await getAllCaseStudies()).slice(0, 3);
+export default function HomePage() {
+  const caseStudies = [
+      { slug: 'atticus', clientName: 'Atticus', industry: 'Estate Settlement', summary: 'Shipped a production-ready web and iOS estate settlement MVP in under 3 months, saving an estimated $550,000 in development costs.', ogImage: { src: { url: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzYWFzfGVufDB8fHx8MTc1Nzc5ODgzOHww&ixlib=rb-4.1.0&q=80&w=1080' }, aiHint: 'legal tech' } },
+      { slug: 'global-entertainment-platform', clientName: 'Global Entertainment Platform', industry: 'Media', summary: 'Replaced an incumbent offshore QA vendor with a 10+ engineer LATAM squad in <30 days, stabilizing releases and reducing defect leakage for a billion-dollar product.', ogImage: { src: { url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtdXNpYyUyMGluZHVzdHJ5fGVufDB8fHx8MTc1Nzc5ODM4OHww&ixlib=rb-4.1.0&q=80&w=1080' }, aiHint: 'media platform' } },
+      { slug: 'rmj-technologies', clientName: 'RMJ Technologies', industry: 'Automotive', summary: 'Stabilized a monolithic platform and launched a microservices program, scaling to 15,000 users and enabling multi-million-dollar revenue expansion.', ogImage: { src: { url: 'https://images.unsplash.com/photo-1631798262744-5c15818c2e92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8dHJ1Y2slMjBkcml2ZXIlMjBtYXB8ZW58MHx8fHwxNzU3ODAwMDA5fDA&ixlib=rb-4.1.0&q=80&w=1080' }, aiHint: 'fleet trucks' } }
+  ];
 
   const siteUrl = 'https://cto.teamstation.dev';
 
@@ -185,14 +174,17 @@ export default async function HomePage() {
         </section>
 
         <section id="trust-by-numbers" className="py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-              {trustNumbers.map(item => (
-                  <div key={item.label} className="text-center">
-                      <p className="text-4xl font-bold text-primary">{item.value}</p>
-                      <p className="text-sm text-muted-foreground mt-1">{item.label}</p>
-                  </div>
-              ))}
-          </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                {trustNumbers.map((item) => (
+                    <div key={item.label} className="group rounded-lg border bg-card p-4 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                        <div className="flex justify-center">
+                            <item.icon className="h-8 w-8 text-primary" />
+                        </div>
+                        <p className="mt-3 text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">{item.value}</p>
+                        <p className="mt-1 text-xs md:text-sm text-muted-foreground">{item.label}</p>
+                    </div>
+                ))}
+            </div>
         </section>
         
         <section id="core-pillars" className="py-24">
@@ -354,5 +346,3 @@ export default async function HomePage() {
     </>
   );
 }
-
-    
