@@ -7,7 +7,9 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 import HeroKpis, { type HeroKpi } from '@/components/metrics/HeroKpis';
-import { SpotifyIcon } from '@/components/SpotifyIcon';
+import dynamic from 'next/dynamic';
+
+const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon), { ssr: false });
 
 export const metadata: Metadata = {
   title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
