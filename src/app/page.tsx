@@ -7,21 +7,24 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import placeholderImages from '@/app/lib/placeholder-images.json';
+import type { KpiItem } from '@/components/charts/HeroKpiBoard';
 
 const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon), { ssr: false });
-const KpiRings = dynamic(
-  () => import('@/components/charts/KpiRings').then((m) => m.KpiRings),
+const HeroKpiBoard = dynamic(
+  () => import('@/components/charts/HeroKpiBoard').then(m => m.HeroKpiBoard),
   { ssr: false }
 );
 
-// Example data (CTO-native signals)
-const heroKpis = [
-  { label: 'Audit-Ready Compliance', value: 100, colorVar: '--primary', unit: '%' },
-  { label: 'Day-1 Tool Readiness', value: 97, colorVar: '--chart-2', unit: '%' },
-  // Normalize 7.6h of 8h SLA → 95%
-  { label: 'PR Review p50 (≤8h SLA)', value: 7.6, max: 8, colorVar: '--foreground', unit: 'h' },
+const kpis: KpiItem[] = [
+  { id: 'compliance', label: 'Audit-Ready Compliance', value: 100, unit: '%', colorVar: '--primary', trend: [99,100,100,100], desire: 'up' },
+  { id: 'readiness', label: 'Day-1 Tool Readiness', value: 97, unit: '%', colorVar: '--chart-2', trend: [95,96,97,97], desire: 'up' },
+  { id: 'prp50', label: 'PR Review p50 (≤8h)', value: 6.8, unit: 'h', max: 8, colorVar: '--foreground', trend: [7.5,7.1,6.9,6.8], desire: 'down', target: 8 },
+  { id: 'mttr', label: 'Incident MTTR p50 (≤4h)', value: 1.2, unit: 'h', max: 4, colorVar: '--primary', trend: [2.1,1.6,1.3,1.2], desire: 'down', target: 4 },
+  { id: 'escape', label: 'Defect Escape Rate (≤1.0%)', value: 0.6, unit: '%', max: 1, colorVar: '--chart-2', trend: [0.9,0.8,0.7,0.6], desire: 'down', target: 1 },
+  { id: 'tto', label: 'Time-to-Offer (≤10d)', value: 8, unit: 'd', max: 10, colorVar: '--foreground', trend: [12,10,9,8], desire: 'down', target: 10 },
+  { id: 'uptime', label: 'Uptime', value: 99.95, unit: '%', colorVar: '--primary', trend: [99.9,99.92,99.94,99.95], desire: 'up' },
+  { id: 'cycle', label: 'Cycle Time p50 (≤3d)', value: 2.2, unit: 'd', max: 3, colorVar: '--chart-2', trend: [3.1,2.8,2.5,2.2], desire: 'down', target: 3 },
 ];
-
 
 function ServicePill({ icon: Icon, text }: { icon: React.ElementType, text: string }) {
     return (
@@ -166,8 +169,8 @@ export default async function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="flex justify-center items-center h-64 md:h-80 w-full">
-               <KpiRings title="Last 90 Days" metrics={heroKpis} size={280} />
+            <div className="flex justify-center items-center h-full w-full">
+               <HeroKpiBoard items={kpis} />
             </div>
           </div>
         </section>
