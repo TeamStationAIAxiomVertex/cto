@@ -1,5 +1,4 @@
 
-
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
@@ -151,16 +150,6 @@ export default async function HomePage() {
       />
       <div className="container mx-auto px-4">
         <section className="text-center py-16 md:py-24">
-          <div className="mb-8">
-            <Image
-              src={placeholderImages.heroTeam.src.url}
-              width={placeholderImages.heroTeam.src.width}
-              height={placeholderImages.heroTeam.src.height}
-              alt={placeholderImages.heroTeam.alt}
-              priority
-              className="mx-auto rounded-xl"
-            />
-          </div>
           <div className="flex justify-center items-center gap-8">
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent px-2 py-4">
                   Nearshore Software Development: The CTO Co-Pilot Field Manual
