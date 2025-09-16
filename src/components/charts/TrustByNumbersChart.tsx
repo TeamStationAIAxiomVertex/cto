@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -17,7 +16,11 @@ type Props = {
 };
 
 export default function TrustByNumbersChart({ data, height = 320 }: Props) {
-  const fills = ['url(#gradient1)', 'url(#gradient2)', 'url(#gradient3)'];
+  const fills = [
+    'url(#gradient1)',
+    'url(#gradient2)',
+    'url(#gradient3)',
+  ];
 
   return (
     <div
@@ -34,12 +37,12 @@ export default function TrustByNumbersChart({ data, height = 320 }: Props) {
               <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0.4}/>
             </linearGradient>
             <linearGradient id="gradient2" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="hsl(var(--chart-2))" stopOpacity={0.8}/>
-              <stop offset="95%" stopColor="hsl(var(--chart-2))" stopOpacity={0.3}/>
+              <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.6}/>
+              <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0.2}/>
             </linearGradient>
              <linearGradient id="gradient3" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="hsl(var(--foreground))" stopOpacity={0.6}/>
-              <stop offset="95%" stopColor="hsl(var(--foreground))" stopOpacity={0.2}/>
+              <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.4}/>
+              <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0.1}/>
             </linearGradient>
           </defs>
           <RechartsTooltip
@@ -57,8 +60,8 @@ export default function TrustByNumbersChart({ data, height = 320 }: Props) {
             nameKey="label"
             cx="50%"
             cy="50%"
-            innerRadius="65%"
-            outerRadius="90%"
+            innerRadius="70%"
+            outerRadius="95%"
             paddingAngle={5}
             stroke="hsl(var(--border))"
           >

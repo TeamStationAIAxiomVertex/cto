@@ -1,3 +1,4 @@
+'use client';
 
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component } from 'lucide-react';
@@ -9,35 +10,17 @@ import Image from 'next/image';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 
 const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon), { ssr: false });
-
-export const metadata: Metadata = {
-  title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
-  description: 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.',
-  openGraph: {
-      title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
-      description: 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.',
-      images: [
-          {
-              url: placeholderImages.heroTeam.src.url,
-              width: placeholderImages.heroTeam.src.width,
-              height: placeholderImages.heroTeam.src.height,
-              alt: placeholderImages.heroTeam.alt,
-          }
-      ]
-  }
-};
-
-// Client-only chart (recharts) with a lightweight skeleton to avoid CLS
-const TrustByNumbersChart = dynamic(
-  () => import('@/components/charts/TrustByNumbersChart'),
-  { ssr: false, loading: () => <div className="h-64 md:h-80 w-full animate-pulse rounded-xl bg-muted" /> }
+const KpiRings = dynamic(
+  () => import('@/components/charts/KpiRings').then((m) => m.KpiRings),
+  { ssr: false }
 );
 
-// Minimal KPI slice suitable for a compact bar chart
-const chartData = [
-  { name: 'TTO', value: 9,   label: 'Time-to-Offer (Days)' },
-  { name: 'Compliance', value: 100, label: 'Audit-Ready Compliance (%)' },
-  { name: 'Readiness', value: 95,  label: 'Day-1 Tool Readiness (%)' },
+// Example data (CTO-native signals)
+const heroKpis = [
+  { label: 'Audit-Ready Compliance', value: 100, colorVar: '--primary', unit: '%' },
+  { label: 'Day-1 Tool Readiness', value: 97, colorVar: '--chart-2', unit: '%' },
+  // Normalize 7.6h of 8h SLA → 95%
+  { label: 'PR Review p50 (≤8h SLA)', value: 7.6, max: 8, colorVar: '--foreground', unit: 'h' },
 ];
 
 function ServicePill({ icon: Icon, text }: { icon: React.ElementType, text: string }) {
@@ -121,8 +104,13 @@ const sandlerCards = [
 ];
 
 
-export default async function HomePage() {
-  const caseStudies = (await getAllCaseStudies()).slice(0, 3);
+export default function HomePage() {
+  const [caseStudies, setCaseStudies] = React.useState<Awaited<ReturnType<typeof getAllCaseStudies>>>([]);
+
+  React.useEffect(() => {
+    getAllCaseStudies().then(setCaseStudies);
+  }, []);
+
   const siteUrl = 'https://cto.teamstation.dev';
 
   const websiteSchema = {
@@ -182,8 +170,8 @@ export default async function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="h-64 md:h-80 w-full">
-              <TrustByNumbersChart data={chartData} />
+            <div className="flex justify-center items-center h-64 md:h-80 w-full">
+               <KpiRings title="Last 90 Days" metrics={heroKpis} size={280} />
             </div>
           </div>
         </section>
