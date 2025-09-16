@@ -3,12 +3,10 @@
 import * as React from 'react';
 import {
   ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip as RechartsTooltip,
+  PieChart,
+  Pie,
   Cell,
+  Tooltip as RechartsTooltip,
 } from 'recharts';
 
 type Datum = { name: string; value: number; label: string };
@@ -28,13 +26,7 @@ export default function TrustByNumbersChart({ data, height = 320 }: Props) {
       role="img"
     >
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          data={data}
-          layout="vertical"
-          margin={{ top: 20, right: 24, left: 12, bottom: 8 }}
-        >
-          <XAxis type="number" hide />
-          <YAxis dataKey="label" type="category" hide />
+        <PieChart>
           <RechartsTooltip
             cursor={{ fill: 'hsla(var(--card))' }}
             contentStyle={{
@@ -44,12 +36,22 @@ export default function TrustByNumbersChart({ data, height = 320 }: Props) {
               borderRadius: 'var(--radius)',
             }}
           />
-          <Bar dataKey="value" radius={[0, 8, 8, 0]}>
+          <Pie
+            data={data}
+            dataKey="value"
+            nameKey="label"
+            cx="50%"
+            cy="50%"
+            innerRadius="60%"
+            outerRadius="80%"
+            paddingAngle={5}
+            stroke="none"
+          >
             {data.map((_, i) => (
-              <Cell key={i} fill={fills[i % fills.length]} />
+              <Cell key={`cell-${i}`} fill={fills[i % fills.length]} />
             ))}
-          </Bar>
-        </BarChart>
+          </Pie>
+        </PieChart>
       </ResponsiveContainer>
     </div>
   );
