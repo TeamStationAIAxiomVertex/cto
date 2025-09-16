@@ -1,30 +1,36 @@
 
-'use client';
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import placeholderImages from '@/app/lib/placeholder-images.json';
-import type { KpiItem } from '@/components/charts/HeroKpiBoard';
+import HeroKpis, { type HeroKpi } from '@/components/metrics/HeroKpis';
+import { SpotifyIcon } from '@/components/SpotifyIcon';
 
-const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon), { ssr: false });
-const HeroKpiBoard = dynamic(
-  () => import('@/components/charts/HeroKpiBoard').then(m => m.HeroKpiBoard),
-  { ssr: false, loading: () => <div className="h-[464px] w-full animate-pulse rounded-xl bg-muted" /> }
-);
+export const metadata: Metadata = {
+  title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
+  description: 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.',
+  openGraph: {
+      title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
+      description: 'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.',
+      images: [
+          {
+              url: placeholderImages.heroTeam.src.url,
+              width: placeholderImages.heroTeam.src.width,
+              height: placeholderImages.heroTeam.src.height,
+              alt: placeholderImages.heroTeam.alt,
+          }
+      ]
+  }
+};
 
-const kpis: KpiItem[] = [
-  { id: 'compliance', label: 'Audit-Ready Compliance', value: 100, unit: '%', colorVar: '--primary', trend: [99,100,100,100], desire: 'up' },
-  { id: 'readiness', label: 'Day-1 Tool Readiness', value: 97, unit: '%', colorVar: '--chart-2', trend: [95,96,97,97], desire: 'up' },
-  { id: 'prp50', label: 'PR Review p50 (≤8h)', value: 6.8, unit: 'h', max: 8, colorVar: '--foreground', trend: [7.5,7.1,6.9,6.8], desire: 'down', target: 8 },
-  { id: 'mttr', label: 'Incident MTTR p50 (≤4h)', value: 1.2, unit: 'h', max: 4, colorVar: '--primary', trend: [2.1,1.6,1.3,1.2], desire: 'down', target: 4 },
-  { id: 'escape', label: 'Defect Escape Rate (≤1.0%)', value: 0.6, unit: '%', max: 1, colorVar: '--chart-2', trend: [0.9,0.8,0.7,0.6], desire: 'down', target: 1 },
-  { id: 'tto', label: 'Time-to-Offer (≤10d)', value: 8, unit: 'd', max: 10, colorVar: '--foreground', trend: [12,10,9,8], desire: 'down', target: 10 },
-  { id: 'uptime', label: 'Uptime', value: 99.95, unit: '%', colorVar: '--primary', trend: [99.9,99.92,99.94,99.95], desire: 'up' },
-  { id: 'cycle', label: 'Cycle Time p50 (≤3d)', value: 2.2, unit: 'd', max: 3, colorVar: '--chart-2', trend: [3.1,2.8,2.5,2.2], desire: 'down', target: 3 },
+const heroKpis: HeroKpi[] = [
+  { id: 'compliance', label: 'Audit-Ready Compliance', value: 100, unit: '%', target: 100, desire: 'up' },
+  { id: 'readiness',  label: 'Day-1 Tool Readiness',  value: 97,  unit: '%', target: 95,  desire: 'up' },
+  { id: 'prp50',      label: 'PR Review p50',         value: 6.8, unit: 'h', target: 8,   desire: 'down', max: 12 },
+  { id: 'mttr',       label: 'Incident MTTR p50',     value: 1.2, unit: 'h', target: 4,   desire: 'down', max: 8  },
 ];
 
 function ServicePill({ icon: Icon, text }: { icon: React.ElementType, text: string }) {
@@ -109,7 +115,7 @@ const sandlerCards = [
 
 
 export default async function HomePage() {
-  const caseStudies = await getAllCaseStudies();
+  const caseStudies = (await getAllCaseStudies()).slice(0, 3);
 
   const siteUrl = 'https://cto.teamstation.dev';
 
@@ -170,8 +176,8 @@ export default async function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="flex justify-center items-center h-full w-full">
-               <HeroKpiBoard items={kpis} />
+            <div className="max-w-md mx-auto w-full">
+              <HeroKpis items={heroKpis} />
             </div>
           </div>
         </section>
@@ -203,15 +209,15 @@ export default async function HomePage() {
                       <div className="mt-4 text-sm text-muted-foreground flex-grow">
                           {pillar.description.includes("Axiom Cortex™") ?
                               (<>
-                                  Stop gambling on resumes. Our <WithTooltip content="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
+                                  Stop gambling on resumes. Our <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
                               </>) :
                            pillar.description.includes("EOR") ?
                             (<>
-                                Stop juggling 5+ vendors. We bundle <WithTooltip content="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip content="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip content="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
+                                Stop juggling 5+ vendors. We bundle <WithTooltip label="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip label="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip label="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
                             </>) :
                            pillar.description.includes("TCO") ?
                             (<>
-                                We provide a predictable, all-inclusive <WithTooltip content="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
+                                We provide a predictable, all-inclusive <WithTooltip label="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
                             </>) : pillar.description
                           }
                       </div>
