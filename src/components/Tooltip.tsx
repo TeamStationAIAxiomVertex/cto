@@ -1,2 +1,11 @@
 'use client';
-export { default, WithTooltip } from './ui/tooltip';
+export {
+  default,
+  WithTooltip,
+  TooltipProvider,
+  TooltipRoot,
+  TooltipTrigger,
+  TooltipPortal,
+  TooltipContent,
+  Tooltip,
+} from './ui/tooltip';
