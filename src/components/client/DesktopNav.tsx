@@ -1,7 +1,6 @@
-
 'use client';
 import Link from 'next/link';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/client/Popover';
 import { ChevronDown, BookOpen } from 'lucide-react';
 import { NAV, simpleNavItems, type NavItem } from '@/config/nav';
 

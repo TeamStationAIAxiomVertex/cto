@@ -1,8 +1,8 @@
 'use client';
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/ThemeToggle';
-import { MobileNav } from './MobileNav';
-import { DesktopNav } from './DesktopNav';
+import { MobileNav } from '@/components/client/MobileNav';
+import { DesktopNav } from '@/components/client/DesktopNav';
 
 export function Header() {
   return (

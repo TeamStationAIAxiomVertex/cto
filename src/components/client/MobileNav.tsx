@@ -1,9 +1,8 @@
-
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-import { DisclosureDrawer } from './DisclosureDrawer';
+import { DisclosureDrawer } from '@/components/DisclosureDrawer';
 import { NAV, simpleNavItems } from '@/config/nav';
 
 export function MobileNav() {
