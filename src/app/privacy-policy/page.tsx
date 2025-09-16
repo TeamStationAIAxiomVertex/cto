@@ -8,7 +8,8 @@ export const metadata: Metadata = {
   robots: {
     index: false, // It's common to no-index legal pages
     follow: true,
-  }
+  },
+  alternates: { canonical: '/privacy-policy' },
 };
 
 export default function PrivacyPolicyPage() {
@@ -84,10 +85,17 @@ export default function PrivacyPolicyPage() {
 
         <h2>9. Contact Us</h2>
         <p>
-          If you have any questions about this Privacy Policy, please <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer">contact us</a>.
+          Questions? Email <a href="mailto:support@teamstation.ai">support@teamstation.ai</a> or{' '}
+          <a
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+            target="_blank" rel="noopener noreferrer"
+          >
+            book a call
+          </a>.
         </p>
-         <p className="text-sm text-muted-foreground border-t border-border pt-4 mt-8">
-            <strong>Disclaimer:</strong> This is a placeholder document. This policy should be reviewed by a qualified legal professional to ensure it meets all legal and regulatory requirements for your specific business operations and jurisdictions.
+
+        <p className="text-sm text-muted-foreground border-t border-border pt-4 mt-8">
+          <strong>Disclaimer:</strong> This is a placeholder document and should be reviewed by counsel.
         </p>
       </article>
     </main>

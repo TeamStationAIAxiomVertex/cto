@@ -56,7 +56,9 @@
         "source": "/research",
         "destination": "/research/hub",
         "type": 301
-      }
+      },
+      { "source": "/privacy", "destination": "/privacy-policy", "type": 301 },
+      { "source": "/terms", "destination": "/terms-of-service", "type": 301 }
     ]
   }
 }

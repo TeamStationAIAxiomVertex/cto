@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -31,13 +30,6 @@ const companyLinks: LinkItem[] = [
     { href: '/case-studies', label: 'Case Studies' },
     { href: '/pricing', label: 'Pricing' },
     { href: "https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book", label: "Nearshore IT Platformed Book"},
-];
-
-const mainSiteLinks: LinkItem[] = [
-    { href: 'https://teamstation.dev', label: 'TeamStation.dev Home' },
-    { href: 'https://teamstation.dev/nearshore-it-staff-augmentation-pricing', label: 'Main Site Pricing' },
-    { href: 'https://teamstation.dev/nearshore-integrated-services', label: 'Main Site Platform' },
-    { href: '/research/hub#podcast', label: 'Podcast', icon: <SpotifyIcon className="h-4 w-4 inline-block ml-1" /> },
 ];
 
 const researchLinks: LinkItem[] = [
@@ -116,7 +108,20 @@ export default function Footer() {
               <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80">Sign In to Platform</Link>
             </div>
              <div className="mt-8">
-              <LinkColumn title="Scientific Research" links={researchLinks} />
+               <LinkColumn
+                title="Scientific Research"
+                links={[
+                  ...researchLinks,
+                  {
+                    href: '/research/hub#podcast',
+                    label: (
+                      <>
+                        Podcast <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
+                      </>
+                    ),
+                  },
+                ]}
+              />
              </div>
           </div>
           
