@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -37,9 +38,9 @@ export function KpiRings({
   }));
 
   // Build concentric band sizes (outer → inner)
-  const OUTER = 86; // %
-  const THICK = 14; // %
-  const STEP = 16; // %
+  const OUTER = 90; // %
+  const THICK = 16; // %
+  const STEP = 18; // %
   const bands = normalized.map((_, i) => {
     const out = OUTER - i * STEP;
     const inn = out - THICK;
@@ -59,107 +60,106 @@ export function KpiRings({
 
   return (
     <div
-      className="relative rounded-2xl border p-4 shadow-sm"
+      className="relative flex flex-col items-center rounded-2xl border p-4 shadow-sm"
       style={{ width: size, height: size, background: 'hsl(var(--card))' }}
       aria-label="Operational KPI rings"
       role="img"
     >
-      <RadialBarChart
-        width={size}
-        height={size}
-        cx="50%"
-        cy="50%"
-        innerRadius="38%"
-        outerRadius="88%"
-        data={[{ value: 100 }]} // scaffold for axis
-        startAngle={90}
-        endAngle={-270}
-      >
-        <PolarAngleAxis type="number" domain={[0, 100]} tick={false} />
-        {/* Rings */}
-        {dataPerRing.map((ringData, i) => (
-          <RadialBar
-            key={normalized[i].label}
-            data={ringData}
-            dataKey="value"
-            cornerRadius={8}
-            background={{ fill: trackFill }}
-            fill={fillFromVar(normalized[i].colorVar)}
-            {...bands[i]}
-          />
-        ))}
-        <RTooltip
-          cursor={false}
-          wrapperStyle={{ outline: 'none' }}
-          content={({ payload }) => {
-            if (!payload || !payload.length) return null;
-            const name = payload[0].payload?.name as string;
-            const idx = normalized.findIndex((m) => m.label === name);
-            if (idx === -1) return null;
-            const m = normalized[idx];
-            return (
-              <div
-                style={{
-                  background: cardBg,
-                  border: `1px solid ${border}`,
-                  color: textFg,
-                  borderRadius: 8,
-                  padding: '8px 10px',
-                  fontSize: 12,
-                }}
-              >
-                <div style={{ fontWeight: 600 }}>{m.label}</div>
-                <div style={{ color: textMuted }}>
-                  {m.value}
-                  {m.unit ? m.unit : ''}{' '}
-                  {m.max ? `of ${m.max}${m.unit ?? ''}` : ''} · {m.pct}%
+      <div style={{ width: '100%', height: '65%'}} className="relative">
+        <RadialBarChart
+          width={size}
+          height={size * 0.65}
+          cx="50%"
+          cy="50%"
+          innerRadius="38%"
+          outerRadius="90%"
+          data={[{ value: 100 }]} // scaffold for axis
+          startAngle={90}
+          endAngle={-270}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          <PolarAngleAxis type="number" domain={[0, 100]} tick={false} />
+          {/* Rings */}
+          {dataPerRing.map((ringData, i) => (
+            <RadialBar
+              key={normalized[i].label}
+              data={ringData}
+              dataKey="value"
+              cornerRadius={8}
+              background={{ fill: trackFill }}
+              fill={fillFromVar(normalized[i].colorVar)}
+              {...bands[i]}
+            />
+          ))}
+          <RTooltip
+            cursor={false}
+            wrapperStyle={{ outline: 'none' }}
+            content={({ payload }) => {
+              if (!payload || !payload.length) return null;
+              const name = payload[0].payload?.name as string;
+              const idx = normalized.findIndex((m) => m.label === name);
+              if (idx === -1) return null;
+              const m = normalized[idx];
+              return (
+                <div
+                  style={{
+                    background: cardBg,
+                    border: `1px solid ${border}`,
+                    color: textFg,
+                    borderRadius: 8,
+                    padding: '8px 10px',
+                    fontSize: 12,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+                  }}
+                >
+                  <div style={{ fontWeight: 600 }}>{m.label}</div>
+                  <div style={{ color: textMuted }}>
+                    {m.value}
+                    {m.unit ? m.unit : ''}{' '}
+                    {m.max ? `of ${m.max}${m.unit ?? ''}` : ''} · {m.pct}%
+                  </div>
                 </div>
-              </div>
-            );
-          }}
-        />
-      </RadialBarChart>
-
-      {/* Center label */}
-      <div className="absolute inset-0 grid place-items-center text-center pointer-events-none">
-        <div className="px-4">
-          <div className="text-xs uppercase tracking-wide text-muted-foreground">
-            {title}
-          </div>
-          {/* Show the strongest headline metric in center (first ring) */}
-          <div className="mt-1 text-3xl font-bold text-foreground">
-            {normalized[0]?.value}
-            {normalized[0]?.unit ?? '%'}
-          </div>
-          <div className="text-xs text-muted-foreground">
-            {normalized[0]?.label}
-            {normalized[0]?.max
-              ? ` (${normalized[0].pct}%)`
-              : normalized[0]
-              ? ''
-              : null}
+              );
+            }}
+          />
+        </RadialBarChart>
+        
+        {/* Center label */}
+        <div className="absolute inset-0 grid place-items-center text-center pointer-events-none">
+          <div className="px-1">
+            <div className="text-xs uppercase tracking-wide text-muted-foreground">
+              {title}
+            </div>
+            <div className="mt-1 text-3xl font-bold text-foreground">
+              {normalized[0]?.value}
+              {normalized[0]?.unit ?? '%'}
+            </div>
+            <div className="text-xs text-muted-foreground truncate">
+              {normalized[0]?.label}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Legend */}
-      <div className="absolute bottom-2 left-2 right-2 grid grid-cols-1 gap-1 text-xs">
-        {normalized.map((m) => (
-          <div key={m.label} className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span
-                className="inline-block h-2 w-2 rounded-sm"
-                style={{ background: fillFromVar(m.colorVar) }}
-              />
-              <span className="text-muted-foreground">{m.label}</span>
+      <div className="w-full mt-auto pt-2 border-t border-border/50">
+        <div className="grid grid-cols-1 gap-1 text-xs">
+          {normalized.map((m) => (
+            <div key={m.label} className="flex items-center justify-between">
+              <div className="flex items-center gap-2 truncate">
+                <span
+                  className="inline-block h-2 w-2 flex-shrink-0 rounded-sm"
+                  style={{ background: fillFromVar(m.colorVar) }}
+                />
+                <span className="text-muted-foreground truncate">{m.label}</span>
+              </div>
+              <div className="tabular-nums text-foreground font-medium">
+                {m.value}
+                {m.unit ?? ''}
+              </div>
             </div>
-            <div className="tabular-nums text-foreground">
-              {m.value}
-              {m.unit ?? ''}
-              {m.max ? ` / ${m.max}${m.unit ?? ''}` : ''}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
