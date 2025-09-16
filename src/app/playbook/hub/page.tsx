@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, BarChart, DollarSign, Globe, Scale, ShieldCheck, Zap, BrainCircuit, Users } from 'lucide-react';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { WithTooltip } from '@/components/client/tooltip';
+import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
   title: 'The CTO Playbook for Nearshore Engineering Success | TeamStation AI',
@@ -81,9 +81,9 @@ const sandlerCards = [
     {
         title: 'Seniority: Resume Theater vs Cognitive Evidence',
         question: 'Who last vetoed a bad pattern before it shipped?',
-        problem: '“Senior” in the deck, junior in the repo.',
+        problem: '“Senior” on the slide, junior in the repo.',
         solution: 'Axiom Cortex™ cognitive signals + structured rubrics + recorded panels.',
-        proof: 'Mismatch rate ≤10%; rewrite ADRs down.',
+        proof: 'Mismatch rate ≤10%; rewrite ADRs trend down.',
         icon: <BrainCircuit className="h-8 w-8 text-primary" />,
     },
     {

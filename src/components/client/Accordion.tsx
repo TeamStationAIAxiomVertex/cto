@@ -1,18 +1,54 @@
+'use client';
 
-"use client";
+import * as React from 'react';
+import { ChevronDown } from 'lucide-react';
 
-import React, { useState, useRef, useEffect, type ReactNode } from "react";
-import { ChevronDown } from "lucide-react";
-
-export const Accordion = ({ children }: { children: ReactNode }) => {
-    return <div className="space-y-2">{children}</div>;
+export type AccordionProps = {
+  children: React.ReactNode;
+  className?: string;
 };
 
-export const AccordionItem = ({ title, children }: { title: string | ReactNode, children: ReactNode }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
+export type AccordionItemProps = {
+  title: React.ReactNode;
+  defaultOpen?: boolean;
+  children: React.ReactNode;
+  className?: string;
+};
 
-  useEffect(() => {
+export function Accordion({ children, className }: AccordionProps) {
+  const [openItems, setOpenItems] = React.useState<number[]>([]);
+
+  const toggleItem = (index: number) => {
+    setOpenItems(prev => 
+      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+    );
+  };
+
+  return (
+    <div className={className}>
+      {React.Children.map(children, (child, index) => {
+        if (React.isValidElement<AccordionItemProps>(child)) {
+          return React.cloneElement(child, {
+            isOpen: openItems.includes(index),
+            toggle: () => toggleItem(index),
+          });
+        }
+        return child;
+      })}
+    </div>
+  );
+}
+
+// Internal AccordionItem that receives isOpen and toggle from Accordion
+type InternalAccordionItemProps = AccordionItemProps & {
+  isOpen?: boolean;
+  toggle?: () => void;
+};
+
+export function AccordionItem({ title, children, className, isOpen, toggle }: InternalAccordionItemProps) {
+  const contentRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
     if (contentRef.current) {
       contentRef.current.style.maxHeight = isOpen
         ? `${contentRef.current.scrollHeight}px`
@@ -21,14 +57,15 @@ export const AccordionItem = ({ title, children }: { title: string | ReactNode, 
   }, [isOpen]);
 
   return (
-    <div className="border-b border-border/50">
+    <div className={className}>
       <button
+        type="button"
+        onClick={toggle}
         className="flex w-full items-center justify-between py-4 text-left font-semibold"
-        onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
         <span>{title}</span>
-        <ChevronDown
+         <ChevronDown
           className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200"
           style={{
             transform: `rotate(${isOpen ? 180 : 0}deg)`,
@@ -44,4 +81,4 @@ export const AccordionItem = ({ title, children }: { title: string | ReactNode, 
       </div>
     </div>
   );
-};
+}

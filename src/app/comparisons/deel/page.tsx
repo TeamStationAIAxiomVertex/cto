@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { WithTooltip } from '@/components/client/tooltip';
+import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

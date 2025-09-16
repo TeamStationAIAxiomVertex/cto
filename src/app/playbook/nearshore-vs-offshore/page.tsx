@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { WithTooltip } from '@/components/client/tooltip';
+import { WithTooltip } from '@/components/ui/tooltip';
 import { Clock, Users, FileSearch, Building, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, BookOpen, BrainCircuit, GitCompare } from 'lucide-react';
 import { ComparisonWidget } from '@/components/ComparisonWidget';
 

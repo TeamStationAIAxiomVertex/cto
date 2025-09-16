@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, DollarSign, Zap, TestTube2, Users, Briefcase, ShieldCheck, Layers, GitCompare, UserCheck, HelpCircle, BookOpen, AlertTriangle, Scale } from 'lucide-react';
-import { WithTooltip } from '@/components/client/tooltip';
+import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
   title: 'TCO Model for Nearshore Engineering Teams | TeamStation AI',

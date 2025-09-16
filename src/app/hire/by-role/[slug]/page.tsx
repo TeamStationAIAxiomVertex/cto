@@ -1,7 +1,7 @@
 
 
 import Link from 'next/link';
-import { WithTooltip } from '@/components/client/tooltip';
+import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 import { CheckCircle, ArrowRight, Shield, Bug, CloudCog, AlertTriangle, Key } from 'lucide-react';
 
