@@ -1,9 +1,12 @@
 
+
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart, BookOpen, Star, Trophy } from 'lucide-react';
 import type { Metadata } from 'next';
-import { SpotifyIcon } from '@/components/SpotifyIcon';
+import dynamic from 'next/dynamic';
+
+const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon), { ssr: false });
 
 export const dynamic = 'force-static';
 

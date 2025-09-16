@@ -1,4 +1,5 @@
 
+
 /** @type {import('next').NextConfig} */
 
 // BREAK-GLASS: set BREAK_GLASS=1 to ignore TS/ESLint errors during build.
@@ -20,6 +21,15 @@ const nextConfig = {
             }
         ],
     },
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react']
+  },
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/icons/{{member}}'
+    }
+  },
   eslint: { ignoreDuringBuilds: breakGlass ? true : false },
   typescript: { ignoreBuildErrors: breakGlass ? true : false },
   async redirects() {

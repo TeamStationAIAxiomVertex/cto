@@ -6,10 +6,24 @@
     "node": "20.x"
   },
   "packageManager": "npm@10",
+  "browserslist": {
+    "production": [
+      "last 2 Chrome versions",
+      "last 2 Firefox versions",
+      "Safari >= 16",
+      "not dead",
+      "not ie <= 11"
+    ],
+    "development": [
+      "last 1 Chrome version",
+      "last 1 Firefox version",
+      "last 1 Safari version"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:production": "next build",
+    "build:production": "npm run typecheck && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",

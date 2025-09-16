@@ -1,12 +1,15 @@
 
+
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
-import { SpotifyIcon } from '@/components/SpotifyIcon';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import placeholderImages from '@/app/lib/placeholder-images.json';
+
+const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon), { ssr: false });
 
 export const metadata: Metadata = {
   title: 'Nearshore Software Development & Staff Augmentation | TeamStation AI',
