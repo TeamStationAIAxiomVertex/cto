@@ -1,8 +1,21 @@
 
-import { ComparisonWidget } from "@/components/ComparisonWidget";
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DollarSign, GitCompare, Layers, ArrowRight } from "lucide-react";
+import dynamic from 'next/dynamic';
+
+const ComparisonWidget = dynamic(
+  () => import('@/components/ComparisonWidget'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="text-center p-8 text-sm text-muted-foreground" aria-busy="true">
+        Loading comparison widget…
+      </div>
+    ),
+  }
+);
+
 
 export const metadata: Metadata = {
   title: 'Nearshore Software Development — New-Gen vs Onshore/Offshore/Legacy | TeamStation AI',
