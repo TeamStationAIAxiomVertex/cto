@@ -6,7 +6,7 @@ import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart, BookO
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
-const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon), { ssr: false });
+const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon'), { ssr: false });
 
 export const dynamic = 'force-static';
 
