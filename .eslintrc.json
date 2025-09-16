@@ -26,12 +26,13 @@
   "overrides": [
     {
       "files": ["src/lib/**", "src/components/**"],
+      "excludedFiles": ["src/components/client/**"],
       "rules": {
         "no-restricted-syntax": [
-          "warn",
+          "error",
           {
-            "selector": "Program:has(Directive[value='use client'])",
-            "message": "'use client' not allowed here. Move to src/components/client/** or create a client island."
+            "selector": "Program:has(> ExpressionStatement[directive='use client'])",
+            "message": "Client Components must live under src/components/client/** and be loaded via a server wrapper."
           }
         ]
       }

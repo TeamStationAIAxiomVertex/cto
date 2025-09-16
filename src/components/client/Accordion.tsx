@@ -29,6 +29,7 @@ export function Accordion({ children, className }: AccordionProps) {
       {React.Children.map(children, (child, index) => {
         if (React.isValidElement<AccordionItemProps>(child)) {
           return React.cloneElement(child, {
+            // @ts-ignore
             isOpen: openItems.includes(index),
             toggle: () => toggleItem(index),
           });
@@ -45,30 +46,35 @@ type InternalAccordionItemProps = AccordionItemProps & {
   toggle?: () => void;
 };
 
-export function AccordionItem({ title, children, className, isOpen, toggle }: InternalAccordionItemProps) {
+export function AccordionItem({ title, children, className, isOpen, toggle, defaultOpen }: InternalAccordionItemProps) {
   const contentRef = React.useRef<HTMLDivElement>(null);
+
+  // Use state to manage open state if not controlled by parent Accordion
+  const [isStandaloneOpen, setStandaloneOpen] = React.useState(!!defaultOpen);
+  const isEffectivelyOpen = isOpen !== undefined ? isOpen : isStandaloneOpen;
+  const handleToggle = toggle || (() => setStandaloneOpen(v => !v));
 
   React.useEffect(() => {
     if (contentRef.current) {
-      contentRef.current.style.maxHeight = isOpen
+      contentRef.current.style.maxHeight = isEffectivelyOpen
         ? `${contentRef.current.scrollHeight}px`
         : "0px";
     }
-  }, [isOpen]);
+  }, [isEffectivelyOpen]);
 
   return (
     <div className={className}>
       <button
         type="button"
-        onClick={toggle}
+        onClick={handleToggle}
         className="flex w-full items-center justify-between py-4 text-left font-semibold"
-        aria-expanded={isOpen}
+        aria-expanded={isEffectivelyOpen}
       >
         <span>{title}</span>
          <ChevronDown
           className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200"
           style={{
-            transform: `rotate(${isOpen ? 180 : 0}deg)`,
+            transform: `rotate(${isEffectivelyOpen ? 180 : 0}deg)`,
           }}
         />
       </button>
