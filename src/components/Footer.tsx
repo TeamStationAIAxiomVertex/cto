@@ -7,9 +7,8 @@ import dynamic from 'next/dynamic';
 import { roleCategories } from '@/lib/roles';
 import { techCategories } from '@/lib/tech';
 import { countries } from '@/lib/countries';
+import { SpotifyIcon } from '@/components/SpotifyIcon';
 
-// Load the tiny client island lazily (never pulls Footer into the client bundle)
-const SpotifyIconIsland = dynamic(() => import('@/components/client/SpotifyIconIsland'), { ssr: false });
 
 type LinkItem = {
   href: string;
@@ -45,7 +44,7 @@ const researchLinks: LinkItem[] = [
     href: '/research/hub#podcast',
     label: (
       <>
-        Podcast <SpotifyIconIsland className="h-4 w-4 inline-block ml-1 align-text-bottom" />
+        Podcast <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
       </>
     ),
   },
