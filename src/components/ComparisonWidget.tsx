@@ -1,5 +1,6 @@
-
 'use client';
+import 'client-only';
+
 import { useState, useMemo, type ReactNode, useId } from 'react';
 import { WithTooltip } from '@/components/ui/tooltip';
 
