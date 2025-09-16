@@ -1,4 +1,3 @@
-'use client';
 
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component } from 'lucide-react';
@@ -22,6 +21,7 @@ const heroKpis = [
   // Normalize 7.6h of 8h SLA → 95%
   { label: 'PR Review p50 (≤8h SLA)', value: 7.6, max: 8, colorVar: '--foreground', unit: 'h' },
 ];
+
 
 function ServicePill({ icon: Icon, text }: { icon: React.ElementType, text: string }) {
     return (
@@ -104,12 +104,8 @@ const sandlerCards = [
 ];
 
 
-export default function HomePage() {
-  const [caseStudies, setCaseStudies] = React.useState<Awaited<ReturnType<typeof getAllCaseStudies>>>([]);
-
-  React.useEffect(() => {
-    getAllCaseStudies().then(setCaseStudies);
-  }, []);
+export default async function HomePage() {
+  const caseStudies = await getAllCaseStudies();
 
   const siteUrl = 'https://cto.teamstation.dev';
 
