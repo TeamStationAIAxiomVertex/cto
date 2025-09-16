@@ -1,0 +1,29 @@
+name: Release Gate
+
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+
+      # Run nuclear review
+      - name: Nuclear Review
+        run: npm run nuclear
+
+      # Optional: Firebase preview channel (requires secrets)
+      - name: Firebase Preview
+        if: github.event_name == 'pull_request'
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: |
+          npx firebase-tools hosting:channel:deploy "pr-${{ github.event.number }}" --json

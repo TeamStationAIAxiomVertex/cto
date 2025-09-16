@@ -1,4 +1,3 @@
-
 {
   "extends": ["next/core-web-vitals"],
   "rules": {
@@ -15,9 +14,27 @@
           {
             "group": ["**/components/Tooltip"],
             "message": "Use '@/components/ui/tooltip'."
+          },
+          {
+            "group": ["@/components/client/*"],
+            "message": "Do not statically import client islands into server files. Use dynamic(() => import(...), { ssr:false }) or pass as children."
           }
         ]
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/lib/**", "src/components/**"],
+      "rules": {
+        "no-restricted-syntax": [
+          "warn",
+          {
+            "selector": "Program:has(Directive[value='use client'])",
+            "message": "'use client' not allowed here. Move to src/components/client/** or create a client island."
+          }
+        ]
+      }
+    }
+  ]
 }
