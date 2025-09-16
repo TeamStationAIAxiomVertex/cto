@@ -6,19 +6,6 @@
     "node": "20.x"
   },
   "packageManager": "npm@10",
-  "browserslist": {
-    "production": [
-      "last 2 Chrome versions",
-      "last 2 Firefox versions",
-      "Safari >= 16",
-      "not dead"
-    ],
-    "development": [
-      "last 1 Chrome version",
-      "last 1 Firefox version",
-      "last 1 Safari version"
-    ]
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -63,5 +50,18 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "browserslist": {
+    "production": [
+      "last 2 Chrome versions",
+      "last 2 Firefox versions",
+      "Safari >= 16",
+      "not dead"
+    ],
+    "development": [
+      "last 1 Chrome version",
+      "last 1 Firefox version",
+      "last 1 Safari version"
+    ]
   }
 }
