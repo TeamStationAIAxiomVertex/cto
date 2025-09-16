@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component, Trophy } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { WithTooltip } from '@/components/client/tooltip';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import placeholderImages from '@/app/lib/placeholder-images.json';

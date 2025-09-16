@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { ThemeToggle } from '@/components/ThemeToggle';
+import { ThemeToggle } from '@/components/client/ThemeToggle';
 import { MobileNav } from '@/components/client/MobileNav';
 import { DesktopNav } from '@/components/client/DesktopNav';
 

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle, Plane } from 'lucide-react';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { WithTooltip } from '@/components/client/tooltip';
 
 const allTech: { 
     [key: string]: { 
@@ -1898,7 +1898,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "When a dashboard is broken, can you trace the problem back to the source?",
             problem: "Without end-to-end data lineage, debugging data quality issues is a nightmare of manual detective work.",
-            solution: "Our engineers are experts in setting up automated data lineage, allowing you to see exactly where your data comes from and how it's transformed, from the source system to the final dashboard.",
+            solution: "Our engineers are experts in set-ting up automated data lineage, allowing you to see exactly where your data comes from and how it's transformed, from the source system to the final dashboard.",
             kpi: "Automated, end-to-end data lineage"
         },
         {
