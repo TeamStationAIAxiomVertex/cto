@@ -24,10 +24,8 @@ const ComparisonWidget = dynamic(
 );
 
 export const metadata: Metadata = {
-  title:
-    'Nearshore Software Development — New-Gen vs Onshore/Offshore/Legacy | TeamStation AI',
-  description:
-    'Static, evidence-based 5-way comparison: Build-In, Onshore, Offshore (Legacy), Nearshore (Legacy), and the Nearshore IT Co-Pilot with cognitive vetting and daylight SLAs.',
+  title: 'New-Gen Nearshore vs. Offshore & Legacy Models',
+  description: 'Evidence-based 5-way comparison of modern nearshore, onshore, offshore, and legacy models for software development.',
 };
 
 const sandlerCards = [

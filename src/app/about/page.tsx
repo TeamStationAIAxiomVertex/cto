@@ -1,5 +1,3 @@
-
-
 import { Target, Telescope, Shield, Users, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -8,8 +6,8 @@ import dynamic from 'next/dynamic';
 const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon ?? mod.default), { ssr: false });
 
 export const metadata: Metadata = {
-  title: 'About TeamStation AI | Nearshore Software Development with LATAM Teams',
-  description: 'Learn about TeamStation AI\'s mission to provide an integrated platform for building elite nearshore software development teams in Latin America. We are the top Bairesdev alternative.',
+  title: 'About TeamStation AI: Nearshore Development Teams',
+  description: 'Learn about our mission to provide the world\'s most efficient and secure platform for building elite nearshore LATAM teams.',
   keywords: 'about teamstation ai, nearshore software development, latam teams, bairesdev alternative, cognitive science hiring',
 };
 

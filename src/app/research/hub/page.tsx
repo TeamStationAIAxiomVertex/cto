@@ -1,5 +1,3 @@
-
-
 import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart, BookOpen, Star, Trophy } from 'lucide-react';
@@ -11,8 +9,8 @@ const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod =>
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Platforming Nearshore IT: The Science of Predictable Results | TeamStation AI',
-  description: 'Explore our peer-reviewed research on AI technical interviews, software engineering performance telemetry, and bias-free hiring for LATAM engineering teams.',
+  title: 'The Science of Predictable Nearshore Results',
+  description: 'Explore our peer-reviewed research on AI technical interviews, software engineering performance telemetry, and bias-free hiring.',
   keywords: 'nearshore research, ai technical interviews, software engineering performance, bias-free hiring, latam engineering, nearshore it platform',
 };
 
@@ -249,5 +247,3 @@ export default async function ResearchPage() {
     </main>
   );
 }
-
-    

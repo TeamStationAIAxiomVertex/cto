@@ -1,12 +1,11 @@
-
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'ParallelStaff Alternative: TeamStation AI vs. ParallelStaff',
-    description: 'Is ParallelStaff\'s "try-before-you-buy" model right for you? See how TeamStation AI offers a more comprehensive nearshore alternative with integrated operations.'
+    title: 'ParallelStaff Alternative: TeamStation AI',
+    description: 'Is ParallelStaff\'s "try-before-you-buy" model right for you? See how our integrated platform offers a more complete solution.',
 };
 
 const comparisonPoints = {

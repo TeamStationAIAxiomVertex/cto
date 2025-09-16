@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane, UserCheck, School, Languages, Zap, Users, Clock } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -91,8 +90,8 @@ export async function generateMetadata({ params }: { params: { country: string }
   const countryName = countriesData[params.country]?.name || 'LATAM';
   const capitalCountryName = countryName.charAt(0).toUpperCase() + countryName.slice(1);
   return {
-    title: `Hire Nearshore Developers in ${capitalCountryName} | TeamStation AI`,
-    description: `Access elite, pre-vetted software engineers in ${capitalCountryName}. TeamStation AI provides a fully compliant platform for hiring nearshore talent in your time zone.`,
+    title: `Hire Nearshore Developers in ${capitalCountryName}`,
+    description: `Access elite, pre-vetted software engineers in ${capitalCountryName}. TeamStation AI offers a compliant platform for hiring LATAM talent.`,
     keywords: `hire nearshore developers in ${countryName}, hire ${countryName} developers, ${countryName} it staff augmentation, ${countryName} software engineers`,
   };
 }

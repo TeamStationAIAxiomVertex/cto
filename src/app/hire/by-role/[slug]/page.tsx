@@ -1,5 +1,3 @@
-
-
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
@@ -348,8 +346,8 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const roleName = roleData[params.slug]?.name || 'Engineer';
   return {
-    title: `Hire Nearshore ${roleName} | TeamStation AI`,
-    description: `Hire elite, pre-vetted LATAM ${roleName} engineers. Our scientific evaluation process de-risks hiring for critical roles in your tech stack.`,
+    title: `Hire Nearshore ${roleName}`,
+    description: `Hire elite, pre-vetted LATAM ${roleName} engineers. Our scientific evaluation process de-risks hiring for critical tech roles.`,
     keywords: `hire nearshore ${roleName}, latam ${roleName}, ${roleName} staff augmentation`,
   };
 }
@@ -550,6 +548,3 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
 export async function generateStaticParams() {
   return Object.keys(roleData).map(slug => ({ slug }));
 }
-
-
-

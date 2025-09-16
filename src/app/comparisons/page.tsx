@@ -1,12 +1,11 @@
-
 import Link from 'next/link';
 import { ArrowRight, Users, Scale, ShieldCheck, Briefcase, ExternalLink, Network } from 'lucide-react';
 import type { Metadata } from 'next';
 import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
-  title: 'Nearshore Vendor Comparisons: BairesDev, Globant, Toptal Alternatives | TeamStation AI',
-  description: 'An objective analysis of nearshore IT vendors. We compare TeamStation AI’s integrated platform against Body Shops, Freelance Networks, SIs, and EOR-only models.',
+  title: 'Nearshore Vendor Comparisons | TeamStation AI',
+  description: 'Objective analysis of nearshore IT vendors. We compare against Body Shops, Freelance Networks, SIs, and EOR-only models.',
 };
 
 const models = [

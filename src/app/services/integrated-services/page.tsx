@@ -1,5 +1,3 @@
-
-
 import Link from "next/link";
 import {
   BrainCircuit,
@@ -13,8 +11,8 @@ import {
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Integrated Nearshore Services | One SLA for Your Entire Operation',
-  description: 'TeamStation AI bundles EOR, payroll, secure devices (MDM), and compliance into a single SLA for nearshore IT staff augmentation. Eliminate vendor chaos.',
+  title: 'Integrated Nearshore Services: One SLA for Ops',
+  description: 'TeamStation AI bundles EOR, payroll, secure devices (MDM), and compliance into a single SLA for nearshore IT staff augmentation.',
   keywords: 'integrated nearshore services, nearshore sla, nearshore eor, nearshore payroll, secure nearshore devices, nearshore compliance',
 };
 

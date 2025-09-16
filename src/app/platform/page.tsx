@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { CheckCircle, Trophy, Star, BookOpen, Beaker, GitCommit, Search, Users, BrainCircuit, FileCheck, Laptop, Gauge, ShieldCheck, FileText, Building, Scale, ArrowRight } from "lucide-react";
 import type { Metadata } from 'next';
@@ -6,8 +5,8 @@ import { WithTooltip } from '@/components/client/tooltip';
 import { DisclosureDrawer } from "@/components/client/DisclosureDrawer";
 
 export const metadata: Metadata = {
-  title: 'Nearshore IT Co-Pilot™ Platform | TeamStation AI',
-  description: 'Run your entire LATAM engineering operation in one platform. Hire, equip, secure, and manage nearshore teams under one accountable SLA with TeamStation AI.',
+  title: 'The Nearshore IT Co-Pilot™ Platform | TeamStation AI',
+  description: 'Run your LATAM engineering operation in one platform. Hire, equip, secure, and manage nearshore teams under one accountable SLA.',
   keywords: 'nearshore it platform, nearshore co-pilot, latam engineering platform, hire nearshore developers, manage nearshore teams',
 };
 

@@ -1,13 +1,11 @@
-
-
 import { BrainCircuit, FileText, ShieldCheck, Scale, BookOpen, CheckCircle, FunctionSquare, Pilcrow, Sigma, GitBranch } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
-  title: 'The AxiomCortex™ Scientific Framework | AI Talent Evaluation',
-  description: 'The definitive scientific and mathematical framework for the AxiomCortex™ 3.0.0 engine, detailing the proprietary algorithms and psychometric models used for bias-free technical talent evaluation.',
+  title: 'The AxiomCortex™ Scientific Framework | AI Talent',
+  description: 'The definitive scientific framework for the AxiomCortex™ engine, detailing algorithms for bias-free technical talent evaluation.',
   keywords: 'axiomcortex, ai talent evaluation, scientific framework, bias-free hiring, technical talent evaluation, psychometric models',
 };
 

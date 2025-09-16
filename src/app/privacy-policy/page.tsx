@@ -1,10 +1,9 @@
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | TeamStation AI',
-  description: 'This Privacy Policy explains how TeamStation AI collects, uses, and discloses information about you through our CTO Playbook website and services.',
+  title: 'Privacy Policy',
+  description: 'This Privacy Policy explains how TeamStation AI collects, uses, and discloses information through our CTO Playbook website.',
   robots: {
     index: false, // It's common to no-index legal pages
     follow: true,

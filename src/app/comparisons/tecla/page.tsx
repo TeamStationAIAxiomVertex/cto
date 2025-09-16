@@ -1,12 +1,11 @@
-
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'TECLA Alternative: TeamStation AI vs. TECLA for LATAM Talent',
-  description: 'Evaluating TECLA? See why TeamStation AI is a strong TECLA alternative, offering an integrated platform with EOR, device management, and AI-vetting.',
+  title: 'TECLA Alternative: TeamStation AI vs. TECLA',
+  description: 'See why our integrated platform with EOR, device management, and AI-vetting is a strong TECLA alternative for LATAM talent.',
 };
 
 const comparisonPoints = {

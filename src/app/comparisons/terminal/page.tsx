@@ -1,12 +1,11 @@
-
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Terminal Alternative: TeamStation AI vs. Terminal.io',
-    description: 'Looking for a Terminal.io alternative? Compare TeamStation AI\'s integrated nearshore platform with Terminal\'s EOR-plus-recruiter model for building remote dev teams.'
+    title: 'Terminal.io Alternative: TeamStation AI',
+    description: 'Compare our integrated nearshore platform with Terminal\'s EOR-plus-recruiter model for building remote dev teams.',
 };
 
 const comparisonPoints = {

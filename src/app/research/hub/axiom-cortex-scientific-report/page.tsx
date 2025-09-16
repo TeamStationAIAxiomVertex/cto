@@ -3,8 +3,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AxiomCortex™ Scientific R&D Report | AI Talent Evaluation',
-  description: 'Read our peer-reviewed research on AxiomCortex™, the proprietary Cognitive AI engine for bias-free technical talent evaluation of nearshore engineers.',
+  title: 'AxiomCortex™ R&D Report | AI Talent Evaluation',
+  description: 'Read our peer-reviewed research on AxiomCortex™, our proprietary Cognitive AI engine for bias-free technical talent evaluation.',
 };
 
 export default function AxiomCortexReportPage() {

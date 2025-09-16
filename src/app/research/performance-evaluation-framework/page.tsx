@@ -1,12 +1,11 @@
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BookOpen, CheckCircle, BarChart, GitCompare, ShieldCheck, Zap, Users, Briefcase, ArrowRight, AlertTriangle } from 'lucide-react';
 import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
-    title: 'Software Engineer Performance & Growth Framework | TeamStation AI',
-    description: 'A data-driven performance evaluation framework for software engineers that moves beyond broken traditional reviews to maximize impact. A playbook for CTOs on technical performance review and bias-free evaluation.',
+    title: 'Software Engineer Performance & Growth Framework',
+    description: 'A data-driven performance evaluation framework for software engineers that moves beyond broken traditional reviews to maximize impact.',
     keywords: 'software engineer performance, performance evaluation framework, technical performance review, bias-free evaluation, engineering impact',
 };
 

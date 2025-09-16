@@ -1,12 +1,11 @@
-
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Globant Alternative: TeamStation AI vs. Globant for Staff Augmentation',
-  description: 'Looking for a Globant alternative for nearshore staff augmentation? Compare TeamStation AI\'s focused team-building platform with Globant\'s project outsourcing model.',
+  title: 'Globant Alternative for Staff Augmentation | TS AI',
+  description: 'Compare our team-building platform with Globant\'s project outsourcing model for nearshore staff augmentation.',
 };
 
 const comparisonPoints = {

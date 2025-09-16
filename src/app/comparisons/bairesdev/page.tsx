@@ -1,12 +1,11 @@
-
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'BairesDev Alternative: TeamStation AI vs. BairesDev | 2024 Comparison',
-  description: 'An objective comparison for CTOs looking for a BairesDev alternative. Compare TeamStation AI\'s integrated platform and Cognitive AI vetting with BairesDev\'s traditional staff augmentation.',
+  title: 'BairesDev Alternative: TeamStation AI vs. BairesDev',
+  description: 'A comparison for CTOs looking for a BairesDev alternative. Compare our integrated platform with their staff augmentation.',
   keywords: 'BairesDev alternative, BairesDev vs, nearshore software development, LATAM staff augmentation, IT outsourcing comparison',
 };
 

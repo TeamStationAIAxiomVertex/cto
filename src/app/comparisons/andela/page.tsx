@@ -1,4 +1,3 @@
-
 import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck, ExternalLink } from 'lucide-react';
 import { WithTooltip } from '@/components/ui/tooltip';
 import Link from 'next/link';
@@ -6,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Andela Alternative: TeamStation AI vs. Andela',
-    description: 'Looking for an Andela alternative? Compare TeamStation AI\'s integrated LATAM nearshore model to Andela\'s global talent marketplace for hiring developers.'
+    description: 'Compare TeamStation AI\'s integrated LATAM model to Andela\'s global talent marketplace for hiring developers.',
 };
 
 const comparisonPoints = {

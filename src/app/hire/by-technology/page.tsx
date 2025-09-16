@@ -1,13 +1,11 @@
-
-
 import Link from 'next/link';
 import { ArrowRight, Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane } from 'lucide-react';
 import type { Metadata } from 'next';
 import { techCategories } from '@/lib/tech';
 
 export const metadata: Metadata = {
-  title: 'Hire Nearshore Developers by Technology | TeamStation AI',
-  description: 'Hire vetted LATAM engineers with expertise in your stack: React, Node, Python, Go, AWS, GCP, Kubernetes, AI/ML, and more. Secure and compliant staff augmentation.',
+  title: 'Hire Nearshore Developers by Technology | TS AI',
+  description: 'Hire vetted LATAM engineers with expertise in your stack: React, Node, Python, AWS, Kubernetes, AI/ML, and more.',
   keywords: 'hire by technology, nearshore developers, latam engineers, react developers, node developers, python developers, aws experts, kubernetes experts, ai/ml engineers',
 };
 

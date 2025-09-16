@@ -1,4 +1,3 @@
-
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
@@ -6,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Unosquare Alternative: TeamStation AI vs. Unosquare',
-  description: 'Looking for an Unosquare alternative? Compare TeamStation AI\'s integrated nearshore platform with Unosquare\'s traditional staff augmentation and consulting.',
+  description: 'Compare our integrated platform with Unosquare\'s traditional staff augmentation and consulting for nearshore teams.',
 };
 
 const comparisonPoints = {

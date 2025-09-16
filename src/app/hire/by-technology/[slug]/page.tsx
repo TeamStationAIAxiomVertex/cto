@@ -1,5 +1,3 @@
-
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle, Plane } from 'lucide-react';
@@ -3359,8 +3357,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const tech = allTech[params.slug as TechKeys];
   const techName = tech?.name || 'Technology';
   return {
-    title: `Hire Nearshore ${techName} Developers | TeamStation AI`,
-    description: `Hire elite, pre-vetted LATAM engineers with expertise in ${techName}. Our scientific evaluation process de-risks hiring for critical roles in your tech stack.`,
+    title: `Hire Nearshore ${techName} Developers`,
+    description: `Hire elite, pre-vetted LATAM engineers with expertise in ${techName}. Our scientific evaluation de-risks hiring for critical roles.`,
     keywords: `hire nearshore ${techName} developers, latam ${techName} engineers, ${techName} staff augmentation`,
   };
 }

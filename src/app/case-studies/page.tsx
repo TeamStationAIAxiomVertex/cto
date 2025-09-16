@@ -1,12 +1,11 @@
-
 import Link from 'next/link';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { ArrowRight, Award, AlertTriangle, Shield, CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Nearshore IT Staff Augmentation Case Studies | TeamStation AI',
-  description: 'Evidence of Impact: See how our elite nearshore LATAM engineering teams solve critical problems, from scaling monoliths to resolving enterprise SSO failures.',
+  title: 'Nearshore IT Staff Augmentation Case Studies',
+  description: 'Evidence of impact. See how our elite nearshore LATAM teams solve critical business problems for our clients.',
 };
 
 export default async function CaseStudiesPage() {

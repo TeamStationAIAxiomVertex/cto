@@ -1,4 +1,3 @@
-
 import { getCaseStudyBySlug, getAllCaseStudies } from '@/lib/case-studies';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -14,6 +13,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: 'Case Study Not Found',
     };
   }
+
+  // Enforce length constraints
+  const title = study.title.length > 60 ? `${study.clientName} Case Study` : study.title;
+  const description = study.summary.length > 160 ? `Case study: how TeamStation AI helped ${study.clientName} with ${study.industry} challenges.` : study.summary;
   
   const keywords = [
       study.clientName,
@@ -24,15 +27,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   ].join(', ');
 
   return {
-    title: study.title,
-    description: study.summary,
+    title: title,
+    description: description,
     keywords: keywords,
     alternates: {
       canonical: study.canonical,
     },
     openGraph: {
-      title: study.title,
-      description: study.summary,
+      title: title,
+      description: description,
       url: study.canonical,
       type: 'article',
       publishedTime: new Date().toISOString(), // This should ideally come from frontmatter
@@ -42,14 +45,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
           url: study.ogImage.src.url,
           width: 1200,
           height: 630,
-          alt: study.title,
+          alt: title,
         },
       ],
     },
      twitter: {
       card: 'summary_large_image',
-      title: study.title,
-      description: study.summary,
+      title: title,
+      description: description,
       images: [study.ogImage.src.url],
     },
   };

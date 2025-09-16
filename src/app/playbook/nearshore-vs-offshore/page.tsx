@@ -1,5 +1,3 @@
-
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { WithTooltip } from '@/components/ui/tooltip';
@@ -7,8 +5,8 @@ import { Clock, Users, FileSearch, Building, Zap, Scale, ShieldCheck, ArrowRight
 import { ComparisonWidget } from '@/components/ComparisonWidget';
 
 export const metadata: Metadata = {
-  title: 'Which path ships this quarter without blowing up Finance? | TeamStation AI',
-  description: 'The definitive, data-driven analysis for CTOs on nearshore vs. offshore software development. A playbook for diagnosing the true cost and risk of your global talent strategy.',
+  title: 'Nearshore vs. Offshore: Which Path Ships Faster?',
+  description: 'Data-driven analysis for CTOs on nearshore vs. offshore software development. A playbook for your global talent strategy.',
 };
 
 const options = [

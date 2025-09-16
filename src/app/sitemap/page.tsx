@@ -1,4 +1,3 @@
-
 import fs from 'node:fs/promises';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -7,7 +6,7 @@ export const dynamic = 'force-static';
 const SITE = 'https://cto.teamstation.dev';
 
 export const metadata: Metadata = {
-  title: 'Sitemap | TeamStation AI',
+  title: 'Sitemap',
   description: 'A complete sitemap of the TeamStation AI CTO Playbook, including all playbooks, services, comparisons, and hiring options.',
 };
 

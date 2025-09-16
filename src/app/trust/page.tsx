@@ -1,11 +1,10 @@
-
 import { ShieldCheck, Laptop, FileLock, Scale, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Nearshore Compliance: GDPR, SSO, MDM & Device Control | Trust Center',
-  description: 'Security and compliance are the foundation of our nearshore platform. Learn about our nearshore compliance for GDPR, SSO, MDM & device control for LATAM teams.',
+  title: 'Nearshore Compliance: GDPR, SSO, MDM | Trust Center',
+  description: 'Security and compliance are the foundation of our nearshore platform. Learn about our controls for LATAM teams.',
   keywords: 'nearshore compliance, gdpr compliance, nearshore sso, nearshore mdm, latam device control, soc 2 nearshore',
 };
 

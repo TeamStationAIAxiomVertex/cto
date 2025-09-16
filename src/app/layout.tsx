@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
@@ -15,20 +14,19 @@ const poppins = Poppins({
 });
 
 const siteName = 'TeamStation AI';
-const siteDescription =
-  'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives.';
+const siteDescription = "CTO's guide to nearshore software development & LATAM staff augmentation. Build elite, secure, and compliant engineering teams.";
 const siteUrl = 'https://cto.teamstation.dev';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} | Nearshore Software Development & Staff Augmentation`,
+    default: `Nearshore Development & IT Staffing | ${siteName}`,
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
   openGraph: {
     title: {
-      default: `${siteName} | Nearshore Software Development & Staff Augmentation`,
+      default: `Nearshore Development & IT Staffing | ${siteName}`,
       template: `%s | ${siteName}`,
     },
     description: siteDescription,
@@ -48,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: {
-      default: `${siteName} | Nearshore Software Development & Staff Augmentation`,
+      default: `Nearshore Development & IT Staffing | ${siteName}`,
       template: `%s | ${siteName}`,
     },
     description: siteDescription,

@@ -1,12 +1,11 @@
-
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Toptal Alternative: TeamStation AI vs. Toptal for Full-Time Teams',
-  description: 'Looking for a Toptal alternative for building long-term teams? Compare TeamStation AI\'s integrated nearshore model with Toptal\'s premium freelance network.',
+  title: 'Toptal Alternative for Full-Time Teams | TS AI',
+  description: 'Compare our integrated nearshore model for building long-term teams with Toptal\'s premium freelance network.',
 };
 
 const comparisonPoints = {

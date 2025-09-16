@@ -1,13 +1,11 @@
-
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, DollarSign, Zap, TestTube2, Users, Briefcase, ShieldCheck, Layers, GitCompare, UserCheck, HelpCircle, BookOpen, AlertTriangle, Scale } from 'lucide-react';
 import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
-  title: 'TCO Model for Nearshore Engineering Teams | TeamStation AI',
-  description: 'A strategic tool for CTOs to model the hidden costs of hiring, delays, and quality issues, and build a CFO-ready business case to turn your engineering organization into a value driver.',
+  title: 'TCO Model for Nearshore Engineering Teams',
+  description: 'A tool for CTOs to model hidden costs of hiring and build a CFO-ready business case to turn engineering into a value driver.',
   keywords: 'tco model, total cost of ownership, nearshore engineering cost, cfo business case, engineering budget',
 };
 

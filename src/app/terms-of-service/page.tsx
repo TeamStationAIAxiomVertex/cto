@@ -1,9 +1,8 @@
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | TeamStation AI',
+  title: 'Terms of Service',
   description: 'Please read these Terms of Service carefully before using the TeamStation AI CTO Playbook website.',
   robots: {
     index: false, // It's common to no-index legal pages

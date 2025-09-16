@@ -1,4 +1,3 @@
-
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
@@ -6,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Nearsure Alternative: TeamStation AI vs. Nearsure',
-    description: 'Looking for a Nearsure alternative? Compare TeamStation AI\'s integrated nearshore platform with Nearsure\'s traditional staff augmentation for LATAM developers.'
+    description: 'Compare our integrated nearshore platform with Nearsure\'s traditional staff augmentation for LATAM developers.',
 };
 
 const comparisonPoints = {

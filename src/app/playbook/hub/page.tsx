@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { ArrowRight, BarChart, DollarSign, Globe, Scale, ShieldCheck, Zap, BrainCircuit, Users } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -6,9 +5,9 @@ import type { ReactNode } from 'react';
 import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
-  title: 'The CTO Playbook for Nearshore Engineering Success | TeamStation AI',
+  title: 'The CTO Playbook for Nearshore Engineering Success',
   description:
-    'The definitive, research-backed hub for CTOs evaluating nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices like Bairesdev alternatives. A playbook for nearshore success.',
+    'The definitive guide for CTOs on nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices.',
   keywords: 'cto playbook, nearshore software development, latam engineering, staff augmentation, bairesdev alternative, build vs buy, tco model',
 };
 

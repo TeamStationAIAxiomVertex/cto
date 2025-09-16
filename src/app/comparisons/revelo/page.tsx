@@ -1,12 +1,11 @@
-
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Revelo Alternative: TeamStation AI vs. Revelo for LATAM Developers',
-  description: 'Searching for a Revelo alternative? See how TeamStation AI\'s integrated platform for hiring developers in Latin America compares to Revelo\'s marketplace model.',
+  title: 'Revelo Alternative: TeamStation AI vs. Revelo',
+  description: 'Compare TeamStation AI\'s integrated platform to Revelo\'s marketplace model for hiring developers in Latin America.',
 };
 
 const comparisonPoints = {

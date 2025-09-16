@@ -1,12 +1,11 @@
-
 import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Deel Alternative for Talent Sourcing: TeamStation AI vs. Deel',
-    description: 'Looking for a Deel alternative for sourcing talent? See how TeamStation AI provides an end-to-end nearshore talent platform, while Deel focuses on HR and payroll.'
+    title: 'Deel Alternative for Talent Sourcing: TeamStation AI',
+    description: 'See how TeamStation AI provides an end-to-end nearshore talent platform, while Deel focuses on HR and payroll for remote teams.',
 };
 
 const comparisonPoints = {

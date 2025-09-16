@@ -1,12 +1,11 @@
-
 import { Search, BrainCircuit, Handshake, Rocket, ShieldCheck, UserCheck, FileSearch, GanttChartSquare, Check, BookOpen, Star, Trophy, Beaker, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
-  title: 'Our Nearshore IT Process: One Accountable SLA | TeamStation AI',
-  description: 'Our engineered system for hiring LATAM engineers under one SLA. From role calibration and Cognitive AI vetting to secure devices and first PR, we deliver Day-1-ready talent.',
+  title: 'Our Nearshore IT Process: One Accountable SLA',
+  description: 'Our engineered system for hiring LATAM engineers under one SLA. We deliver Day-1-ready talent with secure onboarding.',
   keywords: 'nearshore it process, nearshore sla, cognitive ai vetting, secure onboarding, latam engineers, day-1 ready talent',
 };
 

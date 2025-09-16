@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { ArrowRight, Zap, Users, Shield, Layers, BrainCircuit, CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -6,7 +5,7 @@ import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore IT Teams by Topology | TeamStation AI',
-  description: 'We build scalable nearshore IT team topologies from LATAM talent. Hire stream-aligned, platform, or enabling teams to accelerate your US company\'s roadmap with absolute control.',
+  description: 'We build scalable nearshore IT team topologies from LATAM talent. Hire stream-aligned, platform, or enabling teams.',
   keywords: 'team topologies, nearshore it teams, stream-aligned teams, platform teams, enabling teams, latam engineering teams',
 };
 

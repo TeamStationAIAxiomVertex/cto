@@ -1,11 +1,10 @@
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, UserCheck, FileText, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Nearshore IT Staff Augmentation Pricing | TeamStation AI',
-  description: 'Transparent, all-inclusive pricing for nearshore LATAM developers. See our TCO analysis and how we provide a CFO-ready business case for your engineering team.',
+  title: 'Nearshore IT Staff Augmentation Pricing',
+  description: 'Transparent, all-inclusive pricing for nearshore LATAM developers. See our TCO analysis and business case.',
   keywords: 'nearshore pricing, it staff augmentation pricing, latam developers cost, nearshore software development cost',
 };
 

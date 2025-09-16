@@ -1,4 +1,3 @@
-
 export const dynamic = "force-static";
 
 import faqData from "@/data/faq.json";
@@ -7,8 +6,8 @@ import type { Metadata } from 'next';
 import { HelpCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: 'Frequently Asked Questions for CTOs | TeamStation AI',
-    description: 'Key questions for CTOs on nearshore talent, TCO, security, and operations. Learn how our platform de-risks hiring and provides a predictable cost model.',
+    title: 'CTO FAQs: Nearshore Talent, TCO & Security',
+    description: 'Questions for CTOs on nearshore talent, TCO, security, and ops. Learn how our platform de-risks hiring.',
     keywords: 'cto faq, nearshore faq, technical hiring faq, nearshore tco, teamstation ai faq',
 };
 
