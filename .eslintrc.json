@@ -1,0 +1,22 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "@/components/Tooltip",
+            "message": "Import from '@/components/ui/tooltip' instead."
+          }
+        ],
+        "patterns": [
+          {
+            "group": ["**/components/Tooltip"],
+            "message": "Use '@/components/ui/tooltip'."
+          }
+        ]
+      }
+    ]
+  }
+}

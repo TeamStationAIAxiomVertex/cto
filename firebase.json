@@ -39,6 +39,23 @@
           { "key": "X-Content-Type-Options", "value": "nosniff" }
         ]
       }
+    ],
+    "redirects": [
+      {
+        "source": "/cto-playbook",
+        "destination": "/playbook/hub",
+        "type": 301
+      },
+      {
+        "source": "/playbook",
+        "destination": "/playbook/hub",
+        "type": 301
+      },
+      {
+        "source": "/research",
+        "destination": "/research/hub",
+        "type": 301
+      }
     ]
   }
 }
