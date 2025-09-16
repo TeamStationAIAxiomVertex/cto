@@ -68,8 +68,8 @@ const utilityLinks: LinkItem[] = [
     { href: '/faq', label: 'FAQ' },
     { href: '/sitemap', label: 'HTML Sitemap' },
     { href: '/sitemap.xml', label: 'XML Sitemap' },
-    { href: 'https://teamstation.dev/privacy-policy', label: 'Privacy Policy' },
-    { href: 'https://teamstation.dev/terms-of-service', label: 'Terms of Service' },
+    { href: '/privacy-policy', label: 'Privacy Policy' },
+    { href: '/terms-of-service', label: 'Terms of Service' },
 ]
 
 function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
@@ -140,7 +140,7 @@ export default function Footer() {
 
         <div className="mt-16 border-t border-border pt-8 text-center text-sm flex flex-col sm:flex-row justify-between items-center">
           <p>© {year} TeamStation AI — All rights reserved.</p>
-           <div className="flex gap-4 mt-4 sm:mt-0">
+           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4 sm:mt-0">
                {utilityLinks.map(link => (
                     <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground">{link.label}</Link>
                ))}
