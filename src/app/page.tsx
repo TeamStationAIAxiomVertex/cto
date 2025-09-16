@@ -27,6 +27,19 @@ export const metadata: Metadata = {
   }
 };
 
+// Client-only chart (recharts) with a lightweight skeleton to avoid CLS
+const TrustByNumbersChart = dynamic(
+  () => import('@/components/charts/TrustByNumbersChart'),
+  { ssr: false, loading: () => <div className="h-64 md:h-80 w-full animate-pulse rounded-xl bg-muted" /> }
+);
+
+// Minimal KPI slice suitable for a compact bar chart
+const chartData = [
+  { name: 'TTO', value: 9,   label: 'Time-to-Offer (Days)' },
+  { name: 'Compliance', value: 100, label: 'Audit-Ready Compliance (%)' },
+  { name: 'Readiness', value: 95,  label: 'Day-1 Tool Readiness (%)' },
+];
+
 function ServicePill({ icon: Icon, text }: { icon: React.ElementType, text: string }) {
     return (
         <div className="flex items-center gap-2 rounded-full border bg-card px-4 py-2 text-sm text-muted-foreground shadow-lg">
@@ -149,17 +162,29 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <div className="container mx-auto px-4">
-        <section className="text-center py-16 md:py-24">
-          <div className="flex justify-center items-center gap-8">
+        <section className="py-16 md:py-24">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="text-center md:text-left">
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent px-2 py-4">
-                  Nearshore Software Development: The CTO Co-Pilot Field Manual
+                Nearshore Software Development: The CTO Co-Pilot Field Manual
               </h1>
-          </div>
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
-              The vendor era is over. Command an evidence-driven, daylight, secure stack you control—without the lag, fog, or hidden taxes.
-          </p>
-          <div className="mt-10">
-              <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Strategy Call</Link>
+              <p className="mx-auto md:mx-0 mt-6 max-w-3xl text-lg text-muted-foreground">
+                The vendor era is over. Command an evidence-driven, daylight, secure stack you control—without the lag, fog, or hidden taxes.
+              </p>
+              <div className="mt-10">
+                <Link
+                  href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-button"
+                >
+                  Book a Strategy Call
+                </Link>
+              </div>
+            </div>
+            <div className="h-64 md:h-80 w-full">
+              <TrustByNumbersChart data={chartData} />
+            </div>
           </div>
         </section>
 
