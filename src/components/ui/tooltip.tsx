@@ -32,7 +32,7 @@ export const TooltipContent = React.forwardRef<
   );
 });
 
-/** Friendly wrapper: <WithTooltip content="...">{child}</WithTooltip> */
+/** Friendly wrapper: <WithTooltip content="...">...</WithTooltip> */
 export function WithTooltip({
   content,
   children,
