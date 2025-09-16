@@ -56,7 +56,7 @@ const corePillars = [
         pain: "Drowning in vendor management?",
         title: "Eliminate Vendor Chaos with One SLA",
         description: "Stop juggling 5+ vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
-        href: "https://teamstation.dev/nearshore-integrated-services",
+        href: "/services/integrated-services",
         linkLabel: "See Our Integrated Services",
         kpi: "1 contract, 1 invoice"
     },
@@ -125,11 +125,26 @@ export default async function HomePage() {
     }
   };
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TeamStation AI",
+    "url": siteUrl,
+    "logo": `${siteUrl}/apple-touch-icon.png`,
+    "sameAs": [
+        "https://www.linkedin.com/company/teamstation"
+    ]
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <div className="container mx-auto px-4">
         <section className="text-center py-16 md:py-24">
@@ -173,15 +188,15 @@ export default async function HomePage() {
                       <div className="mt-4 text-sm text-muted-foreground flex-grow">
                           {pillar.description.includes("Axiom Cortex™") ?
                               (<>
-                                  Stop gambling on resumes. Our <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
+                                  Stop gambling on resumes. Our <WithTooltip content="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
                               </>) :
                            pillar.description.includes("EOR") ?
                             (<>
-                                Stop juggling 5+ vendors. We bundle <WithTooltip label="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip label="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip label="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
+                                Stop juggling 5+ vendors. We bundle <WithTooltip content="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip content="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip content="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
                             </>) :
                            pillar.description.includes("TCO") ?
                             (<>
-                                We provide a predictable, all-inclusive <WithTooltip label="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
+                                We provide a predictable, all-inclusive <WithTooltip content="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
                             </>) : pillar.description
                           }
                       </div>
@@ -299,7 +314,7 @@ export default async function HomePage() {
               <h2 className="text-3xl font-bold text-foreground">Stop Patching a Broken System. Build a Better One.</h2>
               <p className="mt-3 text-muted-foreground">In a 15-minute call, we won't give you a sales pitch. We'll give you a concrete plan to fix your hiring process, consolidate your vendors, and get a predictable, CFO-ready budget for your nearshore team. You will walk away with actionable advice, whether you work with us or not.</p>
               <div className="mt-6">
-                  <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Strategy Call</Link>
+                  <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a No-Obligation Strategy Call</Link>
               </div>
           </div>
         </section>

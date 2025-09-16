@@ -116,7 +116,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                                         {p.description.includes("BARS") ? 
                                           <>
                                             {p.description.split('BARS')[0]}
-                                            <WithTooltip label="Behaviorally Anchored Rating Scale: A method that ties ratings to specific, observable behaviors to reduce subjectivity.">
+                                            <WithTooltip content="Behaviorally Anchored Rating Scale: A method that ties ratings to specific, observable behaviors to reduce subjectivity.">
                                                 <span className="border-b border-dashed">BARS</span>
                                             </WithTooltip>
                                             {p.description.split('BARS')[1]}
@@ -181,7 +181,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                     ))}
                 </div>
                  <div className="text-center mt-8">
-                    <Link href="/technical-interview-evaluation" className="font-semibold text-primary hover:underline">
+                    <Link href="/research/performance-evaluation-report-example" className="font-semibold text-primary hover:underline">
                         See a Real Sample Report <ArrowRight className="inline h-4 w-4" />
                     </Link>
                 </div>

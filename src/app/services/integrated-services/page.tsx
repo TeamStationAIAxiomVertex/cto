@@ -26,7 +26,7 @@ export default function IntegratedServicesPage() {
       description:
         "Our Axiom Cortex™ Cognitive AI engine validates problem-solving ability, not just credentials. A human expert interviews, and our system synthesizes the conversation to determine the candidate's mental shape. We then run a structured, auditable onboarding process to ensure Day-1 readiness.",
       kpi: "Mismatch Rate ≤10%",
-      href: "https://teamstation.dev/technical-interview-evaluation"
+      href: "/process"
     },
     {
       icon: <FileText className="h-8 w-8 text-primary" />,

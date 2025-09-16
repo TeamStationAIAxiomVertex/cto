@@ -1,63 +1,51 @@
-
 'use client';
 
-import * as React from 'react';
-import * as RadixTooltip from '@radix-ui/react-tooltip';
+import * as RT from '@radix-ui/react-tooltip';
+import type { ReactNode } from 'react';
 
-function cx(...parts: Array<string | false | null | undefined>) {
-  return parts.filter(Boolean).join(' ');
-}
+type Side = 'top' | 'right' | 'bottom' | 'left';
+type Align = 'start' | 'center' | 'end';
 
-/** Primitives (Radix-style) */
-export const TooltipProvider = RadixTooltip.Provider;
-export const TooltipRoot = RadixTooltip.Root;
-export const TooltipTrigger = RadixTooltip.Trigger;
-export const TooltipPortal = RadixTooltip.Portal;
+export type WithTooltipProps = {
+  /** Preferred prop */
+  content?: ReactNode;
+  /** Back-compat alias for older callers */
+  label?: ReactNode;
+  children: ReactNode;
+  side?: Side;
+  align?: Align;
+  /** Optional: delay before showing (ms) */
+  delayDuration?: number;
+};
 
-export const TooltipContent = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentPropsWithoutRef<typeof RadixTooltip.Content> & { className?: string }
->(function TooltipContent({ className, sideOffset = 6, ...props }, ref) {
-  return (
-    <RadixTooltip.Content
-      ref={ref}
-      sideOffset={sideOffset}
-      className={cx(
-        'z-50 rounded-lg border bg-black/90 text-white px-3 py-2 text-xs shadow-md',
-        'backdrop-blur supports-[backdrop-filter]:bg-black/70',
-        className
-      )}
-      {...props}
-    />
-  );
-});
-
-/** Friendly wrapper: <WithTooltip content="...">...</WithTooltip> */
 export function WithTooltip({
-  content,
   children,
+  content,
+  label,
   side = 'top',
   align = 'center',
-}: {
-  content: React.ReactNode;
-  children: React.ReactNode;
-  side?: React.ComponentProps<typeof TooltipContent>['side'];
-  align?: React.ComponentProps<typeof TooltipContent>['align'];
-}) {
+  delayDuration = 150,
+}: WithTooltipProps) {
+  const node = content ?? label;
+  if (!node) return <>{children}</>;
+
   return (
-    <TooltipProvider>
-      <TooltipRoot>
-        <TooltipTrigger asChild>{children}</TooltipTrigger>
-        <TooltipPortal>
-          <TooltipContent side={side} align={align}>
-            {content}
-          </TooltipContent>
-        </TooltipPortal>
-      </TooltipRoot>
-    </TooltipProvider>
+    <RT.Provider delayDuration={delayDuration}>
+      <RT.Root>
+        <RT.Trigger asChild>{children}</RT.Trigger>
+        <RT.Portal>
+          <RT.Content
+            side={side}
+            align={align}
+            className="rounded-md px-2 py-1 text-xs bg-black text-white shadow-md"
+          >
+            {node}
+            <RT.Arrow className="fill-black" />
+          </RT.Content>
+        </RT.Portal>
+      </RT.Root>
+    </RT.Provider>
   );
 }
 
-/** Back-compat sugar: <Tooltip content="...">{child}</Tooltip> */
-export const Tooltip = WithTooltip;
 export default WithTooltip;
