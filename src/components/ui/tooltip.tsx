@@ -36,25 +36,17 @@ export function WithTooltip({
       <RT.Root>
         <RT.Trigger asChild>{children}</RT.Trigger>
         <RT.Portal>
-          <RT.Content
-            side={side}
-            align={align}
-            className="rounded-md px-2 py-1 text-xs bg-black text-white shadow-md"
-          >
+          <TooltipContent side={side} align={align}>
             {node}
             <RT.Arrow className="fill-black" />
-          </RT.Content>
+          </TooltipContent>
         </RT.Portal>
       </RT.Root>
     </RT.Provider>
   );
 }
 
-/** Re-export Radix parts so `<Tooltip.Provider>` etc. work */
-export const TooltipProvider = RT.Provider;
-export const TooltipRoot = RT.Root;
-export const TooltipTrigger = RT.Trigger;
-export const TooltipPortal = RT.Portal;
+/** Styled content primitive (Radix-compatible) */
 export const TooltipContent = React.forwardRef<
   React.ElementRef<typeof RT.Content>,
   React.ComponentPropsWithoutRef<typeof RT.Content>
@@ -62,12 +54,29 @@ export const TooltipContent = React.forwardRef<
   <RT.Content
     ref={ref}
     sideOffset={sideOffset}
-    className={`z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-xs text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 ${className}`}
+    className={`z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-xs text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 ${className ?? ''}`}
     {...props}
   />
 ));
 TooltipContent.displayName = RT.Content.displayName;
 
-/** Back-compat sugar: <Tooltip content="...">{child}</Tooltip> */
+/** Named exports (shadcn/Radix style) */
+export const TooltipProvider = RT.Provider;
+export const TooltipRoot = RT.Root;
+export const TooltipTrigger = RT.Trigger;
+export const TooltipPortal = RT.Portal;
+export const TooltipArrow = RT.Arrow;
+
+/** Namespace-compat aliases so `<Tooltip.Provider>` etc. keep working */
+export const Provider = TooltipProvider;
+export const Root = TooltipRoot;
+export const Trigger = TooltipTrigger;
+export const Portal = TooltipPortal;
+export const Content = TooltipContent;
+export const Arrow = TooltipArrow;
+
+/** Back-compat sugar: <Tooltip content="…">{child}</Tooltip> */
 export const Tooltip = WithTooltip;
+
+/** Default is the HOC */
 export default WithTooltip;
