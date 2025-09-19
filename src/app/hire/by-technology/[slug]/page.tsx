@@ -1133,7 +1133,7 @@ const allTech: {
   },
   'react-native': {
     name: 'React Native',
-    category: 'Mobile / Cross-Platform',
+    category: 'Mobile & Cross-Platform',
     categorySlug: 'mobile-cross-platform',
     intro: "You need to ship on both iOS and Android, but you're struggling with performance issues and native module complexity. You need a React Native expert who understands the bridge, can debug performance bottlenecks, and can build a smooth, native-like experience.",
     pains: [
@@ -1163,7 +1163,7 @@ const allTech: {
   },
   'flutter': {
     name: 'Flutter',
-    category: 'Mobile / Cross-Platform',
+    category: 'Mobile & Cross-Platform',
     categorySlug: 'mobile-cross-platform',
     intro: "You want a beautiful, high-performance cross-platform app from a single codebase. You need a Flutter expert who has mastered Dart, understands widget composition, and can manage complex state efficiently.",
     pains: [
@@ -1193,7 +1193,7 @@ const allTech: {
   },
   'swift': {
     name: 'Swift',
-    category: 'Mobile / Cross-Platform',
+    category: 'Mobile & Cross-Platform',
     categorySlug: 'mobile-cross-platform',
     intro: "You need a world-class iOS application, and that requires a true Swift expert. You're looking for someone who understands modern Swift patterns, can build declarative UIs with SwiftUI, and can manage the complexities of the Apple ecosystem.",
     pains: [
@@ -1223,7 +1223,7 @@ const allTech: {
   },
   'kotlin': {
     name: 'Kotlin',
-    category: 'Mobile / Cross-Platform',
+    category: 'Mobile & Cross-Platform',
     categorySlug: 'mobile-cross-platform',
     intro: "You're building for the modern Android ecosystem. You need a Kotlin expert who has mastered coroutines for asynchronous programming, can build declarative UIs with Jetpack Compose, and understands the nuances of the Android lifecycle.",
     pains: [
@@ -1253,7 +1253,7 @@ const allTech: {
   },
   'objective-c': {
     name: 'Objective-C',
-    category: 'Mobile / Cross-Platform',
+    category: 'Mobile & Cross-Platform',
     categorySlug: 'mobile-cross-platform',
     intro: "You have a mature iOS application with a legacy Objective-C codebase that needs maintenance or modernization. You need a rare expert who is fluent in Objective-C, understands manual memory management, and can safely interoperate with modern Swift code.",
     pains: [
@@ -1283,7 +1283,7 @@ const allTech: {
   },
   'codepush': {
     name: 'CodePush',
-    category: 'Mobile / Cross-Platform',
+    category: 'Mobile & Cross-Platform',
     categorySlug: 'mobile-cross-platform',
     intro: "You need to push updates to your React Native app without going through the slow app store review process. You need an expert in CodePush who can set up a reliable Over-the-Air (OTA) update pipeline, manage releases, and handle rollbacks.",
     pains: [
@@ -1313,7 +1313,7 @@ const allTech: {
   },
   'sentry': {
     name: 'Sentry',
-    category: 'Mobile / Cross-Platform',
+    category: 'Mobile & Cross-Platform',
     categorySlug: 'mobile-cross-platform',
     intro: "You're flying blind when your mobile app crashes on a user's device. You need an expert in Sentry who can integrate crash reporting, capture meaningful context, and set up alerting to help you find and fix bugs before they impact more users.",
     pains: [
@@ -1343,7 +1343,7 @@ const allTech: {
   },
   'appcenter': {
     name: 'AppCenter',
-    category: 'Mobile / Cross-Platform',
+    category: 'Mobile & Cross-Platform',
     categorySlug: 'mobile-cross-platform',
     intro: "You need a unified platform to build, test, distribute, and monitor your mobile applications. You need an expert in App Center who can set up your entire mobile CI/CD pipeline, from automated builds to beta distribution and crash analytics.",
     pains: [
@@ -1373,7 +1373,7 @@ const allTech: {
   },
   'fastlane': {
     name: 'Fastlane',
-    category: 'Mobile / Cross-Platform',
+    category: 'Mobile & Cross-Platform',
     categorySlug: 'mobile-cross-platform',
     intro: "You're tired of the manual, error-prone process of signing and deploying your mobile apps. You need an expert in Fastlane who can automate your entire release process, from code signing and version bumping to uploading screenshots and submitting to the app stores.",
     pains: [
@@ -1403,7 +1403,7 @@ const allTech: {
   },
   'detox': {
     name: 'Detox',
-    category: 'Mobile / Cross-Platform',
+    category: 'Mobile & Cross-Platform',
     categorySlug: 'mobile-cross-platform',
     intro: "Your mobile app's end-to-end tests are flaky and unreliable. You need an expert in gray-box testing with Detox who can write stable, fast, and maintainable E2E tests for your React Native application.",
     pains: [

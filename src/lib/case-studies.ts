@@ -67,7 +67,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
     );
     return caseStudies.filter((study): study is CaseStudy => study !== null);
   } catch (error) {
-    console.error("Error reading case studies:", error);
+    console.error("Error reading case studies directory. This may be expected in some environments. Returning empty array.", error);
     return [];
   }
 }
@@ -75,6 +75,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
 export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
     try {
         const allStudies = await getAllCaseStudies();
+        if (!allStudies || allStudies.length === 0) return null;
         const study = allStudies.find(study => study.slug === slug);
         return study || null;
     } catch (error) {
