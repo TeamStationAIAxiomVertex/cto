@@ -1,7 +1,9 @@
+
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 import { CheckCircle, ArrowRight, Shield, Bug, CloudCog, AlertTriangle, Key } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 
 const roleData: { [key: string]: { name: string; intro: string; roles: string[]; skills: string[]; tech: { name: string, slug: string }[]; evaluation: string[]; problems?: { pain: string; roles: string[]; skills: string[] }[] } } = {
@@ -433,11 +435,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
   const category = roleData[params.slug];
   
   if (!category) {
-    return (
-       <main className="container max-w-5xl py-12">
-        <p>Category not found.</p>
-       </main>
-    )
+    notFound();
   }
 
   const { name, intro, roles, skills, tech, evaluation, problems } = category;
@@ -491,10 +489,10 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
                     <div className="flex flex-wrap gap-2 mt-2">
                         {skills.map(skill => (
                              <span key={skill} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-                                {skill.includes('IaC') ? <WithTooltip label="Infrastructure as Code: Managing infrastructure through code instead of manual processes."><span className="border-b border-dashed">IaC</span></WithTooltip> : 
-                                 skill.includes('SLO/SLI') ? <WithTooltip label="Service Level Objectives/Indicators: A framework for defining and measuring reliability."><span className="border-b border-dashed">SLO/SLI/error budgets</span></WithTooltip> :
-                                 skill.includes('ELT') ? <WithTooltip label="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation."><span className="border-b border-dashed">ELT</span></WithTooltip> :
-                                 skill.includes('retrieval') ? <WithTooltip label="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database."><span className="border-b border-dashed">retrieval design</span></WithTooltip> :
+                                {skill.includes('IaC') ? <WithTooltip content="Infrastructure as Code: Managing infrastructure through code instead of manual processes."><span className="border-b border-dashed">IaC</span></WithTooltip> : 
+                                 skill.includes('SLO/SLI') ? <WithTooltip content="Service Level Objectives/Indicators: A framework for defining and measuring reliability."><span className="border-b border-dashed">SLO/SLI/error budgets</span></WithTooltip> :
+                                 skill.includes('ELT') ? <WithTooltip content="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation."><span className="border-b border-dashed">ELT</span></WithTooltip> :
+                                 skill.includes('retrieval') ? <WithTooltip content="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database."><span className="border-b border-dashed">retrieval design</span></WithTooltip> :
                                  skill}
                              </span>
                         ))}

@@ -75,7 +75,8 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
 export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
     try {
         const allStudies = await getAllCaseStudies();
-        return allStudies.find(study => study.slug === slug) || null;
+        const study = allStudies.find(study => study.slug === slug);
+        return study || null;
     } catch (error) {
         console.error(`Error getting case study by slug ${slug}:`, error);
         return null;

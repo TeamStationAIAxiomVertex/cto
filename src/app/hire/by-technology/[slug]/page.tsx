@@ -1,7 +1,9 @@
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle, Plane } from 'lucide-react';
 import { WithTooltip } from '@/components/ui/tooltip';
+import { notFound } from 'next/navigation';
 
 const allTech: { 
     [key: string]: { 
@@ -3367,11 +3369,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
   const tech = allTech[params.slug as TechKeys];
 
   if (!tech) {
-    return (
-      <main className="container max-w-5xl py-12">
-        <p>Technology not found.</p>
-      </main>
-    )
+    notFound();
   }
 
   return (
