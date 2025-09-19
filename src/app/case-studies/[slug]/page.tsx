@@ -1,10 +1,11 @@
+
 import { getCaseStudyBySlug, getAllCaseStudies } from '@/lib/case-studies';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Briefcase, Award, CheckCircle, AlertTriangle, Shield } from 'lucide-react';
 import { markdownToHtml } from '@/lib/markdown-parser';
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const study = await getCaseStudyBySlug(params.slug);
@@ -23,8 +24,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       study.industry,
       'nearshore',
       'staff augmentation',
-      ...study.techStack.map(t => t.name)
+      ...(study.techStack || []).map(t => t.name)
   ].join(', ');
+
+  const imageUrl = study.ogImage?.src?.url;
 
   return {
     title: title,
@@ -40,20 +43,20 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       type: 'article',
       publishedTime: new Date().toISOString(), // This should ideally come from frontmatter
       authors: ['TeamStation AI'],
-      images: [
+      images: imageUrl ? [
         {
-          url: study.ogImage.src.url,
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: title,
         },
-      ],
+      ] : [],
     },
      twitter: {
       card: 'summary_large_image',
       title: title,
       description: description,
-      images: [study.ogImage.src.url],
+      images: imageUrl ? [imageUrl] : [],
     },
   };
 }
@@ -65,7 +68,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
     notFound();
   }
 
-  const contentHtml = await markdownToHtml(study.content);
+  const contentHtml = await markdownToHtml(study.content || '');
   
   const siteUrl = 'https://cto.teamstation.dev';
   const breadcrumbSchema = {
@@ -93,6 +96,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
     ],
   };
 
+  const imageUrl = study.ogImage?.src?.url;
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -102,7 +106,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
     },
     headline: study.title,
     description: study.summary,
-    image: study.ogImage.src.url,
+    image: imageUrl,
     author: {
         '@type': 'Organization',
         name: 'TeamStation AI',
@@ -143,13 +147,13 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                           {study.title}
                       </h1>
                       <div className="relative h-96 w-full my-8 rounded-lg overflow-hidden border">
-                          <Image 
-                              src={study.ogImage.src.url}
+                          <SafeImage 
+                              src={study.ogImage?.src?.url}
                               alt={`Hero image for ${study.clientName} case study`}
                               fill
                               className="object-cover"
                               priority
-                              data-ai-hint={study.ogImage.aiHint}
+                              data-ai-hint={study.ogImage?.aiHint}
                           />
                       </div>
                   </header>

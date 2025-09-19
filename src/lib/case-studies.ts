@@ -3,6 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
 import placeholderImages from '@/app/lib/placeholder-images.json';
+import type { CaseStudy as CaseStudyType } from '@/types/content';
 
 const contentDirectory = path.join(process.cwd(), 'content', 'case-studies');
 
@@ -15,19 +16,8 @@ type PlaceholderImage = {
     aiHint: string;
 };
 
-export type CaseStudy = {
-  slug: string;
-  title: string;
-  clientName: string;
-  industry: string;
-  summary: string;
-  content: string;
-  challenge: string;
-  why: string;
-  outcomes: string;
+export type CaseStudy = CaseStudyType & {
   ogImage: PlaceholderImage;
-  techStack: { name: string; link: string }[];
-  canonical: string;
 };
 
 // A more robust function to extract a section based on a heading
@@ -47,6 +37,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
     const filenames = await fs.readdir(contentDirectory);
     const caseStudies = await Promise.all(
       filenames.map(async (filename) => {
+        if (!filename.endsWith('.md')) return null;
         const filePath = path.join(contentDirectory, filename);
         const fileContents = await fs.readFile(filePath, 'utf8');
         const { data, content } = matter(fileContents);
@@ -74,7 +65,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
         } as CaseStudy;
       })
     );
-    return caseStudies;
+    return caseStudies.filter((study): study is CaseStudy => study !== null);
   } catch (error) {
     console.error("Error reading case studies:", error);
     return [];
@@ -82,6 +73,11 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
 }
 
 export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
-    const allStudies = await getAllCaseStudies();
-    return allStudies.find(study => study.slug === slug) || null;
+    try {
+        const allStudies = await getAllCaseStudies();
+        return allStudies.find(study => study.slug === slug) || null;
+    } catch (error) {
+        console.error(`Error getting case study by slug ${slug}:`, error);
+        return null;
+    }
 }

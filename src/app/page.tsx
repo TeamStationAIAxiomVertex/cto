@@ -1,9 +1,10 @@
+
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component, Trophy } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 import HeroKpis, { type HeroKpi } from '@/components/metrics/HeroKpis';
 import dynamic from 'next/dynamic';
@@ -304,12 +305,12 @@ export default async function HomePage() {
               {caseStudies.map(study => (
               <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
                   <div className="relative h-40 w-full mb-4 rounded-lg overflow-hidden border">
-                       <Image 
-                          src={study.ogImage.src.url}
+                       <SafeImage 
+                          src={study.ogImage?.src?.url}
                           alt={`Hero image for ${study.clientName} case study`}
                           fill
                           className="object-cover"
-                          data-ai-hint={study.ogImage.aiHint}
+                          data-ai-hint={study.ogImage?.aiHint}
                       />
                   </div>
                   <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{study.clientName}</h3>

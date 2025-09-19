@@ -1,7 +1,9 @@
+
 import Link from 'next/link';
 import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane, UserCheck, School, Languages, Zap, Users, Clock } from 'lucide-react';
 import type { Metadata } from 'next';
 import { countries } from '@/lib/countries';
+import { notFound } from 'next/navigation';
 
 const countriesData: { [key: string]: { name: string; psp: { pain: string; solution: string; proof: string; icon: React.ReactNode }[] } } = {
   'mexico': { 
@@ -169,11 +171,7 @@ export default function CountryRolesPage({ params }: { params: { country: string
   const country = countriesData[params.country];
 
   if (!country) {
-    return (
-       <main className="container max-w-5xl py-12">
-        <p>Country not found.</p>
-       </main>
-    )
+    notFound();
   }
 
   const countryInfo = countries.find(c => c.slug === params.country);
@@ -192,21 +190,23 @@ export default function CountryRolesPage({ params }: { params: { country: string
         </p>
       </header>
 
-      <div className="my-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {country.psp.map((card) => (
-            <div key={card.pain} className="rounded-lg border bg-card p-6 flex flex-col">
-                <p className="text-sm font-semibold text-primary">{card.pain}</p>
-                <div className="flex items-center gap-3 mt-3">
-                    {card.icon}
-                    <h3 className="text-lg font-semibold text-foreground">The Solution</h3>
-                </div>
-                <p className="mt-4 text-sm text-muted-foreground flex-grow">{card.solution}</p>
-                <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-                    <span className='font-bold'>Proof:</span> {card.proof}
-                </p>
-            </div>
-        ))}
-      </div>
+      {country.psp && country.psp.length > 0 && (
+        <div className="my-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {country.psp.map((card) => (
+              <div key={card.pain} className="rounded-lg border bg-card p-6 flex flex-col">
+                  <p className="text-sm font-semibold text-primary">{card.pain}</p>
+                  <div className="flex items-center gap-3 mt-3">
+                      {card.icon}
+                      <h3 className="text-lg font-semibold text-foreground">The Solution</h3>
+                  </div>
+                  <p className="mt-4 text-sm text-muted-foreground flex-grow">{card.solution}</p>
+                  <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
+                      <span className='font-bold'>Proof:</span> {card.proof}
+                  </p>
+              </div>
+          ))}
+        </div>
+      )}
 
 
       <h2 className="text-center text-3xl font-bold mb-8">Explore Available Roles in {country.name}</h2>
