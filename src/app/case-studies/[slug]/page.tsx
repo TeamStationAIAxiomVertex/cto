@@ -184,11 +184,11 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                       <p className="mt-4 text-sm text-foreground">{study.summary}</p>
                   </div>
 
-                  {study.outcomes && (
+                  {study.outcomes && study.outcomes.length > 0 && (
                       <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
                           <h3 className="text-xl font-bold flex items-center gap-3 text-green-500"><CheckCircle className="h-6 w-6" />The Proof (Outcomes)</h3>
                           <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-                              {study.outcomes.split('\n').map((item, index) => (
+                              {study.outcomes.split('\\n').map((item, index) => (
                                   item.trim() && (
                                       <div key={index} className="flex items-start gap-2">
                                           <CheckCircle className="h-4 w-4 mt-1 shrink-0 text-green-500"/>

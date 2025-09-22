@@ -346,7 +346,8 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
 };
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const roleName = roleData[params.slug]?.name || 'Engineer';
+  const role = roleData[params.slug];
+  const roleName = role ? role.name : 'Engineer';
   return {
     title: `Hire Nearshore ${roleName}`,
     description: `Hire elite, pre-vetted LATAM ${roleName} engineers. Our scientific evaluation process de-risks hiring for critical tech roles.`,

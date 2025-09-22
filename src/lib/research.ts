@@ -43,7 +43,8 @@ export async function getResearchBySlug(slug: string): Promise<ResearchPaper | n
     if ((error as NodeJS.ErrnoException).code !== 'ENOENT') {
       console.error(`Error reading research paper ${slug}:`, error);
     } else {
-        console.warn(`Research paper not found at ${filePath}, returning null.`);
+        // This is an expected case if a slug doesn't have a markdown file.
+        // console.warn(`Research paper not found at ${filePath}, returning null.`);
     }
     return null;
   }

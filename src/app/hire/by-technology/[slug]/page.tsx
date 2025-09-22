@@ -766,7 +766,7 @@ const allTech: {
             pain: "Can you remotely contain a compromised endpoint?",
             problem: "During an incident, you need the ability to immediately isolate a compromised machine from the network to stop an attacker from moving laterally.",
             solution: "We look for engineers who are experienced with the response capabilities of EDR platforms, allowing them to remotely contain hosts, kill malicious processes, and remediate threats in real-time.",
-            kpi: "Real-time incident response capabilities"
+            kpi: "Real-time incident response and containment"
         }
     ],
     evaluation: ['Policy management and tuning', 'Threat hunting and incident investigation', 'API integration for automation and SOAR', 'Understanding of MITRE ATT&CK framework', 'Deployment and sensor management']
@@ -1615,7 +1615,7 @@ const allTech: {
     name: 'TypeORM',
     category: 'Data Modeling & Databases',
     categorySlug: 'backend-services',
-    intro: "Your TypeScript backend's data layer is a mess of untyped queries. You need a TypeORM expert who can build a type-safe, maintainable data access layer, manage migrations, and optimize queries without getting tangled in ORM pitfalls.",
+    intro: "Your TypeScript backend's data layer is a mess of untyped queries. You need a TypeORM expert who can build a type-safe, maintainable data access layer, manage migrations, and optimize queries without gettings tangled in ORM pitfalls.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,

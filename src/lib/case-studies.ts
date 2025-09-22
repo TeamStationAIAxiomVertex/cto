@@ -35,40 +35,39 @@ function extractSection(content: string, heading: string): string {
 export async function getAllCaseStudies(): Promise<CaseStudy[]> {
   try {
     const filenames = await fs.readdir(contentDirectory);
-    const caseStudies = await Promise.all(
-      filenames.map(async (filename) => {
-        if (!filename.endsWith('.md')) return null;
-        try {
-            const filePath = path.join(contentDirectory, filename);
-            const fileContents = await fs.readFile(filePath, 'utf8');
-            const { data, content } = matter(fileContents);
+    const caseStudiesPromises = filenames.map(async (filename) => {
+      if (!filename.endsWith('.md')) return null;
+      try {
+          const filePath = path.join(contentDirectory, filename);
+          const fileContents = await fs.readFile(filePath, 'utf8');
+          const { data, content } = matter(fileContents);
 
-            const slug = data.slug as keyof typeof placeholderImages.caseStudies;
-            const imageInfo = placeholderImages.caseStudies[slug] || { 
-                src: { url: 'https://picsum.photos/seed/default/600/400', width: 600, height: 400 },
-                aiHint: 'abstract technology'
-            };
+          const slug = data.slug as keyof typeof placeholderImages.caseStudies;
+          const imageInfo = placeholderImages.caseStudies[slug] || { 
+              src: { url: 'https://picsum.photos/seed/default/600/400', width: 600, height: 400 },
+              aiHint: 'abstract technology'
+          };
 
-            return {
-              slug: data.slug,
-              title: data.title,
-              clientName: data.clientName,
-              industry: data.industry,
-              summary: data.summary,
-              content: content, 
-              challenge: extractSection(content, 'The Challenge'),
-              why: extractSection(content, 'Why TeamStation AI'),
-              outcomes: extractSection(content, 'Outcomes') || extractSection(content, 'Results'),
-              ogImage: imageInfo,
-              techStack: data.techStack || [],
-              canonical: data.canonical,
-            } as CaseStudy;
-        } catch (readError) {
-            console.error(`Error reading or parsing case study file ${filename}:`, readError);
-            return null;
-        }
-      })
-    );
+          return {
+            slug: data.slug,
+            title: data.title,
+            clientName: data.clientName,
+            industry: data.industry,
+            summary: data.summary,
+            content: content, 
+            challenge: extractSection(content, 'The Challenge'),
+            why: extractSection(content, 'Why TeamStation AI'),
+            outcomes: extractSection(content, 'Outcomes') || extractSection(content, 'Results'),
+            ogImage: imageInfo,
+            techStack: data.techStack || [],
+            canonical: data.canonical,
+          } as CaseStudy;
+      } catch (readError) {
+          console.error(`Error reading or parsing case study file ${filename}:`, readError);
+          return null;
+      }
+    });
+    const caseStudies = await Promise.all(caseStudiesPromises);
     return caseStudies.filter((study): study is CaseStudy => study !== null);
   } catch (error) {
     console.error("Error reading case studies directory. This may be expected in some environments. Returning empty array.", error);
