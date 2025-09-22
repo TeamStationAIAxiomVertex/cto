@@ -83,9 +83,9 @@ const sandlerCards = [
     {
         title: 'Seniority: Resume Theater vs Cognitive Evidence',
         question: 'Who last vetoed a bad pattern before it shipped?',
-        problem: '“Senior” in the deck, junior in the repo.',
+        problem: '“Senior” on the slide, junior in the repo.',
         solution: 'Axiom Cortex™ cognitive signals + structured rubrics + recorded panels.',
-        proof: 'Mismatch rate ≤10%; rewrite ADRs down.',
+        proof: 'Mismatch rate ≤10%; rewrite ADRs trend down.',
         icon: <BrainCircuit className="h-8 w-8 text-primary" />,
     },
     {
@@ -302,12 +302,12 @@ export default async function HomePage() {
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">See how CTOs like you have used our platform to solve critical problems and deliver results.</p>
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {caseStudies.map(study => (
+              {caseStudies && caseStudies.map(study => (
               <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
                   <div className="relative h-40 w-full mb-4 rounded-lg overflow-hidden border">
                        <SafeImage 
                           src={study.ogImage?.src?.url}
-                          alt={`Hero image for ${study.clientName} case study`}
+                          alt={study.clientName ? `Hero image for ${study.clientName} case study` : 'Case study image'}
                           fill
                           className="object-cover"
                           data-ai-hint={study.ogImage?.aiHint}
@@ -340,5 +340,3 @@ export default async function HomePage() {
     </>
   );
 }
-
-    

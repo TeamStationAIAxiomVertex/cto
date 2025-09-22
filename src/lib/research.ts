@@ -43,8 +43,6 @@ export async function getResearchBySlug(slug: string): Promise<ResearchPaper | n
     if ((error as NodeJS.ErrnoException).code !== 'ENOENT') {
       console.error(`Error reading research paper ${slug}:`, error);
     } else {
-        // In environments where fs is not fully available or the file doesn't exist,
-        // it's better to return null than to crash the build.
         console.warn(`Research paper not found at ${filePath}, returning null.`);
     }
     return null;

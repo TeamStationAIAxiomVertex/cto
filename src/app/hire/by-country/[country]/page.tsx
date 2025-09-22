@@ -174,8 +174,6 @@ export default function CountryRolesPage({ params }: { params: { country: string
     notFound();
   }
 
-  const countryInfo = countries.find(c => c.slug === params.country);
-
   return (
     <main className="container py-12">
       <div className="text-sm text-muted-foreground mb-8">
