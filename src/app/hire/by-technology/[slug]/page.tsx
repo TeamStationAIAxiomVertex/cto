@@ -3135,7 +3135,7 @@ export const allTech: {
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Can your sales team see product usage data directly inside Salesforce?",
-            problem: "When sales reps have to log into another tool to see product usage, they are less likely to do it. You need to bring the data to them.",
+            problem: "When sales reps have to log into another tool to see how customers are using the product, they are less likely to do it. You need to bring the data to them.",
             solution: "We look for engineers who can use Reverse ETL to sync product usage data directly onto the Account and Contact records in Salesforce, giving reps the insights they need to have smarter conversations.",
             kpi: "Product usage data right where your sales team works"
         }
@@ -3484,5 +3484,3 @@ export async function generateStaticParams() {
     slug,
   }));
 }
-
-    
