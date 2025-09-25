@@ -1,0 +1,246 @@
+{
+  "country": "Brazil",
+  "slug": "brazil",
+  "type": "country",
+  "pageSEO": {
+    "title": "Hire Developers in Brazil | Nearshore Engineers",
+    "description": "Build pods in Brazil with morning-to-afternoon US overlap, EOR onboarding, and MDM/SSO controls. Spin up fast.",
+    "canonical": "https://cto.teamstation.dev/hire/by-country/brazil",
+    "hreflang": {
+      "en": "https://cto.teamstation.dev/hire/by-country/brazil",
+      "es-MX": "https://cto.teamstation.dev/es/hire/by-country/brazil"
+    }
+  },
+  "h1": "Hire Software Developers in Brazil (Daylight Overlap)",
+  "intro": "Access LATAM's largest talent market. Brazil offers unmatched depth in backend, data, and fintech engineering. With 4-6 hours of US overlap, you can tap into this powerhouse while maintaining a daylight-native workflow. Our platform combines this access with the scientific rigor of our <a href='/playbook/bias-free-technical-hiring-axiom-cortex'>Axiom Cortex™</a> vetting and a secure, compliant operational wrapper. See our <a href='/playbook/latam-economics'>LATAM Economics playbook</a> for a full TCO breakdown.",
+  "pspCards": [
+    {
+      "title": "Daylight PR Flow (No Overnight Queues)",
+      "icon": "latency",
+      "body": {
+        "problem": "Your offshore team pushes a PR at the end of their day, which is the middle of your night. A simple question leads to a 24-hour delay. Your agile process grinds to a halt, one day at a time.",
+        "stakes": "This is the 'human latency tax'—a silent killer of velocity. It doubles or triples your cycle time and forces senior engineers into the role of late-night coordinators. Your roadmap slips, your best talent gets frustrated, and opportunity cost compounds with every stalled PR.",
+        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior engineers in Brazil with a guaranteed 4–6 hours of daily overlap with US teams. We instrument and enforce strict PR SLAs—first response ≤1h, to-green ≤4h—and sync our review windows with your team's core hours to ensure a continuous, real-time workflow.",
+        "proof": "Our platform telemetry proves this model works. Teams adopting a daylight cadence reduce their PR turnaround time from an average of 36 hours to under 8 hours within two sprints. This isn't a marginal improvement; it's a systemic acceleration detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
+        "recap": "Stop letting time zones dictate your release schedule. When you <strong>hire developers in Brazil</strong>, you buy back your day with a team that operates on your clock, not against it."
+      }
+    },
+    {
+      "title": "Cognition-First Hiring (Axiom Cortex™)",
+      "icon": "hiring",
+      "body": {
+        "problem": "You need to find elite <strong>São Paulo engineers</strong>, but traditional screening is a lottery. Resumes are full of keywords, but they don't predict a candidate's ability to handle novel problems, design resilient systems, or write clean, maintainable code.",
+        "stakes": "A single senior mis-hire can cost you 6-12 months of salary in lost productivity, team disruption, and the cost of re-hiring. Relying on gut feel and unstructured interviews is a recipe for expensive mistakes and a slowed-down roadmap.",
+        "prescription": "Shift from resume theater to auditable evidence. We leverage our <strong>Nebula Talent Graph</strong> of over 2.6 million LATAM profiles to find potential candidates. Then, our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> cognitive AI engine provides scientific proof of their problem-solving abilities. A human expert conducts a structured evaluation, and our AI synthesizes the data into a 'Cognitive Fingerprint' and a full Evidence Locker. You judge logic and skill, not just presentation.",
+        "proof": "This evidence-based approach reduces mis-hire risk by over 90%, achieving a mismatch rate of ≤10%. You get a candidate whose 'mental shape' is mapped to your role's specific demands.",
+        "recap": "Stop gambling on keywords. Build your team of <strong>nearshore Brazil developers</strong> with a partner that provides data-driven proof of cognitive ability, not just a list of credentials."
+      }
+    },
+    {
+      "title": "Security, Compliance & Managed Devices",
+      "icon": "compliance",
+      "body": {
+        "problem": "You want to access Brazil's talent, but the operational overhead is a major blocker. How do you handle local labor laws, secure remote work, and manage devices without building a foreign subsidiary?",
+        "stakes": "One unmanaged laptop is a compliance nightmare and a data breach waiting to happen. Failing to align with local labor laws creates significant legal and financial risk. Enterprise deals will stall if you can't provide audit-ready security evidence.",
+        "prescription": "Outsource the entire operational stack to our single, accountable SLA. Our platform includes a compliant Employer of Record (EOR), SSO/SAML/SCIM for identity management, and MDM-managed laptops for every engineer. We enforce least-privilege access and provide auditable onboarding dossiers from day one. You get the talent; we handle the operational chaos.",
+        "proof": "Our SOC-aligned onboarding process ensures every engineer starts with a secure, compliant workstation. This allows our clients to confidently pass enterprise security reviews and close deals faster, as detailed in our <a href='/trust' class='text-primary hover:underline'>Trust Center</a>. We absorb the risk, so you can focus on velocity.",
+        "recap": "Don't let operational complexity stop you from accessing top talent. Use an integrated platform that delivers a secure and audit-ready <strong>Brazil software teams</strong> from the start."
+      }
+    },
+    {
+      "title": "Fast Ramp, Lower TCO, Reversible",
+      "icon": "cost",
+      "body": {
+        "problem": "Onboarding a new engineer can take months to show real productivity, and the true cost is far more than just their salary. You're paying a hidden 'time-to-productivity' tax and struggling to build a financial model your CFO will approve.",
+        "stakes": "A slow ramp-up means delayed features and a lower ROI on your hiring investment. Without a clear Total Cost of Ownership (TCO) model, you can't make a strategic business case. You're stuck in a cycle of high costs and slow delivery.",
+        "prescription": "We engineer for a fast ramp. With environments ready before day one, we target a first PR in under 10 business days and meaningful sprint outcomes within the first month. Our all-inclusive pricing model eliminates hidden fees and provides a predictable TCO that is often 40-60% lower than the fully-loaded cost of a US hire.",
+        "proof": "Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> moves the conversation from misleading hourly rates to a comprehensive analysis of value and risk. This data-driven approach gives you the ammunition to make a compelling case to your finance team, as shown in our <a href='/playbook/build-vs-buy' class='text-primary hover:underline'>Build vs. Buy analysis</a>.",
+        "recap": "Choose a partner that provides a clear, predictable financial model and is contractually accountable for a fast, productive ramp-up. It's the smarter, more capital-efficient way to scale your team."
+      }
+    }
+  ],
+  "countrySections": {
+    "whyDaylight": {
+      "h2": "Why Brazil works for daylight delivery",
+      "bullets": [
+        "Morning-to-afternoon US overlap (≈ 4–6 hours).",
+        "Senior-leaning pods in São Paulo and Rio de Janeiro.",
+        "Cultural alignment with US agile rituals (standups, PR cadence)."
+      ]
+    },
+    "hubs": {
+      "h2": "Where the talent lives",
+      "cities": [
+        {
+          "name": "São Paulo",
+          "why": "The economic heart of LATAM, with an immense and highly skilled talent pool in fintech, data, and backend systems."
+        },
+        {
+          "name": "Rio de Janeiro",
+          "why": "A major tech hub with a strong focus on digital media, creative industries, and research institutions."
+        }
+      ]
+    },
+    "legal": {
+      "h2": "Legal & EOR in Brazil",
+      "body": "Hiring in Brazil requires navigating a complex system of labor laws (CLT), including mandatory 13th-month salary, vacation bonuses, and FGTS contributions. Using a compliant EOR for speed and consistency is the standard approach; ensure IP, data, and benefits are handled centrally and contractually defined. Keep contracts clear on scope, IP assignment, and onboarding/offboarding evidence. For quick starts, a compliant EOR is typical.",
+      "cta": {
+        "label": "Talk to Compliance",
+        "href": "/trust"
+      }
+    },
+    "security": {
+      "h2": "Security & devices",
+      "body": "Corporate-owned, MDM-managed laptops; SSO/SAML/SCIM day one; least-privilege access mapped to repos; SOC-aligned onboarding dossiers.",
+      "link": "/trust"
+    },
+    "timeCost": {
+      "h2": "Time-to-hire & cost snapshot",
+      "table": [
+        [
+          "Metric",
+          "Value"
+        ],
+        [
+          "Overlap (hrs/day)",
+          "4–6 hours"
+        ],
+        [
+          "Time-to-first-PR (envs ready)",
+          "≤ 10 business days"
+        ],
+        [
+          "Compensation (directional)",
+          "Largest market; senior bands higher than regional average with excellent depth in backend/data/fintech."
+        ]
+      ]
+    }
+  },
+  "faq": [
+    {
+      "q": "What is the typical time zone overlap for Brazil?",
+      "a": "Engineers in Brazil (primarily BRT, UTC-3) provide 4-6 hours of overlap with US workdays, covering the entire morning and early afternoon for the East Coast."
+    },
+    {
+      "q": "Do I need a local entity to hire developers in Brazil?",
+      "a": "No. Using a compliant Employer of Record (EOR) like TeamStation AI is the standard for speed and lower operational overhead. We handle all local legal and HR complexities, including CLT regulations."
+    },
+    {
+      "q": "Which Brazilian cities have the strongest talent pools?",
+      "a": "São Paulo is the largest tech hub in LATAM with unmatched depth. Rio de Janeiro also has a very strong and growing tech ecosystem."
+    },
+    {
+      "q": "What about English proficiency in Brazil?",
+      "a": "English proficiency is strong within the senior-level tech community, especially in major hubs like São Paulo. Our vetting process includes a rigorous assessment of communication skills to ensure seamless collaboration."
+    },
+    {
+      "q": "How do you ensure security with remote developers in Brazil?",
+      "a": "Security is built-in. Every engineer gets a corporate-owned, MDM-managed laptop with SSO/SAML/SCIM integration from day one. Our process is SOC-aligned and detailed in our <a href='/trust'>Trust Center</a>."
+    },
+    {
+      "q": "How does your process compare to a vendor like Revelo?",
+      "a": "Revelo is a strong marketplace for Brazilian talent. We provide an end-to-end platform that includes the talent sourcing, plus compliant EOR, secure devices, and a single SLA for the entire operation. Read our full <a href='/comparisons/revelo'>Revelo alternative comparison</a> for a detailed breakdown."
+    }
+  ],
+  "cta": {
+    "primary": {
+      "label": "Book a 15-minute plan",
+      "href": "/hire"
+    },
+    "secondary": {
+      "label": "Download the CTO Playbook",
+      "href": "/playbook/hub"
+    }
+  },
+  "schema": {
+    "breadcrumbs": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hire",
+          "item": "https://cto.teamstation.dev/hire"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "By Country",
+          "item": "https://cto.teamstation.dev/hire/by-country"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Brazil",
+          "item": "https://cto.teamstation.dev/hire/by-country/brazil"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Hire Software Developers in Brazil",
+      "provider": {
+        "@type": "Organization",
+        "name": "TeamStation AI",
+        "url": "https://cto.teamstation.dev/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Brazil"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cto.teamstation.dev/hire/by-country/brazil"
+      },
+      "description": "Hire vetted Brazil engineers with daylight overlap, compliant EOR onboarding, and MDM devices with SSO/SCIM."
+    },
+    "faqpage": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the typical time zone overlap for Brazil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Engineers in Brazil (primarily BRT, UTC-3) provide 4-6 hours of overlap with US workdays, covering the entire morning and early afternoon for the East Coast."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a local entity to hire developers in Brazil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Using a compliant Employer of Record (EOR) like TeamStation AI is the standard for speed and lower operational overhead. We handle all local legal and HR complexities, including CLT regulations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Brazilian cities have the strongest talent pools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "São Paulo is the largest tech hub in LATAM with unmatched depth. Rio de Janeiro also has a very strong and growing tech ecosystem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about English proficiency in Brazil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "English proficiency is strong within the senior-level tech community, especially in major hubs like São Paulo. Our vetting process includes a rigorous assessment of communication skills to ensure seamless collaboration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you ensure security with remote developers in Brazil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Security is built-in. Every engineer gets a corporate-owned, MDM-managed laptop with SSO/SAML/SCIM integration from day one. Our process is SOC-aligned and detailed in our Trust Center."
+          }
+        }
+      ]
+    }
+  }
+}
