@@ -1,3 +1,4 @@
+
 {
   "country": "Costa Rica",
   "slug": "costa-rica",
@@ -18,44 +19,44 @@
       "title": "Daylight PR Flow (No Overnight Queues)",
       "icon": "latency",
       "body": {
-        "problem": "<strong>Problem.</strong> Your offshore team pushes a PR at the end of their day, which is the middle of your night. A simple question leads to a 24-hour delay. Your agile process grinds to a halt, one day at a time.",
-        "stakes": "<strong>Stakes.</strong> This 'human latency tax' is the silent killer of velocity. It doubles or triples your cycle time and forces senior engineers into the role of late-night coordinators. Your roadmap slips, your best talent gets frustrated, and opportunity cost compounds with every stalled PR.",
-        "prescription": "<strong>Prescription.</strong> Replace the overnight queue with a daylight-native cadence. We staff pods of senior engineers in Costa Rica with a guaranteed 7–8 hours of daily overlap with US teams. We instrument and enforce strict PR SLAs—first response ≤1h, to-green ≤4h—and sync our review windows with your team's core hours to ensure a continuous, real-time workflow.",
-        "proof": "<strong>Proof.</strong> Our platform telemetry proves this model works. Teams adopting a daylight cadence reduce their PR turnaround time from an average of 36 hours to under 8 hours within two sprints. This isn't a marginal improvement; it's a systemic acceleration detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
-        "recap": "<strong>Recap.</strong> Stop letting time zones dictate your release schedule. When you <strong>hire developers in Costa Rica</strong>, you buy back your day with a team that operates on your clock, not against it."
+        "problem": "Your offshore team pushes a PR at the end of their day, which is the middle of your night. A simple question leads to a 24-hour delay. Your agile process grinds to a halt, one day at a time.",
+        "stakes": "This 'human latency tax' is the silent killer of velocity. It doubles or triples your cycle time and forces senior engineers into the role of late-night coordinators. Your roadmap slips, your best talent gets frustrated, and opportunity cost compounds with every stalled PR.",
+        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior engineers in Costa Rica with a guaranteed 7–8 hours of daily overlap with US teams. We instrument and enforce strict PR SLAs—first response ≤1h, to-green ≤4h—and sync our review windows with your team's core hours to ensure a continuous, real-time workflow.",
+        "proof": "Our platform telemetry proves this model works. Teams adopting a daylight cadence reduce their PR turnaround time from an average of 36 hours to under 8 hours within two sprints. This isn't a marginal improvement; it's a systemic acceleration detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
+        "recap": "Stop letting time zones dictate your release schedule. When you hire developers in Costa Rica, you buy back your day with a team that operates on your clock, not against it."
       }
     },
     {
       "title": "Cognition-First Hiring (Axiom Cortex™)",
       "icon": "hiring",
       "body": {
-        "problem": "<strong>Problem.</strong> You need to find elite talent in Costa Rica's competitive market, but traditional screening is a lottery. Resumes are full of keywords, but they don't predict a candidate's ability to handle novel problems, design resilient systems, or write clean, maintainable code.",
-        "stakes": "<strong>Stakes.</strong> A single senior mis-hire can cost you 6-12 months of salary in lost productivity, team disruption, and the cost of re-hiring. Relying on gut feel and unstructured interviews is a recipe for expensive mistakes and a slowed-down roadmap.",
-        "prescription": "<strong>Prescription.</strong> Shift from resume theater to auditable evidence. We leverage our <strong>Nebula Talent Graph</strong> of over 2.6 million LATAM profiles to find potential candidates. Then, our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> cognitive AI engine provides scientific proof of their problem-solving abilities. A human expert conducts a structured evaluation, and our AI synthesizes the data into a 'Cognitive Fingerprint' and a full Evidence Locker. You judge logic and skill, not just presentation.",
-        "proof": "<strong>Proof.</strong> This evidence-based approach reduces mis-hire risk by over 90%, achieving a mismatch rate of ≤10%. You get a candidate whose 'mental shape' is mapped to your role's specific demands.",
-        "recap": "<strong>Recap.</strong> Stop gambling on keywords. Build your team of <strong>nearshore Costa Rica engineers</strong> with a partner that provides data-driven proof of cognitive ability, not just a list of credentials."
+        "problem": "You need to find elite talent in Costa Rica's competitive market, but traditional screening is a lottery. Resumes are full of keywords, but they don't predict a candidate's ability to handle novel problems, design resilient systems, or write clean, maintainable code.",
+        "stakes": "A single senior mis-hire can cost you 6-12 months of salary in lost productivity, team disruption, and the cost of re-hiring. Relying on gut feel and unstructured interviews is a recipe for expensive mistakes and a slowed-down roadmap.",
+        "prescription": "Shift from resume theater to auditable evidence. We leverage our Nebula Talent Graph of over 2.6 million LATAM profiles to find potential candidates. Then, our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> cognitive AI engine provides scientific proof of their problem-solving abilities. A human expert conducts a structured evaluation, and our AI synthesizes the data into a 'Cognitive Fingerprint' and a full Evidence Locker. You judge logic and skill, not just presentation.",
+        "proof": "This evidence-based approach reduces mis-hire risk by over 90%, achieving a mismatch rate of ≤10%. You get a candidate whose 'mental shape' is mapped to your role's specific demands.",
+        "recap": "Stop gambling on keywords. Build your team of nearshore Costa Rica engineers with a partner that provides data-driven proof of cognitive ability, not just a list of credentials."
       }
     },
     {
       "title": "Security, Compliance & Managed Devices",
       "icon": "compliance",
       "body": {
-        "problem": "<strong>Problem.</strong> You want to access Costa Rica's talent, but the operational overhead is a major blocker. How do you handle local labor laws, secure remote work, and manage devices without building a foreign subsidiary?",
-        "stakes": "<strong>Stakes.</strong> One unmanaged laptop is a compliance nightmare and a data breach waiting to happen. Failing to align with local labor laws creates significant legal and financial risk. Enterprise deals will stall if you can't provide audit-ready security evidence.",
-        "prescription": "<strong>Prescription.</strong> Outsource the entire operational stack to our single, accountable SLA. Our platform includes a compliant Employer of Record (EOR), SSO/SAML/SCIM for identity management, and MDM-managed laptops for every engineer. We enforce least-privilege access and provide auditable onboarding dossiers from day one. You get the talent; we handle the operational chaos.",
-        "proof": "<strong>Proof.</strong> Our SOC-aligned onboarding process ensures every engineer starts with a secure, compliant workstation. This allows our clients to confidently pass enterprise security reviews and close deals faster, as detailed in our <a href='/trust' class='text-primary hover:underline'>Trust Center</a>. We absorb the risk, so you can focus on velocity.",
-        "recap": "<strong>Recap.</strong> Don't let operational complexity stop you from accessing top talent. Use an integrated platform that delivers a secure and audit-ready <strong>Costa Rica software teams</strong> from the start."
+        "problem": "You want to access Costa Rica's talent, but the operational overhead is a major blocker. How do you handle local labor laws, secure remote work, and manage devices without building a foreign subsidiary?",
+        "stakes": "One unmanaged laptop is a compliance nightmare and a data breach waiting to happen. Failing to align with local labor laws creates significant legal and financial risk. Enterprise deals will stall if you can't provide audit-ready security evidence.",
+        "prescription": "Outsource the entire operational stack to our single, accountable SLA. Our platform includes a compliant Employer of Record (EOR), SSO/SAML/SCIM for identity management, and MDM-managed laptops for every engineer. We enforce least-privilege access and provide auditable onboarding dossiers from day one. You get the talent; we handle the operational chaos.",
+        "proof": "Our SOC-aligned onboarding process ensures every engineer starts with a secure, compliant workstation. This allows our clients to confidently pass enterprise security reviews and close deals faster, as detailed in our <a href='/trust' class='text-primary hover:underline'>Trust Center</a>. We absorb the risk, so you can focus on velocity.",
+        "recap": "Don't let operational complexity stop you from accessing top talent. Use an integrated platform that delivers a secure and audit-ready Costa Rica software teams from the start."
       }
     },
     {
       "title": "Fast Ramp, Lower TCO, Reversible",
       "icon": "cost",
       "body": {
-        "problem": "<strong>Problem.</strong> Onboarding a new engineer can take months to show real productivity, and the true cost is far more than just their salary. You're paying a hidden 'time-to-productivity' tax and struggling to build a financial model your CFO will approve.",
-        "stakes": "<strong>Stakes.</strong> A slow ramp-up means delayed features and a lower ROI on your hiring investment. Without a clear Total Cost of Ownership (TCO) model, you can't make a strategic business case. You're stuck in a cycle of high costs and slow delivery.",
-        "prescription": "<strong>Prescription.</strong> We engineer for a fast ramp. With environments ready before day one, we target a first PR in under 10 business days and meaningful sprint outcomes within the first month. Our all-inclusive pricing model eliminates hidden fees and provides a predictable TCO that is often 40-60% lower than the fully-loaded cost of a US hire.",
-        "proof": "<strong>Proof.</strong> Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> moves the conversation from misleading hourly rates to a comprehensive analysis of value and risk. This data-driven approach gives you the ammunition to make a compelling case to your finance team, as shown in our <a href='/playbook/build-vs-buy' class='text-primary hover:underline'>Build vs. Buy analysis</a>.",
-        "recap": "<strong>Recap.</strong> Choose a partner that provides a clear, predictable financial model and is contractually accountable for a fast, productive ramp-up. It's the smarter, more capital-efficient way to scale your team."
+        "problem": "Onboarding a new engineer can take months to show real productivity, and the true cost is far more than just their salary. You're paying a hidden 'time-to-productivity' tax and struggling to build a financial model your CFO will approve.",
+        "stakes": "A slow ramp-up means delayed features and a lower ROI on your hiring investment. Without a clear Total Cost of Ownership (TCO) model, you can't make a strategic business case. You're stuck in a cycle of high costs and slow delivery.",
+        "prescription": "We engineer for a fast ramp. With environments ready before day one, we target a first PR in under 10 business days and meaningful sprint outcomes within the first month. Our all-inclusive pricing model eliminates hidden fees and provides a predictable TCO that is often 40-60% lower than the fully-loaded cost of a US hire.",
+        "proof": "Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> moves the conversation from misleading hourly rates to a comprehensive analysis of value and risk. This data-driven approach gives you the ammunition to make a compelling case to your finance team, as shown in our <a href='/playbook/build-vs-buy' class='text-primary hover:underline'>Build vs. Buy analysis</a>.",
+        "recap": "Choose a partner that provides a clear, predictable financial model and is contractually accountable for a fast, productive ramp-up. It's the smarter, more capital-efficient way to scale your team."
       }
     }
   ],
