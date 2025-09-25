@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle, Plane } from 'lucide-react';
@@ -54,31 +55,31 @@ const allTech: {
     name: 'TypeScript', 
     category: 'Frontend & UI/UX', 
     categorySlug: 'frontend-web',
-    intro: "You're not here because you need another developer who 'knows React.' You're here because your application feels sluggish, your state management is a tangled mess, and your component library is a collection of one-off hacks. You need a true React expert who obsesses over performance, architecture, and user experience as much as you do.",
+    intro: "You're tired of `any` types and runtime errors that should have been caught at compile time. You need more than just a JavaScript developer; you need a TypeScript expert who can leverage the full power of the type system to build safer, more maintainable, and self-documenting code.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is your app slow because of endless re-renders?",
-            problem: "Many 'senior' React developers don't profile their code, leading to slow, janky UIs that frustrate users and kill conversion rates.",
-            solution: "Our engineers are vetted for their deep understanding of the React render cycle. They master performance tools to hunt down bottlenecks and use techniques like memoization and virtualization to ensure a buttery-smooth experience.",
-            kpi: "Expertise in React Profiler & why-did-you-render"
+            pain: "Is your codebase littered with `any` types?",
+            problem: "Using `any` is a viral infection that negates the entire purpose of TypeScript, letting errors slip through to runtime and making refactoring a dangerous guessing game.",
+            solution: "We vet for engineers who can write precise, effective types using advanced features like generics, conditional types, and mapped types to create a truly type-safe codebase.",
+            kpi: "Mastery of advanced TypeScript patterns"
         },
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is your state management a spaghetti of props and contexts?",
-            problem: "Legacy patterns and a poor grasp of server-side state lead to complex, bug-prone applications that are a nightmare to maintain and scale.",
-            solution: "We select for expertise in modern state management, separating client state (e.g., Zustand) from server cache (e.g., TanStack Query) for a simpler, more resilient architecture.",
-            kpi: "Proven ability to architect scalable state"
+            pain: "Are you struggling to type complex third-party libraries?",
+            problem: "Integrating untyped or poorly typed libraries introduces holes in your type safety.",
+            solution: "Our engineers are skilled at writing custom declaration files (`.d.ts`) and using declaration merging to provide strong types for even the most complex JavaScript libraries.",
+            kpi: "Expertise in custom type declarations"
         },
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is your component library just a folder of inconsistent parts?",
-            problem: "Without strong API design and accessibility standards, your component library becomes a source of tech debt, not a force multiplier.",
-            solution: "We hire for strong component API design, accessibility (ARIA), and experience with tools like Storybook. You get a robust, reusable design system, not just a UI that 'looks right.'",
-            kpi: "Focus on reusable & accessible components"
+            pain: "Is your build process slow due to TypeScript compilation?",
+            problem: "A poorly configured `tsconfig.json` or an inefficient build setup can make TypeScript a bottleneck.",
+            solution: "We look for engineers who understand how to optimize the TypeScript compiler and build process, using project references and modern tools like Vite or esbuild to ensure a fast feedback loop.",
+            kpi: "Proficiency in optimizing the TS build process"
         }
     ],
-    evaluation: ['Advanced hooks', 'State management (Zustand/Redux)', 'Component API design', 'Performance profiling'] 
+    evaluation: ['Advanced types (generics, conditional types)', 'Compiler configuration (tsconfig.json)', 'Declaration files and module augmentation', 'Type inference and narrowing', 'Integration with modern build tools'] 
   },
   'node': { 
     name: 'Node.js', 
@@ -264,7 +265,7 @@ const allTech: {
     name: 'PHP (Laravel/Symphony)',
     category: 'APIs & Backend Services',
     categorySlug: 'backend-services',
-    intro: "You're not running a simple WordPress site. You're running a sophisticated application on a modern PHP framework like Laravel or Symfony, and you need an engineer who respects the craft. You're here because you need an expert who can leverage PHP's modern features, build robust systems with its powerful ecosystem (Composer, PHPUnit), and write clean, maintainable, and performant code.",
+    intro: "You're not running a simple WordPress site. You're running a sophisticated application on a modern PHP framework like Laravel or Symphony, and you need an engineer who respects the craft. You're here because you need an expert who can leverage PHP's modern features, build robust systems with its powerful ecosystem (Composer, PHPUnit), and write clean, maintainable, and performant code.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
@@ -772,9 +773,9 @@ const allTech: {
   },
   'crowdstrike': {
     name: 'CrowdStrike/Defender',
-    category: 'Security & GRC',
-    categorySlug: 'security-grc',
-    intro: "You need to protect your endpoints from modern threats, but traditional antivirus isn't enough. You need an expert in modern Endpoint Detection and Response (EDR) platforms like CrowdStrike Falcon or Microsoft Defender for Endpoint to provide real-time visibility and threat hunting capabilities.",
+    category: 'IT / Enterprise Ops',
+    categorySlug: 'it-enterprise-ops',
+    intro: "You need to protect your endpoints from modern threats, but traditional antivirus isn't enough. You need a security analyst who is an expert in modern Endpoint Detection and Response (EDR) platforms like CrowdStrike Falcon or Microsoft Defender for Endpoint to provide real-time visibility and threat hunting capabilities.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
@@ -795,7 +796,7 @@ const allTech: {
             pain: "Can you remotely contain a compromised endpoint?",
             problem: "During an incident, you need the ability to immediately isolate a compromised machine from the network to stop an attacker from moving laterally.",
             solution: "We look for engineers who are experienced with the response capabilities of EDR platforms, allowing them to remotely contain hosts, kill malicious processes, and remediate threats in real-time.",
-            kpi: "Real-time incident response capabilities"
+            kpi: "Rapid incident response and containment"
         }
     ],
     evaluation: ['Policy management and tuning', 'Threat hunting and incident investigation', 'API integration for automation and SOAR', 'Understanding of MITRE ATT&CK framework', 'Deployment and sensor management']
@@ -1379,7 +1380,7 @@ const allTech: {
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is your mobile build and signing process a manual, error-prone nightmare?",
-            problem: "Manually building and signing mobile apps is complex and requires specialized knowledge that is often a single point of failure.",
+            problem: "Manual building and signing mobile apps is complex and requires specialized knowledge that is often a single point of failure.",
             solution: "We find engineers who can automate your entire build and signing process in App Center, creating a reliable, repeatable pipeline that anyone on the team can use.",
             kpi: "Automated mobile build & signing pipelines"
         },
@@ -1520,7 +1521,7 @@ const allTech: {
     ], 
     evaluation: ['Storage engine trade-offs (especially InnoDB)', 'Replication setup and troubleshooting', 'Advanced indexing strategies', 'Performance tuning and using the slow query log', 'Understanding of character sets and collations'] 
   },
-  'sql': { 
+    'sql': { 
     name: 'SQL Server', 
     category: 'Data Modeling & Databases', 
     categorySlug: 'data-engineering-analytics', 
@@ -1604,7 +1605,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is your Redis cache a single point of failure?",
             problem: "A single Redis instance is not highly available. If it fails, your application's performance will degrade significantly as all traffic hits the primary database.",
-            solution: "We look for engineers with experience in set-ting up high-availability Redis with Sentinel or Redis Cluster, ensuring your caching layer is as resilient as your database.",
+            solution: "We look for engineers with experience in set-ting up high-availability Redis with Sentinel or Cluster, ensuring your caching layer is as resilient as your database.",
             kpi: "Experience with high-availability Redis (Sentinel/Cluster)"
         }
     ], 
@@ -1644,7 +1645,7 @@ const allTech: {
     name: 'TypeORM',
     category: 'Data Modeling & Databases',
     categorySlug: 'backend-services',
-    intro: "Your TypeScript backend's data layer is a mess of untyped queries. You need a TypeORM expert who can build a type-safe, maintainable data access layer, manage migrations, and optimize queries without getting tangled in ORM pitfalls.",
+    intro: "Your TypeScript backend's data layer is a mess of untyped queries. You need a TypeORM expert who can build a type-safe, maintainable data access layer, manage migrations, and optimize queries without gettings tangled in ORM pitfalls.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
@@ -1732,7 +1733,7 @@ const allTech: {
   },
   'dbt': { 
     name: 'dbt', 
-    category: 'Data Modeling & Databases', 
+    category: 'Data Engineering / Analytics', 
     categorySlug: 'data-engineering-analytics', 
     intro: "Your data warehouse is a swamp of untested, undocumented SQL scripts. You're here because you need to bring software engineering best practices to your analytics workflow. You need an analytics engineer who is a master of dbt, someone who can build modular, testable, and well-documented data models that your entire organization can trust.",
     pains: [
@@ -1986,7 +1987,7 @@ const allTech: {
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Are your database migrations a manual, risky process?",
-            problem: "Manually writing and applying SQL migration scripts is error-prone and can lead to inconsistencies between environments.",
+            problem: "Manual writing and applying SQL migration scripts is error-prone and can lead to inconsistencies between environments.",
             solution: "Our engineers are experts in using Prisma Migrate, which automatically generates SQL migrations from your declarative schema, ensuring your database schema is always in sync with your application code.",
             kpi: "Safe, declarative database migrations"
         },
@@ -2064,7 +2065,7 @@ const allTech: {
     name: 'Flink/Beam', 
     category: 'Pipelines & Orchestration', 
     categorySlug: 'data-engineering-analytics', 
-    intro: "You need to process data in real-time, not just in hourly batches. You're here because you need to build sophisticated, stateful stream processing applications. You need an expert in Flink or Beam who understands the complexities of windowing, watermarks, and state management to derive insights from your data as it happens.",
+    intro: "You need to process data in real-time, not just in hourly batches. You're here because you need to build sophisticated, stateful stream processing applications. You need an engineer who is an expert in Flink or Beam who understands the complexities of windowing, watermarks, and state management to derive insights from your data as it happens.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
@@ -2454,31 +2455,31 @@ const allTech: {
     name: 'Feast/Tecton',
     category: 'ML/AI & LLM Ops',
     categorySlug: 'ml-ai-llm-ops',
-    intro: "Your data scientists are rebuilding the same features over and over, and you have no consistency between training and serving. You need an expert in feature stores like Feast or Tecton to create a centralized, reliable source of features for your ML models.",
+    intro: "You're spending too much engineering time building and maintaining brittle data ingestion pipelines. You need an expert in automated ELT tools like Fivetran or Airbyte who can quickly and reliably sync data from all your sources into your data warehouse.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your training and serving features inconsistent, leading to skewed model performance?",
-            problem: "The 'train-serve skew' is a notorious problem where differences between the features used in training and serving lead to poor model performance in production.",
-            solution: "We find engineers who can use a feature store to provide a single, consistent definition for features, guaranteeing that the same logic is used for both training data generation and low-latency online serving.",
-            kpi: "Eliminating train-serve skew"
+            pain: "Are your engineers wasting weeks building and maintaining custom API connectors?",
+            problem: "Every SaaS tool your company uses has a different API. Building and maintaining pipelines for each one is a massive, low-leverage time sink.",
+            solution: "We find engineers who can use pre-built connectors from Fivetran or Airbyte to sync data from hundreds of sources in minutes, freeing up your team to work on high-value data modeling.",
+            kpi: "Eliminate time spent on building custom connectors"
         },
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your data scientists spending more time on feature engineering than on modeling?",
-            problem: "Duplicated feature engineering effort is a massive waste of your most expensive resources.",
-            solution: "Our engineers can build a centralized feature store that allows features to be discovered, shared, and reused across the entire organization, dramatically improving productivity.",
-            kpi: "A central repository for feature discovery & reuse"
+            pain: "Do your data pipelines break every time a source API changes its schema?",
+            problem: "Upstream schema changes are a constant source of pipeline failures.",
+            solution: "Our engineers are experienced with tools that automatically detect and adapt to schema changes, ensuring your pipelines are resilient and your data is never lost.",
+            kpi: "Automated schema change handling"
         },
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Can you generate point-in-time correct training data?",
-            problem: "Generating historically accurate training data without leaking future information is incredibly difficult and a common source of model failure.",
-            solution: "We look for engineers with experience in feature stores that can generate point-in-time correct datasets, ensuring your models are trained on valid historical data.",
-            kpi: "Point-in-time correct training data generation"
+            pain: "Are you struggling to get data from a source that isn't supported?",
+            problem: "What do you do when a pre-built connector doesn't exist for one of your niche internal tools?",
+            solution: "We look for engineers with experience in Airbyte's Connector Development Kit (CDK), allowing them to rapidly build new, custom connectors when needed.",
+            kpi: "Ability to build custom connectors with the CDK"
         }
     ],
-    evaluation: ['Feature definition and registration', 'Online vs. offline store concepts', 'Point-in-time correct feature retrieval for training', 'Low-latency feature serving for inference', 'Feature discovery and governance']
+    evaluation: ['Connector configuration and troubleshooting', 'Data replication strategies (incremental, full)', 'Handling schema changes and drift', 'Custom connector development (Airbyte)', 'Monitoring and alerting for sync failures']
   },
   'jira': {
     name: 'Jira/Linear',
@@ -2834,7 +2835,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Are phishing attacks constantly getting through your email filters?",
             problem: "Basic spam filtering is not enough to stop sophisticated phishing and Business Email Compromise (BEC) attacks.",
-            solution: "We look for experts who can implement advanced threat protection features, such as sandboxing for attachments and links, to protect your organization from the most advanced email threats.",
+            solution: "We look for engineers who can implement advanced threat protection features, such as sandboxing for attachments and links, to protect your organization from the most advanced email threats.",
             kpi: "Advanced Threat Protection for email"
         }
     ],
@@ -2864,7 +2865,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "What happens when a laptop is lost or stolen?",
             problem: "A lost or stolen unmanaged laptop is a massive data breach waiting to happen.",
-            solution: "We look for experts who can use MDM to remotely lock and wipe a lost or stolen device, ensuring your company's data remains secure.",
+            solution: "We look for engineers who can use MDM to remotely lock and wipe a lost or stolen device, ensuring your company's data remains secure.",
             kpi: "Remote lock and wipe capabilities"
         }
     ],
@@ -2905,30 +2906,30 @@ const allTech: {
     category: 'IT / Enterprise Ops',
     categorySlug: 'it-enterprise-ops',
     intro: "You need to detect and respond to sophisticated threats on your endpoints. You need a security analyst who is an expert in EDR/XDR platforms to hunt for threats, investigate alerts, and contain attacks before they can spread.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you blind to attacker activity on your endpoints?",
-            problem: "Legacy antivirus can't see modern attacker techniques. You need deep visibility into process execution, network connections, and registry changes.",
-            solution: "We find analysts who can use the deep telemetry from EDR/XDR platforms to hunt for indicators of compromise and proactively find threats that automated detection might miss.",
-            kpi: "Proactive threat hunting capabilities"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you drowning in low-quality security alerts?",
-            problem: "A flood of false positives makes it impossible to find the real threats.",
-            solution: "Our analysts are experts in tuning detection rules and triaging alerts to separate the signal from the noise, ensuring that your team is only focused on real incidents.",
-            kpi: "High-signal, low-noise alert triage"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "How long does it take you to respond to a real threat?",
-            problem: "A slow response time gives an attacker the opportunity to move laterally and achieve their objectives.",
-            solution: "We look for analysts who can use the built-in response actions of EDR platforms to immediately contain threats, such as isolating a host from the network or killing a malicious process, dramatically reducing MTTR.",
-            kpi: "Rapid incident response and containment"
-        }
-    ],
-    evaluation: ['Threat hunting using platform-specific query languages', 'Alert triage and incident investigation', 'Host containment and remediation actions', 'Custom detection rule creation', 'Understanding of attacker techniques (MITRE ATT&CK)']
+        pains: [
+            {
+                icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+                pain: "Are you blind to attacker activity on your endpoints?",
+                problem: "Legacy antivirus can't see modern attacker techniques. You need deep visibility into process execution, network connections, and registry changes.",
+                solution: "We find analysts who can use the deep telemetry from EDR/XDR platforms to hunt for indicators of compromise and proactively find threats that automated detection might miss.",
+                kpi: "Proactive threat hunting capabilities"
+            },
+            {
+                icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+                pain: "Are you drowning in low-quality security alerts?",
+                problem: "A flood of false positives makes it impossible to find the real threats.",
+                solution: "Our analysts are experts in tuning detection rules and triaging alerts to separate the signal from the noise, ensuring that your team is only focused on real incidents.",
+                kpi: "High-signal, low-noise alert triage"
+            },
+            {
+                icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+                pain: "How long does it take you to respond to a real threat?",
+                problem: "A slow response time gives an attacker the opportunity to move laterally and achieve their objectives.",
+                solution: "We look for analysts who can use the built-in response actions of EDR platforms to immediately contain threats, such as isolating a host from the network or killing a malicious process, dramatically reducing MTTR.",
+                kpi: "Rapid incident response and containment"
+            }
+        ],
+        evaluation: ['Threat hunting using platform-specific query languages', 'Alert triage and incident investigation', 'Host containment and remediation actions', 'Custom detection rule creation', 'Understanding of attacker techniques (MITRE ATT&CK)']
   },
   'proofpoint': {
     name: 'Proofpoint',
@@ -3134,7 +3135,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Can your sales team see product usage data directly inside Salesforce?",
             problem: "When sales reps have to log into another tool to see product usage, they are less likely to do it. You need to bring the data to them.",
-            solution: "We look for experts who can use Reverse ETL to sync product usage data directly onto the Account and Contact records in Salesforce, giving reps the insights they need to have smarter conversations.",
+            solution: "We look for engineers who can use Reverse ETL to sync product usage data directly onto the Account and Contact records in Salesforce, giving reps the insights they need to have smarter conversations.",
             kpi: "Product usage data right where your sales team works"
         }
     ],
@@ -3381,7 +3382,6 @@ const allTech: {
     evaluation: ['Event handling and emission', 'Room and namespace management', 'Scaling with Redis adapter', 'Authentication and middleware', 'Reconnection logic and reliability']
   }
 };
-
 type TechKeys = keyof typeof allTech;
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
@@ -3480,10 +3480,6 @@ export default function TechPage({ params }: { params: { slug: string } }) {
 
     </main>
   );
-}
-
-export async function generateStaticParams() {
-  return Object.keys(allTech).map(slug => ({ slug }));
 }
 
     

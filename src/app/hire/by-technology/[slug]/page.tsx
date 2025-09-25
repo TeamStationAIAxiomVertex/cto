@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle, Plane } from 'lucide-react';
 import { WithTooltip } from '@/components/ui/tooltip';
 import { notFound } from 'next/navigation';
+import TypeScriptPSPSection from "@/components/seo/sections/TypeScriptPSPSection";
 
 const allTech: { 
     [key: string]: { 
@@ -50,6 +51,36 @@ const allTech: {
         }
     ],
     evaluation: ['Advanced hooks', 'State management (Zustand/Redux)', 'Component API design', 'Performance profiling'] 
+  },
+  'typescript': { 
+    name: 'TypeScript', 
+    category: 'Frontend & UI/UX', 
+    categorySlug: 'frontend-web',
+    intro: "You're tired of `any` types and runtime errors that should have been caught at compile time. You need more than just a JavaScript developer; you need a TypeScript expert who can leverage the full power of the type system to build safer, more maintainable, and self-documenting code.",
+    pains: [
+        {
+            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+            pain: "Is your codebase littered with `any` types?",
+            problem: "Using `any` is a viral infection that negates the entire purpose of TypeScript, letting errors slip through to runtime and making refactoring a dangerous guessing game.",
+            solution: "We vet for engineers who can write precise, effective types using advanced features like generics, conditional types, and mapped types to create a truly type-safe codebase.",
+            kpi: "Mastery of advanced TypeScript patterns"
+        },
+        {
+            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+            pain: "Are you struggling to type complex third-party libraries?",
+            problem: "Integrating untyped or poorly typed libraries introduces holes in your type safety.",
+            solution: "Our engineers are skilled at writing custom declaration files (`.d.ts`) and using declaration merging to provide strong types for even the most complex JavaScript libraries.",
+            kpi: "Expertise in custom type declarations"
+        },
+        {
+            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+            pain: "Is your build process slow due to TypeScript compilation?",
+            problem: "A poorly configured `tsconfig.json` or an inefficient build setup can make TypeScript a bottleneck.",
+            solution: "We look for engineers who understand how to optimize the TypeScript compiler and build process, using project references and modern tools like Vite or esbuild to ensure a fast feedback loop.",
+            kpi: "Proficiency in optimizing the TS build process"
+        }
+    ],
+    evaluation: ['Advanced types (generics, conditional types)', 'Compiler configuration (tsconfig.json)', 'Declaration files and module augmentation', 'Type inference and narrowing', 'Integration with modern build tools'] 
   },
   'node': { 
     name: 'Node.js', 
@@ -235,7 +266,7 @@ const allTech: {
     name: 'PHP (Laravel/Symphony)',
     category: 'APIs & Backend Services',
     categorySlug: 'backend-services',
-    intro: "You're not running a simple WordPress site. You're running a sophisticated application on a modern PHP framework like Laravel or Symfony, and you need an engineer who respects the craft. You're here because you need an expert who can leverage PHP's modern features, build robust systems with its powerful ecosystem (Composer, PHPUnit), and write clean, maintainable, and performant code.",
+    intro: "You're not running a simple WordPress site. You're running a sophisticated application on a modern PHP framework like Laravel or Symphony, and you need an engineer who respects the craft. You're here because you need an expert who can leverage PHP's modern features, build robust systems with its powerful ecosystem (Composer, PHPUnit), and write clean, maintainable, and performant code.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
@@ -743,9 +774,9 @@ const allTech: {
   },
   'crowdstrike': {
     name: 'CrowdStrike/Defender',
-    category: 'Security & GRC',
-    categorySlug: 'security-grc',
-    intro: "You need to protect your endpoints from modern threats, but traditional antivirus isn't enough. You need an expert in modern Endpoint Detection and Response (EDR) platforms like CrowdStrike Falcon or Microsoft Defender for Endpoint to provide real-time visibility and threat hunting capabilities.",
+    category: 'IT / Enterprise Ops',
+    categorySlug: 'it-enterprise-ops',
+    intro: "You need to protect your endpoints from modern threats, but traditional antivirus isn't enough. You need a security analyst who is an expert in modern Endpoint Detection and Response (EDR) platforms like CrowdStrike Falcon or Microsoft Defender for Endpoint to provide real-time visibility and threat hunting capabilities.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
@@ -766,7 +797,7 @@ const allTech: {
             pain: "Can you remotely contain a compromised endpoint?",
             problem: "During an incident, you need the ability to immediately isolate a compromised machine from the network to stop an attacker from moving laterally.",
             solution: "We look for engineers who are experienced with the response capabilities of EDR platforms, allowing them to remotely contain hosts, kill malicious processes, and remediate threats in real-time.",
-            kpi: "Real-time incident response and containment"
+            kpi: "Rapid incident response and containment"
         }
     ],
     evaluation: ['Policy management and tuning', 'Threat hunting and incident investigation', 'API integration for automation and SOAR', 'Understanding of MITRE ATT&CK framework', 'Deployment and sensor management']
@@ -788,7 +819,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is preparing for your SOC 2 audit a manual, all-hands-on-deck fire drill?",
             problem: "Manual evidence collection is time-consuming, error-prone, and takes your engineers away from building product.",
-            solution: "Our engineers are experienced with compliance automation platforms (e.g., Vanta, Drata) and can help you automate evidence collection, turning your audit from a fire drill into a routine process.",
+            solution: "Our engineers can use="" experienced with="" compliance="" automation="" platforms="" (e.g.,="" vanta,="" drata)="" and="" can="" help="" you="" automate="" evidence="" collection,="" turning="" your="" audit="" from="" a="" fire="" drill="" into="" routine="" process.",
             kpi: "Automate evidence collection for continuous compliance"
         },
         {
@@ -1350,7 +1381,7 @@ const allTech: {
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is your mobile build and signing process a manual, error-prone nightmare?",
-            problem: "Manually building and signing mobile apps is complex and requires specialized knowledge that is often a single point of failure.",
+            problem: "Manual building and signing mobile apps is complex and requires specialized knowledge that is often a single point of failure.",
             solution: "We find engineers who can automate your entire build and signing process in App Center, creating a reliable, repeatable pipeline that anyone on the team can use.",
             kpi: "Automated mobile build & signing pipelines"
         },
@@ -1491,7 +1522,7 @@ const allTech: {
     ], 
     evaluation: ['Storage engine trade-offs (especially InnoDB)', 'Replication setup and troubleshooting', 'Advanced indexing strategies', 'Performance tuning and using the slow query log', 'Understanding of character sets and collations'] 
   },
-  'sql': { 
+    'sql': { 
     name: 'SQL Server', 
     category: 'Data Modeling & Databases', 
     categorySlug: 'data-engineering-analytics', 
@@ -1575,7 +1606,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is your Redis cache a single point of failure?",
             problem: "A single Redis instance is not highly available. If it fails, your application's performance will degrade significantly as all traffic hits the primary database.",
-            solution: "We look for engineers with experience in set-ting up high-availability Redis with Sentinel or Redis Cluster, ensuring your caching layer is as resilient as your database.",
+            solution: "We look for engineers with experience in set-ting up high-availability Redis with Sentinel or Cluster, ensuring your caching layer is as resilient as your database.",
             kpi: "Experience with high-availability Redis (Sentinel/Cluster)"
         }
     ], 
@@ -1673,7 +1704,7 @@ const allTech: {
   },
   'snowflake': {
     name: 'Snowflake/BigQuery/Redshift',
-    category: 'Data Engineering / Analytics',
+    category: 'Data Modeling & Databases',
     categorySlug: 'data-engineering-analytics',
     intro: "Your data warehouse is slow and expensive. You need an expert in modern cloud data warehouses like Snowflake, BigQuery, or Redshift who can optimize storage, tune query performance, and build a cost-effective, scalable analytics platform.",
     pains: [
@@ -1957,7 +1988,7 @@ const allTech: {
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Are your database migrations a manual, risky process?",
-            problem: "Manually writing and applying SQL migration scripts is error-prone and can lead to inconsistencies between environments.",
+            problem: "Manual writing and applying SQL migration scripts is error-prone and can lead to inconsistencies between environments.",
             solution: "Our engineers are experts in using Prisma Migrate, which automatically generates SQL migrations from your declarative schema, ensuring your database schema is always in sync with your application code.",
             kpi: "Safe, declarative database migrations"
         },
@@ -2035,7 +2066,7 @@ const allTech: {
     name: 'Flink/Beam', 
     category: 'Pipelines & Orchestration', 
     categorySlug: 'data-engineering-analytics', 
-    intro: "You need to process data in real-time, not just in hourly batches. You're here because you need to build sophisticated, stateful stream processing applications. You need an expert in Flink or Beam who understands the complexities of windowing, watermarks, and state management to derive insights from your data as it happens.",
+    intro: "You need to process data in real-time, not just in hourly batches. You're here because you need to build sophisticated, stateful stream processing applications. You need an engineer who is an expert in Flink or Beam who understands the complexities of windowing, watermarks, and state management to derive insights from your data as it happens.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
@@ -2245,7 +2276,7 @@ const allTech: {
     name: 'LangChain/LlamaIndex', 
     category: 'ML/AI & LLM Ops', 
     categorySlug: 'ml-ai-llm-ops', 
-    intro: "You're building a RAG application, but it's becoming a complex web of prompts and data sources. You need an engineer who is an expert in frameworks like LangChain or LlamaIndex to structure your application, build robust data ingestion pipelines, and create evaluatable chains and agents. You're here to move from a simple script to a production-ready LLM application.",
+    intro: "Your RAG application 'looks' okay, but you have no objective way to measure its quality. You're here because you need to move beyond anecdotal evidence and implement a rigorous evaluation framework. You need an expert in Ragas or other evaluation tools who can measure metrics like faithfulness, answer relevancy, and context precision to systematically improve your application's performance.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
@@ -2425,31 +2456,31 @@ const allTech: {
     name: 'Feast/Tecton',
     category: 'ML/AI & LLM Ops',
     categorySlug: 'ml-ai-llm-ops',
-    intro: "Your data scientists are rebuilding the same features over and over, and you have no consistency between training and serving. You need an expert in feature stores like Feast or Tecton to create a centralized, reliable source of features for your ML models.",
+    intro: "You're spending too much engineering time building and maintaining brittle data ingestion pipelines. You need an expert in automated ELT tools like Fivetran or Airbyte who can quickly and reliably sync data from all your sources into your data warehouse.",
     pains: [
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your training and serving features inconsistent, leading to skewed model performance?",
-            problem: "The 'train-serve skew' is a notorious problem where differences between the features used in training and serving lead to poor model performance in production.",
-            solution: "We find engineers who can use a feature store to provide a single, consistent definition for features, guaranteeing that the same logic is used for both training data generation and low-latency online serving.",
-            kpi: "Eliminating train-serve skew"
+            pain: "Are your engineers wasting weeks building and maintaining custom API connectors?",
+            problem: "Every SaaS tool your company uses has a different API. Building and maintaining pipelines for each one is a massive, low-leverage time sink.",
+            solution: "We find engineers who can use pre-built connectors from Fivetran or Airbyte to sync data from hundreds of sources in minutes, freeing up your team to work on high-value data modeling.",
+            kpi: "Eliminate time spent on building custom connectors"
         },
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your data scientists spending more time on feature engineering than on modeling?",
-            problem: "Duplicated feature engineering effort is a massive waste of your most expensive resources.",
-            solution: "Our engineers can build a centralized feature store that allows features to be discovered, shared, and reused across the entire organization, dramatically improving productivity.",
-            kpi: "A central repository for feature discovery & reuse"
+            pain: "Do your data pipelines break every time a source API changes its schema?",
+            problem: "Upstream schema changes are a constant source of pipeline failures.",
+            solution: "Our engineers are experienced with tools that automatically detect and adapt to schema changes, ensuring your pipelines are resilient and your data is never lost.",
+            kpi: "Automated schema change handling"
         },
         {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Can you generate point-in-time correct training data?",
-            problem: "Generating historically accurate training data without leaking future information is incredibly difficult and a common source of model failure.",
-            solution: "We look for engineers with experience in feature stores that can generate point-in-time correct datasets, ensuring your models are trained on valid historical data.",
-            kpi: "Point-in-time correct training data generation"
+            pain: "Are you struggling to get data from a source that isn't supported?",
+            problem: "What do you do when a pre-built connector doesn't exist for one of your niche internal tools?",
+            solution: "We look for engineers with experience in Airbyte's Connector Development Kit (CDK), allowing them to rapidly build new, custom connectors when needed.",
+            kpi: "Ability to build custom connectors with the CDK"
         }
     ],
-    evaluation: ['Feature definition and registration', 'Online vs. offline store concepts', 'Point-in-time correct feature retrieval for training', 'Low-latency feature serving for inference', 'Feature discovery and governance']
+    evaluation: ['Connector configuration and troubleshooting', 'Data replication strategies (incremental, full)', 'Handling schema changes and drift', 'Custom connector development (Airbyte)', 'Monitoring and alerting for sync failures']
   },
   'jira': {
     name: 'Jira/Linear',
@@ -2475,7 +2506,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Is your project tool disconnected from the rest of your development ecosystem?",
             problem: "Manual updates between Jira, GitHub, and Slack are a waste of time and a source of errors.",
-            solution: "We look for experts who can set up deep integrations and automation between your tools, automatically transitioning tickets, posting updates, and linking pull requests.",
+            solution: "We look for engineers who can set up deep integrations and automation between your tools, automatically transitioning tickets, posting updates, and linking pull requests.",
             kpi: "A fully integrated, automated toolchain"
         }
     ],
@@ -2805,7 +2836,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Are phishing attacks constantly getting through your email filters?",
             problem: "Basic spam filtering is not enough to stop sophisticated phishing and Business Email Compromise (BEC) attacks.",
-            solution: "We look for experts who can implement advanced threat protection features, such as sandboxing for attachments and links, to protect your organization from the most advanced email threats.",
+            solution: "We look for engineers who can implement advanced threat protection features, such as sandboxing for attachments and links, to protect your organization from the most advanced email threats.",
             kpi: "Advanced Threat Protection for email"
         }
     ],
@@ -2835,7 +2866,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "What happens when a laptop is lost or stolen?",
             problem: "A lost or stolen unmanaged laptop is a massive data breach waiting to happen.",
-            solution: "We look for experts who can use MDM to remotely lock and wipe a lost or stolen device, ensuring your company's data remains secure.",
+            solution: "We look for engineers who can use MDM to remotely lock and wipe a lost or stolen device, ensuring your company's data remains secure.",
             kpi: "Remote lock and wipe capabilities"
         }
     ],
@@ -2865,7 +2896,7 @@ const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Are your IT engineers spending all their time on repetitive manual tasks?",
             problem: "Manual ticket routing and responses are a major drain on your IT team's productivity.",
-            solution: "We look for experts who can build powerful automation rules to handle common tasks like ticket routing, approvals, and status updates, freeing up your team for more valuable work.",
+            solution: "We look for engineers who can build powerful automation rules to handle common tasks like ticket routing, approvals, and status updates, freeing up your team for more valuable work.",
             kpi: "Increased efficiency with workflow automation"
         }
     ],
@@ -2876,488 +2907,66 @@ const allTech: {
     category: 'IT / Enterprise Ops',
     categorySlug: 'it-enterprise-ops',
     intro: "You need to detect and respond to sophisticated threats on your endpoints. You need a security analyst who is an expert in EDR/XDR platforms to hunt for threats, investigate alerts, and contain attacks before they can spread.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you blind to attacker activity on your endpoints?",
-            problem: "Legacy antivirus can't see modern attacker techniques. You need deep visibility into process execution, network connections, and registry changes.",
-            solution: "We find analysts who can use the deep telemetry from EDR/XDR platforms to hunt for indicators of compromise and proactively find threats that automated detection might miss.",
-            kpi: "Proactive threat hunting capabilities"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you drowning in low-quality security alerts?",
-            problem: "A flood of false positives makes it impossible to find the real threats.",
-            solution: "Our analysts are experts in tuning detection rules and triaging alerts to separate the signal from the noise, ensuring that your team is only focused on real incidents.",
-            kpi: "High-signal, low-noise alert triage"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "How long does it take you to respond to a real threat?",
-            problem: "A slow response time gives an attacker the opportunity to move laterally and achieve their objectives.",
-            solution: "We look for analysts who can use the built-in response actions of EDR platforms to immediately contain threats, such as isolating a host from the network or killing a malicious process, dramatically reducing MTTR.",
-            kpi: "Rapid incident response and containment"
-        }
-    ],
-    evaluation: ['Threat hunting using platform-specific query languages', 'Alert triage and incident investigation', 'Host containment and remediation actions', 'Custom detection rule creation', 'Understanding of attacker techniques (MITRE ATT&CK)']
+        pains: [
+            {
+                icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+                pain: "Are you blind to attacker activity on your endpoints?",
+                problem: "Legacy antivirus can't see modern attacker techniques. You need deep visibility into process execution, network connections, and registry changes.",
+                solution: "We find analysts who can use the deep telemetry from EDR/XDR platforms to hunt for indicators of compromise and proactively find threats that automated detection might miss.",
+                kpi: "Proactive threat hunting capabilities"
+            },
+            {
+                icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+                pain: "Are you drowning in low-quality security alerts?",
+                problem: "A flood of false positives makes it impossible to find the real threats.",
+                solution: "Our analysts are experts in tuning detection rules and triaging alerts to separate the signal from the noise, ensuring that your team is only focused on real incidents.",
+                kpi: "High-signal, low-noise alert triage"
+            },
+            {
+                icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+                pain: "How long does it take you to respond to a real threat?",
+                problem: "A slow response time gives an attacker the opportunity to move laterally and achieve their objectives.",
+                solution: "We look for analysts who can use the built-in response actions of EDR platforms to immediately contain threats, such as isolating a host from the network or killing a malicious process, dramatically reducing MTTR.",
+                kpi: "Rapid incident response and containment"
+            }
+        ],
+        evaluation: ['Threat hunting using platform-specific query languages', 'Alert triage and incident investigation', 'Host containment and remediation actions', 'Custom detection rule creation', 'Understanding of attacker techniques (MITRE ATT&CK)']
   },
   'proofpoint': {
     name: 'Proofpoint',
     category: 'IT / Enterprise Ops',
     categorySlug: 'it-enterprise-ops',
-    intro: "Phishing is your number one threat vector. You need an email security expert who can manage Proofpoint to block malicious emails, prevent data loss, and protect your organization from Business Email Compromise (BEC) and other advanced threats.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are sophisticated phishing emails reaching your employees' inboxes?",
-            problem: "Basic spam filters can't stop well-crafted spear-phishing or Business Email Compromise (BEC) attacks.",
-            solution: "We find experts who can configure Proofpoint's advanced threat detection capabilities, including impersonation detection and URL sandboxing, to block the threats that other systems miss.",
-            kpi: "Advanced protection against phishing and BEC"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Do you have visibility into who is being targeted in your organization?",
-            problem: "Without threat intelligence, you don't know which of your employees are being targeted by attackers.",
-            solution: "Our analysts can use Proofpoint's threat intelligence dashboards to identify your 'Very Attacked People' (VAPs) and apply additional, targeted security controls to protect them.",
-            kpi: "Identifying and protecting your 'Very Attacked People'"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you able to automatically quarantine and remediate malicious emails?",
-            problem: "Manually dealing with malicious emails that have already been delivered is slow and inefficient.",
-            solution: "We look for experts who can use Proofpoint's automated response features to automatically pull malicious emails from users' inboxes after they have been delivered, closing the window of opportunity for an attacker.",
-            kpi: "Automated post-delivery remediation"
-        }
-    ],
-    evaluation: ['Email gateway policy and rule configuration', 'Threat analysis and forensics (TAP)', 'Data Loss Prevention (DLP) rule creation', 'Targeted attack protection and impersonation detection', 'End-user training and awareness integration']
-  },
-  'cloudzero': { 
-    name: 'CloudZero/Infracost', 
-    category: 'Cloud FinOps & BizTech', 
-    categorySlug: 'finops-biztech', 
-    intro: "Your cloud bill is a mystery, and you have no idea what features or customers are driving your costs. You're here because you need to achieve cloud cost intelligence. You need a FinOps engineer who can use a platform like CloudZero to map costs to business metrics and a tool like Infracost to see the cost impact of code changes before they're merged.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Can you tell your CFO how much a specific customer or feature costs to run?",
-            problem: "A total cloud bill is not actionable. Without unit cost economics, you can't make informed decisions about pricing, investment, or architecture.",
-            solution: "We find FinOps engineers who can use a platform like CloudZero to allocate 100% of your cloud spend to business dimensions like cost per feature or cost per customer.",
-            kpi: "Achieving granular unit cost visibility"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you surprised by your cloud bill at the end of the month?",
-            problem: "Without real-time anomaly detection, a small code change can lead to a massive, unexpected cost overrun.",
-            solution: "Our engineers can set up real-time cost anomaly detection and alerting, so you know about cost spikes in hours, not weeks.",
-            kpi: "Real-time cost anomaly detection"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your developers making architectural decisions without any visibility into their cost impact?",
-            problem: "When developers don't see the cost of their code, they can't be expected to write cost-efficient code.",
-            solution: "We look for engineers who can 'shift left' on cost by integrating tools like Infracost into the CI/CD pipeline, showing developers the cost impact of their changes directly in the pull request.",
-            kpi: "Shifting cost visibility left to developers"
-        }
-    ], 
-    evaluation: ['Cost anomaly detection and root cause analysis', 'Cost allocation and showback/chargeback', 'Calculating unit cost economics (e.g., cost per feature)', 'Budgeting, forecasting, and trend analysis', 'Integrating cost into the developer workflow'] 
-  },
-  'aws-cost-explorer': { 
-    name: 'AWS Cost Explorer', 
-    category: 'Cloud FinOps & BizTech', 
-    categorySlug: 'finops-biztech', 
-    intro: "Your AWS bill is growing, but you're flying blind without the data to make optimization decisions. You need an engineer who can master AWS Cost Explorer to analyze your cost and usage data, make recommendations for Reserved Instances or Savings Plans, and build a robust tagging strategy to provide visibility to the entire organization.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is your AWS bill a single, opaque number?",
-            problem: "Without a proper tagging strategy, it's impossible to know which teams, products, or features are responsible for your AWS spend.",
-            solution: "We find engineers who can design and enforce a comprehensive cost allocation tagging strategy, giving you full visibility into your spend.",
-            kpi: "A comprehensive cost allocation tagging strategy"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you paying on-demand prices for your steady-state workloads?",
-            problem: "Paying on-demand prices for predictable workloads is like leaving money on the table.",
-            solution: "Our engineers are experts in analyzing your usage patterns with Cost Explorer and making data-driven recommendations for purchasing Savings Plans or Reserved Instances, often saving 30-60%.",
-            kpi: "Data-driven recommendations for Savings Plans & RIs"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Do you only find out you're over budget at the end of the month?",
-            problem: "A lack of proactive budget monitoring means you can't take corrective action until it's too late.",
-            solution: "We look for engineers who can set up AWS Budgets and alerts to notify you when you are forecasted to exceed your budget, allowing you to take action mid-month.",
-            kpi: "Proactive budget monitoring and alerting"
-        }
-    ], 
-    evaluation: ['Deep analysis of Cost and Usage Reports (CUR)', 'RI/Savings Plan analysis and recommendations', 'Designing and enforcing a cost allocation tagging strategy', 'Creating custom reports and dashboards', 'Setting up budgets and alerts'] 
-  },
-  'salesforce': { 
-    name: 'Salesforce', 
-    category: 'Cloud FinOps & BizTech', 
-    categorySlug: 'finops-biztech', 
-    intro: "Your go-to-market teams are stuck with manual processes and disconnected data inside Salesforce. You need a Salesforce Developer or RevOps engineer who can build custom automation, optimize your data model, and integrate Salesforce with the rest of your stack. You're here to turn your CRM from a simple database into a revenue-driving engine.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your sales reps wasting time on manual data entry?",
-            problem: "Manual processes in Salesforce are slow, error-prone, and take your sales team away from what they do best: selling.",
-            solution: "We find experts in declarative automation (Flow) and custom code (Apex) who can automate complex business processes, from lead routing to quote generation.",
-            kpi: "Increased sales productivity through automation"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you hitting governor limits and seeing slow performance?",
-            problem: "A poorly designed data model or inefficient code can quickly hit Salesforce's governor limits, bringing your operations to a halt.",
-            solution: "Our developers are experts in writing bulkified, scalable Apex code and designing efficient data models to stay well within governor limits and ensure high performance.",
-            kpi: "Scalable code that respects governor limits"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is your Salesforce data siloed from the rest of your business?",
-            problem: "When your CRM isn't integrated with your product and billing systems, you have an incomplete view of your customer.",
-            solution: "We look for engineers with deep experience in Salesforce integration patterns, able to use APIs and platform events to create a seamless flow of data across your entire business.",
-            kpi: "A 360-degree customer view through integration"
-        }
-    ], 
-    evaluation: ['Apex and Lightning Web Components (LWC) development', 'SOQL query optimization for large data volumes', 'Declarative automation with Flow and Process Builder', 'Integration patterns (REST/SOAP APIs, Platform Events)', 'Governor limits and scalable architecture'] 
-  },
-  'hubspot': { 
-    name: 'HubSpot', 
-    category: 'Cloud FinOps & BizTech', 
-    categorySlug: 'finops-biztech', 
-    intro: "Your marketing and sales teams are struggling to work efficiently in HubSpot. You need a BizTech or RevOps engineer who can design custom objects, build powerful workflow automations, and integrate HubSpot with your product and billing systems. You're here to unlock the full potential of your HubSpot investment.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is your HubSpot data model just a flat list of contacts?",
-            problem: "Without a proper data model that reflects your business (e.g., with custom objects for 'Workspaces' or 'Subscriptions'), you can't automate or report effectively.",
-            solution: "We find experts who can design and implement a custom data model in HubSpot that perfectly mirrors your business, unlocking powerful new automation and reporting capabilities.",
-            kpi: "A custom data model that fits your business"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your marketing and sales processes manual and inconsistent?",
-            problem: "Manual handoffs between marketing and sales are slow and lead to a poor customer experience.",
-            solution: "Our engineers are masters of HubSpot's workflow engine, able to automate complex lead scoring, routing, and nurturing campaigns.",
-            kpi: "Automated lead management and nurturing"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Do your go-to-market teams lack visibility into product usage data?",
-            problem: "When your marketing and sales teams can't see how customers are using the product, they can't identify upsell opportunities or churn risks.",
-            solution: "We look for engineers who can integrate your product analytics and billing data into HubSpot, giving your GTM teams the insights they need to act.",
-            kpi: "Product-led growth with integrated usage data"
-        }
-    ], 
-    evaluation: ['Custom object and property design', 'Advanced workflow automation and branching logic', 'HubSpot API integration and custom apps', 'Reporting and dashboard creation for marketing/sales KPIs', 'Data hygiene and management best practices'] 
-  },
-  'zuora': {
-    name: 'Zuora/Chargebee',
-    category: 'Cloud FinOps & BizTech',
-    categorySlug: 'finops-biztech',
-    intro: "You're launching a usage-based or subscription product, and your billing logic is getting complicated. You need an expert in a modern billing platform like Zuora or Chargebee to model your product catalog, manage subscriptions, and integrate with your payment gateway.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you struggling to model complex, usage-based pricing?",
-            problem: "Building a reliable and accurate usage-based billing system from scratch is incredibly complex and risky.",
-            solution: "We find engineers who are experts in modern billing platforms, able to model complex pricing schemes, including tiered, volumetric, and multi-attribute pricing.",
-            kpi: "Flexible, usage-based billing models"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is managing subscriptions, upgrades, and downgrades a manual process?",
-            problem: "Manual subscription management doesn't scale and leads to billing errors.",
-            solution: "Our engineers can integrate a billing platform's API to automate the entire subscription lifecycle, from creation and upgrades to cancellations and renewals.",
-            kpi: "Automated subscription lifecycle management"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you failing to collect revenue due to payment failures?",
-            problem: "Without an automated dunning process, you will lose significant revenue to involuntary churn from failed payments.",
-            solution: "We look for experts who can configure and manage an automated dunning process to intelligently retry failed payments and notify customers, maximizing your revenue recovery.",
-            kpi: "Reduced churn with automated dunning management"
-        }
-    ],
-    evaluation: ['Product catalog and rate plan configuration', 'Subscription lifecycle management (upgrades, downgrades, cancellations)', 'Usage-based billing and metering', 'Invoice generation and dunning management', 'Integration with CRMs and ERPs']
-  },
-  'hightouch': {
-    name: 'Hightouch/Census',
-    category: 'Cloud FinOps & BizTech',
-    categorySlug: 'finops-biztech',
-    intro: "Your customer data is trapped in your data warehouse, and your go-to-market teams are working with stale, incomplete information. You need a RevOps or Data engineer who understands Reverse ETL. You're here to find an expert in Hightouch or Census who can sync data from your warehouse back into business tools like Salesforce and HubSpot, empowering your teams with the data they need to act.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your sales and marketing teams working with out-of-date customer data?",
-            problem: "When your business tools aren't synced with your data warehouse (the source of truth), your GTM teams are making decisions based on stale data.",
-            solution: "We find engineers who can use Reverse ETL to automatically sync data from your warehouse to your business tools, ensuring your teams always have the freshest, most accurate data.",
-            kpi: "A single source of truth for your GTM teams"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Can your marketing team build a targeted list without asking a data analyst for a CSV?",
-            problem: "A manual, request-based process for building audiences is slow and prevents your marketing team from being agile.",
-            solution: "Our engineers can empower your marketing team to build their own audiences directly from the data warehouse using a simple UI, no SQL required.",
-            kpi: "Self-serve audience building for marketing"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Can your sales team see product usage data directly inside Salesforce?",
-            problem: "When sales reps have to log into another tool to see product usage, they are less likely to do it. You need to bring the data to them.",
-            solution: "We look for experts who can use Reverse ETL to sync product usage data directly onto the Account and Contact records in Salesforce, giving reps the insights they need to have smarter conversations.",
-            kpi: "Product usage data right where your sales team works"
-        }
-    ],
-    evaluation: ['Understanding of Reverse ETL concepts and use cases', 'Data modeling for activation in business tools', 'Sync configuration, scheduling, and debugging', 'Identity resolution and mapping', 'Measuring the impact of data activation on GTM efforts']
-  },
-  'stripe': {
-    name: 'Stripe Billing',
-    category: 'Cloud FinOps & BizTech',
-    categorySlug: 'finops-biztech',
-    intro: "You're building a subscription business and need a powerful, developer-friendly billing system. You need an expert in Stripe Billing who can integrate the API, manage subscription lifecycles, and handle complex scenarios like metered billing and coupons.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is building your own subscription logic taking months of engineering time?",
-            problem: "Billing logic is complex, sensitive, and a distraction from your core product. Building it yourself is slow and risky.",
-            solution: "We find engineers who are experts in the Stripe Billing API, able to leverage its pre-built components to launch your subscription business in a fraction of the time.",
-            kpi: "Faster time-to-market for your subscription product"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you struggling to offer flexible pricing and promotions?",
-            problem: "A rigid billing system prevents you from experimenting with different pricing models, coupons, and trials.",
-            solution: "Our engineers can use Stripe's flexible product catalog and coupon system to allow you to easily experiment with different go-to-market strategies.",
-            kpi: "Agile pricing and promotion experimentation"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is your checkout experience hosted on a clunky, third-party page?",
-            problem: "A poor checkout experience kills conversion rates. You need a seamless, integrated checkout flow.",
-            solution: "We look for engineers who can use Stripe's modern, embeddable components (like the Payment Element) to create a beautiful and high-converting checkout experience directly within your application.",
-            kpi: "A seamless, high-converting checkout experience"
-        }
-    ],
-    evaluation: ['Subscription and customer API integration', 'Webhook handling for lifecycle events', 'Metered billing and usage reporting', 'Invoice and tax management', 'Checkout and Payment Element customization']
-  },
-  'grafana': {
-    name: 'Grafana',
-    category: 'Observability & SRE',
-    categorySlug: 'platform-infra-sre',
-    intro: "Your dashboards are a mess, and you can't visualize your system's health effectively. You need a Grafana expert who can build insightful, actionable dashboards that correlate metrics, logs, and traces to give you a complete picture of your system's performance.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your dashboards a jumble of disconnected charts?",
-            problem: "Disjointed dashboards make it impossible to see the full picture and diagnose problems quickly.",
-            solution: "We find engineers who can build unified dashboards that correlate metrics, logs, and traces from multiple data sources, giving you a single pane of glass for observability.",
-            kpi: "Unified observability dashboards"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is every dashboard a one-off, custom creation?",
-            problem: "Building dashboards from scratch for every new service or environment doesn't scale.",
-            solution: "Our engineers are experts in creating dynamic, templated dashboards that can be reused across different services, environments, or customers.",
-            kpi: "Scalable, reusable dashboards with templating"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your alerts firing without any context?",
-            problem: "An alert that just says 'CPU is high' is not actionable. You need to know what's causing the problem.",
-            solution: "We look for engineers who can integrate alerting directly with dashboards, so that every alert notification includes a link to a pre-filtered dashboard showing the relevant context.",
-            kpi: "Actionable alerts with deep context"
-        }
-    ],
-    evaluation: ['Advanced dashboard design and visualization techniques', 'Data source integration (Prometheus, Loki, etc.)', 'Templating and variables for dynamic dashboards', 'Alerting configuration and integration', 'Plugin development and usage']
-  },
-  'trivy': {
-    name: 'Trivy',
-    category: 'Security & GRC',
-    categorySlug: 'security-grc',
-    intro: "You need a simple, fast, and comprehensive vulnerability scanner for your container images and other artifacts. You need an expert in Trivy who can integrate it into your CI/CD pipeline to find vulnerabilities before they reach production.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is vulnerability scanning a slow, manual process that happens outside of your CI/CD pipeline?",
-            problem: "Manual scanning is a bottleneck that slows down development and doesn't provide fast feedback.",
-            solution: "We find engineers who can integrate Trivy's fast and simple scanner directly into your CI/CD pipeline, providing immediate feedback on vulnerabilities in every pull request.",
-            kpi: "Fast, automated vulnerability scanning in CI/CD"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you only scanning your final container images?",
-            problem: "Scanning only the final image can miss vulnerabilities in your base images, application dependencies, or even your infrastructure as code.",
-            solution: "Our engineers are experts in using Trivy to scan a wide range of artifacts, from container images and filesystems to Git repositories and IaC files, for a comprehensive security view.",
-            kpi: "Comprehensive scanning across all artifacts"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your security scans producing noisy reports that are hard to act on?",
-            problem: "A giant list of vulnerabilities without any prioritization is not actionable.",
-            solution: "We look for engineers who can configure Trivy to filter by severity and integrate with other tools to create prioritized, actionable security reports.",
-            kpi: "Prioritized, actionable vulnerability reports"
-        }
-    ],
-    evaluation: ['CI/CD integration for automated scanning', 'Vulnerability database management and updates', 'Image, filesystem, and Git repository scanning', 'Filtering and ignoring vulnerabilities', 'Output formatting for reporting and alerting']
-  },
-  'opa': {
-    name: 'OPA',
-    category: 'Security & GRC',
-    categorySlug: 'security-grc',
-    intro: "You need a unified way to enforce policies across your entire stack, from microservices to Kubernetes. You need an expert in Open Policy Agent (OPA) who can write declarative policies in Rego to decouple policy from your application logic.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is your authorization logic hard-coded in every microservice?",
-            problem: "Hard-coded authorization logic is inconsistent, hard to update, and creates a massive maintenance burden.",
-            solution: "We find engineers who can use OPA to decouple policy from code, creating a centralized policy engine that all services can query for authorization decisions.",
-            kpi: "Decoupled, centralized policy enforcement"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Can developers deploy insecure configurations to your Kubernetes cluster?",
-            problem: "Without policy enforcement, it's easy for a developer to accidentally deploy a container that runs as root or mounts a sensitive host path.",
-            solution: "Our engineers are experts in using OPA with Gatekeeper to create a Kubernetes admission controller that automatically rejects insecure deployments.",
-            kpi: "Automated enforcement of Kubernetes security policies"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is your policy language imperative and hard to test?",
-            problem: "Writing policies in a general-purpose programming language can be complex and error-prone.",
-            solution: "We look for engineers who are proficient in Rego, OPA's declarative policy language, which is purpose-built for expressing policies over complex data structures and is easy to test.",
-            kpi: "Declarative, testable policies with Rego"
-        }
-    ],
-    evaluation: ['Rego policy language proficiency', 'Integration with Kubernetes via Gatekeeper', 'API authorization use cases', 'Testing and debugging policies', 'Performance considerations for the OPA agent']
-  },
-  'iso': {
-    name: 'ISO 27001',
-    category: 'Security & GRC',
-    categorySlug: 'security-grc',
-    intro: "You need to demonstrate a commitment to information security management to your enterprise customers and partners. You need an expert who understands the ISO 27001 framework and can help you build an Information Security Management System (ISMS) that meets international standards.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you losing deals to competitors who are ISO 27001 certified?",
-            problem: "For many enterprise and international customers, ISO 27001 certification is a non-negotiable requirement.",
-            solution: "We find GRC experts who can guide you through the process of building an ISMS and achieving ISO 27001 certification, unblocking key sales opportunities.",
-            kpi: "Achieve ISO 27001 certification to win enterprise deals"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is your approach to security ad-hoc and reactive?",
-            problem: "A reactive security posture means you're always one step behind the attackers.",
-            solution: "Our engineers can help you implement a risk-based ISMS, which provides a systematic, proactive approach to managing your organization's information security risks.",
-            kpi: "A systematic, risk-based approach to security"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Is your security documentation a mess of scattered, out-of-date documents?",
-            problem: "A lack of centralized, up-to-date security documentation makes it impossible to pass an audit or effectively manage your security program.",
-            solution: "We look for experts who can help you build the comprehensive documentation required for an ISMS, including the scope, policies, risk assessment, and Statement of Applicability.",
-            kpi: "Comprehensive, audit-ready security documentation"
-        }
-    ],
-    evaluation: ['Understanding of ISMS scope and context', 'Annex A controls and their implementation', 'Risk assessment and treatment methodologies', 'Internal audit and management review processes', 'Continuous improvement and certification lifecycle']
-  },
-  'hipaa': {
-    name: 'HIPAA',
-    category: 'Security & GRC',
-    categorySlug: 'security-grc',
-    intro: "You're handling protected health information (PHI) and need to ensure your systems are HIPAA compliant. You need an expert who understands the Security Rule, Privacy Rule, and Breach Notification Rule, and can translate those requirements into technical and administrative controls.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you at risk of massive fines for a HIPAA violation?",
-            problem: "Handling PHI without proper safeguards is a massive legal and financial risk.",
-            solution: "We find compliance experts who can help you implement the necessary technical, physical, and administrative safeguards to ensure you are fully compliant with HIPAA.",
-            kpi: "Achieve and maintain HIPAA compliance"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Do you have business associate agreements (BAAs) in place with all your vendors?",
-            problem: "If you share PHI with a vendor (like your cloud provider) without a BAA, you are in violation of HIPAA.",
-            solution: "Our experts can help you manage your vendor risk and ensure that you have a signed BAA in place with every vendor that handles PHI.",
-            kpi: "Comprehensive vendor risk management and BAAs"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Can you prove that you are encrypting PHI at rest and in transit?",
-            problem: "Encryption of PHI is a core requirement of the HIPAA Security Rule. You must be able to prove it to an auditor.",
-            solution: "We look for engineers who can implement and document the technical controls for encryption, access control, and audit logging required by HIPAA.",
-            kpi: "Implementing the required technical safeguards"
-        }
-    ],
-    evaluation: ['Technical safeguards (access control, encryption)', 'Physical and administrative safeguards', 'Business Associate Agreements (BAAs)', 'Risk analysis and management', 'Breach notification procedures']
-  },
-  'grpc': {
-    name: 'gRPC',
-    category: 'APIs & Backend Services',
-    categorySlug: 'backend-services',
-    intro: "You need high-performance, low-latency communication between your microservices. You need a gRPC expert who can design efficient Protobuf schemas, leverage different RPC types (unary, streaming), and handle metadata and error handling effectively.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your REST/JSON-based service-to-service calls slow and inefficient?",
-            problem: "Text-based JSON payloads are verbose and slow to serialize/deserialize, creating a performance bottleneck for internal communication.",
-            solution: "We find engineers who can use gRPC with Protobuf, a binary serialization format, to create highly efficient, low-latency communication channels between your microservices.",
-            kpi: "High-performance, low-latency inter-service communication"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are your APIs lacking a strong, type-safe contract?",
-            problem: "REST APIs have no enforceable contract, leading to integration issues and runtime errors.",
-            solution: "Our engineers are experts in designing strongly-typed API contracts with Protobuf, which automatically generates type-safe client and server code, catching errors at compile time.",
-            kpi: "Strongly-typed, contract-first API design"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you unable to build real-time, bi-directional streaming applications?",
-            problem: "Traditional request-response APIs are not suitable for real-time streaming use cases.",
-            solution: "We look for engineers with experience in gRPC's bi-directional streaming capabilities, allowing you to build sophisticated real-time applications with ease.",
-            kpi: "Building real-time apps with bi-directional streaming"
-        }
-    ],
-    evaluation: ['Protobuf schema design and best practices', 'Unary vs. streaming RPCs', 'Interceptors for middleware (logging, auth)', 'Error handling and status codes', 'Performance tuning and load balancing']
-  },
-  'socketio': {
-    name: 'Socket.IO',
-    category: 'Mobile & Cross-Platform',
-    categorySlug: 'mobile-cross-platform',
-    intro: "You need to build real-time features like chat, notifications, or live updates. You need a Socket.IO expert who understands how to manage connections, handle events, and scale a real-time communication server.",
-    pains: [
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Are you struggling to build real-time features with traditional HTTP polling?",
-            problem: "HTTP polling is inefficient, slow, and doesn't provide a true real-time experience.",
-            solution: "We find engineers who are experts in using Socket.IO (which uses WebSockets with fallbacks) to create persistent, real-time communication channels between the client and server.",
-            kpi: "True real-time, bi-directional communication"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "How do you broadcast messages to specific groups of users?",
-            problem: "You need a way to send messages only to users who are interested in them, such as users in a specific chat room.",
-            solution: "Our engineers are proficient in using Socket.IO's 'rooms' feature to efficiently manage and broadcast messages to specific groups of clients.",
-            kpi: "Efficient message broadcasting with rooms"
-        },
-        {
-            icon: <AlertTriangle className="h-8 w-8 text-primary" />,
-            pain: "Can your real-time server handle thousands of concurrent connections?",
-            problem: "A single Socket.IO server doesn't scale. You need a way to distribute connections across multiple servers.",
-            solution: "We look for engineers with experience in scaling Socket.IO horizontally using a Redis adapter, allowing you to handle a massive number of concurrent connections.",
-            kpi: "Horizontal scaling for massive concurrency"
-        }
-    ],
-    evaluation: ['Event handling and emission', 'Room and namespace management', 'Scaling with Redis adapter', 'Authentication and middleware', 'Reconnection logic and reliability']
+    intro: "You need to detect and respond to sophisticated threats on your endpoints. You need a security analyst who is an expert in EDR/XDR platforms to hunt for threats, investigate alerts, and contain attacks before they can spread.",
+        pains: [
+            {
+                icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+                pain: "Are you blind to attacker activity on your endpoints?",
+                problem: "Legacy antivirus can't see modern attacker techniques. You need deep visibility into process execution, network connections, and registry changes.",
+                solution: "We find analysts who can use the deep telemetry from EDR/XDR platforms to hunt for indicators of compromise and proactively find threats that automated detection might miss.",
+                kpi: "Proactive threat hunting capabilities"
+            },
+            {
+                icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+                pain: "Are you drowning in low-quality security alerts?",
+                problem: "A flood of false positives makes it impossible to find the real threats.",
+                solution: "Our analysts are experts in tuning detection rules and triaging alerts to separate the signal from the noise, ensuring that your team is only focused on real incidents.",
+                kpi: "High-signal, low-noise alert triage"
+            },
+            {
+                icon: <AlertTriangle className="h-8 w-8 text-primary" />,
+                pain: "How long does it take you to respond to a real threat?",
+                problem: "A slow response time gives an attacker the opportunity to move laterally and achieve their objectives.",
+                solution: "We look for analysts who can use the built-in response actions of EDR platforms to immediately contain threats, such as isolating a host from the network or killing a malicious process, dramatically reducing MTTR.",
+                kpi: "Rapid incident response and containment"
+            }
+        ],
+        evaluation: ['Threat hunting using platform-specific query languages', 'Alert triage and incident investigation', 'Host containment and remediation actions', 'Custom detection rule creation', 'Understanding of attacker techniques (MITRE ATT&CK)']
   }
 };
-
 type TechKeys = keyof typeof allTech;
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const tech = allTech[params.slug as TechKeys];
-  const techName = tech?.name || 'Technology';
+  const techName = allTech[params.slug as TechKeys]?.name || 'Technology';
   return {
     title: `Hire Nearshore ${techName} Developers`,
     description: `Hire elite, pre-vetted LATAM engineers with expertise in ${techName}. Our scientific evaluation de-risks hiring for critical roles.`,
@@ -3369,7 +2978,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
   const tech = allTech[params.slug as TechKeys];
 
   if (!tech) {
-    notFound();
+   return notFound();
   }
 
   return (
@@ -3443,11 +3052,11 @@ export default function TechPage({ params }: { params: { slug: string } }) {
         </p>
         <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
       </div>
+      
+      {params.slug === 'typescript' && <TypeScriptPSPSection />}
 
     </main>
   );
 }
 
-export async function generateStaticParams() {
-  return Object.keys(allTech).map(slug => ({ slug }));
-}
+    
