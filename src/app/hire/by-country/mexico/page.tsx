@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { ArrowRight, BookOpen, Briefcase, DollarSign, FileText, GitCompare, HelpCircle, Laptop, Layers, Scale, ShieldCheck, UserCheck, Users, Zap, CheckCircle, Code } from 'lucide-react';
 import mexicoData from '@/data/countries/mexico.json';
 import { PSPCard } from '@/components/seo/PSPCard';
+import { roleCategories } from '@/lib/roles';
 
 // Define icons map
 const iconMap: { [key: string]: React.FC<any> } = {
@@ -122,6 +123,24 @@ export default function MexicoPage() {
               </div>
             </div>
             
+            <h2 className="text-center text-3xl font-bold mb-8">Explore Available Roles in {data.country}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
+                {roleCategories.map((details) => (
+                <Link href={`/hire/by-role/${details.slug}`} key={details.slug} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                    <div className='flex justify-between items-start'>
+                        <details.icon  className="h-8 w-8 text-primary" />
+                    </div>
+                    <h2 className="mt-4 text-xl font-bold transition-colors group-hover:text-primary">{details.name}</h2>
+                    <p className="mt-2 text-sm text-muted-foreground flex-grow">
+                        {details.description}
+                    </p>
+                    <div className="mt-6 flex items-center text-sm font-semibold text-primary">
+                        Explore {details.name} Roles <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                </Link>
+                ))}
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="rounded-lg border bg-card p-8 shadow-lg">
                     <h2 className="text-2xl font-bold">{countrySections.hubs.h2}</h2>
