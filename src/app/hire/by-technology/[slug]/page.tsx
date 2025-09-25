@@ -812,7 +812,7 @@ export const allTech: {
             icon: <AlertTriangle className="h-8 w-8 text-primary" />,
             pain: "Are you losing enterprise deals because you can't pass security reviews?",
             problem: "Enterprise customers require proof of your security posture. Without a SOC 2 report, you are often disqualified before you can even demo your product.",
-            solution: "We find engineers who are experienced with the SOC 2 framework and can help you build the technical and procedural controls necessary to pass an audit and unblock enterprise sales.",
+            solution: "Our engineers are experienced with compliance automation platforms (e.g., Vanta, Drata) and can help you automate evidence collection, turning your audit from a fire drill into a routine process.",
             kpi: "Unblock enterprise sales with SOC 2 compliance"
         },
         {
@@ -1102,7 +1102,7 @@ export const allTech: {
     ],
     evaluation: ['Component Story Format (CSF)', 'Controls, args, and mocking data', 'Addons for accessibility, testing, and documentation', 'Visual regression testing integration', 'Publishing and versioning a Storybook instance']
   },
-  'testing': {
+  'testing': { 
     name: 'Testing Library', 
     category: 'Frontend & UI/UX', 
     categorySlug: 'frontend-web', 
@@ -3477,12 +3477,6 @@ export default function TechPage({ params }: { params: { slug: string } }) {
 
     </main>
   );
-}
-
-type TechKeys = keyof typeof allTech;
-
-export async function generateStaticParams() {
-  return Object.keys(allTech).map(slug => ({ slug }));
 }
 
     
