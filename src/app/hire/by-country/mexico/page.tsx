@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowRight, BookOpen, Briefcase, DollarSign, FileText, GitCompare, HelpCircle, Laptop, Layers, Scale, ShieldCheck, UserCheck, Users, Zap, CheckCircle } from 'lucide-react';
 import mexicoData from '@/data/countries/mexico.json';
+import { PSPCard } from '@/components/seo/PSPCard';
 
 // Define icons map
 const iconMap: { [key: string]: React.FC<any> } = {
@@ -62,7 +63,7 @@ export default function MexicoPage() {
 
         <header className="my-8 text-center">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{data.h1}</h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: intro.replace(/Axiom Cortex™/g, '<a href="/playbook/bias-free-technical-hiring-axiom-cortex" class="text-primary hover:underline">Axiom Cortex™</a>').replace(/LATAM Economics/g, '<a href="/playbook/latam-economics" class="text-primary hover:underline">LATAM Economics</a>') }}></p>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: intro }}></p>
         </header>
 
         <section className="my-24">
@@ -70,22 +71,7 @@ export default function MexicoPage() {
                 {pspCards.map(card => {
                     const Icon = iconMap[card.icon] || HelpCircle;
                     return (
-                        <div key={card.title} className="rounded-lg border bg-card p-6 shadow-lg flex flex-col">
-                            <div className="flex items-center gap-3">
-                                <Icon className="h-8 w-8 text-primary" />
-                                <h2 className="text-xl font-bold text-foreground">{card.title}</h2>
-                            </div>
-                            <div className="mt-4 text-sm text-muted-foreground space-y-4 flex-grow" dangerouslySetInnerHTML={{ __html: card.body }} />
-                            {card.links && card.links.length > 0 && (
-                                <div className="mt-4 pt-4 border-t border-border/50">
-                                    {card.links.map(link => (
-                                        <Link key={link.href} href={link.href} className="text-primary font-medium hover:underline text-sm flex items-center">
-                                            {link.label} <ArrowRight className="ml-2 h-4 w-4" />
-                                        </Link>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+                        <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body} />
                     );
                 })}
             </div>
@@ -150,12 +136,12 @@ export default function MexicoPage() {
         </section>
 
         <section className="my-24">
-            <h2 className="text-3xl font-bold text-center">{faq.length} Questions on Hiring in {data.country}</h2>
+            <h2 className="text-3xl font-bold text-center">Questions on Hiring in {data.country}</h2>
             <div className="mt-8 max-w-3xl mx-auto space-y-4">
                 {faq.map((item, i) => (
                     <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
                         <h3 className="font-semibold text-primary">{item.q}</h3>
-                        <p className="text-muted-foreground mt-2 text-sm">{item.a}</p>
+                        <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
                     </div>
                 ))}
             </div>
@@ -179,4 +165,3 @@ export default function MexicoPage() {
     </>
   );
 }
-
