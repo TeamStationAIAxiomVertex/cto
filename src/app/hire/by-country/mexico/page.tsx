@@ -50,7 +50,10 @@ export default function MexicoPage() {
   const { pageSEO, intro, pspCards, countrySections, faq, cta, schema } = data;
 
   const popularTech = [
-    { name: 'Python', slug: 'python', description: 'Build scalable backend systems, data pipelines, and AI/ML applications with expert Python engineers.', icon: <Code className="h-8 w-8 text-primary" /> }
+    { name: 'Python', slug: 'python', description: 'Build scalable backend systems, data pipelines, and AI/ML applications with expert Python engineers.', icon: <Code className="h-8 w-8 text-primary" /> },
+    { name: 'React', slug: 'react', description: 'Build modern, performant, and scalable web applications with expert React and TypeScript engineers.', icon: <Layers className="h-8 w-8 text-primary" /> },
+    { name: 'Node.js', slug: 'node', description: 'Build high-throughput, non-blocking APIs and backend services that can handle real-world scale.', icon: <Code className="h-8 w-8 text-primary" /> },
+    { name: '.NET', slug: 'net', description: 'Build robust, high-performance, and cloud-native applications on the modern .NET platform.', icon: <Code className="h-8 w-8 text-primary" /> }
   ];
 
   return (
@@ -96,7 +99,7 @@ export default function MexicoPage() {
 
              <div className="my-16">
               <h2 className="text-center text-3xl font-bold mb-8">Explore Popular Technologies in {data.country}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12 justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-12 justify-center">
                 {popularTech.map((tech) => (
                   <Link href={`/hire/by-country/mexico/${tech.slug}`} key={tech.slug} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                       <div className='flex justify-between items-start'>
