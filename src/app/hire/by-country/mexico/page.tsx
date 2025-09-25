@@ -53,7 +53,8 @@ export default function MexicoPage() {
     { name: 'Python', slug: 'python', description: 'Build scalable backend systems, data pipelines, and AI/ML applications with expert Python engineers.', icon: <Code className="h-8 w-8 text-primary" /> },
     { name: 'React', slug: 'react', description: 'Build modern, performant, and scalable web applications with expert React and TypeScript engineers.', icon: <Layers className="h-8 w-8 text-primary" /> },
     { name: 'Node.js', slug: 'node', description: 'Build high-throughput, non-blocking APIs and backend services that can handle real-world scale.', icon: <Code className="h-8 w-8 text-primary" /> },
-    { name: '.NET', slug: 'net', description: 'Build robust, high-performance, and cloud-native applications on the modern .NET platform.', icon: <Code className="h-8 w-8 text-primary" /> }
+    { name: '.NET', slug: 'net', description: 'Build robust, high-performance, and cloud-native applications on the modern .NET platform.', icon: <Code className="h-8 w-8 text-primary" /> },
+    { name: 'Java', slug: 'java', description: 'Build resilient, high-performance, and scalable systems using modern Java frameworks, not just legacy J2EE.', icon: <Code className="h-8 w-8 text-primary" /> }
   ];
 
   return (
