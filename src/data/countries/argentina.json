@@ -144,7 +144,7 @@
   ],
   "cta": {
     "primary": {
-      "label": "Book a 15-minute plan",
+      "label": "Book a 30-minute plan",
       "href": "/hire"
     },
     "secondary": {
@@ -244,3 +244,5 @@
     }
   }
 }
+
+    

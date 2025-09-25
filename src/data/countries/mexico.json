@@ -241,10 +241,12 @@
             "name": "What devices and security controls are included?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Corporate-owned, MDM-managed laptops; SSO/SAML/SCIM; least-privilege; audit-ready dossiers."
+                "text": "Corporate-owned, MDM-managed laptops; SSO/SAML/SCIM; least-privilege access; audit-ready dossiers."
             }
         }
       ]
     }
   }
 }
+
+    

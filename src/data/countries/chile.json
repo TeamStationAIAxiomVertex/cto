@@ -120,16 +120,16 @@
     },
     {
       "q": "How do you ensure security with remote developers in Chile?",
-      "a": "Our platform has security built-in. Every engineer receives a corporate-owned, MDM-managed laptop and SSO/SAML/SCIM integration from day one. Our process is SOC-aligned, as detailed in our <a href='/trust'>Trust Center</a>."
+      "a": "Our platform has security built-in. Every engineer receives a corporate-owned, MDM-managed laptop and SSO/SAML/SCIM integration from day one. Our process is SOC-aligned and detailed in our <a href='/trust'>Trust Center</a>."
     },
     {
       "q": "How does TeamStation compare to traditional Chilean outsourcing firms?",
-      "a": "We provide a fully integrated platform, not just staff. This includes our Axiom Cortex™ vetting, compliant EOR, secure devices, and a single SLA for your entire operation, which you can explore in our <a href='/comparisons'>vendor comparisons</a>."
+      "a": "We provide a fully integrated platform, not just staff. This includes our Axiom Cortex™ vetting, compliant EOR, and secure devices under a single SLA, which you can explore in our <a href='/comparisons'>vendor comparisons</a>."
     }
   ],
   "cta": {
     "primary": {
-      "label": "Book a 15-minute plan",
+      "label": "Book a 30-minute plan",
       "href": "/hire"
     },
     "secondary": {
@@ -229,3 +229,5 @@
     }
   }
 }
+
+    

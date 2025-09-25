@@ -13,7 +13,7 @@
     }
   },
   "h1": "Hire Software Developers in Costa Rica (Daylight Overlap)",
-  "intro": "Leverage Costa Rica’s stable, highly educated, and enterprise-focused talent market. With near-perfect US time-zone overlap, you can seamlessly integrate skilled **San José developers** into your daily workflow. Our platform combines this daylight advantage with the scientific rigor of our <a href='/playbook/bias-free-technical-hiring-axiom-cortex'>Axiom Cortex™</a> vetting and a secure, compliant operational wrapper. Explore the financial model in our <a href='/playbook/latam-economics'>LATAM Economics playbook</a>.",
+  "intro": "Leverage Costa Rica’s stable, highly educated, and enterprise-focused talent market. With near-perfect US time-zone overlap, you can seamlessly integrate skilled <strong>San José developers</strong> into your daily workflow. Our platform combines this daylight advantage with the scientific rigor of our <a href='/playbook/bias-free-technical-hiring-axiom-cortex'>Axiom Cortex™</a> vetting and a secure, compliant operational wrapper. Explore the financial model in our <a href='/playbook/latam-economics'>LATAM Economics playbook</a>.",
   "pspCards": [
     {
       "title": "Daylight PR Flow (No Overnight Queues)",
@@ -129,7 +129,7 @@
   ],
   "cta": {
     "primary": {
-      "label": "Book a 15-minute plan",
+      "label": "Book a 30-minute plan",
       "href": "/hire"
     },
     "secondary": {
@@ -229,3 +229,5 @@
     }
   }
 }
+
+    

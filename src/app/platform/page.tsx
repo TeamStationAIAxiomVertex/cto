@@ -94,7 +94,7 @@ export default function PlatformPage() {
         </div>
          <div className="mt-8">
             <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">
-                Book a 15-Minute Platform Demo
+                Book a 30-Minute Platform Demo
             </Link>
         </div>
       </header>
@@ -183,9 +183,11 @@ export default function PlatformPage() {
           Ready to consolidate your vendors and de-risk your operation? Let's build your CFO-ready business case for a fully integrated nearshore platform.
         </p>
          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
-            Book a 15-Minute Platform Demo
+            Book a 30-Minute Platform Demo
         </Link>
       </section>
     </main>
   );
 }
+
+    

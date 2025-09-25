@@ -160,8 +160,10 @@ export default function ProcessPage() {
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
            Let's map your roles, security needs, and go-live timeline.
         </p>
-        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a 15-Minute Discovery Call</Link>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a 30-Minute Discovery Call</Link>
       </div>
     </main>
   );
 }
+
+    
