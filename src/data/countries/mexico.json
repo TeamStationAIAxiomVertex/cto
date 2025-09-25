@@ -1,0 +1,115 @@
+{
+  "type": "country",
+  "pageSEO": {
+    "title": "Hire Software Developers in Mexico | Daylight Nearshore",
+    "description": "Hire vetted Mexico engineers with daylight overlap, REPSE-aligned EOR, and MDM devices with SSO/SCIM. Model TCO in 15 minutes.",
+    "canonical": "https://cto.teamstation.dev/hire/by-country/mexico",
+    "hreflang": {
+      "en": "https://cto.teamstation.dev/hire/by-country/mexico",
+      "es-MX": "https://cto.teamstation.dev/es/hire/by-country/mexico"
+    }
+  },
+  "intro": "Stop losing your release cadence to a 12-hour time lag. With Mexico, you get 6–8 hours of daily overlap with your US team, turning your pull request queue from an overnight parking lot into a real-time workflow. We provide access to elite, pre-vetted engineers from Mexico's top tech hubs like CDMX and Guadalajara. Our platform combines this daylight advantage with the scientific rigor of our Axiom Cortex™ vetting and a secure, compliant operational wrapper, letting you build faster and safer. See our playbook on LATAM Economics for a full cost breakdown.",
+  "pspCards": [
+    {
+      "title": "Daylight PR Flow (No Overnight Queues)",
+      "icon": "latency",
+      "body": "**Problem.** Your offshore team in Asia pushes a PR at the end of their day, which is the middle of your night. You review it the next morning and find a simple question. That question sits for another 12 hours. A one-line fix ends up taking 36 hours. **Stakes.** This “human latency tax” is the silent killer of agile velocity. It doubles or triples your cycle time, turns standups into status updates, and forces your senior engineers into the role of late-night coordinators instead of high-value mentors. Your roadmap slips, one day at a time. **Prescription.** Replace the overnight queue with a daylight-native cadence. We staff pods of senior engineers in Mexico with a guaranteed 6–8 hours of daily overlap. We establish and instrument strict PR SLAs—first response ≤1h, to-green ≤4h—and run review windows that sync with your team's core hours. **Proof.** Our platform telemetry shows teams adopting this model reduce their PR turnaround time from 36-72 hours to under 8 hours within the first two sprints. This is not a marginal gain; it is a systemic acceleration of your entire development process, as detailed in our Nearshore vs Offshore playbook. **Recap.** Don't let time zones dictate your release schedule. Buy back your day with a daylight-native team that operates on your clock, not against it."
+    },
+    {
+      "title": "Cognition-First Hiring (Axiom Cortex™)",
+      "icon": "hiring",
+      "body": "**Problem.** You need to hire software developers in Mexico, but your hiring process is a high-risk gamble on resumes. Keywords on a CV tell you nothing about a candidate's ability to solve novel problems or design resilient systems. You’re left with gut feel and biased interview loops. **Stakes.** A single senior mis-hire costs 6-12 months of salary in lost productivity, team disruption, and the cost of re-hiring. Relying on traditional screening is like navigating without a compass—you’ll eventually get somewhere, but likely not where you intended. **Prescription.** Move from resume theater to auditable evidence. Our Axiom Cortex™ cognitive AI engine provides scientific proof of a candidate’s problem-solving ability. We source from our Nebula Talent Graph of over 2.6 million LATAM profiles, then run candidates through a structured, bias-aware evaluation. This generates a 'Cognitive Fingerprint' and a full Evidence Locker, so you’re judging logic, not just presentation. **Proof.** This cognition-first approach reduces mis-hire risk by over 90%, achieving a mismatch rate of ≤10%. You get a candidate whose mental shape is mapped to your role's demands. **Recap.** Stop gambling on keywords. Build your nearshore Mexico team with a partner that provides data-driven proof of cognitive ability, not just a list of credentials."
+    },
+    {
+      "title": "Security, Compliance & Managed Devices",
+      "icon": "compliance",
+      "body": "**Problem.** You want to hire Mexican developers, but the operational overhead is daunting. How do you handle REPSE compliance, secure remote work, and manage devices without building a full-fledged international subsidiary? **Stakes.** A single unmanaged laptop is a compliance breach waiting to happen. Failing to align with local labor laws creates significant legal and financial risk. Enterprise deals stall when you can't produce audit-ready security evidence. **Prescription.** Outsource the entire operational stack to a single, accountable SLA. Our platform bundles REPSE-aware EOR, SSO/SAML/SCIM for identity, and MDM-managed laptops for every engineer. We enforce least-privilege access and provide auditable onboarding dossiers from day one. You get the talent without the operational chaos. **Proof.** Our SOC-aligned onboarding process ensures every engineer starts with a secure, compliant workstation. This allows clients to pass enterprise security reviews and close deals faster, as detailed in our Trust Center. We own the risk, so you can own the velocity. **Recap.** Don't let operational complexity block your access to top talent. Use an integrated platform that delivers a secure, compliant, and audit-ready nearshore team out of the box."
+    },
+    {
+      "title": "Fast Ramp, Lower TCO, Reversible",
+      "icon": "cost",
+      "body": "**Problem.** Onboarding a new engineer can take months to see real productivity, and the true cost is far more than just their salary. You're paying a hidden 'time-to-productivity' tax and struggling to build a financial model your CFO will approve. **Stakes.** A slow ramp-up means delayed features and a lower ROI on your hiring investment. Without a clear Total Cost of Ownership (TCO) model, you can't make a strategic business case. **Prescription.** We engineer for a fast ramp. With environments ready, we target a first PR in under 10 business days and meaningful sprint outcomes within the first month. Our all-inclusive pricing model eliminates hidden fees, providing a predictable TCO that is often 40-60% lower than the fully-loaded cost of a US hire. **Proof.** Our TCO framework, which you can explore in our Build vs Buy playbook, moves the conversation from misleading hourly rates to a comprehensive analysis of value and risk. This data-driven approach gives you the ammunition to make a compelling case to your finance team. **Recap.** Choose a partner that provides a clear, predictable financial model and is accountable for a fast, productive ramp-up. It's the smarter, more capital-efficient way to scale."
+    }
+  ],
+  "countrySections": {
+    "whyDaylight": {
+      "h2": "Why Mexico works for daylight delivery",
+      "bullets": [
+        "Real-time overlap with US (CST/MST/PST windows) (≈ 6–8 hours).",
+        "Senior-leaning pods in Mexico City (CDMX), Guadalajara (GDL), and Monterrey (MTY).",
+        "Cultural alignment with US agile rituals (standups, PR cadence)."
+      ]
+    },
+    "hubs": {
+      "h2": "Where the talent lives",
+      "cities": [
+        { "name": "Mexico City (CDMX)", "why": "The primary economic and tech hub, with the largest concentration of senior enterprise talent." },
+        { "name": "Guadalajara (GDL)", "why": "Known as Mexico's 'Silicon Valley,' a major center for software development and IT services." },
+        { "name": "Monterrey (MTY)", "why": "A powerhouse of industry and education with a strong pool of engineering and manufacturing tech talent." }
+      ]
+    },
+    "legal": {
+      "h2": "Legal & EOR in Mexico",
+      "body": "Since the 2021 reform, personnel outsourcing is restricted. Use an EOR whose scope qualifies as specialized services and reference registration in contracts; keep core roles properly classified. Keep contracts clear on scope, IP assignment, and onboarding/offboarding evidence. For quick starts, a compliant EOR is typical.",
+      "cta": { "label": "Talk to Compliance", "href": "/playbook/security-compliance" }
+    },
+    "security": {
+      "h2": "Security & devices",
+      "body": "Corporate-owned, MDM-managed laptops; SSO/SAML/SCIM day one; least-privilege access mapped to repos; SOC-aligned onboarding dossiers.",
+      "link": "/trust"
+    },
+    "timeCost": {
+      "h2": "Time-to-hire & cost snapshot",
+      "table": [
+        ["Metric","Value"],
+        ["Overlap (hrs/day)", "6–8 hours"],
+        ["Time-to-first-PR (envs ready)", "≤ 10 business days"],
+        ["Compensation (directional)", "Bands vary by city/seniority; mid–senior compensation is well below US levels while preserving cadence and overlap."]
+      ]
+    }
+  },
+  "faq": [
+    {"q":"Is classic outsourcing legal in Mexico?","a":"Since the 2021 reform, personnel outsourcing is restricted. Use an EOR whose scope qualifies as specialized services and reference registration in contracts; keep core roles properly classified. This page is informational only."},
+    {"q":"Do I need an entity or can I use an EOR in Mexico?","a":"An entity is for a long-term physical presence. A compliant Employer of Record (EOR) is the standard for speed, lower operational overhead, and navigating REPSE rules."},
+    {"q":"Which cities are best to hire developers in Mexico?","a":"Start with Mexico City (CDMX), Guadalajara (GDL), and Monterrey (MTY). Choose based on role depth, travel convenience, and specific skill ecosystems."},
+    {"q":"How much overlap will my US team have with engineers in Mexico?","a":"Typically 6–8 hours per day, covering the full US workday for teams on the West Coast. We schedule PR and review windows to this cadence."},
+    {"q":"What devices and security controls are included?","a":"Corporate-owned, MDM-managed laptops; SSO/SAML/SCIM for identity; least-privilege access; and audit-ready onboarding dossiers. See our Trust Center for details."},
+    {"q":"How does your process compare to a vendor like BairesDev?","a":"While BairesDev has a large talent pool, our integrated platform provides a single SLA for talent, devices, security, and compliance. Read our full BairesDev alternative comparison for a detailed breakdown."}
+  ],
+  "cta": {
+    "primary": { "label": "Book a 15-minute plan", "href": "/hire" },
+    "secondary": { "label": "Download the CTO Playbook", "href": "/playbook/hub" }
+  },
+  "schema": {
+    "breadcrumbs": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Hire", "item": "https://cto.teamstation.dev/hire" },
+        { "@type": "ListItem", "position": 2, "name": "By Country", "item": "https://cto.teamstation.dev/hire/by-country" },
+        { "@type": "ListItem", "position": 3, "name": "Mexico", "item": "https://cto.teamstation.dev/hire/by-country/mexico" }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Hire Software Developers in Mexico",
+      "provider": { "@type": "Organization", "name": "TeamStation AI", "url": "https://cto.teamstation.dev/" },
+      "areaServed": { "@type": "Country", "name": "Mexico" },
+      "offers": { "@type": "Offer", "url": "https://cto.teamstation.dev/hire/by-country/mexico" },
+      "description": "Hire vetted Mexico engineers with daylight overlap, compliant EOR onboarding, and MDM devices with SSO/SCIM."
+    },
+    "faqpage": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Is classic outsourcing legal in Mexico?","acceptedAnswer":{"@type":"Answer","text":"Since the 2021 reform, personnel outsourcing is restricted. Use an EOR whose scope qualifies as specialized services and reference registration in contracts; keep core roles properly classified. This is informational only."}},
+        {"@type":"Question","name":"Do I need an entity or can I use an EOR in Mexico?","acceptedAnswer":{"@type":"Answer","text":"An entity is for a long-term physical presence. A compliant Employer of Record (EOR) is the standard for speed, lower operational overhead, and navigating REPSE rules."}},
+        {"@type":"Question","name":"Which cities are best to hire developers in Mexico?","acceptedAnswer":{"@type":"Answer","text":"Mexico City (CDMX), Guadalajara (GDL), and Monterrey (MTY) are the main hubs; choose based on depth and travel."}},
+        {"@type":"Question","name":"How much US overlap will I have with engineers in Mexico?","acceptedAnswer":{"@type":"Answer","text":"Typically 6–8 hours daily; we schedule PR/review windows accordingly."}},
+        {"@type":"Question","name":"What devices and security controls are included?","acceptedAnswer":{"@type":"Answer","text":"Corporate-owned, MDM-managed laptops; SSO/SAML/SCIM; least-privilege; audit-ready dossiers."}}
+      ]
+    }
+  }
+}

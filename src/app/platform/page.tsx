@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CheckCircle, Trophy, Star, BookOpen, Beaker, GitCommit, Search, Users, BrainCircuit, FileCheck, Laptop, Gauge, ShieldCheck, FileText, Building, Scale, ArrowRight } from "lucide-react";
 import type { Metadata } from 'next';
 import { WithTooltip } from '@/components/client/tooltip';
-import { DisclosureDrawer } from "@/components/client/DisclosureDrawer";
+import { DisclosureDrawer } from "@/components/DisclosureDrawer";
 
 export const metadata: Metadata = {
   title: 'The Nearshore IT Co-Pilot™ Platform | TeamStation AI',
