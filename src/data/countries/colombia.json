@@ -1,0 +1,246 @@
+{
+  "country": "Colombia",
+  "slug": "colombia",
+  "type": "country",
+  "pageSEO": {
+    "title": "Hire Software Developers in Colombia | Daylight Nearshore",
+    "description": "Hire vetted Colombia engineers with daytime overlap, compliant EOR onboarding, and managed devices. Build senior pods fast.",
+    "canonical": "https://cto.teamstation.dev/hire/by-country/colombia",
+    "hreflang": {
+      "en": "https://cto.teamstation.dev/hire/by-country/colombia",
+      "es-MX": "https://cto.teamstation.dev/es/hire/by-country/colombia"
+    }
+  },
+  "h1": "Hire Software Developers in Colombia (Daylight Overlap)",
+  "intro": "Leverage Colombia's vibrant tech hubs and US-aligned work culture to build your nearshore team. With 5-7 hours of daily overlap, you can eliminate the 'human latency tax' that plagues offshore models. Our platform combines this daylight advantage with the scientific rigor of our <a href='/playbook/bias-free-technical-hiring-axiom-cortex'>Axiom Cortex™</a> vetting and a secure, compliant operational wrapper, letting you build faster and safer. See our playbook on <a href='/playbook/latam-economics'>LATAM Economics</a> for a full cost breakdown.",
+  "pspCards": [
+    {
+      "title": "Daylight PR Flow (No Overnight Queues)",
+      "icon": "latency",
+      "body": {
+        "problem": "Your offshore team pushes a PR at the end of their day, which is the middle of your night. A simple question leads to a 24-hour delay. Your agile process grinds to a halt, one day at a time.",
+        "stakes": "This is the 'human latency tax'—a silent killer of velocity. It doubles or triples your cycle time and forces senior engineers into the role of late-night coordinators. Your roadmap slips, your best talent gets frustrated, and opportunity cost compounds with every stalled PR.",
+        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior engineers in Colombia with a guaranteed 5–7 hours of daily overlap with US teams. We instrument and enforce strict PR SLAs—first response ≤1h, to-green ≤4h—and sync our review windows with your team's core hours to ensure a continuous, real-time workflow.",
+        "proof": "Our platform telemetry proves this model works. Teams adopting a daylight cadence reduce their PR turnaround time from an average of 36 hours to under 8 hours within two sprints. This isn't a marginal improvement; it's a systemic acceleration detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
+        "recap": "Stop letting time zones dictate your release schedule. Build your team of <strong>nearshore Colombia engineers</strong> and buy back your day with a team that operates on your clock, not against it."
+      }
+    },
+    {
+      "title": "Cognition-First Hiring (Axiom Cortex™)",
+      "icon": "hiring",
+      "body": {
+        "problem": "You need to <strong>hire software developers in Colombia</strong>, but traditional screening is a lottery. Resumes are full of keywords, but they don't predict a candidate's ability to handle novel problems, design resilient systems, or write clean, maintainable code.",
+        "stakes": "A single senior mis-hire can cost you 6-12 months of salary in lost productivity, team disruption, and the cost of re-hiring. Relying on gut feel and unstructured interviews is a recipe for expensive mistakes and a slowed-down roadmap.",
+        "prescription": "Shift from resume theater to auditable evidence. We leverage our <strong>Nebula Talent Graph</strong> of over 2.6 million LATAM profiles to find potential candidates. Then, our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> cognitive AI engine provides scientific proof of their problem-solving abilities. A human expert conducts a structured evaluation, and our AI synthesizes the data into a 'Cognitive Fingerprint' and a full Evidence Locker. You judge logic and skill, not just presentation.",
+        "proof": "This evidence-based approach reduces mis-hire risk by over 90%, achieving a mismatch rate of ≤10%. You get a candidate whose 'mental shape' is mapped to your role's specific demands.",
+        "recap": "Stop gambling on keywords. Build your team of <strong>Bogotá developers</strong> and <strong>Medellín developers</strong> with a partner that provides data-driven proof of cognitive ability, not just a list of credentials."
+      }
+    },
+    {
+      "title": "Security, Compliance & Managed Devices",
+      "icon": "compliance",
+      "body": {
+        "problem": "You want to access Colombia's talent, but the operational overhead is a major blocker. How do you handle local labor laws, secure remote work, and manage devices without building a foreign subsidiary?",
+        "stakes": "One unmanaged laptop is a compliance nightmare and a data breach waiting to happen. Failing to align with local labor laws creates significant legal and financial risk. Enterprise deals will stall if you can't provide audit-ready security evidence.",
+        "prescription": "Outsource the entire operational stack to our single, accountable SLA. Our platform includes a compliant Employer of Record (EOR), SSO/SAML/SCIM for identity management, and MDM-managed laptops for every engineer. We enforce least-privilege access and provide auditable onboarding dossiers from day one. You get the talent; we handle the operational chaos.",
+        "proof": "Our SOC-aligned onboarding process ensures every engineer starts with a secure, compliant workstation. This allows our clients to confidently pass enterprise security reviews and close deals faster, as detailed in our <a href='/trust' class='text-primary hover:underline'>Trust Center</a>. We absorb the risk, so you can focus on velocity.",
+        "recap": "Don't let operational complexity stop you from accessing top talent. Use an integrated platform that delivers a secure and audit-ready <strong>Colombia nearshore team</strong> from the start."
+      }
+    },
+    {
+      "title": "Fast Ramp, Lower TCO, Reversible",
+      "icon": "cost",
+      "body": {
+        "problem": "Onboarding a new engineer can take months to show real productivity, and the true cost is far more than just their salary. You're paying a hidden 'time-to-productivity' tax and struggling to build a financial model your CFO will approve.",
+        "stakes": "A slow ramp-up means delayed features and a lower ROI on your hiring investment. Without a clear Total Cost of Ownership (TCO) model, you can't make a strategic business case. You're stuck in a cycle of high costs and slow delivery.",
+        "prescription": "We engineer for a fast ramp. With environments ready before day one, we target a first PR in under 10 business days and meaningful sprint outcomes within the first month. Our all-inclusive pricing model eliminates hidden fees and provides a predictable TCO that is often 40-60% lower than the fully-loaded cost of a US hire.",
+        "proof": "Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> moves the conversation from misleading hourly rates to a comprehensive analysis of value and risk. This data-driven approach gives you the ammunition to make a compelling case to your finance team, as shown in our <a href='/playbook/build-vs-buy' class='text-primary hover:underline'>Build vs. Buy analysis</a>.",
+        "recap": "Choose a partner that provides a clear, predictable financial model and is contractually accountable for a fast, productive ramp-up. It's the smarter, more capital-efficient way to scale your team."
+      }
+    }
+  ],
+  "countrySections": {
+    "whyDaylight": {
+      "h2": "Why Colombia works for daylight delivery",
+      "bullets": [
+        "Daylight overlap with US Eastern/Central time (≈ 5–7 hours).",
+        "Senior-leaning pods in Bogotá and Medellín.",
+        "Cultural alignment with US agile rituals (standups, PR cadence)."
+      ]
+    },
+    "hubs": {
+      "h2": "Where the talent lives",
+      "cities": [
+        {
+          "name": "Bogotá",
+          "why": "The nation's largest city and economic hub, with a vast and diverse pool of senior tech talent."
+        },
+        {
+          "name": "Medellín",
+          "why": "Recognized as a global center for innovation, with a vibrant startup scene and a strong bilingual workforce."
+        }
+      ]
+    },
+    "legal": {
+      "h2": "Legal & EOR in Colombia",
+      "body": "Choose entity or compliant EOR; align scope, benefits, IP assignment, and keep onboarding/offboarding evidence. Keep contracts clear on scope, IP assignment, and onboarding/offboarding evidence. For quick starts, a compliant EOR is typical.",
+      "cta": {
+        "label": "Talk to Compliance",
+        "href": "/trust"
+      }
+    },
+    "security": {
+      "h2": "Security & devices",
+      "body": "Corporate-owned, MDM-managed laptops; SSO/SAML/SCIM day one; least-privilege access mapped to repos; SOC-aligned onboarding dossiers.",
+      "link": "/trust"
+    },
+    "timeCost": {
+      "h2": "Time-to-hire & cost snapshot",
+      "table": [
+        [
+          "Metric",
+          "Value"
+        ],
+        [
+          "Overlap (hrs/day)",
+          "5–7 hours"
+        ],
+        [
+          "Time-to-first-PR (envs ready)",
+          "≤ 10 business days"
+        ],
+        [
+          "Compensation (directional)",
+          "Strong value at senior IC/Data/SRE from Bogotá/Medellín; competitive total cost with overlap."
+        ]
+      ]
+    }
+  },
+  "faq": [
+    {
+      "q": "What is the typical time zone overlap with US companies?",
+      "a": "Engineers in Colombia work on COT (UTC-5), which provides 5-7 hours of overlap with US workdays, including full overlap with the East Coast."
+    },
+    {
+      "q": "Do I need a local entity to hire developers in Colombia?",
+      "a": "No. Using a compliant Employer of Record (EOR) like TeamStation AI is the standard for speed and lower operational overhead. We handle all local legal and HR requirements."
+    },
+    {
+      "q": "Which Colombian cities have the strongest talent pools?",
+      "a": "Bogotá and Medellín are the primary tech hubs. Bogotá has the largest volume of enterprise talent, while Medellín is known for its innovation and vibrant startup ecosystem."
+    },
+    {
+      "q": "What about English proficiency?",
+      "a": "Colombia ranks among the top countries in Latin America for English proficiency, particularly within the tech sector. Our vetting process includes a rigorous assessment of communication skills to ensure seamless collaboration."
+    },
+    {
+      "q": "How do you ensure security with remote developers in Colombia?",
+      "a": "Security is built-in. Every engineer gets a corporate-owned, MDM-managed laptop with SSO/SAML/SCIM integration from day one. Our process is SOC-aligned and detailed in our <a href='/trust'>Trust Center</a>."
+    },
+    {
+        "q": "How does your process compare to a vendor like BairesDev?",
+        "a": "While BairesDev has a large talent pool, our integrated platform provides a single SLA for talent, devices, security, and compliance. Read our full <a href='/comparisons/bairesdev'>BairesDev alternative comparison</a> for a detailed breakdown."
+    }
+  ],
+  "cta": {
+    "primary": {
+      "label": "Book a 30-minute plan",
+      "href": "/hire"
+    },
+    "secondary": {
+      "label": "Download the CTO Playbook",
+      "href": "/playbook/hub"
+    }
+  },
+  "schema": {
+    "breadcrumbs": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hire",
+          "item": "https://cto.teamstation.dev/hire"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "By Country",
+          "item": "https://cto.teamstation.dev/hire/by-country"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Colombia",
+          "item": "https://cto.teamstation.dev/hire/by-country/colombia"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Hire Software Developers in Colombia",
+      "provider": {
+        "@type": "Organization",
+        "name": "TeamStation AI",
+        "url": "https://cto.teamstation.dev/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cto.teamstation.dev/hire/by-country/colombia"
+      },
+      "description": "Hire vetted Colombia engineers with daylight overlap, compliant EOR onboarding, and MDM devices with SSO/SCIM."
+    },
+    "faqpage": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the typical time zone overlap with US companies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Engineers in Colombia work on COT (UTC-5), which provides 5-7 hours of overlap with US workdays, including full overlap with the East Coast."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a local entity to hire developers in Colombia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Using a compliant Employer of Record (EOR) like TeamStation AI is the standard for speed and lower operational overhead. We handle all local legal and HR requirements."
+          }
+        },
+        {
+            "@type": "Question",
+            "name": "Which Colombian cities have the strongest talent pools?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bogotá and Medellín are the primary tech hubs. Bogotá has the largest volume of enterprise talent, while Medellín is known for its innovation and vibrant startup ecosystem."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about English proficiency?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Colombia ranks among the top countries in Latin America for English proficiency, particularly within the tech sector. Our vetting process includes a rigorous assessment of communication skills to ensure seamless collaboration."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you ensure security with remote developers in Colombia?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Security is built-in. Every engineer gets a corporate-owned, MDM-managed laptop with SSO/SAML/SCIM integration from day one. Our process is SOC-aligned and detailed in our Trust Center."
+            }
+        }
+      ]
+    }
+  }
+}
