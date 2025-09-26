@@ -14,47 +14,47 @@ export const metadata: Metadata = {
 
 const pspCards = [
     {
-      title: "Daylight PR Flow (No Overnight Queues)",
+      title: "Real-Time Collaboration, Not Overnight Queues",
       icon: GitCompare,
       body: {
-        problem: "Your offshore team pushes a React component PR at the end of their day. You find a simple hook logic issue the next morning. That question sits for 12 hours, delaying a critical fix.",
-        stakes: "This 'human latency tax' kills your agile velocity and forces your senior engineers into late-night coordination. Your roadmap slips, one day at a time.",
-        prescription: "Replace the overnight queue with a daylight-native cadence. We staff pods of senior React engineers in Brazil with a guaranteed 4–6 hours of daily overlap, ensuring a continuous, real-time workflow.",
-        proof: "Teams adopting this model reduce their PR turnaround time from 36 hours to under 8. See the data in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
-        recap: "Stop letting time zones dictate your release schedule. When you <strong>hire React developers in Brazil</strong>, you buy back your day with a team that operates on your clock."
+        problem: "Your offshore team in a distant time zone pushes a complex React hook change at day's end. You spot a subtle logic flaw the next morning, but your feedback sits for 12 hours. A simple fix becomes a 36-hour saga.",
+        stakes: "This 'review latency' is a silent killer of momentum. It forces your US-based architects into late-night calls and turns your agile process into a slow, frustrating game of telephone. Your feature velocity grinds to a halt.",
+        prescription: "Eliminate the time-zone tax with a daylight-native workflow. We assemble elite pods of React engineers in Brazil, guaranteeing 4–6 hours of daily collaborative overlap. This ensures that complex architectural discussions and PR reviews happen in real-time, on your schedule.",
+        proof: "Teams that switch to a daylight-native cadence cut their PR cycle times by over 75%. It's a systemic acceleration of your entire development lifecycle, detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
+        recap: "Stop letting the clock dictate your roadmap. When you <strong>hire React developers in Brazil</strong>, you invest in real-time collaboration and reclaim your team's velocity."
       }
     },
     {
-      "title": "Cognition-First Hiring for React (Axiom Cortex™)",
+      "title": "Vetting for React Mastery, Not Just Keywords",
       "icon": UserCheck,
       "body": {
-        "problem": "You need a React engineer who deeply understands performance, not just someone who has 'used React' on a resume. Traditional screening is a lottery.",
-        "stakes": "A mis-hire who doesn't understand the render cycle will build a slow, janky UI, leading to poor user experience, lower conversion rates, and expensive refactors.",
-        "prescription": "Shift from resume theater to auditable evidence. Our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> engine evaluates a candidate's grasp of React performance, component architecture, and modern state management. You get scientific proof of their problem-solving ability.",
-        "proof": "This evidence-based approach reduces mis-hire risk by over 90%. You get a candidate whose 'mental shape' is mapped to the specific demands of building high-performance React applications.",
-        "recap": "Stop gambling on keywords. Build your team of <strong>nearshore React developers in Brazil</strong> with a partner that provides data-driven proof of cognitive ability."
+        "problem": "You need a React engineer who understands the nuances of the render cycle, state management, and modern component architecture—not just someone who lists 'React' on their CV. Traditional screening methods can't distinguish true expertise from surface-level knowledge.",
+        "stakes": "A developer who doesn't grasp React's performance characteristics will build a slow, janky UI with excessive re-renders. This leads to a poor user experience, lower conversion rates, and a mountain of technical debt that will require expensive refactoring.",
+        "prescription": "Move beyond resume theater to verifiable evidence of skill. Our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> engine evaluates a candidate's deep understanding of React performance, state management patterns (like Zustand vs. Redux Toolkit), and component API design. You receive scientific proof of their problem-solving ability.",
+        "proof": "This data-driven methodology reduces mis-hire risk by over 90%. We deliver candidates whose 'mental shape' is precisely mapped to the demands of building high-performance, scalable React applications.",
+        "recap": "Don't gamble on resumes. Build your team of <strong>nearshore React developers in Brazil</strong> with a partner that provides auditable proof of their cognitive ability and framework mastery."
       }
     },
     {
-      "title": "Security, Compliance & Managed Devices",
+      "title": "Secure Operations, Not Risky Freelancers",
       "icon": ShieldCheck,
       "body": {
-        "problem": "You want to access Brazil's React talent, but the operational overhead is daunting. How do you handle local labor laws, secure remote work, and manage devices?",
-        "stakes": "One unmanaged laptop is a compliance nightmare. Failing to align with local labor laws creates significant legal and financial risk. Enterprise deals stall without audit-ready security evidence.",
-        "prescription": "Outsource the entire operational stack to our single, accountable SLA. Our platform includes compliant EOR, SSO/SAML/SCIM, and MDM-managed laptops for every engineer. You get the talent; we handle the operational chaos.",
-        "proof": "Our SOC-aligned onboarding ensures every engineer starts with a secure workstation, detailed in our <a href='/trust' class='text-primary hover:underline'>Trust Center</a>. We absorb the risk, so you can focus on velocity.",
-        "recap": "Don't let operational complexity stop you. Use an integrated platform that delivers a secure and audit-ready <strong>Brazil React development team</strong> from the start."
+        "problem": "You want to tap into Brazil's deep React talent pool, but the operational complexity is a blocker. How do you handle local labor laws (CLT), secure remote work, and manage IT without becoming a global HR and legal expert?",
+        "stakes": "A single unmanaged personal laptop is a compliance disaster waiting to happen. Misunderstanding local labor laws can create significant legal and financial exposure. Without an audit-ready security posture, you risk losing enterprise deals.",
+        "prescription": "Outsource the entire operational burden to our single, accountable platform. Our service includes a fully compliant Employer of Record (EOR), SSO/SAML/SCIM for identity management, and MDM-managed laptops for every engineer. We provide an auditable security posture from day one.",
+        "proof": "Our SOC-aligned onboarding process, detailed in our <a href='/trust' class='text-primary hover:underline'>Trust Center</a>, ensures that every engineer operates from a secure, managed workstation. We absorb the operational risk so you can focus on building your product.",
+        "recap": "Stop letting operational hurdles prevent you from accessing elite talent. Use an integrated platform that delivers a secure and compliant <strong>Brazil React development team</strong> from the start."
       }
     },
     {
-      "title": "Fast Ramp, Lower TCO, Reversible",
+      "title": "Predictable Costs, Not Hidden Fees",
       "icon": Scale,
       "body": {
-        "problem": "Onboarding a new engineer can take months to show productivity, and the true cost is far more than just their salary. You're paying a hidden 'time-to-productivity' tax.",
-        "stakes": "A slow ramp-up means delayed features and a lower ROI. Without a clear Total Cost of Ownership (TCO) model, you can't make a strategic business case.",
-        "prescription": "We engineer for a fast ramp, targeting a first PR in under 10 business days. Our all-inclusive pricing provides a predictable TCO that is often 40-60% lower than the fully-loaded cost of a US hire.",
-        "proof": "Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> gives you the ammunition to make a compelling case to your finance team, as shown in our <a href='/playbook/build-vs-buy' class='text-primary hover:underline'>Build vs. Buy analysis</a>.",
-        "recap": "Choose a partner that provides a clear financial model and is accountable for a fast ramp-up. It's the smarter way to scale your <strong>React team in Brazil</strong>."
+        "problem": "Onboarding and ramping up a new engineer can take months, and the true financial cost is far more than just their salary. You're paying a hidden 'time-to-productivity' tax and can't build a business case your CFO will approve.",
+        "stakes": "A slow ramp-up means delayed features, a lower ROI on your hiring investment, and an inability to make strategic financial plans. You're stuck in a cycle of unpredictable costs and slow delivery.",
+        "prescription": "We engineer for a fast and efficient ramp-up, targeting a first PR within 10 business days. Our all-inclusive pricing provides a transparent, predictable Total Cost of Ownership (TCO) that is often 40-60% lower than the fully-loaded cost of a US-based hire.",
+        "proof": "Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> provides the data to make a compelling financial case, moving the conversation beyond misleading hourly rates to a comprehensive analysis of value, risk, and ROI. See our <a href='/playbook/build-vs-buy' class='text-primary hover:underline'>Build vs. Buy analysis</a>.",
+        "recap": "Choose a partner that offers a clear financial model and is contractually accountable for a fast, productive ramp-up. It's the more strategic way to scale your <strong>React team in Brazil</strong>."
       }
     }
   ];
@@ -93,8 +93,8 @@ export default function HireReactBrazilPage() {
       </div>
 
       <header className="my-8 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire React Developers in Brazil</h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: `Stop letting a 12-hour time lag kill your development velocity. Hire senior <strong>React and TypeScript developers in Brazil</strong> and integrate them directly into your US time-zone workflow. Our platform provides elite, pre-vetted experts who ship secure, scalable code under a single, compliant SLA.` }}></p>
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire Vetted React Developers in Brazil</h1>
+          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: `Build a world-class frontend with elite <strong>React and TypeScript developers from Brazil</strong>. Our platform provides senior, pre-vetted engineers who ship secure, high-performance, and scalable applications under a single, compliant SLA, all within your time zone.` }}></p>
       </header>
 
       <section className="my-24">
