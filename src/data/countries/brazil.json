@@ -217,32 +217,30 @@
           }
         },
         {
-          "@type": "Question",
-          "name": "Which Brazilian cities have the strongest talent pools?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "São Paulo is the largest tech hub in LATAM with unmatched depth. Rio de Janeiro also has a very strong and growing tech ecosystem."
-          }
+            "@type": "Question",
+            "name": "Which Brazilian cities have the strongest talent pools?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "São Paulo is the largest tech hub in LATAM with unmatched depth. Rio de Janeiro also has a very strong and growing tech ecosystem."
+            }
         },
         {
-          "@type": "Question",
-          "name": "What about English proficiency in Brazil?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "English proficiency is strong within the senior-level tech community, especially in major hubs like São Paulo. Our vetting process includes a rigorous assessment of communication skills to ensure seamless collaboration."
-          }
+            "@type": "Question",
+            "name": "What about English proficiency in Brazil?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "English proficiency is strong within the senior-level tech community, especially in major hubs like São Paulo. Our vetting process includes a rigorous assessment of communication skills to ensure seamless collaboration."
+            }
         },
         {
-          "@type": "Question",
-          "name": "How do you ensure security with remote developers in Brazil?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Security is built-in. Every engineer gets a corporate-owned, MDM-managed laptop with SSO/SAML/SCIM integration from day one. Our process is SOC-aligned and detailed in our Trust Center."
-          }
+            "@type": "Question",
+            "name": "How do you ensure security with remote developers in Brazil?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Security is built-in. Every engineer gets a corporate-owned, MDM-managed laptop with SSO/SAML/SCIM integration from day one. Our process is SOC-aligned and detailed in our Trust Center."
+            }
         }
       ]
     }
   }
 }
-
-    
