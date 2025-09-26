@@ -104,7 +104,7 @@ export default function ArgentinaPage() {
               <h2 className="text-center text-3xl font-bold mb-8">Explore Popular Technologies in {data.country}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12 justify-center">
                 {popularTech.map((tech) => (
-                  <Link href={`/hire/by-technology/${tech.slug}`} key={tech.slug} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                  <Link href={`/hire/by-country/argentina/${tech.slug}`} key={tech.slug} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                       <div className='flex justify-between items-start'>
                         {tech.icon}
                       </div>
