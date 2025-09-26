@@ -2,10 +2,9 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { GitCompare, UserCheck, ShieldCheck, Scale, CheckCircle, Code, Layers, ArrowRight } from 'lucide-react';
-import costaRicaData from '@/data/countries/costa-rica.json';
+import { GitCompare, UserCheck, ShieldCheck, Scale, CheckCircle } from 'lucide-react';
+import guatemalaData from '@/data/countries/guatemala.json';
 import { PSPCard } from '@/components/seo/PSPCard';
-import { roleCategories } from '@/lib/roles';
 
 // Define icons map
 const iconMap: { [key: string]: React.FC<any> } = {
@@ -17,18 +16,18 @@ const iconMap: { [key: string]: React.FC<any> } = {
 
 // Generate metadata from the JSON file
 export async function generateMetadata(): Promise<Metadata> {
-    if (!costaRicaData) {
+    if (!guatemalaData) {
         return {
-            title: "Hire Developers in Costa Rica",
-            description: "Information about hiring nearshore developers in Costa Rica.",
+            title: "Hire Developers in Guatemala",
+            description: "Information about hiring nearshore developers in Guatemala.",
         };
     }
     return {
-        title: costaRicaData.pageSEO.title,
-        description: costaRicaData.pageSEO.description,
+        title: guatemalaData.pageSEO.title,
+        description: guatemalaData.pageSEO.description,
         alternates: {
-            canonical: costaRicaData.pageSEO.canonical,
-            languages: costaRicaData.pageSEO.hreflang,
+            canonical: guatemalaData.pageSEO.canonical,
+            languages: guatemalaData.pageSEO.hreflang,
         },
     };
 }
@@ -41,26 +40,14 @@ const JsonLd = ({ data }: { data: any }) => (
   />
 );
 
-export default function CostaRicaPage() {
-  const data = costaRicaData;
+export default function GuatemalaPage() {
+  const data = guatemalaData;
 
   if (!data) {
     notFound();
   }
 
   const { pageSEO, intro, pspCards, countrySections, faq, cta, schema } = data;
-
-  const popularTech = [
-    { name: 'Python', slug: 'python', description: 'Build scalable backend systems, data pipelines, and AI/ML applications with expert Python engineers.', icon: <Code className="h-8 w-8 text-primary" /> },
-    { name: 'React', slug: 'react', description: 'Build modern, performant, and scalable web applications with expert React and TypeScript engineers.', icon: <Layers className="h-8 w-8 text-primary" /> },
-    { name: 'Node.js', slug: 'node', description: 'Build high-throughput, non-blocking APIs and backend services that can handle real-world scale.', icon: <Code className="h-8 w-8 text-primary" /> },
-    { name: '.NET', slug: 'net', description: 'Build robust, high-performance, and cloud-native applications on the modern .NET platform.', icon: <Code className="h-8 w-8 text-primary" /> },
-    { name: 'Java', slug: 'java', description: 'Build resilient, high-performance, and scalable systems using modern Java frameworks, not just legacy J2EE.', icon: <Code className="h-8 w-8 text-primary" /> },
-    { name: 'Go', slug: 'go', description: 'Build fast, reliable, and highly concurrent systems for modern cloud infrastructure.', icon: <Code className="h-8 w-8 text-primary" /> },
-    { name: 'Next.js', slug: 'nextjs', description: 'Build high-performance, server-rendered React applications with the leading full-stack framework.', icon: <Layers className="h-8 w-8 text-primary" /> },
-    { name: 'Angular', slug: 'angular', description: 'Build robust, enterprise-scale applications with Google\'s mature and opinionated frontend framework.', icon: <Layers className="h-8 w-8 text-primary" /> },
-    { name: 'Vue.js', slug: 'vue', description: 'Create approachable, performant, and incrementally adoptable user interfaces with a progressive framework.', icon: <Layers className="h-8 w-8 text-primary" /> },
-  ];
 
   return (
     <>
@@ -101,44 +88,6 @@ export default function CostaRicaPage() {
                         </li>
                     ))}
                 </ul>
-            </div>
-            
-            <div className="my-16">
-              <h2 className="text-center text-3xl font-bold mb-8">Explore Popular Technologies in {data.country}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12 justify-center">
-                {popularTech.map((tech) => (
-                  <Link href={`/hire/by-country/costa-rica/${tech.slug}`} key={tech.slug} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-                      <div className='flex justify-between items-start'>
-                        {tech.icon}
-                      </div>
-                      <h2 className="mt-4 text-xl font-bold transition-colors group-hover:text-primary">{tech.name}</h2>
-                      <p className="mt-2 text-sm text-muted-foreground flex-grow">
-                        {tech.description}
-                      </p>
-                      <div className="mt-6 flex items-center text-sm font-semibold text-primary">
-                          Hire {tech.name} Developers <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            
-            <h2 className="text-center text-3xl font-bold mb-8">Explore Available Roles in {data.country}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
-                {roleCategories.map((details) => (
-                <Link href={`/hire/by-role/${details.slug}`} key={details.slug} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-                    <div className='flex justify-between items-start'>
-                        <details.icon  className="h-8 w-8 text-primary" />
-                    </div>
-                    <h2 className="mt-4 text-xl font-bold transition-colors group-hover:text-primary">{details.name}</h2>
-                    <p className="mt-2 text-sm text-muted-foreground flex-grow">
-                        {details.description}
-                    </p>
-                    <div className="mt-6 flex items-center text-sm font-semibold text-primary">
-                        Explore {details.name} Roles <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </div>
-                </Link>
-                ))}
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -201,7 +150,7 @@ export default function CostaRicaPage() {
          <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
             <h2 className="text-2xl font-bold text-foreground">Build Your {data.country} Team</h2>
             <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-              Let's build a TCO model for your Costa Rica team and map your roles to our <a href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</a> evaluation process.
+              Let's build a TCO model for your Guatemala team and map your roles to our <a href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</a> evaluation process.
             </p>
              <div className="mt-6 flex justify-center items-center gap-4">
                 <Link href={cta.primary.href} className="cta-button">
