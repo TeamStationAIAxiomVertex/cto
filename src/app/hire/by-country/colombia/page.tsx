@@ -52,8 +52,9 @@ export default function ColombiaPage() {
 
   const popularTech = [
     { name: 'Python', slug: 'python', description: 'Build scalable backend systems, data pipelines, and AI/ML applications with expert Python engineers.', icon: <Code className="h-8 w-8 text-primary" /> },
-    // { name: 'React', slug: 'react', description: 'Build modern, performant, and scalable web applications with expert React and TypeScript engineers.', icon: <Layers className="h-8 w-8 text-primary" /> },
-    // { name: 'Node.js', slug: 'node', description: 'Build high-throughput, non-blocking APIs and backend services that can handle real-world scale.', icon: <Code className="h-8 w-8 text-primary" /> },
+    { name: 'React', slug: 'react', description: 'Build modern, performant, and scalable web applications with expert React and TypeScript engineers.', icon: <Layers className="h-8 w-8 text-primary" /> },
+    { name: 'Node.js', slug: 'node', description: 'Build high-throughput, non-blocking APIs and backend services that can handle real-world scale.', icon: <Code className="h-8 w-8 text-primary" /> },
+    { name: 'Next.js', slug: 'nextjs', description: 'Build high-performance, server-rendered React applications with the leading full-stack framework.', icon: <Layers className="h-8 w-8 text-primary" /> },
   ];
 
   return (
