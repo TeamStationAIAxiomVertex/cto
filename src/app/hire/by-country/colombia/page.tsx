@@ -55,6 +55,9 @@ export default function ColombiaPage() {
     { name: 'React', slug: 'react', description: 'Build modern, performant, and scalable web applications with expert React and TypeScript engineers.', icon: <Layers className="h-8 w-8 text-primary" /> },
     { name: 'Node.js', slug: 'node', description: 'Build high-throughput, non-blocking APIs and backend services that can handle real-world scale.', icon: <Code className="h-8 w-8 text-primary" /> },
     { name: 'Next.js', slug: 'nextjs', description: 'Build high-performance, server-rendered React applications with the leading full-stack framework.', icon: <Layers className="h-8 w-8 text-primary" /> },
+    { name: 'Angular', slug: 'angular', description: 'Build robust, enterprise-scale applications with Google\'s mature and opinionated frontend framework.', icon: <Layers className="h-8 w-8 text-primary" /> },
+    { name: 'Java', slug: 'java', description: 'Build resilient, high-performance, and scalable systems using modern Java frameworks.', icon: <Code className="h-8 w-8 text-primary" /> },
+    { name: '.NET', slug: 'net', description: 'Build robust, high-performance, and cloud-native applications on the modern .NET platform.', icon: <Code className="h-8 w-8 text-primary" /> },
   ];
 
   return (
