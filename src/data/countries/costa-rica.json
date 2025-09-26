@@ -20,7 +20,7 @@
       "icon": "latency",
       "body": {
         "problem": "Your offshore team pushes a PR at the end of their day, which is the middle of your night. A simple question leads to a 24-hour delay. Your agile process grinds to a halt, one day at a time.",
-        "stakes": "This 'human latency tax' is the silent killer of velocity. It doubles or triples your cycle time and forces senior engineers into the role of late-night coordinators. Your roadmap slips, your best talent gets frustrated, and opportunity cost compounds with every stalled PR.",
+        "stakes": "This is the 'human latency tax'—a silent killer of velocity. It doubles or triples your cycle time and forces senior engineers into the role of late-night coordinators. Your roadmap slips, your best talent gets frustrated, and opportunity cost compounds with every stalled PR.",
         "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior engineers in Costa Rica with a guaranteed 7–8 hours of daily overlap with US teams. We instrument and enforce strict PR SLAs—first response ≤1h, to-green ≤4h—and sync our review windows with your team's core hours to ensure a continuous, real-time workflow.",
         "proof": "Our platform telemetry proves this model works. Teams adopting a daylight cadence reduce their PR turnaround time from an average of 36 hours to under 8 hours within two sprints. This isn't a marginal improvement; it's a systemic acceleration detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
         "recap": "Stop letting time zones dictate your release schedule. When you hire developers in Costa Rica, you buy back your day with a team that operates on your clock, not against it."
@@ -229,5 +229,3 @@
     }
   }
 }
-
-    
