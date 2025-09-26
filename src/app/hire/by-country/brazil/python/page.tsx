@@ -17,11 +17,11 @@ const pspCards = [
       title: "Daylight PR Flow (No Overnight Queues)",
       icon: GitCompare,
       body: {
-        problem: "Your offshore team pushes a PR at the end of their day. A simple question on a Django model change leads to a 24-hour delay, stalling your agile process.",
-        stakes: "This 'human latency tax' kills velocity and forces senior engineers into late-night coordination. Your roadmap slips, one day at a time.",
-        prescription: "Replace the overnight queue with a daylight-native cadence. We staff pods of senior Python engineers in Brazil with a guaranteed 4–6 hours of daily overlap, ensuring a continuous, real-time workflow.",
-        proof: "Our platform telemetry shows teams adopting this model reduce PR turnaround from 36 hours to under 8. See the data in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
-        recap: "Stop letting time zones dictate your release schedule. When you <strong>hire Python developers in Brazil</strong>, you buy back your day."
+        "problem": "Your offshore team pushes a PR at the end of their day. A simple question on a Django model change leads to a 24-hour delay, stalling your agile process.",
+        "stakes": "This 'human latency tax' kills velocity and forces senior engineers into late-night coordination. Your roadmap for critical Python services slips, one day at a time.",
+        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior Python engineers in Brazil with a guaranteed 4–6 hours of daily overlap, ensuring a continuous, real-time workflow.",
+        "proof": "Our platform telemetry shows teams adopting this model reduce PR turnaround from 36 hours to under 8. See the data in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
+        "recap": "Stop letting time zones dictate your release schedule. When you <strong>hire Python developers in Brazil</strong>, you buy back your day."
       }
     },
     {
@@ -50,7 +50,7 @@ const pspCards = [
       "title": "Fast Ramp, Lower TCO, Reversible",
       "icon": Scale,
       "body": {
-        "problem": "Onboarding a new engineer can take months to show productivity, and the true cost is far more than just salary. You're paying a hidden 'time-to-productivity' tax.",
+        "problem": "Onboarding a new engineer can take months to show productivity, and the true cost is far more than just their salary. You're paying a hidden 'time-to-productivity' tax.",
         "stakes": "A slow ramp-up means delayed features and a lower ROI. Without a clear Total Cost of Ownership (TCO) model, you can't make a strategic business case.",
         "prescription": "We engineer for a fast ramp, targeting a first PR in under 10 business days. Our all-inclusive pricing provides a predictable TCO that is often 40-60% lower than the fully-loaded cost of a US hire.",
         "proof": "Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> provides the ammunition to make a compelling case to your finance team. See our <a href='/playbook/build-vs-buy' class='text-primary hover:underline'>Build vs. Buy analysis</a>.",
