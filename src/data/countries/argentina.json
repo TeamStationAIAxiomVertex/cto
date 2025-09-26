@@ -83,7 +83,7 @@
     },
     "legal": {
       "h2": "Legal & EOR in Argentina",
-      "body": "The Employer of Record (EOR) model is a popular route for speed and compliance in Argentina. It's crucial to be precise on contract scopes to define the work as a specialized service, align on statutory benefits like 'aguinaldo' (13th-month salary), and ensure clear IP assignment. Keep contracts clear on scope, IP assignment, and onboarding/offboarding evidence. For quick starts, a compliant EOR is typical.",
+      "body": "Using an Employer of Record (EOR) is the standard for navigating local labor laws, including the 'Aguinaldo' (13th-month salary) and strict termination requirements. A compliant EOR ensures speed and risk mitigation. Keep contracts clear on scope, IP assignment, and onboarding/offboarding evidence. For quick starts, a compliant EOR is typical.",
       "cta": {
         "label": "Talk to Compliance",
         "href": "/trust"
@@ -111,7 +111,7 @@
         ],
         [
           "Compensation (directional)",
-          "Strong senior talent and communication; product-savvy ICs and leads are common."
+          "Top-tier talent commands competitive rates, but TCO remains highly favorable vs. US hires due to platform efficiencies."
         ]
       ]
     }
@@ -122,12 +122,12 @@
       "a": "Engineers in Argentina (ART, UTC-3) provide 5-7 hours of daily overlap with US workdays, covering the morning and early afternoon for both East and West coasts."
     },
     {
-      "q": "Is it complicated to hire developers in Argentina?",
-      "a": "Using a compliant Employer of Record (EOR) like TeamStation AI is the standard for speed and lower operational overhead. We handle all local legal, HR, and payroll complexities."
+      "q": "Do I need a local entity to hire developers in Argentina?",
+      "a": "No, using a compliant Employer of Record (EOR) like TeamStation AI is the standard for speed and lower operational overhead. We handle all local legal and HR complexities."
     },
     {
       "q": "What are the main tech hubs in Argentina?",
-      "a": "Buenos Aires is the dominant hub with the largest and most mature talent pool. Córdoba is a significant and growing secondary hub."
+      "a": "Buenos Aires is the dominant hub, known for its large and mature talent pool. Córdoba is a significant and growing secondary hub with strong university ties."
     },
     {
       "q": "What is the English proficiency level like?",
@@ -217,12 +217,12 @@
           }
         },
         {
-          "@type": "Question",
-          "name": "Which cities are best to hire in?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Buenos Aires and Córdoba are the main hubs; choose based on role depth and travel."
-          }
+            "@type": "Question",
+            "name": "Which cities are best to hire in?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Buenos Aires and Córdoba are the main hubs; choose based on role depth and travel."
+            }
         },
         {
             "@type": "Question",
@@ -244,5 +244,3 @@
     }
   }
 }
-
-    

@@ -69,7 +69,7 @@ export default function ArgentinaPage() {
         <section className="my-24">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {pspCards.map(card => {
-                    const Icon = iconMap[card.icon] || GitCompare;
+                    const Icon = iconMap[card.icon as keyof typeof iconMap] || GitCompare;
                     return (
                         <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body} />
                     );
@@ -154,7 +154,7 @@ export default function ArgentinaPage() {
             </p>
              <div className="mt-6 flex justify-center items-center gap-4">
                 <Link href={cta.primary.href} className="cta-button">
-                    Book a 15-minute plan
+                    Book a 30-minute plan
                 </Link>
                 <Link href={cta.secondary.href} className="font-semibold text-primary hover:underline">
                     {cta.secondary.label}
