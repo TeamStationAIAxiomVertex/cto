@@ -69,7 +69,7 @@ export default function PeruPage() {
         <section className="my-24">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {pspCards.map(card => {
-                    const Icon = iconMap[card.icon] || GitCompare;
+                    const Icon = iconMap[card.icon as keyof typeof iconMap] || GitCompare;
                     return (
                         <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body} />
                     );
@@ -148,7 +148,7 @@ export default function PeruPage() {
         </section>
 
          <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-            <h2 className="text-2xl font-bold text-foreground">{cta.primary.label} for Your {data.country} Team</h2>
+            <h2 className="text-2xl font-bold text-foreground">Build Your {data.country} Team</h2>
             <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
               Let's build a TCO model for your Peru team and map your roles to our <a href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</a> evaluation process.
             </p>
