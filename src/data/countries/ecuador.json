@@ -123,7 +123,7 @@
     },
     {
       "q": "How do you ensure security with remote developers in Ecuador?",
-      "a": "Security is built into our platform. Every engineer gets a corporate-owned, MDM-managed laptop with SSO/SAML/SCIM integration from day one. Our processes are SOC-aligned, and you can learn more in our <a href='/trust'>Trust Center</a>."
+      "a": "Security is built into our platform. Every engineer gets a corporate-owned, MDM-managed laptop with SSO/SAML/SCIM integration from day one. Our processes are SOC-aligned and detailed in our <a href='/trust'>Trust Center</a>."
     },
     {
       "q": "How does TeamStation's cost model work for a market like Ecuador?",
