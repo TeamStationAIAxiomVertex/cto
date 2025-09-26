@@ -11,3 +11,5 @@ export const countries = [
     { name: 'Ecuador', slug: 'ecuador', pain: 'Seeking emerging talent with high potential?', solution: 'Explore an emerging talent market with a growing number of skilled engineers and a strong desire to work with U.S. companies.', kpi: 'Significant cost advantage' },
     { name: 'Guatemala', slug: 'guatemala', pain: 'Seeking a growing Central American tech hub?', solution: 'Leverage a growing pool of young, motivated engineers in a market with strong U.S. cultural ties and a focus on service industries.', kpi: 'Central Time Zone alignment' },
 ];
+
+    
