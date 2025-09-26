@@ -1,4 +1,3 @@
-
 {
   "country": "Chile",
   "slug": "chile",
@@ -107,7 +106,7 @@
       "a": "Chile provides a strong 5-7 hours of overlap with US workdays, making it ideal for real-time collaboration with teams across the US."
     },
     {
-      "q": "Is a local entity required to hire in Chile?",
+      "q": "Do I need a local entity to hire in Chile?",
       "a": "Both direct hiring through a local entity and using an Employer of Record (EOR) are common. TeamStation AI's EOR service is the standard for clients who want speed and minimal operational overhead."
     },
     {
@@ -120,7 +119,7 @@
     },
     {
       "q": "How do you ensure security with remote developers in Chile?",
-      "a": "Our platform has security built-in. Every engineer receives a corporate-owned, MDM-managed laptop and SSO/SAML/SCIM integration from day one. Our processes are SOC-aligned and detailed in our <a href='/trust'>Trust Center</a>."
+      "a": "Our platform has security built-in. Every engineer gets a corporate-owned, MDM-managed laptop and SSO/SAML/SCIM integration from day one. Our processes are SOC-aligned and detailed in our <a href='/trust'>Trust Center</a>."
     },
     {
       "q": "How does TeamStation compare to traditional Chilean outsourcing firms?",
