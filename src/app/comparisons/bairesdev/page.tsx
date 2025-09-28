@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { GitCompare, UserCheck, ShieldCheck, Scale, CheckCircle, HelpCircle, AlertTriangle, FileSearch } from 'lucide-react';
+import { GitCompare, UserCheck, ShieldCheck, Scale, FileSearch, HelpCircle } from 'lucide-react';
 import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
 
 const pageData = {
@@ -80,6 +80,18 @@ const pageData = {
     {"q":"Can we trial a pod before committing long-term?","a":"Yes. We often start with a scoped 3-6 month engagement focused on a specific outcome. This allows you to validate the team's cadence, quality, and integration before scaling the partnership."}
   ]
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { title, description, canonical } = pageData.pageSEO;
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
+  };
+}
+
 
 const iconMap: { [key: string]: React.FC<any> } = {
   latency: GitCompare,
