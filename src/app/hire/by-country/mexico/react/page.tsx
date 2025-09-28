@@ -5,7 +5,7 @@ import { GitCompare, UserCheck, ShieldCheck, Scale, Layers } from 'lucide-react'
 import { PSPCard } from '@/components/seo/PSPCard';
 
 export const metadata: Metadata = {
-  title: 'Hire React Developers in Mexico | Nearshore TypeScript Experts',
+  title: 'Hire React Developers in Mexico | Nearshore Experts',
   description: 'Hire vetted React developers in Mexico with daylight overlap. Our senior TypeScript & Next.js engineers ship secure, scalable code under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/mexico/react',
@@ -14,59 +14,58 @@ export const metadata: Metadata = {
 
 const pspCards = [
     {
-      title: "Daylight PR Flow (No Overnight Queues)",
+      title: "Real-Time Collaboration, Not Overnight Queues",
       icon: GitCompare,
       body: {
-        problem: "Your offshore team pushes a React component PR at the end of their day. You find a simple hook logic issue the next morning. That question sits for 12 hours. A one-line fix takes 36 hours.",
-        stakes: "This 'human latency tax' kills your agile velocity. It forces senior engineers into late-night coordination, your roadmap slips, and opportunity cost compounds with every stalled PR.",
-        prescription: "Replace the overnight queue with a daylight-native cadence. We staff pods of senior React engineers in Mexico with a guaranteed 6–8 hours of daily overlap. We enforce strict PR SLAs to ensure a continuous, real-time workflow.",
-        proof: "Teams adopting this model reduce their PR turnaround time from 36 hours to under 8. This is a systemic acceleration detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
-        recap: "Stop letting time zones dictate your release schedule. When you <strong>hire React developers in Mexico</strong>, you buy back your day with a team that operates on your clock."
+        "problem": "Your team in Asia pushes a complex React hook change at day's end. You spot a subtle logic flaw the next morning, but your feedback sits for 12 hours. A simple fix becomes a 36-hour saga.",
+        "stakes": "This 'review latency' is a silent killer of momentum. It forces your US-based architects into late-night calls and turns your agile process into a slow, frustrating game of telephone. Your feature velocity grinds to a halt.",
+        "prescription": "Eliminate the time-zone tax with a daylight-native workflow. We assemble elite pods of React engineers in Mexico, guaranteeing 6–8 hours of daily collaborative overlap. This ensures that complex architectural discussions and PR reviews happen in real-time, on your schedule.",
+        "proof": "Teams that switch to a daylight-native cadence cut their PR cycle times by over 75%. It's a systemic acceleration of your entire development lifecycle, detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
+        "recap": "Stop letting the clock dictate your roadmap. When you <strong>hire React developers in Mexico</strong>, you invest in real-time collaboration and reclaim your team's velocity."
       }
     },
     {
-      "title": "Cognition-First Hiring for React (Axiom Cortex™)",
+      "title": "Vetting for React Mastery, Not Just Keywords",
       "icon": UserCheck,
       "body": {
-        "problem": "You need a senior React engineer who deeply understands the render cycle and state management, not just someone who has 'used React' on a resume. Traditional screening is a lottery.",
-        "stakes": "A mis-hire who doesn't understand performance will build a slow, janky UI, leading to poor user experience, lower conversion rates, and expensive refactors.",
-        "prescription": "Shift from resume theater to auditable evidence. Our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> engine evaluates a candidate's grasp of React performance, component architecture, and modern state management. You get scientific proof of their problem-solving ability.",
-        "proof": "This evidence-based approach reduces mis-hire risk by over 90%. You get a candidate whose 'mental shape' is mapped to the specific demands of building high-performance React applications.",
-        "recap": "Stop gambling on keywords. Build your team of <strong>nearshore React developers in Mexico</strong> with a partner that provides data-driven proof of cognitive ability."
+        "problem": "You need a React engineer who understands the nuances of the render cycle, state management, and modern component architecture—not just someone who lists 'React' on their CV. Traditional screening methods can't distinguish true expertise from surface-level knowledge.",
+        "stakes": "A developer who doesn't grasp React's performance characteristics will build a slow, janky UI with excessive re-renders. This leads to a poor user experience, lower conversion rates, and a mountain of technical debt that will require expensive refactoring.",
+        "prescription": "Move beyond resume theater to verifiable evidence of skill. Our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> engine evaluates a candidate's deep understanding of React performance, state management patterns (like Zustand vs. Redux Toolkit), and component API design. You receive scientific proof of their problem-solving ability.",
+        "proof": "This data-driven methodology reduces mis-hire risk by over 90%. We deliver candidates whose 'mental shape' is precisely mapped to the demands of building high-performance, scalable React applications.",
+        "recap": "Don't gamble on resumes. Build your team of <strong>nearshore React developers in Mexico</strong> with a partner that provides auditable proof of their cognitive ability and framework mastery."
       }
     },
     {
-      "title": "Security, Compliance & Managed Devices",
+      "title": "Secure Operations, Not Risky Freelancers",
       "icon": ShieldCheck,
       "body": {
-        "problem": "You want to access Mexico's React talent, but the operational overhead is daunting. How do you handle local labor laws (REPSE), secure remote work, and manage devices?",
-        "stakes": "One unmanaged laptop is a compliance nightmare. Failing to align with local labor laws creates significant legal risk. Enterprise deals stall without audit-ready security evidence.",
-        "prescription": "Outsource the entire operational stack to our single, accountable SLA. Our platform includes REPSE-aware EOR, SSO/SAML/SCIM, and MDM-managed laptops for every engineer. You get the talent; we handle the operational chaos.",
-        "proof": "Our SOC-aligned onboarding ensures every engineer starts with a secure workstation, detailed in our <a href='/trust' class='text-primary hover:underline'>Trust Center</a>. We absorb the risk, so you can focus on velocity.",
-        "recap": "Don't let operational complexity stop you. Use an integrated platform that delivers a secure and audit-ready <strong>Mexico React development team</strong> from the start."
+        "problem": "You want to tap into Mexico's deep React talent pool, but the operational complexity is a blocker. How do you handle local labor laws (REPSE), secure remote work, and manage IT without becoming a global HR and legal expert?",
+        "stakes": "A single unmanaged personal laptop is a compliance disaster waiting to happen. Misunderstanding local labor laws can create significant legal and financial exposure. Without an audit-ready security posture, you risk losing enterprise deals.",
+        "prescription": "Outsource the entire operational burden to our single, accountable platform. Our service includes a fully compliant Employer of Record (EOR), SSO/SAML/SCIM for identity management, and MDM-managed laptops for every engineer. We provide an auditable security posture from day one.",
+        "proof": "Our SOC-aligned onboarding process, detailed in our <a href='/trust' class='text-primary hover:underline'>Trust Center</a>, ensures that every engineer operates from a secure, managed workstation. We absorb the operational risk so you can focus on building your product.",
+        "recap": "Stop letting operational hurdles prevent you from accessing elite talent. Use an integrated platform that delivers a secure and compliant <strong>Mexico React development team</strong> from the start."
       }
     },
     {
-      "title": "Fast Ramp, Lower TCO, Reversible",
+      "title": "Predictable Costs, Not Hidden Fees",
       "icon": Scale,
       "body": {
-        "problem": "Onboarding a new engineer can take months to show productivity, and the true cost is far more than just their salary. You're paying a hidden 'time-to-productivity' tax.",
-        "stakes": "A slow ramp-up means delayed features and a lower ROI. Without a clear Total Cost of Ownership (TCO) model, you can't make a strategic business case.",
-        "prescription": "We engineer for a fast ramp, targeting a first PR in under 10 business days. Our all-inclusive pricing provides a predictable TCO that is often 40-60% lower than the fully-loaded cost of a US hire.",
-        "proof": "Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> gives you the ammunition to make a compelling case to your finance team, as shown in our <a href='/playbook/build-vs-buy' class='text-primary hover:underline'>Build vs. Buy analysis</a>.",
-        "recap": "Choose a partner that provides a clear financial model and is accountable for a fast ramp-up. It's the smarter way to scale your <strong>React team in Mexico</strong>."
+        "problem": "Onboarding and ramping up a new engineer can take months, and the true financial cost is far more than just their salary. You're paying a hidden 'time-to-productivity' tax and can't build a business case your CFO will approve.",
+        "stakes": "A slow ramp-up means delayed features, a lower ROI on your hiring investment, and an inability to make strategic financial plans. You're stuck in a cycle of unpredictable costs and slow delivery.",
+        "prescription": "We engineer for a fast and efficient ramp-up, targeting a first PR within 10 business days. Our all-inclusive pricing provides a transparent, predictable Total Cost of Ownership (TCO) that is often 40-60% lower than the fully-loaded cost of a US-based hire.",
+        "proof": "Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> provides the data to make a compelling financial case, moving the conversation beyond misleading hourly rates to a comprehensive analysis of value, risk, and ROI. See our <a href='/playbook/build-vs-buy' class='text-primary hover:underline'>Build vs. Buy analysis</a>.",
+        "recap": "Choose a partner that offers a clear financial model and is contractually accountable for a fast, productive ramp-up. It's the more strategic way to scale your <strong>React team in Mexico</strong>."
       }
     }
   ];
 
+const country = "Mexico";
+const technology = "React";
+const siteUrl = "https://cto.teamstation.dev";
 
-export default function HireReactMexicoPage() {
-  const country = "Mexico";
-  const technology = "React";
-
-  const faq = [
+const faq = [
     {
-      "q": `What core React and TypeScript skills do you vet for?`,
+      "q": `What are the core React and TypeScript skills you vet for?`,
       "a": `We focus on modern React (18+) with Hooks, advanced state management (React Query, Zustand), component performance optimization (memoization, virtualization), and strong TypeScript practices for type-safe component APIs.`
     },
     {
@@ -83,54 +82,92 @@ export default function HireReactMexicoPage() {
     }
   ];
 
+  const schema = {
+  breadcrumbs: {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Hire", "item": `${siteUrl}/hire` },
+      { "@type": "ListItem", "position": 2, "name": "By Country", "item": `${siteUrl}/hire/by-country` },
+      { "@type": "ListItem", "position": 3, "name": "Mexico", "item": `${siteUrl}/hire/by-country/mexico` },
+      { "@type": "ListItem", "position": 4, "name": "React", "item": `${siteUrl}/hire/by-country/mexico/react` }
+    ]
+  },
+  service: {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "IT Staff Augmentation",
+    "provider": { "@type": "Organization", "name": "TeamStation AI" },
+    "areaServed": { "@type": "Country", "name": "Mexico" },
+    "description": `Hire elite React developers in Mexico. We provide senior, pre-vetted engineers specializing in TypeScript and Next.js with full US time-zone overlap.`,
+    "name": `Hire React Developers in Mexico`,
+    "offers": { "@type": "Offer", "price": "Contact for pricing" }
+  },
+  faq: {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faq.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": { "@type": "Answer", "text": item.a.replace(/<[^>]*>?/gm, '') }
+    }))
+  }
+};
+
+export default function HireReactMexicoPage() {
   return (
-    <main className="container max-w-5xl py-12">
-      <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/hire" className="hover:text-foreground">Hire</Link> / 
-        <Link href="/hire/by-country" className="hover:text-foreground">By Country</Link> / 
-        <Link href="/hire/by-country/mexico" className="hover:text-foreground">Mexico</Link> / 
-        <span>{technology}</span>
-      </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.breadcrumbs) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.service) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.faq) }} />
+      <main className="container max-w-5xl py-12">
+        <div className="text-sm text-muted-foreground mb-8">
+          <Link href="/hire" className="hover:text-foreground">Hire</Link> / 
+          <Link href="/hire/by-country" className="hover:text-foreground">By Country</Link> / 
+          <Link href="/hire/by-country/mexico" className="hover:text-foreground">Mexico</Link> / 
+          <span>{technology}</span>
+        </div>
 
-      <header className="my-8 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire React Developers in Mexico</h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: `Stop letting a 12-hour time lag kill your development velocity. Hire senior <strong>React and TypeScript developers in Mexico</strong> and integrate them directly into your US time-zone workflow. Our platform provides elite, pre-vetted experts who ship secure, scalable code under a single, compliant SLA.` }}></p>
-      </header>
+        <header className="my-8 text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire React Developers in Mexico</h1>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: `Stop letting a 12-hour time lag kill your development velocity. Hire senior <strong>React and TypeScript developers in Mexico</strong> and integrate them directly into your US time-zone workflow. Our platform provides elite, pre-vetted experts who ship secure, scalable code under a single, compliant SLA.` }}></p>
+        </header>
 
-      <section className="my-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {pspCards.map(card => {
-                  const Icon = card.icon;
-                  return (
-                      <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body} />
-                  );
-              })}
-          </div>
-      </section>
+        <section className="my-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {pspCards.map(card => {
+                    const Icon = card.icon;
+                    return (
+                        <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body} />
+                    );
+                })}
+            </div>
+        </section>
 
-      <section className="my-24">
-          <h2 className="text-3xl font-bold text-center">Questions on Hiring {technology} Developers in {country}</h2>
-          <div className="mt-8 max-w-3xl mx-auto space-y-4">
-              {faq.map((item, i) => (
-                  <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
-                      <h3 className="font-semibold text-primary">{item.q}</h3>
-                      <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
-                  </div>
-              ))}
-          </div>
-      </section>
+        <section className="my-24">
+            <h2 className="text-3xl font-bold text-center">Questions on Hiring {technology} Developers in {country}</h2>
+            <div className="mt-8 max-w-3xl mx-auto space-y-4">
+                {faq.map((item, i) => (
+                    <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
+                        <h3 className="font-semibold text-primary">{item.q}</h3>
+                        <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
+                    </div>
+                ))}
+            </div>
+        </section>
 
-       <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-          <h2 className="text-2xl font-bold text-foreground">Build Your {country} {technology} Team</h2>
-          <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-            Let's build a TCO model for your Mexico-based React team and map your roles to our <a href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</a> evaluation process.
-          </p>
-           <div className="mt-6 flex justify-center items-center gap-4">
-              <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" className="cta-button">
-                  Book a 30-minute plan
-              </Link>
-          </div>
-      </section>
-    </main>
+        <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+            <h2 className="text-2xl font-bold text-foreground">Build Your {country} {technology} Team</h2>
+            <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+              Let's build a TCO model for your Mexico-based React team and map your roles to our <a href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</a> evaluation process.
+            </p>
+            <div className="mt-6 flex justify-center items-center gap-4">
+                <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" className="cta-button">
+                    Book a 30-minute plan
+                </Link>
+            </div>
+        </section>
+      </main>
+    </>
   );
 }

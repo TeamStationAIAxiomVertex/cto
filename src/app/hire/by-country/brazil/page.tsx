@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
         };
     }
     return {
-        title: brazilData.pageSEO.title,
+        title: "Hire Developers in Brazil | Nearshore Engineers",
         description: brazilData.pageSEO.description,
         alternates: {
             canonical: brazilData.pageSEO.canonical,

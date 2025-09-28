@@ -5,7 +5,7 @@ import { GitCompare, UserCheck, ShieldCheck, Scale, Code } from 'lucide-react';
 import { PSPCard } from '@/components/seo/PSPCard';
 
 export const metadata: Metadata = {
-  title: 'Hire Python Developers in Mexico | Nearshore Django & FastAPI',
+  title: 'Hire Python Developers in Mexico | Nearshore Experts',
   description: 'Hire vetted Python developers in Mexico with daylight overlap. Our senior Django & FastAPI engineers ship secure, scalable code under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/mexico/python',

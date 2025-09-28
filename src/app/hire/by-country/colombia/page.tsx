@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
         };
     }
     return {
-        title: colombiaData.pageSEO.title,
+        title: "Hire Developers in Colombia | Daylight Nearshore",
         description: colombiaData.pageSEO.description,
         alternates: {
             canonical: colombiaData.pageSEO.canonical,

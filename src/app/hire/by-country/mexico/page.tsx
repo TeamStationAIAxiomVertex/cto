@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
         };
     }
     return {
-        title: mexicoData.pageSEO.title,
+        title: "Hire Developers in Mexico | Nearshore Daylight Overlap",
         description: mexicoData.pageSEO.description,
         alternates: {
             canonical: mexicoData.pageSEO.canonical,

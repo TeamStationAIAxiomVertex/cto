@@ -5,7 +5,7 @@ import { GitCompare, UserCheck, ShieldCheck, Scale, Layers } from 'lucide-react'
 import { PSPCard } from '@/components/seo/PSPCard';
 
 export const metadata: Metadata = {
-  title: 'Hire Next.js Developers in Argentina | Nearshore React Experts',
+  title: 'Hire Next.js Developers in Argentina | Nearshore Experts',
   description: 'Hire vetted Next.js developers in Argentina with daylight overlap. Our senior React engineers ship secure, high-performance applications under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/argentina/nextjs',
@@ -59,11 +59,11 @@ const pspCards = [
     }
   ];
 
-export default function HireNextJsArgentinaPage() {
-  const country = "Argentina";
-  const technology = "Next.js";
+const country = "Argentina";
+const technology = "Next.js";
+const siteUrl = "https://cto.teamstation.dev";
 
-  const faq = [
+const faq = [
     {
       "q": `What core Next.js skills do you vet for in ${country}?`,
       "a": `We focus on the modern App Router. Our vetting emphasizes deep understanding of Server Components, advanced data fetching and caching strategies (ISR, on-demand revalidation), and performance optimization for Core Web Vitals.`
@@ -82,54 +82,92 @@ export default function HireNextJsArgentinaPage() {
     }
   ];
 
+  const schema = {
+  breadcrumbs: {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Hire", "item": `${siteUrl}/hire` },
+      { "@type": "ListItem", "position": 2, "name": "By Country", "item": `${siteUrl}/hire/by-country` },
+      { "@type": "ListItem", "position": 3, "name": "Argentina", "item": `${siteUrl}/hire/by-country/argentina` },
+      { "@type": "ListItem", "position": 4, "name": "Next.js", "item": `${siteUrl}/hire/by-country/argentina/nextjs` }
+    ]
+  },
+  service: {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "IT Staff Augmentation",
+    "provider": { "@type": "Organization", "name": "TeamStation AI" },
+    "areaServed": { "@type": "Country", "name": "Argentina" },
+    "description": `Hire elite Next.js developers in Argentina. We provide senior, pre-vetted engineers specializing in the App Router and advanced React patterns with full US time-zone overlap.`,
+    "name": `Hire Next.js Developers in Argentina`,
+    "offers": { "@type": "Offer", "price": "Contact for pricing" }
+  },
+  faq: {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faq.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": { "@type": "Answer", "text": item.a.replace(/<[^>]*>?/gm, '') }
+    }))
+  }
+};
+
+export default function HireNextJsArgentinaPage() {
   return (
-    <main className="container max-w-5xl py-12">
-      <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/hire" className="hover:text-foreground">Hire</Link> / 
-        <Link href="/hire/by-country" className="hover:text-foreground">By Country</Link> / 
-        <Link href="/hire/by-country/argentina" className="hover:text-foreground">Argentina</Link> / 
-        <span>{technology}</span>
-      </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.breadcrumbs) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.service) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.faq) }} />
+      <main className="container max-w-5xl py-12">
+        <div className="text-sm text-muted-foreground mb-8">
+          <Link href="/hire" className="hover:text-foreground">Hire</Link> / 
+          <Link href="/hire/by-country" className="hover:text-foreground">By Country</Link> / 
+          <Link href="/hire/by-country/argentina" className="hover:text-foreground">Argentina</Link> / 
+          <span>{technology}</span>
+        </div>
 
-      <header className="my-8 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire Next.js Developers in Argentina</h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: `Stop letting a slow, bloated frontend kill your user experience. Hire senior <strong>Next.js developers in Argentina</strong> and integrate them directly into your US time-zone workflow. Our platform provides elite, pre-vetted experts who ship secure, high-performance React applications under a single, compliant SLA.` }}></p>
-      </header>
+        <header className="my-8 text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire Next.js Developers in Argentina</h1>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: `Stop letting a slow, bloated frontend kill your user experience. Hire senior <strong>Next.js developers in Argentina</strong> and integrate them directly into your US time-zone workflow. Our platform provides elite, pre-vetted experts who ship secure, high-performance React applications under a single, compliant SLA.` }}></p>
+        </header>
 
-      <section className="my-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {pspCards.map(card => {
-                  const Icon = card.icon;
-                  return (
-                      <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body} />
-                  );
-              })}
-          </div>
-      </section>
+        <section className="my-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {pspCards.map(card => {
+                    const Icon = card.icon;
+                    return (
+                        <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body} />
+                    );
+                })}
+            </div>
+        </section>
 
-      <section className="my-24">
-          <h2 className="text-3xl font-bold text-center">Questions on Hiring {technology} Developers in {country}</h2>
-          <div className="mt-8 max-w-3xl mx-auto space-y-4">
-              {faq.map((item, i) => (
-                  <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
-                      <h3 className="font-semibold text-primary">{item.q}</h3>
-                      <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
-                  </div>
-              ))}
-          </div>
-      </section>
+        <section className="my-24">
+            <h2 className="text-3xl font-bold text-center">Questions on Hiring {technology} Developers in {country}</h2>
+            <div className="mt-8 max-w-3xl mx-auto space-y-4">
+                {faq.map((item, i) => (
+                    <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
+                        <h3 className="font-semibold text-primary">{item.q}</h3>
+                        <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
+                    </div>
+                ))}
+            </div>
+        </section>
 
-       <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-          <h2 className="text-2xl font-bold text-foreground">Build Your {country} {technology} Team</h2>
-          <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-            Let's build a TCO model for your Argentina-based Next.js team and map your roles to our <a href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</a> evaluation process.
-          </p>
-           <div className="mt-6 flex justify-center items-center gap-4">
-              <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" className="cta-button">
-                  Book a 30-minute plan
-              </Link>
-          </div>
-      </section>
-    </main>
+        <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+            <h2 className="text-2xl font-bold text-foreground">Build Your {country} {technology} Team</h2>
+            <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+              Let's build a TCO model for your Argentina-based Next.js team and map your roles to our <a href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</a> evaluation process.
+            </p>
+            <div className="mt-6 flex justify-center items-center gap-4">
+                <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" className="cta-button">
+                    Book a 30-minute plan
+                </Link>
+            </div>
+        </section>
+      </main>
+    </>
   );
 }

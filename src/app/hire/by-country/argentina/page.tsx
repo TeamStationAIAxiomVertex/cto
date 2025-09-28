@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
         };
     }
     return {
-        title: argentinaData.pageSEO.title,
+        title: "Hire Developers in Argentina | Nearshore Engineers",
         description: argentinaData.pageSEO.description,
         alternates: {
             canonical: argentinaData.pageSEO.canonical,
