@@ -9,7 +9,7 @@ const pageData = {
   "competitor": "BairesDev",
   "pageSEO": {
     "title": "TeamStation vs BairesDev: Nearshore That Ships",
-    "description": "Compare vetting, daylight overlap, device/MDM, EOR/REPSE, and auditability. Balanced verdict + FAQ.",
+    "description": "Compare vetting, daylight overlap, device/MDM, EOR/compliance, and auditability. Balanced verdict + FAQ.",
     "canonical": "https://cto.teamstation.dev/comparisons/bairesdev"
   },
   "intro": "You need elite LATAM talent, and BairesDev's 'Top 1%' promise is compelling. But is it the right model for shipping secure, high-velocity product? This is a CTO's guide to the real trade-offs. We compare the TeamStation AI integrated platform—which combines <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> vetting with full operational control—against the traditional staff augmentation model, so you can make a decision based on evidence, not just marketing claims.",
@@ -65,7 +65,7 @@ const pageData = {
     {"criterion":"Time-to-first-PR","teamstation":"≤10 business days when envs ready","competitor":"Varies by squad/vendor process"},
     {"criterion":"Devices & MDM","teamstation":"Corporate-owned, MDM-managed; disk encrypt/patch/remote wipe","competitor":"Often BYOD or client-provided, policy varies"},
     {"criterion":"Identity (SSO/SCIM)","teamstation":"SAML/SCIM day one with role maps","competitor":"Depends on client integration"},
-    {"criterion":"EOR/REPSE (MX)","teamstation":"REPSE-aware scope; compliant contracts","competitor":"Approach varies by engagement"},
+    {"criterion":"EOR/Compliance","teamstation":"EOR-native in 10 LATAM countries; REPSE-aware where applicable.","competitor":"Approach varies by engagement; may use third parties."},
     {"criterion":"Overlap & PR SLAs","teamstation":"Daylight pods; first response ≤1h, to-green ≤4h","competitor":"No universal SLA published"},
     {"criterion":"Research & telemetry","teamstation":"4 papers + platform telemetry","competitor":"Marketing case studies"},
     {"criterion":"Pricing posture","teamstation":"All-in pod with ops wrapper","competitor":"Staff augmentation rates"},
