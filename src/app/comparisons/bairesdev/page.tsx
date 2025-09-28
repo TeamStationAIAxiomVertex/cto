@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { GitCompare, UserCheck, ShieldCheck, Scale, CheckCircle, HelpCircle, AlertTriangle } from 'lucide-react';
+import { GitCompare, UserCheck, ShieldCheck, Scale, CheckCircle, HelpCircle, AlertTriangle, FileSearch } from 'lucide-react';
 import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
 
 const pageData = {
@@ -13,6 +13,7 @@ const pageData = {
     "canonical": "https://cto.teamstation.dev/comparisons/bairesdev"
   },
   "intro": "You need elite LATAM talent, and BairesDev's 'Top 1%' promise is compelling. But is it the right model for shipping secure, high-velocity product? This is a CTO's guide to the real trade-offs. We compare the TeamStation AI integrated platform—which combines <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> vetting with full operational control—against the traditional staff augmentation model, so you can make a decision based on evidence, not just marketing claims.",
+  "h1": "TeamStation vs BairesDev: What Actually Ships Faster?",
   "pspCards": [
     {
       "title": "Verdict Snapshot vs BairesDev",
@@ -89,7 +90,7 @@ const iconMap: { [key: string]: React.FC<any> } = {
 };
 
 export default function BairesDevComparisonPage() {
-  const { pageSEO, intro, pspCards, verdictRows, faq } = pageData;
+  const { pageSEO, intro, pspCards, verdictRows, faq, h1 } = pageData;
   const siteUrl = "https://cto.teamstation.dev";
   const schema = {
     breadcrumbs: {
@@ -97,7 +98,7 @@ export default function BairesDevComparisonPage() {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Comparisons", "item": `${siteUrl}/comparisons` },
-        { "@type": "ListItem", "position": 2, "name": "BairesDev Alternative", "item": `${siteUrl}${pageSEO.canonical}` }
+        { "@type": "ListItem", "position": 2, "name": "BairesDev Alternative", "item": `${siteUrl}/comparisons/bairesdev` }
       ]
     },
     faq: {
@@ -121,7 +122,7 @@ export default function BairesDevComparisonPage() {
         </div>
 
         <header className="my-8 text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{pageData.h1 || "TeamStation vs BairesDev: What Actually Ships Faster?"}</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{h1}</h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: intro }}></p>
         </header>
 
