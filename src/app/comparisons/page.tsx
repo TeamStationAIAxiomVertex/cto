@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { ArrowRight, Users, Scale, ShieldCheck, Briefcase, ExternalLink, Network } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -52,7 +53,8 @@ const models = [
             { name: "Deel", href: "/comparisons/deel", website: "https://www.deel.com/" },
             { name: "Revelo", href: "/comparisons/revelo", website: "https://www.revelo.com/" },
             { name: "ParallelStaff", href: "/comparisons/parallelstaff", website: "https://www.parallelstaff.com/" },
-            { name: "TECLA", href: "/comparisons/tecla", website: "https://www.tecla.io/" }
+            { name: "TECLA", href: "/comparisons/tecla", website: "https://www.tecla.io/" },
+            { name: "Howdy", href: "/comparisons/howdy", website: "https://www.howdy.com/" }
         ],
         solution: "We are a complete operational platform. We bundle all 'run-state' services—EOR, devices, MDM, security, insurance—into a single, accountable SLA."
     }
