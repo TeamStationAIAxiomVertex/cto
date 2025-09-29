@@ -1,4 +1,5 @@
-import { CheckCircle, XCircle, ExternalLink, GitCompare, UserCheck, ShieldCheck, Scale, HelpCircle } from 'lucide-react';
+
+import { CheckCircle, XCircle, ExternalLink, GitCompare, UserCheck, ShieldCheck, Scale, HelpCircle, FileSearch } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
@@ -193,3 +194,5 @@ export default function ParallelStaffComparisonPage() {
     </>
   );
 }
+
+    
