@@ -4,6 +4,8 @@ import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 import { CheckCircle, ArrowRight, Shield, Bug, CloudCog, AlertTriangle, Key } from 'lucide-react';
 import { notFound } from 'next/navigation';
+import { roleCategories } from '@/lib/roles';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 
 const roleData: { [key: string]: { name: string; intro: string; roles: string[]; skills: string[]; tech: { name: string, slug: string }[]; evaluation: string[]; problems?: { pain: string; roles: string[]; skills: string[] }[] } } = {
@@ -352,6 +354,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     title: `Hire Nearshore ${roleName}`,
     description: `Hire elite, pre-vetted LATAM ${roleName} engineers. Our scientific evaluation process de-risks hiring for critical tech roles.`,
     keywords: `hire nearshore ${roleName}, latam ${roleName}, ${roleName} staff augmentation`,
+    alternates: {
+        canonical: `/hire/by-role/${params.slug}`
+    }
   };
 }
 
@@ -440,107 +445,157 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
   }
 
   const { name, intro, roles, skills, tech, evaluation, problems } = category;
+  const siteUrl = 'https://cto.teamstation.dev';
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Hire Nearshore ${name} Engineers`,
+    serviceType: 'IT Staff Augmentation',
+    provider: {
+      '@type': 'Organization',
+      name: 'TeamStation AI',
+    },
+    areaServed: 'LATAM',
+    description: intro,
+    keywords: `hire ${name}, nearshore ${name}, latam ${name}`,
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Hire',
+        item: `${siteUrl}/hire`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'By Role',
+        item: `${siteUrl}/hire/by-role`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: name,
+        item: `${siteUrl}/hire/by-role/${params.slug}`,
+      },
+    ],
+  };
 
   return (
-    <main className="container max-w-5xl py-12">
-      <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <Link href="/hire/by-role" className="hover:text-foreground">By Role</Link> / <span>{name}</span>
-      </div>
-      <header className="my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{name}</h1>
-        <p className="mt-4 text-lg text-muted-foreground">{intro}</p>
-      </header>
-      
-      {name === 'Security & GRC' ? (
-        <SecurityContent />
-      ) : (
-        <div className="my-16">
-          {problems && problems.length > 0 && (
-            <div className="mb-16">
-              <h2 className="text-3xl font-bold text-center">Problems We Solve</h2>
-              <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">We provide experts who solve these specific, high-stakes business problems.</p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                {problems.map(problem => (
-                  <div key={problem.pain} className="rounded-lg border bg-card p-6 shadow-lg">
-                    <p className="font-semibold text-primary flex items-start gap-2"><AlertTriangle className="h-5 w-5 mt-1 shrink-0" />{problem.pain}</p>
-                    <div className="mt-4 border-t pt-4">
-                      <h4 className="font-semibold text-foreground text-sm flex items-center gap-2"><Key className="h-4 w-4"/>Relevant Roles & Skills</h4>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {problem.roles.map(r => <span key={r} className="text-xs font-medium bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{r}</span>)}
-                        {problem.skills.map(s => <span key={s} className="text-xs font-medium bg-background px-2 py-1 rounded-full">{s}</span>)}
+    <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <main className="container max-w-5xl py-12">
+        <div className="text-sm text-muted-foreground mb-8">
+          <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <Link href="/hire/by-role" className="hover:text-foreground">By Role</Link> / <span>{name}</span>
+        </div>
+        <header className="my-12">
+          <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{name}</h1>
+          <p className="mt-4 text-lg text-muted-foreground">{intro}</p>
+        </header>
+        
+        {name === 'Security & GRC' ? (
+          <SecurityContent />
+        ) : (
+          <div className="my-16">
+            {problems && problems.length > 0 && (
+              <div className="mb-16">
+                <h2 className="text-3xl font-bold text-center">Problems We Solve</h2>
+                <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">We provide experts who solve these specific, high-stakes business problems.</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                  {problems.map(problem => (
+                    <div key={problem.pain} className="rounded-lg border bg-card p-6 shadow-lg">
+                      <p className="font-semibold text-primary flex items-start gap-2"><AlertTriangle className="h-5 w-5 mt-1 shrink-0" />{problem.pain}</p>
+                      <div className="mt-4 border-t pt-4">
+                        <h4 className="font-semibold text-foreground text-sm flex items-center gap-2"><Key className="h-4 w-4"/>Relevant Roles & Skills</h4>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {problem.roles.map(r => <span key={r} className="text-xs font-medium bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{r}</span>)}
+                          {problem.skills.map(s => <span key={s} className="text-xs font-medium bg-background px-2 py-1 rounded-full">{s}</span>)}
+                        </div>
                       </div>
                     </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="md:col-span-1">
+                  <h2 className="text-2xl font-bold border-b pb-2">Key Roles</h2>
+                  <ul className="mt-4 space-y-2 list-none p-0">
+                      {roles.map(role => <li key={role} className='text-muted-foreground'>{role}</li>)}
+                  </ul>
+              </div>
+              <div className="md:col-span-2">
+                  <h2 className="text-2xl font-bold border-b pb-2">Core Skills & Technologies</h2>
+                  <div className='mt-4'>
+                      <h3 className='font-semibold text-foreground'>Skills</h3>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                          {skills.map(skill => (
+                              <span key={skill} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+                                  {skill.includes('IaC') ? <WithTooltip content="Infrastructure as Code: Managing infrastructure through code instead of manual processes."><span className="border-b border-dashed">IaC</span></WithTooltip> : 
+                                  skill.includes('SLO/SLI') ? <WithTooltip content="Service Level Objectives/Indicators: A framework for defining and measuring reliability."><span className="border-b border-dashed">SLO/SLI/error budgets</span></WithTooltip> :
+                                  skill.includes('ELT') ? <WithTooltip content="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation."><span className="border-b border-dashed">ELT</span></WithTooltip> :
+                                  skill.includes('retrieval') ? <WithTooltip content="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database."><span className="border-b border-dashed">retrieval design</span></WithTooltip> :
+                                  skill}
+                              </span>
+                          ))}
+                      </div>
                   </div>
-                ))}
+                  <div className='mt-6'>
+                      <h3 className='font-semibold text-foreground'>Technologies & Libraries</h3>
+                      <div className="flex flex-wrap gap-2 mt-2 items-center">
+                          {tech.map((t, i) => (
+                              <Link href={`/hire/by-technology/${t.slug}`} key={t.slug} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors">
+                                  {t.name}
+                              </Link>
+                          ))}
+                      </div>
+                  </div>
               </div>
             </div>
-          )}
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="md:col-span-1">
-                <h2 className="text-2xl font-bold border-b pb-2">Key Roles</h2>
-                <ul className="mt-4 space-y-2 list-none p-0">
-                    {roles.map(role => <li key={role} className='text-muted-foreground'>{role}</li>)}
-                </ul>
-            </div>
-            <div className="md:col-span-2">
-                <h2 className="text-2xl font-bold border-b pb-2">Core Skills & Technologies</h2>
-                <div className='mt-4'>
-                    <h3 className='font-semibold text-foreground'>Skills</h3>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                        {skills.map(skill => (
-                             <span key={skill} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-                                {skill.includes('IaC') ? <WithTooltip content="Infrastructure as Code: Managing infrastructure through code instead of manual processes."><span className="border-b border-dashed">IaC</span></WithTooltip> : 
-                                 skill.includes('SLO/SLI') ? <WithTooltip content="Service Level Objectives/Indicators: A framework for defining and measuring reliability."><span className="border-b border-dashed">SLO/SLI/error budgets</span></WithTooltip> :
-                                 skill.includes('ELT') ? <WithTooltip content="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation."><span className="border-b border-dashed">ELT</span></WithTooltip> :
-                                 skill.includes('retrieval') ? <WithTooltip content="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database."><span className="border-b border-dashed">retrieval design</span></WithTooltip> :
-                                 skill}
-                             </span>
-                        ))}
-                    </div>
-                </div>
-                 <div className='mt-6'>
-                    <h3 className='font-semibold text-foreground'>Technologies & Libraries</h3>
-                    <div className="flex flex-wrap gap-2 mt-2 items-center">
-                        {tech.map((t, i) => (
-                             <Link href={`/hire/by-technology/${t.slug}`} key={t.slug} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors">
-                                {t.name}
-                             </Link>
-                        ))}
-                    </div>
-                </div>
-            </div>
           </div>
+        )}
+
+
+        <div className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-center text-3xl font-bold">Our Evaluation Approach for {name}</h2>
+          <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
+              For roles in <strong>{name}</strong>, we understand that "good enough" is a recipe for disaster. Our <Link href="/research/axiom-cortex-scientific-report" className='text-primary hover:underline'>Axiom Cortex™ evaluation</Link> goes beyond simple coding tests to de-risk your hiring decision.
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-8 max-w-2xl mx-auto">
+              {evaluation.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 shrink-0 mt-1" />
+                      <span className='text-muted-foreground'>{point}</span>
+                  </li>
+              ))}
+          </ul>
+          <p className="mt-6 max-w-3xl mx-auto text-center text-muted-foreground">
+            This means you get a candidate who is not only technically proficient but is also a proven problem-solver, a strong collaborator, and ready to contribute from day one. You're not just hiring a resume; you're hiring a pre-validated, high-impact team member whose "mental shape" has been mapped to the specific demands of the role.
+          </p>
         </div>
-      )}
 
-
-      <div className="my-16 rounded-lg border bg-card p-8 shadow-lg">
-        <h2 className="text-center text-3xl font-bold">Our Evaluation Approach for {name}</h2>
-        <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
-             For roles in <strong>{name}</strong>, we understand that "good enough" is a recipe for disaster. Our <Link href="/research/axiom-cortex-scientific-report" className='text-primary hover:underline'>Axiom Cortex™ evaluation</Link> goes beyond simple coding tests to de-risk your hiring decision.
-        </p>
-         <ul className="space-y-4 mt-8 max-w-2xl mx-auto">
-            {evaluation.map((point, i) => (
-                <li key={i} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 shrink-0 mt-1" />
-                    <span className='text-muted-foreground'>{point}</span>
-                </li>
-            ))}
-        </ul>
-         <p className="mt-6 max-w-3xl mx-auto text-center text-muted-foreground">
-           This means you get a candidate who is not only technically proficient but is also a proven problem-solver, a strong collaborator, and ready to contribute from day one. You're not just hiring a resume; you're hiring a pre-validated, high-impact team member whose "mental shape" has been mapped to the specific demands of the role.
-        </p>
-      </div>
-
-      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-        <h2 className="text-2xl font-bold">Ready to Hire Elite {name} Talent?</h2>
-        <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-          Stop sifting through unqualified resumes. Let us provide you with a shortlist of 2-3 elite, pre-vetted candidates ready to make an impact.
-        </p>
-        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
-      </div>
-    </main>
+        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+          <h2 className="text-2xl font-bold">Ready to Hire Elite {name} Talent?</h2>
+          <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+            Stop sifting through unqualified resumes. Let us provide you with a shortlist of 2-3 elite, pre-vetted candidates ready to make an impact.
+          </p>
+          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
+        </div>
+      </main>
+    </>
   );
 }
 
