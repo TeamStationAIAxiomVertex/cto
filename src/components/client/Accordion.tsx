@@ -15,31 +15,6 @@ export type AccordionItemProps = {
   className?: string;
 };
 
-export function Accordion({ children, className }: AccordionProps) {
-  const [openItems, setOpenItems] = React.useState<number[]>([]);
-
-  const toggleItem = (index: number) => {
-    setOpenItems(prev => 
-      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
-    );
-  };
-
-  return (
-    <div className={className}>
-      {React.Children.map(children, (child, index) => {
-        if (React.isValidElement<AccordionItemProps>(child)) {
-          return React.cloneElement(child, {
-            // @ts-ignore
-            isOpen: openItems.includes(index),
-            toggle: () => toggleItem(index),
-          });
-        }
-        return child;
-      })}
-    </div>
-  );
-}
-
 // Internal AccordionItem that receives isOpen and toggle from Accordion
 type InternalAccordionItemProps = AccordionItemProps & {
   isOpen?: boolean;
@@ -60,7 +35,7 @@ export function AccordionItem({ title, children, className, isOpen, toggle, defa
         ? `${contentRef.current.scrollHeight}px`
         : "0px";
     }
-  }, [isEffectivelyOpen]);
+  }, [isEffectivelyOpen, children]); // Re-run if children change, in case scrollHeight needs update
 
   return (
     <div className={className}>
@@ -85,6 +60,35 @@ export function AccordionItem({ title, children, className, isOpen, toggle, defa
       >
         <div className="pb-4 pt-0">{children}</div>
       </div>
+    </div>
+  );
+}
+
+export function Accordion({ children, className }: AccordionProps) {
+  // Find defaultOpen items and set initial state
+  const initialOpenItems = React.Children.map(children, (child, index) => 
+    (React.isValidElement<AccordionItemProps>(child) && child.props.defaultOpen) ? index : null
+  )?.filter((i): i is number => i !== null) || [];
+  
+  const [openItems, setOpenItems] = React.useState<number[]>(initialOpenItems);
+
+  const toggleItem = (index: number) => {
+    setOpenItems(prev => 
+      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+    );
+  };
+
+  return (
+    <div className={className}>
+      {React.Children.map(children, (child, index) => {
+        if (React.isValidElement<InternalAccordionItemProps>(child)) {
+          return React.cloneElement(child, {
+            isOpen: openItems.includes(index),
+            toggle: () => toggleItem(index),
+          });
+        }
+        return child;
+      })}
     </div>
   );
 }

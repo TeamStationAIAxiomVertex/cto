@@ -1,4 +1,3 @@
-'use client';
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/client/ThemeToggle';
 import { MobileNav } from '@/components/client/MobileNav';
@@ -27,5 +26,3 @@ export function Header() {
     </header>
   );
 }
-
-    
