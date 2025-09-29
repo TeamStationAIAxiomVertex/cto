@@ -1,3 +1,7 @@
-'use client';
-export * from './ui/tooltip';
-export { default } from './ui/tooltip';
+// server component
+import { WithTooltip } from '@/components/client/tooltip';
+
+export * from '@/components/client/tooltip-primitives';
+export * from '@/components/client/tooltip';
+
+export default WithTooltip;
