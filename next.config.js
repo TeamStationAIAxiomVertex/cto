@@ -1,9 +1,37 @@
+/**
+ * One config, two worlds: works in both ESM ("type": "module") and CJS.
+ * Firebase App Hosting overrides can still patch this safely.
+ */
+
+// Detect if we're in CommonJS (module.exports available) or ESM
+const isCJS = typeof module !== 'undefined' && typeof module.exports !== 'undefined';
+
+// Bundle analyzer import shim
+let withBundleAnalyzer;
+// This is a simplified async IIFE to handle top-level await for ESM
+(async () => {
+  if (isCJS) {
+    try {
+      withBundleAnalyzer = require('@next/bundle-analyzer')({
+        enabled: process.env.ANALYZE === 'true',
+      });
+    } catch (e) {
+      withBundleAnalyzer = (config) => config;
+    }
+  } else {
+    try {
+      const bundleAnalyzer = await import('@next/bundle-analyzer');
+      withBundleAnalyzer = bundleAnalyzer.default({
+        enabled: process.env.ANALYZE === 'true',
+      });
+    } catch (e) {
+      withBundleAnalyzer = (config) => config;
+    }
+  }
+})();
+
+
 /** @type {import('next').NextConfig} */
-
-// BREAK-GLASS: set BREAK_GLASS=1 to ignore TS/ESLint errors during build.
-// Default is strict (no ignoring).
-const breakGlass = process.env.BREAK_GLASS === '1';
-
 const nextConfig = {
     output: "export",
     images: {
@@ -29,7 +57,7 @@ const nextConfig = {
     }
   },
   eslint: { ignoreDuringBuilds: true },
-  typescript: { ignoreBuildErrors: breakGlass ? true : false },
+  typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === '1' ? true : false },
   async redirects() {
     return [
       {
@@ -51,4 +79,12 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+
+if (isCJS) {
+  module.exports = withBundleAnalyzer ? withBundleAnalyzer(nextConfig) : nextConfig;
+} else {
+  // The export must be a function call that returns the config object
+  // due to the async nature of the import.
+  const finalConfig = withBundleAnalyzer ? withBundleAnalyzer(nextConfig) : nextConfig;
+  Object.assign(module, { default: finalConfig });
+}
