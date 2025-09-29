@@ -39,8 +39,13 @@ export const NAV: NavSections = {
   Comparisons: [
       { href: '/comparisons', label: 'All Comparisons', description: 'A comparative analysis of features, cost, and risk.' },
       { href: '/comparisons/bairesdev', label: 'vs. BairesDev', description: 'The Co-Pilot vs. The "Top 1%" Vendor.' },
-      { href: '/comparisons/globant', label: 'vs. Globant', description: 'The Co-Pilot vs. The Systems Integrator.' },
       { href: '/comparisons/toptal', label: 'vs. Toptal', description: 'Integrated Teams vs. Elite Freelancers.' },
+      { href: '/comparisons/andela', label: 'vs. Andela', description: 'Integrated LATAM model vs. a global talent marketplace.' },
+      { href: '/comparisons/revelo', label: 'vs. Revelo', description: 'Our platform vs. their marketplace + EOR model.' },
+      { href: '/comparisons/howdy', label: 'vs. Howdy', description: 'Integrated platform vs. EOR-plus-recruiter model.' },
+      { href: '/comparisons/nearsure', label: 'vs. Nearsure', description: 'Our platform vs. traditional staff augmentation.' },
+      { href: '/comparisons/terminal', label: 'vs. Terminal.io', description: 'Our platform vs. their EOR-plus-recruiter model.' },
+      { href: '/comparisons/globant', label: 'vs. Globant', description: 'The Co-Pilot vs. The Systems Integrator.' },
   ],
 };
 
