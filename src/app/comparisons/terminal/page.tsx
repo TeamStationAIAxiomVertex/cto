@@ -1,110 +1,198 @@
-import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
-import Link from 'next/link';
-import { WithTooltip } from '@/components/ui/tooltip';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-    title: 'Terminal.io Alternative: TeamStation AI',
-    description: 'Compare our integrated nearshore platform with Terminal\'s EOR-plus-recruiter model for building remote dev teams.',
+import Link from 'next/link';
+import type { Metadata } from 'next';
+import { GitCompare, UserCheck, ShieldCheck, Scale, FileSearch, HelpCircle } from 'lucide-react';
+import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
+
+const pageData = {
+  "type": "comparison",
+  "competitor": "Terminal",
+  "pageSEO": {
+    "title": "Terminal.io Alternative: TeamStation AI vs. Terminal",
+    "description": "Compare our integrated nearshore platform with Terminal's EOR-plus-recruiter model. See why a full-stack solution de-risks hiring.",
+    "canonical": "https://cto.teamstation.dev/comparisons/terminal"
+  },
+  "intro": "You need to hire remote talent and Terminal's promise to handle HR and payroll is a good start. But is that enough to de-risk your operation? This is a CTO's guide to the trade-offs between an EOR-plus-recruiter and TeamStation AI's fully integrated platform that includes scientific vetting, secure devices, and a single, accountable SLA.",
+  "h1": "TeamStation AI vs. Terminal.io",
+  "pspCards": [
+    {
+      "title": "Verdict Snapshot vs Terminal",
+      "icon": "visibility",
+      "body": {
+        "problem": "<strong>Problem.</strong> Terminal solves the 'HR problem'—hiring and payroll—which is valuable. But you are still left with the much harder, higher-risk 'CTO problems': device security, enterprise compliance, and ensuring the person you hired can actually solve complex problems.",
+        "stakes": "<strong>Stakes.</strong> This creates a false sense of security. You've solved payroll but inherited a massive, unmitigated security and operational risk. One unmanaged laptop can fail a SOC 2 audit. A mis-hire who passed a traditional interview can still derail your roadmap.",
+        "prescription": "<strong>Prescription.</strong> Demand a complete operational platform, not just a partial HR solution. An integrated platform like TeamStation AI provides an auditable trail for every step: scientific vetting reports from <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™</a>, device security attestations from our MDM, and a single, accountable SLA for the entire operation.",
+        "proof": "<strong>Proof.</strong> Our platform is your 'single pane of glass' for the entire nearshore operation. It replaces the fragmented responsibility of an EOR-plus-DIY-ops model with a single, auditable system designed for security and velocity.",
+        "recap": "<strong>Recap.</strong> Stop buying half a solution. Choose a platform that delivers a secure, compliant, and high-performing team, not just a new hire."
+      }
+    },
+    {
+      "title": "Vetting Model: Scientific Proof vs. Traditional Recruiting",
+      "icon": "hiring",
+      "body": {
+        "problem": "<strong>Problem.</strong> Terminal has a strong recruiting team, but they rely on traditional interview methods. This process is effective at sourcing candidates but is still susceptible to the same biases and false positives as any standard hiring funnel—it selects for good interviewers, not necessarily great problem-solvers.",
+        "stakes": "<strong>Stakes.</strong> The risk of a mis-hire remains high. You can still onboard an engineer who 'talks a good game' but lacks the deep architectural instinct or problem-solving agility to navigate complex challenges, leading to lost time, money, and team morale.",
+        "prescription": "<strong>Prescription.</strong> Move from subjective interviews to objective, scientific evidence. Our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> engine provides proof of an individual's cognitive abilities. We evaluate how they think, not just what they list on their resume. You get a candidate whose 'mental shape' is mapped to your specific needs.",
+        "proof": "<strong>Proof.</strong> Our methodology, detailed in our peer-reviewed research, reduces mis-hire risk by over 90%. We provide a complete <a href='/technical-interview-evaluation' class='text-primary hover:underline'>Evidence Locker</a> for every candidate, giving you a data-driven and auditable hiring decision.",
+        "recap": "<strong>Recap.</strong> Don't just hire faster; hire better. Demand scientific evidence of a candidate's cognitive ability to truly de-risk your most critical hires."
+      }
+    },
+    {
+      "title": "Operational Scope: EOR vs. Full-Stack Platform",
+      "icon": "compliance",
+      "body": {
+        "problem": "<strong>Problem.</strong> An EOR-plus-recruiter model's job is done once the contract is signed. You are left to figure out how to provide and secure laptops, manage device policies (MDM), and ensure your overall security posture meets enterprise standards.",
+        "stakes": "<strong>Stakes.</strong> This is the most common point of failure for remote teams. One unmanaged laptop can fail a SOC 2 audit. Without centralized device control, you have a massive security blind spot. You're not just a CTO; you're now a global IT and risk manager.",
+        "prescription": "<strong>Prescription.</strong> Outsource the entire operational stack to a single, accountable SLA. The TeamStation AI platform is a complete operational wrapper. Every engineer receives a corporate-owned, MDM-managed laptop before day one. We handle all EOR, compliance, security, and insurance. It's a secure, audit-ready team in a box.",
+        "proof": "<strong>Proof.</strong> Our <a href='/trust' class='text-primary hover:underline'>Trust Center</a> details our SOC 2-aligned controls. We provide auditable evidence of device compliance, access control, and HR processes, ensuring you are enterprise-ready from day one. We absorb the risk so you can focus on building product.",
+        "recap": "<strong>Recap.</strong> Don't just solve the payroll problem. Solve the entire operational and security problem with an integrated platform."
+      }
+    },
+    {
+      "title": "Ramp, TCO & When They’re a Fit",
+      "icon": "cost",
+      "body": {
+        "problem": "<strong>Problem.</strong> The Total Cost of Ownership (TCO) for an EOR-plus-recruiter model is more than just the vendor's fee. You must add the hidden costs of your own IT and security teams' time spent managing devices, compliance, and onboarding for your new hires.",
+        "stakes": "<strong>Stakes.</strong> These hidden costs can inflate your true TCO by 20-30% or more. The 'convenience' of outsourced HR is undermined by the high cost of DIY security and IT. It's an inefficient use of capital that erodes your budget and distracts your core team.",
+        "prescription": "<strong>Prescription.</strong> Use a comprehensive TCO model that accounts for all costs. Our all-inclusive rate provides a predictable, CFO-ready TCO. We engineer for a fast ramp, targeting a first PR in under 10 business days, which minimizes the 'Vacancy Tax' and maximizes your ROI.",
+        "proof": "<strong>Proof.</strong> Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> allows you to model these hidden costs. Terminal is a strong fit if you have a mature, global IT and security infrastructure and only need to solve talent sourcing and payroll. For most companies, an integrated platform that bundles these services offers a faster, safer, and more capital-efficient path to scale.",
+        "recap": "<strong>Recap.</strong> Choose Terminal if you have a robust internal operations team. Choose TeamStation AI if you want a single partner to handle the entire operational stack for you."
+      }
+    }
+  ],
+  "verdictRows": [
+    {"criterion":"Vetting Model","teamstation":"Cognition-first (Axiom Cortex™); evidence-based","competitor":"Traditional recruiting + interviews"},
+    {"criterion":"Operational Scope","teamstation":"Full-stack: EOR, Devices, MDM, Security, Insurance","competitor":"Recruiting + EOR/Payroll"},
+    {"criterion":"Devices & MDM","teamstation":"Corporate-owned, MDM-managed; included","competitor":"Client's responsibility"},
+    {"criterion":"Security & Compliance","teamstation":"SOC 2 aligned; audit-ready from Day 1","competitor":"EOR compliance only; security is client's responsibility"},
+    {"criterion":"Best For","teamstation":"Teams needing a complete, secure operational platform","competitor":"Teams with mature internal IT/security that only need sourcing & payroll"}
+  ],
+  "faq": [
+    {"q":"When is Terminal a better fit than TeamStation AI?","a":"If you have a mature internal IT and security infrastructure that can handle global device management and compliance, and your primary need is to source talent and process payroll in LATAM, Terminal's model can be very effective."},
+    {"q":"Does Terminal provide secure laptops for their developers?","a":"No. Device provisioning and security (MDM) are the client's responsibility. TeamStation AI provides a corporate-owned, MDM-managed laptop for every engineer as part of our core service."},
+    {"q":"How is your vetting process different from a recruiting service like Terminal's?","a":"Recruiting services focus on finding candidates who match keywords. Our <a href='/research/axiom-cortex-scientific-report'>Axiom Cortex™</a> engine goes deeper, providing a scientific measure of a candidate's cognitive abilities, like problem-solving and architectural instinct, to de-risk the hire at a more fundamental level."},
+    {"q":"What is the real difference in your operational models?","a":"Terminal solves the 'HR' part of the problem (hiring and payroll). TeamStation AI solves the entire operational stack—HR, IT, security, legal, and compliance—under a single, accountable SLA."},
+    {"q":"Can I use TeamStation AI just for sourcing and handle EOR myself?","a":"Our value is in the integrated platform. We deliver a complete, managed solution because a fragmented approach creates the exact risks (security gaps, compliance issues) that our platform is designed to eliminate."},
+    {"q":"How quickly can a new nearshore pod actually start shipping code?","a":"With environments ready on your side, we target a first PR within 10 business days. Our structured onboarding process ensures that engineers are not just hired, but are effectively integrated into your team and ready to contribute quickly."}
+  ]
 };
 
-const comparisonPoints = {
-    "Operations": {
-        pain: "Are you just solving payroll, or the entire operational stack?",
-        traditional: "Terminal is an <span class='border-b border-dashed'>EOR</span>-plus-recruiter. They handle hiring and payroll, but they do not provide secure devices, <span class='border-b border-dashed'>MDM</span>, or insurance, leaving critical security and governance gaps.",
-        teamstation: "We are a complete, software-defined operating model. Our integrated platform bundles all 'run-state' services—devices, MDM, offices, compliance, and insurance—under a single, predictable SLA.",
-        proof: "1 accountable SLA"
-    },
-    "Vetting": {
-        pain: "Is your vetting process based on science or just a series of interviews?",
-        traditional: "Terminal's recruiting service is effective at sourcing, but it relies on traditional interview methods that are susceptible to bias and don't measure deep cognitive abilities.",
-        teamstation: "Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> de-risks hiring through scientific, peer-reviewed validation of a candidate's problem-solving skills, not just their resume.",
-        proof: "Mismatch Rate ≤ 10%"
-    },
-    "Cost": {
-        pain: "Are you paying for a recruiter or an end-to-end platform?",
-        traditional: "An EOR-plus-recruiter model has significant hidden costs. You still need to budget for IT, security, and compliance management, increasing your <a href='/playbook/latam-economics' class='text-primary hover:underline'><span class='border-b border-dashed'>TCO</span></a>.",
-        teamstation: "Our transparent, <a href='/pricing' class='text-primary hover:underline'>all-inclusive pricing</a> provides a lower and more predictable TCO by bundling all services, eliminating the need for multiple vendors and hidden fees.",
-        proof: "40-60% Lower TCO"
-    }
-}
+const iconMap: { [key: string]: React.FC<any> } = {
+  visibility: FileSearch,
+  hiring: UserCheck,
+  compliance: ShieldCheck,
+  cost: Scale,
+};
 
+export async function generateMetadata(): Promise<Metadata> {
+  const { title, description, canonical } = pageData.pageSEO;
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
+  };
+}
 
 export default function TerminalComparisonPage() {
+  const { intro, pspCards, verdictRows, faq, h1 } = pageData;
+  const siteUrl = "https://cto.teamstation.dev";
+  const schema = {
+    breadcrumbs: {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Comparisons", "item": `${siteUrl}/comparisons` },
+        { "@type": "ListItem", "position": 2, "name": "Terminal Alternative", "item": `${siteUrl}/comparisons/terminal` }
+      ]
+    },
+    faq: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faq.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": { "@type": "Answer", "text": item.a.replace(/<[^>]*>?/gm, '') }
+      }))
+    }
+  };
+
   return (
-    <main className="container py-12">
-      <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Terminal</span>
-      </div>
-      <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TeamStation AI vs. Terminal</h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          An analysis of TeamStation AI’s integrated Nearshore IT Co-Pilot™ versus Terminal’s EOR-plus-recruiter model.
-        </p>
-         <div className="mt-4 text-sm">
-            <a href="https://www.terminal.io/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
-                Vendor home: terminal.io <ExternalLink className="h-4 w-4" />
-            </a>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.breadcrumbs) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.faq) }} />
+      <main className="container max-w-5xl py-12">
+        <div className="text-sm text-muted-foreground mb-8">
+          <Link href="/comparisons" className="hover:text-foreground">All Comparisons</Link> / <span>vs. Terminal</span>
         </div>
-      </header>
 
-      <div className="my-12">
-        <h2 className="text-3xl font-bold text-center">The Integrated Co-Pilot vs. The EOR-Plus-Recruiter</h2>
-        <div className="mt-8 grid gap-8 md:grid-cols-3">
-          {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
-              <p className="text-sm font-semibold text-primary">{value.pain}</p>
-              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
-              
-              <div className="mt-4 flex-grow space-y-4">
-                <div className="border-t border-border pt-4">
-                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
-                    <XCircle className="h-5 w-5 text-destructive" />
-                    Terminal Model
-                  </h4>
-                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
-                </div>
-                <div className="border-t border-border pt-4">
-                  <h4 className="font-semibold text-foreground flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    TeamStation AI Solution
-                  </h4>
-                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
-                </div>
-              </div>
-              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+        <header className="my-8 text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{h1}</h1>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: intro }}></p>
+        </header>
+
+        <section className="my-24">
+           <h2 className="text-3xl font-bold text-center">Verdict Snapshot</h2>
+           <div className="overflow-x-auto mt-6">
+                <table className="w-full min-w-[700px] text-sm text-left">
+                    <thead>
+                        <tr className="border-b-2 border-border">
+                            <th className="p-2 font-semibold">Criterion</th>
+                            <th className="p-2 font-semibold text-primary">TeamStation AI</th>
+                            <th className="p-2 font-semibold">Terminal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {verdictRows.map(row => (
+                            <tr key={row.criterion} className="border-b border-border/50">
+                                <td className="p-2 font-semibold text-foreground">{row.criterion}</td>
+                                <td className="p-2 text-primary">{row.teamstation}</td>
+                                <td className="p-2 text-muted-foreground">{row.competitor}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+           </div>
+        </section>
+
+        <section className="my-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {pspCards.map(card => {
+                    const Icon = iconMap[card.icon as keyof typeof iconMap] || HelpCircle;
+                    return (
+                        <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body as PSPBody} />
+                    );
+                })}
             </div>
-          ))}
-        </div>
-      </div>
+        </section>
 
-      <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
-        <h2 className="text-center">Analysis: The Integrated Co-Pilot vs. The EOR-Plus-Recruiter</h2>
-        <p>
-            <a href="https://terminal.io/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Terminal <ExternalLink className="h-4 w-4" /></a> builds remote engineering teams and can act as an <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, handling payroll and benefits. They offer a valuable service by removing many of the initial hurdles of hiring globally.
-        </p>
-        <p>
-           However, their model stops there, leaving critical operational and security gaps. They do not provide a productized cognitive AI for talent validation, nor do they bundle secure devices, <WithTooltip label="Mobile Device Management: software that secures, monitors, and manages devices like laptops."><span className="border-b border-dashed">MDM</span></WithTooltip>, or cyber insurance. This means the client must still assemble and manage multiple vendors to cover their operational and security needs, increasing Total Cost of Ownership (TCO) and risk.
-        </p>
-        <h3>The Governance & Validation Gap</h3>
-        <p>
-           TeamStation AI provides a complete, software-defined operating model. Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link> engine de-risks hiring through scientific validation, while our integrated platform bundles all necessary "run-state" services—devices, MDM, offices, compliance, and insurance—under a single, predictable SLA. This is the fundamental difference: Terminal is an EOR-plus-recruiter; TeamStation is a scientific nearshore platform that runs the whole loop from discovery to delivery.
-        </p>
-         <h3>Buyer's Checklist</h3>
-        <ul>
-            <li>Need scientific, model-based proof of talent capability beyond a resume? <strong>Choose TeamStation.</strong></li>
-            <li>Need only EOR services, using your own internal tech and security stack? <strong>Terminal may suffice.</strong></li>
-            <li>Need a fully-managed security posture with device fleets and controlled workspaces from day one? <strong>Choose TeamStation.</strong></li>
-        </ul>
-      </div>
+        <section className="my-24">
+            <h2 className="text-3xl font-bold text-center">Frequently Asked Questions</h2>
+            <div className="mt-8 max-w-3xl mx-auto space-y-4">
+                {faq.map((item, i) => (
+                    <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
+                        <h3 className="font-semibold text-primary">{item.q}</h3>
+                        <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
+                    </div>
+                ))}
+            </div>
+        </section>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-        <h2 className="text-2xl font-bold">Conclusion</h2>
-        <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
-            For companies that just need to solve hiring and payroll, Terminal is a capable partner. For CTOs who require an end-to-end, secure, and scientifically-validated platform for their entire nearshore operation, TeamStation AI offers a far more comprehensive and integrated solution.
-        </p>
-        <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
-      </div>
-    </main>
+        <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+            <h2 className="text-2xl font-bold text-foreground">Ready for a True Platform Solution?</h2>
+            <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+                Let's move beyond sourcing and payroll. In a 15-minute call, we can build a CFO-ready business case for a nearshore platform that delivers a complete, secure, and productive team.
+            </p>
+            <div className="mt-6 flex justify-center items-center gap-4">
+                <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" className="cta-button">
+                    Book a TCO Strategy Call
+                </Link>
+            </div>
+        </section>
+      </main>
+    </>
   );
 }
+
+    
