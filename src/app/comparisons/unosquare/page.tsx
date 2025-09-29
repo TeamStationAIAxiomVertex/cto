@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { GitCompare, UserCheck, ShieldCheck, Scale, FileSearch, HelpCircle } from 'lucide-react';
@@ -15,17 +14,6 @@ const pageData = {
   "intro": "You need skilled LATAM engineers, and Unosquare's staff augmentation services are on your radar. But is simply adding headcount enough to accelerate your roadmap? This is a CTO's guide to the trade-offs between a traditional services firm and an integrated platform that gives you full operational control.",
   "h1": "TeamStation vs Unosquare: What Actually Ships Faster?",
   "pspCards": [
-    {
-      "title": "Verdict Snapshot vs Unosquare",
-      "icon": "visibility",
-      "body": {
-        "problem": "<strong>Problem.</strong> Unosquare offers talent, but their model leaves you responsible for the entire operational ecosystem. You get an engineer, but you inherit the risk and administrative burden of compliance, device security, IT management, and insurance.",
-        "stakes": "<strong>Stakes.</strong> This creates massive 'hidden TCO' in the form of your own team's time spent filling operational gaps. A single unmanaged laptop or compliance oversight can fail an audit and put major enterprise deals at risk. You're not just buying talent; you're buying a second job as a global ops manager.",
-        "prescription": "<strong>Prescription.</strong> Demand a complete operational platform, not just a staffing service. An integrated platform like TeamStation AI provides a single, accountable SLA for the entire nearshore operation. We bundle talent sourcing, scientific vetting with <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™</a>, EOR, secure devices, and compliance into one predictable package.",
-        "proof": "<strong>Proof.</strong> Our platform provides a 'single pane of glass' for your entire operation. You see the auditable vetting data, the device compliance status, and the onboarding checklist in one place, replacing a fragmented, high-risk approach with a secure, unified system.",
-        "recap": "<strong>Recap.</strong> Stop buying half a solution. Choose a platform that delivers a secure, productive team, not just a new hire."
-      }
-    },
     {
       "title": "Vetting: Market-Wide Search vs. Bench-Based Staffing",
       "icon": "hiring",
@@ -46,6 +34,17 @@ const pageData = {
         "prescription": "<strong>Prescription.</strong> Choose a partner with a singular focus: empowering your team. Our platform is purpose-built for staff augmentation. We provide the elite talent and the complete operational wrapper, but you retain 100% control over your architecture, roadmap, and engineering culture. We empower your leadership, we don't seek to replace it.",
         "proof": "<strong>Proof.</strong> Our success is measured by your team's velocity and success, not by the size of our project scope. Our model is designed for seamless integration and knowledge transfer, not dependency. See how we've helped teams in our <a href='/case-studies'>case studies</a>.",
         "recap": "<strong>Recap.</strong> Don't risk a conflict of interest. Choose an integrated platform partner whose only goal is to make your team more successful."
+      }
+    },
+     {
+      "title": "Operational Scope: All-in-One vs. DIY",
+      "icon": "visibility",
+      "body": {
+        "problem": "<strong>Problem.</strong> Unosquare offers talent, but their model leaves you responsible for the entire operational ecosystem. You get an engineer, but you inherit the risk and administrative burden of compliance, device security, IT management, and insurance.",
+        "stakes": "<strong>Stakes.</strong> This creates massive 'hidden TCO' in the form of your own team's time spent filling operational gaps. A single unmanaged laptop or compliance oversight can fail an audit and put major enterprise deals at risk. You're not just buying talent; you're buying a second job as a global ops manager.",
+        "prescription": "<strong>Prescription.</strong> Demand a complete operational platform, not just a staffing service. An integrated platform like TeamStation AI provides a single, accountable SLA for the entire nearshore operation. We bundle talent sourcing, scientific vetting, EOR, secure devices, and compliance into one predictable package.",
+        "proof": "<strong>Proof.</strong> Our platform provides a 'single pane of glass' for your entire operation. You see the auditable vetting data, the device compliance status, and the onboarding checklist in one place, replacing a fragmented, high-risk approach with a secure, unified system.",
+        "recap": "<strong>Recap.</strong> Stop buying half a solution. Choose a platform that delivers a secure, productive team, not just a new hire."
       }
     },
     {
@@ -84,17 +83,6 @@ const iconMap: { [key: string]: React.FC<any> } = {
   compliance: ShieldCheck,
   cost: Scale,
 };
-
-export async function generateMetadata(): Promise<Metadata> {
-  const { title, description, canonical } = pageData.pageSEO;
-  return {
-    title,
-    description,
-    alternates: {
-      canonical,
-    },
-  };
-}
 
 export default function UnosquareComparisonPage() {
   const { intro, pspCards, verdictRows, faq, h1 } = pageData;
@@ -195,5 +183,3 @@ export default function UnosquareComparisonPage() {
     </>
   );
 }
-
-    
