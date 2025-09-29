@@ -1,7 +1,7 @@
 
 import { CheckCircle, XCircle, ExternalLink, GitCompare, UserCheck, ShieldCheck, Scale, HelpCircle, FileSearch } from 'lucide-react';
 import Link from 'next/link';
-import { WithTooltip } from '@/components/ui/tooltip';
+
 import type { Metadata } from 'next';
 import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
 
@@ -194,5 +194,3 @@ export default function ParallelStaffComparisonPage() {
     </>
   );
 }
-
-    

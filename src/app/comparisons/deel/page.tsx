@@ -1,6 +1,7 @@
+
 import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { WithTooltip } from '@/components/ui/tooltip';
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -100,7 +101,7 @@ export default function DeelComparisonPage() {
               <a href="https://www.deel.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Deel <ExternalLink className="h-4 w-4" /></a> is a world-class global payroll and compliance engine. They solve the critical problem of how to legally hire and pay people almost anywhere in the world. However, Deel is not a talent platform. They do not source, vet, or manage talent. You must bring your own candidates to their platform.
           </p>
           <p>
-             TeamStation AI, on the other hand, is an end-to-end talent and operations platform. Our primary function is to find, vet, and deliver elite LATAM engineering talent. Our platform then provides the entire operational wrapper—including <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>/payroll (which could even be powered by a platform like Deel), secure devices, and insurance—to run that team effectively.
+             TeamStation AI, on the other hand, is an end-to-end talent and operations platform. Our primary function is to find, vet, and deliver elite LATAM engineering talent. Our platform then provides the entire operational wrapper—including <span className="border-b border-dashed">EOR</span>/payroll (which could even be powered by a platform like Deel), secure devices, and insurance—to run that team effectively.
           </p>
           <h3>Two Sides of the Same Coin</h3>
           <ul>
