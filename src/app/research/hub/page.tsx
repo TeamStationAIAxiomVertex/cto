@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart, BookOpen, Star, Trophy } from 'lucide-react';
 import type { Metadata } from 'next';
-import nextDynamic from 'next/dynamic';
+import { default as dynamicComponent } from 'next/dynamic';
 
-const SpotifyIcon = nextDynamic(() => import('@/components/SpotifyIcon').then(mod => mod.default), { ssr: false });
+const SpotifyIcon = dynamicComponent(() => import('@/components/SpotifyIcon').then(mod => mod.default), { ssr: false });
 
 export const dynamic = 'force-static';
 
@@ -140,7 +140,7 @@ export default async function ResearchPage() {
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer.replace(/<a href/g, ' <a href').replace(/</a>/g, '</a> ')
+        "text": faq.answer.replace(/<a\s+href="([^"]+)"[^>]*>([^<]+)<\/a>/g, '$2 ($1)')
       }
     }))
   };
