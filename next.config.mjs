@@ -18,6 +18,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'picsum.photos',
       },
+       {
+        protocol: 'https',
+        hostname: 'teamstation.dev',
+      }
     ],
   },
   experimental: {
@@ -54,17 +58,4 @@ const nextConfig = {
   },
 };
 
-let finalConfig = withBundleAnalyzer(nextConfig);
-
-if (process.env.ANALYZE === 'true') {
-  console.log('Bundle analysis enabled. Importing analyzer...');
-  try {
-    const { default: bundleAnalyzer } = await import('@next/bundle-analyzer');
-    const withBundleAnalyzer = bundleAnalyzer({ enabled: true });
-    finalConfig = withBundleAnalyzer(nextConfig);
-  } catch (e) {
-    console.warn('[@next/bundle-analyzer] not installed, skipping analysis.');
-  }
-}
-
-export default finalConfig;
+export default withBundleAnalyzer(nextConfig);
