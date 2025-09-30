@@ -79,12 +79,6 @@ const nextConfig = {
   },
 };
 
+const finalConfig = withBundleAnalyzer ? withBundleAnalyzer(nextConfig) : nextConfig;
 
-if (isCJS) {
-  module.exports = withBundleAnalyzer ? withBundleAnalyzer(nextConfig) : nextConfig;
-} else {
-  // The export must be a function call that returns the config object
-  // due to the async nature of the import.
-  const finalConfig = withBundleAnalyzer ? withBundleAnalyzer(nextConfig) : nextConfig;
-  Object.assign(module, { default: finalConfig });
-}
+export default finalConfig;
