@@ -182,7 +182,7 @@ export default function PricingPage() {
 
        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Stop Burning Money. Start Building.</h2>
-        <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
+        <p className="mt-2 text-muted-foreground">
           Let's have a real conversation about your budget and your roadmap. In 15 minutes, we can give you a concrete, defensible plan.
         </p>
          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
