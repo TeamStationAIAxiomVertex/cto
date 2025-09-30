@@ -1,3 +1,4 @@
+
 /**
  * One config, two worlds: works in both ESM ("type": "module") and CJS.
  * Firebase App Hosting overrides can still patch this safely.
