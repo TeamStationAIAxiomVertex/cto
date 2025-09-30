@@ -199,15 +199,16 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }}
       />
       <div className="container mx-auto px-4">
-        <section className="py-16 md:py-24 text-center">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 md:py-24">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-center md:text-left">
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 Nearshore Software Development: The CTO Playbook
               </h1>
-              <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
+              <p className="mx-auto md:mx-0 mt-6 max-w-xl text-lg text-muted-foreground">
                 Legacy vendors sell hours. The CTO Playbook delivers science, daylight overlap, and outcomes you can measure.
               </p>
-              <p className="mx-auto mt-4 text-md font-semibold text-primary">
+              <p className="mx-auto md:mx-0 mt-4 text-md font-semibold text-primary">
                 Certainty in cost, continuity in delivery, predictability in outcomes — so CTOs ship faster and keep CFOs confident.
               </p>
               <div className="mt-10">
@@ -220,9 +221,10 @@ export default async function HomePage() {
                   Book a Strategy Call
                 </Link>
               </div>
-          </div>
-          <div className="max-w-md mx-auto w-full mt-12">
-            <HeroKpis items={heroKpis} />
+            </div>
+            <div className="max-w-md mx-auto w-full">
+                <HeroKpis items={heroKpis} />
+            </div>
           </div>
         </section>
 
