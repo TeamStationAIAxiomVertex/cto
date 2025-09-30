@@ -17,6 +17,7 @@
     "build:strict": "npm run typecheck && npm run lint && npm run build:production",
     "build:fast": "next build --no-lint",
     "export": "next build && next export",
+    "deploy": "bash scripts/deploy.sh",
     "seo:xray": "node scripts/seo-xray.mjs",
     "nuclear": "scripts/nuclear-review.sh"
   },
