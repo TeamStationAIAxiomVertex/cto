@@ -1,6 +1,5 @@
 
 import Link from 'next/link';
-import { BookOpen, CheckCircle, AlertTriangle, Users, Zap, Layers, Trophy } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { WithTooltip } from '@/components/client/tooltip';
 import type { Metadata } from 'next';
@@ -8,7 +7,15 @@ import SafeImage from '@/components/SafeImage';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 import HeroKpis, { type HeroKpi } from '@/components/metrics/HeroKpis';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
+const BookOpen = dynamic(() => import('lucide-react').then(m => m.BookOpen), { ssr: false });
+const CheckCircle = dynamic(() => import('lucide-react').then(m => m.CheckCircle), { ssr: false });
+const AlertTriangle = dynamic(() => import('lucide-react').then(m => m.AlertTriangle), { ssr: false });
+const Users = dynamic(() => import('lucide-react').then(m => m.Users), { ssr: false });
+const Zap = dynamic(() => import('lucide-react').then(m => m.Zap), { ssr: false });
+const Layers = dynamic(() => import('lucide-react').then(m => m.Layers), { ssr: false });
+const Trophy = dynamic(() => import('lucide-react').then(m => m.Trophy), { ssr: false });
 const BrainCircuit = dynamic(() => import('lucide-react').then(m => m.BrainCircuit), { ssr: false });
 const ShieldCheck = dynamic(() => import('lucide-react').then(m => m.ShieldCheck), { ssr: false });
 const Scale = dynamic(() => import('lucide-react').then(m => m.Scale), { ssr: false });
@@ -80,7 +87,7 @@ const trustNumbers = [
 
 const corePillars = [
     {
-        icon: <BrainCircuit className="h-8 w-8 text-primary"/>,
+        icon: <BrainCircuit className="h-8 w-8 text-primary" aria-label="Cognitive AI Icon"/>,
         pain: "Wasting months on bad hires?",
         title: "De-Risk Your Hiring with Cognitive AI",
         description: "Stop gambling on resumes. Our Axiom Cortex™ Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.",
@@ -89,7 +96,7 @@ const corePillars = [
         kpi: "Mismatch rate ≤ 10%"
     },
     {
-        icon: <ShieldCheck className="h-8 w-8 text-primary"/>,
+        icon: <ShieldCheck className="h-8 w-8 text-primary" aria-label="Security Shield Icon"/>,
         pain: "Drowning in vendor management?",
         title: "Eliminate Vendor Chaos with One SLA",
         description: "Stop juggling 5+ vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
@@ -98,7 +105,7 @@ const corePillars = [
         kpi: "1 contract, 1 invoice"
     },
     {
-        icon: <Scale className="h-8 w-8 text-primary"/>,
+        icon: <Scale className="h-8 w-8 text-primary" aria-label="Scale Icon"/>,
         pain: "Struggling to justify your budget?",
         title: "Get a CFO-Ready TCO Model",
         description: "We provide a predictable, all-inclusive Total Cost of Ownership (TCO) that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.",
@@ -211,6 +218,7 @@ export default async function HomePage() {
       <div className="container mx-auto px-4">
         <section className="py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left: Hero Text */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left w-full">
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 Nearshore Software Development: The CTO Playbook
@@ -226,12 +234,14 @@ export default async function HomePage() {
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cta-button"
+                  className="cta-button px-6 py-3"
                 >
                   Book a Strategy Call
                 </Link>
               </div>
             </div>
+
+            {/* Right: Hero KPIs */}
             <div className="w-full flex justify-center md:justify-end">
               <HeroKpis items={heroKpis} />
             </div>
@@ -376,12 +386,14 @@ export default async function HomePage() {
               {caseStudies && caseStudies.map(study => (
               <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
                   <div className="relative h-40 w-full mb-4 rounded-lg overflow-hidden border">
-                       <SafeImage 
-                          src={study.ogImage?.src?.url}
+                       <Image 
+                          src={study.ogImage?.src?.url || placeholderImages.heroTeam.src.url}
                           alt={study.clientName ? `Hero image for ${study.clientName} case study` : 'Case study image'}
                           fill
                           className="object-cover"
                           data-ai-hint={study.ogImage?.aiHint}
+                          priority={study.slug === 'atticus'}
+                          loading={study.slug === 'atticus' ? undefined : 'lazy'}
                       />
                   </div>
                   <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{study.clientName}</h3>

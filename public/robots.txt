@@ -1,3 +1,7 @@
+
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /privacy-policy
+Disallow: /terms-of-service
+
 Sitemap: https://cto.teamstation.dev/sitemap.xml

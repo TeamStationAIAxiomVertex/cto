@@ -1,55 +1,28 @@
-import bundleAnalyzer from '@next/bundle-analyzer';
 
 /** @type {import('next').NextConfig} */
-const withBundleAnalyzer = bundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
-});
-
 const nextConfig = {
-  output: 'standalone', // works for Firebase/Cloud Run
-  images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-      },
-    ],
-  },
+  reactStrictMode: true,
+  swcMinify: true,
   experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['lucide-react'],
+    optimizePackageImports: ["lucide-react"],
   },
-  modularizeImports: {
-    'lucide-react': { transform: 'lucide-react/icons/{{member}}' },
-  },
-  eslint: { ignoreDuringBuilds: true },
-  typescript: {
-    ignoreBuildErrors: process.env.BREAK_GLASS === '1',
-  },
-  async redirects() {
+  async headers() {
     return [
       {
-        source: '/cto-playbook',
-        destination: '/playbook/hub',
-        permanent: true,
-      },
-      {
-        source: '/playbook',
-        destination: '/playbook/hub',
-        permanent: true,
-      },
-      {
-        source: '/research',
-        destination: '/research/hub',
-        permanent: true,
+        source: "/:path*",
+        headers: [
+          {
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin",
+          },
+          {
+            key: "Cross-Origin-Embedder-Policy",
+            value: "require-corp",
+          },
+        ],
       },
     ];
   },
 };
 
-export default withBundleAnalyzer(nextConfig);
+export default nextConfig;
