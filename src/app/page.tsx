@@ -148,7 +148,7 @@ export default async function HomePage() {
                 Nearshore Software Development: The CTO Playbook
               </h1>
               <p className="mx-auto md:mx-0 mt-6 max-w-3xl text-lg text-muted-foreground">
-                You have a critical, high-stakes role to fill, and a mis-hire could cost you months. Our integrated platform doesn't just find candidates—it provides scientific evidence of their ability to solve your specific problems, so you can build with confidence.
+                Legacy vendors sell hours. The CTO Playbook delivers science, daylight overlap, and outcomes you can measure.
               </p>
               <div className="mt-10">
                 <Link
