@@ -201,8 +201,8 @@ export default async function HomePage() {
       <div className="container mx-auto px-4">
         <section className="py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col justify-center items-center text-center md:items-start md:text-left">
-              <div className="max-w-xl">
+            <div className="flex justify-center md:justify-start">
+              <div className="max-w-xl text-center md:text-left">
                   <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                     Nearshore Software Development: The CTO Playbook
                   </h1>
@@ -212,7 +212,7 @@ export default async function HomePage() {
                   <p className="mt-4 text-md font-semibold text-primary">
                     Certainty in cost, continuity in delivery, predictability in outcomes — so CTOs ship faster and keep CFOs confident.
                   </p>
-                  <div className="mt-10">
+                  <div className="mt-10 flex justify-center md:justify-start">
                     <Link
                       href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
                       target="_blank"
