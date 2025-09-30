@@ -201,7 +201,7 @@ export default async function HomePage() {
       <div className="container mx-auto px-4">
         <section className="py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col justify-center items-center text-center md:items-start md:text-left">
               <div className="max-w-xl">
                   <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                     Nearshore Software Development: The CTO Playbook
