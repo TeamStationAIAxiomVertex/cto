@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { ArrowRight, BarChart, DollarSign, Globe, Scale, ShieldCheck, Zap, BrainCircuit, Users } from 'lucide-react';
 import type { Metadata } from 'next';
