@@ -1,4 +1,3 @@
-
 https://cto.teamstation.dev/
 https://cto.teamstation.dev/about
 https://cto.teamstation.dev/case-studies
@@ -267,3 +266,5 @@ https://cto.teamstation.dev/services/talent-onboarding
 https://cto.teamstation.dev/sitemap
 https://cto.teamstation.dev/technical-interview-evaluation
 https://cto.teamstation.dev/trust
+https://cto.teamstation.dev/privacy-policy
+https://cto.teamstation.dev/terms-of-service
