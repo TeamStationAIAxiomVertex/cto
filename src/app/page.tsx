@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component, Trophy } from 'lucide-react';
+import { BookOpen, CheckCircle, AlertTriangle, Users, Zap, Layers, Trophy } from 'lucide-react';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { WithTooltip } from '@/components/client/tooltip';
 import type { Metadata } from 'next';
@@ -9,7 +9,17 @@ import placeholderImages from '@/app/lib/placeholder-images.json';
 import HeroKpis, { type HeroKpi } from '@/components/metrics/HeroKpis';
 import dynamic from 'next/dynamic';
 
-const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon ?? mod.default), { ssr: false });
+const BrainCircuit = dynamic(() => import('lucide-react').then(m => m.BrainCircuit), { ssr: false });
+const ShieldCheck = dynamic(() => import('lucide-react').then(m => m.ShieldCheck), { ssr: false });
+const Scale = dynamic(() => import('lucide-react').then(m => m.Scale), { ssr: false });
+const ArrowRight = dynamic(() => import('lucide-react').then(m => m.ArrowRight), { ssr: false });
+const GitCompare = dynamic(() => import('lucide-react').then(m => m.GitCompare), { ssr: false });
+const FileText = dynamic(() => import('lucide-react').then(m => m.FileText), { ssr: false });
+const Component = dynamic(() => import('lucide-react').then(m => m.Component), { ssr: false });
+const Star = dynamic(() => import('lucide-react').then(m => m.Star), { ssr: false });
+const Beaker = dynamic(() => import('lucide-react').then(m => m.Beaker), { ssr: false });
+const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.default), { ssr: false });
+
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cto.teamstation.dev'),
@@ -200,32 +210,32 @@ export default async function HomePage() {
       />
       <div className="container mx-auto px-4">
         <section className="py-16 md:py-24">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="max-w-xl text-center md:text-left">
-                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                  Nearshore Software Development: The CTO Playbook
-                </h1>
-                <p className="mt-6 text-lg text-muted-foreground">
-                  Legacy vendors sell hours. The CTO Playbook delivers science, daylight overlap, and outcomes you can measure.
-                </p>
-                <p className="mt-4 text-md font-semibold text-primary">
-                  Certainty in cost, continuity in delivery, predictability in outcomes — so CTOs ship faster and keep CFOs confident.
-                </p>
-                <div className="mt-10 flex justify-center md:justify-start">
-                  <Link
-                    href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cta-button"
-                  >
-                    Book a Strategy Call
-                  </Link>
-                </div>
+           <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="w-full text-center md:text-left">
+                  <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+                    Nearshore Software Development: The CTO Playbook
+                  </h1>
+                  <p className="mt-6 text-lg text-muted-foreground">
+                    Legacy vendors sell hours. The CTO Playbook delivers science, daylight overlap, and outcomes you can measure.
+                  </p>
+                  <p className="mt-4 text-md font-semibold text-primary">
+                    Certainty in cost, continuity in delivery, predictability in outcomes — so CTOs ship faster and keep CFOs confident.
+                  </p>
+                  <div className="mt-10 flex justify-center md:justify-start">
+                    <Link
+                      href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cta-button"
+                    >
+                      Book a Strategy Call
+                    </Link>
+                  </div>
+              </div>
+              <div className="w-full">
+                  <HeroKpis items={heroKpis} />
+              </div>
             </div>
-            <div className="max-w-md mx-auto w-full">
-                <HeroKpis items={heroKpis} />
-            </div>
-          </div>
         </section>
 
         <section id="trust-by-numbers" className="py-12">
