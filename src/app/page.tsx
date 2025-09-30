@@ -150,6 +150,9 @@ export default async function HomePage() {
               <p className="mx-auto md:mx-0 mt-6 max-w-3xl text-lg text-muted-foreground">
                 Legacy vendors sell hours. The CTO Playbook delivers science, daylight overlap, and outcomes you can measure.
               </p>
+              <p className="mx-auto md:mx-0 mt-4 text-md font-semibold text-primary">
+                Certainty in cost, continuity in delivery, predictability in outcomes — so CTOs ship faster and keep CFOs confident.
+              </p>
               <div className="mt-10">
                 <Link
                   href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
