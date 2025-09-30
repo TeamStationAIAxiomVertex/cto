@@ -67,6 +67,7 @@ https://cto.teamstation.dev/hire/by-country/colombia/vue
 https://cto.teamstation.dev/hire/by-country/costa-rica
 https://cto.teamstation.dev/hire/by-country/costa-rica/angular
 https://cto.teamstation.dev/hire/by-country/costa-rica/go
+https://cto.teamstation.dev/hire/by-country/costa-rica/guatemala
 https://cto.teamstation.dev/hire/by-country/costa-rica/java
 https://cto.teamstation.dev/hire/by-country/costa-rica/net
 https://cto.teamstation.dev/hire/by-country/costa-rica/nextjs
@@ -261,6 +262,7 @@ https://cto.teamstation.dev/research/axiom-cortex-scientific-report
 https://cto.teamstation.dev/research/hub
 https://cto.teamstation.dev/research/performance-evaluation-framework
 https://cto.teamstation.dev/research/performance-evaluation-report-example
+https://cto.teamstation.dev/research/technical-talent-evaluation-system
 https://cto.teamstation.dev/services/integrated-services
 https://cto.teamstation.dev/services/talent-onboarding
 https://cto.teamstation.dev/sitemap
