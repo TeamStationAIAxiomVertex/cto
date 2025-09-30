@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit",
     "build:strict": "npm run typecheck && npm run lint && npm run build:production",
     "build:fast": "next build --no-lint",
-    "export": "next build",
+    "export": "next build && next export",
     "seo:xray": "node scripts/seo-xray.mjs",
     "nuclear": "scripts/nuclear-review.sh"
   },
