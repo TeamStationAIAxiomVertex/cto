@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
-const config = require('./next.config.mjs');
-
-module.exports = config;
+// next.config.js
+import config from './next.config.mjs';
+export default config;

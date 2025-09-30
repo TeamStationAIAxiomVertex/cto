@@ -8,17 +8,18 @@
   },
   "packageManager": "npm@10",
   "scripts": {
-    "dev": "next start --port 9002 --hostname 0.0.0.0",
-    "build": "next build",
-    "start": "next start --port 9002 --hostname 0.0.0.0",
+    "dev": "next dev --port 9002 --hostname 0.0.0.0",
+    "build": "NODE_OPTIONS='--loader tsx' next build -c ./next.config.mjs",
+    "start": "next start --port 9002 --hostname 0.0.0.0 -c ./next.config.mjs",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "build:production": "npm run typecheck && next build",
+    "build:production": "npm run typecheck && next build -c ./next.config.mjs",
     "build:strict": "npm run typecheck && npm run lint && npm run build:production",
-    "build:fast": "next build --no-lint",
-    "export": "next build",
+    "build:fast": "next build -c ./next.config.mjs --no-lint",
+    "export": "next build -c ./next.config.mjs",
     "seo:xray": "node scripts/seo-xray.mjs",
-    "nuclear": "scripts/nuclear-review.sh"
+    "nuclear": "scripts/nuclear-review.sh",
+    "firebase:deploy": "npm run build && firebase deploy --only hosting,apphosting"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.7",

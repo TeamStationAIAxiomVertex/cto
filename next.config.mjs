@@ -1,4 +1,3 @@
-
 import bundleAnalyzer from '@next/bundle-analyzer';
 
 /** @type {import('next').NextConfig} */
@@ -7,6 +6,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const nextConfig = {
+  output: 'standalone', // works for Firebase/Cloud Run
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -25,9 +25,7 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react'],
   },
   modularizeImports: {
-    'lucide-react': {
-      transform: 'lucide-react/icons/{{member}}',
-    },
+    'lucide-react': { transform: 'lucide-react/icons/{{member}}' },
   },
   eslint: { ignoreDuringBuilds: true },
   typescript: {
