@@ -1,3 +1,2 @@
-// This file is a stub to ensure compatibility with Firebase App Hosting build overrides.
-// The main configuration now lives in next.config.mjs.
-export { default } from './next.config.mjs';
+
+throw new Error("❌ next.config.js should never be loaded directly. Use next.config.mjs.");
