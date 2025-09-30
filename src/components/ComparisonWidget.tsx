@@ -59,8 +59,6 @@ type Row = {
   data: Cell[];
 };
 
-const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
-
 const columns = [
   'Build-In (In-House)',
   'Onshore (US)',
@@ -69,7 +67,9 @@ const columns = [
   'Nearshore IT Co-Pilot (New Gen)',
 ];
 
-export function ComparisonWidget() {
+const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
+
+export default function ComparisonWidget() {
   const [basisHours, setBasisHours] = useState(173);
   const [offshoreOverhead, setOffshoreOverhead] = useState(0.25);
   const [nearshoreLegacyOverhead, setNearshoreLegacyOverhead] = useState(0.10);
@@ -242,7 +242,7 @@ export function ComparisonWidget() {
         We count the hidden taxes—PR latency, vacancy days, failed-change costs, and management overhead—not just the sticker. The Nearshore IT Co-Pilot wins because it removes lag and makes outcomes observable.
       </p>
 
-      <div className="mt-6 flex flex-wrap justify-start items-center gap-4 rounded-lg bg-background p-4 border text-sm">
+      <div className="mt-6 flex flex-wrap justify-center items-center gap-x-6 gap-y-4 rounded-lg bg-background p-4 border text-sm">
         <div className="flex items-center gap-2">
           <label htmlFor={`${baseId}-basis-hours`} className="font-medium text-muted-foreground">
             Basis Hours:
@@ -333,7 +333,7 @@ export function ComparisonWidget() {
       </div>
 
       <div className="mt-4 overflow-x-auto">
-        <table className="w-full min-w-[1200px] text-sm text-left border-collapse">
+        <table className="w-full text-sm text-left border-collapse">
           <caption className="sr-only">
             Comparison of different software development engagement models.
           </caption>
@@ -341,7 +341,7 @@ export function ComparisonWidget() {
             <tr>
               <th
                 scope="col"
-                className="p-3 border-b-2 border-border font-semibold text-foreground sticky left-0 bg-card w-[200px] z-10"
+                className="p-3 border-b-2 border-border font-semibold text-foreground sticky left-0 bg-card w-1/6 z-10"
               >
                 Metric
               </th>
@@ -349,7 +349,7 @@ export function ComparisonWidget() {
                 <th
                   key={col}
                   scope="col"
-                  className={`p-3 border-b-2 border-border font-semibold text-center ${
+                  className={`p-3 border-b-2 border-border font-semibold text-center w-[16.66%] ${
                     col.includes('Co-Pilot') ? 'text-primary' : 'text-foreground'
                   }`}
                 >
@@ -368,7 +368,7 @@ export function ComparisonWidget() {
               <tr key={row.label} className="hover:bg-background/50">
                 <th
                   scope="row"
-                  className="p-3 font-medium text-muted-foreground sticky left-0 bg-card w-[200px] z-10"
+                  className="p-3 font-medium text-muted-foreground sticky left-0 bg-card w-1/6 z-10"
                 >
                   <WithTooltip label={row.description}>
                     <span className="border-b border-dashed cursor-help">{row.label}</span>
@@ -377,7 +377,7 @@ export function ComparisonWidget() {
                 {row.data.map((cell, cellIndex) => (
                   <td
                     key={`${row.label}:${columns[cellIndex]}`}
-                    className={`p-3 text-center font-mono ${
+                    className={`p-3 text-center font-mono w-[16.66%] ${
                       cellIndex === 4 ? 'text-primary font-bold' : 'text-foreground'
                     }`}
                   >
@@ -392,4 +392,3 @@ export function ComparisonWidget() {
     </section>
   );
 }
-
