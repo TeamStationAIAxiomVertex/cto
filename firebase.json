@@ -9,7 +9,10 @@
     "targets": {
       "web": {
         "buildCommand": "npm run build",
-        "runCommand": "npm run start"
+        "runCommand": "npm run start",
+        "env": {
+          "NODE_ENV": "production"
+        }
       }
     }
   }
