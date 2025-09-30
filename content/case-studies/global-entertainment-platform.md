@@ -66,7 +66,7 @@ Engagement model: Dedicated squad with elastic bench capacity and SLAs for cover
 
 ## Security & Compliance
 
--   Encryption & access: End‑to-end encryption, MFA/SSO, role‑based access controls, and quarterly access reviews.
+-   Encryption & access: End‑to‑end encryption, MFA/SSO, role‑based access controls, and quarterly access reviews.
 -   Certifications & testing: Alignment with SOC 2 and ISO 27001 practices; regular internal and third‑party penetration testing.
 -   Device governance: Corporate‑owned, MDM‑enforced devices with patch compliance and remote wipe.
 -   Insurance: Cybersecurity insurance covering client workstreams and device operations.
