@@ -10,23 +10,29 @@ const isCJS = typeof module !== 'undefined' && typeof module.exports !== 'undefi
 let withBundleAnalyzer;
 // This is a simplified async IIFE to handle top-level await for ESM
 (async () => {
-  if (isCJS) {
-    try {
-      withBundleAnalyzer = require('@next/bundle-analyzer')({
-        enabled: process.env.ANALYZE === 'true',
-      });
-    } catch (e) {
-      withBundleAnalyzer = (config) => config;
+  if (process.env.ANALYZE === 'true') {
+    if (isCJS) {
+      try {
+        withBundleAnalyzer = require('@next/bundle-analyzer')({
+          enabled: true,
+        });
+      } catch (e) {
+        // Silently fail if not present
+        withBundleAnalyzer = (config) => config;
+      }
+    } else {
+      try {
+        const bundleAnalyzer = await import('@next/bundle-analyzer');
+        withBundleAnalyzer = bundleAnalyzer.default({
+          enabled: true,
+        });
+      } catch (e) {
+        // Silently fail if not present
+        withBundleAnalyzer = (config) => config;
+      }
     }
   } else {
-    try {
-      const bundleAnalyzer = await import('@next/bundle-analyzer');
-      withBundleAnalyzer = bundleAnalyzer.default({
-        enabled: process.env.ANALYZE === 'true',
-      });
-    } catch (e) {
-      withBundleAnalyzer = (config) => config;
-    }
+    withBundleAnalyzer = (config) => config;
   }
 })();
 
