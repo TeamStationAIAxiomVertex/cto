@@ -1,5 +1,4 @@
 
-// next.config.mjs
 import bundleAnalyzer from '@next/bundle-analyzer';
 
 /** @type {import('next').NextConfig} */
@@ -8,18 +7,11 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const nextConfig = {
-  output: 'export',
   images: {
     unoptimized: true,
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-      },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
+      { protocol: 'https', hostname: 'picsum.photos' },
     ],
   },
   experimental: {
@@ -27,9 +19,7 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react'],
   },
   modularizeImports: {
-    'lucide-react': {
-      transform: 'lucide-react/icons/{{member}}',
-    },
+    'lucide-react': { transform: 'lucide-react/icons/{{member}}' },
   },
   eslint: { ignoreDuringBuilds: true },
   typescript: {

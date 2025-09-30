@@ -10,15 +10,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:production": "npm run typecheck && next build",
-    "start": "next start",
-    "lint": "next lint",
-    "typecheck": "tsc --noEmit",
-    "build:strict": "npm run typecheck && npm run lint && npm run build:production",
-    "build:fast": "next build --no-lint",
-    "export": "next build",
-    "seo:xray": "node scripts/seo-xray.mjs",
-    "nuclear": "scripts/nuclear-review.sh"
+    "start": "next start --port 9002 --hostname 0.0.0.0"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.7",
