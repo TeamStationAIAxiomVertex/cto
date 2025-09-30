@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Building, Code, User, ArrowRight, Shapes } from 'lucide-react';
 import type { Metadata } from 'next';

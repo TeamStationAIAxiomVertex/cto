@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { CheckCircle, Trophy, Star, BookOpen, Beaker, GitCommit, Search, Users, BrainCircuit, FileCheck, Laptop, Gauge, ShieldCheck, FileText, Building, Scale, ArrowRight } from "lucide-react";
 import type { Metadata } from 'next';
@@ -43,7 +44,7 @@ const includedServices = [
         icon: <Gauge className="h-8 w-8 text-primary"/>,
         pain: 'New hires taking weeks to ship code?',
         title: 'Onboarding Automation',
-        description: 'Pre-boarding checklists, access requests, first ticket, and a 30-60-90 plan are auto-tracked to Day-1 readiness with status and alerts.',
+        description: 'Pre-boarding checklists, access requests, first ticket, and a 30-60-90 day plan are auto-tracked to Day-1 readiness with status and alerts.',
         kpi: 'Day-1 readiness ≥95%'
     },
     {
@@ -189,5 +190,3 @@ export default function PlatformPage() {
     </main>
   );
 }
-
-    
