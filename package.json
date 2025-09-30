@@ -38,6 +38,7 @@
     "tailwindcss-animate": "^1.0.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.3",
     "@lhci/cli": "^0.13.0",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20",
