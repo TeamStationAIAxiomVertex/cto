@@ -22,7 +22,6 @@ const Scale = dynamic(() => import('lucide-react').then(m => m.Scale), { ssr: fa
 const ArrowRight = dynamic(() => import('lucide-react').then(m => m.ArrowRight), { ssr: false });
 const GitCompare = dynamic(() => import('lucide-react').then(m => m.GitCompare), { ssr: false });
 const FileText = dynamic(() => import('lucide-react').then(m => m.FileText), { ssr: false });
-const Component = dynamic(() => import('lucide-react').then(m => m.Component), { ssr: false });
 const Star = dynamic(() => import('lucide-react').then(m => m.Star), { ssr: false });
 const Beaker = dynamic(() => import('lucide-react').then(m => m.Beaker), { ssr: false });
 const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.default), { ssr: false });
@@ -218,6 +217,8 @@ export default async function HomePage() {
       <div className="container mx-auto px-4">
         <section className="py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            
+            {/* Left: Hero Text */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 Nearshore Software Development: The CTO Playbook
@@ -239,8 +240,10 @@ export default async function HomePage() {
                 </Link>
               </div>
             </div>
+
+            {/* Right: Hero KPIs */}
             <div className="w-full flex justify-center md:justify-end">
-                <HeroKpis items={heroKpis} />
+              <HeroKpis items={heroKpis} />
             </div>
           </div>
         </section>

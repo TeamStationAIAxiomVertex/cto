@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: placeholderImages.metaCard.src.url,
-        width: placeholderImages.metaCard.src.width,
-        height: placeholderImages.metaCard.src.height,
+        width: 1200,
+        height: 630,
         alt: placeholderImages.metaCard.alt,
       },
     ],
@@ -58,6 +58,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="theme-color" content="#3F83F8" />
       </head>
       <body className={`${poppins.variable} font-sans bg-background text-foreground`}>
         <AppProviders>
