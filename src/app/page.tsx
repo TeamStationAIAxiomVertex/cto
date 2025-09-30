@@ -42,7 +42,7 @@ const corePillars = [
         description: "Stop gambling on resumes. Our Axiom Cortex™ Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.",
         href: "/playbook/bias-free-technical-hiring-axiom-cortex",
         linkLabel: "Learn About Our Vetting",
-        kpi: "Mismatch rate ≤10%"
+        kpi: "Mismatch rate ≤ 10%"
     },
     {
         icon: <ShieldCheck className="h-8 w-8 text-primary"/>,
@@ -145,10 +145,10 @@ export default async function HomePage() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="text-center md:text-left">
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                The CTO's Guide to Nearshore Excellence
+                Stop Gambling on Talent.
               </h1>
               <p className="mx-auto md:mx-0 mt-6 max-w-3xl text-lg text-muted-foreground">
-                The vendor era is over. Command an evidence-driven, daylight, secure stack you control—without the lag, fog, or hidden taxes.
+                You have a critical, high-stakes role to fill, and a mis-hire could cost you months. Our integrated platform doesn't just find candidates—it provides scientific evidence of their ability to solve your specific problems, so you can build with confidence.
               </p>
               <div className="mt-10">
                 <Link
