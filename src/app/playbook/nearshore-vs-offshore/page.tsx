@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { WithTooltip } from '@/components/ui/tooltip';
-import { Clock, Users, FileSearch, Building, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, BookOpen, BrainCircuit, GitCompare, CheckCircle } from 'lucide-react';
+import { Clock, Users, FileSearch, Building, Zap, ArrowRight, AlertTriangle, BookOpen, BrainCircuit, GitCompare, CheckCircle } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
-const ComparisonWidget = dynamic(() => import('@/components/ComparisonWidget').then(mod => mod.ComparisonWidget), {
+const ComparisonWidget = dynamic(() => import('@/components/ComparisonWidget').then(mod => mod.default), {
   ssr: false,
   loading: () => (
     <div className="text-center p-8 text-sm text-muted-foreground" aria-busy="true">
@@ -188,3 +188,5 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
+
+    
