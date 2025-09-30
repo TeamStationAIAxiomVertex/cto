@@ -1,3 +1,4 @@
+
 'use client';
 import 'client-only';
 
@@ -5,11 +6,14 @@ import { useState, useMemo, type ReactNode, useId } from 'react';
 import { WithTooltip } from '@/components/ui/tooltip';
 
 const inputs = {
+  // Base cost inputs
   buildIn: { salaryAnnual: 180000, burdenPct: 0.30 },
   onshore: { hourlyLow: 120, hourlyHigh: 150 },
   offshoreLegacy: { hourlyLow: 45, hourlyHigh: 65 },
   nearshoreLegacy: { hourlyLow: 45, hourlyHigh: 65 },
   nearshoreCoPilot: { hourlyMin: 40, hourlyCap: 47, includes: ['EOR', 'Devices/MDM', 'SSO/SAML/SCIM', 'Compliance'] },
+
+  // Operational & multiplier inputs
   ops: {
     prsPerMonth: 120,
     devHourBlended: 85,
@@ -27,13 +31,14 @@ const inputs = {
       onshore: { EM: 18, PM: 12 },
       offshoreLegacy: { EM: 30, PM: 20 },
       nearshoreLegacy: { EM: 18, PM: 12 },
-      nearshoreCoPilot: { EM: 0, PM: 0 },
+      nearshoreCoPilot: { EM: 0, PM: 0 }, // Co-pilot model aims to eliminate this overhead
     },
     mgmtRatesUSD: { EM: 120, PM: 95 },
     auditHoursSavedPerYear: { buildIn: 80, onshore: 80, offshoreLegacy: 20, nearshoreLegacy: 120, nearshoreCoPilot: 250 },
     complianceHourRateUSD: 110,
   },
 } as const;
+
 
 type Cell = ReactNode;
 
@@ -45,6 +50,7 @@ type Results = {
   cfrLoss: string[];
   mgmtOverhead: string[];
   complianceSavings: string[];
+  totalMonthlyCost: string[];
 };
 
 type Row = {
@@ -60,12 +66,10 @@ export function ComparisonWidget() {
   const [offshoreOverhead, setOffshoreOverhead] = useState(0.25);
   const [nearshoreLegacyOverhead, setNearshoreLegacyOverhead] = useState(0.10);
   const [onshoreOverhead, setOnshoreOverhead] = useState(0.20);
+  const [devHourBlended, setDevHourBlended] = useState(inputs.ops.devHourBlended);
+
 
   const baseId = useId();
-  const basisHoursId = `${baseId}-basis-hours`;
-  const onshoreOverheadId = `${baseId}-onshore-overhead`;
-  const offshoreOverheadId = `${baseId}-offshore-overhead`;
-  const legacyOverheadId = `${baseId}-legacy-overhead`;
 
   // Stable formatter, created once.
   const currency = useMemo(
@@ -80,36 +84,70 @@ export function ComparisonWidget() {
   const f = (n?: number) => (typeof n === 'number' ? currency.format(n) : '$0');
   const fRange = (low?: number, high?: number) => `${f(low)} – ${f(high)}`;
 
-  // Clamp inputs used in calculations to avoid subtle bugs.
-  const safeHours = useMemo(() => clamp(Number(basisHours) || 0, 120, 200), [basisHours]);
-  const safeOnshoreOH = useMemo(() => clamp(onshoreOverhead, 0, 1), [onshoreOverhead]);
-  const safeOffshoreOH = useMemo(() => clamp(offshoreOverhead, 0, 1), [offshoreOverhead]);
-  const safeLegacyNearshoreOH = useMemo(() => clamp(nearshoreLegacyOverhead, 0, 1), [nearshoreLegacyOverhead]);
-
-  const columns = [
-    'Build-In (In-House)',
-    'Onshore (US)',
-    'Offshore (Legacy)',
-    'Nearshore (Legacy)',
-    'Nearshore IT Co-Pilot (New Gen)',
-  ] as const;
-
   const data: Results = useMemo(() => {
     const buildInMonthly = (inputs.buildIn.salaryAnnual * (1 + inputs.buildIn.burdenPct)) / 12;
 
-    const onshoreMonthlyLow = inputs.onshore.hourlyLow * safeHours * (1 + safeOnshoreOH);
-    const onshoreMonthlyHigh = inputs.onshore.hourlyHigh * safeHours * (1 + safeOnshoreOH);
+    const onshoreMonthlyLow = inputs.onshore.hourlyLow * basisHours * (1 + onshoreOverhead);
+    const onshoreMonthlyHigh = inputs.onshore.hourlyHigh * basisHours * (1 + onshoreOverhead);
 
-    const offshoreLegacyMonthlyLow = inputs.offshoreLegacy.hourlyLow * safeHours * (1 + safeOffshoreOH);
-    const offshoreLegacyMonthlyHigh = inputs.offshoreLegacy.hourlyHigh * safeHours * (1 + safeOffshoreOH);
+    const offshoreLegacyMonthlyLow = inputs.offshoreLegacy.hourlyLow * basisHours * (1 + offshoreOverhead);
+    const offshoreLegacyMonthlyHigh = inputs.offshoreLegacy.hourlyHigh * basisHours * (1 + offshoreOverhead);
 
     const nearshoreLegacyMonthlyLow =
-      inputs.nearshoreLegacy.hourlyLow * safeHours * (1 + safeLegacyNearshoreOH);
+      inputs.nearshoreLegacy.hourlyLow * basisHours * (1 + nearshoreLegacyOverhead);
     const nearshoreLegacyMonthlyHigh =
-      inputs.nearshoreLegacy.hourlyHigh * safeHours * (1 + safeLegacyNearshoreOH);
+      inputs.nearshoreLegacy.hourlyHigh * basisHours * (1 + nearshoreLegacyOverhead);
 
-    const nearshoreCoPilotMonthlyLow = inputs.nearshoreCoPilot.hourlyMin * safeHours;
-    const nearshoreCoPilotMonthlyHigh = inputs.nearshoreCoPilot.hourlyCap * safeHours;
+    const nearshoreCoPilotMonthlyLow = inputs.nearshoreCoPilot.hourlyMin * basisHours;
+    const nearshoreCoPilotMonthlyHigh = inputs.nearshoreCoPilot.hourlyCap * basisHours;
+
+    const prLatency = {
+        buildIn: inputs.ops.prsPerMonth * (inputs.ops.reviewHours.buildIn - 1.0) * devHourBlended,
+        onshore: inputs.ops.prsPerMonth * (inputs.ops.reviewHours.onshore - 1.0) * devHourBlended,
+        offshoreLegacy: inputs.ops.prsPerMonth * (inputs.ops.reviewHours.offshoreLegacy - 1.0) * devHourBlended,
+        nearshoreLegacy: inputs.ops.prsPerMonth * (inputs.ops.reviewHours.nearshoreLegacy - 1.0) * devHourBlended,
+        nearshoreCoPilot: inputs.ops.prsPerMonth * (inputs.ops.reviewHours.nearshoreCoPilot - 1.0) * devHourBlended
+    };
+
+    const vacancy = {
+        buildIn: inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.buildIn - inputs.ops.ttoDays.nearshoreCoPilot),
+        onshore: inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.onshore - inputs.ops.ttoDays.nearshoreCoPilot),
+        offshoreLegacy: inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.offshoreLegacy - inputs.ops.ttoDays.nearshoreCoPilot),
+        nearshoreLegacy: inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.nearshoreLegacy - inputs.ops.ttoDays.nearshoreCoPilot),
+        nearshoreCoPilot: inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.nearshoreCoPilot - inputs.ops.ttoDays.nearshoreCoPilot)
+    };
+
+    const cfr = {
+        buildIn: inputs.ops.deploysPerMonth * (inputs.ops.cfr.buildIn - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD,
+        onshore: inputs.ops.deploysPerMonth * (inputs.ops.cfr.onshore - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD,
+        offshoreLegacy: inputs.ops.deploysPerMonth * (inputs.ops.cfr.offshoreLegacy - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD,
+        nearshoreLegacy: inputs.ops.deploysPerMonth * (inputs.ops.cfr.nearshoreLegacy - inputs.ops.cfr.nearshoreCoPilot) * inputs.ops.incidentCostUSD,
+        nearshoreCoPilot: 0
+    };
+    
+    const mgmt = {
+        buildIn: (inputs.ops.mgmtHoursMonth.buildIn.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.buildIn.PM * inputs.ops.mgmtRatesUSD.PM),
+        onshore: (inputs.ops.mgmtHoursMonth.onshore.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.onshore.PM * inputs.ops.mgmtRatesUSD.PM),
+        offshoreLegacy: (inputs.ops.mgmtHoursMonth.offshoreLegacy.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.offshoreLegacy.PM * inputs.ops.mgmtRatesUSD.PM),
+        nearshoreLegacy: (inputs.ops.mgmtHoursMonth.nearshoreLegacy.EM * inputs.ops.mgmtRatesUSD.EM + inputs.ops.mgmtHoursMonth.nearshoreLegacy.PM * inputs.ops.mgmtRatesUSD.PM),
+        nearshoreCoPilot: 0
+    };
+    
+    const compliance = {
+       buildIn: (inputs.ops.auditHoursSavedPerYear.buildIn * inputs.ops.complianceHourRateUSD) / 12,
+       onshore: (inputs.ops.auditHoursSavedPerYear.onshore * inputs.ops.complianceHourRateUSD) / 12,
+       offshoreLegacy: (inputs.ops.auditHoursSavedPerYear.offshoreLegacy * inputs.ops.complianceHourRateUSD) / 12,
+       nearshoreLegacy: (inputs.ops.auditHoursSavedPerYear.nearshoreLegacy * inputs.ops.complianceHourRateUSD) / 12,
+       nearshoreCoPilot: (inputs.ops.auditHoursSavedPerYear.nearshoreCoPilot * inputs.ops.complianceHourRateUSD) / 12
+    }
+    
+    const total = {
+       buildIn: buildInMonthly + prLatency.buildIn + mgmt.buildIn - compliance.buildIn,
+       onshore: (onshoreMonthlyLow + onshoreMonthlyHigh)/2 + prLatency.onshore + mgmt.onshore - compliance.onshore,
+       offshoreLegacy: (offshoreLegacyMonthlyLow + offshoreLegacyMonthlyHigh)/2 + prLatency.offshoreLegacy + mgmt.offshoreLegacy - compliance.offshoreLegacy,
+       nearshoreLegacy: (nearshoreLegacyMonthlyLow + nearshoreLegacyMonthlyHigh)/2 + prLatency.nearshoreLegacy + mgmt.nearshoreLegacy - compliance.nearshoreLegacy,
+       nearshoreCoPilot: (nearshoreCoPilotMonthlyLow + nearshoreCoPilotMonthlyHigh)/2 - compliance.nearshoreCoPilot
+    }
 
     return {
       seatCost: [
@@ -120,110 +158,20 @@ export function ComparisonWidget() {
         fRange(nearshoreCoPilotMonthlyLow, nearshoreCoPilotMonthlyHigh),
       ],
       effectiveHourly: [
-        f(buildInMonthly / safeHours),
-        fRange(onshoreMonthlyLow / safeHours, onshoreMonthlyHigh / safeHours),
-        fRange(offshoreLegacyMonthlyLow / safeHours, offshoreLegacyMonthlyHigh / safeHours),
-        fRange(nearshoreLegacyMonthlyLow / safeHours, nearshoreLegacyMonthlyHigh / safeHours),
-        fRange(nearshoreCoPilotMonthlyLow / safeHours, nearshoreCoPilotMonthlyHigh / safeHours),
+        f(buildInMonthly / basisHours),
+        fRange(onshoreMonthlyLow / basisHours, onshoreMonthlyHigh / basisHours),
+        fRange(offshoreLegacyMonthlyLow / basisHours, offshoreLegacyMonthlyHigh / basisHours),
+        fRange(nearshoreLegacyMonthlyLow / basisHours, nearshoreLegacyMonthlyHigh / basisHours),
+        fRange(nearshoreCoPilotMonthlyLow / basisHours, nearshoreCoPilotMonthlyHigh / basisHours),
       ],
-      prLatencyCost: [
-        f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.buildIn - 1.0) * inputs.ops.devHourBlended),
-        f(inputs.ops.prsPerMonth * (inputs.ops.reviewHours.onshore - 1.0) * inputs.ops.devHourBlended),
-        f(
-          inputs.ops.prsPerMonth *
-            (inputs.ops.reviewHours.offshoreLegacy - 1.0) *
-            inputs.ops.devHourBlended
-        ),
-        f(
-          inputs.ops.prsPerMonth *
-            (inputs.ops.reviewHours.nearshoreLegacy - 1.0) *
-            inputs.ops.devHourBlended
-        ),
-        f(
-          inputs.ops.prsPerMonth *
-            (inputs.ops.reviewHours.nearshoreCoPilot - 1.0) *
-            inputs.ops.devHourBlended
-        ),
-      ],
-      vacancyCost: [
-        f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.buildIn - inputs.ops.ttoDays.nearshoreCoPilot)),
-        f(inputs.ops.dailyValueUSD * (inputs.ops.ttoDays.onshore - inputs.ops.ttoDays.nearshoreCoPilot)),
-        f(
-          inputs.ops.dailyValueUSD *
-            (inputs.ops.ttoDays.offshoreLegacy - inputs.ops.ttoDays.nearshoreCoPilot)
-        ),
-        f(
-          inputs.ops.dailyValueUSD *
-            (inputs.ops.ttoDays.nearshoreLegacy - inputs.ops.ttoDays.nearshoreCoPilot)
-        ),
-        f(
-          inputs.ops.dailyValueUSD *
-            (inputs.ops.ttoDays.nearshoreCoPilot - inputs.ops.ttoDays.nearshoreCoPilot)
-        ),
-      ],
-      cfrLoss: [
-        f(
-          inputs.ops.deploysPerMonth *
-            (inputs.ops.cfr.buildIn - inputs.ops.cfr.nearshoreCoPilot) *
-            inputs.ops.incidentCostUSD
-        ),
-        f(
-          inputs.ops.deploysPerMonth *
-            (inputs.ops.cfr.onshore - inputs.ops.cfr.nearshoreCoPilot) *
-            inputs.ops.incidentCostUSD
-        ),
-        f(
-          inputs.ops.deploysPerMonth *
-            (inputs.ops.cfr.offshoreLegacy - inputs.ops.cfr.nearshoreCoPilot) *
-            inputs.ops.incidentCostUSD
-        ),
-        f(
-          inputs.ops.deploysPerMonth *
-            (inputs.ops.cfr.nearshoreLegacy - inputs.ops.cfr.nearshoreCoPilot) *
-            inputs.ops.incidentCostUSD
-        ),
-        f(
-          inputs.ops.deploysPerMonth *
-            (inputs.ops.cfr.nearshoreCoPilot - inputs.ops.cfr.nearshoreCoPilot) *
-            inputs.ops.incidentCostUSD
-        ),
-      ],
-      mgmtOverhead: [
-        f(
-          12 *
-            (inputs.ops.mgmtHoursMonth.buildIn.EM * inputs.ops.mgmtRatesUSD.EM +
-              inputs.ops.mgmtHoursMonth.buildIn.PM * inputs.ops.mgmtRatesUSD.PM)
-        ),
-        f(
-          12 *
-            (inputs.ops.mgmtHoursMonth.onshore.EM * inputs.ops.mgmtRatesUSD.EM +
-              inputs.ops.mgmtHoursMonth.onshore.PM * inputs.ops.mgmtRatesUSD.PM)
-        ),
-        f(
-          12 *
-            (inputs.ops.mgmtHoursMonth.offshoreLegacy.EM * inputs.ops.mgmtRatesUSD.EM +
-              inputs.ops.mgmtHoursMonth.offshoreLegacy.PM * inputs.ops.mgmtRatesUSD.PM)
-        ),
-        f(
-          12 *
-            (inputs.ops.mgmtHoursMonth.nearshoreLegacy.EM * inputs.ops.mgmtRatesUSD.EM +
-              inputs.ops.mgmtHoursMonth.nearshoreLegacy.PM * inputs.ops.mgmtRatesUSD.PM)
-        ),
-        f(
-          12 *
-            (inputs.ops.mgmtHoursMonth.nearshoreCoPilot.EM * inputs.ops.mgmtRatesUSD.EM +
-              inputs.ops.mgmtHoursMonth.nearshoreCoPilot.PM * inputs.ops.mgmtRatesUSD.PM)
-        ),
-      ],
-      complianceSavings: [
-        f(inputs.ops.auditHoursSavedPerYear.buildIn * inputs.ops.complianceHourRateUSD),
-        f(inputs.ops.auditHoursSavedPerYear.onshore * inputs.ops.complianceHourRateUSD),
-        f(inputs.ops.auditHoursSavedPerYear.offshoreLegacy * inputs.ops.complianceHourRateUSD),
-        f(inputs.ops.auditHoursSavedPerYear.nearshoreLegacy * inputs.ops.complianceHourRateUSD),
-        f(inputs.ops.auditHoursSavedPerYear.nearshoreCoPilot * inputs.ops.complianceHourRateUSD),
-      ],
+      prLatencyCost: Object.values(prLatency).map(c => f(c)),
+      vacancyCost: Object.values(vacancy).map(c => f(c)),
+      cfrLoss: Object.values(cfr).map(c => f(c)),
+      mgmtOverhead: Object.values(mgmt).map(c => f(c)),
+      complianceSavings: Object.values(compliance).map(c => f(c)),
+      totalMonthlyCost: Object.values(total).map(c => f(c)),
     };
-  }, [safeHours, safeOnshoreOH, safeOffshoreOH, safeLegacyNearshoreOH, currency]);
+  }, [basisHours, onshoreOverhead, offshoreOverhead, nearshoreLegacyOverhead, devHourBlended, currency]);
 
   const rows: Row[] = useMemo(
     () => [
@@ -257,66 +205,24 @@ export function ComparisonWidget() {
         description:
           'The monthly cost of developer time wasted waiting for code reviews, calculated against a 1-hour ideal.',
       },
-      {
-        label: 'Time-to-offer (days)',
-        data: [
-          inputs.ops.ttoDays.buildIn,
-          inputs.ops.ttoDays.onshore,
-          inputs.ops.ttoDays.offshoreLegacy,
-          inputs.ops.ttoDays.nearshoreLegacy,
-          inputs.ops.ttoDays.nearshoreCoPilot,
-        ],
-        description:
-          "The number of days from opening a role to a signed offer. Shorter times reduce the 'Vacancy Tax'.",
-      },
-      {
-        label: 'Vacancy cost vs Co-Pilot (one role)',
-        data: data.vacancyCost,
-        description:
-          "The opportunity cost (lost revenue/value) incurred by a role remaining empty, calculated against the Co-Pilot's faster hiring time.",
-      },
-      {
-        label: 'Change failure rate (CFR)',
-        data: [
-          `${(inputs.ops.cfr.buildIn * 100).toFixed(0)}%`,
-          `${(inputs.ops.cfr.onshore * 100).toFixed(0)}%`,
-          `${(inputs.ops.cfr.offshoreLegacy * 100).toFixed(0)}%`,
-          `${(inputs.ops.cfr.nearshoreLegacy * 100).toFixed(0)}%`,
-          `${(inputs.ops.cfr.nearshoreCoPilot * 100).toFixed(0)}%`,
-        ],
-        description:
-          'The percentage of deployments that cause a failure in production (a core DORA metric).',
-      },
-      {
-        label: '$ loss vs Co-Pilot from CFR (monthly)',
-        data: data.cfrLoss,
-        description:
-          "The monthly financial impact of failed changes, based on the cost of each incident, compared to the Co-Pilot's lower CFR.",
-      },
-      {
-        label: 'Attrition (annual)',
-        data: [
-          `${(inputs.ops.attrition.buildIn * 100).toFixed(0)}%`,
-          `${(inputs.ops.attrition.onshore * 100).toFixed(0)}%`,
-          `${(inputs.ops.attrition.offshoreLegacy * 100).toFixed(0)}%`,
-          `${(inputs.ops.attrition.nearshoreLegacy * 100).toFixed(0)}%`,
-          `${(inputs.ops.attrition.nearshoreCoPilot * 100).toFixed(0)}%`,
-        ],
-        description:
-          'The annual percentage of engineers who leave, creating high replacement and knowledge transfer costs.',
-      },
-      {
-        label: 'Mgmt overhead (annual)',
+       {
+        label: 'Mgmt overhead tax (monthly)',
         data: data.mgmtOverhead,
         description:
           'The cost of engineering/product management time spent on vendor coordination, rework, and other non-value-add activities.',
       },
       {
-        label: 'Compliance readiness (audit hrs saved / $)',
+        label: 'Compliance readiness (audit hrs saved/mo)',
         data: data.complianceSavings,
         description:
           'The value of engineering/security time saved by having an audit-ready, compliant posture from day one, avoiding questionnaire fire-drills.',
       },
+      {
+        label: 'Total TCO / month',
+        data: data.totalMonthlyCost,
+        description:
+          'The true monthly cost per seat, including seat cost and hidden taxes like latency and management overhead, minus compliance savings.',
+      }
     ],
     [data]
   );
@@ -330,11 +236,11 @@ export function ComparisonWidget() {
 
       <div className="mt-6 flex flex-wrap justify-start items-center gap-4 rounded-lg bg-background p-4 border text-sm">
         <div className="flex items-center gap-2">
-          <label htmlFor={basisHoursId} className="font-medium text-muted-foreground">
+          <label htmlFor={`${baseId}-basis-hours`} className="font-medium text-muted-foreground">
             Basis Hours:
           </label>
           <select
-            id={basisHoursId}
+            id={`${baseId}-basis-hours`}
             value={basisHours}
             onChange={(e) => setBasisHours(Number(e.target.value))}
             className="bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary"
@@ -343,10 +249,26 @@ export function ComparisonWidget() {
             <option value="160">160</option>
           </select>
         </div>
+         <div className="flex items-center gap-2">
+          <WithTooltip label="Your blended engineering cost per hour, used for calculating latency and rework costs.">
+            <label htmlFor={`${baseId}-dev-hour`} className="font-medium text-muted-foreground border-b border-dashed">
+                Blended Dev Rate:
+            </label>
+           </WithTooltip>
+           <span className="text-muted-foreground">$</span>
+           <input
+            type="number"
+            id={`${baseId}-dev-hour`}
+            min={50} max={200} step={5}
+            value={devHourBlended}
+            onChange={(e) => setDevHourBlended(Number(e.target.value))}
+            className="w-20 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary"
+          />
+        </div>
         <div className="flex items-center gap-2">
           <WithTooltip label="Estimated management and administrative overhead for onshore vendors.">
             <label
-              htmlFor={onshoreOverheadId}
+              htmlFor={`${baseId}-onshore-overhead`}
               className="font-medium text-muted-foreground border-b border-dashed"
             >
               Onshore Overhead:
@@ -354,17 +276,10 @@ export function ComparisonWidget() {
           </WithTooltip>
           <input
             type="number"
-            id={onshoreOverheadId}
-            min={0}
-            max={100}
-            step={0.1}
-            inputMode="decimal"
+            id={`${baseId}-onshore-overhead`}
+            min={0} max={100} step={1}
             value={onshoreOverhead * 100}
-            onChange={(e) => {
-              const v = e.currentTarget.valueAsNumber;
-              if (!Number.isFinite(v)) return;
-              setOnshoreOverhead(clamp(v, 0, 100) / 100);
-            }}
+            onChange={(e) => setOnshoreOverhead(clamp(e.target.valueAsNumber, 0, 100) / 100)}
             className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary"
           />
           <span className="text-muted-foreground">%</span>
@@ -372,7 +287,7 @@ export function ComparisonWidget() {
         <div className="flex items-center gap-2">
           <WithTooltip label="Estimated management, communication, and rework overhead for offshore vendors.">
             <label
-              htmlFor={offshoreOverheadId}
+              htmlFor={`${baseId}-offshore-overhead`}
               className="font-medium text-muted-foreground border-b border-dashed"
             >
               Offshore Overhead:
@@ -380,17 +295,10 @@ export function ComparisonWidget() {
           </WithTooltip>
           <input
             type="number"
-            id={offshoreOverheadId}
-            min={0}
-            max={100}
-            step={0.1}
-            inputMode="decimal"
+            id={`${baseId}-offshore-overhead`}
+            min={0} max={100} step={1}
             value={offshoreOverhead * 100}
-            onChange={(e) => {
-              const v = e.currentTarget.valueAsNumber;
-              if (!Number.isFinite(v)) return;
-              setOffshoreOverhead(clamp(v, 0, 100) / 100);
-            }}
+            onChange={(e) => setOffshoreOverhead(clamp(e.target.valueAsNumber, 0, 100) / 100)}
             className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary"
           />
           <span className="text-muted-foreground">%</span>
@@ -398,7 +306,7 @@ export function ComparisonWidget() {
         <div className="flex items-center gap-2">
           <WithTooltip label="Estimated management and administrative overhead for legacy nearshore vendors.">
             <label
-              htmlFor={legacyOverheadId}
+              htmlFor={`${baseId}-legacy-overhead`}
               className="font-medium text-muted-foreground border-b border-dashed"
             >
               Legacy Nearshore Overhead:
@@ -406,17 +314,10 @@ export function ComparisonWidget() {
           </WithTooltip>
           <input
             type="number"
-            id={legacyOverheadId}
-            min={0}
-            max={100}
-            step={0.1}
-            inputMode="decimal"
+            id={`${baseId}-legacy-overhead`}
+            min={0} max={100} step={1}
             value={nearshoreLegacyOverhead * 100}
-            onChange={(e) => {
-              const v = e.currentTarget.valueAsNumber;
-              if (!Number.isFinite(v)) return;
-              setNearshoreLegacyOverhead(clamp(v, 0, 100) / 100);
-            }}
+            onChange={(e) => setNearshoreLegacyOverhead(clamp(e.target.valueAsNumber, 0, 100) / 100)}
             className="w-16 bg-background border border-border rounded-md px-2 py-1 focus:ring-2 focus:ring-primary"
           />
           <span className="text-muted-foreground">%</span>
@@ -483,3 +384,4 @@ export function ComparisonWidget() {
     </section>
   );
 }
+
