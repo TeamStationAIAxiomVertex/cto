@@ -3,7 +3,17 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { WithTooltip } from '@/components/ui/tooltip';
 import { Clock, Users, FileSearch, Building, Zap, Scale, ShieldCheck, ArrowRight, AlertTriangle, BookOpen, BrainCircuit, GitCompare, CheckCircle } from 'lucide-react';
-import { ComparisonWidget } from '@/components/client/ComparisonWidget';
+import dynamic from 'next/dynamic';
+
+const ComparisonWidget = dynamic(() => import('@/components/ComparisonWidget').then(mod => mod.ComparisonWidget), {
+  ssr: false,
+  loading: () => (
+    <div className="text-center p-8 text-sm text-muted-foreground" aria-busy="true">
+      Loading comparison widget…
+    </div>
+  ),
+});
+
 
 export const metadata: Metadata = {
   title: 'Nearshore vs. Offshore: The CTO’s Guide to Shipping Faster',
@@ -178,4 +188,3 @@ export default async function NearshoreVsOffshorePage() {
     </main>
   );
 }
-
