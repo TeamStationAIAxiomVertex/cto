@@ -11,6 +11,40 @@ import dynamic from 'next/dynamic';
 
 const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon ?? mod.default), { ssr: false });
 
+export const metadata: Metadata = {
+  metadataBase: new URL('https://cto.teamstation.dev'),
+  title: "Nearshore Software Development: The CTO Playbook | TeamStation AI",
+  description: "Legacy vendors sell hours. The CTO Playbook delivers science, daylight overlap, and outcomes you can measure, turning your nearshore team into a competitive advantage.",
+  openGraph: {
+    title: "Nearshore Software Development: The CTO Playbook | TeamStation AI",
+    description: "Legacy vendors sell hours. The CTO Playbook delivers science, daylight overlap, and outcomes you can measure.",
+    url: 'https://cto.teamstation.dev',
+    siteName: "TeamStation AI",
+    images: [
+      {
+        url: placeholderImages.metaCard.src.url,
+        width: 1200,
+        height: 630,
+        alt: "TeamStation AI CTO Playbook",
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Nearshore Software Development: The CTO Playbook | TeamStation AI",
+    description: "Legacy vendors sell hours. The CTO Playbook delivers science, daylight overlap, and outcomes you can measure.",
+    images: [placeholderImages.metaCard.src.url],
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+};
+
+
 const heroKpis: HeroKpi[] = [
   { id: 'compliance', label: 'Audit-Ready Compliance', value: 100, unit: '%', target: 100, desire: 'up' },
   { id: 'readiness',  label: 'Day-1 Tool Readiness',  value: 97,  unit: '%', target: 95,  desire: 'up' },
@@ -118,7 +152,7 @@ export default async function HomePage() {
       "query-input": "required name=search_term_string"
     }
   };
-
+  
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -130,6 +164,26 @@ export default async function HomePage() {
     ]
   };
 
+  const techArticleSchema = {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Nearshore Software Development: The CTO Playbook",
+      "description": "Legacy vendors sell hours. The CTO Playbook delivers science, daylight overlap, and outcomes you can measure, turning your nearshore team into a competitive advantage.",
+      "author": {
+          "@type": "Organization",
+          "name": "TeamStation AI"
+      },
+      "publisher": {
+          "@type": "Organization",
+          "name": "TeamStation AI",
+          "logo": {
+              "@type": "ImageObject",
+              "url": `${siteUrl}/apple-touch-icon.png`
+          }
+      },
+      "datePublished": "2024-08-01T00:00:00Z"
+  };
+
   return (
     <>
       <script
@@ -139,6 +193,10 @@ export default async function HomePage() {
        <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }}
       />
       <div className="container mx-auto px-4">
         <section className="py-16 md:py-24">

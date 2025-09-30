@@ -34,7 +34,7 @@ const playbookEntries: Entry[] = [
   {
     href: '/playbook/latam-economics',
     icon: <DollarSign className="h-8 w-8 text-primary" />,
-    title: 'LATAM Economics',
+    title: 'LATAM Economics & TCO',
     pain: 'Is your budget based on misleading hourly rates?',
     solution:
       'Move beyond salary-only math. Our TCO model includes the hidden costs of hiring, management overhead, and productivity loss, giving you a CFO-ready business case.',
