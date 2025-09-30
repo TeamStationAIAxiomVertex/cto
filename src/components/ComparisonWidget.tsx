@@ -61,6 +61,14 @@ type Row = {
 
 const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
 
+const columns = [
+  'Build-In (In-House)',
+  'Onshore (US)',
+  'Offshore (Legacy)',
+  'Nearshore (Legacy)',
+  'Nearshore IT Co-Pilot (New Gen)',
+];
+
 export function ComparisonWidget() {
   const [basisHours, setBasisHours] = useState(173);
   const [offshoreOverhead, setOffshoreOverhead] = useState(0.25);
@@ -171,7 +179,7 @@ export function ComparisonWidget() {
       complianceSavings: Object.values(compliance).map(c => f(c)),
       totalMonthlyCost: Object.values(total).map(c => f(c)),
     };
-  }, [basisHours, onshoreOverhead, offshoreOverhead, nearshoreLegacyOverhead, devHourBlended, currency]);
+  }, [basisHours, onshoreOverhead, offshoreOverhead, nearshoreLegacyOverhead, devHourBlended, f, fRange]);
 
   const rows: Row[] = useMemo(
     () => [
@@ -212,7 +220,7 @@ export function ComparisonWidget() {
           'The cost of engineering/product management time spent on vendor coordination, rework, and other non-value-add activities.',
       },
       {
-        label: 'Compliance readiness (audit hrs saved/mo)',
+        label: 'Compliance readiness (audit hrs saved / mo)',
         data: data.complianceSavings,
         description:
           'The value of engineering/security time saved by having an audit-ready, compliant posture from day one, avoiding questionnaire fire-drills.',
