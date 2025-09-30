@@ -1,3 +1,4 @@
+
 // NOTE: this file is a Server Component (no 'use client')
 import 'server-only';
 
@@ -7,12 +8,8 @@ import { DollarSign, GitCompare, Layers, ArrowRight } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 // Load client-only widget as an island.
-// Works whether the widget is default- or named-exported.
 const ComparisonWidget = dynamic(
-  async () => {
-    const m = await import('@/components/ComparisonWidget'); // adjust path if your widget lives elsewhere
-    return 'default' in m ? m.default : (m as any).ComparisonWidget;
-  },
+  () => import('@/components/ComparisonWidget'),
   {
     ssr: false,
     loading: () => (
