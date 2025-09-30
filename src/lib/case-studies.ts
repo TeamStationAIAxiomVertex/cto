@@ -43,10 +43,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
           const { data, content } = matter(fileContents);
 
           const slug = data.slug as keyof typeof placeholderImages.caseStudies;
-          const imageInfo = placeholderImages.caseStudies[slug] || { 
-              src: { url: 'https://picsum.photos/seed/default/600/400', width: 600, height: 400 },
-              aiHint: 'abstract technology'
-          };
+          const imageInfo = placeholderImages.caseStudies[slug] || placeholderImages.metaCard;
 
           return {
             slug: data.slug,

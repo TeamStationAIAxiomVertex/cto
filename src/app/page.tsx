@@ -108,7 +108,7 @@ const corePillars = [
         icon: <Scale className="h-8 w-8 text-primary" aria-label="Scale Icon"/>,
         pain: "Struggling to justify your budget?",
         title: "Get a CFO-Ready TCO Model",
-        description: "We provide a predictable, all-inclusive Total Cost of Ownership (TCO) that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.",
+        description: "We provide a predictable, all-inclusive TCO that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.",
         href: "/playbook/latam-economics",
         linkLabel: "View Our TCO Model",
         kpi: "≈$98k revenue pulled forward"
@@ -218,8 +218,7 @@ export default async function HomePage() {
       <div className="container mx-auto px-4">
         <section className="py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left: Hero Text */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left w-full">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 Nearshore Software Development: The CTO Playbook
               </h1>
@@ -240,10 +239,8 @@ export default async function HomePage() {
                 </Link>
               </div>
             </div>
-
-            {/* Right: Hero KPIs */}
             <div className="w-full flex justify-center md:justify-end">
-              <HeroKpis items={heroKpis} />
+                <HeroKpis items={heroKpis} />
             </div>
           </div>
         </section>
@@ -387,13 +384,12 @@ export default async function HomePage() {
               <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
                   <div className="relative h-40 w-full mb-4 rounded-lg overflow-hidden border">
                        <Image 
-                          src={study.ogImage?.src?.url || placeholderImages.heroTeam.src.url}
-                          alt={study.clientName ? `Hero image for ${study.clientName} case study` : 'Case study image'}
+                          src={placeholderImages.caseStudies[study.slug as keyof typeof placeholderImages.caseStudies]?.src.url || placeholderImages.heroTeam.src.url}
+                          alt={placeholderImages.caseStudies[study.slug as keyof typeof placeholderImages.caseStudies]?.alt || `Case study for ${study.clientName}`}
                           fill
                           className="object-cover"
                           data-ai-hint={study.ogImage?.aiHint}
-                          priority={study.slug === 'atticus'}
-                          loading={study.slug === 'atticus' ? undefined : 'lazy'}
+                          loading="lazy"
                       />
                   </div>
                   <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{study.clientName}</h3>
