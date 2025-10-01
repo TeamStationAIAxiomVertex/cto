@@ -105,3 +105,5 @@ export default function TeclaComparisonPage() {
     </main>
   );
 }
+
+    
