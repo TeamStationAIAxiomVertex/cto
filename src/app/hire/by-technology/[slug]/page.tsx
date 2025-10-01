@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle, Plane } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { notFound } from 'next/navigation';
 import { allTech } from '@/lib/tech';
@@ -62,6 +62,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
     },
     "areaServed": { "@type": "Country", "name": "United States" },
     "description": `Hire elite, pre-vetted LATAM engineers with expertise in ${tech.name}.`,
+    "name": `Hire ${tech.name} Developers`,
     "offers": {
       "@type": "Offer",
       "price": "Contact for pricing",
@@ -81,16 +82,20 @@ export default function TechPage({ params }: { params: { slug: string } }) {
           <span>{tech.name}</span>
         </div>
         <header className="my-12">
-          <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire for <span className="font-bold">{tech.name}</span> Mastery</h1>
+          <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+            Hire Elite {tech.name} Developers
+          </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-              {tech.intro}
+              Hire pre-vetted, elite <strong>{tech.name} developers</strong> from LATAM. {tech.intro}
           </p>
         </header>
 
         {tech.pains && tech.pains.length > 0 && (
           <section className="my-16">
               <h2 className="text-center text-3xl font-bold">Sound Familiar?</h2>
-              <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Common problems we solve by providing true {tech.name} experts.</p>
+              <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">
+                Common problems solved by providing true <strong>{tech.name} experts</strong>.
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                   {tech.pains.map((item) => {
                     const Icon = item.icon;
@@ -102,7 +107,6 @@ export default function TechPage({ params }: { params: { slug: string } }) {
                               <h3 className="text-lg font-semibold text-foreground">The Problem</h3>
                           </div>
                           <p className="mt-4 text-sm text-muted-foreground ">{item.problem}</p>
-                          
                           <div className="mt-4 border-t border-border pt-4">
                               <h4 className="font-semibold text-primary">The TeamStation AI Solution</h4>
                               <p className="text-sm text-foreground m-0">{item.solution}</p>
@@ -118,7 +122,6 @@ export default function TechPage({ params }: { params: { slug: string } }) {
           </section>
         )}
 
-
         <div className="my-16 rounded-lg border bg-card p-8">
           <h2 className="text-center text-3xl font-bold">Our Evaluation Approach for {tech.name}</h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
@@ -133,7 +136,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-            focuses on practical application and deep system understanding, not just trivia. We assess candidates on:
+            ensures objective vetting beyond resumes. We assess candidates on:
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-8 max-w-2xl mx-auto">
               {tech.evaluation.map((point, i) => (
@@ -153,18 +156,22 @@ export default function TechPage({ params }: { params: { slug: string } }) {
         <div className="text-center rounded-lg bg-primary/10 p-8">
           <h2 className="text-2xl font-bold">Ready to Hire Elite {tech.name} Talent?</h2>
           <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-            Stop sifting through unqualified resumes. Let us provide you with a shortlist of 2-3 elite, pre-vetted candidates with proven {tech.name} mastery.
+            Stop sifting through unqualified resumes. Let us provide you with a shortlist of 2–3 elite, pre-vetted candidates with proven {tech.name} mastery.
           </p>
-          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
+          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" 
+            target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
+              Book a No-Obligation Strategy Call
+          </Link>
         </div>
 
-        <nav className="mt-12 border-t border-border pt-6 text-sm">
-            <h3 className="font-semibold text-foreground">See Also:</h3>
-            <ul className="list-none p-0 space-y-2 mt-2">
-              <li><Link href="/hire/by-country/mexico" className="text-primary hover:underline">Hire Developers in Mexico</Link></li>
-              <li><Link href={`/hire/by-role/${tech.categorySlug}`} className="text-primary hover:underline">Hire for the {tech.category} Role</Link></li>
-              <li><Link href="/comparisons/bairesdev" className="text-primary hover:underline">TeamStation AI vs. BairesDev</Link></li>
-            </ul>
+        {/* Internal Link Mesh */}
+        <nav className="mt-12 border-t border-border pt-6 text-sm text-center">
+          <h3 className="font-semibold text-foreground mb-3">Explore More:</h3>
+          <ul className="flex flex-wrap justify-center gap-4">
+            <li><Link href="/hire/by-country/mexico" className="text-primary hover:underline">Hire Developers in Mexico</Link></li>
+            <li><Link href={`/hire/by-role/${tech.categorySlug}`} className="text-primary hover:underline">Hire {tech.category} Engineers</Link></li>
+            <li><Link href="/comparisons/bairesdev" className="text-primary hover:underline">TeamStation vs BairesDev</Link></li>
+          </ul>
         </nav>
       </main>
     </>
@@ -172,7 +179,5 @@ export default function TechPage({ params }: { params: { slug: string } }) {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(allTech).map(slug => ({
-    slug,
-  }));
+  return Object.keys(allTech).map(slug => ({ slug }));
 }
