@@ -3,15 +3,22 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 
-export const metadata: Metadata = {
+const pageInfo = {
+  slug: "unosquare",
   title: "TeamStation vs Unosquare: A CTO’s Guide | TeamStation AI",
   description:
     "CTO comparison: TeamStation AI vs Unosquare. Evaluating vetting methods, security, compliance, and delivery velocity.",
-  alternates: { canonical: "https://cto.teamstation.dev/comparisons/unosquare" },
+  canonical: "https://cto.teamstation.dev/comparisons/unosquare",
+};
+
+export const metadata: Metadata = {
+  title: pageInfo.title,
+  description: pageInfo.description,
+  alternates: { canonical: pageInfo.canonical },
   openGraph: {
     title: "TeamStation vs Unosquare: A CTO’s Guide",
     description: "Evidence-driven breakdown of TeamStation AI vs Unosquare across vetting, compliance, and SLAs.",
-    url: "https://cto.teamstation.dev/comparisons/unosquare",
+    url: pageInfo.canonical,
     type: "article",
   },
   twitter: {
@@ -70,7 +77,7 @@ const faqSchema = {
 
 export default function ComparisonPage() {
   const siteUrl = 'https://cto.teamstation.dev';
-  const schema = {
+  const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "TeamStation vs Unosquare: A CTO’s Guide",
@@ -82,28 +89,44 @@ export default function ComparisonPage() {
   };
 
   return (
-    <main className="container max-w-4xl py-12 prose dark:prose-invert">
-      <JsonLd data={[schema, faqSchema]} />
-      <div className="text-sm mb-8">
-        <Link href="/">Home</Link> / <Link href="/comparisons">Comparisons</Link> / <span>Unosquare</span>
-      </div>
-      <h1>TeamStation vs Unosquare: A CTO’s Guide</h1>
-      <p>Compare <strong>TeamStation AI</strong> vs <strong>Unosquare</strong> across vetting, compliance, delivery, and TCO.</p>
-       <section className="my-16 border-t border-border pt-12">
-        <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
-        <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
-          <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
-          <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
-          <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
-          <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
-        </ul>
-        <div className="mt-6 text-sm">
-          Related: 
-          <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
-          <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
-          <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
+    <>
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={faqSchema} />
+      <main className="container max-w-4xl py-12 prose dark:prose-invert">
+        <div className="text-sm mb-8 not-prose">
+            <Link href="/" className="hover:text-foreground">Home</Link> / 
+            <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / 
+            <span>Unosquare</span>
         </div>
-      </section>
-    </main>
+        <h1>TeamStation vs Unosquare: A CTO’s Guide</h1>
+        <p>Compare <strong>TeamStation AI</strong> vs <strong>Unosquare</strong> across vetting, compliance, delivery, and TCO.</p>
+        
+        <h2>Frequently Asked Questions</h2>
+        <dl>
+            {faqSchema.mainEntity.map((item, i) => (
+                <div key={i} className="mb-6">
+                    <dt className="font-semibold">{item.name}</dt>
+                    <dd className="mt-2 text-muted-foreground">{item.acceptedAnswer.text}</dd>
+                </div>
+            ))}
+        </dl>
+        
+        <section className="my-16 border-t border-border pt-12 not-prose">
+            <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
+            <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
+                <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
+                <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
+                <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
+                <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
+            </ul>
+            <div className="mt-6 text-sm">
+                Related: 
+                <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
+                <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
+                <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
+            </div>
+        </section>
+      </main>
+    </>
   );
 }
