@@ -5,13 +5,13 @@ import { BookOpen, ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 const pageInfo = {
-    slug: "axiom-cortex-scientific-report",
-    title: "AxiomCortex™ Scientific Report | TeamStation AI Research",
-    description: "Introduces AxiomCortex™, a cognitive AI vetting engine applying neuro-psychometric calculus to bias-free hiring. Shows predictive accuracy improves 27% vs legacy vendor assessments.",
-    canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
+    slug: "framework-for-measuring-capacity",
+    title: "Framework for Measuring Engineering Capacity | TeamStation AI Research",
+    description: "Proposes a quantitative model for capacity planning in distributed engineering teams. Incorporates psychometric and economic factors for predictable delivery.",
+    canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490",
     summary: [
-        "This paper introduces the AxiomCortex™ engine, a proprietary cognitive AI framework designed to de-risk technical hiring by moving beyond traditional, biased evaluation methods. It details the application of neuro-psychometric calculus to analyze conversational data from structured interviews, generating a quantitative 'Cognitive Fingerprint' of a candidate's problem-solving abilities.",
-        "The research demonstrates that by focusing on latent traits such as Architectural Instinct and Problem-Solving Agility, the AxiomCortex™ model achieves a 27% improvement in predictive accuracy for long-term success compared to legacy vendor assessments that rely on keyword matching and unstructured interviews. The paper provides a foundational look at the mathematical models and bias mitigation strategies that make this possible."
+        "This paper addresses a fundamental challenge for CTOs: how to accurately measure and forecast the productive capacity of a distributed engineering team. Traditional headcount-based planning is flawed, as it fails to account for critical variables that impact real-world output.",
+        "We propose a new quantitative model that incorporates not only team size but also psychometric data (from our AxiomCortex™ engine), operational friction (e.g., time-zone latency), and economic factors (like the 'Vacancy Tax'). The framework provides a more accurate, multi-dimensional view of team capacity, enabling leaders to make data-driven decisions about team composition, resource allocation, and strategic investments for predictable delivery."
     ]
 };
 
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "headline": "AxiomCortex™ Scientific Report",
+  "headline": "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering",
   "author": { "@type": "Organization", "name": "TeamStation AI" },
   "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
   "url": `https://cto.teamstation.dev/research/${pageInfo.slug}`,
@@ -53,7 +53,7 @@ export default function ResearchPaperPage() {
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / 
           <Link href="/research/hub" className="hover:text-foreground">Research</Link> / 
-          <span>AxiomCortex™ Report</span>
+          <span>Measuring Engineering Capacity</span>
         </div>
         <article className="prose dark:prose-invert max-w-none">
           <h1>{pageInfo.title.split(' | ')[0]}</h1>
@@ -66,7 +66,7 @@ export default function ResearchPaperPage() {
             <h3 className="font-semibold text-foreground">Explore More:</h3>
             <ul className="list-none p-0 space-y-2">
               <li><Link href="/research/hub" className="text-primary hover:underline">Research Hub</Link></li>
-              <li><Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Playbook: Bias-Free Hiring</Link></li>
+              <li><Link href="/playbook/tco-model" className="text-primary hover:underline">Playbook: TCO Model</Link></li>
               <li><Link href="/case-studies" className="text-primary hover:underline">Case Studies</Link></li>
             </ul>
           </nav>

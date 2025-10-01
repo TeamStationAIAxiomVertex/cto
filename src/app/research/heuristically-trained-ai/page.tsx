@@ -5,13 +5,13 @@ import { BookOpen, ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 const pageInfo = {
-    slug: "axiom-cortex-scientific-report",
-    title: "AxiomCortex™ Scientific Report | TeamStation AI Research",
-    description: "Introduces AxiomCortex™, a cognitive AI vetting engine applying neuro-psychometric calculus to bias-free hiring. Shows predictive accuracy improves 27% vs legacy vendor assessments.",
-    canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
+    slug: "heuristically-trained-ai",
+    title: "Heuristically Trained AI | TeamStation AI Research",
+    description: "Explores heuristic-driven AI models that adapt cognitive strategies rather than brute force. Demonstrates improved efficiency in talent evaluation across diverse engineering roles.",
+    canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433",
     summary: [
-        "This paper introduces the AxiomCortex™ engine, a proprietary cognitive AI framework designed to de-risk technical hiring by moving beyond traditional, biased evaluation methods. It details the application of neuro-psychometric calculus to analyze conversational data from structured interviews, generating a quantitative 'Cognitive Fingerprint' of a candidate's problem-solving abilities.",
-        "The research demonstrates that by focusing on latent traits such as Architectural Instinct and Problem-Solving Agility, the AxiomCortex™ model achieves a 27% improvement in predictive accuracy for long-term success compared to legacy vendor assessments that rely on keyword matching and unstructured interviews. The paper provides a foundational look at the mathematical models and bias mitigation strategies that make this possible."
+        "This research paper challenges the conventional 'brute-force' approach to AI in talent evaluation. Instead of relying solely on massive datasets, it introduces a framework for 'heuristically trained' AI models. These models are designed to emulate the adaptive cognitive strategies and mental shortcuts (heuristics) used by expert human interviewers.",
+        "The study demonstrates that this approach leads to a more efficient and context-aware evaluation process. By teaching the AI to recognize patterns of reasoning rather than just keywords, the system achieves higher accuracy in predicting candidate success across a wide range of engineering disciplines, even with less initial data. This marks a significant step toward more nuanced and less data-intensive AI for human capital management."
     ]
 };
 
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "headline": "AxiomCortex™ Scientific Report",
+  "headline": "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation",
   "author": { "@type": "Organization", "name": "TeamStation AI" },
   "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
   "url": `https://cto.teamstation.dev/research/${pageInfo.slug}`,
@@ -53,7 +53,7 @@ export default function ResearchPaperPage() {
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / 
           <Link href="/research/hub" className="hover:text-foreground">Research</Link> / 
-          <span>AxiomCortex™ Report</span>
+          <span>Heuristically Trained AI</span>
         </div>
         <article className="prose dark:prose-invert max-w-none">
           <h1>{pageInfo.title.split(' | ')[0]}</h1>
