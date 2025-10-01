@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: ['/_next/', '/api/', '/studio/'],
     },
     sitemap: 'https://cto.teamstation.dev/sitemap.xml',
   };
