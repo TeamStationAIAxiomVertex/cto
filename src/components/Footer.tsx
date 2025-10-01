@@ -138,9 +138,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-border pt-8 text-center text-sm flex flex-col sm:flex-row justify-between items-center">
+        <div className="mt-16 border-t border-border pt-8 text-center text-sm">
           <p>© {year} TeamStation AI — All rights reserved.</p>
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4 sm:mt-0">
+           <p className="mt-2">
+            Part of the TeamStation AI network — visit our corporate site at{' '}
+            <a href="https://teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+              teamstation.dev
+            </a>
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4">
             {utilityLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground">
                 {link.label}
@@ -152,5 +158,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-    

@@ -14,6 +14,10 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cto.teamstation.dev'),
+  alternates: {
+    canonical: 'https://teamstation.dev/cto',
+  },
   title: 'Nearshore Software Development: The CTO Playbook | TeamStation AI',
   description:
     'Audit-ready compliance, cognitive AI vetting, and daylight overlap. The CTO Playbook delivers measurable outcomes so you ship faster with predictable TCO.',
