@@ -1,4 +1,3 @@
-
 // src/app/comparisons/revelo/page.tsx
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
