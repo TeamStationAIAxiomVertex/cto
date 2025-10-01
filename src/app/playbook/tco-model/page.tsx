@@ -250,19 +250,16 @@ export default function TCOModelPage() {
         </div>
 
         <header className="my-8">
-            <div className="rounded-lg border bg-card p-8 md:p-12 shadow-lg">
-                <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Beyond Salary: The CTO's Guide to Total Cost of Ownership</h1>
+            <div className="rounded-lg border bg-card p-8 md:p-12">
+                <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Computational Cards: A CFO-Ready TCO Model</h1>
                 <div className="mt-8 max-w-4xl space-y-6">
                     <div className="bg-background p-6 rounded-lg border border-primary/20">
-                        <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>Foreword: The Flawed Conversation</h2>
-                        <p className="mt-2 text-muted-foreground">The conversation about engineering cost is fundamentally broken. It revolves around a single, dangerously misleading number: the hourly rate or the base salary. Your CFO sees a lower number on a spreadsheet from an offshore vendor and calls it a "win," while you, the CTO, are left to deal with the catastrophic second-order effects: delayed timelines, burned-out senior engineers, and a constant state of fire-fighting.</p>
-                    </div>
-                    <div className="bg-background p-6 rounded-lg border border-border/50">
-                        <p className="mt-2 text-muted-foreground">This is not a sustainable way to build a high-performance engineering organization. A true financial analysis must account for the <WithTooltip label="Includes not just salary, but all direct and indirect costs like hiring, legal, IT, and management overhead."><strong className="text-foreground"><span className="border-b border-dashed">Total Cost of Ownership (TCO)</span></strong></WithTooltip>, a model that includes not just direct costs, but also the massive, often unmeasured "hidden taxes" on your budget: the cost of slow hiring, the penalty for poor quality, and the operational drag of managing a fragmented, global team.</p>
+                        <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>Foreword: Moving Beyond the Rate Card</h2>
+                        <p className="mt-2 text-muted-foreground">The hourly rate is the most misleading number in IT staffing. It tells you what you pay, but not what you get. True Total Cost of Ownership (TCO) is a function of not just salary, but speed, quality, and risk. A "cheaper" offshore team that ships buggy code slowly is infinitely more expensive than a nearshore pod that delivers clean code in your time zone.</p>
                     </div>
                     <div className="bg-background p-6 rounded-lg border border-border/50">
                         <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Playbook's Purpose</h3>
-                        <p className="mt-2 text-muted-foreground">This guide is your strategic weapon. It provides a CFO-ready framework, presented as a series of "Computational Cost" cards, to systematically dismantle the "cheaper is better" argument. Each card isolates a specific hidden cost, quantifies its financial impact using simple formulas, and demonstrates how an integrated nearshore platform turns that cost center into a source of value. This is how you shift the conversation from cost-cutting to <strong className="text-primary">strategic investment in velocity, quality, and risk mitigation.</strong></p>
+                        <p className="mt-2 text-muted-foreground">These "Computational Cost Cards" are designed to be your internal business case. Each card isolates a "hidden tax" of traditional staffing models, provides a simple formula to quantify its impact, and shows how an integrated platform like TeamStation AI turns that cost into a saving. Use this framework to have a data-driven conversation with your CFO and move your organization from cost-based accounting to value-based investment.</p>
                     </div>
                 </div>
             </div>
@@ -337,23 +334,21 @@ export default function TCOModelPage() {
           </div>
         </section>
 
-        <section className="my-16 rounded-xl border bg-card p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-foreground">Variables for Estimation</h3>
-              <p className="text-sm text-muted-foreground mt-1">A legend of variables used in the computational cost cards.</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {legend.map(item => <span key={item} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{item}</span>)}
-              </div>
-        </section>
-
-          <div className="text-center rounded-lg bg-primary/10 p-8 mt-12 shadow-lg">
-              <h2 className="text-2xl font-bold">Ready to Build Your Business Case?</h2>
-              <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-                  Let's plug your numbers into this framework. In a 15-minute, no-obligation strategy call, we can build a CFO-ready TCO model for your specific situation.
-              </p>
-              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
-                  Book a TCO Strategy Call <ArrowRight className="ml-2 h-4 w-4"/>
-              </a>
+        <section className="my-16 border-t border-border pt-12">
+          <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
+          <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
+            <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
+            <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
+            <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
+            <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
+          </ul>
+          <div className="mt-6 text-sm">
+            Related: 
+            <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
+            <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
+            <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
           </div>
+        </section>
       </main>
     </>
   );

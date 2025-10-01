@@ -150,27 +150,27 @@ export default function BiasFreeHiringAxiomCortexPage() {
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
           A bad hire isn't just a personnel problem; it's a significant financial event. This is the CFO-ready math to justify investing in a scientific hiring process. The "cheaper" ad-hoc approach is costing you a fortune.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              {hiddenTaxes.map((tax, index) => (
-                  <div key={index} className="bg-background/50 rounded-lg border border-destructive/20 p-6">
+          <div className="my-12 grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+              {hiddenTaxes.map((item) => (
+                  <div key={item.title} className="rounded-lg border border-destructive/20 bg-background p-6 flex flex-col">
                       <div className="flex items-center gap-3">
-                          {tax.icon}
-                          <h3 className="text-lg font-bold text-foreground">{tax.title}</h3>
+                          {item.icon}
+                          <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
                       </div>
-                      <p className="text-sm text-muted-foreground mt-4">
-                          {tax.description}
-                          {tax.impact && (
-                              <strong className={`font-bold ${tax.impactColor}`}> {tax.impact} </strong>
+                      <p className="mt-4 text-sm text-muted-foreground flex-grow">
+                          {item.description}
+                          {item.impact && (
+                              <strong className={`font-bold ${item.impactColor}`}> {item.impact} </strong>
                           )}
-                          {tax.afterText}
+                          {item.afterText}
                       </p>
                   </div>
               ))}
           </div>
-          <div className="mt-8 text-center">
-              <Link href="/playbook/latam-economics" className="cta-button">
-                See the Full TCO Framework <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+          <div className="text-center my-8 p-6 rounded-lg bg-background border border-destructive/30">
+              <h3 className="text-xl font-bold text-foreground">Total Hidden Cost (1st Year, per hire):</h3>
+              <p className="text-4xl font-mono font-bold text-destructive mt-2">$97,000 - $185,000+</p>
+              <p className="text-sm text-muted-foreground mt-1">This is <em className="font-bold">in addition</em> to the engineer's salary. The "cheaper" build model is often twice as expensive in the first year.</p>
           </div>
         </section>
         
@@ -222,37 +222,23 @@ export default function BiasFreeHiringAxiomCortexPage() {
               </tbody>
             </table>
           </div>
-          <div className="mt-8 not-prose">
-              <h4 className="font-bold text-foreground text-center">Further Reading:</h4>
-              <div className="flex justify-center space-x-4">
-                  <Link href="/comparisons/bairesdev" className="text-primary hover:underline">vs. Bairesdev</Link>
-                  <Link href="/research/hub" className="text-primary hover:underline">Research Hub</Link>
-              </div>
-          </div>
         </section>
 
-        <section className="my-24">
-          <div className="rounded-lg border bg-card p-8 md:p-12">
-              <h2 className="text-4xl font-bold text-center text-foreground">The Verdict: From Guesswork to Science</h2>
-              <div className="mt-8 max-w-4xl mx-auto space-y-6">
-                  <div className="bg-background p-6 rounded-lg border border-primary/20">
-                      <h3 className="font-bold text-primary flex items-center gap-2"><CheckCircle className="h-5 w-5"/>The Strategic Imperative</h3>
-                      <p className="mt-2 text-muted-foreground">You cannot build a world-class engineering organization on a foundation of hiring guesswork. The single most leveraged activity a CTO can perform is to de-risk the process of bringing new talent into the organization. A scientific, evidence-based hiring system is not a "nice-to-have"; it is the fundamental prerequisite for predictable delivery, innovation, and long-term success.</p>
-                      <p className="mt-4 text-foreground">This methodology transforms hiring from a game of chance into a science. It's how you build an elite team based on <strong className="text-primary">proven capability</strong>, not just credentials on a PDF. Our platform provides the auditable report, the cognitive fingerprint, and the evidence locker, so you can make a data-driven decision, not a gut-feel guess. It's the system that allows you to stop gambling and start engineering your team with the same rigor you apply to your software.</p>
-                  </div>
-              </div>
+        <section className="my-16 border-t border-border pt-12">
+          <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
+          <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
+            <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
+            <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
+            <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
+            <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
+          </ul>
+          <div className="mt-6 text-sm">
+            Related: 
+            <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
+            <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
+            <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
           </div>
         </section>
-
-        <div className="text-center rounded-lg bg-primary/10 p-8 mt-12">
-              <h2 className="text-2xl font-bold">Ready to De-Risk Your Hiring?</h2>
-              <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-                  This isn't a sales pitch. It's a strategic consultation to build your CFO-ready business case for a scientific hiring process. Let's discuss how our evaluation process can find you the right talent, faster and more accurately than any other method.
-              </p>
-              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
-                  Book a Hiring Strategy Call <ArrowRight className="ml-2 h-4 w-4"/>
-              </a>
-          </div>
       </main>
     </>
   );

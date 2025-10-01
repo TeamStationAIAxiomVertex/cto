@@ -103,14 +103,6 @@ export default function LatamEconomicsPage() {
                     <div className="bg-background p-6 rounded-lg border border-primary/20">
                         <p className="mt-2 text-muted-foreground">This CTO Playbook gives you a measured nearshore system: cognition-first hiring, secure-by-default devices, real SLAs for PRs and incidents, and a TCO model Finance signs without flinching.</p>
                     </div>
-                    <div className="mt-8 not-prose">
-                          <h4 className="font-bold text-foreground">Related Frameworks:</h4>
-                          <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4">
-                              <Link href="/playbook/build-vs-buy" className="text-primary hover:underline">Build vs. Buy Framework</Link>
-                              <Link href="/playbook/tco-model" className="text-primary hover:underline">TCO Model Cards</Link>
-                              <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
-                          </div>
-                      </div>
                 </div>
             </div>
         </header>
@@ -220,33 +212,23 @@ export default function LatamEconomicsPage() {
               </tbody>
             </table>
           </div>
-          <div className="text-center mt-8">
-              <Link href="/playbook/tco-model" className="font-semibold text-primary hover:underline">
-                  See the Complete CFO-Ready TCO Model <ArrowRight className="inline h-4 w-4" />
-              </Link>
-          </div>
         </section>
 
-        <section className="my-24 rounded-lg border bg-card p-8 md:p-12">
-          <h2 className="text-4xl font-bold text-center text-foreground">The Verdict: From Cost Center to Value Driver</h2>
-          <div className="mt-8 max-w-4xl mx-auto space-y-6">
-              <div className="bg-background p-6 rounded-lg border border-primary/20">
-                  <h3 className="font-bold text-primary flex items-center gap-2"><HelpCircle className="h-5 w-5"/>The Strategic Conversation</h3>
-                  <p className="mt-2 text-muted-foreground">The conversation with your CFO should not be about finding the "cheapest" developers. It should be about making the <strong className="text-foreground">most valuable investment</strong>. A low hourly rate from a traditional vendor is a tactical decision that introduces massive strategic risk. An all-inclusive TCO from an integrated platform like TeamStation AI is a strategic decision that <strong className="text-foreground">buys down risk, accelerates revenue, and creates a predictable financial model</strong> for scaling your engineering organization.</p>
-                  <p className="mt-4 text-foreground">By presenting this framework, you are no longer just a technical leader asking for budget. You are a business partner demonstrating financial acumen and a clear-eyed understanding of risk. This is how you get your budget approved and build an engineering organization that drives, rather than drains, value.</p>
-              </div>
-          </div>
-        </section>
-
-        <div className="text-center rounded-lg bg-primary/10 p-8">
-          <h2 className="text-2xl font-bold">Ready to Build Your CFO-Ready Business Case?</h2>
-          <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
-            Stop gambling on incomplete data. Let's have a real conversation about the nearshore software development cost for your specific needs. In 15 minutes, we can give you a concrete, defensible plan your CFO will approve.
-          </p>
-          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
-              Book a No-Obligation Strategy Call
-          </Link>
+        <section className="my-16 border-t border-border pt-12">
+        <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
+        <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
+          <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
+          <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
+          <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
+          <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
+        </ul>
+        <div className="mt-6 text-sm">
+          Related: 
+          <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
+          <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
+          <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
         </div>
+      </section>
       </main>
     </>
   );

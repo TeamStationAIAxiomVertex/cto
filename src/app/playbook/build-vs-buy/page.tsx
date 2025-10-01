@@ -205,42 +205,21 @@ export default function BuildVsBuyPage() {
           </div>
       </section>
 
-      <section className="my-24 rounded-lg border bg-card p-8 md:p-12">
-          <h2 className="text-4xl font-bold text-center text-foreground">The Verdict: A CFO-Ready Decision</h2>
-          <div className="mt-8 max-w-4xl mx-auto space-y-6">
-              <div className="bg-background p-6 rounded-lg border border-primary/20">
-                  <h3 className="font-bold text-primary flex items-center gap-2"><HelpCircle className="h-5 w-5"/>The Strategic Conversation</h3>
-                  <p className="mt-2 text-muted-foreground">The choice between "Build" and "Buy" is a classic business trade-off. For a CTO, however, the variables are different. You are not just buying a component; you are buying <strong className="text-foreground">time, speed, and risk mitigation</strong>. The "Build" model forces you, a technology leader, to become an expert in international law, HR, and logistics. It is a massive, unforced error that diverts your focus from your primary mission.</p>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-background p-6 rounded-lg border border-destructive/20">
-                      <h3 className="font-bold text-destructive flex items-center gap-2"><Layers className="h-5 w-5"/>The "Build" Model</h3>
-                      <p className="mt-2 text-muted-foreground">Optimizes for a single, misleading metric: <strong className="text-foreground">a lower base salary number on a spreadsheet</strong>. It ignores the massive, compounding hidden costs.</p>
-                  </div>
-                  <div className="bg-background p-6 rounded-lg border border-primary/20">
-                      <h3 className="font-bold text-primary flex items-center gap-2"><Zap className="h-5 w-5"/>The "Buy" Model (Integrated Platform)</h3>
-                      <p className="mt-2 text-muted-foreground">Optimizes for what actually matters: <Link href="/playbook/latam-economics#tco-knockout" className="text-primary font-bold hover:underline">predictable TCO</Link>, <strong className="text-foreground">speed-to-market</strong>, and <strong className="text-foreground">enterprise-grade risk management.</strong></p>
-                  </div>
-              </div>
-              <div className="bg-background p-6 rounded-lg border border-primary/20">
-                  <h3 className="font-bold text-primary flex items-center gap-2"><CheckCircle className="h-5 w-5"/>The Conclusion</h3>
-                  <p className="mt-2 text-foreground">By presenting this TCO framework, you are demonstrating to your CFO and your board that you are not just a technical manager but a strategic business partner. You are making a capital allocation decision based on a clear-eyed assessment of total cost and risk. For most growth-stage companies, the "Build" model is a financially and operationally reckless gamble. The "Buy" model, offered by an integrated platform like TeamStation AI, is the only logical choice to scale with speed and safety.</p>
-                  <div className="mt-6 text-center">
-                    <Link href="/playbook/tco-model" className="cta-button">See the CFO-Ready Cost Breakdown</Link>
-                  </div>
-              </div>
-          </div>
+      <section className="my-16 border-t border-border pt-12">
+        <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
+        <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
+          <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
+          <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
+          <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
+          <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
+        </ul>
+        <div className="mt-6 text-sm">
+          Related: 
+          <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
+          <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
+          <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
+        </div>
       </section>
-
-      <div className="text-center rounded-lg bg-primary/10 p-8 mt-12">
-          <h2 className="text-2xl font-bold">Ready to see the TCO model for your specific needs?</h2>
-          <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-              This isn't a sales pitch. It's a strategic consultation to build your CFO-ready business case for nearshore success.
-          </p>
-          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
-              Book a No-Obligation Strategy Call <ArrowRight className="ml-2 h-4 w-4"/>
-          </Link>
-      </div>
     </main>
     </>
   );

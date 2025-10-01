@@ -118,7 +118,6 @@ export default function DeelComparisonPage() {
           <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
               Choosing between TeamStation AI and Deel is not an either/or decision. They are different tools for different jobs. If you need to find and run an elite nearshore team with full operational support, TeamStation AI is your solution. If you simply need a way to pay an international team you've already sourced, Deel is the industry leader.
           </p>
-          <div className="not-prose">
             <section className="my-16 border-t border-border pt-12">
               <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
               <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
@@ -134,7 +133,6 @@ export default function DeelComparisonPage() {
                 <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
               </div>
             </section>
-          </div>
           <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
         </div>
       </main>
