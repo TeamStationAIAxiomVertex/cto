@@ -1,117 +1,107 @@
 
-import Link from "next/link";
-import type { Metadata } from "next";
-import { JsonLd } from "@/components/seo/JsonLd";
-
-const pageInfo = {
-  slug: "tecla",
-  title: "TeamStation vs TECLA: A CTO’s Guide | TeamStation AI",
-  description:
-    "CTO comparison: TeamStation AI vs TECLA. See how integrated platform control stacks up against TECLA’s talent marketplace.",
-  alternates: { canonical: "https://cto.teamstation.dev/comparisons/tecla" },
-  openGraph: {
-    title: "TeamStation vs TECLA: A CTO’s Guide",
-    description: "Side-by-side analysis of TeamStation AI vs TECLA across vetting, compliance, devices, and TCO.",
-    url: "https://cto.teamstation.dev/comparisons/tecla",
-    type: "article",
-  },
-  twitter: {
-    card: "summary",
-    title: "TeamStation vs TECLA: A CTO’s Guide",
-    description: "Evidence-driven comparison of TeamStation AI vs TECLA for CTOs evaluating nearshore IT options.",
-  },
-};
+import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+import { WithTooltip } from '@/components/ui/tooltip';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: pageInfo.title,
-    description: pageInfo.description,
-    alternates: pageInfo.alternates,
-    openGraph: pageInfo.openGraph,
-    twitter: pageInfo.twitter,
+  title: 'TECLA Alternative: TeamStation AI vs. TECLA',
+  description: 'See why our integrated platform with EOR, device management, and AI-vetting is a strong TECLA alternative for LATAM talent.',
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "TeamStation vs TECLA: A CTO’s Guide",
-  "description":
-    "CTO comparison of TeamStation AI vs TECLA. Evidence-driven breakdown across vetting, compliance, devices, SLAs, and TCO.",
-  "author": { "@type": "Organization", "name": "TeamStation AI" },
-  "publisher": { "@type": "Organization", "name": "TeamStation AI" },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://cto.teamstation.dev/comparisons/tecla" },
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How does TeamStation AI compare to TECLA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TECLA is a community-driven network that matches U.S. companies with LATAM developers. TeamStation AI goes further by delivering a fully integrated Nearshore IT Co-Pilot: scientific vetting, secure devices, and compliance management, so CTOs can focus on shipping product instead of vendor management."
-      }
+const comparisonPoints = {
+    "Operations": {
+        pain: "Are you equipped to be a global employer?",
+        traditional: "TECLA is a talent marketplace. They connect you with talent, but the significant burden of compliance, payroll (<span class='border-b border-dashed'>EOR</span>), and IT security falls squarely on you.",
+        teamstation: "We are your global employer platform. We absorb all operational complexity—EOR, secure devices (<span class='border-b border-dashed'>MDM</span>), and insurance—into one accountable SLA.",
+        proof: "1 accountable SLA"
     },
-    {
-      "@type": "Question",
-      "name": "Which offers more predictability in delivery?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TECLA focuses on access to talent. Predictability depends on how each client integrates and manages developers. TeamStation AI guarantees structured onboarding, SLA-backed response times, and telemetry from our Axiom Cortex™ engine, making velocity and quality observable from day one."
-      }
+    "Vetting": {
+        pain: "Is a skills test enough to de-risk a hire?",
+        traditional: "Marketplace vetting is often limited to self-reported skills and basic technical challenges. This doesn't measure the deeper cognitive traits that predict success.",
+        teamstation: "Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> provides peer-reviewed, scientific proof of a candidate's problem-solving ability and learning orientation.",
+        proof: "Mismatch Rate ≤ 10%"
     },
-    {
-      "@type": "Question",
-      "name": "What are the cost trade-offs between TeamStation AI and TECLA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TECLA charges access and placement fees, with compliance and IT left to the client. TeamStation AI includes devices, payroll, compliance, and MDM security inside a single TCO rate, often saving 40–60% when you factor hidden costs like vacancy days and compliance overhead."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does compliance differ between the two?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TECLA connects clients and developers but does not assume full compliance liability. TeamStation AI operates EOR-native across 10 LATAM countries, REPSE-aware in Mexico, and provides audit-ready HR and IT documentation—de-risking enterprise adoption."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When is TECLA a better fit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TECLA works for companies that want community access and are comfortable running their own compliance, IT, and onboarding stack. TeamStation AI is a fit for CTOs who want velocity, control, and evidence-backed hiring built into a single operational platform."
-      }
+    "Cost": {
+        pain: "Is a placement fee the real cost?",
+        traditional: "A marketplace model seems cheap upfront, but the 'hidden costs' of setting up your own EOR, IT, and legal frameworks create a massive, unpredictable <a href='/playbook/latam-economics' class='text-primary hover:underline'><span class='border-b border-dashed'>TCO</span></a>.",
+        teamstation: "Our <a href='/pricing' class='text-primary hover:underline'>all-inclusive pricing</a> eliminates surprises. You get a predictable, CFO-ready TCO that is often 40-60% lower than the fully-loaded cost of the marketplace model.",
+        proof: "40-60% Lower TCO"
     }
-  ]
-};
+}
 
-export default function ComparisonPage() {
+
+export default function TeclaComparisonPage() {
   return (
-    <main className="container max-w-4xl py-12 prose dark:prose-invert">
-      <JsonLd data={[schema, faqSchema]} />
-      <div className="text-sm mb-8">
-        <Link href="/">Home</Link> / <Link href="/comparisons">Comparisons</Link> / <span>TECLA</span>
+    <main className="container py-12">
+      <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>TECLA Alternative</span>
       </div>
-      <h1>TeamStation vs TECLA: A CTO’s Guide</h1>
-      <p>Compare <strong>TeamStation AI</strong> vs <strong>TECLA</strong> across vetting, compliance, security, and TCO.</p>
-       <section className="my-16 border-t border-border pt-12">
-        <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
-        <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
-          <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
-          <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
-          <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
-          <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
-        </ul>
-        <div className="mt-6 text-sm">
-          Related: 
-          <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
-          <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
-          <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
+      <header className="text-center my-8">
+        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TECLA Alternative: TeamStation AI</h1>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          A comparison between TeamStation AI’s integrated platform and TECLA’s talent marketplace model for hiring developers in Latin America.
+        </p>
+         <div className="mt-4 text-sm">
+            <a href="https://www.tecla.io/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                Vendor home: tecla.io <ExternalLink className="h-4 w-4" />
+            </a>
         </div>
-      </section>
+      </header>
+
+       <div className="my-12">
+        <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The Talent Marketplace</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
+          {Object.entries(comparisonPoints).map(([key, value]) => (
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+              <p className="text-sm font-semibold text-primary">{value.pain}</p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+              
+              <div className="mt-4 flex-grow space-y-4">
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                    <XCircle className="h-5 w-5 text-destructive" />
+                    TECLA Model
+                  </h4>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                </div>
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    TeamStation AI Solution
+                  </h4>
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                </div>
+              </div>
+              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
+        <h2 className="text-center">Analysis: The Integrated Platform vs. The Marketplace</h2>
+        <p>
+            <a href="https://www.tecla.io/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">TECLA <ExternalLink className="h-4 w-4" /></a> operates as a talent marketplace, connecting companies with a network of developers across Latin America. While effective for sourcing candidates, their model places the significant burden of compliance, payroll, device security, and HR management squarely on the client.
+        </p>
+        <p>
+           As a TECLA alternative, TeamStation AI provides a fully integrated platform. We don't just find talent; we provide the entire operational infrastructure. This includes <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, secure device provisioning (<WithTooltip label="Mobile Device Management: software that secures, monitors, and manages devices like laptops."><span className="border-b border-dashed">MDM</span></WithTooltip>), and comprehensive insurance, all bundled into a single, predictable rate. Our{' '}
+            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link>
+            {' '} engine also provides a layer of cognitive and bias-aware vetting that goes far beyond traditional screening.
+        </p>
+        <h3>Operational Responsibility: Where Does it Lie?</h3>
+        <p>
+            With a marketplace like TECLA, you find the talent, but then you are largely on your own. You have to figure out how to hire them compliantly, pay them, and secure their work environment. This creates significant operational overhead and legal risk. TeamStation AI absorbs this complexity. Our model is designed for CTOs who need to scale without building a global HR and legal department from scratch.
+        </p>
+      </div>
+
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+        <h2 className="text-2xl font-bold">Conclusion</h2>
+        <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
+            If you have the internal resources to manage international hiring, compliance, and IT security, a marketplace like TECLA can be a good sourcing tool. However, for companies looking for a complete, secure, and scalable solution that reduces risk and operational burden, TeamStation AI's integrated platform offers a clear advantage as a TECLA alternative.
+        </p>
+        <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
+      </div>
     </main>
   );
 }
