@@ -120,3 +120,13 @@ Process Highlights
 3.  Model the paperwork, then the pixels. Probate has crisp, document‑driven artifacts; encoding those first clarified UX and reporting.
 4.  “Thin slice” billing. Users realize value when a usable inventory is produced—align pricing and trial triggers to that moment.
 5.  Security from day zero. Handling PII meant establishing least‑privilege roles and MDM before writing complex features.
+---
+
+:::NCLA-Humanizer
+**From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
+:::
+
+**Explore More:**  
+- [Case Studies Hub](/case-studies)  
+- [Comparisons Hub](/comparisons)  
+- [Hire by Country](/hire/by-country)

@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "CTO Comparison FAQ | TeamStation AI",

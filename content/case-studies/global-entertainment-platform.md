@@ -36,7 +36,7 @@ A top-tier entertainment company running a billion‑dollar, globally distribute
 -   Time‑zone alignment: Real‑time stand‑ups, pairing, and triage in U.S. business hours.
 -   Assured security posture: End‑to-end encryption, MFA/SSO, least‑privilege access, background checks, and regular pen‑tests.
 -   Devices & coverage: Company‑issued devices with MDM, secure network baselines, and cybersecurity insurance coverage—a level of protection many far‑shore vendors typically do not provide.
--   Integrated delivery: Employer‑of-Record (EOR), localized payroll/benefits, onboarding, governance, and ongoing performance management through the TeamStation platform.
+-   Integrated delivery: Employer‑of‑Record (EOR), localized payroll/benefits, onboarding, governance, and ongoing performance management through the TeamStation platform.
 
 ---
 
@@ -98,3 +98,13 @@ Engagement model: Dedicated squad with elastic bench capacity and SLAs for cover
 
 -   Rituals: Daily stand‑ups, embedded QA in planning/refinement, weekly quality council, and monthly risk reviews.
 -   Reporting: Executive dashboards for coverage, flake rate, escape rate, MTTR, and readiness to ship.
+---
+
+:::NCLA-Humanizer
+**From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
+:::
+
+**Explore More:**  
+- [Case Studies Hub](/case-studies)  
+- [Comparisons Hub](/comparisons)  
+- [Hire by Country](/hire/by-country)

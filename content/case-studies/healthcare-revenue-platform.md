@@ -66,3 +66,13 @@ What we produce and maintain (living artifacts):
 -   Faster onboarding: New engineers productive in ≤10 business days with audited evidence.
 -   Lower coordination cost: Time‑zone alignment and documented rituals cut decision latency.
 -   Compliance confidence: Clean audits/QBRs anchored by maintained artifacts.
+---
+
+:::NCLA-Humanizer
+**From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
+:::
+
+**Explore More:**  
+- [Case Studies Hub](/case-studies)  
+- [Comparisons Hub](/comparisons)  
+- [Hire by Country](/hire/by-country)

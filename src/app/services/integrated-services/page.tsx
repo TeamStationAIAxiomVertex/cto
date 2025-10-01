@@ -57,7 +57,7 @@ export default function IntegratedServicesPage() {
     {
       icon: <Scale className="h-8 w-8 text-primary" />,
       pain: "Carrying all the liability for remote work?",
-      title: "Cyber, E&O Insurance & IP Protection",
+      title: "Cyber & E&O Insurance & IP Protection",
       description:
         "All work is covered by our comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, plus Work-for-Hire IP protection, giving you a critical liability shield.",
        kpi: "Liability shield included",

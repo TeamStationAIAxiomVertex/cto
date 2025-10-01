@@ -70,3 +70,13 @@ Product Squad Expansion
 -   Onboarding unlocked for additional billable users on the worker-automation platform.
 -   Sustained product velocity across multiple lines with embedded Product/UX and strong QA automation.
 -   Trusted partnership established after prior vendor evaluations failed to meet quality/culture standards.
+---
+
+:::NCLA-Humanizer
+**From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
+:::
+
+**Explore More:**  
+- [Case Studies Hub](/case-studies)  
+- [Comparisons Hub](/comparisons)  
+- [Hire by Country](/hire/by-country)

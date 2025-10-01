@@ -74,3 +74,13 @@ This structure reduces friction, ensures security compliance, and accelerates ti
 3.  Documentation is part of the deliverable. Lightweight ADRs and PR notes preserve decision context and reduce regression risk.
 4.  Feature flags are your best brake and accelerator. They make faster releases compatible with lower risk.
 5.  Time‑zone alignment is not a perk; it’s throughput. Same‑day feedback compounds over sprints.
+---
+
+:::NCLA-Humanizer
+**From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
+:::
+
+**Explore More:**  
+- [Case Studies Hub](/case-studies)  
+- [Comparisons Hub](/comparisons)  
+- [Hire by Country](/hire/by-country)

@@ -74,7 +74,7 @@ const faqSchema = {
       "name": "How does compliance differ between the two?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TECLA connects clients and developers but does not assume full compliance liability. TeamStation AI operates as EOR-native across 10 LATAM countries, REPSE-aware in Mexico, and provides audit-ready HR and IT documentation—de-risking enterprise adoption."
+        "text": "TECLA connects clients and developers but does not assume full compliance liability. TeamStation AI operates EOR-native across 10 LATAM countries, REPSE-aware in Mexico, and provides audit-ready HR and IT documentation—de-risking enterprise adoption."
       }
     },
     {
