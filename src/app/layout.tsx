@@ -66,29 +66,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <path d="M211 140H141V210H211V140Z" fill="#F0F8FF"/>
       <path d="M371 140H301V210H371V140Z" fill="#F0F8FF"/>
       <path d="M301 210H211V402C211 402 211 442 256 442C301 442 301 402 301 402V210Z" fill="#F0F8FF"/>
-      <path d="M211 140H141V210H211V140Z" fill="url(#paint0_linear_1_2)"/>
-      <path d.ts="M371 140H301V210H371V140Z" fill="url(#paint1_linear_1_2)"/>
-      <path d="M301 210H211V402C211 402 211 442 256 442C301 442 301 402 301 402V210Z" fill="url(#paint2_linear_1_2)"/>
       <path d="M196 140H126V210H196V140Z" fill="#4C57D3"/>
       <path d="M356 140H286V210H356V140Z" fill="#4C57D3"/>
       <path d="M286 210H196V402C196 402 196 442 241 442C286 442 286 402 286 402V210Z" fill="#4C57D3"/>
       <path d="M181 140H111V210H181V140Z" fill="#8E99FF"/>
       <path d="M341 140H271V210H341V140Z" fill="#8E99FF"/>
       <path d="M271 210H181V402C181 402 181 442 226 442C271 442 271 402 271 402V210Z" fill="#8E99FF"/>
-      <defs>
-        <linearGradient id="paint0_linear_1_2" x1="176" y1="140" x2="176" y2="210" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#2D3798"/>
-          <stop offset="1" stop-color="#4C57D3"/>
-        </linearGradient>
-        <linearGradient id="paint1_linear_1_2" x1="336" y1="140" x2="336" y2="210" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#2D3798"/>
-          <stop offset="1" stop-color="#4C57D3"/>
-        </linearGradient>
-        <linearGradient id="paint2_linear_1_2" x1="256" y1="210" x2="256" y2="442" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#2D3798"/>
-          <stop offset="1" stop-color="#4C57D3"/>
-        </linearGradient>
-      </defs>
     </svg>
   `;
   const faviconDataUri = `data:image/svg+xml,${encodeURIComponent(faviconSvg)}`;
