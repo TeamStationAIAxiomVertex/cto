@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   // Enforce length constraints
-  const title = study.title.length > 60 ? `${study.clientName} Case Study` : study.title;
+  const title = study.title.replace(' | TeamStation AI Case Study', 'Case Study');
   const description = study.summary.length > 160 ? `Case study: how TeamStation AI helped ${study.clientName} with ${study.industry} challenges.` : study.summary;
   
   const keywords = [
@@ -104,7 +104,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
         '@type': 'WebPage',
         '@id': study.canonical,
     },
-    headline: study.title,
+    headline: study.title.replace(' | TeamStation AI Case Study', ''),
     description: study.summary,
     image: imageUrl,
     author: {
@@ -144,7 +144,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
               <div className="lg:col-span-8 space-y-12">
                   <header>
                       <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                          {study.title}
+                          {study.title.replace(' | TeamStation AI Case Study', '')}
                       </h1>
                       <div className="relative h-96 w-full my-8 rounded-lg overflow-hidden border">
                           <SafeImage 
