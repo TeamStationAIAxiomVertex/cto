@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -102,6 +103,19 @@ export default function ComparisonHubPage() {
           </li>
         ))}
       </ul>
+
+      <nav className="mt-12 border-t border-border pt-6 text-sm">
+        <h3>Related Resources:</h3>
+        <ul>
+            <li>
+              <Link href="/comparisons/faq" className="text-primary hover:underline">
+                Comparison FAQ
+              </Link>
+            </li>
+            <li><Link href="/playbook/tco-model">Playbook: TCO Model</Link></li>
+            <li><Link href="/case-studies">Case Studies</Link></li>
+        </ul>
+      </nav>
     </main>
   );
 }
