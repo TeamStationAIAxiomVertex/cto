@@ -80,9 +80,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "url": "https://teamstation.dev",
               "logo": "https://teamstation.dev/apple-touch-icon.png",
               "sameAs": [
+                "https://teamstation.dev",
                 "https://cto.teamstation.dev",
-                "https://www.linkedin.com/company/teamstation",
-                 "https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en"
+                "https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en",
+                "https://www.linkedin.com/company/teamstation"
               ]
             })
           }}
