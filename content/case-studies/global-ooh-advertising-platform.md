@@ -1,6 +1,6 @@
 ---
 slug: 'global-ooh-advertising-platform'
-title: 'Accelerating AI Feature Velocity | AdTech Case Study | TeamStation AI'
+title: 'Accelerating AI Feature Velocity | AdTech Case Study'
 description: 'TeamStation AI embedded senior nearshore full-stack engineers into a global AdTech platform, accelerating AI feature velocity and reducing operational risk.'
 clientName: 'Global OOH Advertising Platform'
 industry: 'Advertising Technology'
