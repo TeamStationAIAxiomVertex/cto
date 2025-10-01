@@ -5,70 +5,43 @@ import { JsonLd } from "@/components/seo/JsonLd";
 
 const pageInfo = {
   slug: "tecla",
-  title: "TeamStation vs TECLA: Platform vs Network",
+  title: "TeamStation vs TECLA: A CTO’s Guide | TeamStation AI",
   description:
-    "TECLA provides a curated LATAM network. TeamStation AI offers a scientific, audit-ready platform for CTOs demanding velocity, compliance, and data-driven vetting.",
-  canonical: "https://cto.teamstation.dev/comparisons/tecla",
-};
-
-export const metadata: Metadata = {
-  title: pageInfo.title,
-  description: pageInfo.description,
-  alternates: { canonical: pageInfo.canonical },
+    "CTO comparison: TeamStation AI vs TECLA. See how integrated platform control stacks up against TECLA’s talent marketplace.",
+  alternates: { canonical: "https://cto.teamstation.dev/comparisons/tecla" },
   openGraph: {
-    title: pageInfo.title,
-    description: pageInfo.description,
-    url: pageInfo.canonical,
+    title: "TeamStation vs TECLA: A CTO’s Guide",
+    description: "Side-by-side analysis of TeamStation AI vs TECLA across vetting, compliance, devices, and TCO.",
+    url: "https://cto.teamstation.dev/comparisons/tecla",
     type: "article",
   },
-  twitter: { card: "summary", title: pageInfo.title, description: pageInfo.description },
+  twitter: {
+    card: "summary",
+    title: "TeamStation vs TECLA: A CTO’s Guide",
+    description: "Evidence-driven comparison of TeamStation AI vs TECLA for CTOs evaluating nearshore IT options.",
+  },
 };
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  name: "TeamStation vs TECLA",
-  description: pageInfo.description,
-  brand: { "@type": "Organization", name: "TeamStation AI" },
-  url: pageInfo.canonical,
-  review: {
-    "@type": "Review",
-    reviewBody:
-      "TECLA connects clients with a curated network of LATAM engineers. TeamStation AI provides integrated scientific vetting, managed devices, and EOR compliance, delivering lower TCO and faster ramp.",
-    author: { "@type": "Organization", name: "TeamStation AI" },
-  },
+  "@type": "Article",
+  "headline": "TeamStation vs TECLA: A CTO’s Guide",
+  "description":
+    "CTO comparison of TeamStation AI vs TECLA. Evidence-driven breakdown across vetting, compliance, devices, SLAs, and TCO.",
+  "author": { "@type": "Organization", "name": "TeamStation AI" },
+  "publisher": { "@type": "Organization", "name": "TeamStation AI" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://cto.teamstation.dev/comparisons/tecla" },
 };
 
 export default function ComparisonPage() {
   return (
-    <>
+    <main className="container max-w-4xl py-12 prose dark:prose-invert">
       <JsonLd data={schema} />
-      <main className="container max-w-4xl py-12">
-        <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/" className="hover:text-foreground">Home</Link> / 
-          <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / 
-          <span>TECLA</span>
-        </div>
-        <article className="prose dark:prose-invert max-w-none">
-          <h1>{pageInfo.title}</h1>
-          <p>{pageInfo.description}</p>
-          <h2>Verdict Snapshot</h2>
-          <ul>
-            <li><strong>Vetting:</strong> TeamStation Axiom Cortex™ vs TECLA curated profiles.</li>
-            <li><strong>Compliance:</strong> TeamStation EOR-native compliance; TECLA depends on client setup.</li>
-            <li><strong>Devices:</strong> TeamStation managed devices; TECLA leaves hardware to client.</li>
-            <li><strong>Velocity:</strong> TeamStation ≤10 days to first PR; TECLA depends on client processes.</li>
-          </ul>
-          <nav className="mt-12 border-t border-border pt-6 text-sm">
-            <h3>Explore More:</h3>
-            <ul>
-              <li><Link href="/comparisons/unosquare">Compare TeamStation vs Unosquare</Link></li>
-              <li><Link href="/comparisons/bairesdev">Compare TeamStation vs BairesDev</Link></li>
-              <li><Link href="/playbook/hub">Playbook Hub</Link></li>
-            </ul>
-          </nav>
-        </article>
-      </main>
-    </>
+      <div className="text-sm mb-8">
+        <Link href="/">Home</Link> / <Link href="/comparisons">Comparisons</Link> / <span>TECLA</span>
+      </div>
+      <h1>TeamStation vs TECLA: A CTO’s Guide</h1>
+      <p>Compare <strong>TeamStation AI</strong> vs <strong>TECLA</strong> across vetting, compliance, security, and TCO.</p>
+    </main>
   );
 }
