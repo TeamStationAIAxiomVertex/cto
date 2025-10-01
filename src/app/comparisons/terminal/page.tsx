@@ -1,68 +1,46 @@
-// src/app/comparisons/terminal/page.tsx
+// Terminal Comparison Page
+import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
-import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "TeamStation vs Terminal: Nearshore Pods vs Remote HR Infrastructure",
+  title: "TeamStation vs Terminal: A CTO’s Guide | TeamStation AI",
   description:
-    "Terminal provides HR and infrastructure for distributed teams. TeamStation AI delivers integrated nearshore pods with scientific vetting, MDM devices, and enterprise-grade compliance.",
+    "CTO comparison: TeamStation AI vs Terminal. Evaluating secure onboarding, compliance, vetting, and total cost of ownership.",
   alternates: { canonical: "https://cto.teamstation.dev/comparisons/terminal" },
   openGraph: {
-    title: "TeamStation vs Terminal: Nearshore Pods vs Remote HR Infrastructure",
-    description:
-      "Terminal provides HR and infrastructure for distributed teams. TeamStation AI delivers integrated nearshore pods with scientific vetting, MDM devices, and enterprise-grade compliance.",
+    title: "TeamStation vs Terminal: A CTO’s Guide",
+    description: "Evidence-based comparison of TeamStation AI vs Terminal across vetting, compliance, devices, and SLAs.",
     url: "https://cto.teamstation.dev/comparisons/terminal",
     type: "article",
   },
-  twitter: { card: "summary", title: "TeamStation vs Terminal", description: "Terminal provides HR and infrastructure for distributed teams. TeamStation AI delivers integrated nearshore pods with scientific vetting, MDM devices, and enterprise-grade compliance." },
+  twitter: {
+    card: "summary",
+    title: "TeamStation vs Terminal: A CTO’s Guide",
+    description: "CTO-focused comparison of TeamStation AI vs Terminal, highlighting evidence-based security and compliance.",
+  },
 };
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  name: "TeamStation vs Terminal",
-  description: "Terminal provides HR and infrastructure for distributed teams. TeamStation AI delivers integrated nearshore pods with scientific vetting, MDM devices, and enterprise-grade compliance.",
-  brand: { "@type": "Organization", name: "TeamStation AI" },
-  url: "https://cto.teamstation.dev/comparisons/terminal",
-  review: {
-    "@type": "Review",
-    reviewBody:
-      "Terminal offers HR and workspace infrastructure for distributed teams. TeamStation AI instead provides audit-ready LATAM pods with cognitive vetting, managed devices, and single-SLA compliance.",
-    author: { "@type": "Organization", name: "TeamStation AI" },
-  },
+  "@type": "Article",
+  "headline": "TeamStation vs Terminal: A CTO’s Guide",
+  "description":
+    "CTO comparison of TeamStation AI vs Terminal. Evidence-driven breakdown across vetting, compliance, devices, SLAs, and TCO.",
+  "author": { "@type": "Organization", "name": "TeamStation AI" },
+  "publisher": { "@type": "Organization", "name": "TeamStation AI" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://cto.teamstation.dev/comparisons/terminal" },
 };
 
 export default function ComparisonPage() {
   return (
-    <>
+    <main className="container max-w-4xl py-12 prose dark:prose-invert">
       <JsonLd data={schema} />
-      <main className="container max-w-4xl py-12">
-        <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/" className="hover:text-foreground">Home</Link> /
-          <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> /
-          <span>Terminal</span>
-        </div>
-        <article className="prose dark:prose-invert max-w-none">
-          <h1>{metadata.title as string}</h1>
-          <p>{metadata.description}</p>
-          <h2>Verdict Snapshot</h2>
-          <ul>
-            <li><strong>Model:</strong> TeamStation = pods + ops wrapper; Terminal = HR + office infra.</li>
-            <li><strong>Vetting:</strong> TeamStation Axiom Cortex™; Terminal leaves vetting to clients.</li>
-            <li><strong>Devices:</strong> TeamStation-managed laptops; Terminal = client responsibility.</li>
-            <li><strong>Compliance:</strong> TeamStation = REPSE/EOR native; Terminal = HR frameworks.</li>
-          </ul>
-          <nav className="mt-12 border-t border-border pt-6 text-sm">
-            <h3>Explore More:</h3>
-            <ul>
-              <li><Link href="/comparisons/parallelstaff">Compare TeamStation vs ParallelStaff</Link></li>
-              <li><Link href="/playbook/tco-model">Playbook: TCO Model</Link></li>
-              <li><Link href="/trust">Trust Center</Link></li>
-            </ul>
-          </nav>
-        </article>
-      </main>
-    </>
+      <div className="text-sm mb-8">
+        <Link href="/">Home</Link> / <Link href="/comparisons">Comparisons</Link> / <span>Terminal</span>
+      </div>
+      <h1>TeamStation vs Terminal: A CTO’s Guide</h1>
+      <p>Compare <strong>TeamStation AI</strong> vs <strong>Terminal</strong> across secure onboarding, evidence-based vetting, compliance, and cost models.</p>
+    </main>
   );
 }
