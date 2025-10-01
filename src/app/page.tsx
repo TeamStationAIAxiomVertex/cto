@@ -201,36 +201,42 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }}
       />
-      <div className="container mx-auto px-4">
         <section className="py-16 md:py-24">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col items-center md:items-start text-center md:text-left w-full">
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                Nearshore Software Development: The CTO Playbook
-              </h1>
-              <p className="mt-6 text-lg text-muted-foreground">
-                Legacy vendors sell hours. The CTO Playbook delivers science, daylight overlap, and outcomes you can measure.
-              </p>
-              <p className="mt-4 text-md font-semibold text-primary">
-                Certainty in cost, continuity in delivery, predictability in outcomes — so CTOs ship faster and keep CFOs confident.
-              </p>
-              <div className="mt-10">
-                <Link
-                  href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-button px-6 py-3"
-                >
-                  Book a Strategy Call
-                </Link>
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              
+              {/* Left: Hero Text */}
+              <div className="flex flex-col items-center md:items-start text-center md:text-left w-full">
+                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+                  Nearshore Software Development: The CTO Playbook
+                </h1>
+                <p className="mt-6 text-lg text-muted-foreground">
+                  Legacy vendors sell hours. The CTO Playbook delivers science, daylight overlap, and outcomes you can measure.
+                </p>
+                <p className="mt-4 text-md font-semibold text-primary">
+                  Certainty in cost, continuity in delivery, predictability in outcomes — so CTOs ship faster and keep CFOs confident.
+                </p>
+                <div className="mt-10">
+                  <Link
+                    href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cta-button px-6 py-3"
+                  >
+                    Book a Strategy Call
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="w-full flex justify-center md:justify-end">
-              <HeroKpis items={heroKpis} />
+
+              {/* Right: Hero KPIs */}
+              <div className="w-full flex justify-center md:justify-end">
+                <HeroKpis items={heroKpis} />
+              </div>
             </div>
           </div>
         </section>
 
+        <div className="container mx-auto px-4">
         <section id="trust-by-numbers" className="py-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 {trustNumbers.map((item) => {
@@ -238,7 +244,7 @@ export default async function HomePage() {
                     return(
                         <div key={item.label} className="group rounded-lg border bg-card p-4 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                             <div className="flex justify-center">
-                                <Icon className="h-8 w-8 text-primary" />
+                                <Icon aria-label={item.label} className="h-8 w-8 text-primary" />
                             </div>
                             <p className="mt-3 text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">{item.value}</p>
                             <p className="mt-1 text-xs md:text-sm text-muted-foreground">{item.label}</p>
