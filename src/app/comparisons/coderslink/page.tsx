@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -27,15 +26,15 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "TeamStation vs CodersLink",
-  description: pageInfo.description,
-  brand: { "@type": "Organization", name: "TeamStation AI" },
-  url: pageInfo.canonical,
-  review: {
+  "name": "TeamStation vs CodersLink",
+  "description": pageInfo.description,
+  "brand": { "@type": "Organization", "name": "TeamStation AI" },
+  "url": pageInfo.canonical,
+  "review": {
     "@type": "Review",
-    reviewBody:
+    "reviewBody":
       "CodersLink connects companies with LATAM developers. TeamStation AI delivers managed pods with scientific vetting, security, and EOR compliance for faster delivery and lower risk.",
-    author: { "@type": "Organization", name: "TeamStation AI" },
+    "author": { "@type": "Organization", "name": "TeamStation AI" },
   },
 };
 

@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -27,15 +26,15 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "TeamStation vs Devlane",
-  description: pageInfo.description,
-  brand: { "@type": "Organization", name: "TeamStation AI" },
-  url: pageInfo.canonical,
-  review: {
+  "name": "TeamStation vs Devlane",
+  "description": pageInfo.description,
+  "brand": { "@type": "Organization", "name": "TeamStation AI" },
+  "url": pageInfo.canonical,
+  "review": {
     "@type": "Review",
-    reviewBody:
+    "reviewBody":
       "Devlane is a LATAM staff augmentation vendor. TeamStation AI bundles cognitive vetting, device security, and compliance into one SLA to reduce risk and accelerate delivery.",
-    author: { "@type": "Organization", name: "TeamStation AI" },
+    "author": { "@type": "Organization", "name": "TeamStation AI" },
   },
 };
 

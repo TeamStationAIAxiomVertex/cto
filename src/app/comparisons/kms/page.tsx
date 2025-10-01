@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -27,15 +26,15 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "TeamStation vs KMS Technology",
-  description: pageInfo.description,
-  brand: { "@type": "Organization", name: "TeamStation AI" },
-  url: pageInfo.canonical,
-  review: {
+  "name": "TeamStation vs KMS Technology",
+  "description": pageInfo.description,
+  "brand": { "@type": "Organization", "name": "TeamStation AI" },
+  "url": pageInfo.canonical,
+  "review": {
     "@type": "Review",
-    reviewBody:
+    "reviewBody":
       "KMS Technology is an offshore outsourcing vendor. TeamStation AI provides measurable outcomes via nearshore pods, cognitive vetting, and single-SLA operational control.",
-    author: { "@type": "Organization", name: "TeamStation AI" },
+    "author": { "@type": "Organization", "name": "TeamStation AI" },
   },
 };
 
