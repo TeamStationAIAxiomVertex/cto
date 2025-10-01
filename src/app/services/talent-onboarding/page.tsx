@@ -83,6 +83,17 @@ export default function OnboardingPage() {
         </p>
         <Link href="/process" className="cta-button mt-6">Explore Our Full Process <ArrowRight className="ml-2 h-4 w-4"/></Link>
       </div>
+      <section className="my-16 border-t border-border pt-12">
+        <h2 className="text-2xl font-bold">Why It Matters</h2>
+        <p className="mt-2 text-muted-foreground">
+          CTOs don’t buy marketing—they buy measurable velocity, compliance, and secure outcomes.
+        </p>
+        <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
+          <li><a href="/playbook" className="text-primary hover:underline">CTO Playbook</a></li>
+          <li><a href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</a></li>
+          <li><a href="/hire/by-country/mexico" className="text-primary hover:underline">Hire in Mexico</a></li>
+        </ul>
+      </section>
     </main>
   );
 }

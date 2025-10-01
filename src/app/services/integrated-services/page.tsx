@@ -121,6 +121,18 @@ export default function IntegratedServicesPage() {
             Stop managing vendors and start building your product. Let our integrated platform handle the operational complexity for you.
         </p>
         <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>      </div>
+
+      <section className="my-16 border-t border-border pt-12">
+        <h2 className="text-2xl font-bold">Why It Matters</h2>
+        <p className="mt-2 text-muted-foreground">
+          CTOs don’t buy marketing—they buy measurable velocity, compliance, and secure outcomes.
+        </p>
+        <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
+          <li><a href="/playbook" className="text-primary hover:underline">CTO Playbook</a></li>
+          <li><a href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</a></li>
+          <li><a href="/hire/by-country/mexico" className="text-primary hover:underline">Hire in Mexico</a></li>
+        </ul>
+      </section>
     </main>
   );
 }

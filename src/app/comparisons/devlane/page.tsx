@@ -57,6 +57,21 @@ export default function ComparisonPage() {
             <li><strong>Devices:</strong> TeamStation = MDM-managed laptops; Devlane = variable.</li>
             <li><strong>Fit:</strong> TeamStation = growth-stage CTOs; Devlane = transactional augmentation.</li>
           </ul>
+           <section className="my-16 border-t border-border pt-12">
+            <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
+            <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
+              <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
+              <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
+              <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
+              <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
+            </ul>
+            <div className="mt-6 text-sm">
+              Related: 
+              <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
+              <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
+              <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
+            </div>
+          </section>
           <nav className="mt-12 border-t border-border pt-6 text-sm">
             <h3>Explore More:</h3>
             <ul>
