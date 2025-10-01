@@ -15,12 +15,6 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cto.teamstation.dev'),
-  alternates: {
-    canonical: 'https://teamstation.dev/cto',
-    languages: {
-      'en-US': 'https://cto.teamstation.dev', // hreflang declaration
-    },
-  },
   title: 'Nearshore Software Development: The CTO Playbook | TeamStation AI',
   description:
     'Audit-ready compliance, cognitive AI vetting, and daylight overlap. The CTO Playbook delivers measurable outcomes so you ship faster with predictable TCO.',
@@ -52,6 +46,17 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  // ✅ U.S. Geo Targeting + Hreflang
+  alternates: {
+    canonical: 'https://teamstation.dev/cto',
+    languages: {
+      'en-US': 'https://cto.teamstation.dev',
+    },
+  },
+  other: {
+    'geo.region': 'US',
+    'geo.placename': 'United States',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -63,13 +68,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://picsum.photos" />
-
-        {/* US Geo-targeting for SEO */}
-        <meta name="geo.region" content="US" />
-        <meta name="geo.placename" content="United States" />
-
-        {/* Hreflang signal */}
-        <link rel="alternate" href="https://cto.teamstation.dev" hrefLang="en-US" />
         
         {/* Organization & Website Schema */}
         <script
