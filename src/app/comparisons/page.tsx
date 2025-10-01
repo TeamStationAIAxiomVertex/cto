@@ -56,40 +56,40 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      name: "Why does TeamStation AI publish vendor comparisons?",
-      acceptedAnswer: {
+      "name": "Why does TeamStation AI publish vendor comparisons?",
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "CTOs need transparent evidence before choosing a nearshore partner. TeamStation AI provides side-by-side comparisons of major vendors like BairesDev, Globant, Revelo, TECLA, Unosquare, and Toptal so leaders can make decisions based on data, not marketing promises."
       }
     },
     {
       "@type": "Question",
-      name: "How is TeamStation AI different from vendors like BairesDev or Globant?",
-      acceptedAnswer: {
+      "name": "How is TeamStation AI different from vendors like BairesDev or Globant?",
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "Unlike staff augmentation vendors, TeamStation AI is an integrated platform. It combines Axiom Cortex™ cognitive vetting, MDM-managed devices, EOR compliance across 10+ LATAM countries, and telemetry for real delivery outcomes—so you can validate security, velocity, and cost predictability."
       }
     },
     {
       "@type": "Question",
-      name: "Which vendors are compared on this page?",
-      acceptedAnswer: {
+      "name": "Which vendors are compared on this page?",
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "We cover head-to-head comparisons against BairesDev, Globant, Revelo, TECLA, Unosquare, Toptal, Andela, Nearsure, ParallelStaff, Terminal, CodersLink, and more. Each page provides a detailed verdict table on vetting, time-to-PR, compliance, and pricing posture."
       }
     },
     {
       "@type": "Question",
-      name: "What should CTOs look for when choosing a nearshore partner?",
-      acceptedAnswer: {
+      "name": "What should CTOs look for when choosing a nearshore partner?",
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "Beyond hourly rates, CTOs should demand evidence of delivery velocity, audit-ready compliance, secure device posture, and true daylight overlap. TeamStation AI publishes a Total Cost of Ownership (TCO) model and peer-reviewed research to help quantify these factors."
       }
     },
     {
       "@type": "Question",
-      name: "Can I see proof of TeamStation AI’s research?",
-      acceptedAnswer: {
+      "name": "Can I see proof of TeamStation AI’s research?",
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. Our research is published on SSRN and indexed by Google Scholar. Papers include the Axiom Cortex™ scientific report, frameworks for measuring engineering capacity, and peer-reviewed methods for bias-free hiring. Links are available in the Research Hub."
       }
