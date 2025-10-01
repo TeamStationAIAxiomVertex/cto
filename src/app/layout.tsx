@@ -60,27 +60,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const faviconSvg = `
-    <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="512" height="512" fill="#1A1A2E"/>
-      <path d="M211 140H141V210H211V140Z" fill="#F0F8FF"/>
-      <path d="M371 140H301V210H371V140Z" fill="#F0F8FF"/>
-      <path d="M301 210H211V402C211 402 211 442 256 442C301 442 301 402 301 402V210Z" fill="#F0F8FF"/>
-      <path d="M196 140H126V210H196V140Z" fill="#4C57D3"/>
-      <path d="M356 140H286V210H356V140Z" fill="#4C57D3"/>
-      <path d="M286 210H196V402C196 402 196 442 241 442C286 442 286 402 286 402V210Z" fill="#4C57D3"/>
-      <path d="M181 140H111V210H181V140Z" fill="#8E99FF"/>
-      <path d="M341 140H271V210H341V140Z" fill="#8E99FF"/>
-      <path d="M271 210H181V402C181 402 181 442 226 442C271 442 271 402 271 402V210Z" fill="#8E99FF"/>
-    </svg>
-  `;
-  const faviconDataUri = `data:image/svg+xml,${encodeURIComponent(faviconSvg)}`;
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#3F83F8" />
-        <link rel="icon" href={faviconDataUri} type="image/svg+xml" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
