@@ -1,198 +1,150 @@
 
-import Link from 'next/link';
+// src/app/comparisons/globant/page.tsx
 import type { Metadata } from 'next';
-import { GitCompare, UserCheck, ShieldCheck, Scale, FileSearch, Layers, HelpCircle } from 'lucide-react';
-import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateComparisonSchema } from '@/lib/comparisonSchema';
+import Link from 'next/link';
 
-const pageData = {
-  "type": "comparison",
-  "competitor": "Globant",
-  "pageSEO": {
-    "title": "TeamStation vs Globant: Daylight Delivery",
-    "description": "Compare our team-building platform with Globant's project outsourcing model. See how Cortex-vetted pods with device control and measurable PR flow differ from the global SI posture.",
-    "canonical": "https://cto.teamstation.dev/comparisons/globant"
+export const metadata: Metadata = {
+  title: 'TeamStation vs Globant: Enterprise-Ready Nearshore Comparison',
+  description:
+    'Compare TeamStation AI’s integrated nearshore platform (Axiom Cortex™, audit-ready compliance, secure MDM devices, daylight SLAs) with Globant’s consulting model. Evidence for CTOs.',
+  alternates: {
+    canonical: 'https://cto.teamstation.dev/comparisons/globant',
   },
-  "intro": "You need to scale engineering, and Globant's global reach is impressive. But are you buying a team that integrates, or are you outsourcing your architecture? This is a CTO's guide to the trade-offs between a Systems Integrator (SI) model and TeamStation AI's integrated platform, which gives you direct control over elite, pre-vetted LATAM pods.",
-  "h1": "TeamStation vs Globant: What Actually Ships Faster?",
-  "pspCards": [
-    {
-      "title": "Verdict Snapshot vs Globant",
-      "icon": "visibility",
-      "body": {
-        "problem": "<strong>Problem.</strong> Choosing Globant feels like buying a black box. You get a project quote, but have zero visibility into the individual engineers, their cognitive abilities, or the security of their work environment. You're buying a brand, not a transparent system.",
-        "stakes": "<strong>Stakes.</strong> This opacity creates massive risk. You could be staffed with junior talent on a senior budget. The architecture might not align with your long-term vision, creating expensive integration debt. You're ceding control of your core IP to a vendor's process.",
-        "prescription": "<strong>Prescription.</strong> Demand evidence and control. An integrated platform like TeamStation AI gives you an auditable trail: scientific vetting reports from <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™</a>, device security attestations from our MDM, and direct management of your team. It's a system built for visibility, not vendor lock-in.",
-        "proof": "<strong>Proof.</strong> Our platform is your 'single pane of glass.' You see the evidence for a candidate's skills, you own the roadmap, and you control the engineering culture. We provide the talent and the secure operational wrapper; you drive the outcome.",
-        "recap": "<strong>Recap.</strong> Stop outsourcing your brain. Choose a partner that gives you the data and control to de-risk your most critical projects."
-      }
-    },
-    {
-      "title": "Vetting Model: Team Augmentation vs. Project Outsourcing",
-      "icon": "hiring",
-      "body": {
-        "problem": "<strong>Problem.</strong> Globant sells project outcomes, not talent transparency. Their internal staffing process is opaque. You get the team they assign, not necessarily the team you need. It’s a model optimized for their resource allocation, not your specific technical challenges.",
-        "stakes": "<strong>Stakes.</strong> This is the core conflict of the SI model for staff augmentation. You might get a 'B-team' staffed with whoever is on the bench, leading to slower delivery and lower quality. You have no way to verify the seniority or specific skills of the individuals building your product.",
-        "prescription": "<strong>Prescription.</strong> Hire the engineer, not the project. We are purpose-built for staff augmentation. Our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> engine provides scientific proof of an individual's cognitive ability, ensuring you know exactly who you're hiring and that they have the right 'mental shape' to solve your problems.",
-        "proof": "<strong>Proof.</strong> Our process delivers a full <a href='/technical-interview-evaluation' class='text-primary hover:underline'>Evidence Locker</a> for every candidate. This reduces mis-hire risk by over 90% and ensures you are building your team with individuals who have been scientifically vetted for excellence.",
-        "recap": "<strong>Recap.</strong> Don't buy a black box team. Build your own elite squad with a partner that provides radical transparency into talent quality."
-      }
-    },
-    {
-      "title": "Control & Culture: Integration vs. Isolation",
-      "icon": "compliance",
-      "body": {
-        "problem": "<strong>Problem.</strong> When you hire a large SI, you are outsourcing your engineering culture. Their teams operate within their own ecosystem, with their own processes and tools. The team is not truly integrated into yours.",
-        "stakes": "<strong>Stakes.</strong> This leads to long-term dependency, architectural drift, and a painful integration process when the project is 'done.' The knowledge and context built during the project walk out the door with the vendor team.",
-        "prescription": "<strong>Prescription.</strong> Own your culture and your roadmap. Our model is built for control and integration. We provide elite, pre-vetted LATAM engineers who join your teams, adopt your rituals (stand-ups, PR reviews, sprint planning), and work in your toolchain. They are your team members, just on our payroll.",
-        "proof": "<strong>Proof.</strong> Our <a href='/process' class='text-primary hover:underline'>structured onboarding process</a> ensures engineers are Day-1 ready in your environment, targeting a first PR in under 10 business days. This leads to deep integration and knowledge retention, not vendor lock-in.",
-        "recap": "<strong>Recap.</strong> Don't rent a siloed team. Build an integrated one. Choose a partner that empowers your leadership, doesn't replace it."
-      }
-    },
-    {
-      "title": "Ramp, TCO & When They’re a Fit",
-      "icon": "cost",
-      "body": {
-        "problem": "<strong>Problem.</strong> A fixed-bid project from an SI seems predictable, but it often hides the massive Total Cost of Ownership (TCO) in vendor management, change orders, and the cost of eventually reintegrating the outsourced project back into your core systems.",
-        "stakes": "<strong>Stakes.</strong> You pay a premium for the project management layer, and any deviation from the original scope results in expensive change orders. The upfront 'predictability' quickly becomes a source of budget overruns and friction.",
-        "prescription": "<strong>Prescription.</strong> Focus on a predictable TCO for building capacity, not just a project price. Our all-inclusive rate gives you a clear, CFO-ready TCO for elite engineering talent. By bundling all operational costs, we deliver a lower true cost than managing an SI engagement.",
-        "proof": "<strong>Proof.</strong> Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> demonstrates how our model delivers a 40-60% lower true TCO than a fragmented approach. Globant is a world-class fit for massive, multi-year digital transformation projects where you want to outsource the entire function. For CTOs who need to augment their existing teams with top-tier talent they can direct, our integrated platform is the faster, safer, and more capital-efficient choice.",
-        "recap": "<strong>Recap.</strong> Choose Globant for large-scale outsourcing. Choose TeamStation AI for building and scaling your own high-performing nearshore team."
-      }
-    }
-  ],
-  "verdictRows": [
-    {"criterion":"Vetting Model","teamstation":"Cognition-first (Axiom Cortex™); transparent evidence","competitor":"Internal project staffing; opaque to client"},
-    {"criterion":"Best For","teamstation":"Team augmentation; client-led projects","competitor":"Full project outsourcing; digital transformation"},
-    {"criterion":"Control & Culture","teamstation":"Client retains full control over architecture and team culture","competitor":"Vendor controls process and culture"},
-    {"criterion":"Pricing Posture","teamstation":"All-in pod rate; predictable TCO for talent capacity","competitor":"Project-based or SOW-based pricing"},
-    {"criterion":"Devices & MDM","teamstation":"Corporate-owned, MDM-managed; included","competitor":"Managed within their environment; no direct client control"},
-    {"criterion":"Identity (SSO/SCIM)","teamstation":"Integrated with client's IdP from Day 1","competitor":"Managed within their own corporate systems"},
-    {"criterion":"Time-zone Overlap","teamstation":"Guaranteed 4-8 hours daily overlap","competitor":"Varies; global delivery model, not LATAM-specific"},
-    {"criterion":"Ramp Speed","teamstation":"First PR targeted in <10 business days","competitor":"Varies by project scope and SOW"},
-    {"criterion":"Core Competency","teamstation":"Building & operating elite nearshore engineering teams","competitor":"Large-scale systems integration & digital consulting"}
-  ],
-  "faq": [
-    {"q":"When is Globant a better fit than TeamStation AI?","a":"If your goal is to outsource an entire, well-defined digital transformation project and hand off management responsibility to a large-scale Systems Integrator, Globant is a world-class choice. They are built for taking on massive projects end-to-end."},
-    {"q":"How is your vetting process different if I'm just augmenting my team?","a":"Our process is designed specifically for augmentation. We vet for individuals with high 'Collaborative Mindset' and 'Learning Orientation' because we know they need to integrate deeply with your existing team and culture. We provide you with a full <a href='/technical-interview-evaluation'>Evidence Locker</a> for each candidate, giving you transparency that project-based outsourcing doesn't offer."},
-    {"q":"Does TeamStation provide Project Managers?","a":"While our core model is providing elite engineers that you manage, we can and often do provide full pods that include Product Managers, Delivery Managers, and QA Leads when the engagement requires it. It's a flexible model designed to fit your needs."},
-    {"q":"Can a TeamStation AI team work on a fixed-scope project?","a":"Yes. We can operate on a time-and-materials basis or scope out a fixed-price SOW for a specific outcome. The key difference is that you retain full transparency and direct access to the team, their vetting data, and their security posture."},
-    {"q":"How do you ensure your team integrates with our tools and processes?","a":"Our onboarding process is built around toolchain convergence. From Day 1, our engineers are in your Slack, your Jira, your GitHub, and your stand-ups. They adopt your rituals, not the other way around."},
-    {"q":"What if I need to scale the team up or down?","a":"Our model is elastic. You can scale your team up with new, fully-vetted engineers or scale down with a standard notice period, giving you far more flexibility than a rigid, multi-year SI contract."}
-  ]
+  openGraph: {
+    title: 'TeamStation vs Globant: Enterprise-Ready Comparison',
+    description:
+      'CTO guide: Globant vs TeamStation AI. Cognitive vetting, secure devices, TCO, and scientific SLAs vs. large-scale consulting augmentation.',
+    url: 'https://cto.teamstation.dev/comparisons/globant',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'TeamStation vs Globant: CTO Comparison',
+    description:
+      'The enterprise nearshore choice: audit-ready compliance, bias-free hiring, predictable TCO. TeamStation AI vs Globant.',
+  },
+  robots: { index: true, follow: true },
 };
 
-const schema = generateComparisonSchema({
-  competitorName: "Globant",
-  competitorUrl: "https://www.globant.com",
-  slug: "globant",
-  faqs: [
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "TeamStation AI vs Globant Comparison",
+  "description": "A CTO-focused comparison of TeamStation AI’s integrated platform against Globant’s global consulting model.",
+  "brand": {
+    "@type": "Organization",
+    "name": "TeamStation AI",
+    "url": "https://cto.teamstation.dev"
+  },
+  "isSimilarTo": {
+    "@type": "Organization",
+    "name": "Globant",
+    "url": "https://www.globant.com/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      question: "What is the difference between Globant and TeamStation AI?",
-      answer: "Globant operates as a global consultancy, while TeamStation AI specializes in U.S.-aligned nearshore teams with cognitive AI vetting and measurable delivery SLAs."
+      "@type": "Question",
+      "name": "When is Globant a better fit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Globant fits when you want a large-scale consulting partner to manage multi-country delivery, with a broad digital transformation scope."
+      }
     },
     {
-      question: "Why do CTOs choose TeamStation AI over Globant?",
-      answer: "CTOs seeking agility, compliance, and predictable TCO prefer TeamStation AI’s focused nearshore model instead of Globant’s broad consultancy approach."
+      "@type": "Question",
+      "name": "How does TeamStation differ from Globant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TeamStation provides an integrated platform with scientific vetting (Axiom Cortex™), secure corporate devices, EOR compliance, and CFO-ready TCO. Globant operates as a consulting partner with variable engagement structures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do both provide secure devices and SSO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TeamStation guarantees corporate-owned, MDM-managed devices and SSO/SAML/SCIM. Globant’s model varies per engagement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about ramp speed and PR SLAs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TeamStation targets first PRs in ≤10 business days with daylight overlap. Globant does not universally publish developer onboarding or PR SLAs."
+      }
     }
   ]
-});
-
-export async function generateMetadata(): Promise<Metadata> {
-  const { title, description, canonical } = pageData.pageSEO;
-  return {
-    title,
-    description,
-    alternates: {
-      canonical,
-    },
-  };
-}
-
-const iconMap: { [key: string]: React.FC<any> } = {
-  latency: GitCompare,
-  hiring: UserCheck,
-  compliance: ShieldCheck,
-  cost: Scale,
-  visibility: FileSearch,
 };
 
 export default function GlobantComparisonPage() {
-  const { intro, pspCards, verdictRows, faq, h1 } = pageData;
-
   return (
-    <>
+    <main className="container max-w-4xl py-12">
       <JsonLd data={schema} />
-      <main className="container max-w-5xl py-12">
-        <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/comparisons" className="hover:text-foreground">All Comparisons</Link> / <span>vs. Globant</span>
-        </div>
+      <JsonLd data={faqSchema} />
 
-        <header className="my-8 text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{h1}</h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: intro }}></p>
-        </header>
+      <article className="prose dark:prose-invert max-w-none">
+        <h1>TeamStation vs Globant: Enterprise-Ready Nearshore Comparison</h1>
+        <p>
+          Globant is a giant in the LATAM outsourcing and consulting space, with 
+          brand power and scale. But when CTOs need audit-ready compliance, 
+          secure devices, and measurable delivery velocity, scale alone is not 
+          enough. This guide compares TeamStation AI’s integrated platform with 
+          Globant’s model so you can decide on evidence, not marketing slogans.
+        </p>
 
-        <section className="my-24">
-           <h2 className="text-3xl font-bold text-center">Verdict Snapshot</h2>
-           <div className="overflow-x-auto mt-6">
-                <table className="w-full min-w-[700px] text-sm text-left">
-                    <thead>
-                        <tr className="border-b-2 border-border">
-                            <th className="p-2 font-semibold">Criterion</th>
-                            <th className="p-2 font-semibold text-primary">TeamStation AI</th>
-                            <th className="p-2 font-semibold">Globant</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {verdictRows.map(row => (
-                            <tr key={row.criterion} className="border-b border-border/50">
-                                <td className="p-2 font-semibold text-foreground">{row.criterion}</td>
-                                <td className="p-2 text-primary">{row.teamstation}</td>
-                                <td className="p-2 text-muted-foreground">{row.competitor}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-           </div>
-        </section>
+        <h2>Verdict Snapshot</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Criterion</th>
+              <th>TeamStation AI</th>
+              <th>Globant</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vetting</td>
+              <td>Axiom Cortex™, cognition-first, peer-reviewed</td>
+              <td>Traditional interviews, brand-driven hiring</td>
+            </tr>
+            <tr>
+              <td>Ramp to PR</td>
+              <td>≤10 days with daylight SLAs</td>
+              <td>Depends on project scope, variable</td>
+            </tr>
+            <tr>
+              <td>Devices</td>
+              <td>Corporate-owned, MDM-managed, SOC2 aligned</td>
+              <td>BYOD/client provided, engagement dependent</td>
+            </tr>
+            <tr>
+              <td>Compliance</td>
+              <td>EOR-native, REPSE aware, single SLA</td>
+              <td>Varies, consulting-driven compliance</td>
+            </tr>
+            <tr>
+              <td>Best for</td>
+              <td>CTOs seeking control, evidence, velocity</td>
+              <td>Large-scale digital transformation engagements</td>
+            </tr>
+          </tbody>
+        </table>
 
-        <section className="my-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {pspCards.map(card => {
-                    const Icon = iconMap[card.icon as keyof typeof iconMap] || HelpCircle;
-                    return (
-                        <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body as PSPBody} />
-                    );
-                })}
-            </div>
-        </section>
-
-        <section className="my-24">
-            <h2 className="text-3xl font-bold text-center">Frequently Asked Questions</h2>
-            <div className="mt-8 max-w-3xl mx-auto space-y-4">
-                {faq.map((item, i) => (
-                    <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
-                        <h3 className="font-semibold text-primary">{item.q}</h3>
-                        <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
-                    </div>
-                ))}
-            </div>
-        </section>
-
-        <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-            <h2 className="text-2xl font-bold text-foreground">Ready for a Real TCO Analysis?</h2>
-            <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-                Let's move beyond project quotes. In a 15-minute call, we can build a CFO-ready business case for a nearshore platform that delivers predictable velocity and lower total cost of ownership.
-            </p>
-            <div className="mt-6 flex justify-center items-center gap-4">
-                <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" className="cta-button">
-                    Book a TCO Strategy Call
-                </Link>
-            </div>
-        </section>
-      </main>
-    </>
+        <h2>Explore More</h2>
+        <ul>
+          <li><Link href="/playbook/hub">Playbook Hub</Link></li>
+          <li><Link href="/research/hub">Research Hub</Link></li>
+          <li><Link href="/case-studies">Case Studies</Link></li>
+          <li><Link href="/hire/by-country/mexico">Hire in Mexico</Link></li>
+        </ul>
+      </article>
+    </main>
   );
 }
