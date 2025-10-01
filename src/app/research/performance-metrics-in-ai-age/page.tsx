@@ -26,11 +26,20 @@ export const metadata: Metadata = {
     description: pageInfo.description,
     url: `https://cto.teamstation.dev/research/${pageInfo.slug}`,
     type: 'article',
+     images: [
+        {
+          url: '/og-research.png',
+          width: 1200,
+          height: 630,
+          alt: pageInfo.title,
+        },
+      ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: pageInfo.title,
     description: pageInfo.description,
+     images: ['/og-research.png'],
   },
 };
 

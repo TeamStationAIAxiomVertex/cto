@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 const pageInfo = {
     slug: "heuristically-trained-ai",
     title: "Heuristically Trained AI | TeamStation AI Research",
-    description: "Explores heuristic-driven AI models that adapt cognitive strategies rather than brute force. Demonstrates improved efficiency in talent evaluation across diverse engineering roles.",
+    description: "Research on heuristic-driven AI models that replicate cognitive strategy patterns, cutting brute-force inefficiencies in evaluating engineering talent.",
     canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433",
     summary: [
         "This research paper challenges the conventional 'brute-force' approach to AI in talent evaluation. Instead of relying solely on massive datasets, it introduces a framework for 'heuristically trained' AI models. These models are designed to emulate the adaptive cognitive strategies and mental shortcuts (heuristics) used by expert human interviewers.",
@@ -26,11 +26,20 @@ export const metadata: Metadata = {
     description: pageInfo.description,
     url: `https://cto.teamstation.dev/research/${pageInfo.slug}`,
     type: 'article',
+     images: [
+        {
+          url: '/og-research.png',
+          width: 1200,
+          height: 630,
+          alt: pageInfo.title,
+        },
+      ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: pageInfo.title,
     description: pageInfo.description,
+    images: ['/og-research.png'],
   },
 };
 

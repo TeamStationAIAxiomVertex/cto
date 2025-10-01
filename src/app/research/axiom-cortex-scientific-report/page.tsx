@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 const pageInfo = {
     slug: "axiom-cortex-scientific-report",
     title: "AxiomCortex™ Scientific Report | TeamStation AI Research",
-    description: "Introduces AxiomCortex™, a cognitive AI vetting engine applying neuro-psychometric calculus to bias-free hiring. Shows predictive accuracy improves 27% vs legacy vendor assessments.",
+    description: "Bias-free hiring through neuro-psychometric calculus. Cognitive AI vetting that predicts engineering success with 27% higher accuracy than legacy vendor methods.",
     canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
     summary: [
         "This paper introduces the AxiomCortex™ engine, a proprietary cognitive AI framework designed to de-risk technical hiring by moving beyond traditional, biased evaluation methods. It details the application of neuro-psychometric calculus to analyze conversational data from structured interviews, generating a quantitative 'Cognitive Fingerprint' of a candidate's problem-solving abilities.",
@@ -26,11 +26,20 @@ export const metadata: Metadata = {
     description: pageInfo.description,
     url: `https://cto.teamstation.dev/research/${pageInfo.slug}`,
     type: 'article',
+    images: [
+        {
+          url: '/og-research.png',
+          width: 1200,
+          height: 630,
+          alt: pageInfo.title,
+        },
+      ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: pageInfo.title,
     description: pageInfo.description,
+    images: ['/og-research.png'],
   },
 };
 
