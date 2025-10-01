@@ -2,8 +2,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-import { DisclosureDrawer } from '@/components/DisclosureDrawer';
 import { NAV, simpleNavItems } from '@/config/nav';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,14 +30,23 @@ export function MobileNav() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col space-y-2">
-                {Object.entries(NAV).map(([title, items]) => (
-                  <DisclosureDrawer
-                    key={title}
-                    title={title}
-                    items={items.map(({ href, label }) => ({ href, title: label }))}
-                    onLinkClick={handleLinkClick}
-                  />
-                ))}
+                <Accordion type="multiple" className="w-full">
+                  {Object.entries(NAV).map(([title, items]) => (
+                    <AccordionItem value={title} key={title}>
+                      <AccordionTrigger className="text-lg font-semibold">{title}</AccordionTrigger>
+                      <AccordionContent>
+                        <div className="flex flex-col space-y-2 pl-4">
+                          {items.map(({ href, label }) => (
+                            <Link key={href} href={href} className="block py-2 text-muted-foreground hover:text-primary" onClick={handleLinkClick} target={href.startsWith('http') ? '_blank' : '_self'} rel={href.startsWith('http') ? 'noopener noreferrer' : ''}>
+                                {label}
+                            </Link>
+                          ))}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+
                 {simpleNavItems.map(item => (
                     <Link key={item.href} href={item.href} className="block py-2 text-lg font-semibold text-foreground hover:text-primary" onClick={handleLinkClick} target={item.href.startsWith('http') ? '_blank' : '_self'} rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}>
                         {item.label}
