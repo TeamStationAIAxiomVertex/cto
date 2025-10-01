@@ -1,79 +1,178 @@
 
+import { BrainCircuit, FileText, ShieldCheck, Scale, BookOpen, CheckCircle, FunctionSquare, Pilcrow, Sigma, GitBranch } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BookOpen } from 'lucide-react';
-import { JsonLd } from '@/components/seo/JsonLd';
-
-const pageInfo = {
-  slug: "axiom-cortex-scientific-report",
-  title: "Bias-Free Technical Hiring with AxiomCortex™ | TeamStation AI Research",
-  description: "Presents the AxiomCortex™ neuro-psychometric model for evaluating software engineers. Eliminates bias, improves predictive validity, and enables audit-ready hiring.",
-  canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
-  summary: [
-    "Hiring technical talent is often plagued by bias and unreliable signals. This paper introduces AxiomCortex™, a novel cognitive-science-based evaluation framework.",
-    "It integrates structured interviews, psychometric calibration, and technical work samples to ensure reproducibility and fairness in hiring decisions. Results demonstrate measurable improvements in predictive validity and audit compliance."
-  ]
-};
+import { WithTooltip } from '@/components/ui/tooltip';
 
 export const metadata: Metadata = {
-  title: pageInfo.title,
-  description: pageInfo.description,
-  alternates: { canonical: pageInfo.canonical },
-  openGraph: {
-    title: pageInfo.title,
-    description: pageInfo.description,
-    url: `https://cto.teamstation.dev/research/${pageInfo.slug}`,
-    type: 'article',
-    images: [{ url: '/og-research.png', width: 1200, height: 630, alt: pageInfo.title }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: pageInfo.title,
-    description: pageInfo.description,
-    images: ['/og-research.png'],
-  },
+  title: 'The AxiomCortex™ Scientific Framework | AI Talent',
+  description: 'The definitive scientific framework for the AxiomCortex™ engine, detailing algorithms for bias-free technical talent evaluation.',
+  keywords: 'axiomcortex, ai talent evaluation, scientific framework, bias-free hiring, technical talent evaluation, psychometric models',
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
-  "headline": pageInfo.title,
-  "author": { "@type": "Organization", "name": "TeamStation AI" },
-  "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
-  "url": `https://cto.teamstation.dev/research/${pageInfo.slug}`,
-  "sameAs": pageInfo.canonical,
-  "abstract": pageInfo.description,
-  "datePublished": "2025-07-15",
-  "dateModified": "2025-07-15"
-};
+export default function AxiomCortexReportPage() {
+  const pillars = [
+    {
+        icon: <BrainCircuit className="h-6 w-6 text-primary" />,
+        title: '1. Neuro-Psychometric Profiling',
+        description: 'Utilizes a Latent Trait Inference Engine (LTIE) to quantify traits like Architectural Instinct and Problem-Solving Agility from conversational data.'
+    },
+    {
+        icon: <FileText className="h-6 w-6 text-primary" />,
+        title: '2. Advanced NLP & Semantic Analysis',
+        description: 'Employs a suite of NLP techniques to analyze language patterns, semantic meaning, and conceptual understanding, independent of jargon.'
+    },
+    {
+        icon: <ShieldCheck className="h-6 w-6 text-primary" />,
+        title: '3. Cortex Calibration Layer (Bias Mitigation)',
+        description: 'Applies algorithmic adjustments to raw scores to ensure the evaluation of pure technical and logical signals, neutralizing linguistic and cultural "noise."'
+    },
+    {
+        icon: <Scale className="h-6 w-6 text-primary" />,
+        title: '4. Behavioral Deconstruction (Beyond STAR)',
+        description: 'Deconstructs answers into core conceptual components and validated behavioral markers, avoiding rigid frameworks to eliminate presentation bias.'
+    }
+];
 
-export default function ResearchPaperPage() {
   return (
-    <>
-      <JsonLd data={schema} />
-      <main className="container max-w-4xl py-12">
-        <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/" className="hover:text-foreground">Home</Link> /
-          <Link href="/research/hub" className="hover:text-foreground">Research</Link> /
-          <span>AxiomCortex™ Scientific Report</span>
+    <main className="container max-w-4xl py-12">
+       <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/research/hub" className="hover:text-foreground">Research</Link> / <span>AxiomCortex™ Framework 3.0.0</span>
+      </div>
+      <header className="my-8 text-center">
+        <h1 className="text-4xl font-extrabold md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The AxiomCortex™ Scientific Framework 3.0.0</h1>
+        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+          This is the definitive public documentation of the proprietary Cognitive AI engine that powers TeamStation AI's talent evaluation. It outlines the core scientific pillars, the 44 mathematical models and algorithms, and the bias mitigation strategies that allow us to de-risk hiring.
+        </p>
+      </header>
+
+       <section className="my-16">
+        <h2 className="text-3xl font-bold text-center">Core Scientific Pillars</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-8">
+            {pillars.map(pillar => (
+                <div className="flex items-start gap-4 rounded-lg border bg-card p-6" key={pillar.title}>
+                    {pillar.icon}
+                    <div>
+                        <h3 className="font-semibold text-foreground">{pillar.title}</h3>
+                        <p className="text-sm text-muted-foreground m-0">
+                          {pillar.description.includes('LTIE') && 
+                            <>Utilizes a <WithTooltip label="Latent Trait Inference Engine: A model that infers unobservable psychological traits from observable data."><span className="border-b border-dashed">LTIE</span></WithTooltip> to quantify traits like Architectural Instinct and Problem-Solving Agility from conversational data.</>
+                          }
+                           {pillar.description.includes('NLP') && 
+                            <>Employs a suite of <WithTooltip label="Natural Language Processing: AI techniques to understand and interpret human language."><span className="border-b border-dashed">NLP</span></WithTooltip> techniques to analyze language patterns, semantic meaning, and conceptual understanding, independent of jargon.</>
+                          }
+                          {pillar.description.includes('Cortex') && pillar.description}
+                           {pillar.description.includes('STAR') && 
+                            <>Deconstructs answers into core conceptual components and validated behavioral markers, avoiding rigid frameworks like <WithTooltip label="Situation, Task, Action, Result: A common, but often rigid, behavioral interview framework."><span className="border-b border-dashed">STAR</span></WithTooltip> to eliminate presentation bias.</>
+                          }
+                        </p>
+                    </div>
+                </div>
+            ))}
         </div>
-        <article className="prose dark:prose-invert max-w-none">
-          <h1>{pageInfo.title.split(' | ')[0]}</h1>
-          {pageInfo.summary.map((p, i) => <p key={i}>{p}</p>)}
-          <a href={pageInfo.canonical} target="_blank" rel="noopener noreferrer" className="cta-button mt-4 inline-flex items-center">
-            <BookOpen className="mr-2 h-4 w-4" />
-            Read full paper on SSRN →
-          </a>
-          <nav className="mt-12 border-t border-border pt-6 text-sm">
-            <h3 className="font-semibold text-foreground">Explore More:</h3>
-            <ul className="list-none p-0 space-y-2">
-              <li><Link href="/research/hub" className="text-primary hover:underline">Research Hub</Link></li>
-              <li><Link href="/playbook/nearshore-vs-offshore" className="text-primary hover:underline">Playbook: Nearshore vs Offshore</Link></li>
-              <li><Link href="/case-studies" className="text-primary hover:underline">Case Studies</Link></li>
-            </ul>
-          </nav>
-        </article>
-      </main>
-    </>
+      </section>
+
+      <section className="prose dark:prose-invert mx-auto my-16 max-w-none">
+        <h2 className="text-center">Methodology: Self-Governing NLP & Phasic Micro-Chunking</h2>
+        <p>The operational backbone of Axiom Cortex is its novel approach to executing complex <WithTooltip label="Natural Language Processing"><span className="border-b border-dashed">NLP</span></WithTooltip> tasks: a <strong>Self-Governing, Self-Learning Phasic Micro-Chunking NLP-based Prompt Engineering</strong> technique. This methodology is designed for maximum accuracy, token efficiency, and minimal external dependencies, allowing the LLM itself to perform the core analytical heavy lifting across 44 distinct algorithmic passes.</p>
+        
+        <h3 className='text-center'>Comprehensive Review of Core Functions, Formulas, and Algorithms</h3>
+
+        <div className="space-y-8">
+            <div>
+                <h4 className="flex items-center gap-2"><FunctionSquare className="h-5 w-5 text-primary" />Function: Transcript Ingestion & Pre-processing</h4>
+                <p className="text-sm">The initial phase where the raw video interview transcript is cleaned, speaker-diarized, and segmented into question-answer pairs.</p><ul>
+                    <li><strong>Algorithm 1: Utterance Normalization:</strong> Removes filler words, and standardizes punctuation.</li>
+                    <li><strong>Algorithm 2: Speaker Diarization:</strong> Correctly attributes text to 'Interviewer' or 'Candidate'.</li>
+                    <li><strong>Algorithm 3: Q/A Segmentation:</strong> Identifies and isolates discrete question and answer blocks for individual analysis.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 className="flex items-center gap-2"><Pilcrow className="h-5 w-5 text-primary" />Protocol: Phasic Micro-Chunking Analysis</h4>
+                <p className="text-sm">For each Q/A pair, the system performs a multi-pass analysis. This involves breaking the answer down into "micro-chunks" (individual sentences or clauses) and analyzing them for specific signals.</p>
+                <ul>
+                    <li><strong>Algorithm 4: Key Concept Extraction:</strong> Uses <WithTooltip label="Named Entity Recognition: An NLP technique to identify and classify named entities in text."><span className="border-b border-dashed">NER</span></WithTooltip> (Named Entity Recognition) to identify technical terms and concepts.</li>
+                    <li><strong>Algorithm 5: Argument Structure Mapping:</strong> Maps the logical flow of the candidate's explanation.</li>
+                    <li><strong>Algorithm 6: Evidence-to-Blueprint Comparison:</strong> Compares extracted concepts against a pre-defined "ideal answer blueprint" for the question.</li>
+                </ul>
+            </div>
+
+             <div>
+                <h4 className="flex items-center gap-2"><Sigma className="h-5 w-5 text-primary" />Formulas: BARS (Behaviorally Anchored Rating Scales) Scoring</h4>
+                <p className="text-sm">A suite of algorithms (7-19) scores the answer chunk against multiple behavioral axioms. Each B-Axiom has its own scoring function.</p>
+                <ul>
+                    <li><strong>Algorithm 7 (B_P - Procedural Knowledge):</strong> Scores the correctness and completeness of the process described by the candidate.</li>
+                    <li><strong>Algorithm 8 (B_M - Mental Model):</strong> Scores the underlying logic and conceptual soundness of the explanation.</li>
+                    <li><strong>Algorithm 9 (B_A - Accuracy):</strong> Scores the factual correctness of the technical statements.</li>
+                    <li><strong>Algorithm 10 (B_C - Clarity):</strong> Scores the clarity and conciseness of the explanation, after calibration for linguistic factors.</li>
+                     <li><strong>Algorithm 11 (B_L - Cognitive Load):</strong> Measures linguistic markers of cognitive strain (hesitations, restarts) to assess difficulty.</li>
+                     <li><p><strong>Formula: <WithTooltip label="Behaviorally Anchored Rating Scales: A scoring method that ties ratings to specific behaviors."><span className="border-b border-dashed">B-Axiom</span></WithTooltip> Score (BAS_q)</strong> for a given question `q`:</p>
+                    <pre className="text-xs">{`BAS_q = (w_p*B_P) + (w_m*B_M) + (w_a*B_A) + (w_c*B_C) - (w_l*B_L)`}</pre>
+                    </li>
+                    <li><small>Where `w` denotes the weight for each axiom.</small></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 className="flex items-center gap-2"><GitBranch className="h-5 w-5 text-primary" />Protocol: Latent Trait Inference Engine (LTIE)</h4>
+                <p className="text-sm">This is the core psychometric engine (Algorithms 20-35) that synthesizes scores from multiple questions to infer the four key latent traits.</p>
+                <ul>
+                    <li><strong>Algorithm 20-24 (Architectural Instinct):</strong> Aggregates scores from systems design questions, focusing on B_M (Mental Model).</li>
+                    <li><strong>Algorithm 25-29 (Problem-Solving Agility):</strong> Aggregates scores from novel or unexpected questions, focusing on the ability to adapt.</li>
+                    <li><strong>Algorithm 30-35 (Learning Orientation & Collaborative Mindset):</strong> Analyzes behavioral questions and "authenticityIncidents" across the entire transcript.</li>
+                    <li><p><strong>Formula: Latent Trait Inference Score (LTIS_trait)</strong></p>
+                    <pre className="text-xs">{`LTIS_trait = Σ(w_q * BAS_q) * λ_ccl`}</pre>
+                    </li>
+                    <li><small>Where `w_q` is the relevance weight of question `q` for the trait, `BAS_q` is the overall B-Axiom score for that question, and `λ_ccl` is the Cortex Calibration Layer coefficient.</small></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 className="flex items-center gap-2"><ShieldCheck className="h-5 w-5 text-primary" />Protocol: Cortex Calibration Layer (Bias Mitigation)</h4>
+                <p className="text-sm">A set of algorithms (36-41) designed to identify and neutralize sources of bias in the evaluation.</p>
+                <ul>
+                    <li><strong>Algorithm 36: Linguistic Fluency Normalization:</strong> Identifies non-native speaker patterns (e.g., grammatical errors, phonetic approximations) and instructs the scoring model to focus on the conceptual content, not the delivery. Generates the `λ_ccl` coefficient.</li>
+                    <li><strong>Algorithm 37: Authenticity Incident Detection:</strong> Flags instances of intellectual honesty (e.g., "I don't know," "I'm not the best at that"). This positively weights the Learning Orientation score.</li>
+                    <li><strong>Algorithm 38: Jargon vs. First-Principles Detection:</strong> Determines if a candidate is using buzzwords without understanding (negative signal) or explaining concepts from fundamentals (positive signal).</li>
+                    <li><p><strong>Formula: Conceptual Fidelity Score (<WithTooltip label="Conceptual Fidelity Score"><span className="border-b border-dashed">CFS</span></WithTooltip>)</strong></p>
+                    <pre className="text-xs">{`CFS = S_sem * (1 - P_jargon)`}</pre>
+                     </li>
+                    <li><small>Where `S_sem` is semantic similarity and `P_jargon` is a penalty for over-reliance on jargon.</small></li>
+                </ul>
+            </div>
+             <div>
+                <h4 className="flex items-center gap-2"><Sigma className="h-5 w-5 text-primary" />Formulas: Final Synthesis & Risk Analysis</h4>
+                <p className="text-sm">The final algorithms (42-44) synthesize all data into the executive summary and risk mitigation plan.</p>
+                <ul>
+                    <li><p><strong>Algorithm 42: Metacognitive Conviction Index (<WithTooltip label="Metacognitive Conviction Index: Measures how well a candidate's self-assessed confidence aligns with their measured accuracy."><span className="border-b border-dashed">MCI</span></WithTooltip>):</strong> Correlates a candidate's self-assessed confidence with their measured accuracy to gauge self-awareness.</p>
+                     <pre className="text-xs">{`MCI = 1 - |(C_self - A_norm) / (C_self + A_norm)|`}</pre>
+                    </li>
+                    <li><small>Where `C_self` is self-assessed confidence and `A_norm` is normalized accuracy. An <WithTooltip label="Metacognitive Conviction Index"><span className="border-b border-dashed">MCI</span></WithTooltip> close to 1 is a strong positive signal.</small></li>
+                    <li><strong>Algorithm 43: Risk Triangulation:</strong> Identifies areas where a candidate's scores fall below the ideal profile for a specific trait and cross-references this with admissions of weakness (authenticityIncidents) to generate a specific, evidence-backed risk factor.</li>
+                     <li><strong>Algorithm 44: Final Score Aggregation:</strong> Computes the final weighted average score based on all latent traits, providing the top-line "Strong Hire / Hire / No Hire" recommendation.</li>
+                </ul>
+            </div>
+        </div>
+      </section>
+
+      <div className="prose dark:prose-invert mx-auto max-w-none">
+        <div className="text-center rounded-lg bg-primary/10 p-6 my-8">
+            <h2 className="text-2xl font-bold">Read the Full Peer-Reviewed Paper</h2>
+            <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+                For a deeper academic analysis of the foundational principles, access the complete research paper on the Social Science Research Network (<WithTooltip label="Social Science Research Network: A repository for preprints of scholarly research."><span className="border-b border-dashed">SSRN</span></WithTooltip>).
+            </p>
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397" target="_blank" rel="noopener noreferrer" className="cta-button mt-4">
+                <BookOpen className="mr-2 h-4 w-4" />
+                View on SSRN
+            </a>
+        </div>
+      </div>
+
+       <div className="text-center mt-8">
+            <Link href="/technical-interview-evaluation" className="font-semibold text-primary hover:underline">See This Framework Applied in a Sample Report →</Link>
+        </div>
+
+    </main>
   );
 }
