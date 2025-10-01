@@ -13,7 +13,6 @@ echo "⚡ Rolling back to last known good baseline..."
 
 cp "$BASELINE_DIR/next.config.js" .
 cp "$BASELINE_DIR/firebase.json" .
-cp "$BASELINE_DIR/.nvmrc" .
 cp "$BASELINE_DIR/package.json" .
 
 rm -rf node_modules .next
