@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BookOpen, ArrowRight } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 const pageInfo = {
@@ -52,6 +52,8 @@ const schema = {
   "url": `https://cto.teamstation.dev/research/${pageInfo.slug}`,
   "sameAs": pageInfo.canonical,
   "abstract": pageInfo.description,
+  "datePublished": "2025-06-20",
+  "dateModified": "2025-06-20"
 };
 
 export default function ResearchPaperPage() {

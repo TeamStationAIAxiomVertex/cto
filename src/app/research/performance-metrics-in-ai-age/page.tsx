@@ -1,57 +1,50 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BookOpen, ArrowRight } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 const pageInfo = {
-    slug: "performance-metrics-in-ai-age",
-    title: "Performance Metrics in the AI Age | TeamStation AI Research",
-    description: "Defines new KPIs for measuring engineering performance under AI-augmented workflows. Highlights reduction of latency tax and vacancy overhead in nearshore IT.",
-    canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470",
-    summary: [
-        "This paper argues that traditional software engineering metrics like 'lines of code' or 'story points' are obsolete in an AI-augmented world. It proposes a new set of Key Performance Indicators (KPIs) designed to measure what truly matters: business impact and system health.",
-        "We introduce metrics such as 'Latency Tax Reduction' (quantifying the value of time-zone alignment) and 'Vacancy Overhead Mitigation' (measuring the financial impact of faster hiring). The framework provides CTOs with a new vocabulary to articulate engineering's value in financial terms, shifting the conversation from a cost center to a value driver."
-    ]
+  slug: "performance-metrics-in-ai-age",
+  title: "Performance Metrics in the AI Age | TeamStation AI Research",
+  description: "Redefines productivity and performance metrics for engineering teams using AI-assisted workflows. Proposes new measurement models aligned with modern software delivery.",
+  canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470",
+  summary: [
+    "Legacy productivity metrics (e.g., lines of code, velocity points) fail in AI-augmented workflows. This paper outlines a new framework for measuring impact in engineering teams.",
+    "The model introduces metrics tied to cognitive leverage, decision latency, and outcome predictability — capturing the real value of human-AI collaboration in software delivery."
+  ]
 };
 
 export const metadata: Metadata = {
   title: pageInfo.title,
   description: pageInfo.description,
-  alternates: {
-    canonical: pageInfo.canonical,
-  },
+  alternates: { canonical: pageInfo.canonical },
   openGraph: {
     title: pageInfo.title,
     description: pageInfo.description,
     url: `https://cto.teamstation.dev/research/${pageInfo.slug}`,
     type: 'article',
-     images: [
-        {
-          url: '/og-research.png',
-          width: 1200,
-          height: 630,
-          alt: pageInfo.title,
-        },
-      ],
+    images: [{ url: '/og-research.png', width: 1200, height: 630, alt: pageInfo.title }],
   },
   twitter: {
     card: 'summary_large_image',
     title: pageInfo.title,
     description: pageInfo.description,
-     images: ['/og-research.png'],
+    images: ['/og-research.png'],
   },
 };
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "headline": "Nearshore IT Talent Performance Metrics in the Age of AI",
+  "headline": pageInfo.title,
   "author": { "@type": "Organization", "name": "TeamStation AI" },
   "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
   "url": `https://cto.teamstation.dev/research/${pageInfo.slug}`,
   "sameAs": pageInfo.canonical,
   "abstract": pageInfo.description,
+  "datePublished": "2025-08-05",
+  "dateModified": "2025-08-05"
 };
 
 export default function ResearchPaperPage() {
@@ -60,8 +53,8 @@ export default function ResearchPaperPage() {
       <JsonLd data={schema} />
       <main className="container max-w-4xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/" className="hover:text-foreground">Home</Link> / 
-          <Link href="/research/hub" className="hover:text-foreground">Research</Link> / 
+          <Link href="/" className="hover:text-foreground">Home</Link> /
+          <Link href="/research/hub" className="hover:text-foreground">Research</Link> /
           <span>Performance Metrics in AI Age</span>
         </div>
         <article className="prose dark:prose-invert max-w-none">

@@ -1,39 +1,30 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BookOpen, ArrowRight } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 const pageInfo = {
-    slug: "axiom-cortex-scientific-report",
-    title: "AxiomCortex™ Scientific Report | TeamStation AI Research",
-    description: "Bias-free hiring through neuro-psychometric calculus. Cognitive AI vetting that predicts engineering success with 27% higher accuracy than legacy vendor methods.",
-    canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
-    summary: [
-        "This paper introduces the AxiomCortex™ engine, a proprietary cognitive AI framework designed to de-risk technical hiring by moving beyond traditional, biased evaluation methods. It details the application of neuro-psychometric calculus to analyze conversational data from structured interviews, generating a quantitative 'Cognitive Fingerprint' of a candidate's problem-solving abilities.",
-        "The research demonstrates that by focusing on latent traits such as Architectural Instinct and Problem-Solving Agility, the AxiomCortex™ model achieves a 27% improvement in predictive accuracy for long-term success compared to legacy vendor assessments that rely on keyword matching and unstructured interviews. The paper provides a foundational look at the mathematical models and bias mitigation strategies that make this possible."
-    ]
+  slug: "axiom-cortex-scientific-report",
+  title: "Bias-Free Technical Hiring with AxiomCortex™ | TeamStation AI Research",
+  description: "Presents the AxiomCortex™ neuro-psychometric model for evaluating software engineers. Eliminates bias, improves predictive validity, and enables audit-ready hiring.",
+  canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
+  summary: [
+    "Hiring technical talent is often plagued by bias and unreliable signals. This paper introduces AxiomCortex™, a novel cognitive-science-based evaluation framework.",
+    "It integrates structured interviews, psychometric calibration, and technical work samples to ensure reproducibility and fairness in hiring decisions. Results demonstrate measurable improvements in predictive validity and audit compliance."
+  ]
 };
 
 export const metadata: Metadata = {
   title: pageInfo.title,
   description: pageInfo.description,
-  alternates: {
-    canonical: pageInfo.canonical,
-  },
+  alternates: { canonical: pageInfo.canonical },
   openGraph: {
     title: pageInfo.title,
     description: pageInfo.description,
     url: `https://cto.teamstation.dev/research/${pageInfo.slug}`,
     type: 'article',
-    images: [
-        {
-          url: '/og-research.png',
-          width: 1200,
-          height: 630,
-          alt: pageInfo.title,
-        },
-      ],
+    images: [{ url: '/og-research.png', width: 1200, height: 630, alt: pageInfo.title }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -46,12 +37,14 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "headline": "AxiomCortex™ Scientific Report",
+  "headline": pageInfo.title,
   "author": { "@type": "Organization", "name": "TeamStation AI" },
   "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
   "url": `https://cto.teamstation.dev/research/${pageInfo.slug}`,
   "sameAs": pageInfo.canonical,
   "abstract": pageInfo.description,
+  "datePublished": "2025-07-15",
+  "dateModified": "2025-07-15"
 };
 
 export default function ResearchPaperPage() {
@@ -60,9 +53,9 @@ export default function ResearchPaperPage() {
       <JsonLd data={schema} />
       <main className="container max-w-4xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/" className="hover:text-foreground">Home</Link> / 
-          <Link href="/research/hub" className="hover:text-foreground">Research</Link> / 
-          <span>AxiomCortex™ Report</span>
+          <Link href="/" className="hover:text-foreground">Home</Link> /
+          <Link href="/research/hub" className="hover:text-foreground">Research</Link> /
+          <span>AxiomCortex™ Scientific Report</span>
         </div>
         <article className="prose dark:prose-invert max-w-none">
           <h1>{pageInfo.title.split(' | ')[0]}</h1>
@@ -75,7 +68,7 @@ export default function ResearchPaperPage() {
             <h3 className="font-semibold text-foreground">Explore More:</h3>
             <ul className="list-none p-0 space-y-2">
               <li><Link href="/research/hub" className="text-primary hover:underline">Research Hub</Link></li>
-              <li><Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Playbook: Bias-Free Hiring</Link></li>
+              <li><Link href="/playbook/nearshore-vs-offshore" className="text-primary hover:underline">Playbook: Nearshore vs Offshore</Link></li>
               <li><Link href="/case-studies" className="text-primary hover:underline">Case Studies</Link></li>
             </ul>
           </nav>

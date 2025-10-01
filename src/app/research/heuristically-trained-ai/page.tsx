@@ -1,39 +1,30 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BookOpen, ArrowRight } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 const pageInfo = {
-    slug: "heuristically-trained-ai",
-    title: "Heuristically Trained AI | TeamStation AI Research",
-    description: "Research on heuristic-driven AI models that replicate cognitive strategy patterns, cutting brute-force inefficiencies in evaluating engineering talent.",
-    canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433",
-    summary: [
-        "This research paper challenges the conventional 'brute-force' approach to AI in talent evaluation. Instead of relying solely on massive datasets, it introduces a framework for 'heuristically trained' AI models. These models are designed to emulate the adaptive cognitive strategies and mental shortcuts (heuristics) used by expert human interviewers.",
-        "The study demonstrates that this approach leads to a more efficient and context-aware evaluation process. By teaching the AI to recognize patterns of reasoning rather than just keywords, the system achieves higher accuracy in predicting candidate success across a wide range of engineering disciplines, even with less initial data. This marks a significant step toward more nuanced and less data-intensive AI for human capital management."
-    ]
+  slug: "heuristically-trained-ai",
+  title: "Heuristically Trained AI Models for Technical Evaluation | TeamStation AI Research",
+  description: "Explores heuristic-guided model training for evaluating software engineers. Balances statistical robustness with domain-specific interpretability.",
+  canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433",
+  summary: [
+    "Traditional AI models often lack transparency in candidate evaluation. This paper introduces heuristic training methods that combine domain expertise with machine learning.",
+    "The approach ensures interpretability, fairness, and adaptability while preserving predictive strength — critical factors for CTOs seeking reliable AI-driven evaluation systems."
+  ]
 };
 
 export const metadata: Metadata = {
   title: pageInfo.title,
   description: pageInfo.description,
-  alternates: {
-    canonical: pageInfo.canonical,
-  },
+  alternates: { canonical: pageInfo.canonical },
   openGraph: {
     title: pageInfo.title,
     description: pageInfo.description,
     url: `https://cto.teamstation.dev/research/${pageInfo.slug}`,
     type: 'article',
-     images: [
-        {
-          url: '/og-research.png',
-          width: 1200,
-          height: 630,
-          alt: pageInfo.title,
-        },
-      ],
+    images: [{ url: '/og-research.png', width: 1200, height: 630, alt: pageInfo.title }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -46,12 +37,14 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "headline": "Heuristically Trained Neural AI for End-to-End Nearshore IT Staff Augmentation",
+  "headline": pageInfo.title,
   "author": { "@type": "Organization", "name": "TeamStation AI" },
   "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
   "url": `https://cto.teamstation.dev/research/${pageInfo.slug}`,
   "sameAs": pageInfo.canonical,
   "abstract": pageInfo.description,
+  "datePublished": "2025-05-10",
+  "dateModified": "2025-05-10"
 };
 
 export default function ResearchPaperPage() {
@@ -60,8 +53,8 @@ export default function ResearchPaperPage() {
       <JsonLd data={schema} />
       <main className="container max-w-4xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/" className="hover:text-foreground">Home</Link> / 
-          <Link href="/research/hub" className="hover:text-foreground">Research</Link> / 
+          <Link href="/" className="hover:text-foreground">Home</Link> /
+          <Link href="/research/hub" className="hover:text-foreground">Research</Link> /
           <span>Heuristically Trained AI</span>
         </div>
         <article className="prose dark:prose-invert max-w-none">
@@ -75,7 +68,7 @@ export default function ResearchPaperPage() {
             <h3 className="font-semibold text-foreground">Explore More:</h3>
             <ul className="list-none p-0 space-y-2">
               <li><Link href="/research/hub" className="text-primary hover:underline">Research Hub</Link></li>
-              <li><Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Playbook: Bias-Free Hiring</Link></li>
+              <li><Link href="/playbook/build-vs-buy" className="text-primary hover:underline">Playbook: Build vs Buy</Link></li>
               <li><Link href="/case-studies" className="text-primary hover:underline">Case Studies</Link></li>
             </ul>
           </nav>
