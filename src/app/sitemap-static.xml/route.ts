@@ -1,48 +1,21 @@
+
 import { MetadataRoute } from 'next';
 
 const baseUrl = 'https://cto.teamstation.dev';
 
 const staticPages = [
-  '', '/about', '/comparisons', '/faq', '/hire', '/hire/by-country',
-  '/hire/by-role', '/hire/by-team-topologies', '/hire/by-technology',
-  '/platform', '/playbook/hub', '/pricing', '/process', '/privacy-policy',
-  '/research/hub', '/services/integrated-services',
-  '/services/talent-onboarding', '/technical-interview-evaluation',
-  '/terms-of-service', '/trust', '/case-studies',
+  '', '/about', '/comparisons', '/faq', '/platform',
+  '/pricing', '/process', '/trust',
+  '/privacy-policy', '/terms-of-service',
 ];
 
-export async function GET() {
-    const now = new Date().toISOString();
-    const sitemapEntries: MetadataRoute.Sitemap = staticPages.map((path) => ({
-        url: `${baseUrl}${path}`,
-        lastModified: now,
-        changeFrequency: path === '' ? 'daily' : 'monthly',
-        priority: path === '' ? 1.0 : 0.8,
-    }));
+export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date().toISOString();
 
-    const sitemap = generateSitemap(sitemapEntries);
-
-    return new Response(sitemap, {
-        headers: {
-        'Content-Type': 'application/xml',
-        },
-    });
-}
-
-function generateSitemap(pages: MetadataRoute.Sitemap): string {
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${pages
-    .map(
-      (page) => `
-    <url>
-      <loc>${page.url}</loc>
-      <lastmod>${page.lastModified}</lastmod>
-      <changefreq>${page.changeFrequency}</changefreq>
-      <priority>${page.priority}</priority>
-    </url>
-  `
-    )
-    .join('')}
-</urlset>`;
+  return staticPages.map((path) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: now,
+    changeFrequency: path === '' ? 'daily' : 'monthly',
+    priority: path === '' ? 1.0 : 0.8,
+  }));
 }

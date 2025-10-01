@@ -3,21 +3,27 @@ import { MetadataRoute } from 'next';
 
 const baseUrl = 'https://cto.teamstation.dev';
 
-const researchPages = [
-  '/playbook/bias-free-technical-hiring-axiom-cortex',
-  '/playbook/build-vs-buy',
-  '/playbook/latam-economics',
+const playbookPages = [
+  '/playbook/hub',
   '/playbook/nearshore-vs-offshore',
+  '/playbook/latam-economics',
+  '/playbook/build-vs-buy',
+  '/playbook/bias-free-technical-hiring-axiom-cortex',
   '/playbook/tco-model',
+];
+
+const researchPages = [
+  '/research/hub',
   '/research/axiom-cortex-scientific-report',
-  '/research/performance-evaluation-framework',
-  '/research/technical-talent-evaluation-system',
+  '/research/heuristically-trained-ai',
   '/research/framework-for-measuring-capacity',
+  '/research/performance-metrics-in-ai-age',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
-  return researchPages.map((path) => ({
+
+  return [...playbookPages, ...researchPages].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: now,
     changeFrequency: 'weekly',

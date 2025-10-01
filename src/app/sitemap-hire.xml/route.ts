@@ -1,3 +1,4 @@
+
 import { MetadataRoute } from 'next';
 import { countries } from '@/lib/countries';
 import { roleCategories } from '@/lib/roles';
@@ -5,7 +6,7 @@ import { techCategories } from '@/lib/tech';
 
 const baseUrl = 'https://cto.teamstation.dev';
 
-export async function GET() {
+export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
 
   const byCountry = countries.map((c) => ({
@@ -31,31 +32,5 @@ export async function GET() {
     }))
   );
 
-  const sitemapEntries: MetadataRoute.Sitemap = [...byCountry, ...byRole, ...byTech];
-  
-  const sitemap = generateSitemap(sitemapEntries);
-
-  return new Response(sitemap, {
-    headers: {
-      'Content-Type': 'application/xml',
-    },
-  });
-}
-
-function generateSitemap(pages: MetadataRoute.Sitemap): string {
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${pages
-    .map(
-      (page) => `
-    <url>
-      <loc>${page.url}</loc>
-      <lastmod>${page.lastModified}</lastmod>
-      <changefreq>${page.changeFrequency}</changefreq>
-      <priority>${page.priority}</priority>
-    </url>
-  `
-    )
-    .join('')}
-</urlset>`;
+  return [...byCountry, ...byRole, ...byTech];
 }
