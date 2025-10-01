@@ -1,28 +1,27 @@
-
 // src/app/comparisons/tecla/page.tsx
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'TeamStation vs TECLA: LATAM Talent Networks Compared',
+  title: 'TeamStation vs TECLA: Integrated Nearshore Platform vs Talent Network',
   description:
-    'CTO guide: TeamStation AI vs TECLA. Integrated vetting, secure MDM devices, compliance, and predictable TCO vs. a talent network referral model.',
+    'CTO guide: Compare TeamStation AI’s integrated nearshore platform against TECLA’s LATAM talent network. Evidence-driven hiring, compliance, and predictable TCO.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/comparisons/tecla',
   },
   openGraph: {
-    title: 'TeamStation vs TECLA: CTO Comparison',
+    title: 'TeamStation vs TECLA: Platform vs Talent Network',
     description:
-      'Compare TeamStation AI’s integrated nearshore platform with TECLA’s curated network. Vetting science, compliance, devices, and TCO implications.',
+      'See how TeamStation AI’s scientific vetting, device security, and compliance stack up against TECLA’s network model. Which fits your roadmap?',
     url: 'https://cto.teamstation.dev/comparisons/tecla',
     type: 'article',
   },
   twitter: {
     card: 'summary',
-    title: 'TeamStation vs TECLA: LATAM Network vs Platform',
+    title: 'TeamStation vs TECLA: Platform vs Talent Network',
     description:
-      'Scientific vetting, MDM-secured devices, audit-ready compliance, and CFO-grade TCO vs. TECLA’s network referrals. Evidence for CTOs.',
+      'TeamStation offers an integrated IT Co-Pilot with Axiom Cortex™ vetting, audit-ready compliance, and secure devices. TECLA provides a talent network model. Which is right for your team?',
   },
   robots: { index: true, follow: true },
 };
@@ -53,7 +52,7 @@ const faqSchema = {
       "name": "How does TECLA work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TECLA operates as a curated talent network, referring candidates from its pool of pre-vetted engineers. Compliance, devices, and ramp-up depend on the client."
+        "text": "TECLA operates as a curated talent network, referring candidates from its pool of pre-vetted engineers. Compliance, devices, and delivery cadence depend on the client."
       }
     },
     {
@@ -66,7 +65,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "When is TECLA a better fit?",
+      "name": "When is TECLA a good fit?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "TECLA is a fit if you want quick introductions to LATAM engineers and already have internal infrastructure to manage compliance, security, and onboarding."
@@ -90,14 +89,14 @@ export default function TeclaComparisonPage() {
       <JsonLd data={faqSchema} />
 
       <article className="prose dark:prose-invert max-w-none">
-        <h1>TeamStation vs TECLA: LATAM Talent Networks Compared</h1>
+        <h1>TeamStation vs TECLA: Integrated Nearshore Platform vs Talent Network</h1>
         <p>
-          TECLA connects U.S. companies with Latin American engineers through a 
-          curated network. It’s essentially a referral model—fast introductions, 
-          but the operational load remains on your team. TeamStation AI is built 
-          differently: it’s a full platform. Vetting, compliance, secure devices, 
-          and ramp SLAs are built in so you get shipping code, not just candidate 
-          names.
+          TECLA is a LATAM talent network that helps companies connect with regional
+          developers. This approach provides access to candidates but requires the client
+          to manage vetting, devices, compliance, and delivery cadence. TeamStation AI
+          offers an alternative: a fully integrated nearshore IT Co-Pilot platform that
+          bundles scientific vetting, secure devices, EOR compliance, and SLA-driven
+          velocity.
         </p>
 
         <h2>Verdict Snapshot</h2>
