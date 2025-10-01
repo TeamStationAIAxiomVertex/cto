@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://cto.teamstation.dev'),
   alternates: {
     canonical: 'https://teamstation.dev/cto',
+    languages: {
+      'en-US': 'https://cto.teamstation.dev', // hreflang declaration
+    },
   },
   title: 'Nearshore Software Development: The CTO Playbook | TeamStation AI',
   description:
@@ -52,17 +55,21 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#3F83F8" />
-        <meta name="geo.region" content="US" />
-        <meta name="geo.placename" content="United States" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://picsum.photos" />
+
+        {/* US Geo-targeting for SEO */}
+        <meta name="geo.region" content="US" />
+        <meta name="geo.placename" content="United States" />
+
+        {/* Hreflang signal */}
+        <link rel="alternate" href="https://cto.teamstation.dev" hrefLang="en-US" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
