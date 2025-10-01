@@ -70,6 +70,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* Hreflang signal */}
         <link rel="alternate" href="https://cto.teamstation.dev" hrefLang="en-US" />
+        
+        {/* Organization & Website Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -81,17 +83,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "logo": "https://teamstation.dev/apple-touch-icon.png",
               "sameAs": [
                 "https://cto.teamstation.dev",
-                "https://www.linkedin.com/company/teamstation"
-              ],
-              "subOrganization": {
-                "@type": "Organization",
-                "name": "TeamStation AI — CTO Playbook",
-                "url": "https://cto.teamstation.dev"
-              }
+                "https://www.linkedin.com/company/teamstation",
+                 "https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en"
+              ]
             })
           }}
         />
-        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+         <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "url": "https://cto.teamstation.dev",
+                "name": "TeamStation AI CTO Playbook",
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://cto.teamstation.dev/search?q={search_term_string}"
+                  },
+                  "query-input": "required name=search_term_string"
+                }
+            })
+          }}
+        />
       </head>
       <body className={`${poppins.variable} font-sans bg-background text-foreground`}>
         <AppProviders>
