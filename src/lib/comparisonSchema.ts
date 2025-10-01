@@ -1,4 +1,3 @@
-
 // src/lib/comparisonSchema.ts
 export type ComparisonFAQ = {
   question: string;

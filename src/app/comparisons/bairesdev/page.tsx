@@ -5,6 +5,15 @@ import { GitCompare, UserCheck, ShieldCheck, Scale, FileSearch, HelpCircle } fro
 import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateComparisonSchema } from '@/lib/comparisonSchema';
+import { defaultComparisonFaqs } from '@/lib/comparisonFaqs';
+
+const competitor = { name: "BairesDev", url: "https://www.bairesdev.com", slug: "bairesdev" };
+const schema = generateComparisonSchema({
+  competitorName: competitor.name,
+  competitorUrl: competitor.url,
+  slug: competitor.slug,
+  faqs: defaultComparisonFaqs(competitor.name),
+});
 
 const pageData = {
   "type": "comparison",
@@ -82,22 +91,6 @@ const pageData = {
     {"q":"Can we trial a pod before committing long-term?","a":"Yes. We often start with a scoped 3-6 month engagement focused on a specific outcome. This allows you to validate the team's cadence, quality, and integration before scaling the partnership."}
   ]
 };
-
-const schema = generateComparisonSchema({
-  competitorName: "BairesDev",
-  competitorUrl: "https://www.bairesdev.com",
-  slug: "bairesdev",
-  faqs: [
-    {
-      question: "How does TeamStation AI compare to BairesDev?",
-      answer: "BairesDev focuses on staffing volume, while TeamStation AI delivers vetted nearshore squads, compliance, and single-SLA governance designed for U.S. CTOs and CFOs."
-    },
-    {
-      question: "What are common issues with legacy vendors like BairesDev?",
-      answer: "Clients report long hiring cycles, variable quality, and vendor sprawl. TeamStation AI eliminates these with cognitive vetting and integrated compliance."
-    }
-  ]
-});
 
 export async function generateMetadata(): Promise<Metadata> {
   const { title, description, canonical } = pageData.pageSEO;
