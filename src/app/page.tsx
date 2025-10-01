@@ -26,7 +26,6 @@ const Star = dynamic(() => import('lucide-react').then(m => m.Star), { ssr: fals
 const Beaker = dynamic(() => import('lucide-react').then(m => m.Beaker), { ssr: false });
 const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.default), { ssr: false });
 
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://cto.teamstation.dev'),
   title: "Nearshore Software Development: The CTO Playbook | TeamStation AI",
@@ -59,7 +58,6 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
 };
-
 
 const heroKpis: HeroKpi[] = [
   { id: 'compliance', label: 'Audit-Ready Compliance', value: 100, unit: '%', target: 100, desire: 'up' },
@@ -148,7 +146,6 @@ const sandlerCards = [
     }
 ];
 
-
 export default async function HomePage() {
   const caseStudies = await getAllCaseStudies();
 
@@ -218,8 +215,7 @@ export default async function HomePage() {
         <section className="py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             
-            {/* Left: Hero Text */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="w-full flex flex-col items-center md:items-start text-center md:text-left">
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 Nearshore Software Development: The CTO Playbook
               </h1>
@@ -241,7 +237,6 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Right: Hero KPIs */}
             <div className="w-full flex justify-center md:justify-end">
               <HeroKpis items={heroKpis} />
             </div>
@@ -250,15 +245,18 @@ export default async function HomePage() {
 
         <section id="trust-by-numbers" className="py-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                {trustNumbers.map((item) => (
-                    <div key={item.label} className="group rounded-lg border bg-card p-4 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-                        <div className="flex justify-center">
-                            <item.icon className="h-8 w-8 text-primary" />
+                {trustNumbers.map((item) => {
+                    const Icon = item.icon;
+                    return(
+                        <div key={item.label} className="group rounded-lg border bg-card p-4 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                            <div className="flex justify-center">
+                                <Icon className="h-8 w-8 text-primary" />
+                            </div>
+                            <p className="mt-3 text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">{item.value}</p>
+                            <p className="mt-1 text-xs md:text-sm text-muted-foreground">{item.label}</p>
                         </div>
-                        <p className="mt-3 text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">{item.value}</p>
-                        <p className="mt-1 text-xs md:text-sm text-muted-foreground">{item.label}</p>
-                    </div>
-                ))}
+                    )
+                })}
             </div>
         </section>
         
@@ -268,34 +266,37 @@ export default async function HomePage() {
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">We're not another vendor. We are a force multiplier for your engineering organization, giving you the leverage to succeed.</p>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
-              {corePillars.map(pillar => (
-                  <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
-                      <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
-                      <div className="flex items-center gap-3 mt-3">
-                          {pillar.icon}
-                          <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
+              {corePillars.map(pillar => {
+                  const Icon = pillar.icon;
+                  return (
+                      <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+                          <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
+                          <div className="flex items-center gap-3 mt-3">
+                              <Icon aria-label={pillar.title} />
+                              <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
+                          </div>
+                          <div className="mt-4 text-sm text-muted-foreground flex-grow">
+                              {pillar.description.includes("Axiom Cortex™") ?
+                                  (<>
+                                      Stop gambling on resumes. Our <WithTooltip content="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
+                                  </>) :
+                               pillar.description.includes("EOR") ?
+                                (<>
+                                    Stop juggling 5+ vendors. We bundle <WithTooltip content="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip content="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip content="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
+                                </>) :
+                               pillar.description.includes("TCO") ?
+                                (<>
+                                    We provide a predictable, all-inclusive <WithTooltip content="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
+                                </>) : pillar.description
+                              }
+                          </div>
+                          <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
+                          <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary" target={pillar.href.startsWith('http') ? '_blank' : '_self'} rel={pillar.href.startsWith('http') ? 'noopener noreferrer' : ''}>
+                              {pillar.linkLabel} <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
                       </div>
-                      <div className="mt-4 text-sm text-muted-foreground flex-grow">
-                          {pillar.description.includes("Axiom Cortex™") ?
-                              (<>
-                                  Stop gambling on resumes. Our <WithTooltip content="Our proprietary Cognitive AI engine for talent evaluation."><span className="text-primary border-b border-dashed">Axiom Cortex™</span></WithTooltip> Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.
-                              </>) :
-                           pillar.description.includes("EOR") ?
-                            (<>
-                                Stop juggling 5+ vendors. We bundle <WithTooltip content="Employer of Record"><span className="border-b border-dashed">EOR</span></WithTooltip>, payroll, secure devices (<WithTooltip content="Mobile Device Management"><span className="border-b border-dashed">MDM</span></WithTooltip>), and insurance into one accountable <WithTooltip content="Service Level Agreement"><span className="border-b border-dashed">SLA</span></WithTooltip>, giving you a single pane of glass for your entire operation.
-                            </>) :
-                           pillar.description.includes("TCO") ?
-                            (<>
-                                We provide a predictable, all-inclusive <WithTooltip content="Total Cost of Ownership"><span className="border-b border-dashed">TCO</span></WithTooltip> that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.
-                            </>) : pillar.description
-                          }
-                      </div>
-                      <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">{pillar.kpi}</p>
-                      <Link href={pillar.href} className="mt-6 flex items-center text-sm font-semibold text-primary" target={pillar.href.startsWith('http') ? '_blank' : '_self'} rel={pillar.href.startsWith('http') ? 'noopener noreferrer' : ''}>
-                          {pillar.linkLabel} <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                  </div>
-              ))}
+                  );
+              })}
           </div>
         </section>
 
@@ -303,12 +304,15 @@ export default async function HomePage() {
           <h2 className="text-center text-4xl font-bold text-foreground">Sound Familiar? It's the Cost of Doing Nothing.</h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">These aren't just headaches. They are symptoms of a broken IT staff augmentation model.</p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {painPoints.map((pain, index) => (
-                  <div key={index} className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-lg">
-                      <AlertTriangle className="h-6 w-6 text-primary shrink-0"/>
-                      <p className="m-0 font-medium text-muted-foreground">{pain}</p>
-                  </div>
-              ))}
+              {painPoints.map((pain, index) => {
+                  const Icon = AlertTriangle;
+                  return (
+                      <div key={index} className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-lg">
+                          <Icon className="h-6 w-6 text-primary shrink-0"/>
+                          <p className="m-0 font-medium text-muted-foreground">{pain}</p>
+                      </div>
+                  )
+                })}
           </div>
         </section>
 
@@ -318,32 +322,35 @@ export default async function HomePage() {
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">Legacy vendors promise, overcharge, and under-deliver. This Field Manual names the failure modes and instruments the fixes—cognitive hiring signals, daylight SLAs for PRs/incidents, device/MDM control, EOR & compliance, and TCO you can defend in front of Finance.</p>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {sandlerCards.map((card) => (
-              <div key={card.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
-                  <div className="flex items-start gap-4">
-                      {card.icon}
-                      <div>
-                          <h3 className="text-lg font-bold text-foreground">{card.title}</h3>
+            {sandlerCards.map((card) => {
+                const Icon = card.icon;
+                return(
+                  <div key={card.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+                      <div className="flex items-start gap-4">
+                          <Icon />
+                          <div>
+                              <h3 className="text-lg font-bold text-foreground">{card.title}</h3>
+                          </div>
+                      </div>
+                      <div className="mt-4 pt-4 border-t border-border/50">
+                          <h4 className="font-semibold text-destructive text-sm">Problem (Legacy)</h4>
+                          <p className="text-sm text-muted-foreground m-0">{card.problem}</p>
+                      </div>
+                      <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
+                          <h4 className="font-semibold text-primary text-sm">Solution (Next-Gen)</h4>
+                          <p className="text-sm text-foreground m-0">
+                            {card.solution}
+                          </p>
+                      </div>
+                      <div className="mt-4 pt-4 border-t border-border/50">
+                          <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {card.proof}</p>
+                      </div>
+                      <div className="mt-6 text-sm text-center font-semibold text-primary/90 border-t border-border/50 pt-4">
+                          <span className="italic">{card.question}</span>
                       </div>
                   </div>
-                  <div className="mt-4 pt-4 border-t border-border/50">
-                      <h4 className="font-semibold text-destructive text-sm">Problem (Legacy)</h4>
-                      <p className="text-sm text-muted-foreground m-0">{card.problem}</p>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
-                      <h4 className="font-semibold text-primary text-sm">Solution (Next-Gen)</h4>
-                      <p className="text-sm text-foreground m-0">
-                        {card.solution}
-                      </p>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-border/50">
-                      <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {card.proof}</p>
-                  </div>
-                  <div className="mt-6 text-sm text-center font-semibold text-primary/90 border-t border-border/50 pt-4">
-                      <span className="italic">{card.question}</span>
-                  </div>
-              </div>
-            ))}
+                )
+            })}
           </div>
           <div className="text-center mt-12">
                 <Link href="/comparisons" className="font-semibold text-primary hover:underline">

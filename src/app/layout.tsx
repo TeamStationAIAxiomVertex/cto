@@ -67,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#3F83F8" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${poppins.variable} font-sans bg-background text-foreground`}>
         <AppProviders>
