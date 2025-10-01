@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Prevent staging/test from being indexed
+Disallow: /_next/
+Disallow: /api/
+Disallow: /static/
+Disallow: /studio/
+
+# Point to the sitemap index
+Sitemap: https://cto.teamstation.dev/sitemap.xml
