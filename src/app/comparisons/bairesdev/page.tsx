@@ -1,126 +1,128 @@
-// src/app/comparisons/bairesdev/page.tsx
-import type { Metadata } from 'next';
-import { JsonLd } from '@/components/seo/JsonLd';
-import Link from 'next/link';
+
+import Link from "next/link";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: 'TeamStation vs BairesDev: Evidence-Based Comparison for CTOs',
+  title: "TeamStation vs BairesDev: A CTO’s Guide | TeamStation AI",
   description:
-    'CTO comparison guide: TeamStation AI vs BairesDev. Cognitive vetting (Axiom Cortex™), audit-ready compliance, secure devices, and CFO-ready TCO vs. traditional staff augmentation.',
+    "CTO comparison: TeamStation AI vs BairesDev. Vetting, SLAs, devices, compliance, and TCO. Evidence-driven choice for secure, fast nearshore engineering.",
   alternates: {
-    canonical: 'https://cto.teamstation.dev/comparisons/bairesdev',
+    canonical: "https://cto.teamstation.dev/comparisons/bairesdev",
   },
   openGraph: {
-    title: 'TeamStation vs BairesDev: Evidence-Based Comparison',
+    title: "TeamStation vs BairesDev: A CTO’s Guide",
     description:
-      'Compare TeamStation AI’s integrated platform (Axiom Cortex™, secure devices, EOR compliance) with BairesDev’s staff augmentation. Make decisions on evidence, not marketing claims.',
-    url: 'https://cto.teamstation.dev/comparisons/bairesdev',
-    type: 'article',
+      "See how TeamStation AI compares to BairesDev across vetting, compliance, security, and TCO. Make decisions with data, not marketing.",
+    url: "https://cto.teamstation.dev/comparisons/bairesdev",
+    type: "article",
   },
   twitter: {
-    card: 'summary',
-    title: 'TeamStation vs BairesDev: CTO Comparison',
+    card: "summary",
+    title: "TeamStation vs BairesDev: A CTO’s Guide",
     description:
-      'The real trade-offs: Cognitive vetting, audit-ready compliance, TCO, and daylight overlap vs. traditional staff augmentation.',
+      "Evidence-based comparison of TeamStation AI vs BairesDev for CTOs choosing a nearshore IT partner.",
   },
-  robots: { index: true, follow: true },
 };
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "TeamStation AI vs BairesDev Comparison",
-  "description": "An evidence-based comparison for CTOs evaluating TeamStation AI’s integrated nearshore platform vs. BairesDev’s staff augmentation model.",
-  "brand": {
+  "@type": "Article",
+  "headline": "TeamStation vs BairesDev: A CTO’s Guide",
+  "description":
+    "CTO comparison of TeamStation AI vs BairesDev. Evidence-driven breakdown across vetting, compliance, devices, SLAs, and TCO.",
+  "author": {
     "@type": "Organization",
     "name": "TeamStation AI",
-    "url": "https://cto.teamstation.dev"
+    "url": "https://teamstation.dev",
   },
-  "review": {
-    "@type": "Review",
-    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "author": { "@type": "Organization", "name": "TeamStation AI" }
-  },
-  "isSimilarTo": {
+  "publisher": {
     "@type": "Organization",
-    "name": "BairesDev",
-    "url": "https://www.bairesdev.com/"
-  }
+    "name": "TeamStation AI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://teamstation.dev/apple-touch-icon.png",
+    },
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cto.teamstation.dev/comparisons/bairesdev",
+  },
 };
 
-const faqSchema = {
+const breadcrumbSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {
-      "@type": "Question",
-      "name": "When is BairesDev a better fit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "If you have a mature internal infrastructure to manage HR, IT, and security, and only need access to a very large candidate funnel, BairesDev may fit."
-      }
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cto.teamstation.dev/",
     },
     {
-      "@type": "Question",
-      "name": "What does Axiom Cortex™ change in vetting?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It shifts evaluation from subjective interviews to objective, cognitive evidence. Mis-hire risk is reduced by 90%+."
-      }
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Comparisons",
+      "item": "https://cto.teamstation.dev/comparisons",
     },
     {
-      "@type": "Question",
-      "name": "Do you provide secure devices and SSO integration?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, all engineers receive a corporate-owned MDM-managed laptop with SSO/SAML/SCIM integrated from day one."
-      }
+      "@type": "ListItem",
+      "position": 3,
+      "name": "BairesDev",
+      "item": "https://cto.teamstation.dev/comparisons/bairesdev",
     },
-    {
-      "@type": "Question",
-      "name": "How quickly can a pod start shipping code?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "With environments ready, TeamStation targets a first PR within 10 business days."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What about Mexico's REPSE compliance?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TeamStation scopes engagements through compliant Employer of Record partners to fully adhere to REPSE labor laws."
-      }
-    }
-  ]
+  ],
 };
 
-export default function BairesDevComparisonPage() {
+export default function ComparisonPage() {
   return (
-    <main className="container max-w-4xl py-12">
-      {/* Inject JSON-LD Schema */}
-      <JsonLd data={schema} />
-      <JsonLd data={faqSchema} />
+    <main className="container max-w-4xl py-12 prose dark:prose-invert">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([schema, breadcrumbSchema]),
+        }}
+      />
 
-      <article className="prose dark:prose-invert max-w-none">
-        <h1>TeamStation vs BairesDev: What Actually Ships Faster?</h1>
+      <div className="text-sm text-muted-foreground mb-8 not-prose">
+        <Link href="/" className="hover:text-foreground">Home</Link> /{" "}
+        <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> /{" "}
+        <span>BairesDev</span>
+      </div>
+
+      <h1>TeamStation vs BairesDev: A CTO’s Guide</h1>
+      <p>
+        This guide compares <strong>TeamStation AI</strong> vs{" "}
+        <strong>BairesDev</strong> across vetting, compliance, devices, SLAs,
+        and total cost of ownership (TCO). The goal is to help CTOs choose a
+        nearshore partner with evidence, not just marketing.
+      </p>
+
+      <section>
+        <h2>Verdict Snapshot</h2>
+        {/* Insert your verdict table here */}
+      </section>
+
+      <section>
+        <h2>Why It Matters</h2>
         <p>
-          You need elite LATAM talent, and BairesDev's “Top 1%” promise is compelling. 
-          But is it the right model for shipping secure, high-velocity product? 
-          This is a CTO's guide to the real trade-offs.
+          Choosing a nearshore partner impacts velocity, compliance, and security.
+          TeamStation AI provides an integrated platform, while BairesDev follows
+          a traditional staff augmentation model. Below, we break down the
+          trade-offs.
         </p>
+      </section>
 
-        {/* --- Full page content goes here (your Verdict Snapshot, Problems/Stakes/Proof) --- */}
-        {/* I kept the original body intact from your draft */}
-
+      <section>
         <h2>Explore More</h2>
         <ul>
-          <li><Link href="/playbook/hub">Playbook Hub</Link></li>
-          <li><Link href="/research/hub">Research Hub</Link></li>
+          <li><Link href="/comparisons">All Comparisons</Link></li>
+          <li><Link href="/playbook/tco-model">Playbook: TCO Model</Link></li>
           <li><Link href="/case-studies">Case Studies</Link></li>
-          <li><Link href="/hire/by-country/mexico">Hire in Mexico</Link></li>
         </ul>
-      </article>
+      </section>
     </main>
   );
 }
