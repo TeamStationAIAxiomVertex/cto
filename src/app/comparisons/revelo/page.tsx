@@ -5,24 +5,24 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'TeamStation vs Revelo: LATAM Talent Platforms Compared',
+  title: 'TeamStation vs Revelo: Nearshore IT Co-Pilot vs Talent Marketplace',
   description:
-    'CTO comparison: TeamStation AI vs Revelo. Evidence-based vetting, secure devices, compliance, and CFO-ready TCO vs. a candidate marketplace model.',
+    'CTO comparison: TeamStation AI’s integrated nearshore platform vs. Revelo’s talent marketplace. Scientific vetting, secure devices, compliance, and TCO.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/comparisons/revelo',
   },
   openGraph: {
-    title: 'TeamStation vs Revelo: CTO Guide',
+    title: 'TeamStation vs Revelo: Platform vs Talent Marketplace',
     description:
-      'Compare TeamStation AI’s integrated nearshore platform with Revelo’s marketplace. Vetting science, compliance, devices, and TCO trade-offs.',
+      'Compare TeamStation AI’s evidence-driven platform with Revelo’s LATAM talent marketplace. Cognitive vetting, EOR compliance, and predictable TCO.',
     url: 'https://cto.teamstation.dev/comparisons/revelo',
     type: 'article',
   },
   twitter: {
     card: 'summary',
-    title: 'TeamStation vs Revelo: CTO Comparison',
+    title: 'TeamStation vs Revelo: Platform vs Marketplace',
     description:
-      'Scientific vetting, secure MDM devices, EOR compliance, and predictable TCO vs. a candidate marketplace. Evidence for CTOs.',
+      'TeamStation offers scientific vetting, device security, and audit-ready compliance. Revelo provides a marketplace of developers. Which model fits your roadmap?',
   },
   robots: { index: true, follow: true },
 };
@@ -31,7 +31,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "TeamStation AI vs Revelo Comparison",
-  "description": "CTO-focused comparison of TeamStation AI’s integrated platform against Revelo’s marketplace approach.",
+  "description": "CTO-focused comparison of TeamStation AI’s platform vs. Revelo’s talent marketplace.",
   "brand": {
     "@type": "Organization",
     "name": "TeamStation AI",
@@ -50,34 +50,34 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How does Revelo work?",
+      "name": "What is Revelo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Revelo operates as a marketplace, connecting U.S. companies with LATAM candidates. It emphasizes matching speed but leaves compliance and device management to the client."
+        "text": "Revelo is a talent marketplace that connects U.S. companies with developers in Latin America. It focuses on sourcing engineers but leaves compliance and operations to the client."
       }
     },
     {
       "@type": "Question",
-      "name": "How does TeamStation differ from Revelo?",
+      "name": "How is TeamStation different from Revelo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TeamStation provides an integrated platform with Axiom Cortex™ scientific vetting, corporate-owned MDM-managed devices, audit-ready compliance, and CFO-ready TCO models."
+        "text": "TeamStation bundles scientific vetting, secure devices, EOR compliance, and SLA-driven operations into one integrated platform, not just talent sourcing."
       }
     },
     {
       "@type": "Question",
-      "name": "Who is a better fit for Revelo?",
+      "name": "When is Revelo a better fit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Revelo is a fit if you want to quickly browse a wide candidate pool and already have internal teams to handle compliance, devices, and onboarding."
+        "text": "Revelo can work for companies that already have strong HR, IT, and compliance infrastructure and simply want to add candidates from LATAM."
       }
     },
     {
       "@type": "Question",
-      "name": "What about ramp time and PR readiness?",
+      "name": "What’s the cost difference?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TeamStation targets a first PR within 10 business days with daylight overlap. Revelo’s ramp speed depends on the client’s onboarding and management processes."
+        "text": "Revelo’s rates appear lower on a per-hour basis but don’t include hidden TCO costs like device management, compliance, or time-to-ramp. TeamStation provides CFO-ready TCO models with full operational coverage."
       }
     }
   ]
@@ -90,13 +90,13 @@ export default function ReveloComparisonPage() {
       <JsonLd data={faqSchema} />
 
       <article className="prose dark:prose-invert max-w-none">
-        <h1>TeamStation vs Revelo: LATAM Talent Platforms Compared</h1>
+        <h1>TeamStation vs Revelo: Nearshore IT Co-Pilot vs Talent Marketplace</h1>
         <p>
-          Revelo’s marketplace approach makes it simple to browse and contract 
-          developers across LATAM. But CTOs often find that a marketplace is not 
-          the same as a system. TeamStation AI integrates compliance, device 
-          security, and cognitive vetting into one accountable SLA—so you get 
-          teams that ship, not just resumes.
+          Revelo is a well-known LATAM talent marketplace connecting U.S. firms with
+          regional developers. For CTOs, this model provides access to candidates,
+          but leaves vetting, compliance, and operations largely in your hands.
+          TeamStation AI takes a different path: a full platform that de-risks every
+          step of nearshore hiring and delivery.
         </p>
 
         <h2>Verdict Snapshot</h2>
@@ -111,38 +111,38 @@ export default function ReveloComparisonPage() {
           <tbody>
             <tr>
               <td>Vetting</td>
-              <td>Axiom Cortex™, cognition-first, peer-reviewed</td>
-              <td>Marketplace screening, CV/interview emphasis</td>
+              <td>Axiom Cortex™, scientific, psychometric + work-sample evidence</td>
+              <td>Marketplace screening, resumes + interviews</td>
             </tr>
             <tr>
-              <td>Ramp to PR</td>
-              <td>≤10 days with daylight SLAs</td>
-              <td>Depends on client onboarding & infra</td>
+              <td>Ramp</td>
+              <td>≤10 business days to first PR</td>
+              <td>Varies, candidate-dependent</td>
             </tr>
             <tr>
               <td>Devices</td>
-              <td>Corporate-owned, MDM-managed, SOC2 aligned</td>
-              <td>BYOD, client managed</td>
+              <td>Corporate-owned, MDM-managed</td>
+              <td>Client responsibility</td>
             </tr>
             <tr>
               <td>Compliance</td>
-              <td>EOR-native in 10 countries, REPSE-aware</td>
-              <td>Client responsibility, vendor optional</td>
+              <td>EOR-native across LATAM, REPSE-aware</td>
+              <td>Marketplace facilitation; client must ensure compliance</td>
             </tr>
             <tr>
               <td>Best for</td>
-              <td>CTOs needing velocity, compliance, TCO control</td>
-              <td>Startups needing fast access to resumes</td>
+              <td>CTOs needing audit-ready pods with predictable TCO</td>
+              <td>Companies with internal HR/IT wanting direct hires</td>
             </tr>
           </tbody>
         </table>
 
         <h2>Explore More</h2>
         <ul>
-          <li><Link href="/playbook/hub">Playbook Hub</Link></li>
+          <li><Link href="/comparisons/bairesdev">BairesDev Comparison</Link></li>
+          <li><Link href="/comparisons/globant">Globant Comparison</Link></li>
+          <li><Link href="/comparisons/tecla">TECLA Comparison</Link></li>
           <li><Link href="/research/hub">Research Hub</Link></li>
-          <li><Link href="/case-studies">Case Studies</Link></li>
-          <li><Link href="/hire/by-country/mexico">Hire in Mexico</Link></li>
         </ul>
       </article>
     </main>
