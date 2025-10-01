@@ -1,16 +1,12 @@
-import { MetadataRoute } from "next";
-import { getAllCaseStudies } from '@/lib/case-studies';
-import { getAllPlaybookSlugs } from '@/lib/playbook';
-import { getAllResearchSlugs } from '@/lib/research';
-import { countries } from '@/lib/countries';
-import { roleCategories } from '@/lib/roles';
-import { techCategories } from '@/lib/tech';
+// src/app/sitemap.ts
+import type { MetadataRoute } from 'next';
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://cto.teamstation.dev";
+export default function sitemap(): MetadataRoute.Sitemap {
+  const base = 'https://cto.teamstation.dev';
 
-  const staticPages = [
-    '/',
+  // Static hubs
+  const staticRoutes = [
+    '',
     '/about',
     '/comparisons',
     '/faq',
@@ -30,67 +26,40 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/technical-interview-evaluation',
     '/terms-of-service',
     '/trust',
+    '/case-studies',
   ];
 
-  const staticRoutes = staticPages.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as 'monthly',
-    priority: route === '/' ? 1.0 : 0.8,
-  }));
-
-  const caseStudies = await getAllCaseStudies();
-  const caseStudyRoutes = caseStudies.map((study) => ({
-    url: `${baseUrl}/case-studies/${study.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as 'monthly',
-    priority: 0.7,
-  }));
-
-  const playbookSlugs = await getAllPlaybookSlugs();
-  const playbookRoutes = playbookSlugs.map(slug => ({
-      url: `${baseUrl}/playbook/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as 'weekly',
-      priority: 0.9,
-  }));
-
-  const researchSlugs = await getAllResearchSlugs();
-  const researchRoutes = researchSlugs.map(slug => ({
-      url: `${baseUrl}/research/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as 'weekly',
-      priority: 0.9,
-  }));
-  
-  const countryRoutes = countries.map(country => ({
-      url: `${baseUrl}/hire/by-country/${country.slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as 'monthly',
-      priority: 0.7
-  }));
-
-  const roleRoutes = roleCategories.map(role => ({
-      url: `${baseUrl}/hire/by-role/${role.slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as 'monthly',
-      priority: 0.7
-  }));
-  
-  const techRoutes = techCategories.flatMap(category => category.tech).map(tech => ({
-      url: `${baseUrl}/hire/by-technology/${tech.slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as 'monthly',
-      priority: 0.6
-  }));
-
-  return [
-    ...staticRoutes,
-    ...caseStudyRoutes,
-    ...playbookRoutes,
-    ...researchRoutes,
-    ...countryRoutes,
-    ...roleRoutes,
-    ...techRoutes
+  // Programmatic SEO stubs (expand as needed)
+  const programmaticRoutes = [
+    '/hire/by-country/mexico',
+    '/hire/by-country/colombia',
+    '/hire/by-country/brazil',
+    '/hire/by-country/argentina',
+    '/hire/by-country/chile',
+    '/hire/by-country/peru',
+    '/hire/by-country/costa-rica',
+    '/hire/by-country/uruguay',
+    '/hire/by-country/ecuador',
+    '/hire/by-country/guatemala',
+    '/hire/by-role/platform-infra-sre',
+    '/hire/by-role/security-grc',
+    '/hire/by-role/backend-services',
+    '/hire/by-role/frontend-web',
+    '/hire/by-role/data-engineering-analytics',
+    '/hire/by-role/ml-ai-llm-ops',
+    '/hire/by-role/product-design-growth',
+    '/hire/by-role/qa-quality-engineering',
+    '/hire/by-role/mobile-cross-platform',
+    '/hire/by-role/it-enterprise-ops',
+    '/hire/by-role/finops-biztech',
   ];
+
+  const allRoutes = [...staticRoutes, ...programmaticRoutes];
+
+  return allRoutes.map((route) => ({
+    url: `${base}${route}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'monthly',
+    priority: route === '' ? 1.0 : 0.8,
+  }));
 }
