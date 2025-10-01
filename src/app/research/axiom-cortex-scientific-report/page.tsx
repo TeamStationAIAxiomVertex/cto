@@ -1,8 +1,7 @@
-
 import { BrainCircuit, FileText, ShieldCheck, Scale, BookOpen, CheckCircle, FunctionSquare, Pilcrow, Sigma, GitBranch } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { WithTooltip } from '@/components/client/tooltip';
 
 export const metadata: Metadata = {
   title: 'The AxiomCortex™ Scientific Framework | AI Talent',
