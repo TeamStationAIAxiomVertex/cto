@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 import Link from "next/link";
