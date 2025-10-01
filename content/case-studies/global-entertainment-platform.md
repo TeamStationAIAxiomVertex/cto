@@ -1,6 +1,6 @@
 ---
 slug: 'global-entertainment-platform'
-title: 'Stabilizing Global Releases: A QA Squad Case Study | TeamStation AI'
+title: 'Stabilizing Global Releases: A QA Squad Case Study'
 description: 'TeamStation AI deployed a 10+ engineer nearshore QA squad in <30 days for a global entertainment platform, replacing an offshore vendor to stabilize releases and cut defect leakage.'
 clientName: 'Global Entertainment Platform'
 industry: 'Global Entertainment & Media'
