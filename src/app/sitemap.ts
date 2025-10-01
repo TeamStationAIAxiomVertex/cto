@@ -1,44 +1,82 @@
-// src/app/sitemap.ts
+
 import { MetadataRoute } from 'next';
+import { countries } from '@/lib/countries';
+import { roleCategories } from '@/lib/roles';
+import { techCategories } from '@/lib/tech';
+import { getAllCaseStudies } from '@/lib/case-studies';
 
 const baseUrl = 'https://cto.teamstation.dev';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const staticPages = [
+  { path: '', title: 'TeamStation AI – Nearshore IT Co-Pilot for CTOs' },
+  { path: '/about', title: 'About TeamStation AI' },
+  { path: '/comparisons', title: 'Vendor Comparisons Hub' },
+  { path: '/faq', title: 'FAQ for CTOs' },
+  { path: '/hire', title: 'Hire Nearshore Software Developers' },
+  { path: '/hire/by-country', title: 'Hire Developers by Country' },
+  { path: '/hire/by-role', title: 'Hire Developers by Role' },
+  { path: '/hire/by-team-topologies', title: 'Hire by Team Topology' },
+  { path: '/hire/by-technology', title: 'Hire by Technology' },
+  { path: '/platform', title: 'TeamStation Platform Overview' },
+  { path: '/playbook/hub', title: 'CTO Playbook Hub' },
+  { path: '/pricing', title: 'Pricing & Engagement Models' },
+  { path: '/process', title: 'Onboarding Process' },
+  { path: '/privacy-policy', title: 'Privacy Policy' },
+  { path: '/research/hub', title: 'Research Hub' },
+  { path: '/services/integrated-services', title: 'Integrated Services' },
+  { path: '/services/talent-onboarding', title: 'Talent Onboarding' },
+  { path: '/technical-interview-evaluation', title: 'Technical Interview Evaluation' },
+  { path: '/terms-of-service', title: 'Terms of Service' },
+  { path: '/trust', title: 'Trust & Compliance Center' },
+  { path: '/case-studies', title: 'Case Studies' },
+];
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date().toISOString();
 
-  // This should be a sitemap index file. The actual sitemap generation will be handled by the specific route files.
-  // This file is now being corrected to output a sitemap index as requested.
-  // For Studio to correctly generate a sitemap index, it needs to be the root sitemap.ts
-  // However, the prompt implies creating sub-sitemaps AND this index file. This might be a limitation.
-  // The correct Next.js approach is to have /sitemap.xml/route.ts for the index, and other files for parts.
-  // Given the user prompt, let's assume they want a single sitemap index file at the root.
-  // The user prompt is a bit ambiguous on the exact file naming convention for Next.js app router.
-  // Let's follow the user's latest instruction for a modular sitemap.
-  
-  // The user's last instruction was to create a modular sitemap. I will adhere to that.
-  // This file should actually be `sitemap.xml/route.ts` to be a sitemap index.
-  // Let's assume the build tool handles `sitemap.ts` as the index.
-  const sitemaps: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/sitemap-static.xml`,
+  const staticEntries = staticPages.map((p) => ({
+    url: `${baseUrl}${p.path}`,
+    lastModified: now,
+    changeFrequency: p.path === '' ? 'daily' : 'monthly',
+    priority: p.path === '' ? 1.0 : 0.8,
+  }));
+
+  const hireByCountry = countries.map((c) => ({
+    url: `${baseUrl}/hire/by-country/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const hireByRole = roleCategories.map((r) => ({
+    url: `${baseUrl}/hire/by-role/${r.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const hireByTech = techCategories.flatMap((cat) =>
+    cat.tech.map((t) => ({
+      url: `${baseUrl}/hire/by-technology/${t.slug}`,
       lastModified: now,
-    },
-    {
-      url: `${baseUrl}/sitemap-hire.xml`,
-      lastModified: now,
-    },
-    {
-      url: `${baseUrl}/sitemap-case-studies.xml`,
-      lastModified: now,
-    },
-    {
-      url: `${baseUrl}/sitemap-research.xml`,
-      lastModified: now,
-    },
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  );
+
+  const caseStudies = await getAllCaseStudies();
+  const caseStudyEntries = caseStudies.map((study) => ({
+    url: `${baseUrl}/case-studies/${study.slug}`,
+    lastModified: study.lastModified ? new Date(study.lastModified).toISOString() : now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [
+    ...staticEntries,
+    ...hireByCountry,
+    ...hireByRole,
+    ...hireByTech,
+    ...caseStudyEntries,
   ];
-  
-  // The type for a sitemap index is different. The user prompt seems to be using the wrong type.
-  // I will generate the correct type for a sitemap index.
-  
-  return sitemaps;
 }
