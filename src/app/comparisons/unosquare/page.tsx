@@ -1,4 +1,4 @@
-// Unosquare Comparison Page
+
 import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -19,17 +19,6 @@ export const metadata: Metadata = {
     title: "TeamStation vs Unosquare: A CTO’s Guide",
     description: "CTO-focused comparison of TeamStation AI vs Unosquare with evidence on security, devices, and TCO.",
   },
-};
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "TeamStation vs Unosquare: A CTO’s Guide",
-  "description":
-    "CTO comparison of TeamStation AI vs Unosquare. Evidence-driven breakdown across vetting, compliance, devices, SLAs, and TCO.",
-  "author": { "@type": "Organization", "name": "TeamStation AI" },
-  "publisher": { "@type": "Organization", "name": "TeamStation AI" },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://cto.teamstation.dev/comparisons/unosquare" },
 };
 
 const faqSchema = {
@@ -80,6 +69,18 @@ const faqSchema = {
 };
 
 export default function ComparisonPage() {
+  const siteUrl = 'https://cto.teamstation.dev';
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "TeamStation vs Unosquare: A CTO’s Guide",
+    "description":
+      "CTO comparison of TeamStation AI vs Unosquare. Evidence-driven breakdown across vetting, compliance, devices, SLAs, and TCO.",
+    "author": { "@type": "Organization", "name": "TeamStation AI" },
+    "publisher": { "@type": "Organization", "name": "TeamStation AI" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `${siteUrl}/comparisons/unosquare` },
+  };
+
   return (
     <main className="container max-w-4xl py-12 prose dark:prose-invert">
       <JsonLd data={[schema, faqSchema]} />

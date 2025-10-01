@@ -3,6 +3,7 @@ import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Toptal Alternative for Full-Time Teams | TeamStation AI',
@@ -32,79 +33,92 @@ const comparisonPoints = {
 
 
 export default function ToptalComparisonPage() {
+    const siteUrl = 'https://cto.teamstation.dev';
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+      { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": `${siteUrl}/comparisons` },
+      { "@type": "ListItem", "position": 3, "name": "Toptal Alternative", "item": `${siteUrl}/comparisons/toptal` }
+    ]
+  };
   return (
-    <main className="container py-12">
-      <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Toptal Alternative</span>
-      </div>
-      <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Toptal Alternative: TeamStation AI</h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          A comparison between TeamStation AI’s integrated team model for nearshore software development and Toptal’s premium freelance network.
-        </p>
-         <div className="mt-4 text-sm">
-            <a href="https://www.toptal.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
-                Vendor home: toptal.com <ExternalLink className="h-4 w-4" />
-            </a>
+    <>
+      <JsonLd data={breadcrumbSchema} />
+      <main className="container py-12">
+        <div className="text-sm text-muted-foreground mb-8">
+          <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Toptal Alternative</span>
         </div>
-      </header>
+        <header className="text-center my-8">
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Toptal Alternative: TeamStation AI</h1>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+            A comparison between TeamStation AI’s integrated team model for nearshore software development and Toptal’s premium freelance network.
+          </p>
+           <div className="mt-4 text-sm">
+              <a href="https://www.toptal.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                  Vendor home: toptal.com <ExternalLink className="h-4 w-4" />
+              </a>
+          </div>
+        </header>
 
-      <div className="my-12">
-        <h2 className="text-3xl font-bold text-center">Integrated Teams vs. Elite Freelancers</h2>
-        <div className="mt-8 grid gap-8 md:grid-cols-3">
-          {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
-              <p className="text-sm font-semibold text-primary">{value.pain}</p>
-              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
-              
-              <div className="mt-4 flex-grow space-y-4">
-                <div className="border-t border-border pt-4">
-                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
-                    <XCircle className="h-5 w-5 text-destructive" />
-                    Toptal Model
-                  </h4>
-                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+        <div className="my-12">
+          <h2 className="text-3xl font-bold text-center">Integrated Teams vs. Elite Freelancers</h2>
+          <div className="mt-8 grid gap-8 md:grid-cols-3">
+            {Object.entries(comparisonPoints).map(([key, value]) => (
+              <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+                <p className="text-sm font-semibold text-primary">{value.pain}</p>
+                <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+                
+                <div className="mt-4 flex-grow space-y-4">
+                  <div className="border-t border-border pt-4">
+                    <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                      <XCircle className="h-5 w-5 text-destructive" />
+                      Toptal Model
+                    </h4>
+                    <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                  </div>
+                  <div className="border-t border-border pt-4">
+                    <h4 className="font-semibold text-foreground flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      TeamStation AI Solution
+                    </h4>
+                     <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                  </div>
                 </div>
-                <div className="border-t border-border pt-4">
-                  <h4 className="font-semibold text-foreground flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    TeamStation AI Solution
-                  </h4>
-                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
-                </div>
+                <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
               </div>
-              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
-        <h2 className="text-center">Analysis: Integrated Teams vs. Elite Freelancers</h2>
-        <p>
-            <a href="https://www.toptal.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Toptal <ExternalLink className="h-4 w-4" /></a> markets an exclusive network of the "top 3%" of freelance talent, ideal for companies needing individual experts for specific projects. However, it is fundamentally a freelance model, not a solution for building integrated, long-term teams.
-        </p>
-        <p>
-            As a Toptal alternative, TeamStation AI's model is different. We build fully integrated, long-term nearshore teams and provide the operational, legal, and security infrastructure to run them. While Toptal's screening is rigorous, our{' '}
-            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link>
-            {' '} engine adds a layer of cognitive science and bias mitigation that provides a deeper, evidence-based understanding of a candidate's true potential.
-        </p>
-        <h3>Cost and Continuity Risk</h3>
-        <p>
-            Toptal's premium positioning comes with high hourly rates ($60-$150+) plus subscription fees. This model is suited for short-term projects but is expensive for building full-time capacity. More importantly, the freelance model introduces continuity risk; there is no guarantee a contractor will remain for the long term.
-        </p>
-        <p>
-            TeamStation AI focuses on providing a cost-effective, scalable solution for building dedicated teams of full-time employees. Our all-inclusive <Link href="/pricing">pricing</Link> is transparent and predictable, providing a lower TCO and eliminating the continuity risk inherent in freelance models.
-        </p>
-      </div>
+        <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
+          <h2 className="text-center">Analysis: Integrated Teams vs. Elite Freelancers</h2>
+          <p>
+              <a href="https://www.toptal.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Toptal <ExternalLink className="h-4 w-4" /></a> markets an exclusive network of the "top 3%" of freelance talent, ideal for companies needing individual experts for specific projects. However, it is fundamentally a freelance model, not a solution for building integrated, long-term teams.
+          </p>
+          <p>
+              As a Toptal alternative, TeamStation AI's model is different. We build fully integrated, long-term nearshore teams and provide the operational, legal, and security infrastructure to run them. While Toptal's screening is rigorous, our{' '}
+              <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link>
+              {' '} engine adds a layer of cognitive science and bias mitigation that provides a deeper, evidence-based understanding of a candidate's true potential.
+          </p>
+          <h3>Cost and Continuity Risk</h3>
+          <p>
+              Toptal's premium positioning comes with high hourly rates ($60-$150+) plus subscription fees. This model is suited for short-term projects but is expensive for building full-time capacity. More importantly, the freelance model introduces continuity risk; there is no guarantee a contractor will remain for the long term.
+          </p>
+          <p>
+              TeamStation AI focuses on providing a cost-effective, scalable solution for building dedicated teams of full-time employees. Our all-inclusive <Link href="/pricing">pricing</Link> is transparent and predictable, providing a lower TCO and eliminating the continuity risk inherent in freelance models.
+          </p>
+        </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-        <h2 className="text-2xl font-bold">Conclusion</h2>
-        <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
-            If you need a world-class freelance developer for a 3-month project, Toptal is an excellent choice. If you need to build a dedicated, secure, and cost-effective nearshore engineering team for the long haul, TeamStation AI is the more strategic and financially sound Toptal alternative.
-        </p>
-        <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
-      </div>
-    </main>
+        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+          <h2 className="text-2xl font-bold">Conclusion</h2>
+          <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
+              If you need a world-class freelance developer for a 3-month project, Toptal is an excellent choice. If you need to build a dedicated, secure, and cost-effective nearshore engineering team for the long haul, TeamStation AI is the more strategic and financially sound Toptal alternative.
+          </p>
+          <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
+        </div>
+      </main>
+    </>
   );
 }

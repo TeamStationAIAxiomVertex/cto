@@ -3,6 +3,7 @@ import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'TECLA Alternative: TeamStation AI vs. TECLA',
@@ -32,78 +33,89 @@ const comparisonPoints = {
 
 
 export default function TeclaComparisonPage() {
+    const siteUrl = 'https://cto.teamstation.dev';
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+      { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": `${siteUrl}/comparisons` },
+      { "@type": "ListItem", "position": 3, "name": "TECLA Alternative", "item": `${siteUrl}/comparisons/tecla` }
+    ]
+  };
   return (
-    <main className="container py-12">
-      <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>TECLA Alternative</span>
-      </div>
-      <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TECLA Alternative: TeamStation AI</h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          A comparison between TeamStation AI’s integrated platform and TECLA’s talent marketplace model for hiring developers in Latin America.
-        </p>
-         <div className="mt-4 text-sm">
-            <a href="https://www.tecla.io/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
-                Vendor home: tecla.io <ExternalLink className="h-4 w-4" />
-            </a>
+    <>
+      <JsonLd data={breadcrumbSchema} />
+      <main className="container py-12">
+        <div className="text-sm text-muted-foreground mb-8">
+          <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>TECLA Alternative</span>
         </div>
-      </header>
+        <header className="text-center my-8">
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TECLA Alternative: TeamStation AI</h1>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+            A comparison between TeamStation AI’s integrated platform and TECLA’s talent marketplace model for hiring developers in Latin America.
+          </p>
+           <div className="mt-4 text-sm">
+              <a href="https://www.tecla.io/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                  Vendor home: tecla.io <ExternalLink className="h-4 w-4" />
+              </a>
+          </div>
+        </header>
 
-       <div className="my-12">
-        <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The Talent Marketplace</h2>
-        <div className="mt-8 grid gap-8 md:grid-cols-3">
-          {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
-              <p className="text-sm font-semibold text-primary">{value.pain}</p>
-              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
-              
-              <div className="mt-4 flex-grow space-y-4">
-                <div className="border-t border-border pt-4">
-                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
-                    <XCircle className="h-5 w-5 text-destructive" />
-                    TECLA Model
-                  </h4>
-                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+         <div className="my-12">
+          <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The Talent Marketplace</h2>
+          <div className="mt-8 grid gap-8 md:grid-cols-3">
+            {Object.entries(comparisonPoints).map(([key, value]) => (
+              <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+                <p className="text-sm font-semibold text-primary">{value.pain}</p>
+                <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+                
+                <div className="mt-4 flex-grow space-y-4">
+                  <div className="border-t border-border pt-4">
+                    <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                      <XCircle className="h-5 w-5 text-destructive" />
+                      TECLA Model
+                    </h4>
+                    <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                  </div>
+                  <div className="border-t border-border pt-4">
+                    <h4 className="font-semibold text-foreground flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      TeamStation AI Solution
+                    </h4>
+                     <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                  </div>
                 </div>
-                <div className="border-t border-border pt-4">
-                  <h4 className="font-semibold text-foreground flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    TeamStation AI Solution
-                  </h4>
-                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
-                </div>
+                <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
               </div>
-              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
-        <h2 className="text-center">Analysis: The Integrated Platform vs. The Marketplace</h2>
-        <p>
-            <a href="https://www.tecla.io/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">TECLA <ExternalLink className="h-4 w-4" /></a> operates as a talent marketplace, connecting companies with a network of developers across Latin America. While effective for sourcing candidates, their model places the significant burden of compliance, payroll, device security, and HR management squarely on the client.
-        </p>
-        <p>
-           As a TECLA alternative, TeamStation AI provides a fully integrated platform. We don't just find talent; we provide the entire operational infrastructure. This includes <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, secure device provisioning (<WithTooltip label="Mobile Device Management: software that secures, monitors, and manages devices like laptops."><span className="border-b border-dashed">MDM</span></WithTooltip>), and comprehensive insurance, all bundled into a single, predictable rate. Our{' '}
-            <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link>
-            {' '} engine also provides a layer of cognitive and bias-aware vetting that goes far beyond traditional screening.
-        </p>
-        <h3>Operational Responsibility: Where Does it Lie?</h3>
-        <p>
-            With a marketplace like TECLA, you find the talent, but then you are largely on your own. You have to figure out how to hire them compliantly, pay them, and secure their work environment. This creates significant operational overhead and legal risk. TeamStation AI absorbs this complexity. Our model is designed for CTOs who need to scale without building a global HR and legal department from scratch.
-        </p>
-      </div>
+        <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
+          <h2 className="text-center">Analysis: The Integrated Platform vs. The Marketplace</h2>
+          <p>
+              <a href="https://www.tecla.io/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">TECLA <ExternalLink className="h-4 w-4" /></a> operates as a talent marketplace, connecting companies with a network of developers across Latin America. While effective for sourcing candidates, their model places the significant burden of compliance, payroll, device security, and HR management squarely on the client.
+          </p>
+          <p>
+             As a TECLA alternative, TeamStation AI provides a fully integrated platform. We don't just find talent; we provide the entire operational infrastructure. This includes <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, secure device provisioning (<WithTooltip label="Mobile Device Management: software that secures, monitors, and manages devices like laptops."><span className="border-b border-dashed">MDM</span></WithTooltip>), and comprehensive insurance, all bundled into a single, predictable rate. Our{' '}
+              <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link>
+              {' '} engine also provides a layer of cognitive and bias-aware vetting that goes far beyond traditional screening.
+          </p>
+          <h3>Operational Responsibility: Where Does it Lie?</h3>
+          <p>
+              With a marketplace like TECLA, you find the talent, but then you are largely on your own. You have to figure out how to hire them compliantly, pay them, and secure their work environment. This creates significant operational overhead and legal risk. TeamStation AI absorbs this complexity. Our model is designed for CTOs who need to scale without building a global HR and legal department from scratch.
+          </p>
+        </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-        <h2 className="text-2xl font-bold">Conclusion</h2>
-        <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
-            If you have the internal resources to manage international hiring, compliance, and IT security, a marketplace like TECLA can be a good sourcing tool. However, for companies looking for a complete, secure, and scalable solution that reduces risk and operational burden, TeamStation AI's integrated platform offers a clear advantage as a TECLA alternative.
-        </p>
-        <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
-      </div>
-    </main>
+        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+          <h2 className="text-2xl font-bold">Conclusion</h2>
+          <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
+              If you have the internal resources to manage international hiring, compliance, and IT security, a marketplace like TECLA can be a good sourcing tool. However, for companies looking for a complete, secure, and scalable solution that reduces risk and operational burden, TeamStation AI's integrated platform offers a clear advantage as a TECLA alternative.
+          </p>
+          <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
+        </div>
+      </main>
+    </>
   );
 }
-
-    

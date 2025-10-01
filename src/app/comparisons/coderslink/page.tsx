@@ -1,4 +1,4 @@
-// src/app/comparisons/coderslink/page.tsx
+
 import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";

@@ -1,3 +1,4 @@
+
 // NOTE: this file is a Server Component (no 'use client')
 import 'server-only';
 
@@ -5,6 +6,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DollarSign, GitCompare, Layers, ArrowRight } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 // Load client-only widget as an island.
 // Works whether the widget is default- or named-exported.
@@ -87,10 +89,7 @@ export default function NewGenNearshoreComparisonPage() {
 
   return (
     <main className="container max-w-7xl py-12">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={faqSchema} />
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">
           Home
