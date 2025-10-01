@@ -1,44 +1,73 @@
-
+// src/app/comparisons/coderslink/page.tsx
+import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 
-export const metadata: Metadata = {
-  title: "TeamStation vs CodersLink: Mexico Nearshore Comparison",
+const pageInfo = {
+  slug: "coderslink",
+  title: "TeamStation vs CodersLink: Integrated Platform vs Recruitment Marketplace",
   description:
-    "Compare TeamStation AI’s cognitive vetting, compliance-native pods, and MDM-secured devices with CodersLink’s Mexico-based IT staffing.",
-  alternates: { canonical: "https://cto.teamstation.dev/comparisons/coderslink" },
+    "CodersLink operates as a recruitment marketplace for LATAM talent. TeamStation AI provides an end-to-end platform with cognitive vetting, managed devices, and compliance.",
+  canonical: "https://cto.teamstation.dev/comparisons/coderslink",
+};
+
+export const metadata: Metadata = {
+  title: pageInfo.title,
+  description: pageInfo.description,
+  alternates: { canonical: pageInfo.canonical },
   openGraph: {
-    title: "TeamStation vs CodersLink",
-    description:
-      "CTO comparison of TeamStation AI vs CodersLink. Focus: Mexico nearshore talent, compliance, devices, and delivery outcomes.",
-    url: "https://cto.teamstation.dev/comparisons/coderslink",
+    title: pageInfo.title,
+    description: pageInfo.description,
+    url: pageInfo.canonical,
     type: "article",
   },
+  twitter: { card: "summary", title: pageInfo.title, description: pageInfo.description },
 };
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "TeamStation vs CodersLink",
-  "description":
-    "CTO-focused evaluation of TeamStation AI vs CodersLink for nearshore engineering in Mexico. Covers vetting, compliance, TCO, and secure devices.",
-  "brand": { "@type": "Organization", "name": "TeamStation AI" },
-  "isSimilarTo": { "@type": "Organization", "name": "CodersLink" },
-  "audience": { "@type": "Audience", "audienceType": "CTO, CIO, Engineering Leaders" },
-  "url": "https://cto.teamstation.dev/comparisons/coderslink",
+  name: "TeamStation vs CodersLink",
+  description: pageInfo.description,
+  brand: { "@type": "Organization", name: "TeamStation AI" },
+  url: pageInfo.canonical,
+  review: {
+    "@type": "Review",
+    reviewBody:
+      "CodersLink connects companies with LATAM developers. TeamStation AI delivers managed pods with scientific vetting, security, and EOR compliance for faster delivery and lower risk.",
+    author: { "@type": "Organization", name: "TeamStation AI" },
+  },
 };
 
-export default function Page() {
+export default function ComparisonPage() {
   return (
     <>
       <JsonLd data={schema} />
-      <main className="container py-12">
-        <h1>TeamStation vs CodersLink: Mexico Nearshore Talent</h1>
-        <p>
-          <strong>TeamStation AI</strong> and <strong>CodersLink</strong> both
-          focus on Mexico’s nearshore talent. This page compares transparency,
-          compliance, and cost models so CTOs can make the right call.
-        </p>
+      <main className="container max-w-4xl py-12">
+        <div className="text-sm text-muted-foreground mb-8">
+          <Link href="/" className="hover:text-foreground">Home</Link> /
+          <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> /
+          <span>CodersLink</span>
+        </div>
+        <article className="prose dark:prose-invert max-w-none">
+          <h1>{pageInfo.title}</h1>
+          <p>{pageInfo.description}</p>
+          <h2>Verdict Snapshot</h2>
+          <ul>
+            <li><strong>Model:</strong> TeamStation = integrated pods; CodersLink = recruiting marketplace.</li>
+            <li><strong>Vetting:</strong> TeamStation Axiom Cortex™ cognitive science; CodersLink = candidate sourcing.</li>
+            <li><strong>Devices:</strong> TeamStation provides managed laptops; CodersLink = none.</li>
+            <li><strong>Compliance:</strong> TeamStation = EOR-native LATAM; CodersLink leaves compliance to client.</li>
+          </ul>
+          <nav className="mt-12 border-t border-border pt-6 text-sm">
+            <h3>Explore More:</h3>
+            <ul>
+              <li><Link href="/comparisons/terminal">Compare TeamStation vs Terminal</Link></li>
+              <li><Link href="/research/framework-for-measuring-capacity">Research: Measuring Capacity</Link></li>
+              <li><Link href="/trust">Trust Center</Link></li>
+            </ul>
+          </nav>
+        </article>
       </main>
     </>
   );
