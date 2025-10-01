@@ -1,3 +1,4 @@
+
 // NO 'use client' — Footer stays a Server Component
 import Link from 'next/link';
 import type { ReactNode } from 'react';
@@ -33,7 +34,7 @@ const companyLinks: LinkItem[] = [
 ];
 
 const researchLinks: LinkItem[] = [
-  { href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397', label: 'AxiomCortex™ R&D Report' },
+  { href: '/research/axiom-cortex-scientific-report', label: 'AxiomCortex™ R&D Report' },
   { href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433', label: 'Heuristically Trained AI' },
   { href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490', label: 'Framework for Measuring Capacity' },
   { href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470', label: 'Performance Metrics in AI Age' },

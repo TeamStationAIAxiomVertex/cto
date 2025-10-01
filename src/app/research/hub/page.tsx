@@ -1,9 +1,9 @@
 
 import Link from 'next/link';
-import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
 import { ArrowRight, Beaker, FileText, BrainCircuit, HelpCircle, BarChart, BookOpen, Star, Trophy } from 'lucide-react';
 import type { Metadata } from 'next';
 import { default as dynamicComponent } from 'next/dynamic';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 const SpotifyIcon = dynamicComponent(() => import('@/components/SpotifyIcon').then(mod => mod.default), { ssr: false });
 
@@ -51,7 +51,7 @@ export default async function ResearchPage() {
       slug: 'performance-evaluation-report-example',
       title: 'Sample Performance Report (Day 30)',
       description: 'A real, anonymized example of our 30-Day Onboarding Check diagnostic, demonstrating how we track performance and establish a growth baseline from the start.',
-      href: '/technical-interview-evaluation',
+      href: '/research/performance-evaluation-report-example',
       pain: "Is your onboarding process a black box?",
       icon: <BarChart className="h-8 w-8 text-primary" />,
       solutionTitle: "Proof of Performance",
@@ -147,14 +147,8 @@ export default async function ResearchPage() {
 
   return (
     <main className="container max-w-6xl py-12">
-      <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
-      />
-      <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={pageSchema} />
+      <JsonLd data={faqSchema} />
        <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research</span>
       </div>

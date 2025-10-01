@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { CheckSquare, Square } from 'lucide-react';
@@ -5,6 +6,10 @@ import { CheckSquare, Square } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Sample Performance Evaluation Report',
   description: 'An example of our Day-30 Onboarding Check, a BARS-based diagnostic to ensure engineer success and client-partner alignment.',
+  robots: {
+    index: false,
+    follow: false,
+  }
 };
 
 const activities = [

@@ -3,7 +3,7 @@
 import type { MetadataRoute } from 'next';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { getAllPlaybookSlugs } from '@/lib/playbook';
-import { getAllResearchSlugs, getResearchBySlug } from '@/lib/research';
+import { getAllResearchSlugs } from '@/lib/research';
 import { countries } from '@/lib/countries';
 import { roleCategories } from '@/lib/roles';
 import { techCategories } from '@/lib/tech';
@@ -47,8 +47,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getAllPlaybookSlugs(),
     getAllResearchSlugs(),
   ]);
-
-  const research = (await Promise.all(researchSlugs.map(slug => getResearchBySlug(slug)))).filter(Boolean) as Awaited<ReturnType<typeof getResearchBySlug>>[];
 
   // Static → use today's date
   const staticEntries = staticRoutes.map((route) => ({
@@ -94,8 +92,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  const researchEntries = research.map((r) => ({
-    url: `${base}/research/${r.slug}`,
+  const researchEntries = researchSlugs.map((slug) => ({
+    url: `${base}/research/${slug}`,
     lastModified: new Date().toISOString(), // No date in frontmatter yet
     changeFrequency: 'weekly',
     priority: 0.9,

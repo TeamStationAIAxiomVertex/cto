@@ -1,3 +1,4 @@
+
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
@@ -16,4 +17,23 @@ const playbookSlugs = [
 
 export async function getAllPlaybookSlugs(): Promise<string[]> {
     return playbookSlugs;
+}
+
+export async function getPlaybookBySlug(slug: string) {
+    try {
+        const filePath = path.join(contentDirectory, `${slug}.mdx`); // Assuming .mdx, adjust if needed
+        const fileContents = await fs.readFile(filePath, 'utf8');
+        const stats = await fs.stat(filePath);
+        const { data } = matter(fileContents);
+        
+        return {
+            slug,
+            title: data.title,
+            description: data.description,
+            lastModified: (data.lastModified || data.date || stats.mtime).toISOString(),
+        };
+    } catch (error) {
+        console.error(`Could not get playbook for slug: ${slug}`, error);
+        return null;
+    }
 }
