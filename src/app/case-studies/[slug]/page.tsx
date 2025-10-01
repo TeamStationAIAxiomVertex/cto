@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowRight, Briefcase, Award, CheckCircle, AlertTriangle, Shield } from 'lucide-react';
 import { markdownToHtml } from '@/lib/markdown-parser';
 import type { Metadata } from 'next';
-import SafeImage from '@/components/SafeImage';
+import SeoSafeImage from '@/components/seo/SeoSafeImage';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const study = await getCaseStudyBySlug(params.slug);
@@ -147,8 +147,8 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                           {study.title.replace(/ \| TeamStation AI( Case Study)?/g, '')}
                       </h1>
                       <div className="relative h-96 w-full my-8 rounded-lg overflow-hidden border">
-                          <SafeImage 
-                              src={study.ogImage?.src?.url}
+                          <SeoSafeImage 
+                              src={study.ogImage?.src?.url ?? ''}
                               alt={`Hero image for ${study.clientName} case study`}
                               fill
                               className="object-cover"

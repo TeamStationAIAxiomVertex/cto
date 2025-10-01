@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import Footer from '@/components/Footer';
 import AppProviders from '@/providers/app-providers';
 import './globals.css';
-import placeholderImages from '@/app/lib/placeholder-images.json';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -14,31 +13,22 @@ const poppins = Poppins({
   display: 'swap',
 });
 
-const siteName = 'TeamStation AI';
-const siteDescription = "The CTO's definitive guide to building elite, secure, and compliant nearshore engineering teams in LATAM.";
-const siteUrl = 'https://cto.teamstation.dev';
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: `CTO's Playbook for Nearshore Teams | ${siteName}`,
-    template: `%s | ${siteName}`,
-  },
-  description: siteDescription,
+  title: 'Nearshore Software Development: The CTO Playbook | TeamStation AI',
+  description:
+    'Audit-ready compliance, cognitive AI vetting, and daylight overlap. The CTO Playbook delivers measurable outcomes so you ship faster with predictable TCO.',
   openGraph: {
-    title: {
-      default: `CTO's Playbook for Nearshore Teams | ${siteName}`,
-      template: `%s | ${siteName}`,
-    },
-    description: siteDescription,
-    url: siteUrl,
-    siteName,
+    title: 'Nearshore Software Development: The CTO Playbook | TeamStation AI',
+    description:
+      'Evidence-driven nearshore teams with secure devices, EOR compliance, and bias-free hiring powered by Axiom Cortex™ AI.',
+    url: 'https://cto.teamstation.dev',
+    siteName: 'TeamStation AI',
     images: [
       {
-        url: placeholderImages.metaCard.src.url,
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: placeholderImages.metaCard.alt,
+        alt: 'TeamStation AI – Nearshore IT Co-Pilot',
       },
     ],
     locale: 'en_US',
@@ -46,19 +36,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: {
-      default: `CTO's Playbook for Nearshore Teams | ${siteName}`,
-      template: `%s | ${siteName}`,
-    },
-    description: siteDescription,
-    images: [placeholderImages.metaCard.src.url],
+    title: 'Nearshore Software Development: The CTO Playbook',
+    description:
+      'The integrated platform for talent, security, and compliance. Built for CTOs, trusted by CFOs.',
+    images: ['/og-image.png'],
   },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+  robots: {
+    index: true,
+    follow: true,
   },
-  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -68,6 +54,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta name="theme-color" content="#3F83F8" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://picsum.photos" />
       </head>
       <body className={`${poppins.variable} font-sans bg-background text-foreground`}>
         <AppProviders>
