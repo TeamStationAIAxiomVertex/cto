@@ -4,23 +4,7 @@ import type { Metadata } from 'next';
 import { GitCompare, UserCheck, ShieldCheck, Scale, FileSearch, Layers, HelpCircle } from 'lucide-react';
 import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
 import { JsonLd } from '@/components/seo/JsonLd';
-
-const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
-   {
-     "@type": "Question",
-     "name": "What is the difference between Globant and TeamStation AI?",
-     "acceptedAnswer": { "@type": "Answer", "text": "Globant operates as a global consultancy, while TeamStation AI specializes in U.S.-aligned nearshore teams with cognitive AI vetting and measurable delivery SLAs." }
-   },
-   {
-     "@type": "Question",
-     "name": "Why do CTOs choose TeamStation AI over Globant?",
-     "acceptedAnswer": { "@type": "Answer", "text": "CTOs seeking agility, compliance, and predictable TCO prefer TeamStation AI’s focused nearshore model instead of Globant’s broad consultancy approach." }
-   }
- ]
-};
+import { generateComparisonSchema } from '@/lib/comparisonSchema';
 
 const pageData = {
   "type": "comparison",
@@ -99,6 +83,22 @@ const pageData = {
   ]
 };
 
+const schema = generateComparisonSchema({
+  competitorName: "Globant",
+  competitorUrl: "https://www.globant.com",
+  slug: "globant",
+  faqs: [
+    {
+      question: "What is the difference between Globant and TeamStation AI?",
+      answer: "Globant operates as a global consultancy, while TeamStation AI specializes in U.S.-aligned nearshore teams with cognitive AI vetting and measurable delivery SLAs."
+    },
+    {
+      question: "Why do CTOs choose TeamStation AI over Globant?",
+      answer: "CTOs seeking agility, compliance, and predictable TCO prefer TeamStation AI’s focused nearshore model instead of Globant’s broad consultancy approach."
+    }
+  ]
+});
+
 export async function generateMetadata(): Promise<Metadata> {
   const { title, description, canonical } = pageData.pageSEO;
   return {
@@ -120,32 +120,10 @@ const iconMap: { [key: string]: React.FC<any> } = {
 
 export default function GlobantComparisonPage() {
   const { intro, pspCards, verdictRows, faq, h1 } = pageData;
-  const siteUrl = "https://cto.teamstation.dev";
-  const schema = {
-    breadcrumbs: {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Comparisons", "item": `${siteUrl}/comparisons` },
-        { "@type": "ListItem", "position": 2, "name": "Globant Alternative", "item": `${siteUrl}/comparisons/globant` }
-      ]
-    },
-    faq: {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faq.map(item => ({
-        "@type": "Question",
-        "name": item.q,
-        "acceptedAnswer": { "@type": "Answer", "text": item.a.replace(/<[^>]*>?/gm, '') }
-      }))
-    }
-  };
 
   return (
     <>
-      <JsonLd data={faqSchema} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.breadcrumbs) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.faq) }} />
+      <JsonLd data={schema} />
       <main className="container max-w-5xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/comparisons" className="hover:text-foreground">All Comparisons</Link> / <span>vs. Globant</span>

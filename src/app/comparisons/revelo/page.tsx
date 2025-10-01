@@ -4,23 +4,7 @@ import type { Metadata } from 'next';
 import { GitCompare, UserCheck, ShieldCheck, Scale, FileSearch, Layers, HelpCircle } from 'lucide-react';
 import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
 import { JsonLd } from '@/components/seo/JsonLd';
-
-const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
-   {
-     "@type": "Question",
-     "name": "How does TeamStation AI compare to BairesDev?",
-     "acceptedAnswer": { "@type": "Answer", "text": "BairesDev focuses on staffing volume, while TeamStation AI delivers vetted nearshore squads, compliance, and single-SLA governance designed for U.S. CTOs and CFOs." }
-   },
-   {
-     "@type": "Question",
-     "name": "What are common issues with legacy vendors like BairesDev?",
-     "acceptedAnswer": { "@type": "Answer", "text": "Clients report long hiring cycles, variable quality, and vendor sprawl. TeamStation AI eliminates these with cognitive vetting and integrated compliance." }
-   }
- ]
-};
+import { generateComparisonSchema } from '@/lib/comparisonSchema';
 
 const pageData = {
   "type": "comparison",
@@ -96,6 +80,13 @@ const pageData = {
   ]
 };
 
+const schema = generateComparisonSchema({
+  competitorName: "Revelo",
+  competitorUrl: "https://www.revelo.com",
+  slug: "revelo",
+  faqs: pageData.faq.map(item => ({ question: item.q, answer: item.a.replace(/<[^>]*>?/gm, '') }))
+});
+
 const iconMap: { [key: string]: React.FC<any> } = {
   latency: GitCompare,
   hiring: UserCheck,
@@ -117,32 +108,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function ReveloComparisonPage() {
   const { intro, pspCards, verdictRows, faq, h1 } = pageData;
-  const siteUrl = "https://cto.teamstation.dev";
-  const schema = {
-    breadcrumbs: {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Comparisons", "item": `${siteUrl}/comparisons` },
-        { "@type": "ListItem", "position": 2, "name": "Revelo Alternative", "item": `${siteUrl}/comparisons/revelo` }
-      ]
-    },
-    faq: {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faq.map(item => ({
-        "@type": "Question",
-        "name": item.q,
-        "acceptedAnswer": { "@type": "Answer", "text": item.a.replace(/<[^>]*>?/gm, '') }
-      }))
-    }
-  };
 
   return (
     <>
-      <JsonLd data={faqSchema} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.breadcrumbs) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.faq) }} />
+      <JsonLd data={schema} />
       <main className="container max-w-5xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/comparisons" className="hover:text-foreground">All Comparisons</Link> / <span>vs. Revelo</span>
