@@ -13,57 +13,66 @@ type LinkItem = {
   icon?: ReactNode;
 };
 
+// Playbook Section
 const playbookLinks: LinkItem[] = [
-  { href: '/playbook/hub', label: 'Playbook Hub' },
-  { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs. Offshore' },
-  { href: '/playbook/latam-economics', label: 'LATAM Economics' },
-  { href: '/playbook/build-vs-buy', label: 'Build vs. Buy' },
-  { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring' },
-  { href: '/playbook/tco-model', label: 'TCO Model' },
+  { href: '/playbook/hub', label: 'CTO Playbook Hub' },
+  { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs Offshore Guide' },
+  { href: '/playbook/latam-economics', label: 'LATAM Software Talent Economics' },
+  { href: '/playbook/build-vs-buy', label: 'Build vs Buy Analysis' },
+  { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring with Axiom Cortex™' },
+  { href: '/playbook/tco-model', label: 'TCO Model for Engineering Teams' },
   { href: '/faq', label: 'FAQ for CTOs' },
 ];
 
+// Company Section
 const companyLinks: LinkItem[] = [
-  { href: '/about', label: 'About Us' },
+  { href: '/about', label: 'About TeamStation AI' },
   { href: '/research/hub', label: 'Research Hub' },
-  { href: '/trust', label: 'Trust Center' },
-  { href: '/case-studies', label: 'Case Studies' },
-  { href: '/pricing', label: 'Pricing' },
+  { href: '/trust', label: 'Trust & Compliance Center' },
+  { href: '/case-studies', label: 'Case Studies & Proof' },
+  { href: '/pricing', label: 'Pricing & Engagement Models' },
   { href: 'https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book', label: 'Nearshore IT Platformed Book' },
-  { href: 'https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en', label: 'Google Scholar' },
-  { href: 'https://www.linkedin.com/company/teamstation', label: 'LinkedIn' },
+  { href: 'https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en', label: 'Google Scholar Research' },
+  { href: 'https://www.linkedin.com/company/teamstation', label: 'TeamStation LinkedIn' },
 ];
 
+// Research Section
 const researchLinks: LinkItem[] = [
   { href: '/research/axiom-cortex-scientific-report', label: 'AxiomCortex™ R&D Report' },
-  { href: '/research/heuristically-trained-ai', label: 'Heuristically Trained AI' },
-  { href: '/research/framework-for-measuring-capacity', label: 'Framework for Measuring Capacity' },
-  { href: '/research/performance-metrics-in-ai-age', label: 'Performance Metrics in AI Age' },
+  { href: '/research/heuristically-trained-ai', label: 'Heuristically Trained AI Whitepaper' },
+  { href: '/research/framework-for-measuring-capacity', label: 'Framework for Measuring Engineering Capacity' },
+  { href: '/research/performance-metrics-in-ai-age', label: 'Performance Metrics in the AI Age' },
   {
     href: '/research/hub#podcast',
     label: (
       <>
-        Podcast <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
+        TeamStation Podcast <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
       </>
     ),
   },
 ];
 
-const hireByRoleLinks: LinkItem[] = roleCategories.map((r) => ({ href: `/hire/by-role/${r.slug}`, label: `Hire ${r.name} experts` }));
+// Programmatic Links
+const hireByRoleLinks: LinkItem[] = roleCategories.map((r) => ({
+  href: `/hire/by-role/${r.slug}`,
+  label: `Hire ${r.name} engineers`,
+}));
+
 const hireByCountryLinks: LinkItem[] = countries.map((c) => ({
   href: `/hire/by-country/${c.slug}`,
-  label: <span className="flex items-center gap-2">{`Hire developers in ${c.name}`}</span>,
+  label: `Hire software developers in ${c.name}`,
 }));
+
 const popularTechLinks: LinkItem[] = [
   'react','node','python','java','go','net','aws','kubernetes','dbt','snowflake','pytorch','transformers','langchain','nextjs',
 ].map((slug) => {
   const tech = techCategories.flatMap((c) => c.tech).find((t) => t.slug === slug);
-  const name = tech?.name || slug;
-  return { href: `/hire/by-technology/${slug}`, label: `Hire ${name} developers` };
+  return { href: `/hire/by-technology/${slug}`, label: `Hire ${tech?.name || slug} developers` };
 });
 
+// Utility Section
 const utilityLinks: LinkItem[] = [
-  { href: '/faq', label: 'FAQ' },
+  { href: '/faq', label: 'CTO FAQs' },
   { href: '/sitemap', label: 'HTML Sitemap' },
   { href: '/sitemap.xml', label: 'XML Sitemap' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
@@ -95,37 +104,16 @@ function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
 export default function Footer() {
   const year = new Date().getFullYear();
 
-  const orgSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "TeamStation AI",
-    "url": "https://teamstation.dev",
-    "logo": "https://teamstation.dev/apple-touch-icon.png",
-    "sameAs": [
-      "https://teamstation.dev",
-      "https://cto.teamstation.dev",
-      "https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en",
-      "https://www.linkedin.com/company/teamstation"
-    ]
-  };
-
   return (
     <footer className="mt-32 border-t border-border bg-card py-16 text-muted-foreground">
-      {/* Organization Schema for Knowledge Graph */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-      />
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-y-10 gap-x-8 md:grid-cols-12">
           <div className="col-span-2 md:col-span-3">
             <h3 className="text-lg font-bold text-foreground">TeamStation AI</h3>
             <p className="mt-2 text-sm">The integrated platform for building and scaling elite nearshore engineering teams.</p>
             <address className="mt-4 text-sm not-italic">
-              One Seaport Square, 77 Sleeper St
-              <br />
-              5830 E 2nd St, Ste 7000 #14687
-              <br />
+              One Seaport Square, 77 Sleeper St<br />
+              5830 E 2nd St, Ste 7000 #14687<br />
               Boston, MA 02210
             </address>
             <div className="mt-4">
