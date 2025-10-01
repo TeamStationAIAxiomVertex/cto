@@ -2,18 +2,14 @@
 {
   "hosting": {
     "source": ".",
-    "frameworksBackend": {
-      "region": "us-central1"
-    }
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   },
   "apphosting": {
     "targets": {
       "web": {
+        "runtime": { "node": "20.19.0" },
         "buildCommand": "npm run build",
-        "runCommand": "npm run start",
-        "env": {
-          "NODE_ENV": "production"
-        }
+        "runCommand": "npm run start"
       }
     }
   }
