@@ -1,7 +1,7 @@
 
 import { ArrowRight, BookOpen, BarChart, FileSearch, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
-import { WithTooltip } from '@/components/client/tooltip';
+import { WithTooltip } from '@/components/ui/tooltip';
 import SafeImage from '@/components/SafeImage';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 import { HeroKpi } from '@/components/metrics/HeroKpis';
