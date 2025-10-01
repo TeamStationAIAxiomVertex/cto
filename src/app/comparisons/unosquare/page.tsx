@@ -1,174 +1,151 @@
 
-import Link from 'next/link';
+// src/app/comparisons/unosquare/page.tsx
 import type { Metadata } from 'next';
-import { GitCompare, UserCheck, ShieldCheck, Scale, FileSearch, HelpCircle } from 'lucide-react';
-import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateComparisonSchema } from '@/lib/comparisonSchema';
+import Link from 'next/link';
 
-const pageData = {
-  "type": "comparison",
-  "competitor": "Unosquare",
-  "pageSEO": {
-    "title": "Unosquare Alternative: TeamStation AI vs. Unosquare",
-    "description": "Compare our integrated platform with Unosquare's traditional staff augmentation and consulting for nearshore teams.",
-    "canonical": "https://cto.teamstation.dev/comparisons/unosquare"
+export const metadata: Metadata = {
+  title: 'TeamStation vs Unosquare: Nearshore IT Staff Augmentation Compared',
+  description:
+    'CTO guide: TeamStation AI vs Unosquare. Platformized vetting, secure MDM devices, compliance, and predictable TCO vs. traditional augmentation delivery.',
+  alternates: {
+    canonical: 'https://cto.teamstation.dev/comparisons/unosquare',
   },
-  "intro": "You need skilled LATAM engineers, and Unosquare's staff augmentation services are on your radar. But is simply adding headcount enough to accelerate your roadmap? This is a CTO's guide to the trade-offs between a traditional services firm and an integrated platform that gives you full operational control.",
-  "h1": "TeamStation vs Unosquare: What Actually Ships Faster?",
-  "pspCards": [
+  openGraph: {
+    title: 'TeamStation vs Unosquare: CTO Comparison',
+    description:
+      'Compare TeamStation AI’s integrated nearshore platform with Unosquare’s staff augmentation model. Evidence-based vetting, compliance, and TCO insights.',
+    url: 'https://cto.teamstation.dev/comparisons/unosquare',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'TeamStation vs Unosquare: Staff Augmentation vs Platform',
+    description:
+      'Scientific vetting, MDM-secured devices, audit-ready compliance, and CFO-grade TCO vs. Unosquare’s augmentation services. Evidence for CTOs.',
+  },
+  robots: { index: true, follow: true },
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "TeamStation AI vs Unosquare Comparison",
+  "description": "CTO-focused comparison of TeamStation AI’s integrated platform against Unosquare’s staff augmentation services.",
+  "brand": {
+    "@type": "Organization",
+    "name": "TeamStation AI",
+    "url": "https://cto.teamstation.dev"
+  },
+  "isSimilarTo": {
+    "@type": "Organization",
+    "name": "Unosquare",
+    "url": "https://www.unosquare.com/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "title": "Vetting: Market-Wide Search vs. Bench-Based Staffing",
-      "icon": "hiring",
-      "body": {
-        "problem": "<strong>Problem.</strong> Traditional staff augmentation firms often pull from their available 'bench,' which may not represent the best possible talent for your specific, high-stakes role. Their vetting is based on past project experience, not a scientific measure of cognitive ability.",
-        "stakes": "<strong>Stakes.</strong> You risk getting a candidate who is 'good enough' and available, not the absolute best fit. This leads to slower ramp times, lower innovation, and a higher chance of a mis-hire that sets your roadmap back by months.",
-        "prescription": "<strong>Prescription.</strong> Go beyond the bench and find the best candidate in the entire market. Our <strong>Nebula™ Talent Graph</strong> scans over 2.6 million LATAM profiles. Then, our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> engine provides scientific proof of an individual's cognitive ability, ensuring their 'mental shape' is a precise match for your challenges.",
-        "proof": "<strong>Proof.</strong> Our methodology reduces mis-hire risk by over 90%. We provide a complete <a href='/technical-interview-evaluation' class='text-primary hover:underline'>Evidence Locker</a> for every candidate, giving you a data-driven and auditable hiring decision, not just a resume and a rate.",
-        "recap": "<strong>Recap.</strong> Don't settle for who's available. Demand a partner that can find and validate the best possible talent from the entire market."
+      "@type": "Question",
+      "name": "What does Unosquare provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unosquare delivers nearshore staff augmentation services, supplying engineers from LATAM but leaving device security, compliance, and onboarding largely to clients."
       }
     },
     {
-      "title": "Model: Integrated Platform vs. Hybrid Services",
-      "icon": "compliance",
-      "body": {
-        "problem": "<strong>Problem.</strong> Unosquare offers both staff augmentation and project-based consulting. This can create a conflict of interest, where the incentive may shift from augmenting your team effectively to expanding the vendor's own project scope and billable hours.",
-        "stakes": "<strong>Stakes.</strong> You risk losing control of your architecture and roadmap. What starts as a simple staff augmentation engagement can morph into a costly, outsourced project that creates vendor lock-in and long-term dependency. Your team's ability to own and maintain the system diminishes.",
-        "prescription": "<strong>Prescription.</strong> Choose a partner with a singular focus: empowering your team. Our platform is purpose-built for staff augmentation. We provide the elite talent and the complete operational wrapper, but you retain 100% control over your architecture, roadmap, and engineering culture. We empower your leadership, we don't seek to replace it.",
-        "proof": "<strong>Proof.</strong> Our success is measured by your team's velocity and success, not by the size of our project scope. Our model is designed for seamless integration and knowledge transfer, not dependency. See how we've helped teams in our <a href='/case-studies'>case studies</a>.",
-        "recap": "<strong>Recap.</strong> Don't risk a conflict of interest. Choose an integrated platform partner whose only goal is to make your team more successful."
-      }
-    },
-     {
-      "title": "Operational Scope: All-in-One vs. DIY",
-      "icon": "visibility",
-      "body": {
-        "problem": "<strong>Problem.</strong> Unosquare offers talent, but their model leaves you responsible for the entire operational ecosystem. You get an engineer, but you inherit the risk and administrative burden of compliance, device security, IT management, and insurance.",
-        "stakes": "<strong>Stakes.</strong> This creates massive 'hidden TCO' in the form of your own team's time spent filling operational gaps. A single unmanaged laptop or compliance oversight can fail an audit and put major enterprise deals at risk. You're not just buying talent; you're buying a second job as a global ops manager.",
-        "prescription": "<strong>Prescription.</strong> Demand a complete operational platform, not just a staffing service. An integrated platform like TeamStation AI provides a single, accountable SLA for the entire nearshore operation. We bundle talent sourcing, scientific vetting, EOR, secure devices, and compliance into one predictable package.",
-        "proof": "<strong>Proof.</strong> Our platform provides a 'single pane of glass' for your entire operation. You see the auditable vetting data, the device compliance status, and the onboarding checklist in one place, replacing a fragmented, high-risk approach with a secure, unified system.",
-        "recap": "<strong>Recap.</strong> Stop buying half a solution. Choose a platform that delivers a secure, productive team, not just a new hire."
+      "@type": "Question",
+      "name": "How is TeamStation different from Unosquare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TeamStation bundles scientific vetting (Axiom Cortex™), corporate-owned secure devices, EOR-native compliance, and a predictable TCO framework under one SLA."
       }
     },
     {
-      "title": "Ramp, TCO & When They’re a Fit",
-      "icon": "cost",
-      "body": {
-        "problem": "<strong>Problem.</strong> The hourly rate from a traditional vendor hides the true Total Cost of Ownership (TCO). You have to factor in the hidden costs of your own team's time spent on vendor management, plus the direct costs of EOR, IT, legal, and security services you now have to source yourself.",
-        "stakes": "<strong>Stakes.</strong> These hidden costs can inflate your true TCO by 30-50% or more. The 'cheaper' hourly rate becomes a false economy that drains your budget and slows down your roadmap. It's a classic case of winning the battle but losing the war.",
-        "prescription": "<strong>Prescription.</strong> Use a comprehensive TCO model that accounts for all costs, not just the rate. Our all-inclusive pricing provides a predictable, CFO-ready TCO. We are accountable for a fast ramp (first PR in &lt;10 business days), minimizing the 'Vacancy Tax' and maximizing your ROI.",
-        "proof": "<strong>Proof.</strong> Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO framework</a> lets you model these hidden costs. Unosquare can be a fit if you need project-based outsourcing or have a mature internal infrastructure to handle global ops. For most companies, our integrated platform is the faster, safer, and more capital-efficient path to scale.",
-        "recap": "<strong>Recap.</strong> Choose Unosquare for project outsourcing. Choose TeamStation AI for building and running your own secure, high-performing nearshore team."
+      "@type": "Question",
+      "name": "When is Unosquare a better fit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unosquare is a fit if you want augmentation capacity from LATAM and have strong internal HR, IT, and compliance infrastructure to absorb operational risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What’s the difference in time-to-first-PR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TeamStation targets a first PR within 10 business days with daylight overlap. Unosquare’s ramp-up depends on client-side onboarding processes."
       }
     }
-  ],
-  "verdictRows": [
-    {"criterion":"Vetting Model","teamstation":"Cognition-first (Axiom Cortex™); whole-market search","competitor":"Traditional interviews; often bench-based staffing"},
-    {"criterion":"Business Model","teamstation":"Integrated Platform for Team Augmentation","competitor":"Hybrid: Staff Augmentation & Project Consulting"},
-    {"criterion":"Operational Scope","teamstation":"Full-stack: EOR, Devices, MDM, Security, Insurance","competitor":"Talent placement only; ops are client's responsibility"},
-    {"criterion":"Control & Culture","teamstation":"Client retains full control over architecture and culture","competitor":"Potential for vendor-led project control"},
-    {"criterion":"Pricing Posture","teamstation":"All-in pod rate; predictable TCO","competitor":"Staff augmentation rates + unbundled operational costs"},
-    {"criterion":"Best For","teamstation":"Teams needing a complete, secure operational platform","competitor":"Teams needing project outsourcing or with mature internal ops"}
-  ],
-  "faq": [
-    {"q":"When is Unosquare a better fit than TeamStation AI?","a":"If you are looking to outsource an entire software project to a managed team, or if you have a mature internal HR, legal, and IT infrastructure to handle global operations and only need a talent provider, Unosquare's model can be effective."},
-    {"q":"What is the main difference in your business models?","a":"We have a singular focus: providing an integrated platform for you to build and run your own elite nearshore team. Unosquare operates a hybrid model of both staff augmentation and project-based consulting, which can create different incentives."},
-    {"q":"How is your talent sourcing different?","a":"We search the entire LATAM market of over 2.6 million profiles using our Nebula™ Talent Graph to find the best possible fit. Traditional firms may be incentivized to place consultants from their existing bench first."},
-    {"q":"Does Unosquare provide secure laptops or handle compliance?","a":"Typically, no. In a standard staff augmentation model, device security (MDM), legal compliance (EOR), and insurance are the client's responsibility. Our platform bundles all of these services into a single, accountable SLA."},
-    {"q":"How does the Total Cost of Ownership (TCO) compare?","a":"Our all-inclusive model provides a predictable TCO. With a traditional model, you must add the significant 'hidden costs' of your internal team's time and the direct costs of sourcing separate EOR, IT, and legal services. Use our <a href='/playbook/tco-model'>TCO framework</a> to compare."},
-    {"q":"Can I hire a full project team from TeamStation AI?","a":"Yes. While our model is designed for you to manage the team, we often provide complete pods including Delivery Managers, Product Managers, and QA Leads when an engagement requires it. The key difference is you always retain transparency and direct control."}
   ]
 };
 
-const schema = generateComparisonSchema({
-  competitorName: "Unosquare",
-  competitorUrl: "https://www.unosquare.com",
-  slug: "unosquare",
-  faqs: pageData.faq.map(item => ({ question: item.q, answer: item.a.replace(/<[^>]*>?/gm, '') }))
-});
-
-const iconMap: { [key: string]: React.FC<any> } = {
-  visibility: FileSearch,
-  hiring: UserCheck,
-  compliance: ShieldCheck,
-  cost: Scale,
-};
-
 export default function UnosquareComparisonPage() {
-  const { intro, pspCards, verdictRows, faq, h1 } = pageData;
-
   return (
-    <>
+    <main className="container max-w-4xl py-12">
       <JsonLd data={schema} />
-      <main className="container max-w-5xl py-12">
-        <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/comparisons" className="hover:text-foreground">All Comparisons</Link> / <span>vs. Unosquare</span>
-        </div>
+      <JsonLd data={faqSchema} />
 
-        <header className="my-8 text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{h1}</h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: intro }}></p>
-        </header>
+      <article className="prose dark:prose-invert max-w-none">
+        <h1>TeamStation vs Unosquare: Nearshore IT Staff Augmentation Compared</h1>
+        <p>
+          Unosquare has a strong presence in the nearshore augmentation market, 
+          offering LATAM engineers through its delivery centers. The model is 
+          serviceable, but the operational risk—devices, compliance, onboarding—
+          remains on the client. TeamStation AI is a platform approach: scientific 
+          vetting, secure MDM-managed devices, EOR-native compliance, and CFO-ready 
+          TCO are all included.
+        </p>
 
-        <section className="my-24">
-           <h2 className="text-3xl font-bold text-center">Verdict Snapshot</h2>
-           <div className="overflow-x-auto mt-6">
-                <table className="w-full min-w-[700px] text-sm text-left">
-                    <thead>
-                        <tr className="border-b-2 border-border">
-                            <th className="p-2 font-semibold">Criterion</th>
-                            <th className="p-2 font-semibold text-primary">TeamStation AI</th>
-                            <th className="p-2 font-semibold">Unosquare</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {verdictRows.map(row => (
-                            <tr key={row.criterion} className="border-b border-border/50">
-                                <td className="p-2 font-semibold text-foreground">{row.criterion}</td>
-                                <td className="p-2 text-primary">{row.teamstation}</td>
-                                <td className="p-2 text-muted-foreground">{row.competitor}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-           </div>
-        </section>
+        <h2>Verdict Snapshot</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Criterion</th>
+              <th>TeamStation AI</th>
+              <th>Unosquare</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vetting</td>
+              <td>Axiom Cortex™, psychometrics, cognitive science</td>
+              <td>Resume and interview-based, vendor-driven</td>
+            </tr>
+            <tr>
+              <td>Ramp to PR</td>
+              <td>≤10 days, daylight SLAs</td>
+              <td>Varies; client-driven onboarding</td>
+            </tr>
+            <tr>
+              <td>Devices</td>
+              <td>Corporate-owned, MDM-managed, SOC2 aligned</td>
+              <td>BYOD or client-issued</td>
+            </tr>
+            <tr>
+              <td>Compliance</td>
+              <td>EOR-native in 10 countries, REPSE-aware</td>
+              <td>Vendor + client shared responsibility</td>
+            </tr>
+            <tr>
+              <td>Best for</td>
+              <td>CTOs needing velocity, visibility, compliance</td>
+              <td>Companies with internal ops to absorb risk</td>
+            </tr>
+          </tbody>
+        </table>
 
-        <section className="my-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {pspCards.map(card => {
-                    const Icon = iconMap[card.icon as keyof typeof iconMap] || HelpCircle;
-                    return (
-                        <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body as PSPBody} />
-                    );
-                })}
-            </div>
-        </section>
-
-        <section className="my-24">
-            <h2 className="text-3xl font-bold text-center">Frequently Asked Questions</h2>
-            <div className="mt-8 max-w-3xl mx-auto space-y-4">
-                {faq.map((item, i) => (
-                    <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
-                        <h3 className="font-semibold text-primary">{item.q}</h3>
-                        <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
-                    </div>
-                ))}
-            </div>
-        </section>
-
-        <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-            <h2 className="text-2xl font-bold text-foreground">Ready for an Integrated Platform?</h2>
-            <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-                Let's move beyond sourcing and build a CFO-ready business case for a nearshore platform that delivers a complete, secure, and productive team.
-            </p>
-            <div className="mt-6 flex justify-center items-center gap-4">
-                <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" className="cta-button">
-                    Book a TCO Strategy Call
-                </Link>
-            </div>
-        </section>
-      </main>
-    </>
+        <h2>Explore More</h2>
+        <ul>
+          <li><Link href="/comparisons/bairesdev">BairesDev Comparison</Link></li>
+          <li><Link href="/comparisons/tecla">TECLA Comparison</Link></li>
+          <li><Link href="/research/hub">Research Hub</Link></li>
+          <li><Link href="/playbook/hub">Playbook Hub</Link></li>
+        </ul>
+      </article>
+    </main>
   );
 }
