@@ -3,6 +3,24 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { GitCompare, UserCheck, ShieldCheck, Scale, FileSearch, Layers, HelpCircle } from 'lucide-react';
 import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
+import { JsonLd } from '@/components/seo/JsonLd';
+
+const faqSchema = {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+   {
+     "@type": "Question",
+     "name": "What is the difference between Globant and TeamStation AI?",
+     "acceptedAnswer": { "@type": "Answer", "text": "Globant operates as a global consultancy, while TeamStation AI specializes in U.S.-aligned nearshore teams with cognitive AI vetting and measurable delivery SLAs." }
+   },
+   {
+     "@type": "Question",
+     "name": "Why do CTOs choose TeamStation AI over Globant?",
+     "acceptedAnswer": { "@type": "Answer", "text": "CTOs seeking agility, compliance, and predictable TCO prefer TeamStation AI’s focused nearshore model instead of Globant’s broad consultancy approach." }
+   }
+ ]
+};
 
 const pageData = {
   "type": "comparison",
@@ -125,6 +143,7 @@ export default function GlobantComparisonPage() {
 
   return (
     <>
+      <JsonLd data={faqSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.breadcrumbs) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.faq) }} />
       <main className="container max-w-5xl py-12">
@@ -199,5 +218,3 @@ export default function GlobantComparisonPage() {
     </>
   );
 }
-
-    

@@ -3,6 +3,24 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { GitCompare, UserCheck, ShieldCheck, Scale, FileSearch, HelpCircle } from 'lucide-react';
 import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
+import { JsonLd } from '@/components/seo/JsonLd';
+
+const faqSchema = {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+   {
+     "@type": "Question",
+     "name": "How does TeamStation AI compare to BairesDev?",
+     "acceptedAnswer": { "@type": "Answer", "text": "BairesDev focuses on staffing volume, while TeamStation AI delivers vetted nearshore squads, compliance, and single-SLA governance designed for U.S. CTOs and CFOs." }
+   },
+   {
+     "@type": "Question",
+     "name": "What are common issues with legacy vendors like BairesDev?",
+     "acceptedAnswer": { "@type": "Answer", "text": "Clients report long hiring cycles, variable quality, and vendor sprawl. TeamStation AI eliminates these with cognitive vetting and integrated compliance." }
+   }
+ ]
+};
 
 const pageData = {
   "type": "comparison",
@@ -126,6 +144,7 @@ export default function BairesDevComparisonPage() {
 
   return (
     <>
+      <JsonLd data={faqSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.breadcrumbs) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.faq) }} />
       <main className="container max-w-5xl py-12">
