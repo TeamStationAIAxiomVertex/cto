@@ -1,74 +1,47 @@
 
+// Revelo Comparison Page
 import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 
-const pageInfo = {
-  slug: "revelo",
-  title: "TeamStation vs Revelo: Evidence vs Marketplace",
-  description:
-    "Revelo offers a marketplace of LATAM talent, but does it deliver audit-ready teams? Compare with TeamStation AI’s integrated platform that blends scientific vetting and operational control.",
-  canonical: "https://cto.teamstation.dev/comparisons/revelo",
-};
-
 export const metadata: Metadata = {
-  title: pageInfo.title,
-  description: pageInfo.description,
-  alternates: { canonical: pageInfo.canonical },
+  title: "TeamStation vs Revelo: A CTO’s Guide | TeamStation AI",
+  description:
+    "CTO comparison: TeamStation AI vs Revelo. Assessing vetting, devices, compliance, SLAs, and total cost of ownership.",
+  alternates: { canonical: "https://cto.teamstation.dev/comparisons/revelo" },
   openGraph: {
-    title: pageInfo.title,
-    description: pageInfo.description,
-    url: pageInfo.canonical,
+    title: "TeamStation vs Revelo: A CTO’s Guide",
+    description: "Evidence-driven breakdown of TeamStation AI vs Revelo for CTOs choosing nearshore IT staff augmentation.",
+    url: "https://cto.teamstation.dev/comparisons/revelo",
     type: "article",
   },
-  twitter: { card: "summary", title: pageInfo.title, description: pageInfo.description },
+  twitter: {
+    card: "summary",
+    title: "TeamStation vs Revelo: A CTO’s Guide",
+    description: "Side-by-side analysis of TeamStation AI vs Revelo for secure, compliant nearshore engineering.",
+  },
 };
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  name: "TeamStation vs Revelo",
-  description: pageInfo.description,
-  brand: { "@type": "Organization", name: "TeamStation AI" },
-  url: pageInfo.canonical,
-  review: {
-    "@type": "Review",
-    reviewBody:
-      "Revelo provides a large talent marketplace but leaves compliance, devices, and integration to the client. TeamStation bundles vetting, EOR compliance, and device security for faster, safer ramps.",
-    author: { "@type": "Organization", name: "TeamStation AI" },
-  },
+  "@type": "Article",
+  "headline": "TeamStation vs Revelo: A CTO’s Guide",
+  "description":
+    "CTO comparison of TeamStation AI vs Revelo. Evidence-driven breakdown across vetting, compliance, devices, SLAs, and TCO.",
+  "author": { "@type": "Organization", "name": "TeamStation AI" },
+  "publisher": { "@type": "Organization", "name": "TeamStation AI" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://cto.teamstation.dev/comparisons/revelo" },
 };
 
 export default function ComparisonPage() {
   return (
-    <>
+    <main className="container max-w-4xl py-12 prose dark:prose-invert">
       <JsonLd data={schema} />
-      <main className="container max-w-4xl py-12">
-        <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/" className="hover:text-foreground">Home</Link> / 
-          <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / 
-          <span>Revelo</span>
-        </div>
-        <article className="prose dark:prose-invert max-w-none">
-          <h1>{pageInfo.title}</h1>
-          <p>{pageInfo.description}</p>
-          <h2>Verdict Snapshot</h2>
-          <ul>
-            <li><strong>Vetting:</strong> TeamStation: cognitive science & Axiom Cortex™; Revelo: candidate marketplace profiles.</li>
-            <li><strong>Compliance:</strong> TeamStation: built-in EOR in 10 LATAM countries; Revelo: client-managed compliance.</li>
-            <li><strong>Devices:</strong> TeamStation: corporate-owned laptops; Revelo: varies by candidate/client setup.</li>
-            <li><strong>Time-to-first-PR:</strong> TeamStation: ≤10 days; Revelo: depends on client onboarding pipeline.</li>
-          </ul>
-          <nav className="mt-12 border-t border-border pt-6 text-sm">
-            <h3>Explore More:</h3>
-            <ul>
-              <li><Link href="/comparisons/tecla">Compare TeamStation vs TECLA</Link></li>
-              <li><Link href="/case-studies">Case Studies</Link></li>
-              <li><Link href="/research/hub">Research Hub</Link></li>
-            </ul>
-          </nav>
-        </article>
-      </main>
-    </>
+      <div className="text-sm mb-8">
+        <Link href="/">Home</Link> / <Link href="/comparisons">Comparisons</Link> / <span>Revelo</span>
+      </div>
+      <h1>TeamStation vs Revelo: A CTO’s Guide</h1>
+      <p>Compare <strong>TeamStation AI</strong> vs <strong>Revelo</strong> across vetting, compliance, devices, SLAs, and TCO.</p>
+    </main>
   );
 }
