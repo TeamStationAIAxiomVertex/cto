@@ -1,27 +1,26 @@
-// src/app/comparisons/globant/page.tsx
-import type { Metadata } from 'next';
-import { JsonLd } from '@/components/seo/JsonLd';
+import type { Metadata } from "next";
 import Link from 'next/link';
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: 'TeamStation vs Globant: Nearshore Partner Comparison | TeamStation AI',
+  title: 'TeamStation vs Globant: Nearshore IT Partner Comparison | CTO Guide',
   description:
-    'CTO’s guide: TeamStation AI vs Globant. Compare cognitive AI vetting, EOR compliance, and secure pods against Globant’s global delivery model.',
+    "CTO-focused comparison of TeamStation AI vs Globant. Learn how cognitive vetting, MDM-managed devices, and single-SLA operations compare to Globant’s consulting model.",
   alternates: {
     canonical: 'https://cto.teamstation.dev/comparisons/globant',
   },
   openGraph: {
-    title: 'TeamStation vs Globant: Nearshore Partner Comparison',
+    title: 'TeamStation vs Globant: CTO Comparison',
     description:
-      'Which model ships faster and safer? TeamStation AI’s integrated nearshore platform vs Globant’s global vendor delivery network.',
+      "Compare TeamStation AI’s integrated nearshore platform with Globant’s consulting-based model. Transparent vetting, compliance, and delivery SLAs.",
     url: 'https://cto.teamstation.dev/comparisons/globant',
     type: 'article',
   },
   twitter: {
     card: 'summary',
-    title: 'TeamStation vs Globant: Nearshore Partner Comparison',
+    title: 'TeamStation vs Globant',
     description:
-      'Evidence-based CTO comparison. Vetting, devices, compliance, and TCO — TeamStation AI vs Globant.',
+      'Compare Globant’s global IT outsourcing model with TeamStation’s cognitive AI-powered nearshore platform built for CTOs who need velocity and compliance.',
   },
   robots: { index: true, follow: true },
 };
@@ -87,16 +86,7 @@ export default function GlobantComparisonPage() {
     <main className="container max-w-4xl py-12">
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/" className="hover:text-foreground">
-            Home
-          </Link>{' '}
-          /{' '}
-          <Link href="/comparisons" className="hover:text-foreground">
-            Comparisons
-          </Link>{' '}
-          / <span>Globant</span>
-        </div>
+
       <article className="prose dark:prose-invert max-w-none">
         <h1>TeamStation vs Globant: Nearshore IT Co-Pilot vs IT Services Giant</h1>
         <p>
