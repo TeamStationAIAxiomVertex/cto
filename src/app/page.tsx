@@ -3,11 +3,10 @@ import Link from 'next/link';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { WithTooltip } from '@/components/client/tooltip';
 import type { Metadata } from 'next';
-import SafeImage from '@/components/SafeImage';
+import Image from 'next/image';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 import HeroKpis, { type HeroKpi } from '@/components/metrics/HeroKpis';
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
 
 const BookOpen = dynamic(() => import('lucide-react').then(m => m.BookOpen), { ssr: false });
 const CheckCircle = dynamic(() => import('lucide-react').then(m => m.CheckCircle), { ssr: false });
@@ -84,7 +83,7 @@ const trustNumbers = [
 
 const corePillars = [
     {
-        icon: <BrainCircuit className="h-8 w-8 text-primary" aria-label="Cognitive AI Icon"/>,
+        icon: BrainCircuit,
         pain: "Wasting months on bad hires?",
         title: "De-Risk Your Hiring with Cognitive AI",
         description: "Stop gambling on resumes. Our Axiom Cortex™ Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.",
@@ -93,7 +92,7 @@ const corePillars = [
         kpi: "Mismatch rate ≤ 10%"
     },
     {
-        icon: <ShieldCheck className="h-8 w-8 text-primary" aria-label="Security Shield Icon"/>,
+        icon: ShieldCheck,
         pain: "Drowning in vendor management?",
         title: "Eliminate Vendor Chaos with One SLA",
         description: "Stop juggling 5+ vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
@@ -102,7 +101,7 @@ const corePillars = [
         kpi: "1 contract, 1 invoice"
     },
     {
-        icon: <Scale className="h-8 w-8 text-primary" aria-label="Scale Icon"/>,
+        icon: Scale,
         pain: "Struggling to justify your budget?",
         title: "Get a CFO-Ready TCO Model",
         description: "We provide a predictable, all-inclusive TCO that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.",
@@ -126,7 +125,7 @@ const sandlerCards = [
         problem: 'PRs sleep overnight; one question = one day lost.',
         solution: 'Daylight overlap + same-day review SLAs with telemetry.',
         proof: 'PR turnaround 36–72h → <8h; cycle time drops in 2 sprints.',
-        icon: <Zap className="h-8 w-8 text-primary" />,
+        icon: Zap,
     },
     {
         title: 'Seniority: Resume Theater vs Cognitive Evidence',
@@ -134,7 +133,7 @@ const sandlerCards = [
         problem: '“Senior” on the slide, junior in the repo.',
         solution: 'Axiom Cortex™ cognitive signals + structured rubrics + recorded panels.',
         proof: 'Mismatch rate ≤10%; rewrite ADRs trend down.',
-        icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+        icon: BrainCircuit,
     },
     {
         title: 'Governance: Five Invoices vs One Operating Rhythm',
@@ -142,7 +141,7 @@ const sandlerCards = [
         problem: 'Vendor sprawl; shadow staffing; no single throat to choke.',
         solution: 'One governed system: hiring → devices/MDM → access → payroll/EOR → SLAs.',
         proof: 'Forecast vs actual variance <10%; fewer reopenings.',
-        icon: <Users className="h-8 w-8 text-primary" />,
+        icon: Users,
     }
 ];
 
@@ -214,8 +213,7 @@ export default async function HomePage() {
       <div className="container mx-auto px-4">
         <section className="py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            
-            <div className="w-full flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 Nearshore Software Development: The CTO Playbook
               </h1>
@@ -236,7 +234,6 @@ export default async function HomePage() {
                 </Link>
               </div>
             </div>
-
             <div className="w-full flex justify-center md:justify-end">
               <HeroKpis items={heroKpis} />
             </div>
@@ -272,7 +269,7 @@ export default async function HomePage() {
                       <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
                           <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
                           <div className="flex items-center gap-3 mt-3">
-                              <Icon aria-label={pillar.title} />
+                              <Icon aria-label={pillar.title} className="h-8 w-8 text-primary" />
                               <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
                           </div>
                           <div className="mt-4 text-sm text-muted-foreground flex-grow">
@@ -305,10 +302,9 @@ export default async function HomePage() {
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">These aren't just headaches. They are symptoms of a broken IT staff augmentation model.</p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {painPoints.map((pain, index) => {
-                  const Icon = AlertTriangle;
                   return (
                       <div key={index} className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-lg">
-                          <Icon className="h-6 w-6 text-primary shrink-0"/>
+                          <AlertTriangle className="h-6 w-6 text-primary shrink-0"/>
                           <p className="m-0 font-medium text-muted-foreground">{pain}</p>
                       </div>
                   )
@@ -327,7 +323,7 @@ export default async function HomePage() {
                 return(
                   <div key={card.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
                       <div className="flex items-start gap-4">
-                          <Icon />
+                          <Icon className="h-8 w-8 text-primary" />
                           <div>
                               <h3 className="text-lg font-bold text-foreground">{card.title}</h3>
                           </div>
@@ -394,8 +390,8 @@ export default async function HomePage() {
               <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
                   <div className="relative h-40 w-full mb-4 rounded-lg overflow-hidden border">
                        <Image 
-                          src={placeholderImages.caseStudies[study.slug as keyof typeof placeholderImages.caseStudies]?.src.url || placeholderImages.heroTeam.src.url}
-                          alt={placeholderImages.caseStudies[study.slug as keyof typeof placeholderImages.caseStudies]?.alt || `Case study for ${study.clientName}`}
+                          src={study.ogImage?.src?.url || placeholderImages.heroTeam.src.url}
+                          alt={study.ogImage?.alt || `Case study for ${study.clientName}`}
                           fill
                           className="object-cover"
                           data-ai-hint={study.ogImage?.aiHint}
