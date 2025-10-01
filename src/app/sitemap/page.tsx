@@ -8,7 +8,7 @@ import { techCategories } from "@/lib/tech";
 export const metadata: Metadata = {
   title: "HTML Sitemap | TeamStation AI",
   description:
-    "Browse all TeamStation AI pages: playbook, research, comparisons, case studies, and programmatic SEO pages (by country, role, and technology).",
+    "Full sitemap of TeamStation AI: Playbook, Research, Comparisons, Case Studies, and programmatic SEO pages (by country, role, and technology).",
   robots: { index: true, follow: true },
   alternates: {
     canonical: "https://cto.teamstation.dev/sitemap",
@@ -16,15 +16,72 @@ export const metadata: Metadata = {
 };
 
 export default function HtmlSitemap() {
+  const navSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Playbook",
+        "url": "https://cto.teamstation.dev/playbook/hub",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Comparisons",
+        "url": "https://cto.teamstation.dev/comparisons",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Research",
+        "url": "https://cto.teamstation.dev/research/hub",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Case Studies",
+        "url": "https://cto.teamstation.dev/case-studies",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Hire Developers",
+        "url": "https://cto.teamstation.dev/hire",
+      },
+    ],
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://cto.teamstation.dev/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sitemap",
+        "item": "https://cto.teamstation.dev/sitemap",
+      },
+    ],
+  };
+
   return (
     <main className="container max-w-5xl py-12 prose dark:prose-invert">
+      {/* Inject JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([navSchema, breadcrumbSchema]),
+        }}
+      />
+
       <h1>HTML Sitemap</h1>
       <p>
-        This sitemap lists every major section of{" "}
-        <strong>TeamStation AI</strong> — structured for CTOs searching for{" "}
-        <strong>nearshore software development</strong>,{" "}
-        <strong>cognitive AI vetting</strong>, and{" "}
-        <strong>audit-ready operations</strong>.
+        Explore <strong>TeamStation AI</strong>: nearshore engineering, cognitive
+        AI vetting, and audit-ready compliance. This sitemap provides clear
+        navigation for CTOs and search engines.
       </p>
 
       {/* Core Pages */}
