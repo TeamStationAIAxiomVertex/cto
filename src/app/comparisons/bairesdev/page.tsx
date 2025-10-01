@@ -20,7 +20,7 @@ const comparisonPoints = {
     "Security": {
         pain: "Is your vendor creating massive security holes?",
         traditional: "Traditional staff augmentation leaves security to you. Unmanaged devices, no <span class='border-b border-dashed'>MDM</span>, and no compliance framework expose you to catastrophic risk.",
-        teamstation: "Our integrated platform is <a href='/trust' class='text-primary hover:underline'>secure by default</a>. We bundle <span class='border-b border-dashed'>EOR</span>, MDM-secured devices, and insurance under one SLA.",
+        teamstation: "Our integrated platform is <a href='/trust' class='text-primary hover:underline'>secure by default</a>. We provide MDM-secured devices, <span class='border-b border-dashed'>EOR</span>, and insurance under one SLA.",
         proof: "SOC 2 & ISO Aligned"
     },
     "Cost": {
