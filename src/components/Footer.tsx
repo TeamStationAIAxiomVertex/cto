@@ -1,3 +1,4 @@
+
 // NO 'use client' — Footer stays a Server Component
 import Link from 'next/link';
 import type { ReactNode } from 'react';
@@ -50,12 +51,10 @@ const researchLinks: LinkItem[] = [
 ];
 
 const hireByRoleLinks: LinkItem[] = roleCategories.map((r) => ({ href: `/hire/by-role/${r.slug}`, label: r.name }));
-
 const hireByCountryLinks: LinkItem[] = countries.map((c) => ({
   href: `/hire/by-country/${c.slug}`,
   label: <span className="flex items-center gap-2">{c.name}</span>,
 }));
-
 const popularTechLinks: LinkItem[] = [
   'react','node','python','java','go','net','aws','kubernetes','dbt','snowflake','pytorch','transformers','langchain','nextjs',
 ].map((slug) => {
@@ -73,7 +72,7 @@ const utilityLinks: LinkItem[] = [
 
 function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
   return (
-    <div>
+    <nav aria-label={title}>
       <h4 className="font-semibold text-foreground tracking-wider uppercase text-sm">{title}</h4>
       <ul className="mt-4 space-y-3">
         {links.map((link) => (
@@ -89,15 +88,34 @@ function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 }
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TeamStation AI",
+    "url": "https://teamstation.dev",
+    "logo": "https://teamstation.dev/apple-touch-icon.png",
+    "sameAs": [
+      "https://teamstation.dev",
+      "https://cto.teamstation.dev",
+      "https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en",
+      "https://www.linkedin.com/company/teamstation"
+    ]
+  };
+
   return (
     <footer className="mt-32 border-t border-border bg-card py-16 text-muted-foreground">
+      {/* Organization Schema for Knowledge Graph */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-y-10 gap-x-8 md:grid-cols-12">
           <div className="col-span-2 md:col-span-3">
@@ -142,7 +160,7 @@ export default function Footer() {
 
         <div className="mt-16 border-t border-border pt-8 text-center text-sm">
           <p>© {year} TeamStation AI — All rights reserved.</p>
-           <p className="mt-2">
+          <p className="mt-2">
             Part of the TeamStation AI network — visit our corporate site at{' '}
             <a href="https://teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
               teamstation.dev
