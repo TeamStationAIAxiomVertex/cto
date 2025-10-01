@@ -1,108 +1,114 @@
-// Globant Comparison Page
-import Link from "next/link";
-import type { Metadata } from "next";
-import { JsonLd } from "@/components/seo/JsonLd";
+
+import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+import { WithTooltip } from '@/components/ui/tooltip';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "TeamStation vs Globant: A CTO’s Guide | TeamStation AI",
-  description:
-    "CTO comparison: TeamStation AI vs Globant. Evaluating vetting, delivery models, compliance, devices, and TCO.",
-  alternates: { canonical: "https://cto.teamstation.dev/comparisons/globant" },
-  openGraph: {
-    title: "TeamStation vs Globant: A CTO’s Guide",
-    description: "Side-by-side analysis of TeamStation AI vs Globant for CTOs evaluating nearshore partners.",
-    url: "https://cto.teamstation.dev/comparisons/globant",
-    type: "article",
-  },
-  twitter: {
-    card: "summary",
-    title: "TeamStation vs Globant: A CTO’s Guide",
-    description: "Evidence-based comparison of TeamStation AI vs Globant for nearshore IT staff augmentation.",
-  },
+  title: 'Globant Alternative for Staff Augmentation (2024) | TS AI',
+  description: 'Compare our team-building platform with Globant\'s project outsourcing model for nearshore staff augmentation. See which fits your needs as a CTO.',
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "TeamStation vs Globant: A CTO’s Guide",
-  "description":
-    "CTO comparison of TeamStation AI vs Globant. Evidence-driven breakdown across vetting, compliance, delivery, and TCO.",
-  "author": { "@type": "Organization", "name": "TeamStation AI" },
-  "publisher": { "@type": "Organization", "name": "TeamStation AI" },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://cto.teamstation.dev/comparisons/globant" },
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How does TeamStation AI compare to Globant?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Globant is a global consulting giant known for scale and brand recognition, but it often operates as a traditional services firm. TeamStation AI focuses on elite LATAM pods with cognitive vetting, corporate-owned secure devices, and audit-ready compliance. For CTOs, that means less overhead, faster ramp-up, and measurable outcomes instead of consulting theater."
-      }
+const comparisonPoints = {
+    "Model": {
+        pain: "Do you need to augment your team or outsource a project?",
+        traditional: "Globant is a massive systems integrator. They sell project delivery, which works for large-scale outsourcing but is misaligned for CTOs who need to embed talent into their own teams.",
+        teamstation: "We are purpose-built for staff augmentation. We provide elite, mission-fit LATAM engineers who integrate directly into your existing teams, culture, and workflows.",
+        proof: "Time-to-First-PR in 7–14 days"
     },
-    {
-      "@type": "Question",
-      "name": "Does TeamStation AI deliver faster than Globant?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. TeamStation AI targets first PRs in ≤10 business days once environments are ready. Globant’s projects often move on enterprise timelines, with delivery speed varying by contract and squad structure. Our daylight overlap and PR SLAs create predictable velocity."
-      }
+    "Vetting": {
+        pain: "Are you hiring an individual or a black box team?",
+        traditional: "Globant sells project outcomes, not talent transparency. Their use of 'AI' is a marketing label for a process, not a scientifically-validated tool for assessing individual engineers.",
+        teamstation: "Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> provides peer-reviewed, scientific proof of an individual's cognitive ability, ensuring you know exactly who you're hiring.",
+        proof: "Mismatch Rate ≤ 10%"
     },
-    {
-      "@type": "Question",
-      "name": "Which model is more cost-effective?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Globant engagements are priced like enterprise consulting projects. TeamStation AI offers a predictable TCO model, bundling talent, compliance, and device management. This often results in a 40–60% lower true TCO when compared to the layered costs of Globant’s consulting approach."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What about compliance and enterprise readiness?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TeamStation AI provides EOR compliance in 10+ LATAM countries, REPSE alignment in Mexico, and corporate-owned MDM-managed devices with SSO/SCIM. Globant has enterprise-grade governance but often requires client-side integration and shared responsibility. Our model puts compliance and device security into a single accountable SLA."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When is Globant a better fit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Globant is a strong fit for Fortune 100 enterprises running multi-year digital transformation projects that need thousands of engineers worldwide. TeamStation AI is best for U.S. CTOs who need elite LATAM pods that can ramp quickly, deliver in daylight hours, and pass Finance and compliance checks with confidence."
-      }
+    "Control": {
+        pain: "Do you want to retain control over your engineering culture?",
+        traditional: "With a large SI, you lose direct control over technical direction, architecture, and team culture. This can lead to long-term dependency and integration challenges.",
+        teamstation: "Our model is built for control. You manage the team, own the roadmap, and shape the culture. We provide the talent and the operational platform to make it happen.",
+        proof: "100% Client-Managed Teams"
     }
-  ]
-};
+}
 
-export default function ComparisonPage() {
+export default function GlobantComparisonPage() {
   return (
-    <main className="container max-w-4xl py-12 prose dark:prose-invert">
-      <JsonLd data={[schema, faqSchema]} />
-      <div className="text-sm mb-8">
-        <Link href="/">Home</Link> / <Link href="/comparisons">Comparisons</Link> / <span>Globant</span>
+    <main className="container py-12">
+      <div className="text-sm text-muted-foreground mb-8">
+        <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Globant Alternative</span>
       </div>
-      <h1>TeamStation vs Globant: A CTO’s Guide</h1>
-      <p>Compare <strong>TeamStation AI</strong> vs <strong>Globant</strong> across vetting, compliance, delivery, and TCO.</p>
-      <section className="my-16 border-t border-border pt-12">
-        <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
-        <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
-          <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
-          <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
-          <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
-          <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
-        </ul>
-        <div className="mt-6 text-sm">
-          Related: 
-          <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
-          <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
-          <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
+      <header className="text-center my-8">
+        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Globant Alternative: TeamStation AI</h1>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          A strategic breakdown for CTOs: TeamStation AI’s precision staff augmentation platform vs. Globant’s large-scale project delivery model.
+        </p>
+         <div className="mt-4 text-sm">
+            <a href="https://www.globant.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                Vendor home: globant.com <ExternalLink className="h-4 w-4" />
+            </a>
         </div>
-      </section>
+      </header>
+
+      <div className="my-12">
+        <h2 className="text-3xl font-bold text-center">The Co-Pilot vs. The Systems Integrator</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
+          {Object.entries(comparisonPoints).map(([key, value]) => (
+            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+              <p className="text-sm font-semibold text-primary">{value.pain}</p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
+              
+              <div className="mt-4 flex-grow space-y-4">
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
+                    <XCircle className="h-5 w-5 text-destructive" />
+                    Globant Model
+                  </h4>
+                  <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
+                </div>
+                <div className="border-t border-border pt-4">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    TeamStation AI Solution
+                  </h4>
+                   <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }} />
+                </div>
+              </div>
+              <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
+        <h2 className="text-center">Analysis: The Co-Pilot vs. The Systems Integrator</h2>
+        <p>
+            Choosing between TeamStation AI and Globant is about selecting the right operational model. <a href="https://www.globant.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Globant <ExternalLink className="h-4 w-4" /></a> is a massive, global systems integrator, a powerhouse for large-scale digital transformation projects. You hand them a problem, and their teams deliver a solution. It is not a staff augmentation platform.
+        </p>
+        <p>
+            As a Globant alternative, TeamStation AI operates on a fundamentally different premise. We are your{' '}
+            <WithTooltip label="An integrated platform for CTOs who need to ship faster without sacrificing security or quality. We provide the talent, governance, and infrastructure.">
+                <span className="border-b border-dashed">Nearshore IT Co-Pilot™</span>
+            </WithTooltip>. Our entire platform is purpose-built for staff augmentation, providing you with elite, mission-fit LATAM engineering talent that integrates directly into your existing teams.
+        </p>
+        <h3>Talent vs. Projects: Where Do You Need Control?</h3>
+        <p>
+            Globant sells project delivery. Their value is in the final product, not in the transparency of the team building it. Their use of "AI" is a marketing label for a process, not a scientifically-validated tool for assessing individual talent. This model works well for enterprise-level outsourcing of entire functions.
+        </p>
+        <p>
+            TeamStation AI, in contrast, focuses on talent quality and integration. Our{' '}
+            <Link href="/research/axiom-cortex-scientific-report">
+                Axiom Cortex™ Cognitive AI
+            </Link>
+            {' '} engine measures cognitive traits, ensuring you're hiring engineers who are not just skilled, but are also agile problem-solvers. Our platform provides you with the data and control to manage your team effectively. For any organization that wants to retain direct control over their engineering culture and technical direction, the TeamStation model is far more aligned.
+        </p>
+      </div>
+
+      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+        <h2 className="text-2xl font-bold">Conclusion: Choose the Right Tool for the Job</h2>
+        <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
+            If you need to outsource an entire digital transformation initiative, Globant is a world-class choice. If your goal is to strategically build and scale your own high-performing nearshore engineering team via staff augmentation, TeamStation AI is the superior Globant alternative.
+        </p>
+        <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
+      </div>
     </main>
   );
 }

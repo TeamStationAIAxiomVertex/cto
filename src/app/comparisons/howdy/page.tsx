@@ -1,7 +1,8 @@
 
+import { CheckCircle, XCircle, ExternalLink, HelpCircle, UserCheck, ShieldCheck, Scale } from 'lucide-react';
 import Link from 'next/link';
+import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
-import { GitCompare, UserCheck, ShieldCheck, Scale, FileSearch, HelpCircle } from 'lucide-react';
 import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
 
 const pageData = {
@@ -44,7 +45,7 @@ const pageData = {
         "problem": "<strong>Problem.</strong> An EOR-plus-recruiter model's job is done once the contract is signed. You are left to figure out how to provide and secure laptops, manage device policies (MDM), and ensure your overall security posture meets enterprise standards.",
         "stakes": "<strong>Stakes.</strong> This is the most common point of failure for remote teams. One unmanaged laptop can fail a SOC 2 audit. Without centralized device control, you have a massive security blind spot. You're not just a CTO; you're now a global IT and risk manager.",
         "prescription": "<strong>Prescription.</strong> Outsource the entire operational stack to a single, accountable SLA. The TeamStation AI platform is a complete operational wrapper. Every engineer receives a corporate-owned, MDM-managed laptop before day one. We handle all EOR, compliance, security, and insurance. It's a secure, audit-ready team in a box.",
-        "proof": "<strong>Proof.</strong> Our <a href='/trust' class='text-primary hover:underline'>Trust Center</a> details our SOC 2-aligned controls. We provide auditable evidence of device compliance, access control, and HR processes, ensuring you are enterprise-ready from day one. We absorb the risk so you can focus on building product.",
+        "proof": "<strong>Proof.</strong> Our <a href='/trust' class='text-primary hover:underline'>Trust Center</a> details our SOC 2-aligned controls. We provide auditable evidence of device compliance, access control, and HR processes, ensuring you are enterprise-ready from day one. We absorb the risk so you can focus on velocity.",
         "recap": "<strong>Recap.</strong> Don't just solve the payroll problem. Solve the entire operational and security problem with an integrated platform."
       }
     },
@@ -89,7 +90,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const iconMap: { [key: string]: React.FC<any> } = {
-  visibility: FileSearch,
+  visibility: HelpCircle,
   hiring: UserCheck,
   compliance: ShieldCheck,
   cost: Scale,
@@ -120,8 +121,6 @@ export default function HowdyComparisonPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.breadcrumbs) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.faq) }} />
       <main className="container max-w-5xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/comparisons" className="hover:text-foreground">All Comparisons</Link> / <span>vs. Howdy</span>
