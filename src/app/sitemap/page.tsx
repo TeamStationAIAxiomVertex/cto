@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { countries } from "@/lib/countries";
 import { roleCategories } from "@/lib/roles";
 import { techCategories } from "@/lib/tech";
+import { comparisonPages } from "@/lib/comparisonPages";
 
 export const metadata: Metadata = {
   title: "HTML Sitemap | TeamStation AI",
@@ -94,7 +95,6 @@ export default function HtmlSitemap() {
           <li><Link href="/pricing">Pricing</Link></li>
           <li><Link href="/trust">Trust & Compliance</Link></li>
           <li><Link href="/faq">FAQ for CTOs</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
         </ul>
       </section>
 
@@ -115,21 +115,10 @@ export default function HtmlSitemap() {
       <section>
         <h2>Vendor Comparisons</h2>
         <ul>
-          {[
-            "bairesdev",
-            "globant",
-            "revelo",
-            "tecla",
-            "toptal",
-            "unosquare",
-            "andela",
-            "terminal",
-            "nearsure",
-            "parallelstaff",
-          ].map((vendor) => (
-            <li key={vendor}>
-              <Link href={`/comparisons/${vendor}`}>
-                TeamStation vs {vendor.charAt(0).toUpperCase() + vendor.slice(1)}
+          {comparisonPages.map((vendor) => (
+            <li key={vendor.slug}>
+              <Link href={`/comparisons/${vendor.slug}`}>
+                TeamStation vs {vendor.name}
               </Link>
             </li>
           ))}
@@ -154,9 +143,9 @@ export default function HtmlSitemap() {
         <ul>
           <li><Link href="/case-studies">Case Studies Hub</Link></li>
           <li><Link href="/case-studies/atticus">Atticus – Probate Tech</Link></li>
-          <li><Link href="/case-studies/global-entertainment">Global Entertainment</Link></li>
-          <li><Link href="/case-studies/global-ooh">Global OOH Advertising</Link></li>
-          <li><Link href="/case-studies/healthcare-rcm">Healthcare RCM Platform</Link></li>
+          <li><Link href="/case-studies/global-entertainment-platform">Global Entertainment</Link></li>
+          <li><Link href="/case-studies/global-ooh-advertising-platform">Global OOH Advertising</Link></li>
+          <li><Link href="/case-studies/healthcare-revenue-platform">Healthcare RCM Platform</Link></li>
           <li><Link href="/case-studies/parsable">Parsable – Industrial Automation</Link></li>
           <li><Link href="/case-studies/rmj-technologies">RMJ Technologies – Fleet</Link></li>
         </ul>

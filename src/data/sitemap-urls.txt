@@ -10,9 +10,12 @@ https://cto.teamstation.dev/case-studies/rmj-technologies
 https://cto.teamstation.dev/comparisons
 https://cto.teamstation.dev/comparisons/andela
 https://cto.teamstation.dev/comparisons/bairesdev
+https://cto.teamstation.dev/comparisons/coderslink
 https://cto.teamstation.dev/comparisons/deel
+https://cto.teamstation.dev/comparisons/devlane
 https://cto.teamstation.dev/comparisons/globant
 https://cto.teamstation.dev/comparisons/howdy
+https://cto.teamstation.dev/comparisons/kms
 https://cto.teamstation.dev/comparisons/nearsure
 https://cto.teamstation.dev/comparisons/new-gen-nearshore
 https://cto.teamstation.dev/comparisons/parallelstaff

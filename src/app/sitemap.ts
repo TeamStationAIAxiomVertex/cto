@@ -4,6 +4,7 @@ import { countries } from '@/lib/countries';
 import { roleCategories } from '@/lib/roles';
 import { techCategories } from '@/lib/tech';
 import { getAllCaseStudies } from '@/lib/case-studies';
+import { comparisonPages } from '@/lib/comparisonPages';
 
 const baseUrl = 'https://cto.teamstation.dev';
 
@@ -41,6 +42,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: p.path === '' ? 1.0 : 0.8,
   }));
 
+  const comparisonEntries = comparisonPages.map((page) => ({
+    url: `${baseUrl}/comparisons/${page.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   const hireByCountry = countries.map((c) => ({
     url: `${baseUrl}/hire/by-country/${c.slug}`,
     lastModified: now,
@@ -74,6 +82,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...staticEntries,
+    ...comparisonEntries,
     ...hireByCountry,
     ...hireByRole,
     ...hireByTech,
