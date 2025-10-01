@@ -11,12 +11,23 @@ type TechKeys = keyof typeof allTech;
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const techName = allTech[params.slug as TechKeys]?.name || 'Technology';
+  const url = `https://cto.teamstation.dev/hire/by-technology/${params.slug}`;
   return {
-    title: `Hire Nearshore ${techName} Developers`,
-    description: `Hire elite, pre-vetted LATAM engineers with expertise in ${techName}. Our scientific evaluation de-risks hiring for critical roles.`,
-    keywords: `hire nearshore ${techName} developers, latam ${techName} engineers, ${techName} staff augmentation`,
-    alternates: {
-      canonical: `/hire/by-technology/${params.slug}`
+    title: `Hire Nearshore ${techName} Developers | TeamStation AI`,
+    description: `Elite, pre-vetted ${techName} engineers in LATAM. Axiom Cortex™ vetting, EOR compliance, and audit-ready ops. Book a strategy call today.`,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `Hire Nearshore ${techName} Developers`,
+      description: `Elite, pre-vetted ${techName} engineers in LATAM. Evidence, not resumes.`,
+      url,
+      type: 'article',
+      siteName: 'TeamStation AI',
+      images: [{ url: 'https://teamstation.dev/og-default.png', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Hire Nearshore ${techName} Developers`,
+      description: `Elite, pre-vetted ${techName} engineers in LATAM.`,
     }
   };
 }
@@ -42,12 +53,20 @@ export default function TechPage({ params }: { params: { slug: string } }) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "IT Staff Augmentation",
-    "provider": { "@type": "Organization", "name": "TeamStation AI" },
-    "areaServed": { "@type": "Country", "name": "LATAM" },
+    "serviceType": `${tech.name} Staff Augmentation`,
+    "provider": {
+      "@type": "Organization",
+      "name": "TeamStation AI",
+      "url": "https://teamstation.dev",
+      "logo": "https://teamstation.dev/apple-touch-icon.png"
+    },
+    "areaServed": { "@type": "Country", "name": "United States" },
     "description": `Hire elite, pre-vetted LATAM engineers with expertise in ${tech.name}.`,
-    "name": `Hire ${tech.name} Developers`,
-    "offers": { "@type": "Offer", "price": "Contact for pricing" }
+    "offers": {
+      "@type": "Offer",
+      "price": "Contact for pricing",
+      "priceCurrency": "USD"
+    }
   };
 
   return (
@@ -62,7 +81,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
           <span>{tech.name}</span>
         </div>
         <header className="my-12">
-          <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire for {tech.name} Mastery</h1>
+          <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire for <span className="font-bold">{tech.name}</span> Mastery</h1>
           <p className="mt-4 text-lg text-muted-foreground">
               {tech.intro}
           </p>
@@ -138,6 +157,15 @@ export default function TechPage({ params }: { params: { slug: string } }) {
           </p>
           <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
         </div>
+
+        <nav className="mt-12 border-t border-border pt-6 text-sm">
+            <h3 className="font-semibold text-foreground">See Also:</h3>
+            <ul className="list-none p-0 space-y-2 mt-2">
+              <li><Link href="/hire/by-country/mexico" className="text-primary hover:underline">Hire Developers in Mexico</Link></li>
+              <li><Link href={`/hire/by-role/${tech.categorySlug}`} className="text-primary hover:underline">Hire for the {tech.category} Role</Link></li>
+              <li><Link href="/comparisons/bairesdev" className="text-primary hover:underline">TeamStation AI vs. BairesDev</Link></li>
+            </ul>
+        </nav>
       </main>
     </>
   );
