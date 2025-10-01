@@ -2,9 +2,18 @@
 import * as React from 'react';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
-// A safe, temporary placeholder for WithTooltip to avoid client-side rendering issues on the server.
-export function WithTooltip({ children }: { children: React.ReactNode;[key: string]: any; }) {
-  return <>{children}</>;
+export function WithTooltip({ children, label, ...props }: { children: React.ReactNode; label: string, [key: string]: any; }) {
+  if (!label) return <>{children}</>;
+  return (
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild {...props}>{children}</TooltipTrigger>
+        <TooltipContent>
+          <p>{label}</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
 }
 
 const TooltipProvider = TooltipPrimitive.Provider;

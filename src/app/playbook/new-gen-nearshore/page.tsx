@@ -1,4 +1,3 @@
-
 // NOTE: this file is a Server Component (no 'use client')
 import 'server-only';
 
@@ -8,7 +7,7 @@ import { DollarSign, GitCompare, Layers, ArrowRight } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 // Load client-only widget as an island.
-const ComparisonWidget = dynamic(() => import('@/components/ComparisonWidget').then(mod => mod.default),
+const ComparisonWidget = dynamic(() => import('@/components/ComparisonWidget'),
   {
     ssr: false,
     loading: () => (
@@ -151,5 +150,3 @@ export default function NewGenNearshoreComparisonPage() {
     </main>
   );
 }
-
-    

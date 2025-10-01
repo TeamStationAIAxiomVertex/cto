@@ -1,4 +1,3 @@
-
 // NO 'use client' — Footer stays a Server Component
 import Link from 'next/link';
 import type { ReactNode } from 'react';
@@ -50,16 +49,17 @@ const researchLinks: LinkItem[] = [
   },
 ];
 
-const hireByRoleLinks: LinkItem[] = roleCategories.map((r) => ({ href: `/hire/by-role/${r.slug}`, label: r.name }));
+const hireByRoleLinks: LinkItem[] = roleCategories.map((r) => ({ href: `/hire/by-role/${r.slug}`, label: `Hire ${r.name} experts` }));
 const hireByCountryLinks: LinkItem[] = countries.map((c) => ({
   href: `/hire/by-country/${c.slug}`,
-  label: <span className="flex items-center gap-2">{c.name}</span>,
+  label: <span className="flex items-center gap-2">{`Hire developers in ${c.name}`}</span>,
 }));
 const popularTechLinks: LinkItem[] = [
   'react','node','python','java','go','net','aws','kubernetes','dbt','snowflake','pytorch','transformers','langchain','nextjs',
 ].map((slug) => {
   const tech = techCategories.flatMap((c) => c.tech).find((t) => t.slug === slug);
-  return { href: `/hire/by-technology/${slug}`, label: tech?.name || slug };
+  const name = tech?.name || slug;
+  return { href: `/hire/by-technology/${slug}`, label: `Hire ${name} developers` };
 });
 
 const utilityLinks: LinkItem[] = [

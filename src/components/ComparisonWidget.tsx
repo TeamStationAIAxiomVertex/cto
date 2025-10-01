@@ -1,9 +1,8 @@
-
 'use client';
 import 'client-only';
 
 import { useState, useMemo, type ReactNode, useId } from 'react';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { WithTooltip } from '@/components/client/tooltip';
 
 const inputs = {
   // Base cost inputs
