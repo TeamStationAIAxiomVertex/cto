@@ -1,7 +1,7 @@
 
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
 import Link from 'next/link';
-import { JsonLd } from '@/components/seo/JsonLd';
 import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
