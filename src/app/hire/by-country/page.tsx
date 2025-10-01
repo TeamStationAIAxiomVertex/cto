@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import { ArrowRight, Building, Check, Languages, School, UserCheck } from 'lucide-react';
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import SeoSafeImage from '@/components/seo/SeoSafeImage';
 import { countries } from '@/lib/countries';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Country | Top LATAM Hubs',
@@ -41,13 +42,13 @@ export default function HireByCountryPage() {
                  <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">One less vendor to manage</p>
             </div>
             <div className="flex justify-center">
-                <Image 
-                    src="https://images.unsplash.com/photo-1603201667141-5a2d4c673378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8d2V3b3JrfGVufDB8fHx8MTc1Nzc5MjMwNnww&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Modern office interior with developers working." 
-                    width={1080}
-                    height={720}
+                <SeoSafeImage 
+                    src={placeholderImages.weworkOffice.src.url}
+                    alt={placeholderImages.weworkOffice.alt}
+                    width={placeholderImages.weworkOffice.src.width}
+                    height={placeholderImages.weworkOffice.src.height}
                     className="rounded-lg shadow-lg aspect-video object-cover" 
-                    data-ai-hint="modern office interior software developers"
+                    data-ai-hint={placeholderImages.weworkOffice.aiHint}
                 />
             </div>
         </div>
