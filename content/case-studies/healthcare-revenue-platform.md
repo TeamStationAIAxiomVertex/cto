@@ -1,6 +1,6 @@
 ---
 slug: 'healthcare-revenue-platform'
-title: 'Audit-Ready Delivery for Healthcare Revenue | TeamStation AI Case Study'
+title: 'Audit-Ready Delivery for Healthcare Revenue Case Study'
 description: 'TeamStation AI''s Nearshore IT Copilot built an audit-ready, documentation-first delivery system for a US healthcare revenue platform, ensuring compliance and predictable velocity.'
 clientName: 'Healthcare Revenue Cycle Platform'
 industry: 'Healthcare Technology'
