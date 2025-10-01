@@ -1,4 +1,3 @@
-
 // NO 'use client' — Footer stays a Server Component
 import Link from 'next/link';
 import type { ReactNode } from 'react';
@@ -31,13 +30,15 @@ const companyLinks: LinkItem[] = [
   { href: '/case-studies', label: 'Case Studies' },
   { href: '/pricing', label: 'Pricing' },
   { href: 'https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book', label: 'Nearshore IT Platformed Book' },
+  { href: 'https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en', label: 'Google Scholar' },
+  { href: 'https://www.linkedin.com/company/teamstation', label: 'LinkedIn' },
 ];
 
 const researchLinks: LinkItem[] = [
   { href: '/research/axiom-cortex-scientific-report', label: 'AxiomCortex™ R&D Report' },
-  { href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433', label: 'Heuristically Trained AI' },
-  { href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490', label: 'Framework for Measuring Capacity' },
-  { href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470', label: 'Performance Metrics in AI Age' },
+  { href: '/research/heuristically-trained-ai', label: 'Heuristically Trained AI' },
+  { href: '/research/framework-for-measuring-capacity', label: 'Framework for Measuring Capacity' },
+  { href: '/research/performance-metrics-in-ai-age', label: 'Performance Metrics in AI Age' },
   {
     href: '/research/hub#podcast',
     label: (
