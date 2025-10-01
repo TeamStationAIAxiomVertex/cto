@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "source": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  },
+  "apphosting": {
+    "targets": {
+      "web": {
+        "runtime": { "node": "20.19.0" },
+        "buildCommand": "npm run build",
+        "runCommand": "npm run start",
+        "healthCheck": {
+          "path": "/healthz",
+          "timeoutSeconds": 10
+        }
+      }
+    }
+  }
+}
