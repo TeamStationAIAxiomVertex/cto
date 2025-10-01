@@ -1,4 +1,3 @@
-
 import { MetadataRoute } from 'next';
 import { getAllCaseStudies } from '@/lib/case-studies';
 
@@ -10,10 +9,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return caseStudies.map((study) => ({
     url: `${baseUrl}/case-studies/${study.slug}`,
-    lastModified: study.lastModified
-      ? new Date(study.lastModified).toISOString()
-      : now,
-    changeFrequency: 'monthly' as const,
+    lastModified: study.lastModified ? new Date(study.lastModified).toISOString() : now,
+    changeFrequency: 'monthly',
     priority: 0.7,
   }));
 }

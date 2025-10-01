@@ -1,4 +1,3 @@
-
 import { MetadataRoute } from 'next';
 import { countries } from '@/lib/countries';
 import { roleCategories } from '@/lib/roles';
