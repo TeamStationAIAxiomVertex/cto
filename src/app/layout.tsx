@@ -61,6 +61,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://picsum.photos" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "TeamStation AI",
+              "url": "https://teamstation.dev",
+              "logo": "https://teamstation.dev/apple-touch-icon.png",
+              "sameAs": [
+                "https://cto.teamstation.dev",
+                "https://www.linkedin.com/company/teamstation"
+              ],
+              "subOrganization": {
+                "@type": "Organization",
+                "name": "TeamStation AI — CTO Playbook",
+                "url": "https://cto.teamstation.dev"
+              }
+            })
+          }}
+        />
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       </head>
       <body className={`${poppins.variable} font-sans bg-background text-foreground`}>
         <AppProviders>
