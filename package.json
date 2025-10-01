@@ -21,7 +21,8 @@
     "export": "next build",
     "seo:xray": "node scripts/seo-xray.mjs",
     "nuclear": "scripts/nuclear-review.sh",
-    "firebase:deploy": "npm run build && firebase deploy --only hosting,apphosting"
+    "firebase:deploy": "npm run build && firebase deploy --only hosting,apphosting",
+    "rollback": "bash scripts/rollback.sh"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.7",
