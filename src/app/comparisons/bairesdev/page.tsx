@@ -8,12 +8,98 @@ import { generateComparisonSchema } from '@/lib/comparisonSchema';
 import { defaultComparisonFaqs } from '@/lib/comparisonFaqs';
 
 const competitor = { name: "BairesDev", url: "https://www.bairesdev.com", slug: "bairesdev" };
-const schema = generateComparisonSchema({
-  competitorName: competitor.name,
-  competitorUrl: competitor.url,
-  slug: competitor.slug,
-  faqs: defaultComparisonFaqs(competitor.name),
-});
+
+export const metadata: Metadata = {
+  title: 'TeamStation vs BairesDev: Evidence-Based Comparison for CTOs',
+  description:
+    'CTO comparison guide: TeamStation AI vs BairesDev. Cognitive vetting (Axiom Cortex™), audit-ready compliance, secure devices, and CFO-ready TCO vs. traditional staff augmentation.',
+  alternates: {
+    canonical: 'https://cto.teamstation.dev/comparisons/bairesdev',
+  },
+  openGraph: {
+    title: 'TeamStation vs BairesDev: Evidence-Based Comparison',
+    description:
+      'Compare TeamStation AI’s integrated platform (Axiom Cortex™, secure devices, EOR compliance) with BairesDev’s staff augmentation. Make decisions on evidence, not marketing claims.',
+    url: 'https://cto.teamstation.dev/comparisons/bairesdev',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'TeamStation vs BairesDev: CTO Comparison',
+    description:
+      'The real trade-offs: Cognitive vetting, audit-ready compliance, TCO, and daylight overlap vs. traditional staff augmentation.',
+  },
+  robots: { index: true, follow: true },
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "TeamStation AI vs BairesDev Comparison",
+  "description": "An evidence-based comparison for CTOs evaluating TeamStation AI’s integrated nearshore platform vs. BairesDev’s staff augmentation model.",
+  "brand": {
+    "@type": "Organization",
+    "name": "TeamStation AI",
+    "url": "https://cto.teamstation.dev"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "author": { "@type": "Organization", "name": "TeamStation AI" }
+  },
+  "isSimilarTo": {
+    "@type": "Organization",
+    "name": "BairesDev",
+    "url": "https://www.bairesdev.com/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When is BairesDev a better fit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you have a mature internal infrastructure to manage HR, IT, and security, and only need access to a very large candidate funnel, BairesDev may fit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Axiom Cortex™ change in vetting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It shifts evaluation from subjective interviews to objective, cognitive evidence. Mis-hire risk is reduced by 90%+."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide secure devices and SSO integration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all engineers receive a corporate-owned MDM-managed laptop with SSO/SAML/SCIM integrated from day one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can a pod start shipping code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With environments ready, TeamStation targets a first PR within 10 business days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about Mexico's REPSE compliance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TeamStation scopes engagements through compliant Employer of Record partners to fully adhere to REPSE labor laws."
+      }
+    }
+  ]
+};
 
 const pageData = {
   "type": "comparison",
@@ -92,18 +178,6 @@ const pageData = {
   ]
 };
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { title, description, canonical } = pageData.pageSEO;
-  return {
-    title,
-    description,
-    alternates: {
-      canonical,
-    },
-  };
-}
-
-
 const iconMap: { [key: string]: React.FC<any> } = {
   latency: GitCompare,
   hiring: UserCheck,
@@ -118,6 +192,7 @@ export default function BairesDevComparisonPage() {
   return (
     <>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <main className="container max-w-5xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/comparisons" className="hover:text-foreground">All Comparisons</Link> / <span>vs. BairesDev</span>
