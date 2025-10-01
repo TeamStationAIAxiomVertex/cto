@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
 
+# Canonical host
+Host: https://teamstation.dev
+
+# Point crawlers to the main sitemap
 Sitemap: https://cto.teamstation.dev/sitemap.xml
-Host: teamstation.dev
+Sitemap: https://teamstation.dev/sitemap.xml
