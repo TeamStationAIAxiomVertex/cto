@@ -29,4 +29,5 @@ export type CaseStudy = {
   canonical: string;
   pspCards?: PSPCard[];
   faq?: { q: string; a: string }[];
+  lastModified?: string;
 };

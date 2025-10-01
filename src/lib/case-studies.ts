@@ -18,6 +18,7 @@ type PlaceholderImage = {
 
 export type CaseStudy = CaseStudyType & {
   ogImage: PlaceholderImage;
+  lastModified: string;
 };
 
 // A more robust function to extract a section based on a heading
@@ -40,6 +41,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
       try {
           const filePath = path.join(contentDirectory, filename);
           const fileContents = await fs.readFile(filePath, 'utf8');
+          const stats = await fs.stat(filePath);
           const { data, content } = matter(fileContents);
 
           const slug = data.slug as keyof typeof placeholderImages.caseStudies;
@@ -58,6 +60,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
             ogImage: imageInfo,
             techStack: data.techStack || [],
             canonical: data.canonical,
+            lastModified: (data.lastModified || data.date || stats.mtime).toISOString(),
           } as CaseStudy;
       } catch (readError) {
           console.error(`Error reading or parsing case study file ${filename}:`, readError);

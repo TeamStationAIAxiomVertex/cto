@@ -10,6 +10,7 @@ export type ResearchPaper = {
   title: string;
   description: string;
   href: string;
+  lastModified: string;
 };
 
 async function getFilenames(): Promise<string[]> {
@@ -31,6 +32,7 @@ export async function getResearchBySlug(slug: string): Promise<ResearchPaper | n
   const filePath = path.join(contentDirectory, `${slug}.md`);
   try {
     const fileContents = await fs.readFile(filePath, 'utf8');
+    const stats = await fs.stat(filePath);
     const { data } = matter(fileContents);
 
     return {
@@ -38,6 +40,7 @@ export async function getResearchBySlug(slug: string): Promise<ResearchPaper | n
       title: data.title,
       description: data.description,
       href: `/research/${slug}`,
+      lastModified: (data.lastModified || data.date || stats.mtime).toISOString(),
     } as ResearchPaper;
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== 'ENOENT') {
