@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle, Plane } from 'lucide-react';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { notFound } from 'next/navigation';
 import { allTech } from '@/lib/tech';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -103,7 +103,18 @@ export default function TechPage({ params }: { params: { slug: string } }) {
         <div className="my-16 rounded-lg border bg-card p-8">
           <h2 className="text-center text-3xl font-bold">Our Evaluation Approach for {tech.name}</h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
-            For roles requiring deep {tech.name} expertise, our <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/technical-interview-evaluation" className='text-primary hover:underline'>Axiom Cortex™ evaluation</Link></WithTooltip> focuses on practical application and deep system understanding, not just trivia. We assess candidates on:
+            For roles requiring deep {tech.name} expertise, our 
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link href="/technical-interview-evaluation" className='text-primary hover:underline'> Axiom Cortex™ evaluation </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Our proprietary Cognitive AI engine for talent evaluation.</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            focuses on practical application and deep system understanding, not just trivia. We assess candidates on:
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-8 max-w-2xl mx-auto">
               {tech.evaluation.map((point, i) => (
@@ -127,9 +138,6 @@ export default function TechPage({ params }: { params: { slug: string } }) {
           </p>
           <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
         </div>
-        
-        {params.slug === 'typescript' && <TypeScriptPSPSection />}
-
       </main>
     </>
   );
