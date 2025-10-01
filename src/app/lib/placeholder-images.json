@@ -20,11 +20,11 @@
     },
     "weworkOffice": {
         "src": {
-            "url": "https://picsum.photos/seed/wework-office/1080/720",
+            "url": "https://images.unsplash.com/photo-1603201667141-5a2d4c673378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8d2V3b3JrfGVufDB8fHx8MTc1Nzc5MjMwNnww&ixlib=rb-4.1.0&q=80&w=1080",
             "width": 1080,
             "height": 720
         },
-        "alt": "A modern office building, representing our global reach and professional workspaces.",
+        "alt": "Modern office interior with developers working.",
         "aiHint": "modern office interior"
     },
     "caseStudies": {
@@ -38,7 +38,7 @@
         },
         "global-entertainment-platform": {
             "src": {
-                "url": "https://picsum.photos/seed/entertainment/600/400",
+                "url": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtdXNpYyUyMGluZHVzdHJ5fGVufDB8fHx8MTc1OTI4NDQ2OHww&ixlib=rb-4.1.0&q=80&w=1080",
                 "width": 600,
                 "height": 400
             },
