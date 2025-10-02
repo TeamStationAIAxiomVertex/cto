@@ -11,14 +11,17 @@ function formatSlug(slug: string) {
 export default function FurtherReading({
   country,
   technology,
+  role,
 }: {
   country?: string;
   technology?: string;
+  role?: string;
 }) {
   return (
     <section className="my-16 border-t border-border pt-12">
       <h2 className="text-2xl font-bold">Further Reading</h2>
       <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
+        {/* Always include 3 core internal links */}
         <li>
           <Link href="/playbook/hub" className="text-primary hover:underline">
             CTO Playbook Hub
@@ -34,6 +37,8 @@ export default function FurtherReading({
             Vendor Comparisons
           </Link>
         </li>
+
+        {/* Country link */}
         {country && (
           <li>
             <Link
@@ -44,6 +49,8 @@ export default function FurtherReading({
             </Link>
           </li>
         )}
+
+        {/* Country + Technology link */}
         {country && technology && (
           <li>
             <Link
@@ -51,6 +58,30 @@ export default function FurtherReading({
               className="text-primary hover:underline"
             >
               Hire {formatSlug(technology)} Developers in {formatSlug(country)}
+            </Link>
+          </li>
+        )}
+
+        {/* Role link */}
+        {role && (
+          <li>
+            <Link
+              href={`/hire/by-role/${role}`}
+              className="text-primary hover:underline"
+            >
+              Hire {formatSlug(role)} Engineers
+            </Link>
+          </li>
+        )}
+
+        {/* Technology link */}
+        {technology && !country && (
+          <li>
+            <Link
+              href={`/hire/by-technology/${technology}`}
+              className="text-primary hover:underline"
+            >
+              Hire {formatSlug(technology)} Developers
             </Link>
           </li>
         )}

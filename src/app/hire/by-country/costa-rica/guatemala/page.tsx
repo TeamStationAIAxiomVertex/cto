@@ -7,6 +7,7 @@ import guatemalaData from '@/data/countries/guatemala.json';
 import { PSPCard } from '@/components/seo/PSPCard';
 import { roleCategories } from '@/lib/roles';
 import { techCategories } from '@/lib/tech';
+import FurtherReading from '@/components/seo/FurtherReading';
 
 // Define icons map
 const iconMap: { [key: string]: React.FC<any> } = {
@@ -187,6 +188,7 @@ export default function GuatemalaPage() {
                 </Link>
             </div>
         </section>
+        <FurtherReading country={data.slug} />
       </main>
     </>
   );
