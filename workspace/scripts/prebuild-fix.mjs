@@ -40,34 +40,26 @@ function validateSEO(file, content) {
 
 const root = path.resolve("src/app");
 for (const file of walk(root)) {
-  try {
-    let content = fs.readFileSync(file, "utf8");
-    const fixed = fixContent(content);
-    if (fixed !== content) {
-      fs.writeFileSync(file, fixed, "utf8");
-      console.log(`🛠️ Fixed Markdown in ${file}`);
-    }
-    validateSEO(file, fixed);
-  } catch (e) {
-    console.warn(`Could not read or process file ${file}, skipping. Error: ${e.message}`);
+  let content = fs.readFileSync(file, "utf8");
+  const fixed = fixContent(content);
+  if (fixed !== content) {
+    fs.writeFileSync(file, fixed, "utf8");
+    console.log(`🛠️ Fixed Markdown in ${file}`);
   }
+  validateSEO(file, fixed);
 }
 
 // --- Health check endpoint ---
 const healthz = "src/app/healthz/route.ts";
-try {
-  fs.mkdirSync(path.dirname(healthz), { recursive: true });
-  fs.writeFileSync(
-    healthz,
-    `import { NextResponse } from "next/server";
+fs.mkdirSync(path.dirname(healthz), { recursive: true });
+fs.writeFileSync(
+  healthz,
+  `import { NextResponse } from "next/server";
 
 export async function GET() {
   return NextResponse.json({ status: "ok" }, { status: 200 });
 }
 `,
-    "utf8"
-  );
-  console.log("✅ Ensured healthz endpoint");
-} catch (e) {
-    console.warn(`Could not create healthz endpoint. Error: ${e.message}`);
-}
+  "utf8"
+);
+console.log("✅ Ensured healthz endpoint");
