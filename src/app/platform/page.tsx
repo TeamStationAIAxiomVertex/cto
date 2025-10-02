@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { CheckCircle, Trophy, Star, BookOpen, Beaker, GitCommit, Search, Users, BrainCircuit, FileCheck, Laptop, Gauge, ShieldCheck, FileText, Building, Scale, ArrowRight, Server, Database, Share2, Layers } from "lucide-react";
 import type { Metadata } from 'next';
-import { WithTooltip } from '@/components/client/tooltip';
+import { WithTooltip } from '@/components/ui/tooltip';
 import { DisclosureDrawer } from "@/components/DisclosureDrawer";
 
 export const metadata: Metadata = {
@@ -127,9 +127,7 @@ export default function PlatformPage() {
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Nearshore IT Co-Pilot™ Platform</h1>
         <div className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           <span>
-            Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable <WithTooltip label="A contract defining the level of service you can expect, backed by our MSA.">
-                <span className="border-b border-dashed">SLA</span>
-            </WithTooltip>.
+            Hire, equip, secure, and manage your entire LATAM engineering operation under one accountable <span title="A contract defining the level of service you can expect, backed by our MSA." className="border-b border-dashed">SLA</span>.
           </span>
         </div>
          <div className="mt-8">
