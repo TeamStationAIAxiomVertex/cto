@@ -15,9 +15,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "validate": "node scripts/validate-content.mjs",
-    "build:production": "npm run validate && next build",
-    "backup": "mkdir -p .studio-backups && cp firebase.json package.json .studio-backups/ || true",
-    "reset": "node scripts/reset-to-last-good.mjs"
+    "build:production": "npm run validate && next build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
