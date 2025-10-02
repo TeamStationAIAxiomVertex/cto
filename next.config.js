@@ -38,7 +38,7 @@ const nextConfig = {
     },
   },
 
-  eslint: { ignoreDuringBuilds: true },
+  eslint: { ignoreDuringBuilds: process.env.BREAK_GLASS === "1" },
   typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" },
 
   productionBrowserSourceMaps: true,

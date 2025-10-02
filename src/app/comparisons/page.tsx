@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Users, Scale, ShieldCheck, Briefcase, ExternalLink, Network } from 'lucide-react';
 import type { Metadata } from 'next';
 import { WithTooltip } from '@/components/ui/tooltip';
-import SandlerPSP from '@/components/seo/SandlerPSP';
+import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
 
 export const metadata: Metadata = {
   title: 'Nearshore Vendor Comparisons | TeamStation AI',
@@ -117,25 +117,15 @@ export default function ComparisonsPage() {
       </section>
 
       <section className="my-16">
-        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-          <h2 className="text-3xl font-bold">Ready to Move Beyond a Broken Model?</h2>
-          <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
-            Let's have a real conversation about Total Cost of Ownership, velocity, and risk. In 15 minutes, we can build a CFO-ready business case for a truly integrated nearshore platform.
-          </p>
-          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
-              Book a No-Obligation Strategy Call
-          </Link>
-        </div>
-      </section>
-
-      <SandlerPSP
+        <ValuePropositionBlock
             pain="CTOs face hidden risks in cost, compliance, and velocity."
             stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
             prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
-            proof="40–60% lower TCO vs legacy models. Case studies: Currance, Parsable."
+            proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
             ctaHref="/comparisons"
             ctaText="See All Vendor Comparisons"
-      />
+        />
+      </section>
     </main>
   );
 }

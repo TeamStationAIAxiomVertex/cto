@@ -2,15 +2,9 @@
   "hosting": {
     "source": ".",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-      {
-        "source": "**",
-        "run": {
-          "serviceId": "web",
-          "region": "us-central1"
-        }
-      }
-    ],
+    "frameworksBackend": {
+      "region": "us-central1"
+    },
     "headers": [
       {
         "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico|css|js|woff2|ttf)",
@@ -36,10 +30,10 @@
         "runtime": { "node": "20.19.0" },
         "buildCommand": "npm run build:production",
         "runCommand": "npm run start",
-        "healthCheck": { "path": "/healthz", "timeoutSeconds": 10 },
         "env": {
           "BREAK_GLASS": "1"
-        }
+        },
+        "healthCheck": { "path": "/healthz", "timeoutSeconds": 10 }
       }
     }
   }

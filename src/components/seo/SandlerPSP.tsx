@@ -1,8 +1,7 @@
-
 // This component is deprecated. Use ValuePropositionBlock instead.
 import Link from "next/link";
 
-interface SandlerPSPProps {
+interface ValuePropositionBlockProps {
   pain: string;
   stakes: string;
   prescription: string;
@@ -11,14 +10,14 @@ interface SandlerPSPProps {
   ctaText?: string;
 }
 
-export default function SandlerPSP({
+export default function ValuePropositionBlock({
   pain,
   stakes,
   prescription,
   proof,
   ctaHref = "/playbook/hub",
   ctaText = "Explore the CTO Playbook",
-}: SandlerPSPProps) {
+}: ValuePropositionBlockProps) {
   return (
     <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
       <div className="space-y-6">
@@ -32,7 +31,7 @@ export default function SandlerPSP({
           <p className="text-muted-foreground">{prescription}</p>
         </div>
         <div>
-          <p className="text-muted-foreground font-bold" dangerouslySetInnerHTML={{ __html: proof.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') }}></p>
+          <p className="font-bold text-muted-foreground" dangerouslySetInnerHTML={{ __html: proof.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') }}></p>
         </div>
       </div>
 
