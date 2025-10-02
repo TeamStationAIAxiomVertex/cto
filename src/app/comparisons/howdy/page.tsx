@@ -44,7 +44,7 @@ const pageData = {
       "body": {
         "problem": "<strong>Problem.</strong> An EOR-plus-recruiter model's job is done once the contract is signed. You are left to figure out how to provide and secure laptops, manage device policies (MDM), and ensure your overall security posture meets enterprise standards.",
         "stakes": "<strong>Stakes.</strong> This is the most common point of failure for remote teams. One unmanaged laptop can fail a SOC 2 audit. Without centralized device control, you have a massive security blind spot. You're not just a CTO; you're now a global IT and risk manager.",
-        "prescription": "<strong>Prescription.</strong> Outsource the entire operational stack to a single, accountable SLA. The TeamStation AI platform is a complete operational wrapper. Every engineer receives a corporate-owned, MDM-managed laptop before day one. We handle all EOR, compliance, security, and insurance. It's a secure, audit-ready team in a box.",
+        "prescription": "<strong>Prescription.</strong> Outsource the entire operational stack to a single, accountable SLA. The TeamStation AI platform is a complete operational wrapper. Every engineer receives a corporate-owned, MDM-managed laptop before day one. We handle all EOR, compliance, security, and insurance.",
         "proof": "<strong>Proof.</strong> Our <a href='/trust' class='text-primary hover:underline'>Trust Center</a> details our SOC 2-aligned controls. We provide auditable evidence of device compliance, access control, and HR processes, ensuring you are enterprise-ready from day one. We absorb the risk so you can focus on velocity.",
         "recap": "<strong>Recap.</strong> Don't just solve the payroll problem. Solve the entire operational and security problem with an integrated platform."
       }
@@ -129,6 +129,11 @@ export default function HowdyComparisonPage() {
         <header className="my-8 text-center">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{h1}</h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: intro }}></p>
+            <div className="mt-4 text-sm">
+                <a href="https://www.howdy.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                    Vendor home: howdy.com <ExternalLink className="h-4 w-4" />
+                </a>
+            </div>
              <nav className="mt-6 flex justify-center gap-4 text-sm">
                 <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
                 <Link href="/research/hub" className="text-primary hover:underline">Our Research</Link>
