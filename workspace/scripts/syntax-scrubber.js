@@ -1,1 +1,2 @@
-console.log("✅ Syntax scrubber placeholder loaded. No-op.");
+
+console.log("✅ syntax-scrubber.js loaded. No operation.");

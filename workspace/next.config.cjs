@@ -1,3 +1,4 @@
+
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
@@ -8,7 +9,4 @@ const config = {
     ]
   }
 };
-
-// Firebase App Hosting monkeypatch needs module.exports
 module.exports = config;
-export default config;
