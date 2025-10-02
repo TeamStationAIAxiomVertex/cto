@@ -33,7 +33,7 @@ Business Impact
 
 -   Time & budget constraints: Ship a fully functional system on a lean budget with an MVP in ~90 days.
 -   Inheritance of a broken start: The team inherited a non‑functional monolithic proof of concept.
--   Stack transition: Migrate a partially built Python/Django/GraphQL API to a stack aligned with team skills, budget, and time‑to-market: PHP/Laravel, Vue.js, MySQL, with Swift for iOS.
+-   Stack transition: Migrate a partially built Python/Django/GraphQL API to a stack aligned with team skills, budget, and time‑to‑market: PHP/Laravel, Vue.js, MySQL, with Swift for iOS.
 -   Regulatory tone & data sensitivity: Estate workflows involve personally identifiable information (PII) and sensitive inventories—security and auditability were table stakes.
 
 ---
@@ -130,3 +130,10 @@ Process Highlights
 - [Case Studies Hub](/case-studies)  
 - [Comparisons Hub](/comparisons)  
 - [Hire by Country](/hire/by-country)
+
+---
+
+### Further Reading
+- [CTO Playbook Hub](/playbook/hub)
+- [Research Hub](/research/hub)
+- [Hire Developers in Mexico](/hire/by-country/mexico)

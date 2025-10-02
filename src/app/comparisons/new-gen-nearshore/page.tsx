@@ -9,12 +9,7 @@ import dynamic from 'next/dynamic';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 // Load client-only widget as an island.
-// Works whether the widget is default- or named-exported.
-const ComparisonWidget = dynamic(
-  async () => {
-    const m = await import('@/components/ComparisonWidget'); // adjust path if your widget lives elsewhere
-    return 'default' in m ? m.default : (m as any).ComparisonWidget;
-  },
+const ComparisonWidget = dynamic(() => import('@/components/ComparisonWidget'),
   {
     ssr: false,
     loading: () => (
@@ -159,3 +154,17 @@ export default function NewGenNearshoreComparisonPage() {
     </main>
   );
 }
+
+---
+
+## Pain
+CTOs face hidden risks in cost, compliance, and velocity.
+
+## Stakes
+Without addressing these, budgets spiral and projects miss critical deadlines.
+
+## Prescription
+TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO.
+
+## Proof
+40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable).

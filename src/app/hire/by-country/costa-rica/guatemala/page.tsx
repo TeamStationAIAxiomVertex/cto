@@ -5,6 +5,8 @@ import { notFound } from 'next/navigation';
 import { GitCompare, UserCheck, ShieldCheck, Scale, CheckCircle } from 'lucide-react';
 import guatemalaData from '@/data/countries/guatemala.json';
 import { PSPCard } from '@/components/seo/PSPCard';
+import { roleCategories } from '@/lib/roles';
+import { techCategories } from '@/lib/tech';
 
 // Define icons map
 const iconMap: { [key: string]: React.FC<any> } = {
@@ -48,6 +50,7 @@ export default function GuatemalaPage() {
   }
 
   const { pageSEO, intro, pspCards, countrySections, faq, cta, schema } = data;
+  const popularTech = techCategories.flatMap(c => c.tech).slice(0, 9); // Example: Get first 9 popular techs
 
   return (
     <>
@@ -71,7 +74,7 @@ export default function GuatemalaPage() {
                 {pspCards.map(card => {
                     const Icon = iconMap[card.icon as keyof typeof iconMap] || GitCompare;
                     return (
-                        <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body} />
+                        <PSPCard key={card.title} title={card.title} icon={<Icon className="h-8 w-8 text-primary" />} body={card.body as any} />
                     );
                 })}
             </div>
@@ -88,6 +91,29 @@ export default function GuatemalaPage() {
                         </li>
                     ))}
                 </ul>
+            </div>
+            
+            <div className="my-16">
+              <h2 className="text-center text-3xl font-bold mb-8">Explore Popular Technologies in {data.country}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12 justify-center">
+                {popularTech.map((tech) => (
+                  <Link href={`/hire/by-technology/${tech.slug}`} key={tech.slug} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                      <h2 className="mt-4 text-xl font-bold transition-colors group-hover:text-primary">{tech.name}</h2>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            <h2 className="text-center text-3xl font-bold mb-8">Explore Available Roles in {data.country}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
+                {roleCategories.map((details) => (
+                <Link href={`/hire/by-role/${details.slug}`} key={details.slug} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                    <h2 className="mt-4 text-xl font-bold transition-colors group-hover:text-primary">{details.name}</h2>
+                    <p className="mt-2 text-sm text-muted-foreground flex-grow">
+                        {details.description}
+                    </p>
+                </Link>
+                ))}
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -165,3 +191,10 @@ export default function GuatemalaPage() {
     </>
   );
 }
+
+---
+
+### Further Reading
+- [CTO Playbook Hub](/playbook/hub)
+- [Research Hub](/research/hub)
+- [Hire Developers in Mexico](/hire/by-country/mexico)

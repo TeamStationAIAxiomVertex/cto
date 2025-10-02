@@ -14,3 +14,10 @@ Frankly, the software development world races ahead, supercharged by AI, yet the
 - [Axiom Cortex™ Scientific Report](/research/axiom-cortex-scientific-report)  
 - [Performance Evaluation Report Example](/research/performance-evaluation-report-example)  
 - [CTO Playbook Hub](/playbook)
+
+---
+
+### Further Reading
+- [CTO Playbook Hub](/playbook/hub)
+- [Research Hub](/research/hub)
+- [Hire Developers in Mexico](/hire/by-country/mexico)

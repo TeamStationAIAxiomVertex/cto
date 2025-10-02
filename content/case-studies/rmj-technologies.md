@@ -102,3 +102,10 @@ Key Architecture Decisions
 - [Case Studies Hub](/case-studies)  
 - [Comparisons Hub](/comparisons)  
 - [Hire by Country](/hire/by-country)
+
+---
+
+### Further Reading
+- [CTO Playbook Hub](/playbook/hub)
+- [Research Hub](/research/hub)
+- [Hire Developers in Mexico](/hire/by-country/mexico)

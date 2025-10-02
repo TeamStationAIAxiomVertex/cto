@@ -89,3 +89,10 @@ export default function HireByCountryPage() {
     </main>
   );
 }
+
+---
+
+### Further Reading
+- [CTO Playbook Hub](/playbook/hub)
+- [Research Hub](/research/hub)
+- [Hire Developers in Mexico](/hire/by-country/mexico)
