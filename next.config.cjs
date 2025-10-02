@@ -1,4 +1,22 @@
 /** @type {import('next').NextConfig} */
-const config = require('./next.config.mjs');
+const nextConfig = {
+  output: 'standalone',
+  reactStrictMode: true,
 
-module.exports = config;
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "picsum.photos" },
+      { protocol: "https", hostname: "cto.teamstation.dev" },
+      { protocol: "https", hostname: "teamstation.dev" }
+    ]
+  },
+
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" },
+
+  productionBrowserSourceMaps: true
+};
+
+module.exports = nextConfig;
