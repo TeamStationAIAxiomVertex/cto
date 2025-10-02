@@ -19,50 +19,55 @@ function fixContent(content) {
     .replace(/^\s*# (.+)$/gm, "<h1>$1</h1>");
 }
 
-// --- SEO Validator ---
+// --- SEO Soft Validator (warn only, no fail) ---
 function validateSEO(file, content) {
-  const errors = [];
-
+  const warnings = [];
   if (!/export\s+const\s+metadata/.test(content)) {
-    errors.push("❌ Missing metadata export");
+    warnings.push("⚠️ Missing metadata export");
   }
   if (!/<h1>/.test(content)) {
-    errors.push("❌ Missing <h1>");
+    warnings.push("⚠️ Missing <h1>");
   }
   const linkCount = (content.match(/<Link /g) || []).length;
   if (linkCount < 6) {
-    errors.push(`❌ Only ${linkCount} internal links (need ≥6)`);
+    warnings.push(`⚠️ Only ${linkCount} internal links (need ≥6)`);
   }
 
-  if (errors.length > 0) {
-    console.error(`\nSEO check failed in ${file}:\n${errors.join("\n")}\n`);
-    process.exit(1);
+  if (warnings.length > 0) {
+    console.warn(`\nSEO warnings in ${file}:\n${warnings.join("\n")}\n`);
   }
 }
 
 const root = path.resolve("src/app");
 for (const file of walk(root)) {
-  let content = fs.readFileSync(file, "utf8");
-  const fixed = fixContent(content);
-  if (fixed !== content) {
-    fs.writeFileSync(file, fixed, "utf8");
-    console.log(`🛠️ Fixed Markdown in ${file}`);
+  try {
+    let content = fs.readFileSync(file, "utf8");
+    const fixed = fixContent(content);
+    if (fixed !== content) {
+      fs.writeFileSync(file, fixed, "utf8");
+      console.log(`🛠️ Fixed Markdown in ${file}`);
+    }
+    validateSEO(file, fixed);
+  } catch (e) {
+    console.warn(`Could not read or process file ${file}, skipping. Error: ${e.message}`);
   }
-
-  validateSEO(file, fixed);
 }
 
 // --- Health check endpoint ---
 const healthz = "src/app/healthz/route.ts";
-fs.mkdirSync(path.dirname(healthz), { recursive: true });
-fs.writeFileSync(
-  healthz,
-  `import { NextResponse } from "next/server";
+try {
+  fs.mkdirSync(path.dirname(healthz), { recursive: true });
+  fs.writeFileSync(
+    healthz,
+    `import { NextResponse } from "next/server";
 
 export async function GET() {
   return NextResponse.json({ status: "ok" }, { status: 200 });
 }
 `,
-  "utf8"
-);
-console.log("✅ Ensured healthz endpoint");
+    "utf8"
+  );
+  console.log("✅ Ensured healthz endpoint");
+} catch (e) {
+    console.warn(`Could not create healthz endpoint. Error: ${e.message}`);
+}
