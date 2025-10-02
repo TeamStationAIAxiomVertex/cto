@@ -1,15 +1,18 @@
 {
   "hosting": {
     "source": ".",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      { "source": "**", "run": { "serviceId": "web", "region": "us-central1" } }
+    ]
   },
   "apphosting": {
     "targets": {
       "web": {
         "runtime": { "node": "20.19.0" },
-        "buildCommand": "npm ci && npm run build",
+        "buildCommand": "npm ci --no-audit --no-fund && npm run build",
         "runCommand": "npm run start",
-        "healthCheck": { "path": "/healthz", "timeoutSeconds": 10 }
+        "healthCheck": { "path": "/healthz", "timeoutSeconds": 15 }
       }
     }
   }
