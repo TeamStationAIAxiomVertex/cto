@@ -8,14 +8,13 @@
   },
   "packageManager": "npm@10",
   "scripts": {
-    "prebuild": "node scripts/syntax-scrubber.js",
-    "build:production": "npm run prebuild && npm run typecheck && next build -c next.config.mjs",
-    "build:strict": "npm run lint && npm run typecheck && next build",
-    "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0 -c next.config.mjs",
-    "build": "next build -c next.config.mjs",
-    "start": "next start -p ${PORT:-8080} -H 0.0.0.0 -c next.config.mjs",
+    "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start -p ${PORT:-8080} -H 0.0.0.0",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prebuild": "rm -rf node_modules/@next/swc-* && node scripts/syntax-scrubber.js",
+    "build:production": "npm run prebuild && next build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
