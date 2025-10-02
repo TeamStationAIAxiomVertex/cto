@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-// scripts/validate-content.mjs
+// 🚀 Nuclear override w/ BREAK_GLASS toggle
+// If BREAK_GLASS=1 → skip validation and always pass
+// Otherwise, run your normal validator (if you decide to re-enable later)
+
 if (process.env.BREAK_GLASS === "1") {
   console.log("🚨 BREAK_GLASS enabled — skipping SEO/content validation checks.");
   process.exit(0);
