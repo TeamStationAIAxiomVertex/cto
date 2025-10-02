@@ -16,13 +16,8 @@
     "typecheck": "tsc --noEmit",
     "validate": "node scripts/validate-content.mjs",
     "build:production": "npm run validate && next build",
-    "build:strict": "npm run typecheck && npm run lint && npm run build:production",
-    "build:fast": "next build --no-lint",
-    "export": "next build",
-    "seo:xray": "node scripts/seo-xray.mjs",
-    "nuclear": "scripts/nuclear-review.sh",
-    "firebase:deploy": "npm run build && firebase deploy --only hosting,apphosting",
-    "rollback": "bash scripts/rollback.sh"
+    "backup": "mkdir -p .studio-backups && cp firebase.json package.json .studio-backups/ || true",
+    "reset": "node scripts/reset-to-last-good.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
