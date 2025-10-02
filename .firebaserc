@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "studio-9826104025"
+    "default": "cto-playbook-platform"
+  },
+  "targets": {
+    "cto-playbook-platform": {
+      "hosting": {
+        "web": [
+          "cto-playbook-platform"
+        ]
+      }
+    }
   }
 }
