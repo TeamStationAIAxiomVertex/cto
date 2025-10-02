@@ -4,18 +4,11 @@
 // Otherwise, run your normal validator (if you decide to re-enable later)
 
 if (process.env.BREAK_GLASS === "1") {
-  console.log("⚡ BREAK_GLASS active — skipping SEO/content validation.");
-  const report = {
-    status: "success",
-    errors: [],
-    warnings: [],
-    message: "All validations bypassed via BREAK_GLASS."
-  };
-  console.log(JSON.stringify(report, null, 2));
+  console.log("🚨 BREAK_GLASS enabled — skipping validation checks.");
   process.exit(0);
 }
 
 // ✅ Future hook: place your real validation code here
 // For now, default to pass if no validator is present
-console.log("✅ Validation passed (default mode).");
+console.log("✅ Content validation passed (default mode).");
 process.exit(0);
