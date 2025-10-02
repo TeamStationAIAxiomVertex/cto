@@ -1,3 +1,4 @@
+
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
@@ -8,4 +9,5 @@ const config = {
     ]
   }
 };
+
 module.exports = config;
