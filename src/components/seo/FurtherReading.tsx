@@ -1,14 +1,20 @@
 
 import Link from "next/link";
 
-function formatCountryName(slug: string) {
+function formatSlug(slug: string) {
   return slug
     .split("-")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
 }
 
-export default function FurtherReading({ country }: { country?: string }) {
+export default function FurtherReading({
+  country,
+  technology,
+}: {
+  country?: string;
+  technology?: string;
+}) {
   return (
     <section className="my-16 border-t border-border pt-12">
       <h2 className="text-2xl font-bold">Further Reading</h2>
@@ -28,14 +34,26 @@ export default function FurtherReading({ country }: { country?: string }) {
             Vendor Comparisons
           </Link>
         </li>
-        <li>
-          <Link
-            href={`/hire/by-country/${country ?? "mexico"}`}
-            className="text-primary hover:underline"
-          >
-            Hire Developers in {formatCountryName(country ?? "mexico")}
-          </Link>
-        </li>
+        {country && (
+          <li>
+            <Link
+              href={`/hire/by-country/${country}`}
+              className="text-primary hover:underline"
+            >
+              Hire Developers in {formatSlug(country)}
+            </Link>
+          </li>
+        )}
+        {country && technology && (
+          <li>
+            <Link
+              href={`/hire/by-country/${country}/${technology}`}
+              className="text-primary hover:underline"
+            >
+              Hire {formatSlug(technology)} Developers in {formatSlug(country)}
+            </Link>
+          </li>
+        )}
       </ul>
     </section>
   );
