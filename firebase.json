@@ -22,7 +22,7 @@
         "runCommand": "npm run start",
         "healthCheck": {
           "path": "/healthz",
-          "timeoutSeconds": 15
+          "timeoutSeconds": 30
         }
       }
     }

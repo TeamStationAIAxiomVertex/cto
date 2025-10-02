@@ -1,28 +1,26 @@
 import fs from "fs";
 import path from "path";
 
-const root = path.resolve("src");
-const exts = new Set([".tsx", ".ts"]);
-const regex = /^\s*---.*$|^\s*###.*$/gm; // matches stray markdown delimiters
+const ROOT = path.resolve("src/app");
+const exts = new Set([".tsx"]);
 
 function* walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const p = path.join(dir, entry.name);
-    if (entry.isDirectory()) yield* walk(p);
-    else if (exts.has(path.extname(entry.name))) yield p;
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) yield* walk(full);
+    else if (exts.has(path.extname(full))) yield full;
   }
 }
 
-for (const file of walk(root)) {
-  try {
-      const text = fs.readFileSync(file, "utf8");
-      const cleaned = text.replace(regex, "");
-      if (text !== cleaned) {
-        fs.writeFileSync(file, cleaned);
-        console.log(`🧹 Cleaned ${file}`);
-      }
-  } catch (e) {
-    console.error(`Could not scrub ${file}:`, e);
+for (const file of walk(ROOT)) {
+  let src = fs.readFileSync(file, "utf8");
+  let cleaned = src
+    // Remove raw Markdown headers like "### Foo"
+    .replace(/^#{1,6}\\s.*$/gm, "")
+    // Remove horizontal rules "---"
+    .replace(/^\\s*---\\s*$/gm, "");
+  if (src !== cleaned) {
+    console.log(`Scrubbed: ${file}`);
+    fs.writeFileSync(file, cleaned, "utf8");
   }
 }
-console.log("✅ Scrub complete");
