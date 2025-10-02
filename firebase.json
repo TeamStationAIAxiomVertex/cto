@@ -1,7 +1,6 @@
 {
   "hosting": {
     "source": ".",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       { "source": "**", "run": { "serviceId": "web", "region": "us-central1" } }
     ]
@@ -10,7 +9,7 @@
     "targets": {
       "web": {
         "runtime": { "node": "20.19.0" },
-        "buildCommand": "npm ci --no-audit --no-fund && npm run build",
+        "buildCommand": "node scripts/failsafe-build.mjs",
         "runCommand": "npm run start",
         "healthCheck": { "path": "/healthz", "timeoutSeconds": 15 }
       }

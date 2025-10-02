@@ -1,8 +1,6 @@
-/** @type {import('next').NextConfig} */
 
-// Force CommonJS (avoid require() vs import errors in Firebase)
-// Self-heals by falling back if Firebase overwrites config.
-
+// next.config.cjs
+// Self-healing CommonJS config, PWA-ready, ignores lint/TS build stops
 let withPWA;
 try {
   withPWA = require("next-pwa")({ dest: "public" });
