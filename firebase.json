@@ -1,14 +1,43 @@
-
 {
   "hosting": {
     "source": ".",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+
+    "rewrites": [
+      {
+        "source": "**",
+        "run": {
+          "serviceId": "web",
+          "region": "us-central1"
+        }
+      }
+    ],
+
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico|css|js|woff2|ttf)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public,max-age=31536000,immutable" }
+        ]
+      },
+      {
+        "source": "/(.*)",
+        "headers": [
+          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+          { "key": "Permissions-Policy", "value": "geolocation=()" },
+          { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+        ]
+      }
+    ]
   },
+
   "apphosting": {
     "targets": {
       "web": {
         "runtime": { "node": "20.19.0" },
-        "buildCommand": "npm run build",
+        "buildCommand": "npm run build:production",
         "runCommand": "npm run start",
         "healthCheck": { "path": "/healthz", "timeoutSeconds": 10 }
       }
