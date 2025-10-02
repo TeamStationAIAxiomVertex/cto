@@ -1,17 +1,8 @@
 {
   "hosting": {
     "source": ".",
-    "frameworksBackend": {
-      "region": "us-central1"
-    },
     "rewrites": [
-      {
-        "source": "**",
-        "run": {
-          "serviceId": "web",
-          "region": "us-central1"
-        }
-      }
+      { "source": "**", "run": { "serviceId": "web", "region": "us-central1" } }
     ]
   },
   "apphosting": {
@@ -20,10 +11,7 @@
         "runtime": { "node": "20.19.0" },
         "buildCommand": "npm run build:production",
         "runCommand": "npm run start",
-        "healthCheck": {
-          "path": "/healthz",
-          "timeoutSeconds": 30
-        }
+        "healthCheck": { "path": "/healthz", "timeoutSeconds": 30 }
       }
     }
   }
