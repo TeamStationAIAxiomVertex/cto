@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
+import SandlerPSP from '@/components/seo/SandlerPSP';
+import FurtherReading from '@/components/seo/FurtherReading';
 
 export const metadata: Metadata = {
   title: 'TECLA Alternative: TeamStation AI vs. TECLA',
@@ -115,6 +117,15 @@ export default function TeclaComparisonPage() {
           </p>
           <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
         </div>
+        <SandlerPSP
+            pain="CTOs face hidden risks in cost, compliance, and velocity."
+            stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
+            prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
+            proof="40–60% lower TCO vs legacy models. Case studies: Currance, Parsable."
+            ctaHref="/comparisons"
+            ctaText="See All Vendor Comparisons"
+        />
+        <FurtherReading comparison="tecla" />
       </main>
     </>
   );

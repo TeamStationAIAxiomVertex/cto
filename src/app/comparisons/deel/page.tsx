@@ -3,6 +3,8 @@ import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck, ExternalLink
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
+import SandlerPSP from '@/components/seo/SandlerPSP';
+import FurtherReading from '@/components/seo/FurtherReading';
 
 export const metadata: Metadata = {
     title: 'Deel Alternative for Talent Sourcing: TeamStation AI',
@@ -104,21 +106,15 @@ export default function DeelComparisonPage() {
         </p>
         <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
       </div>
+      <SandlerPSP
+        pain="CTOs face hidden risks in cost, compliance, and velocity."
+        stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
+        prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
+        proof="40–60% lower TCO vs legacy models. Case studies: Currance, Parsable."
+        ctaHref="/comparisons"
+        ctaText="See All Vendor Comparisons"
+      />
+      <FurtherReading comparison="deel" />
     </main>
   );
 }
-
----
-
-## Pain
-CTOs face hidden risks in cost, compliance, and velocity.
-
-## Stakes
-Without addressing these, budgets spiral and projects miss critical deadlines.
-
-## Prescription
-TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO.
-
-## Proof
-40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable).
-
