@@ -6,7 +6,7 @@ import { CheckCircle, ArrowRight, Shield, Bug, CloudCog, AlertTriangle, Key } fr
 import { notFound } from 'next/navigation';
 import { roleCategories } from '@/lib/roles';
 import { JsonLd } from '@/components/seo/JsonLd';
-
+import FurtherReading from '@/components/seo/FurtherReading';
 
 const roleData: { [key: string]: { name: string; intro: string; roles: string[]; skills: string[]; tech: { name: string, slug: string }[]; evaluation: string[]; problems?: { pain: string; roles: string[]; skills: string[] }[] } } = {
   'platform-infra-sre': {
@@ -352,7 +352,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const roleName = role ? role.name : 'Engineer';
   return {
     title: `Hire Nearshore ${roleName}`,
-    description: `Hire elite, pre-vetted LATAM ${roleName} engineers. Our scientific evaluation process de-risks hiring for critical tech roles.`,
+    description: `Hire elite, pre-vetted LATAM engineers with expertise in ${roleName}. Our scientific evaluation process de-risks hiring for critical tech roles.`,
     keywords: `hire nearshore ${roleName}, latam ${roleName}, ${roleName} staff augmentation`,
     alternates: {
         canonical: `/hire/by-role/${params.slug}`
@@ -594,6 +594,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
           </p>
           <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
         </div>
+        <FurtherReading role={params.slug} />
       </main>
     </>
   );

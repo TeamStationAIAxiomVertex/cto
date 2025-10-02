@@ -4,6 +4,7 @@ import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Br
 import type { Metadata } from 'next';
 import { countries } from '@/lib/countries';
 import { notFound } from 'next/navigation';
+import FurtherReading from '@/components/seo/FurtherReading';
 
 const countriesData: { [key: string]: { name: string; psp: { pain: string; solution: string; proof: string; icon: React.ReactNode }[] } } = {
   'mexico': { 
@@ -228,10 +229,11 @@ export default function CountryRolesPage({ params }: { params: { country: string
        <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Ready to build your team in {country.name}?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-            Let's discuss your specific needs. In a 15-minute call, we can map your roles to our evaluation process for talent in {country.name}.
+            Let's discuss your specific needs. In 15-minute call, we can map your roles to our evaluation process for talent in {country.name}.
         </p>
         <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
+      <FurtherReading country={params.country} />
     </main>
   );
 }

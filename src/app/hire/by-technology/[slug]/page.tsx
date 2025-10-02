@@ -6,6 +6,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { notFound } from 'next/navigation';
 import { allTech } from '@/lib/tech';
 import { JsonLd } from '@/components/seo/JsonLd';
+import FurtherReading from '@/components/seo/FurtherReading';
 
 type TechKeys = keyof typeof allTech;
 
@@ -107,6 +108,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
                               <h3 className="text-lg font-semibold text-foreground">The Problem</h3>
                           </div>
                           <p className="mt-4 text-sm text-muted-foreground ">{item.problem}</p>
+                          
                           <div className="mt-4 border-t border-border pt-4">
                               <h4 className="font-semibold text-primary">The TeamStation AI Solution</h4>
                               <p className="text-sm text-foreground m-0">{item.solution}</p>
@@ -163,16 +165,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
               Book a No-Obligation Strategy Call
           </Link>
         </div>
-
-        {/* Internal Link Mesh */}
-        <nav className="mt-12 border-t border-border pt-6 text-sm text-center">
-          <h3 className="font-semibold text-foreground mb-3">Explore More:</h3>
-          <ul className="flex flex-wrap justify-center gap-4">
-            <li><Link href="/hire/by-country/mexico" className="text-primary hover:underline">Hire Developers in Mexico</Link></li>
-            <li><Link href={`/hire/by-role/${tech.categorySlug}`} className="text-primary hover:underline">Hire {tech.category} Engineers</Link></li>
-            <li><Link href="/comparisons/bairesdev" className="text-primary hover:underline">TeamStation vs BairesDev</Link></li>
-          </ul>
-        </nav>
+        <FurtherReading technology={params.slug} />
       </main>
     </>
   );
