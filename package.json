@@ -10,11 +10,11 @@
   "packageManager": "npm@10",
   "scripts": {
     "dev": "next dev -p 8080 -H 0.0.0.0",
-    "build": "node scripts/fix-content.mjs && next build",
+    "build": "next build",
     "start": "next start -p $PORT -H 0.0.0.0",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "validate": "node scripts/fix-content.mjs && node scripts/validate-content.mjs",
+    "validate": "node scripts/validate-content.mjs",
     "build:production": "next build",
     "build:strict": "npm run typecheck && npm run lint && npm run build:production",
     "build:fast": "next build --no-lint",
