@@ -15,7 +15,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "validate": "node scripts/validate-content.mjs",
-    "build:production": "npm run typecheck || true && next build || true",
+    "build:production": "npm run validate && next build",
     "build:strict": "npm run typecheck && npm run lint && npm run build:production",
     "build:fast": "next build --no-lint",
     "export": "next build",

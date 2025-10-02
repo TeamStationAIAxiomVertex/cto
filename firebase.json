@@ -39,7 +39,10 @@
         "runtime": { "node": "20.19.0" },
         "buildCommand": "npm run build:production",
         "runCommand": "npm run start",
-        "healthCheck": { "path": "/healthz", "timeoutSeconds": 10 }
+        "healthCheck": { "path": "/healthz", "timeoutSeconds": 10 },
+        "env": {
+          "BREAK_GLASS": "1"
+        }
       }
     }
   }
