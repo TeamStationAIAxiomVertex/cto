@@ -10,9 +10,9 @@
   "scripts": {
     "prebuild": "node scripts/syntax-scrubber.js",
     "build:production": "npm ci && npm run typecheck && next build -c next.config.mjs",
-    "build:strict": "npm run lint && npm run typecheck && next build",
-    "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0 -c next.config.mjs",
-    "build": "next build",
+    "build:strict": "npm run lint && npm run typecheck && next build -c next.config.mjs",
+    "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0",
+    "build": "next build -c next.config.mjs",
     "start": "next start -p ${PORT:-8080} -H 0.0.0.0 -c next.config.mjs",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
