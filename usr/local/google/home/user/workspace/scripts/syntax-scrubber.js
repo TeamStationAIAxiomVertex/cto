@@ -1,7 +1,7 @@
 // scripts/syntax-scrubber.js
-// Nuclear-safe scrubber: Prevents Firebase/Next.js build failures
-// by transforming illegal markdown into JSX-safe comments.
-// Non-destructive: content preserved, never deleted.
+// Nuclear-safe scrubber for Firebase/Next.js builds
+// Transforms stray Markdown into JSX-safe comments
+// Non-destructive: text preserved, build never fails
 
 import fs from "fs";
 import path from "path";
@@ -21,12 +21,16 @@ for (const file of walk(ROOT)) {
   let code = fs.readFileSync(file, "utf8");
   let original = code;
 
-  // Transform illegal Markdown syntax into JSX-safe comments
+  // Wrap markdown-style syntax in JSX comments
   code = code
-    // Headings like ### Something
+    // Headings like #, ##, ### ...
     .replace(/^\s*#{1,6}\s+(.*)$/gm, (_m, text) => `{/* HEADING: ${text} */}`)
-    // Horizontal rules ---
-    .replace(/^\s*---+\s*$/gm, "{/* HR */}");
+    // Horizontal rules --- or ***
+    .replace(/^\s*[-*]{3,}\s*$/gm, "{/* HR */}")
+    // Blockquotes > something
+    .replace(/^\s*>\s+(.*)$/gm, (_m, text) => `{/* QUOTE: ${text} */}`)
+    // List items - item or * item
+    .replace(/^\s*[-*]\s+(.*)$/gm, (_m, text) => `{/* LIST: ${text} */}`);
 
   if (code !== original) {
     fs.writeFileSync(file, code, "utf8");
