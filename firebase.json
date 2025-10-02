@@ -34,11 +34,8 @@
     "targets": {
       "web": {
         "runtime": { "node": "20.19.0" },
-        "buildCommand": "npm run build:production",
+        "buildCommand": "npm ci --no-audit --no-fund && npm run build:production",
         "runCommand": "npm run start",
-        "env": {
-          "BREAK_GLASS": "1"
-        },
         "healthCheck": { "path": "/healthz", "timeoutSeconds": 10 }
       }
     }
