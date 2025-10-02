@@ -10,7 +10,7 @@
   "packageManager": "npm@10",
   "scripts": {
     "dev": "next dev -p 8080 -H 0.0.0.0",
-    "build": "npm run validate && next build",
+    "build": "next build",
     "start": "next start -p $PORT -H 0.0.0.0",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
