@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { DollarSign, GitCompare, Layers, ArrowRight } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { JsonLd } from '@/components/seo/JsonLd';
-import FurtherReading from '@/components/seo/FurtherReading';
+import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
 
 // Load client-only widget as an island.
 const ComparisonWidget = dynamic(() => import('@/components/ComparisonWidget'),
@@ -135,23 +135,14 @@ export default function NewGenNearshoreComparisonPage() {
           </div>
         ))}
       </div>
-
-      <div className="text-center rounded-lg bg-primary/10 p-8 mt-12">
-        <h2 className="text-2xl font-bold">Ready to Eliminate the Hidden Taxes?</h2>
-        <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-          This isn&apos;t a sales pitch. It&apos;s a strategic consultation to build your
-          CFO-ready business case. Let&apos;s discuss how our nearshore talent and
-          integrated platform can accelerate your roadmap.
-        </p>
-        <a
-          href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cta-button mt-6"
-        >
-          Book a Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
-        </a>
-      </div>
+      <ValuePropositionBlock
+        pain="CTOs face hidden risks in cost, compliance, and velocity."
+        stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
+        prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
+        proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
+        ctaHref="/comparisons"
+        ctaText="See All Vendor Comparisons"
+      />
     </main>
   );
 }
