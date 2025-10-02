@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { WithTooltip } from '@/components/ui/tooltip';
 import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen, UserX } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
+import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
 
 const faqSchema = {
  "@context": "https://schema.org",
@@ -224,21 +225,14 @@ export default function BiasFreeHiringAxiomCortexPage() {
           </div>
         </section>
 
-        <section className="my-16 border-t border-border pt-12">
-          <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
-          <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
-            <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
-            <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
-            <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
-            <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
-          </ul>
-          <div className="mt-6 text-sm">
-            Related: 
-            <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
-            <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
-            <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
-          </div>
-        </section>
+        <ValuePropositionBlock
+            pain="CTOs face hidden risks in cost, compliance, and velocity."
+            stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
+            prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
+            proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
+            ctaHref="/comparisons"
+            ctaText="See All Vendor Comparisons"
+        />
       </main>
     </>
   );

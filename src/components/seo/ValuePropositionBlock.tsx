@@ -20,7 +20,7 @@ export default function ValuePropositionBlock({
 }: ValuePropositionBlockProps) {
   return (
     <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
-      <div className="space-y-4">
+       <div className="space-y-4">
         <div>
           <h3 className="text-lg font-semibold text-primary">The Pain</h3>
           <p className="text-muted-foreground">{pain}</p>

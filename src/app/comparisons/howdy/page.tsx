@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
 import FurtherReading from '@/components/seo/FurtherReading';
-import SandlerPSP from '@/components/seo/SandlerPSP';
+import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
 
 const pageData = {
   "type": "comparison",
@@ -189,11 +189,11 @@ export default function HowdyComparisonPage() {
             </div>
         </section>
 
-        <SandlerPSP
+        <ValuePropositionBlock
             pain="CTOs face hidden risks in cost, compliance, and velocity."
             stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
             prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
-            proof="40–60% lower TCO vs legacy models. Case studies: Currance, Parsable."
+            proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
             ctaHref="/comparisons"
             ctaText="See All Vendor Comparisons"
         />
