@@ -1,6 +1,6 @@
-
 import withPWA from 'next-pwa';
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -8,8 +8,17 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['cto.teamstation.dev', 'images.unsplash.com', 'picsum.photos', 'teamstation.dev'],
+    unoptimized: true,
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "picsum.photos" },
+      { protocol: "https", hostname: "cto.teamstation.dev" },
+      { protocol: "https", hostname: "teamstation.dev" }
+    ]
   },
+   output: 'standalone',
+   eslint: { ignoreDuringBuilds: process.env.BREAK_GLASS === '1' },
+   typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === '1' },
 };
 
 export default withPWA({
