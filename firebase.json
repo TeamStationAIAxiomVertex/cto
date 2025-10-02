@@ -1,7 +1,9 @@
 {
   "hosting": {
     "source": ".",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "frameworksBackend": {
+      "region": "us-central1"
+    },
     "rewrites": [
       {
         "source": "**",
@@ -15,14 +17,12 @@
   "apphosting": {
     "targets": {
       "web": {
-        "runtime": {
-          "node": "20.19.0"
-        },
-        "buildCommand": "npm ci && npm run build:production",
+        "runtime": { "node": "20.19.0" },
+        "buildCommand": "npm run build:production",
         "runCommand": "npm run start",
         "healthCheck": {
           "path": "/healthz",
-          "timeoutSeconds": 30
+          "timeoutSeconds": 15
         }
       }
     }
