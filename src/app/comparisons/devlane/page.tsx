@@ -1,3 +1,4 @@
+
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -114,3 +115,17 @@ export default function DevlaneComparisonPage() {
     </>
   );
 }
+
+---
+
+## Pain
+CTOs face hidden risks in cost, compliance, and velocity.
+
+## Stakes
+Without addressing these, budgets spiral and projects miss critical deadlines.
+
+## Prescription
+TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO.
+
+## Proof
+40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable).

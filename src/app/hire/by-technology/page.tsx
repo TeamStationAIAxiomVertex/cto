@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane } from 'lucide-react';
 import type { Metadata } from 'next';
 import { techCategories } from '@/lib/tech';
+import FurtherReading from '@/components/seo/FurtherReading';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Developers by Technology | TS AI',
@@ -60,13 +61,7 @@ export default function HireByTechnologyPage() {
         </p>
         <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
+      <FurtherReading />
     </main>
   );
 }
-
----
-
-### Further Reading
-- [CTO Playbook Hub](/playbook/hub)
-- [Research Hub](/research/hub)
-- [Hire Developers in Mexico](/hire/by-country/mexico)

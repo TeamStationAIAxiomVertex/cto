@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { WithTooltip } from '@/components/ui/tooltip';
 import { roleCategories } from '@/lib/roles';
+import FurtherReading from '@/components/seo/FurtherReading';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Role | Staff Augmentation',
@@ -86,13 +87,7 @@ export default function HireByRolePage() {
         </p>
         <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
+      <FurtherReading />
     </main>
   );
 }
-
----
-
-### Further Reading
-- [CTO Playbook Hub](/playbook/hub)
-- [Research Hub](/research/hub)
-- [Hire Developers in Mexico](/hire/by-country/mexico)

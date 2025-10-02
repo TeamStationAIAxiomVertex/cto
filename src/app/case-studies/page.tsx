@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { ArrowRight, Award, AlertTriangle, Shield, CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
+import FurtherReading from '@/components/seo/FurtherReading';
 
 export const metadata: Metadata = {
   title: 'Nearshore IT Staff Augmentation Case Studies',
@@ -78,6 +79,7 @@ export default async function CaseStudiesPage() {
           </div>
         ))}
       </div>
+      <FurtherReading />
     </main>
   );
 }

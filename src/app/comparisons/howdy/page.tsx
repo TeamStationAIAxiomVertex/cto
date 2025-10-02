@@ -1,10 +1,9 @@
 
-
 import { CheckCircle, XCircle, ExternalLink, HelpCircle, UserCheck, ShieldCheck, Scale } from 'lucide-react';
 import Link from 'next/link';
-import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
+import FurtherReading from '@/components/seo/FurtherReading';
 
 const pageData = {
   "type": "comparison",
@@ -184,21 +183,7 @@ export default function HowdyComparisonPage() {
             </div>
         </section>
 
-        <section className="my-16 border-t border-border pt-12">
-            <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
-            <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
-              <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
-              <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
-              <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
-              <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
-            </ul>
-            <div className="mt-6 text-sm">
-              Related: 
-              <Link href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</Link>
-              <Link href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</Link>
-              <Link href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</Link>
-            </div>
-          </section>
+        <FurtherReading />
 
         <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
             <h2 className="text-2xl font-bold text-foreground">Ready for a True Platform Solution?</h2>
