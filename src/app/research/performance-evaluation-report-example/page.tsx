@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { CheckSquare, Square } from 'lucide-react';
+import FurtherReading from '@/components/seo/FurtherReading';
 
 export const metadata: Metadata = {
   title: 'Sample Performance Evaluation Report',
@@ -153,13 +154,7 @@ export default function PerformanceReportExamplePage() {
             <p className="text-xs text-muted-foreground mt-4">Confidential — Client use only. © {new Date().getFullYear()} TeamStation AI™. All rights reserved.</p>
         </footer>
       </div>
+      <FurtherReading />
     </main>
   );
 }
-
----
-
-### Further Reading
-- [CTO Playbook Hub](/playbook/hub)
-- [Research Hub](/research/hub)
-- [Hire Developers in Mexico](/hire/by-country/mexico)
