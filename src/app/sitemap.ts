@@ -9,29 +9,34 @@ import { playbookSlugs } from '@/lib/playbook';
 
 const baseUrl = 'https://cto.teamstation.dev';
 
+// List of core static pages
 const staticPages = [
-  '/',
   '/about',
-  '/comparisons',
   '/faq',
-  '/hire',
-  '/hire/by-country',
-  '/hire/by-role',
-  '/hire/by-team-topologies',
-  '/hire/by-technology',
   '/platform',
-  '/playbook/hub',
   '/pricing',
   '/process',
   '/privacy-policy',
-  '/research/hub',
   '/services/integrated-services',
   '/services/talent-onboarding',
   '/technical-interview-evaluation',
   '/terms-of-service',
   '/trust',
-  '/case-studies',
   '/sitemap'
+];
+
+// List of hub pages that are more important and updated more frequently
+const hubPages = [
+    '/',
+    '/playbook/hub',
+    '/research/hub',
+    '/comparisons',
+    '/case-studies',
+    '/hire',
+    '/hire/by-country',
+    '/hire/by-role',
+    '/hire/by-team-topologies',
+    '/hire/by-technology',
 ];
 
 const researchPages = [
@@ -45,13 +50,31 @@ const researchPages = [
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date().toISOString();
 
+  // Homepage with highest priority
+  const homeEntry: MetadataRoute.Sitemap = [{
+    url: baseUrl,
+    lastModified: now,
+    changeFrequency: 'weekly',
+    priority: 1.0,
+  }];
+
+  // Hub pages with high priority
+  const hubEntries = hubPages.filter(p => p !== '/').map((path) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
+  // Other static pages
   const staticEntries = staticPages.map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: path === '/' ? 1.0 : 0.8,
+    priority: 0.8,
   }));
   
+  // Research content
   const researchEntries = researchPages.map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: now,
@@ -59,6 +82,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Playbook articles
   const playbookEntries = playbookSlugs.map((slug) => ({
     url: `${baseUrl}/playbook/${slug}`,
     lastModified: now,
@@ -66,6 +90,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Comparison pages
   const comparisonEntries = comparisonPages.map((page) => ({
     url: `${baseUrl}/comparisons/${page.slug}`,
     lastModified: now,
@@ -73,6 +98,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Programmatic "Hire" pages - granular, so lower priority
   const hireByCountryEntries = countries.flatMap((c) => {
     const base = {
         url: `${baseUrl}/hire/by-country/${c.slug}`,
@@ -105,6 +131,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
+  // Case studies
   const caseStudies = await getAllCaseStudies();
   const caseStudyEntries = caseStudies.map((study) => ({
     url: `${baseUrl}/case-studies/${study.slug}`,
@@ -114,6 +141,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   return [
+    ...homeEntry,
+    ...hubEntries,
     ...staticEntries,
     ...researchEntries,
     ...playbookEntries,
