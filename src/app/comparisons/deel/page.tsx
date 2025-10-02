@@ -3,7 +3,7 @@ import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck, ExternalLink
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
-import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
+import { DecisionCard } from '@/components/ui/DecisionCard';
 import FurtherReading from '@/components/seo/FurtherReading';
 
 export const metadata: Metadata = {
@@ -106,13 +106,16 @@ export default function DeelComparisonPage() {
         </p>
         <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
       </div>
-      <ValuePropositionBlock
-        pain="CTOs face hidden risks in cost, compliance, and velocity."
-        stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
-        prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
-        proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
-        ctaHref="/comparisons"
-        ctaText="See All Vendor Comparisons"
+      <DecisionCard
+        problem="CTOs face hidden risks in cost, compliance, and velocity when using legacy staffing models."
+        stakes="Without addressing these fundamental issues, budgets spiral, projects miss critical deadlines, and security incidents become inevitable."
+        approach="TeamStation AI's integrated platform delivers pre-vetted LATAM talent, audit-ready compliance with secure devices, and a predictable Total Cost of Ownership."
+        evidence="On average, clients see a 40–60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
+        related={[
+          { label: "CTO Playbook", href: "/playbook/hub" },
+          { label: "Our Vetting Process", href: "/technical-interview-evaluation" },
+          { label: "Hire in Mexico", href: "/hire/by-country/mexico" }
+        ]}
       />
       <FurtherReading comparison="deel" />
     </main>
