@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { ArrowRight, Building, Check, Languages, School, UserCheck } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -23,6 +24,11 @@ export default function HireByCountryPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           You're here because the 12-hour lag with your offshore team is killing your velocity. A simple question takes a full day to answer. Our nearshore model gives you access to elite talent in your time zone, enabling the real-time collaboration that agile development demands.
       </p>
+       <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+            <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+            <Link href="/research/hub" className="text-primary hover:underline">Our Research</Link>
+        </nav>
       </header>
 
        <div className="my-16 rounded-lg border bg-card p-8 md:p-12 shadow-lg">
@@ -58,7 +64,7 @@ export default function HireByCountryPage() {
         <h2 className="text-center text-3xl font-bold">Explore Our Premier LATAM Engineering Hubs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {countries.map((country) => (
-                <div key={country.slug} className="group flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
+                <div key={country.slug} className="group relative flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
                     <p className="text-sm font-semibold text-primary">{country.pain}</p>
                     <div className="mt-3 flex items-center gap-3">
                         <h3 className="text-xl font-bold text-foreground">{country.name}</h3>

@@ -85,6 +85,11 @@ export default function IntegratedServicesPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           TeamStation AI is not a collection of services; it's a single, unified platform that bundles everything you need to hire, run, and scale an elite nearshore engineering team. We replace multi-vendor complexity with one accountable partner.
         </p>
+         <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+            <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+            <Link href="/hire" className="text-primary hover:underline">Hire Talent</Link>
+        </nav>
       </header>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 my-16 gap-8">

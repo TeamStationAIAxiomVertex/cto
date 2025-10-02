@@ -51,6 +51,11 @@ export default function OnboardingPage() {
        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
         A slow or insecure onboarding process is a drain on productivity and a major security risk. Our evidence-backed onboarding system ensures every new team member is compliant, secure, and ready to contribute from day one.
       </p>
+       <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+            <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+            <Link href="/hire" className="text-primary hover:underline">Hire Talent</Link>
+        </nav>
       </header>
 
       <div className="grid md:grid-cols-2 my-16 gap-8">
