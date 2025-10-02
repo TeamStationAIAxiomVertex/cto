@@ -1,3 +1,4 @@
+
 // NO 'use client' — Footer stays a Server Component
 import Link from 'next/link';
 import type { ReactNode } from 'react';

@@ -377,7 +377,7 @@ const SecurityContent = () => (
                 <h4 className="font-semibold text-foreground">Core Skills</h4>
                 <div className="flex flex-wrap gap-2 mt-2">
                     {['Threat modeling', 'Secure SDLC', 'SAST/DAST', 'Secrets management'].map(skill => (
-                        <span key={skill} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{skill}</span>
+                        <span key={skill} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium">{skill}</span>
                     ))}
                 </div>
             </div>
@@ -385,7 +385,7 @@ const SecurityContent = () => (
                 <h4 className="font-semibold text-foreground">Key Technologies</h4>
                  <div className="flex flex-wrap gap-2 mt-2">
                     {['CodeQL', 'Snyk', 'SonarQube', 'OWASP ZAP', 'Vault', 'SOPS'].map(tech => (
-                        <span key={tech} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{tech}</span>
+                        <span key={tech} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium">{tech}</span>
                     ))}
                 </div>
             </div>
@@ -407,7 +407,7 @@ const SecurityContent = () => (
                     <h4 className="font-semibold text-foreground">Key Technologies</h4>
                     <div className="flex flex-wrap gap-2 mt-2">
                         {['Okta', 'Auth0', 'OIDC/SAML', 'CrowdStrike', 'AWS IAM'].map(tech => (
-                            <span key={tech} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{tech}</span>
+                            <span key={tech} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium">{tech}</span>
                         ))}
                     </div>
                 </div>
@@ -427,7 +427,7 @@ const SecurityContent = () => (
                     <h4 className="font-semibold text-foreground">Key Frameworks</h4>
                     <div className="flex flex-wrap gap-2 mt-2">
                         {['SOC 2', 'ISO 27001', 'HIPAA', 'PCI DSS', 'GDPR/CCPA'].map(tech => (
-                            <span key={tech} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{tech}</span>
+                            <span key={tech} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium">{tech}</span>
                         ))}
                     </div>
                 </div>
@@ -520,7 +520,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
                       <div className="mt-4 border-t pt-4">
                         <h4 className="font-semibold text-foreground text-sm flex items-center gap-2"><Key className="h-4 w-4"/>Relevant Roles & Skills</h4>
                         <div className="mt-2 flex flex-wrap gap-2">
-                          {problem.roles.map(r => <span key={r} className="text-xs font-medium bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{r}</span>)}
+                          {problem.roles.map(r => <span key={r} className="text-xs font-medium bg-primary/20 text-primary px-2 py-1 rounded-full">{r}</span>)}
                           {problem.skills.map(s => <span key={s} className="text-xs font-medium bg-background px-2 py-1 rounded-full">{s}</span>)}
                         </div>
                       </div>
@@ -543,7 +543,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
                       <h3 className='font-semibold text-foreground'>Skills</h3>
                       <div className="flex flex-wrap gap-2 mt-2">
                           {skills.map(skill => (
-                              <span key={skill} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+                              <span key={skill} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium">
                                   {skill.includes('IaC') ? <WithTooltip content="Infrastructure as Code: Managing infrastructure through code instead of manual processes."><span className="border-b border-dashed">IaC</span></WithTooltip> : 
                                   skill.includes('SLO/SLI') ? <WithTooltip content="Service Level Objectives/Indicators: A framework for defining and measuring reliability."><span className="border-b border-dashed">SLO/SLI/error budgets</span></WithTooltip> :
                                   skill.includes('ELT') ? <WithTooltip content="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation."><span className="border-b border-dashed">ELT</span></WithTooltip> :
@@ -557,7 +557,7 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
                       <h3 className='font-semibold text-foreground'>Technologies & Libraries</h3>
                       <div className="flex flex-wrap gap-2 mt-2 items-center">
                           {tech.map((t, i) => (
-                              <Link href={`/hire/by-technology/${t.slug}`} key={t.slug} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors">
+                              <Link href={`/hire/by-technology/${t.slug}`} key={t.slug} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium hover:bg-primary/30 transition-colors">
                                   {t.name}
                               </Link>
                           ))}

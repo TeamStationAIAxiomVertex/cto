@@ -154,7 +154,7 @@ export default function PlatformPage() {
                         <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Key Technologies:</h4>
                         <div className="flex flex-wrap gap-2 mt-2">
                             {layer.tech.map(t => (
-                                <span key={t} className="text-xs font-medium bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{t}</span>
+                                <span key={t} className="text-xs font-medium bg-primary/20 text-primary px-2 py-1 rounded-full">{t}</span>
                             ))}
                         </div>
                     </div>

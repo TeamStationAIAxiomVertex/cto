@@ -39,7 +39,7 @@ export default function HireByTechnologyPage() {
             </div>
             <div className="flex flex-wrap gap-2 my-4">
               {category.tech.map(tech => (
-                  <Link href={`/hire/by-technology/${tech.slug}`} key={tech.slug} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors">
+                  <Link href={`/hire/by-technology/${tech.slug}`} key={tech.slug} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium hover:bg-primary/30 transition-colors">
                     {tech.name}
                   </Link>
                 )
