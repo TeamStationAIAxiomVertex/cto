@@ -86,13 +86,17 @@ export default function HireByCountryPage() {
         </p>
         <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
+       <section className="my-16 border-t border-border pt-12">
+        <h2 className="text-2xl font-bold">Why It Matters</h2>
+        <p className="mt-2 text-muted-foreground">
+          CTOs don’t buy marketing—they buy measurable velocity, compliance, and secure outcomes.
+        </p>
+        <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
+          <li><Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link></li>
+          <li><Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link></li>
+          <li><Link href="/hire/by-country/mexico" className="text-primary hover:underline">Hire in Mexico</Link></li>
+        </ul>
+      </section>
     </main>
   );
 }
-
----
-
-### Further Reading
-- [CTO Playbook Hub](/playbook/hub)
-- [Research Hub](/research/hub)
-- [Hire Developers in Mexico](/hire/by-country/mexico)
