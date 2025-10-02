@@ -1,8 +1,11 @@
+import Link from 'next/link';
+
 export default function NotFound() {
   return (
-    <main style={{ padding: "2rem", textAlign: "center" }}>
-      <h1>⚠️ Page temporarily unavailable</h1>
-      <p>Our team is updating this content. Please try again later.</p>
-    </main>
+    <div className="flex flex-col items-center justify-center min-h-screen text-center p-8">
+      <h1 className="text-4xl font-bold mb-4">404 – Page Not Found</h1>
+      <p className="mb-6">The page you’re looking for doesn’t exist. Let’s get you back on track.</p>
+      <a href="/" className="text-blue-600 underline">Go Home</a>
+    </div>
   );
 }

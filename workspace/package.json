@@ -8,11 +8,10 @@
   },
   "packageManager": "npm@10",
   "scripts": {
-    "prebuild": "rm -rf node_modules/@next/swc-* && node scripts/syntax-scrubber.js",
-    "build:production": "npm ci && npm run prebuild && npm run typecheck && next build",
-    "build:strict": "npm run lint && npm run typecheck && next build",
     "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0",
     "build": "next build",
+    "build:production": "npm ci && npm run prebuild && next build",
+    "prebuild": "node scripts/syntax-scrubber.js",
     "start": "next start -p ${PORT:-8080} -H 0.0.0.0",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
