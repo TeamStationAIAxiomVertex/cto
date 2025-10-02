@@ -30,7 +30,38 @@ const comparisonPoints = {
         teamstation: "Our all-inclusive <a href='/pricing' class='text-primary hover:underline'>pricing</a> provides a predictable, CFO-ready TCO that is often 40-60% lower than the fully-loaded cost of other models.",
         proof: "40-60% Lower TCO"
     }
-}
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Why is TeamStation AI a better alternative to BairesDev for CTOs?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "TeamStation AI provides a fully integrated platform that includes scientific vetting (Axiom Cortex™), secure MDM-managed devices, and bundled EOR/compliance under a single SLA. This de-risks hiring and provides a lower, predictable TCO compared to BairesDev's traditional staff augmentation model, which leaves operational and security burdens on the client."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How does your 'Axiom Cortex' vetting compare to BairesDev's 'Top 1%' claim?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "BairesDev's 'Top 1%' is a marketing claim based on resume screening. Our Axiom Cortex™ is a peer-reviewed cognitive AI engine that provides scientific, evidence-based proof of a candidate's problem-solving ability and 'mental shape,' reducing mis-hire risk by over 90%. We provide data, not just claims."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the Total Cost of Ownership (TCO) difference?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "BairesDev's hourly rates do not include the 'hidden costs' of EOR, IT, legal, and security management that you must handle internally. TeamStation AI's all-inclusive pricing provides a transparent and predictable TCO that is often 40-60% lower than the fully-loaded cost of a traditional model."
+            }
+        }
+    ]
+};
 
 export default function BairesDevComparisonPage() {
   const siteUrl = 'https://cto.teamstation.dev';
@@ -46,6 +77,7 @@ export default function BairesDevComparisonPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={faqSchema} />
       <main className="container py-12">
          <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>BairesDev Alternative</span>

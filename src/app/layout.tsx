@@ -46,9 +46,8 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  // ✅ U.S. Geo Targeting + Hreflang
   alternates: {
-    canonical: 'https://teamstation.dev/cto',
+    canonical: 'https://cto.teamstation.dev',
     languages: {
       'en-US': 'https://cto.teamstation.dev',
     },
@@ -65,8 +64,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta name="theme-color" content="#3F83F8" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <link rel="apple-touch-icon" sizes="512x512" href="/icons/maskable-icon-512x512.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3F83F8" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

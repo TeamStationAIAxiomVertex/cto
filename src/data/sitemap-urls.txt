@@ -70,7 +70,6 @@ https://cto.teamstation.dev/hire/by-country/colombia/vue
 https://cto.teamstation.dev/hire/by-country/costa-rica
 https://cto.teamstation.dev/hire/by-country/costa-rica/angular
 https://cto.teamstation.dev/hire/by-country/costa-rica/go
-https://cto.teamstation.dev/hire/by-country/costa-rica/guatemala
 https://cto.teamstation.dev/hire/by-country/costa-rica/java
 https://cto.teamstation.dev/hire/by-country/costa-rica/net
 https://cto.teamstation.dev/hire/by-country/costa-rica/nextjs
@@ -273,3 +272,4 @@ https://cto.teamstation.dev/technical-interview-evaluation
 https://cto.teamstation.dev/trust
 https://cto.teamstation.dev/privacy-policy
 https://cto.teamstation.dev/terms-of-service
+https://cto.teamstation.dev/comparisons/faq
