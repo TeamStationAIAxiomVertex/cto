@@ -135,7 +135,7 @@ export default function BuildVsBuyPage() {
                   <div className="bg-background p-6 rounded-lg border border-border/50">
                       <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Playbook's Purpose</h3>
                       <div className="mt-2 text-muted-foreground">
-                          <p>This guide is your strategic ammunition. It is a CFO-ready framework, built on the Sandler methodology, to move the conversation beyond misleading salary comparisons to the only metric that matters: <strong>Total Cost of Ownership (TCO)</strong>. We will diagnose the pain of the "Build" model, quantify its true cost, and present the data-driven case for the "Buy" model as a faster, safer, and more capital-efficient path to scaling your engineering team.</p>
+                          <p>This guide is your strategic ammunition. It is a CFO-ready framework to move the conversation beyond misleading salary comparisons to the only metric that matters: <strong>Total Cost of Ownership (TCO)</strong>. We will diagnose the pain of the "Build" model, quantify its true cost, and present the data-driven case for the "Buy" model as a faster, safer, and more capital-efficient path to scaling your engineering team.</p>
                           <WithTooltip label="Includes salary plus all direct and indirect costs like hiring, legal, IT, and management overhead."><span className="border-b border-dashed">Total Cost of Ownership</span></WithTooltip>
                       </div>
                   </div>
@@ -204,23 +204,7 @@ export default function BuildVsBuyPage() {
               </div>
           </div>
       </section>
-
-      <section className="my-16 border-t border-border pt-12">
-        <h2 className="text-2xl font-bold">The Sandler PSP Lens</h2>
-        <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
-          <li><strong>Pain:</strong> Legacy/offshore vendors slow velocity, increase turnover, and hide costs.</li>
-          <li><strong>Stakes:</strong> Every failed sprint = CFO trust erodes and roadmap slips.</li>
-          <li><strong>Prescription:</strong> TeamStation AI delivers daylight pods, secure devices, and Axiom Cortex™ vetting.</li>
-          <li><strong>Proof:</strong> 95%+ retention and measurable sprint velocity across live clients.</li>
-        </ul>
-        <div className="mt-6 text-sm">
-          Related: 
-          <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
-          <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
-          <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
-        </div>
-      </section>
-    </main>
+      </main>
     </>
   );
 }

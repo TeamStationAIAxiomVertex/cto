@@ -1,7 +1,7 @@
-// This component is deprecated. Use ValuePropositionBlock instead.
+
 import Link from "next/link";
 
-interface SandlerPSPProps {
+interface ValuePropositionBlockProps {
   pain: string;
   stakes: string;
   prescription: string;
@@ -10,37 +10,28 @@ interface SandlerPSPProps {
   ctaText?: string;
 }
 
-export default function SandlerPSP({
+export default function ValuePropositionBlock({
   pain,
   stakes,
   prescription,
   proof,
   ctaHref = "/playbook/hub",
   ctaText = "Explore the CTO Playbook",
-}: SandlerPSPProps) {
+}: ValuePropositionBlockProps) {
   return (
     <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
-      <h2 className="text-2xl font-bold text-primary">Sandler PSP Framework</h2>
-      <div className="mt-6 space-y-6">
-        
+      <div className="space-y-6">
         <div>
-          <h3 className="font-semibold text-foreground">Pain</h3>
-          <p className="text-muted-foreground">{pain}</p>
+          <p className="font-semibold text-foreground">{pain}</p>
         </div>
-        
         <div>
-          <h3 className="font-semibold text-foreground">Stakes</h3>
           <p className="text-muted-foreground">{stakes}</p>
         </div>
-        
         <div>
-          <h3 className="font-semibold text-foreground">Prescription</h3>
           <p className="text-muted-foreground">{prescription}</p>
         </div>
-        
         <div>
-          <h3 className="font-semibold text-foreground">Proof</h3>
-          <p className="text-muted-foreground">{proof}</p>
+          <p className="text-muted-foreground font-bold">{proof}</p>
         </div>
       </div>
 

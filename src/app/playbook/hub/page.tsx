@@ -153,7 +153,7 @@ export default function PlaybookHubPage() {
           <h2 className="text-center text-4xl font-bold text-foreground">
               Key Frameworks & Mental Models
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">Core concepts from the Sandler selling system, adapted for CTOs. Each card isolates a common pain point, presents our solution, and offers quantifiable proof.</p>
+          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">Core concepts from our methodology, adapted for CTOs. Each card isolates a common pain point, presents our solution, and offers quantifiable proof.</p>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {sandlerCards.map((card) => (
               <div key={card.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
@@ -201,17 +201,3 @@ export default function PlaybookHubPage() {
     </main>
   );
 }
-
----
-
-## Pain
-CTOs face hidden risks in cost, compliance, and velocity.
-
-## Stakes
-Without addressing these, budgets spiral and projects miss critical deadlines.
-
-## Prescription
-TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO.
-
-## Proof
-40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable).

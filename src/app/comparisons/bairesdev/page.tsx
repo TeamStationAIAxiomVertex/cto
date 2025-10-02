@@ -5,7 +5,7 @@ import { WithTooltip } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
 import FurtherReading from '@/components/seo/FurtherReading';
-import SandlerPSP from '@/components/seo/SandlerPSP';
+import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
 
 export const metadata: Metadata = {
   title: 'BairesDev Alternative: TeamStation AI vs. BairesDev (2024)',
@@ -148,7 +148,7 @@ export default function BairesDevComparisonPage() {
           </p>
           <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
         </div>
-        <SandlerPSP
+        <ValuePropositionBlock
             pain="CTOs face hidden risks in cost, compliance, and velocity."
             stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
             prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
