@@ -8,9 +8,14 @@
   },
   "packageManager": "npm@10",
   "scripts": {
-    "dev": "next dev",
+    "prebuild": "node scripts/syntax-scrubber.js",
+    "build:production": "npm ci && npm run typecheck && next build",
+    "build:strict": "npm run lint && npm run typecheck && next build",
+    "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0",
     "build": "next build",
-    "start": "next start -p ${PORT:-8080} -H 0.0.0.0"
+    "start": "next start -p ${PORT:-8080} -H 0.0.0.0",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
