@@ -1,26 +1,31 @@
 {
-  "name": "TeamStation AI CTO Playbook",
-  "short_name": "TSA Playbook",
-  "description": "The definitive guide for CTOs on nearshore software development, LATAM engineering, AI-driven hiring, and vendor choices.",
+  "name": "CTO Playbook | TeamStation AI",
+  "short_name": "CTO Playbook",
+  "description": "The CTO’s guide to nearshore engineering, AI-driven hiring, and vendor comparisons from TeamStation AI.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#0a192f",
+  "orientation": "portrait",
+  "background_color": "#0B1629",
   "theme_color": "#3F83F8",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
+      "src": "/icons/maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
