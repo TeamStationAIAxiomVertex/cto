@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import { CheckCircle, Trophy, Star, BookOpen, Beaker, GitCommit, Search, Users, BrainCircuit, FileCheck, Laptop, Gauge, ShieldCheck, FileText, Building, Scale, ArrowRight } from "lucide-react";
+import { CheckCircle, Trophy, Star, BookOpen, Beaker, GitCommit, Search, Users, BrainCircuit, FileCheck, Laptop, Gauge, ShieldCheck, FileText, Building, Scale, ArrowRight, Server, Database, Share2, Layers } from "lucide-react";
 import type { Metadata } from 'next';
 import { WithTooltip } from '@/components/client/tooltip';
 import { DisclosureDrawer } from "@/components/DisclosureDrawer";
@@ -77,6 +77,45 @@ const guardrails = [
     { title: "Offices & Workspaces", owner: "TeamStation AI", details: ["Desks/meeting rooms across 45+ hubs", "Secure Wi-Fi, badging policies", "Provisioning SLA: ≤ 3 business days"] },
 ];
 
+const architectureLayers = [
+    {
+        icon: <Users className="h-8 w-8 text-primary"/>,
+        title: "User Layer",
+        description: "CTOs, CFOs, Talent Ops, and Engineers access the web application securely over HTTPS.",
+        tech: ["Browser", "Client App"]
+    },
+    {
+        icon: <Layers className="h-8 w-8 text-primary"/>,
+        title: "Application Layer",
+        description: "Handles all business logic, routing, and API orchestration for workflows like requisitions, candidate approvals, and onboarding.",
+        tech: ["PHP 8.2", "Laravel 11", "DigitalOcean Droplets"]
+    },
+    {
+        icon: <Database className="h-8 w-8 text-primary"/>,
+        title: "Database Layer",
+        description: "Stores all structured data for users, candidates, contracts, and compliance records with durability and scalability.",
+        tech: ["MariaDB", "Replication", "Daily Dumps"]
+    },
+    {
+        icon: <BrainCircuit className="h-8 w-8 text-primary"/>,
+        title: "AI Service Layer",
+        description: "Our proprietary AI engines, called asynchronously from the backend to perform cognitive evaluations and candidate matching.",
+        tech: ["Axiom Cortex™", "Nebula Neural Search™", "Service Endpoints"]
+    },
+    {
+        icon: <Share2 className="h-8 w-8 text-primary"/>,
+        title: "Integration Layer",
+        description: "Connects the platform to external systems for seamless operations and workflow automation.",
+        tech: ["Slack", "GitHub", "Jira", "KYC/KYB APIs", "Payroll APIs", "MDM APIs"]
+    },
+    {
+        icon: <Server className="h-8 w-8 text-primary"/>,
+        title: "Infrastructure & Ops",
+        description: "The foundation of the platform, built for horizontal scaling, high availability, and disaster recovery on DigitalOcean.",
+        tech: ["Horizontal Scaling", "DB Replication", "Snapshots & Backups"]
+    }
+];
+
 
 export default function PlatformPage() {
   return (
@@ -99,6 +138,32 @@ export default function PlatformPage() {
             </Link>
         </div>
       </header>
+
+       <section className="my-24">
+        <h2 className="text-center text-4xl font-bold text-foreground">Platform Architecture</h2>
+        <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
+            A high-level look at the robust, scalable, and secure technology stack that powers the Nearshore IT Co-Pilot™ platform.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {architectureLayers.map((layer) => (
+                <div key={layer.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+                    <div className="flex items-center gap-4">
+                        {layer.icon}
+                        <h3 className="text-xl font-semibold text-foreground">{layer.title}</h3>
+                    </div>
+                    <p className="mt-4 text-sm text-muted-foreground flex-grow">{layer.description}</p>
+                    <div className="mt-4 pt-4 border-t border-border/50">
+                        <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Key Technologies:</h4>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                            {layer.tech.map(t => (
+                                <span key={t} className="text-xs font-medium bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{t}</span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+       </section>
 
        <section className="my-16 max-w-6xl mx-auto">
          <h2 className="text-center text-4xl font-bold text-foreground">What’s Included in Your TeamStation Plan</h2>
