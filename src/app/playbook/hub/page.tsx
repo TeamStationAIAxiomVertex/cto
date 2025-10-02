@@ -112,6 +112,11 @@ export default function PlaybookHubPage() {
           misleading hourly rates and build a CFO-ready, data-driven case for a faster, safer, and more cost-effective
           engineering strategy.
         </p>
+        <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/research/hub" className="text-primary hover:underline">Our Research</Link>
+            <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+            <Link href="/hire" className="text-primary hover:underline">Hire Talent</Link>
+        </nav>
       </header>
 
       <section className="my-16">

@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { ArrowRight, Users, Scale, ShieldCheck, Briefcase, ExternalLink, Network } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -73,6 +74,11 @@ export default function ComparisonsPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           Most nearshore vendors sell a single, flawed metric: a low hourly rate. This is a trap that leads to higher costs, slower delivery, and massive risk. We don't sell hours; we provide a complete, integrated platform that delivers predictable outcomes. Here's how we compare to the broken models.
         </p>
+         <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+            <Link href="/research/hub" className="text-primary hover:underline">Our Research</Link>
+            <Link href="/hire" className="text-primary hover:underline">Hire Talent</Link>
+        </nav>
       </header>
 
       <section className="my-16">

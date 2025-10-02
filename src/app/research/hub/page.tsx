@@ -86,6 +86,11 @@ export default function ResearchHubPage() {
             All papers are indexed on <a href="https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a> 
             and published on <a href="https://papers.ssrn.com/" target="_blank" rel="noopener noreferrer">SSRN</a>.
           </p>
+           <nav className="not-prose mt-6 mb-12 flex justify-center gap-4 text-sm">
+                <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+                <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+                <Link href="/hire" className="text-primary hover:underline">Hire Talent</Link>
+            </nav>
 
           <ul className="list-none p-0 space-y-6">
             {papers.map((paper) => (

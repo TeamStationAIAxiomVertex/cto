@@ -108,6 +108,11 @@ export default function NewGenNearshoreComparisonPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           Evidence, not theater. Day-one security, daylight shipping.
         </p>
+         <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+            <Link href="/research/hub" className="text-primary hover:underline">Our Research</Link>
+            <Link href="/hire" className="text-primary hover:underline">Hire Talent</Link>
+        </nav>
       </header>
 
       {/* Client-only island */}

@@ -159,6 +159,14 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                   </header>
 
                   <article className="prose prose-lg dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+                  <nav className="border-t border-border pt-8 mt-12 text-sm">
+                        <h3 className="font-bold text-lg text-foreground">Explore further</h3>
+                        <div className="flex flex-wrap gap-4 mt-4">
+                            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+                            <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+                            <Link href="/hire" className="text-primary hover:underline">Hire Nearshore Talent</Link>
+                        </div>
+                    </nav>
 
               </div>
 

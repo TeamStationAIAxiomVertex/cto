@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -27,6 +28,11 @@ export default function HireByRolePage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             You wouldn't hire a cardiologist to perform brain surgery. Stop searching for generic developers. We provide elite, pre-vetted LATAM talent matched to the specific, high-stakes competencies your business demands.
         </p>
+         <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+            <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+            <Link href="/hire/by-technology" className="text-primary hover:underline">Hire by Technology</Link>
+        </nav>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
@@ -76,7 +82,7 @@ export default function HireByRolePage() {
        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Ready to build your team with confidence?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-            Let's discuss your specific needs. In a 15-minute call, we can map your roles to our evaluation process and show you how we de-risk your hiring.
+            Let's discuss your specific needs. In 15 minutes, we can map your roles to our evaluation process and show you how we de-risk your hiring.
         </p>
         <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>

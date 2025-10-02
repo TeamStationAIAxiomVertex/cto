@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { ArrowRight, Award, AlertTriangle, Shield, CheckCircle } from 'lucide-react';
@@ -21,6 +22,11 @@ export default async function CaseStudiesPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           From resolving critical SSO failures for enterprise clients to scaling monolithic platforms for 15,000+ users, our nearshore squads deliver results. Here’s the evidence.
         </p>
+         <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+            <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+            <Link href="/hire" className="text-primary hover:underline">Hire Talent</Link>
+        </nav>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">

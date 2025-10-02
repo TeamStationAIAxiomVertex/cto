@@ -1,3 +1,4 @@
+
 import { FileCheck, Laptop, Users, Gauge, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -89,9 +90,9 @@ export default function OnboardingPage() {
           CTOs don’t buy marketing—they buy measurable velocity, compliance, and secure outcomes.
         </p>
         <ul className="list-disc ml-6 mt-4 space-y-2 text-muted-foreground">
-          <li><a href="/playbook" className="text-primary hover:underline">CTO Playbook</a></li>
-          <li><a href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</a></li>
-          <li><a href="/hire/by-country/mexico" className="text-primary hover:underline">Hire in Mexico</a></li>
+          <li><Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link></li>
+          <li><Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link></li>
+          <li><Link href="/hire/by-country/mexico" className="text-primary hover:underline">Hire in Mexico</Link></li>
         </ul>
       </section>
     </main>

@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 import Link from "next/link";
@@ -108,9 +109,9 @@ export default function ComparisonFAQPage() {
         </ul>
         <div className="mt-6 text-sm">
           Related: 
-          <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
-          <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
-          <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
+          <Link href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</Link>
+          <Link href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</Link>
+          <Link href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</Link>
         </div>
       </section>
     </main>

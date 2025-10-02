@@ -51,11 +51,16 @@ export default function HirePage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           You're here because a generic "developer" isn't enough. You have a critical, high-stakes role to fill, and a mis-hire could cost you months. Our integrated platform doesn't just find candidates—it provides scientific evidence of their ability to solve your specific problems, so you can build with confidence.
         </p>
+         <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+            <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+            <Link href="/research/hub" className="text-primary hover:underline">Our Research</Link>
+        </nav>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
         {hireOptions.map((option) => (
-          <div key={option.href} className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
+          <div key={option.href} className="group relative flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
             <p className="text-sm font-semibold text-primary">{option.pain}</p>
             <div className='flex items-center gap-3 mt-3'>
               {option.icon}

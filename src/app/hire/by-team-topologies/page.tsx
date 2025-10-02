@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { ArrowRight, Zap, Users, Shield, Layers, BrainCircuit, CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -67,6 +68,11 @@ export default function TeamTopologiesPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
          Your organizational structure is either an accelerator or an anchor. For CTOs of scaling companies, random staff augmentation creates chaos. We provide what others can't: strategically designed LATAM engineering teams, built with scientific precision and managed with absolute control through our platform.
         </p>
+         <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+            <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+            <Link href="/research/hub" className="text-primary hover:underline">Our Research</Link>
+        </nav>
       </header>
 
       <section className="my-24">

@@ -5,8 +5,7 @@ import { roleCategories } from '@/lib/roles';
 import { techCategories } from '@/lib/tech';
 import { getAllCaseStudies } from '@/lib/case-studies';
 import { comparisonPages } from '@/lib/comparisonPages';
-import { getPlaybookBySlug, getAllPlaybookSlugs } from '@/lib/playbook';
-import { getResearchBySlug, getAllResearchSlugs } from '@/lib/research';
+import { getAllPlaybookSlugs } from '@/lib/playbook';
 
 const baseUrl = 'https://cto.teamstation.dev';
 
@@ -49,32 +48,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.3,
   }));
 
-  // 2. Dynamic Content (with lastModified from file system)
   const playbookSlugs = await getAllPlaybookSlugs();
-  const playbookEntries = await Promise.all(
-      playbookSlugs.map(async (slug) => {
-          const page = await getPlaybookBySlug(slug);
-          return {
-              url: `${baseUrl}/playbook/${slug}`,
-              lastModified: page?.lastModified || now,
-              changeFrequency: 'monthly' as const,
-              priority: 0.7,
-          };
-      })
-  );
+  const playbookEntries = playbookSlugs.map(slug => ({
+    url: `${baseUrl}/playbook/${slug}`,
+    lastModified: now, // Placeholder, ideally from file stats
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
-  const researchSlugs = await getAllResearchSlugs();
-  const researchEntries = await Promise.all(
-      researchSlugs.map(async (slug) => {
-          const page = await getResearchBySlug(slug);
-          return {
-              url: `${baseUrl}/research/${slug}`,
-              lastModified: page?.lastModified || now,
-              changeFrequency: 'monthly' as const,
-              priority: 0.7,
-          };
-      })
-  );
+  const researchEntries = [
+    '/research/axiom-cortex-scientific-report',
+    '/research/framework-for-measuring-capacity',
+    '/research/heuristically-trained-ai',
+    '/research/performance-metrics-in-ai-age',
+    '/research/performance-evaluation-report-example',
+    '/research/technical-talent-evaluation-system'
+  ].map(path => ({
+    url: `${baseUrl}${path}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
 
   const caseStudies = await getAllCaseStudies();
   const caseStudyEntries = caseStudies.map((study) => ({
@@ -84,7 +79,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // 3. Programmatic Pages (SEO Landing Pages)
   const comparisonEntries = comparisonPages.map((page) => ({
     url: `${baseUrl}/comparisons/${page.slug}`,
     lastModified: now,
@@ -124,7 +118,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
-  // Combine all entries
   return [
     ...homeEntry,
     ...hubPages,

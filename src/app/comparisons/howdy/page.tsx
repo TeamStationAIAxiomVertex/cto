@@ -1,4 +1,5 @@
 
+
 import { CheckCircle, XCircle, ExternalLink, HelpCircle, UserCheck, ShieldCheck, Scale } from 'lucide-react';
 import Link from 'next/link';
 import { WithTooltip } from '@/components/ui/tooltip';
@@ -129,6 +130,11 @@ export default function HowdyComparisonPage() {
         <header className="my-8 text-center">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{h1}</h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: intro }}></p>
+             <nav className="mt-6 flex justify-center gap-4 text-sm">
+                <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+                <Link href="/research/hub" className="text-primary hover:underline">Our Research</Link>
+                <Link href="/hire" className="text-primary hover:underline">Hire Talent</Link>
+            </nav>
         </header>
 
         <section className="my-24">
@@ -188,9 +194,9 @@ export default function HowdyComparisonPage() {
             </ul>
             <div className="mt-6 text-sm">
               Related: 
-              <a href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</a>
-              <a href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</a>
-              <a href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</a>
+              <Link href="/playbook" className="text-primary hover:underline ml-2">CTO Playbook</Link>
+              <Link href="/comparisons" className="text-primary hover:underline ml-2">Comparisons Hub</Link>
+              <Link href="/hire/by-country/mexico" className="text-primary hover:underline ml-2">Hire in Mexico</Link>
             </div>
           </section>
 

@@ -1,3 +1,4 @@
+
 // NOTE: this file is a Server Component (no 'use client')
 import 'server-only';
 
@@ -5,6 +6,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DollarSign, GitCompare, Layers, ArrowRight } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 // Load client-only widget as an island.
 const ComparisonWidget = dynamic(() => import('@/components/ComparisonWidget'),
@@ -82,10 +84,7 @@ export default function NewGenNearshoreComparisonPage() {
 
   return (
     <main className="container max-w-7xl py-12">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={faqSchema} />
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">
           Home
@@ -104,6 +103,11 @@ export default function NewGenNearshoreComparisonPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           Evidence, not theater. Day-one security, daylight shipping.
         </p>
+         <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+            <Link href="/research/hub" className="text-primary hover:underline">Our Research</Link>
+            <Link href="/hire" className="text-primary hover:underline">Hire Talent</Link>
+        </nav>
       </header>
 
       {/* Client-only island */}

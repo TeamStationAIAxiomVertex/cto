@@ -55,6 +55,11 @@ export default function PerformanceReportExamplePage() {
             <div className="mt-4 text-muted-foreground max-w-2xl mx-auto space-y-4 text-sm">
               <p>Thanks for taking a few minutes to share how Jorge’s first month landed on your side. The aim is simple: capture what actually happened during onboarding and turn it into a practical next‑30‑days plan—no busywork, just useful signal.</p>
             </div>
+             <nav className="mt-6 flex justify-center gap-4 text-sm">
+                <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+                <Link href="/research/hub" className="text-primary hover:underline">Research Hub</Link>
+                <Link href="/process" className="text-primary hover:underline">Our Process</Link>
+            </nav>
         </header>
 
         <section className="py-6 border-b border-border">

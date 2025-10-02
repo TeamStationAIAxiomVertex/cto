@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { ArrowRight, Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -20,6 +21,11 @@ export default function HireByTechnologyPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             You're here because finding an engineer who has simply "used" a technology isn't enough. You need someone who has mastered it to solve real-world problems. We provide experts with proven, deeply-rooted expertise in the specific technologies that power your business.
         </p>
+         <nav className="mt-6 flex justify-center gap-4 text-sm">
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
+            <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
+            <Link href="/hire/by-role" className="text-primary hover:underline">Hire by Role</Link>
+        </nav>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
@@ -57,5 +63,3 @@ export default function HireByTechnologyPage() {
     </main>
   );
 }
-
-    
