@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const config = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -9,4 +9,6 @@ const nextConfig = {
   }
 };
 
-module.exports = nextConfig;
+// Firebase App Hosting monkeypatch needs module.exports
+module.exports = config;
+export default config;
