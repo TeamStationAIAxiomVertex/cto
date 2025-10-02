@@ -6,7 +6,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateComparisonSchema } from '@/lib/comparisonSchema';
 import { defaultComparisonFaqs } from '@/lib/comparisonFaqs';
 import FurtherReading from '@/components/seo/FurtherReading';
-import SandlerPSP from '@/components/seo/SandlerPSP';
+import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
 
 const competitor = {
   name: "CodersLink",
@@ -113,7 +113,7 @@ export default function CodersLinkComparisonPage() {
           </p>
           <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
         </div>
-        <SandlerPSP
+        <ValuePropositionBlock
             pain="CTOs face hidden risks in cost, compliance, and velocity."
             stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
             prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."

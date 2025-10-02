@@ -2,7 +2,7 @@
 import { redirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import SandlerPSP from '@/components/seo/SandlerPSP';
+import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
 import FurtherReading from '@/components/seo/FurtherReading';
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function PlaybookPage() {
         <main className="container py-12">
             <h1 className="text-2xl font-bold">CTO Playbook</h1>
             <p>This is a hub for strategic content for Chief Technology Officers. Please see the links below.</p>
-            <SandlerPSP
+            <ValuePropositionBlock
                 pain="CTOs face hidden risks in cost, compliance, and velocity."
                 stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
                 prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."

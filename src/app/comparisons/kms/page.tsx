@@ -2,7 +2,7 @@
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import SandlerPSP from '@/components/seo/SandlerPSP';
+import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
 import FurtherReading from '@/components/seo/FurtherReading';
 
 export const metadata: Metadata = {
@@ -110,7 +110,7 @@ export default function KMSComparisonPage() {
           Back to All Comparisons
         </Link>
       </div>
-      <SandlerPSP
+      <ValuePropositionBlock
         pain="CTOs face hidden risks in cost, compliance, and velocity."
         stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
         prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
