@@ -1,3 +1,4 @@
+
 {
   "name": "cto-playbook-platform",
   "version": "0.1.0",
@@ -8,11 +9,11 @@
   },
   "packageManager": "npm@10",
   "scripts": {
-    "dev": "NODE_OPTIONS=--experimental-specifier-resolution=node next dev -p ${PORT:-8080} -H 0.0.0.0",
-    "build": "NODE_OPTIONS=--experimental-specifier-resolution=node next build",
-    "build:production": "npm ci && npm run prebuild && NODE_OPTIONS=--experimental-specifier-resolution=node next build",
+    "dev": "NODE_OPTIONS=--experimental-specifier-resolution=node next dev -p ${PORT:-8080} -H 0.0.0.0 -c ./next.config.cjs",
+    "build": "NODE_OPTIONS=--experimental-specifier-resolution=node next build -c ./next.config.cjs",
+    "build:production": "npm ci && npm run prebuild && NODE_OPTIONS=--experimental-specifier-resolution=node next build -c ./next.config.cjs",
     "prebuild": "node scripts/force-cjs-config.js && node scripts/syntax-scrubber.js",
-    "start": "NODE_OPTIONS=--experimental-specifier-resolution=node next start -p ${PORT:-8080} -H 0.0.0.0",
+    "start": "NODE_OPTIONS=--experimental-specifier-resolution=node next start -p ${PORT:-8080} -H 0.0.0.0 -c ./next.config.cjs",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
