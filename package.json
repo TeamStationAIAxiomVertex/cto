@@ -1,23 +1,20 @@
-
 {
   "name": "cto-playbook-platform",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "engines": {
-    "node": ">=20 <21"
+    "node": "20.19.5"
   },
-  "packageManager": "npm@10",
+  "packageManager": "npm@10.8.1",
   "scripts": {
-    "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0",
+    "dev": "next dev",
+    "prebuild": "node scripts/preflight.cjs",
     "build": "npm run prebuild && next build",
-    "build:strict": "npm run typecheck && npm run lint && npm run build",
-    "prebuild": "node scripts/ensure-required-files.js && node scripts/syntax-scrubber.js",
-    "postinstall": "node scripts/ensure-required-files.js",
-    "preinstall": "node scripts/ensure-required-files.js",
-    "start": "next start -p ${PORT:-8080} -H 0.0.0.0",
+    "start": "node .next/standalone/server.js",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "nuclear": "bash scripts/nuclear-review.sh"
+    "postinstall": "node -e \"if(process.env.CI || process.env.FIREBASE_CONFIG) require('./scripts/preflight.cjs')\""
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
@@ -58,6 +55,7 @@
     "fast-glob": "^3.3.2",
     "kleur": "^4.1.5",
     "linkinator": "^4.0.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5",
+    "globby": "^14.0.1"
   }
 }

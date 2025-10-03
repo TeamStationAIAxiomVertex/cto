@@ -39,7 +39,7 @@
           "node": "20.19.0"
         },
         "buildCommand": "npm run build",
-        "runCommand": "npm run start",
+        "runCommand": "npm start",
         "healthCheck": {
           "path": "/healthz",
           "timeoutSeconds": 30
