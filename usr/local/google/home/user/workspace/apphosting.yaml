@@ -1,4 +1,5 @@
-# apphosting.yaml
+
+# Firebase App Hosting configuration
 runConfig:
   minInstances: 1
   maxInstances: 50
@@ -24,8 +25,18 @@ env:
     availability:
       - BUILD
       - RUNTIME
+  
+  - variable: BREAK_GLASS
+    value: "1"
+    availability:
+      - BUILD
 
-  # Optional toggles (only if actually used):
-  # - variable: BREAK_GLASS
-  #   value: "0"
-  #   availability: [BUILD]
+  - variable: FORCE_WRITE
+    value: "1"
+    availability:
+      - BUILD
+
+  - variable: STRICT_ALIAS_REWRITE
+    value: "1"
+    availability:
+      - BUILD
