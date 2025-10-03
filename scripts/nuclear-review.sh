@@ -4,7 +4,7 @@ set -euo pipefail
 echo "▶ Nuclear Review starting…"
 
 # 0) Clean
-rm -rf .next out
+rm -rf .next out || true
 
 # 1) Boundary & import guards (pure grep + bash)
 echo "▶ Checking 'use client' locations…"
@@ -49,33 +49,12 @@ echo "▶ Typecheck & lint…"
 npm run typecheck
 npm run lint
 
-# 3) Build (Next output:export writes to out/)
+# 3) Build (SSR on App Hosting)
 echo "▶ Building (strict)…"
 npm run build:strict
 
-# 4) Static export checks
-echo "▶ Link integrity (out/)…"
-npx --yes linkinator out --skip "mailto:,tel:,^/api" --recurse
-
-echo "▶ firebase.json redirects presence…"
-node -e "const f=require('fs');const j=JSON.parse(f.readFileSync('firebase.json','utf8')); if(!j.hosting||!Array.isArray(j.hosting.redirects)) { throw new Error('firebase.json missing hosting.redirects'); }"
-
-echo "▶ robots noindex for legal pages…"
-for f in out/privacy-policy/index.html out/terms-of-service/index.html; do
-  if [ -f "$f" ] && ! grep -qi "noindex" "$f"; then
-    echo "✖ $f missing 'noindex' robots meta."
-    exit 1
-  fi
-done
-
-# 5) Size budget (simple sanity)
-echo "▶ Export size budget…"
-TOTAL_KB=$(du -sk out | awk '{print $1}')
-echo "Total export size (KB): $TOTAL_KB"
-MAX_KB=25000
-if [ "$TOTAL_KB" -gt "$MAX_KB" ]; then
-  echo "✖ Export too large ($TOTAL_KB KB > $MAX_KB KB). Review bundles/images."
-  exit 1
-fi
+# 4) firebase.json sanity (App Hosting uses rewrites, not redirects)
+echo "▶ firebase.json rewrites presence…"
+node -e "const f=require('fs');const j=JSON.parse(f.readFileSync('firebase.json','utf8')); if(!j.hosting||!Array.isArray(j.hosting.rewrites)) { throw new Error('firebase.json missing hosting.rewrites'); }"
 
 echo "✔ Nuclear Review passed."
