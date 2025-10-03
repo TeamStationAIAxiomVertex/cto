@@ -1,3 +1,4 @@
+
 import "server-only";
 import fs from "fs";
 import path from "path";
@@ -6,12 +7,17 @@ import { markdownToHtml } from "./markdown-parser";
 
 export type CaseStudy = {
   slug: string;
+  title: string;
   clientName?: string;
   industry?: string;
   summary?: string;
   lastModified?: string;
   ogImage?: { src?: { url?: string }; aiHint?: string };
   contentHtml?: string;
+  challenge?: string;
+  outcomes?: string;
+  techStack?: { name: string; link: string }[];
+  canonical?: string;
 };
 
 const CANDIDATE_DIRS = [
@@ -40,24 +46,25 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
       summary: data.summary || data.description,
       ogImage: data.ogImage,
       lastModified: stat.mtime.toISOString(),
+      title: data.title,
+      challenge: data.challenge,
+      outcomes: data.outcomes,
+      techStack: data.techStack,
+      canonical: data.canonical
     };
   });
 }
 
-export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
+export async function getCaseStudyBySlug(slug: string | undefined): Promise<CaseStudy | null> {
+  if (!slug) return null;
   const dir = findDir();
   if (!dir) return null;
-
-  const file = [".md", ".mdx"]
-    .map(ext => path.join(dir, `${slug}${ext}`))
-    .find(f => fs.existsSync(f));
+  const file = [".md", ".mdx"].map(ext => path.join(dir, `${slug}${ext}`)).find(f => fs.existsSync(f));
   if (!file) return null;
-
   const raw = fs.readFileSync(file, "utf8");
   const { data, content } = matter(raw);
   const html = await markdownToHtml(content);
   const stat = fs.statSync(file);
-
   return {
     slug,
     clientName: data.clientName || data.title,
@@ -66,7 +73,11 @@ export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null
     ogImage: data.ogImage,
     lastModified: stat.mtime.toISOString(),
     contentHtml: html,
+    title: data.title,
+    challenge: data.challenge,
+    outcomes: data.outcomes,
+    techStack: data.techStack,
+    canonical: data.canonical,
   };
 }
-
 export default { getAllCaseStudies, getCaseStudyBySlug };
