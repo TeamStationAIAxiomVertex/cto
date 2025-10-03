@@ -1,5 +1,6 @@
 // scripts/ensure-required-files.js
 /* eslint-disable no-console */
+console.log("🔎 ensure-required-files: start");
 const fs = require("fs");
 const path = require("path");
 
@@ -50,28 +51,52 @@ export type ReadingItem = { href: string; title: string; desc?: string };
 type Props = {
   items?: ReadingItem[];
   title?: string;
-  comparison?: string; // allow your usage: <FurtherReading comparison="andela" />
+  comparison?: string;
+  role?: string;
+  technology?: string;
+  country?: string;
 };
 
 const PRESETS: Record<string, ReadingItem[]> = {
-  andela: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
+  andela: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  bairesdev: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  coderslink: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  deel: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  devlane: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  globant: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  howdy: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  kms: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  nearsure: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  parallelstaff: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  revelo: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  tecla: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  terminal: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  toptal: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  unosquare: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  default: [{ href: "/playbook/hub", title: "CTO Playbook" }, { href: "/comparisons", title: "Vendor Comparisons" }, { href: "/hire/by-country/mexico", title: "Hire in Mexico" }],
 };
 
-export default function FurtherReading({ items = [], title = "Further reading", comparison }: Props) {
-  const list = items.length ? items : (comparison && PRESETS[comparison]) ? PRESETS[comparison] : [];
+export default function FurtherReading({ items = [], title = "Further reading", comparison, role, technology, country }: Props) {
+  let list = items;
+  if (!items.length) {
+      if(comparison && PRESETS[comparison]) {
+        list = PRESETS[comparison];
+      } else {
+        list = PRESETS['default'];
+      }
+  }
+  
   if (!list.length) return null;
 
   return (
-    <aside aria-label={title} className="space-y-2">
-      <h2 className="text-base font-semibold">{title}</h2>
+    <aside aria-label={title} className="space-y-2 my-16 border-t border-border pt-8">
+      <h2 className="text-xl font-bold">{title}</h2>
       <ul className="list-disc pl-5 space-y-1">
         {list.map(({ href, title, desc }, i) => (
           <li key={i}>
-            <a href={href} className="underline hover:no-underline">{title}</a>
+            <Link href={href} className="text-primary hover:underline">
+              {title}
+            </Link>
             {desc ? <div className="text-sm text-muted-foreground">{desc}</div> : null}
           </li>
         ))}
@@ -106,7 +131,6 @@ export function AccordionContent({children}:{children:React.ReactNode}){ return 
 export default { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
 `.trim(),
 
-  // --- Optional: stub to avoid surprises if DecisionCard is missing ---
   [path.join(SRC, "components/ui/DecisionCard.tsx")]: `
 import * as React from "react";
 import Link from 'next/link';
@@ -166,12 +190,17 @@ import { markdownToHtml } from "./markdown-parser";
 
 export type CaseStudy = {
   slug: string;
+  title: string;
   clientName?: string;
   industry?: string;
   summary?: string;
   lastModified?: string;
   ogImage?: { src?: { url?: string }; aiHint?: string };
   contentHtml?: string;
+  challenge?: string;
+  outcomes?: string;
+  techStack?: { name: string; link: string }[];
+  canonical?: string;
 };
 
 const CANDIDATE_DIRS = [
@@ -200,11 +229,17 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
       summary: data.summary || data.description,
       ogImage: data.ogImage,
       lastModified: stat.mtime.toISOString(),
+      title: data.title,
+      challenge: data.challenge,
+      outcomes: data.outcomes,
+      techStack: data.techStack,
+      canonical: data.canonical
     };
   });
 }
 
-export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
+export async function getCaseStudyBySlug(slug: string | undefined): Promise<CaseStudy | null> {
+  if (!slug) return null;
   const dir = findDir();
   if (!dir) return null;
   const file = [".md", ".mdx"].map(ext => path.join(dir, \`\${slug}\${ext}\`)).find(f => fs.existsSync(f));
@@ -221,9 +256,104 @@ export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null
     ogImage: data.ogImage,
     lastModified: stat.mtime.toISOString(),
     contentHtml: html,
+    title: data.title,
+    challenge: data.challenge,
+    outcomes: data.outcomes,
+    techStack: data.techStack,
+    canonical: data.canonical,
   };
 }
 export default { getAllCaseStudies, getCaseStudyBySlug };
+`.trim(),
+
+  // --- Comparison helpers ---
+  [path.join(SRC, "lib/comparisonFaqs.ts")]: `
+export type Faq =
+  | { q: string; a: string }
+  | { question: string; answer: string };
+
+export function defaultComparisonFaqs(vendor: string): Faq[] {
+  // Keep the {question,answer} shape by default, but accept {q,a} elsewhere
+  return [
+    {
+      question: \`Why choose TeamStation AI vs. \${vendor}?\`,
+      answer:
+        "TeamStation AI bundles scientific vetting, secure MDM devices, EOR/compliance, and insurance under one SLA to reduce risk and lower TCO.",
+    },
+    {
+      question: "How do you vet engineers?",
+      answer:
+        "We use our Axiom Cortex™ cognitive AI to measure problem-solving ability and learning orientation, providing evidence-based signals—beyond resumes.",
+    },
+    {
+      question: "What about compliance and security?",
+      answer:
+        "We’re aligned to SOC 2/ISO practices, devices are MDM-managed with encryption and remote wipe, and all work is covered by Cyber & E&O insurance.",
+    },
+  ];
+}
+
+export default { defaultComparisonFaqs };
+`.trim(),
+
+  [path.join(SRC, "lib/comparisonSchema.ts")]: `
+import type { Faq } from "./comparisonFaqs";
+
+type AnyFaq = { q?: string; a?: string; question?: string; answer?: string };
+
+function normalizeFaqs(faqs: AnyFaq[]) {
+  return (faqs || [])
+    .map((f) => ({
+      question: (f as any).question ?? (f as any).q,
+      answer: (f as any).answer ?? (f as any).a,
+    }))
+    .filter((f) => f.question && f.answer);
+}
+
+type Args = {
+  // accept both old and new shapes
+  name?: string;
+  url?: string;
+  competitorName?: string;
+  competitorUrl?: string;
+  slug?: string;
+  faqs?: Faq[];
+};
+
+const SITE = "https://cto.teamstation.dev";
+
+/** Returns either a single WebPage object or [WebPage, FAQPage] */
+export function generateComparisonSchema(args: Args) {
+  const name = args.name ?? args.competitorName ?? "Competitor";
+  const url = args.url ?? args.competitorUrl;
+  const slug = args.slug ?? name.toLowerCase();
+  const faqs = normalizeFaqs(args.faqs as AnyFaq[]);
+
+  const webPage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: \`TeamStation AI vs. \${name}\`,
+    url: \`\${SITE}/comparisons/\${slug}\`,
+    about: { "@type": "Organization", name, ...(url ? { url } : {}) },
+  };
+
+  if (!faqs.length) return webPage;
+
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
+  // JSON-LD arrays are valid and handled by your <JsonLd> component
+  return [webPage, faqPage];
+}
+
+export default { generateComparisonSchema };
 `.trim(),
 };
 
@@ -236,7 +366,10 @@ function rewriteAliases() {
   const files = [];
 
   (function walk(dir) {
-    if (!fs.existsSync(dir)) return;
+    if (!fs.existsSync(dir)) {
+      console.error(`❌ src directory missing: ${dir}`);
+      process.exit(1);
+    }
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const p = path.join(dir, entry.name);
       if (entry.isDirectory()) walk(p);
