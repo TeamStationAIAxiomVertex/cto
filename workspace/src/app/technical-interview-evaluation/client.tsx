@@ -1,11 +1,11 @@
 
-'use client'
+'use client';
 
 import React, { type ReactNode } from 'react';
-import { Accordion, AccordionItem } from '../../components/ui/accordion';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { BrainCircuit, ArrowRight, HelpCircle, UserCheck, Zap } from 'lucide-react';
 import Link from 'next/link';
-import { WithTooltip } from '../../components/ui/tooltip';
+import { WithTooltip } from '@/components/ui/tooltip';
 
 const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
@@ -24,7 +24,7 @@ const renderWithMany = (
   return parts.map((part, idx) => {
     const tip = byTerm.get(part);
     return tip ? (
-      <WithTooltip key={`hl-${idx}`} content={tip}>
+      <WithTooltip key={`hl-${idx}`} label={tip}>
         <span className="text-primary border-b border-dashed">{part}</span>
       </WithTooltip>
     ) : (
@@ -489,11 +489,11 @@ export default function TalentEvaluationClient() {
                 </h4>
                 <div className="text-muted-foreground">
                     <span>The score is a data-driven output from the </span> 
-                    <WithTooltip content="Our proprietary Cognitive AI engine for talent evaluation.">
+                    <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation.">
                         <Link href="/research/axiom-cortex-scientific-report" className="text-primary border-b border-dashed">Axiom Cortex™</Link>
                     </WithTooltip>
                     <span> AI. The engine analyzes the full interview transcript, maps the candidate's statements to our proprietary </span> 
-                    <WithTooltip content="Behaviorally Anchored Rating Scales: a scoring method that ties ratings to specific, observable behaviors.">
+                    <WithTooltip label="Behaviorally Anchored Rating Scales: a scoring method that ties ratings to specific, observable behaviors.">
                          <span className="text-primary border-b border-dashed">BARS</span>
                     </WithTooltip>
                     <span> rubric, and applies calibration layers to mitigate bias. The final score is a weighted synthesis of performance across multiple questions, grounded in direct evidence.</span>
@@ -558,8 +558,9 @@ export default function TalentEvaluationClient() {
             <div className="mt-8">
                 <Accordion type="single" collapsible>
                     {evidenceLocker.map(item => (
-                        <AccordionItem title={item.title} key={item.title}>
-                            {item.content}
+                        <AccordionItem value={item.title} key={item.title}>
+                           <AccordionTrigger>{item.title}</AccordionTrigger>
+                           <AccordionContent>{item.content}</AccordionContent>
                         </AccordionItem>
                     ))}
                 </Accordion>

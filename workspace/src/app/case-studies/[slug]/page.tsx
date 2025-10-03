@@ -4,8 +4,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Briefcase, Award, CheckCircle, AlertTriangle, Shield } from 'lucide-react';
 import type { Metadata } from 'next';
-import SeoSafeImage from "../../../components/seo/SeoSafeImage";
-import FurtherReading from "../../../components/seo/FurtherReading";
+import SeoSafeImage from '@/components/seo/SeoSafeImage';
+import FurtherReading from '@/components/seo/FurtherReading';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const study = await getCaseStudyBySlug(params.slug);
@@ -199,7 +199,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                       <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
                           <h3 className="text-xl font-bold flex items-center gap-3 text-green-500"><CheckCircle className="h-6 w-6" />The Proof (Outcomes)</h3>
                           <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-                              {study.outcomes.split('\n').map((item, index) =>
+                              {(study.outcomes ?? '').split('\n').map((item, index) =>
                                 item.trim() && (
                                   <div key={index} className="flex items-start gap-2">
                                     <CheckCircle className="h-4 w-4 mt-1 shrink-0 text-green-500" />

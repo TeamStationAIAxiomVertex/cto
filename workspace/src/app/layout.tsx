@@ -2,9 +2,9 @@
 import './globals.css';
 import { Inter, Poppins, Source_Code_Pro } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
-import { Header } from '../components/layout/Header';
-import Footer from '../components/Footer';
-import AppProviders from '../providers/app-providers';
+import { Header } from '@/components/layout/Header';
+import Footer from '@/components/Footer';
+import AppProviders from '@/providers/app-providers';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,7 +26,7 @@ const sourceCodePro = Source_Code_Pro({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cto.teamstation.dev'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cto.teamstation.dev'),
   title: 'TeamStation AI',
   description: 'Nearshore IT Co-Pilot and CTO Playbook',
   manifest: '/manifest.webmanifest',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0F172A',
+  themeColor: '#0ea5e9',
 };
 
 export default function RootLayout({

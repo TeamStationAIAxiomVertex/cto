@@ -4,20 +4,17 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "20.x"
+    "node": "20.19.5"
   },
-  "packageManager": "npm@10",
+  "packageManager": "npm@10.8.1",
   "scripts": {
     "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0",
+    "prebuild": "node scripts/preflight.cjs",
     "build": "npm run prebuild && next build",
-    "build:strict": "npm run typecheck && npm run lint && npm run build",
-    "prebuild": "STRICT_ALIAS_REWRITE=1 node scripts/ensure-required-files.js && node scripts/syntax-scrubber.js",
-    "postinstall": "node scripts/ensure-required-files.js",
-    "preinstall": "node scripts/ensure-required-files.js",
     "start": "next start -p ${PORT:-8080} -H 0.0.0.0",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "nuclear": "bash scripts/nuclear-review.sh"
+    "build:strict": "npm run typecheck && npm run lint && npm run build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
@@ -53,11 +50,11 @@
     "@types/recharts": "^1.8.29",
     "cheerio": "^1.0.0-rc.12",
     "critters": "^0.0.23",
-    "eslint": "^8.57.1",
+    "eslint": "^9",
     "eslint-config-next": "14.2.3",
     "fast-glob": "^3.3.2",
     "kleur": "^4.1.5",
     "linkinator": "^4.0.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5"
   }
 }
