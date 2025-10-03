@@ -1,3 +1,4 @@
+
 // scripts/ensure-required-files.js
 /* eslint-disable no-console */
 const fs = require("fs");
@@ -139,16 +140,13 @@ const PRESETS: Record<string, ReadingItem[]> = {
 };
 
 export default function FurtherReading({ items = [], title = "Further reading", comparison, role, technology, country }: Props) {
-  let list = items.length ? items : PRESETS['default'];
+  let list = items;
   if (comparison && PRESETS[comparison]) {
     list = PRESETS[comparison];
-  }
-
-  if (!items.length && (role || technology || country)) {
+  } else if (!items.length) {
     list = PRESETS['default'];
   }
-
-
+  
   if (!list.length) return null;
 
   return (
@@ -207,7 +205,7 @@ export function DecisionCard({ problem, stakes, approach, evidence, related = []
       <p><strong>Problem:</strong> {problem}</p>
       <p><strong>Stakes:</strong> {stakes}</p>
       <p><strong>Approach:</strong> {approach}</p>
-      <p dangerouslySetInnerHTML={{ __html: evidence.replace(/\\\\[(.*?)\\\\]\\\\((.*?)\\\\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') }}></p>
+      <p dangerouslySetInnerHTML={{ __html: evidence.replace(/\\[(.*?)\\]\\((.*?)\\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') }}></p>
       {related.length ? (
         <div className="pt-2">
           <div className="font-semibold">Related</div>
@@ -332,12 +330,20 @@ export default { getAllCaseStudies, getCaseStudyBySlug };
 };
 
 /** ---------- Write any missing files ---------- */
-Object.entries(FILES).forEach(([file, content]) => writeIfMissing(file, content));
+Object.entries(FILES).forEach(([file, content]) => {
+    // FORCE_WRITE logic added as suggested
+    if (process.env.FORCE_WRITE === "1" || !fs.existsSync(file) || !fs.readFileSync(file, "utf8").trim()) {
+        ensureDir(file);
+        fs.writeFileSync(file, content);
+        console.log(`🧩 ${process.env.FORCE_WRITE === "1" ? 'overwrote' : 'wrote'} ${path.relative(ROOT, file)}`);
+    }
+});
+
 
 /** ---------- Rewrite '@/…' imports to relative paths ---------- */
 function rewriteAliases() {
   const exts = [".ts", ".tsx", ".js", ".jsx"];
-  const files: string[] = [];
+  const files = [];
 
   (function walk(dir) {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -347,6 +353,7 @@ function rewriteAliases() {
     }
   })(SRC);
 
+  // Correct regex (single backslashes) – handles ESM `from` and CJS `require(...)`
   const rx = /from\\s+['"]@\\/([^'"]+)['"]|require\\(\\s*['"]@\\/([^'"]+)['"]\\s*\\)/g;
 
   let rewrites = 0;
@@ -356,9 +363,9 @@ function rewriteAliases() {
     let changed = false;
 
     src = src.replace(rx, (m, m1, m2) => {
-      const sub = (m1 || m2).trim();
+      const sub = (m1 || m2).trim(); // e.g. "components/seo/JsonLd"
       const targetAbs = path.join(SRC, sub);
-      const rel = path.relative(dir, targetAbs).replace(/\\/g, "/");
+      const rel = path.relative(dir, targetAbs).replace(/\\/g, "/"); // normalize
       const fixed = rel.startsWith(".") ? rel : "./" + rel;
       changed = true;
       rewrites++;
@@ -371,16 +378,17 @@ function rewriteAliases() {
     }
   }
 
+  // Safety net: fail (or warn) if any "@/..." survived
   const STRICT = process.env.STRICT_ALIAS_REWRITE === "1";
   const leftovers = files.filter(f => fs.readFileSync(f, "utf8").includes("@/"));
   if (leftovers.length) {
-    const msg = `Found ${leftovers.length} remaining "@/…" imports:\\n` +
+    const msg = `Found \${leftovers.length} remaining "@/…" imports:\\n` +
                 leftovers.map(f => " - " + path.relative(ROOT, f)).join("\\n");
     STRICT ? console.error("❌ " + msg) : console.warn("⚠️  " + msg);
     if (STRICT) process.exit(1);
   }
 
-  console.log(`✅ alias rewrite complete (${rewrites} updates).`);
+  console.log(`✅ alias rewrite complete (\${rewrites} updates).`);
 }
 
 rewriteAliases();
