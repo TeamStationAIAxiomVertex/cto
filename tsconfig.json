@@ -1,3 +1,4 @@
+
 {
   "compilerOptions": {
     "target": "esnext",
@@ -23,9 +24,10 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
+        "src/*"
       ]
     }
   },

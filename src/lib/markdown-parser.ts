@@ -1,7 +1,8 @@
+
 import { remark } from 'remark';
 import html from 'remark-html';
 
-/** Convert Markdown → HTML (used by case-study pages). */
+/** Markdown → HTML for case studies. */
 export async function markdownToHtml(markdown: string): Promise<string> {
   const result = await remark().use(html, { sanitize: false }).process(markdown || '');
   return String(result);

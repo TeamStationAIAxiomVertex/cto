@@ -1,3 +1,4 @@
+
 // Server-safe stubs so imports from "@/components/ui/accordion" always compile
 import * as React from 'react';
 

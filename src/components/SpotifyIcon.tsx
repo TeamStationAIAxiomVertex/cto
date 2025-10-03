@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 
 export function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
