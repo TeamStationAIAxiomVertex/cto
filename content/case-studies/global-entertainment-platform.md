@@ -6,6 +6,10 @@ clientName: 'Global Entertainment Platform'
 industry: 'Global Entertainment & Media'
 summary: 'Replaced an incumbent offshore QA vendor with a 10+ engineer LATAM squad in <30 days, stabilizing releases and reducing defect leakage for a billion-dollar product.'
 canonical: 'https://cto.teamstation.dev/case-studies/global-entertainment-platform'
+ogImage:
+  src:
+    url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtdXNpYyUyMGluZHVzdHJ5fGVufDB8fHx8MTc1OTI4NDQ2OHww&ixlib=rb-4.1.0&q=80&w=1080"
+  aiHint: "media platform"
 techStack:
   - name: 'QA Automation'
     link: '/hire/by-role/qa-quality-engineering'
@@ -51,7 +55,7 @@ Engagement model: Dedicated squad with elastic bench capacity and SLAs for cover
 1.  Discovery & risk map: Scope critical user journeys (web, mobile, OTT), enumerate high‑risk modules, and define NFRs (non‑functional requirements).
 2.  AI‑guided selection: Transformer‑based parsing and linguistic pattern analysis identify candidates with verified automation depth and entertainment‑domain QA experience.
 3.  Validation & controls: Practical assessments, code exercises, pair‑tests, reference checks, and compliance gates.
-4.  Secure onboarding: Provision MDM‑managed devices, identity/access policies, VPN baselines, and data handling SOPs.
+4.  Secure onboarding: Provision MDM‑managed devices, identity/access policies, VPN baselines, and data‑handling SOPs.
 5.  Parallel shadowing: Replace the incumbent with zero‑downtime by shadowing for two sprints, then assume ownership with a controlled cut‑over.
 
 ### Operating System for Quality

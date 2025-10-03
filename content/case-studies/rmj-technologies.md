@@ -6,6 +6,10 @@ clientName: 'RMJ Technologies'
 industry: 'Automotive Fleet Optimization'
 summary: 'Stabilized a monolithic platform and launched a microservices program, scaling to 15,000 users and enabling multi-million-dollar revenue expansion.'
 canonical: 'https://cto.teamstation.dev/case-studies/rmj-technologies'
+ogImage:
+  src:
+    url: "https://images.unsplash.com/photo-1617137896784-2202ba45cd74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkcml2ZXIlMjB0ZWNobm9sb2dpZXMlMjB8ZW58MHx8fHwxNzU5Mjg1MjAxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+  aiHint: "fleet trucks"
 techStack:
   - name: 'C#/.NET'
     link: '/hire/by-technology'

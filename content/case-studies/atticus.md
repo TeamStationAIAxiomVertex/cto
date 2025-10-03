@@ -6,6 +6,10 @@ clientName: 'Atticus'
 industry: 'Estate Settlement & Probate Technology'
 summary: 'Shipped a production-ready web and iOS estate settlement MVP in under 3 months, saving an estimated $550,000 in development costs.'
 canonical: 'https://cto.teamstation.dev/case-studies/atticus'
+ogImage:
+  src:
+    url: "https://images.unsplash.com/photo-1590402494562-4b788beb429e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8cHJvZHVjdCUyMHRlYW0lMjB8ZW58MHx8fHwxNzU5Mjg0MzY5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+  aiHint: "legal tech"
 techStack:
   - name: 'PHP/Laravel'
     link: '/hire/by-role/backend-services'

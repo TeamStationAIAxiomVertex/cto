@@ -6,6 +6,10 @@ clientName: 'Parsable'
 industry: 'Industrial Worker Automation'
 summary: 'Resolved a mission-critical Okta SSO integration failure for a marquee enterprise client, unlocking onboarding for new billable users.'
 canonical: 'https://cto.teamstation.dev/case-studies/parsable'
+ogImage:
+  src:
+    url: "https://images.unsplash.com/photo-1618885472179-5e474019f2a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoZWluZWtlbiUyMGJlZXJ8ZW58MHx8fHwxNzU5MjgzMjA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+  aiHint: "industrial factory"
 techStack:
   - name: 'Okta SSO'
     link: '/hire/by-role/security-grc'

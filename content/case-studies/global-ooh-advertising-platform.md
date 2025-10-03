@@ -6,6 +6,10 @@ clientName: 'Global OOH Advertising Platform'
 industry: 'Advertising Technology'
 summary: 'Accelerated development of AI-assisted media planning software by embedding two senior Full-Stack LATAM engineers, increasing feature velocity and reducing operational risk.'
 canonical: 'https://cto.teamstation.dev/case-studies/global-ooh-advertising-platform'
+ogImage:
+  src:
+    url: "https://images.unsplash.com/photo-1579027974112-70eb878806c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8bmV3JTIweW9yayUyMGJpbGxib2FyZHN8ZW58MHx8fHwxNzU5Mjg0NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+  aiHint: "advertising analytics"
 techStack:
   - name: 'Python'
     link: '/hire/by-technology'
