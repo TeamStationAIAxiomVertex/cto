@@ -266,59 +266,91 @@ export default { getAllCaseStudies, getCaseStudyBySlug };
 
   // --- Comparison helpers ---
   [path.join(SRC, "lib/comparisonFaqs.ts")]: `
-export type Faq = { question: string; answer: string };
+export type Faq =
+  | { q: string; a: string }
+  | { question: string; answer: string };
 
-/** Default FAQs for a competitor page; safe fallback if none provided */
 export function defaultComparisonFaqs(vendor: string): Faq[] {
+  // Keep the {question,answer} shape by default, but accept {q,a} elsewhere
   return [
     {
       question: \`Why choose TeamStation AI vs. \${vendor}?\`,
-      answer: "TeamStation AI bundles scientific vetting, secure MDM devices, EOR/compliance, and insurance under one SLA to reduce risk and lower TCO."
+      answer:
+        "TeamStation AI bundles scientific vetting, secure MDM devices, EOR/compliance, and insurance under one SLA to reduce risk and lower TCO.",
     },
     {
       question: "How do you vet engineers?",
-      answer: "We use our Axiom Cortex™ cognitive AI to measure problem-solving ability and learning orientation, providing evidence-based signals—beyond resumes."
+      answer:
+        "We use our Axiom Cortex™ cognitive AI to measure problem-solving ability and learning orientation, providing evidence-based signals—beyond resumes.",
     },
     {
       question: "What about compliance and security?",
-      answer: "We’re aligned to SOC 2/ISO practices, devices are MDM-managed with encryption and remote wipe, and all work is covered by Cyber & E&O insurance."
-    }
+      answer:
+        "We’re aligned to SOC 2/ISO practices, devices are MDM-managed with encryption and remote wipe, and all work is covered by Cyber & E&O insurance.",
+    },
   ];
 }
+
 export default { defaultComparisonFaqs };
 `.trim(),
 
   [path.join(SRC, "lib/comparisonSchema.ts")]: `
 import type { Faq } from "./comparisonFaqs";
 
-type Args = { competitorName: string; competitorUrl?: string; slug?: string; faqs?: Faq[] };
+type AnyFaq = { q?: string; a?: string; question?: string; answer?: string };
+
+function normalizeFaqs(faqs: AnyFaq[]) {
+  return (faqs || [])
+    .map((f) => ({
+      question: (f as any).question ?? (f as any).q,
+      answer: (f as any).answer ?? (f as any).a,
+    }))
+    .filter((f) => f.question && f.answer);
+}
+
+type Args = {
+  // accept both old and new shapes
+  name?: string;
+  url?: string;
+  competitorName?: string;
+  competitorUrl?: string;
+  slug?: string;
+  faqs?: Faq[];
+};
+
 const SITE = "https://cto.teamstation.dev";
 
-/** Minimal, valid JSON-LD for comparison pages with optional FAQ */
-export function generateComparisonSchema({ competitorName, competitorUrl, slug, faqs = [] }: Args) {
-  const canonical = \`\${SITE}/comparisons/\${slug ?? competitorName.toLowerCase()}\`;
+/** Returns either a single WebPage object or [WebPage, FAQPage] */
+export function generateComparisonSchema(args: Args) {
+  const name = args.name ?? args.competitorName ?? "Competitor";
+  const url = args.url ?? args.competitorUrl;
+  const slug = args.slug ?? name.toLowerCase();
+  const faqs = normalizeFaqs(args.faqs as AnyFaq[]);
 
-  const faqBlock = faqs.length
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(({ question, answer }) => ({
-          "@type": "Question",
-          "name": question,
-          "acceptedAnswer": { "@type": "Answer", "text": answer }
-        }))
-      }
-    : null;
-
-  return {
+  const webPage = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": \`TeamStation AI vs. \${competitorName}\`,
-    "url": canonical,
-    "about": { "@type": "Organization", "name": competitorName, "url": competitorUrl },
-    ...(faqBlock ? { mainEntity: faqBlock.mainEntity } : {})
+    name: \`TeamStation AI vs. \${name}\`,
+    url: \`\${SITE}/comparisons/\${slug}\`,
+    about: { "@type": "Organization", name, ...(url ? { url } : {}) },
   };
+
+  if (!faqs.length) return webPage;
+
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
+  // JSON-LD arrays are valid and handled by your <JsonLd> component
+  return [webPage, faqPage];
 }
+
 export default { generateComparisonSchema };
 `.trim(),
 };
@@ -329,7 +361,7 @@ Object.entries(FILES).forEach(([file, content]) => writeIfMissing(file, content)
 /** ---------- Rewrite '@/…' imports to relative paths ---------- */
 function rewriteAliases() {
   const exts = [".ts", ".tsx", ".js", ".jsx"];
-  const files: string[] = [];
+  const files = [];
 
   (function walk(dir) {
     if (!fs.existsSync(dir)) {
@@ -350,7 +382,7 @@ function rewriteAliases() {
     let src = fs.readFileSync(file, "utf8");
     let changed = false;
 
-    const mk = (sub: string) => {
+    const mk = (sub) => {
       const targetAbs = path.join(SRC, sub);
       const rel = path
         .relative(dir, targetAbs)
