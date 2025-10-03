@@ -2,8 +2,8 @@
 import './globals.css';
 import { Inter, Poppins, Source_Code_Pro } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
-import { Header } from '@/components/layout/Header';
-import Footer from '@/components/Footer';
+import { Header } from '../components/layout/Header';
+import Footer from '../components/Footer';
 import AppProviders from '../providers/app-providers';
 
 const inter = Inter({
