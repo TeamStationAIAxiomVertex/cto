@@ -1,19 +1,13 @@
-// server-safe stubs (no 'use client')
-import * as React from 'react';
-
+import * as React from "react";
 export function TooltipProvider({ children }: { children: React.ReactNode }) { return <>{children}</>; }
 export function Tooltip({ children }: { children: React.ReactNode }) { return <>{children}</>; }
 export function TooltipTrigger({ children }: { children: React.ReactNode }) { return <>{children}</>; }
 export function TooltipContent({ children }: { children: React.ReactNode }) { return <>{children}</>; }
-
-export function WithTooltip({
-  content,
-  children,
-  as: Tag = 'span',
-  className,
-}: {
-  content: React.ReactNode; children: React.ReactNode; as?: keyof JSX.IntrinsicElements; className?: string;
+export function WithTooltip(props: {
+  content?: React.ReactNode; label?: React.ReactNode; children: React.ReactNode; as?: keyof JSX.IntrinsicElements; className?: string;
 }) {
-  const title = typeof content === 'string' ? content : undefined;
+  const { content, label, children, as: Tag = "span", className } = props as any;
+  const title = typeof (content ?? label) === "string" ? (content ?? label) : undefined;
   return <Tag title={title} className={className} data-hint={title}>{children}</Tag>;
 }
+export default { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent, WithTooltip };

@@ -13,17 +13,19 @@ env:
       - BUILD
       - RUNTIME
 
-  # Production environment settings
   - variable: NODE_ENV
     value: "production"
     availability:
+      - BUILD
       - RUNTIME
+
   - variable: LOG_LEVEL
     value: "warn"
     availability:
+      - BUILD
       - RUNTIME
 
-  # Only flip to "1" if you truly need to bypass TS during build
+  # Optional toggles (only if actually used):
   - variable: BREAK_GLASS
     value: "0"
     availability:
