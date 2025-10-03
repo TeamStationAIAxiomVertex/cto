@@ -48,7 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable} ${sourceCodePro.variable}`}>
-      <body className={poppins.className}>
+      <body className={inter.className}>
         <AppProviders>
           <div className="flex min-h-screen flex-col">
             <Header />

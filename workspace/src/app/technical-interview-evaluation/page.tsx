@@ -2,7 +2,7 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
-const Client = dynamic(() => import('./client'), { ssr: false });
+const TechnicalInterviewClient = dynamic(() => import('./client'), { ssr: false });
 
 export const metadata: Metadata = {
     title: 'Evidence-Based Technical Interview Evaluation',
@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 
 // This page now correctly renders the client component.
 export default function TechnicalInterviewEvaluationPage() {
-  return <Client />;
+  return <TechnicalInterviewClient />;
 }

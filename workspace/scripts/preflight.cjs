@@ -21,10 +21,7 @@ function rewrite(p, search, replace) {
   if (!exists(p)) return;
   const before = read(p);
   const after = before.replace(search, replace);
-  if (after !== before) {
-      write(p, after);
-      console.log(`🛠  Rewrote imports in ${path.relative(ROOT, p)}`);
-  }
+  if (after !== before) write(p, after);
 }
 function walk(dir, out = []) {
   if (!exists(dir)) return out;
@@ -38,8 +35,8 @@ function walk(dir, out = []) {
 
 console.log('🔎 Running preflight checks...');
 
-// 0) ENV sanity
-if (process.env.NODE_ENV !== 'production' && process.env.CI) {
+// 0) ENV sanity — your logs showed NODE_ENV = "TeamStation AI"
+if (process.env.NODE_ENV !== 'production') {
   fail(`NODE_ENV must be "production" during build; got "${process.env.NODE_ENV || ''}"`);
 }
 
@@ -103,7 +100,7 @@ if (exists(layoutPath)) {
     fail(`Root layout missing metadataBase in metadata: ${layoutPath}`);
   }
   if (/export\s+const\s+metadata[\s\S]*themeColor\s*:/.test(c)) {
-    fail(`themeColor belongs in "export const viewport", not metadata: ${layoutPath}`);
+    fail(`Root layout has themeColor inside metadata (belongs in viewport): ${layoutPath}`);
   }
   if (!/export\s+const\s+viewport\s*=/.test(c)) {
     fail(`Root layout missing 'export const viewport = { themeColor: ... }': ${layoutPath}`);
@@ -117,9 +114,9 @@ for (const f of walk(APP)) {
   if (!isStatic) continue;
   const c = read(f);
   const usesParams =
-    /\bfunction\s+\w+\s*\(\s*\{\s*params\s*:/.test(c) ||
-    /\(\s*\{\s*params\s*\}\s*:\s*\{/.test(c) ||
-    /\bparams\./.test(c);
+    /\\bfunction\\s+\\w+\\s*\\(\\s*\\{\\s*params\\s*:/.test(c) ||
+    /\\(\\s*\\{\\s*params\\s*\\}\\s*:\\s*\\{/.test(c) ||
+    /\\bparams\\./.test(c);
   if (usesParams) fail(`Static route uses 'params': ${f}`);
 }
 

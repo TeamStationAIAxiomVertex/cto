@@ -8,10 +8,10 @@
   },
   "packageManager": "npm@10.8.1",
   "scripts": {
-    "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0",
+    "dev": "next dev",
     "prebuild": "node scripts/preflight.cjs",
     "build": "npm run prebuild && next build",
-    "start": "next start -p ${PORT:-8080} -H 0.0.0.0",
+    "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "postinstall": "node -e \"if(process.env.CI || process.env.FIREBASE_CONFIG) require('./scripts/preflight.cjs')\""
