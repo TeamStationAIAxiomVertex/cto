@@ -1,3 +1,4 @@
+
 import { getCaseStudyBySlug, getAllCaseStudies } from '../../../lib/case-studies';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -14,11 +15,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
-  const titleSafe = (study.title ?? "Case Study").replace(/ \| TeamStation AI( Case Study)?/g, " Case Study");
-  const summarySafe = (study.summary ?? "").trim();
-  const fallbackSummary =
-    `Case study: how TeamStation AI helped ${study.clientName ?? "a client"}${study.industry ? ` with ${study.industry} challenges` : ""}.`.trim();
-  const description = summarySafe.length > 160 ? fallbackSummary : (summarySafe || fallbackSummary);
+  // Enforce length constraints
+  const title = (study.title ?? "Case Study").replace(/ \| TeamStation AI( Case Study)?/g, ' Case Study');
+  const summary = study.summary ?? '';
+  const fallbackSummary = `Case study: how TeamStation AI helped ${study.clientName ?? "a client"}${study.industry ? ` with ${study.industry} challenges` : ""}.`.trim();
+  const description = summary.length > 160 ? fallbackSummary : (summary || fallbackSummary);
   
   const keywords = [
       study.clientName,
@@ -31,14 +32,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const imageUrl = study.ogImage?.src?.url;
 
   return {
-    title: titleSafe,
+    title: title,
     description: description,
     keywords: keywords,
     alternates: {
       canonical: study.canonical,
     },
     openGraph: {
-      title: titleSafe,
+      title: title,
       description: description,
       url: study.canonical,
       type: 'article',
@@ -49,13 +50,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: titleSafe,
+          alt: title,
         },
       ] : [],
     },
      twitter: {
       card: 'summary_large_image',
-      title: titleSafe,
+      title: title,
       description: description,
       images: imageUrl ? [imageUrl] : [],
     },
@@ -68,10 +69,10 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
   if (!study) {
     notFound();
   }
-
-  const titleSafe = (study.title ?? "Case Study").replace(/ \| TeamStation AI( Case Study)?/g, " Case Study");
-  const summarySafe = (study.summary ?? "").trim();
+  
   const siteUrl = 'https://cto.teamstation.dev';
+  const titleSafe = (study.title ?? "Case Study").replace(/ \| TeamStation AI( Case Study)?/g, " Case Study");
+  const summarySafe = study.summary ?? '';
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -154,12 +155,12 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                       {imageUrl ? (
                         <div className="relative h-96 w-full my-8 rounded-lg overflow-hidden border">
                           <SeoSafeImage
-                            src={imageUrl}
-                            alt={`Hero image for ${study.clientName ?? titleSafe} case study`}
-                            fill
-                            className="object-cover"
-                            priority
-                            data-ai-hint={study.ogImage?.aiHint}
+                              src={imageUrl}
+                              alt={`Hero image for ${study.clientName ?? titleSafe} case study`}
+                              fill
+                              className="object-cover"
+                              priority
+                              data-ai-hint={study.ogImage?.aiHint}
                           />
                         </div>
                       ) : (
@@ -194,18 +195,16 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                       <p className="mt-4 text-sm text-foreground">{summarySafe || "A comprehensive solution was implemented to address the client's challenges."}</p>
                   </div>
 
-                  {study.outcomes && study.outcomes.length > 0 && (
+                  {study.outcomes && (study.outcomes.length ?? 0) > 0 && (
                       <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
                           <h3 className="text-xl font-bold flex items-center gap-3 text-green-500"><CheckCircle className="h-6 w-6" />The Proof (Outcomes)</h3>
                           <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-                              {(study.outcomes ?? '').split('\n').map((item, index) =>
-                                item.trim() && (
-                                  <div key={index} className="flex items-start gap-2">
-                                    <CheckCircle className="h-4 w-4 mt-1 shrink-0 text-green-500" />
-                                    <span>{item.replace(/^-/, '').trim()}</span>
-                                  </div>
-                                )
-                              )}
+                              {(study.outcomes ?? '').split('\\n').filter(Boolean).map((item, index) => (
+                                      <div key={index} className="flex items-start gap-2">
+                                          <CheckCircle className="h-4 w-4 mt-1 shrink-0 text-green-500"/>
+                                          <span>{item.replace(/^-/, '').trim()}</span>
+                                      </div>
+                              ))}
                           </div>
                       </div>
                   )}
