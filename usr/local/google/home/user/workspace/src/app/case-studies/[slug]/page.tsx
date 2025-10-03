@@ -15,7 +15,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
-  // Enforce length constraints
   const title = (study.title ?? "Case Study").replace(/ \| TeamStation AI( Case Study)?/g, ' Case Study');
   const summary = study.summary ?? '';
   const fallbackSummary = `Case study: how TeamStation AI helped ${study.clientName ?? "a client"}${study.industry ? ` with ${study.industry} challenges` : ""}.`.trim();
@@ -109,7 +108,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
     },
     headline: titleSafe,
     description: summarySafe,
-    image: imageUrl ? [imageUrl] : undefined,
+    image: imageUrl ? [imageUrl] : [],
     author: {
         '@type': 'Organization',
         name: 'TeamStation AI',
@@ -120,7 +119,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
         name: 'TeamStation AI',
         logo: {
             '@type': 'ImageObject',
-            url: `${siteUrl}/apple-icon.png`
+            url: `${siteUrl}/apple-touch-icon.png`
         }
     },
     datePublished: study.lastModified || new Date().toISOString(),
@@ -199,7 +198,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                       <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
                           <h3 className="text-xl font-bold flex items-center gap-3 text-green-500"><CheckCircle className="h-6 w-6" />The Proof (Outcomes)</h3>
                           <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-                              {(study.outcomes ?? '').split('\\n').filter(Boolean).map((item, index) => (
+                              {(study.outcomes.split('\\n') ?? []).filter(Boolean).map((item, index) => (
                                       <div key={index} className="flex items-start gap-2">
                                           <CheckCircle className="h-4 w-4 mt-1 shrink-0 text-green-500"/>
                                           <span>{item.replace(/^-/, '').trim()}</span>

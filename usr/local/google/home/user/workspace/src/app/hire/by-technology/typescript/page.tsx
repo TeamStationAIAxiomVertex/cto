@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, AlertTriangle } from 'lucide-react';
-import { WithTooltip } from '../../../../components/ui/tooltip';
-import { allTech } from '../../../../lib/tech';
-import { JsonLd } from '../../../../components/seo/JsonLd';
-import TypeScriptPSPSection from '../../../../components/seo/sections/TypeScriptPSPSection';
+import { WithTooltip } from '@/components/ui/tooltip';
+import { allTech } from '@/lib/tech';
+import { JsonLd } from '@/components/seo/JsonLd';
+import TypeScriptPSPSection from '@/components/seo/sections/TypeScriptPSPSection';
 
 export const metadata: Metadata = {
   title: `Hire Nearshore TypeScript Developers`,
