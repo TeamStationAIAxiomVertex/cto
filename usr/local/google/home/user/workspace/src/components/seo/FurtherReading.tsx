@@ -1,15 +1,50 @@
 import * as React from "react";
 import Link from "next/link";
-export default function FurtherReading({ items = [], title = "Further reading" }:{items?: {href:string;title:string;desc?:string}[]; title?:string}) {
-  if (!items.length) return null;
+export type ReadingItem = { href: string; title: string; desc?: string };
+const PRESETS: Record<string, ReadingItem[]> = {
+  andela: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  bairesdev: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  coderslink: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  default: [
+    { href: "/playbook/hub", title: "CTO Playbook" },
+    { href: "/comparisons", title: "Vendor Comparisons" },
+    { href: "/hire/by-country/mexico", title: "Hire in Mexico" },
+  ],
+};
+export default function FurtherReading({
+  items = [],
+  title = "Further reading",
+  comparison,
+}: {
+  items?: ReadingItem[];
+  title?: string;
+  comparison?: string;
+}) {
+  const list =
+    items.length ? items : PRESETS[comparison ?? ""] ?? PRESETS.default;
+  if (!list.length) return null;
   return (
     <aside aria-label={title} className="space-y-2 my-16 border-t border-border pt-8">
       <h2 className="text-xl font-bold">{title}</h2>
       <ul className="list-disc pl-5 space-y-1">
-        {items.map((it, i) => (
+        {list.map(({ href, title, desc }, i) => (
           <li key={i}>
-            <Link href={it.href} className="text-primary hover:underline">{it.title}</Link>
-            {it.desc ? <div className="text-sm text-muted-foreground">{it.desc}</div> : null}
+            <Link href={href} className="text-primary hover:underline">
+              {title}
+            </Link>
+            {desc ? <div className="text-sm text-muted-foreground">{desc}</div> : null}
           </li>
         ))}
       </ul>

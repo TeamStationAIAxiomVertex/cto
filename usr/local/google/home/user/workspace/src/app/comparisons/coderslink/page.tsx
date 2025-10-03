@@ -44,7 +44,7 @@ const comparisonPoints = {
 };
 
 const faqs = defaultComparisonFaqs(competitor.name);
-const schema = generateComparisonSchema({ ...competitor, faqs });
+const schema = generateComparisonSchema({ name: competitor.name, url: competitor.url, slug: competitor.slug, faqs });
 
 export default function CodersLinkComparisonPage() {
   return (

@@ -1,7 +1,15 @@
 import * as React from "react";
-export function JsonLd({ data, json, id }: {data?: any; json?: any; id?: string}) {
+type JsonLdProps = { data?: Record<string, any>; json?: Record<string, any>; id?: string };
+export function JsonLd({ data, json, id }: JsonLdProps) {
   const payload = json ?? data ?? {};
-  const text = JSON.stringify(payload).replace(/</g, "\\u003c");
-  return <script type="application/ld+json" id={id} dangerouslySetInnerHTML={{ __html: text }} suppressHydrationWarning />;
+  const jsonText = JSON.stringify(payload).replace(/</g, "\\u003c");
+  return (
+    <script
+      type="application/ld+json"
+      id={id}
+      dangerouslySetInnerHTML={{ __html: jsonText }}
+      suppressHydrationWarning
+    />
+  );
 }
 export default JsonLd;
