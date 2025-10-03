@@ -49,7 +49,6 @@ echo "▶ Typecheck & lint…"
 npm run typecheck
 npm run lint
 
-# 3) Build (Next output:export writes to out/)
 echo "▶ Building (strict)…"
 npm run build:strict
 
