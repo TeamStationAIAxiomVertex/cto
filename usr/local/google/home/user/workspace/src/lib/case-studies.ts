@@ -5,12 +5,17 @@ import { markdownToHtml } from './markdown-parser';
 
 export type CaseStudy = {
   slug: string;
+  title: string;
   clientName?: string;
   industry?: string;
   summary?: string;
   lastModified?: string;
   ogImage?: { src?: { url?: string }; aiHint?: string };
   contentHtml?: string;
+  challenge?: string;
+  outcomes?: string;
+  techStack?: { name: string; link: string }[];
+  canonical?: string;
 };
 
 const CANDIDATE_DIRS = [
@@ -39,6 +44,11 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
       summary: data.summary || data.description,
       ogImage: data.ogImage,
       lastModified: stat.mtime.toISOString(),
+      title: data.title,
+      challenge: data.challenge,
+      outcomes: data.outcomes,
+      techStack: data.techStack,
+      canonical: data.canonical
     };
   });
 }
@@ -54,11 +64,16 @@ export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null
   const stat = fs.statSync(file);
   return {
     slug,
+    title: data.title,
     clientName: data.clientName || data.title,
     industry: data.industry,
     summary: data.summary || data.description,
     ogImage: data.ogImage,
     lastModified: stat.mtime.toISOString(),
     contentHtml: html,
+    challenge: data.challenge,
+    outcomes: data.outcomes,
+    techStack: data.techStack,
+    canonical: data.canonical,
   };
 }
