@@ -1,6 +1,6 @@
 export const dynamic = "force-static";
 
-import faqData from "@/data/faq.json";
+import faqData from "../../data/faq.json";
 import Link from "next/link";
 import type { Metadata } from 'next';
 import { HelpCircle } from "lucide-react";

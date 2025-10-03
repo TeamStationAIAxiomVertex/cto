@@ -2,9 +2,9 @@
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { JsonLd } from '@/components/seo/JsonLd';
-import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
-import FurtherReading from '@/components/seo/FurtherReading';
+import { JsonLd } from "../../../components/seo/JsonLd";
+import ValuePropositionBlock from "../../../components/seo/ValuePropositionBlock";
+import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
   title: 'Unosquare Alternative | TeamStation AI',

@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BookOpen } from 'lucide-react';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { JsonLd } from "../../../components/seo/JsonLd";
 
 const pageInfo = {
   slug: "heuristically-trained-ai",

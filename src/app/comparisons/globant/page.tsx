@@ -1,11 +1,11 @@
 
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { WithTooltip } from "../../../components/ui/tooltip";
 import type { Metadata } from 'next';
-import { JsonLd } from '@/components/seo/JsonLd';
-import { DecisionCard } from '@/components/ui/DecisionCard';
-import FurtherReading from '@/components/seo/FurtherReading';
+import { JsonLd } from "../../../components/seo/JsonLd";
+import { DecisionCard } from "../../../components/ui/DecisionCard";
+import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
   title: 'Globant Alternative for Staff Augmentation (2024) | TS AI',

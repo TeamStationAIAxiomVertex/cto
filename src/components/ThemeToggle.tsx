@@ -1,3 +1,3 @@
 'use client';
-import { ThemeToggle } from '@/components/client/ThemeToggle';
+import { ThemeToggle } from "./client/ThemeToggle";
 export default ThemeToggle;

@@ -1,7 +1,7 @@
 import { Search, BrainCircuit, Handshake, Rocket, ShieldCheck, UserCheck, FileSearch, GanttChartSquare, Check, BookOpen, Star, Trophy, Beaker, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { WithTooltip } from "../../components/ui/tooltip";
 
 export const metadata: Metadata = {
   title: 'Our Nearshore IT Process: One Accountable SLA',

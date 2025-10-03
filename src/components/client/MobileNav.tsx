@@ -2,13 +2,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-import { NAV, simpleNavItems } from '@/config/nav';
+import { NAV, simpleNavItems } from "../../config/nav";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from "../ui/accordion";
 
 
 export function MobileNav() {

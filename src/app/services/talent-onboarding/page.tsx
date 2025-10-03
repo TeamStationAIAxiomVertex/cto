@@ -2,8 +2,8 @@
 import { FileCheck, Laptop, Users, Gauge, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { WithTooltip } from '@/components/ui/tooltip';
-import FurtherReading from '@/components/seo/FurtherReading';
+import { WithTooltip } from "../../../components/ui/tooltip";
+import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
   title: 'Secure & Auditable Nearshore Talent Onboarding',

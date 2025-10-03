@@ -1,7 +1,7 @@
 
 // src/app/playbook-sitemap.xml/route.ts
 import { NextResponse } from 'next/server';
-import { collectPlaybookUrls } from '@/lib/sitemap-data';
+import { collectPlaybookUrls } from "../../lib/sitemap-data";
 
 export const revalidate = 60 * 60; // 1h
 

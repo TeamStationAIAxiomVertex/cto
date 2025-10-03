@@ -2,11 +2,11 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle } from 'lucide-react';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../../../components/ui/tooltip";
 import { notFound } from 'next/navigation';
-import { allTech } from '@/lib/tech';
-import { JsonLd } from '@/components/seo/JsonLd';
-import FurtherReading from '@/components/seo/FurtherReading';
+import { allTech } from "../../../../lib/tech";
+import { JsonLd } from "../../../../components/seo/JsonLd";
+import FurtherReading from "../../../../components/seo/FurtherReading";
 
 type TechKeys = keyof typeof allTech;
 

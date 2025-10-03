@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, DollarSign, Zap, TestTube2, Users, Briefcase, ShieldCheck, Layers, GitCompare, UserCheck, HelpCircle, BookOpen, AlertTriangle, Scale } from 'lucide-react';
-import { WithTooltip } from '@/components/ui/tooltip';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { WithTooltip } from "../../../components/ui/tooltip";
+import { JsonLd } from "../../../components/seo/JsonLd";
 
 const faqSchema = {
  "@context": "https://schema.org",

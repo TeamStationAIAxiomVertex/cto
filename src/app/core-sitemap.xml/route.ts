@@ -1,7 +1,7 @@
 
 // src/app/core-sitemap.xml/route.ts
 import { NextResponse } from 'next/server';
-import { collectCoreUrls } from '@/lib/sitemap-data';
+import { collectCoreUrls } from "../../lib/sitemap-data";
 
 export const revalidate = 60 * 60 * 6; // 6h
 

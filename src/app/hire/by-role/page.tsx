@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
-import { WithTooltip } from '@/components/ui/tooltip';
-import { roleCategories } from '@/lib/roles';
-import FurtherReading from '@/components/seo/FurtherReading';
+import { WithTooltip } from "../../../components/ui/tooltip";
+import { roleCategories } from "../../../lib/roles";
+import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Role | Staff Augmentation',

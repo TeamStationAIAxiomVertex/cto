@@ -1,10 +1,10 @@
 
 import Link from "next/link";
 import type { Metadata } from "next";
-import { countries } from "@/lib/countries";
-import { roleCategories } from "@/lib/roles";
-import { techCategories } from "@/lib/tech";
-import { comparisonPages } from "@/lib/comparisonPages";
+import { countries } from "../../lib/countries";
+import { roleCategories } from "../../lib/roles";
+import { techCategories } from "../../lib/tech";
+import { comparisonPages } from "../../lib/comparisonPages";
 
 export const metadata: Metadata = {
   title: "HTML Sitemap | TeamStation AI",

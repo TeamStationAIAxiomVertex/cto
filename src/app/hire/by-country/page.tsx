@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import { ArrowRight, Building, Check, Languages, School, UserCheck } from 'lucide-react';
 import type { Metadata } from 'next';
-import SeoSafeImage from '@/components/seo/SeoSafeImage';
-import { countries } from '@/lib/countries';
-import placeholderImages from '@/app/lib/placeholder-images.json';
-import FurtherReading from '@/components/seo/FurtherReading';
+import SeoSafeImage from "../../../components/seo/SeoSafeImage";
+import { countries } from "../../../lib/countries";
+import placeholderImages from "../../lib/placeholder-images.json";
+import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Country | Top LATAM Hubs',

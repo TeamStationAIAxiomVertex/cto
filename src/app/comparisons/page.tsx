@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import { ArrowRight, Users, Scale, ShieldCheck, Briefcase, ExternalLink, Network } from 'lucide-react';
 import type { Metadata } from 'next';
-import { WithTooltip } from '@/components/ui/tooltip';
-import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
+import { WithTooltip } from "../../components/ui/tooltip";
+import ValuePropositionBlock from "../../components/seo/ValuePropositionBlock";
 
 export const metadata: Metadata = {
   title: 'Nearshore Vendor Comparisons | TeamStation AI',

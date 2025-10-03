@@ -3,9 +3,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowRight, BookOpen, Briefcase, DollarSign, FileText, GitCompare, HelpCircle, Laptop, Layers, Scale, ShieldCheck, UserCheck, Users, Zap, CheckCircle, Code } from 'lucide-react';
-import mexicoData from '@/data/countries/mexico.json';
-import { PSPCard } from '@/components/seo/PSPCard';
-import { roleCategories } from '@/lib/roles';
+import mexicoData from "../../../../data/countries/mexico.json";
+import { PSPCard } from "../../../../components/seo/PSPCard";
+import { roleCategories } from "../../../../lib/roles";
 
 // Define icons map
 const iconMap: { [key: string]: React.FC<any> } = {

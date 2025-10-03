@@ -3,9 +3,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Clock, Users, FileSearch, Building, Zap, ArrowRight, AlertTriangle, BookOpen, BrainCircuit, GitCompare, CheckCircle } from 'lucide-react';
 import dynamic from 'next/dynamic';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { JsonLd } from "../../../components/seo/JsonLd";
 
-const WithTooltip = dynamic(() => import('@/components/client/tooltip').then(mod => mod.WithTooltip), { ssr: false });
+const WithTooltip = dynamic(() => import("../../../components/client/tooltip").then(mod => mod.WithTooltip), { ssr: false });
 
 const faqSchema = {
  "@context": "https://schema.org",
@@ -24,7 +24,7 @@ const faqSchema = {
  ]
 };
 
-const ComparisonWidget = dynamic(() => import('@/components/ComparisonWidget'), {
+const ComparisonWidget = dynamic(() => import("../../../components/ComparisonWidget"), {
   ssr: false,
   loading: () => (
     <div className="text-center p-8 text-sm text-muted-foreground" aria-busy="true">

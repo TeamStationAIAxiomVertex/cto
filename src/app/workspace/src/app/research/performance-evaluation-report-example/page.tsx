@@ -1,8 +1,8 @@
 
 import React from "react";
 import Link from "next/link";
-import FurtherReading from "@/components/seo/FurtherReading";
-import { DecisionCard } from "@/components/ui/DecisionCard";
+import FurtherReading from "../../../../../../components/seo/FurtherReading";
+import { DecisionCard } from "../../../../../../components/ui/DecisionCard";
 
 export default function PerformanceEvaluationReportExample() {
   return (

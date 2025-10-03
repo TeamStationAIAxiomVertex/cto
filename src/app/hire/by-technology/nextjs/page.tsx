@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, BrainCircuit, ShieldCheck, FileText, Scale, UserX, UserCheck, AlertTriangle, Plane } from 'lucide-react';
-import { WithTooltip } from '@/components/ui/tooltip';
-import { allTech } from '@/lib/tech';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { WithTooltip } from "../../../../components/ui/tooltip";
+import { allTech } from "../../../../lib/tech";
+import { JsonLd } from "../../../../components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: `Hire Nearshore Next.js Developers`,

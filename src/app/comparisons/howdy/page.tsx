@@ -2,9 +2,9 @@
 import { CheckCircle, XCircle, ExternalLink, HelpCircle, UserCheck, ShieldCheck, Scale } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { PSPCard, type PSPBody } from '@/components/seo/PSPCard';
-import FurtherReading from '@/components/seo/FurtherReading';
-import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
+import { PSPCard, type PSPBody } from "../../../components/seo/PSPCard";
+import FurtherReading from "../../../components/seo/FurtherReading";
+import ValuePropositionBlock from "../../../components/seo/ValuePropositionBlock";
 
 const pageData = {
   "type": "comparison",

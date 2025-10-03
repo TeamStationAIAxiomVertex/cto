@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import { ArrowRight, Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane } from 'lucide-react';
 import type { Metadata } from 'next';
-import { techCategories } from '@/lib/tech';
-import FurtherReading from '@/components/seo/FurtherReading';
+import { techCategories } from "../../../lib/tech";
+import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Developers by Technology | TS AI',

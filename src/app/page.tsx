@@ -1,15 +1,15 @@
 
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component, Trophy } from 'lucide-react';
-import { getAllCaseStudies } from '@/lib/case-studies';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { getAllCaseStudies } from "../lib/case-studies";
+import { WithTooltip } from "../components/ui/tooltip";
 import type { Metadata } from 'next';
-import SafeImage from '@/components/SafeImage';
-import placeholderImages from '@/app/lib/placeholder-images.json';
-import HeroKpis, { type HeroKpi } from '@/components/metrics/HeroKpis';
+import SafeImage from "../components/SafeImage";
+import placeholderImages from "./lib/placeholder-images.json";
+import HeroKpis, { type HeroKpi } from "../components/metrics/HeroKpis";
 import dynamic from 'next/dynamic';
 
-const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon ?? mod.default), { ssr: false });
+const SpotifyIcon = dynamic(() => import("../components/SpotifyIcon").then(mod => mod.SpotifyIcon ?? mod.default), { ssr: false });
 
 const heroKpis: HeroKpi[] = [
   { id: 'compliance', label: 'Audit-Ready Compliance', value: 100, unit: '%', target: 100, desire: 'up' },

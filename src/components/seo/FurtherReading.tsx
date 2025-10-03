@@ -7,7 +7,7 @@ export type ReadingItem = { href: string; title: string; desc?: string };
 type Props = {
   items?: ReadingItem[];
   title?: string;
-  comparison?: string; // allow your usage: <FurtherReading comparison="andela" />
+  comparison?: string;
   role?: string;
   technology?: string;
   country?: string;
@@ -25,66 +25,6 @@ const PRESETS: Record<string, ReadingItem[]> = {
     { href: "/case-studies", title: "Customer case studies" },
   ],
   coderslink: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  deel: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  devlane: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  globant: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  howdy: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  kms: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  nearsure: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  parallelstaff: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  revelo: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  tecla: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  terminal: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  toptal: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  unosquare: [
     { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
     { href: "/trust", title: "Security & Compliance posture" },
     { href: "/case-studies", title: "Customer case studies" },

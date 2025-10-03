@@ -6,11 +6,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DollarSign, GitCompare, Layers, ArrowRight } from 'lucide-react';
 import dynamic from 'next/dynamic';
-import { JsonLd } from '@/components/seo/JsonLd';
-import { DecisionCard } from '@/components/ui/DecisionCard';
+import { JsonLd } from "../../../../../../components/seo/JsonLd";
+import { DecisionCard } from "../../../../../../components/ui/DecisionCard";
 
 // Load client-only widget as an island.
-const ComparisonWidget = dynamic(() => import('@/components/ComparisonWidget'),
+const ComparisonWidget = dynamic(() => import("../../../../../../components/ComparisonWidget"),
   {
     ssr: false,
     loading: () => (

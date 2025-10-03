@@ -1,6 +1,6 @@
 
 import type { ReactNode } from 'react';
-import { SpotifyIcon } from '@/components/SpotifyIcon';
+import { SpotifyIcon } from "../components/SpotifyIcon";
 
 // Note: NavItem href is now a string to allow external links
 export type NavItem = {

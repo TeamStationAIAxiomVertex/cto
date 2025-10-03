@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { ArrowRight, Briefcase, Award, CheckCircle, AlertTriangle, Shield } from 'lucide-react';
 import { markdownToHtml } from '../../../lib/markdown-parser';
 import type { Metadata } from 'next';
-import SeoSafeImage from '@/components/seo/SeoSafeImage';
-import FurtherReading from '@/components/seo/FurtherReading';
+import SeoSafeImage from "../../../components/seo/SeoSafeImage";
+import FurtherReading from "../../../components/seo/FurtherReading";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const study = await getCaseStudyBySlug(params.slug);

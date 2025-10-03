@@ -1,12 +1,12 @@
 
 import Link from 'next/link';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { WithTooltip } from "../../../../components/ui/tooltip";
 import type { Metadata } from 'next';
 import { CheckCircle, ArrowRight, Shield, Bug, CloudCog, AlertTriangle, Key } from 'lucide-react';
 import { notFound } from 'next/navigation';
-import { roleCategories } from '@/lib/roles';
-import { JsonLd } from '@/components/seo/JsonLd';
-import FurtherReading from '@/components/seo/FurtherReading';
+import { roleCategories } from "../../../../lib/roles";
+import { JsonLd } from "../../../../components/seo/JsonLd";
+import FurtherReading from "../../../../components/seo/FurtherReading";
 
 const roleData: { [key: string]: { name: string; intro: string; roles: string[]; skills: string[]; tech: { name: string, slug: string }[]; evaluation: string[]; problems?: { pain: string; roles: string[]; skills: string[] }[] } } = {
   'platform-infra-sre': {

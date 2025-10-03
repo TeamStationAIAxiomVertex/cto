@@ -1,7 +1,7 @@
 
 // server component — humanized Sandler PSP content for /hire/by-technology/typescript
 import Link from "next/link";
-import PSPCards, { PSPItem } from "@/components/seo/PSPCards";
+import PSPCards, { PSPItem } from "../PSPCards";
 
 export default function TypeScriptPSPSection() {
   const items: PSPItem[] = [

@@ -1,11 +1,11 @@
 
 // src/lib/sitemap-data.ts
-import { countries } from '@/lib/countries';
-import { roleCategories } from '@/lib/roles';
-import { techCategories } from '@/lib/tech';
-import { getAllCaseStudies } from '@/lib/case-studies';
-import { comparisonPages } from '@/lib/comparisonPages';
-import { getAllPlaybookSlugs } from '@/lib/playbook';
+import { countries } from "./countries";
+import { roleCategories } from "./roles";
+import { techCategories } from "./tech";
+import { getAllCaseStudies } from "./case-studies";
+import { comparisonPages } from "./comparisonPages";
+import { getAllPlaybookSlugs } from "./playbook";
 
 export type UrlRec = {
   url: string;

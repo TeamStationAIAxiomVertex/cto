@@ -1,3 +1,4 @@
+
 # Firebase App Hosting configuration
 runConfig:
   minInstances: 1
@@ -13,19 +14,29 @@ env:
       - BUILD
       - RUNTIME
 
-  # Production environment settings
   - variable: NODE_ENV
     value: "production"
     availability:
       - BUILD
       - RUNTIME
+
   - variable: LOG_LEVEL
     value: "warn"
     availability:
+      - BUILD
       - RUNTIME
 
-  # Only flip to "1" if you truly need to bypass TS during build
   - variable: BREAK_GLASS
     value: "0"
+    availability:
+      - BUILD
+  
+  - variable: FORCE_WRITE
+    value: "1"
+    availability:
+      - BUILD
+
+  - variable: STRICT_ALIAS_REWRITE
+    value: "1"
     availability:
       - BUILD

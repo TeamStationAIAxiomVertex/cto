@@ -3,10 +3,10 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { GitCompare, UserCheck, ShieldCheck, Scale, CheckCircle, Code, Layers, ArrowRight } from 'lucide-react';
-import uruguayData from '@/data/countries/uruguay.json';
-import { PSPCard } from '@/components/seo/PSPCard';
-import { roleCategories } from '@/lib/roles';
-import FurtherReading from '@/components/seo/FurtherReading';
+import uruguayData from "../../../../data/countries/uruguay.json";
+import { PSPCard } from "../../../../components/seo/PSPCard";
+import { roleCategories } from "../../../../lib/roles";
+import FurtherReading from "../../../../components/seo/FurtherReading";
 
 // Define icons map
 const iconMap: { [key: string]: React.FC<any> } = {

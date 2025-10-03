@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, BarChart, DollarSign, Globe, Scale, ShieldCheck, Zap, BrainCircuit, Users } from 'lucide-react';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { WithTooltip } from "../../../components/ui/tooltip";
 
 export const metadata: Metadata = {
   title: 'The CTO Playbook for Nearshore Engineering Success',

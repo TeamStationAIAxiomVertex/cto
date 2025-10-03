@@ -2,8 +2,8 @@
 import { redirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
-import FurtherReading from '@/components/seo/FurtherReading';
+import ValuePropositionBlock from "../../components/seo/ValuePropositionBlock";
+import FurtherReading from "../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
     title: "CTO Playbook | TeamStation AI",

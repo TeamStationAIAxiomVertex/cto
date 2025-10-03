@@ -2,11 +2,11 @@
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { JsonLd } from '@/components/seo/JsonLd';
-import { generateComparisonSchema } from '@/lib/comparisonSchema';
-import { defaultComparisonFaqs } from '@/lib/comparisonFaqs';
-import FurtherReading from '@/components/seo/FurtherReading';
-import { DecisionCard } from '@/components/ui/DecisionCard';
+import { JsonLd } from "../../../components/seo/JsonLd";
+import { generateComparisonSchema } from "../../../lib/comparisonSchema";
+import { defaultComparisonFaqs } from "../../../lib/comparisonFaqs";
+import FurtherReading from "../../../components/seo/FurtherReading";
+import { DecisionCard } from "../../../components/ui/DecisionCard";
 
 const competitor = {
   name: "CodersLink",

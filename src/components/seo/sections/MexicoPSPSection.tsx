@@ -1,6 +1,6 @@
 // server component — humanized Sandler PSP content for /hire/by-country/mexico
 import Link from "next/link";
-import PSPCards, { PSPItem } from "@/components/seo/PSPCards";
+import PSPCards, { PSPItem } from "../PSPCards";
 
 export default function MexicoPSPSection() {
   const items: PSPItem[] = [

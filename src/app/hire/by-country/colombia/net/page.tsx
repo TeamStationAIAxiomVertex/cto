@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { GitCompare, UserCheck, ShieldCheck, Scale, Code } from 'lucide-react';
-import { PSPCard } from '@/components/seo/PSPCard';
+import { PSPCard } from "../../../../../components/seo/PSPCard";
 
 export const metadata: Metadata = {
   title: 'Hire .NET Developers in Colombia | Nearshore Experts',

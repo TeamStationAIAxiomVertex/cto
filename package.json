@@ -9,13 +9,14 @@
   "packageManager": "npm@10",
   "scripts": {
     "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0",
-    "build": "next build",
-    "build:production": "npm ci && npm run prebuild && next build",
-    "build:strict": "npm run typecheck && npm run lint && npm run build:production",
-    "prebuild": "node scripts/syntax-scrubber.js",
+    "build": "npm run prebuild && next build",
+    "build:strict": "npm run typecheck && npm run lint && npm run build",
+    "prebuild": "STRICT_ALIAS_REWRITE=1 node scripts/ensure-required-files.js && node scripts/syntax-scrubber.js",
+    "postinstall": "node scripts/ensure-required-files.js",
+    "preinstall": "node scripts/ensure-required-files.js",
     "start": "next start -p ${PORT:-8080} -H 0.0.0.0",
-    "lint": "next lint",
-    "typecheck": "tsc --noEmit",
+    "lint": "node scripts/ensure-required-files.js && next lint",
+    "typecheck": "node scripts/ensure-required-files.js && tsc --noEmit",
     "nuclear": "bash scripts/nuclear-review.sh"
   },
   "dependencies": {

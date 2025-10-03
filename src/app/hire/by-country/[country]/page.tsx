@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import { ArrowRight, BrainCircuit, Code, GanttChartSquare, Layers, TestTube2, Briefcase, ShieldCheck, Database, Server, Wallet, Plane, UserCheck, School, Languages, Zap, Users, Clock } from 'lucide-react';
 import type { Metadata } from 'next';
-import { countries } from '@/lib/countries';
+import { countries } from "../../../../lib/countries";
 import { notFound } from 'next/navigation';
-import FurtherReading from '@/components/seo/FurtherReading';
+import FurtherReading from "../../../../components/seo/FurtherReading";
 
 const countriesData: { [key: string]: { name: string; psp: { pain: string; solution: string; proof: string; icon: React.ReactNode }[] } } = {
   'mexico': { 

@@ -1,6 +1,6 @@
 // src/app/sitemaps/playbook.xml/route.ts
 import { NextResponse } from "next/server";
-import { getAllPlaybookSlugs } from "@/lib/playbook";
+import { getAllPlaybookSlugs } from "../../../lib/playbook";
 import type { MetadataRoute } from 'next';
 
 export async function GET() {

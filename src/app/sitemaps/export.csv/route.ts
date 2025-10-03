@@ -1,7 +1,7 @@
 
 // src/app/sitemaps/export.csv/route.ts
 import { NextResponse } from 'next/server';
-import { collectCoreUrls, collectPlaybookUrls } from '@/lib/sitemap-data';
+import { collectCoreUrls, collectPlaybookUrls } from "../../../lib/sitemap-data";
 
 export const revalidate = 60 * 60; // 1h
 

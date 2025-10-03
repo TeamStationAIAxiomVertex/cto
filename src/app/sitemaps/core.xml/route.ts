@@ -1,10 +1,10 @@
 // src/app/sitemaps/core.xml/route.ts
 import { NextResponse } from "next/server";
-import { getAllCaseStudies } from "@/lib/case-studies";
-import { comparisonPages } from "@/lib/comparisonPages";
-import { techCategories } from "@/lib/tech";
-import { roleCategories } from "@/lib/roles";
-import { countries } from "@/lib/countries";
+import { getAllCaseStudies } from "../../../lib/case-studies";
+import { comparisonPages } from "../../../lib/comparisonPages";
+import { techCategories } from "../../../lib/tech";
+import { roleCategories } from "../../../lib/roles";
+import { countries } from "../../../lib/countries";
 import type { MetadataRoute } from 'next';
 
 

@@ -1,8 +1,8 @@
 'use client';
 import Link from 'next/link';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/client/Popover';
+import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
 import { ChevronDown, BookOpen } from 'lucide-react';
-import { NAV, simpleNavItems, type NavItem } from '@/config/nav';
+import { NAV, simpleNavItems, type NavItem } from "../../config/nav";
 
 function NavLink({ href, label, description, isHubLink }: NavItem) {
     const isExternal = href.startsWith('http');

@@ -4,7 +4,7 @@
 import * as React from 'react';
 import * as Popover from '@radix-ui/react-popover';
 import { Info } from 'lucide-react';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { WithTooltip } from "../ui/tooltip";
 
 
 type InfoDropdownProps = {

@@ -1,6 +1,7 @@
 
 // scripts/ensure-required-files.js
 /* eslint-disable no-console */
+console.log("🔎 ensure-required-files: start");
 const fs = require("fs");
 const path = require("path");
 
@@ -79,8 +80,11 @@ const PRESETS: Record<string, ReadingItem[]> = {
 export default function FurtherReading({ items = [], title = "Further reading", comparison, role, technology, country }: Props) {
   let list = items;
   if (!items.length) {
-      if(comparison && PRESETS[comparison]) list = PRESETS[comparison];
-      else list = PRESETS['default'];
+      if(comparison && PRESETS[comparison]) {
+        list = PRESETS[comparison];
+      } else {
+        list = PRESETS['default'];
+      }
   }
   
   if (!list.length) return null;
@@ -140,7 +144,7 @@ export function DecisionCard({ problem, stakes, approach, evidence, related = []
       <p><strong className="text-destructive">Problem:</strong> {problem}</p>
       <p><strong>Stakes:</strong> {stakes}</p>
       <p><strong className="text-primary">Approach:</strong> {approach}</p>
-      <p dangerouslySetInnerHTML={{ __html: "<strong>Evidence:</strong> " + evidence.replace(/\\[(.*?)\\]\\((.*?)\\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') }}></p>
+      <p dangerouslySetInnerHTML={{ __html: "<strong>Evidence:</strong> " + evidence.replace(/\\\[(.*?)\\]\\((.*?)\\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') }}></p>
       {related.length ? (
         <div className="pt-2">
           <div className="font-semibold">Related</div>
@@ -153,16 +157,6 @@ export function DecisionCard({ problem, stakes, approach, evidence, related = []
   );
 }
 export default DecisionCard;
-`.trim(),
-
-  [path.join(SRC, "components/SpotifyIcon.tsx")]: `
-import * as React from "react";
-export function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (<svg viewBox="0 0 168 168" aria-hidden="true" focusable="false" {...props}>
-    <path d="M84 0a84 84 0 1 0 0 168 84 84 0 0 0 0-168Zm38.7 121.3a6 6 0 0 1-8.3 2c-22.8-14-51.6-17.2-85.3-9.4a6 6 0 1 1-2.7-11.7c36.7-8.4 68.5-4.7 93 10.7a6 6 0 0 1 2.3 8.4Zm11-24.4a7.4 7.4 0 0 1-10.2 2.4c-26.1-16-65.9-20.7-96.7-11.3a7.4 7.4 0 1 1-4.2-14.2c34.6-10.2 78-5 107.6 13.1a7.4 7.4 0 0 1 3.5 10Zm1.3-25.9c-31-18.4-82.2-20.6-111.7-11.3a9 9 0 1 1-5.3-17.2c34.2-10.5 90.2-7.8 126 13.3a9 9 0 1 1-9 15.2Z" fill="currentColor"/>
-  </svg>);
-}
-export default SpotifyIcon;
 `.trim(),
 
   [path.join(SRC, "lib/markdown-parser.ts")]: `
@@ -271,7 +265,10 @@ function rewriteAliases() {
   const files = [];
 
   (function walk(dir) {
-    if (!fs.existsSync(dir)) return;
+    if (!fs.existsSync(dir)) {
+      console.error(`❌ src directory missing: ${dir}`);
+      process.exit(1);
+    }
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const p = path.join(dir, entry.name);
       if (entry.isDirectory()) walk(p);
@@ -279,26 +276,39 @@ function rewriteAliases() {
     }
   })(SRC);
 
-  // Correct regex (single backslashes) – handles ESM `from` and CJS `require(...)`
-  const rx = /from\s+['"]@\/([^'"]+)['"]|require\(\s*['"]@\/([^'"]+)['"]\s*\)/g;
-
   let rewrites = 0;
+
   for (const file of files) {
     const dir = path.dirname(file);
     let src = fs.readFileSync(file, "utf8");
     let changed = false;
-
-    src = src.replace(rx, (m, m1, m2) => {
-      const sub = (m1 || m2).trim(); // e.g. "components/seo/JsonLd"
+    
+    const mk = (sub) => {
       const targetAbs = path.join(SRC, sub);
-      const rel = path.relative(dir, targetAbs).replace(/\\/g, "/");
-      const fixed = rel.startsWith(".") ? rel : "./" + rel;
-      changed = true;
-      rewrites++;
-      return m.startsWith("from")
-        ? `from "${fixed}"`
-        : `require("${fixed}")`;
+      const rel = path
+        .relative(dir, targetAbs)
+        .replace(/\\/g, "/");
+      return rel.startsWith(".") ? rel : "./" + rel;
+    };
+
+    // 1) ESM/CJS: import/export ... from '@/...'
+    src = src.replace(/from\s+['"]@\/([^'"]+)['"]/g, (_m, sub) => {
+      changed = true; rewrites++;
+      return `from "${mk(sub.trim())}"`;
     });
+
+    // 2) CJS: require('@/...')
+    src = src.replace(/require\(\s*['"]@\/([^'"]+)['"]\s*\)/g, (_m, sub) => {
+      changed = true; rewrites++;
+      return `require("${mk(sub.trim())}")`;
+    });
+
+    // 3) Dynamic: import('@/...')
+    src = src.replace(/import\(\s*['"]@\/([^'"]+)['"]\s*\)/g, (_m, sub) => {
+      changed = true; rewrites++;
+      return `import("${mk(sub.trim())}")`;
+    });
+
 
     if (changed) {
       fs.writeFileSync(file, src);
@@ -306,18 +316,19 @@ function rewriteAliases() {
     }
   }
 
-  // Optional: harden the step so we don't miss anything
   const STRICT = process.env.STRICT_ALIAS_REWRITE === "1";
   const leftovers = files.filter(f => fs.readFileSync(f, "utf8").includes("@/"));
   if (leftovers.length) {
-    const msg = `Found \${leftovers.length} remaining "@/…" imports:\n` +
-                leftovers.map(f => " - " + path.relative(ROOT, f)).join("\n");
+    const msg =
+      `Found ${leftovers.length} remaining "@/…" imports:\n` +
+      leftovers.map(f => " - " + path.relative(ROOT, f)).join("\n");
     STRICT ? console.error("❌ " + msg) : console.warn("⚠️  " + msg);
     if (STRICT) process.exit(1);
   }
 
   console.log(`✅ alias rewrite complete (${rewrites} updates).`);
 }
+
 
 rewriteAliases();
 console.log("✅ ensure-required-files: done");

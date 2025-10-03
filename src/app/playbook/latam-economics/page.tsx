@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import { ArrowRight, TrendingUp, DollarSign, Zap, AlertTriangle, BrainCircuit, ShieldCheck, HelpCircle, Scale, Briefcase, BarChart, BookOpen, UserCheck, FileText } from 'lucide-react';
 import type { Metadata } from 'next';
-import { WithTooltip } from '@/components/ui/tooltip';
-import { JsonLd } from '@/components/seo/JsonLd';
-import ValuePropositionBlock from '@/components/seo/ValuePropositionBlock';
+import { WithTooltip } from "../../../components/ui/tooltip";
+import { JsonLd } from "../../../components/seo/JsonLd";
+import ValuePropositionBlock from "../../../components/seo/ValuePropositionBlock";
 
 const faqSchema = {
  "@context": "https://schema.org",

@@ -2,10 +2,10 @@
 'use client'
 
 import React, { type ReactNode } from 'react';
-import { Accordion, AccordionItem } from '@/components/client/Accordion';
+import { Accordion, AccordionItem } from "../../../components/client/Accordion";
 import { BrainCircuit, ArrowRight, HelpCircle, UserCheck, Zap } from 'lucide-react';
 import Link from 'next/link';
-import { WithTooltip } from '@/components/client/tooltip';
+import { WithTooltip } from "../../../components/client/tooltip";
 
 const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 

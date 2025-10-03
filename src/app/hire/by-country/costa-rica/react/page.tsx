@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { GitCompare, UserCheck, ShieldCheck, Scale, Layers } from 'lucide-react';
-import { PSPCard } from '@/components/seo/PSPCard';
+import { PSPCard } from "../../../../../components/seo/PSPCard";
 
 export const metadata: Metadata = {
   title: 'Hire React Developers in Costa Rica | Nearshore Experts',

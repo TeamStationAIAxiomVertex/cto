@@ -1,10 +1,10 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { WithTooltip } from "../../../components/ui/tooltip";
 import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen } from 'lucide-react';
-import { JsonLd } from '@/components/seo/JsonLd';
-import { DecisionCard } from '@/components/ui/DecisionCard';
+import { JsonLd } from "../../../components/seo/JsonLd";
+import { DecisionCard } from "../../../components/ui/DecisionCard";
 
 const faqSchema = {
  "@context": "https://schema.org",
