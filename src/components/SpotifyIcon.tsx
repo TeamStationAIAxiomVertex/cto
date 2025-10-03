@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export default function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
+export function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 168 168" aria-hidden="true" focusable="false" {...props}>
       <path
@@ -10,3 +10,5 @@ export default function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export default SpotifyIcon;
