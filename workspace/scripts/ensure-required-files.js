@@ -1,3 +1,4 @@
+// scripts/ensure-required-files.js
 const fs = require("fs");
 const path = require("path");
 
@@ -50,12 +51,12 @@ for (const [rel, content] of files) {
   if (!fs.existsSync(abs)) {
     fs.mkdirSync(path.dirname(abs), { recursive: true });
     fs.writeFileSync(abs, content);
-    console.log(`🧩 created ${rel}`);
+    console.log(\`🧩 created \${rel}\`);
   } else {
     const ok = fs.readFileSync(abs, "utf8").trim().length > 0;
     if (!ok) {
       fs.writeFileSync(abs, content);
-      console.log(`🧩 fixed empty ${rel}`);
+      console.log(\`🧩 fixed empty \${rel}\`);
     }
   }
 }
