@@ -9,11 +9,11 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>${base}/core-sitemap.xml</loc>
+    <loc>${base}/sitemaps/core.xml</loc>
     <lastmod>${now}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>${base}/playbook-sitemap.xml</loc>
+    <loc>${base}/sitemaps/playbook.xml</loc>
     <lastmod>${now}</lastmod>
   </sitemap>
 </sitemapindex>`;
