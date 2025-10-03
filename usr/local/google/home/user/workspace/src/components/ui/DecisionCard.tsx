@@ -1,16 +1,9 @@
 import * as React from "react";
 import Link from "next/link";
 export function DecisionCard({
-  problem,
-  stakes,
-  approach,
-  evidence,
-  related = [],
+  problem, stakes, approach, evidence, related = [],
 }: {
-  problem: string;
-  stakes: string;
-  approach: string;
-  evidence: string;
+  problem: string; stakes: string; approach: string; evidence: string;
   related?: { label: string; href: string }[];
 }) {
   return (
@@ -26,20 +19,16 @@ export function DecisionCard({
             evidence.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>'),
         }}
       />
-      {related.length ? (
+      {!!related.length && (
         <div className="pt-2">
           <div className="font-semibold">Related</div>
           <ul className="list-disc pl-5">
             {related.map((r, i) => (
-              <li key={i}>
-                <Link className="text-primary hover:underline" href={r.href}>
-                  {r.label}
-                </Link>
-              </li>
+              <li key={i}><Link className="text-primary hover:underline" href={r.href}>{r.label}</Link></li>
             ))}
           </ul>
         </div>
-      ) : null}
+      )}
     </section>
   );
 }

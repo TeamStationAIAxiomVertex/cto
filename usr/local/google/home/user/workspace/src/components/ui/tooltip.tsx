@@ -4,8 +4,7 @@ export function Tooltip({ children }: { children: React.ReactNode }) { return <>
 export function TooltipTrigger({ children }: { children: React.ReactNode }) { return <>{children}</>; }
 export function TooltipContent({ children }: { children: React.ReactNode }) { return <>{children}</>; }
 export function WithTooltip(props: {
-  content?: React.ReactNode; label?: React.ReactNode; children: React.ReactNode;
-  as?: keyof JSX.IntrinsicElements; className?: string;
+  content?: React.ReactNode; label?: React.ReactNode; children: React.ReactNode; as?: keyof JSX.IntrinsicElements; className?: string;
 }) {
   const { content, label, children, as: Tag = "span", className } = props as any;
   const title = typeof (content ?? label) === "string" ? (content ?? label) : undefined;

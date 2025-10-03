@@ -27,13 +27,8 @@ export default function FurtherReading({
   items = [],
   title = "Further reading",
   comparison,
-}: {
-  items?: ReadingItem[];
-  title?: string;
-  comparison?: string;
-}) {
-  const list =
-    items.length ? items : PRESETS[comparison ?? ""] ?? PRESETS.default;
+}: { items?: ReadingItem[]; title?: string; comparison?: string }) {
+  const list = items.length ? items : PRESETS[comparison ?? ""] ?? PRESETS.default;
   if (!list.length) return null;
   return (
     <aside aria-label={title} className="space-y-2 my-16 border-t border-border pt-8">
