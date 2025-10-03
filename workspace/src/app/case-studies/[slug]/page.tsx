@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Briefcase, Award, CheckCircle, AlertTriangle, Shield } from 'lucide-react';
 import type { Metadata } from 'next';
-import SeoSafeImage from '@/components/seo/SeoSafeImage';
+import SeoSafeImage from '../../../components/seo/SeoSafeImage';
 import FurtherReading from "../../../components/seo/FurtherReading";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
