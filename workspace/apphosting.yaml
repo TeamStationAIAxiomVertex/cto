@@ -24,3 +24,13 @@ env:
     value: "0"
     availability:
       - BUILD
+  
+  - variable: FORCE_WRITE
+    value: "1"
+    availability:
+      - BUILD
+
+  - variable: STRICT_ALIAS_REWRITE
+    value: "1"
+    availability:
+      - BUILD
