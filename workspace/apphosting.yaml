@@ -35,3 +35,4 @@ env:
   - variable: NEXT_PUBLIC_SITE_URL
     value: "https://cto.teamstation.dev"
     availability: [BUILD, RUNTIME]
+
