@@ -185,7 +185,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                   
                   <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
                       <h3 className="text-xl font-bold flex items-center gap-3 text-primary"><Shield className="h-6 w-6" />The Solution</h3>
-                      <p className="mt-4 text-sm text-foreground">{study.summary ?? 'A comprehensive solution was implemented to address the client\\'s challenges.'}</p>
+                      <p className="mt-4 text-sm text-foreground">{study.summary ?? 'A comprehensive solution was implemented to address the client\'s challenges.'}</p>
                   </div>
 
                   {study.outcomes && study.outcomes.length > 0 && (
