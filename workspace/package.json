@@ -14,7 +14,8 @@
     "prebuild": "node scripts/syntax-scrubber.js",
     "start": "NODE_OPTIONS=--experimental-specifier-resolution=node next start -p ${PORT:-8080} -H 0.0.0.0",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:strict": "npm run typecheck && npm run lint && npm run build:production"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
