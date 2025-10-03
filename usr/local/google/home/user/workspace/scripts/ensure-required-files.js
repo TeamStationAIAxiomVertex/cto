@@ -264,6 +264,64 @@ export async function getCaseStudyBySlug(slug: string | undefined): Promise<Case
 }
 export default { getAllCaseStudies, getCaseStudyBySlug };
 `.trim(),
+
+  // --- Comparison helpers ---
+  [path.join(SRC, "lib/comparisonFaqs.ts")]: `
+export type Faq = { q: string; a: string };
+
+/** Default FAQs for a competitor page; safe fallback if none provided */
+export function defaultComparisonFaqs(vendor: string): Faq[] {
+  return [
+    {
+      q: \`Why choose TeamStation AI vs. \${vendor}?\`,
+      a: "TeamStation AI bundles scientific vetting, secure MDM devices, EOR/compliance, and insurance under one SLA to reduce risk and lower TCO."
+    },
+    {
+      q: "How do you vet engineers?",
+      a: "We use our Axiom Cortex™ cognitive AI to measure problem-solving ability and learning orientation, providing evidence-based signals—beyond resumes."
+    },
+    {
+      q: "What about compliance and security?",
+      a: "We’re aligned to SOC 2/ISO practices, devices are MDM-managed with encryption and remote wipe, and all work is covered by Cyber & E&O insurance."
+    }
+  ];
+}
+export default { defaultComparisonFaqs };
+`.trim(),
+
+  [path.join(SRC, "lib/comparisonSchema.ts")]: `
+import type { Faq } from "./comparisonFaqs";
+
+type Args = { name: string; url?: string; slug?: string; faqs?: Faq[] };
+const SITE = "https://cto.teamstation.dev";
+
+/** Minimal, valid JSON-LD for comparison pages with optional FAQ */
+export function generateComparisonSchema({ name, url, slug, faqs = [] }: Args) {
+  const canonical = \`\${SITE}/comparisons/\${slug ?? name.toLowerCase()}\`;
+
+  const faqBlock = faqs.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(({ q, a }) => ({
+          "@type": "Question",
+          "name": q,
+          "acceptedAnswer": { "@type": "Answer", "text": a }
+        }))
+      }
+    : null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": \`TeamStation AI vs. \${name}\`,
+    "url": canonical,
+    "about": { "@type": "Organization", "name": name, "url": url },
+    ...(faqBlock ? { faqBlock } : {})
+  };
+}
+export default { generateComparisonSchema };
+`.trim(),
 };
 
 /** ---------- Write any missing files ---------- */
@@ -302,19 +360,19 @@ function rewriteAliases() {
     };
 
     // 1) ESM/CJS: import/export ... from '@/...'
-    src = src.replace(/from\\s+['"]@\\/([^'"]+)['"]/g, (_m, sub) => {
+    src = src.replace(/from\s+['"]@\/([^'"]+)['"]/g, (_m, sub) => {
       changed = true; rewrites++;
       return `from "${mk(sub.trim())}"`;
     });
 
     // 2) CJS: require('@/...')
-    src = src.replace(/require\\(\\s*['"]@\\/([^'"]+)['"]\\s*\\)/g, (_m, sub) => {
+    src = src.replace(/require\(\s*['"]@\/([^'"]+)['"]\s*\)/g, (_m, sub) => {
       changed = true; rewrites++;
       return `require("${mk(sub.trim())}")`;
     });
 
     // 3) Dynamic: import('@/...')
-    src = src.replace(/import\\(\\s*['"]@\\/([^'"]+)['"]\\s*\\)/g, (_m, sub) => {
+    src = src.replace(/import\(\s*['"]@\/([^'"]+)['"]\s*\)/g, (_m, sub) => {
       changed = true; rewrites++;
       return `import("${mk(sub.trim())}")`;
     });
@@ -341,5 +399,3 @@ function rewriteAliases() {
 
 rewriteAliases();
 console.log("✅ ensure-required-files: done");
-
-    
