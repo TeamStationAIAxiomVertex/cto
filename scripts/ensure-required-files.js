@@ -45,7 +45,7 @@ export { JsonLdImpl as JsonLd };
 
   [path.join(SRC, "components/seo/FurtherReading.tsx")]: `
 import * as React from "react";
-import Link from 'next/link';
+import Link from "next/link";
 
 export type ReadingItem = { href: string; title: string; desc?: string };
 
@@ -141,15 +141,15 @@ export function DecisionCard({ problem, stakes, approach, evidence, related = []
   return (
     <section className="rounded-lg border bg-card p-6 space-y-4 my-16">
       <h3 className="text-xl font-bold">Decision Brief</h3>
-      <p><strong className="text-destructive">Problem:</strong> {problem}</p>
+      <p><strong>Problem:</strong> {problem}</p>
       <p><strong>Stakes:</strong> {stakes}</p>
-      <p><strong className="text-primary">Approach:</strong> {approach}</p>
-      <p dangerouslySetInnerHTML={{ __html: "<strong>Evidence:</strong> " + evidence.replace(/\\\[(.*?)\\]\\((.*?)\\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') }}></p>
+      <p><strong>Approach:</strong> {approach}</p>
+      <p><strong>Evidence:</strong> {evidence}</p>
       {related.length ? (
         <div className="pt-2">
           <div className="font-semibold">Related</div>
           <ul className="list-disc pl-5">
-            {related.map((r, i) => <li key={i}><Link className="text-primary hover:underline" href={r.href}>{r.label}</Link></li>)}
+            {related.map((r, i) => <li key={i}><a className="underline" href={r.href}>{r.label}</a></li>)}
           </ul>
         </div>
       ) : null}
@@ -159,6 +159,18 @@ export function DecisionCard({ problem, stakes, approach, evidence, related = []
 export default DecisionCard;
 `.trim(),
 
+  // --- Icons ---
+  [path.join(SRC, "components/SpotifyIcon.tsx")]: `
+import * as React from "react";
+export function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (<svg viewBox="0 0 168 168" aria-hidden="true" focusable="false" {...props}>
+    <path d="M84 0a84 84 0 1 0 0 168 84 84 0 0 0 0-168Zm38.7 121.3a6 6 0 0 1-8.3 2c-22.8-14-51.6-17.2-85.3-9.4a6 6 0 1 1-2.7-11.7c36.7-8.4 68.5-4.7 93 10.7a6 6 0 0 1 2.3 8.4Zm11-24.4a7.4 7.4 0 0 1-10.2 2.4c-26.1-16-65.9-20.7-96.7-11.3a7.4 7.4 0 1 1-4.2-14.2c34.6-10.2 78-5 107.6 13.1a7.4 7.4 0 0 1 3.5 10Zm1.3-25.9c-31-18.4-82.2-20.6-111.7-11.3a9 9 0 1 1-5.3-17.2c34.2-10.5 90.2-7.8 126 13.3a9 9 0 1 1-9 15.2Z" fill="currentColor"/>
+  </svg>);
+}
+export default SpotifyIcon;
+`.trim(),
+
+  // --- Markdown helpers ---
   [path.join(SRC, "lib/markdown-parser.ts")]: `
 import { remark } from "remark";
 import html from "remark-html";
@@ -254,6 +266,96 @@ export async function getCaseStudyBySlug(slug: string | undefined): Promise<Case
 }
 export default { getAllCaseStudies, getCaseStudyBySlug };
 `.trim(),
+
+  // --- Comparison helpers ---
+  [path.join(SRC, "lib/comparisonFaqs.ts")]: `
+export type Faq =
+  | { q: string; a: string }
+  | { question: string; answer: string };
+
+export function defaultComparisonFaqs(vendor: string): Faq[] {
+  // Keep the {question,answer} shape by default, but accept {q,a} elsewhere
+  return [
+    {
+      question: \`Why choose TeamStation AI vs. \${vendor}?\`,
+      answer:
+        "TeamStation AI bundles scientific vetting, secure MDM devices, EOR/compliance, and insurance under one SLA to reduce risk and lower TCO.",
+    },
+    {
+      question: "How do you vet engineers?",
+      answer:
+        "We use our Axiom Cortex™ cognitive AI to measure problem-solving ability and learning orientation, providing evidence-based signals—beyond resumes.",
+    },
+    {
+      question: "What about compliance and security?",
+      answer:
+        "We’re aligned to SOC 2/ISO practices, devices are MDM-managed with encryption and remote wipe, and all work is covered by Cyber & E&O insurance.",
+    },
+  ];
+}
+
+export default { defaultComparisonFaqs };
+`.trim(),
+
+  [path.join(SRC, "lib/comparisonSchema.ts")]: `
+import type { Faq } from "./comparisonFaqs";
+
+type AnyFaq = { q?: string; a?: string; question?: string; answer?: string };
+
+function normalizeFaqs(faqs: AnyFaq[]) {
+  return (faqs || [])
+    .map((f) => ({
+      question: (f as any).question ?? (f as any).q,
+      answer: (f as any).answer ?? (f as any).a,
+    }))
+    .filter((f) => f.question && f.answer);
+}
+
+type Args = {
+  // accept both old and new shapes
+  name?: string;
+  url?: string;
+  competitorName?: string;
+  competitorUrl?: string;
+  slug?: string;
+  faqs?: Faq[];
+};
+
+const SITE = "https://cto.teamstation.dev";
+
+/** Returns either a single WebPage object or [WebPage, FAQPage] */
+export function generateComparisonSchema(args: Args) {
+  const name = args.name ?? args.competitorName ?? "Competitor";
+  const url = args.url ?? args.competitorUrl;
+  const slug = args.slug ?? name.toLowerCase();
+  const faqs = normalizeFaqs(args.faqs as AnyFaq[]);
+
+  const webPage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: \`TeamStation AI vs. \${name}\`,
+    url: \`\${SITE}/comparisons/\${slug}\`,
+    about: { "@type": "Organization", name, ...(url ? { url } : {}) },
+  };
+
+  if (!faqs.length) return webPage;
+
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
+  // JSON-LD arrays are valid and handled by your <JsonLd> component
+  return [webPage, faqPage];
+}
+
+export default { generateComparisonSchema };
+`.trim(),
 };
 
 /** ---------- Write any missing files ---------- */
@@ -282,7 +384,7 @@ function rewriteAliases() {
     const dir = path.dirname(file);
     let src = fs.readFileSync(file, "utf8");
     let changed = false;
-    
+
     const mk = (sub) => {
       const targetAbs = path.join(SRC, sub);
       const rel = path
@@ -292,23 +394,22 @@ function rewriteAliases() {
     };
 
     // 1) ESM/CJS: import/export ... from '@/...'
-    src = src.replace(/from\s+['"]@\/([^'"]+)['"]/g, (_m, sub) => {
+    src = src.replace(/from\\s+['"]@\/([^'"]+)['"]/g, (_m, sub) => {
       changed = true; rewrites++;
       return `from "${mk(sub.trim())}"`;
     });
 
     // 2) CJS: require('@/...')
-    src = src.replace(/require\(\s*['"]@\/([^'"]+)['"]\s*\)/g, (_m, sub) => {
+    src = src.replace(/require\\(\\s*['"]@\/([^'"]+)['"]\\s*\\)/g, (_m, sub) => {
       changed = true; rewrites++;
       return `require("${mk(sub.trim())}")`;
     });
 
     // 3) Dynamic: import('@/...')
-    src = src.replace(/import\(\s*['"]@\/([^'"]+)['"]\s*\)/g, (_m, sub) => {
+    src = src.replace(/import\\(\\s*['"]@\/([^'"]+)['"]\\s*\\)/g, (_m, sub) => {
       changed = true; rewrites++;
       return `import("${mk(sub.trim())}")`;
     });
-
 
     if (changed) {
       fs.writeFileSync(file, src);
@@ -320,8 +421,8 @@ function rewriteAliases() {
   const leftovers = files.filter(f => fs.readFileSync(f, "utf8").includes("@/"));
   if (leftovers.length) {
     const msg =
-      `Found ${leftovers.length} remaining "@/…" imports:\n` +
-      leftovers.map(f => " - " + path.relative(ROOT, f)).join("\n");
+      `Found ${leftovers.length} remaining "@/…" imports:\\n` +
+      leftovers.map(f => " - " + path.relative(ROOT, f)).join("\\n");
     STRICT ? console.error("❌ " + msg) : console.warn("⚠️  " + msg);
     if (STRICT) process.exit(1);
   }

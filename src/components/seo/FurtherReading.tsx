@@ -1,17 +1,9 @@
 
 import * as React from "react";
-import Link from 'next/link';
+import Link from "next/link";
 
 export type ReadingItem = { href: string; title: string; desc?: string };
-
-type Props = {
-  items?: ReadingItem[];
-  title?: string;
-  comparison?: string;
-  role?: string;
-  technology?: string;
-  country?: string;
-};
+type Props = { items?: ReadingItem[]; title?: string; comparison?: string };
 
 const PRESETS: Record<string, ReadingItem[]> = {
   andela: [
@@ -36,16 +28,8 @@ const PRESETS: Record<string, ReadingItem[]> = {
   ],
 };
 
-export default function FurtherReading({ items = [], title = "Further reading", comparison, role, technology, country }: Props) {
-  let list = items;
-  if (!items.length) {
-      if(comparison && PRESETS[comparison]) {
-        list = PRESETS[comparison];
-      } else {
-        list = PRESETS['default'];
-      }
-  }
-  
+export default function FurtherReading({ items = [], title = "Further reading", comparison }: Props) {
+  const list = items.length ? items : PRESETS[comparison ?? ""] ?? PRESETS.default;
   if (!list.length) return null;
 
   return (

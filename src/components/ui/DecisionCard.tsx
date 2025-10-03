@@ -1,6 +1,7 @@
 
 import * as React from "react";
-import Link from 'next/link';
+import Link from "next/link";
+
 export function DecisionCard({
   problem, stakes, approach, evidence, related = [],
 }: {
@@ -20,7 +21,7 @@ export function DecisionCard({
             evidence.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>'),
         }}
       />
-      {!!related.length && (
+      {related.length ? (
         <div className="pt-2">
           <div className="font-semibold">Related</div>
           <ul className="list-disc pl-5">
@@ -29,7 +30,7 @@ export function DecisionCard({
             ))}
           </ul>
         </div>
-      )}
+      ) : null}
     </section>
   );
 }

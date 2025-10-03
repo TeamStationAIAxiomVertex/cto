@@ -1,4 +1,3 @@
-
 # Firebase App Hosting configuration
 runConfig:
   minInstances: 1
@@ -26,11 +25,6 @@ env:
       - BUILD
       - RUNTIME
 
-  - variable: BREAK_GLASS
-    value: "0"
-    availability:
-      - BUILD
-  
   - variable: FORCE_WRITE
     value: "1"
     availability:
