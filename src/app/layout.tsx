@@ -15,9 +15,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'TeamStation AI',
   description: 'Nearshore IT Co-Pilot and CTO Playbook',
+  manifest: '/manifest.webmanifest',
+  themeColor: '#0F172A',
   icons: {
-    icon: '/logo.svg',
-  },
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico'
+  }
 };
 
 export default function RootLayout({

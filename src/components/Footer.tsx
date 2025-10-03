@@ -68,7 +68,7 @@ const popularTechLinks: LinkItem[] = [
   'react','node','python','java','go','net','aws','kubernetes','dbt','snowflake','pytorch','transformers','langchain','nextjs',
 ].map((slug) => {
   const tech = techCategories.flatMap((c) => c.tech).find((t) => t.slug === slug);
-  return { href: `/hire/by-technology/${slug}`, label: `Hire ${tech?.name || slug} developers` };
+  return { href: `/hire/by-technology/${slug}`, label: `Hire ${tech?.name || slug} Developers` };
 });
 
 // Utility Section
@@ -118,7 +118,7 @@ export default function Footer() {
               Boston, MA 02210
             </address>
             <div className="mt-4">
-              <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80">
+              <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80 a11y-tap-target">
                 Sign In to Platform
               </Link>
             </div>
@@ -151,13 +151,13 @@ export default function Footer() {
           <p>© {year} TeamStation AI — All rights reserved.</p>
           <p className="mt-2">
             Part of the TeamStation AI network — visit our corporate site at{' '}
-            <a href="https://teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+            <a href="https://teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline a11y-tap-target">
               teamstation.dev
             </a>
           </p>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4">
             {utilityLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground">
+              <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground a11y-tap-target">
                 {link.label}
               </Link>
             ))}

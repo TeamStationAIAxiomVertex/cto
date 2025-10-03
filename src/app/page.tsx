@@ -167,7 +167,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="trust-by-numbers" className="py-12">
+        <section id="trust-by-numbers" className="py-12 section-defer">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 {trustNumbers.map((item) => (
                     <div key={item.label} className="group rounded-lg border bg-card p-4 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
@@ -181,7 +181,7 @@ export default async function HomePage() {
             </div>
         </section>
         
-        <section id="core-pillars" className="py-24">
+        <section id="core-pillars" className="py-24 section-defer">
           <h2 className="text-center text-4xl font-bold text-foreground">
               Your Unfair Advantage
           </h2>
@@ -218,7 +218,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="pain-points" className="py-24 bg-card rounded-lg shadow-lg">
+        <section id="pain-points" className="py-24 bg-card rounded-lg shadow-lg section-defer">
           <h2 className="text-center text-4xl font-bold text-foreground">Sound Familiar? It's the Cost of Doing Nothing.</h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">These aren't just headaches. They are symptoms of a broken IT staff augmentation model.</p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -231,7 +231,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="comparison" className="py-24">
+        <section id="comparison" className="py-24 section-defer">
           <h2 className="text-center text-4xl font-bold text-foreground">
               There Is a Better Way
           </h2>
@@ -271,7 +271,7 @@ export default async function HomePage() {
             </div>
         </section>
 
-        <section id="thought-leadership" className="py-24">
+        <section id="thought-leadership" className="py-24 section-defer">
           <h2 className="text-center text-4xl font-bold text-foreground">
               Go Deeper: Our Research & Vision
           </h2>
@@ -296,7 +296,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="case-studies" className="py-24">
+        <section id="case-studies" className="py-24 section-defer">
           <h2 className="text-center text-4xl font-bold text-foreground">
               Evidence of Impact
           </h2>
@@ -327,7 +327,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="contact" className="py-24">
+        <section id="contact" className="py-24 section-defer">
           <div className="mx-auto max-w-3xl rounded-lg border bg-card p-8 text-center shadow-lg">
               <h2 className="text-3xl font-bold text-foreground">Stop Patching a Broken System. Build a Better One.</h2>
               <p className="mt-3 text-muted-foreground">In a 15-minute call, we won't give you a sales pitch. We'll give you a concrete plan to fix your hiring process, consolidate your vendors, and get a predictable, CFO-ready budget for your nearshore team. You will walk away with actionable advice, whether you work with us or not.</p>
