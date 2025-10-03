@@ -1,0 +1,113 @@
+
+site_name: TeamStation AI
+site_url: https://cto.teamstation.dev/
+nav:
+    - Home: index.md
+    - About: about.md
+    - 'Case Studies':
+        - 'Case Studies Hub': case-studies/index.md
+        - 'Atticus': case-studies/atticus.md
+        - 'Global Entertainment Platform': case-studies/global-entertainment-platform.md
+        - 'Global OOH Advertising Platform': case-studies/global-ooh-advertising-platform.md
+        - 'Healthcare Revenue Platform': case-studies/healthcare-revenue-platform.md
+        - 'Parsable': case-studies/parsable.md
+        - 'RMJ Technologies': case-studies/rmj-technologies.md
+    - 'CTO Playbook':
+        - 'Playbook Hub': playbook/hub.md
+        - 'Nearshore vs Offshore': playbook/nearshore-vs-offshore.md
+        - 'LATAM Economics & TCO': playbook/latam-economics.md
+        - 'Build vs. Buy Framework': playbook/build-vs-buy.md
+        - 'Bias-Free Technical Hiring': playbook/bias-free-technical-hiring-axiom-cortex.md
+        - 'TCO Model': playbook/tco-model.md
+    - 'Research':
+        - 'Research Hub': research/hub.md
+        - 'AxiomCortex™ R&D Report': research/axiom-cortex-scientific-report.md
+        - 'Performance Evaluation Framework': research/performance-evaluation-framework.md
+        - 'Sample Performance Evaluation Report': research/performance-evaluation-report-example.md
+        - 'Technical Talent Evaluation System': research/technical-talent-evaluation-system.md
+    - 'Comparisons':
+        - 'Comparisons Hub': comparisons/index.md
+        - 'vs. BairesDev': comparisons/bairesdev.md
+        - 'vs. Toptal': comparisons/toptal.md
+        - 'vs. Andela': comparisons/andela.md
+        - 'vs. Globant': comparisons/globant.md
+        - 'vs. Terminal': comparisons/terminal.md
+        - 'vs. Revelo': comparisons/revelo.md
+        - 'vs. TECLA': comparisons/tecla.md
+        - 'vs. Howdy': comparisons/howdy.md
+        - 'vs. Nearsure': comparisons/nearsure.md
+        - 'vs. ParallelStaff': comparisons/parallelstaff.md
+        - 'vs. CodersLink': comparisons/coderslink.md
+        - 'vs. Unosquare': comparisons/unosquare.md
+        - 'vs. KMS Technology': comparisons/kms.md
+        - 'vs. Devlane': comparisons/devlane.md
+    - 'Hire Developers':
+        - 'Hire Home': hire/index.md
+        - 'By Role': hire/by-role.md
+        - 'By Technology': hire/by-technology.md
+        - 'By Country': hire/by-country.md
+    - 'Trust': trust.md
+    - 'Pricing': pricing.md
+    - 'Process': process.md
+    - 'Platform': platform.md
+theme:
+  name: material
+  logo: assets/images/logo.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: 'blue'
+      accent: 'blue'
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: 'blue'
+      accent: 'blue'
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+plugins:
+    - search
+    - material/social
+    - material/tags
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/teamstation
+      name: TeamStation on LinkedIn
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@teamstation
+      name: TeamStation on YouTube
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/teamstation
+      name: TeamStation on Twitter
+  generator: false
+
