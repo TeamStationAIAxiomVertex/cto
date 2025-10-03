@@ -17,6 +17,7 @@ env:
   - variable: NODE_ENV
     value: "production"
     availability:
+      - BUILD
       - RUNTIME
   - variable: LOG_LEVEL
     value: "warn"

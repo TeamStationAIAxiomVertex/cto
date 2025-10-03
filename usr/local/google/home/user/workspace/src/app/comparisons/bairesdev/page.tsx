@@ -1,11 +1,11 @@
 
 import { CheckCircle, XCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { WithTooltip } from '../../../components/ui/tooltip';
+import { WithTooltip } from '@/components/ui';
 import type { Metadata } from 'next';
-import { JsonLd } from '../../../components/seo/JsonLd';
-import FurtherReading from '../../../components/seo/FurtherReading';
-import { DecisionCard } from '../../../components/ui/DecisionCard';
+import { JsonLd } from '@/components/seo';
+import { FurtherReading } from '@/components/seo';
+import { DecisionCard } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'BairesDev Alternative: TeamStation AI vs. BairesDev (2024)',

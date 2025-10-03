@@ -18,7 +18,10 @@ const nextConfig = {
   },
   typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" },
   webpack(config) {
-    config.resolve.alias['@'] = path.join(__dirname, 'src');
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      "@": path.resolve(__dirname, "src"),
+    };
     return config;
   },
   async headers() {
