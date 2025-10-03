@@ -17,15 +17,15 @@ env:
   - variable: NODE_ENV
     value: "production"
     availability:
+      - BUILD
       - RUNTIME
   - variable: LOG_LEVEL
     value: "warn"
     availability:
       - RUNTIME
 
-  # BREAK-GLASS to force a build even if TS/ESLint fail (BUILD only)
+  # Only flip to "1" if you truly need to bypass TS during build
   - variable: BREAK_GLASS
-    value: "1" # BREAK_GLASS ACTIVATED TO BYPASS DEPLOYMENT BLOCKER
+    value: "0"
     availability:
       - BUILD
-
