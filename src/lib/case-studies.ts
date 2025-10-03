@@ -8,9 +8,9 @@ import { markdownToHtml } from "./markdown-parser";
 export type CaseStudy = {
   slug: string;
   title: string;
-  clientName?: string;
-  industry?: string;
-  summary?: string;
+  clientName: string;
+  industry: string;
+  summary: string;
   lastModified?: string;
   ogImage?: { src?: { url?: string }; aiHint?: string };
   contentHtml?: string;
@@ -41,12 +41,12 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
     const stat = fs.statSync(abs);
     return {
       slug: file.replace(/\.mdx?$/, ""),
-      clientName: data.clientName || data.title,
-      industry: data.industry,
-      summary: data.summary || data.description,
+      clientName: String(data.clientName || data.title || ""),
+      industry: data.industry || "",
+      summary: String(data.summary || data.description || ""),
       ogImage: data.ogImage,
       lastModified: stat.mtime.toISOString(),
-      title: data.title,
+      title: String(data.title || data.clientName || "Case Study"),
       challenge: data.challenge,
       outcomes: data.outcomes,
       techStack: data.techStack,
@@ -67,13 +67,13 @@ export async function getCaseStudyBySlug(slug: string | undefined): Promise<Case
   const stat = fs.statSync(file);
   return {
     slug,
-    clientName: data.clientName || data.title,
-    industry: data.industry,
-    summary: data.summary || data.description,
+    clientName: String(data.clientName || data.title || ""),
+    industry: data.industry || "",
+    summary: String(data.summary || data.description || ""),
     ogImage: data.ogImage,
     lastModified: stat.mtime.toISOString(),
     contentHtml: html,
-    title: data.title,
+    title: String(data.title || data.clientName || "Case Study"),
     challenge: data.challenge,
     outcomes: data.outcomes,
     techStack: data.techStack,

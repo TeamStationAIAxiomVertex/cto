@@ -1,4 +1,4 @@
-# Firebase App Hosting configuration
+
 runConfig:
   minInstances: 1
   maxInstances: 50
@@ -32,5 +32,10 @@ env:
 
   - variable: STRICT_ALIAS_REWRITE
     value: "1"
+    availability:
+      - BUILD
+  
+  - variable: BREAK_GLASS
+    value: "0"
     availability:
       - BUILD
