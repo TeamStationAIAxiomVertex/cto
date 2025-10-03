@@ -1,14 +1,28 @@
+// src/lib/case-studies.ts
 export type CaseStudy = {
   slug: string;
   clientName?: string;
   industry?: string;
   summary?: string;
   lastModified?: string;
-  ogImage?: { src?: { url?: string } };
+  ogImage?: { 
+    src?: { 
+      url?: string;
+      width?: number;
+      height?: number;
+    },
+    aiHint?: string;
+  };
+  challenge?: string;
+  outcomes?: string;
+  techStack?: { name: string; link: string }[];
+  canonical?: string;
+  content?: string;
 };
 
 export async function getAllCaseStudies(): Promise<CaseStudy[]> {
-  // TODO: replace with real loader (FS, CMS, etc.)
+  // This is a stub. In a real app, you'd fetch this from a CMS or filesystem.
+  // For now, returning an empty array is sufficient to unblock the build.
   return [];
 }
 
