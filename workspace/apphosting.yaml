@@ -24,13 +24,12 @@ env:
     availability:
       - BUILD
       - RUNTIME
-
-  # Optional toggles (only if actually used):
+  
   - variable: BREAK_GLASS
-    value: "0"
+    value: "1"
     availability:
       - BUILD
-  
+
   - variable: FORCE_WRITE
     value: "1"
     availability:

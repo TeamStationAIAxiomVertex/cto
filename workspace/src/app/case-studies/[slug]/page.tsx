@@ -1,12 +1,11 @@
 
-import { getAllCaseStudies, getCaseStudyBySlug } from '../../../lib/case-studies';
+import { getCaseStudyBySlug, getAllCaseStudies } from '../../../lib/case-studies';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Briefcase, Award, CheckCircle, AlertTriangle, Shield } from 'lucide-react';
-import { markdownToHtml } from '../../../lib/markdown-parser';
 import type { Metadata } from 'next';
-import SeoSafeImage from '@/components/seo/SeoSafeImage';
-import FurtherReading from '@/components/seo/FurtherReading';
+import SeoSafeImage from "../../../components/seo/SeoSafeImage";
+import FurtherReading from "../../../components/seo/FurtherReading";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const study = await getCaseStudyBySlug(params.slug);
@@ -16,9 +15,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
-  // Enforce length constraints
-  const title = study.title.replace(/ \| TeamStation AI( Case Study)?/g, ' Case Study');
-  const description = study.summary.length > 160 ? `Case study: how TeamStation AI helped ${study.clientName} with ${study.industry} challenges.` : study.summary;
+  const titleSafe = (study.title ?? "Case Study").replace(/ \| TeamStation AI( Case Study)?/g, " Case Study");
+  const summarySafe = (study.summary ?? "").trim();
+  const fallbackSummary =
+    `Case study: how TeamStation AI helped ${study.clientName ?? "a client"}${study.industry ? ` with ${study.industry} challenges` : ""}.`.trim();
+  const description = summarySafe.length > 160 ? fallbackSummary : (summarySafe || fallbackSummary);
   
   const keywords = [
       study.clientName,
@@ -26,19 +27,19 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       'nearshore',
       'staff augmentation',
       ...(study.techStack || []).map(t => t.name)
-  ].join(', ');
+  ].filter(Boolean).join(', ');
 
   const imageUrl = study.ogImage?.src?.url;
 
   return {
-    title: title,
+    title: titleSafe,
     description: description,
     keywords: keywords,
     alternates: {
       canonical: study.canonical,
     },
     openGraph: {
-      title: title,
+      title: titleSafe,
       description: description,
       url: study.canonical,
       type: 'article',
@@ -49,13 +50,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: titleSafe,
         },
       ] : [],
     },
      twitter: {
       card: 'summary_large_image',
-      title: title,
+      title: titleSafe,
       description: description,
       images: imageUrl ? [imageUrl] : [],
     },
@@ -69,9 +70,10 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
     notFound();
   }
 
-  const contentHtml = await markdownToHtml(study.content || '');
-  
+  const titleSafe = (study.title ?? "Case Study").replace(/ \| TeamStation AI( Case Study)?/g, " Case Study");
+  const summarySafe = (study.summary ?? "").trim();
   const siteUrl = 'https://cto.teamstation.dev';
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -91,7 +93,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
        {
         '@type': 'ListItem',
         position: 3,
-        name: study.title,
+        name: titleSafe,
         item: `${siteUrl}/case-studies/${study.slug}`,
       },
     ],
@@ -103,11 +105,11 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
     '@type': 'Article',
     mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': study.canonical,
+        '@id': study.canonical ?? `${siteUrl}/case-studies/${study.slug}`,
     },
-    headline: study.title.replace(/ \| TeamStation AI( Case Study)?/g, ''),
-    description: study.summary,
-    image: imageUrl,
+    headline: titleSafe,
+    description: summarySafe,
+    image: imageUrl ? [imageUrl] : undefined,
     author: {
         '@type': 'Organization',
         name: 'TeamStation AI',
@@ -124,6 +126,8 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
     datePublished: new Date().toISOString(), // This should ideally come from frontmatter
   };
 
+  const contentHtml = study.contentHtml || '';
+
   return (
     <>
       <script
@@ -136,7 +140,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
       />
       <main className="container max-w-7xl py-12">
           <div className="text-sm text-muted-foreground mb-8">
-              <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/case-studies" className="hover:text-foreground">Case Studies</Link> / <span>{study.clientName}</span>
+              <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/case-studies" className="hover:text-foreground">Case Studies</Link> / <span>{study.clientName ?? titleSafe}</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -145,18 +149,23 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
               <div className="lg:col-span-8 space-y-12">
                   <header>
                       <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                          {study.title.replace(/ \| TeamStation AI( Case Study)?/g, '')}
+                          {titleSafe}
                       </h1>
-                      <div className="relative h-96 w-full my-8 rounded-lg overflow-hidden border">
-                          <SeoSafeImage 
-                              src={study.ogImage?.src?.url ?? ''}
-                              alt={`Hero image for ${study.clientName} case study`}
-                              fill
-                              className="object-cover"
-                              priority
-                              data-ai-hint={study.ogImage?.aiHint}
+
+                      {imageUrl ? (
+                        <div className="relative h-96 w-full my-8 rounded-lg overflow-hidden border">
+                          <SeoSafeImage
+                            src={imageUrl}
+                            alt={`Hero image for ${study.clientName ?? titleSafe} case study`}
+                            fill
+                            className="object-cover"
+                            priority
+                            data-ai-hint={study.ogImage?.aiHint}
                           />
-                      </div>
+                        </div>
+                      ) : (
+                        <div className="h-32 my-8 rounded-lg border bg-muted/30" />
+                      )}
                   </header>
 
                   <article className="prose prose-lg dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: contentHtml }} />
@@ -169,8 +178,8 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                   <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
                       <h3 className="text-xl font-bold flex items-center gap-3"><Briefcase className="h-6 w-6 text-primary" />Client Snapshot</h3>
                       <div className="mt-4 space-y-3 text-sm">
-                          <p><strong>Client:</strong> {study.clientName}</p>
-                          <p><strong>Industry:</strong> {study.industry}</p>
+                          <p><strong>Client:</strong> {study.clientName ?? "—"}</p>
+                          <p><strong>Industry:</strong> {study.industry ?? "—"}</p>
                       </div>
                   </div>
                   
@@ -183,21 +192,21 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                   
                   <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
                       <h3 className="text-xl font-bold flex items-center gap-3 text-primary"><Shield className="h-6 w-6" />The Solution</h3>
-                      <p className="mt-4 text-sm text-foreground">{study.summary}</p>
+                      <p className="mt-4 text-sm text-foreground">{summarySafe || "A comprehensive solution was implemented to address the client's challenges."}</p>
                   </div>
 
                   {study.outcomes && study.outcomes.length > 0 && (
                       <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
                           <h3 className="text-xl font-bold flex items-center gap-3 text-green-500"><CheckCircle className="h-6 w-6" />The Proof (Outcomes)</h3>
                           <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-                              {study.outcomes.split('\\n').map((item, index) => (
-                                  item.trim() && (
-                                      <div key={index} className="flex items-start gap-2">
-                                          <CheckCircle className="h-4 w-4 mt-1 shrink-0 text-green-500"/>
-                                          <span>{item.replace(/^-/, '').trim()}</span>
-                                      </div>
-                                  )
-                              ))}
+                              {study.outcomes.split('\n').map((item, index) =>
+                                item.trim() && (
+                                  <div key={index} className="flex items-start gap-2">
+                                    <CheckCircle className="h-4 w-4 mt-1 shrink-0 text-green-500" />
+                                    <span>{item.replace(/^-/, '').trim()}</span>
+                                  </div>
+                                )
+                              )}
                           </div>
                       </div>
                   )}
@@ -207,8 +216,13 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                       <p className="mt-2 text-sm text-muted-foreground">
                           Let TeamStation AI provide the talent, governance, and infrastructure you need to ship faster and more securely.
                       </p>
-                      <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6 text-sm">
-                          Book a Strategy Call
+                      <Link
+                        href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cta-button mt-6 text-sm"
+                      >
+                        Book a Strategy Call
                       </Link>
                   </div>
               </aside>
