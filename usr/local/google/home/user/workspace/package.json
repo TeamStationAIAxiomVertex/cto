@@ -10,16 +10,20 @@
   "scripts": {
     "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0",
     "build": "next build",
+    "build:production": "npm ci && npm run prebuild && next build",
+    "build:strict": "npm run typecheck && npm run lint && npm run build:production",
+    "prebuild": "node scripts/syntax-scrubber.js",
     "start": "next start -p ${PORT:-8080} -H 0.0.0.0",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "prebuild": "rm -rf node_modules/@next/swc-* && node scripts/syntax-scrubber.js",
-    "build:production": "npm run prebuild && next build"
+    "nuclear": "bash scripts/nuclear-review.sh"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "autoprefixer": "^10.4.19",
     "class-variance-authority": "^0.7.0",
     "client-only": "^0.0.1",
     "clsx": "^2.1.1",
@@ -28,6 +32,7 @@
     "next": "14.2.3",
     "next-pwa": "^5.6.0",
     "next-themes": "^0.3.0",
+    "postcss": "^8",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "recharts": "^2.12.7",
@@ -35,17 +40,16 @@
     "remark-html": "^16.0.1",
     "server-only": "^0.0.1",
     "tailwind-merge": "^2.3.0",
+    "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^14.2.3",
     "@lhci/cli": "^0.13.0",
-    "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/recharts": "^1.8.29",
-    "autoprefixer": "^10.4.19",
     "cheerio": "^1.0.0-rc.12",
     "critters": "^0.0.23",
     "eslint": "^8.57.1",
@@ -53,8 +57,6 @@
     "fast-glob": "^3.3.2",
     "kleur": "^4.1.5",
     "linkinator": "^4.0.0",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "typescript": "^5.5.4"
   }
 }
