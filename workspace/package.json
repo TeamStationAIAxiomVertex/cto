@@ -11,7 +11,7 @@
     "build": "next build",
     "build:production": "npm ci && npm run prebuild && next build",
     "build:strict": "npm run typecheck && npm run lint && npm run build:production",
-    "prebuild": "node scripts/syntax-scrubber.js",
+    "prebuild": "node scripts/ensure-required-files.js && node scripts/syntax-scrubber.js",
     "start": "next start -p ${PORT:-8080} -H 0.0.0.0",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",

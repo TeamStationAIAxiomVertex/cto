@@ -18,3 +18,5 @@ export function WithTooltip({
   const title = typeof content === 'string' ? content : undefined;
   return <Tag title={title} className={className} data-hint={title}>{children}</Tag>;
 }
+
+export default { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent, WithTooltip };

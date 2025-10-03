@@ -62,3 +62,5 @@ export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null
     contentHtml: html,
   };
 }
+
+export default { getAllCaseStudies, getCaseStudyBySlug };

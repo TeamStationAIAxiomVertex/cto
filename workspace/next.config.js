@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+const path = require("path");
+
 const nextConfig = {
   output: "standalone",
-
+  reactStrictMode: true,
+  productionBrowserSourceMaps: true,
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
@@ -10,13 +13,17 @@ const nextConfig = {
       { protocol: "https", hostname: "teamstation.dev" }
     ]
   },
-
-  reactStrictMode: true,
-  productionBrowserSourceMaps: true,
-
-  // BREAK_GLASS support: set BREAK_GLASS=1 at build time to bypass TS errors
+  modularizeImports: {
+    "lucide-react": { transform: "lucide-react/dist/esm/icons/{{member}}" }
+  },
   typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" },
-
+  webpack(config) {
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      "@": path.resolve(__dirname, "src"),
+    };
+    return config;
+  },
   async headers() {
     return [
       {
