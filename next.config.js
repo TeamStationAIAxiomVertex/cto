@@ -13,7 +13,8 @@ const nextConfig = {
   },
   modularizeImports: {
     "lucide-react": { transform: "lucide-react/dist/esm/icons/{{member}}" }
-  }
+  },
+  typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" }
 };
 
-export default nextConfig;
+module.exports = nextConfig;
