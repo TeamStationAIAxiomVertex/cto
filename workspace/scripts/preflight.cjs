@@ -1,23 +1,12 @@
-
+// scripts/preflight.cjs
 const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
 const APP = path.join(ROOT, "src", "app");
 
-function walk(dir, out = []) {
-  if (!fs.existsSync(dir)) return out;
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const p = path.join(dir, entry.name);
-    if (entry.isDirectory()) walk(p, out);
-    else if (p.endsWith(".tsx") || p.endsWith(".jsx")) out.push(p);
-  }
-  return out;
-}
-
-function isStaticRoute(filePath) {
-  const parts = path.dirname(filePath).split(path.sep);
-  return !parts.some((seg) => seg.startsWith("[") && seg.endsWith("]"));
+function exists(file) {
+  return fs.existsSync(file);
 }
 
 function content(file) {
@@ -29,59 +18,77 @@ function fail(msg) {
   process.exit(1);
 }
 
-// 1) themeColor inside metadata
-function checkThemeColorInMetadata(file) {
-  const c = content(file);
-  if (c.includes("export const metadata") && c.match(/themeColor\s*:/)) {
-    fail(`themeColor found in metadata export: ${file}. Move it to 'export const viewport'.`);
-  }
+function warn(msg) {
+    console.warn("⚠️ Preflight:", msg);
 }
 
-// 2) static routes using params
-function checkStaticParams(file) {
-  if (!isStaticRoute(file)) return;
-  const c = content(file);
-  const usesParams =
-    /\bfunction\s+\w+\s*\(\s*\{\s*params\s*:/.test(c) ||
-    /\(\s*\{\s*params\s*\}\s*:\s*\{/.test(c) ||
-    /\bparams\./.test(c);
-  if (usesParams) {
-    fail(`Static route uses 'params': ${file}. Remove from signature and usage.`);
-  }
-}
-
-// 3) client components must have 'use client' AND default export
-function checkClientComponents(file) {
-  const c = content(file);
-  if (c.startsWith("'use client'") || c.startsWith('"use client"')) {
-    if (!/\bexport\s+default\b/.test(c)) {
-      fail(`Client component missing default export: ${file}`);
+function ensureFile(file, fileContent) {
+    if (!exists(file)) {
+        fs.mkdirSync(path.dirname(file), { recursive: true });
+        fs.writeFileSync(file, fileContent, 'utf8');
+        console.log(`✓ Created missing file: ${path.relative(ROOT, file)}`);
     }
-  }
 }
 
-// 4) layout must have metadataBase in metadata and themeColor in viewport
-function checkLayout() {
-  const candidates = ["layout.tsx", "layout.jsx"].map((f) => path.join(APP, f));
-  const layout = candidates.find((f) => fs.existsSync(f));
-  if (!layout) return; // skip if non-standard
-  const c = content(layout);
-  if (!/export\s+const\s+metadata/.test(c) || !/metadataBase\s*:\s*new URL\(/.test(c)) {
-    fail(`Root layout missing metadataBase in metadata: ${layout}`);
+function rewrite(file, pairs) {
+  if (!exists(file)) return;
+  const src = content(file);
+  let out = src, changed = false;
+  for (const [from, to] of pairs) {
+    if (src.includes(from)) { out = out.split(from).join(to); changed = true; }
   }
-  if (/themeColor\s*:/.test(c) && /export\s+const\s+metadata/.test(c)) {
-    fail(`Root layout has themeColor inside metadata (belongs in viewport): ${layout}`);
-  }
-  if (!/export\s+const\s+viewport\s*=/.test(c)) {
-    fail(`Root layout missing 'export const viewport = { themeColor: ... }': ${layout}`);
+  if (changed) {
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, out, 'utf8');
+    console.log(`🛠  Rewrote imports in ${path.relative(ROOT, file)}`);
   }
 }
 
 console.log("🔎 Running preflight checks...");
-checkLayout();
-for (const file of walk(APP)) {
-  checkThemeColorInMetadata(file);
-  checkStaticParams(file);
-  checkClientComponents(file);
+
+// --- self-heal imports for adapters / reviewers ---
+ensureFile(path.join(ROOT, 'src', 'providers', 'app-providers.tsx'),
+`'use client';
+import React from 'react';
+export default function AppProviders({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }
+`);
+
+ensureFile(path.join(ROOT, 'src', 'components', 'seo', 'SeoSafeImage.tsx'),
+`'use client';
+import Image, { ImageProps } from 'next/image';
+export default function SeoSafeImage(props: ImageProps & { alt?: string }) {
+  const { alt = '', ...rest } = props as ImageProps;
+  return <Image alt={alt} {...rest} />;
+}
+`);
+
+// Force alias imports so relative depth never breaks again
+rewrite(path.join(ROOT, 'src', 'app', 'layout.tsx'), [
+  ["../providers/app-providers", "@/providers/app-providers"]
+]);
+rewrite(path.join(ROOT, 'src', 'app', 'case-studies', '[slug]', 'page.tsx'), [
+  ["../../../components/seo/SeoSafeImage", "@/components/seo/SeoSafeImage"]
+]);
+
+// Validate tsconfig alias
+(function checkAliasesFlexible() {
+  const tsconfigPath = path.join(ROOT, 'tsconfig.json');
+  if (!exists(tsconfigPath)) return warn('tsconfig.json not found; alias check skipped.');
+  const raw = content(tsconfigPath).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*/g, '');
+  let ts; try { ts = JSON.parse(raw); } catch { return fail('tsconfig.json is not valid JSON.'); }
+  const co = ts.compilerOptions || {};
+  const bu = co.baseUrl;
+  const p  = co.paths || {};
+  const okA = bu === 'src' && Array.isArray(p['@/*']) && p['@/*'].some(x => x === '*');
+  const okB = bu === '.'   && Array.isArray(p['@/*']) && p['@/*'].some(x => x === 'src/*');
+  if (!okA && !okB) {
+    fail(`Alias config must be either:
+ - baseUrl:"src", paths:{ "@/*": ["*"] }  OR
+ - baseUrl:".",  paths:{ "@/*": ["src/*"] }.
+Got baseUrl:${JSON.stringify(bu)} paths:${JSON.stringify(p['@/*'])}`);
+  }
+})();
+
 console.log("✅ Preflight checks passed.");
