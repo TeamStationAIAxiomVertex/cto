@@ -1,17 +1,32 @@
+// src/lib/case-studies.ts
 export type CaseStudy = {
   slug: string;
   clientName?: string;
   industry?: string;
   summary?: string;
   lastModified?: string;
-  ogImage?: { src?: { url?: string } };
+  ogImage?: { 
+    src?: { 
+      url?: string;
+      width?: number;
+      height?: number;
+    },
+    aiHint?: string;
+  };
+  challenge?: string;
+  outcomes?: string;
+  techStack?: { name: string; link: string }[];
+  canonical?: string;
+  content?: string;
 };
 
 export async function getAllCaseStudies(): Promise<CaseStudy[]> {
-  // TODO: wire to real content store; safe empty list for compile/runtime
+  // This is a stub. In a real app, you'd fetch this from a CMS or filesystem.
+  // For now, returning an empty array is sufficient to unblock the build.
   return [];
 }
 
-export async function getCaseStudyBySlug(_slug: string): Promise<CaseStudy | null> {
-  return null;
+export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
+  const all = await getAllCaseStudies();
+  return all.find(s => s.slug === slug) ?? null;
 }

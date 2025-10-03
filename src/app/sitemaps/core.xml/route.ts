@@ -5,6 +5,8 @@ import { comparisonPages } from "@/lib/comparisonPages";
 import { techCategories } from "@/lib/tech";
 import { roleCategories } from "@/lib/roles";
 import { countries } from "@/lib/countries";
+import type { MetadataRoute } from 'next';
+
 
 export async function GET() {
   const base = "https://cto.teamstation.dev";
@@ -33,11 +35,18 @@ export async function GET() {
     ...hireByTech,
   ];
 
+  const sitemapEntries: MetadataRoute.Sitemap = urls.map(u => ({
+    url: `${base}${u}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.7
+  }));
+
   const body =
 `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url><loc>${base}${u}</loc><lastmod>${now}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`).join("\n")}
+${sitemapEntries.map(u => `  <url><loc>${u.url}</loc><lastmod>${u.lastModified}</lastmod><changefreq>${u.changeFrequency}</changefreq><priority>${u.priority?.toFixed(1) ?? '0.7'}</priority></url>`).join("\n")}
 </urlset>`;
 
-  return new NextResponse(body, { headers: { "Content-Type": "application/xml" } });
+  return new NextResponse(body, { headers: { "Content-Type": "application/xml; charset=utf-8" } });
 }

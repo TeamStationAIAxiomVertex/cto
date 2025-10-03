@@ -1,59 +1,87 @@
-
 import fs from 'fs';
 import path from 'path';
+import fastGlob from 'fast-glob';
 import matter from 'gray-matter';
-import glob from 'fast-glob';
-import kleur from 'kleur';
+import { remark } from 'remark';
+import html from 'remark-html';
+import { VFile } from 'vfile';
+import kle from 'kleur';
 
 const contentDir = path.join(process.cwd(), 'content');
-const requiredKeys = ['title', 'description'];
-let errorCount = 0;
 
-console.log(kleur.cyan('▶ Running content validation...'));
+async function validateMarkdownFile(filePath) {
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const { data, content } = matter(fileContents);
+  const vfile = new VFile({ path: filePath, value: content });
 
-async function validate() {
-  const files = await glob(`${contentDir}/**/*.md`);
+  const errors = [];
 
-  if (files.length === 0) {
-    console.log(kleur.yellow('No markdown files found to validate. Skipping.'));
-    return;
+  // Basic frontmatter checks
+  if (!data.title || typeof data.title !== 'string' || data.title.length < 10) {
+    errors.push(`Title is missing, not a string, or too short (must be > 10 chars). Found: "${data.title}"`);
+  }
+  if (!data.description || typeof data.description !== 'string' || data.description.length < 50) {
+    errors.push(`Description is missing, not a string, or too short (must be > 50 chars). Found: "${data.description}"`);
   }
 
-  for (const file of files) {
-    const content = fs.readFileSync(file, 'utf8');
-    const { data } = matter(content);
+  // Markdown processing to catch syntax errors
+  try {
+    await remark().use(html).process(vfile);
+    if (vfile.messages.length > 0) {
+      errors.push(...vfile.messages.map(m => m.message));
+    }
+  } catch (err) {
+    errors.push(`Markdown processing failed: ${err.message}`);
+  }
+
+  return errors;
+}
+
+async function main() {
+  console.log('▶️  Starting content validation...');
+  const markdownFiles = await fastGlob(`${contentDir}/**/*.md`);
+  let totalErrors = 0;
+  
+  for (const file of markdownFiles) {
     const relativePath = path.relative(process.cwd(), file);
-
-    for (const key of requiredKeys) {
-      if (!data[key]) {
-        console.error(kleur.red(`❌ Missing required key '${key}' in ${relativePath}`));
-        errorCount++;
-      } else if (typeof data[key] !== 'string' || data[key].trim() === '') {
-        console.error(kleur.red(`❌ Key '${key}' cannot be empty in ${relativePath}`));
-        errorCount++;
-      }
-    }
-
-    if (data.title && data.title.length > 60) {
-        console.warn(kleur.yellow(`   🟡 Title in ${relativePath} is > 60 chars.`));
-    }
-    if (data.description && data.description.length > 160) {
-        console.warn(kleur.yellow(`   🟡 Description in ${relativePath} is > 160 chars.`));
+    const errors = await validateMarkdownFile(file);
+    if (errors.length > 0) {
+      totalErrors += errors.length;
+      console.error(kle.red(`✖ ${relativePath}`));
+      errors.forEach(err => console.error(`  - ${err}`));
+    } else {
+      console.log(kle.green(`✔ ${relativePath}`));
     }
   }
+  
+  // Validate sitemap existence
+  const legacySitemapPath = path.join(process.cwd(), 'src', 'app', 'sitemap.ts');
+  const sitemapIndexPath = path.join(process.cwd(), 'src', 'app', 'sitemap.xml', 'route.ts');
 
-  // Check for legacy sitemap file
-  const legacySitemapPath = path.join(process.cwd(), 'src/app/sitemap.ts');
+  if (!fs.existsSync(sitemapIndexPath)) {
+      totalErrors++;
+      console.error(kle.red('✖ Sitemap index not found at src/app/sitemap.xml/route.ts.'));
+  } else {
+      console.log(kle.green('✔ Sitemap index (sitemap.xml/route.ts) found.'));
+  }
+  
   if (fs.existsSync(legacySitemapPath)) {
-    console.warn(kleur.yellow(`   🟡 Legacy sitemap file found at 'src/app/sitemap.ts'. This should be removed in favor of the new route handlers.`));
+    totalErrors++;
+    console.error(kle.red(`✖ Legacy sitemap file found at ${legacySitemapPath}. It should be removed.`));
+  } else {
+    console.log(kle.green('✔ Legacy sitemap file (sitemap.ts) correctly removed.'));
   }
 
-  if (errorCount > 0) {
-    console.error(kleur.bold().red(`\nValidation failed with ${errorCount} error(s).`));
+
+  if (totalErrors > 0) {
+    console.error(kle.bold().red(`\n💥 Found ${totalErrors} validation error(s).`));
     process.exit(1);
   } else {
-    console.log(kleur.green('✔ Content validation passed.'));
+    console.log(kle.bold().green('\n✅ All content validated successfully!'));
   }
 }
 
-validate();
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
