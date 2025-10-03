@@ -1,6 +1,4 @@
-
 const path = require("path");
-const BREAK_GLASS = process.env.BREAK_GLASS === "1";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -18,8 +16,8 @@ const nextConfig = {
   modularizeImports: {
     "lucide-react": { transform: "lucide-react/dist/esm/icons/{{member}}" },
   },
-  typescript: { ignoreBuildErrors: BREAK_GLASS },
-  eslint: { ignoreDuringBuilds: BREAK_GLASS },
+  typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" },
+  eslint: { ignoreDuringBuilds: process.env.BREAK_GLASS === "1" },
   webpack(config) {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
