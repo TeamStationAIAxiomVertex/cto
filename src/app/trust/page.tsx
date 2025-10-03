@@ -2,6 +2,7 @@
 import { ShieldCheck, Laptop, FileLock, Scale, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import FurtherReading from '../../components/seo/FurtherReading';
 
 export const metadata: Metadata = {
   title: 'Nearshore Compliance: GDPR, SSO, MDM | Trust Center',
@@ -119,10 +120,3 @@ export default function TrustPage() {
     </main>
   );
 }
-
----
-
-### Further Reading
-- [CTO Playbook Hub](/playbook/hub)
-- [Research Hub](/research/hub)
-- [Hire Developers in Mexico](/hire/by-country/mexico)
