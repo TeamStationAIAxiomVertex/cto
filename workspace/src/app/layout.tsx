@@ -1,10 +1,10 @@
 
 import './globals.css';
-import { Inter } from 'next/font/google';
-import type { Metadata } from 'next';
-import { Header } from '@/components/layout/Header';
-import Footer from '@/components/Footer';
-import AppProviders from '@/providers/app-providers';
+import { Inter, Poppins, Source_Code_Pro } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
+import { Header } from '../components/layout/Header';
+import Footer from '../components/Footer';
+import AppProviders from '../providers/app-providers';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -12,16 +12,33 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-source-code-pro',
+});
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cto.teamstation.dev'),
   title: 'TeamStation AI',
   description: 'Nearshore IT Co-Pilot and CTO Playbook',
   manifest: '/manifest.webmanifest',
-  themeColor: '#0F172A',
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
     shortcut: '/favicon.ico'
   }
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0F172A',
 };
 
 export default function RootLayout({
@@ -30,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable} ${sourceCodePro.variable}`}>
+      <body className={poppins.className}>
         <AppProviders>
           <div className="flex min-h-screen flex-col">
             <Header />
