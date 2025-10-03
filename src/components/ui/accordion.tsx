@@ -1,19 +1,15 @@
-// Server-safe structural accordion fallbacks
+// Server-safe stubs so imports from "@/components/ui/accordion" always compile
 import * as React from 'react';
 
 export function Accordion({ children, ...rest }: React.HTMLAttributes<HTMLDivElement>) {
   return <div {...rest}>{children}</div>;
 }
-
 export function AccordionItem({ children, value }: { children: React.ReactNode; value: string }) {
   return <section data-accordion-item={value}>{children}</section>;
 }
-
 export function AccordionTrigger({ children }: { children: React.ReactNode }) {
-  // Markup only; style via CSS to look like a trigger
   return <div role="button" tabIndex={0}>{children}</div>;
 }
-
 export function AccordionContent({ children }: { children: React.ReactNode }) {
   return <div>{children}</div>;
 }
