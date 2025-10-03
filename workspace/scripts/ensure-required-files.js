@@ -8,21 +8,22 @@ const ROOT = process.cwd();
 const SRC = path.join(ROOT, "src");
 
 function ensureDir(p) {
-  fs.mkdirSync(path.dirname(p), { recursive: true });
+  if (!fs.existsSync(path.dirname(p))) {
+    fs.mkdirSync(path.dirname(p), { recursive: true });
+  }
 }
 
 function writeIfMissing(file, content) {
+    if (process.env.FORCE_WRITE === "1") {
+        ensureDir(file);
+        fs.writeFileSync(file, content);
+        console.log("🧩 overwrote", path.relative(ROOT, file));
+        return;
+    }
   if (!fs.existsSync(file) || !fs.readFileSync(file, "utf8").trim()) {
     ensureDir(file);
     fs.writeFileSync(file, content);
     console.log("🧩 wrote", path.relative(ROOT, file));
-  } else {
-    // Also check for empty files and overwrite
-    const ok = fs.readFileSync(file, "utf8").trim().length > 0;
-    if (!ok) {
-      fs.writeFileSync(file, content);
-      console.log(`🧩 fixed empty ${path.relative(ROOT, file)}`);
-    }
   }
 }
 
@@ -50,101 +51,36 @@ export type ReadingItem = { href: string; title: string; desc?: string };
 type Props = {
   items?: ReadingItem[];
   title?: string;
-  comparison?: string; // allow your usage: <FurtherReading comparison="andela" />
+  comparison?: string;
   role?: string;
   technology?: string;
   country?: string;
 };
 
 const PRESETS: Record<string, ReadingItem[]> = {
-  andela: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  bairesdev: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  coderslink: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  deel: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  devlane: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  globant: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  howdy: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  kms: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  nearsure: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  parallelstaff: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  revelo: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  tecla: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  terminal: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  toptal: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  unosquare: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  default: [
-    { href: "/playbook/hub", title: "CTO Playbook" },
-    { href: "/comparisons", title: "Vendor Comparisons" },
-    { href: "/hire/by-country/mexico", title: "Hire in Mexico" },
-  ],
+  andela: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  bairesdev: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  coderslink: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  deel: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  devlane: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  globant: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  howdy: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  kms: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  nearsure: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  parallelstaff: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  revelo: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  tecla: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  terminal: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  toptal: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  unosquare: [{ href: "/technical-interview-evaluation", title: "Our Vetting Process" }, { href: "/trust", title: "Security & Compliance posture" }, { href: "/case-studies", title: "Customer case studies" }],
+  default: [{ href: "/playbook/hub", title: "CTO Playbook" }, { href: "/comparisons", title: "Vendor Comparisons" }, { href: "/hire/by-country/mexico", title: "Hire in Mexico" }],
 };
 
 export default function FurtherReading({ items = [], title = "Further reading", comparison, role, technology, country }: Props) {
   let list = items;
-  if (comparison && PRESETS[comparison]) {
-    list = PRESETS[comparison];
-  } else if (!items.length) {
-    list = PRESETS['default'];
+  if (!items.length) {
+      if(comparison && PRESETS[comparison]) list = PRESETS[comparison];
+      else list = PRESETS['default'];
   }
   
   if (!list.length) return null;
@@ -192,7 +128,6 @@ export function AccordionContent({children}:{children:React.ReactNode}){ return 
 export default { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
 `.trim(),
 
-  // --- Optional: stub to avoid surprises if DecisionCard is missing ---
   [path.join(SRC, "components/ui/DecisionCard.tsx")]: `
 import * as React from "react";
 import Link from 'next/link';
@@ -200,12 +135,12 @@ export function DecisionCard({ problem, stakes, approach, evidence, related = []
   problem:string; stakes:string; approach:string; evidence:string; related?:{label:string; href:string}[];
 }) {
   return (
-    <section className="rounded-lg border bg-card p-6 space-y-4">
+    <section className="rounded-lg border bg-card p-6 space-y-4 my-16">
       <h3 className="text-xl font-bold">Decision Brief</h3>
-      <p><strong>Problem:</strong> {problem}</p>
+      <p><strong className="text-destructive">Problem:</strong> {problem}</p>
       <p><strong>Stakes:</strong> {stakes}</p>
-      <p><strong>Approach:</strong> {approach}</p>
-      <p dangerouslySetInnerHTML={{ __html: evidence.replace(/\\[(.*?)\\]\\((.*?)\\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') }}></p>
+      <p><strong className="text-primary">Approach:</strong> {approach}</p>
+      <p dangerouslySetInnerHTML={{ __html: "<strong>Evidence:</strong> " + evidence.replace(/\\[(.*?)\\]\\((.*?)\\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') }}></p>
       {related.length ? (
         <div className="pt-2">
           <div className="font-semibold">Related</div>
@@ -220,7 +155,6 @@ export function DecisionCard({ problem, stakes, approach, evidence, related = []
 export default DecisionCard;
 `.trim(),
 
-  // --- Icons ---
   [path.join(SRC, "components/SpotifyIcon.tsx")]: `
 import * as React from "react";
 export function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -231,7 +165,6 @@ export function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
 export default SpotifyIcon;
 `.trim(),
 
-  // --- Markdown helpers ---
   [path.join(SRC, "lib/markdown-parser.ts")]: `
 import { remark } from "remark";
 import html from "remark-html";
@@ -330,15 +263,7 @@ export default { getAllCaseStudies, getCaseStudyBySlug };
 };
 
 /** ---------- Write any missing files ---------- */
-Object.entries(FILES).forEach(([file, content]) => {
-    // FORCE_WRITE logic added as suggested
-    if (process.env.FORCE_WRITE === "1" || !fs.existsSync(file) || !fs.readFileSync(file, "utf8").trim()) {
-        ensureDir(file);
-        fs.writeFileSync(file, content);
-        console.log(`🧩 ${process.env.FORCE_WRITE === "1" ? 'overwrote' : 'wrote'} ${path.relative(ROOT, file)}`);
-    }
-});
-
+Object.entries(FILES).forEach(([file, content]) => writeIfMissing(file, content));
 
 /** ---------- Rewrite '@/…' imports to relative paths ---------- */
 function rewriteAliases() {
@@ -346,6 +271,7 @@ function rewriteAliases() {
   const files = [];
 
   (function walk(dir) {
+    if (!fs.existsSync(dir)) return;
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const p = path.join(dir, entry.name);
       if (entry.isDirectory()) walk(p);
@@ -354,7 +280,7 @@ function rewriteAliases() {
   })(SRC);
 
   // Correct regex (single backslashes) – handles ESM `from` and CJS `require(...)`
-  const rx = /from\\s+['"]@\\/([^'"]+)['"]|require\\(\\s*['"]@\\/([^'"]+)['"]\\s*\\)/g;
+  const rx = /from\s+['"]@\/([^'"]+)['"]|require\(\s*['"]@\/([^'"]+)['"]\s*\)/g;
 
   let rewrites = 0;
   for (const file of files) {
@@ -365,11 +291,13 @@ function rewriteAliases() {
     src = src.replace(rx, (m, m1, m2) => {
       const sub = (m1 || m2).trim(); // e.g. "components/seo/JsonLd"
       const targetAbs = path.join(SRC, sub);
-      const rel = path.relative(dir, targetAbs).replace(/\\/g, "/"); // normalize
+      const rel = path.relative(dir, targetAbs).replace(/\\/g, "/");
       const fixed = rel.startsWith(".") ? rel : "./" + rel;
       changed = true;
       rewrites++;
-      return m.startsWith("from") ? `from "${fixed}"` : `require("${fixed}")`;
+      return m.startsWith("from")
+        ? `from "${fixed}"`
+        : `require("${fixed}")`;
     });
 
     if (changed) {
@@ -378,17 +306,17 @@ function rewriteAliases() {
     }
   }
 
-  // Safety net: fail (or warn) if any "@/..." survived
+  // Optional: harden the step so we don't miss anything
   const STRICT = process.env.STRICT_ALIAS_REWRITE === "1";
   const leftovers = files.filter(f => fs.readFileSync(f, "utf8").includes("@/"));
   if (leftovers.length) {
-    const msg = `Found \${leftovers.length} remaining "@/…" imports:\\n` +
-                leftovers.map(f => " - " + path.relative(ROOT, f)).join("\\n");
+    const msg = `Found \${leftovers.length} remaining "@/…" imports:\n` +
+                leftovers.map(f => " - " + path.relative(ROOT, f)).join("\n");
     STRICT ? console.error("❌ " + msg) : console.warn("⚠️  " + msg);
     if (STRICT) process.exit(1);
   }
 
-  console.log(`✅ alias rewrite complete (\${rewrites} updates).`);
+  console.log(`✅ alias rewrite complete (${rewrites} updates).`);
 }
 
 rewriteAliases();

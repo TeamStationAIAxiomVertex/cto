@@ -14,11 +14,6 @@ env:
       - RUNTIME
 
   # Production environment settings
-  - variable: NODE_ENV
-    value: "production"
-    availability:
-      - BUILD
-      - RUNTIME
   - variable: LOG_LEVEL
     value: "warn"
     availability:
