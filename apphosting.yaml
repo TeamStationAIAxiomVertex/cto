@@ -1,4 +1,4 @@
-
+# Firebase App Hosting configuration
 runConfig:
   minInstances: 1
   maxInstances: 50
