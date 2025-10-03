@@ -24,6 +24,11 @@ env:
     availability:
       - BUILD
       - RUNTIME
+  
+  - variable: BREAK_GLASS
+    value: "1"
+    availability:
+      - BUILD
 
   - variable: FORCE_WRITE
     value: "1"
@@ -32,10 +37,5 @@ env:
 
   - variable: STRICT_ALIAS_REWRITE
     value: "1"
-    availability:
-      - BUILD
-  
-  - variable: BREAK_GLASS
-    value: "0"
     availability:
       - BUILD
