@@ -1,5 +1,5 @@
 // src/app/sitemap.xml/route.ts
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 export async function GET() {
   const base = "https://cto.teamstation.dev";
@@ -15,5 +15,5 @@ export async function GET() {
     <lastmod>${now}</lastmod>
   </sitemap>
 </sitemapindex>`;
-  return new NextResponse(xml, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
+  return new NextResponse(xml, { headers: { "Content-Type": "application/xml" } });
 }

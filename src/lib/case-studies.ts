@@ -1,4 +1,3 @@
-// src/lib/case-studies.ts
 export type CaseStudy = {
   slug: string;
   clientName?: string;
@@ -9,11 +8,10 @@ export type CaseStudy = {
 };
 
 export async function getAllCaseStudies(): Promise<CaseStudy[]> {
-  // TODO: replace with real loader (FS, CMS, etc.)
+  // TODO: wire to real content store; safe empty list for compile/runtime
   return [];
 }
 
-export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
-  const all = await getAllCaseStudies();
-  return all.find(s => s.slug === slug) ?? null;
+export async function getCaseStudyBySlug(_slug: string): Promise<CaseStudy | null> {
+  return null;
 }
