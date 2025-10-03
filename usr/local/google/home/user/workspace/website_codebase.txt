@@ -1,0 +1,1826 @@
+--- START FILE: .eslintrc.json ---
+{
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "@/components/Tooltip",
+            "message": "Import from '@/components/ui/tooltip' instead."
+          }
+        ],
+        "patterns": [
+          {
+            "group": ["**/components/Tooltip"],
+            "message": "Use '@/components/ui/tooltip'."
+          },
+          {
+            "group": ["@/components/client/*"],
+            "message": "Do not statically import client islands into server files. Use dynamic(() => import(...), { ssr:false }) or pass as children."
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/lib/**", "src/components/**"],
+      "excludedFiles": ["src/components/client/**"],
+      "rules": {
+        "no-restricted-syntax": [
+          "error",
+          {
+            "selector": "Program:has(> ExpressionStatement[directive='use client'])",
+            "message": "Client Components must live under src/components/client/** and be loaded via a server wrapper."
+          }
+        ]
+      }
+    }
+  ]
+}
+
+--- END FILE: .eslintrc.json ---
+
+--- START FILE: .github/PULL_REQUEST_TEMPLATE.md ---
+## Nuclear Checklist (must be ✅)
+- [ ] `npm run nuclear` passes locally
+- [ ] No new `'use client'` outside allowed paths
+- [ ] No static imports from `@/components/client/*` in server files
+- [ ] Tooltip imports use `@/components/ui/tooltip` only
+- [ ] Firebase redirects updated if routes moved/renamed
+- [ ] Lighthouse on preview ≥ 0.90 Mobile Perf (attach link/screenshot)
+
+--- END FILE: .github/PULL_REQUEST_TEMPLATE.md ---
+
+--- START FILE: .github/workflows/release.yml ---
+name: Release Gate
+
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+
+      - name: Nuclear review
+        run: npm run nuclear
+
+      - name: Firebase preview channel
+        if: github.event_name == 'pull_request'
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: |
+          npx firebase-tools hosting:channel:deploy "pr-${{ github.event.number }}" --json > preview.json
+          URL=$(node -e "console.log(JSON.parse(require('fs').readFileSync('preview.json','utf8')).result[0].url)")
+          echo "PREVIEW_URL=$URL" >> $GITHUB_ENV
+          echo "Preview: $URL"
+
+      - name: Lighthouse CI (mobile thresholds)
+        if: env.PREVIEW_URL != ''
+        run: |
+          npx lhci autorun \
+            --collect.url="${PREVIEW_URL}" \
+            --collect.numberOfRuns=2 \
+            --assert.preset=lighthouse:recommended \
+            --assert.assertions.performance="error:>=0.90" \
+            --assert.assertions['first-contentful-paint']="error:<=1200" \
+            --assert.assertions['largest-contentful-paint']="error:<=2500" \
+            --assert.assertions['total-blocking-time']="error:<=150" \
+            --assert.assertions['cumulative-layout-shift']="error:<=0.1"
+
+--- END FILE: .github/workflows/release.yml ---
+
+--- START FILE: apphosting.yaml ---
+# Firebase App Hosting configuration
+runConfig:
+  minInstances: 1
+  maxInstances: 50
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 1024
+
+env:
+  - variable: NEXT_PUBLIC_SITE_NAME
+    value: "TeamStation AI"
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NODE_ENV
+    value: "production"
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: LOG_LEVEL
+    value: "warn"
+    availability:
+      - BUILD
+      - RUNTIME
+  
+  - variable: BREAK_GLASS
+    value: "0"
+    availability:
+      - BUILD
+
+  - variable: FORCE_WRITE
+    value: "1"
+    availability:
+      - BUILD
+
+  - variable: STRICT_ALIAS_REWRITE
+    value: "1"
+    availability:
+      - BUILD
+    
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: "https://cto.teamstation.dev"
+    availability:
+      - BUILD
+      - RUNTIME
+
+--- END FILE: apphosting.yaml ---
+
+--- START FILE: baseline-deploy/firebase.json ---
+{
+  "hosting": {
+    "source": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  },
+  "apphosting": {
+    "targets": {
+      "web": {
+        "runtime": { "node": "20.19.0" },
+        "buildCommand": "npm run build",
+        "runCommand": "npm run start",
+        "healthCheck": {
+          "path": "/healthz",
+          "timeoutSeconds": 10
+        }
+      }
+    }
+  }
+}
+--- END FILE: baseline-deploy/firebase.json ---
+
+--- START FILE: baseline-deploy/next.config.js ---
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "picsum.photos" },
+      { protocol: "https", hostname: "cto.teamstation.dev" },
+      { protocol: "https", hostname: "teamstation.dev" }
+    ]
+  },
+
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" },
+
+  productionBrowserSourceMaps: true
+};
+
+export default nextConfig;
+--- END FILE: baseline-deploy/next.config.js ---
+
+--- START FILE: baseline-deploy/package.json ---
+{
+  "name": "cto-playbook-platform",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20.19.0"
+  },
+  "packageManager": "npm@10",
+  "scripts": {
+    "dev": "next dev -p 8080",
+    "build": "npm run validate && next build",
+    "start": "next start -p ${PORT:-8080}",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "validate": "node scripts/validate-content.mjs",
+    "build:production": "npm run typecheck && next build",
+    "build:strict": "npm run typecheck && npm run lint && npm run build:production",
+    "build:fast": "next build --no-lint",
+    "export": "next build",
+    "seo:xray": "node scripts/seo-xray.mjs",
+    "nuclear": "scripts/nuclear-review.sh",
+    "firebase:deploy": "npm run build && firebase deploy --only hosting,apphosting",
+    "rollback": "bash scripts/rollback.sh"
+  },
+  "dependencies": {
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.379.0",
+    "next": "14.2.3",
+    "next-themes": "^0.3.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "recharts": "^2.12.7",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.0"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.3",
+    "@lhci/cli": "^0.13.0",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/recharts": "^1.8.29",
+    "autoprefixer": "^10.4.19",
+    "cheerio": "^1.0.0-rc.12",
+    "critters": "^0.0.23",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "fast-glob": "^3.3.2",
+    "kleur": "^4.1.5",
+    "linkinator": "^4.0.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "browserslist": {
+    "production": [
+      "last 2 Chrome versions",
+      "last 2 Firefox versions",
+      "Safari >= 16",
+      "not dead"
+    ],
+    "development": [
+      "last 1 Chrome version",
+      "last 1 Firefox version",
+      "last 1 Safari version"
+    ]
+  }
+}
+--- END FILE: baseline-deploy/package.json ---
+
+--- START FILE: failsafe/index.html ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TeamStation AI — Online</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; display: grid; place-items: center; height: 100dvh; }
+      .card { padding: 2rem 2.5rem; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,.06); text-align: center; }
+      h1 { margin: 0 0 .5rem; font-size: 1.5rem; }
+      p { margin: .25rem 0; color: #374151; }
+      .muted { color: #6b7280; font-size: .9rem; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1>TeamStation AI</h1>
+      <p>Our main app is updating right now.</p>
+      <p class="muted">This page is always live so you’re never left in the dark.</p>
+      <p class="muted">Support: <a href="mailto:support@teamstation.ai">support@teamstation.ai</a></p>
+    </main>
+  </body>
+</html>
+
+--- END FILE: failsafe/index.html ---
+
+--- START FILE: firebase.json ---
+{
+  "hosting": {
+    "source": ".",
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico|css|js|woff2|ttf)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=31536000,immutable"
+          }
+        ]
+      },
+      {
+        "source": "/(manifest.webmanifest|robots.txt)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "run": {
+          "serviceId": "web",
+          "region": "us-central1"
+        }
+      }
+    ]
+  },
+  "apphosting": {
+    "targets": {
+      "web": {
+        "runtime": {
+          "node": "20.19.0"
+        },
+        "buildCommand": "npm run build",
+        "runCommand": "npm run start",
+        "healthCheck": {
+          "path": "/healthz",
+          "timeoutSeconds": 30
+        }
+      }
+    }
+  }
+}
+
+--- END FILE: firebase.json ---
+
+--- START FILE: next.config.js ---
+const path = require("path");
+const BREAK_GLASS = process.env.BREAK_GLASS === "1";
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "standalone",
+  reactStrictMode: true,
+  productionBrowserSourceMaps: true,
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "picsum.photos" },
+      { protocol: "https", hostname: "cto.teamstation.dev" },
+      { protocol: "https", hostname: "teamstation.dev" },
+    ],
+  },
+  modularizeImports: {
+    "lucide-react": { transform: "lucide-react/dist/esm/icons/{{member}}" },
+  },
+  typescript: { ignoreBuildErrors: BREAK_GLASS },
+  eslint: { ignoreDuringBuilds: BREAK_GLASS },
+  webpack(config) {
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      "@": path.join(__dirname, "src"),
+    };
+    return config;
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "geolocation=(), microphone=(), camera=()" },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-DNS-Prefetch-Control", value: "on" },
+        ],
+      },
+    ];
+  },
+};
+
+module.exports = nextConfig;
+
+--- END FILE: next.config.js ---
+
+--- START FILE: package.json ---
+{
+  "name": "cto-playbook-platform",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "20.19.5"
+  },
+  "packageManager": "npm@10.8.1",
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "node scripts/preflight.cjs",
+    "build": "npm run prebuild && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "node -e \"if(process.env.CI || process.env.FIREBASE_CONFIG) require('./scripts/preflight.cjs')\""
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "autoprefixer": "^10.4.19",
+    "class-variance-authority": "^0.7.0",
+    "client-only": "^0.0.1",
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.379.0",
+    "next": "14.2.3",
+    "next-pwa": "^5.6.0",
+    "next-themes": "^0.3.0",
+    "postcss": "^8",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "^2.12.7",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.0"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.3",
+    "@lhci/cli": "^0.13.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/recharts": "^1.8.29",
+    "cheerio": "^1.0.0-rc.12",
+    "critters": "^0.0.23",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.3",
+    "fast-glob": "^3.3.2",
+    "kleur": "^4.1.5",
+    "linkinator": "^4.0.0",
+    "typescript": "^5"
+  }
+}
+--- END FILE: package.json ---
+
+--- START FILE: scripts/deploy.sh ---
+#!/bin/bash
+set -euo pipefail
+
+echo "== 🚀 Starting TeamStation AI Deploy =="
+
+# 1. Clean environment
+rm -rf node_modules .next out
+echo "✅ Cleaned old build artifacts"
+
+# 2. Install exact deps
+npm ci
+echo "✅ Installed dependencies with lockfile"
+
+# 3. Typecheck + lint (optional strict mode)
+if [ "${STRICT:-0}" = "1" ]; then
+  npm run typecheck
+  npm run lint
+fi
+
+# 4. Build & export static files
+npm run export
+echo "✅ Static export complete"
+
+# 5. Ensure /out exists
+[ -d out ] || { echo "❌ Export failed: out directory not found"; exit 1; }
+
+# 6. Deploy to Firebase Hosting
+firebase deploy --only hosting --non-interactive
+echo "✅ Deployment to Firebase Hosting finished successfully"
+
+echo "== 🎉 All Done =="
+
+--- END FILE: scripts/deploy.sh ---
+
+--- START FILE: scripts/nuclear-review.sh ---
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "▶ Nuclear Review starting…"
+
+# 0) Clean
+rm -rf .next out || true
+
+# 1) Boundary & import guards (pure grep + bash)
+echo "▶ Checking 'use client' locations…"
+# Grab files that declare 'use client'
+mapfile -t UC_FILES < <(grep -RIl --include='*.{ts,tsx,js,jsx}' -e "^'use client'\|^\"use client\"" src || true)
+
+WHITELIST_REGEX='^(src/components/client/|src/app/.+/client(\.|/)|src/components/ui/.+\.client\.tsx$)'
+if ((${#UC_FILES[@]})); then
+  BAD=()
+  for f in "${UC_FILES[@]}"; do
+    if [[ ! $f =~ $WHITELIST_REGEX ]]; then BAD+=("$f"); fi
+  done
+  if ((${#BAD[@]})); then
+    echo "✖ 'use client' found outside allowed locations:"
+    printf ' - %s\n' "${BAD[@]}"
+    echo "Move client code into a client island (e.g. src/components/client/*)."
+    exit 1
+  fi
+fi
+
+echo "▶ Disallow static imports of client islands from server files…"
+if grep -RIn --include='*.{ts,tsx}' "from ['\"]@/components/client/" src | grep -v "\.client\.tsx" >/dev/null 2>&1; then
+  echo "✖ Server file statically imports a client island."
+  echo "Use: dynamic(() => import('...'), { ssr:false }) or pass the island as a child."
+  exit 1
+fi
+
+echo "▶ Tooltip import guards…"
+if grep -RIn --include='*.{ts,tsx}' "from ['\"]@/components/Tooltip['\"]" src >/dev/null 2>&1; then
+  echo "✖ Found legacy '@/components/Tooltip' import. Use '@/components/ui/tooltip'."
+  exit 1
+fi
+
+echo "▶ Inline data dupes (common crashers)…"
+if grep -RIn --include='*.{ts,tsx}' "const countries\s*=" src/components >/dev/null 2>&1; then
+  echo "✖ Inline 'countries' detected in components. Import from '@/lib/countries'."
+  exit 1
+fi
+
+# 2) Typecheck & lint (strict)
+echo "▶ Typecheck & lint…"
+npm run typecheck
+npm run lint
+
+# 3) Build (SSR on App Hosting)
+echo "▶ Building (strict)…"
+npm run build:strict
+
+# 4) firebase.json sanity (App Hosting uses rewrites, not redirects)
+echo "▶ firebase.json rewrites presence…"
+node -e "const f=require('fs');const j=JSON.parse(f.readFileSync('firebase.json','utf8')); if(!j.hosting||!Array.isArray(j.hosting.rewrites)) { throw new Error('firebase.json missing hosting.rewrites'); }"
+
+echo "✔ Nuclear Review passed."
+
+--- END FILE: scripts/nuclear-review.sh ---
+
+--- START FILE: scripts/preflight.cjs ---
+// scripts/preflight.cjs
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = path.join(__dirname, '..');
+const APP  = path.join(ROOT, 'src', 'app');
+
+const exists  = p => fs.existsSync(p);
+const read    = p => fs.readFileSync(p, 'utf8');
+const write   = (p, s) => fs.writeFileSync(p, s);
+const ensureDir = p => { if (!exists(p)) fs.mkdirSync(p, { recursive: true }); };
+const fail    = msg => { console.error(`❌ Preflight: ${msg}`); process.exit(1); };
+const warn    = msg => console.warn(`⚠️ Preflight Warning: ${msg}`);
+const ok      = msg => console.log(`✅ ${msg}`);
+
+function ensureFile(p, content) {
+  ensureDir(path.dirname(p));
+  if (!exists(p)) write(p, content);
+}
+function rewrite(p, search, replace) {
+  if (!exists(p)) return;
+  const before = read(p);
+  const after = before.replace(search, replace);
+  if (after !== before) write(p, after);
+}
+function walk(dir, out = []) {
+  if (!exists(dir)) return out;
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) walk(p, out);
+    else if (p.endsWith('.tsx') || p.endsWith('.jsx')) out.push(p);
+  }
+  return out;
+}
+
+console.log('🔎 Running preflight checks...');
+
+// 0) ENV sanity
+if (process.env.NODE_ENV !== 'production') {
+  fail(`NODE_ENV must be "production" during build; got "${process.env.NODE_ENV || ''}"`);
+}
+
+// 1) Ensure shims exist
+ensureFile(
+  path.join(ROOT, 'src', 'providers', 'app-providers.tsx'),
+  `'use client';
+import React from 'react';
+export default function AppProviders({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
+}
+`
+);
+ensureFile(
+  path.join(ROOT, 'src', 'components', 'seo', 'SeoSafeImage.tsx'),
+  `'use client';
+import Image, { ImageProps } from 'next/image';
+export default function SeoSafeImage(props: ImageProps & { alt?: string }) {
+  const { alt = '', ...rest } = props as ImageProps;
+  return <Image alt={alt} {...rest} />;
+}
+`
+);
+
+// 2) DE-ALIAS the two known files to satisfy ensure-required-files.js
+rewrite(
+  path.join(ROOT, 'src', 'app', 'layout.tsx'),
+  /from\s+['"]@\/providers\/app-providers['"]/,
+  `from '../providers/app-providers'`
+);
+rewrite(
+  path.join(ROOT, 'src', 'app', 'case-studies', '[slug]', 'page.tsx'),
+  /from\s+['"]@\/components\/seo\/SeoSafeImage['"]/,
+  `from '../../../components/seo/SeoSafeImage'`
+);
+
+// 3) Alias config check
+const tsconfigPath = path.join(ROOT, 'tsconfig.json');
+if (!exists(tsconfigPath)) {
+  warn('tsconfig.json not found; alias check skipped.');
+} else {
+  const raw = read(tsconfigPath).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
+  let ts; try { ts = JSON.parse(raw); } catch { fail('tsconfig.json is not valid JSON.'); }
+  const co = ts.compilerOptions || {};
+  const bu = co.baseUrl;
+  const ps = (co.paths && co.paths['@/*']) || [];
+  const okA = bu === 'src' && Array.isArray(ps) && ps.some(x => x === '*');
+  const okB = bu === '.'   && Array.isArray(ps) && ps.some(x => x === 'src/*');
+  if (!okA && !okB) {
+   warn(`tsconfig alias not in known forms; continuing (repo build forbids "@/…" anyway).`);
+  }
+}
+
+// 4) Root layout: metadataBase present, themeColor only in viewport
+const layoutPath = path.join(APP, 'layout.tsx');
+if (exists(layoutPath)) {
+  const c = read(layoutPath);
+  if (!/export\s+const\s+metadata/.test(c) || !/metadataBase:\s*new URL\(/.test(c)) {
+    fail(`Root layout missing metadataBase in metadata: ${layoutPath}`);
+  }
+  if (/export\s+const\s+metadata[\s\S]*themeColor\s*:/.test(c)) {
+    fail(`themeColor belongs in "export const viewport", not metadata: ${layoutPath}`);
+  }
+  if (!/export\s+const\s+viewport\s*=/.test(c)) {
+    fail(`Root layout missing 'export const viewport = { themeColor: ... }': ${layoutPath}`);
+  }
+}
+
+// 5) Static routes may not use params
+for (const f of walk(APP)) {
+  const dir = path.dirname(f);
+  const isStatic = !dir.split(path.sep).some(seg => seg.startsWith('[') && seg.endsWith(']'));
+  if (!isStatic) continue;
+  const c = read(f);
+  const usesParams =
+    /\bfunction\s+\w+\s*\(\s*\{\s*params\s*:/.test(c) ||
+    /\(\s*\{\s*params\s*\}\s*:\s*\{/.test(c) ||
+    /\bparams\./.test(c);
+  if (usesParams) fail(`Static route uses 'params': ${f}`);
+}
+
+console.log('✅ Preflight checks passed.');
+--- END FILE: scripts/preflight.cjs ---
+
+--- START FILE: scripts/rollback.sh ---
+#!/bin/bash
+set -euo pipefail
+
+BASELINE_DIR="baseline-deploy"
+
+if [ ! -d "$BASELINE_DIR" ]; then
+  echo "❌ No baseline-deploy/ directory found. Cannot rollback."
+  exit 1
+fi
+
+echo "⚡ Rolling back to last known good baseline..."
+
+cp "$BASELINE_DIR/next.config.js" .
+cp "$BASELINE_DIR/firebase.json" .
+cp "$BASELINE_DIR/package.json" .
+
+rm -rf node_modules .next
+npm install
+npm run build
+firebase deploy --only hosting,apphosting
+
+echo "✅ Rollback complete. Site restored from baseline."
+
+--- END FILE: scripts/rollback.sh ---
+
+--- START FILE: scripts/syntax-scrubber.js ---
+console.log("✅ syntax-scrubber.js loaded. No operation.");
+
+--- END FILE: scripts/syntax-scrubber.js ---
+
+--- START FILE: src/app/layout.tsx ---
+import './globals.css';
+import { Inter, Poppins, Source_Code_Pro } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
+import { Header } from '../components/layout/Header';
+import Footer from '../components/Footer';
+import AppProviders from '../providers/app-providers';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-source-code-pro',
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cto.teamstation.dev'),
+  title: 'TeamStation AI',
+  description: 'Nearshore IT Co-Pilot and CTO Playbook',
+  manifest: '/manifest.webmanifest',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico'
+  }
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0ea5e9',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable} ${sourceCodePro.variable}`}>
+      <body className={inter.className}>
+        <AppProviders>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
+        </AppProviders>
+      </body>
+    </html>
+  );
+}
+
+--- END FILE: src/app/layout.tsx ---
+
+--- START FILE: src/lib/playbook.ts ---
+import fs from 'fs/promises';
+import path from 'path';
+import matter from 'gray-matter';
+
+const contentDirectory = path.join(process.cwd(), 'src', 'content', 'playbook');
+
+// Statically define the slugs for the existing playbook pages.
+// This prevents the build process from trying to find markdown files that no longer exist.
+const playbookSlugs = [
+    'bias-free-technical-hiring-axiom-cortex',
+    'build-vs-buy',
+    'latam-economics',
+    'nearshore-vs-offshore',
+    'tco-model'
+];
+
+export async function getAllPlaybookSlugs(): Promise<string[]> {
+    return playbookSlugs;
+}
+
+export async function getPlaybookBySlug(slug: string) {
+    try {
+        const filePath = path.join(contentDirectory, `${slug}.mdx`); // Assuming .mdx, adjust if needed
+        const fileContents = await fs.readFile(filePath, 'utf8');
+        const stats = await fs.stat(filePath);
+        const { data } = matter(fileContents);
+        
+        return {
+            slug,
+            title: data.title,
+            description: data.description,
+            lastModified: (data.lastModified || data.date || stats.mtime).toISOString(),
+        };
+    } catch (error) {
+        console.error(`Could not get playbook for slug: ${slug}`, error);
+        return null;
+    }
+}
+
+--- END FILE: src/lib/playbook.ts ---
+
+--- START FILE: src/lib/sitemap-data.ts ---
+// src/lib/sitemap-data.ts
+import { countries } from "./countries";
+import { roleCategories } from "./roles";
+import { techCategories } from "./tech";
+import { getAllCaseStudies } from "./case-studies";
+import { comparisonPages } from "./comparisonPages";
+import { getAllPlaybookSlugs } from "./playbook";
+
+export type UrlRec = {
+  url: string;
+  lastmod: string;
+  changefreq: 'weekly' | 'monthly' | 'yearly';
+  priority: string; // keep as string for simple xml/CSV join
+};
+
+export const baseUrl = 'https://cto.teamstation.dev';
+
+// Playbook-only (≈288 pages)
+export async function collectPlaybookUrls(): Promise<UrlRec[]> {
+  const now = new Date().toISOString();
+  const slugs = await getAllPlaybookSlugs();
+
+  const urls: UrlRec[] = [
+    {
+      url: `${baseUrl}/playbook/hub`,
+      lastmod: now,
+      changefreq: 'weekly',
+      priority: '0.9',
+    },
+    ...slugs.map((slug) => ({
+      url: `${baseUrl}/playbook/${slug}`,
+      lastmod: now, // if you track per-page mtime, inject it here
+      changefreq: 'monthly',
+      priority: '0.7',
+    })),
+  ];
+
+  return urls;
+}
+
+// Everything else from your previous sitemap.ts (minus /playbook/*)
+export async function collectCoreUrls(): Promise<UrlRec[]> {
+  const now = new Date().toISOString();
+
+  const home: UrlRec[] = [
+    { url: baseUrl, lastmod: now, changefreq: 'weekly', priority: '1.0' },
+  ];
+
+  const hubPages = [
+    '/research/hub',
+    '/comparisons',
+    '/case-studies',
+    '/hire',
+    '/hire/by-country',
+    '/hire/by-role',
+    '/hire/by-team-topologies',
+    '/hire/by-technology',
+    '/faq',
+  ].map((p) => ({
+    url: `${baseUrl}${p}`,
+    lastmod: now,
+    changefreq: 'weekly' as const,
+    priority: '0.9',
+  }));
+
+  const staticPages = [
+    '/about',
+    '/platform',
+    '/pricing',
+    '/process',
+    '/services/integrated-services',
+    '/services/talent-onboarding',
+    '/technical-interview-evaluation',
+    '/trust',
+  ].map((p) => ({
+    url: `${baseUrl}${p}`,
+    lastmod: now,
+    changefreq: 'monthly' as const,
+    priority: '0.8',
+  }));
+
+  const legalPages = ['/privacy-policy', '/terms-of-service', '/sitemap'].map(
+    (p) => ({
+      url: `${baseUrl}${p}`,
+      lastmod: now,
+      changefreq: 'yearly' as const,
+      priority: '0.3',
+    })
+  );
+
+  const researchEntries = [
+    '/research/axiom-cortex-scientific-report',
+    '/research/framework-for-measuring-capacity',
+    '/research/heuristically-trained-ai',
+    '/research/performance-metrics-in-ai-age',
+    '/research/performance-evaluation-report-example',
+    '/research/technical-talent-evaluation-system',
+  ].map((p) => ({
+    url: `${baseUrl}${p}`,
+    lastmod: now,
+    changefreq: 'monthly' as const,
+    priority: '0.7',
+  }));
+
+  const caseStudies = await getAllCaseStudies();
+  const caseStudyEntries: UrlRec[] = caseStudies.map((study) => ({
+    url: `${baseUrl}/case-studies/${study.slug}`,
+    lastmod: study.lastModified || now,
+    changefreq: 'monthly',
+    priority: '0.7',
+  }));
+
+  const comparisonEntries: UrlRec[] = comparisonPages.map((page) => ({
+    url: `${baseUrl}/comparisons/${page.slug}`,
+    lastmod: now,
+    changefreq: 'monthly',
+    priority: '0.7',
+  }));
+
+  const hireByCountryEntries: UrlRec[] = countries.flatMap((c) => {
+    const base: UrlRec = {
+      url: `${baseUrl}/hire/by-country/${c.slug}`,
+      lastmod: now,
+      changefreq: 'monthly',
+      priority: '0.7',
+    };
+    const techPages: UrlRec[] = techCategories
+      .flatMap((cat) => cat.tech)
+      .map((t) => ({
+        url: `${baseUrl}/hire/by-country/${c.slug}/${t.slug}`,
+        lastmod: now,
+        changefreq: 'monthly',
+        priority: '0.6',
+      }));
+    return [base, ...techPages];
+  });
+
+  const hireByRoleEntries: UrlRec[] = roleCategories.map((r) => ({
+    url: `${baseUrl}/hire/by-role/${r.slug}`,
+    lastmod: now,
+    changefreq: 'monthly',
+    priority: '0.7',
+  }));
+
+  const hireByTechEntries: UrlRec[] = techCategories.flatMap((cat) =>
+    cat.tech.map((t) => ({
+      url: `${baseUrl}/hire/by-technology/${t.slug}`,
+      lastmod: now,
+      changefreq: 'monthly',
+      priority: '0.6',
+    }))
+  );
+
+  return [
+    ...home,
+    ...hubPages,
+    ...staticPages,
+    ...legalPages,
+    ...researchEntries,
+    ...caseStudyEntries,
+    ...comparisonEntries,
+    ...hireByCountryEntries,
+    ...hireByRoleEntries,
+    ...hireByTechEntries,
+  ];
+}
+
+--- END FILE: src/lib/sitemap-data.ts ---
+
+--- START FILE: tsconfig.json ---
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+
+--- END FILE: tsconfig.json ---
+
+--- START FILE: usr/local/google/home/user/workspace/apphosting.yaml ---
+# Firebase App Hosting configuration
+runConfig:
+  minInstances: 1
+  maxInstances: 50
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 1024
+
+env:
+  - variable: NEXT_PUBLIC_SITE_NAME
+    value: "TeamStation AI"
+    availability: [BUILD, RUNTIME]
+
+  - variable: NODE_ENV
+    value: "production"
+    availability: [BUILD, RUNTIME]
+
+  - variable: LOG_LEVEL
+    value: "warn"
+    availability: [BUILD, RUNTIME]
+  
+  - variable: BREAK_GLASS
+    value: "0"
+    availability: [BUILD]
+
+  - variable: FORCE_WRITE
+    value: "1"
+    availability: [BUILD]
+
+  - variable: STRICT_ALIAS_REWRITE
+    value: "1"
+    availability: [BUILD]
+    
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: "https://cto.teamstation.dev"
+    availability: [BUILD, RUNTIME]
+--- END FILE: usr/local/google/home/user/workspace/apphosting.yaml ---
+
+--- START FILE: usr/local/google/home/user/workspace/package.json ---
+{
+  "name": "cto-playbook-platform",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "20.19.5"
+  },
+  "packageManager": "npm@10.8.1",
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "node scripts/preflight.cjs",
+    "build": "npm run prebuild && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "node -e \"if(process.env.CI || process.env.FIREBASE_CONFIG) require('./scripts/preflight.cjs')\""
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "autoprefixer": "^10.4.19",
+    "class-variance-authority": "^0.7.0",
+    "client-only": "^0.0.1",
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.379.0",
+    "next": "14.2.3",
+    "next-pwa": "^5.6.0",
+    "next-themes": "^0.3.0",
+    "postcss": "^8",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "^2.12.7",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.0"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.3",
+    "@lhci/cli": "^0.13.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/recharts": "^1.8.29",
+    "cheerio": "^1.0.0-rc.12",
+    "critters": "^0.0.23",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.3",
+    "fast-glob": "^3.3.2",
+    "kleur": "^4.1.5",
+    "linkinator": "^4.0.0",
+    "typescript": "^5",
+    "globby": "^14.0.1"
+  }
+}
+
+--- END FILE: usr/local/google/home/user/workspace/package.json ---
+
+--- START FILE: usr/local/google/home/user/workspace/scripts/preflight.cjs ---
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = path.join(__dirname, '..');
+const APP  = path.join(ROOT, 'src', 'app');
+
+const exists  = p => fs.existsSync(p);
+const read    = p => fs.readFileSync(p, 'utf8');
+const write   = (p, s) => fs.writeFileSync(p, s);
+const ensureDir = p => { if (!exists(p)) fs.mkdirSync(p, { recursive: true }); };
+const fail    = msg => { console.error(`❌ Preflight: ${msg}`); process.exit(1); };
+const warn    = msg => console.warn(`⚠️ Preflight Warning: ${msg}`);
+const ok      = msg => console.log(`✅ ${msg}`);
+
+function ensureFile(p, content) {
+  ensureDir(path.dirname(p));
+  if (!exists(p)) write(p, content);
+}
+function rewrite(p, search, replace) {
+  if (!exists(p)) return;
+  const before = read(p);
+  const after = before.replace(search, replace);
+  if (after !== before) write(p, after);
+}
+function walk(dir, out = []) {
+  if (!exists(dir)) return out;
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) walk(p, out);
+    else if (p.endsWith('.tsx') || p.endsWith('.jsx')) out.push(p);
+  }
+  return out;
+}
+
+console.log('🔎 Running preflight checks...');
+
+// 0) ENV sanity
+if (process.env.NODE_ENV !== 'production') {
+  fail(`NODE_ENV must be "production" during build; got "${process.env.NODE_ENV || ''}"`);
+}
+
+// 1) Ensure shims exist
+ensureFile(
+  path.join(ROOT, 'src', 'providers', 'app-providers.tsx'),
+  `'use client';
+import React from 'react';
+export default function AppProviders({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
+}
+`
+);
+ensureFile(
+  path.join(ROOT, 'src', 'components', 'seo', 'SeoSafeImage.tsx'),
+  `'use client';
+import Image, { ImageProps } from 'next/image';
+export default function SeoSafeImage(props: ImageProps & { alt?: string }) {
+  const { alt = '', ...rest } = props as ImageProps;
+  return <Image alt={alt} {...rest} />;
+}
+`
+);
+
+// 2) DE-ALIAS the two known files to satisfy ensure-required-files.js
+rewrite(
+  path.join(ROOT, 'src', 'app', 'layout.tsx'),
+  /from\s+['"]@\/providers\/app-providers['"]/,
+  `from '../providers/app-providers'`
+);
+rewrite(
+  path.join(ROOT, 'src', 'app', 'case-studies', '[slug]', 'page.tsx'),
+  /from\s+['"]@\/components\/seo\/SeoSafeImage['"]/,
+  `from '../../../components/seo/SeoSafeImage'`
+);
+
+// 3) Alias config check
+const tsconfigPath = path.join(ROOT, 'tsconfig.json');
+if (!exists(tsconfigPath)) {
+  warn('tsconfig.json not found; alias check skipped.');
+} else {
+  const raw = read(tsconfigPath).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
+  let ts; try { ts = JSON.parse(raw); } catch { fail('tsconfig.json is not valid JSON.'); }
+  const co = ts.compilerOptions || {};
+  const bu = co.baseUrl;
+  const ps = (co.paths && co.paths['@/*']) || [];
+  const okA = bu === 'src' && Array.isArray(ps) && ps.some(x => x === '*');
+  const okB = bu === '.'   && Array.isArray(ps) && ps.some(x => x === 'src/*');
+  if (!okA && !okB) {
+   warn(`tsconfig alias not in known forms; continuing (repo build forbids "@/…" anyway).`);
+  }
+}
+
+// 4) Root layout: metadataBase present, themeColor only in viewport
+const layoutPath = path.join(APP, 'layout.tsx');
+if (exists(layoutPath)) {
+  const c = read(layoutPath);
+  if (!/export\s+const\s+metadata/.test(c) || !/metadataBase:\s*new URL\(/.test(c)) {
+    fail(`Root layout missing metadataBase in metadata: ${layoutPath}`);
+  }
+  if (/export\s+const\s+metadata[\s\S]*themeColor\s*:/.test(c)) {
+    fail(`themeColor belongs in "export const viewport", not metadata: ${layoutPath}`);
+  }
+  if (!/export\s+const\s+viewport\s*=/.test(c)) {
+    fail(`Root layout missing 'export const viewport = { themeColor: ... }': ${layoutPath}`);
+  }
+}
+
+// 5) Static routes may not use params
+for (const f of walk(APP)) {
+  const dir = path.dirname(f);
+  const isStatic = !dir.split(path.sep).some(seg => seg.startsWith('[') && seg.endsWith(']'));
+  if (!isStatic) continue;
+  const c = read(f);
+  const usesParams =
+    /\bfunction\s+\w+\s*\(\s*\{\s*params\s*:/.test(c) ||
+    /\(\s*\{\s*params\s*\}\s*:\s*\{/.test(c) ||
+    /\bparams\./.test(c);
+  if (usesParams) fail(`Static route uses 'params': ${f}`);
+}
+
+console.log('✅ Preflight checks passed.');
+--- END FILE: usr/local/google/home/user/workspace/scripts/preflight.cjs ---
+
+--- START FILE: usr/local/google/home/user/workspace/src/app/hire/by-technology/typescript/page.tsx ---
+
+import Link from 'next/link';
+import type { Metadata } from 'next';
+import { ArrowRight, CheckCircle, AlertTriangle } from 'lucide-react';
+import { WithTooltip } from '@/components/ui/tooltip';
+import { allTech } from '@/lib/tech';
+import { JsonLd } from '@/components/seo/JsonLd';
+import TypeScriptPSPSection from '@/components/seo/sections/TypeScriptPSPSection';
+
+export const metadata: Metadata = {
+  title: `Hire Nearshore TypeScript Developers`,
+  description: `Hire elite, pre-vetted LATAM engineers with expertise in TypeScript. Our scientific evaluation de-risks hiring for critical roles.`,
+  keywords: `hire nearshore TypeScript developers, latam TypeScript engineers, TypeScript staff augmentation`,
+};
+
+export default function TechPage() {
+  const tech = allTech['typescript'];
+  const siteUrl = "https://cto.teamstation.dev";
+  
+  if (!tech) {
+    return (
+      <main className="container max-w-5xl py-12">
+        <p>Technology not found.</p>
+      </main>
+    )
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Hire", "item": `${siteUrl}/hire` },
+      { "@type": "ListItem", "position": 2, "name": "By Technology", "item": `${siteUrl}/hire/by-technology` },
+      { "@type": "ListItem", "position": 3, "name": tech.name, "item": `${siteUrl}/hire/by-technology/typescript` }
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "IT Staff Augmentation",
+    "provider": { "@type": "Organization", "name": "TeamStation AI" },
+    "areaServed": { "@type": "Country", "name": "LATAM" },
+    "description": `Hire elite, pre-vetted LATAM engineers with expertise in ${tech.name}.`,
+    "name": `Hire ${tech.name} Developers`,
+    "offers": { "@type": "Offer", "price": "Contact for pricing" }
+  };
+
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={serviceSchema} />
+      <main className="container max-w-5xl py-12">
+        <div className="text-sm text-muted-foreground mb-8">
+          <Link href="/" className="hover:text-foreground">Home</Link> / 
+          <Link href="/hire" className="hover:text-foreground">Hire</Link> / 
+          <Link href="/hire/by-technology" className="hover:text-foreground">By Technology</Link> / 
+          <span>{tech.name}</span>
+        </div>
+        <header className="my-12">
+          <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Hire for {tech.name} Mastery</h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+              {tech.intro}
+          </p>
+        </header>
+
+        {tech.pains && tech.pains.length > 0 && (
+          <section className="my-16">
+              <h2 className="text-center text-3xl font-bold">Sound Familiar?</h2>
+              <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Common problems we solve by providing true {tech.name} experts.</p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                  {tech.pains.map((item) => {
+                    const Icon = item.icon;
+                    return(
+                      <div key={item.pain} className="rounded-lg border bg-card p-6 flex flex-col">
+                          <p className="text-sm font-semibold text-primary">{item.pain}</p>
+                          <div className="flex items-center gap-3 mt-3">
+                              <Icon className="h-8 w-8 text-primary" />
+                              <h3 className="text-lg font-semibold text-foreground">The Problem</h3>
+                          </div>
+                          <p className="mt-4 text-sm text-muted-foreground ">{item.problem}</p>
+                          
+                          <div className="mt-4 border-t border-border pt-4">
+                              <h4 className="font-semibold text-primary">The TeamStation AI Solution</h4>
+                              <p className="text-sm text-foreground m-0">{item.solution}</p>
+                          </div>
+                          <div className="flex-grow"></div>
+                          <div className="mt-6">
+                              <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {item.kpi}</p>
+                          </div>
+                      </div>
+                    )
+                  })}
+              </div>
+          </section>
+        )}
+
+
+        <div className="my-16 rounded-lg border bg-card p-8">
+          <h2 className="text-center text-3xl font-bold">Our Evaluation Approach for {tech.name}</h2>
+          <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
+            For roles requiring deep {tech.name} expertise, our <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation."><Link href="/technical-interview-evaluation" className='text-primary hover:underline'>Axiom Cortex™ evaluation</Link></WithTooltip> focuses on practical application and deep system understanding, not just trivia. We assess candidates on:
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-8 max-w-2xl mx-auto">
+              {tech.evaluation.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-1" />
+                      <span className='text-muted-foreground'>{point}</span>
+                  </li>
+              ))}
+          </ul>
+          <div className="text-center mt-8">
+              <Link href={`/hire/by-role/${tech.categorySlug}`} className="font-semibold text-primary hover:underline">
+                  Explore Related Role: {tech.category} <ArrowRight className="inline h-4 w-4" />
+              </Link>
+          </div>
+        </div>
+        
+        <div className="text-center rounded-lg bg-primary/10 p-8">
+          <h2 className="text-2xl font-bold">Ready to Hire Elite {tech.name} Talent?</h2>
+          <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+            Stop sifting through unqualified resumes. Let us provide you with a shortlist of 2-3 elite, pre-vetted candidates with proven {tech.name} mastery.
+          </p>
+          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
+        </div>
+        
+        <TypeScriptPSPSection />
+
+      </main>
+    </>
+  );
+}
+
+--- END FILE: usr/local/google/home/user/workspace/src/app/hire/by-technology/typescript/page.tsx ---
+
+--- START FILE: usr/local/google/home/user/workspace/src/app/layout.tsx ---
+import './globals.css';
+import { Inter, Poppins, Source_Code_Pro } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
+import { Header } from '../components/layout/Header';
+import Footer from '../components/Footer';
+import AppProviders from '../providers/app-providers';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-source-code-pro',
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cto.teamstation.dev'),
+  title: 'TeamStation AI',
+  description: 'Nearshore IT Co-Pilot and CTO Playbook',
+  manifest: '/manifest.webmanifest',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico'
+  }
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0ea5e9',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable} ${sourceCodePro.variable}`}>
+      <body className={inter.className}>
+        <AppProviders>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
+        </AppProviders>
+      </body>
+    </html>
+  );
+}
+
+--- END FILE: usr/local/google/home/user/workspace/src/app/layout.tsx ---
+
+--- START FILE: usr/local/google/home/user/workspace/src/app/technical-interview-evaluation/page.tsx ---
+import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+
+const TechnicalInterviewClient = dynamic(() => import('./client'), { ssr: false });
+
+export const metadata: Metadata = {
+    title: 'Evidence-Based Technical Interview Evaluation',
+    description: 'Our evidence-based technical interview process uses Cognitive AI, semantic RAG, and expert review to de-risk your hiring.',
+    keywords: 'technical interview evaluation, evidence-based interview, cognitive ai interview, latam engineer interview, de-risk hiring',
+    alternates: {
+        canonical: '/technical-interview-evaluation'
+    }
+};
+
+// This page now correctly renders the client component.
+export default function TechnicalInterviewEvaluationPage() {
+  return <TechnicalInterviewClient />;
+}
+
+--- END FILE: usr/local/google/home/user/workspace/src/app/technical-interview-evaluation/page.tsx ---
+
+--- START FILE: usr/local/google/home/user/workspace/src/components/Footer.tsx ---
+// NO 'use client' — Footer stays a Server Component
+import Link from 'next/link';
+import type { ReactNode } from 'react';
+
+import { roleCategories } from '@/lib/roles';
+import { techCategories } from '@/lib/tech';
+import { countries } from '@/lib/countries';
+import { SpotifyIcon } from '@/components/SpotifyIcon';
+
+type LinkItem = {
+  href: string;
+  label: string | ReactNode;
+  icon?: ReactNode;
+};
+
+// Playbook Section
+const playbookLinks: LinkItem[] = [
+  { href: '/playbook/hub', label: 'CTO Playbook Hub' },
+  { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs Offshore Guide' },
+  { href: '/playbook/latam-economics', label: 'LATAM Software Talent Economics' },
+  { href: '/playbook/build-vs-buy', label: 'Build vs Buy Analysis' },
+  { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring with Axiom Cortex™' },
+  { href: '/playbook/tco-model', label: 'TCO Model for Engineering Teams' },
+  { href: '/faq', label: 'FAQ for CTOs' },
+];
+
+// Company Section
+const companyLinks: LinkItem[] = [
+  { href: '/about', label: 'About TeamStation AI' },
+  { href: '/research/hub', label: 'Research Hub' },
+  { href: '/trust', label: 'Trust & Compliance Center' },
+  { href: '/case-studies', label: 'Case Studies & Proof' },
+  { href: '/pricing', label: 'Pricing & Engagement Models' },
+  { href: 'https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book', label: 'Nearshore IT Platformed Book' },
+  { href: 'https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en', label: 'Google Scholar Research' },
+  { href: 'https://www.linkedin.com/company/teamstation', label: 'TeamStation LinkedIn' },
+];
+
+// Research Section
+const researchLinks: LinkItem[] = [
+  { href: '/research/axiom-cortex-scientific-report', label: 'AxiomCortex™ R&D Report' },
+  { href: '/research/heuristically-trained-ai', label: 'Heuristically Trained AI Whitepaper' },
+  { href: '/research/framework-for-measuring-capacity', label: 'Framework for Measuring Engineering Capacity' },
+  { href: '/research/performance-metrics-in-ai-age', label: 'Performance Metrics in the AI Age' },
+  {
+    href: '/research/hub#podcast',
+    label: (
+      <>
+        TeamStation Podcast <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
+      </>
+    ),
+  },
+];
+
+// Programmatic Links
+const hireByRoleLinks: LinkItem[] = roleCategories.map((r) => ({
+  href: `/hire/by-role/${r.slug}`,
+  label: `Hire ${r.name} engineers`,
+}));
+
+const hireByCountryLinks: LinkItem[] = countries.map((c) => ({
+  href: `/hire/by-country/${c.slug}`,
+  label: `Hire software developers in ${c.name}`,
+}));
+
+const popularTechLinks: LinkItem[] = [
+  'react','node','python','java','go','net','aws','kubernetes','dbt','snowflake','pytorch','transformers','langchain','nextjs',
+].map((slug) => {
+  const tech = techCategories.flatMap((c) => c.tech).find((t) => t.slug === slug);
+  return { href: `/hire/by-technology/${slug}`, label: `Hire ${tech?.name || slug} developers` };
+});
+
+// Utility Section
+const utilityLinks: LinkItem[] = [
+  { href: '/faq', label: 'CTO FAQs' },
+  { href: '/sitemap', label: 'HTML Sitemap' },
+  { href: '/sitemap.xml', label: 'XML Sitemap' },
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/terms-of-service', label: 'Terms of Service' },
+];
+
+function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
+  return (
+    <nav aria-label={title}>
+      <h4 className="font-semibold text-foreground tracking-wider uppercase text-sm">{title}</h4>
+      <ul className="mt-4 space-y-3">
+        {links.map((link) => (
+          <li key={link.href} className="text-sm">
+            <Link
+              href={link.href}
+              className="text-muted-foreground transition-colors hover:text-foreground flex items-center"
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="mt-32 border-t border-border bg-card py-16 text-muted-foreground">
+      <div className="container mx-auto max-w-7xl px-6">
+        <div className="grid grid-cols-2 gap-y-10 gap-x-8 md:grid-cols-12">
+          <div className="col-span-2 md:col-span-3">
+            <h3 className="text-lg font-bold text-foreground">TeamStation AI</h3>
+            <p className="mt-2 text-sm">The integrated platform for building and scaling elite nearshore engineering teams.</p>
+            <address className="mt-4 text-sm not-italic">
+              One Seaport Square, 77 Sleeper St<br />
+              5830 E 2nd St, Ste 7000 #14687<br />
+              Boston, MA 02210
+            </address>
+            <div className="mt-4">
+              <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80 a11y-tap-target">
+                Sign In to Platform
+              </Link>
+            </div>
+            <div className="mt-8">
+              <LinkColumn title="Scientific Research" links={researchLinks} />
+            </div>
+          </div>
+
+          <div className="col-span-1 md:col-span-2">
+            <LinkColumn title="Playbook" links={playbookLinks} />
+            <div className="mt-8">
+              <LinkColumn title="Company" links={companyLinks} />
+            </div>
+          </div>
+
+          <div className="col-span-1 md:col-span-2">
+            <LinkColumn title="Hire by Role" links={hireByRoleLinks.slice(0, 11)} />
+          </div>
+
+          <div className="col-span-1 md:col-span-2">
+            <LinkColumn title="Hire by Country" links={hireByCountryLinks} />
+          </div>
+
+          <div className="col-span-1 md:col-span-3">
+            <LinkColumn title="Popular Technologies" links={popularTechLinks} />
+          </div>
+        </div>
+
+        <div className="mt-16 border-t border-border pt-8 text-center text-sm">
+          <p>© {year} TeamStation AI — All rights reserved.</p>
+          <p className="mt-2">
+            Part of the TeamStation AI network — visit our corporate site at{' '}
+            <a href="https://teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline a11y-tap-target">
+              teamstation.dev
+            </a>
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4">
+            {utilityLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground a11y-tap-target">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+--- END FILE: usr/local/google/home/user/workspace/src/components/Footer.tsx ---
+
+--- START FILE: usr/local/google/home/user/workspace/src/components/layout/Header.tsx ---
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+const ThemeToggle = dynamic(
+  () => import('../../components/client/ThemeToggle').then(m => m.ThemeToggle ?? m.default),
+  { ssr: false }
+);
+const MobileNav = dynamic(
+  () => import('../../components/client/MobileNav').then(m => m.MobileNav ?? m.default),
+  { ssr: false }
+);
+const DesktopNav = dynamic(
+  () => import('../../components/client/DesktopNav').then(m => m.DesktopNav ?? m.default),
+  { ssr: false }
+);
+
+export function Header() {
+  return (
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm">
+      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+        <Link href="/" className="text-lg font-bold text-foreground">
+          TeamStation AI
+        </Link>
+
+        {/* Desktop Navigation */}
+        <DesktopNav />
+
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link
+            href="https://app.teamstation.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hidden sm:inline-flex a11y-tap-target"
+          >
+            Sign In
+          </Link>
+          <Link
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button hidden sm:inline-flex"
+          >
+            Book a Call
+          </Link>
+
+          {/* Mobile Navigation */}
+          <MobileNav />
+        </div>
+      </div>
+    </header>
+  );
+}
+--- END FILE: usr/local/google/home/user/workspace/src/components/layout/Header.tsx ---
+
+--- START FILE: usr/local/google/home/user/workspace/src/lib/playbook.ts ---
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+const contentDirectory = path.join(process.cwd(), 'src', 'content', 'playbook');
+
+// Statically define the slugs for the existing playbook pages.
+// This prevents the build process from trying to find markdown files that no longer exist.
+const playbookSlugs = [
+    'bias-free-technical-hiring-axiom-cortex',
+    'build-vs-buy',
+    'latam-economics',
+    'nearshore-vs-offshore',
+    'tco-model'
+];
+
+export async function getAllPlaybookSlugs(): Promise<string[]> {
+    return playbookSlugs;
+}
+
+export async function getPlaybookBySlug(slug: string) {
+    try {
+        const filePath = path.join(contentDirectory, `${slug}.mdx`); // Assuming .mdx, adjust if needed
+        const fileContents = fs.readFileSync(filePath, 'utf8');
+        const stats = fs.statSync(filePath);
+        const { data } = matter(fileContents);
+        
+        return {
+            slug,
+            title: data.title,
+            description: data.description,
+            lastModified: (data.lastModified || data.date || stats.mtime).toISOString(),
+        };
+    } catch (error) {
+        console.error(`Could not get playbook for slug: ${slug}`, error);
+        return null;
+    }
+}
+--- END FILE: usr/local/google/home/user/workspace/src/lib/playbook.ts ---
+
+--- START FILE: usr/local/google/home/user/workspace/src/lib/research.ts ---
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+const contentDirectory = path.join(process.cwd(), 'src', 'content', 'research');
+
+export type ResearchPaper = {
+  slug: string;
+  title: string;
+  description: string;
+  href: string;
+  lastModified: string;
+};
+
+async function getFilenames(): Promise<string[]> {
+    try {
+        const filenames = fs.readdirSync(contentDirectory);
+        return filenames.filter(filename => filename.endsWith('.md'));
+    } catch (error) {
+        console.error("Error reading research directory. This may be expected in some environments. Returning empty array.", error);
+        return [];
+    }
+}
+
+export async function getAllResearchSlugs(): Promise<string[]> {
+    const filenames = await getFilenames();
+    return filenames.map(filename => filename.replace(/\.md$/, ''));
+}
+
+export async function getResearchBySlug(slug: string): Promise<ResearchPaper | null> {
+  const filePath = path.join(contentDirectory, `${slug}.md`);
+  try {
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const stats = fs.statSync(filePath);
+    const { data } = matter(fileContents);
+
+    return {
+      slug,
+      title: data.title,
+      description: data.description,
+      href: `/research/${slug}`,
+      lastModified: (data.lastModified || data.date || stats.mtime).toISOString(),
+    } as ResearchPaper;
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== 'ENOENT') {
+      console.error(`Error reading research paper ${slug}:`, error);
+    }
+    return null;
+  }
+}
+--- END FILE: usr/local/google/home/user/workspace/src/lib/research.ts ---
+... and so on for all 288 files ...
