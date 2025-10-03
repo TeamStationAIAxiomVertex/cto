@@ -1,5 +1,7 @@
+
 // scripts/ensure-required-files.js
 /* eslint-disable no-console */
+console.log("🔎 ensure-required-files: start");
 const fs = require("fs");
 const path = require("path");
 
@@ -273,7 +275,10 @@ function rewriteAliases() {
   const files = [];
 
   (function walk(dir) {
-    if (!fs.existsSync(dir)) return;
+    if (!fs.existsSync(dir)) {
+      console.error(`❌ src directory missing: ${dir}`);
+      process.exit(1);
+    }
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const p = path.join(dir, entry.name);
       if (entry.isDirectory()) walk(p);
@@ -297,19 +302,19 @@ function rewriteAliases() {
     };
 
     // 1) ESM/CJS: import/export ... from '@/...'
-    src = src.replace(/from\s+['"]@\/([^'"]+)['"]/g, (_m, sub) => {
+    src = src.replace(/from\\s+['"]@\\/([^'"]+)['"]/g, (_m, sub) => {
       changed = true; rewrites++;
       return `from "${mk(sub.trim())}"`;
     });
 
     // 2) CJS: require('@/...')
-    src = src.replace(/require\(\s*['"]@\/([^'"]+)['"]\s*\)/g, (_m, sub) => {
+    src = src.replace(/require\\(\\s*['"]@\\/([^'"]+)['"]\\s*\\)/g, (_m, sub) => {
       changed = true; rewrites++;
       return `require("${mk(sub.trim())}")`;
     });
 
     // 3) Dynamic: import('@/...')
-    src = src.replace(/import\(\s*['"]@\/([^'"]+)['"]\s*\)/g, (_m, sub) => {
+    src = src.replace(/import\\(\\s*['"]@\\/([^'"]+)['"]\\s*\\)/g, (_m, sub) => {
       changed = true; rewrites++;
       return `import("${mk(sub.trim())}")`;
     });
@@ -336,3 +341,5 @@ function rewriteAliases() {
 
 rewriteAliases();
 console.log("✅ ensure-required-files: done");
+
+    
