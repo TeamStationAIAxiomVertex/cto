@@ -1,5 +1,5 @@
 
-import { getCaseStudyBySlug, getAllCaseStudies } from '../../../lib/case-studies';
+import { getAllCaseStudies, getCaseStudyBySlug } from '../../../lib/case-studies';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Briefcase, Award, CheckCircle, AlertTriangle, Shield } from 'lucide-react';

@@ -20,7 +20,7 @@ export type CaseStudy = { slug: string; clientName?: string; industry?: string; 
 const CANDIDATE_DIRS = [path.join(process.cwd(), "content", "case-studies"), path.join(process.cwd(), "src", "content", "case-studies")];
 function findDir(){ for(const d of CANDIDATE_DIRS) if(fs.existsSync(d)) return d; return null; }
 export async function getAllCaseStudies(){ const dir=findDir(); if(!dir) return []; const files=fs.readdirSync(dir).filter(f=>/\\.mdx?$/.test(f)); return files.map(file=>{ const abs=path.join(dir,file); const raw=fs.readFileSync(abs,"utf8"); const {data}=matter(raw); const stat=fs.statSync(abs); return { slug:file.replace(/\\.mdx?$/,""), clientName:data.clientName||data.title, industry:data.industry, summary:data.summary||data.description, ogImage:data.ogImage, lastModified:stat.mtime.toISOString() }; }); }
-export async function getCaseStudyBySlug(slug){ const dir=findDir(); if(!dir) return null; const file=[".md",".mdx"].map(ext=>path.join(dir,\`\${slug}\${ext}\`)).find(f=>fs.existsSync(f)); if(!file) return null; const raw=fs.readFileSync(file,"utf8"); const {data,content}=matter(raw); const html=await markdownToHtml(content); const stat=fs.statSync(file); return { slug, clientName:data.clientName||data.title, industry:data.industry, summary:data.summary||data.description, ogImage:data.ogImage, lastModified:stat.mtime.toISOString(), contentHtml:html }; }
+export async function getCaseStudyBySlug(slug){ if (!slug) return null; const dir=findDir(); if(!dir) return null; const file=[".md",".mdx"].map(ext=>path.join(dir,\`\${slug}\${ext}\`)).find(f=>fs.existsSync(f)); if(!file) return null; const raw=fs.readFileSync(file,"utf8"); const {data,content}=matter(raw); const html=await markdownToHtml(content); const stat=fs.statSync(file); return { slug, clientName:data.clientName||data.title, industry:data.industry, summary:data.summary||data.description, ogImage:data.ogImage, lastModified:stat.mtime.toISOString(), contentHtml:html }; }
 export default { getAllCaseStudies, getCaseStudyBySlug };`],
 
   ["src/components/SpotifyIcon.tsx", `import * as React from "react";
@@ -30,19 +30,37 @@ export default function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
   </svg>);
 }`],
 
-  ["src/components/ui/tooltip.tsx", `import * as React from "react";
-export function TooltipProvider({ children }:{children:React.ReactNode}){return <>{children}</>;}
-export function Tooltip({ children }:{children:React.ReactNode}){return <>{children}</>;}
-export function TooltipTrigger({ children }:{children:React.ReactNode}){return <>{children}</>;}
-export function TooltipContent({ children }:{children:React.ReactNode}){return <>{children}</>;}
-export function WithTooltip({ content, children, as:Tag="span", className }:{content:React.ReactNode; children:React.ReactNode; as?:keyof JSX.IntrinsicElements; className?:string}){ const title=typeof content==="string"?content:undefined; return <Tag title={title} className={className} data-hint={title}>{children}</Tag>; }
+  ["src/components/ui/tooltip.tsx", `"use client";
+import * as React from "react";
+
+export function TooltipProvider({ children }: { children: React.ReactNode }) { return <>{children}</>; }
+export function Tooltip({ children }: { children: React.ReactNode }) { return <>{children}</>; }
+export function TooltipTrigger({ children }: { children: React.ReactNode }) { return <span>{children}</span>; }
+export function TooltipContent({ children }: { children: React.ReactNode }) { return <span>{children}</span>; }
+
+/** Helper that works in SSR and CSR via native title attribute */
+export function WithTooltip({
+  content, children, as: Tag = "span", className,
+}: { content: React.ReactNode; children: React.ReactNode; as?: keyof JSX.IntrinsicElements; className?: string }) {
+  const title = typeof content === "string" ? content : undefined;
+  return <Tag title={title} className={className} data-hint={title}>{children}</Tag>;
+}
+
 export default { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent, WithTooltip };`],
 
-  ["src/components/ui/accordion.tsx", `import * as React from "react";
-export function Accordion(props:React.HTMLAttributes<HTMLDivElement>){return <div {...props}/>;}
-export function AccordionItem({children,value}:{children:React.ReactNode; value:string}){return <section data-accordion-item={value}>{children}</section>;}
-export function AccordionTrigger({children}:{children:React.ReactNode}){return <div role="button" tabIndex={0}>{children}</div>;}
-export function AccordionContent({children}:{children:React.ReactNode}){return <div>{children}</div>;}
+  ["src/components/ui/accordion.tsx", `"use client";
+import * as React from "react";
+
+export function Accordion(props: React.HTMLAttributes<HTMLDivElement>) { return <div {...props} />; }
+export function AccordionItem({ children, value }: { children: React.ReactNode; value: string }) {
+  return <section data-accordion-item={value}>{children}</section>;
+}
+export function AccordionTrigger({ children }: { children: React.ReactNode }) {
+  return <div role="button" tabIndex={0}>{children}</div>;
+}
+export function AccordionContent({ children }: { children: React.ReactNode }) {
+  return <div>{children}</div>;
+}
 export default { Accordion, AccordionItem, AccordionTrigger, AccordionContent };`],
 ];
 
@@ -51,12 +69,12 @@ for (const [rel, content] of files) {
   if (!fs.existsSync(abs)) {
     fs.mkdirSync(path.dirname(abs), { recursive: true });
     fs.writeFileSync(abs, content);
-    console.log(\`🧩 created \${rel}\`);
+    console.log(`🧩 created ${rel}`);
   } else {
     const ok = fs.readFileSync(abs, "utf8").trim().length > 0;
     if (!ok) {
       fs.writeFileSync(abs, content);
-      console.log(\`🧩 fixed empty \${rel}\`);
+      console.log(`🧩 fixed empty ${rel}`);
     }
   }
 }
