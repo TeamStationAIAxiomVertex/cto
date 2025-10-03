@@ -1,4 +1,3 @@
-
 // scripts/ensure-required-files.js
 /* eslint-disable no-console */
 console.log("🔎 ensure-required-files: start");
@@ -267,22 +266,22 @@ export default { getAllCaseStudies, getCaseStudyBySlug };
 
   // --- Comparison helpers ---
   [path.join(SRC, "lib/comparisonFaqs.ts")]: `
-export type Faq = { q: string; a: string };
+export type Faq = { question: string; answer: string };
 
 /** Default FAQs for a competitor page; safe fallback if none provided */
 export function defaultComparisonFaqs(vendor: string): Faq[] {
   return [
     {
-      q: \`Why choose TeamStation AI vs. \${vendor}?\`,
-      a: "TeamStation AI bundles scientific vetting, secure MDM devices, EOR/compliance, and insurance under one SLA to reduce risk and lower TCO."
+      question: \`Why choose TeamStation AI vs. \${vendor}?\`,
+      answer: "TeamStation AI bundles scientific vetting, secure MDM devices, EOR/compliance, and insurance under one SLA to reduce risk and lower TCO."
     },
     {
-      q: "How do you vet engineers?",
-      a: "We use our Axiom Cortex™ cognitive AI to measure problem-solving ability and learning orientation, providing evidence-based signals—beyond resumes."
+      question: "How do you vet engineers?",
+      answer: "We use our Axiom Cortex™ cognitive AI to measure problem-solving ability and learning orientation, providing evidence-based signals—beyond resumes."
     },
     {
-      q: "What about compliance and security?",
-      a: "We’re aligned to SOC 2/ISO practices, devices are MDM-managed with encryption and remote wipe, and all work is covered by Cyber & E&O insurance."
+      question: "What about compliance and security?",
+      answer: "We’re aligned to SOC 2/ISO practices, devices are MDM-managed with encryption and remote wipe, and all work is covered by Cyber & E&O insurance."
     }
   ];
 }
@@ -292,21 +291,21 @@ export default { defaultComparisonFaqs };
   [path.join(SRC, "lib/comparisonSchema.ts")]: `
 import type { Faq } from "./comparisonFaqs";
 
-type Args = { name: string; url?: string; slug?: string; faqs?: Faq[] };
+type Args = { competitorName: string; competitorUrl?: string; slug?: string; faqs?: Faq[] };
 const SITE = "https://cto.teamstation.dev";
 
 /** Minimal, valid JSON-LD for comparison pages with optional FAQ */
-export function generateComparisonSchema({ name, url, slug, faqs = [] }: Args) {
-  const canonical = \`\${SITE}/comparisons/\${slug ?? name.toLowerCase()}\`;
+export function generateComparisonSchema({ competitorName, competitorUrl, slug, faqs = [] }: Args) {
+  const canonical = \`\${SITE}/comparisons/\${slug ?? competitorName.toLowerCase()}\`;
 
   const faqBlock = faqs.length
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": faqs.map(({ q, a }) => ({
+        "mainEntity": faqs.map(({ question, answer }) => ({
           "@type": "Question",
-          "name": q,
-          "acceptedAnswer": { "@type": "Answer", "text": a }
+          "name": question,
+          "acceptedAnswer": { "@type": "Answer", "text": answer }
         }))
       }
     : null;
@@ -314,10 +313,10 @@ export function generateComparisonSchema({ name, url, slug, faqs = [] }: Args) {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": \`TeamStation AI vs. \${name}\`,
+    "name": \`TeamStation AI vs. \${competitorName}\`,
     "url": canonical,
-    "about": { "@type": "Organization", "name": name, "url": url },
-    ...(faqBlock ? { faqBlock } : {})
+    "about": { "@type": "Organization", "name": competitorName, "url": competitorUrl },
+    ...(faqBlock ? { mainEntity: faqBlock.mainEntity } : {})
   };
 }
 export default { generateComparisonSchema };
@@ -330,7 +329,7 @@ Object.entries(FILES).forEach(([file, content]) => writeIfMissing(file, content)
 /** ---------- Rewrite '@/…' imports to relative paths ---------- */
 function rewriteAliases() {
   const exts = [".ts", ".tsx", ".js", ".jsx"];
-  const files = [];
+  const files: string[] = [];
 
   (function walk(dir) {
     if (!fs.existsSync(dir)) {
@@ -351,7 +350,7 @@ function rewriteAliases() {
     let src = fs.readFileSync(file, "utf8");
     let changed = false;
 
-    const mk = (sub) => {
+    const mk = (sub: string) => {
       const targetAbs = path.join(SRC, sub);
       const rel = path
         .relative(dir, targetAbs)
