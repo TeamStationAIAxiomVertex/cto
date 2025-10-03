@@ -17,6 +17,10 @@ const nextConfig = {
     "lucide-react": { transform: "lucide-react/dist/esm/icons/{{member}}" },
   },
   typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" },
+  webpack(config) {
+    config.resolve.alias['@'] = path.join(__dirname, 'src');
+    return config;
+  },
   async headers() {
     return [
       {

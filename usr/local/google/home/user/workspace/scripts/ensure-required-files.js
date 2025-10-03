@@ -267,4 +267,72 @@ export default { getAllCaseStudies, getCaseStudyBySlug };
 /** ---------- Write any missing files ---------- */
 Object.entries(FILES).forEach(([file, content]) => writeIfMissing(file, content));
 
+/** ---------- Rewrite '@/…' imports to relative paths ---------- */
+function rewriteAliases() {
+  const exts = [".ts", ".tsx", ".js", ".jsx"];
+  const files = [];
+
+  (function walk(dir) {
+    if (!fs.existsSync(dir)) return;
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(p);
+      else if (exts.includes(path.extname(p))) files.push(p);
+    }
+  })(SRC);
+
+  let rewrites = 0;
+
+  for (const file of files) {
+    const dir = path.dirname(file);
+    let src = fs.readFileSync(file, "utf8");
+    let changed = false;
+
+    const mk = (sub) => {
+      const targetAbs = path.join(SRC, sub);
+      const rel = path
+        .relative(dir, targetAbs)
+        .replace(/\\/g, "/");
+      return rel.startsWith(".") ? rel : "./" + rel;
+    };
+
+    // 1) ESM/CJS: import/export ... from '@/...'
+    src = src.replace(/from\s+['"]@\/([^'"]+)['"]/g, (_m, sub) => {
+      changed = true; rewrites++;
+      return `from "${mk(sub.trim())}"`;
+    });
+
+    // 2) CJS: require('@/...')
+    src = src.replace(/require\(\s*['"]@\/([^'"]+)['"]\s*\)/g, (_m, sub) => {
+      changed = true; rewrites++;
+      return `require("${mk(sub.trim())}")`;
+    });
+
+    // 3) Dynamic: import('@/...')
+    src = src.replace(/import\(\s*['"]@\/([^'"]+)['"]\s*\)/g, (_m, sub) => {
+      changed = true; rewrites++;
+      return `import("${mk(sub.trim())}")`;
+    });
+
+    if (changed) {
+      fs.writeFileSync(file, src);
+      console.log("🔧 alias → relative:", path.relative(ROOT, file));
+    }
+  }
+
+  const STRICT = process.env.STRICT_ALIAS_REWRITE === "1";
+  const leftovers = files.filter(f => fs.readFileSync(f, "utf8").includes("@/"));
+  if (leftovers.length) {
+    const msg =
+      `Found ${leftovers.length} remaining "@/…" imports:\n` +
+      leftovers.map(f => " - " + path.relative(ROOT, f)).join("\n");
+    STRICT ? console.error("❌ " + msg) : console.warn("⚠️  " + msg);
+    if (STRICT) process.exit(1);
+  }
+
+  console.log(`✅ alias rewrite complete (${rewrites} updates).`);
+}
+
+
+rewriteAliases();
 console.log("✅ ensure-required-files: done");
