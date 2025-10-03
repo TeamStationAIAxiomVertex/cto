@@ -1,5 +1,3 @@
-// src/components/ui/accordion.tsx
-// Server-safe stubs; replace with client islands later if you need interactivity.
 import * as React from 'react';
 
 export function Accordion({ children, ...rest }: React.HTMLAttributes<HTMLDivElement>) {

@@ -1,5 +1,4 @@
-// src/components/ui/tooltip.tsx
-// Server-safe stubs to satisfy imports (no 'use client').
+// Server-safe stubs so imports from "@/components/ui/tooltip" always compile
 import * as React from 'react';
 
 export function TooltipProvider({ children }: { children: React.ReactNode }) { return <>{children}</>; }
@@ -7,7 +6,7 @@ export function Tooltip({ children }: { children: React.ReactNode }) { return <>
 export function TooltipTrigger({ children }: { children: React.ReactNode }) { return <>{children}</>; }
 export function TooltipContent({ children }: { children: React.ReactNode }) { return <>{children}</>; }
 
-// Optional convenience wrapper so existing code can render a title attribute
+/** Optional SSR-friendly helper: shows native title on hover/focus */
 export function WithTooltip({
   content,
   children,
