@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     }
 };
 
+// This page now correctly renders the client component.
 export default function TechnicalInterviewEvaluationPage() {
   return <Client />;
 }

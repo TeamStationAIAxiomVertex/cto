@@ -1,94 +1,126 @@
-// scripts/preflight.cjs
-const fs = require("fs");
-const path = require("path");
 
-const ROOT = path.join(__dirname, "..");
-const APP = path.join(ROOT, "src", "app");
+const fs = require('fs');
+const path = require('path');
 
-function exists(file) {
-  return fs.existsSync(file);
+const ROOT = path.join(__dirname, '..');
+const APP  = path.join(ROOT, 'src', 'app');
+
+const exists  = p => fs.existsSync(p);
+const read    = p => fs.readFileSync(p, 'utf8');
+const write   = (p, s) => fs.writeFileSync(p, s);
+const ensureDir = p => { if (!exists(p)) fs.mkdirSync(p, { recursive: true }); };
+const fail    = msg => { console.error(`❌ Preflight: ${msg}`); process.exit(1); };
+const warn    = msg => console.warn(`⚠️ Preflight Warning: ${msg}`);
+const ok      = msg => console.log(`✅ ${msg}`);
+
+function ensureFile(p, content) {
+  ensureDir(path.dirname(p));
+  if (!exists(p)) write(p, content);
 }
-
-function content(file) {
-  return fs.readFileSync(file, "utf8");
-}
-
-function fail(msg) {
-  console.error("❌ Preflight:", msg);
-  process.exit(1);
-}
-
-function warn(msg) {
-    console.warn("⚠️ Preflight:", msg);
-}
-
-function ensureFile(file, fileContent) {
-    if (!exists(file)) {
-        fs.mkdirSync(path.dirname(file), { recursive: true });
-        fs.writeFileSync(file, fileContent, 'utf8');
-        console.log(`✓ Created missing file: ${path.relative(ROOT, file)}`);
-    }
-}
-
-function rewrite(file, pairs) {
-  if (!exists(file)) return;
-  const src = content(file);
-  let out = src, changed = false;
-  for (const [from, to] of pairs) {
-    if (src.includes(from)) { out = out.split(from).join(to); changed = true; }
-  }
-  if (changed) {
-    fs.mkdirSync(path.dirname(file), { recursive: true });
-    fs.writeFileSync(file, out, 'utf8');
-    console.log(`🛠  Rewrote imports in ${path.relative(ROOT, file)}`);
+function rewrite(p, search, replace) {
+  if (!exists(p)) return;
+  const before = read(p);
+  const after = before.replace(search, replace);
+  if (after !== before) {
+      write(p, after);
+      console.log(`🛠  Rewrote imports in ${path.relative(ROOT, p)}`);
   }
 }
+function walk(dir, out = []) {
+  if (!exists(dir)) return out;
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) walk(p, out);
+    else if (p.endsWith('.tsx') || p.endsWith('.jsx')) out.push(p);
+  }
+  return out;
+}
 
-console.log("🔎 Running preflight checks...");
+console.log('🔎 Running preflight checks...');
 
-// --- self-heal imports for adapters / reviewers ---
-ensureFile(path.join(ROOT, 'src', 'providers', 'app-providers.tsx'),
-`'use client';
+// 0) ENV sanity
+if (process.env.NODE_ENV !== 'production' && process.env.CI) {
+  fail(`NODE_ENV must be "production" during build; got "${process.env.NODE_ENV || ''}"`);
+}
+
+// 1) Ensure shims exist (no-op if already present)
+ensureFile(
+  path.join(ROOT, 'src', 'providers', 'app-providers.tsx'),
+  `'use client';
 import React from 'react';
 export default function AppProviders({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
-`);
-
-ensureFile(path.join(ROOT, 'src', 'components', 'seo', 'SeoSafeImage.tsx'),
-`'use client';
+`
+);
+ensureFile(
+  path.join(ROOT, 'src', 'components', 'seo', 'SeoSafeImage.tsx'),
+  `'use client';
 import Image, { ImageProps } from 'next/image';
 export default function SeoSafeImage(props: ImageProps & { alt?: string }) {
   const { alt = '', ...rest } = props as ImageProps;
   return <Image alt={alt} {...rest} />;
 }
-`);
+`
+);
 
-// Force alias imports so relative depth never breaks again
-rewrite(path.join(ROOT, 'src', 'app', 'layout.tsx'), [
-  ["../providers/app-providers", "@/providers/app-providers"]
-]);
-rewrite(path.join(ROOT, 'src', 'app', 'case-studies', '[slug]', 'page.tsx'), [
-  ["../../../components/seo/SeoSafeImage", "@/components/seo/SeoSafeImage"]
-]);
+// 2) Rewrite fragile relative imports → alias (one-time)
+rewrite(
+  path.join(ROOT, 'src', 'app', 'layout.tsx'),
+  /from\s+['"]\.\.\/providers\/app-providers['"]/,
+  `from '@/providers/app-providers'`
+);
+rewrite(
+  path.join(ROOT, 'src', 'app', 'case-studies', '[slug]', 'page.tsx'),
+  /from\s+['"]\.\.\/\.\.\/\.\.\/components\/seo\/SeoSafeImage['"]/,
+  `from '@/components/seo/SeoSafeImage'`
+);
 
-// Validate tsconfig alias
-(function checkAliasesFlexible() {
-  const tsconfigPath = path.join(ROOT, 'tsconfig.json');
-  if (!exists(tsconfigPath)) return warn('tsconfig.json not found; alias check skipped.');
-  const raw = content(tsconfigPath).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*/g, '');
-  let ts; try { ts = JSON.parse(raw); } catch { return fail('tsconfig.json is not valid JSON.'); }
+// 3) Alias config must be either:
+//    A) baseUrl: "src", paths: { "@/*": ["*"] }
+//    B) baseUrl: ".",   paths: { "@/*": ["src/*"] }
+const tsconfigPath = path.join(ROOT, 'tsconfig.json');
+if (!exists(tsconfigPath)) {
+  warn('tsconfig.json not found; alias check skipped.');
+} else {
+  const raw = read(tsconfigPath).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
+  let ts; try { ts = JSON.parse(raw); } catch { fail('tsconfig.json is not valid JSON.'); }
   const co = ts.compilerOptions || {};
   const bu = co.baseUrl;
-  const p  = co.paths || {};
-  const okA = bu === 'src' && Array.isArray(p['@/*']) && p['@/*'].some(x => x === '*');
-  const okB = bu === '.'   && Array.isArray(p['@/*']) && p['@/*'].some(x => x === 'src/*');
+  const ps = (co.paths && co.paths['@/*']) || [];
+  const okA = bu === 'src' && Array.isArray(ps) && ps.some(x => x === '*');
+  const okB = bu === '.'   && Array.isArray(ps) && ps.some(x => x === 'src/*');
   if (!okA && !okB) {
-    fail(`Alias config must be either:
- - baseUrl:"src", paths:{ "@/*": ["*"] }  OR
- - baseUrl:".",  paths:{ "@/*": ["src/*"] }.
-Got baseUrl:${JSON.stringify(bu)} paths:${JSON.stringify(p['@/*'])}`);
+    fail(`Alias config must be baseUrl:"src"+["@/*":"*"] OR baseUrl:"."+["@/*":"src/*"]. Got baseUrl:${JSON.stringify(bu)} paths:${JSON.stringify(ps)}`);
   }
-})();
+}
 
-console.log("✅ Preflight checks passed.");
+// 4) Root layout: metadataBase present, themeColor only in viewport
+const layoutPath = path.join(APP, 'layout.tsx');
+if (exists(layoutPath)) {
+  const c = read(layoutPath);
+  if (!/export\s+const\s+metadata/.test(c) || !/metadataBase:\s*new URL\(/.test(c)) {
+    fail(`Root layout missing metadataBase in metadata: ${layoutPath}`);
+  }
+  if (/export\s+const\s+metadata[\s\S]*themeColor\s*:/.test(c)) {
+    fail(`themeColor belongs in "export const viewport", not metadata: ${layoutPath}`);
+  }
+  if (!/export\s+const\s+viewport\s*=/.test(c)) {
+    fail(`Root layout missing 'export const viewport = { themeColor: ... }': ${layoutPath}`);
+  }
+}
+
+// 5) Static routes may not use params
+for (const f of walk(APP)) {
+  const dir = path.dirname(f);
+  const isStatic = !dir.split(path.sep).some(seg => seg.startsWith('[') && seg.endsWith(']'));
+  if (!isStatic) continue;
+  const c = read(f);
+  const usesParams =
+    /\bfunction\s+\w+\s*\(\s*\{\s*params\s*:/.test(c) ||
+    /\(\s*\{\s*params\s*\}\s*:\s*\{/.test(c) ||
+    /\bparams\./.test(c);
+  if (usesParams) fail(`Static route uses 'params': ${f}`);
+}
+
+console.log('✅ Preflight checks passed.');

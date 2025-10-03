@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description: description,
       url: study.canonical,
       type: 'article',
-      publishedTime: new Date().toISOString(), // This should ideally come from frontmatter
+      publishedTime: study.lastModified || new Date().toISOString(),
       authors: ['TeamStation AI'],
       images: imageUrl ? [
         {
@@ -123,7 +123,7 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
             url: `${siteUrl}/apple-icon.png`
         }
     },
-    datePublished: new Date().toISOString(), // This should ideally come from frontmatter
+    datePublished: study.lastModified || new Date().toISOString(),
   };
 
   const contentHtml = study.contentHtml || '';
