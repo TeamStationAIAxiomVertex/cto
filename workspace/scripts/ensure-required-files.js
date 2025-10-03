@@ -15,6 +15,13 @@ function writeIfMissing(file, content) {
     ensureDir(file);
     fs.writeFileSync(file, content);
     console.log("🧩 wrote", path.relative(ROOT, file));
+  } else {
+    // Also check for empty files and overwrite
+    const ok = fs.readFileSync(file, "utf8").trim().length > 0;
+    if (!ok) {
+      fs.writeFileSync(file, content);
+      console.log(`🧩 fixed empty ${path.relative(ROOT, file)}`);
+    }
   }
 }
 
@@ -26,7 +33,7 @@ import * as React from "react";
 type JsonLdProps = { data?: Record<string, any>; json?: Record<string, any>; id?: string };
 function JsonLdImpl({ data, json, id }: JsonLdProps) {
   const payload = json ?? data ?? {};
-  const jsonText = JSON.stringify(payload).replace(/</g, "\\u003c");
+  const jsonText = JSON.stringify(payload).replace(/</g, "\\\\u003c");
   return <script type="application/ld+json" id={id} dangerouslySetInnerHTML={{ __html: jsonText }} suppressHydrationWarning />;
 }
 export default JsonLdImpl;
@@ -35,16 +42,124 @@ export { JsonLdImpl as JsonLd };
 
   [path.join(SRC, "components/seo/FurtherReading.tsx")]: `
 import * as React from "react";
+import Link from 'next/link';
+
 export type ReadingItem = { href: string; title: string; desc?: string };
-export default function FurtherReading({ items = [], title = "Further reading" }:{ items?: ReadingItem[]; title?: string }) {
-  if (!items.length) return null;
+
+type Props = {
+  items?: ReadingItem[];
+  title?: string;
+  comparison?: string; // allow your usage: <FurtherReading comparison="andela" />
+  role?: string;
+  technology?: string;
+  country?: string;
+};
+
+const PRESETS: Record<string, ReadingItem[]> = {
+  andela: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  bairesdev: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  coderslink: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  deel: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  devlane: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  globant: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  howdy: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  kms: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  nearsure: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  parallelstaff: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  revelo: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  tecla: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  terminal: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  toptal: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  unosquare: [
+    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
+    { href: "/trust", title: "Security & Compliance posture" },
+    { href: "/case-studies", title: "Customer case studies" },
+  ],
+  default: [
+    { href: "/playbook/hub", title: "CTO Playbook" },
+    { href: "/comparisons", title: "Vendor Comparisons" },
+    { href: "/hire/by-country/mexico", title: "Hire in Mexico" },
+  ],
+};
+
+export default function FurtherReading({ items = [], title = "Further reading", comparison, role, technology, country }: Props) {
+  let list = items.length ? items : PRESETS['default'];
+  if (comparison && PRESETS[comparison]) {
+    list = PRESETS[comparison];
+  }
+
+  if (!items.length && (role || technology || country)) {
+    list = PRESETS['default'];
+  }
+
+
+  if (!list.length) return null;
+
   return (
-    <aside aria-label={title} className="space-y-2">
-      <h2 className="text-base font-semibold">{title}</h2>
+    <aside aria-label={title} className="space-y-2 my-16 border-t border-border pt-8">
+      <h2 className="text-xl font-bold">{title}</h2>
       <ul className="list-disc pl-5 space-y-1">
-        {items.map(({ href, title, desc }, i) => (
+        {list.map(({ href, title, desc }, i) => (
           <li key={i}>
-            <a href={href} className="underline hover:no-underline">{title}</a>
+            <Link href={href} className="text-primary hover:underline">
+              {title}
+            </Link>
             {desc ? <div className="text-sm text-muted-foreground">{desc}</div> : null}
           </li>
         ))}
@@ -82,6 +197,7 @@ export default { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
   // --- Optional: stub to avoid surprises if DecisionCard is missing ---
   [path.join(SRC, "components/ui/DecisionCard.tsx")]: `
 import * as React from "react";
+import Link from 'next/link';
 export function DecisionCard({ problem, stakes, approach, evidence, related = [] as {label:string; href:string}[] }:{
   problem:string; stakes:string; approach:string; evidence:string; related?:{label:string; href:string}[];
 }) {
@@ -91,12 +207,12 @@ export function DecisionCard({ problem, stakes, approach, evidence, related = []
       <p><strong>Problem:</strong> {problem}</p>
       <p><strong>Stakes:</strong> {stakes}</p>
       <p><strong>Approach:</strong> {approach}</p>
-      <p><strong>Evidence:</strong> {evidence}</p>
+      <p dangerouslySetInnerHTML={{ __html: evidence.replace(/\\\\[(.*?)\\\\]\\\\((.*?)\\\\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') }}></p>
       {related.length ? (
         <div className="pt-2">
           <div className="font-semibold">Related</div>
           <ul className="list-disc pl-5">
-            {related.map((r, i) => <li key={i}><a className="underline" href={r.href}>{r.label}</a></li>)}
+            {related.map((r, i) => <li key={i}><Link className="text-primary hover:underline" href={r.href}>{r.label}</Link></li>)}
           </ul>
         </div>
       ) : null}
@@ -109,11 +225,12 @@ export default DecisionCard;
   // --- Icons ---
   [path.join(SRC, "components/SpotifyIcon.tsx")]: `
 import * as React from "react";
-export default function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
+export function SpotifyIcon(props: React.SVGProps<SVGSVGElement>) {
   return (<svg viewBox="0 0 168 168" aria-hidden="true" focusable="false" {...props}>
     <path d="M84 0a84 84 0 1 0 0 168 84 84 0 0 0 0-168Zm38.7 121.3a6 6 0 0 1-8.3 2c-22.8-14-51.6-17.2-85.3-9.4a6 6 0 1 1-2.7-11.7c36.7-8.4 68.5-4.7 93 10.7a6 6 0 0 1 2.3 8.4Zm11-24.4a7.4 7.4 0 0 1-10.2 2.4c-26.1-16-65.9-20.7-96.7-11.3a7.4 7.4 0 1 1-4.2-14.2c34.6-10.2 78-5 107.6 13.1a7.4 7.4 0 0 1 3.5 10Zm1.3-25.9c-31-18.4-82.2-20.6-111.7-11.3a9 9 0 1 1-5.3-17.2c34.2-10.5 90.2-7.8 126 13.3a9 9 0 1 1-9 15.2Z" fill="currentColor"/>
   </svg>);
 }
+export default SpotifyIcon;
 `.trim(),
 
   // --- Markdown helpers ---
@@ -133,16 +250,21 @@ import "server-only";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import markdownToHtml from "./markdown-parser";
+import { markdownToHtml } from "./markdown-parser";
 
 export type CaseStudy = {
   slug: string;
+  title: string;
   clientName?: string;
   industry?: string;
   summary?: string;
   lastModified?: string;
   ogImage?: { src?: { url?: string }; aiHint?: string };
   contentHtml?: string;
+  challenge?: string;
+  outcomes?: string;
+  techStack?: { name: string; link: string }[];
+  canonical?: string;
 };
 
 const CANDIDATE_DIRS = [
@@ -171,11 +293,17 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
       summary: data.summary || data.description,
       ogImage: data.ogImage,
       lastModified: stat.mtime.toISOString(),
+      title: data.title,
+      challenge: data.challenge,
+      outcomes: data.outcomes,
+      techStack: data.techStack,
+      canonical: data.canonical
     };
   });
 }
 
-export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
+export async function getCaseStudyBySlug(slug: string | undefined): Promise<CaseStudy | null> {
+  if (!slug) return null;
   const dir = findDir();
   if (!dir) return null;
   const file = [".md", ".mdx"].map(ext => path.join(dir, \`\${slug}\${ext}\`)).find(f => fs.existsSync(f));
@@ -192,6 +320,11 @@ export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null
     ogImage: data.ogImage,
     lastModified: stat.mtime.toISOString(),
     contentHtml: html,
+    title: data.title,
+    challenge: data.challenge,
+    outcomes: data.outcomes,
+    techStack: data.techStack,
+    canonical: data.canonical,
   };
 }
 export default { getAllCaseStudies, getCaseStudyBySlug };
@@ -204,7 +337,7 @@ Object.entries(FILES).forEach(([file, content]) => writeIfMissing(file, content)
 /** ---------- Rewrite '@/…' imports to relative paths ---------- */
 function rewriteAliases() {
   const exts = [".ts", ".tsx", ".js", ".jsx"];
-  const files = [];
+  const files: string[] = [];
 
   (function walk(dir) {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -214,7 +347,7 @@ function rewriteAliases() {
     }
   })(SRC);
 
-  const rx = /from\\s+['"]@\\/(.+?)['"]|require\\(\\s*['"]@\\/(.+?)['"]\\s*\\)/g;
+  const rx = /from\\s+['"]@\\/([^'"]+)['"]|require\\(\\s*['"]@\\/([^'"]+)['"]\\s*\\)/g;
 
   let rewrites = 0;
   for (const file of files) {
@@ -222,16 +355,14 @@ function rewriteAliases() {
     let src = fs.readFileSync(file, "utf8");
     let changed = false;
 
-    src = src.replace(rx, (_m, m1, m2) => {
-      const sub = (m1 || m2).trim();             // e.g. "components/seo/JsonLd"
+    src = src.replace(rx, (m, m1, m2) => {
+      const sub = (m1 || m2).trim();
       const targetAbs = path.join(SRC, sub);
-      const rel = path.relative(dir, targetAbs).replace(/\\\\/g, "/");
+      const rel = path.relative(dir, targetAbs).replace(/\\/g, "/");
       const fixed = rel.startsWith(".") ? rel : "./" + rel;
       changed = true;
       rewrites++;
-      return _m.startsWith("from")
-        ? `from "${fixed}"`
-        : `require("${fixed}")`;
+      return m.startsWith("from") ? `from "${fixed}"` : `require("${fixed}")`;
     });
 
     if (changed) {
@@ -239,6 +370,16 @@ function rewriteAliases() {
       console.log("🔧 alias → relative:", path.relative(ROOT, file));
     }
   }
+
+  const STRICT = process.env.STRICT_ALIAS_REWRITE === "1";
+  const leftovers = files.filter(f => fs.readFileSync(f, "utf8").includes("@/"));
+  if (leftovers.length) {
+    const msg = `Found ${leftovers.length} remaining "@/…" imports:\\n` +
+                leftovers.map(f => " - " + path.relative(ROOT, f)).join("\\n");
+    STRICT ? console.error("❌ " + msg) : console.warn("⚠️  " + msg);
+    if (STRICT) process.exit(1);
+  }
+
   console.log(`✅ alias rewrite complete (${rewrites} updates).`);
 }
 
