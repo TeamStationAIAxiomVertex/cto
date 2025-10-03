@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
-  typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" },
 
   // keep images working in prod & preview
   images: {
@@ -15,9 +14,9 @@ const nextConfig = {
 
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
-  modularizeImports: {
-    "lucide-react": { transform: "lucide-react/dist/esm/icons/{{member}}" }
-  }
+
+  // BREAK_GLASS support: set BREAK_GLASS=1 at build time to bypass TS errors
+  typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" }
 };
 
 export default nextConfig;

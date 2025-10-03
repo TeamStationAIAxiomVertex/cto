@@ -4,7 +4,7 @@ set -euo pipefail
 echo "▶ Nuclear Review starting…"
 
 # 0) Clean
-rm -rf .next out
+rm -rf .next out || true
 
 # 1) Boundary & import guards (pure grep + bash)
 echo "▶ Checking 'use client' locations…"
@@ -49,9 +49,11 @@ echo "▶ Typecheck & lint…"
 npm run typecheck
 npm run lint
 
+# 3) Build (SSR on App Hosting)
 echo "▶ Building (strict)…"
 npm run build:strict
 
+# 4) firebase.json sanity (App Hosting uses rewrites, not redirects)
 echo "▶ firebase.json rewrites presence…"
 node -e "const f=require('fs');const j=JSON.parse(f.readFileSync('firebase.json','utf8')); if(!j.hosting||!Array.isArray(j.hosting.rewrites)) { throw new Error('firebase.json missing hosting.rewrites'); }"
 
