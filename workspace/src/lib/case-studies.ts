@@ -8,7 +8,8 @@ export type CaseStudy = {
 };
 
 export async function getAllCaseStudies(): Promise<CaseStudy[]> {
-  return []; // TODO: wire real data
+  // TODO: replace with real loader (FS, CMS, etc.)
+  return [];
 }
 
 export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
