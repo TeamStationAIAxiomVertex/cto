@@ -1,11 +1,11 @@
 
 import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck, ExternalLink } from 'lucide-react';
-import { WithTooltip } from '@/components/ui/tooltip';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { JsonLd } from '@/components/seo/JsonLd';
-import FurtherReading from '@/components/seo/FurtherReading';
-import { DecisionCard } from '@/components/ui/DecisionCard';
+import { WithTooltip } from '../../../components/ui/tooltip';
+import { JsonLd } from '../../../components/seo/JsonLd';
+import FurtherReading from '../../../components/seo/FurtherReading';
+import { DecisionCard } from '../../../components/ui/DecisionCard';
 
 export const metadata: Metadata = {
     title: 'Andela Alternative: TeamStation AI vs. Andela',
