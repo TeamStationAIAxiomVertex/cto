@@ -1,12 +1,10 @@
-
 // src/app/sitemap.xml/route.ts
 import { NextResponse } from 'next/server';
 
-export const revalidate = 60 * 60; // 1h
-
 export async function GET() {
-  const base = "https://cto.teamstation.dev";
+  const base = 'https://cto.teamstation.dev';
   const now = new Date().toISOString();
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
@@ -19,5 +17,7 @@ export async function GET() {
   </sitemap>
 </sitemapindex>`;
 
-  return new NextResponse(xml, { headers: { 'Content-Type': 'application/xml' } });
+  return new NextResponse(xml, {
+    headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=300' }
+  });
 }
