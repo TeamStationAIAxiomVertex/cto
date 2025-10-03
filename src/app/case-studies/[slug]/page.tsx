@@ -16,9 +16,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
-  // Enforce length constraints
+  // Enforce length constraints and handle undefined summary
+  const summary = study.summary ?? '';
   const title = study.title.replace(/ \| TeamStation AI( Case Study)?/g, ' Case Study');
-  const description = study.summary.length > 160 ? `Case study: how TeamStation AI helped ${study.clientName} with ${study.industry} challenges.` : study.summary;
+  const description = summary.length > 160 ? `Case study: how TeamStation AI helped ${study.clientName} with ${study.industry} challenges.` : summary;
   
   const keywords = [
       study.clientName,
