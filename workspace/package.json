@@ -2,18 +2,17 @@
   "name": "cto-playbook-platform",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "engines": {
     "node": "20.19.0"
   },
   "packageManager": "npm@10",
   "scripts": {
-    "dev": "NODE_OPTIONS=--experimental-specifier-resolution=node next dev -p ${PORT:-8080} -H 0.0.0.0",
-    "build": "NODE_OPTIONS=--experimental-specifier-resolution=node next build",
-    "build:production": "npm ci && npm run prebuild && NODE_OPTIONS=--experimental-specifier-resolution=node next build",
+    "dev": "next dev -p ${PORT:-8080} -H 0.0.0.0",
+    "build": "next build",
+    "build:production": "npm ci && npm run prebuild && next build",
     "build:strict": "npm run typecheck && npm run lint && npm run build:production",
     "prebuild": "node scripts/syntax-scrubber.js",
-    "start": "NODE_OPTIONS=--experimental-specifier-resolution=node next start -p ${PORT:-8080} -H 0.0.0.0",
+    "start": "next start -p ${PORT:-8080} -H 0.0.0.0",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "nuclear": "bash scripts/nuclear-review.sh"
