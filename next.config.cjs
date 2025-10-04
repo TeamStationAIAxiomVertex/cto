@@ -1,6 +1,10 @@
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+});
 const path = require("path");
-const BREAK_GLASS = process.env.BREAK_GLASS === "1";
 
+const BREAK_GLASS = process.env.BREAK_GLASS === "1";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
@@ -22,6 +26,7 @@ const nextConfig = {
   webpack(config) {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
+      // Fix the path import to use dirname correctly with CJS:
       "@": path.join(__dirname, "src"),
     };
     return config;
@@ -43,4 +48,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withPWA(nextConfig);
