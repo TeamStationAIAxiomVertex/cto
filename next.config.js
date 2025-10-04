@@ -1,3 +1,4 @@
+import withPWA from 'next-pwa';
 import path from "path";
 
 const BREAK_GLASS = process.env.BREAK_GLASS === "1";
@@ -23,7 +24,8 @@ const nextConfig = {
   webpack(config) {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
-      "@": path.join(import.meta.dirname, "src"),
+      // Fix the path import to use dirname correctly with webpack:
+      "@": path.join(process.cwd(), "src"),
     };
     return config;
   },
@@ -44,4 +46,7 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withPWA({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+})(nextConfig);
