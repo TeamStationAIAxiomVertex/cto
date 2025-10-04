@@ -257,7 +257,7 @@ export default function ComparisonWidget() {
           </select>
         </div>
          <div className="flex items-center gap-2">
-          <WithTooltip label="Your blended engineering cost per hour, used for calculating latency and rework costs.">
+          <WithTooltip content="Your blended engineering cost per hour, used for calculating latency and rework costs.">
             <label htmlFor={`${baseId}-dev-hour`} className="font-medium text-muted-foreground border-b border-dashed">
                 Blended Dev Rate:
             </label>
@@ -273,7 +273,7 @@ export default function ComparisonWidget() {
           />
         </div>
         <div className="flex items-center gap-2">
-          <WithTooltip label="Estimated management and administrative overhead for onshore vendors.">
+          <WithTooltip content="Estimated management and administrative overhead for onshore vendors.">
             <label
               htmlFor={`${baseId}-onshore-overhead`}
               className="font-medium text-muted-foreground border-b border-dashed"
@@ -292,7 +292,7 @@ export default function ComparisonWidget() {
           <span className="text-muted-foreground">%</span>
         </div>
         <div className="flex items-center gap-2">
-          <WithTooltip label="Estimated management, communication, and rework overhead for offshore vendors.">
+          <WithTooltip content="Estimated management, communication, and rework overhead for offshore vendors.">
             <label
               htmlFor={`${baseId}-offshore-overhead`}
               className="font-medium text-muted-foreground border-b border-dashed"
@@ -311,7 +311,7 @@ export default function ComparisonWidget() {
           <span className="text-muted-foreground">%</span>
         </div>
         <div className="flex items-center gap-2">
-          <WithTooltip label="Estimated management and administrative overhead for legacy nearshore vendors.">
+          <WithTooltip content="Estimated management and administrative overhead for legacy nearshore vendors.">
             <label
               htmlFor={`${baseId}-legacy-overhead`}
               className="font-medium text-muted-foreground border-b border-dashed"
@@ -369,7 +369,7 @@ export default function ComparisonWidget() {
                   scope="row"
                   className="p-3 font-medium text-muted-foreground sticky left-0 bg-card w-1/6 z-10"
                 >
-                  <WithTooltip label={row.description}>
+                  <WithTooltip content={row.description}>
                     <span className="border-b border-dashed cursor-help">{row.label}</span>
                   </WithTooltip>
                 </th>

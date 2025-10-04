@@ -1,9 +1,18 @@
-'use client';
-
 import Link from 'next/link';
-import { ThemeToggle } from '@/components/ThemeToggle';
-import { MobileNav } from '@/components/client/MobileNav';
-import { DesktopNav } from '@/components/client/DesktopNav';
+import dynamic from 'next/dynamic';
+
+const ThemeToggle = dynamic(
+  () => import('../client/ThemeToggle').then(m => m.ThemeToggle ?? m.default),
+  { ssr: false }
+);
+const MobileNav = dynamic(
+  () => import('../client/MobileNav').then(m => m.MobileNav ?? m.default),
+  { ssr: false }
+);
+const DesktopNav = dynamic(
+  () => import('../client/DesktopNav').then(m => m.DesktopNav ?? m.default),
+  { ssr: false }
+);
 
 export function Header() {
   return (
@@ -12,19 +21,29 @@ export function Header() {
         <Link href="/" className="text-lg font-bold text-foreground">
           TeamStation AI
         </Link>
-        
+
         {/* Desktop Navigation */}
         <DesktopNav />
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hidden sm:inline-flex a11y-tap-target">
+          <Link
+            href="https://app.teamstation.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hidden sm:inline-flex a11y-tap-target"
+          >
             Sign In
           </Link>
-          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button hidden sm:inline-flex">
+          <Link
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button hidden sm:inline-flex"
+          >
             Book a Call
           </Link>
-          
+
           {/* Mobile Navigation */}
           <MobileNav />
         </div>

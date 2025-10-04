@@ -2,48 +2,17 @@
 {
   "hosting": {
     "source": ".",
-    "headers": [
-      {
-        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico|css|js|woff2|ttf)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public,max-age=31536000,immutable"
-          }
-        ]
-      },
-      {
-        "source": "/(manifest.webmanifest|robots.txt)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=3600"
-          }
-        ]
-      }
-    ],
     "rewrites": [
-      {
-        "source": "**",
-        "run": {
-          "serviceId": "web",
-          "region": "us-central1"
-        }
-      }
+      { "source": "**", "run": { "serviceId": "web", "region": "us-central1" } }
     ]
   },
   "apphosting": {
     "targets": {
       "web": {
-        "runtime": {
-          "node": "20.19.0"
-        },
-        "buildCommand": "npm run build",
-        "runCommand": "npm start",
-        "healthCheck": {
-          "path": "/healthz",
-          "timeoutSeconds": 30
-        }
+        "runtime": { "node": "20.19.0" },
+        "buildCommand": "npm run build:production",
+        "runCommand": "npm run start",
+        "healthCheck": { "path": "/healthz", "timeoutSeconds": 30 }
       }
     }
   }
