@@ -9,22 +9,28 @@ runConfig:
 env:
   - variable: NEXT_PUBLIC_SITE_NAME
     value: "TeamStation AI"
-    availability:
-      - BUILD
-      - RUNTIME
+    availability: [BUILD, RUNTIME]
 
-  # Production environment settings
   - variable: NODE_ENV
     value: "production"
-    availability:
-      - RUNTIME
+    availability: [BUILD, RUNTIME]
+
   - variable: LOG_LEVEL
     value: "warn"
-    availability:
-      - RUNTIME
-
-  # BREAK-GLASS to force a build even if TS/ESLint fail (BUILD only)
+    availability: [BUILD, RUNTIME]
+  
   - variable: BREAK_GLASS
-    value: "1" # BREAK_GLASS ACTIVATED TO BYPASS DEPLOYMENT BLOCKER
-    availability:
-      - BUILD
+    value: "0"
+    availability: [BUILD]
+
+  - variable: FORCE_WRITE
+    value: "1"
+    availability: [BUILD]
+
+  - variable: STRICT_ALIAS_REWRITE
+    value: "1"
+    availability: [BUILD]
+    
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: "https://cto.teamstation.dev"
+    availability: [BUILD, RUNTIME]
