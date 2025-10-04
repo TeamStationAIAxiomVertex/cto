@@ -3,15 +3,15 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
 const ThemeToggle = dynamic(
-  () => import('@/components/client/ThemeToggle').then(m => m.ThemeToggle ?? m.default),
+  () => import('../client/ThemeToggle').then(m => m.ThemeToggle ?? m.default),
   { ssr: false }
 );
 const MobileNav = dynamic(
-  () => import('@/components/client/MobileNav').then(m => m.MobileNav ?? m.default),
+  () => import('../client/MobileNav').then(m => m.MobileNav ?? m.default),
   { ssr: false }
 );
 const DesktopNav = dynamic(
-  () => import('@/components/client/DesktopNav').then(m => m.DesktopNav ?? m.default),
+  () => import('../client/DesktopNav').then(m => m.DesktopNav ?? m.default),
   { ssr: false }
 );
 

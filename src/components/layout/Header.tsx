@@ -1,16 +1,17 @@
+
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
 const ThemeToggle = dynamic(
-  () => import('../client/ThemeToggle').then(m => m.ThemeToggle ?? m.default),
+  () => import('@/components/client-ui/ThemeToggle').then(m => m.ThemeToggle ?? m.default),
   { ssr: false }
 );
 const MobileNav = dynamic(
-  () => import('../client/MobileNav').then(m => m.MobileNav ?? m.default),
+  () => import('@/components/client-ui/MobileNav').then(m => m.MobileNav ?? m.default),
   { ssr: false }
 );
 const DesktopNav = dynamic(
-  () => import('../client/DesktopNav').then(m => m.DesktopNav ?? m.default),
+  () => import('@/components/client-ui/DesktopNav').then(m => m.DesktopNav ?? m.default),
   { ssr: false }
 );
 
