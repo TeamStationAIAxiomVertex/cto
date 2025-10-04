@@ -1,12 +1,11 @@
-
-// src/app/playbook-sitemap.xml/route.ts
+// src/app/sitemaps/core.xml/route.ts
 import { NextResponse } from 'next/server';
-import { collectPlaybookUrls } from "../../lib/sitemap-data";
+import { collectCoreUrls } from '@/lib/sitemap-data';
 
-export const revalidate = 60 * 60; // 1h
+export const revalidate = 60 * 60 * 6; // 6h
 
 export async function GET() {
-  const urls = await collectPlaybookUrls();
+  const urls = await collectCoreUrls();
 
   const body =
     `<?xml version="1.0" encoding="UTF-8"?>` +
@@ -19,5 +18,5 @@ export async function GET() {
       .join('') +
     `</urlset>`;
 
-  return new NextResponse(body, { headers: { 'Content-Type': 'application/xml' } });
+  return new NextResponse(body, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
 }
