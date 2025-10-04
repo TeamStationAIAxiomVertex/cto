@@ -1,4 +1,4 @@
-const path = require("path");
+import path from 'path';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -19,6 +19,7 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" },
   eslint: { ignoreDuringBuilds: process.env.BREAK_GLASS === "1" },
   webpack(config) {
+    const __dirname = path.dirname(new URL(import.meta.url).pathname);
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       "@": path.join(__dirname, "src"),
@@ -42,4 +43,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
