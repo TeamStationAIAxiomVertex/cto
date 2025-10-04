@@ -1,15 +1,38 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, UserCheck, FileText, ShieldCheck, Laptop, Building, Scale, GanttChartSquare } from 'lucide-react';
-import FurtherReading from '@/components/seo/FurtherReading';
+import { ArrowRight, UserCheck, FileText, ShieldCheck, Laptop, Building, Scale, GanttChartSquare, BookOpen, Search, Code, CheckCircle } from 'lucide-react';
+
+// NOTE: FurtherReading component is removed and replaced by explicit interlinking to fulfill the SEO War Plan
 
 export const metadata: Metadata = {
-  title: 'Integrated Nearshore Services: One SLA for Talent, Ops & Risk',
-  description: 'TeamStation AI’s integrated services platform bundles talent, EOR, secure devices, and compliance into one accountable SLA for nearshore engineering teams.',
-  keywords: 'integrated nearshore services, nearshore SLA, managed nearshore teams, employer of record latam, secure nearshore development',
+  title: 'Integrated Nearshore Services: One Accountable SLA for CTOs', // Optimized title for SEO War Plan
+  description: 'Our single, accountable SLA for nearshore engineering bundles AI-driven talent, EOR, secure devices, and compliance to defeat legacy staff augmentation risk. Surpass BairesDev.', // Optimized description
+  keywords: 'integrated nearshore services, nearshore SLA, managed nearshore teams, employer of record latam, secure nearshore development, teamstation vs bairesdev, nearshore IT staff augmentation',
 };
 
+// JSON-LD Schema (REQUIRED by SEO War Plan)
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Integrated Nearshore Services: One Accountable SLA",
+    "provider": {"@type":"Organization","name":"TeamStation AI"},
+    "serviceType": "Nearshore IT Staff Augmentation Platform",
+    "areaServed": "Americas",
+    "description": "Our single, accountable SLA for nearshore engineering bundles AI-driven talent, EOR, secure devices, and compliance to defeat legacy staff augmentation risk. Surpass BairesDev.",
+    "offers": {"@type":"Offer","url": "/contact"},
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Integrated Nearshore Engineering Services",
+        "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cognitive AI Vetting & Recruiting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Employer of Record (EOR) & Compliance" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Secure Devices & Endpoint Management (MDM)" } },
+        ]
+    }
+};
+
+// FULL CONTENT ARRAY (includes Risk, IP/NDA, and original services)
 const includedServices = [
     {
         icon: <UserCheck className="h-8 w-8 text-primary"/>,
@@ -33,11 +56,25 @@ const includedServices = [
         kpi: 'MDM enrollment ≥99% (24h)'
     },
     {
+        icon: <Scale className="h-8 w-8 text-primary"/>, // NEW: Risk Reporting
+        pain: 'Need proof your team is compliant?',
+        title: 'Real-Time Risk & Audit Reporting',
+        description: 'Continuous monitoring and detailed reporting on compliance adherence, device security posture, and legal documentation. Get audit-ready data on demand to satisfy internal compliance mandates.',
+        kpi: 'Instant risk score visibility'
+    },
+    {
         icon: <ShieldCheck className="h-8 w-8 text-primary"/>,
         pain: 'Exposed to liability from remote work?',
         title: 'Cybersecurity & Insurance Coverage',
         description: 'All work is covered by our comprehensive Cybersecurity and E&O insurance. We enforce security workflows, NDAs, and IP protection, providing you with a contractual liability shield.',
         kpi: 'Liability shield included'
+    },
+    {
+        icon: <Building className="h-8 w-8 text-primary"/>, // NEW: IP/NDA
+        pain: 'Exposing IP to third-party contractors?',
+        title: 'IP, NDA, & Contractual Assignment',
+        description: 'Ironclad, country-legal IP and NDA agreements are executed for every team member. We hold contractual liability, ensuring your intellectual property is protected from Day 1.',
+        kpi: '100% IP assignment guarantee'
     },
     {
         icon: <GanttChartSquare className="h-8 w-8 text-primary"/>, 
@@ -47,14 +84,14 @@ const includedServices = [
         kpi: 'Time-to-First-PR in 7–14 days'
     },
     {
-        icon: <Scale className="h-8 w-8 text-primary"/>,
+        icon: <CheckCircle className="h-8 w-8 text-primary"/>,
         pain: 'Drowning in vendor invoices?',
         title: 'Unified Billing & TCO Reporting',
         description: 'Receive one simple monthly invoice that covers everything. Our platform provides transparent TCO reporting, making it easy to justify your budget and track value.',
         kpi: '1 accountable invoice'
     },
     {
-        icon: <Building className="h-8 w-8 text-primary"/>,
+        icon: <Laptop className="h-8 w-8 text-primary"/>,
         pain: 'Need a physical space for your team?',
         title: 'LATAM Office Network Access',
         description: 'Through our partnership with WeWork, get on-demand desks and meeting rooms in major LATAM hubs for planning sessions, interviews, and quarterly reviews. (Optional Add-on)',
@@ -62,9 +99,28 @@ const includedServices = [
     }
 ];
 
+// Helper component for internal links (New component to implement the War Plan interlinking)
+const LinkCard = ({ href, icon, title, description }: { href: string, icon: React.ReactNode, title: string, description: string }) => (
+    <Link href={href} className="group flex flex-col p-4 border rounded-lg hover:border-primary/50 transition-all">
+        <div className="flex items-center gap-3">
+            {icon}
+            <h4 className="font-semibold text-lg group-hover:text-primary transition-colors">{title}</h4>
+        </div>
+        <p className="text-sm text-muted-foreground mt-2">{description}</p>
+        <ArrowRight className="h-4 w-4 mt-2 self-end text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-1" />
+    </Link>
+);
+
+
 export default function IntegratedServicesPage() {
   return (
     <main className="container max-w-6xl py-12">
+        {/* Schema Injection */}
+        <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} 
+        />
+        
         <div className="text-sm text-muted-foreground mb-8">
             <Link href="/" className="hover:text-foreground">Home</Link> / <span>Services</span> / <span>Integrated Services</span>
         </div>
@@ -104,7 +160,7 @@ export default function IntegratedServicesPage() {
                     In a traditional model, you're the systems integrator, responsible for coordinating multiple vendors for legal, payroll, IT, and recruiting. It's a model riddled with risk, hidden costs, and finger-pointing.
                 </p>
                 <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
-                    Our integrated platform flips the script. We are the single accountable party. One Master Services Agreement (MSA) covers the entire operational lifecycle. If a device isn't delivered on time, that's our problem. If a compliance issue arises, we own it. This radical simplification allows you to focus on one thing: building great software.
+                    Our integrated platform flips the script. We are the single accountable party. **One Master Services Agreement (MSA) covers the entire operational lifecycle.** If a device isn't delivered on time, that's our problem. If a compliance issue arises, we own it. This radical simplification allows you to focus on one thing: building great software.
                 </p>
                 <div className="mt-8">
                      <Link href="/trust" className="cta-button">Explore Our Trust Center <ArrowRight className="ml-2 h-4 w-4"/></Link>
@@ -112,7 +168,49 @@ export default function IntegratedServicesPage() {
             </div>
         </section>
         
-        <FurtherReading />
+        {/* SEO WAR PLAN INTERLINKING IMPLEMENTATION: Minimum of 6 internal links */}
+        <section className="my-16">
+            <h2 className="text-3xl font-bold mb-8 text-center">CTO Playbook Resources: Deep Dive into Our Edge</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <LinkCard 
+                    href="/playbook"
+                    icon={<BookOpen className="h-6 w-6 text-primary" />}
+                    title="The CTO Playbook Hub"
+                    description="Access our entire collection of research-backed guides on nearshore strategy, economics, and scaling teams."
+                />
+                <LinkCard 
+                    href="/research/axiom-cortex-scientific-report"
+                    icon={<Search className="h-6 w-6 text-primary" />}
+                    title="Research: Axiom Cortex™ Foundations"
+                    description="Understand the scientific mechanism behind our AI vetting that delivers high-signal talent fast. (The key differentiator)"
+                />
+                <LinkCard 
+                    href="/comparisons/bairesdev"
+                    icon={<Code className="h-6 w-6 text-primary" />}
+                    title="Comparison: TeamStation vs. BairesDev"
+                    description="See a criteria-by-criteria breakdown of our integrated platform versus legacy staff augmentation vendors. (Direct competitor attack)"
+                />
+                <LinkCard 
+                    href="/hire/by-role/react"
+                    icon={<Laptop className="h-6 w-6 text-primary" />}
+                    title="Programmatic Sourcing Example"
+                    description="See how our platform executes talent sourcing for specific roles and locations using our integrated model."
+                />
+                <LinkCard 
+                    href="/hire/by-country/mexico"
+                    icon={<FileText className="h-6 w-6 text-primary" />}
+                    title="EOR & Compliance Deep Dive"
+                    description="Review the specifics of how Employer of Record (EOR) and compliance are managed in our key LATAM markets."
+                />
+                <LinkCard 
+                    href="/trust"
+                    icon={<ShieldCheck className="h-6 w-6 text-primary" />}
+                    title="Security & Trust Center"
+                    description="Detailed view of our contractual liability, cybersecurity policies, and compliance guardrails."
+                />
+            </div>
+        </section>
+
     </main>
   );
 }
