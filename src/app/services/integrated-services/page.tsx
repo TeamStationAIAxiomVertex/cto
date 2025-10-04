@@ -22,7 +22,7 @@ const includedServices = [
         icon: <FileText className="h-8 w-8 text-primary"/>,
         pain: 'Worried about complex local labor laws?',
         title: 'Employer of Record (EOR) & Compliance',
-        description: 'We handle all country-legal contracts, payroll, taxes, and statutory benefits, centralizing HR and labor-law compliance under our master service agreement.',
+        description: 'Country-legal contracts, payroll, taxes, and statutory benefits handled by TeamStation, centralizing HR and labor-law compliance under our master service agreement.',
         kpi: 'Zero compliance overhead'
     },
     {
