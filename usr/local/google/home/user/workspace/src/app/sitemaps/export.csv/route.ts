@@ -1,4 +1,3 @@
-
 import { collectCoreUrls, collectPlaybookUrls } from '@/lib/sitemap-data';
 import type { UrlRec } from '@/lib/sitemap-data';
 
