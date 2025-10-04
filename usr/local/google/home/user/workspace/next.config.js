@@ -1,5 +1,4 @@
-
-    import path from "path";
+import path from "path";
 
     const BREAK_GLASS = process.env.BREAK_GLASS === "1";
 
@@ -46,4 +45,3 @@
     };
 
     export default nextConfig;
-    
