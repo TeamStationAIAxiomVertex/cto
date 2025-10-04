@@ -1,3 +1,4 @@
+
 // Server component: no 'use client'
 import * as React from 'react';
 
@@ -54,7 +55,7 @@ export default function HeroKpis({ items }: { items: HeroKpi[] }) {
             className="rounded-xl border bg-card p-3"
           >
             <div className="flex items-baseline justify-between gap-3">
-              <div role="heading" aria-level={3} className="text-sm text-muted-foreground truncate font-semibold">{k.label}</div>
+              <p className="text-sm text-muted-foreground truncate font-semibold">{k.label}</p>
               <div className="text-lg font-semibold text-foreground tabular-nums">
                 {k.value}
                 {k.unit ?? ''}
