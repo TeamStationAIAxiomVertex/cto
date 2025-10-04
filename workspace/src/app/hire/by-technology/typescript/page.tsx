@@ -7,7 +7,7 @@ import { allTech } from '@/lib/tech';
 import { JsonLd } from '@/components/seo/JsonLd';
 import TypeScriptPSPSection from '@/components/seo/sections/TypeScriptPSPSection';
 
-export const metadata = { title: `Hire Nearshore TypeScript Developers`, description: `Hire elite, pre-vetted LATAM engineers with expertise in TypeScript. Our scientific evaluation de-risks hiring for critical roles.`, keywords: `hire nearshore TypeScript developers, latam TypeScript engineers, TypeScript staff augmentation` };
+export const metadata: Metadata = { title: `Hire Nearshore TypeScript Developers`, description: `Hire elite, pre-vetted LATAM engineers with expertise in TypeScript. Our scientific evaluation de-risks hiring for critical roles.`, keywords: `hire nearshore TypeScript developers, latam TypeScript engineers, TypeScript staff augmentation` };
 
 export default function TechPage() {
   const tech = allTech['typescript'];
@@ -120,3 +120,5 @@ export default function TechPage() {
     </>
   );
 }
+
+    

@@ -235,3 +235,5 @@ export async function generateStaticParams() {
     slug: study.slug,
   }));
 }
+
+    
