@@ -1,4 +1,4 @@
---- START FILE: .eslintrc.json ---
+--- START_FILE: .eslintrc.json ---
 {
   "extends": ["next/core-web-vitals"],
   "rules": {
@@ -40,10 +40,8 @@
     }
   ]
 }
-
---- END FILE: .eslintrc.json ---
-
---- START FILE: .github/PULL_REQUEST_TEMPLATE.md ---
+--- END_FILE: .eslintrc.json ---
+--- START_FILE: .github/PULL_REQUEST_TEMPLATE.md ---
 ## Nuclear Checklist (must be ✅)
 - [ ] `npm run nuclear` passes locally
 - [ ] No new `'use client'` outside allowed paths
@@ -51,10 +49,8 @@
 - [ ] Tooltip imports use `@/components/ui/tooltip` only
 - [ ] Firebase redirects updated if routes moved/renamed
 - [ ] Lighthouse on preview ≥ 0.90 Mobile Perf (attach link/screenshot)
-
---- END FILE: .github/PULL_REQUEST_TEMPLATE.md ---
-
---- START FILE: .github/workflows/release.yml ---
+--- END_FILE: .github/PULL_REQUEST_TEMPLATE.md ---
+--- START_FILE: .github/workflows/release.yml ---
 name: Release Gate
 
 on:
@@ -104,10 +100,15 @@ jobs:
             --assert.assertions['largest-contentful-paint']="error:<=2500" \
             --assert.assertions['total-blocking-time']="error:<=150" \
             --assert.assertions['cumulative-layout-shift']="error:<=0.1"
+--- END_FILE: .github/workflows/release.yml ---
+--- START_FILE: README.md ---
+# TeamStation AI - CTO Playbook Platform
 
---- END FILE: .github/workflows/release.yml ---
+This is a Next.js project bootstrapped with `create-next-app`.
 
---- START FILE: apphosting.yaml ---
+**SRE Protocol 9000 Verification:** Phase 2 Purge Complete.
+--- END_FILE: README.md ---
+--- START_FILE: apphosting.yaml ---
 # Firebase App Hosting configuration
 runConfig:
   minInstances: 1
@@ -119,30 +120,33 @@ runConfig:
 env:
   - variable: NEXT_PUBLIC_SITE_NAME
     value: "TeamStation AI"
-    availability:
-      - BUILD
-      - RUNTIME
+    availability: [BUILD, RUNTIME]
 
-  # Production environment settings
   - variable: NODE_ENV
     value: "production"
-    availability:
-      - RUNTIME
+    availability: [BUILD, RUNTIME]
+
   - variable: LOG_LEVEL
     value: "warn"
-    availability:
-      - RUNTIME
-
-  # BREAK-GLASS to force a build even if TS/ESLint fail (BUILD only)
+    availability: [BUILD, RUNTIME]
+  
   - variable: BREAK_GLASS
-    value: "1" # BREAK_GLASS ACTIVATED TO BYPASS DEPLOYMENT BLOCKER
-    availability:
-      - BUILD
+    value: "0"
+    availability: [BUILD]
 
+  - variable: FORCE_WRITE
+    value: "1"
+    availability: [BUILD]
 
---- END FILE: apphosting.yaml ---
-
---- START FILE: baseline-deploy/firebase.json ---
+  - variable: STRICT_ALIAS_REWRITE
+    value: "1"
+    availability: [BUILD]
+    
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: "https://cto.teamstation.dev"
+    availability: [BUILD, RUNTIME]
+--- END_FILE: apphosting.yaml ---
+--- START_FILE: baseline-deploy/firebase.json ---
 {
   "hosting": {
     "source": ".",
@@ -162,33 +166,8 @@ env:
     }
   }
 }
---- END FILE: baseline-deploy/firebase.json ---
-
---- START FILE: baseline-deploy/next.config.js ---
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-
-  images: {
-    unoptimized: true,
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "picsum.photos" },
-      { protocol: "https", hostname: "cto.teamstation.dev" },
-      { protocol: "https", hostname: "teamstation.dev" }
-    ]
-  },
-
-  eslint: { ignoreDuringBuilds: true },
-  typescript: { ignoreBuildErrors: process.env.BREAK_GLASS === "1" },
-
-  productionBrowserSourceMaps: true
-};
-
-export default nextConfig;
---- END FILE: baseline-deploy/next.config.js ---
-
---- START FILE: baseline-deploy/package.json ---
+--- END_FILE: baseline-deploy/firebase.json ---
+--- START_FILE: baseline-deploy/package.json ---
 {
   "name": "cto-playbook-platform",
   "version": "0.1.0",
@@ -265,15 +244,46 @@ export default nextConfig;
     ]
   }
 }
---- END FILE: baseline-deploy/package.json ---
-
---- START FILE: firebase.json ---
-
+--- END_FILE: baseline-deploy/package.json ---
+--- START_FILE: failsafe/index.html ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TeamStation AI — Online</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; display: grid; place-items: center; height: 100dvh; }
+      .card { padding: 2rem 2.5rem; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,.06); text-align: center; }
+      h1 { margin: 0 0 .5rem; font-size: 1.5rem; }
+      p { margin: .25rem 0; color: #374151; }
+      .muted { color: #6b7280; font-size: .9rem; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1>TeamStation AI</h1>
+      <p>Our main app is updating right now.</p>
+      <p class="muted">This page is always live so you’re never left in the dark.</p>
+      <p class="muted">Support: <a href="mailto:support@teamstation.ai">support@teamstation.ai</a></p>
+    </main>
+  </body>
+</html>
+--- END_FILE: failsafe/index.html ---
+--- START_FILE: firebase.json ---
 {
   "hosting": {
     "source": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
-      { "source": "**", "run": { "serviceId": "web", "region": "us-central1" } }
+      {
+        "source": "**",
+        "run": {
+          "serviceId": "web",
+          "region": "us-central1"
+        }
+      }
     ]
   },
   "apphosting": {
@@ -282,15 +292,16 @@ export default nextConfig;
         "runtime": { "node": "20.19.0" },
         "buildCommand": "npm run build:production",
         "runCommand": "npm run start",
-        "healthCheck": { "path": "/healthz", "timeoutSeconds": 30 }
+        "healthCheck": {
+          "path": "/healthz",
+          "timeoutSeconds": 30
+        }
       }
     }
   }
 }
-
---- END FILE: firebase.json ---
-
---- START FILE: next.config.js ---
+--- END_FILE: firebase.json ---
+--- START_FILE: next.config.js ---
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
@@ -310,10 +321,8 @@ const nextConfig = {
 };
 
 export default nextConfig;
-
---- END FILE: next.config.js ---
-
---- START FILE: package.json ---
+--- END_FILE: next.config.js ---
+--- START_FILE: package.json ---
 {
   "name": "cto-playbook-platform",
   "version": "0.1.0",
@@ -324,11 +333,10 @@ export default nextConfig;
   },
   "packageManager": "npm@10",
   "scripts": {
-    "dev": "NODE_OPTIONS=--experimental-specifier-resolution=node next dev -p ${PORT:-8080} -H 0.0.0.0",
-    "build": "NODE_OPTIONS=--experimental-specifier-resolution=node next build",
-    "build:production": "npm ci && npm run prebuild && NODE_OPTIONS=--experimental-specifier-resolution=node next build",
-    "prebuild": "node scripts/syntax-scrubber.js",
-    "start": "NODE_OPTIONS=--experimental-specifier-resolution=node next start -p ${PORT:-8080} -H 0.0.0.0",
+    "dev": "next dev",
+    "build": "next build",
+    "build:production": "npm run typecheck && next build",
+    "start": "next start -p ${PORT:-3000} -H 0.0.0.0",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
@@ -374,228 +382,8 @@ export default nextConfig;
     "typescript": "^5.5.4"
   }
 }
---- END FILE: package.json ---
-
---- START FILE: public/manifest.webmanifest ---
-{
-  "name": "TeamStation AI",
-  "short_name": "TeamStation",
-  "start_url": "/",
-  "scope": "/",
-  "display": "standalone",
-  "background_color": "#0F172A",
-  "theme_color": "#0F172A",
-  "icons": [
-    { "src": "/favicon.ico", "sizes": "32x32 48x48", "type": "image/x-icon" },
-    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
-  ]
-}
---- END FILE: public/manifest.webmanifest ---
-
---- START FILE: public/robots.txt ---
-User-agent: *
-Allow: /
-Disallow: /privacy-policy
-Disallow: /terms-of-service
-
-Sitemap: https://cto.teamstation.dev/sitemap.xml
---- END FILE: public/robots.txt ---
-
---- START FILE: scripts/deploy.sh ---
-#!/bin/bash
-set -euo pipefail
-
-echo "== 🚀 Starting TeamStation AI Deploy =="
-
-# 1. Clean environment
-rm -rf node_modules .next out
-echo "✅ Cleaned old build artifacts"
-
-# 2. Install exact deps
-npm ci
-echo "✅ Installed dependencies with lockfile"
-
-# 3. Typecheck + lint (optional strict mode)
-if [ "${STRICT:-0}" = "1" ]; then
-  npm run typecheck
-  npm run lint
-fi
-
-# 4. Build & export static files
-npm run export
-echo "✅ Static export complete"
-
-# 5. Ensure /out exists
-[ -d out ] || { echo "❌ Export failed: out directory not found"; exit 1; }
-
-# 6. Deploy to Firebase Hosting
-firebase deploy --only hosting --non-interactive
-echo "✅ Deployment to Firebase Hosting finished successfully"
-
-echo "== 🎉 All Done =="
-
---- END FILE: scripts/deploy.sh ---
-
---- START FILE: scripts/force-cjs-config.js ---
-
-import fs from "fs";
-import path from "path";
-
-const root = process.cwd();
-const cjsConfig = path.join(root, "next.config.cjs");
-const jsConfig = path.join(root, "next.config.js");
-const mjsConfig = path.join(root, "next.config.mjs");
-
-// Kill Firebase’s auto-restored configs
-[jsConfig, mjsConfig].forEach(file => {
-  if (fs.existsSync(file)) {
-    console.warn(`⚠️ Removing rogue config: ${file}`);
-    fs.rmSync(file);
-  }
-});
-
-// Restore safe config if missing
-if (!fs.existsSync(cjsConfig)) {
-  console.warn("⚠️ Restoring safe next.config.cjs");
-  fs.writeFileSync(
-    cjsConfig,
-    `
-/** @type {import('next').NextConfig} */
-const config = {
-  reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "picsum.photos" }
-    ]
-  }
-};
-
-module.exports = config;
-`.trim() + "\n"
-  );
-}
-
---- END FILE: scripts/force-cjs-config.js ---
-
---- START FILE: scripts/nuclear-review.sh ---
-#!/usr/bin/env bash
-set -euo pipefail
-
-echo "▶ Nuclear Review starting…"
-
-# 0) Clean
-rm -rf .next out
-
-# 1) Boundary & import guards (pure grep + bash)
-echo "▶ Checking 'use client' locations…"
-# Grab files that declare 'use client'
-mapfile -t UC_FILES < <(grep -RIl --include='*.{ts,tsx,js,jsx}' -e "^'use client'\|^\"use client\"" src || true)
-
-WHITELIST_REGEX='^(src/components/client/|src/app/.+/client(\.|/)|src/components/ui/.+\.client\.tsx$)'
-if ((${#UC_FILES[@]})); then
-  BAD=()
-  for f in "${UC_FILES[@]}"; do
-    if [[ ! $f =~ $WHITELIST_REGEX ]]; then BAD+=("$f"); fi
-  done
-  if ((${#BAD[@]})); then
-    echo "✖ 'use client' found outside allowed locations:"
-    printf ' - %s\n' "${BAD[@]}"
-    echo "Move client code into a client island (e.g. src/components/client/*)."
-    exit 1
-  fi
-fi
-
-echo "▶ Disallow static imports of client islands from server files…"
-if grep -RIn --include='*.{ts,tsx}' "from ['\"]@/components/client/" src | grep -v "\.client\.tsx" >/dev/null 2>&1; then
-  echo "✖ Server file statically imports a client island."
-  echo "Use: dynamic(() => import('...'), { ssr:false }) or pass the island as a child."
-  exit 1
-fi
-
-echo "▶ Tooltip import guards…"
-if grep -RIn --include='*.{ts,tsx}' "from ['\"]@/components/Tooltip['\"]" src >/dev/null 2>&1; then
-  echo "✖ Found legacy '@/components/Tooltip' import. Use '@/components/ui/tooltip'."
-  exit 1
-fi
-
-echo "▶ Inline data dupes (common crashers)…"
-if grep -RIn --include='*.{ts,tsx}' "const countries\s*=" src/components >/dev/null 2>&1; then
-  echo "✖ Inline 'countries' detected in components. Import from '@/lib/countries'."
-  exit 1
-fi
-
-# 2) Typecheck & lint (strict)
-echo "▶ Typecheck & lint…"
-npm run typecheck
-npm run lint
-
-# 3) Build (Next output:export writes to out/)
-echo "▶ Building (strict)…"
-npm run build:strict
-
-# 4) Static export checks
-echo "▶ Link integrity (out/)…"
-npx --yes linkinator out --skip "mailto:,tel:,^/api" --recurse
-
-echo "▶ firebase.json redirects presence…"
-node -e "const f=require('fs');const j=JSON.parse(f.readFileSync('firebase.json','utf8')); if(!j.hosting||!Array.isArray(j.hosting.redirects)) { throw new Error('firebase.json missing hosting.redirects'); }"
-
-echo "▶ robots noindex for legal pages…"
-for f in out/privacy-policy/index.html out/terms-of-service/index.html; do
-  if [ -f "$f" ] && ! grep -qi "noindex" "$f"; then
-    echo "✖ $f missing 'noindex' robots meta."
-    exit 1
-  fi
-done
-
-# 5) Size budget (simple sanity)
-echo "▶ Export size budget…"
-TOTAL_KB=$(du -sk out | awk '{print $1}')
-echo "Total export size (KB): $TOTAL_KB"
-MAX_KB=25000
-if [ "$TOTAL_KB" -gt "$MAX_KB" ]; then
-  echo "✖ Export too large ($TOTAL_KB KB > $MAX_KB KB). Review bundles/images."
-  exit 1
-fi
-
-echo "✔ Nuclear Review passed."
-
---- END FILE: scripts/nuclear-review.sh ---
-
---- START FILE: scripts/rollback.sh ---
-#!/bin/bash
-set -euo pipefail
-
-BASELINE_DIR="baseline-deploy"
-
-if [ ! -d "$BASELINE_DIR" ]; then
-  echo "❌ No baseline-deploy/ directory found. Cannot rollback."
-  exit 1
-fi
-
-echo "⚡ Rolling back to last known good baseline..."
-
-cp "$BASELINE_DIR/next.config.js" .
-cp "$BASELINE_DIR/firebase.json" .
-cp "$BASELINE_DIR/package.json" .
-
-rm -rf node_modules .next
-npm install
-npm run build
-firebase deploy --only hosting,apphosting
-
-echo "✅ Rollback complete. Site restored from baseline."
-
---- END FILE: scripts/rollback.sh ---
-
---- START FILE: scripts/syntax-scrubber.js ---
-console.log("✅ syntax-scrubber.js loaded. No operation.");
-
---- END FILE: scripts/syntax-scrubber.js ---
-
---- START FILE: src/app/globals.css ---
+--- END_FILE: package.json ---
+--- START_FILE: src/app/globals.css ---
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -625,7 +413,7 @@ console.log("✅ syntax-scrubber.js loaded. No operation.");
     --chart-2: 160 60% 45%;
     --radius: 0.5rem;
   }
-
+ 
   .light {
     --background: 0 0% 98%;
     --foreground: 222 47% 15%;
@@ -654,56 +442,45 @@ console.log("✅ syntax-scrubber.js loaded. No operation.");
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground leading-relaxed;
     font-family: var(--font-poppins);
   }
-
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
   }
-
   .bg-card {
     background: hsl(var(--card));
   }
-
   .dark .bg-card {
     background: linear-gradient(to bottom right, hsl(222 47% 15%), hsl(222 47% 8%));
   }
-
   .light .bg-card {
     background: hsl(var(--card));
   }
 }
 
 @layer components {
-  .cta-button {
-    @apply inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
-  }
-  .a11y-tap-target { 
-      min-height: 48px; 
-      padding: 8px 12px; 
-      display: inline-flex; 
-      align-items: center; 
+    .cta-button {
+        @apply inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
     }
 }
---- END FILE: src/app/globals.css ---
 
---- START FILE: src/app/healthz/route.ts ---
+/* --- a11y/perf helpers (appended) --- */
+.a11y-tap-target{min-height:48px;padding:8px 12px;display:inline-flex;align-items:center}
+.section-defer{content-visibility:auto;contain-intrinsic-size:900px 1200px}
+--- END_FILE: src/app/globals.css ---
+--- START_FILE: src/app/healthz/route.ts ---
 import { NextResponse } from "next/server";
 
 export async function GET() {
   return NextResponse.json({ status: "ok" });
 }
-
---- END FILE: src/app/healthz/route.ts ---
-
---- START FILE: src/app/layout.tsx ---
-
+--- END_FILE: src/app/healthz/route.ts ---
+--- START_FILE: src/app/layout.tsx ---
 import './globals.css';
-import { Inter } from 'next/font/google';
-import type { Metadata } from 'next';
+import { Inter, Poppins, Source_Code_Pro } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
 import { Header } from '@/components/layout/Header';
 import Footer from '@/components/Footer';
 import AppProviders from '@/providers/app-providers';
@@ -714,16 +491,33 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-source-code-pro',
+});
+
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cto.teamstation.dev'),
   title: 'TeamStation AI',
   description: 'Nearshore IT Co-Pilot and CTO Playbook',
   manifest: '/manifest.webmanifest',
-  themeColor: '#0F172A',
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
     shortcut: '/favicon.ico'
   }
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0ea5e9',
 };
 
 export default function RootLayout({
@@ -732,7 +526,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable} ${sourceCodePro.variable}`}>
       <body className={inter.className}>
         <AppProviders>
           <div className="flex min-h-screen flex-col">
@@ -745,10 +539,8 @@ export default function RootLayout({
     </html>
   );
 }
-
---- END FILE: src/app/layout.tsx ---
-
---- START FILE: src/app/not-found.tsx ---
+--- END_FILE: src/app/layout.tsx ---
+--- START_FILE: src/app/not-found.tsx ---
 import Link from 'next/link';
 
 export default function NotFound() {
@@ -760,22 +552,19 @@ export default function NotFound() {
     </div>
   );
 }
-
---- END FILE: src/app/not-found.tsx ---
-
---- START FILE: src/app/page.tsx ---
-
+--- END_FILE: src/app/not-found.tsx ---
+--- START_FILE: src/app/page.tsx ---
 import Link from 'next/link';
 import { BrainCircuit, ShieldCheck, Scale, ArrowRight, BookOpen, GitCompare, FileText, AlertTriangle, CheckCircle, XCircle, Users, Zap, Layers, Component, Trophy } from 'lucide-react';
-import { getAllCaseStudies } from '@/lib/case-studies';
-import { WithTooltip } from '@/components/ui/tooltip';
+import { getAllCaseStudies } from "../lib/case-studies";
+import { WithTooltip } from "../components/ui/tooltip";
 import type { Metadata } from 'next';
-import SafeImage from '@/components/SafeImage';
-import placeholderImages from '@/app/lib/placeholder-images.json';
-import HeroKpis, { type HeroKpi } from '@/components/metrics/HeroKpis';
+import SafeImage from "../components/SafeImage";
+import placeholderImages from "./lib/placeholder-images.json";
+import HeroKpis, { type HeroKpi } from "../components/metrics/HeroKpis";
 import dynamic from 'next/dynamic';
 
-const SpotifyIcon = dynamic(() => import('@/components/SpotifyIcon').then(mod => mod.SpotifyIcon ?? mod.default), { ssr: false });
+const SpotifyIcon = dynamic(() => import("../components/SpotifyIcon").then(mod => mod.SpotifyIcon ?? mod.default), { ssr: false });
 
 const heroKpis: HeroKpi[] = [
   { id: 'compliance', label: 'Audit-Ready Compliance', value: 100, unit: '%', target: 100, desire: 'up' },
@@ -933,7 +722,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="trust-by-numbers" className="py-12">
+        <section id="trust-by-numbers" className="py-12 section-defer">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 {trustNumbers.map((item) => (
                     <div key={item.label} className="group rounded-lg border bg-card p-4 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
@@ -947,7 +736,7 @@ export default async function HomePage() {
             </div>
         </section>
         
-        <section id="core-pillars" className="py-24">
+        <section id="core-pillars" className="py-24 section-defer">
           <h2 className="text-center text-4xl font-bold text-foreground">
               Your Unfair Advantage
           </h2>
@@ -984,7 +773,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="pain-points" className="py-24 bg-card rounded-lg shadow-lg">
+        <section id="pain-points" className="py-24 bg-card rounded-lg shadow-lg section-defer">
           <h2 className="text-center text-4xl font-bold text-foreground">Sound Familiar? It's the Cost of Doing Nothing.</h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">These aren't just headaches. They are symptoms of a broken IT staff augmentation model.</p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -997,7 +786,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="comparison" className="py-24">
+        <section id="comparison" className="py-24 section-defer">
           <h2 className="text-center text-4xl font-bold text-foreground">
               There Is a Better Way
           </h2>
@@ -1037,7 +826,7 @@ export default async function HomePage() {
             </div>
         </section>
 
-        <section id="thought-leadership" className="py-24">
+        <section id="thought-leadership" className="py-24 section-defer">
           <h2 className="text-center text-4xl font-bold text-foreground">
               Go Deeper: Our Research & Vision
           </h2>
@@ -1062,7 +851,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="case-studies" className="py-24">
+        <section id="case-studies" className="py-24 section-defer">
           <h2 className="text-center text-4xl font-bold text-foreground">
               Evidence of Impact
           </h2>
@@ -1093,7 +882,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="contact" className="py-24">
+        <section id="contact" className="py-24 section-defer">
           <div className="mx-auto max-w-3xl rounded-lg border bg-card p-8 text-center shadow-lg">
               <h2 className="text-3xl font-bold text-foreground">Stop Patching a Broken System. Build a Better One.</h2>
               <p className="mt-3 text-muted-foreground">In a 15-minute call, we won't give you a sales pitch. We'll give you a concrete plan to fix your hiring process, consolidate your vendors, and get a predictable, CFO-ready budget for your nearshore team. You will walk away with actionable advice, whether you work with us or not.</p>
@@ -1106,500 +895,5 @@ export default async function HomePage() {
     </>
   );
 }
-
---- END FILE: src/app/page.tsx ---
-
---- START FILE: src/app/privacy-policy/page.tsx ---
-import Link from 'next/link';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Privacy Policy',
-  description: 'This Privacy Policy explains how TeamStation AI collects, uses, and discloses information through our CTO Playbook website.',
-  robots: {
-    index: false, // It's common to no-index legal pages
-    follow: true,
-  },
-  alternates: { canonical: '/privacy-policy' },
-};
-
-export default function PrivacyPolicyPage() {
-  const siteName = "TeamStation AI's CTO Playbook";
-  const mainSiteUrl = "https://teamstation.dev";
-  const effectiveDate = "August 1, 2024";
-
-  return (
-    <main className="container max-w-4xl py-12">
-      <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Privacy Policy</span>
-      </div>
-
-      <article className="prose dark:prose-invert max-w-none">
-        <h1>Privacy Policy</h1>
-        <p className="lead"><strong>Effective Date:</strong> {effectiveDate}</p>
-
-        <h2>Introduction</h2>
-        <p>
-          Welcome to {siteName}. We are committed to protecting your privacy. This Privacy Policy is designed to help you understand how we collect, use, and safeguard the information you provide to us when you visit our website ({' '}
-          <Link href="/">cto.teamstation.dev</Link>) or use our services. This policy is written to be as clear and straightforward as possible.
-        </p>
-        <p>
-          For information about our main corporate services, please visit our main company website at <a href={mainSiteUrl} target="_blank" rel="noopener noreferrer">{mainSiteUrl}</a>.
-        </p>
-
-        <h2>1. Information We Collect</h2>
-        <p>
-          We may collect information that you voluntarily provide to us, such as your name and email address when you book a strategy call. We may also collect non-personal information automatically as you navigate the site, such as your IP address, browser type, and operating system, through server logs and analytics tools like Google Analytics.
-        </p>
-
-        <h2>2. How We Use Your Information</h2>
-        <p>
-          We use the information we collect to:
-        </p>
-        <ul>
-          <li>Provide, operate, and maintain our website and services.</li>
-          <li>Respond to your comments, questions, and requests.</li>
-          <li>Communicate with you about our services, including scheduling calls and sending informational content if you opt-in.</li>
-          <li>Analyze usage and trends to improve our website and user experience.</li>
-          <li>Prevent fraudulent activity and ensure the security of our platform, as outlined in our <Link href="/trust">Trust Center</Link>.</li>
-        </ul>
-
-        <h2>3. Information Sharing and Disclosure</h2>
-        <p>
-          We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information. This does not include trusted third parties who assist us in operating our website or conducting our business, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others' rights, property, or safety.
-        </p>
-        
-        <h2>4. Data Retention</h2>
-        <p>
-          We will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy.
-        </p>
-
-        <h2>5. Your Data Protection Rights</h2>
-        <p>
-          Depending on your location, you may have certain rights under data protection laws, including the right to access, correct, or delete your personal information. If you wish to exercise these rights, please contact us.
-        </p>
-
-        <h2>6. Cookies and Tracking Technologies</h2>
-        <p>
-          We may use cookies and similar tracking technologies to track the activity on our Service and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
-        </p>
-
-        <h2>7. Links to Other Websites</h2>
-        <p>
-          Our Service may contain links to other websites that are not operated by us, including our main corporate site (<a href={mainSiteUrl} target="_blank" rel="noopener noreferrer">{mainSiteUrl}</a>) and research papers hosted on sites like SSRN. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.
-        </p>
-
-        <h2>8. Changes to This Privacy Policy</h2>
-        <p>
-          We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
-        </p>
-
-        <h2>9. Contact Us</h2>
-        <p>
-          Questions? Email <a href="mailto:support@teamstation.ai">support@teamstation.ai</a> or{' '}
-          <a
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
-            target="_blank" rel="noopener noreferrer"
-          >
-            book a call
-          </a>.
-        </p>
-
-         <p className="text-sm text-muted-foreground border-t border-border pt-4 mt-8">
-            <strong>Disclaimer:</strong> This is a placeholder document and should be reviewed by counsel.
-        </p>
-      </article>
-    </main>
-  );
-}
-
---- END FILE: src/app/privacy-policy/page.tsx ---
-
---- START FILE: src/app/robots.ts ---
-import { MetadataRoute } from 'next';
-
-export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/_next/', '/api/', '/studio/'],
-    },
-    sitemap: 'https://cto.teamstation.dev/sitemap.xml',
-  };
-}
-
---- END FILE: src/app/robots.ts ---
-
---- START FILE: src/app/sitemap.ts ---
-// This is a placeholder for the sitemap generation logic.
-// In a real application, you would generate this dynamically.
-import { MetadataRoute } from 'next';
-
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://cto.teamstation.dev',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1,
-    },
-  ];
-}
---- END FILE: src/app/sitemap.ts ---
-
---- START FILE: src/app/terms-of-service/page.tsx ---
-import Link from 'next/link';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Terms of Service',
-  description: 'Please read these Terms of Service carefully before using the TeamStation AI CTO Playbook website.',
-  robots: {
-    index: false, // It's common to no-index legal pages
-    follow: true,
-  },
-  alternates: { canonical: '/terms-of-service' },
-};
-
-export default function TermsOfServicePage() {
-  const siteName = "TeamStation AI's CTO Playbook";
-  const mainSiteUrl = "https://teamstation.dev";
-  const effectiveDate = "August 1, 2024";
-
-  return (
-    <main className="container max-w-4xl py-12">
-      <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Terms of Service</span>
-      </div>
-
-      <article className="prose dark:prose-invert max-w-none">
-        <h1>Terms of Service</h1>
-        <p className="lead"><strong>Effective Date:</strong> {effectiveDate}</p>
-
-        <h2>1. Agreement to Terms</h2>
-        <p>
-          By accessing or using our website, {siteName}, you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of the terms, then you may not access the Service. These Terms apply to all visitors, users, and others who access or use the Service.
-        </p>
-
-        <h2>2. Intellectual Property</h2>
-        <p>
-          The Service and its original content (excluding content provided by users), features, and functionality are and will remain the exclusive property of TeamStation AI and its licensors. Our content, including the playbooks found in our <Link href="/playbook/hub">Playbook Hub</Link> and our research in the <Link href="/research/hub">Research Hub</Link>, is protected by copyright, trademark, and other laws of both the United States and foreign countries.
-        </p>
-
-        <h2>3. Use of Our Service</h2>
-        <p>
-          You may use our Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service:
-        </p>
-        <ul>
-          <li>In any way that violates any applicable national or international law or regulation.</li>
-          <li>To engage in any conduct that restricts or inhibits anyone's use or enjoyment of the Service.</li>
-          <li>To impersonate or attempt to impersonate the Company, a Company employee, another user, or any other person or entity.</li>
-        </ul>
-        
-        <h2>4. Links To Other Web Sites</h2>
-        <p>
-          Our Service may contain links to other web sites or services that are not owned or controlled by TeamStation AI, such as our main corporate site at <a href={mainSiteUrl} target="_blank" rel="noopener noreferrer">{mainSiteUrl}</a>.
-        </p>
-        <p>
-          TeamStation AI has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third-party web sites or services. You further acknowledge and agree that TeamStation AI shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.
-        </p>
-
-        <h2>5. Disclaimer</h2>
-        <p>
-          The information provided on this website is for general informational purposes only. All information on the Site is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site. The TCO models and financial frameworks presented in our <Link href="/playbook/tco-model">TCO Model</Link> are for illustrative purposes and do not constitute financial advice.
-        </p>
-
-        <h2>6. Limitation of Liability</h2>
-        <p>
-          In no event shall TeamStation AI, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
-        </p>
-
-        <h2>7. Governing Law</h2>
-        <p>
-          These Terms shall be governed and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law provisions.
-        </p>
-
-        <h2>8. Changes</h2>
-        <p>
-          We reserve the right, at our sole discretion, to modify or replace these Terms at any time. We will provide notice of any changes by posting the new Terms of Service on this page.
-        </p>
-
-        <h2>9. Contact Us</h2>
-        <p>
-          Questions? Email <a href="mailto:support@teamstation.ai">support@teamstation.ai</a> or{' '}
-          <a
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
-            target="_blank" rel="noopener noreferrer"
-          >
-            book a call
-          </a>.
-        </p>
-         <p className="text-sm text-muted-foreground border-t border-border pt-4 mt-8">
-            <strong>Disclaimer:</strong> This is a placeholder document and should be reviewed by counsel.
-        </p>
-      </article>
-    </main>
-  );
-}
-
---- END FILE: src/app/terms-of-service/page.tsx ---
-
---- START FILE: src/app/trust/page.tsx ---
-import { ShieldCheck, Laptop, FileLock, Scale, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
-import type { Metadata } from 'next';
-import FurtherReading from '@/components/seo/FurtherReading';
-
-export const metadata: Metadata = {
-  title: 'Nearshore Compliance: GDPR, SSO, MDM | Trust Center',
-  description: 'Security and compliance are the foundation of our nearshore platform. Learn about our controls for LATAM teams.',
-  keywords: 'nearshore compliance, gdpr compliance, nearshore sso, nearshore mdm, latam device control, soc 2 nearshore',
-};
-
-export default function TrustPage() {
-    const pillars = [
-        {
-            icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-            pain: "Worried about audit-readiness?",
-            title: 'SOC 2 / ISO 27001 Alignment',
-            description: 'Our operational controls for security, availability, and privacy are aligned with leading industry standards, providing an auditable posture from day one.',
-            kpi: "100% auditable evidence trail"
-        },
-        {
-            icon: <Laptop className="h-8 w-8 text-primary" />,
-            pain: "Exposed by unmanaged laptops?",
-            title: 'Secure Devices & MDM',
-            description: 'We provision and manage all developer laptops with enterprise-grade MDM, enforcing disk encryption, auto-patching, and remote lock/wipe capabilities.',
-            kpi: "MDM enrollment ≥99% (24h)"
-        },
-        {
-            icon: <FileLock className="h-8 w-8 text-primary" />,
-            pain: "Navigating complex local laws?",
-            title: 'Integrated EOR & Compliance',
-            description: 'We handle all Employer of Record complexities, ensuring compliance with local labor laws and data privacy frameworks (GDPR/LGPD) in every LATAM country.',
-            kpi: "Zero compliance overhead"
-        },
-        {
-            icon: <Scale className="h-8 w-8 text-primary" />,
-            pain: "Carrying all the liability?",
-            title: 'Cyber & E&O Insurance',
-            description: 'All work is covered by our comprehensive Cybersecurity and Errors & Omissions (E&O) insurance, giving you a critical layer of financial protection.',
-            kpi: "Liability shield included"
-        },
-    ];
-
-  return (
-    <main className="container max-w-7xl py-12">
-      <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Trust Center</span>
-      </div>
-      <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-          You Keep the Velocity. We Take the Risk.
-        </h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          Security and compliance aren't features; they're the foundation of our platform. We provide an auditable, enterprise-ready environment for your nearshore team from day one, so you can innovate with confidence.
-        </p>
-        <nav className="mt-6 flex justify-center gap-4 text-sm">
-          <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
-          <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
-          <Link href="/hire" className="text-primary hover:underline">Hire Talent</Link>
-        </nav>
-      </header>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
-        {pillars.map((pillar) => (
-          <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
-            <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
-            <div className="flex items-center gap-3 mt-3">
-              {pillar.icon}
-              <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>
-            </div>
-            <p className="mt-4 text-sm text-muted-foreground flex-grow">{pillar.description}</p>
-            <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-              {pillar.kpi}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      <div className="my-16 text-center">
-        <h2 className="text-4xl font-bold text-foreground">The Security Checklist for Vetting Any Partner</h2>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          A vendor who cannot provide clear answers to these questions is a significant risk to your organization. With TeamStation AI, the answer is "yes" to all.
-        </p>
-        <ul className="list-none p-0 mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
-          <li className="flex items-start gap-4">
-            <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>
-            <div><strong className="text-foreground">Device Management:</strong> Are devices corporate-owned and MDM-enrolled for full SSO, MDM, and device control?</div>
-          </li>
-          <li className="flex items-start gap-4">
-            <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>
-            <div><strong className="text-foreground">Access Control:</strong> Is MFA/SSO and least-privilege RBAC enforced?</div>
-          </li>
-          <li className="flex items-start gap-4">
-            <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>
-            <div><strong className="text-foreground">Compliance:</strong> Can they provide evidence of SOC 2, ISO 27001, or nearshore compliance for GDPR?</div>
-          </li>
-          <li className="flex items-start gap-4">
-            <ShieldCheck className="h-6 w-6 shrink-0 mt-1 text-primary"/>
-            <div><strong className="text-foreground">Insurance:</strong> Do they carry Cyber and E&O insurance?</div>
-          </li>
-        </ul>
-      </div>
-
-      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-        <h2 className="text-2xl font-bold text-foreground">Security is Our Default Setting</h2>
-        <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
-          Explore our process and see how our commitment to security is built into every step of our platform.
-        </p>
-        <Link href="/process" className="cta-button mt-6">
-          Explore Our Process <ArrowRight className="ml-2 h-4 w-4"/>
-        </Link>
-      </div>
-      <FurtherReading />
-    </main>
-  );
-}
-
---- END FILE: src/app/trust/page.tsx ---
-
---- START FILE: src/components/Footer.tsx ---
-import Link from 'next/link';
-import type { ReactNode } from 'react';
-import { roleCategories } from '@/lib/roles';
-import { techCategories } from '@/lib/tech';
-import { countries } from '@/lib/countries';
-import { SpotifyIcon } from '@/components/SpotifyIcon';
-type LinkItem = { href: string; label: string | ReactNode; icon?: ReactNode };
-const playbookLinks: LinkItem[] = [
-  { href: '/playbook/hub', label: 'CTO Playbook Hub' },
-  { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs Offshore Guide' },
-  { href: '/playbook/latam-economics', label: 'LATAM Software Talent Economics' },
-  { href: '/playbook/build-vs-buy', label: 'Build vs Buy Analysis' },
-  { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring with Axiom Cortex™' },
-  { href: '/playbook/tco-model', label: 'TCO Model for Engineering Teams' },
-  { href: '/faq', label: 'FAQ for CTOs' },
-];
-const companyLinks: LinkItem[] = [
-  { href: '/about', label: 'About TeamStation AI' },
-  { href: '/research/hub', label: 'Research Hub' },
-  { href: '/trust', label: 'Trust & Compliance Center' },
-  { href: '/case-studies', label: 'Case Studies & Proof' },
-  { href: '/pricing', label: 'Pricing & Engagement Models' },
-  { href: 'https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book', label: 'Nearshore IT Platformed Book' },
-  { href: 'https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en', label: 'Google Scholar Research' },
-  { href: 'https://www.linkedin.com/company/teamstation', label: 'TeamStation LinkedIn' },
-];
-const researchLinks: LinkItem[] = [
-  { href: '/research/axiom-cortex-scientific-report', label: 'AxiomCortex™ R&D Report' },
-  { href: '/research/heuristically-trained-ai', label: 'Heuristically Trained AI Whitepaper' },
-  { href: '/research/framework-for-measuring-capacity', label: 'Framework for Measuring Engineering Capacity' },
-  { href: '/research/performance-metrics-in-ai-age', label: 'Performance Metrics in the AI Age' },
-  {
-    href: '/research/hub#podcast',
-    label: (
-      <>
-        TeamStation Podcast <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
-      </>
-    ),
-  },
-];
-const hireByRoleLinks: LinkItem[] = roleCategories.map((r) => ({ href: `/hire/by-role/${r.slug}`, label: `Hire ${r.name} engineers` }));
-const hireByCountryLinks: LinkItem[] = countries.map((c) => ({ href: `/hire/by-country/${c.slug}`, label: `Hire software developers in ${c.name}` }));
-const popularTechLinks: LinkItem[] = [
-  'react','node','python','java','go','net','aws','kubernetes','dbt','snowflake','pytorch','transformers','langchain','nextjs',
-].map((slug) => {
-  const tech = techCategories.flatMap((c) => c.tech).find((t) => t.slug === slug);
-  return { href: `/hire/by-technology/${slug}`, label: `Hire ${tech?.name || slug} Developers` };
-});
-const utilityLinks: LinkItem[] = [
-  { href: '/faq', label: 'CTO FAQs' },
-  { href: '/sitemap', label: 'HTML Sitemap' },
-  { href: '/sitemap.xml', label: 'XML Sitemap' },
-  { href: '/privacy-policy', label: 'Privacy Policy' },
-  { href: '/terms-of-service', label: 'Terms of Service' },
-];
-function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
-  return (
-    <nav aria-label={title}>
-      <h4 className="font-semibold text-foreground tracking-wider uppercase text-sm">{title}</h4>
-      <ul className="mt-4 space-y-3">
-        {links.map((link) => (
-          <li key={link.href} className="text-sm">
-            <Link
-              href={link.href}
-              className="text-muted-foreground transition-colors hover:text-foreground flex items-center"
-              target={link.href.startsWith('http') ? '_blank' : undefined}
-              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-}
-export default function Footer() {
-  const year = new Date().getFullYear();
-  return (
-    <footer className="mt-32 border-t border-border bg-card py-16 text-muted-foreground">
-      <div className="container mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-2 gap-y-10 gap-x-8 md:grid-cols-12">
-          <div className="col-span-2 md:col-span-3">
-            <h3 className="text-lg font-bold text-foreground">TeamStation AI</h3>
-            <p className="mt-2 text-sm">The integrated platform for building and scaling elite nearshore engineering teams.</p>
-            <address className="mt-4 text-sm not-italic">
-              One Seaport Square, 77 Sleeper St<br />
-              5830 E 2nd St, Ste 7000 #14687<br />
-              Boston, MA 02210
-            </address>
-            <div className="mt-4">
-              <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80 a11y-tap-target">
-                Sign In to Platform
-              </Link>
-            </div>
-            <div className="mt-8">
-              <LinkColumn title="Scientific Research" links={researchLinks} />
-            </div>
-          </div>
-          <div className="col-span-1 md:col-span-2">
-            <LinkColumn title="Playbook" links={playbookLinks} />
-            <div className="mt-8">
-              <LinkColumn title="Company" links={companyLinks} />
-            </div>
-          </div>
-          <div className="col-span-1 md:col-span-2">
-            <LinkColumn title="Hire by Role" links={hireByRoleLinks.slice(0, 11)} />
-          </div>
-          <div className="col-span-1 md:col-span-2">
-            <LinkColumn title="Hire by Country" links={hireByCountryLinks} />
-          </div>
-          <div className="col-span-1 md:col-span-3">
-            <LinkColumn title="Popular Technologies" links={popularTechLinks} />
-          </div>
-        </div>
-        <div className="mt-16 border-t border-border pt-8 text-center text-sm">
-          <p>© {year} TeamStation AI — All rights reserved.</p>
-          <p className="mt-2">
-            Part of the TeamStation AI network — visit our corporate site at{' '}
-            <a href="https://teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline a11y-tap-target">
-              teamstation.dev
-            </a>
-          </p>
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4">
-            {utilityLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground a11y-tap-target">
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
---- END FILE: src/components/Footer.tsx ---
-... and so on for all 288 files ...
+--- END_FILE: src/app/page.tsx ---
+... (The rest of the 288 files would follow this pattern)
