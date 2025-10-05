@@ -1,54 +1,24 @@
 
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 
-const ThemeToggle = dynamic(
-  () => import('@/components/client/ThemeToggle').then(m => m.ThemeToggle ?? m.default),
-  { ssr: false }
-);
-const MobileNav = dynamic(
-  () => import('@/components/client/MobileNav').then(m => m.MobileNav ?? m.default),
-  { ssr: false }
-);
-const DesktopNav = dynamic(
-  () => import('@/components/client/DesktopNav').then(m => m.DesktopNav ?? m.default),
-  { ssr: false }
-);
-
-export function Header() {
+const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        <Link href="/" className="text-lg font-bold text-foreground">
-          TeamStation AI
+    <header className="bg-gray-800 text-white p-4">
+      <nav className="container mx-auto flex justify-between">
+        <Link href="/" className="text-xl font-bold">
+          My App
         </Link>
-
-        {/* Desktop Navigation */}
-        <DesktopNav />
-
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <Link
-            href="https://app.teamstation.dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hidden sm:inline-flex a11y-tap-target"
-          >
-            Sign In
+        <div>
+          <Link href="/about" className="mr-4">
+            About
           </Link>
-          <Link
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button hidden sm:inline-flex"
-          >
-            Book a Call
+          <Link href="/case-studies">
+            Case Studies
           </Link>
-
-          {/* Mobile Navigation */}
-          <MobileNav />
         </div>
-      </div>
+      </nav>
     </header>
   );
-}
+};
+
+export default Header;

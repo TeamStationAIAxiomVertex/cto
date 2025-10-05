@@ -26,45 +26,70 @@ const CANDIDATE_DIRS = [
 ];
 
 function findDir(): string | null {
-  for (const d of CANDIDATE_DIRS) if (fs.existsSync(d)) return d;
+  for (const d of CANDIDATE_DIRS) {
+    try {
+      if (fs.existsSync(d)) return d;
+    } catch (e) {
+      // ignore case where we can't even access the parent
+    }
+  }
   return null;
 }
 
 export async function getAllCaseStudies(): Promise<CaseStudy[]> {
   const dir = findDir();
   if (!dir) return [];
-  const files = fs.readdirSync(dir).filter(f => /\.mdx?$/.test(f));
-  return files.map(file => {
-    const abs = path.join(dir, file);
-    const raw = fs.readFileSync(abs, "utf8");
-    const { data } = matter(raw);
-    const stat = fs.statSync(abs);
-    return {
-      slug: file.replace(/\.mdx?$/, ""),
-      title: String(data.title ?? data.clientName ?? "Case Study"),
-      clientName: String(data.clientName ?? data.title ?? ""),
-      industry: data.industry ?? "",
-      summary: String(data.summary ?? data.description ?? ""),
-      ogImage: data.ogImage,
-      lastModified: stat.mtime.toISOString(),
-      challenge: data.challenge,
-      outcomes: data.outcomes,
-      techStack: data.techStack,
-      canonical: data.canonical
-    };
-  });
+  try {
+    const files = fs.readdirSync(dir).filter(f => /\.mdx?$/.test(f));
+    return files.map(file => {
+      const abs = path.join(dir, file);
+      const raw = fs.readFileSync(abs, "utf8");
+      const { data } = matter(raw);
+      const stat = fs.statSync(abs);
+      return {
+        slug: file.replace(/\.mdx?$/, ""),
+        title: String(data.title ?? data.clientName ?? "Case Study"),
+        clientName: String(data.clientName ?? data.title ?? ""),
+        industry: data.industry ?? "",
+        summary: String(data.summary ?? data.description ?? ""),
+        ogImage: data.ogImage,
+        lastModified: stat.mtime.toISOString(),
+        challenge: data.challenge,
+        outcomes: data.outcomes,
+        techStack: data.techStack,
+        canonical: data.canonical
+      };
+    });
+  } catch (error) {
+    console.error("Error reading case studies directory:", error);
+    return [];
+  }
 }
 
 export async function getCaseStudyBySlug(slug: string | undefined): Promise<CaseStudy | null> {
   if (!slug) return null;
   const dir = findDir();
   if (!dir) return null;
-  const file = [".md", ".mdx"].map(ext => path.join(dir, `${slug}${ext}`)).find(f => fs.existsSync(f));
+
+  const extensions = [".md", ".mdx"];
+  let file: string | undefined;
+  for (const ext of extensions) {
+    const candidateFile = path.join(dir, `${slug}${ext}`);
+    try {
+      if (fs.existsSync(candidateFile)) {
+        file = candidateFile;
+        break;
+      }
+    } catch(e) {}
+  }
+
   if (!file) return null;
+
   const raw = fs.readFileSync(file, "utf8");
   const { data, content } = matter(raw);
   const html = await markdownToHtml(content);
   const stat = fs.statSync(file);
+
   return {
     slug,
     title: String(data.title ?? data.clientName ?? "Case Study"),
@@ -80,4 +105,3 @@ export async function getCaseStudyBySlug(slug: string | undefined): Promise<Case
     canonical: data.canonical,
   };
 }
-export default { getAllCaseStudies, getCaseStudyBySlug };
