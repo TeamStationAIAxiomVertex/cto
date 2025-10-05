@@ -47,4 +47,4 @@ export function DesktopNav() {
   );
 }
 
-    
+export default DesktopNav;

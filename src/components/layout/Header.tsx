@@ -1,24 +1,50 @@
-
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import { assertComponent } from '@/lib/assertComponent';
 
-const Header = () => {
+const ThemeToggle = dynamic(() => import('@/components/client/ThemeToggle'), { ssr: false });
+const MobileNav = dynamic(() => import('@/components/client/MobileNav'), { ssr: false });
+const DesktopNav = dynamic(() => import('@/components/client/DesktopNav'), { ssr: false });
+
+assertComponent('ThemeToggle', ThemeToggle);
+assertComponent('MobileNav', MobileNav);
+assertComponent('DesktopNav', DesktopNav);
+
+
+export function Header() {
   return (
-    <header className="bg-gray-800 text-white p-4">
-      <nav className="container mx-auto flex justify-between">
-        <Link href="/" className="text-xl font-bold">
-          My App
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm">
+      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+        <Link href="/" className="text-lg font-bold text-foreground">
+          TeamStation AI
         </Link>
-        <div>
-          <Link href="/about" className="mr-4">
-            About
+
+        {/* Desktop Navigation */}
+        <DesktopNav />
+
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link
+            href="https://app.teamstation.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hidden sm:inline-flex a11y-tap-target"
+          >
+            Sign In
           </Link>
-          <Link href="/case-studies">
-            Case Studies
+          <Link
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button hidden sm:inline-flex"
+          >
+            Book a Call
           </Link>
+
+          {/* Mobile Navigation */}
+          <MobileNav />
         </div>
-      </nav>
+      </div>
     </header>
   );
-};
-
-export default Header;
+}
