@@ -1,3 +1,4 @@
+
 // src/app/sitemaps/static.xml/route.ts
 
 import { NextResponse } from 'next/server';
