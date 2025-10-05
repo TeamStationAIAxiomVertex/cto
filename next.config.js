@@ -1,5 +1,5 @@
 // next.config.js
-// MUST use ES Module syntax (import/export default) because package.json 
+// MUST use ES Module syntax (import/export) because package.json 
 // sets "type": "module".
 
 /** @type {import('next').NextConfig} */
@@ -28,6 +28,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'firebasestorage.googleapis.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
       },
       // You may need to add other remote domains here.
     ],
