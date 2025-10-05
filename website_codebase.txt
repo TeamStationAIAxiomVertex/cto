@@ -383,6 +383,30 @@ export default nextConfig;
   }
 }
 --- END_FILE: package.json ---
+--- START_FILE: public/manifest.webmanifest ---
+{
+  "name": "TeamStation AI",
+  "short_name": "TeamStation",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#0F172A",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "32x32 48x48", "type": "image/x-icon" },
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
+--- END_FILE: public/manifest.webmanifest ---
+--- START_FILE: public/robots.txt ---
+User-agent: *
+Allow: /
+Disallow: /privacy-policy
+Disallow: /terms-of-service
+
+Sitemap: https://cto.teamstation.dev/sitemap.xml
+--- END_FILE: public/robots.txt ---
 --- START_FILE: src/app/globals.css ---
 @tailwind base;
 @tailwind components;
@@ -896,4 +920,342 @@ export default async function HomePage() {
   );
 }
 --- END_FILE: src/app/page.tsx ---
-... (The rest of the 288 files would follow this pattern)
+--- START_FILE: src/components/Footer.tsx ---
+// NO 'use client' — Footer stays a Server Component
+import Link from 'next/link';
+import type { ReactNode } from 'react';
+
+import { roleCategories } from "../lib/roles";
+import { techCategories } from "../lib/tech";
+import { countries } from "../lib/countries";
+import { SpotifyIcon } from "./SpotifyIcon";
+
+type LinkItem = {
+  href: string;
+  label: string | ReactNode;
+  icon?: ReactNode;
+};
+
+// Playbook Section
+const playbookLinks: LinkItem[] = [
+  { href: '/playbook/hub', label: 'CTO Playbook Hub' },
+  { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs Offshore Guide' },
+  { href: '/playbook/latam-economics', label: 'LATAM Software Talent Economics' },
+  { href: '/playbook/build-vs-buy', label: 'Build vs Buy Analysis' },
+  { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring with Axiom Cortex™' },
+  { href: '/playbook/tco-model', label: 'TCO Model for Engineering Teams' },
+  { href: '/faq', label: 'FAQ for CTOs' },
+];
+
+// Company Section
+const companyLinks: LinkItem[] = [
+  { href: '/about', label: 'About TeamStation AI' },
+  { href: '/research/hub', label: 'Research Hub' },
+  { href: '/trust', label: 'Trust & Compliance Center' },
+  { href: '/case-studies', label: 'Case Studies & Proof' },
+  { href: '/pricing', label: 'Pricing & Engagement Models' },
+  { href: 'https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book', label: 'Nearshore IT Platformed Book' },
+  { href: 'https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en', label: 'Google Scholar Research' },
+  { href: 'https://www.linkedin.com/company/teamstation', label: 'TeamStation LinkedIn' },
+];
+
+// Research Section
+const researchLinks: LinkItem[] = [
+  { href: '/research/axiom-cortex-scientific-report', label: 'AxiomCortex™ R&D Report' },
+  { href: '/research/heuristically-trained-ai', label: 'Heuristically Trained AI Whitepaper' },
+  { href: '/research/framework-for-measuring-capacity', label: 'Framework for Measuring Engineering Capacity' },
+  { href: '/research/performance-metrics-in-ai-age', label: 'Performance Metrics in the AI Age' },
+  {
+    href: '/research/hub#podcast',
+    label: (
+      <>
+        TeamStation Podcast <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
+      </>
+    ),
+  },
+];
+
+// Programmatic Links
+const hireByRoleLinks: LinkItem[] = roleCategories.map((r) => ({
+  href: `/hire/by-role/${r.slug}`,
+  label: `Hire ${r.name} engineers`,
+}));
+
+const hireByCountryLinks: LinkItem[] = countries.map((c) => ({
+  href: `/hire/by-country/${c.slug}`,
+  label: `Hire software developers in ${c.name}`,
+}));
+
+const popularTechLinks: LinkItem[] = [
+  'react','node','python','java','go','net','aws','kubernetes','dbt','snowflake','pytorch','transformers','langchain','nextjs',
+].map((slug) => {
+  const tech = techCategories.flatMap((c) => c.tech).find((t) => t.slug === slug);
+  return { href: `/hire/by-technology/${slug}`, label: `Hire ${tech?.name || slug} Developers` };
+});
+
+// Utility Section
+const utilityLinks: LinkItem[] = [
+  { href: '/faq', label: 'CTO FAQs' },
+  { href: '/sitemap', label: 'HTML Sitemap' },
+  { href: '/sitemap.xml', label: 'XML Sitemap' },
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/terms-of-service', label: 'Terms of Service' },
+];
+
+function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
+  return (
+    <nav aria-label={title}>
+      <h4 className="font-semibold text-foreground tracking-wider uppercase text-sm">{title}</h4>
+      <ul className="mt-4 space-y-3">
+        {links.map((link) => (
+          <li key={link.href} className="text-sm">
+            <Link
+              href={link.href}
+              className="text-muted-foreground transition-colors hover:text-foreground flex items-center"
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="mt-32 border-t border-border bg-card py-16 text-muted-foreground">
+      <div className="container mx-auto max-w-7xl px-6">
+        <div className="grid grid-cols-2 gap-y-10 gap-x-8 md:grid-cols-12">
+          <div className="col-span-2 md:col-span-3">
+            <h3 className="text-lg font-bold text-foreground">TeamStation AI</h3>
+            <p className="mt-2 text-sm">The integrated platform for building and scaling elite nearshore engineering teams.</p>
+            <address className="mt-4 text-sm not-italic">
+              One Seaport Square, 77 Sleeper St<br />
+              5830 E 2nd St, Ste 7000 #14687<br />
+              Boston, MA 02210
+            </address>
+            <div className="mt-4">
+              <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80 a11y-tap-target">
+                Sign In to Platform
+              </Link>
+            </div>
+            <div className="mt-8">
+              <LinkColumn title="Scientific Research" links={researchLinks} />
+            </div>
+          </div>
+
+          <div className="col-span-1 md:col-span-2">
+            <LinkColumn title="Playbook" links={playbookLinks} />
+            <div className="mt-8">
+              <LinkColumn title="Company" links={companyLinks} />
+            </div>
+          </div>
+
+          <div className="col-span-1 md:col-span-2">
+            <LinkColumn title="Hire by Role" links={hireByRoleLinks.slice(0, 11)} />
+          </div>
+
+          <div className="col-span-1 md:col-span-2">
+            <LinkColumn title="Hire by Country" links={hireByCountryLinks} />
+          </div>
+
+          <div className="col-span-1 md:col-span-3">
+            <LinkColumn title="Popular Technologies" links={popularTechLinks} />
+          </div>
+        </div>
+
+        <div className="mt-16 border-t border-border pt-8 text-center text-sm">
+          <p>© {year} TeamStation AI — All rights reserved.</p>
+          <p className="mt-2">
+            Part of the TeamStation AI network — visit our corporate site at{' '}
+            <a href="https://teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline a11y-tap-target">
+              teamstation.dev
+            </a>
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4">
+            {utilityLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground a11y-tap-target">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+--- END_FILE: src/components/Footer.tsx ---
+--- START_FILE: src/lib/sitemap-data.ts ---
+// src/lib/sitemap-data.ts
+import { countries } from "./countries";
+import { roleCategories } from "./roles";
+import { techCategories } from "./tech";
+import { getAllCaseStudies } from "./case-studies";
+import { comparisonPages } from "./comparisonPages";
+import { getAllPlaybookSlugs } from "./playbook";
+
+export type UrlRec = {
+  url: string;
+  lastmod: string;
+  changefreq: 'weekly' | 'monthly' | 'yearly';
+  priority: string; // keep as string for simple xml/CSV join
+};
+
+export const baseUrl = 'https://cto.teamstation.dev';
+
+// Playbook-only (≈288 pages)
+export async function collectPlaybookUrls(): Promise<UrlRec[]> {
+  const now = new Date().toISOString();
+  const slugs = await getAllPlaybookSlugs();
+
+  const urls: UrlRec[] = [
+    {
+      url: `${baseUrl}/playbook/hub`,
+      lastmod: now,
+      changefreq: 'weekly',
+      priority: '0.9',
+    },
+    ...slugs.map((slug) => ({
+      url: `${baseUrl}/playbook/${slug}`,
+      lastmod: now, // if you track per-page mtime, inject it here
+      changefreq: 'monthly',
+      priority: '0.7',
+    })),
+  ];
+
+  return urls;
+}
+
+// Everything else from your previous sitemap.ts (minus /playbook/*)
+export async function collectCoreUrls(): Promise<UrlRec[]> {
+  const now = new Date().toISOString();
+
+  const home: UrlRec[] = [
+    { url: baseUrl, lastmod: now, changefreq: 'weekly', priority: '1.0' },
+  ];
+
+  const hubPages = [
+    '/research/hub',
+    '/comparisons',
+    '/case-studies',
+    '/hire',
+    '/hire/by-country',
+    '/hire/by-role',
+    '/hire/by-team-topologies',
+    '/hire/by-technology',
+    '/faq',
+  ].map((p) => ({
+    url: `${baseUrl}${p}`,
+    lastmod: now,
+    changefreq: 'weekly' as const,
+    priority: '0.9',
+  }));
+
+  const staticPages = [
+    '/about',
+    '/platform',
+    '/pricing',
+    '/process',
+    '/services/integrated-services',
+    '/services/talent-onboarding',
+    '/technical-interview-evaluation',
+    '/trust',
+  ].map((p) => ({
+    url: `${baseUrl}${p}`,
+    lastmod: now,
+    changefreq: 'monthly' as const,
+    priority: '0.8',
+  }));
+
+  const legalPages = ['/privacy-policy', '/terms-of-service', '/sitemap'].map(
+    (p) => ({
+      url: `${baseUrl}${p}`,
+      lastmod: now,
+      changefreq: 'yearly' as const,
+      priority: '0.3',
+    })
+  );
+
+  const researchEntries = [
+    '/research/axiom-cortex-scientific-report',
+    '/research/framework-for-measuring-capacity',
+    '/research/heuristically-trained-ai',
+    '/research/performance-metrics-in-ai-age',
+    '/research/performance-evaluation-report-example',
+    '/research/technical-talent-evaluation-system',
+  ].map((p) => ({
+    url: `${baseUrl}${p}`,
+    lastmod: now,
+    changefreq: 'monthly' as const,
+    priority: '0.7',
+  }));
+
+  const caseStudies = await getAllCaseStudies();
+  const caseStudyEntries: UrlRec[] = caseStudies.map((study) => ({
+    url: `${baseUrl}/case-studies/${study.slug}`,
+    lastmod: study.lastModified || now,
+    changefreq: 'monthly',
+    priority: '0.7',
+  }));
+
+  const comparisonEntries: UrlRec[] = comparisonPages.map((page) => ({
+    url: `${baseUrl}/comparisons/${page.slug}`,
+    lastmod: now,
+    changefreq: 'monthly',
+    priority: '0.7',
+  }));
+
+  const hireByCountryEntries: UrlRec[] = countries.flatMap((c) => {
+    const base: UrlRec = {
+      url: `${baseUrl}/hire/by-country/${c.slug}`,
+      lastmod: now,
+      changefreq: 'monthly',
+      priority: '0.7',
+    };
+    const techPages: UrlRec[] = techCategories
+      .flatMap((cat) => cat.tech)
+      .map((t) => ({
+        url: `${baseUrl}/hire/by-country/${c.slug}/${t.slug}`,
+        lastmod: now,
+        changefreq: 'monthly',
+        priority: '0.6',
+      }));
+    return [base, ...techPages];
+  });
+
+  const hireByRoleEntries: UrlRec[] = roleCategories.map((r) => ({
+    url: `${baseUrl}/hire/by-role/${r.slug}`,
+    lastmod: now,
+    changefreq: 'monthly',
+    priority: '0.7',
+  }));
+
+  const hireByTechEntries: UrlRec[] = techCategories.flatMap((cat) =>
+    cat.tech.map((t) => ({
+      url: `${baseUrl}/hire/by-technology/${t.slug}`,
+      lastmod: now,
+      changefreq: 'monthly',
+      priority: '0.6',
+    }))
+  );
+
+  return [
+    ...home,
+    ...hubPages,
+    ...staticPages,
+    ...legalPages,
+    ...researchEntries,
+    ...caseStudyEntries,
+    ...comparisonEntries,
+    ...hireByCountryEntries,
+    ...hireByRoleEntries,
+    ...hireByTechEntries,
+  ];
+}
+--- END_FILE: src/lib/sitemap-data.ts ---
+... and so on for all 288+ files ...
