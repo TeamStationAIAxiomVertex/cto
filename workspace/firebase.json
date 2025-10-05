@@ -1,26 +1,7 @@
 {
   "hosting": {
     "source": ".",
-    "headers": [
-      {
-        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico|css|js|woff2|ttf)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public,max-age=31536000,immutable"
-          }
-        ]
-      },
-      {
-        "source": "/(manifest.webmanifest|robots.txt)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=3600"
-          }
-        ]
-      }
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
@@ -29,15 +10,27 @@
           "region": "us-central1"
         }
       }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico|css|js|woff2|ttf)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public,max-age=31536000,immutable" }
+        ]
+      },
+      {
+        "source": "/(manifest.webmanifest|robots.txt)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=3600" }
+        ]
+      }
     ]
   },
   "apphosting": {
     "targets": {
       "web": {
-        "runtime": {
-          "node": "20.19.0"
-        },
-        "buildCommand": "npm run build",
+        "runtime": { "node": "20.19.0" },
+        "buildCommand": "npm run build:production",
         "runCommand": "npm run start",
         "healthCheck": {
           "path": "/healthz",
