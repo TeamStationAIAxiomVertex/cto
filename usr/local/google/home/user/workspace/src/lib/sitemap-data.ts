@@ -3,165 +3,92 @@
 import { countries } from "./countries";
 import { roleCategories } from "./roles";
 import { techCategories } from "./tech";
-import { getAllCaseStudies } from "./case-studies";
+import { getAllCaseStudies }s from "./case-studies";
 import { comparisonPages } from "./comparisonPages";
 import { getAllPlaybookSlugs } from "./playbook";
+import { getAllResearchSlugs } from "./research";
 
 export type UrlRec = {
   url: string;
   lastmod: string;
   changefreq: 'weekly' | 'monthly' | 'yearly';
-  priority: string; // keep as string for simple xml/CSV join
+  priority: string;
 };
 
 export const baseUrl = 'https://cto.teamstation.dev';
+const now = new Date().toISOString();
 
-// Playbook-only (≈288 pages)
-export async function collectPlaybookUrls(): Promise<UrlRec[]> {
-  const now = new Date().toISOString();
-  const slugs = await getAllPlaybookSlugs();
+// Function to get a consistent last modified date
+const getLastMod = (date?: string) => date || now;
 
-  const urls: UrlRec[] = [
-    {
-      url: `${baseUrl}/playbook/hub`,
-      lastmod: now,
-      changefreq: 'weekly',
-      priority: '0.9',
-    },
-    ...slugs.map((slug) => ({
-      url: `${baseUrl}/playbook/${slug}`,
-      lastmod: now, // if you track per-page mtime, inject it here
-      changefreq: 'monthly',
-      priority: '0.7',
-    })),
-  ];
-
-  return urls;
+// CORE STATIC URLS
+export async function collectCoreUrls(): Promise<UrlRec[]> {
+  const home: UrlRec[] = [{ url: baseUrl, lastmod: now, changefreq: 'weekly', priority: '1.0' }];
+  const hubPages = [
+    '/research/hub', '/comparisons', '/case-studies', '/hire', '/hire/by-country',
+    '/hire/by-role', '/hire/by-team-topologies', '/hire/by-technology', '/faq',
+  ].map(p => ({ url: `${baseUrl}${p}`, lastmod: now, changefreq: 'weekly' as const, priority: '0.9' }));
+  const staticPages = [
+    '/about', '/platform', '/pricing', '/process', '/services/integrated-services',
+    '/services/talent-onboarding', '/technical-interview-evaluation', '/trust',
+  ].map(p => ({ url: `${baseUrl}${p}`, lastmod: now, changefreq: 'monthly' as const, priority: '0.8' }));
+  const legalPages = ['/privacy-policy', '/terms-of-service', '/sitemap'].map(p => ({
+    url: `${baseUrl}${p}`, lastmod: now, changefreq: 'yearly' as const, priority: '0.3',
+  }));
+  return [...home, ...hubPages, ...staticPages, ...legalPages];
 }
 
-// Everything else from your previous sitemap.ts (minus /playbook/*)
-export async function collectCoreUrls(): Promise<UrlRec[]> {
-  const now = new Date().toISOString();
-
-  const home: UrlRec[] = [
-    { url: baseUrl, lastmod: now, changefreq: 'weekly', priority: '1.0' },
-  ];
-
-  const hubPages = [
-    '/research/hub',
-    '/comparisons',
-    '/case-studies',
-    '/hire',
-    '/hire/by-country',
-    '/hire/by-role',
-    '/hire/by-team-topologies',
-    '/hire/by-technology',
-    '/faq',
-  ].map((p) => ({
-    url: `${baseUrl}${p}`,
-    lastmod: now,
-    changefreq: 'weekly' as const,
-    priority: '0.9',
+// PLAYBOOK URLS
+export async function collectPlaybookUrls(): Promise<UrlRec[]> {
+  const slugs = await getAllPlaybookSlugs();
+  return slugs.map(slug => ({
+    url: `${baseUrl}/playbook/${slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7'
   }));
+}
 
-  const staticPages = [
-    '/about',
-    '/platform',
-    '/pricing',
-    '/process',
-    '/services/integrated-services',
-    '/services/talent-onboarding',
-    '/technical-interview-evaluation',
-    '/trust',
-  ].map((p) => ({
-    url: `${baseUrl}${p}`,
-    lastmod: now,
-    changefreq: 'monthly' as const,
-    priority: '0.8',
-  }));
-
-  const legalPages = ['/privacy-policy', '/terms-of-service', '/sitemap'].map(
-    (p) => ({
-      url: `${baseUrl}${p}`,
-      lastmod: now,
-      changefreq: 'yearly' as const,
-      priority: '0.3',
-    })
-  );
-
-  const researchEntries = [
-    '/research/axiom-cortex-scientific-report',
-    '/research/framework-for-measuring-capacity',
-    '/research/heuristically-trained-ai',
-    '/research/performance-metrics-in-ai-age',
-    '/research/performance-evaluation-report-example',
-    '/research/technical-talent-evaluation-system',
-  ].map((p) => ({
-    url: `${baseUrl}${p}`,
-    lastmod: now,
-    changefreq: 'monthly' as const,
-    priority: '0.7',
-  }));
-
+// CASE STUDIES & RESEARCH
+export async function collectCaseStudyUrls(): Promise<UrlRec[]> {
   const caseStudies = await getAllCaseStudies();
   const caseStudyEntries: UrlRec[] = caseStudies.map((study) => ({
-    url: `${baseUrl}/case-studies/${study.slug}`,
-    lastmod: study.lastModified || now,
-    changefreq: 'monthly',
-    priority: '0.7',
+    url: `${baseUrl}/case-studies/${study.slug}`, lastmod: getLastMod(study.lastModified), changefreq: 'monthly', priority: '0.7'
   }));
 
-  const comparisonEntries: UrlRec[] = comparisonPages.map((page) => ({
-    url: `${baseUrl}/comparisons/${page.slug}`,
-    lastmod: now,
-    changefreq: 'monthly',
-    priority: '0.7',
+  const researchSlugs = await getAllResearchSlugs();
+  const researchEntries: UrlRec[] = researchSlugs.map((slug) => ({
+      url: `${baseUrl}/research/${slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7'
   }));
+  
+  return [...caseStudyEntries, ...researchEntries];
+}
 
-  const hireByCountryEntries: UrlRec[] = countries.flatMap((c) => {
-    const base: UrlRec = {
-      url: `${baseUrl}/hire/by-country/${c.slug}`,
-      lastmod: now,
-      changefreq: 'monthly',
-      priority: '0.7',
-    };
-    const techPages: UrlRec[] = techCategories
-      .flatMap((cat) => cat.tech)
-      .map((t) => ({
-        url: `${baseUrl}/hire/by-country/${c.slug}/${t.slug}`,
-        lastmod: now,
-        changefreq: 'monthly',
-        priority: '0.6',
-      }));
+// COMPARISON PAGES
+export async function collectComparisonUrls(): Promise<UrlRec[]> {
+  return comparisonPages.map((page) => ({
+    url: `${baseUrl}/comparisons/${page.slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7'
+  }));
+}
+
+// HIRE BY COUNTRY
+export async function collectHireByCountryUrls(): Promise<UrlRec[]> {
+  return countries.flatMap((c) => {
+    const base: UrlRec = { url: `${baseUrl}/hire/by-country/${c.slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7' };
+    const techPages: UrlRec[] = techCategories.flatMap((cat) => cat.tech).map((t) => ({
+      url: `${baseUrl}/hire/by-country/${c.slug}/${t.slug}`, lastmod: now, changefreq: 'monthly', priority: '0.6'
+    }));
     return [base, ...techPages];
   });
+}
 
-  const hireByRoleEntries: UrlRec[] = roleCategories.map((r) => ({
-    url: `${baseUrl}/hire/by-role/${r.slug}`,
-    lastmod: now,
-    changefreq: 'monthly',
-    priority: '0.7',
-  }));
+// HIRE BY ROLE
+export async function collectHireByRoleUrls(): Promise<UrlRec[]> {
+    return roleCategories.map(r => ({
+        url: `${baseUrl}/hire/by-role/${r.slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7'
+    }));
+}
 
-  const hireByTechEntries: UrlRec[] = techCategories.flatMap((cat) =>
-    cat.tech.map((t) => ({
-      url: `${baseUrl}/hire/by-technology/${t.slug}`,
-      lastmod: now,
-      changefreq: 'monthly',
-      priority: '0.6',
-    }))
-  );
-
-  return [
-    ...home,
-    ...hubPages,
-    ...staticPages,
-    ...legalPages,
-    ...researchEntries,
-    ...caseStudyEntries,
-    ...comparisonEntries,
-    ...hireByCountryEntries,
-    ...hireByRoleEntries,
-    ...hireByTechEntries,
-  ];
+// HIRE BY TECHNOLOGY
+export async function collectHireByTechnologyUrls(): Promise<UrlRec[]> {
+    return techCategories.flatMap(cat => cat.tech.map(t => ({
+        url: `${baseUrl}/hire/by-technology/${t.slug}`, lastmod: now, changefreq: 'monthly', priority: '0.6'
+    })));
 }
