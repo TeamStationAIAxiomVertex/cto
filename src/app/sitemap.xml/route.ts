@@ -15,10 +15,7 @@ export async function GET() {
     `${SITE_URL}/sitemaps/playbook.xml`,
     `${SITE_URL}/sitemaps/case-studies.xml`,
     `${SITE_URL}/sitemaps/comparisons.xml`,
-    `${SITE_URL}/sitemaps/hire-by-country.xml`,
-    `${SITE_URL}/sitemaps/hire-by-role.xml`,
-    `${SITE_URL}/sitemaps/hire-by-technology.xml`,
-    // Add more sub-sitemaps here as your content grows
+    `${SITE_URL}/sitemaps/hire-pages.xml`, // Consolidated hiring pages
   ];
 
   const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
