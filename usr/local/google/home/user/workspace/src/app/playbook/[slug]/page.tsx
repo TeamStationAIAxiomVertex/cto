@@ -6,7 +6,8 @@ import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
 // --- Placeholder Data/Utility Imports (MUST be created) ---
-import { getPlaybookData, getPlaybookSlugs, PlaybookFactPack } from '@/lib/playbook-data'; 
+import { getPlaybookData, getPlaybookSlugs } from '@/lib/playbook-data'; 
+import type { PlaybookFactPack } from '@/lib/playbook-data'; 
 
 // --- Component Imports (Placeholders) ---
 import Breadcrumbs from '@/components/Breadcrumbs'; 
@@ -71,7 +72,7 @@ export default async function PlaybookChapterPage({ params }: { params: { slug: 
 
       <Breadcrumbs items={[
         { label: 'Home', path: '/' },
-        { label: 'Playbook', path: '/playbook' },
+        { label: 'Playbook', path: '/playbook/hub' },
         { label: title, path: `/playbook/${params.slug}` },
       ]} />
 

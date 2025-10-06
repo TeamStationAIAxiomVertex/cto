@@ -80,3 +80,4 @@ export async function getCaseStudyBySlug(slug: string | undefined): Promise<Case
     canonical: data.canonical,
   };
 }
+export default { getAllCaseStudies, getCaseStudyBySlug };
