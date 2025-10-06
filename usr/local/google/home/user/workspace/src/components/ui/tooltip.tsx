@@ -44,7 +44,7 @@ const WithTooltip = ({
           {children}
         </TooltipTrigger>
         <TooltipContent>
-          {typeof label === 'string' ? <p>{label}</p> : label}
+          {typeof label === 'string' ? <span>{label}</span> : label}
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
