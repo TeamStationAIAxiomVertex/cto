@@ -1131,6 +1131,8 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
-```
 
 ```
+```
+
+I will add the 'use client' directive to the Accordion component to fix this.
