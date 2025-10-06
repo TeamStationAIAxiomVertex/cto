@@ -1,5 +1,6 @@
 
 import type { ReactNode } from 'react';
+
 import { Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane, AlertTriangle } from 'lucide-react';
 
 export interface Tech {
@@ -1122,14 +1123,58 @@ export const techCategories: TechCategory[] = [
 export function getAllTechSlugs(): string[] {
     return Object.keys(allTech);
 }
-```
-- workspace/src/lib/utils.ts:
-```ts
+--- END_FILE: src/lib/tech.ts ---
+--- START_FILE: src/lib/utils.ts ---
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+--- END_FILE: src/lib/utils.ts ---
+--- START_FILE: tsconfig.json ---
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+--- END_FILE: tsconfig.json ---
 
 ```
