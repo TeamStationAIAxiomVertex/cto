@@ -110,14 +110,14 @@ export default function BairesDevComparisonPage() {
                       <XCircle className="h-5 w-5 text-destructive" />
                       BairesDev Model
                     </h4>
-                    <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional.replace("<span class='border-b border-dashed'>MDM</span>", '<span class="border-b border-dashed">MDM</span>') }} />
+                    <p className="text-sm text-muted-foreground m-0" dangerouslySetInnerHTML={{ __html: value.traditional }} />
                   </div>
                   <div className="mt-4 border-t border-border pt-4">
                     <h4 className="font-semibold text-foreground flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-primary" />
                       TeamStation AI Solution
                     </h4>
-                     <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation.replace("<span class='border-b border-dashed'>EOR</span>", '<span class="border-b border-dashed">EOR</span>') }}></p>
+                     <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation }}></p>
                   </div>
                 </div>
                 <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
@@ -128,17 +128,17 @@ export default function BairesDevComparisonPage() {
 
         <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
           <h2 className="text-center">Analysis: The Co-Pilot vs. The Staffing Agency</h2>
-          <p>
+          <div>
               <a href="https://www.bairesdev.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">BairesDev <ExternalLink className="h-4 w-4" /></a> markets heavily on hiring the "top 1%" of talent. While this signals a large recruiting operation, their model is traditional staff augmentation. They find and place engineers, but the client is left to manage compliance, device security, and the associated risks. As a Bairesdev alternative, TeamStation AI provides a complete, science-driven system for hiring, running, and securing your nearshore team under a single, predictable contract.
-          </p>
+          </div>
           <h3>Vetting: Cognitive Science vs. Resume Screening</h3>
           <p>
               This is the most significant divide. BairesDev's "top 1%" claim is based on their internal screening of resumes and traditional interviews. TeamStation AI's <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link> engine uses proprietary Cognitive AI with over 44 algorithms to evaluate a candidate's problem-solving abilities and learning orientation, with a fairness layer to mitigate bias. We provide evidence-based validation of cognitive ability, not just resume keywords.
           </p>
           <h3>Cost & Risk: Predictable TCO vs. Hidden Fees</h3>
-          <p>
-              With BairesDev, companies must budget for separate vendors to handle <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
-          </p>
+          <div>
+              With BairesDev, companies must budget for separate vendors to handle <WithTooltip content="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
+          </div>
         </div>
 
         <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">

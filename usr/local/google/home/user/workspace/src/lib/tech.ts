@@ -1122,17 +1122,3 @@ export const techCategories: TechCategory[] = [
 export async function getAllTechSlugs(): Promise<string[]> {
     return Object.keys(allTech);
 }
-```
-- workspace/src/lib/utils.ts:
-```ts
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
-
-```
-```
-
-I will add the 'use client' directive to the Accordion component to fix this.
