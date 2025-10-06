@@ -1123,3 +1123,5 @@ export const techCategories: TechCategory[] = [
 export async function getAllTechSlugs(): Promise<string[]> {
     return Object.keys(allTech);
 }
+
+    
