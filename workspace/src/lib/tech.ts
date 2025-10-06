@@ -1,6 +1,6 @@
 
-import { Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane, AlertTriangle } from 'lucide-react';
 import type { ReactNode } from 'react';
+import { Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane, AlertTriangle } from 'lucide-react';
 
 export interface Tech {
   name: string;
@@ -1125,7 +1125,6 @@ export async function getAllTechSlugs(): Promise<string[]> {
 ```
 - workspace/src/lib/utils.ts:
 ```ts
-// src/lib/utils.ts
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -1134,13 +1133,31 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 ```
+- workspace/src/middleware.ts:
+```ts
+// src/middleware.ts
+import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
+
+export function middleware(req: NextRequest) {
+  const res = NextResponse.next();
+  res.headers.set('X-Content-Type-Options', 'nosniff');
+  res.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.headers.set('X-Frame-Options', 'SAMEORIGIN');
+  // Consider a CSP once you inventory all inline scripts/styles
+  return res;
+}
+
+export const config = { matcher: ['/((?!_next/|favicon.ico|robots.txt|manifest.webmanifest).*)'] };
+
+```
 - workspace/src/providers/app-providers.tsx:
 ```tsx
 'use client';
 
 import React from 'react';
-import { ThemeProvider } from '../components/theme-provider';
-import { TooltipProvider } from '../components/client/tooltip-provider';
+import { ThemeProvider } from '@/components/theme-provider'; 
+import { TooltipProvider } from '@/components/client/tooltip-provider';
 
 export default function AppProviders({ children }: { children: React.ReactNode }) {
   return (
@@ -1265,7 +1282,6 @@ const config = {
             '--tw-prose-invert-counters': 'hsl(var(--muted-foreground))',
             '--tw-prose-invert-bullets': 'hsl(var(--border))',
             '--tw-prose-invert-hr': 'hsl(var(--border))',
-            '--tw-prose-invert-quotes': 'hsl(var(--foreground))',
             '--tw-prose-invert-quote-borders': 'hsl(var(--border))',
             '--tw-prose-invert-captions': 'hsl(var(--muted-foreground))',
             '--tw-prose-invert-code': 'hsl(var(--foreground))',
@@ -1285,17 +1301,15 @@ export default config
 ```
 - workspace/tsconfig.json:
 ```json
+
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -1304,15 +1318,10 @@ export default config
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "plugins": [{ "name": "next" }],
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["src/*"]
     }
   },
   "include": [
@@ -1321,9 +1330,7 @@ export default config
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
 
 ```
