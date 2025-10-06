@@ -1,3 +1,4 @@
+
 // src/lib/comparison-data.ts
 import { VerdictRow } from '@/components/VerdictTable';
 

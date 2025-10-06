@@ -180,4 +180,3 @@ export default function TechPage({ params }: { params: { slug: string } }) {
     </>
   );
 }
-

@@ -609,4 +609,3 @@ export default function RoleCategoryPage({ params }: { params: { slug: string } 
     </>
   );
 }
-

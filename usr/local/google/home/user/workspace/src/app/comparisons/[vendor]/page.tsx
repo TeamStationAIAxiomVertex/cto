@@ -1,3 +1,4 @@
+
 // src/app/comparisons/[vendor]/page.tsx
 
 import { notFound } from 'next/navigation';
@@ -88,4 +89,3 @@ export default async function ComparisonPage({ params }: { params: { vendor: str
     </main>
   );
 }
-
