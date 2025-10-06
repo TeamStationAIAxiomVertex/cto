@@ -1,8 +1,8 @@
-
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
+// Corrected directory path to be more robust
 const contentDirectory = path.join(process.cwd(), 'src', 'content', 'research');
 
 export type ResearchPaper = {
@@ -13,9 +13,10 @@ export type ResearchPaper = {
   lastModified: string;
 };
 
+// Now async
 async function getFilenames(): Promise<string[]> {
     try {
-        const filenames = fs.readdirSync(contentDirectory);
+        const filenames = await fs.promises.readdir(contentDirectory);
         return filenames.filter(filename => filename.endsWith('.md'));
     } catch (error) {
         console.error("Error reading research directory. This may be expected in some environments. Returning empty array.", error);
@@ -23,21 +24,24 @@ async function getFilenames(): Promise<string[]> {
     }
 }
 
+// Now async
 export async function getAllResearchSlugs(): Promise<string[]> {
     const filenames = await getFilenames();
     return filenames.map(filename => filename.replace(/\.md$/, ''));
 }
 
+// Now async
 export async function getCaseStudySlugs(): Promise<string[]> {
     const filenames = await getFilenames();
     return filenames.map(filename => filename.replace(/\.md$/, ''));
 }
 
+// Now async
 export async function getResearchBySlug(slug: string): Promise<ResearchPaper | null> {
   const filePath = path.join(contentDirectory, `${slug}.md`);
   try {
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const stats = fs.statSync(filePath);
+    const fileContents = await fs.promises.readFile(filePath, 'utf8');
+    const stats = await fs.promises.stat(filePath);
     const { data } = matter(fileContents);
 
     return {

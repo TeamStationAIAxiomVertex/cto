@@ -1,96 +1,120 @@
-
 // src/lib/sitemap-data.ts
-import { countries } from "./countries";
-import { roleCategories } from "./roles";
-import { techCategories } from "./tech";
-import { getAllCaseStudies } from "./case-studies";
-import { comparisonPages } from "./comparisonPages";
-import { getAllPlaybookSlugs } from "./playbook";
-import { getAllResearchSlugs } from "./research";
+import { getCountrySlugs } from './programmatic-data';
+import { getPlaybookSlugs } from './playbook-data';
+import { getComparisonSlugs } from './comparison-data';
+import { getAllResearchSlugs } from './research'; 
+import { getAllRoleSlugs } from './roles'; 
+import { getAllTechSlugs } from './tech'; 
+import { countries } from './countries';
+import { getAllCaseStudies } from './case-studies';
 
-export type UrlRec = {
-  url: string;
-  lastmod: string;
-  changefreq: 'weekly' | 'monthly' | 'yearly';
-  priority: string;
+const BASE_URL = 'https://cto.teamstation.dev';
+
+export type SitemapUrl = {
+  loc: string;
+  lastmod?: string;
+  changefreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly';
+  priority?: number;
 };
 
-export const baseUrl = 'https://cto.teamstation.dev';
-const now = new Date().toISOString();
 
-// Function to get a consistent last modified date
-const getLastMod = (date?: string) => date || now;
-
-// CORE STATIC URLS
-export async function collectCoreUrls(): Promise<UrlRec[]> {
-  const home: UrlRec[] = [{ url: baseUrl, lastmod: now, changefreq: 'weekly', priority: '1.0' }];
-  const hubPages = [
-    '/research/hub', '/comparisons', '/case-studies', '/hire', '/hire/by-country',
-    '/hire/by-role', '/hire/by-team-topologies', '/hire/by-technology', '/faq',
-  ].map(p => ({ url: `${baseUrl}${p}`, lastmod: now, changefreq: 'weekly' as const, priority: '0.9' }));
-  const staticPages = [
-    '/about', '/platform', '/pricing', '/process', '/services/integrated-services',
-    '/services/talent-onboarding', '/technical-interview-evaluation', '/trust',
-  ].map(p => ({ url: `${baseUrl}${p}`, lastmod: now, changefreq: 'monthly' as const, priority: '0.8' }));
-  const legalPages = ['/privacy-policy', '/terms-of-service', '/sitemap'].map(p => ({
-    url: `${baseUrl}${p}`, lastmod: now, changefreq: 'yearly' as const, priority: '0.3',
-  }));
-  return [...home, ...hubPages, ...staticPages, ...legalPages];
+// 1. Core Pages (Static)
+export async function collectCoreUrls() {
+    const urls = [
+        { loc: `${BASE_URL}/`, lastmod: new Date().toISOString(), changefreq: 'weekly', priority: 1.0 },
+        { loc: `${BASE_URL}/playbook/hub`, lastmod: new Date().toISOString(), changefreq: 'monthly', priority: 0.8 },
+        { loc: `${BASE_URL}/comparisons`, lastmod: new Date().toISOString(), changefreq: 'monthly', priority: 0.8 },
+        { loc: `${BASE_URL}/hire`, lastmod: new Date().toISOString(), changefreq: 'weekly', priority: 0.9 },
+        { loc: `${BASE_URL}/trust`, lastmod: new Date().toISOString(), changefreq: 'yearly', priority: 0.5 },
+        { loc: `${BASE_URL}/about`, lastmod: new Date().toISOString(), changefreq: 'monthly', priority: 0.7 },
+        { loc: `${BASE_URL}/platform`, lastmod: new Date().toISOString(), changefreq: 'monthly', priority: 0.7 },
+        { loc: `${BASE_URL}/pricing`, lastmod: new Date().toISOString(), changefreq: 'monthly', priority: 0.7 },
+        { loc: `${BASE_URL}/process`, lastmod: new Date().toISOString(), changefreq: 'monthly', priority: 0.7 },
+        { loc: `${BASE_URL}/services/integrated-services`, lastmod: new Date().toISOString(), changefreq: 'monthly', priority: 0.6 },
+        { loc: `${BASE_URL}/services/talent-onboarding`, lastmod: new Date().toISOString(), changefreq: 'monthly', priority: 0.6 },
+        { loc: `${BASE_URL}/technical-interview-evaluation`, lastmod: new Date().toISOString(), changefreq: 'monthly', priority: 0.8 },
+    ];
+    return urls.map(u => ({...u, priority: u.priority.toFixed(1)}));
 }
 
-// PLAYBOOK URLS
-export async function collectPlaybookUrls(): Promise<UrlRec[]> {
-  const slugs = await getAllPlaybookSlugs();
-  return slugs.map(slug => ({
-    url: `${baseUrl}/playbook/${slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7'
-  }));
+// 2. Playbook URLs (Dynamic)
+export async function collectPlaybookUrls() {
+    const playbookSlugs = await getAllPlaybookSlugs();
+    return playbookSlugs.map(slug => ({
+        loc: `${BASE_URL}/playbook/${slug}`,
+        lastmod: new Date().toISOString(),
+        changefreq: 'monthly',
+        priority: 0.7
+    }));
 }
 
-// CASE STUDIES & RESEARCH
-export async function collectCaseStudyUrls(): Promise<UrlRec[]> {
-  const caseStudies = await getAllCaseStudies();
-  const caseStudyEntries: UrlRec[] = caseStudies.map((study) => ({
-    url: `${baseUrl}/case-studies/${study.slug}`, lastmod: getLastMod(study.lastModified), changefreq: 'monthly', priority: '0.7'
-  }));
+// 2b. Research/Case Study URLs (Dynamic)
+export async function collectCaseStudyUrls() {
+    const caseStudies = await getAllCaseStudies();
+    const researchSlugs = await getAllResearchSlugs();
+    
+    const caseStudyEntries = caseStudies.map((study) => ({
+        loc: `${BASE_URL}/case-studies/${study.slug}`, 
+        lastmod: study.lastModified || new Date().toISOString(), 
+        changefreq: 'monthly', 
+        priority: 0.7
+    }));
 
-  const researchSlugs = await getAllResearchSlugs();
-  const researchEntries: UrlRec[] = researchSlugs.map((slug) => ({
-      url: `${baseUrl}/research/${slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7'
-  }));
+    const researchEntries = researchSlugs.map((slug) => ({
+        loc: `${BASE_URL}/research/${slug}`, 
+        lastmod: new Date().toISOString(), 
+        changefreq: 'monthly', 
+        priority: 0.7
+    }));
   
-  return [...caseStudyEntries, ...researchEntries];
+    return [...caseStudyEntries, ...researchEntries];
 }
 
-// COMPARISON PAGES
-export async function collectComparisonUrls(): Promise<UrlRec[]> {
-  return comparisonPages.map((page) => ({
-    url: `${baseUrl}/comparisons/${page.slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7'
-  }));
-}
-
-// HIRE BY COUNTRY
-export async function collectHireByCountryUrls(): Promise<UrlRec[]> {
-  return countries.flatMap((c) => {
-    const base: UrlRec = { url: `${baseUrl}/hire/by-country/${c.slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7' };
-    const techPages: UrlRec[] = techCategories.flatMap((cat) => cat.tech).map((t) => ({
-      url: `${baseUrl}/hire/by-country/${c.slug}/${t.slug}`, lastmod: now, changefreq: 'monthly', priority: '0.6'
-    }));
-    return [base, ...techPages];
-  });
-}
-
-// HIRE BY ROLE
-export async function collectHireByRoleUrls(): Promise<UrlRec[]> {
-    const roleSlugs = await roleCategories.map(r => r.slug);
-    return roleSlugs.map(slug => ({
-        url: `${baseUrl}/hire/by-role/${slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7'
+// 3. Comparison URLs (Dynamic)
+export async function collectComparisonUrls() {
+    const slugs = await getComparisonSlugs();
+    return slugs.map(slug => ({
+        loc: `${BASE_URL}/comparisons/${slug}`,
+        lastmod: new Date().toISOString(),
+        changefreq: 'quarterly', 
+        priority: 0.8
     }));
 }
 
-// HIRE BY TECHNOLOGY
-export async function collectHireByTechnologyUrls(): Promise<UrlRec[]> {
-    const techSlugs = techCategories.flatMap(cat => cat.tech.map(t => t.slug));
-    return techSlugs.map(slug => ({
-        url: `${baseUrl}/hire/by-technology/${slug}`, lastmod: now, changefreq: 'monthly', priority: '0.6'
+
+// 4. Programmatic Hire-By-Country URLs (Dynamic)
+export async function collectHireByCountryUrls() {
+    return countries.flatMap((country) => {
+        const base = { loc: `${BASE_URL}/hire/by-country/${country.slug}`, lastmod: new Date().toISOString(), changefreq: 'monthly', priority: 0.8 };
+        const techPages = techCategories.flatMap(cat => cat.tech).map(tech => ({
+            loc: `${BASE_URL}/hire/by-country/${country.slug}/${tech.slug}`,
+            lastmod: new Date().toISOString(),
+            changefreq: 'monthly',
+            priority: 0.7
+        }));
+        return [base, ...techPages];
+    });
+}
+
+
+// 5. Programmatic Hire-By-Role URLs (Dynamic)
+export async function collectHireByRoleUrls() {
+    const slugs = await getAllRoleSlugs(); 
+    return slugs.map(slug => ({
+        loc: `${BASE_URL}/hire/by-role/${slug}`,
+        lastmod: new Date().toISOString(),
+        changefreq: 'monthly',
+        priority: 0.8
+    }));
+}
+
+// 6. Programmatic Hire-By-Technology URLs (Dynamic)
+export async function collectHireByTechnologyUrls() {
+    const slugs = await getAllTechSlugs(); 
+    return slugs.map(slug => ({
+        loc: `${BASE_URL}/hire/by-technology/${slug}`,
+        lastmod: new Date().toISOString(),
+        changefreq: 'monthly',
+        priority: 0.8
     }));
 }

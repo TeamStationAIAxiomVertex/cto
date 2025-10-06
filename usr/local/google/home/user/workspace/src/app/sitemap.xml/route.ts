@@ -1,4 +1,3 @@
-
 // src/app/sitemap.xml/route.ts
 import { generateSitemapXml } from '@/lib/sitemap-utils';
 
@@ -9,14 +8,12 @@ const SITE_URL = 'https://cto.teamstation.dev';
  * This serves as the sitemap index file.
  */
 export async function GET() {
-  // In a real-world scenario, you might have more dynamic logic here
-  // to determine the number of sub-sitemaps needed.
   const sitemaps = [
     `${SITE_URL}/sitemaps/static.xml`,
     `${SITE_URL}/sitemaps/playbook.xml`,
     `${SITE_URL}/sitemaps/case-studies.xml`,
     `${SITE_URL}/sitemaps/comparisons.xml`,
-    `${SITE_URL}/sitemaps/hire-pages.xml`, // Consolidated hiring pages
+    `${SITE_URL}/sitemaps/hire-pages.xml`, 
   ];
 
   const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
