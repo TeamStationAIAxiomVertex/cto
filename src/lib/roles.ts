@@ -114,3 +114,7 @@ export const roleCategories = [
     proof: { href: '/playbook/latam-economics', label: 'See how we model Total Cost of Ownership.'}
   }
 ];
+
+export function getAllRoleSlugs(): string[] {
+    return roleCategories.map(category => category.slug);
+}

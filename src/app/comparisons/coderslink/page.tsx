@@ -26,12 +26,12 @@ const comparisonPoints = {
     "Vetting": {
         pain: "Is your vetting just a keyword match?",
         traditional: `${competitor.name} operates a recruitment marketplace, connecting you with a large pool of talent. Their process is effective for sourcing but relies on traditional screening.`,
-        teamstation: "Our Axiom Cortex™ provides scientific proof of a candidate's problem-solving ability, not just their credentials. We de-risk the hiring decision with data.",
+        teamstation: "Our Axiom Cortex™ provides scientific proof of a candidate\'s problem-solving ability, not just their credentials. We de-risk the hiring decision with data.",
         proof: "Mismatch Rate ≤ 10%"
     },
     "Operations": {
         pain: "Who handles the operational complexity?",
-        traditional: `The marketplace model leaves you to manage EOR, device security, and insurance. It's a significant operational burden you inherit.`,
+        traditional: `The marketplace model leaves you to manage EOR, device security, and insurance. It\'s a significant operational burden you inherit.`,
         teamstation: "Our integrated platform is a complete operational wrapper. We bundle all services under a single, accountable SLA, so you can focus on your product.",
         proof: "1 accountable SLA"
     },
@@ -44,7 +44,12 @@ const comparisonPoints = {
 };
 
 const faqs = defaultComparisonFaqs(competitor.name);
-const schema = generateComparisonSchema({ ...competitor, faqs });
+const schema = generateComparisonSchema({ 
+  competitorName: competitor.name, 
+  competitorUrl: competitor.url, 
+  slug: competitor.slug, 
+  faqs 
+});
 
 export default function CodersLinkComparisonPage() {
   return (

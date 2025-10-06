@@ -26,7 +26,7 @@ const comparisonPoints = {
     "Vetting": {
         pain: "Is your vetting just a skills test?",
         traditional: `${competitor.name} focuses on traditional staff augmentation, which is effective for adding headcount but often relies on standard technical interviews that miss deeper cognitive traits.`,
-        teamstation: "Our Axiom Cortex™ provides scientific proof of a candidate's problem-solving ability and architectural instinct, ensuring you hire for long-term impact, not just short-term skills.",
+        teamstation: "Our Axiom Cortex™ provides scientific proof of a candidate\'s problem-solving ability and architectural instinct, ensuring you hire for long-term impact, not just short-term skills.",
         proof: "Mismatch Rate ≤ 10%"
     },
     "Operations": {
@@ -37,14 +37,19 @@ const comparisonPoints = {
     },
     "Cost": {
         pain: "Is a low hourly rate hiding your true cost?",
-        traditional: "The rate card doesn't include the hidden TCO of management overhead, slow ramp-up times, and the potential cost of a security incident or mis-hire.",
+        traditional: "The rate card doesn\'t include the hidden TCO of management overhead, slow ramp-up times, and the potential cost of a security incident or mis-hire.",
         teamstation: "Our all-inclusive pricing model provides a predictable, CFO-ready TCO that is often 40-60% lower than the fully-loaded cost of traditional models.",
         proof: "40-60% Lower TCO"
     }
 };
 
 const faqs = defaultComparisonFaqs(competitor.name);
-const schema = generateComparisonSchema({ ...competitor, faqs });
+const schema = generateComparisonSchema({ 
+  competitorName: competitor.name, 
+  competitorUrl: competitor.url, 
+  slug: competitor.slug, 
+  faqs 
+});
 
 export default function DevlaneComparisonPage() {
   return (

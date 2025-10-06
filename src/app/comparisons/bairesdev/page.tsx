@@ -17,7 +17,7 @@ const comparisonPoints = {
     "Vetting": {
         pain: "Is your hiring process a high-risk gamble on resumes?",
         traditional: "BairesDev's 'Top 1%' is a marketing claim based on resume screening. Their 'AI' is likely a wrapper around a generic LLM API, with no peer-reviewed science to back it up.",
-        teamstation: "Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> provides scientific, evidence-based proof of a candidate's problem-solving ability, not just their credentials.",
+        teamstation: "Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> provides scientific, evidence-based proof of a candidate\'s problem-solving ability, not just their credentials.",
         proof: "Mismatch Rate ≤ 10%"
     },
     "Security": {
@@ -51,7 +51,7 @@ const faqSchema = {
             "name": "How does your 'Axiom Cortex' vetting compare to BairesDev's 'Top 1%' claim?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "BairesDev's 'Top 1%' is a marketing claim based on resume screening. Our Axiom Cortex™ is a peer-reviewed cognitive AI engine that provides scientific, evidence-based proof of a candidate's problem-solving ability and 'mental shape,' reducing mis-hire risk by over 90%. We provide data, not just claims."
+                "text": "BairesDev's 'Top 1%' is a marketing claim based on resume screening. Our Axiom Cortex™ is a peer-reviewed cognitive AI engine that provides scientific, evidence-based proof of a candidate\'s problem-solving ability and 'mental shape,' reducing mis-hire risk by over 90%. We provide data, not just claims."
             }
         },
         {
@@ -137,7 +137,7 @@ export default function BairesDevComparisonPage() {
           </p>
           <h3>Cost & Risk: Predictable TCO vs. Hidden Fees</h3>
           <p>
-              With BairesDev, companies must budget for separate vendors to handle <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
+              With BairesDev, companies must budget for separate vendors to handle <WithTooltip content="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
           </p>
         </div>
 

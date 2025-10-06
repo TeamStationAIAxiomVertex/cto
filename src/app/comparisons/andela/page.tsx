@@ -16,7 +16,7 @@ const comparisonPoints = {
     "Vetting": {
         pain: "Is your hiring process a gamble on a massive, unfiltered talent pool?",
         traditional: "Andela provides access to a vast global talent cloud, but their vetting is primarily based on resume screening and technical tests, not a deep cognitive evaluation.",
-        teamstation: "Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> provides scientific, evidence-based proof of a candidate's problem-solving ability, ensuring you hire for aptitude, not just experience.",
+        teamstation: "Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> provides scientific, evidence-based proof of a candidate\'s problem-solving ability, ensuring you hire for aptitude, not just experience.",
         proof: "Mismatch Rate ≤ 10%"
     },
     "Operations": {
@@ -96,10 +96,10 @@ export default function AndelaComparisonPage() {
         <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
           <h2 className="text-center">Analysis: The Nearshore Specialist vs. The Global Generalist</h2>
           <p>
-              <a href="https://andela.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Andela <ExternalLink className="h-4 w-4" /></a> operates a large, global "talent cloud" that connects companies with technologists from around the world. Their strength is their breadth and scale. However, their model does not include bundled <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, devices, or insurance, leaving the client to manage these critical operational components.
+              <a href="https://andela.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Andela <ExternalLink className="h-4 w-4" /></a> operates a large, global "talent cloud" that connects companies with technologists from around the world. Their strength is their breadth and scale. However, their model does not include bundled <WithTooltip content="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, devices, or insurance, leaving the client to manage these critical operational components.
           </p>
           <p>
-             TeamStation AI has a more specialized focus: building elite nearshore engineering teams specifically within Latin America. This focus allows us to provide a deeply integrated operational platform that is tailored to the unique legal, cultural, and logistical nuances of the region. While Andela helps you find talent, our platform provides the entire security and compliance wrapper—EOR, <WithTooltip label="Mobile Device Management: software that secures, monitors, and manages devices like laptops."><span className="border-b border-dashed">MDM</span></WithTooltip>-managed devices, insurance—that is critical for a secure nearshore operation.
+             TeamStation AI has a more specialized focus: building elite nearshore engineering teams specifically within Latin America. This focus allows us to provide a deeply integrated operational platform that is tailored to the unique legal, cultural, and logistical nuances of the region. While Andela helps you find talent, our platform provides the entire security and compliance wrapper—EOR, <WithTooltip content="Mobile Device Management: software that secures, monitors, and manages devices like laptops."><span className="border-b border-dashed">MDM</span></WithTooltip>-managed devices, insurance—that is critical for a secure nearshore operation.
           </p>
           <h3>Depth vs. Breadth</h3>
           <p>

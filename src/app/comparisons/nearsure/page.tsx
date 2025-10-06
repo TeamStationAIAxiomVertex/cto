@@ -87,7 +87,7 @@ export default function NearsureComparisonPage() {
             <a href="https://nearsure.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Nearsure <ExternalLink className="h-4 w-4" /></a> operates on a classic staff augmentation model. They are experts at sourcing and placing nearshore talent, and their AI recruiter has improved their hiring time. However, their model leaves significant operational, legal, and security burdens on the client.
         </p>
         <p>
-           Issues like compliant hiring (<WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>), payroll, secure device management, and insurance are outside their scope. TeamStation AI was created to solve this exact problem. We provide an integrated platform that handles not only sourcing (powered by our{' '}
+           Issues like compliant hiring (<WithTooltip content="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>), payroll, secure device management, and insurance are outside their scope. TeamStation AI was created to solve this exact problem. We provide an integrated platform that handles not only sourcing (powered by our{' '}
             <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>
             ) but also the entire operational infrastructure, all under a single, predictable SLA.
         </p>

@@ -100,7 +100,7 @@ export default function GlobantComparisonPage() {
           </p>
           <p>
               As a Globant alternative, TeamStation AI operates on a fundamentally different premise. We are your{' '}
-              <WithTooltip label="An integrated platform for CTOs who need to ship faster without sacrificing security or quality. We provide the talent, governance, and infrastructure.">
+              <WithTooltip content="An integrated platform for CTOs who need to ship faster without sacrificing security or quality. We provide the talent, governance, and infrastructure.">
                   <span className="border-b border-dashed">Nearshore IT Co-Pilot™</span>
               </WithTooltip>. Our entire platform is purpose-built for staff augmentation, providing you with elite, mission-fit LATAM engineering talent that integrates directly into your existing teams.
           </p>

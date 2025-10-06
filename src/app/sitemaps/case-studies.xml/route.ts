@@ -1,8 +1,8 @@
 // src/app/sitemaps/case-studies.xml/route.ts
 
 import { NextResponse } from 'next/server';
-import { generateSitemapXml } from '@/lib/sitemap-utils';
-import { collectCaseStudyUrls } from '@/lib/sitemap-data'; 
+import { generateSitemapXml } from '../../../lib/sitemap-utils';
+import { collectCaseStudyUrls } from '../../../lib/sitemap-data'; 
 
 /**
  * Handles GET requests to /sitemaps/case-studies.xml
