@@ -1,15 +1,55 @@
-import * as React from "react";
-export function TooltipProvider({ children }: { children: React.ReactNode }) { return <>{children}</>; }
-export function Tooltip({ children }: { children: React.ReactNode }) { return <>{children}</>; }
-export function TooltipTrigger({ children }: { children: React.ReactNode }) { return <>{children}</>; }
-export function TooltipContent({ children }: { children: React.ReactNode }) { return <>{children}</>; }
-/** Accept both 'content' and 'label' */
-export function WithTooltip(props: {
-  content?: React.ReactNode; label?: React.ReactNode; children: React.ReactNode; as?: keyof JSX.IntrinsicElements; className?: string;
-}) {
-  const { content, label, children, as: Tag = "span", className } = props as any;
-  const title = typeof (content ?? label) === "string" ? (content ?? label) : undefined;
-  // Ensure the wrapping tag is a span, not a p, to prevent nesting errors.
-  return <Tag title={title} className={className} data-hint={title}>{children}</Tag>;
-}
-export default { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent, WithTooltip };
+
+'use client'
+import * as React from "react"
+import * as TooltipPrimitive from "@radix-ui/react-tooltip"
+
+import { cn } from "@/lib/utils"
+
+const TooltipProvider = TooltipPrimitive.Provider
+
+const Tooltip = TooltipPrimitive.Root
+
+const TooltipTrigger = TooltipPrimitive.Trigger
+
+const TooltipContent = React.forwardRef<
+  React.ElementRef<typeof TooltipPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
+>(({ className, sideOffset = 4, ...props }, ref) => (
+  <TooltipPrimitive.Content
+    ref={ref}
+    sideOffset={sideOffset}
+    className={cn(
+      "z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      className
+    )}
+    {...props}
+  />
+))
+TooltipContent.displayName = TooltipPrimitive.Content.displayName
+
+const WithTooltip = ({
+  children,
+  label,
+  ...props
+}: {
+  children: React.ReactNode;
+  label: string | React.ReactNode; // Allow ReactNode for complex tooltips
+  [key: string]: any;
+}) => {
+  if (!label) return <>{children}</>;
+  return (
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild {...props}>
+          {children}
+        </TooltipTrigger>
+        <TooltipContent>
+          {typeof label === 'string' ? <p>{label}</p> : label}
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
+};
+
+
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, WithTooltip }
