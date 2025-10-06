@@ -1,5 +1,4 @@
 
-
 import { Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane, AlertTriangle } from 'lucide-react';
 import type { ReactNode } from 'react';
 
@@ -1123,10 +1122,10 @@ export const techCategories: TechCategory[] = [
 export async function getAllTechSlugs(): Promise<string[]> {
     return Object.keys(allTech);
 }
-
 ```
 - workspace/src/lib/utils.ts:
 ```ts
+// src/lib/utils.ts
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -1137,24 +1136,24 @@ export function cn(...inputs: ClassValue[]) {
 ```
 - workspace/src/providers/app-providers.tsx:
 ```tsx
-
 'use client';
-import { ThemeProvider } from '@/components/theme-provider';
-import { TooltipProvider } from '@/components/ui/tooltip';
-import * as React from 'react';
+
+import React from 'react';
+import { ThemeProvider } from '../components/theme-provider';
+import { TooltipProvider } from '../components/client/tooltip-provider';
 
 export default function AppProviders({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="dark" // Default to dark mode
-      enableSystem
-      disableTransitionOnChange
-    >
-      <TooltipProvider>
+    <TooltipProvider delayDuration={0}>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="dark"
+        enableSystem
+        disableTransitionOnChange
+      >
         {children}
-      </TooltipProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </TooltipProvider>
   );
 }
 
@@ -1166,10 +1165,11 @@ import type { Config } from "tailwindcss"
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    './content/**/*.md',
 	],
   prefix: "",
   theme: {
@@ -1181,6 +1181,9 @@ const config = {
       },
     },
     extend: {
+       fontFamily: {
+        sans: ['var(--font-poppins)', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -1235,20 +1238,61 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      typography: ({ theme }: { theme: any }) => ({
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': 'hsl(var(--muted-foreground))',
+            '--tw-prose-headings': 'hsl(var(--primary))',
+            '--tw-prose-lead': 'hsl(var(--muted-foreground))',
+            '--tw-prose-links': 'hsl(var(--primary))',
+            '--tw-prose-bold': 'hsl(var(--foreground))',
+            '--tw-prose-counters': 'hsl(var(--muted-foreground))',
+            '--tw-prose-bullets': 'hsl(var(--border))',
+            '--tw-prose-hr': 'hsl(var(--border))',
+            '--tw-prose-quotes': 'hsl(var(--foreground))',
+            '--tw-prose-quote-borders': 'hsl(var(--border))',
+            '--tw-prose-captions': 'hsl(var(--muted-foreground))',
+            '--tw-prose-code': 'hsl(var(--foreground))',
+            '--tw-prose-pre-code': 'hsl(var(--foreground))',
+            '--tw-prose-pre-bg': 'hsl(var(--card))',
+            '--tw-prose-th-borders': 'hsl(var(--border))',
+            '--tw-prose-td-borders': 'hsl(var(--border))',
+            '--tw-prose-invert-body': 'hsl(var(--muted-foreground))',
+            '--tw-prose-invert-headings': 'hsl(var(--primary))',
+            '--tw-prose-invert-lead': 'hsl(var(--muted-foreground))',
+            '--tw-prose-invert-links': 'hsl(var(--primary))',
+            '--tw-prose-invert-bold': 'hsl(var(--foreground))',
+            '--tw-prose-invert-counters': 'hsl(var(--muted-foreground))',
+            '--tw-prose-invert-bullets': 'hsl(var(--border))',
+            '--tw-prose-invert-hr': 'hsl(var(--border))',
+            '--tw-prose-invert-quotes': 'hsl(var(--foreground))',
+            '--tw-prose-invert-quote-borders': 'hsl(var(--border))',
+            '--tw-prose-invert-captions': 'hsl(var(--muted-foreground))',
+            '--tw-prose-invert-code': 'hsl(var(--foreground))',
+            '--tw-prose-invert-pre-code': 'hsl(var(--foreground))',
+            '--tw-prose-invert-pre-bg': 'hsl(var(--card))',
+            '--tw-prose-invert-th-borders': 'hsl(var(--border))',
+            '--tw-prose-invert-td-borders': 'hsl(var(--border))',
+          },
+        },
+      }),
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config
 
 export default config
-
 ```
 - workspace/tsconfig.json:
 ```json
-
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -1260,75 +1304,26 @@ export default config
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [{ "name": "next" }],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
-```I have analyzed the new build failure. The logs clearly indicate that while the `autoprefixer` dependency issue was resolved, the build is now failing due to incorrect import paths for client components within `src/components/layout/Header.tsx`. The build environment is stricter about path resolution than the local development server.
 
-I will execute a precise fix to resolve this.
-
-1.  **Correct Component Imports**: I will update `src/components/layout/Header.tsx` to use the correct absolute path aliases (`@/`) for the `ThemeToggle`, `MobileNav`, and `DesktopNav` components. This guarantees that the build system can locate them.
-2.  **Ensure `postcss.config.js`**: I will verify the presence and correctness of `postcss.config.js` to prevent any recurrence of the CSS tooling errors.
-
-This targeted action addresses all remaining "Module not found" errors and will ensure a successful deployment.
-
-<changes>
-  <description>Fix critical build failure by correcting import paths in the main layout Header to use absolute aliases, and ensure the postcss.config.js file exists to resolve CSS tooling errors. This addresses all remaining module resolution issues from the build log.</description>
-  <change>
-    <file>/workspace/src/components/layout/Header.tsx</file>
-    <content><![CDATA[
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
-import { assertComponent } from '@/lib/assertComponent';
-
-const ThemeToggle = dynamic(() => import('@/components/client/ThemeToggle'), { ssr: false });
-const MobileNav = dynamic(() => import('@/components/client/MobileNav'), { ssr: false });
-const DesktopNav = dynamic(() => import('@/components/client/DesktopNav'), { ssr: false });
-
-assertComponent('ThemeToggle', ThemeToggle);
-assertComponent('MobileNav', MobileNav);
-assertComponent('DesktopNav', DesktopNav);
-
-
-export function Header() {
-  return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        <Link href="/" className="text-lg font-bold text-foreground">
-          TeamStation AI
-        </Link>
-
-        {/* Desktop Navigation */}
-        <DesktopNav />
-
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <Link
-            href="https://app.teamstation.dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hidden sm:inline-flex a11y-tap-target"
-          >
-            Sign In
-          </Link>
-          <Link
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button hidden sm:inline-flex"
-          >
-            Book a Call
-          </Link>
-
-          {/* Mobile Navigation */}
-          <MobileNav />
-        </div>
-      </div>
-    </header>
-  );
-}
+```
