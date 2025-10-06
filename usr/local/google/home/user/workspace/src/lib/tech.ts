@@ -1,6 +1,5 @@
 
 import type { ReactNode } from 'react';
-
 import { Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane, AlertTriangle } from 'lucide-react';
 
 export interface Tech {
@@ -1120,8 +1119,17 @@ export const techCategories: TechCategory[] = [
   }
 ];
 
-export async function getAllTechSlugs(): Promise<string[]> {
+export function getAllTechSlugs(): string[] {
     return Object.keys(allTech);
 }
+```
+- workspace/src/lib/utils.ts:
+```ts
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-    
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
+```
