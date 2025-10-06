@@ -1120,61 +1120,19 @@ export const techCategories: TechCategory[] = [
   }
 ];
 
-export function getAllTechSlugs(): string[] {
+export async function getAllTechSlugs(): Promise<string[]> {
     return Object.keys(allTech);
 }
---- END_FILE: src/lib/tech.ts ---
---- START_FILE: src/lib/utils.ts ---
+
+```
+- workspace/src/lib/utils.ts:
+```ts
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
---- END_FILE: src/lib/utils.ts ---
---- START_FILE: tsconfig.json ---
-{
-  "compilerOptions": {
-    "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    }
-  },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
-}
---- END_FILE: tsconfig.json ---
 
 ```
+
