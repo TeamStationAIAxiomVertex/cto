@@ -136,9 +136,9 @@ export default function BairesDevComparisonPage() {
               This is the most significant divide. BairesDev's "top 1%" claim is based on their internal screening of resumes and traditional interviews. TeamStation AI's <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link> engine uses proprietary Cognitive AI with over 44 algorithms to evaluate a candidate's problem-solving abilities and learning orientation, with a fairness layer to mitigate bias. We provide evidence-based validation of cognitive ability, not just resume keywords.
           </p>
           <h3>Cost & Risk: Predictable TCO vs. Hidden Fees</h3>
-          <p>
-              With BairesDev, companies must budget for separate vendors to handle <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
-          </p>
+          <div>
+              With BairesDev, companies must budget for separate vendors to handle <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</WithTooltip>, device management, and insurance. The total cost of ownership (TCO) for a $40/hr engineer can easily exceed TeamStation’s all-inclusive rate. Our transparent, bundled <Link href="/pricing">pricing</Link> eliminates hidden fees, making your budget predictable and often lower.
+          </div>
         </div>
 
         <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">

@@ -97,10 +97,10 @@ export default function ReveloComparisonPage() {
         <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
           <h2 className="text-center">Analysis: The Integrated Platform vs. Sourcing + EOR</h2>
           <div>
-              <a href="https://www.revelo.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Revelo <ExternalLink className="h-4 w-4" /></a> offers a strong value proposition by combining a LATAM talent marketplace with <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip> services, promising a 14-day time-to-hire. This solves a major pain point for companies by handling payroll and benefits. However, it stops short of a truly integrated operational solution.
+              <a href="https://www.revelo.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Revelo <ExternalLink className="h-4 w-4" /></a> offers a strong value proposition by combining a LATAM talent marketplace with <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</WithTooltip> services, promising a 14-day time-to-hire. This solves a major pain point for companies by handling payroll and benefits. However, it stops short of a truly integrated operational solution.
           </div>
           <div>
-             Key operational areas like secure device provisioning, <WithTooltip label="Mobile Device Management: software that secures, monitors, and manages devices like laptops."><span className="border-b border-dashed">MDM</span></WithTooltip>, and cybersecurity insurance are not part of their core offering. This leaves a significant security and compliance gap for clients to fill, adding hidden costs and risks.
+             Key operational areas like secure device provisioning, <WithTooltip label="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</WithTooltip>, and cybersecurity insurance are not part of their core offering. This leaves a significant security and compliance gap for clients to fill, adding hidden costs and risks.
           </div>
           <h3>The Security and Velocity Gap</h3>
           <p>
@@ -118,7 +118,7 @@ export default function ReveloComparisonPage() {
           <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
         </div>
         <ValuePropositionBlock
-            pain="CTOs face hidden risks in cost, compliance, and velocity."
+            pain="CTOs face hidden risks in cost, compliance, and velocity when using legacy staffing models."
             stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
             prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
             proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
