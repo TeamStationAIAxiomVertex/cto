@@ -1,3 +1,4 @@
+
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -23,6 +24,11 @@ async function getFilenames(): Promise<string[]> {
 }
 
 export async function getAllResearchSlugs(): Promise<string[]> {
+    const filenames = await getFilenames();
+    return filenames.map(filename => filename.replace(/\.md$/, ''));
+}
+
+export async function getCaseStudySlugs(): Promise<string[]> {
     const filenames = await getFilenames();
     return filenames.map(filename => filename.replace(/\.md$/, ''));
 }

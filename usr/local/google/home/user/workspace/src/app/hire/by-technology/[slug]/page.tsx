@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle } from 'lucide-react';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../../../components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { notFound } from 'next/navigation';
-import { allTech, getAllTechSlugs } from "../../../../lib/tech";
-import { JsonLd } from "../../../../components/seo/JsonLd";
-import FurtherReading from "../../../../components/seo/FurtherReading";
+import { allTech, getAllTechSlugs } from "@/lib/tech";
+import { JsonLd } from "@/components/seo/JsonLd";
+import FurtherReading from "@/components/seo/FurtherReading";
 
 export const revalidate = 3600;
 
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function TechPage({ params }: { params: { slug: string } }) {
+export default async function TechPage({ params }: { params: { slug: string } }) {
   const tech = allTech[params.slug as TechKeys];
   const siteUrl = "https://cto.teamstation.dev";
 

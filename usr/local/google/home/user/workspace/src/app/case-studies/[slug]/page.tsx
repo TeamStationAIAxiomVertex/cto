@@ -7,6 +7,15 @@ import type { Metadata } from 'next';
 import SeoSafeImage from '@/components/seo/SeoSafeImage';
 import FurtherReading from '@/components/seo/FurtherReading';
 
+export const revalidate = 3600; // Revalidate every hour
+
+export async function generateStaticParams() {
+  const studies = await getAllCaseStudies();
+  return studies.map(study => ({
+    slug: study.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const study = await getCaseStudyBySlug(params.slug);
   if (!study) {
@@ -228,12 +237,3 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
     </>
   );
 }
-
-export async function generateStaticParams() {
-  const studies = await getAllCaseStudies();
-  return studies.map(study => ({
-    slug: study.slug,
-  }));
-}
-
-    

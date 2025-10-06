@@ -43,7 +43,7 @@ export default async function ComparisonPage({ params }: { params: { vendor: str
     notFound();
   }
 
-  const { competitorName, h1, faqs, internal_links, comparison_claims } = data;
+  const { competitorName, h1, faqs, internal_links } = data;
   
   const verdictRows = generateComparisonVerdictRows(data);
   const faqSchema = generateFaqSchema(faqs);
