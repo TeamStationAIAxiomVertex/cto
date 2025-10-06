@@ -96,12 +96,12 @@ export default function TerminalComparisonPage() {
 
         <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
           <h2 className="text-center">Analysis: The Integrated Co-Pilot vs. The EOR-Plus-Recruiter</h2>
-          <p>
+          <div>
               <a href="https://terminal.io/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Terminal <ExternalLink className="h-4 w-4" /></a> builds remote engineering teams and can act as an <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>, handling payroll and benefits. They offer a valuable service by removing many of the initial hurdles of hiring globally.
-          </p>
-          <p>
+          </div>
+          <div>
              However, their model stops there, leaving critical operational and security gaps. They do not provide a productized cognitive AI for talent validation, nor do they bundle secure devices, <WithTooltip label="Mobile Device Management: software that secures, monitors, and manages devices like laptops."><span className="border-b border-dashed">MDM</span></WithTooltip>, or cyber insurance. This means the client must still assemble and manage multiple vendors to cover their operational and security needs, increasing Total Cost of Ownership (TCO) and risk.
-          </p>
+          </div>
           <h3>The Governance & Validation Gap</h3>
           <p>
              TeamStation AI provides a complete, software-defined operating model. Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link> engine de-risks hiring through scientific validation, while our integrated platform bundles all necessary "run-state" services—devices, MDM, offices, compliance, and insurance—under a single, predictable SLA. This is the fundamental difference: Terminal is an EOR-plus-recruiter; TeamStation is a scientific nearshore platform that runs the whole loop from discovery to delivery.

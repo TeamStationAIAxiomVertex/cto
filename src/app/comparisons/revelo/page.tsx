@@ -36,15 +36,15 @@ const comparisonPoints = {
 
 export default function ReveloComparisonPage() {
     const siteUrl = 'https://cto.teamstation.dev';
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
-        { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": `${siteUrl}/comparisons` },
-        { "@type": "ListItem", "position": 3, "name": "Revelo Alternative", "item": `${siteUrl}/comparisons/revelo` }
-        ]
-    };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+      { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": `${siteUrl}/comparisons` },
+      { "@type": "ListItem", "position": 3, "name": "Revelo Alternative", "item": `${siteUrl}/comparisons/revelo` }
+    ]
+  };
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
@@ -96,12 +96,12 @@ export default function ReveloComparisonPage() {
 
         <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
           <h2 className="text-center">Analysis: The Integrated Platform vs. Sourcing + EOR</h2>
-          <p>
+          <div>
               <a href="https://www.revelo.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Revelo <ExternalLink className="h-4 w-4" /></a> offers a strong value proposition by combining a LATAM talent marketplace with <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip> services, promising a 14-day time-to-hire. This solves a major pain point for companies by handling payroll and benefits. However, it stops short of a truly integrated operational solution.
-          </p>
-          <p>
+          </div>
+          <div>
              Key operational areas like secure device provisioning, <WithTooltip label="Mobile Device Management: software that secures, monitors, and manages devices like laptops."><span className="border-b border-dashed">MDM</span></WithTooltip>, and cybersecurity insurance are not part of their core offering. This leaves a significant security and compliance gap for clients to fill, adding hidden costs and risks.
-          </p>
+          </div>
           <h3>The Security and Velocity Gap</h3>
           <p>
               For any CTO, security is non-negotiable. The lack of integrated device management is a critical vulnerability. As a Revelo alternative, TeamStation AI addresses this head-on by providing MDM-managed laptops to all engineers, ensuring an audit-ready security posture from day one. Furthermore, our <Link href="/process">process</Link> delivers a faster time-to-offer (≈9 days) and our{' '}
