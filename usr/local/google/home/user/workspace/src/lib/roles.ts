@@ -107,7 +107,7 @@ export const roleCategories = [
     slug: 'finops-biztech',
     priority: 'P2 Medium',
     priorityTooltip: 'Important roles that support specific business lines or secondary platforms.',
-    pain: "Are runaway cloud costs eating your margin?",
+    pain: "Are runaway cloud costs eating into your margins?",
     description: 'Cloud cost optimization, RevOps engineering, and financial data analysis to improve efficiency.',
     icon: Wallet,
     proof: { href: '/playbook/latam-economics', label: 'See how we model Total Cost of Ownership.'}

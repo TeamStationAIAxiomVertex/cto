@@ -9,6 +9,15 @@ import { roleCategories, getAllRoleSlugs } from "../../../../lib/roles";
 import { JsonLd } from "../../../../components/seo/JsonLd";
 import FurtherReading from "../../../../components/seo/FurtherReading";
 
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+    const slugs = await getAllRoleSlugs(); 
+    return slugs.map(slug => ({
+        slug: slug,
+    }));
+}
+
 const roleData: { [key: string]: { name: string; intro: string; roles: string[]; skills: string[]; tech: { name: string, slug: string }[]; evaluation: string[]; problems?: { pain: string; roles: string[]; skills: string[] }[] } } = {
   'platform-infra-sre': {
     name: 'Platform / Infra / SRE',
@@ -348,160 +357,256 @@ const roleData: { [key: string]: { name: string; intro: string; roles: string[];
   }
 };
 
-export const techCategories: TechCategory[] = [
-  {
-    name: 'APIs & Backend Services',
-    slug: 'backend-services',
-    pain: "Is your backend a bottleneck or a force multiplier?",
-    icon: Server,
-    tech: [
-      { name: 'Node.js', slug: 'node' },
-      { name: 'Python', slug: 'python' },
-      { name: 'Java', slug: 'java' },
-      { name: 'Go', slug: 'go' },
-      { name: '.NET', slug: 'net' },
-      { name: 'Ruby on Rails', slug: 'ruby' },
-      { name: 'PHP (Laravel/Symphony)', slug: 'php' },
-      { name: 'gRPC', slug: 'grpc' },
-      { name: 'GraphQL', slug: 'graphql' },
-    ],
-  },
-  {
-    name: 'Frontend & UI/UX',
-    slug: 'frontend-web',
-    pain: "Is a slow, buggy UI costing you customers?",
-    icon: Layers,
-    tech: [
-      { name: 'React/TypeScript', slug: 'react' },
-      { name: 'Next.js', slug: 'nextjs' },
-      { name: 'Vite', slug: 'vite' },
-      { name: 'Angular', slug: 'angular' },
-      { name: 'Vue.js', slug: 'vue' },
-      { name: 'TanStack Query', slug: 'tanstack' },
-      { name: 'Redux/Zustand', slug: 'redux' },
-      { name: 'Tailwind/shadcn', slug: 'tailwind' },
-      { name: 'Testing Library', slug: 'testing' },
-    ],
-  },
-    {
-    name: 'Mobile & Cross-Platform',
-    slug: 'mobile-cross-platform',
-    pain: "Is your mobile experience falling behind?",
-    icon: Plane,
-    tech: [
-        { name: 'React Native', slug: 'react-native' },
-        { name: 'Flutter', slug: 'flutter' },
-        { name: 'Swift', slug: 'swift' },
-        { name: 'Kotlin', slug: 'kotlin' },
-        { name: 'Socket.IO', slug: 'socketio' },
-    ],
-  },
-  {
-    name: 'Data Modeling & Databases',
-    slug: 'data-engineering-analytics',
-    pain: "Is your data model built for scale or for future refactors?",
-    icon: Database,
-    tech: [
-      { name: 'PostgreSQL', slug: 'postgresql' },
-      { name: 'MySQL', slug: 'mysql' },
-      { name: 'SQL Server', slug: 'sql' },
-      { name: 'dbt', slug: 'dbt' },
-      { name: 'Prisma', slug: 'prisma' },
-      { name: 'SQLAlchemy', slug: 'sqlalchemy' },
-      { name: 'Hibernate', slug: 'hibernate' },
-      { name: 'Redis', slug: 'redis' },
-      { name: 'Memcached', slug: 'memcached' },
-      { name: 'DynamoDB', slug: 'dynamodb' },
-    ],
-  },
-  {
-    name: 'Pipelines & Orchestration',
-    slug: 'data-engineering-analytics',
-    pain: "Are your data pipelines brittle and unreliable?",
-    icon: Component,
-    tech: [
-      { name: 'Airflow/Prefect', slug: 'airflow' },
-      { name: 'Kafka/RabbitMQ', slug: 'kafka' },
-      { name: 'Flink/Beam', slug: 'flink' },
-      { name: 'Kubernetes', slug: 'kubernetes' },
-      { name: 'Docker', slug: 'docker' },
-    ],
-  },
-  {
-    name: 'ML/AI & LLM Ops',
-    slug: 'ml-ai-llm-ops',
-    pain: "Struggling to move AI from a notebook to production?",
-    icon: BrainCircuit,
-    tech: [
-      { name: 'PyTorch', slug: 'pytorch' },
-      { name: 'Transformers', slug: 'transformers' },
-      { name: 'vLLM', slug: 'vllm' },
-      { name: 'Ray Serve', slug: 'ray' },
-      { name: 'LangChain', slug: 'langchain' },
-      { name: 'pgvector/Pinecone', slug: 'pgvector' },
-      { name: 'MLflow/W&B', slug: 'mlflow' },
-      { name: 'Ragas', slug: 'ragas' },
-    ],
-  },
-  {
-    name: 'Observability & SRE',
-    slug: 'platform-infra-sre',
-    pain: "Are you debugging in the dark when systems fail?",
-    icon: GanttChartSquare,
-    tech: [
-      { name: 'Prometheus', slug: 'prometheus' },
-      { name: 'Grafana', slug: 'grafana' },
-      { name: 'OpenTelemetry', slug: 'opentelemetry' },
-      { name: 'Jaeger/Loki', slug: 'jaeger' },
-      { name: 'Terraform/Pulumi', slug: 'terraform' },
-      { name: 'Istio/Linkerd', slug: 'istio' },
-    ],
-  },
-  {
-    name: 'Security & GRC',
-    slug: 'security-grc',
-    pain: "Is compliance an afterthought or built into your stack?",
-    icon: ShieldCheck,
-    tech: [
-      { name: 'Vault', slug: 'vault' },
-      { name: 'Okta/Auth0', slug: 'okta' },
-      { name: 'CodeQL/Snyk', slug: 'codeql' },
-      { name: 'Trivy', slug: 'trivy' },
-      { name: 'OPA', slug: 'opa' },
-      { name: 'SOC 2', slug: 'soc' },
-      { name: 'ISO 27001', slug: 'iso' },
-      { name: 'HIPAA', slug: 'hipaa' },
-    ],
-  },
-  {
-    name: 'Testing & Quality Engineering',
-    slug: 'qa-quality-engineering',
-    pain: "Does 'shipping fast' also mean 'shipping bugs'?",
-    icon: TestTube2,
-    tech: [
-      { name: 'Playwright/Cypress', slug: 'playwright' },
-      { name: 'Jest/Vitest', slug: 'jest' },
-      { name: 'PyTest/JUnit', slug: 'pytest' },
-      { name: 'k6/Locust', slug: 'k6' },
-      { name: 'Pact', slug: 'pact' },
-      { name: 'Gremlin/Litmus', slug: 'gremlin' },
-    ],
-  },
-  {
-    name: 'Cloud FinOps & BizTech',
-    slug: 'finops-biztech',
-    pain: "Are runaway cloud costs eating into your margins?",
-    icon: Wallet,
-    tech: [
-      { name: 'CloudZero/Infracost', slug: 'cloudzero' },
-      { name: 'AWS Cost Explorer', slug: 'aws' },
-      { name: 'Salesforce', slug: 'salesforce' },
-      { name: 'HubSpot', slug: 'hubspot' },
-      { name: 'Hightouch/Census', slug: 'hightouch' },
-    ],
-  }
-];
-
-export async function getAllTechSlugs(): Promise<string[]> {
-    return Object.keys(allTech);
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const role = roleData[params.slug];
+  const roleName = role ? role.name : 'Engineer';
+  return {
+    title: `Hire Nearshore ${roleName}`,
+    description: `Hire elite, pre-vetted LATAM engineers with expertise in ${roleName}. Our scientific evaluation de-risks hiring for critical tech roles.`,
+    keywords: `hire nearshore ${roleName}, latam ${roleName}, ${roleName} staff augmentation`,
+    alternates: {
+        canonical: `/hire/by-role/${params.slug}`
+    }
+  };
 }
+
+const SecurityContent = () => (
+    <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* AppSec Pillar */}
+        <div className="rounded-lg border bg-card p-6 shadow-inner">
+            <h3 className="text-xl font-bold flex items-center gap-3"><Bug className="h-6 w-6 text-primary" />Application Security</h3>
+            <p className="text-sm text-muted-foreground mt-2"><strong>Problem Solved:</strong> Preventing vulnerabilities in your own code before they reach production.</p>
+            <div className="mt-4 pt-4 border-t">
+                <h4 className="font-semibold text-foreground">Key Roles</h4>
+                <ul className="list-disc list-inside text-sm text-muted-foreground mt-2">
+                    <li>AppSec Engineer</li>
+                    <li>Security Champion (embedded in dev team)</li>
+                </ul>
+            </div>
+            <div className="mt-4 pt-4 border-t">
+                <h4 className="font-semibold text-foreground">Core Skills</h4>
+                <div className="flex flex-wrap gap-2 mt-2">
+                    {['Threat modeling', 'Secure SDLC', 'SAST/DAST', 'Secrets management'].map(skill => (
+                        <span key={skill} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium">{skill}</span>
+                    ))}
+                </div>
+            </div>
+            <div className="mt-4 pt-4 border-t">
+                <h4 className="font-semibold text-foreground">Key Technologies</h4>
+                 <div className="flex flex-wrap gap-2 mt-2">
+                    {['CodeQL', 'Snyk', 'SonarQube', 'OWASP ZAP', 'Vault', 'SOPS'].map(tech => (
+                        <span key={tech} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium">{tech}</span>
+                    ))}
+                </div>
+            </div>
+        </div>
+
+        {/* CloudSec / GRC Pillar */}
+        <div className="space-y-8">
+            <div className="rounded-lg border bg-card p-6 shadow-inner">
+                <h3 className="text-xl font-bold flex items-center gap-3"><CloudCog className="h-6 w-6 text-primary" />Cloud Security</h3>
+                <p className="text-sm text-muted-foreground mt-2"><strong>Problem Solved:</strong> Securing your cloud infrastructure and managing identities.</p>
+                <div className="mt-4 pt-4 border-t">
+                    <h4 className="font-semibold text-foreground">Key Roles</h4>
+                    <ul className="list-disc list-inside text-sm text-muted-foreground mt-2">
+                        <li>Cloud Security Engineer</li>
+                        <li>Identity & Access Management (IAM) Engineer</li>
+                    </ul>
+                </div>
+                <div className="mt-4 pt-4 border-t">
+                    <h4 className="font-semibold text-foreground">Key Technologies</h4>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                        {['Okta', 'Auth0', 'OIDC/SAML', 'CrowdStrike', 'AWS IAM'].map(tech => (
+                            <span key={tech} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+            <div className="rounded-lg border bg-card p-6 shadow-inner">
+                <h3 className="text-xl font-bold flex items-center gap-3"><Shield className="h-6 w-6 text-primary" />Governance, Risk & Compliance (GRC)</h3>
+                <p className="text-sm text-muted-foreground mt-2"><strong>Problem Solved:</strong> Passing audits and proving your security posture to enterprise customers.</p>
+                 <div className="mt-4 pt-4 border-t">
+                    <h4 className="font-semibold text-foreground">Key Roles</h4>
+                    <ul className="list-disc list-inside text-sm text-muted-foreground mt-2">
+                        <li>CISO / Head of Security</li>
+                        <li>GRC Lead</li>
+                        <li>Privacy Lead (DPO)</li>
+                    </ul>
+                </div>
+                <div className="mt-4 pt-4 border-t">
+                    <h4 className="font-semibold text-foreground">Key Frameworks</h4>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                        {['SOC 2', 'ISO 27001', 'HIPAA', 'PCI DSS', 'GDPR/CCPA'].map(tech => (
+                            <span key={tech} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
+
+export default function RoleCategoryPage({ params }: { params: { slug: string } }) {
+  const category = roleData[params.slug];
+  
+  if (!category) {
+    notFound();
+  }
+
+  const { name, intro, roles, skills, tech, evaluation, problems } = category;
+  const siteUrl = 'https://cto.teamstation.dev';
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Hire Nearshore ${name} Engineers`,
+    serviceType: 'IT Staff Augmentation',
+    provider: {
+      '@type': 'Organization',
+      name: 'TeamStation AI',
+    },
+    areaServed: 'LATAM',
+    description: intro,
+    keywords: `hire ${name}, nearshore ${name}, latam ${name}`,
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Hire',
+        item: `${siteUrl}/hire`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'By Role',
+        item: `${siteUrl}/hire/by-role`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: name,
+        item: `${siteUrl}/hire/by-role/${params.slug}`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <main className="container max-w-5xl py-12">
+        <div className="text-sm text-muted-foreground mb-8">
+          <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <Link href="/hire/by-role" className="hover:text-foreground">By Role</Link> / <span>{name}</span>
+        </div>
+        <header className="my-12">
+          <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{name}</h1>
+          <p className="mt-4 text-lg text-muted-foreground">{intro}</p>
+        </header>
+        
+        {name === 'Security & GRC' ? (
+          <SecurityContent />
+        ) : (
+          <div className="my-16">
+            {problems && problems.length > 0 && (
+              <div className="mb-16">
+                <h2 className="text-3xl font-bold text-center">Problems We Solve</h2>
+                <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">We provide experts who solve these specific, high-stakes business problems.</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                  {problems.map(problem => (
+                    <div key={problem.pain} className="rounded-lg border bg-card p-6 shadow-lg">
+                      <p className="font-semibold text-primary flex items-start gap-2"><AlertTriangle className="h-5 w-5 mt-1 shrink-0" />{problem.pain}</p>
+                      <div className="mt-4 border-t pt-4">
+                        <h4 className="font-semibold text-foreground text-sm flex items-center gap-2"><Key className="h-4 w-4"/>Relevant Roles & Skills</h4>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {problem.roles.map(r => <span key={r} className="text-xs font-medium bg-primary/20 text-primary px-2 py-1 rounded-full">{r}</span>)}
+                          {problem.skills.map(s => <span key={s} className="text-xs font-medium bg-background px-2 py-1 rounded-full">{s}</span>)}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="md:col-span-1">
+                  <h2 className="text-2xl font-bold border-b pb-2">Key Roles</h2>
+                  <ul className="mt-4 space-y-2 list-none p-0">
+                      {roles.map(role => <li key={role} className='text-muted-foreground'>{role}</li>)}
+                  </ul>
+              </div>
+              <div className="md:col-span-2">
+                  <h2 className="text-2xl font-bold border-b pb-2">Core Skills & Technologies</h2>
+                  <div className='mt-4'>
+                      <h3 className='font-semibold text-foreground'>Skills</h3>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                          {skills.map(skill => (
+                              <span key={skill} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium">
+                                  {skill.includes('IaC') ? <WithTooltip label="Infrastructure as Code: Managing infrastructure through code instead of manual processes."><span className="border-b border-dashed">IaC</span></WithTooltip> : 
+                                  skill.includes('SLO/SLI') ? <WithTooltip label="Service Level Objectives/Indicators: A framework for defining and measuring reliability."><span className="border-b border-dashed">SLO/SLI/error budgets</span></WithTooltip> :
+                                  skill.includes('ELT') ? <WithTooltip label="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation."><span className="border-b border-dashed">ELT</span></WithTooltip> :
+                                  skill.includes('retrieval') ? <WithTooltip label="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database."><span className="border-b border-dashed">retrieval design</span></WithTooltip> :
+                                  skill}
+                              </span>
+                          ))}
+                      </div>
+                  </div>
+                  <div className='mt-6'>
+                      <h3 className='font-semibold text-foreground'>Technologies & Libraries</h3>
+                      <div className="flex flex-wrap gap-2 mt-2 items-center">
+                          {tech.map((t, i) => (
+                              <Link href={`/hire/by-technology/${t.slug}`} key={t.slug} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium hover:bg-primary/30 transition-colors">
+                                  {t.name}
+                              </Link>
+                          ))}
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+
+        <div className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-center text-3xl font-bold">Our Evaluation Approach for {name}</h2>
+          <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
+              For roles in <strong>{name}</strong>, we understand that "good enough" is a recipe for disaster. Our <Link href="/research/axiom-cortex-scientific-report" className='text-primary hover:underline'>Axiom Cortex™ evaluation</Link> goes beyond simple coding tests to de-risk your hiring decision.
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-8 max-w-2xl mx-auto">
+              {evaluation.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 shrink-0 mt-1" />
+                      <span className='text-muted-foreground'>{point}</span>
+                  </li>
+              ))}
+          </ul>
+          <p className="mt-6 max-w-3xl mx-auto text-center text-muted-foreground">
+            This means you get a candidate who is not only technically proficient but is also a proven problem-solver, a strong collaborator, and ready to contribute from day one. You're not just hiring a resume; you're hiring a pre-validated, high-impact team member whose "mental shape" has been mapped to the specific demands of the role.
+          </p>
+        </div>
+
+        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+          <h2 className="text-2xl font-bold">Ready to Hire Elite {name} Talent?</h2>
+          <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+            Stop sifting through unqualified resumes. Let us provide you with a shortlist of 2-3 elite, pre-vetted candidates ready to make an impact.
+          </p>
+          <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a No-Obligation Strategy Call</Link>
+        </div>
+        <FurtherReading role={params.slug} />
+      </main>
+    </>
+  );
+}
+

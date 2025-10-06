@@ -963,7 +963,7 @@ export const allTech: AllTech = {
         }
     ], 
     evaluation: ['Event handling and emission', 'Room and namespace management', 'Scaling with Redis adapter', 'Authentication and middleware', 'Reconnection logic and reliability'] 
-  },
+  }
 };
 
 export const techCategories: TechCategory[] = [
