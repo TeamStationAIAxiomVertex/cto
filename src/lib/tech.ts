@@ -1,3 +1,4 @@
+
 import type { ReactNode } from 'react';
 
 import { Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane, AlertTriangle } from 'lucide-react';
@@ -1119,6 +1120,6 @@ export const techCategories: TechCategory[] = [
   }
 ];
 
-export async function getAllTechSlugs(): Promise<string[]> {
+export function getAllTechSlugs(): string[] {
     return Object.keys(allTech);
 }
