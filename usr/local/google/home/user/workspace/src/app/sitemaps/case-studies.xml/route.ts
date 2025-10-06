@@ -1,17 +1,17 @@
 
-// src/app/sitemaps/playbook.xml/route.ts
+// src/app/sitemaps/case-studies.xml/route.ts
 
 import { NextResponse } from 'next/server';
-import { generateSitemapXml } from '@/lib/sitemap-utils';
-import { collectPlaybookUrls } from '@/lib/sitemap-data'; 
+import { generateSitemapXml } from '../../../lib/sitemap-utils';
+import { collectCaseStudyUrls } from '../../../lib/sitemap-data'; 
 
 /**
- * Handles GET requests to /sitemaps/playbook.xml
- * Generates the sitemap for the high-volume Playbook content.
+ * Handles GET requests to /sitemaps/case-studies.xml
+ * Generates the sitemap for Case Studies and Research/Science Papers.
  */
 export async function GET() {
-  // 1. Collect all Playbook URLs using the specific gatherer function
-  const urls = await collectPlaybookUrls();
+  // 1. Collect all Case Study and Research URLs
+  const urls = await collectCaseStudyUrls();
 
   // 2. Generate the XML string using the utility
   const xmlContent = generateSitemapXml(urls);

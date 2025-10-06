@@ -3,7 +3,7 @@
 import { countries } from "./countries";
 import { roleCategories } from "./roles";
 import { techCategories } from "./tech";
-import { getAllCaseStudies }s from "./case-studies";
+import { getAllCaseStudies } from "./case-studies";
 import { comparisonPages } from "./comparisonPages";
 import { getAllPlaybookSlugs } from "./playbook";
 import { getAllResearchSlugs } from "./research";
@@ -81,14 +81,16 @@ export async function collectHireByCountryUrls(): Promise<UrlRec[]> {
 
 // HIRE BY ROLE
 export async function collectHireByRoleUrls(): Promise<UrlRec[]> {
-    return roleCategories.map(r => ({
-        url: `${baseUrl}/hire/by-role/${r.slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7'
+    const roleSlugs = await roleCategories.map(r => r.slug);
+    return roleSlugs.map(slug => ({
+        url: `${baseUrl}/hire/by-role/${slug}`, lastmod: now, changefreq: 'monthly', priority: '0.7'
     }));
 }
 
 // HIRE BY TECHNOLOGY
 export async function collectHireByTechnologyUrls(): Promise<UrlRec[]> {
-    return techCategories.flatMap(cat => cat.tech.map(t => ({
-        url: `${baseUrl}/hire/by-technology/${t.slug}`, lastmod: now, changefreq: 'monthly', priority: '0.6'
-    })));
+    const techSlugs = techCategories.flatMap(cat => cat.tech.map(t => t.slug));
+    return techSlugs.map(slug => ({
+        url: `${baseUrl}/hire/by-technology/${slug}`, lastmod: now, changefreq: 'monthly', priority: '0.6'
+    }));
 }

@@ -1,17 +1,17 @@
 
-// src/app/sitemaps/playbook.xml/route.ts
+// src/app/sitemaps/comparisons.xml/route.ts
 
 import { NextResponse } from 'next/server';
 import { generateSitemapXml } from '@/lib/sitemap-utils';
-import { collectPlaybookUrls } from '@/lib/sitemap-data'; 
+import { collectComparisonUrls } from '@/lib/sitemap-data'; 
 
 /**
- * Handles GET requests to /sitemaps/playbook.xml
- * Generates the sitemap for the high-volume Playbook content.
+ * Handles GET requests to /sitemaps/comparisons.xml
+ * Generates the sitemap for competitor comparison pages (Direct Interception Pillar).
  */
 export async function GET() {
-  // 1. Collect all Playbook URLs using the specific gatherer function
-  const urls = await collectPlaybookUrls();
+  // 1. Collect all Comparison URLs
+  const urls = await collectComparisonUrls();
 
   // 2. Generate the XML string using the utility
   const xmlContent = generateSitemapXml(urls);

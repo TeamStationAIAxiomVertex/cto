@@ -77,7 +77,7 @@ export const roleCategories = [
     slug: 'qa-quality-engineering',
     priority: 'P1/P2 Risk-Based',
     priorityTooltip: 'Priority depends on the product risk profile and release velocity needs.',
-    pain: "Does shipping fast mean shipping bugs?",
+    pain: "Does 'shipping fast' mean shipping bugs?",
     description: "Shift-left testing, e2e automation, contract testing, and chaos engineering. Your insurance policy for quality.",
     icon: TestTube2,
     proof: { href: '/case-studies/global-entertainment-platform', label: 'See how our QA squad stabilized global releases.'}
