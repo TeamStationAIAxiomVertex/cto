@@ -1,18 +1,16 @@
+
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import { assertComponent } from '@/lib/assertComponent';
 
-const ThemeToggle = dynamic(
-  () => import('../client/ThemeToggle').then(m => m.ThemeToggle ?? m.default),
-  { ssr: false }
-);
-const MobileNav = dynamic(
-  () => import('../client/MobileNav').then(m => m.MobileNav ?? m.default),
-  { ssr: false }
-);
-const DesktopNav = dynamic(
-  () => import('../client/DesktopNav').then(m => m.DesktopNav ?? m.default),
-  { ssr: false }
-);
+const ThemeToggle = dynamic(() => import('@/components/client/ThemeToggle'), { ssr: false });
+const MobileNav = dynamic(() => import('@/components/client/MobileNav'), { ssr: false });
+const DesktopNav = dynamic(() => import('@/components/client/DesktopNav'), { ssr: false });
+
+assertComponent('ThemeToggle', ThemeToggle);
+assertComponent('MobileNav', MobileNav);
+assertComponent('DesktopNav', DesktopNav);
+
 
 export function Header() {
   return (
