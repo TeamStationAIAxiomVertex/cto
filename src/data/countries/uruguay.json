@@ -41,7 +41,7 @@
       "title": "Security, Compliance & Managed Devices",
       "icon": "compliance",
       "body": {
-        "problem": "You want to access Uruguay's talent, but the operational overhead is a major blocker. How do you handle local labor laws, secure remote work, and manage devices without building a foreign subsidiary?",
+        "problem": "You want to access Uruguay's elite talent, but the operational overhead is a major blocker. How do you handle local labor laws, secure remote work, and manage devices without building a foreign subsidiary?",
         "stakes": "One unmanaged laptop is a compliance nightmare and a data breach waiting to happen. Failing to align with local labor laws creates significant legal and financial risk. Enterprise deals will stall if you can't provide audit-ready security evidence.",
         "prescription": "Outsource the entire operational stack to our single, accountable SLA. Our platform includes a compliant Employer of Record (EOR), SSO/SAML/SCIM for identity management, and MDM-managed laptops for every engineer. We enforce least-privilege access and provide auditable onboarding dossiers from day one. You get the talent; we handle the operational chaos.",
         "proof": "Our SOC-aligned onboarding process ensures every engineer starts with a secure, compliant workstation. This allows our clients to confidently pass enterprise security reviews and close deals faster, as detailed in our <a href='/trust' class='text-primary hover:underline'>Trust Center</a>. We absorb the risk, so you can focus on velocity.",
