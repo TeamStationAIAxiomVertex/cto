@@ -124,6 +124,36 @@ export const allTech: AllTech = {
     ],
     evaluation: ['App Router and advanced routing patterns', 'Server Components and data fetching strategies', 'Advanced caching (full route cache, data cache, on-demand revalidation)', 'Server Actions vs. Route Handlers', 'Performance optimization for Core Web Vitals']
   },
+  'angular': {
+    name: 'Angular',
+    category: 'Frontend & UI/UX',
+    categorySlug: 'frontend-web',
+    intro: "You're building a large-scale enterprise application, and you need the structure, opinionation, and long-term stability of a mature framework. You're here because you need a true Angular expert who can leverage its powerful dependency injection, build modular applications with NgModules, and tame the complexity of RxJS.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your component communication a complex web of `@Input` and `@Output`?",
+            problem: "As applications grow, passing data up and down the component tree becomes a maintenance nightmare.",
+            solution: "We find engineers who are experts in using RxJS and shared services to manage state and communicate between components in a clean, decoupled way.",
+            kpi: "Mastery of RxJS for state management"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your change detection slow and causing performance issues?",
+            problem: "A lack of understanding of Angular's change detection mechanism can lead to unnecessary checks and a slow UI.",
+            solution: "Our engineers are skilled in optimizing change detection, using the `OnPush` strategy and immutable data structures to build highly performant applications.",
+            kpi: "Expertise in change detection optimization"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your modules disorganized and your lazy loading ineffective?",
+            problem: "A poorly structured application with no clear module boundaries is hard to maintain and can't take full advantage of lazy loading.",
+            solution: "We vet for a deep understanding of Angular modules and the ability to design a modular architecture that enables effective code splitting and lazy loading.",
+            kpi: "Proficiency in modular architecture & lazy loading"
+        }
+    ],
+    evaluation: ['Deep understanding of RxJS and reactive patterns', 'Change detection strategies (OnPush)', 'Modular architecture with NgModules', 'Advanced dependency injection patterns', 'Angular CLI and build optimization']
+  },
   'vue': {
     name: 'Vue.js',
     category: 'Frontend & UI/UX',
@@ -544,10 +574,10 @@ export const allTech: AllTech = {
     ], 
     evaluation: ['Traffic management (e.g., canary deployments, retries)', 'Mutual TLS (mTLS) and security policy enforcement', 'Telemetry and observability features', 'Performance overhead analysis', 'Debugging and troubleshooting the data plane and control plane'] 
   },
-  'prometheus': { 
-    name: 'Prometheus', 
-    category: 'Observability & SRE', 
-    categorySlug: 'platform-infra-sre', 
+  'prometheus': {
+    name: 'Prometheus',
+    category: 'Observability & SRE',
+    categorySlug: 'platform-infra-sre',
     intro: "Your systems are failing, but your monitoring isn't telling you until it's too late. You need an engineer who is a master of Prometheus, someone who can write powerful PromQL queries, design effective alerting rules, and build a scalable, high-availability monitoring setup. You're here to build a proactive observability platform, not a reactive one.",
     pains: [
         {
@@ -571,13 +601,13 @@ export const allTech: AllTech = {
             solution: "We vet for engineers who can not only configure Prometheus but also instrument applications with client libraries to expose custom, business-relevant metrics.",
             kpi: "Proficiency in application instrumentation"
         }
-    ], 
-    evaluation: ['Advanced PromQL proficiency (aggregations, functions, joins)', 'Instrumentation best practices (application & infrastructure)', 'Alerting rule design and Alertmanager configuration', 'High-availability and long-term storage solutions (Thanos, Cortex)', 'Custom exporter development'] 
+    ],
+    evaluation: ['Advanced PromQL proficiency (aggregations, functions, joins)', 'Instrumentation best practices (application & infrastructure)', 'Alerting rule design and Alertmanager configuration', 'High-availability and long-term storage solutions (Thanos, Cortex)', 'Custom exporter development']
   },
-  'opentelemetry': { 
-    name: 'OpenTelemetry', 
-    category: 'Observability & SRE', 
-    categorySlug: 'platform-infra-sre', 
+  'opentelemetry': {
+    name: 'OpenTelemetry',
+    category: 'Observability & SRE',
+    categorySlug: 'platform-infra-sre',
     intro: "You have metrics, logs, and traces, but they're all in separate silos. You're here because you need a unified observability strategy. You need an engineer who is an expert in OpenTelemetry, someone who can implement instrumentation, configure the collector, and manage context propagation to provide a complete picture of your system's behavior.",
     pains: [
         {
@@ -601,13 +631,13 @@ export const allTech: AllTech = {
             solution: "We vet for experience with advanced OpenTelemetry Collector configurations, including sampling strategies and data processing to reduce noise and control costs.",
             kpi: "Experience with advanced collector configurations"
         }
-    ], 
-    evaluation: ['Auto vs. manual instrumentation trade-offs', 'Collector configuration (pipelines, processors, exporters)', 'Sampling strategies for cost and performance', 'Context propagation across services', 'Vendor-agnostic observability principles'] 
+    ],
+    evaluation: ['Auto vs. manual instrumentation trade-offs', 'Collector configuration (pipelines, processors, exporters)', 'Sampling strategies for cost and performance', 'Context propagation across services', 'Vendor-agnostic observability principles']
   },
-  'jaeger': { 
-    name: 'Jaeger/Loki', 
-    category: 'Observability & SRE', 
-    categorySlug: 'platform-infra-sre', 
+  'jaeger': {
+    name: 'Jaeger/Loki',
+    category: 'Observability & SRE',
+    categorySlug: 'platform-infra-sre',
     intro: "When a request fails, you're stuck searching through terabytes of unstructured logs. You need an engineer who can use tools like Jaeger for distributed tracing and Loki for log aggregation to quickly diagnose and solve problems in a complex microservices environment. You're here to find an expert who can turn your logs and traces into a powerful debugging tool.",
     pains: [
         {
@@ -631,13 +661,13 @@ export const allTech: AllTech = {
             solution: "We look for engineers who can configure systems to automatically inject trace IDs into logs, allowing you to jump from a slow span in Jaeger directly to the relevant logs in Loki with a single click.",
             kpi: "Expertise in trace-log correlation"
         }
-    ], 
-    evaluation: ['Analyzing distributed traces to find bottlenecks', 'Log correlation with traces and metrics', 'Performance bottleneck identification using traces', 'High-volume data ingestion and storage strategies', 'Querying and filtering in Loki (LogQL)'] 
+    ],
+    evaluation: ['Analyzing distributed traces to find bottlenecks', 'Log correlation with traces and metrics', 'Performance bottleneck identification using traces', 'High-volume data ingestion and storage strategies', 'Querying and filtering in Loki (LogQL)']
   },
-  'vault': { 
-    name: 'Vault', 
-    category: 'Security & GRC', 
-    categorySlug: 'security-grc', 
+  'vault': {
+    name: 'Vault',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
     intro: "Your secrets are scattered in environment variables, config files, and code. You're here because you need to centralize and secure your secrets management. You need an engineer who is an expert in HashiCorp Vault, someone who can implement dynamic secrets, manage authentication methods, and write fine-grained policies to enforce least-privilege access to all your sensitive data.",
     pains: [
         {
@@ -661,8 +691,8 @@ export const allTech: AllTech = {
             solution: "We vet for engineers with experience in set-ting up and managing a high-availability Vault cluster, ensuring your secrets management is as resilient as the rest of your infrastructure.",
             kpi: "Experience with high-availability Vault clusters"
         }
-    ], 
-    evaluation: ['Secrets engines usage (KV, Database, PKI)', 'Dynamic secrets for ephemeral credentials', 'Auth methods integration (Kubernetes, AWS, OIDC)', 'Policy and ACL management for least privilege', 'High-availability and operational best practices'] 
+    ],
+    evaluation: ['Secrets engines usage (KV, Database, PKI)', 'Dynamic secrets for ephemeral credentials', 'Auth methods integration (Kubernetes, AWS, OIDC)', 'Policy and ACL management for least privilege', 'High-availability and operational best practices']
   },
   'external-secrets': {
     name: 'External Secrets',
@@ -724,10 +754,10 @@ export const allTech: AllTech = {
     ],
     evaluation: ['SDK integration (client-side and server-side)', 'Targeting rules and progressive rollouts', 'Experimentation and A/B testing setup', 'The OpenFeature standard and vendor neutrality', 'Performance and reliability considerations']
   },
-  'okta': { 
-    name: 'Okta/Auth0', 
-    category: 'Security & GRC', 
-    categorySlug: 'security-grc', 
+  'okta': {
+    name: 'Okta/Auth0',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
     intro: "You're building your own authentication system, and it's becoming a complex and risky distraction from your core product. You need an identity expert. You're here to find an engineer who can leverage a platform like Okta or Auth0 to implement secure, scalable, and feature-rich identity management, including SSO, MFA, and user provisioning.",
     pains: [
         {
@@ -751,8 +781,8 @@ export const allTech: AllTech = {
             solution: "We vet for experience with SCIM (System for Cross-domain Identity Management) to automate user provisioning, ensuring access is granted and revoked instantly and correctly.",
             kpi: "Experience with automated user provisioning (SCIM)"
         }
-    ], 
-    evaluation: ['OIDC/OAuth2 flow implementation and best practices', 'User provisioning (SCIM) and directory integration', 'MFA policy enforcement and adaptive MFA', 'Custom actions/rules for extending functionality', 'API access management'] 
+    ],
+    evaluation: ['OIDC/OAuth2 flow implementation and best practices', 'User provisioning (SCIM) and directory integration', 'MFA policy enforcement and adaptive MFA', 'Custom actions/rules for extending functionality', 'API access management']
   },
   'oidc': {
     name: 'OIDC/SAML',
@@ -814,10 +844,10 @@ export const allTech: AllTech = {
     ],
     evaluation: ['Integration with KMS providers (AWS, GCP)', 'Key management and rotation strategies', 'Git integration and pre-commit hooks', 'CI/CD decryption workflows', 'User access control with GPG or age']
   },
-  'codeql': { 
-    name: 'CodeQL/Snyk', 
-    category: 'Security & GRC', 
-    categorySlug: 'security-grc', 
+  'codeql': {
+    name: 'CodeQL/Snyk',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
     intro: "Your security vulnerabilities are being discovered in production, not in the pull request. You're here because you need to 'shift left' and integrate security into your CI/CD pipeline. You need an AppSec engineer who can implement SAST/DAST tools like CodeQL, SonarQube, or Snyk to find and fix vulnerabilities before they ever reach production.",
     pains: [
         {
@@ -841,8 +871,8 @@ export const allTech: AllTech = {
             solution: "We vet for engineers who have experience tuning and customizing security tools to reduce false positives and create high-signal, actionable security alerts that developers will actually fix.",
             kpi: "Experience in false positive triage and tuning"
         }
-    ], 
-    evaluation: ['SAST/DAST/SCA integration into CI/CD pipelines', 'False positive triage and tuning', 'Custom rule creation for specific vulnerabilities', 'Dependency scanning and license compliance', 'Reporting and metrics for security posture'] 
+    ],
+    evaluation: ['SAST/DAST/SCA integration into CI/CD pipelines', 'False positive triage and tuning', 'Custom rule creation for specific vulnerabilities', 'Dependency scanning and license compliance', 'Reporting and metrics for security posture']
   },
   'crowdstrike': {
     name: 'CrowdStrike/Defender',
@@ -874,10 +904,10 @@ export const allTech: AllTech = {
     ],
     evaluation: ['Policy management and tuning', 'Threat hunting and incident investigation', 'API integration for automation and SOAR', 'Understanding of MITRE ATT&CK framework', 'Deployment and sensor management']
   },
-  'soc': { 
-    name: 'SOC 2', 
-    category: 'Security & GRC', 
-    categorySlug: 'security-grc', 
+  'soc': {
+    name: 'SOC 2',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
     intro: "You're trying to sell to enterprise customers, but you can't get past their security review because you don't have a SOC 2 report. You're here because you need a GRC or security engineer who understands how to translate SOC 2 controls into technical implementations, automate evidence collection, and manage the audit process. You need to build a foundation of trust with your customers.",
     pains: [
         {
@@ -901,13 +931,13 @@ export const allTech: AllTech = {
             solution: "We look for engineers who can translate policies into technical reality, such as implementing Infrastructure as Code to enforce configuration standards or using MDM to enforce endpoint policies.",
             kpi: "Translate policies into technical controls"
         }
-    ], 
-    evaluation: ['Mapping Trust Service Criteria to technical controls', 'Evidence collection automation', 'Experience with the audit process (readiness, audit)', 'Policy and procedure documentation', 'Working with auditors and internal stakeholders'] 
+    ],
+    evaluation: ['Mapping Trust Service Criteria to technical controls', 'Evidence collection automation', 'Experience with the audit process (readiness, audit)', 'Policy and procedure documentation', 'Working with auditors and internal stakeholders']
   },
-  'iso': { 
-    name: 'ISO 27001', 
-    category: 'Security & GRC', 
-    categorySlug: 'security-grc', 
+  'iso': {
+    name: 'ISO 27001',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
     intro: "You need to demonstrate a commitment to information security management to your enterprise customers and partners. You need an expert who understands the ISO 27001 framework and can help you build an Information Security Management System (ISMS) that meets international standards.",
     pains: [
         {
@@ -931,13 +961,13 @@ export const allTech: AllTech = {
             solution: "We look for experts who can help you build the comprehensive documentation required for an ISMS, including the scope, policies, risk assessment, and Statement of Applicability.",
             kpi: "Comprehensive, audit-ready security documentation"
         }
-    ], 
-    evaluation: ['Understanding of ISMS scope and context', 'Annex A controls and their implementation', 'Risk assessment and treatment methodologies', 'Internal audit and management review processes', 'Continuous improvement and certification lifecycle'] 
+    ],
+    evaluation: ['Understanding of ISMS scope and context', 'Annex A controls and their implementation', 'Risk assessment and treatment methodologies', 'Internal audit and management review processes', 'Continuous improvement and certification lifecycle']
   },
-  'hipaa': { 
-    name: 'HIPAA', 
-    category: 'Security & GRC', 
-    categorySlug: 'security-grc', 
+  'hipaa': {
+    name: 'HIPAA',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
     intro: "You're handling protected health information (PHI) and need to ensure your systems are HIPAA compliant. You need an expert who understands the Security Rule, Privacy Rule, and Breach Notification Rule, and can translate those requirements into technical and administrative controls.",
     pains: [
         {
@@ -961,13 +991,13 @@ export const allTech: AllTech = {
             solution: "We look for engineers who can implement and document the technical controls for encryption, access control, and audit logging required by HIPAA.",
             kpi: "Implementing the required technical safeguards"
         }
-    ], 
-    evaluation: ['Technical safeguards (access control, encryption)', 'Physical and administrative safeguards', 'Business Associate Agreements (BAAs)', 'Risk analysis and management', 'Breach notification procedures'] 
+    ],
+    evaluation: ['Technical safeguards (access control, encryption)', 'Physical and administrative safeguards', 'Business Associate Agreements (BAAs)', 'Risk analysis and management', 'Breach notification procedures']
   },
-  'grpc': { 
-    name: 'gRPC', 
-    category: 'APIs & Backend Services', 
-    categorySlug: 'backend-services', 
+  'grpc': {
+    name: 'gRPC',
+    category: 'APIs & Backend Services',
+    categorySlug: 'backend-services',
     intro: "You need high-performance, low-latency communication between your microservices. You need a gRPC expert who can design efficient Protobuf schemas, leverage different RPC types (unary, streaming), and handle metadata and error handling effectively.",
     pains: [
         {
@@ -991,13 +1021,13 @@ export const allTech: AllTech = {
             solution: "We look for engineers with experience in gRPC's bi-directional streaming capabilities, allowing you to build sophisticated real-time applications with ease.",
             kpi: "Building real-time apps with bi-directional streaming"
         }
-    ], 
-    evaluation: ['Protobuf schema design and best practices', 'Unary vs. streaming RPCs', 'Interceptors for middleware (logging, auth)', 'Error handling and status codes', 'Performance tuning and load balancing'] 
+    ],
+    evaluation: ['Protobuf schema design and best practices', 'Unary vs. streaming RPCs', 'Interceptors for middleware (logging, auth)', 'Error handling and status codes', 'Performance tuning and load balancing']
   },
-  'socketio': { 
-    name: 'Socket.IO', 
-    category: 'Mobile & Cross-Platform', 
-    categorySlug: 'mobile-cross-platform', 
+  'socketio': {
+    name: 'Socket.IO',
+    category: 'Mobile & Cross-Platform',
+    categorySlug: 'mobile-cross-platform',
     intro: "You need to build real-time features like chat, notifications, or live updates. You need a Socket.IO expert who understands how to manage connections, handle events, and scale a real-time communication server.",
     pains: [
         {
@@ -1021,8 +1051,8 @@ export const allTech: AllTech = {
             solution: "We look for engineers with experience in scaling Socket.IO horizontally using a Redis adapter, allowing you to handle a massive number of concurrent connections.",
             kpi: "Horizontal scaling for massive concurrency"
         }
-    ], 
-    evaluation: ['Event handling and emission', 'Room and namespace management', 'Scaling with Redis adapter', 'Authentication and middleware', 'Reconnection logic and reliability'] 
+    ],
+    evaluation: ['Event handling and emission', 'Room and namespace management', 'Scaling with Redis adapter', 'Authentication and middleware', 'Reconnection logic and reliability']
   },
   'dbt': {
     name: 'dbt',
@@ -1030,31 +1060,31 @@ export const allTech: AllTech = {
     categorySlug: 'data-engineering-analytics',
     intro: "Your data warehouse is a swamp of untrusted, undocumented tables. You need an analytics engineer who can use dbt to transform your raw data into tested, documented, and reliable data products that the entire business can trust.",
     pains: [
-      {
-        icon: AlertTriangle,
-        pain: "Does anyone trust the data in your dashboards?",
-        problem: "When data isn't tested, documented, and version-controlled, business users lose trust, and decisions are made on gut feel instead of data.",
-        solution: "We find experts who can use dbt to implement a software engineering workflow for your data models, including version control, automated testing, and documentation.",
-        kpi: "Build trusted, reliable data products"
-      },
-      {
-        icon: AlertTriangle,
-        pain: "Are your data models slow and expensive to run?",
-        problem: "Poorly written SQL and inefficient materialization strategies can lead to long-running queries and a massive data warehouse bill.",
-        solution: "We vet for a deep understanding of dbt materializations (views, tables, incremental) and SQL performance tuning to build efficient and cost-effective data pipelines.",
-        kpi: "Expertise in dbt performance tuning"
-      },
-      {
-        icon: AlertTriangle,
-        pain: "Is your data logic a tangled mess of undocumented scripts?",
-        problem: "Complex business logic hidden in a series of SQL scripts is impossible to maintain, debug, or evolve.",
-        solution: "Our engineers use dbt's modular structure and macros to create clean, reusable, and well-documented data models that are easy for the entire team to understand.",
-        kpi: "Clean, modular, and reusable data models"
-      }
+        {
+            icon: AlertTriangle,
+            pain: "Does anyone trust the data in your dashboards?",
+            problem: "When data isn't tested, documented, and version-controlled, business users lose trust, and decisions are made on gut feel instead of data.",
+            solution: "We find experts who can use dbt to implement a software engineering workflow for your data models, including version control, automated testing, and documentation.",
+            kpi: "Build trusted, reliable data products"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your data models slow and expensive to run?",
+            problem: "Poorly written SQL and inefficient materialization strategies can lead to long-running queries and a massive data warehouse bill.",
+            solution: "We vet for a deep understanding of dbt materializations (views, tables, incremental) and SQL performance tuning to build efficient and cost-effective data pipelines.",
+            kpi: "Expertise in dbt performance tuning"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your data logic a tangled mess of undocumented scripts?",
+            problem: "Complex business logic hidden in a series of SQL scripts is impossible to maintain, debug, or evolve.",
+            solution: "Our engineers use dbt's modular structure and macros to create clean, reusable, and well-documented data models that are easy for the entire team to understand.",
+            kpi: "Clean, modular, and reusable data models"
+        }
     ],
     evaluation: ['Data modeling best practices (e.g., Kimball)', 'Advanced dbt features (macros, packages, hooks)', 'dbt Cloud vs. dbt Core trade-offs', 'SQL performance tuning', 'Testing and data quality frameworks']
   },
-    'snowflake': {
+  'snowflake': {
     name: 'Snowflake',
     category: 'Data Modeling & Databases',
     categorySlug: 'data-engineering-analytics',
