@@ -77,7 +77,7 @@ export default function AboutPage() {
             <div>
                 <h4 className="font-bold text-foreground">Listen to the Founders</h4>
                 <p className="text-sm text-muted-foreground m-0">Hear directly from our leadership about the vision and science behind TeamStation AI on our podcast.</p>
-                <Link href="/research/hub#podcast" className="text-sm font-semibold text-primary hover:underline mt-2 inline-block">Listen Now &rarr;</Link>
+                <Link href="https://open.spotify.com/episode/7EwovXvoVFIGLJDwqTZFUE" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-primary hover:underline mt-2 inline-block">Listen Now &rarr;</Link>
             </div>
         </div>
       </div>

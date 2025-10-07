@@ -43,7 +43,7 @@ const researchLinks: LinkItem[] = [
   { href: '/research/framework-for-measuring-capacity', label: 'Framework for Measuring Engineering Capacity' },
   { href: '/research/performance-metrics-in-ai-age', label: 'Performance Metrics in the AI Age' },
   {
-    href: '/research/hub#podcast',
+    href: 'https://open.spotify.com/episode/7EwovXvoVFIGLJDwqTZFUE',
     label: (
       <>
         TeamStation Podcast <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
