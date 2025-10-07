@@ -38,9 +38,9 @@ export interface AllTech {
 }
 
 export const allTech: AllTech = {
-  'react': {
-    name: 'React/TypeScript',
-    category: 'Frontend & UI/UX',
+  'react': { 
+    name: 'React/TypeScript', 
+    category: 'Frontend & UI/UX', 
     categorySlug: 'frontend-web',
     seo_title: 'Hire React/TypeScript Developers | Senior Frontend Talent',
     meta_description: 'Build performant, scalable UIs. Hire elite remote React & TypeScript talent vetted for architectural skill, not just syntax. Schedule a call today.',
@@ -368,5 +368,3 @@ export const techCategories: TechCategory[] = [
 export function getAllTechSlugs(): string[] {
     return Object.keys(allTech);
 }
-
-    

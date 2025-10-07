@@ -1,6 +1,6 @@
 
 // src/lib/sitemap-data.ts
-import { getAllPlaybookSlugs } from "./playbook";
+import { getPlaybookSlugs } from "./playbook";
 import { getAllResearchSlugs } from "./research";
 import { getAllRoleSlugs } from "./roles";
 import { getAllTechSlugs } from "./tech";
@@ -12,7 +12,7 @@ export type { SitemapUrl } from "./sitemap-utils";
 
 const BASE_URL = "https://cto.teamstation.dev";
 
-// 1. Core Pages (Static) - Now includes all essential static pages as per the plan.
+// 1. Core Pages (Static)
 export async function collectCoreUrls(): Promise<SitemapUrl[]> {
   const urls: SitemapUrl[] = [
     { loc: `${BASE_URL}/`, lastmod: new Date().toISOString(), changefreq: "weekly", priority: 1.0 },
@@ -87,30 +87,29 @@ export async function collectComparisonUrls(): Promise<SitemapUrl[]> {
   );
 }
 
-// 4. Programmatic Hire-By-Country URLs (Dynamic) - CORRECTED
+// 4. Programmatic Hire-By-Country URLs (Dynamic)
 export async function collectHireByCountryUrls(): Promise<SitemapUrl[]> {
-  const allTechSlugs = await getTechSlugs();
-  return countries.flatMap((country) => {
-    const base: SitemapUrl = {
-      loc: `${BASE_URL}/hire/by-country/${country.slug}`,
-      lastmod: new Date().toISOString(),
-      changefreq: 'monthly',
-      priority: 0.8
-    };
-    // This was the missing piece: generating nested tech pages for each country.
-    const techPages: SitemapUrl[] = allTechSlugs.map(techSlug => ({
-        loc: `${BASE_URL}/hire/by-country/${country.slug}/${techSlug}`,
+    const allTechSlugs = await getAllTechSlugs();
+    return countries.flatMap((country) => {
+        const base: SitemapUrl = {
+        loc: `${BASE_URL}/hire/by-country/${country.slug}`,
         lastmod: new Date().toISOString(),
         changefreq: 'monthly',
-        priority: 0.7
-    }));
-    return [base, ...techPages];
-  });
+        priority: 0.8
+        };
+        const techPages: SitemapUrl[] = allTechSlugs.map(techSlug => ({
+            loc: `${BASE_URL}/hire/by-country/${country.slug}/${techSlug}`,
+            lastmod: new Date().toISOString(),
+            changefreq: 'monthly',
+            priority: 0.7
+        }));
+        return [base, ...techPages];
+    });
 }
 
-// 5. Programmatic Hire-By-Role URLs (Dynamic) - CORRECTED
+// 5. Programmatic Hire-By-Role URLs (Dynamic)
 export async function collectHireByRoleUrls(): Promise<SitemapUrl[]> {
-  const slugs = getAllRoleSlugs(); // Uses the correct function from roles.ts
+  const slugs = getAllRoleSlugs();
   return slugs.map(
     (slug): SitemapUrl => ({
       loc: `${BASE_URL}/hire/by-role/${slug}`,
@@ -121,9 +120,9 @@ export async function collectHireByRoleUrls(): Promise<SitemapUrl[]> {
   );
 }
 
-// 6. Programmatic Hire-By-Technology URLs (Dynamic) - CORRECTED
+// 6. Programmatic Hire-By-Technology URLs (Dynamic)
 export async function collectHireByTechnologyUrls(): Promise<SitemapUrl[]> {
-  const slugs = await getTechSlugs(); // Uses the correct function from tech.ts
+  const slugs = await getAllTechSlugs();
   return slugs.map((slug) => ({
     loc: `${BASE_URL}/hire/by-technology/${slug}`,
     lastmod: new Date().toISOString(),

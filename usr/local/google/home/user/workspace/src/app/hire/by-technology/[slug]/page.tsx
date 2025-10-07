@@ -1,16 +1,13 @@
+
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@radix-ui/react-tooltip";
 import { notFound } from "next/navigation";
 import { allTech, getAllTechSlugs } from "@/lib/tech";
 import { JsonLd } from "@/components/seo/JsonLd";
 import FurtherReading from "@/components/seo/FurtherReading";
+import { WithTooltip } from "@/components/ui/tooltip";
+
 
 export const revalidate = 3600;
 
@@ -28,39 +25,26 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const techName = allTech[params.slug as TechKeys]?.name || "Technology";
+  const tech = allTech[params.slug as TechKeys];
+  if (!tech) {
+    return { title: 'Technology Not Found' };
+  }
   const url = `https://cto.teamstation.dev/hire/by-technology/${params.slug}`;
   return {
-    title: `Hire Nearshore ${techName} Developers | TeamStation AI`,
-    description: `Elite, pre-vetted ${techName} engineers in LATAM. Axiom Cortex™ vetting, EOR compliance, and audit-ready ops. Book a strategy call today.`,
+    title: tech.seo_title,
+    description: tech.meta_description,
     alternates: { canonical: url },
     openGraph: {
-      title: `Hire Nearshore ${techName} Developers`,
-      description: `Elite, pre-vetted ${techName} engineers in LATAM. Evidence, not resumes.`,
+      title: tech.seo_title,
+      description: tech.meta_description,
       url,
       type: "article",
       siteName: "TeamStation AI",
-      images: [
-        {
-          url: "https://teamstation.dev/og-default.png",
-          width: 1200,
-          height: 630,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `Hire Nearshore ${techName} Developers`,
-      description: `Elite, pre-vetted ${techName} engineers in LATAM.`,
     },
   };
 }
 
-export default async function TechPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function TechPage({ params }: { params: { slug: string } }) {
   const tech = allTech[params.slug as TechKeys];
   const siteUrl = "https://cto.teamstation.dev";
 
@@ -197,24 +181,20 @@ export default async function TechPage({
           </h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
             For roles requiring deep {tech.name} expertise, our
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href="/technical-interview-evaluation"
-                    className="text-primary hover:underline"
-                  >
-                    {" "}
-                    Axiom Cortex™ evaluation{" "}
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>
-                    Our proprietary Cognitive AI engine for talent evaluation.
-                  </p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+            <WithTooltip
+              label={
+                <span>
+                  Our proprietary Cognitive AI engine for talent evaluation.
+                </span>
+              }
+            >
+              <Link
+                href="/technical-interview-evaluation"
+                className="text-primary hover:underline"
+              >
+                Axiom Cortex™ evaluation
+              </Link>
+            </WithTooltip>{" "}
             ensures objective vetting beyond resumes. We assess candidates on:
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-8 max-w-2xl mx-auto">
@@ -235,6 +215,13 @@ export default async function TechPage({
             </Link>
           </div>
         </div>
+        
+        {tech.technical_analysis && (
+            <div className="prose dark:prose-invert max-w-none my-16">
+                <h3>Technical Analysis</h3>
+                <p>{tech.technical_analysis}</p>
+            </div>
+        )}
 
         <div className="text-center rounded-lg bg-primary/10 p-8">
           <h2 className="text-2xl font-bold">
