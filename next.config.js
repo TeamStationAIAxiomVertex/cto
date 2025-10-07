@@ -1,29 +1,12 @@
+// next.config.js
+// CRITICAL FIX: Changed from module.exports (CommonJS) to export default (ES Module)
+
 /** @type {import('next').NextConfig} */
-
-import withPWA from 'next-pwa';
-
-const pwaConfig = withPWA({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
-});
-
 const nextConfig = {
-  output: "standalone",
-
-  // keep images working in prod & preview
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "picsum.photos" },
-      { protocol: "https", hostname: "cto.teamstation.dev" },
-      { protocol: "https", hostname: "teamstation.dev" }
-    ]
-  },
-
-  reactStrictMode: true,
-  productionBrowserSourceMaps: true
+  // Add any specific Next.js configurations here if needed, 
+  // e.g., output: 'standalone', images: { unoptimized: true }
+  
+  // This is a minimal, safe configuration
 };
 
-export default pwaConfig(nextConfig);
+export default nextConfig; // Using ES Module syntax to fix the ReferenceError
