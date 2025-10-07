@@ -94,6 +94,36 @@ export const allTech: AllTech = {
     ],
     evaluation: ['Advanced types (generics, conditional types)', 'Compiler configuration (tsconfig.json)', 'Declaration files and module augmentation', 'Type inference and narrowing', 'Integration with modern build tools'] 
   },
+  'nextjs': {
+    name: 'Next.js',
+    category: 'Frontend & UI/UX',
+    categorySlug: 'frontend-web',
+    intro: "You're building more than a website; you're building a web application. You need engineers who are not just React developers but true Next.js experts who can master the full-stack capabilities, from the App Router and server components to advanced caching and API routes.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your app slow and your client-side bundle massive?",
+            problem: "Incorrect use of 'use client' and a poor understanding of Server Components can lead to a sluggish user experience and poor Core Web Vitals.",
+            solution: "We vet for a deep understanding of the App Router and the Server/Client Component mental model. Our engineers build applications that are server-first by default, ensuring a fast, lightweight experience.",
+            kpi: "Mastery of Server Components & performance"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling with Next.js caching and data revalidation?",
+            problem: "The new caching model in Next.js is powerful but complex. Incorrect implementation leads to stale data or, worse, constant cache misses that hammer your backend.",
+            solution: "Our evaluation includes scenarios on advanced data fetching, cache tagging, and on-demand revalidation to ensure your application is both fast and fresh.",
+            kpi: "Expertise in advanced caching & revalidation"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you unsure when to use Route Handlers vs. Server Actions?",
+            problem: "Choosing the wrong tool for data mutations can lead to complex, insecure code.",
+            solution: "We look for engineers who understand the trade-offs and can use Server Actions for secure, RPC-style mutations and Route Handlers for building standard RESTful APIs.",
+            kpi: "Proficiency in Server Actions & API Routes"
+        }
+    ],
+    evaluation: ['App Router and advanced routing patterns', 'Server Components and data fetching strategies', 'Advanced caching (full route cache, data cache, on-demand revalidation)', 'Server Actions vs. Route Handlers', 'Performance optimization for Core Web Vitals']
+  },
   'vue': {
     name: 'Vue.js',
     category: 'Frontend & UI/UX',
@@ -1183,3 +1213,5 @@ export const techCategories: TechCategory[] = [
 export function getAllTechSlugs(): string[] {
     return Object.keys(allTech);
 }
+
+    
