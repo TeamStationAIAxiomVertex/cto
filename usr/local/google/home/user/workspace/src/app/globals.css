@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 80% 5%;
+    --foreground: 210 40% 90%;
+    --muted: 215 20% 75%;
+    --muted-foreground: 215 20% 75%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+    --border: 215 28% 25%;
+    --input: 215 28% 25%;
+    --primary: 229 100% 75%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 215 28% 25%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 215 28% 25%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 229 100% 75%;
+    --chart-1: 229 100% 75%;
+    --chart-2: 160 60% 45%;
+    --radius: 0.5rem;
+  }
+
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 15%;
+    --muted: 215 20% 45%;
+    --muted-foreground: 215 20% 45%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 15%;
+    --border: 214 32% 91.4%;
+    --input: 214 32% 91.4%;
+    --primary: 229 80% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 229 80% 55%;
+    --chart-1: 229 80% 55%;
+    --chart-2: 20 95% 55%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground leading-relaxed;
+    font-family: var(--font-poppins);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  .bg-card {
+    background: hsl(var(--card));
+  }
+
+  .dark .bg-card {
+    background: linear-gradient(to bottom right, hsl(222 47% 15%), hsl(222 47% 8%));
+  }
+
+  .light .bg-card {
+    background: hsl(var(--card));
+  }
+}
+
+@layer components {
+  .cta-button {
+    @apply inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  }
+  .a11y-tap-target { 
+      min-height: 48px; 
+      padding: 8px 12px; 
+      display: inline-flex; 
+      align-items: center; 
+    }
+}
