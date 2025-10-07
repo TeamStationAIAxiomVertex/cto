@@ -2,7 +2,6 @@
   "apphosting": {
     "targets": {
       "web": {
-        "runtime": { "node": "20.19.1" },
         "buildCommand": "npm run build",
         "runCommand": "npm run start",
         "region": "us-central1",
