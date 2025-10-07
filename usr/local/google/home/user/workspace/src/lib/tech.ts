@@ -124,6 +124,36 @@ export const allTech: AllTech = {
     ],
     evaluation: ['App Router and advanced routing patterns', 'Server Components and data fetching strategies', 'Advanced caching (full route cache, data cache, on-demand revalidation)', 'Server Actions vs. Route Handlers', 'Performance optimization for Core Web Vitals']
   },
+  'angular': {
+    name: 'Angular',
+    category: 'Frontend & UI/UX',
+    categorySlug: 'frontend-web',
+    intro: "You're building a large-scale enterprise application, and you need the structure, opinionation, and long-term stability of a mature framework. You're here because you need a true Angular expert who can leverage its powerful dependency injection, build modular applications with NgModules, and tame the complexity of RxJS.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your component communication a complex web of `@Input` and `@Output`?",
+            problem: "As applications grow, passing data up and down the component tree becomes a maintenance nightmare.",
+            solution: "We find engineers who are experts in using RxJS and shared services to manage state and communicate between components in a clean, decoupled way.",
+            kpi: "Mastery of RxJS for state management"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your change detection slow and causing performance issues?",
+            problem: "A lack of understanding of Angular's change detection mechanism can lead to unnecessary checks and a slow UI.",
+            solution: "Our engineers are skilled in optimizing change detection, using the `OnPush` strategy and immutable data structures to build highly performant applications.",
+            kpi: "Expertise in change detection optimization"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your modules disorganized and your lazy loading ineffective?",
+            problem: "A poorly structured application with no clear module boundaries is hard to maintain and can't take full advantage of lazy loading.",
+            solution: "We vet for a deep understanding of Angular modules and the ability to design a modular architecture that enables effective code splitting and lazy loading.",
+            kpi: "Proficiency in modular architecture & lazy loading"
+        }
+    ],
+    evaluation: ['Deep understanding of RxJS and reactive patterns', 'Change detection strategies (OnPush)', 'Modular architecture with NgModules', 'Advanced dependency injection patterns', 'Angular CLI and build optimization']
+  },
   'vue': {
     name: 'Vue.js',
     category: 'Frontend & UI/UX',
@@ -1054,7 +1084,7 @@ export const allTech: AllTech = {
     ],
     evaluation: ['Data modeling best practices (e.g., Kimball)', 'Advanced dbt features (macros, packages, hooks)', 'dbt Cloud vs. dbt Core trade-offs', 'SQL performance tuning', 'Testing and data quality frameworks']
   },
-  'snowflake': {
+    'snowflake': {
     name: 'Snowflake',
     category: 'Data Modeling & Databases',
     categorySlug: 'data-engineering-analytics',
