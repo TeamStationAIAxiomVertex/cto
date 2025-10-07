@@ -207,6 +207,142 @@ export const allTech: AllTech = {
     evaluation: ['Composition API and composables', 'State management (Pinia/Vuex)', 'Nuxt SSR/ISR and routing', 'Performance profiling and code-splitting'],
     technical_analysis: "Our technical evaluation for Vue.js developers is designed to identify true experts in the modern Vue 3 ecosystem. We move beyond basic component creation to assess a candidate's architectural thinking. A key focus is their mastery of the Composition API; we provide scenarios that require them to create complex, reusable composables that encapsulate business logic and state, and we evaluate the cleanliness and testability of their solutions. State management is another critical area. We test their ability to design a scalable Pinia store, including the use of modules, getters, and actions, and their understanding of how to manage both local and global state effectively. For Nuxt.js expertise, we present a complex application requirement and ask them to architect the Nuxt project, explaining their choices for rendering modes (SSR, ISR, CSR), directory structure, and data fetching strategies (`useFetch`, `useAsyncData`). We also assess their ability to debug performance issues in a Nuxt application, using tools to identify and fix bottlenecks related to server rendering or client-side hydration. Finally, we evaluate their understanding of Vue's reactivity system at a deep level. We ask them to explain the difference between `ref` and `reactive`, the nuances of `watch` vs. `watchEffect`, and how to avoid common performance pitfalls. This ensures we hire engineers who can not only build features but can also build them in a way that is performant, scalable, and a pleasure to maintain.",
     interlink_slugs: ['typescript', 'nextjs', 'node']
+  },
+   'prometheus': {
+    name: 'Prometheus',
+    category: 'Platform / Infra / SRE',
+    categorySlug: 'platform-infra-sre',
+    seo_title: 'Hire Prometheus Engineers | Senior Monitoring Talent',
+    meta_description: 'Stop alert fatigue. Hire pre-vetted senior remote Prometheus talent to implement effective, scalable monitoring. Start fast, scale reliably.',
+    intro: "You're tired of fragmented metrics and alert fatigue. You need an engineer who is a true Prometheus expert, not just a junior who can follow a setup guide. You require talent who can establish centralized, queryable metrics that deliver actionable insights, not just noise, and who can do so in a cost-effective, multi-tenant environment. Our vetting process is specifically designed to isolate senior SREs who understand the architectural trade-offs of a time-series database (TSDB) and the critical importance of Service Level Objectives (SLOs) over simple host monitoring. We look for demonstrated expertise in PromQL, Alertmanager configuration, and long-term storage strategies using solutions like Thanos or Cortex. By hiring a Prometheus expert from us, you solve two core problems: you eliminate the 'blind spots' in your production environment, and you gain the discipline required to maintain a performant, scalable observability platform that scales with your infrastructure. This is the difference between constant firefighting and proactive platform management, ensuring your production systems are stable and your team's on-call burden is minimized.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is alert fatigue blinding you to real incidents?",
+            problem: "Most monitoring setups rely on generic CPU/memory alerts, resulting in endless false positives that desensitize on-call teams. This lack of signal-to-noise means that when a true, user-impacting incident occurs, the team is slow to react, leading to increased mean time to recovery (MTTR) and customer churn. It is a fundamental failure to apply the SRE principle of setting alerts based on user impact.",
+            solution: "Our experts define precise, signal-based alert rules using advanced PromQL and establish Service Level Indicators (SLIs) and Objectives (SLOs). They configure Alertmanager to use sophisticated grouping, silence, and routing strategies based on service criticality. This ensures your team only gets paged for true user-facing issues, restoring trust in the alerting system and drastically reducing MTTR.",
+            kpi: "30% reduction in monitoring-related service interruptions"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to store and query metrics beyond 30 days?",
+            problem: "Prometheus's native local storage is fantastic for immediate querying but is neither scalable nor cost-effective for long-term retention required for compliance, auditing, or year-over-year trending. Attempting to manage massive local Prometheus instances leads to maintenance nightmares, data loss risks, and unacceptable operational overhead, making historical analysis impossible.",
+            solution: "We vet for expertise in implementing and operating highly available, scalable long-term storage solutions like **Thanos** or **Cortex**. Our engineers can design a robust architecture that uses object storage (like S3) for cost-effective retention, while still allowing fast, unified querying across all Prometheus instances via a global query view. This allows for reliable long-term trending without sacrificing query performance.",
+            kpi: "Achieve 99.99% data retention compliance with 40% reduced storage costs"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is onboarding new microservices a manual, error-prone process?",
+            problem: "Without an automated service discovery mechanism, adding a new service or container to your monitoring setup requires manual configuration, which introduces human error, causes configuration drift, and slows down development velocity. In a dynamic Kubernetes or cloud environment, this lack of automation is a major operational liability that directly inhibits scaling.",
+            solution: "We look for engineers who are masters of Prometheus service discovery, particularly within Kubernetes using its service monitor and pod scraping configurations. They can implement automatic instrumentation and discovery mechanisms using solutions like OpenTelemetry, ensuring every new service is monitored correctly and instantly, allowing your developers to focus purely on shipping code.",
+            kpi: "Reduce service-to-monitoring setup time from hours to minutes"
+        }
+    ],
+    evaluation: ['PromQL mastery for complex queries', 'AlertManager configuration and templating', 'Thanos/Cortex for long-term storage', 'SLO definition and error budget calculation', 'Kubernetes and Consul Service Discovery'],
+    technical_analysis: "The technical analysis for a senior Prometheus engineer moves beyond basic installation and configuration. We assess a candidate's architectural ability to deploy Prometheus for resilience and scale. A critical area of evaluation is their mastery of **PromQL (Prometheus Query Language)**; we present complex scenarios requiring aggregation, rate calculation, and join-like operations (using `group_left`/`group_right`) to derive meaningful SLIs like request latency, error rates, and saturation, directly mapping these to business metrics. They must demonstrate an understanding of **High Availability (HA)**, including deploying multiple Prometheus replicas with consistent configuration and using tools like Prometheus Operator for lifecycle management within Kubernetes. The **long-term storage challenge** is non-negotiable: a candidate must articulate the trade-offs between Thanos (simpler for cloud-native) and Cortex (more complex, multi-tenant-focused), and demonstrate practical knowledge of configuring sidecar and receiver components to ship data reliably to object storage. Furthermore, we test their ability to define and calculate an **Error Budget**, explaining how violating the SLO translates into consequences for the engineering team. Finally, an expert must integrate Prometheus with the wider observability ecosystem, specifically demonstrating how to pass tracing context (via OpenTelemetry) into their alert definitions, bridging the gap between metrics and deep-dive root cause analysis. This holistic view of observability is what defines a senior SRE and ensures that your monitoring platform is robust, scalable, and cost-effective.",
+    interlink_slugs: ['opentelemetry', 'kubernetes', 'jaeger']
+  },
+  'opentelemetry': {
+    name: 'OpenTelemetry',
+    category: 'Platform / Infra / SRE',
+    categorySlug: 'platform-infra-sre',
+    seo_title: 'Hire OpenTelemetry Engineers | Senior SRE Talent',
+    meta_description: 'Gain unified observability. Hire senior remote OpenTelemetry experts to consolidate metrics, logs, and traces. Guaranteed performance. Contact us.',
+    intro: "You're drowning in disparate data sources: Prometheus for metrics, Jaeger for traces, and a separate log solution. You need true unified observability, and that requires an engineer who has mastered the OpenTelemetry (OTel) standard, not just heard of it. Our vetting process specifically targets senior SREs and Platform Engineers who can implement the OTel Collector, auto-instrument complex applications, and standardize the three pillars of observability across a massive microservice architecture. They understand that OTel is not just a library; it's a foundational shift in how you build and debug distributed systems. By bringing in this expertise, you don't just consolidate tools; you dramatically reduce your Mean Time to Resolution (MTTR) by allowing a single view of performance that correlates user-facing symptoms directly to root causes deep within your stack. This level of discipline ensures your platform is ready for the next decade of scale, eliminating vendor lock-in and streamlining developer workflow.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is debugging a disaster due to missing data correlation?",
+            problem: "Most engineering teams have isolated metrics, logs, and traces. When an incident occurs, engineers waste hours manually correlating timestamps and request IDs across three different dashboards. This fractured view leads to slow resolution times and prolonged customer outages, directly impacting your business's bottom line and damaging customer trust.",
+            solution: "Our experts implement OpenTelemetry to ensure every piece of data—metrics, logs, and traces—shares a common context. They master context propagation across service boundaries, enabling your team to jump from a Prometheus alert (metric) directly to the associated trace in Jaeger and the corresponding logs, slashing MTTR and reducing on-call stress.",
+            kpi: "Reduce Mean Time to Resolution (MTTR) by 50%"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you locked into expensive vendor-specific monitoring solutions?",
+            problem: "Proprietary instrumentation libraries force you to pay high licensing fees and make switching vendors prohibitively expensive and time-consuming. This vendor lock-in prevents you from optimizing costs by sending data to the most appropriate backend (e.g., cheaper log storage, specialized trace analysis tool).",
+            solution: "We find engineers who are experts in the **OpenTelemetry Collector**, using it as a neutral data pipeline. They implement vendor-agnostic OTLP (OpenTelemetry Protocol) at the application layer, allowing you to sample, filter, and export data to any backend—Datadog, Grafana Cloud, or a custom stack—optimizing your cost and preventing lock-in.",
+            kpi: "Achieve 100% vendor independence and 20% reduction in monitoring costs"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is manual service instrumentation taking too long and introducing bugs?",
+            problem: "Requiring every developer to manually add OTel code to every method in every service is tedious, inconsistent, and highly prone to error. This slow, high-friction process stalls adoption and leaves new or legacy services unmonitored, creating blind spots in your production environment.",
+            solution: "Our senior talent is skilled in **automatic instrumentation**. They can deploy language-specific agents and the OTel Collector to automatically capture spans, metrics, and logs with zero code changes in most services. For complex or legacy systems, they establish clear standards for manual instrumentation that are easily auditable, ensuring complete, accurate coverage across your entire stack.",
+            kpi: "Reduce service instrumentation time by 90% via auto-instrumentation"
+        }
+    ],
+    evaluation: ['OpenTelemetry Collector configuration (receivers, processors, exporters)', 'Context propagation across service boundaries', 'OTLP implementation and best practices', 'Automatic vs. Manual instrumentation trade-offs', 'Unified metrics/logs/traces correlation'],
+    technical_analysis: "The technical analysis for an OpenTelemetry expert centers on their ability to architect a resilient, standardized data collection pipeline. We assess mastery of the **OpenTelemetry Collector**, requiring candidates to demonstrate knowledge of its various components: selecting appropriate **Receivers** (e.g., OTLP, Prometheus remote_write), configuring **Processors** (e.g., batching, tail-based sampling, attribute modification for PII scrubbing), and managing complex **Exporters** to multiple backends simultaneously. A core competency is **Context Propagation**; candidates must articulate how trace IDs are correctly passed between polyglot microservices (e.g., Node.js service calling a Go service) using baggage and context headers, and how failure to do so results in 'broken' traces. We test their practical knowledge of OTel’s **Sampling strategies**—Head-Based vs. Tail-Based—and require justification for which method is most cost-effective and debuggable for high-volume environments. An expert must also demonstrate how to use OTel's built-in metric instruments (Counters, Histograms, Asynchronous Gauges) correctly, ensuring that application metrics are not just present, but semantically correct and align with established conventions. Finally, they must integrate OTel with existing monitoring tools, demonstrating how to bridge the gap (e.g., using OTel to export Prometheus-compatible metrics) to smooth the transition for engineering teams accustomed to legacy systems. This is an architectural, not just a coding, challenge.",
+    interlink_slugs: ['prometheus', 'jaeger', 'kubernetes']
+  },
+  'jaeger': {
+    name: 'Jaeger',
+    category: 'Platform / Infra / SRE',
+    categorySlug: 'platform-infra-sre',
+    seo_title: 'Hire Jaeger Tracing Experts | Senior Observability Talent',
+    meta_description: 'Pinpoint service bottlenecks. Hire senior remote Jaeger experts for distributed tracing and root cause analysis. Cut debugging time in half. Call us.',
+    intro: "You've moved to microservices, but now you have an invisible system: a single user request bounces across a dozen services, and when something fails, you have no idea where the bottleneck is. You need a Distributed Tracing expert who can deploy, configure, and operate **Jaeger** at scale. Our vetting process is designed to find SREs who understand the deep, architectural challenge of tracing: implementing context propagation, configuring appropriate sampling, and optimizing the Jaeger backend for high-volume ingestion and fast query times. We look for engineers who can not only get Jaeger working but can integrate it seamlessly with your metrics (Prometheus) and logs (OpenTelemetry/Elasticsearch) to provide a single pane of glass for debugging. This level of insight transforms your debugging process from a frustrating guessing game into a predictable, fast, and data-driven exercise, which is essential for maintaining high service levels and engineering velocity.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are you blind to latency spikes in specific services?",
+            problem: "Traditional metrics tell you *that* a service is slow, but not *why* or *where* the time is being spent within the request's execution path. This makes it impossible to pinpoint whether a latency spike is due to a slow database query, a specific external API call, or an internal bottleneck in a downstream service.",
+            solution: "Our Jaeger experts implement full request tracing across all critical paths. They ensure every service correctly emits spans, capturing critical tags and events. This allows your team to use the Jaeger UI to visualize the full dependency graph and see the exact duration of every operation, enabling precision performance tuning.",
+            kpi: "Reduce time spent diagnosing performance bottlenecks by 70%"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your tracing system too expensive or missing traces?",
+            problem: "Distributed tracing generates a massive volume of data, making it prohibitively expensive to store every trace, while aggressive random sampling often means the critical traces (the ones that failed or were slow) are missed entirely. This results in either massive cloud bills or a useless tracing system.",
+            solution: "We vet for expertise in intelligent, high-value sampling strategies, including **Probabilistic** and **Rate Limiting** sampling at the service level, and most critically, **Head-Based** and **Tail-Based** sampling. They can configure the Jaeger Collector to ensure 100% of error traces and the slowest N% of successful traces are always recorded, balancing cost and data quality.",
+            kpi: "Implement high-value sampling, saving 40% on storage costs while capturing 100% of error traces"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are developers failing to adopt tracing due to complex setup?",
+            problem: "Developers often view manual tracing instrumentation as a burden, requiring too much boilerplate code that clutters business logic. This lack of developer experience (DX) leads to inconsistent adoption, resulting in 'broken traces' that fail to propagate context between services.",
+            solution: "Our senior talent champions **OpenTelemetry (OTel)** for tracing. They set up auto-instrumentation where possible and provide clear, simple OTel SDK wrappers for polyglot services, ensuring a consistent and minimal code footprint for developers. They focus on context propagation standards, making tracing effortless for the entire team.",
+            kpi: "Achieve 95% service tracing coverage within the first month"
+        }
+    ],
+    evaluation: ['Jaeger Collector and Agent configuration', 'Intelligent sampling strategies (e.g., tail-based)', 'Storage backend optimization (Cassandra/Elasticsearch)', 'Root cause analysis using Trace IDs and Span Tags', 'OpenTelemetry integration for instrumentation'],
+    technical_analysis: "Senior-level Jaeger proficiency is about managing the entire distributed tracing infrastructure for high throughput and reliable querying. We evaluate a candidate's architectural choices for the **Jaeger backend components**: understanding the trade-offs between using Cassandra, Elasticsearch, or a dedicated storage solution like ClickHouse for the high-volume ingestion of spans. They must demonstrate expertise in tuning the **Jaeger Collector** and **Agent** to handle production traffic spikes without dropping data, including buffer size and processing parallelism settings. A critical skill is **optimizing query performance**; candidates are tested on their ability to structure tags and use indices effectively in the chosen storage backend to enable fast, targeted trace lookups (e.g., finding all traces for a specific user ID with a 5xx error code). We also assess their expertise in configuring the **Jaeger UI** for team usability and integrating it with SSO/authentication. Finally, the modern expert must master the transition to OpenTelemetry, demonstrating the ability to take OTel-emitted spans (via OTLP) and correctly ingest them into the Jaeger Collector, ensuring seamless interoperability between the industry-standard instrumentation format and the powerful Jaeger analysis engine. This focus on backend resilience and query performance ensures your tracing data is always available when you need it most: during an incident.",
+    interlink_slugs: ['opentelemetry', 'prometheus', 'kubernetes']
+  },
+    'mlflow': {
+    name: 'MLflow',
+    category: 'ML/AI & LLM Ops',
+    categorySlug: 'ml-ai-llm-ops',
+    seo_title: 'Hire MLflow Experts | Senior MLOps Talent for Production',
+    meta_description: 'Operationalize ML models fast. Hire senior remote MLflow experts vetted for tracking, model registry, and scalable deployments. Start a project today.',
+    intro: "Your Data Science team is creating brilliant models, but those models are stuck in notebooks, failing to make it to production reliably and efficiently. You're here because you need an MLflow expert who can bridge the gap between research and production—someone who can establish a robust MLOps practice using MLflow Tracking, Projects, and the Model Registry to ensure governance and reproducibility. Our rigorous vetting process filters out data scientists who only use MLflow casually and identifies the rare MLOps engineer who treats the model lifecycle as a critical piece of infrastructure. They understand version control for models, artifact storage, and the complexities of deploying and managing models with diverse dependencies. By partnering with us, you gain the discipline required to turn machine learning from a research expense into a predictable, revenue-generating product line, accelerating your model-to-production time from months to days.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are your Data Scientists unable to reproduce past model results?",
+            problem: "Without rigorous tracking of parameters, metrics, code versions, and environment configurations, models become 'black boxes.' If a production model starts degrading, your team cannot reliably roll back or reproduce the exact training run that created the broken model, leading to prolonged service degradation and instability.",
+            solution: "Our senior engineers are experts in enforcing MLflow Tracking. They set up standardized logging for every experiment run, capturing all parameters, metrics, and source code using MLflow Projects. This guarantees **100% reproducibility** and provides an immutable audit trail for governance, ensuring immediate rollback capability when needed.",
+            kpi: "Achieve 100% model reproducibility and 80% faster rollback time"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your model deployment process manual, slow, and insecure?",
+            problem: "Moving a trained model from the notebook environment to a production endpoint (e.g., Kubernetes, SageMaker) is often a manual, custom-scripted process. This is slow, error-prone, and lacks the security and version control needed for a reliable production system, creating a major bottleneck in your ML pipeline.",
+            solution: "We vet for mastery of the **MLflow Model Registry** and seamless deployment. Our experts use the registry for lifecycle management, transitioning models from 'Staging' to 'Production' with a single API call. They implement model deployment using MLflow's standardized deployment formats (e.g., PyFunc, flavor-specific deployment tools), enabling secure, scalable, and automated deployment via CI/CD pipelines.",
+            kpi: "Reduce model-to-production time from weeks to 48 hours"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to manage model drift and decay in production?",
+            problem: "A model performing well in training can quickly degrade in production due to changes in real-world data distributions (data drift) or concept drift. Without a robust system to monitor this, the model will silently degrade its performance, negatively impacting business metrics without a clear alert.",
+            solution: "While MLflow focuses on lifecycle, our experts integrate it with dedicated monitoring tools like Prometheus and proprietary platforms. They use the MLflow API to pull model metadata and prediction artifacts, setting up **baseline monitoring** that triggers alerts when production performance deviates from the expected training metrics, giving you early warning on drift and decay.",
+            kpi: "Implement proactive drift alerts, preventing 90% of silent model failures"
+        }
+    ],
+    evaluation: ['MLflow Tracking Server architecture (SQL/Object Storage)', 'Model Registry lifecycle management (Staging/Production)', 'MLflow Projects and reproducible environments', 'PyFunc and custom model packaging/deployment', 'Integration with Kubernetes/SageMaker'],
+    technical_analysis: "A senior MLflow expert is a hybrid MLOps and SRE specialist. The evaluation probes deep into their ability to manage the **MLflow Tracking Server architecture**. This includes securing the server, configuring its persistence store (e.g., Postgres or MySQL) for metadata, and integrating it with secure cloud storage (S3/GCS) for artifact logging. A core challenge is their strategy for managing **multi-team, multi-project usage**—they must demonstrate how to partition access and implement naming conventions to prevent metadata collisions. Mastery of the **MLflow Model Registry** is non-negotiable; candidates must articulate a detailed GitOps-based workflow for moving models through stages (Staging, Production, Archived), often involving webhooks and CI/CD triggers to deploy automatically upon status change. We test their knowledge of **Model Packaging**—specifically the creation of custom PyFunc models to wrap complex pre- or post-processing logic—which is critical for deploying non-standard models. Finally, we assess their expertise in **containerizing MLflow components** using Docker and deploying the entire stack on Kubernetes or a managed service like AWS SageMaker, ensuring high availability and cost-effective scaling for both training and inference workloads. This holistic approach ensures the model isn't just tracked, but is fully operationalized as a first-class production service.",
+    interlink_slugs: ['langchain', 'snowflake', 'python']
   }
 };
 
@@ -302,7 +438,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Ray Serve', slug: 'ray' },
       { name: 'LangChain', slug: 'langchain' },
       { name: 'pgvector/Pinecone', slug: 'pgvector' },
-      { name: 'MLflow/W&B', slug: 'mlflow' },
+      { name: 'MLflow', slug: 'mlflow' },
       { name: 'Ragas', slug: 'ragas' },
     ],
   },
