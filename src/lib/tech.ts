@@ -208,7 +208,7 @@ export const allTech: AllTech = {
     technical_analysis: "Our technical evaluation for Vue.js developers is designed to identify true experts in the modern Vue 3 ecosystem. We move beyond basic component creation to assess a candidate's architectural thinking. A key focus is their mastery of the Composition API; we provide scenarios that require them to create complex, reusable composables that encapsulate business logic and state, and we evaluate the cleanliness and testability of their solutions. State management is another critical area. We test their ability to design a scalable Pinia store, including the use of modules, getters, and actions, and their understanding of how to manage both local and global state effectively. For Nuxt.js expertise, we present a complex application requirement and ask them to architect the Nuxt project, explaining their choices for rendering modes (SSR, ISR, CSR), directory structure, and data fetching strategies (`useFetch`, `useAsyncData`). We also assess their ability to debug performance issues in a Nuxt application, using tools to identify and fix bottlenecks related to server rendering or client-side hydration. Finally, we evaluate their understanding of Vue's reactivity system at a deep level. We ask them to explain the difference between `ref` and `reactive`, the nuances of `watch` vs. `watchEffect`, and how to avoid common performance pitfalls. This ensures we hire engineers who can not only build features but can also build them in a way that is performant, scalable, and a pleasure to maintain.",
     interlink_slugs: ['typescript', 'nextjs', 'node']
   },
-   'prometheus': {
+  'prometheus': {
     name: 'Prometheus',
     category: 'Platform / Infra / SRE',
     categorySlug: 'platform-infra-sre',
@@ -278,7 +278,7 @@ export const allTech: AllTech = {
   },
   'jaeger': {
     name: 'Jaeger',
-    category: 'Platform / Infra / SRE',
+    category: 'Observability & SRE',
     categorySlug: 'platform-infra-sre',
     seo_title: 'Hire Jaeger Tracing Experts | Senior Observability Talent',
     meta_description: 'Pinpoint service bottlenecks. Hire senior remote Jaeger experts for distributed tracing and root cause analysis. Cut debugging time in half. Call us.',
@@ -310,7 +310,7 @@ export const allTech: AllTech = {
     technical_analysis: "Senior-level Jaeger proficiency is about managing the entire distributed tracing infrastructure for high throughput and reliable querying. We evaluate a candidate's architectural choices for the **Jaeger backend components**: understanding the trade-offs between using Cassandra, Elasticsearch, or a dedicated storage solution like ClickHouse for the high-volume ingestion of spans. They must demonstrate expertise in tuning the **Jaeger Collector** and **Agent** to handle production traffic spikes without dropping data, including buffer size and processing parallelism settings. A critical skill is **optimizing query performance**; candidates are tested on their ability to structure tags and use indices effectively in the chosen storage backend to enable fast, targeted trace lookups (e.g., finding all traces for a specific user ID with a 5xx error code). We also assess their expertise in configuring the **Jaeger UI** for team usability and integrating it with SSO/authentication. Finally, the modern expert must master the transition to OpenTelemetry, demonstrating the ability to take OTel-emitted spans (via OTLP) and correctly ingest them into the Jaeger Collector, ensuring seamless interoperability between the industry-standard instrumentation format and the powerful Jaeger analysis engine. This focus on backend resilience and query performance ensures your tracing data is always available when you need it most: during an incident.",
     interlink_slugs: ['opentelemetry', 'prometheus', 'kubernetes']
   },
-    'mlflow': {
+  'mlflow': {
     name: 'MLflow',
     category: 'ML/AI & LLM Ops',
     categorySlug: 'ml-ai-llm-ops',
@@ -343,6 +343,108 @@ export const allTech: AllTech = {
     evaluation: ['MLflow Tracking Server architecture (SQL/Object Storage)', 'Model Registry lifecycle management (Staging/Production)', 'MLflow Projects and reproducible environments', 'PyFunc and custom model packaging/deployment', 'Integration with Kubernetes/SageMaker'],
     technical_analysis: "A senior MLflow expert is a hybrid MLOps and SRE specialist. The evaluation probes deep into their ability to manage the **MLflow Tracking Server architecture**. This includes securing the server, configuring its persistence store (e.g., Postgres or MySQL) for metadata, and integrating it with secure cloud storage (S3/GCS) for artifact logging. A core challenge is their strategy for managing **multi-team, multi-project usage**—they must demonstrate how to partition access and implement naming conventions to prevent metadata collisions. Mastery of the **MLflow Model Registry** is non-negotiable; candidates must articulate a detailed GitOps-based workflow for moving models through stages (Staging, Production, Archived), often involving webhooks and CI/CD triggers to deploy automatically upon status change. We test their knowledge of **Model Packaging**—specifically the creation of custom PyFunc models to wrap complex pre- or post-processing logic—which is critical for deploying non-standard models. Finally, we assess their expertise in **containerizing MLflow components** using Docker and deploying the entire stack on Kubernetes or a managed service like AWS SageMaker, ensuring high availability and cost-effective scaling for both training and inference workloads. This holistic approach ensures the model isn't just tracked, but is fully operationalized as a first-class production service.",
     interlink_slugs: ['langchain', 'snowflake', 'python']
+  },
+  'vault': {
+    name: 'Vault',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
+    seo_title: 'Hire Vault Experts | Senior Security Engineers',
+    meta_description: 'Centralize and secure your secrets. Hire senior remote Vault experts to manage dynamic secrets, PKI, and secure auth methods. Book a call to start.',
+    intro: "Your secrets are scattered across environment variables, config files, and code—a ticking time bomb for a breach. You need an engineer who is a master of HashiCorp Vault, someone who can architect a secure, centralized secrets management solution for your entire organization. Our vetting process identifies engineers who don't just know the Vault API, but who deeply understand the core security principles behind it. They are experts in implementing dynamic secrets to eliminate long-lived credentials, managing authentication methods for humans and machines, and writing fine-grained policies to enforce least-privilege access. By hiring a Vault expert from us, you’re not just buying a tool; you’re investing in a foundational piece of your security posture that will protect your most sensitive data, streamline your developer workflows, and make your auditors happy. This is about moving from a reactive, vulnerable state to a proactive, secure, and automated one.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: "Are your database credentials static and long-lived?",
+        problem: "Hardcoded or long-lived database credentials are a primary target for attackers. Once compromised, they provide persistent access to your most sensitive data. Manually rotating these credentials is a slow, error-prone process that is often neglected, leaving you perpetually vulnerable.",
+        solution: "We find engineers who are experts in implementing Vault's **Dynamic Secrets Engine**. They can configure Vault to generate ephemeral, on-demand database credentials with a short time-to-live (TTL). Applications request credentials when they need them and they expire automatically, dramatically reducing your risk exposure and eliminating the need for manual rotation.",
+        kpi: "Eliminate 100% of long-lived database credentials"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "How do your applications and CI/CD pipelines get secrets?",
+        problem: "Passing secrets to applications via environment variables or plaintext files is insecure and a common source of leaks. Managing access for dozens of services and developers is complex and often results in overly permissive policies, violating the principle of least privilege.",
+        solution: "Our engineers are masters of Vault's authentication methods. They can securely integrate Vault with platforms like **Kubernetes** (using the Vault Agent and CSI driver) or **AWS** (using the IAM auth method) to provide secure, automated, and identity-based access to secrets. This means no more secrets in environment variables or on disk.",
+        kpi: "Achieve zero-trust secret injection for applications"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Is your internal PKI a manual process of generating TLS certs?",
+        problem: "Manually creating and distributing TLS certificates for internal microservice communication (mTLS) is a massive operational burden and a security risk if not done correctly. It's slow, error-prone, and doesn't scale.",
+        solution: "We look for engineers with expertise in Vault's **PKI Secrets Engine**. They can use Vault as a private Certificate Authority (CA) to automatically generate short-lived TLS certificates for your services, enabling secure, encrypted communication (mTLS) with minimal operational overhead.",
+        kpi: "Automate 100% of internal certificate management"
+      }
+    ],
+    evaluation: ['Secrets engines usage (KV, Database, PKI)', 'Dynamic secrets for ephemeral credentials', 'Auth methods integration (Kubernetes, AWS, OIDC)', 'Policy and ACL management for least privilege', 'High-availability and operational best practices'],
+    technical_analysis: "Evaluating a senior Vault engineer requires a deep dive into both architectural and operational expertise. Our process presents candidates with a complex, multi-cloud, multi-Kubernetes cluster environment and tasks them with designing a resilient, highly available Vault deployment. This includes articulating the trade-offs between different storage backends (like Consul vs. integrated storage), designing a disaster recovery plan with replication, and securing the Vault cluster itself (TLS, audit devices, seal/unseal mechanisms). We probe their understanding of Vault's identity-based security model by requiring them to create a detailed policy and role structure for a sample application, demonstrating a firm grasp of least-privilege access. A key practical test involves configuring an auth method end-to-end; for example, setting up the Kubernetes auth method, creating the necessary roles, and demonstrating how a pod would securely retrieve a secret without any hardcoded tokens. We also assess their ability to use Vault for more than just key-value secrets, requiring them to set up a dynamic secrets engine for a database and a PKI engine to act as an internal CA. Finally, they must demonstrate how they would monitor the health and security of the Vault cluster itself, including interpreting audit device logs and setting up Prometheus metrics for key performance indicators. This ensures we hire engineers who can not only use Vault but can operate it as a critical piece of production infrastructure.",
+    interlink_slugs: ['kubernetes', 'aws', 'oidc']
+  },
+  'external-secrets': {
+    name: 'External Secrets',
+    category: 'Security & GRC',
+    categorySlug: 'platform-infra-sre',
+    seo_title: 'Hire K8s Secrets Experts | External Secrets Operator',
+    meta_description: 'Securely sync secrets in Kubernetes. Hire senior remote engineers expert in External Secrets Operator (ESO) with Vault & AWS. Book a call today.',
+    intro: "Your Kubernetes secrets are checked into Git or manually managed with kubectl, creating security vulnerabilities and operational bottlenecks. You need an expert in modern GitOps secret management. You're here to find an engineer who has mastered the **External Secrets Operator (ESO)** to securely and automatically sync secrets from external stores like AWS Secrets Manager, Google Secrets Manager, or HashiCorp Vault directly into your Kubernetes clusters. Our vetting process identifies platform engineers who understand that separating secrets from application configuration is a fundamental principle of secure, modern infrastructure. They are not just Kubernetes operators; they are security-conscious engineers who can build a seamless and auditable pipeline for secrets management that empowers developers without compromising on security. By hiring an ESO expert, you eliminate manual secret management, reduce the risk of secret leakage, and create a scalable system that works across multiple clusters and environments.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: "Are you checking encrypted secrets into Git with tools like SOPS?",
+        problem: "While better than plaintext, committing encrypted secrets to Git introduces a significant operational burden. You have to manage GPG or KMS keys for every developer and CI/CD system, and every secret rotation requires a new commit and pull request, creating a slow and painful workflow.",
+        solution: "We find engineers who can use External Secrets Operator to completely decouple secrets from your Git repository. They configure ESO to read secrets directly from a dedicated secret store (like Vault or AWS Secrets Manager) and sync them into Kubernetes. This allows you to manage secrets entirely outside of Git, simplifying workflows and key management.",
+        kpi: "Achieve a 100% Git-free secret management workflow"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "How do you handle secret rotation across multiple clusters?",
+        problem: "Manually updating Kubernetes secrets in multiple clusters after a rotation is an error-prone and time-consuming task. It's easy to miss a cluster or a namespace, leaving applications with old, invalid credentials and causing production outages.",
+        solution: "Our engineers are experts in using ESO to automate secret rotation. They configure ESO to periodically poll for changes in the external secret store. When a secret is rotated in the central store, ESO automatically detects the change and updates the corresponding Kubernetes secret in every cluster, ensuring a seamless and reliable rotation process.",
+        kpi: "95% reduction in manual effort for secret rotation"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Are you duplicating the same secret in every namespace?",
+        problem: "Managing copies of the same secret (e.g., a Docker registry pull secret or a shared API key) across dozens of namespaces is inefficient, difficult to audit, and increases the risk of a secret becoming stale or out of sync.",
+        solution: "We look for engineers who can leverage ESO's advanced features, like `ClusterSecretStore` and templating. This allows them to define a single source of truth for a secret and have ESO securely distribute and sync it to multiple namespaces or even an entire cluster, following the Don't Repeat Yourself (DRY) principle.",
+        kpi: "Centralized management for 100% of shared secrets"
+      }
+    ],
+    evaluation: ['Integration with various secret providers (AWS, Vault, GCP)', 'SecretStore and ExternalSecret configuration', 'Templating and data transformation', 'Refresh intervals and caching strategies', 'Security best practices and RBAC for ESO'],
+    technical_analysis: "Our technical evaluation for an External Secrets Operator (ESO) expert focuses on their ability to build a secure and scalable secrets management pipeline for Kubernetes. We test their knowledge of configuring different `SecretStore` types (e.g., Vault, AWS Secrets Manager, GCP Secret Manager) and the specific authentication mechanisms for each, such as using Kubernetes service account tokens with IAM roles (IRSA) for AWS, or the Kubernetes auth method for Vault. Candidates are presented with complex secret management scenarios, like syncing a multi-line TLS certificate from a provider or transforming a JSON object stored as a secret into multiple individual key-value pairs in a Kubernetes secret. This assesses their proficiency with ESO's templating and data transformation capabilities. We also probe their understanding of the operational aspects of ESO, including setting appropriate refresh intervals, debugging sync errors by inspecting the ESO controller logs, and configuring Prometheus metrics for monitoring the health of the operator. Security is paramount; candidates must demonstrate how to configure RBAC permissions for ESO itself, limiting its access to only the namespaces and external secrets it needs. Finally, we evaluate their ability to design a holistic GitOps workflow that incorporates ESO, where application manifests in Git reference the *name* of a secret, but the secret's *value* is managed entirely out-of-band and synced by ESO, demonstrating a complete separation of config and secrets.",
+    interlink_slugs: ['vault', 'kubernetes', 'aws']
+  },
+  'launchdarkly': {
+    name: 'LaunchDarkly/OpenFeature',
+    category: 'Platform / Infra / SRE',
+    categorySlug: 'platform-infra-sre',
+    seo_title: 'Hire LaunchDarkly Experts | Senior Feature Flag Talent',
+    meta_description: 'De-risk deployments. Hire senior remote experts in LaunchDarkly & OpenFeature for feature flagging and progressive delivery. Book a discovery call.',
+    intro: "Your release process is a high-stakes, all-or-nothing event that brings your team to a standstill. You need an engineer who can transform your deployments from a source of fear into a source of competitive advantage. You're here to find an expert in feature management platforms like LaunchDarkly and the vendor-neutral OpenFeature standard. Our vetting process identifies engineers who understand that feature flagging is not just an 'if' statement; it's a strategic capability that enables progressive delivery, trunk-based development, and real-time operational control. They are not just developers; they are release engineers who can architect a feature flagging strategy that de-risks deployments, empowers product teams to run experiments, and gives you a 'kill switch' for production issues. By hiring an expert in this space, you fundamentally change your team's relationship with production, enabling them to ship faster and with more confidence than ever before.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: "Is every deployment a high-stress 'big bang' release?",
+        problem: "Monolithic deployments create a massive blast radius. A single bug can cause a full-site outage and require a lengthy, risky rollback, bringing all other development to a halt. This fear of failure leads to a slow, cautious release cadence that kills velocity.",
+        solution: "We find engineers who are masters of using feature flags to **decouple deployment from release**. They can help you implement a workflow where new code is merged and deployed to production safely wrapped in a feature flag, completely inert. The feature is then 'released' to users via the LaunchDarkly dashboard with zero risk and no new deployment.",
+        kpi: "90% reduction in deployment-related incidents"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Are you unable to test new features with real users before a full launch?",
+        problem: "Without a way to target specific user segments, you're building in a vacuum. You launch features based on assumptions and hope they work, with no ability to gather feedback or measure impact on a small cohort of users before a full-scale release.",
+        solution: "Our engineers are experts in LaunchDarkly's powerful targeting capabilities. They can implement **progressive rollouts**, releasing a new feature to internal users first, then to a beta group, then to 10% of customers, and so on. This allows you to test in production safely, get real-world feedback, and make data-driven decisions about your product.",
+        kpi: "Launch 100% of major features with a progressive rollout"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "When a bug is found in production, is your only option a full rollback?",
+        problem: "A full rollback is a slow, blunt instrument. It often rolls back unrelated, perfectly good changes along with the bad one, and it requires a new deployment cycle, extending your mean time to recovery (MTTR).",
+        solution: "We look for engineers who can architect feature flags to act as a **'kill switch'** for your application. If a newly released feature causes a spike in errors or negative user feedback, you can instantly turn it off in the LaunchDarkly UI for all users, with no code changes and no new deployment required. This reduces your MTTR from hours to seconds.",
+        kpi: "Reduce incident MTTR from hours to seconds"
+      }
+    ],
+    evaluation: ['SDK integration (client-side and server-side)', 'Targeting rules and progressive rollouts', 'Experimentation and A/B testing setup', 'The OpenFeature standard and vendor neutrality', 'Performance and reliability considerations'],
+    technical_analysis: "Our evaluation of a senior feature management expert goes beyond basic flag creation. We assess their architectural understanding of how to integrate a platform like LaunchDarkly into a complex, distributed system. This includes the trade-offs between using client-side and server-side SDKs, managing context and user attributes for powerful targeting, and ensuring the performance and reliability of the SDKs themselves (e.g., using the Relay Proxy for high-volume environments). A key area of focus is their ability to design a scalable and maintainable flagging strategy. This means they can create a clear naming convention, establish a process for managing the lifecycle of a flag (from creation to cleanup), and use tags and other metadata to keep the system organized. We also test their expertise in the emerging **OpenFeature** standard, assessing their ability to write vendor-neutral code that can be easily switched between different feature flag providers, preventing vendor lock-in. Finally, we present them with complex release scenarios, requiring them to design a progressive rollout plan that combines percentage-based rollouts with attribute-based targeting to safely release a high-risk feature, demonstrating their strategic thinking and ability to use feature flagging as a core part of the development lifecycle.",
+    interlink_slugs: ['kubernetes', 'react', 'node']
   }
 };
 
@@ -438,7 +540,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Ray Serve', slug: 'ray' },
       { name: 'LangChain', slug: 'langchain' },
       { name: 'pgvector/Pinecone', slug: 'pgvector' },
-      { name: 'MLflow', slug: 'mlflow' },
+      { name: 'MLflow/W&B', slug: 'mlflow' },
       { name: 'Ragas', slug: 'ragas' },
     ],
   },
