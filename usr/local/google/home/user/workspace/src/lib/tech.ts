@@ -1,4 +1,6 @@
 
+import type { ElementType } from 'react';
+
 import { 
   AlertTriangle, ShieldCheck, GanttChartSquare, 
   Database, Server, Cloud, Package, Code, 
@@ -275,7 +277,7 @@ export const allTech: AllTech = {
     categorySlug: 'frontend-web',
     seo_title: 'Hire Vue.js Developers | Senior Frontend Talent',
     meta_description: 'Build fast, maintainable UIs. Hire senior remote Vue.js experts vetted for Composition API, Pinia state management, and ecosystem mastery. Book a call.',
-    intro: "You need more than someone who's dabbled in Vue. You need an engineer who understands reactivity deeply, composes components cleanly, and can scale SPA/SSR apps with Nuxt while keeping performance tight and DX high. The beauty of Vue lies in its approachability and scalability, but harnessing its full potential requires a level of expertise that goes beyond the official documentation. Our vetting process is designed to identify these experts. We focus on a candidate's ability to write clean, reusable, and performant code using the Composition API. We test their understanding of Vue's reactivity system to ensure they can build complex, interactive UIs without introducing performance bottlenecks. We also assess their experience with the broader Vue ecosystem, including state management with Pinia and building server-rendered applications with Nuxt. By hiring a Vue expert from us, you get an engineer who can not only build beautiful user interfaces but can also architect a frontend that is a joy for your entire team to work on.",
+    intro: "Vue.js is the progressive framework built for approachability and performance. You need an engineer who can leverage Vue's best features—the intuitive Composition API, the power of Vite for rapid development, and the simplicity of Pinia for state management—to build applications that are not just easy to use, but easy to evolve. The Vue ecosystem is vast, and a developer who truly masters it can deliver incredible velocity. Our vetting process is focused on identifying engineers who understand the framework's core reactivity system, ensuring they write efficient and predictable code. We test their ability to design reusable components, manage complex application state with Pinia, and strategically use Vue's ecosystem tools, like Vue Router and Nuxt. By hiring a Vue expert from us, you gain a developer who can not only build beautiful user interfaces but can also architect a frontend that is a joy for your entire team to work on.",
     pains: [
         {
             icon: AlertTriangle,
@@ -294,14 +296,14 @@ export const allTech: AllTech = {
         {
             icon: AlertTriangle,
             pain: 'Are SSR/SEO and performance falling short?',
-            problem: 'Building a server-rendered Vue application for performance and SEO is not trivial. A developer without experience in a framework like Nuxt can struggle with properly configuring server-side rendering, managing asynchronous data on the server, and implementing effective caching strategies. This leads to slow Time to First Byte (TTFB), poor Core Web Vitals, and a bad experience for both users and search engine crawlers.',
+            problem: "Building a server-rendered Vue application for performance and SEO is not trivial. A developer without experience in a framework like Nuxt can struggle with properly configuring server-side rendering, managing asynchronous data on the server, and implementing effective caching strategies. This leads to slow Time to First Byte (TTFB), poor Core Web Vitals, and a bad experience for both users and search engine crawlers.",
             solution: "We look for engineers with hands-on experience building production applications with **Nuxt.js**. They understand the differences between Static Site Generation (SSG) and Server-Side Rendering (SSR), and how to leverage features like data fetching hooks (`useAsyncData`) and hybrid rendering to achieve optimal performance, SEO, and user experience.",
             kpi: 'Proficiency in Nuxt SSR/SSG and data fetching'
         }
     ],
-    evaluation: ['Composition API and custom composables', 'Pinia for scalable state management', 'Reactivity debugging and optimization', 'Nuxt 3 architecture (SSR, SSG, routing)', 'Component testing with Vue Test Utils/Vitest'],
+    evaluation: ['Composition API and advanced reactivity (watch, watchEffect)', 'State management with Pinia', 'Nuxt 3 architecture (SSR, SSG, routing)', 'Component testing with Vue Test Utils/Vitest', 'Ecosystem integration (Vite, Vue Router)'],
     technical_analysis: "The technical analysis for a senior Vue.js expert focuses heavily on the modern Composition API paradigm and framework architecture. We present complex state flow scenarios and require candidates to use the Composition API to create efficient, reusable **composables** that manage both reactive state (`ref`, `reactive`) and derived state (`computed`). A critical assessment area is **Nuxt.js** mastery, where candidates must demonstrate their ability to strategically choose between universal, server-only, and client-only rendering modes to optimize performance and SEO. We probe their knowledge of Nuxt's data fetching hooks (e.g., `useAsyncData`) and how they ensure data is available before initial render. For state management, we test their ability to architect a scalable solution using **Pinia**, focusing on modularity, store composition, and actions for asynchronous logic. Finally, we assess their performance optimization skills, requiring them to analyze and fix issues related to unnecessary re-renders (often caused by incorrect reactivity usage) and their ability to lazy-load components and routes to improve the initial load experience. This ensures the hired engineer can build large-scale applications with Vue's signature blend of power and approachability.",
-    interlink_slugs: ['typescript', 'pinia', 'nextjs']
+    interlink_slugs: ['pinia', 'typescript', 'vite']
   },
   'dbt': {
     name: 'dbt (data build tool)',
@@ -336,6 +338,264 @@ export const allTech: AllTech = {
     evaluation: ['Jinja templating for dynamic SQL generation', 'Incremental model design and optimization', 'Data testing and schema definition in YAML', 'Data lineage and documentation generation', 'Integration with data orchestration tools (Airflow/Prefect)'],
     technical_analysis: "The dbt expert evaluation focuses on the principles of Analytics Engineering and scalable data modeling. Candidates must demonstrate proficiency in **Jinja templating**, writing macros that generate dynamic, reusable SQL to eliminate boilerplate. We present scenarios requiring the use of **Incremental Models**, assessing their ability to correctly configure the unique key and filter logic to ensure accurate, performant updates. A critical area is data quality: candidates must articulate how to use dbt's built-in tests (`unique`, `not_null`) and how to write custom schema tests to enforce complex business rules. We test their understanding of the **Data Lineage Graph**, asking them to design a multi-stage model (staging, intermediate, mart) and explain how the graph is used for impact analysis during refactoring. Finally, they must show experience with deploying dbt in a production environment, specifically integrating dbt Core or Cloud with a data orchestrator like Airflow or Prefect for reliable scheduling and monitoring.",
     interlink_slugs: ['snowflake', 'airbyte', 'data-governance']
+  },
+   'snowflake': {
+    name: 'Snowflake',
+    category: 'Data Engineering',
+    categorySlug: 'data-engineering',
+    seo_title: 'Hire Snowflake Experts | Cloud Data Platform Talent',
+    meta_description: 'Unlock your data potential. Hire senior Snowflake experts for data warehousing, cost optimization, and secure data sharing. Book a strategy call.',
+    intro: "You've chosen Snowflake as your cloud data platform, but you're not getting the performance, cost-efficiency, or governance you were promised. You need a true Snowflake expert who can architect for scale. Our vetting process identifies senior data professionals who master Snowflake's unique architecture, including virtual warehouse optimization, zero-copy cloning for CI/CD, and secure data sharing. Hiring a Snowflake expert from us means you can finally realize the full potential of the Data Cloud, turning your data warehouse from a costly, slow utility into a high-performance engine for analytics and business intelligence.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your Snowflake bill surprisingly high and unpredictable?",
+            problem: "Without proper warehouse management and query tuning, Snowflake costs can spiral. Developers often leave large warehouses running or write inefficient queries that consume excessive credits.",
+            solution: "Our experts implement rigorous cost management. They are masters of `warehouse-size`, `auto-suspend`, and resource monitors. They optimize queries to minimize compute and leverage features like `result_scan` to avoid re-computation, directly reducing your monthly bill.",
+            kpi: "Reduce Snowflake compute costs by 30%"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you manually copying production data for development and testing?",
+            problem: "Copying massive production tables to create development environments is slow, expensive, and creates major security risks by proliferating sensitive data.",
+            solution: "We find engineers who are experts in Snowflake's **Zero-Copy Cloning**. They can create instant, writable copies of entire databases for development and CI/CD with zero additional storage cost, enabling fast, safe, and cost-effective testing.",
+            kpi: "Achieve instant, zero-cost dev environment provisioning"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is sharing data with partners slow and insecure?",
+            problem: "Traditional data sharing via FTP or API exports is slow, insecure, and creates stale data copies that are difficult to manage.",
+            solution: "We vet for expertise in **Snowflake Secure Data Sharing**. Our engineers can set up secure shares that provide live, read-only access to your data without ever moving or copying it, enabling secure, real-time collaboration with partners and customers.",
+            kpi: "Implement secure, real-time data sharing"
+        }
+    ],
+    evaluation: ['Virtual warehouse optimization and cost management', 'Zero-Copy Cloning for CI/CD and dev environments', 'Secure Data Sharing and RBAC policies', 'Performance tuning (query profiling, clustering keys)', 'Data loading and unloading best practices (Snowpipe)'],
+    technical_analysis: "The Snowflake technical analysis focuses on the unique architectural features of the platform. Candidates must demonstrate a deep understanding of the separation of storage and compute, explaining how to choose the right **Virtual Warehouse** size and multi-cluster configuration for different workloads. We test their ability to use the Query Profile to diagnose and fix performance bottlenecks in complex SQL queries, including their understanding of when to define **Clustering Keys**. A critical evaluation area is their approach to **CI/CD for database changes**: they must design a workflow using Zero-Copy Cloning and a tool like `schemachange` to automate database deployments safely. Finally, we assess their mastery of **Role-Based Access Control (RBAC)**, requiring them to design a secure roles hierarchy that enforces the principle of least privilege for data access across different business units.",
+    interlink_slugs: ['dbt', 'airbyte', 'data-governance']
+  },
+  'grpc': {
+    name: 'gRPC',
+    category: 'Backend & Data',
+    categorySlug: 'backend-data',
+    seo_title: 'Hire gRPC Experts | Senior Microservices Protocol Talent',
+    meta_description: 'Build fast microservices. Hire pre-vetted senior gRPC experts for high-performance communication, Protocol Buffers, and stream architecture.',
+    intro: "Your microservices architecture is suffering from the overhead of REST/JSON: slow serialization, bloated payloads, and inflexible API definitions. You need a gRPC expert who can transition your inter-service communication to a high-performance, binary protocol. Our vetting process targets senior backend engineers who are masters of **Protocol Buffers (Protobuf)**, bi-directional streaming, and the gRPC service definition language. We look for the ability to design APIs that are inherently faster, safer (via strong typing), and dramatically reduce network latency compared to traditional REST. Hiring a gRPC expert from us means you can scale your microservices without sacrificing speed, enforce a strict contract-first development approach, and unlock high-throughput use cases like real-time data feeds and high-frequency transactions that are simply infeasible with legacy HTTP/1.1 and JSON.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is REST/JSON overhead slowing down your microservices?",
+            problem: "HTTP/1.1 and verbose JSON payloads cause severe latency issues between internal services. Slow text-based serialization and large request/response bodies create bottlenecks, especially in high-traffic or resource-constrained environments, leading to unpredictable system performance.",
+            solution: "Our experts implement **gRPC with Protocol Buffers**. This uses efficient binary serialization and the HTTP/2 protocol, dramatically reducing message size and overhead. This results in faster parsing, lower latency, and significantly higher throughput for internal service-to-service communication.",
+            kpi: "Reduce inter-service communication latency by 50%+"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Do you struggle with API contract consistency and schema drift?",
+            problem: "REST APIs often lack a single source of truth for the contract (relying on informal documentation or Swagger). This leads to client/server incompatibility, schema drift, and difficult debugging when services are independently deployed.",
+            solution: "We vet for mastery of **Protocol Buffers (Protobuf)**. Our engineers enforce a **contract-first development** approach where the service definition is the single source of truth. This strict schema definition prevents type errors, ensures version compatibility, and generates code stubs automatically for multiple languages.",
+            kpi: "Eliminate 99% of API contract-related integration bugs"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you unable to support efficient real-time data streaming?",
+            problem: "Building a complex real-time feed (like a live activity stream or a continuous status update) is difficult with traditional REST, often requiring inefficient polling. Existing solutions often involve complex, one-off WebSocket implementations that lack robust error handling.",
+            solution: "Our experts utilize **gRPC streaming (Server, Client, and Bidirectional)**. They design robust, high-performance streaming APIs for scenarios like real-time notifications or chat applications, leveraging gRPC's built-in flow control and standard error mechanisms to simplify complex real-time needs.",
+            kpi: "Enable scalable, real-time data feeds without inefficient polling"
+        }
+    ],
+    evaluation: ['Protocol Buffers (Protobuf) schema design and optimization', 'gRPC service types (Unary, Streaming)', 'HTTP/2 and connection pooling implementation', 'Cross-language service integration (Go, Node.js, Python)', 'Error handling and status codes in gRPC'],
+    technical_analysis: "The gRPC expert evaluation centers on deep protocol knowledge and contract design. Candidates must demonstrate proficiency in **Protobuf schema design**, specifically understanding field numbering, message nesting, and using `oneof` and `map` types effectively. We test their ability to architect all four gRPC service methods (Unary, Server Stream, Client Stream, Bidirectional Stream), requiring them to justify the choice based on use case (e.g., why bidirectional streaming is ideal for load balancing). A key area of focus is **cross-language interoperability**: the candidate must explain how to use the generated code stubs to seamlessly integrate services built in polyglot environments (e.g., a Go backend and a Node.js client). Finally, we assess operational concerns, including implementing **gRPC health checks** and configuring client-side **load balancing/retry logic** to ensure the high availability and resilience of the microservices layer.",
+    interlink_slugs: ['node', 'go', 'kubernetes']
+  },
+  'socketio': {
+    name: 'Socket.IO',
+    category: 'Backend & Data',
+    categorySlug: 'backend-data',
+    seo_title: 'Hire Socket.IO Experts | Senior Real-Time Web Talent',
+    meta_description: 'Build fast, persistent web sockets. Hire senior Socket.IO experts for scalable real-time chat, dashboards, and connection resilience. Schedule a call.',
+    intro: "Your users demand real-time interactivity—live chat, dynamic dashboards, and instant notifications—but you can't rely on inefficient polling or complex, error-prone raw WebSocket implementations. You need a **Socket.IO** expert who can build a highly scalable, resilient real-time layer that just works. Our vetting process targets engineers who are masters of connection management, horizontal scaling with Redis adapters, and ensuring robust fallback mechanisms for every user, regardless of their network. We look for expertise that goes beyond simple tutorials: understanding how to use rooms for efficient broadcasting, implementing custom authentication middleware, and maintaining persistence across distributed servers. Hiring a Socket.IO expert from us means you gain the ability to deliver complex, high-volume real-time features that are automatically resilient, secure, and scalable to millions of concurrent users.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your chat/real-time feature constantly disconnecting or failing?",
+            problem: "Raw WebSocket connections are brittle and can be blocked by proxies, firewalls, or flakey mobile networks. When the connection drops, users lose context, leading to frustrating, unreliable, and high-churn user experiences.",
+            solution: "Our engineers master **Socket.IO's transport mechanism**. They leverage its built-in reliability, ensuring automatic re-connection, heartbeat pings, and intelligent fallback to HTTP polling when WebSockets are unavailable, providing a stable, resilient connection layer for all users.",
+            kpi: "Reduce real-time feature connection failure rates by 99%"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your application unable to broadcast efficiently to targeted users?",
+            problem: "Sending a notification or data update to a specific subset of users (e.g., all users on a certain team or viewing a specific document) without an efficient mechanism results in either broadcasting to everyone (wasting bandwidth) or slow, manual message routing.",
+            solution: "We vet for expertise in **Socket.IO Rooms**. Our experts design a clean architecture where connections are automatically placed into logical 'rooms' (e.g., `document-123`, `team-marketing`), allowing for highly efficient, targeted broadcasting to the exact set of users who need the update.",
+            kpi: "Increase message efficiency by 90% via targeted room broadcasting"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to scale real-time features across multiple servers?",
+            problem: "When scaling your Socket.IO server horizontally behind a load balancer, messages sent from one server will not reach users connected to a different server. This breaks core functionality like chat or group updates in a distributed environment.",
+            solution: "Our experts implement and configure **Socket.IO Adapters (e.g., Redis)**. They ensure that all servers share connection state and can broadcast events across the entire cluster, making your real-time layer infinitely scalable and resilient to individual server failure.",
+            kpi: "Achieve seamless horizontal scaling of the real-time server cluster"
+        }
+    ],
+    evaluation: ['Horizontal scaling with Redis/Postgres Adapters', 'Connection management and transport fallbacks', 'Designing with Rooms and Namespaces for efficiency', 'Custom middleware for authentication and authorization', 'Implementing reliable, sequenced message delivery'],
+    technical_analysis: "The Socket.IO expert evaluation focuses on distributed system resilience and efficiency. A core competency is the implementation of **horizontal scaling via Adapters**; candidates must articulate the role of the Redis Adapter in state sharing and how to prevent split-brain scenarios in a distributed cluster. We rigorously test their understanding of **Namespaces** and **Rooms**—asking them to architect a real-time system that minimizes data transfer by efficiently routing events. A critical security aspect is the use of **custom middleware**: candidates must demonstrate how to integrate the Socket.IO connection handshake with an existing authentication mechanism (e.g., JWT validation) to prevent unauthorized connections and ensure secure context resolution. Finally, we assess their knowledge of connection resilience, requiring them to explain the sequence of transports (WebSocket, Polling) and the role of the `ping` and `pong` heartbeats in maintaining session liveness.",
+    interlink_slugs: ['node', 'redis', 'kubernetes']
   }
 }
+export const techCategories: TechCategory[] = [
+  {
+    name: 'APIs & Backend Services',
+    slug: 'backend-services',
+    pain: "Is your backend a bottleneck or a force multiplier?",
+    icon: Server,
+    tech: [
+      { name: 'Node.js', slug: 'node' },
+      { name: 'Python', slug: 'python' },
+      { name: 'Java', slug: 'java' },
+      { name: 'Go', slug: 'go' },
+      { name: '.NET', slug: 'net' },
+      { name: 'Ruby on Rails', slug: 'ruby' },
+      { name: 'PHP (Laravel/Symphony)', slug: 'php' },
+      { name: 'gRPC', slug: 'grpc' },
+      { name: 'GraphQL', slug: 'graphql' },
+    ],
+  },
+  {
+    name: 'Frontend & UI/UX',
+    slug: 'frontend-web',
+    pain: "Is a slow, buggy UI costing you customers?",
+    icon: Layers,
+    tech: [
+      { name: 'React/TypeScript', slug: 'react' },
+      { name: 'Next.js', slug: 'nextjs' },
+      { name: 'Vite', slug: 'vite' },
+      { name: 'Angular', slug: 'angular' },
+      { name: 'Vue.js', slug: 'vue' },
+      { name: 'TanStack Query', slug: 'tanstack' },
+      { name: 'Redux/Zustand', slug: 'redux' },
+      { name: 'Tailwind/shadcn', slug: 'tailwind' },
+      { name: 'Testing Library', slug: 'testing' },
+    ],
+  },
+    {
+    name: 'Mobile & Cross-Platform',
+    slug: 'mobile-cross-platform',
+    pain: "Is your mobile experience falling behind?",
+    icon: Plane,
+    tech: [
+        { name: 'React Native', slug: 'react-native' },
+        { name: 'Flutter', slug: 'flutter' },
+        { name: 'Swift', slug: 'swift' },
+        { name: 'Kotlin', slug: 'kotlin' },
+        { name: 'Socket.IO', slug: 'socketio' },
+    ],
+  },
+  {
+    name: 'Data Modeling & Databases',
+    slug: 'data-engineering-analytics',
+    pain: "Is your data model built for scale or for future refactors?",
+    icon: Database,
+    tech: [
+      { name: 'PostgreSQL', slug: 'postgresql' },
+      { name: 'MySQL', slug: 'mysql' },
+      { name: 'SQL Server', slug: 'sql' },
+      { name: 'dbt', slug: 'dbt' },
+      { name: 'Prisma', slug: 'prisma' },
+      { name: 'SQLAlchemy', slug: 'sqlalchemy' },
+      { name: 'Hibernate', slug: 'hibernate' },
+      { name: 'Redis', slug: 'redis' },
+      { name: 'Memcached', slug: 'memcached' },
+      { name: 'DynamoDB', slug: 'dynamodb' },
+    ],
+  },
+  {
+    name: 'Pipelines & Orchestration',
+    slug: 'data-engineering-analytics',
+    pain: "Are your data pipelines brittle and unreliable?",
+    icon: Component,
+    tech: [
+      { name: 'Airflow/Prefect', slug: 'airflow' },
+      { name: 'Kafka/RabbitMQ', slug: 'kafka' },
+      { name: 'Flink/Beam', slug: 'flink' },
+      { name: 'Kubernetes', slug: 'kubernetes' },
+      { name: 'Docker', slug: 'docker' },
+    ],
+  },
+  {
+    name: 'ML/AI & LLM Ops',
+    slug: 'ml-ai-llm-ops',
+    pain: "Struggling to move AI from a notebook to production?",
+    icon: BrainCircuit,
+    tech: [
+      { name: 'PyTorch', slug: 'pytorch' },
+      { name: 'Transformers', slug: 'transformers' },
+      { name: 'vLLM', slug: 'vllm' },
+      { name: 'Ray Serve', slug: 'ray' },
+      { name: 'LangChain', slug: 'langchain' },
+      { name: 'pgvector/Pinecone', slug: 'pgvector' },
+      { name: 'MLflow/W&B', slug: 'mlflow' },
+      { name: 'Ragas', slug: 'ragas' },
+    ],
+  },
+  {
+    name: 'Observability & SRE',
+    slug: 'platform-infra-sre',
+    pain: "Are you debugging in the dark when systems fail?",
+    icon: GanttChartSquare,
+    tech: [
+      { name: 'Prometheus', slug: 'prometheus' },
+      { name: 'Grafana', slug: 'grafana' },
+      { name: 'OpenTelemetry', slug: 'opentelemetry' },
+      { name: 'Jaeger/Loki', slug: 'jaeger' },
+      { name: 'Terraform/Pulumi', slug: 'terraform' },
+      { name: 'Istio/Linkerd', slug: 'istio' },
+    ],
+  },
+  {
+    name: 'Security & GRC',
+    slug: 'security-grc',
+    pain: "Is compliance an afterthought or built into your stack?",
+    icon: ShieldCheck,
+    tech: [
+      { name: 'Vault', slug: 'vault' },
+      { name: 'Okta/Auth0', slug: 'okta' },
+      { name: 'CodeQL/Snyk', slug: 'codeql' },
+      { name: 'Trivy', slug: 'trivy' },
+      { name: 'OPA', slug: 'opa' },
+      { name: 'SOC 2', slug: 'soc' },
+      { name: 'ISO 27001', slug: 'iso' },
+      { name: 'HIPAA', slug: 'hipaa' },
+    ],
+  },
+  {
+    name: 'Testing & Quality Engineering',
+    slug: 'qa-quality-engineering',
+    pain: "Does 'shipping fast' also mean 'shipping bugs'?",
+    icon: TestTube2,
+    tech: [
+      { name: 'Playwright/Cypress', slug: 'playwright' },
+      { name: 'Jest/Vitest', slug: 'jest' },
+      { name: 'PyTest/JUnit', slug: 'pytest' },
+      { name: 'k6/Locust', slug: 'k6' },
+      { name: 'Pact', slug: 'pact' },
+      { name: 'Gremlin/Litmus', slug: 'gremlin' },
+    ],
+  },
+  {
+    name: 'Cloud FinOps & BizTech',
+    slug: 'finops-biztech',
+    pain: "Are runaway cloud costs eating into your margins?",
+    icon: Wallet,
+    tech: [
+      { name: 'CloudZero/Infracost', slug: 'cloudzero' },
+      { name: 'AWS Cost Explorer', slug: 'aws' },
+      { name: 'Salesforce', slug: 'salesforce' },
+      { name: 'HubSpot', slug: 'hubspot' },
+      { name: 'Hightouch/Census', slug: 'hightouch' },
+    ],
+  }
+];
 
+export async function getAllTechSlugs(): Promise<string[]> {
+    return Object.keys(allTech);
+}
