@@ -1,3 +1,4 @@
+
 import { Target, Telescope, Shield, Users, BookOpen } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -149,7 +150,9 @@ export default function AboutPage() {
               behind TeamStation AI on our podcast.
             </p>
             <Link
-              href="/research/hub#podcast"
+              href="https://open.spotify.com/episode/7EwovXvoVFIGLJDwqTZFUE"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-semibold text-primary hover:underline mt-2 inline-block"
             >
               Listen Now &rarr;
