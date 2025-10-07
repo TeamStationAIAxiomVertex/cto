@@ -1,14 +1,14 @@
 
 import Link from "next/link";
 import type { Metadata } from "next";
-import { 
-    collectCoreUrls, 
-    collectPlaybookUrls, 
-    collectCaseStudyUrls,
-    collectComparisonUrls,
-    collectHireByCountryUrls,
-    collectHireByRoleUrls,
-    collectHireByTechnologyUrls
+import {
+  collectCoreUrls,
+  collectPlaybookUrls,
+  collectCaseStudyUrls,
+  collectComparisonUrls,
+  collectHireByCountryUrls,
+  collectHireByRoleUrls,
+  collectHireByTechnologyUrls,
 } from "@/lib/sitemap-data";
 import type { SitemapUrl } from "@/lib/sitemap-utils";
 
