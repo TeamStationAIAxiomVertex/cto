@@ -74,10 +74,6 @@ What we produce and maintain (living artifacts):
 -   Compliance confidence: Clean audits/QBRs anchored by maintained artifacts.
 ---
 
-:::NCLA-Humanizer
-**From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
-:::
-
 **Explore More:**  
 - [Case Studies Hub](/case-studies)  
 - [Comparisons Hub](/comparisons)  

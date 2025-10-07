@@ -78,10 +78,6 @@ Product Squad Expansion
 -   Trusted partnership established after prior vendor evaluations failed to meet quality/culture standards.
 ---
 
-:::NCLA-Humanizer
-**From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
-:::
-
 **Explore More:**  
 - [Case Studies Hub](/case-studies)  
 - [Comparisons Hub](/comparisons)  

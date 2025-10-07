@@ -128,10 +128,6 @@ Process Highlights
 5.  Security from day zero. Handling PII meant establishing least‑privilege roles and MDM before writing complex features.
 ---
 
-:::NCLA-Humanizer
-**From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
-:::
-
 **Explore More:**  
 - [Case Studies Hub](/case-studies)  
 - [Comparisons Hub](/comparisons)  

@@ -106,10 +106,6 @@ Engagement model: Dedicated squad with elastic bench capacity and SLAs for cover
 -   Reporting: Executive dashboards for coverage, flake rate, escape rate, MTTR, and readiness to ship.
 ---
 
-:::NCLA-Humanizer
-**From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
-:::
-
 **Explore More:**  
 - [Case Studies Hub](/case-studies)  
 - [Comparisons Hub](/comparisons)  

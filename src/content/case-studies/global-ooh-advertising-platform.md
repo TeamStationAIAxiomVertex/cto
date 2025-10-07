@@ -82,10 +82,6 @@ This structure reduces friction, ensures security compliance, and accelerates ti
 5.  Time‑zone alignment is not a perk; it’s throughput. Same‑day feedback compounds over sprints.
 ---
 
-:::NCLA-Humanizer
-**From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
-:::
-
 **Explore More:**  
 - [Case Studies Hub](/case-studies)  
 - [Comparisons Hub](/comparisons)  

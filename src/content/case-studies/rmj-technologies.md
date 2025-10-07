@@ -100,10 +100,6 @@ Key Architecture Decisions
 -   Operational risk reduced — improved observability, lower incident frequency, and safer deploys.
 ---
 
-:::NCLA-Humanizer
-**From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
-:::
-
 **Explore More:**  
 - [Case Studies Hub](/case-studies)  
 - [Comparisons Hub](/comparisons)  
