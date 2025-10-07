@@ -1,5 +1,5 @@
 
-import type { ReactNode } from 'react';
+import type { ElementType } from 'react';
 
 import { Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane, AlertTriangle } from 'lucide-react';
 
@@ -12,7 +12,7 @@ export interface TechCategory {
   name: string;
   slug: string;
   pain: string;
-  icon: React.ElementType;
+  icon: ElementType;
   tech: Tech[];
 }
 
@@ -23,7 +23,7 @@ export interface AllTech {
     categorySlug: string;
     intro: string;
     pains: {
-      icon: React.ElementType;
+      icon: ElementType;
       pain: string;
       problem: string;
       solution: string;
@@ -104,7 +104,7 @@ export const allTech: AllTech = {
         icon: AlertTriangle,
         pain: 'Is your reactivity buggy or unpredictable?',
         problem: 'Misusing refs/reactive and watchers leads to stale state, unnecessary recomputations, and hard-to-debug UI glitches.',
-        solution: 'We vet for deep knowledge of Vue reactivity, computed vs. watchers, and correct patterns to ensure predictable updates and great performance.',
+        solution: 'We vet for deep knowledge of Vue 3 reactivity, computed vs. watchers, and correct patterns to ensure predictable updates and great performance.',
         kpi: 'Mastery of Vue 3 reactivity model'
       },
       {
@@ -993,6 +993,36 @@ export const allTech: AllTech = {
         }
     ], 
     evaluation: ['Event handling and emission', 'Room and namespace management', 'Scaling with Redis adapter', 'Authentication and middleware', 'Reconnection logic and reliability'] 
+  },
+  'dbt': {
+    name: 'dbt',
+    category: 'Data Modeling & Databases',
+    categorySlug: 'data-engineering-analytics',
+    intro: "Your data warehouse is a swamp of untrusted, undocumented tables. You need an analytics engineer who can use dbt to transform your raw data into tested, documented, and reliable data products that the entire business can trust.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: "Does anyone trust the data in your dashboards?",
+        problem: "When data isn't tested, documented, and version-controlled, business users lose trust, and decisions are made on gut feel instead of data.",
+        solution: "We find experts who can use dbt to implement a software engineering workflow for your data models, including version control, automated testing, and documentation.",
+        kpi: "Build trusted, reliable data products"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Are your data models slow and expensive to run?",
+        problem: "Poorly written SQL and inefficient materialization strategies can lead to long-running queries and a massive data warehouse bill.",
+        solution: "We vet for a deep understanding of dbt materializations (views, tables, incremental) and SQL performance tuning to build efficient and cost-effective data pipelines.",
+        kpi: "Expertise in dbt performance tuning"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Is your data logic a tangled mess of undocumented scripts?",
+        problem: "Complex business logic hidden in a series of SQL scripts is impossible to maintain, debug, or evolve.",
+        solution: "Our engineers use dbt's modular structure and macros to create clean, reusable, and well-documented data models that are easy for the entire team to understand.",
+        kpi: "Clean, modular, and reusable data models"
+      }
+    ],
+    evaluation: ['Data modeling best practices (e.g., Kimball)', 'Advanced dbt features (macros, packages, hooks)', 'dbt Cloud vs. dbt Core trade-offs', 'SQL performance tuning', 'Testing and data quality frameworks']
   }
 };
 
