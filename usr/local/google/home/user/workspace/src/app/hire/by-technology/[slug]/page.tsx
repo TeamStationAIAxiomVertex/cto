@@ -8,7 +8,6 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import FurtherReading from "@/components/seo/FurtherReading";
 import { WithTooltip } from "@/components/ui/tooltip";
 
-
 export const revalidate = 3600;
 
 export async function generateStaticParams() {

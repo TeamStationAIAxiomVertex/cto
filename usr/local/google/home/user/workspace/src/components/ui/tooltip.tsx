@@ -1,14 +1,15 @@
-"use client";
-import * as React from "react";
-import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
-import { cn } from "../../../../../../../../../src/lib/utils";
+'use client'
+import * as React from "react"
+import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 
-const TooltipProvider = TooltipPrimitive.Provider;
+import { cn } from "@/lib/utils"
 
-const Tooltip = TooltipPrimitive.Root;
+const TooltipProvider = TooltipPrimitive.Provider
 
-const TooltipTrigger = TooltipPrimitive.Trigger;
+const Tooltip = TooltipPrimitive.Root
+
+const TooltipTrigger = TooltipPrimitive.Trigger
 
 const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
@@ -23,8 +24,8 @@ const TooltipContent = React.forwardRef<
     )}
     {...props}
   />
-));
-TooltipContent.displayName = TooltipPrimitive.Content.displayName;
+))
+TooltipContent.displayName = TooltipPrimitive.Content.displayName
 
 const WithTooltip = ({
   children,
@@ -32,7 +33,7 @@ const WithTooltip = ({
   ...props
 }: {
   children: React.ReactNode;
-  label: string | React.ReactNode; // Allow ReactNode for complex tooltips
+  label: string | React.ReactNode;
   [key: string]: any;
 }) => {
   if (!label) return <>{children}</>;
@@ -40,20 +41,15 @@ const WithTooltip = ({
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild {...props}>
-          {children}
+          <span>{children}</span>
         </TooltipTrigger>
         <TooltipContent>
-          {typeof label === "string" ? <span>{label}</span> : label}
+          {typeof label === 'string' ? <p>{label}</p> : label}
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
 };
 
-export {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-  TooltipProvider,
-  WithTooltip,
-};
+
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, WithTooltip }

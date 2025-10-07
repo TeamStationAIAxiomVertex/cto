@@ -1,12 +1,12 @@
 
 // src/lib/sitemap-data.ts
-import { getPlaybookSlugs } from "./playbook";
 import { getAllResearchSlugs } from "./research";
-import { getAllRoleSlugs } from "./roles";
-import { getAllTechSlugs } from "./tech";
-import { getAllCaseStudies } from "./case-studies";
+import { getAllTechSlugs, techCategories } from "./tech";
 import { countries } from "./countries";
+import { getAllCaseStudies } from "./case-studies";
 import { comparisonPages } from "./comparisonPages";
+import { getAllRoleSlugs } from "./roles";
+import { getAllPlaybookSlugs } from "./playbook";
 import type { SitemapUrl } from "./sitemap-utils";
 export type { SitemapUrl } from "./sitemap-utils";
 
@@ -89,22 +89,24 @@ export async function collectComparisonUrls(): Promise<SitemapUrl[]> {
 
 // 4. Programmatic Hire-By-Country URLs (Dynamic)
 export async function collectHireByCountryUrls(): Promise<SitemapUrl[]> {
-    const allTechSlugs = await getAllTechSlugs();
-    return countries.flatMap((country) => {
-        const base: SitemapUrl = {
-        loc: `${BASE_URL}/hire/by-country/${country.slug}`,
+  const allTechSlugs = await getAllTechSlugs() || [];
+  return countries.flatMap((country) => {
+    const base: SitemapUrl = {
+      loc: `${BASE_URL}/hire/by-country/${country.slug}`,
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
+      priority: 0.8,
+    };
+    const techPages: SitemapUrl[] = allTechSlugs.map(
+      (techSlug): SitemapUrl => ({
+        loc: `${BASE_URL}/hire/by-country/${country.slug}/${techSlug}`,
         lastmod: new Date().toISOString(),
-        changefreq: 'monthly',
-        priority: 0.8
-        };
-        const techPages: SitemapUrl[] = allTechSlugs.map(techSlug => ({
-            loc: `${BASE_URL}/hire/by-country/${country.slug}/${techSlug}`,
-            lastmod: new Date().toISOString(),
-            changefreq: 'monthly',
-            priority: 0.7
-        }));
-        return [base, ...techPages];
-    });
+        changefreq: "monthly",
+        priority: 0.7,
+      })
+    );
+    return [base, ...techPages];
+  });
 }
 
 // 5. Programmatic Hire-By-Role URLs (Dynamic)

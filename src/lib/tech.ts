@@ -69,7 +69,7 @@ export const allTech: AllTech = {
         }
     ],
     evaluation: ['Advanced hooks and render optimization', 'Modern state management (Zustand, React Query)', 'Component API design and accessibility (ARIA)', 'Performance profiling and debugging', 'TypeScript for robust component props and state'],
-    technical_analysis: "The technical evaluation for React/TypeScript mastery at TeamStation AI is designed to filter for deep, architectural understanding over superficial knowledge. Candidates are assessed on their ability to structure a large-scale React application for maintainability and performance. A key area of focus is their approach to state management; we present scenarios that require them to differentiate between local, global client, and server cache state, expecting them to articulate the trade-offs between tools like Zustand, Jotai, and TanStack Query. We don't just want to see if they can use a library; we want to see if they understand the 'why' behind their choices. Performance is another critical pillar. Candidates are given a deliberately inefficient application and are expected to use the React Profiler to identify and explain the causes of performance bottlenecks, such as unnecessary re-renders. Their solution must not only fix the issue but also demonstrate a grasp of core optimization principles like memoization and virtualization. On the TypeScript front, we move beyond basic type annotations. Our scenarios require candidates to create complex generic types, use conditional and mapped types to build flexible and reusable type utilities, and correctly type higher-order components or complex hooks. This ensures they can use TypeScript as a tool for building truly robust and self-documenting systems, rather than just adding `:string` to variables. Finally, we evaluate their understanding of the broader ecosystem, including testing strategies with React Testing Library and Playwright, and their ability to configure modern build tools like Vite or Next.js for optimal performance and developer experience.",
+    technical_analysis: "Our technical analysis for React/TypeScript mastery at TeamStation AI is designed to filter for deep, architectural understanding over superficial knowledge. Candidates are assessed on their ability to structure a large-scale React application for maintainability and performance. A key area of focus is their approach to state management; we present scenarios that require them to differentiate between local, global client, and server cache state, expecting them to articulate the trade-offs between tools like Zustand, Jotai, and TanStack Query. We don't just want to see if they can use a library; we want to see if they understand the 'why' behind their choices. Performance is another critical pillar. Candidates are given a deliberately inefficient application and are expected to use the React Profiler to identify and explain the causes of performance bottlenecks, such as unnecessary re-renders. Their solution must not only fix the issue but also demonstrate a grasp of core optimization principles like memoization and virtualization. On the TypeScript front, we move beyond basic type annotations. Our scenarios require candidates to create complex generic types, use conditional and mapped types to build flexible and reusable type utilities, and correctly type higher-order components or complex hooks. This ensures they can use TypeScript as a tool for building truly robust and self-documenting systems, rather than just adding `:string` to variables. Finally, we evaluate their understanding of the broader ecosystem, including testing strategies with React Testing Library and Playwright, and their ability to configure modern build tools like Vite or Next.js for optimal performance and developer experience.",
     interlink_slugs: ['typescript', 'nextjs', 'vite']
   },
   'typescript': { 
@@ -208,209 +208,73 @@ export const allTech: AllTech = {
     technical_analysis: "Our technical evaluation for Vue.js developers is designed to identify true experts in the modern Vue 3 ecosystem. We move beyond basic component creation to assess a candidate's architectural thinking. A key focus is their mastery of the Composition API; we provide scenarios that require them to create complex, reusable composables that encapsulate business logic and state, and we evaluate the cleanliness and testability of their solutions. State management is another critical area. We test their ability to design a scalable Pinia store, including the use of modules, getters, and actions, and their understanding of how to manage both local and global state effectively. For Nuxt.js expertise, we present a complex application requirement and ask them to architect the Nuxt project, explaining their choices for rendering modes (SSR, ISR, CSR), directory structure, and data fetching strategies (`useFetch`, `useAsyncData`). We also assess their ability to debug performance issues in a Nuxt application, using tools to identify and fix bottlenecks related to server rendering or client-side hydration. Finally, we evaluate their understanding of Vue's reactivity system at a deep level. We ask them to explain the difference between `ref` and `reactive`, the nuances of `watch` vs. `watchEffect`, and how to avoid common performance pitfalls. This ensures we hire engineers who can not only build features but can also build them in a way that is performant, scalable, and a pleasure to maintain.",
     interlink_slugs: ['typescript', 'nextjs', 'node']
   },
-  'prometheus': {
-    name: 'Prometheus',
-    category: 'Platform / Infra / SRE',
-    categorySlug: 'platform-infra-sre',
-    seo_title: 'Hire Prometheus Engineers | Senior Monitoring Talent',
-    meta_description: 'Stop alert fatigue. Hire pre-vetted senior remote Prometheus talent to implement effective, scalable monitoring. Start fast, scale reliably.',
-    intro: "You're tired of fragmented metrics and alert fatigue. You need an engineer who is a true Prometheus expert, not just a junior who can follow a setup guide. You require talent who can establish centralized, queryable metrics that deliver actionable insights, not just noise, and who can do so in a cost-effective, multi-tenant environment. Our vetting process is specifically designed to isolate senior SREs who understand the architectural trade-offs of a time-series database (TSDB) and the critical importance of Service Level Objectives (SLOs) over simple host monitoring. We look for demonstrated expertise in PromQL, Alertmanager configuration, and long-term storage strategies using solutions like Thanos or Cortex. By hiring a Prometheus expert from us, you solve two core problems: you eliminate the 'blind spots' in your production environment, and you gain the discipline required to maintain a performant, scalable observability platform that scales with your infrastructure. This is the difference between constant firefighting and proactive platform management, ensuring your production systems are stable and your team's on-call burden is minimized.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Is alert fatigue blinding you to real incidents?",
-            problem: "Most monitoring setups rely on generic CPU/memory alerts, resulting in endless false positives that desensitize on-call teams. This lack of signal-to-noise means that when a true, user-impacting incident occurs, the team is slow to react, leading to increased mean time to recovery (MTTR) and customer churn. It is a fundamental failure to apply the SRE principle of setting alerts based on user impact.",
-            solution: "Our experts define precise, signal-based alert rules using advanced PromQL and establish Service Level Indicators (SLIs) and Objectives (SLOs). They configure Alertmanager to use sophisticated grouping, silence, and routing strategies based on service criticality. This ensures your team only gets paged for true user-facing issues, restoring trust in the alerting system and drastically reducing MTTR.",
-            kpi: "30% reduction in monitoring-related service interruptions"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are you struggling to store and query metrics beyond 30 days?",
-            problem: "Prometheus's native local storage is fantastic for immediate querying but is neither scalable nor cost-effective for long-term retention required for compliance, auditing, or year-over-year trending. Attempting to manage massive local Prometheus instances leads to maintenance nightmares, data loss risks, and unacceptable operational overhead, making historical analysis impossible.",
-            solution: "We vet for expertise in implementing and operating highly available, scalable long-term storage solutions like **Thanos** or **Cortex**. Our engineers can design a robust architecture that uses object storage (like S3) for cost-effective retention, while still allowing fast, unified querying across all Prometheus instances via a global query view. This allows for reliable long-term trending without sacrificing query performance.",
-            kpi: "Achieve 99.99% data retention compliance with 40% reduced storage costs"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is onboarding new microservices a manual, error-prone process?",
-            problem: "Without an automated service discovery mechanism, adding a new service or container to your monitoring setup requires manual configuration, which introduces human error, causes configuration drift, and slows down development velocity. In a dynamic Kubernetes or cloud environment, this lack of automation is a major operational liability that directly inhibits scaling.",
-            solution: "We look for engineers who are masters of Prometheus service discovery, particularly within Kubernetes using its service monitor and pod scraping configurations. They can implement automatic instrumentation and discovery mechanisms using solutions like OpenTelemetry, ensuring every new service is monitored correctly and instantly, allowing your developers to focus purely on shipping code.",
-            kpi: "Reduce service-to-monitoring setup time from hours to minutes"
-        }
-    ],
-    evaluation: ['PromQL mastery for complex queries', 'AlertManager configuration and templating', 'Thanos/Cortex for long-term storage', 'SLO definition and error budget calculation', 'Kubernetes and Consul Service Discovery'],
-    technical_analysis: "The technical analysis for a senior Prometheus engineer moves beyond basic installation and configuration. We assess a candidate's architectural ability to deploy Prometheus for resilience and scale. A critical area of evaluation is their mastery of **PromQL (Prometheus Query Language)**; we present complex scenarios requiring aggregation, rate calculation, and join-like operations (using `group_left`/`group_right`) to derive meaningful SLIs like request latency, error rates, and saturation, directly mapping these to business metrics. They must demonstrate an understanding of **High Availability (HA)**, including deploying multiple Prometheus replicas with consistent configuration and using tools like Prometheus Operator for lifecycle management within Kubernetes. The **long-term storage challenge** is non-negotiable: a candidate must articulate the trade-offs between Thanos (simpler for cloud-native) and Cortex (more complex, multi-tenant-focused), and demonstrate practical knowledge of configuring sidecar and receiver components to ship data reliably to object storage. Furthermore, we test their ability to define and calculate an **Error Budget**, explaining how violating the SLO translates into consequences for the engineering team. Finally, an expert must integrate Prometheus with the wider observability ecosystem, specifically demonstrating how to pass tracing context (via OpenTelemetry) into their alert definitions, bridging the gap between metrics and deep-dive root cause analysis. This holistic view of observability is what defines a senior SRE and ensures that your monitoring platform is robust, scalable, and cost-effective.",
-    interlink_slugs: ['opentelemetry', 'kubernetes', 'jaeger']
-  },
-  'opentelemetry': {
-    name: 'OpenTelemetry',
-    category: 'Platform / Infra / SRE',
-    categorySlug: 'platform-infra-sre',
-    seo_title: 'Hire OpenTelemetry Engineers | Senior SRE Talent',
-    meta_description: 'Gain unified observability. Hire senior remote OpenTelemetry experts to consolidate metrics, logs, and traces. Guaranteed performance. Contact us.',
-    intro: "You're drowning in disparate data sources: Prometheus for metrics, Jaeger for traces, and a separate log solution. You need true unified observability, and that requires an engineer who has mastered the OpenTelemetry (OTel) standard, not just heard of it. Our vetting process specifically targets senior SREs and Platform Engineers who can implement the OTel Collector, auto-instrument complex applications, and standardize the three pillars of observability across a massive microservice architecture. They understand that OTel is not just a library; it's a foundational shift in how you build and debug distributed systems. By bringing in this expertise, you don't just consolidate tools; you dramatically reduce your Mean Time to Resolution (MTTR) by allowing a single view of performance that correlates user-facing symptoms directly to root causes deep within your stack. This level of discipline ensures your platform is ready for the next decade of scale, eliminating vendor lock-in and streamlining developer workflow.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Is debugging a disaster due to missing data correlation?",
-            problem: "Most engineering teams have isolated metrics, logs, and traces. When an incident occurs, engineers waste hours manually correlating timestamps and request IDs across three different dashboards. This fractured view leads to slow resolution times and prolonged customer outages, directly impacting your business's bottom line and damaging customer trust.",
-            solution: "Our experts implement OpenTelemetry to ensure every piece of data—metrics, logs, and traces—shares a common context. They master context propagation across service boundaries, enabling your team to jump from a Prometheus alert (metric) directly to the associated trace in Jaeger and the corresponding logs, slashing MTTR and reducing on-call stress.",
-            kpi: "Reduce Mean Time to Resolution (MTTR) by 50%"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are you locked into expensive vendor-specific monitoring solutions?",
-            problem: "Proprietary instrumentation libraries force you to pay high licensing fees and make switching vendors prohibitively expensive and time-consuming. This vendor lock-in prevents you from optimizing costs by sending data to the most appropriate backend (e.g., cheaper log storage, specialized trace analysis tool).",
-            solution: "We find engineers who are experts in the **OpenTelemetry Collector**, using it as a neutral data pipeline. They implement vendor-agnostic OTLP (OpenTelemetry Protocol) at the application layer, allowing you to sample, filter, and export data to any backend—Datadog, Grafana Cloud, or a custom stack—optimizing your cost and preventing lock-in.",
-            kpi: "Achieve 100% vendor independence and 20% reduction in monitoring costs"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is manual service instrumentation taking too long and introducing bugs?",
-            problem: "Requiring every developer to manually add OTel code to every method in every service is tedious, inconsistent, and highly prone to error. This slow, high-friction process stalls adoption and leaves new or legacy services unmonitored, creating blind spots in your production environment.",
-            solution: "Our senior talent is skilled in **automatic instrumentation**. They can deploy language-specific agents and the OTel Collector to automatically capture spans, metrics, and logs with zero code changes in most services. For complex or legacy systems, they establish clear standards for manual instrumentation that are easily auditable, ensuring complete, accurate coverage across your entire stack.",
-            kpi: "Reduce service instrumentation time by 90% via auto-instrumentation"
-        }
-    ],
-    evaluation: ['OpenTelemetry Collector configuration (receivers, processors, exporters)', 'Context propagation across service boundaries', 'OTLP implementation and best practices', 'Automatic vs. Manual instrumentation trade-offs', 'Unified metrics/logs/traces correlation'],
-    technical_analysis: "The technical analysis for an OpenTelemetry expert centers on their ability to architect a resilient, standardized data collection pipeline. We assess mastery of the **OpenTelemetry Collector**, requiring candidates to demonstrate knowledge of its various components: selecting appropriate **Receivers** (e.g., OTLP, Prometheus remote_write), configuring **Processors** (e.g., batching, tail-based sampling, attribute modification for PII scrubbing), and managing complex **Exporters** to multiple backends simultaneously. A core competency is **Context Propagation**; candidates must articulate how trace IDs are correctly passed between polyglot microservices (e.g., Node.js service calling a Go service) using baggage and context headers, and how failure to do so results in 'broken' traces. We test their practical knowledge of OTel’s **Sampling strategies**—Head-Based vs. Tail-Based—and require justification for which method is most cost-effective and debuggable for high-volume environments. An expert must also demonstrate how to use OTel's built-in metric instruments (Counters, Histograms, Asynchronous Gauges) correctly, ensuring that application metrics are not just present, but semantically correct and align with established conventions. Finally, they must integrate OTel with existing monitoring tools, demonstrating how to bridge the gap (e.g., using OTel to export Prometheus-compatible metrics) to smooth the transition for engineering teams accustomed to legacy systems. This is an architectural, not just a coding, challenge.",
-    interlink_slugs: ['prometheus', 'jaeger', 'kubernetes']
-  },
-  'jaeger': {
-    name: 'Jaeger',
-    category: 'Observability & SRE',
-    categorySlug: 'platform-infra-sre',
-    seo_title: 'Hire Jaeger Tracing Experts | Senior Observability Talent',
-    meta_description: 'Pinpoint service bottlenecks. Hire senior remote Jaeger experts for distributed tracing and root cause analysis. Cut debugging time in half. Call us.',
-    intro: "You've moved to microservices, but now you have an invisible system: a single user request bounces across a dozen services, and when something fails, you have no idea where the bottleneck is. You need a Distributed Tracing expert who can deploy, configure, and operate **Jaeger** at scale. Our vetting process is designed to find SREs who understand the deep, architectural challenge of tracing: implementing context propagation, configuring appropriate sampling, and optimizing the Jaeger backend for high-volume ingestion and fast query times. We look for engineers who can not only get Jaeger working but can integrate it seamlessly with your metrics (Prometheus) and logs (OpenTelemetry/Elasticsearch) to provide a single pane of glass for debugging. This level of insight transforms your debugging process from a frustrating guessing game into a predictable, fast, and data-driven exercise, which is essential for maintaining high service levels and engineering velocity.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Are you blind to latency spikes in specific services?",
-            problem: "Traditional metrics tell you *that* a service is slow, but not *why* or *where* the time is being spent within the request's execution path. This makes it impossible to pinpoint whether a latency spike is due to a slow database query, a specific external API call, or an internal bottleneck in a downstream service.",
-            solution: "Our Jaeger experts implement full request tracing across all critical paths. They ensure every service correctly emits spans, capturing critical tags and events. This allows your team to use the Jaeger UI to visualize the full dependency graph and see the exact duration of every operation, enabling precision performance tuning.",
-            kpi: "Reduce time spent diagnosing performance bottlenecks by 70%"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your tracing system too expensive or missing traces?",
-            problem: "Distributed tracing generates a massive volume of data, making it prohibitively expensive to store every trace, while aggressive random sampling often means the critical traces (the ones that failed or were slow) are missed entirely. This results in either massive cloud bills or a useless tracing system.",
-            solution: "We vet for expertise in intelligent, high-value sampling strategies, including **Probabilistic** and **Rate Limiting** sampling at the service level, and most critically, **Head-Based** and **Tail-Based** sampling. They can configure the Jaeger Collector to ensure 100% of error traces and the slowest N% of successful traces are always recorded, balancing cost and data quality.",
-            kpi: "Implement high-value sampling, saving 40% on storage costs while capturing 100% of error traces"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are developers failing to adopt tracing due to complex setup?",
-            problem: "Developers often view manual tracing instrumentation as a burden, requiring too much boilerplate code that clutters business logic. This lack of developer experience (DX) leads to inconsistent adoption, resulting in 'broken traces' that fail to propagate context between services.",
-            solution: "Our senior talent champions **OpenTelemetry (OTel)** for tracing. They set up auto-instrumentation where possible and provide clear, simple OTel SDK wrappers for polyglot services, ensuring a consistent and minimal code footprint for developers. They focus on context propagation standards, making tracing effortless for the entire team.",
-            kpi: "Achieve 95% service tracing coverage within the first month"
-        }
-    ],
-    evaluation: ['Jaeger Collector and Agent configuration', 'Intelligent sampling strategies (e.g., tail-based)', 'Storage backend optimization (Cassandra/Elasticsearch)', 'Root cause analysis using Trace IDs and Span Tags', 'OpenTelemetry integration for instrumentation'],
-    technical_analysis: "Senior-level Jaeger proficiency is about managing the entire distributed tracing infrastructure for high throughput and reliable querying. We evaluate a candidate's architectural choices for the **Jaeger backend components**: understanding the trade-offs between using Cassandra, Elasticsearch, or a dedicated storage solution like ClickHouse for the high-volume ingestion of spans. They must demonstrate expertise in tuning the **Jaeger Collector** and **Agent** to handle production traffic spikes without dropping data, including buffer size and processing parallelism settings. A critical skill is **optimizing query performance**; candidates are tested on their ability to structure tags and use indices effectively in the chosen storage backend to enable fast, targeted trace lookups (e.g., finding all traces for a specific user ID with a 5xx error code). We also assess their expertise in configuring the **Jaeger UI** for team usability and integrating it with SSO/authentication. Finally, the modern expert must master the transition to OpenTelemetry, demonstrating the ability to take OTel-emitted spans (via OTLP) and correctly ingest them into the Jaeger Collector, ensuring seamless interoperability between the industry-standard instrumentation format and the powerful Jaeger analysis engine. This focus on backend resilience and query performance ensures your tracing data is always available when you need it most: during an incident.",
-    interlink_slugs: ['opentelemetry', 'prometheus', 'kubernetes']
-  },
-  'mlflow': {
-    name: 'MLflow',
-    category: 'ML/AI & LLM Ops',
-    categorySlug: 'ml-ai-llm-ops',
-    seo_title: 'Hire MLflow Experts | Senior MLOps Talent for Production',
-    meta_description: 'Operationalize ML models fast. Hire senior remote MLflow experts vetted for tracking, model registry, and scalable deployments. Start a project today.',
-    intro: "Your Data Science team is creating brilliant models, but those models are stuck in notebooks, failing to make it to production reliably and efficiently. You're here because you need an MLflow expert who can bridge the gap between research and production—someone who can establish a robust MLOps practice using MLflow Tracking, Projects, and the Model Registry to ensure governance and reproducibility. Our rigorous vetting process filters out data scientists who only use MLflow casually and identifies the rare MLOps engineer who treats the model lifecycle as a critical piece of infrastructure. They understand version control for models, artifact storage, and the complexities of deploying and managing models with diverse dependencies. By partnering with us, you gain the discipline required to turn machine learning from a research expense into a predictable, revenue-generating product line, accelerating your model-to-production time from months to days.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Are your Data Scientists unable to reproduce past model results?",
-            problem: "Without rigorous tracking of parameters, metrics, code versions, and environment configurations, models become 'black boxes.' If a production model starts degrading, your team cannot reliably roll back or reproduce the exact training run that created the broken model, leading to prolonged service degradation and instability.",
-            solution: "Our senior engineers are experts in enforcing MLflow Tracking. They set up standardized logging for every experiment run, capturing all parameters, metrics, and source code using MLflow Projects. This guarantees **100% reproducibility** and provides an immutable audit trail for governance, ensuring immediate rollback capability when needed.",
-            kpi: "Achieve 100% model reproducibility and 80% faster rollback time"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your model deployment process manual, slow, and insecure?",
-            problem: "Moving a trained model from the notebook environment to a production endpoint (e.g., Kubernetes, SageMaker) is often a manual, custom-scripted process. This is slow, error-prone, and lacks the security and version control needed for a reliable production system, creating a major bottleneck in your ML pipeline.",
-            solution: "We vet for mastery of the **MLflow Model Registry** and seamless deployment. Our experts use the registry for lifecycle management, transitioning models from 'Staging' to 'Production' with a single API call. They implement model deployment using MLflow's standardized deployment formats (e.g., PyFunc, flavor-specific deployment tools), enabling secure, scalable, and automated deployment via CI/CD pipelines.",
-            kpi: "Reduce model-to-production time from weeks to 48 hours"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are you struggling to manage model drift and decay in production?",
-            problem: "A model performing well in training can quickly degrade in production due to changes in real-world data distributions (data drift) or concept drift. Without a robust system to monitor this, the model will silently degrade its performance, negatively impacting business metrics without a clear alert.",
-            solution: "While MLflow focuses on lifecycle, our experts integrate it with dedicated monitoring tools like Prometheus and proprietary platforms. They use the MLflow API to pull model metadata and prediction artifacts, setting up **baseline monitoring** that triggers alerts when production performance deviates from the expected training metrics, giving you early warning on drift and decay.",
-            kpi: "Implement proactive drift alerts, preventing 90% of silent model failures"
-        }
-    ],
-    evaluation: ['MLflow Tracking Server architecture (SQL/Object Storage)', 'Model Registry lifecycle management (Staging/Production)', 'MLflow Projects and reproducible environments', 'PyFunc and custom model packaging/deployment', 'Integration with Kubernetes/SageMaker'],
-    technical_analysis: "A senior MLflow expert is a hybrid MLOps and SRE specialist. The evaluation probes deep into their ability to manage the **MLflow Tracking Server architecture**. This includes securing the server, configuring its persistence store (e.g., Postgres or MySQL) for metadata, and integrating it with secure cloud storage (S3/GCS) for artifact logging. A core challenge is their strategy for managing **multi-team, multi-project usage**—they must demonstrate how to partition access and implement naming conventions to prevent metadata collisions. Mastery of the **MLflow Model Registry** is non-negotiable; candidates must articulate a detailed GitOps-based workflow for moving models through stages (Staging, Production, Archived), often involving webhooks and CI/CD triggers to deploy automatically upon status change. We test their knowledge of **Model Packaging**—specifically the creation of custom PyFunc models to wrap complex pre- or post-processing logic—which is critical for deploying non-standard models. Finally, we assess their expertise in **containerizing MLflow components** using Docker and deploying the entire stack on Kubernetes or a managed service like AWS SageMaker, ensuring high availability and cost-effective scaling for both training and inference workloads. This holistic approach ensures the model isn't just tracked, but is fully operationalized as a first-class production service.",
-    interlink_slugs: ['langchain', 'snowflake', 'python']
-  },
   'vault': {
-    name: 'Vault',
+    name: 'HashiCorp Vault',
     category: 'Security & GRC',
     categorySlug: 'security-grc',
-    seo_title: 'Hire Vault Experts | Senior Security Engineers',
-    meta_description: 'Centralize and secure your secrets. Hire senior remote Vault experts to manage dynamic secrets, PKI, and secure auth methods. Book a call to start.',
-    intro: "Your secrets are scattered across environment variables, config files, and code—a ticking time bomb for a breach. You need an engineer who is a master of HashiCorp Vault, someone who can architect a secure, centralized secrets management solution for your entire organization. Our vetting process identifies engineers who don't just know the Vault API, but who deeply understand the core security principles behind it. They are experts in implementing dynamic secrets to eliminate long-lived credentials, managing authentication methods for humans and machines, and writing fine-grained policies to enforce least-privilege access. By hiring a Vault expert from us, you’re not just buying a tool; you’re investing in a foundational piece of your security posture that will protect your most sensitive data, streamline your developer workflows, and make your auditors happy. This is about moving from a reactive, vulnerable state to a proactive, secure, and automated one.",
+    seo_title: 'Hire HashiCorp Vault Experts | Senior Security Talent',
+    meta_description: 'Secure your secrets at scale. Hire senior remote Vault talent for robust secrets management, rotation, and PKI. Schedule a call today.',
+    intro: "You've realized that storing API keys and database credentials in environment variables or configuration files is a massive security liability and a compliance nightmare. You need a dedicated Vault expert who can eliminate secret sprawl, implement a Zero Trust security model, and establish dynamic, short-lived credentials across your entire infrastructure. Our vetting process is designed to filter for senior engineers who can architect Vault for high availability (HA), manage complex authentication methods (e.g., Kubernetes, OIDC, AWS/Azure), and operationalize its most powerful features like Dynamic Secrets and Transit Encryption. Hiring a Vault expert from us is not just about installing software; it's about fundamentally transforming your security posture from vulnerable static secrets to an automated, auditable, and resilient secrets management platform. This investment directly reduces your risk of a data breach and simplifies compliance with regulations like SOC 2 and HIPAA.",
     pains: [
-      {
-        icon: AlertTriangle,
-        pain: "Are your database credentials static and long-lived?",
-        problem: "Hardcoded or long-lived database credentials are a primary target for attackers. Once compromised, they provide persistent access to your most sensitive data. Manually rotating these credentials is a slow, error-prone process that is often neglected, leaving you perpetually vulnerable.",
-        solution: "We find engineers who are experts in implementing Vault's **Dynamic Secrets Engine**. They can configure Vault to generate ephemeral, on-demand database credentials with a short time-to-live (TTL). Applications request credentials when they need them and they expire automatically, dramatically reducing your risk exposure and eliminating the need for manual rotation.",
-        kpi: "Eliminate 100% of long-lived database credentials"
-      },
-      {
-        icon: AlertTriangle,
-        pain: "How do your applications and CI/CD pipelines get secrets?",
-        problem: "Passing secrets to applications via environment variables or plaintext files is insecure and a common source of leaks. Managing access for dozens of services and developers is complex and often results in overly permissive policies, violating the principle of least privilege.",
-        solution: "Our engineers are masters of Vault's authentication methods. They can securely integrate Vault with platforms like **Kubernetes** (using the Vault Agent and CSI driver) or **AWS** (using the IAM auth method) to provide secure, automated, and identity-based access to secrets. This means no more secrets in environment variables or on disk.",
-        kpi: "Achieve zero-trust secret injection for applications"
-      },
-      {
-        icon: AlertTriangle,
-        pain: "Is your internal PKI a manual process of generating TLS certs?",
-        problem: "Manually creating and distributing TLS certificates for internal microservice communication (mTLS) is a massive operational burden and a security risk if not done correctly. It's slow, error-prone, and doesn't scale.",
-        solution: "We look for engineers with expertise in Vault's **PKI Secrets Engine**. They can use Vault as a private Certificate Authority (CA) to automatically generate short-lived TLS certificates for your services, enabling secure, encrypted communication (mTLS) with minimal operational overhead.",
-        kpi: "Automate 100% of internal certificate management"
-      }
+        {
+            icon: AlertTriangle,
+            pain: "Is manual secret rotation exposing you to breaches?",
+            problem: "If a database password or API key is static and used for months or years, a single breach or accidental commit can compromise your entire system. Manual rotation is slow, error-prone, and often leads to downtime when a service uses the old credential, creating a security/availability trade-off.",
+            solution: "Our engineers are experts in implementing Vault's **Dynamic Secrets Engine**. They integrate Vault with your databases and cloud providers (e.g., RDS, AWS IAM) to generate unique, short-lived credentials on demand. When the service is finished, the secret is automatically revoked, eliminating the risk of long-lived credentials and enforcing a Zero Trust model.",
+            kpi: "Achieve 100% dynamic secret usage for core applications"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to securely manage keys for multiple clouds or teams?",
+            problem: "As your company scales, secrets sprawl into multiple systems (AWS Secrets Manager, Azure Key Vault, local config files, Git), leading to inconsistency, a fragmented security policy, and an unmanageable audit trail. This complexity makes it impossible for your security team to maintain control.",
+            solution: "We hire architects who can deploy Vault as the **centralized secrets broker**. They consolidate access policies using Vault's namespaces and fine-grained access control (ACLs), acting as the single source of truth for all secrets across hybrid and multi-cloud environments, dramatically simplifying governance and auditing.",
+            kpi: "Consolidate 90% of all application secrets into Vault within 90 days"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you manually managing SSL/TLS certificates for internal services?",
+            problem: "Maintaining a Public Key Infrastructure (PKI) for internal microservices with manual certificate issuance and renewal is a time-consuming, repetitive task that frequently results in expired certificates, leading to production outages and service trust issues.",
+            solution: "Our experts deploy and automate Vault's **PKI Secrets Engine**. They configure Certificate Authority (CA) roles to automatically issue and renew internal TLS certificates for all your microservices, dramatically reducing operational overhead and eliminating certificate expiration-related downtime.",
+            kpi: "Eliminate certificate expiration-related downtime entirely"
+        }
     ],
-    evaluation: ['Secrets engines usage (KV, Database, PKI)', 'Dynamic secrets for ephemeral credentials', 'Auth methods integration (Kubernetes, AWS, OIDC)', 'Policy and ACL management for least privilege', 'High-availability and operational best practices'],
-    technical_analysis: "Evaluating a senior Vault engineer requires a deep dive into both architectural and operational expertise. Our process presents candidates with a complex, multi-cloud, multi-Kubernetes cluster environment and tasks them with designing a resilient, highly available Vault deployment. This includes articulating the trade-offs between different storage backends (like Consul vs. integrated storage), designing a disaster recovery plan with replication, and securing the Vault cluster itself (TLS, audit devices, seal/unseal mechanisms). We probe their understanding of Vault's identity-based security model by requiring them to create a detailed policy and role structure for a sample application, demonstrating a firm grasp of least-privilege access. A key practical test involves configuring an auth method end-to-end; for example, setting up the Kubernetes auth method, creating the necessary roles, and demonstrating how a pod would securely retrieve a secret without any hardcoded tokens. We also assess their ability to use Vault for more than just key-value secrets, requiring them to set up a dynamic secrets engine for a database and a PKI engine to act as an internal CA. Finally, they must demonstrate how they would monitor the health and security of the Vault cluster itself, including interpreting audit device logs and setting up Prometheus metrics for key performance indicators. This ensures we hire engineers who can not only use Vault but can operate it as a critical piece of production infrastructure.",
-    interlink_slugs: ['kubernetes', 'aws', 'oidc']
+    evaluation: ['Vault HA deployment and storage backends (Raft)', 'Dynamic Secrets implementation (Databases, Cloud)', 'Authentication Methods (Kubernetes, OIDC, LDAP)', 'Transit Secrets Engine for encryption-as-a-service', 'Policy and ACL management'],
+    technical_analysis: "The technical evaluation for a senior Vault engineer is centered on architectural resilience and the operational security model. Candidates must demonstrate deep knowledge of **Vault HA deployment**, specifically using the **Raft Storage Backend** over legacy Consul, articulating the complexities of cluster initialization, unsealing, and auto-unsealing mechanisms (e.g., using cloud key management services). A core area of expertise is the **Dynamic Secrets Engine**, requiring candidates to implement and justify lease duration and revocation policies for high-volume database access, demonstrating how to use the `lease_id` and monitor lease expiry. We rigorously test their understanding of **Auth Methods**, specifically the **Kubernetes Auth Method** for seamless injection of secrets into pods via Service Account Tokens, and the OIDC/JWT Auth Method for integrating with external identity providers. Furthermore, we assess mastery of the **Transit Secrets Engine** for data encryption/decryption-as-a-service, ensuring they understand deterministic vs. convergent encryption and proper key rotation without data loss. Finally, a candidate must demonstrate proficiency in HCL for Policy-as-Code using Sentinel or Terraform to manage all Vault configuration in an auditable, GitOps-compliant manner, proving they can deploy and manage Vault itself with the same security discipline it enforces.",
+    interlink_slugs: ['kubernetes', 'sops', 'oidc']
   },
   'external-secrets': {
-    name: 'External Secrets',
+    name: 'External Secrets Operator',
     category: 'Security & GRC',
-    categorySlug: 'platform-infra-sre',
-    seo_title: 'Hire K8s Secrets Experts | External Secrets Operator',
-    meta_description: 'Securely sync secrets in Kubernetes. Hire senior remote engineers expert in External Secrets Operator (ESO) with Vault & AWS. Book a call today.',
+    categorySlug: 'security-grc',
+    seo_title: 'Hire External Secrets Experts | Kubernetes Secret Talent',
+    meta_description: 'Sync cloud secrets to Kubernetes securely. Hire senior remote External Secrets experts for automated, one-way secret syncing. Get started now.',
     intro: "Your Kubernetes secrets are checked into Git or manually managed with kubectl, creating security vulnerabilities and operational bottlenecks. You need an expert in modern GitOps secret management. You're here to find an engineer who has mastered the **External Secrets Operator (ESO)** to securely and automatically sync secrets from external stores like AWS Secrets Manager, Google Secrets Manager, or HashiCorp Vault directly into your Kubernetes clusters. Our vetting process identifies platform engineers who understand that separating secrets from application configuration is a fundamental principle of secure, modern infrastructure. They are not just Kubernetes operators; they are security-conscious engineers who can build a seamless and auditable pipeline for secrets management that empowers developers without compromising on security. By hiring an ESO expert, you eliminate manual secret management, reduce the risk of secret leakage, and create a scalable system that works across multiple clusters and environments.",
     pains: [
-      {
-        icon: AlertTriangle,
-        pain: "Are you checking encrypted secrets into Git with tools like SOPS?",
-        problem: "While better than plaintext, committing encrypted secrets to Git introduces a significant operational burden. You have to manage GPG or KMS keys for every developer and CI/CD system, and every secret rotation requires a new commit and pull request, creating a slow and painful workflow.",
-        solution: "We find engineers who can use External Secrets Operator to completely decouple secrets from your Git repository. They configure ESO to read secrets directly from a dedicated secret store (like Vault or AWS Secrets Manager) and sync them into Kubernetes. This allows you to manage secrets entirely outside of Git, simplifying workflows and key management.",
-        kpi: "Achieve a 100% Git-free secret management workflow"
-      },
-      {
-        icon: AlertTriangle,
-        pain: "How do you handle secret rotation across multiple clusters?",
-        problem: "Manually updating Kubernetes secrets in multiple clusters after a rotation is an error-prone and time-consuming task. It's easy to miss a cluster or a namespace, leaving applications with old, invalid credentials and causing production outages.",
-        solution: "Our engineers are experts in using ESO to automate secret rotation. They configure ESO to periodically poll for changes in the external secret store. When a secret is rotated in the central store, ESO automatically detects the change and updates the corresponding Kubernetes secret in every cluster, ensuring a seamless and reliable rotation process.",
-        kpi: "95% reduction in manual effort for secret rotation"
-      },
-      {
-        icon: AlertTriangle,
-        pain: "Are you duplicating the same secret in every namespace?",
-        problem: "Managing copies of the same secret (e.g., a Docker registry pull secret or a shared API key) across dozens of namespaces is inefficient, difficult to audit, and increases the risk of a secret becoming stale or out of sync.",
-        solution: "We look for engineers who can leverage ESO's advanced features, like `ClusterSecretStore` and templating. This allows them to define a single source of truth for a secret and have ESO securely distribute and sync it to multiple namespaces or even an entire cluster, following the Don't Repeat Yourself (DRY) principle.",
-        kpi: "Centralized management for 100% of shared secrets"
-      }
+        {
+            icon: AlertTriangle,
+            pain: "Are sensitive secrets stored insecurely in Kubernetes native secrets?",
+            problem: "The default Kubernetes Secret is only base64 encoded, not encrypted, and is stored in the cluster's etcd database. If etcd is breached or misconfigured, all your sensitive data (database credentials, API keys) is immediately compromised. Storing the secrets directly in manifests is a security time bomb.",
+            solution: "Our experts deploy External Secrets Operator to **proxy** the secrets. The sensitive data is kept exclusively in external, hardened systems like Vault or AWS Secrets Manager, and ESO pulls a synchronized copy, keeping the data source secure and preventing secret exposure via cluster misconfiguration.",
+            kpi: "Eliminate all hardcoded or base64 secrets in Kubernetes manifests"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Do developers wait for DevOps to manually update secrets after rotation?",
+            problem: "Whenever a master key in a cloud provider (e.g., a database password in AWS Secrets Manager) is rotated, a developer must manually fetch the new value and update the Kubernetes Secret, leading to long delays, potential downtime, and developer friction.",
+            solution: "We implement External Secrets with **polling and synchronization**. Once configured, ESO automatically detects changes in the external SecretStore (e.g., Vault) and instantly updates the corresponding Kubernetes Secret, ensuring zero delay in rotation and zero downtime for the application pods.",
+            kpi: "Reduce secret update propagation time from hours to seconds"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is secret access control confusing and hard to audit?",
+            problem: "Using native Kubernetes Secrets means all applications within a namespace often share the same secret access privileges, making it difficult to enforce the Principle of Least Privilege. Auditing who accessed which secret at what time is complex or impossible.",
+            solution: "Our engineers configure ESO to utilize the fine-grained access control of the external SecretStore. By defining specific `SecretStore` resources, they ensure that the External Secrets Operator only has access to the minimal required data, providing a clear, auditable trail and enforcing strict access boundaries.",
+            kpi: "Enforce strict Least Privilege principle on 100% of production secrets"
+        }
     ],
-    evaluation: ['Integration with various secret providers (AWS, Vault, GCP)', 'SecretStore and ExternalSecret configuration', 'Templating and data transformation', 'Refresh intervals and caching strategies', 'Security best practices and RBAC for ESO'],
-    technical_analysis: "Our technical evaluation for an External Secrets Operator (ESO) expert focuses on their ability to build a secure and scalable secrets management pipeline for Kubernetes. We test their knowledge of configuring different `SecretStore` types (e.g., Vault, AWS Secrets Manager, GCP Secret Manager) and the specific authentication mechanisms for each, such as using Kubernetes service account tokens with IAM roles (IRSA) for AWS, or the Kubernetes auth method for Vault. Candidates are presented with complex secret management scenarios, like syncing a multi-line TLS certificate from a provider or transforming a JSON object stored as a secret into multiple individual key-value pairs in a Kubernetes secret. This assesses their proficiency with ESO's templating and data transformation capabilities. We also probe their understanding of the operational aspects of ESO, including setting appropriate refresh intervals, debugging sync errors by inspecting the ESO controller logs, and configuring Prometheus metrics for monitoring the health of the operator. Security is paramount; candidates must demonstrate how to configure RBAC permissions for ESO itself, limiting its access to only the namespaces and external secrets it needs. Finally, we evaluate their ability to design a holistic GitOps workflow that incorporates ESO, where application manifests in Git reference the *name* of a secret, but the secret's *value* is managed entirely out-of-band and synced by ESO, demonstrating a complete separation of config and secrets.",
-    interlink_slugs: ['vault', 'kubernetes', 'aws']
+    evaluation: ['Deploying and securing the ESO Operator', 'Configuring `SecretStore` and `ClusterSecretStore`', 'Integrating with Vault, AWS Secrets Manager, and Azure Key Vault', 'Syncing secrets with labels and property mapping', 'Handling secret rotation and auto-update policies'],
+    technical_analysis: "Mastery of the External Secrets Operator (ESO) requires deep competence in both Kubernetes Operators and external vault integration. The technical evaluation focuses heavily on a candidate's ability to architect the **`SecretStore` resource** to securely connect to the external provider. This involves understanding and configuring cloud-specific authentication methods, such as using an AWS IAM Role tied to the ESO Service Account (via IRSA) or using the Kubernetes Auth Method for HashiCorp Vault. A critical component is the **`ExternalSecret` definition**: we test their knowledge of advanced data extraction using JSONPath or template mapping to pull specific values from complex secret objects in the external store. Candidates must demonstrate how to configure **reconciliation intervals** and **rotation policy**—explaining the trade-off between aggressive polling for faster rotation and API rate limiting on the external provider. Finally, an expert must secure the Operator itself, ensuring the ESO deployment adheres to Pod Security Standards and the Service Account only has `get`/`watch`/`list` access to the necessary Custom Resources, preventing lateral movement within the cluster in case of compromise.",
+    interlink_slugs: ['kubernetes', 'vault', 'aws']
   },
   'launchdarkly': {
     name: 'LaunchDarkly/OpenFeature',
@@ -420,189 +284,167 @@ export const allTech: AllTech = {
     meta_description: 'De-risk deployments. Hire senior remote experts in LaunchDarkly & OpenFeature for feature flagging and progressive delivery. Book a discovery call.',
     intro: "Your release process is a high-stakes, all-or-nothing event that brings your team to a standstill. You need an engineer who can transform your deployments from a source of fear into a source of competitive advantage. You're here to find an expert in feature management platforms like LaunchDarkly and the vendor-neutral OpenFeature standard. Our vetting process identifies engineers who understand that feature flagging is not just an 'if' statement; it's a strategic capability that enables progressive delivery, trunk-based development, and real-time operational control. They are not just developers; they are release engineers who can architect a feature flagging strategy that de-risks deployments, empowers product teams to run experiments, and gives you a 'kill switch' for production issues. By hiring an expert in this space, you fundamentally change your team's relationship with production, enabling them to ship faster and with more confidence than ever before.",
     pains: [
-      {
-        icon: AlertTriangle,
-        pain: "Is every deployment a high-stress 'big bang' release?",
-        problem: "Monolithic deployments create a massive blast radius. A single bug can cause a full-site outage and require a lengthy, risky rollback, bringing all other development to a halt. This fear of failure leads to a slow, cautious release cadence that kills velocity.",
-        solution: "We find engineers who are masters of using feature flags to **decouple deployment from release**. They can help you implement a workflow where new code is merged and deployed to production safely wrapped in a feature flag, completely inert. The feature is then 'released' to users via the LaunchDarkly dashboard with zero risk and no new deployment.",
-        kpi: "90% reduction in deployment-related incidents"
-      },
-      {
-        icon: AlertTriangle,
-        pain: "Are you unable to test new features with real users before a full launch?",
-        problem: "Without a way to target specific user segments, you're building in a vacuum. You launch features based on assumptions and hope they work, with no ability to gather feedback or measure impact on a small cohort of users before a full-scale release.",
-        solution: "Our engineers are experts in LaunchDarkly's powerful targeting capabilities. They can implement **progressive rollouts**, releasing a new feature to internal users first, then to a beta group, then to 10% of customers, and so on. This allows you to test in production safely, get real-world feedback, and make data-driven decisions about your product.",
-        kpi: "Launch 100% of major features with a progressive rollout"
-      },
-      {
-        icon: AlertTriangle,
-        pain: "When a bug is found in production, is your only option a full rollback?",
-        problem: "A full rollback is a slow, blunt instrument. It often rolls back unrelated, perfectly good changes along with the bad one, and it requires a new deployment cycle, extending your mean time to recovery (MTTR).",
-        solution: "We look for engineers who can architect feature flags to act as a **'kill switch'** for your application. If a newly released feature causes a spike in errors or negative user feedback, you can instantly turn it off in the LaunchDarkly UI for all users, with no code changes and no new deployment required. This reduces your MTTR from hours to seconds.",
-        kpi: "Reduce incident MTTR from hours to seconds"
-      }
+        {
+            icon: AlertTriangle,
+            pain: "Is every deployment a high-stress 'big bang' release?",
+            problem: "Monolithic deployments create a massive blast radius. A single bug can cause a full-site outage and require a lengthy, risky rollback, bringing all other development to a halt. This fear of failure leads to a slow, cautious release cadence that kills velocity.",
+            solution: "We find engineers who are masters of using feature flags to **decouple deployment from release**. They can help you implement a workflow where new code is merged and deployed to production safely wrapped in a feature flag, completely inert. The feature is then 'released' to users via the LaunchDarkly dashboard with zero risk and no new deployment.",
+            kpi: "90% reduction in deployment-related incidents"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you unable to test new features with real users before a full launch?",
+            problem: "Without a way to target specific user segments, you're building in a vacuum. You launch features based on assumptions and hope they work, with no ability to gather feedback or measure impact on a small cohort of users before a full-scale release.",
+            solution: "Our engineers are experts in LaunchDarkly's powerful targeting capabilities. They can implement **progressive rollouts**, releasing a new feature to internal users first, then to a beta group, then to 10% of customers, and so on. This allows you to test in production safely, get real-world feedback, and make data-driven decisions about your product.",
+            kpi: "Launch 100% of major features with a progressive rollout"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "When a bug is found in production, is your only option a full rollback?",
+            problem: "A full rollback is a slow, blunt instrument. It often rolls back unrelated, perfectly good changes along with the bad one, and it requires a new deployment cycle, extending your mean time to recovery (MTTR).",
+            solution: "We look for engineers who can architect feature flags to act as a **'kill switch'** for your application. If a newly released feature causes a spike in errors or negative user feedback, you can instantly turn it off in the LaunchDarkly UI for all users, with no code changes and no new deployment required. This reduces your MTTR from hours to seconds.",
+            kpi: "Reduce incident MTTR from hours to seconds"
+        }
     ],
     evaluation: ['SDK integration (client-side and server-side)', 'Targeting rules and progressive rollouts', 'Experimentation and A/B testing setup', 'The OpenFeature standard and vendor neutrality', 'Performance and reliability considerations'],
     technical_analysis: "Our evaluation of a senior feature management expert goes beyond basic flag creation. We assess their architectural understanding of how to integrate a platform like LaunchDarkly into a complex, distributed system. This includes the trade-offs between using client-side and server-side SDKs, managing context and user attributes for powerful targeting, and ensuring the performance and reliability of the SDKs themselves (e.g., using the Relay Proxy for high-volume environments). A key area of focus is their ability to design a scalable and maintainable flagging strategy. This means they can create a clear naming convention, establish a process for managing the lifecycle of a flag (from creation to cleanup), and use tags and other metadata to keep the system organized. We also test their expertise in the emerging **OpenFeature** standard, assessing their ability to write vendor-neutral code that can be easily switched between different feature flag providers, preventing vendor lock-in. Finally, we present them with complex release scenarios, requiring them to design a progressive rollout plan that combines percentage-based rollouts with attribute-based targeting to safely release a high-risk feature, demonstrating their strategic thinking and ability to use feature flagging as a core part of the development lifecycle.",
     interlink_slugs: ['kubernetes', 'react', 'node']
+  },
+  'okta': {
+    name: 'Okta/Auth0',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
+    seo_title: 'Hire Okta & Auth0 Experts | Senior Identity Engineers',
+    meta_description: 'Build secure, scalable identity. Hire senior remote Okta & Auth0 experts for SSO, MFA, and B2B federation. Book a call to start.',
+    intro: "You're building your own authentication system, and it's becoming a complex and risky distraction from your core product. You need an identity expert. You're here to find an engineer who can leverage a platform like Okta or Auth0 to implement secure, scalable, and feature-rich identity management, including SSO, MFA, and user provisioning. Our vetting process identifies engineers who understand that identity is a critical piece of infrastructure, not just a login form. They are experts in modern authentication protocols, federation, and building secure, seamless user experiences. By hiring an identity expert from us, you can offload the burden of building and maintaining a complex authentication system and focus on what you do best: building your product. This accelerates your time-to-market, enhances your security posture, and unblocks enterprise sales by providing the features your customers demand.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: "Are you spending months building and maintaining your own user authentication?",
+        problem: "Building a secure, feature-rich authentication system (password reset, MFA, social logins) is a massive undertaking that distracts from your core business and is a common source of security vulnerabilities.",
+        solution: "We find engineers who are experts in identity platforms like Okta or Auth0, allowing you to outsource your authentication and focus on your product, not on password hashing algorithms. This can save you months of development time.",
+        kpi: "Reduce time-to-market for new products by 2-3 months"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Can your enterprise customers sign in with their own SSO?",
+        problem: "A lack of enterprise Single Sign-On (SAML/OIDC) is a major blocker for selling to large companies, who demand it for security and compliance.",
+        solution: "Our engineers can rapidly integrate with any enterprise identity provider using Okta or Auth0's federation capabilities, unblocking your enterprise sales pipeline and accelerating revenue.",
+        kpi: "Unblock enterprise sales with SSO & federation"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Are you struggling to manage user access across all your applications?",
+        problem: "Manual provisioning and de-provisioning of users in multiple systems is slow, error-prone, and a security risk. When an employee leaves, their access might linger for days.",
+        solution: "We vet for experience with SCIM (System for Cross-domain Identity Management) to automate user provisioning, ensuring access is granted and revoked instantly and correctly across all your systems.",
+        kpi: "Automate user provisioning and de-provisioning (SCIM)"
+      }
+    ],
+    evaluation: ['OIDC/OAuth2 flow implementation and best practices', 'User provisioning (SCIM) and directory integration', 'MFA policy enforcement and adaptive MFA', 'Custom actions/rules for extending functionality', 'API access management'],
+    technical_analysis: "A senior identity engineer is evaluated on their deep understanding of modern authentication and authorization protocols. Our process includes practical exercises where candidates must implement a secure OIDC/OAuth2 flow from scratch for a single-page application, demonstrating their mastery of the Authorization Code flow with PKCE. We assess their ability to configure and manage enterprise federation using SAML, including debugging assertions and managing certificate rotation. A key area of expertise is extending the identity platform; we require candidates to write custom Actions (Auth0) or Hooks (Okta) to implement complex business logic, such as enriching user profiles or enforcing custom authorization rules. We also test their knowledge of API access management, requiring them to secure a sample API using JWTs and configure scopes and claims for fine-grained access control. Finally, a candidate must demonstrate their understanding of the security implications of different configurations, such as token lifetimes, session management, and the trade-offs between different MFA factors. This ensures we hire engineers who can build an identity solution that is not just functional, but also secure and scalable.",
+    interlink_slugs: ['oidc', 'saml', 'security-grc']
+  },
+  'oidc': {
+    name: 'OIDC/SAML',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
+    seo_title: 'Hire OIDC/SAML Experts | Senior Identity Engineers',
+    meta_description: 'Enable enterprise SSO. Hire senior remote OIDC & SAML experts for secure identity federation and authentication. Contact us for a consultation.',
+    intro: "Your applications have inconsistent, insecure login mechanisms, and you can't sell to enterprise customers because you don't support SSO. You need an expert in modern identity protocols like OpenID Connect (OIDC) and SAML to build a centralized, secure authentication and federation strategy. Our vetting process identifies engineers who have a deep, standards-based understanding of how these complex protocols work. They are not just plugging in a library; they are architecting a secure identity layer for your entire platform. By hiring an identity protocol expert, you can finally unblock your enterprise sales pipeline, improve your security posture, and provide a seamless login experience for all your users.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: "Is every application on your platform inventing its own login system?",
+        problem: "Homegrown authentication is a notorious source of security vulnerabilities and a poor user experience. It's also a massive time sink for your development teams.",
+        solution: "We find experts in OIDC and SAML who can help you implement a centralized identity provider, allowing all your applications to use a single, secure, and well-understood login flow.",
+        kpi: "Centralized, secure authentication"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Are you losing enterprise deals due to a lack of SSO?",
+        problem: "Forcing enterprise users to create a separate username and password for your app is a major sales and security obstacle. Large companies demand SSO.",
+        solution: "Our engineers are masters of identity federation. They can use SAML or OIDC to securely connect your application to your customers' identity providers (like Okta, Azure AD), enabling seamless and secure SSO.",
+        kpi: "Unblock enterprise sales with identity federation"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Are your mobile and single-page apps using insecure authentication flows?",
+        problem: "Using the wrong OAuth 2.0 flow (e.g., the deprecated implicit flow) can expose your applications to token theft and other attacks.",
+        solution: "We vet for a deep understanding of modern security best practices, such as the Authorization Code flow with PKCE, ensuring your applications are using the most secure methods available to protect user data.",
+        kpi: "Expertise in secure OAuth 2.0 flows (PKCE)"
+      }
+    ],
+    evaluation: ['Deep understanding of OAuth2 flows (Auth Code, PKCE)', 'OIDC token types (ID Token, Access Token) and claims', 'SAML assertions and IdP/SP-initiated flows', 'Security best practices (state parameter, nonce)', 'Debugging and troubleshooting federation issues'],
+    technical_analysis: "Our technical analysis for an OIDC/SAML expert goes beyond the high-level concepts. Candidates are required to demonstrate a deep, practical understanding of the protocols. We present them with a HAR file of a failed SAML login and ask them to debug the base64-encoded assertion to find the error (e.g., an incorrect NameID format or a certificate mismatch). For OIDC, we require them to explain the exact purpose of each parameter in an authorization request (e.g., `state`, `nonce`, `code_challenge`) and the security vulnerability that each one prevents. We also assess their ability to secure an API using access tokens, including how to perform token validation (checking the signature, issuer, and audience) and how to use scopes for authorization. A key part of the evaluation is their ability to architect a multi-tenant federation solution, explaining how they would dynamically handle configuration for hundreds of different customer identity providers. This ensures we hire engineers who can build a robust, secure, and scalable identity platform, not just follow a tutorial.",
+    interlink_slugs: ['okta', 'security-grc', 'vault']
+  },
+  'sops': {
+    name: 'SOPS',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
+    seo_title: 'Hire SOPS Experts | GitOps Secrets Management',
+    meta_description: 'Secure your GitOps workflow. Hire senior remote SOPS experts to manage encrypted secrets in Git with KMS or GPG. Get started today.',
+    intro: "You want the benefits of GitOps, but you're struggling with the 'secret problem.' Committing plaintext secrets is a non-starter, but managing encrypted files with PGP keys for your whole team is an operational nightmare. You're here to find an expert in Mozilla SOPS who can solve this problem elegantly. Our vetting process identifies engineers who understand how to use SOPS with cloud KMS providers (AWS KMS, GCP KMS) to create a secure, auditable, and developer-friendly workflow for managing secrets in Git. By hiring a SOPS expert, you can fully embrace GitOps without compromising on security, allowing your team to move faster and with more confidence.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: "Are you checking encrypted secrets into Git and dealing with key management?",
+        problem: "Managing PGP keys for every developer and CI/CD system to decrypt secrets is a complex and fragile operational burden. Key rotation is a nightmare, and onboarding new developers is slow.",
+        solution: "We find engineers who are experts in using SOPS with cloud-based KMS providers like AWS KMS or GCP KMS. This eliminates the need for individual PGP keys and simplifies key management, using cloud IAM to control access.",
+        kpi: "Simplified key management with cloud KMS"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "How do you give your CI/CD pipeline access to secrets without exposing keys?",
+        problem: "Storing decryption keys as environment variables in your CI/CD system is a major security vulnerability.",
+        solution: "We vet for engineers who can configure a secure CI/CD workflow where the pipeline is granted a temporary IAM role that allows it to use KMS to decrypt the SOPS file, without ever handling a raw key.",
+        kpi: "Secure, keyless CI/CD decryption workflows"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Are you struggling to manage secrets across multiple environments?",
+        problem: "Managing different secret files for dev, staging, and prod is error-prone and can easily lead to a secret from a lower environment being accidentally promoted to production.",
+        solution: "Our experts can implement advanced SOPS patterns, such as using different KMS keys per environment or leveraging SOPS's YAML features to manage all environments in a single, encrypted file, reducing risk and simplifying management.",
+        kpi: "Robust, multi-environment secret management"
+      }
+    ],
+    evaluation: ['Integration with KMS providers (AWS, GCP)', 'Key management and rotation strategies', 'Git integration and pre-commit hooks', 'CI/CD decryption workflows', 'User access control with GPG or age'],
+    technical_analysis: "A senior SOPS expert is evaluated on their ability to design and implement a secure, end-to-end GitOps secrets workflow. Our technical analysis requires candidates to create a `.sops.yaml` configuration from scratch that uses a combination of KMS keys and PGP keys for different user groups, demonstrating an understanding of key groups and encryption rules. We test their ability to integrate SOPS into a developer's local workflow, for example by setting up git hooks to automatically encrypt/decrypt files on commit/checkout. A key scenario involves designing a CI/CD pipeline in GitHub Actions that can decrypt a SOPS file without any long-lived credentials, requiring them to demonstrate knowledge of using OIDC to assume a cloud IAM role with KMS permissions. We also assess their scripting skills by asking them to write a small helper script that uses the SOPS binary to inject secrets into an application's environment at runtime. This ensures we hire engineers who can not only use SOPS but can also build the automation around it to make it a seamless part of the development lifecycle.",
+    interlink_slugs: ['terraform', 'kubernetes', 'vault']
+  },
+  'codeql': {
+    name: 'CodeQL/Snyk',
+    category: 'Security & GRC',
+    categorySlug: 'security-grc',
+    seo_title: 'Hire AppSec Experts | CodeQL & Snyk Security Talent',
+    meta_description: 'Shift security left. Hire senior remote AppSec engineers to integrate CodeQL, Snyk, and SAST/DAST into your CI/CD pipeline. Contact us.',
+    intro: "You're finding critical security vulnerabilities in production, where they are 100x more expensive to fix. You need to 'shift left.' You're here to find an Application Security (AppSec) engineer who is an expert in integrating static and dynamic analysis tools (SAST/DAST) like CodeQL, SonarQube, or Snyk directly into your development lifecycle. Our vetting process identifies engineers who don't just run scanners, but who can tune them to reduce false positives, write custom rules to find business-specific vulnerabilities, and work with developers to fix the root cause. By hiring an AppSec expert, you transform security from a final-stage gatekeeper into a continuous, automated part of your development process, dramatically reducing your risk and enabling your team to ship faster and more securely.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: "Are you finding security bugs in production?",
+        problem: "Finding vulnerabilities late in the cycle is 100x more expensive to fix and puts your business, reputation, and customers at significant risk.",
+        solution: "We find AppSec engineers who can integrate Static Application Security Testing (SAST) tools like CodeQL or SonarQube directly into your CI/CD pipeline, catching bugs before they are even merged to the main branch.",
+        kpi: "Shift security left into the CI/CD pipeline"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Are you vulnerable to exploits in your open-source dependencies?",
+        problem: "Your application is only as secure as its weakest dependency. A single vulnerable open-source package can compromise your entire system.",
+        solution: "Our engineers are experts in Software Composition Analysis (SCA) tools like Snyk or Trivy, which automatically scan your dependencies for known vulnerabilities and even suggest automated fixes, securing your supply chain.",
+        kpi: "Automated dependency vulnerability scanning"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Are your security scans generating too much noise and false positives?",
+        problem: "A noisy scanner that generates hundreds of unactionable false positives will be ignored by developers, rendering the tool useless and creating a culture of alert fatigue.",
+        solution: "We vet for engineers who have experience tuning and customizing security tools to reduce false positives and create high-signal, actionable security alerts that developers will actually fix. This includes writing custom CodeQL queries or Snyk rules.",
+        kpi: "Experience in false positive triage and tuning"
+      }
+    ],
+    evaluation: ['SAST/DAST/SCA integration into CI/CD pipelines', 'False positive triage and tuning', 'Custom rule creation for specific vulnerabilities', 'Dependency scanning and license compliance', 'Reporting and metrics for security posture'],
+    technical_analysis: "The technical evaluation for an AppSec engineer focuses on their ability to build and operate a practical, effective security program. We assess their deep knowledge of at least one major SAST tool, requiring them to write a custom CodeQL query to find a specific, non-trivial vulnerability class (e.g., a specific type of injection flaw) in a sample application. For SCA, they must demonstrate how to configure a tool like Snyk to not only fail the build on critical vulnerabilities but also how to manage a process for ignoring acceptable risks and planning upgrades for others. We also test their understanding of Dynamic Application Security Testing (DAST) by asking them to configure a tool like OWASP ZAP to run authenticated scans against a live application within a CI pipeline. A key part of the evaluation is their ability to work with developers; we present them with a security finding and ask them to explain how they would report it, including how to provide clear remediation guidance and how to balance security risk with product deadlines. This ensures we hire engineers who are security experts, but also pragmatic partners to the development team.",
+    interlink_slugs: ['github-actions', 'security-grc', 'trivy']
   }
-};
-
-export const techCategories: TechCategory[] = [
-  {
-    name: 'APIs & Backend Services',
-    slug: 'backend-services',
-    pain: "Is your backend a bottleneck or a force multiplier?",
-    icon: Server,
-    tech: [
-      { name: 'Node.js', slug: 'node' },
-      { name: 'Python', slug: 'python' },
-      { name: 'Java', slug: 'java' },
-      { name: 'Go', slug: 'go' },
-      { name: '.NET', slug: 'net' },
-      { name: 'Ruby on Rails', slug: 'ruby' },
-      { name: 'PHP (Laravel/Symphony)', slug: 'php' },
-      { name: 'gRPC', slug: 'grpc' },
-      { name: 'GraphQL', slug: 'graphql' },
-    ],
-  },
-  {
-    name: 'Frontend & UI/UX',
-    slug: 'frontend-web',
-    pain: "Is a slow, buggy UI costing you customers?",
-    icon: Layers,
-    tech: [
-      { name: 'React/TypeScript', slug: 'react' },
-      { name: 'Next.js', slug: 'nextjs' },
-      { name: 'Vite', slug: 'vite' },
-      { name: 'Angular', slug: 'angular' },
-      { name: 'Vue.js', slug: 'vue' },
-      { name: 'TanStack Query', slug: 'tanstack' },
-      { name: 'Redux/Zustand', slug: 'redux' },
-      { name: 'Tailwind/shadcn', slug: 'tailwind' },
-      { name: 'Testing Library', slug: 'testing' },
-    ],
-  },
-    {
-    name: 'Mobile & Cross-Platform',
-    slug: 'mobile-cross-platform',
-    pain: "Is your mobile experience falling behind?",
-    icon: Plane,
-    tech: [
-        { name: 'React Native', slug: 'react-native' },
-        { name: 'Flutter', slug: 'flutter' },
-        { name: 'Swift', slug: 'swift' },
-        { name: 'Kotlin', slug: 'kotlin' },
-        { name: 'Socket.IO', slug: 'socketio' },
-    ],
-  },
-  {
-    name: 'Data Modeling & Databases',
-    slug: 'data-engineering-analytics',
-    pain: "Is your data model built for scale or for future refactors?",
-    icon: Database,
-    tech: [
-      { name: 'PostgreSQL', slug: 'postgresql' },
-      { name: 'MySQL', slug: 'mysql' },
-      { name: 'SQL Server', slug: 'sql' },
-      { name: 'dbt', slug: 'dbt' },
-      { name: 'Prisma', slug: 'prisma' },
-      { name: 'SQLAlchemy', slug: 'sqlalchemy' },
-      { name: 'Hibernate', slug: 'hibernate' },
-      { name: 'Redis', slug: 'redis' },
-      { name: 'Memcached', slug: 'memcached' },
-      { name: 'DynamoDB', slug: 'dynamodb' },
-      { name: 'Snowflake', slug: 'snowflake' }
-    ],
-  },
-  {
-    name: 'Pipelines & Orchestration',
-    slug: 'data-engineering-analytics',
-    pain: "Are your data pipelines brittle and unreliable?",
-    icon: Component,
-    tech: [
-      { name: 'Airflow/Prefect', slug: 'airflow' },
-      { name: 'Kafka/RabbitMQ', slug: 'kafka' },
-      { name: 'Flink/Beam', slug: 'flink' },
-      { name: 'Kubernetes', slug: 'kubernetes' },
-      { name: 'Docker', slug: 'docker' },
-    ],
-  },
-  {
-    name: 'ML/AI & LLM Ops',
-    slug: 'ml-ai-llm-ops',
-    pain: "Struggling to move AI from a notebook to production?",
-    icon: BrainCircuit,
-    tech: [
-      { name: 'PyTorch', slug: 'pytorch' },
-      { name: 'Transformers', slug: 'transformers' },
-      { name: 'vLLM', slug: 'vllm' },
-      { name: 'Ray Serve', slug: 'ray' },
-      { name: 'LangChain', slug: 'langchain' },
-      { name: 'pgvector/Pinecone', slug: 'pgvector' },
-      { name: 'MLflow/W&B', slug: 'mlflow' },
-      { name: 'Ragas', slug: 'ragas' },
-    ],
-  },
-  {
-    name: 'Observability & SRE',
-    slug: 'platform-infra-sre',
-    pain: "Are you debugging in the dark when systems fail?",
-    icon: GanttChartSquare,
-    tech: [
-      { name: 'Prometheus', slug: 'prometheus' },
-      { name: 'Grafana', slug: 'grafana' },
-      { name: 'OpenTelemetry', slug: 'opentelemetry' },
-      { name: 'Jaeger/Loki', slug: 'jaeger' },
-      { name: 'Terraform/Pulumi', slug: 'terraform' },
-      { name: 'Istio/Linkerd', slug: 'istio' },
-    ],
-  },
-  {
-    name: 'Security & GRC',
-    slug: 'security-grc',
-    pain: "Is compliance an afterthought or built into your stack?",
-    icon: ShieldCheck,
-    tech: [
-      { name: 'Vault', slug: 'vault' },
-      { name: 'Okta/Auth0', slug: 'okta' },
-      { name: 'CodeQL/Snyk', slug: 'codeql' },
-      { name: 'Trivy', slug: 'trivy' },
-      { name: 'OPA', slug: 'opa' },
-      { name: 'SOC 2', slug: 'soc' },
-      { name: 'ISO 27001', slug: 'iso' },
-      { name: 'HIPAA', slug: 'hipaa' },
-    ],
-  },
-  {
-    name: 'Testing & Quality Engineering',
-    slug: 'qa-quality-engineering',
-    pain: "Does 'shipping fast' also mean 'shipping bugs'?",
-    icon: TestTube2,
-    tech: [
-      { name: 'Playwright/Cypress', slug: 'playwright' },
-      { name: 'Jest/Vitest', slug: 'jest' },
-      { name: 'PyTest/JUnit', slug: 'pytest' },
-      { name: 'k6/Locust', slug: 'k6' },
-      { name: 'Pact', slug: 'pact' },
-      { name: 'Gremlin/Litmus', slug: 'gremlin' },
-    ],
-  },
-  {
-    name: 'Cloud FinOps & BizTech',
-    slug: 'finops-biztech',
-    pain: "Are runaway cloud costs eating into your margins?",
-    icon: Wallet,
-    tech: [
-      { name: 'CloudZero/Infracost', slug: 'cloudzero' },
-      { name: 'AWS Cost Explorer', slug: 'aws' },
-      { name: 'Salesforce', slug: 'salesforce' },
-      { name: 'HubSpot', slug: 'hubspot' },
-      { name: 'Hightouch/Census', slug: 'hightouch' },
-    ],
-  }
-];
-
-export function getAllTechSlugs(): string[] {
-    return Object.keys(allTech);
 }
+
