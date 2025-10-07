@@ -1,5 +1,5 @@
 
-import type { ReactNode } from 'react';
+import type { ElementType } from 'react';
 
 import { Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane, AlertTriangle } from 'lucide-react';
 
@@ -12,7 +12,7 @@ export interface TechCategory {
   name: string;
   slug: string;
   pain: string;
-  icon: React.ElementType;
+  icon: ElementType;
   tech: Tech[];
 }
 
@@ -23,7 +23,7 @@ export interface AllTech {
     categorySlug: string;
     intro: string;
     pains: {
-      icon: React.ElementType;
+      icon: ElementType;
       pain: string;
       problem: string;
       solution: string;
@@ -1123,216 +1123,3 @@ export const techCategories: TechCategory[] = [
 export async function getAllTechSlugs(): Promise<string[]> {
     return Object.keys(allTech);
 }
-
-```
-- workspace/src/lib/utils.ts:
-```ts
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
-
-```
-- workspace/src/middleware.ts:
-```ts
-// src/middleware.ts
-import type { NextRequest } from 'next/server';
-import { NextResponse } from 'next/server';
-
-export function middleware(req: NextRequest) {
-  const res = NextResponse.next();
-  res.headers.set('X-Content-Type-Options', 'nosniff');
-  res.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-  res.headers.set('X-Frame-Options', 'SAMEORIGIN');
-  // Consider a CSP once you inventory all inline scripts/styles
-  return res;
-}
-
-export const config = { matcher: ['/((?!_next/|favicon.ico|robots.txt|manifest.webmanifest).*)'] };
-
-```
-- workspace/src/providers/app-providers.tsx:
-```tsx
-'use client';
-
-import React from 'react';
-import { ThemeProvider } from '@/components/theme-provider'; 
-import { TooltipProvider } from '@/components/client/tooltip-provider';
-
-export default function AppProviders({ children }: { children: React.ReactNode }) {
-  return (
-    <TooltipProvider delayDuration={0}>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="dark"
-        enableSystem
-        disableTransitionOnChange
-      >
-        {children}
-      </ThemeProvider>
-    </TooltipProvider>
-  );
-}
-
-```
-- workspace/tailwind.config.ts:
-```ts
-import type { Config } from "tailwindcss"
-
-const config = {
-  darkMode: ["class"],
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './content/**/*.md',
-	],
-  prefix: "",
-  theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
-    extend: {
-       fontFamily: {
-        sans: ['var(--font-poppins)', 'sans-serif'],
-      },
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-      typography: ({ theme }: { theme: any }) => ({
-        DEFAULT: {
-          css: {
-            '--tw-prose-body': 'hsl(var(--muted-foreground))',
-            '--tw-prose-headings': 'hsl(var(--primary))',
-            '--tw-prose-lead': 'hsl(var(--muted-foreground))',
-            '--tw-prose-links': 'hsl(var(--primary))',
-            '--tw-prose-bold': 'hsl(var(--foreground))',
-            '--tw-prose-counters': 'hsl(var(--muted-foreground))',
-            '--tw-prose-bullets': 'hsl(var(--border))',
-            '--tw-prose-hr': 'hsl(var(--border))',
-            '--tw-prose-quotes': 'hsl(var(--foreground))',
-            '--tw-prose-quote-borders': 'hsl(var(--border))',
-            '--tw-prose-captions': 'hsl(var(--muted-foreground))',
-            '--tw-prose-code': 'hsl(var(--foreground))',
-            '--tw-prose-pre-code': 'hsl(var(--foreground))',
-            '--tw-prose-pre-bg': 'hsl(var(--card))',
-            '--tw-prose-th-borders': 'hsl(var(--border))',
-            '--tw-prose-td-borders': 'hsl(var(--border))',
-            '--tw-prose-invert-body': 'hsl(var(--muted-foreground))',
-            '--tw-prose-invert-headings': 'hsl(var(--primary))',
-            '--tw-prose-invert-lead': 'hsl(var(--muted-foreground))',
-            '--tw-prose-invert-links': 'hsl(var(--primary))',
-            '--tw-prose-invert-bold': 'hsl(var(--foreground))',
-            '--tw-prose-invert-counters': 'hsl(var(--muted-foreground))',
-            '--tw-prose-invert-bullets': 'hsl(var(--border))',
-            '--tw-prose-invert-hr': 'hsl(var(--border))',
-            '--tw-prose-invert-quote-borders': 'hsl(var(--border))',
-            '--tw-prose-invert-captions': 'hsl(var(--muted-foreground))',
-            '--tw-prose-invert-code': 'hsl(var(--foreground))',
-            '--tw-prose-invert-pre-code': 'hsl(var(--foreground))',
-            '--tw-prose-invert-pre-bg': 'hsl(var(--card))',
-            '--tw-prose-invert-th-borders': 'hsl(var(--border))',
-            '--tw-prose-invert-td-borders': 'hsl(var(--border))',
-          },
-        },
-      }),
-    },
-  },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
-} satisfies Config
-
-export default config
-```
-- workspace/tsconfig.json:
-```json
-
-{
-  "compilerOptions": {
-    "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [{ "name": "next" }],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": ["node_modules"]
-}
-
-```

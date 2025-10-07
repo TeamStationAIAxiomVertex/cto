@@ -1,19 +1,19 @@
 // src/components/layout/UserNav.tsx
-import Link from 'next/link';
-import { LogOut, Settings, User } from 'lucide-react';
+import Link from "next/link";
+import { LogOut, Settings, User } from "lucide-react";
 
 // Required UI Components
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
+  DropdownMenuRadioGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'; // Required Avatar components
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // Required Avatar components
 
 // NOTE: This component assumes a user session is available.
 // In a real application, you'd fetch user data here.
@@ -21,10 +21,10 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'; //
 export function UserNav() {
   // Placeholder user data
   const user = {
-    name: 'Jane Doe',
-    email: 'jane.doe@example.com',
-    initials: 'JD',
-    avatarUrl: '/avatars/jane.png', // This path might need a placeholder image
+    name: "Jane Doe",
+    email: "jane.doe@example.com",
+    initials: "JD",
+    avatarUrl: "/avatars/jane.png", // This path might need a placeholder image
   };
 
   return (
@@ -48,7 +48,7 @@ export function UserNav() {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuGroup>
+        <DropdownMenuRadioGroup>
           <DropdownMenuItem asChild>
             <Link href="/profile">
               <User className="mr-2 h-4 w-4" />
@@ -61,7 +61,7 @@ export function UserNav() {
               <span>Settings</span>
             </Link>
           </DropdownMenuItem>
-        </DropdownMenuGroup>
+        </DropdownMenuRadioGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <LogOut className="mr-2 h-4 w-4" />

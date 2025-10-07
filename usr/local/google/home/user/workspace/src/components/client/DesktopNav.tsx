@@ -1,22 +1,38 @@
-'use client';
-import Link from 'next/link';
-import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
-import { ChevronDown, BookOpen } from 'lucide-react';
-import { NAV, simpleNavItems, type NavItem } from "../../config/nav";
+"use client";
+import Link from "next/link";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@radix-ui/react-popover";
+import { ChevronDown, BookOpen } from "lucide-react";
+import {
+  NAV,
+  simpleNavItems,
+  type NavItem,
+} from "../../../../../../../../../src/config/nav";
 
 function NavLink({ href, label, description, isHubLink }: NavItem) {
-    const isExternal = href.startsWith('http');
-    const linkProps = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+  const isExternal = href.startsWith("http");
+  const linkProps = isExternal
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
 
-    return (
-        <Link href={href} {...linkProps} className="-m-3 flex flex-col rounded-lg p-3 hover:bg-accent">
-            <p className="text-sm font-medium text-foreground flex items-center">
-                {isHubLink && <BookOpen className="mr-2 h-4 w-4" />}
-                {label}
-            </p>
-            {description && <p className="text-sm text-muted-foreground">{description}</p>}
-        </Link>
-    );
+  return (
+    <Link
+      href={href}
+      {...linkProps}
+      className="-m-3 flex flex-col rounded-lg p-3 hover:bg-accent"
+    >
+      <p className="text-sm font-medium text-foreground flex items-center">
+        {isHubLink && <BookOpen className="mr-2 h-4 w-4" />}
+        {label}
+      </p>
+      {description && (
+        <p className="text-sm text-muted-foreground">{description}</p>
+      )}
+    </Link>
+  );
 }
 
 export function DesktopNav() {
@@ -29,19 +45,28 @@ export function DesktopNav() {
           </PopoverTrigger>
           <PopoverContent className="w-80">
             <div className="grid gap-4">
-              {items.map(item => <NavLink key={item.href} {...item} />)}
+              {items.map((item) => (
+                <NavLink key={item.href} {...item} />
+              ))}
             </div>
           </PopoverContent>
         </Popover>
       ))}
-      {simpleNavItems.map(item => {
-          const isExternal = item.href.startsWith('http');
-          const linkProps = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {};
-          return (
-            <Link key={item.href} href={item.href} {...linkProps} className="text-muted-foreground transition-colors hover:text-foreground">
-              {item.label}
-            </Link>
-          )
+      {simpleNavItems.map((item) => {
+        const isExternal = item.href.startsWith("http");
+        const linkProps = isExternal
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {};
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            {...linkProps}
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {item.label}
+          </Link>
+        );
       })}
     </nav>
   );

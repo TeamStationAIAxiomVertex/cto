@@ -1,5 +1,9 @@
 import * as React from "react";
-type JsonLdProps = { data?: Record<string, any>; json?: Record<string, any>; id?: string };
+type JsonLdProps = {
+  data?: Record<string, any>;
+  json?: Record<string, any>;
+  id?: string;
+};
 export function JsonLd({ data, json, id }: JsonLdProps) {
   const payload = json ?? data ?? {};
   const jsonText = JSON.stringify(payload).replace(/</g, "\\u003c");

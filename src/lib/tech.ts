@@ -94,6 +94,36 @@ export const allTech: AllTech = {
     ],
     evaluation: ['Advanced types (generics, conditional types)', 'Compiler configuration (tsconfig.json)', 'Declaration files and module augmentation', 'Type inference and narrowing', 'Integration with modern build tools'] 
   },
+  'vue': {
+    name: 'Vue.js',
+    category: 'Frontend & UI/UX',
+    categorySlug: 'frontend-web',
+    intro: "You need more than someone who's dabbled in Vue. You need an engineer who understands reactivity deeply, composes components cleanly, and can scale SPA/SSR apps with Nuxt while keeping performance tight and DX high.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: 'Is your reactivity buggy or unpredictable?',
+        problem: 'Misusing refs/reactive and watchers leads to stale state, unnecessary recomputations, and hard-to-debug UI glitches.',
+        solution: 'We vet for deep knowledge of Vue reactivity, computed vs. watchers, and correct patterns to ensure predictable updates and great performance.',
+        kpi: 'Mastery of Vue 3 reactivity model'
+      },
+      {
+        icon: AlertTriangle,
+        pain: 'Is your codebase a tangle of options and mixins?',
+        problem: 'Large apps built with ad-hoc patterns or legacy mixins degrade maintainability and testability.',
+        solution: 'We prioritize engineers fluent in the Composition API and provide guidance to refactor to composables for clean, reusable logic.',
+        kpi: 'Composition API and composables expertise'
+      },
+      {
+        icon: AlertTriangle,
+        pain: 'Are SSR/SEO and performance falling short?',
+        problem: 'Improper SSR/ISR setup and heavy components cause slow TTFB and poor Core Web Vitals.',
+        solution: 'We look for hands-on Nuxt experience, code-splitting, and perf profiling to deliver fast, SEO-friendly Vue apps.',
+        kpi: 'Nuxt SSR/ISR and performance optimization'
+      }
+    ],
+    evaluation: ['Composition API and composables', 'State management (Pinia/Vuex)', 'Nuxt SSR/ISR and routing', 'Performance profiling and code-splitting']
+  },
   'node': { 
     name: 'Node.js', 
     category: 'APIs & Backend Services', 
