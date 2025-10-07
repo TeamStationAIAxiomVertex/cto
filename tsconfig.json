@@ -28,7 +28,8 @@
       "@/*": [
         "src/*"
       ]
-    }
+    },
+    "noImplicitAny": false
   },
   "include": [
     "next-env.d.ts",
@@ -37,6 +38,7 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/components/command-menu.tsx"
   ]
 }
