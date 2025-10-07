@@ -94,6 +94,36 @@ export const allTech: AllTech = {
     ],
     evaluation: ['Advanced types (generics, conditional types)', 'Compiler configuration (tsconfig.json)', 'Declaration files and module augmentation', 'Type inference and narrowing', 'Integration with modern build tools'] 
   },
+  'nextjs': {
+    name: 'Next.js',
+    category: 'Frontend & UI/UX',
+    categorySlug: 'frontend-web',
+    intro: "You're building more than a website; you're building a web application. You need engineers who are not just React developers but true Next.js experts who can master the full-stack capabilities, from the App Router and server components to advanced caching and API routes.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your app slow and your client-side bundle massive?",
+            problem: "Incorrect use of 'use client' and a poor understanding of Server Components can lead to a sluggish user experience and poor Core Web Vitals.",
+            solution: "We vet for a deep understanding of the App Router and the Server/Client Component mental model. Our engineers build applications that are server-first by default, ensuring a fast, lightweight experience.",
+            kpi: "Mastery of Server Components & performance"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling with Next.js caching and data revalidation?",
+            problem: "The new caching model in Next.js is powerful but complex. Incorrect implementation leads to stale data or, worse, constant cache misses that hammer your backend.",
+            solution: "Our evaluation includes scenarios on advanced data fetching, cache tagging, and on-demand revalidation to ensure your application is both fast and fresh.",
+            kpi: "Expertise in advanced caching & revalidation"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you unsure when to use Route Handlers vs. Server Actions?",
+            problem: "Choosing the wrong tool for data mutations can lead to complex, insecure code.",
+            solution: "We look for engineers who understand the trade-offs and can use Server Actions for secure, RPC-style mutations and Route Handlers for building standard RESTful APIs.",
+            kpi: "Proficiency in Server Actions & API Routes"
+        }
+    ],
+    evaluation: ['App Router and advanced routing patterns', 'Server Components and data fetching strategies', 'Advanced caching (full route cache, data cache, on-demand revalidation)', 'Server Actions vs. Route Handlers', 'Performance optimization for Core Web Vitals']
+  },
   'vue': {
     name: 'Vue.js',
     category: 'Frontend & UI/UX',
@@ -1023,6 +1053,156 @@ export const allTech: AllTech = {
       }
     ],
     evaluation: ['Data modeling best practices (e.g., Kimball)', 'Advanced dbt features (macros, packages, hooks)', 'dbt Cloud vs. dbt Core trade-offs', 'SQL performance tuning', 'Testing and data quality frameworks']
+  },
+  'snowflake': {
+    name: 'Snowflake',
+    category: 'Data Modeling & Databases',
+    categorySlug: 'data-engineering-analytics',
+    intro: "Your data is locked in silos, and you can't get the performance you need for your analytics. You need a Snowflake expert who can build a modern, scalable data cloud platform for all your data warehousing, data engineering, and data science needs.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are your analytics queries too slow to be useful?",
+            problem: "Traditional data warehouses can't handle the scale and concurrency required for modern analytics, leading to slow queries and frustrated users.",
+            solution: "We find engineers who are experts in Snowflake's multi-cluster shared data architecture, able to design a data cloud that delivers fast query performance for all your users.",
+            kpi: "Fast, concurrent query performance"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your data warehouse bill unpredictable and out of control?",
+            problem: "A lack of understanding of Snowflake's credit-based pricing model can lead to massive cost overruns.",
+            solution: "We vet for expertise in Snowflake cost management, including virtual warehouse optimization, query monitoring, and resource management to ensure your costs are predictable and efficient.",
+            kpi: "Predictable and optimized data cloud costs"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to securely share data with partners and customers?",
+            problem: "Traditional data sharing methods (like FTP) are slow, insecure, and create data copies that are hard to manage.",
+            solution: "Our engineers can leverage Snowflake's Secure Data Sharing to create live, read-only shares of your data, allowing for secure and real-time collaboration without creating data copies.",
+            kpi: "Secure, real-time data sharing"
+        }
+    ],
+    evaluation: ['Virtual warehouse optimization and cost management', 'Role-based access control (RBAC) and data governance', 'Performance tuning and query optimization', 'Data sharing and collaboration features', 'Experience with Snowpipe for continuous data ingestion']
+  },
+  'langchain': {
+    name: 'LangChain/LlamaIndex',
+    category: 'ML/AI & LLM Ops',
+    categorySlug: 'ml-ai-llm-ops',
+    intro: "You're building an LLM-powered application, but you're getting stuck in a maze of boilerplate code for chaining prompts, managing agents, and connecting to data sources. You need an expert in frameworks like LangChain or LlamaIndex to accelerate your development and build robust, production-ready RAG (Retrieval-Augmented Generation) applications.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are you rewriting the same prompt-chaining logic for every new feature?",
+            problem: "Building complex LLM workflows from scratch is time-consuming and error-prone.",
+            solution: "We find engineers who are experts in using LangChain Expression Language (LCEL) or LlamaIndex's query engines to compose complex chains and agents with clean, reusable code.",
+            kpi: "Accelerated LLM application development"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your RAG application giving inaccurate or irrelevant answers?",
+            problem: "The quality of your retrieval step is the most critical factor for a successful RAG application. Poor document chunking, embedding, or retrieval logic will lead to poor results.",
+            solution: "Our engineers are skilled in the full RAG pipeline, from document loading and chunking strategies to advanced retrieval techniques (e.g., hybrid search, re-ranking) using LlamaIndex or LangChain.",
+            kpi: "Building high-quality RAG pipelines"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you unable to debug your complex LLM chains?",
+            problem: "When a complex chain of prompts and tools fails, it can be nearly impossible to understand what went wrong.",
+            solution: "We vet for experience with tools like LangSmith, which provides full visibility into the execution of your LLM agents, making it easy to debug, test, and evaluate your chains.",
+            kpi: "Expertise in LLM application observability"
+        }
+    ],
+    evaluation: ['LangChain Expression Language (LCEL)', 'RAG pipeline implementation (chunking, embedding, retrieval)', 'Building autonomous agents and tools', 'Debugging and tracing with LangSmith', 'LlamaIndex query and data ingestion engines']
+  },
+  'transformers': {
+    name: 'Transformers',
+    category: 'ML/AI & LLM Ops',
+    categorySlug: 'ml-ai-llm-ops',
+    intro: "You need to move beyond simple API calls to proprietary models. You need an engineer who understands the open-source transformer ecosystem and can leverage platforms like Hugging Face to fine-tune, quantize, and serve your own models.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are you locked into a single, expensive LLM provider?",
+            problem: "Relying on a single proprietary model creates vendor lock-in and can be prohibitively expensive at scale.",
+            solution: "We find engineers who are experts in the Hugging Face ecosystem, able to help you select, fine-tune, and deploy open-source models that meet your specific needs and budget.",
+            kpi: "Leverage the open-source transformer ecosystem"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your LLM inference costs too high?",
+            problem: "Serving large language models is computationally expensive, especially with naive implementations.",
+            solution: "Our engineers are experienced with model optimization techniques like quantization (e.g., using bitsandbytes) and optimized inference servers (like vLLM) to dramatically reduce your serving costs.",
+            kpi: "Expertise in model optimization and quantization"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to get a fine-tuned model to perform well?",
+            problem: "Fine-tuning is more of an art than a science. It requires careful data preparation and a deep understanding of the process.",
+            solution: "We look for engineers with practical experience in preparing datasets and using tools like the Hugging Face Trainer API or PEFT (Parameter-Efficient Fine-Tuning) to efficiently fine-tune models.",
+            kpi: "Practical experience with model fine-tuning"
+        }
+    ],
+    evaluation: ['Hugging Face Hub and ecosystem (Transformers, Datasets)', 'Model fine-tuning techniques (full fine-tuning vs. PEFT/LoRA)', 'Model quantization and optimization', 'Inference servers (TGI, vLLM)', 'Model evaluation and benchmarking']
+  },
+  'pytorch': {
+    name: 'PyTorch/TensorFlow',
+    category: 'ML/AI & LLM Ops',
+    categorySlug: 'ml-ai-llm-ops',
+    intro: "You need to build custom machine learning models, not just call APIs. You need an engineer with deep expertise in foundational frameworks like PyTorch or TensorFlow who can design neural networks, manage training loops, and deploy models to production.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are your model training times too slow?",
+            problem: "Inefficient data loading, a lack of distributed training, or not using mixed-precision can make model training a major bottleneck.",
+            solution: "We find engineers who are experts in performance optimization, able to leverage tools like PyTorch Lightning and distributed training strategies to dramatically accelerate your training loops.",
+            kpi: "Accelerated model training times"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is deploying your model to production a complex, manual process?",
+            problem: "Moving a model from a research environment to a scalable, production-ready inference service is a major challenge.",
+            solution: "Our engineers have experience with model serving frameworks like TorchServe or TensorFlow Serving, and can build robust, containerized inference endpoints for your models.",
+            kpi: "Expertise in production model deployment"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to debug your neural network's behavior?",
+            problem: "Understanding why a model is making certain predictions can be difficult without the right tools.",
+            solution: "We vet for experience with visualization and debugging tools like TensorBoard, allowing you to inspect model weights, gradients, and activation to understand and improve your models.",
+            kpi: "Deep model debugging and interpretability"
+        }
+    ],
+    evaluation: ['Custom module and layer creation', 'Training loop management and optimization', 'Distributed training strategies (DDP)', 'Model serving and deployment (TorchServe, TF Serving)', 'Debugging and visualization with TensorBoard']
+  },
+  'playwright': {
+    name: 'Playwright/Cypress',
+    category: 'Testing & Quality Engineering',
+    categorySlug: 'qa-quality-engineering',
+    intro: "Your manual regression testing is slow, flaky, and can't keep up with your development velocity. You need a QA Automation Engineer who can build a fast, reliable, and maintainable end-to-end test suite using modern frameworks like Playwright or Cypress.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are your E2E tests slow and flaky?",
+            problem: "Poorly written tests with no explicit waits and bad selectors lead to a test suite that no one trusts.",
+            solution: "We find engineers who are masters of writing resilient tests, using features like auto-waits and clean, user-facing selectors to build a stable and reliable test suite.",
+            kpi: "Building stable and reliable test suites"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Can you run your test suite against multiple browsers and environments?",
+            problem: "Your application needs to work for all your users, not just on Chrome on your developer's machine.",
+            solution: "Our engineers are experienced in setting up cross-browser testing using the capabilities of frameworks like Playwright, ensuring broad compatibility.",
+            kpi: "Expertise in cross-browser testing"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your tests difficult to write and maintain?",
+            problem: "A test suite with lots of duplicated code and no clear structure becomes a maintenance nightmare.",
+            solution: "We vet for experience with patterns like the Page Object Model, which creates a clean, reusable, and maintainable structure for your test code.",
+            kpi: "Writing clean, maintainable test code"
+        }
+    ],
+    evaluation: ['Writing reliable selectors', 'Page Object Model and test structure', 'Handling authentication flows', 'Debugging and analyzing test failures', 'CI/CD integration for automated test runs']
   }
 };
 
@@ -1090,6 +1270,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Redis', slug: 'redis' },
       { name: 'Memcached', slug: 'memcached' },
       { name: 'DynamoDB', slug: 'dynamodb' },
+      { name: 'Snowflake', slug: 'snowflake' }
     ],
   },
   {
