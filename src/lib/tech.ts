@@ -502,7 +502,7 @@ export const allTech: AllTech = {
         {
             icon: AlertTriangle,
             pain: "Are your GraphQL queries suffering from the N+1 problem?",
-            problem: "The flexibility of GraphQL makes it incredibly easy to accidentally create the N+1 problem, where a single query results in a cascade of database calls. Inexperienced developers often fail to use data loading patterns, leading to massive performance bottlenecks.",
+            problem: "The flexibility of GraphQL makes it incredibly easy to accidentally create the N+1 problem, where a single query results in a cascade of database calls. Inexperienced developers fail to use data loading patterns, leading to massive performance bottlenecks.",
             solution: "We vet for engineers who are masters of the **Dataloader pattern**. They must demonstrate the ability to batch and cache database requests within a single API call, completely eliminating the N+1 problem and ensuring efficient, high-performance data fetching for even the most complex queries.",
             kpi: "Mastery of the Dataloader Pattern"
         },
@@ -533,8 +533,8 @@ export const allTech: AllTech = {
     name: 'Node.js',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
-    seo_title: 'Hire Senior Node.js Developers | Backend API & Microservices Experts',
-    meta_description: 'Build fast, scalable server-side applications. Hire elite remote Node.js experts vetted for event loop mastery, microservices, and performance. Book a call.',
+    seo_title: 'Hire Senior Node.js Developers | High-Performance Backend Talent',
+    meta_description: 'Build fast, scalable microservices. Hire elite remote Node.js experts vetted for async/await mastery, performance tuning, and robust architecture. Book a call.',
     intro: "You're not looking for someone who just wrote a few Express routes. You're here because you need an engineer who understands how to build high-throughput, non-blocking APIs that can handle real-world scale without falling over. You need someone who has tamed the event loop, not just heard of it.",
     pains: [
         {
@@ -559,11 +559,11 @@ export const allTech: AllTech = {
             kpi: "Experience with modern, structured frameworks"
         }
     ],
-    evaluation: ['Event Loop architecture and non-blocking I/O', 'API design (REST, GraphQL) and routing', 'Asynchronous patterns (Promises, Async/Await) and concurrency', 'Modular architecture and code structure', 'Security (Authentication, Authorization, Input Sanitization)'],
-    technical_analysis: "The Node.js evaluation is centered on performance and concurrency. Candidates are presented with a simulated high-load environment and must diagnose and fix an Event Loop blockage using the `perf_hooks` module and Worker Threads. We rigorously test their understanding of the difference between synchronous and asynchronous operations and how to write non-blocking code. Architectural assessment focuses on their ability to design a scalable API using a modern framework like NestJS, demonstrating a clear separation of concerns using the MVC/layered pattern. Security is non-negotiable; candidates must demonstrate knowledge of OWASP top 10 vulnerabilities relevant to Node.js and how to implement secure practices such as input validation, sanitization, and protecting against common attacks (e.g., XSS, SQL injection). Finally, containerization expertise (Docker multi-stage builds) is required for modern deployment.",
-    interlink_slugs: ['typescript', 'kubernetes', 'rest-api-design']
-  },
-  'java': {
+    evaluation: ['Deep mastery of the Event Loop and Worker Threads', 'Performance tuning and profiling', 'Framework expertise (NestJS, Fastify)', 'Microservices design and deployment (Docker/K8s)', 'Asynchronous control flow and error handling'],
+    technical_analysis: "The Node.js evaluation is centered on a candidate's mastery of the asynchronous programming model and backend architecture. The critical assessment point is the **Node.js Event Loop**: candidates are given scenarios that intentionally lead to blocking code and are required to diagnose the bottleneck and refactor it into a non-blocking solution, demonstrating an understanding of the different phases (Timers, Pending Callbacks, I/O, Check, Close). For architecture, we evaluate their ability to design a scalable API using modern frameworks (e.g., NestJS, Express) with a clear separation of concerns (e.g., service and repository layers). We specifically test their knowledge of security best practices, including correct implementation of CORS, handling JWTs, and using validation libraries to prevent common API vulnerabilities. Finally, we assess their proficiency with ORMs (e.g., Prisma, TypeORM) and their ability to integrate with diverse data stores (PostgreSQL, MongoDB) efficiently.",
+    interlink_slugs: ['typescript', 'microservices', 'rest-api-design', 'postgresql']
+},
+'java': {
     name: 'Java (Spring & JVM)',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -596,60 +596,60 @@ export const allTech: AllTech = {
     evaluation: ['Advanced JVM tuning and garbage collection (G1, ZGC)', 'Concurrency models (Virtual Threads, RxJava/Reactor)', 'Spring Boot/Spring Cloud for microservices', 'Database interaction (JPA/Hibernate, Spring Data)', 'Test-Driven Development (JUnit, Mockito)'],
     technical_analysis: "The Java evaluation focuses on enterprise architecture and JVM performance. Candidates are tested on their ability to design a microservice using Spring Boot, demonstrating a deep understanding of IoC, dependency injection, and configuration management. A key area is **concurrency**, where candidates must solve real-world threading problems, proving their expertise in using synchronization, thread pools, and concurrent collections to prevent deadlocks and race conditions. We assess their JVM knowledge by asking them to diagnose performance issues related to garbage collection and memory leaks. Finally, for data access, they must demonstrate efficiency in using ORMs (like Hibernate/JPA) and writing complex, performant SQL queries, ensuring the entire stack is optimized for speed and stability.",
     interlink_slugs: ['microservices', 'postgresql', 'event-sourcing']
-  },
-  'python': {
+},
+'python': {
     name: 'Python',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
-    seo_title: 'Hire Senior Python Developers | Django, Flask, and Data Engineering Experts',
-    meta_description: 'Build fast APIs, ML pipelines, and data systems. Hire elite remote Python developers vetted for Django/Flask, performance, and concurrency mastery. Book a call.',
-    intro: "Python's unparalleled versatility makes it the engine for everything from web backends (Django/Flask) to advanced Data Science and Machine Learning pipelines. You need an engineer who can leverage the full spectrum of the ecosystem, not just the basic syntax. Our vetting process is designed to find those rare full-spectrum Python experts. We assess their deep understanding of the **Global Interpreter Lock (GIL)** and how to write truly concurrent and parallel applications using libraries like `asyncio` or worker processes. We test their ability to build robust, secure web APIs and their proficiency with data-centric libraries (**Pandas/NumPy**) for high-performance computing. By hiring a Python expert from us, you acquire a developer who can bridge the gap between application development and data science, ensuring your team has the flexibility to tackle any challenge.",
+    seo_title: 'Hire Senior Python Developers | AI, Data Science & Backend APIs',
+    meta_description: 'Hire elite remote Python engineers for scalable APIs (FastAPI), complex data science, and robust backend systems. Vetted for performance and architecture.',
+    intro: "Python's versatility makes it the engine for everything from high-traffic APIs (FastAPI) to the core of data science and machine learning (PyTorch/TensorFlow). You need an engineer who can bridge these worlds: a developer who understands both the architectural needs of a robust backend and the unique performance demands of data processing. Our vetting process finds these experts. We focus on their ability to write efficient, clean code (adhering to PEP 8), their mastery of asynchronous programming (asyncio), and their deep knowledge of key libraries like NumPy, Pandas, and Scikit-learn. For backend roles, we test their expertise in modern, high-performance frameworks like FastAPI and Django. By hiring our Python talent, you are investing in a flexible, powerful engineer capable of building intelligent, data-driven applications that scale with your business.",
     pains: [
         {
             icon: AlertTriangle,
-            pain: "Is your Python code slow due to I/O and GIL bottlenecks?",
-            problem: "Due to the Global Interpreter Lock (GIL), standard Python concurrency fails for CPU-bound tasks, making many applications single-threaded and slow. Inexperienced developers fail to correctly use asynchronous libraries or multi-process parallelism, severely limiting scalability.",
-            solution: "We vet for expertise in two areas: **`asyncio`** for I/O-bound concurrency (fast API calls, network tasks) and **`multiprocessing`** for CPU-bound parallelism (data processing, complex calculations), ensuring the code runs at maximum speed and utilizes all available cores.",
-            kpi: "Asynchronous I/O and Parallelism Mastery (asyncio, multiprocessing)"
+            pain: "Is your API performance crippled by the GIL (Global Interpreter Lock)?",
+            problem: "Python's GIL prevents true parallel execution of native threads, making I/O-heavy web services and CPU-intensive data tasks perform poorly under concurrent load. Developers who don't understand `asyncio` or multiprocess architecture fail to utilize modern cloud resources efficiently.",
+            solution: "Our engineers are masters of asynchronous Python (`asyncio`) and modern frameworks like **FastAPI**. They demonstrate the ability to build high-throughput APIs that utilize asynchronous I/O to maximize performance. For CPU-bound tasks, they implement correct parallel execution using the `multiprocessing` module or offload work to a task queue like Celery.",
+            kpi: "API throughput (RPS) and latency"
         },
         {
             icon: AlertTriangle,
-            pain: "Are your Django/Flask APIs difficult to maintain and scale?",
-            problem: "Building a complex API without proper structure leads to 'views.py' files that are bloated with business logic, making the code untestable, unreadable, and impossible to refactor safely. This is a common failure point for scaling web applications.",
-            solution: "Our engineers are masters of MVC/MVT patterns. They are vetted on their ability to correctly structure Django models, views, and serializers/forms, and to implement Flask blueprints with a clean separation of concerns, resulting in a highly modular and maintainable web backend.",
-            kpi: "Modular Web Framework Architecture (Django/Flask)"
+            pain: "Is your data pipeline code slow and unmaintainable?",
+            problem: "Many developers use base Python loops and data structures for large-scale data processing, which is incredibly slow. Additionally, a lack of clear architecture in data code leads to brittle, untestable, and costly-to-maintain data pipelines.",
+            solution: "We vet for deep expertise in vectorized operations using **NumPy** and **Pandas**. Our candidates write highly efficient, idiomatic data processing code that is orders of magnitude faster. For data engineers, they are vetted on their ability to build structured, version-controlled pipelines using tools like **dbt** or **Apache Spark**.",
+            kpi: "Data processing time reduction"
         },
         {
             icon: AlertTriangle,
-            pain: "Is your data processing logic inefficiently written (slow loops)?",
-            problem: "Using native Python loops for large-scale data manipulation is incredibly slow. Developers who haven't mastered **Pandas** and **NumPy** for vectorization create data pipelines that take hours instead of seconds.",
-            solution: "We look for engineers proficient in high-performance data manipulation. They must demonstrate the ability to use Pandas DataFrames for vectorized operations and NumPy for high-speed numerical computing, bypassing Python loops for dramatic speed gains in data-intensive applications.",
-            kpi: "Vectorization and High-Performance Data Computing"
+            pain: "Are your ML models stuck in notebooks, not production?",
+            problem: "The jump from a data science notebook to a production-ready, scalable ML service is massive. Most data scientists lack the DevOps and software engineering skills to package, deploy, monitor, and maintain models in a live environment.",
+            solution: "We hire **MLOps-aware** Python engineers who can build a full ML lifecycle. They are proficient in deploying models as microservices (using FastAPI or Flask) and integrating them with cloud platforms (AWS Sagemaker, Azure ML) and containerization (Docker/Kubernetes).",
+            kpi: "Time-to-deploy and model latency"
         }
     ],
-    evaluation: ['Concurrency (GIL, asyncio, threading)', 'Web frameworks (Django/Flask) and API design', 'Data processing (Pandas, NumPy) and performance', 'Testing (Pytest) and TDD principles', 'Ecosystem knowledge (virtual environments, packaging)'],
+    evaluation: ['Asyncio and non-blocking I/O mastery', 'Modern API frameworks (FastAPI, Django/DRF)', 'Data science stack (NumPy, Pandas, Scikit-learn)', 'MLOps and production model deployment', 'Clean, idiomatic Python (PEP 8)'],
     technical_analysis: "The Python evaluation is bifurcated for core software engineering and data science roles. For backend roles, we test `asyncio` mastery, requiring candidates to design a high-concurrency service using FastAPI and explain how they would handle blocking operations. For data-centric roles, the focus is on efficient data manipulation using NumPy and Pandas, specifically vectorized operations over loops. Both tracks require strong software engineering fundamentals: modular design, dependency management (Poetry/Pipenv), and TDD using Pytest. MLOps awareness is now mandatory, requiring candidates to articulate a strategy for containerizing a model and deploying it to a cloud environment for low-latency inference.",
-    interlink_slugs: ['data-engineering', 'pandas', 'numpy', 'llms']
-  },
-  'golang': {
+    interlink_slugs: ['data-engineering', 'machine-learning', 'sql']
+},
+'golang': {
     name: 'Go (Golang)',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
-    seo_title: 'Hire Senior Go Developers | High-Concurrency and Systems Programming Experts',
-    meta_description: 'Build fast, highly concurrent microservices and system tools. Hire elite remote Go experts vetted for goroutines, channel mastery, and low-latency API design. Book a call.',
-    intro: "Go, or Golang, is the language of choice for building highly concurrent, low-latency microservices and infrastructure tools. Its simplicity, native compilation, and powerful concurrency model (goroutines and channels) make it ideal for backends that demand extreme performance and efficiency. You need an engineer who can master Go's unique approach to concurrency, moving beyond the traditional multithreading model to leverage **goroutines** and **channels** for massive parallelism. Our vetting process is designed to find these systems experts, assessing their ability to write simple, yet powerful concurrent code that avoids race conditions and deadlocks. By hiring a Go expert from us, you are equipping your team with a developer who can build the highest-performance backbone for your most critical services.",
+    seo_title: 'Hire Senior Golang Engineers | High-Concurrency Microservices',
+    meta_description: 'Build fast, resource-efficient microservices. Hire elite remote Go experts vetted for goroutines, channels, and modern cloud-native architecture. Talk to us.',
+    intro: "Golang is the language of choice for building fast, highly concurrent, and resource-efficient cloud infrastructure, network tools, and high-performance microservices. It's the language that powers Kubernetes and Docker, and it's perfect for low-latency operations. You need an engineer who can fully utilize its core strength: **goroutines and channels**. Our vetting process focuses on engineers who understand the Go concurrency model deeply, avoiding common pitfalls like race conditions and deadlocks. We test their ability to build clean, idiomatic Go applications, emphasizing standard library usage over heavy frameworks. By hiring a Golang expert from us, you get a developer who can deliver scalable performance with minimal resource consumption, drastically lowering your cloud costs and ensuring superior reliability.",
     pains: [
         {
             icon: AlertTriangle,
-            pain: "Is your Go concurrency code plagued by race conditions and deadlocks?",
-            problem: "While simple to write, concurrent Go code is notoriously easy to get wrong. Developers who don't follow the 'Do not communicate by sharing memory; instead, share memory by communicating' philosophy introduce hard-to-debug race conditions or deadlocks that bring services to a grinding halt.",
-            solution: "We vet for mastery of the **CSP (Communicating Sequential Processes) model**. Our experts must demonstrate correct and idiomatic use of goroutines and channels to manage shared state safely. We test their ability to use the `context` package for cancellation and timeouts, ensuring resilient service operation.",
-            kpi: "Mastery of Goroutines and Channels"
+            pain: "Is your concurrent code prone to deadlocks or race conditions?",
+            problem: "Go makes concurrency easy to *start* but hard to get *right*. Misuse of mutexes, channels, or select statements leads to non-deterministic bugs, race conditions, or deadlocks, crippling application reliability and being incredibly difficult to debug.",
+            solution: "We vet for mastery of the Go concurrency model. Our experts must demonstrate correct and idiomatic use of goroutines and channels to manage shared state safely and efficiently. We demand mastery of the built-in race detector and profiler to prevent and debug these issues.",
+            kpi: "Concurrency model score and error rate reduction"
         },
         {
             icon: AlertTriangle,
-            pain: "Are your microservices failing under heavy load due to poor structure?",
-            problem: "The minimalist nature of Go can lead to disorganized codebases if architectural discipline is lacking. Unstructured application code makes it difficult to add features, manage dependencies, and enforce consistency across a fleet of microservices.",
+            pain: "Are you struggling with poor code structure and excessive interface usage?",
+            problem: "Go's emphasis on simplicity and interfaces is often misused, leading to overly complex interface hierarchies or 'big-package' monolithic code structures that are hard to test and maintain. This violates Go's principle of composability.",
             solution: "Our engineers are masters of idiomatic Go architecture. They are vetted on their ability to structure services using patterns like **Dependency Injection** and clearly separated domain, service, and data layers, ensuring the code is highly testable, scalable, and easy to navigate for new team members.",
             kpi: "Idiomatic Go Service Architecture"
         },
@@ -661,16 +661,16 @@ export const allTech: AllTech = {
             kpi: "Proficiency in Go Testing and Race Detector"
         }
     ],
-    evaluation: ['Concurrency (Goroutines, Channels, Select)', 'Context package for timeouts/cancellation', 'Service architecture and dependency management', 'API implementation (HTTP, gRPC) and routing', 'Testing (table-driven tests, race detector)'],
-    technical_analysis: "The Go evaluation is highly focused on system-level concurrency and performance. The core test is the candidate's mastery of the **goroutine and channel model**: candidates are required to build a simple concurrent service that safely processes work, using channels to coordinate state and the `select` statement for handling multiple communication paths. We assess their ability to use the `context` package for proper request cancellation and cleanup in complex call chains. For architecture, we evaluate their design principles, looking for clean separation of concerns and correct use of interfaces for dependency inversion, which is critical in large Go codebases. Finally, we test their knowledge of the standard library, including HTTP, encoding/json, and their ability to use Go's built-in tools for benchmarking and profiling to ensure low-latency performance.",
-    interlink_slugs: ['microservices', 'grpc', 'docker', 'prometheus']
-  },
-  'c-sharp': {
+    evaluation: ['Goroutines and channel mastery (CSP model)', 'Idiomatic Go code and interface design', 'Microservices frameworks (Gin, Echo, Fiber)', 'Profiling and performance tuning', 'Building clean, minimal Docker containers'],
+    technical_analysis: "The Golang evaluation is a deep dive into concurrency and system architecture. Candidates are given scenarios requiring them to implement a highly concurrent worker pool using goroutines and channels, with a mandatory requirement to use the built-in race detector to prove their solution is thread-safe. Architectural skills are tested by requiring them to design a small microservice using a lightweight framework (like Fiber or Echo), focusing on clean separation of concerns and correct use of interfaces for dependency inversion, which is critical in large Go codebases. Performance is paramount: candidates must demonstrate proficiency with the Go profiler (`pprof`) to analyze CPU and memory usage and propose optimizations. Finally, strong knowledge of the standard library, especially for networking and HTTP handling, is essential.",
+    interlink_slugs: ['kubernetes', 'docker', 'grpc']
+},
+'c-sharp': {
     name: 'C# / .NET',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
-    seo_title: 'Hire Senior C# / .NET Developers | Enterprise Microservices and API Experts',
-    meta_description: 'Build fast, stable enterprise backends. Hire elite remote C# experts vetted for ASP.NET Core, cloud-native architecture, and asynchronous programming. Book a call.',
+    seo_title: 'Hire Senior C# / .NET Developers | Enterprise & Cloud-Native Backend',
+    meta_description: 'Build fast, secure enterprise applications. Hire elite C#/.NET experts vetted for ASP.NET Core, Azure integration, and microservices architecture. Book a call.',
     intro: "Modern C# and the .NET platform are no longer Windows-bound; they are a leading choice for cross-platform, high-performance, and cloud-native backend development, especially within the Azure ecosystem. You need a senior engineer who masters the latest features of **.NET Core**, asynchronous programming (`async/await`), and advanced architecture patterns like microservices and event-driven design. Our vetting process is designed to find professionals who excel at building robust APIs with **ASP.NET Core**, understand Entity Framework Core for data access, and are proficient in performance optimization and security. By hiring our C#/.NET talent, you get a developer who can deliver enterprise-grade stability, speed, and deep integration with Azure or other cloud services, ensuring a reliable and scalable foundation for your core business logic.",
     pains: [
         {
@@ -695,11 +695,11 @@ export const allTech: AllTech = {
             kpi: "Container image size and security vulnerability score"
         }
     ],
-    evaluation: ['ASP.NET Core and Minimal APIs mastery', 'Asynchronous programming (async/await) and TPL', 'Data access (EF Core, Dapper)', 'Microservices architecture and inter-service communication (gRPC)', 'Azure/Cloud-native deployment and security (IdentityServer)'],
+    evaluation: ['ASP.NET Core and Minimal APIs mastery', 'Asynchronous programming (async/await, TPL)', 'Data access (EF Core, Dapper)', 'Microservices architecture and inter-service communication (gRPC)', 'Azure/Cloud-native deployment and security (IdentityServer)'],
     technical_analysis: "The C#/.NET evaluation focuses on enterprise readiness, performance, and architecture. The critical assessment is the candidate's mastery of the **Task-based Asynchronous Pattern (TAP)**; they are given scenarios to diagnose and fix asynchronous deadlocks and inefficient thread usage. We test their architectural skills by requiring them to design a multi-layered ASP.NET Core application, focusing on the correct use of Dependency Injection (DI) to create loosely coupled services. Expertise in **Entity Framework Core (EF Core)** is mandatory, specifically assessing their ability to write performant LINQ queries, use projections, and manage change tracking to avoid common performance pitfalls like the N+1 problem. Finally, we assess their knowledge of the C# language features (e.g., LINQ, records, pattern matching) and their ability to write clean, idiomatic, and testable code using modern testing frameworks.",
-    interlink_slugs: ['microservices', 'azure', 'postgresql']
-  },
-  'rust': {
+    interlink_slugs: ['azure', 'microservices', 'grpc']
+},
+'rust': {
     name: 'Rust',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -732,8 +732,8 @@ export const allTech: AllTech = {
     evaluation: ['Ownership, Borrowing, and Lifetimes (The core of Rust)', 'Asynchronous programming and concurrency (Tokio, Channels)', 'Error handling (Result, `?` operator, custom errors)', 'Macro usage (procedural, declarative) and metaprogramming', 'Crate ecosystem and build system (Cargo)'],
     technical_analysis: "The Rust evaluation is highly theoretical and practical, centered on the **Ownership Model**. Candidates are given scenarios involving complex data structures (e.g., linked lists, graphs) that are designed to fail the Borrow Checker, requiring them to implement a memory-safe solution using correct lifetimes, borrowing rules, and smart pointers. We specifically test their knowledge of **fearless concurrency**, requiring them to write a safe, concurrent solution using `Mutex`, `Arc`, and `Channel` to ensure they can manage shared mutable state without data races. For system development, we assess their ability to use Rust's powerful standard library, integrate with external C code (FFI), and use performance profiling tools (e.g., flamegraphs) to identify and fix bottlenecks, confirming their ability to build production-grade, high-performance software.",
     interlink_slugs: ['golang', 'docker', 'system-design']
-  },
-  'php': {
+},
+'php': {
     name: 'PHP (Laravel/Symfony)',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -766,8 +766,8 @@ export const allTech: AllTech = {
     evaluation: ['Modern PHP features (PHP 8+)', 'Framework mastery (Laravel, Symfony)', 'ORM optimization (Eloquent, Doctrine)', 'Asynchronous task queuing (Redis, RabbitMQ)', 'Clean architecture and Domain-Driven Design'],
     technical_analysis: "The PHP evaluation focuses on framework mastery and architectural discipline. Candidates are required to refactor a slow Laravel endpoint, demonstrating their ability to fix the N+1 problem, implement caching, and use database query profiling. Architectural skills are tested by asking them to design a complex module using a clean, layered approach, separating domain logic from framework concerns. We verify their mastery of testing (PHPUnit) and their knowledge of the Composer ecosystem. Finally, proficiency in using modern PHP tools like queues, broadcasting, and high-performance server extensions (Swoole/RoadRunner) is essential for handling enterprise-grade traffic.",
     interlink_slugs: ['mysql', 'rest-api-design', 'postgresql']
-  },
-  'kotlin': {
+},
+'kotlin': {
     name: 'Kotlin',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -800,8 +800,8 @@ export const allTech: AllTech = {
     evaluation: ['Coroutines and structured concurrency mastery', 'Null Safety and idiomatic Kotlin features', 'Frameworks (Spring Boot, Ktor)', 'Interoperability with Java libraries', 'Functional programming concepts and immutability'],
     technical_analysis: "The Kotlin evaluation focuses on its unique features and integration with the JVM ecosystem. The critical assessment is the candidate's mastery of **Coroutines**: they must design and implement a non-blocking asynchronous solution, correctly using structured concurrency and different Coroutine dispatchers for I/O and CPU-bound tasks. We rigorously test for **idiomatic Kotlin**, assessing their use of null safety features (`?`, safe calls, `let`), functional collection operators, and conciseness, demanding that they eliminate common Java boilerplate. For backend development, we test their ability to build a performant API using a framework like Spring Boot or Ktor, focusing on dependency injection, clean layering, and seamless interaction with existing Java components and libraries.",
     interlink_slugs: ['java', 'microservices', 'grpc']
-  },
-  'scala': {
+},
+'scala': {
     name: 'Scala',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -834,8 +834,8 @@ export const allTech: AllTech = {
     evaluation: ['Functional Programming (Immutability, Monads, Pattern Matching)', 'Concurrency (Actor Model/Akka) and asynchronous programming', 'Big Data ecosystem (Apache Spark, Kafka)', 'Advanced type system usage (Type Classes, Variance)', 'Testing (ScalaTest) and property-based testing'],
     technical_analysis: "The Scala evaluation is highly demanding, focusing entirely on functional programming and distributed systems. Candidates are tested on their ability to solve problems using an FP style, requiring mastery of immutable data structures, `Option`, `Either`, and advanced concepts like Monads and Type Classes, proving they can write reliable code. A core assessment is made on **concurrency**: they must demonstrate expertise in either the **Actor Model (Akka)** or the use of **Futures** for asynchronous operations, showing how to build fault-tolerant distributed services. For data processing, we test their practical knowledge of the Big Data ecosystem, specifically assessing their ability to write efficient data transformations using **Apache Spark** DataFrames/Datasets, ensuring they can handle massive datasets performantly.",
     interlink_slugs: ['apache-spark', 'kafka', 'data-engineering']
-  },
-  'erlang': {
+},
+'erlang': {
     name: 'Erlang',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -868,8 +868,8 @@ export const allTech: AllTech = {
     evaluation: ['Actor Model and asynchronous message passing', 'OTP framework (gen_server, Supervisors)', 'Fault tolerance and process linking/monitoring', 'Distributed Erlang and clustering', 'Concurrency patterns and state isolation'],
     technical_analysis: "The Erlang evaluation is centered on the **Actor Model** and the **OTP framework**. Candidates are required to design a fault-tolerant system using a hierarchy of OTP Supervisors and Worker processes, proving their ability to implement the 'Let It Crash' philosophy for automatic failure recovery. We test their mastery of the Actor Model by requiring them to manage shared state safely using asynchronous message passing between processes, explicitly preventing race conditions. Expertise in low-latency concurrency is assessed by designing systems that can handle a high volume of simultaneous connections, demonstrating an understanding of Erlang's lightweight processes and scheduler. Finally, we test their knowledge of distributed Erlang and how to build a resilient cluster that spans multiple nodes.",
     interlink_slugs: ['message-queues', 'event-sourcing', 'system-design']
-  },
-  'haskell': {
+},
+'haskell': {
     name: 'Haskell',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -902,8 +902,8 @@ export const allTech: AllTech = {
     evaluation: ['Pure functional core and side-effect isolation', 'Monad mastery (IO, Maybe, Either/Result) and Monad Transformers', 'Type system (Algebraic Data Types, Type Classes, Generics)', 'Laziness and memoization strategies', 'Concurrency (Async/STM) and parallelism'],
     technical_analysis: "The Haskell evaluation is the most abstract and rigorous, focusing entirely on **pure Functional Programming**. The core test is the candidate's mastery of the **Monad concept**, specifically requiring them to implement a complex I/O-dependent business workflow, using Monads (especially the IO Monad and Monad Transformers) to sequence operations while maintaining purity. We assess their ability to use **Algebraic Data Types (ADTs)** to model complex domains and enforce business invariants using the type system, proving they can make 'illegal states unrepresentable.' Finally, we test their understanding of **lazy evaluation** and its performance implications, requiring them to diagnose and fix scenarios that lead to space leaks, ensuring they can write efficient, production-ready code.",
     interlink_slugs: ['functional-programming', 'scala', 'elixir']
-  },
-  'elixir': {
+},
+'elixir': {
     name: 'Elixir',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -936,7 +936,7 @@ export const allTech: AllTech = {
     evaluation: ['Phoenix LiveView and Channels for real-time web', 'OTP (GenServer, Supervisors) and fault tolerance', 'Functional Programming (Pattern Matching, Pipe Operator)', 'Concurrency (Actors, Message Passing) and state isolation', 'Ecto ORM and database interaction'],
     technical_analysis: "The Elixir evaluation is a full-stack assessment of real-time and fault-tolerant capabilities. The core assessment is the candidate's ability to build a **real-time feature using Phoenix LiveView**, demonstrating an understanding of how LiveView manages state, handles user events, and minimizes network latency. We rigorously test their mastery of the **OTP platform**, requiring them to design a small service using a **GenServer** and implement a **Supervisor** to manage process failure, proving they can build self-healing systems. For application logic, we assess their proficiency in functional programming concepts, pattern matching, and the use of the pipe operator for clean data transformation. Finally, we test their ability to use Ecto ORM effectively for database interaction, focusing on query optimization and change management.",
     interlink_slugs: ['erlang', 'postgresql', 'web-accessibility']
-  },
+},
 
   // ----------------------------------------------------------------------
   // 3. DEVOPS & CLOUD (18)
@@ -972,7 +972,7 @@ export const allTech: AllTech = {
         }
     ],
     evaluation: ['Infrastructure-as-Code (Terraform/CloudFormation)', 'Container Orchestration (Kubernetes/Helm)', 'CI/CD Pipeline Architecture (Jenkins/GitLab CI)', 'Cloud Networking & Security (VPC, IAM, Security Groups)', 'Observability (Prometheus, Grafana, Alerting)'],
-    technical_analysis: "The DevOps Engineering evaluation is comprehensive, spanning cloud architecture, automation, and reliability. Candidates are tested on their ability to design a secure, highly available architecture (e.g., a three-tier app in a VPC) using **Terraform**, requiring them to define networking, compute, and security resources. A critical focus is **Kubernetes**: candidates must demonstrate mastery of core concepts (Deployments, Services, Ingress, ConfigMaps) and proficiency in packaging and deploying applications using **Helm**. We rigorously assess their experience building end-to-end **CI/CD pipelines**, requiring them to define a multi-stage process that includes automated testing, security scanning, and blue/green deployment strategies. Finally, we evaluate their skills in **observability**, requiring them to configure Prometheus scraping targets, design effective Grafana dashboards, and define critical alerting rules (SLOs/SLAs) to ensure proactive system health management.",
+    technical_analysis: "The DevOps Engineering evaluation is comprehensive, spanning cloud architecture, automation, and reliability. Candidates are tested on their ability to design a secure, highly available architecture (e.g., a three-tier app in a VPC) using **Terraform**, requiring them to define networking, compute, and security resources. A key focus is **Kubernetes**: candidates must demonstrate mastery of core concepts (Deployments, Services, Ingress, ConfigMaps) and proficiency in packaging and deploying applications using **Helm**. We rigorously assess their experience building end-to-end **CI/CD pipelines**, requiring them to define a multi-stage process that includes automated testing, security scanning, and blue/green deployment strategies. Finally, we evaluate their skills in **observability**, requiring them to configure Prometheus scraping targets, design effective Grafana dashboards, and define critical alerting rules (SLOs/SLAs) to ensure proactive system health management.",
     interlink_slugs: ['kubernetes', 'aws', 'terraform', 'ci-cd']
 },
 'aws': {
@@ -1554,6 +1554,9 @@ export const allTech: AllTech = {
     interlink_slugs: ['aws', 'event-sourcing', 'api-gateway', 'dynamodb']
 },
 
+  // ----------------------------------------------------------------------
+  // 9. VETTING & COGNITIVE AI (1)
+  // ----------------------------------------------------------------------
   'axiom-cortex': {
     name: 'Axiom Cortex™',
     category: 'Vetting & Cognitive AI',
@@ -1622,7 +1625,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Python', slug: 'python' },
       { name: 'Java', slug: 'java' },
       { name: 'Go', slug: 'golang' },
-      { name: '.NET', slug: 'c-sharp' },
+      { name: '.NET', slug: 'net' },
       { name: 'Ruby on Rails', slug: 'ruby' },
       { name: 'PHP (Laravel/Symphony)', slug: 'php' },
       { name: 'gRPC', slug: 'grpc' },
@@ -1764,8 +1767,3 @@ export const techCategories: TechCategory[] = [
     ],
   }
 ];
-
-// Note: This is an incomplete list. You will be prompted to add more technologies.
-// Final list should have 87 entries.
-// Missing: rx-js, pandas, numpy, jest, vitest, api-security, graphql, etc.
-
