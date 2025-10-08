@@ -99,6 +99,7 @@ export type TechSlug =
   | 'llms'
   | 'pandas'
   | 'numpy'
+  | 'langchain'
 
   // Databases (7)
   | 'postgresql'
@@ -136,7 +137,6 @@ export type TechSlug =
   // Vetting & Cognitive AI (2)
   | 'axiom-cortex'
   | 'graphql'
-  | 'langchain'
 ;
 
 
@@ -491,6 +491,40 @@ export const allTech: AllTech = {
     evaluation: ['Mastery of core operators (map, filter, tap)', 'Higher-order mapping operators (switchMap, mergeMap)', 'State management with Subjects (BehaviorSubject)', 'Error handling and retry strategies', 'Subscription management and memory leak prevention'],
     technical_analysis: "The RxJS evaluation is focused on solving complex asynchronous problems in a declarative style. Candidates are given scenarios involving race conditions, request cancellation, and real-time updates, and are required to use the correct combination of RxJS operators to build a robust solution. The critical assessment is their mastery of **higher-order mapping operators**: they must explain the difference between `switchMap`, `mergeMap`, `concatMap`, and `exhaustMap`, and use the correct one for a given scenario (e.g., `switchMap` for typeahead search). We rigorously test their understanding of **subscription management** and how to prevent memory leaks in long-lived applications. Finally, we assess their ability to architect a simple state management store using a `BehaviorSubject`, demonstrating their ability to manage and multicast state across an application.",
     interlink_slugs: ['angular', 'typescript', 'node']
+  },
+  'graphql': {
+    name: 'GraphQL',
+    category: 'Architecture & Integrations',
+    categorySlug: 'architecture-integrations',
+    seo_title: 'Hire Senior GraphQL Developers | API Architecture and Performance Experts',
+    meta_description: 'Build flexible, efficient, and strongly-typed APIs. Hire elite remote GraphQL experts vetted for schema design, resolvers, and performance optimization. Book a call.',
+    intro: "GraphQL empowers frontend clients to request exactly the data they need and nothing more, solving the over-fetching and under-fetching problems of traditional REST APIs. You need an engineer who can architect a robust GraphQL schema, implement efficient resolvers, and manage the performance trade-offs of a flexible query language. Our vetting process is designed to find experts in GraphQL server implementation (Apollo Server, GraphQL-Yoga) and client-side integration. We test their ability to design a schema that is both powerful and easy to maintain, and their mastery of techniques for preventing common performance issues like the N+1 problem. By hiring a GraphQL expert from us, you gain a developer who can dramatically improve your API performance, reduce network overhead, and accelerate frontend development.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are your GraphQL queries suffering from the N+1 problem?",
+            problem: "The flexibility of GraphQL makes it incredibly easy to accidentally create the N+1 problem, where a single query results in a cascade of database calls. Inexperienced developers fail to use data loading patterns, leading to massive performance bottlenecks.",
+            solution: "We vet for engineers who are masters of the **Dataloader pattern**. They must demonstrate the ability to batch and cache database requests within a single API call, completely eliminating the N+1 problem and ensuring efficient, high-performance data fetching for even the most complex queries.",
+            kpi: "Mastery of the Dataloader Pattern"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your GraphQL schema difficult to evolve and maintain?",
+            problem: "A poorly designed schema with inconsistent naming, weak typing, or overly complex object graphs becomes a maintenance nightmare. It's difficult for frontend developers to use and even harder to extend without introducing breaking changes.",
+            solution: "Our experts are proficient in **Schema-First Design**. They are vetted on their ability to create a clean, consistent, and well-documented schema that serves as a single source of truth. They understand how to evolve a schema gracefully using techniques that avoid breaking existing clients.",
+            kpi: "Schema-First Design and Evolvability"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to implement secure and granular access control?",
+            problem: "GraphQL's single endpoint can make it difficult to implement fine-grained authorization. A naive implementation often grants either all-or-nothing access, creating significant security risks.",
+            solution: "We look for engineers with experience in GraphQL security. They demonstrate the ability to implement authorization at the resolver level, ensuring that users can only access the data they are permitted to see, even within a single, complex query.",
+            kpi: "Resolver-Level Authorization and Security"
+        }
+    ],
+    evaluation: ['Schema design (SDL) and best practices', 'Resolver implementation and performance (Dataloader)', 'GraphQL server frameworks (Apollo Server)', 'Authentication and authorization strategies', 'Client-side integration (Apollo Client, Relay)'],
+    technical_analysis: "The GraphQL evaluation focuses on schema design and performance optimization. Candidates are required to design a GraphQL schema for a complex domain, demonstrating an understanding of types, queries, mutations, and subscriptions. The critical assessment is their ability to solve the **N+1 problem**: candidates must implement a set of resolvers for a nested query and use the Dataloader pattern to batch database calls efficiently. We also test their knowledge of the GraphQL ecosystem, including the Apollo platform, and their ability to integrate a GraphQL API with a client-side application for efficient caching and state management. Security is a key focus, requiring candidates to implement a secure authentication and authorization layer that protects sensitive data at the resolver level.",
+    interlink_slugs: ['node', 'react', 'api-security']
   },
 
   // ----------------------------------------------------------------------
@@ -1523,39 +1557,48 @@ export const allTech: AllTech = {
 
   'langchain': {
     name: 'LangChain',
-    category: 'ML/AI & LLM Ops',
+    category: 'Data & AI',
     categorySlug: 'ml-ai-llm-ops',
-    seo_title: 'Hire Senior LangChain Developers | AI Application & RAG Experts',
-    meta_description: 'Build powerful, data-aware AI applications. Hire elite remote LangChain experts vetted for complex chains, RAG architecture, and agent development. Book a call.',
-    intro: "LangChain is the definitive framework for composing LLM-powered applications, providing a rich toolkit for building complex chains, data-aware agents, and robust Retrieval-Augmented Generation (RAG) systems. You need an engineer who can move beyond basic LLM calls to architect sophisticated applications that can reason, act, and interact with your proprietary data. Our vetting process is designed to find these experts. We assess their deep understanding of LangChain's core components—Chains, Agents, and Tools—and their ability to design and optimize RAG pipelines. By hiring a LangChain expert from us, you get a developer who can transform your LLM concepts into production-ready, high-value AI applications.",
+    seo_title: 'Hire Senior LangChain Engineers | AI Application & RAG Experts',
+    meta_description: 'Vetted LangChain experts specializing in RAG system productionization, agent orchestration, and cost-optimized, low-latency deployments.',
+    intro: 'LangChain is the premier framework for developing applications powered by Large Language Models (LLMs). It excels at prototyping complex Retrieval-Augmented Generation (RAG) systems and autonomous AI agents.',
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Are your RAG results inaccurate or irrelevant?",
-            problem: "A naive RAG implementation often retrieves irrelevant documents, causing the LLM to hallucinate or provide incorrect answers. This stems from a poor understanding of text chunking, embedding models, and retrieval strategies.",
-            solution: "We vet for mastery of the **RAG pipeline**. Our experts must demonstrate proficiency in advanced chunking strategies, choosing the right embedding models, and implementing sophisticated retrieval techniques (e.g., HyDE, multi-query retriever) to ensure high-quality, relevant results.",
-            kpi: "RAG Pipeline Optimization and Accuracy"
+            icon: BrainCircuit,
+            pain: "Our proof-of-concept RAG system fails constantly in production.",
+            problem: "LangChain is built for rapid prototyping, but its abstractions and dependency bloat introduce high latency, memory leaks, and massive debugging complexity when moved to production scale.",
+            solution: "Our engineers focus on **production-ready agent architectures** (e.g., LangGraph) and observability tools (LangSmith) to provide full, trace-level visibility into every LLM call, ensuring reliability and maintainability.",
+            kpi: "99.9% uptime and <500ms API latency for complex, multi-tool agent chains.",
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your LLM application a single, monolithic prompt?",
-            problem: "Attempting to solve a complex problem with a single, massive prompt is brittle and hard to debug. This approach fails to break down the problem into logical, manageable steps, leading to unpredictable and inconsistent LLM behavior.",
-            solution: "Our engineers are experts in **LangChain Expression Language (LCEL)**. They are vetted on their ability to build complex, modular chains by composing smaller, reusable components, ensuring the logic is clear, testable, and easy to maintain.",
-            kpi: "Mastery of LCEL and Composable Chains"
+            icon: DollarSign,
+            pain: "Our OpenAI token costs are out of control and rising.",
+            problem: "Inefficient RAG pipelines often retrieve too many documents, or LangChain's default memory wrappers store excess conversation history, leading to unnecessary token consumption and wasted API calls.",
+            solution: "We implement custom, cost-optimized solutions like **semantic caching** and advanced chunking/re-ranking strategies to ensure only the most relevant, context-fitting data is passed to the LLM, reducing tokens by up to 30%.",
+            kpi: "30% reduction in monthly token consumption costs via optimized retrieval and caching.",
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application unable to interact with external tools and APIs?",
-            problem: "LLMs are powerful but are limited by their training data. Without the ability to interact with external systems, your AI application cannot access real-time information, perform actions, or integrate with your existing business logic.",
-            solution: "We look for engineers proficient in building **LangChain Agents and Tools**. They are vetted on their ability to define custom tools that allow the LLM to securely interact with any API or data source, transforming it from a simple text generator into a powerful, autonomous agent.",
-            kpi: "Custom Agent and Tool Development"
-        }
+            icon: Bug,
+            pain: "The LLM generates plausible-sounding answers not supported by our data (Hallucinations).",
+            problem: "RAG systems frequently fail due to missed top-ranked documents, incorrect chunking, or the LLM failing to extract the correct answer from noisy context, leading to inaccurate outputs.",
+            solution: "We rigorously apply **evaluation frameworks** (e.g., RAGAS) and test-driven development to validate retrieval accuracy and answer relevance, ensuring responses are strictly grounded in your provided knowledge base.",
+            kpi: "100% answer groundness score on test benchmarks, eliminating hallucinations.",
+        },
     ],
-    evaluation: ['LangChain Expression Language (LCEL) and chain composition', 'Retrieval-Augmented Generation (RAG) architecture', 'Agent and Tool creation for external API interaction', 'Vector database integration (pgvector, Pinecone, Weaviate)', 'Model evaluation and debugging (LangSmith)'],
-    technical_analysis: "The LangChain evaluation focuses on a candidate's ability to build complex, data-aware LLM applications. The critical assessment is their mastery of **RAG architecture**: candidates must design a complete RAG pipeline, including choosing appropriate chunking strategies, embedding models, and vector stores, and then implement advanced retrieval methods to improve accuracy. We rigorously test their understanding of **LangChain Expression Language (LCEL)** by requiring them to build a complex, branching chain of runnable components, demonstrating their ability to compose and debug asynchronous data flows. For agentic behavior, we assess their proficiency in creating custom **Tools** that securely interact with external APIs, and in using those tools within a ReAct-style Agent. Finally, we test their knowledge of the LangChain ecosystem, including their ability to use LangSmith for tracing, debugging, and evaluating the performance of their LLM chains.",
-    interlink_slugs: ['python', 'llms', 'data-engineering', 'pgvector']
+    evaluation: [
+        'Mastery of core LangChain components (Chains, Agents, Tools, Prompts, Memory, Retrieval).',
+        'Expertise in optimizing Retrieval-Augmented Generation (RAG) pipelines for accuracy and low-latency.',
+        'Deep understanding of advanced RAG patterns (e.g., recursive retrieval, query transformation).',
+        'Proven ability to diagnose and debug complex, nested chain execution flows and production failures.',
+        'Cost optimization strategies for LLM API usage and token management.',
+    ],
+    technical_analysis: "Evaluating a senior LangChain engineer goes far beyond basic chaining. We test their ability to move past the **prototyping phase** and solve enterprise-scale problems like reliability, latency, and cost control. Vetting focuses on RAG system optimization (chunking, vector store selection, re-ranking) and the creation of reliable, observable agents using tools like LangGraph/LangSmith. Success requires a candidate who can manage the trade-offs between flexibility and the framework’s production-readiness shortcomings.",
+    interlink_slugs: ['llms', 'python', 'vector-databases', 'data-engineering', 'data-science'],
   },
 
+  // ----------------------------------------------------------------------
+  // 9. VETTING & COGNITIVE AI (1)
+  // ----------------------------------------------------------------------
   'axiom-cortex': {
     name: 'Axiom Cortex™',
     category: 'Vetting & Cognitive AI',
@@ -1766,3 +1809,9 @@ export const techCategories: TechCategory[] = [
     ],
   }
 ];
+
+// Note: This is an incomplete list. You will be prompted to add more technologies.
+// Final list should have 87 entries.
+// Missing: rx-js, pandas, numpy, jest, vitest, api-security, graphql, etc.
+
+    
