@@ -819,7 +819,7 @@ export const allTech: AllTech = {
         },
         {
             icon: AlertTriangle,
-            pain: "Are you struggling to manage concurrent and distributed systems?",
+            pain: "Are you struggling with concurrent and distributed systems?",
             problem: "Building high-concurrency systems without the right tools leads to fragile, difficult-to-scale architectures. Traditional threading models are often too low-level and error-prone for distributed environments.",
             solution: "Our engineers are proficient in distributed toolkits like **Akka**. They are vetted on their ability to use the Actor model to build robust, fault-tolerant, and highly concurrent services that scale out easily across multiple machines, perfect for microservices and real-time processing.",
             kpi: "Expertise in Actor Model (Akka) for Concurrency"
@@ -1667,7 +1667,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Python', slug: 'python' },
       { name: 'Java', slug: 'java' },
       { name: 'Go', slug: 'golang' },
-      { name: '.NET', slug: 'c-sharp' },
+      { name: '.NET', slug: 'net' },
       { name: 'Ruby on Rails', slug: 'ruby' },
       { name: 'PHP (Laravel/Symphony)', slug: 'php' },
       { name: 'gRPC', slug: 'grpc' },
@@ -1814,4 +1814,3 @@ export const techCategories: TechCategory[] = [
 // Final list should have 87 entries.
 // Missing: rx-js, pandas, numpy, jest, vitest, api-security, graphql, etc.
 
-    
