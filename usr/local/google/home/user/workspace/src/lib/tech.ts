@@ -42,7 +42,7 @@ export type TechSlug =
   | 'remix'
   | 'svelte'
   | 'web-accessibility'
-  | 'rx-js'
+  | 'rx-js' // <-- MISSING SLUG 1 (For Angular/Reactive Programming)
 
   // Backend/Core Languages (12)
   | 'node'
@@ -97,8 +97,8 @@ export type TechSlug =
   | 'kafka'
   | 'data-science'
   | 'llms'
-  | 'pandas'
-  | 'numpy'
+  | 'pandas' // <-- MISSING SLUG 2 (Data Science/Python)
+  | 'numpy' // <-- MISSING SLUG 3 (Data Science/Python)
 
   // Databases (7)
   | 'postgresql'
@@ -115,8 +115,8 @@ export type TechSlug =
   | 'qa-automation'
   | 'security-engineering'
   | 'penetration-testing'
-  | 'jest'
-  | 'vitest'
+  | 'jest' // <-- MISSING SLUG 4 (Testing Framework)
+  | 'vitest' // <-- MISSING SLUG 5 (Testing Framework)
 
   // Architecture & Integrations (8)
   | 'microservices'
@@ -127,7 +127,7 @@ export type TechSlug =
   | 'message-queues'
   | 'api-gateway'
   | 'system-design'
-  | 'api-security'
+  | 'api-security' // <-- MISSING SLUG 6 (General Security/API)
 
   // Mobile (2)
   | 'react-native'
@@ -135,7 +135,7 @@ export type TechSlug =
 
   // Vetting & Cognitive AI (1)
   | 'axiom-cortex'
-  | 'graphql'
+  | 'graphql' // <-- MISSING SLUG 7 (Alternative to REST/gRPC)
 ;
 
 
@@ -433,10 +433,10 @@ export const allTech: AllTech = {
     pains: [
         {
             icon: AlertTriangle,
-            pain: "Is your site at high risk of ADA compliance lawsuits?",
-            problem: "Most automated tools only catch 30-40% of accessibility issues. A lack of human, expert review means critical failures related to context, user flow, and complex ARIA roles slip into production, leaving your organization vulnerable to expensive legal action.",
-            solution: "Our experts are certified and vetted for their ability to perform thorough manual audits using screen readers (VoiceOver, NVDA), keyboard-only navigation, and advanced ARIA validation. They identify critical failures that tools miss, providing clear, prioritized remediation strategies to eliminate legal risk.",
-            kpi: "WCAG 2.2 Level AA compliance score"
+            pain: "Is your app legally exposed due to WCAG non-compliance?",
+            problem: "Failure to comply with Web Content Accessibility Guidelines (WCAG) not only excludes a significant user base but exposes your business to serious and expensive legal liability. Most developers lack the deep, practical knowledge required to ensure a high level of compliance.",
+            solution: "We vet for developers who are experts in WCAG 2.1/2.2 standards. They understand the principles (Perceivable, Operable, Understandable, Robust) and know how to apply them. They are skilled in auditing existing applications using tools like Axe and Lighthouse, and they know how to interpret and fix the resulting errors to ensure legal compliance.",
+            kpi: "WCAG Compliance and Audit Scores"
         },
         {
             icon: AlertTriangle,
@@ -447,7 +447,7 @@ export const allTech: AllTech = {
         },
         {
             icon: AlertTriangle,
-            pain: "Is accessibility treated as a last-minute patch rather than a core feature?",
+            pain: "Is accessibility an afterthought, not a core feature?",
             problem: "When accessibility is tacked on at the end of the development cycle, it often requires extensive, costly refactoring. This slows down development and results in a poor, fragile user experience.",
             solution: "We look for engineers who integrate A11y into every stage of development. They are proficient in tools like Jest-Axe for testing accessibility during component development and are skilled in automated and manual testing techniques to ensure that accessibility is a core, built-in feature of your application, not an afterthought.",
             kpi: "Accessibility integrated into Definition of Done"
@@ -455,55 +455,7 @@ export const allTech: AllTech = {
     ],
     evaluation: ['WCAG 2.1/2.2 principles and guidelines', 'Semantic HTML5 and ARIA attributes', 'Keyboard navigation and focus management', 'Screen reader testing proficiency (NVDA, VoiceOver)', 'Automated A11y testing (Axe, Lighthouse)'],
     technical_analysis: "The Web Accessibility evaluation is highly practical and focused on remediation. Candidates are presented with common accessibility failures (e.g., improper color contrast, missing form labels, broken keyboard trap, incorrect ARIA usage on a custom widget) and are tasked with diagnosing and fixing them. We assess their foundational knowledge of the accessibility tree, expecting them to articulate how semantic HTML maps to it and when to use ARIA as a supplement, not a replacement. A key area is keyboard interaction: candidates must demonstrate mastery of focus management (using `tabindex`, programmatically managing focus) and correctly handling component interactions without a mouse. Finally, they must be able to integrate accessibility testing tools (like `jest-axe`) into a component testing suite, proving they can implement accessibility as a continuous quality gate.",
-    interlink_slugs: ['react', 'angular', 'qa-automation']
-  },
-
-  // ----------------------------------------------------------------------
-  // 9. VETTING & COGNITIVE AI (1)
-  // ----------------------------------------------------------------------
-  'axiom-cortex': {
-    name: 'Axiom Cortex™',
-    category: 'Vetting & Cognitive AI',
-    categorySlug: 'vetted-talent',
-    seo_title: '44 Neuropsychometric Formulas | Scientific, Bias-Mitigated Cognitive AI for Nearshore IT Staff Augmentation Services',
-    meta_description: 'The Axiom Cortex **Cognitive AI Matrix Engine** uses 44+ neuropsychometric formulas, including Isotonic Regression and Fréchet Semantic Distance, to evaluate the **Mental Shape** of nearshore IT talent.',
-    intro: 'The **Axiom Cortex** is not a marketing tool—it is a **Cognitive AI Matrix Engine** engineered to reveal the **Mental Shape** and **True Capacity** of nearshore engineering talent. While other vendors invest in marketing to fool you, we have invested 8 years in **44 neuropsychometric formulas and algorithms** to provide the only scientifically defensible assessment for **nearshore software development**. We systematically filter out the noise of L2 linguistic variance, stress, and cultural bias to measure only **Conceptual Fidelity**. This proprietary, deep-learning matrix quantifies **4 Latent Traits** and **5 B-Axioms**, giving your **nearshore IT staff augmentation services** team unparalleled clarity.',
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: 'Are interviews penalizing your best nearshore talent for their accent, delivery, or L2 fluency?',
-            problem: 'The "Linguistic Penalty" causes assessors to confuse real-time L2 translation effort (high Cognitive Load) with a lack of technical knowledge (low B_C), leading to mis-hires and missed opportunities in **nearshore software development**.',
-            solution: 'Our **Cortex Calibration Layer** applies algorithmic adjustments, such as the **Proficiency-Normalized Scoring** and the **Translation Filter**, to mitigate linguistic bias, ensuring scores reflect technical reasoning, not surface fluency—a first for **nearshore IT staff augmentation services**.',
-            kpi: 'Reduction in false negative rate for L2 English candidates'
-        },
-        {
-            icon: AlertTriangle,
-            pain: 'Are you hiring "Cargo-Cult" engineers who can recite patterns but cannot solve novel problems?',
-            problem: 'Traditional interviews focus on rote knowledge, failing to assess the candidate’s true **Mental Model (B_M)** or ability to handle complex trade-offs, leading to critical failure in production environments.',
-            solution: 'We measure **B_M** using the **Nonparametric Latent Measurement Layer** (specifically, **Deep Lattice Models** and **Isotonic Regression**) to quantify the depth and causality of the candidate\'s understanding. We prioritize the **Architectural Instinct (AI)** Latent Trait, a proxy for top-down system design and trade-off management.',
-            kpi: 'Improved Cognitive Alignment score and 90-day success rate'
-        },
-        {
-            icon: AlertTriangle,
-            pain: 'Is your vendor using easily-fooled, off-the-shelf AI that developers can cheat or are they hiding deceptive behavior?',
-            problem: 'Most vendors use generic, public LLMs that can be gamed, and they lack the **neuropsychometric** capability to detect deception, lying, or AI-written text *read by the developer* from their non-verbal or speech patterns.',
-            solution: '**Axiom Cortex is NOT a public LLM.** Our **Cognitive AI Matrix Engine** employs **44+ algorithms** with the **Translation-Invariance Test** and **Forensic NLP** sub-models to detect minute inconsistencies—a proxy for lying or AI cheating. Our proprietary data moat of **12,000 human-vetted interviews** ensures this system is defensible, transparent, and superior to any vendor relying on marketing hype.',
-            kpi: 'Detection of deception and guaranteed data integrity'
-        }
-    ],
-    evaluation: [
-      '**The Cognitive AI Matrix Engine: Core Components & Formulas (44+ Signals):**',
-      '**Measurement Layer:** Nonparametric Latent Measurement (Deep Lattice Models, Isotonic Regression)',
-      '**Latent Trait Synthesis:** Bayesian Network Modeling with Probabilistic Gating',
-      '**L2 Bias Mitigation:** Proficiency-Normalized Scoring',
-      '**Conceptual Fidelity:** Cross-Lingual Semantic Fidelity (Fréchet Semantic Distance) and Masked Optimal Transport',
-      '**Integrity & Explainability:** Integrity & Certainty Assurance Layer (ICAL) using Jeffreys Divergence and Expected Calibration Error (ECE)',
-      '**Scientific Reliability:** Generalizability Theory (G-coefficients) and Random Matrix Theory (Marchenko–Pastur Distribution)',
-      '**Adaptive Interviewing:** Active Evaluation via Information Gain',
-      '**The 5 B-Axioms:** (Accuracy $B_A$, Mental Model $B_M$, Procedural $B_P$, Clarity $B_C$, Cognitive Load $B_L$)'
-    ],
-    technical_analysis: "The **Axiom Cortex Cognitive AI Matrix Engine** delivers the first truly **Scientific, Bias-Mitigated Cognitive AI for Nearshore IT Staff Augmentation Services**. Its **44+ neuropsychometric formulas** are organized into functional layers. The core **Latent Trait Inference Engine (LTIE)** uses **Isotonic Regression** and **Deep Lattice Models** to guarantee score monotonicity. The **Cortex Calibration Layer** eliminates L2 bias using **Proficiency-Normalized Scoring** and cross-lingual models like the **Fréchet Semantic Distance (FSD)** to ensure **Conceptual Fidelity** is measured, not grammar or accent. For detection of cheating/deception, the engine employs specialized **Forensic NLP Sub-Models** and a **Translation-Invariance Test** to analyze subtle **Linguistic Signatures** in speech patterns. Its integrity is non-negotiable, enforced by the **ICAL** using **Jeffreys Divergence** to validate data grounding before the final, reliable score is calculated via **Bayesian Network Modeling**. This rigorous, auditable science is trained on **12,000 human-curated technical interviews**, making it immune to the linguistic biases that plague legacy vendor tools.",
-    interlink_slugs: ['nearshore-development', 'offshore-development', 'staff-augmentation-services', 'ai-ml', 'nlp', 'psychometric-testing', 'data-science', 'python', 'auditability', 'neuroscience', 'machine-learning-engineering']
+    interlink_slugs: ['react', 'typescript', 'vue']
   },
 
   // ----------------------------------------------------------------------
@@ -685,7 +637,7 @@ export const allTech: AllTech = {
     categorySlug: 'backend-services', 
     seo_title: 'Hire Rust Developers | Systems Programming & High-Performance Backend',
     meta_description: 'Build fast, memory-safe, and highly concurrent systems. Hire elite remote Rust experts for systems programming, web assembly, and zero-cost abstractions. Talk to us.',
-    intro: "Rust is a systems programming language that guarantees **memory safety and thread safety** without relying on a garbage collector, making it ideal for performance-critical applications, operating systems, and high-concurrency microservices. If your current language is facing scaling issues, suffering from random crashes, or wasting resources, Rust is the solution. You need an engineer who has mastered the **Ownership and Borrowing Model**, asynchronous programming with **Async/Await**, and the Actix or Tokio runtimes. Our vetting process is designed to find engineers who write zero-cost abstraction code that is both blisteringly fast and safe. By hiring our Rust talent, you are investing in a future-proof, stable, and incredibly performant codebase that will drastically reduce your infrastructure costs and eliminate entire classes of runtime errors.",
+    intro: "**Rust** is a systems programming language that guarantees **memory safety and thread safety** without relying on a garbage collector, making it ideal for performance-critical applications, operating systems, and high-concurrency microservices. If your current language is facing scaling issues, suffering from random crashes, or wasting resources, Rust is the solution. You need an engineer who has mastered the **Ownership and Borrowing Model**, asynchronous programming with **Async/Await**, and the Actix or Tokio runtimes. Our vetting process is designed to find engineers who write zero-cost abstraction code that is both blisteringly fast and safe. By hiring our Rust talent, you are investing in a future-proof, stable, and incredibly performant codebase that will drastically reduce your infrastructure costs and eliminate entire classes of runtime errors.",
     pains: [
         {
             icon: AlertTriangle,
@@ -880,7 +832,7 @@ export const allTech: AllTech = {
         }
     ], 
     evaluation: ['Pure functional core and side-effect isolation', 'Monad mastery (IO, Maybe, Either/Result) and Monad Transformers', 'Type system (Algebraic Data Types, Type Classes, Generics)', 'Laziness and memoization strategies', 'Concurrency (Async/STM) and parallelism'],
-    technical_analysis: "The Haskell assessment is the most abstract, focusing on type theory and functional architecture. Candidates are required to implement a complex calculation pipeline, ensuring that all functions are **Pure** (no side effects) and all data is **Immutable**. A critical test involves handling a scenario where an operation can fail (e.g., dividing by zero or a database read failing), and they must use an **Algebraic Data Type** (e.g., `Result` or `Either`) to safely represent both success and failure states, avoiding exceptions entirely. Finally, they must demonstrate how to combine two asynchronous, independent operations using a concurrent primitive or a Monad (depending on the language) to achieve parallelism safely and correctly, proving their expertise in concurrency management via immutability.",
+    technical_analysis: "The Haskell evaluation is the most abstract, focusing on type theory and functional architecture. Candidates are required to implement a complex calculation pipeline, ensuring that all functions are **Pure** (no side effects) and all data is **Immutable**. A critical test involves handling a scenario where an operation can fail (e.g., dividing by zero or a database read failing), and they must use an **Algebraic Data Type** (e.g., `Result` or `Either`) to safely represent both success and failure states, avoiding exceptions entirely. Finally, they must demonstrate how to combine two asynchronous, independent operations using a concurrent primitive or a Monad (depending on the language) to achieve parallelism safely and correctly, proving their expertise in concurrency management via immutability.",
     interlink_slugs: ['functional-programming', 'scala', 'elixir']
   },
   'elixir': { 
@@ -916,6 +868,54 @@ export const allTech: AllTech = {
     evaluation: ['Phoenix Framework and LiveView mastery', 'OTP (GenServer, Supervisor) and fault tolerance', 'Actor Model and process concurrency', 'Functional programming and immutability', 'Ecto for data access and migrations'],
     technical_analysis: "The Elixir evaluation is a full-stack assessment of real-time and fault-tolerant capabilities. Candidates are required to implement a real-time feature (like a simple chat or live dashboard) using Phoenix LiveView, demonstrating their ability to handle user input, manage state, and broadcast updates efficiently. We test their mastery of OTP by requiring them to design a stateful service using `GenServer` and wrap it in a `Supervisor` to prove fault tolerance. Data access skills with Ecto, including migrations and efficient query composition, are also rigorously tested. The goal is to find engineers who can build highly scalable, resilient, and real-time systems that fully leverage the power of the BEAM.",
     interlink_slugs: ['erlang', 'message-queues', 'event-sourcing']
+  },
+
+  // ----------------------------------------------------------------------
+  // 9. VETTING & COGNITIVE AI (1)
+  // ----------------------------------------------------------------------
+  'axiom-cortex': {
+    name: 'Axiom Cortex™',
+    category: 'Vetting & Cognitive AI',
+    categorySlug: 'vetted-talent',
+    seo_title: '44 Neuropsychometric Formulas | Scientific, Bias-Mitigated Cognitive AI for Nearshore IT Staff Augmentation Services',
+    meta_description: 'The Axiom Cortex **Cognitive AI Matrix Engine** uses 44+ neuropsychometric formulas, including Isotonic Regression and Fréchet Semantic Distance, to evaluate the **Mental Shape** of nearshore IT talent.',
+    intro: 'The **Axiom Cortex** is not a marketing tool—it is a **Cognitive AI Matrix Engine** engineered to reveal the **Mental Shape** and **True Capacity** of nearshore engineering talent. While other vendors invest in marketing to fool you, we have invested 8 years in **44 neuropsychometric formulas and algorithms** to provide the only scientifically defensible assessment for **nearshore software development**. We systematically filter out the noise of L2 linguistic variance, stress, and cultural bias to measure only **Conceptual Fidelity**. This proprietary, deep-learning matrix quantifies **4 Latent Traits** and **5 B-Axioms**, giving your **nearshore IT staff augmentation services** team unparalleled clarity.',
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: 'Are interviews penalizing your best nearshore talent for their accent, delivery, or L2 fluency?',
+            problem: 'The "Linguistic Penalty" causes assessors to confuse real-time L2 translation effort (high Cognitive Load) with a lack of technical knowledge (low B_C), leading to mis-hires and missed opportunities in **nearshore software development**.',
+            solution: 'Our **Cortex Calibration Layer** applies algorithmic adjustments, such as the **Proficiency-Normalized Scoring** and the **Translation Filter**, to mitigate linguistic bias, ensuring scores reflect technical reasoning, not surface fluency—a first for **nearshore IT staff augmentation services**.',
+            kpi: 'Reduction in false negative rate for L2 English candidates'
+        },
+        {
+            icon: AlertTriangle,
+            pain: 'Are you hiring "Cargo-Cult" engineers who can recite patterns but cannot solve novel problems?',
+            problem: 'Traditional interviews focus on rote knowledge, failing to assess the candidate’s true **Mental Model (B_M)** or ability to handle complex trade-offs, leading to critical failure in production environments.',
+            solution: 'We measure **B_M** using the **Nonparametric Latent Measurement Layer** (specifically, **Deep Lattice Models** and **Isotonic Regression**) to quantify the depth and causality of the candidate\'s understanding. We prioritize the **Architectural Instinct (AI)** Latent Trait, a proxy for top-down system design and trade-off management.',
+            kpi: 'Improved Cognitive Alignment score and 90-day success rate'
+        },
+        {
+            icon: AlertTriangle,
+            pain: 'Is your vendor using easily-fooled, off-the-shelf AI that developers can cheat or are they hiding deceptive behavior?',
+            problem: 'Most vendors use generic, public LLMs that can be gamed, and they lack the **neuropsychometric** capability to detect deception, lying, or AI-written text *read by the developer* from their non-verbal or speech patterns.',
+            solution: '**Axiom Cortex is NOT a public LLM.** Our **Cognitive AI Matrix Engine** employs **44+ algorithms** with the **Translation-Invariance Test** and **Forensic NLP** sub-models to detect minute inconsistencies—a proxy for lying or AI cheating. Our proprietary data moat of **12,000 human-vetted interviews** ensures this system is defensible, transparent, and superior to any vendor relying on marketing hype.',
+            kpi: 'Detection of deception and guaranteed data integrity'
+        }
+    ],
+    evaluation: [
+      '**The Cognitive AI Matrix Engine: Core Components & Formulas (44+ Signals):**',
+      '**Measurement Layer:** Nonparametric Latent Measurement (Deep Lattice Models, Isotonic Regression)',
+      '**Latent Trait Synthesis:** Bayesian Network Modeling with Probabilistic Gating',
+      '**L2 Bias Mitigation:** Proficiency-Normalized Scoring',
+      '**Conceptual Fidelity:** Cross-Lingual Semantic Fidelity (Fréchet Semantic Distance) and Masked Optimal Transport',
+      '**Integrity & Explainability:** Integrity & Certainty Assurance Layer (ICAL) using Jeffreys Divergence and Expected Calibration Error (ECE)',
+      '**Scientific Reliability:** Generalizability Theory (G-coefficients) and Random Matrix Theory (Marchenko–Pastur Distribution)',
+      '**Adaptive Interviewing:** Active Evaluation via Information Gain',
+      '**The 5 B-Axioms:** (Accuracy $B_A$, Mental Model $B_M$, Procedural $B_P$, Clarity $B_C$, Cognitive Load $B_L$)'
+    ],
+    technical_analysis: "The **Axiom Cortex Cognitive AI Matrix Engine** delivers the first truly **Scientific, Bias-Mitigated Cognitive AI for Nearshore IT Staff Augmentation Services**. Its **44+ neuropsychometric formulas** are organized into functional layers. The core **Latent Trait Inference Engine (LTIE)** uses **Isotonic Regression** and **Deep Lattice Models** to guarantee score monotonicity. The **Cortex Calibration Layer** eliminates L2 bias using **Proficiency-Normalized Scoring** and cross-lingual models like the **Fréchet Semantic Distance (FSD)** to ensure **Conceptual Fidelity** is measured, not grammar or accent. For detection of cheating/deception, the engine employs specialized **Forensic NLP Sub-Models** and a **Translation-Invariance Test** to analyze subtle **Linguistic Signatures** in speech patterns. Its integrity is non-negotiable, enforced by the **ICAL** using **Jeffreys Divergence** to validate data grounding before the final, reliable score is calculated via **Bayesian Network Modeling**. This rigorous, auditable science is trained on **12,000 human-curated technical interviews**, making it immune to the linguistic biases that plague legacy vendor tools.",
+    interlink_slugs: ['nearshore-development', 'offshore-development', 'staff-augmentation-services', 'ai-ml', 'nlp', 'psychometric-testing', 'data-science', 'python', 'auditability', 'neuroscience', 'machine-learning-engineering']
   }
 };
 
@@ -1083,3 +1083,8 @@ export const techCategories: TechCategory[] = [
     ],
   }
 ];
+
+// Note: This is an incomplete list. You will be prompted to add more technologies.
+// Final list should have 87 entries.
+// Missing: rx-js, pandas, numpy, jest, vitest, api-security, graphql, etc.
+
