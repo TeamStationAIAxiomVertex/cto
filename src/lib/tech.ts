@@ -100,6 +100,7 @@ export type TechSlug =
   | 'pandas'
   | 'numpy'
   | 'langchain'
+  | 'transformers'
 
   // Databases (7)
   | 'postgresql'
@@ -527,7 +528,7 @@ export const allTech: AllTech = {
         }
     ],
     evaluation: ['Deep mastery of the Event Loop and Worker Threads', 'Performance tuning and profiling', 'Framework expertise (NestJS, Fastify)', 'Microservices design and deployment (Docker/K8s)', 'Asynchronous control flow and error handling'],
-    technical_analysis: "The Node.js evaluation is centered on a candidate's mastery of the asynchronous programming model and backend architecture. The critical assessment point is the **Node.js Event Loop**: candidates are given scenarios that intentionally lead to blocking code and are required to diagnose the bottleneck and refactor it into a non-blocking solution, demonstrating an understanding of the different phases (Timers, Pending Callbacks, I/O, Check, Close). For architecture, we evaluate their ability to design a scalable API using modern frameworks (e.g., NestJS, Express) with a clear separation of concerns (e.g., service and repository layers). We specifically test their knowledge of security best practices, including correct implementation of CORS, handling JWTs, and using validation libraries to prevent common API vulnerabilities. Finally, we assess their proficiency with ORMs (e.g., Prisma, TypeORM) and their ability to integrate with diverse data stores (PostgreSQL, MongoDB) efficiently.",
+    technical_analysis: "The Node.js evaluation is centered on a candidate's mastery of the asynchronous programming model and backend architecture. The critical assessment point is the **Node.js Event Loop**: candidates are given scenarios that intentionally lead to blocking code and are required to diagnose the bottleneck and refactor it into a non-blocking solution, demonstrating an understanding of the different phases (Timers, Pending Callbacks, I/O, Check, Close). For architecture, we evaluate their ability to design a scalable API using a modern framework like NestJS, demonstrating a clear separation of concerns using the MVC/layered pattern. We specifically test their knowledge of security best practices, including correct implementation of CORS, handling JWTs, and using validation libraries to prevent common API vulnerabilities. Finally, we assess their proficiency with ORMs (e.g., Prisma, TypeORM) and their ability to integrate with diverse data stores (PostgreSQL, MongoDB) efficiently.",
     interlink_slugs: ['typescript', 'microservices', 'rest-api-design', 'postgresql']
 },
 'java': {
@@ -536,7 +537,7 @@ export const allTech: AllTech = {
     categorySlug: 'backend-services',
     seo_title: 'Hire Senior Java Developers | Spring Boot & Microservices Experts',
     meta_description: 'Build robust, mission-critical backends. Hire elite remote Java experts vetted for JVM performance, Spring, and enterprise microservice architecture. Book a call.',
-    intro: "Java and the JVM ecosystem (especially **Spring Boot**) remain the gold standard for building massive-scale, mission-critical enterprise applications and microservices. You need an engineer who can leverage Java's stability, strong type system, and vast ecosystem to deliver solutions that are not just fast, but inherently reliable and maintainable under extreme loads. Our vetting process is designed to find engineers who are masters of the JVM, assessing their deep understanding of multithreading, garbage collection, and optimizing Spring/Quarkus applications for production. We move beyond simple CRUD to test their ability to architect complex, distributed systems, ensuring they can harness Java's power for resilience and performance. By hiring a Java expert from us, you are investing in a proven technology stack handled by top-tier talent, guaranteeing the long-term stability and evolutionary capacity of your core business logic.",
+    intro: "Java and the JVM ecosystem (especially **Spring Boot**) remain the gold standard for building massive-scale, mission-critical enterprise applications and microservices. You need an engineer who can leverage Java's stability, strong typing, and vast ecosystem to deliver solutions that are not just fast, but inherently reliable and maintainable under extreme loads. Our vetting process is designed to find engineers who are masters of the JVM, assessing their deep understanding of multithreading, garbage collection, and optimizing Spring/Quarkus applications for production. We move beyond simple CRUD to test their ability to architect complex, distributed systems, ensuring they can harness Java's power for resilience and performance. By hiring a Java expert from us, you are investing in a proven technology stack handled by top-tier talent, guaranteeing the long-term stability and evolutionary capacity of your core business logic.",
     pains: [
         {
             icon: AlertTriangle,
@@ -1560,6 +1561,40 @@ export const allTech: AllTech = {
     ],
     technical_analysis: "Evaluating a senior LangChain engineer goes far beyond basic chaining. We test their ability to move past the **prototyping phase** and solve enterprise-scale problems like reliability, latency, and cost control. Vetting focuses on RAG system optimization (chunking, vector store selection, re-ranking) and the creation of reliable, observable agents using tools like LangGraph/LangSmith. Success requires a candidate who can manage the trade-offs between flexibility and the framework’s production-readiness shortcomings.",
     interlink_slugs: ['llms', 'python', 'vector-databases', 'data-engineering', 'data-science'],
+  },
+  'transformers': {
+    name: 'Transformers (Hugging Face)',
+    category: 'Data & AI',
+    categorySlug: 'ml-ai-llm-ops',
+    seo_title: 'Hire Transformers Developers | Hugging Face & NLP Experts',
+    meta_description: 'Build advanced NLP applications. Hire elite remote Transformers experts vetted for fine-tuning, RAG, and deploying models from Hugging Face Hub. Book a call.',
+    intro: "The Hugging Face Transformers library is the definitive toolkit for modern Natural Language Processing (NLP). You need an engineer who can move beyond basic `pipeline()` usage to fine-tune pre-trained models on your proprietary data and deploy them for low-latency, high-throughput inference. Our vetting process is designed to find experts in the full Hugging Face ecosystem. We assess their deep understanding of the Trainer API, their ability to implement efficient data processing with Datasets, and their mastery of deploying models for production use. By hiring a Transformers expert, you get a developer who can build state-of-the-art NLP features, from custom text classification to sophisticated question-answering systems.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to fine-tune models on your own data?",
+            problem: "Fine-tuning a Transformer model requires careful data preparation, hyperparameter tuning, and a deep understanding of the training process. A naive approach leads to poor model performance, wasted compute resources, and a failure to adapt the model to your specific domain.",
+            solution: "We vet for mastery of the **Hugging Face training ecosystem**. Our experts must demonstrate proficiency in using the `Trainer` and `PEFT` (Parameter-Efficient Fine-Tuning) libraries to efficiently and effectively fine-tune models like Llama or Mistral on custom datasets, achieving state-of-the-art performance.",
+            kpi: "Demonstrable uplift in model accuracy on custom data"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your model inference too slow or expensive for production?",
+            problem: "Running large Transformer models for real-time inference is a major performance and cost challenge. Without optimization, high latency and expensive GPU requirements make production deployment impractical.",
+            solution: "Our engineers are experts in **inference optimization**. They are vetted on their ability to use techniques like quantization (bitsandbytes), ONNX export, and optimized runtimes (vLLM, TensorRT-LLM) to dramatically reduce model latency and infrastructure costs.",
+            kpi: "Sub-500ms inference latency and 50% cost reduction"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you unable to integrate models into a production-ready RAG system?",
+            problem: "Using a Transformer model effectively within a Retrieval-Augmented Generation (RAG) system requires expertise in both the model itself and the surrounding data pipeline (vector databases, retrieval logic). A lack of integration skill leads to inaccurate and irrelevant results.",
+            solution: "We look for engineers who are proficient in the full **RAG stack**. They are vetted on their ability to integrate Hugging Face models with vector databases (Pinecone, pgvector) and retrieval frameworks to build end-to-end, production-grade question-answering and conversational AI systems.",
+            kpi: "Expertise in building and deploying RAG pipelines"
+        }
+    ],
+    evaluation: ['Fine-tuning with Trainer API and PEFT', 'Inference optimization (Quantization, ONNX)', 'Integration with the Hugging Face ecosystem (Datasets, Hub)', 'Building production RAG systems', 'Model deployment (Docker, vLLM)'],
+    technical_analysis: "The Transformers evaluation assesses a candidate's ability to take a model from the Hugging Face Hub to a production-ready, fine-tuned service. A critical task is to perform a **PEFT fine-tuning** run on a custom dataset, demonstrating proficiency with the `Trainer` API and data preparation using the `datasets` library. We rigorously test their knowledge of **inference optimization**, requiring them to quantize a model using `bitsandbytes` and explain the performance vs. accuracy trade-offs. Finally, we assess their ability to build a complete **RAG pipeline**, requiring them to use a custom embedding model to index documents into a vector store and then use a separate LLM for generation, proving they can orchestrate a full, complex AI workflow.",
+    interlink_slugs: ['python', 'pytorch', 'langchain', 'data-science']
   },
 
   // ----------------------------------------------------------------------
