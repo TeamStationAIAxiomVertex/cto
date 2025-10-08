@@ -99,6 +99,7 @@ export type TechSlug =
   | 'llms'
   | 'pandas'
   | 'numpy'
+  | 'langchain'
 
   // Databases (7)
   | 'postgresql'
@@ -133,7 +134,7 @@ export type TechSlug =
   | 'react-native'
   | 'flutter'
 
-  // Vetting & Cognitive AI (1)
+  // Vetting & Cognitive AI (2)
   | 'axiom-cortex'
   | 'graphql'
 ;
@@ -491,40 +492,6 @@ export const allTech: AllTech = {
     technical_analysis: "The RxJS evaluation is focused on solving complex asynchronous problems in a declarative style. Candidates are given scenarios involving race conditions, request cancellation, and real-time updates, and are required to use the correct combination of RxJS operators to build a robust solution. The critical assessment is their mastery of **higher-order mapping operators**: they must explain the difference between `switchMap`, `mergeMap`, `concatMap`, and `exhaustMap`, and use the correct one for a given scenario (e.g., `switchMap` for typeahead search). We rigorously test their understanding of **subscription management** and how to prevent memory leaks in long-lived applications. Finally, we assess their ability to architect a simple state management store using a `BehaviorSubject`, demonstrating their ability to manage and multicast state across an application.",
     interlink_slugs: ['angular', 'typescript', 'node']
   },
-  'graphql': {
-    name: 'GraphQL',
-    category: 'Architecture & Integrations',
-    categorySlug: 'architecture-integrations',
-    seo_title: 'Hire Senior GraphQL Developers | API Architecture and Performance Experts',
-    meta_description: 'Build flexible, efficient, and strongly-typed APIs. Hire elite remote GraphQL experts vetted for schema design, resolvers, and performance optimization. Book a call.',
-    intro: "GraphQL empowers frontend clients to request exactly the data they need and nothing more, solving the over-fetching and under-fetching problems of traditional REST APIs. You need an engineer who can architect a robust GraphQL schema, implement efficient resolvers, and manage the performance trade-offs of a flexible query language. Our vetting process is designed to find experts in GraphQL server implementation (Apollo Server, GraphQL-Yoga) and client-side integration. We test their ability to design a schema that is both powerful and easy to maintain, and their mastery of techniques for preventing common performance issues like the N+1 problem. By hiring a GraphQL expert from us, you gain a developer who can dramatically improve your API performance, reduce network overhead, and accelerate frontend development.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Are your GraphQL queries suffering from the N+1 problem?",
-            problem: "The flexibility of GraphQL makes it incredibly easy to accidentally create the N+1 problem, where a single query results in a cascade of database calls. Inexperienced developers fail to use data loading patterns, leading to massive performance bottlenecks.",
-            solution: "We vet for engineers who are masters of the **Dataloader pattern**. They must demonstrate the ability to batch and cache database requests within a single API call, completely eliminating the N+1 problem and ensuring efficient, high-performance data fetching for even the most complex queries.",
-            kpi: "Mastery of the Dataloader Pattern"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your GraphQL schema difficult to evolve and maintain?",
-            problem: "A poorly designed schema with inconsistent naming, weak typing, or overly complex object graphs becomes a maintenance nightmare. It's difficult for frontend developers to use and even harder to extend without introducing breaking changes.",
-            solution: "Our experts are proficient in **Schema-First Design**. They are vetted on their ability to create a clean, consistent, and well-documented schema that serves as a single source of truth. They understand how to evolve a schema gracefully using techniques that avoid breaking existing clients.",
-            kpi: "Schema-First Design and Evolvability"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are you struggling to implement secure and granular access control?",
-            problem: "GraphQL's single endpoint can make it difficult to implement fine-grained authorization. A naive implementation often grants either all-or-nothing access, creating significant security risks.",
-            solution: "We look for engineers with experience in GraphQL security. They demonstrate the ability to implement authorization at the resolver level, ensuring that users can only access the data they are permitted to see, even within a single, complex query.",
-            kpi: "Resolver-Level Authorization and Security"
-        }
-    ],
-    evaluation: ['Schema design (SDL) and best practices', 'Resolver implementation and performance (Dataloader)', 'GraphQL server frameworks (Apollo Server)', 'Authentication and authorization strategies', 'Client-side integration (Apollo Client, Relay)'],
-    technical_analysis: "The GraphQL evaluation focuses on schema design and performance optimization. Candidates are required to design a GraphQL schema for a complex domain, demonstrating an understanding of types, queries, mutations, and subscriptions. The critical assessment is their ability to solve the **N+1 problem**: candidates must implement a set of resolvers for a nested query and use the Dataloader pattern to batch database calls efficiently. We also test their knowledge of the GraphQL ecosystem, including the Apollo platform, and their ability to integrate a GraphQL API with a client-side application for efficient caching and state management. Security is a key focus, requiring candidates to implement a secure authentication and authorization layer that protects sensitive data at the resolver level.",
-    interlink_slugs: ['node', 'react', 'api-security']
-  },
 
   // ----------------------------------------------------------------------
   // 2. BACKEND/CORE LANGUAGES (12)
@@ -592,15 +559,15 @@ export const allTech: AllTech = {
             solution: "We look for engineers who can confidently implement thread-safe code. They are vetted on their knowledge of concurrency utilities, lock-free structures, and the correct use of synchronization and locking mechanisms, guaranteeing the stability and correctness of data integrity under heavy load.",
             kpi: "Concurrency and Thread-Safe Programming"
         }
-    ],
+    ], 
     evaluation: ['Advanced JVM tuning and garbage collection (G1, ZGC)', 'Concurrency models (Virtual Threads, RxJava/Reactor)', 'Spring Boot/Spring Cloud for microservices', 'Database interaction (JPA/Hibernate, Spring Data)', 'Test-Driven Development (JUnit, Mockito)'],
     technical_analysis: "The Java evaluation focuses on enterprise architecture and JVM performance. Candidates are tested on their ability to design a microservice using Spring Boot, demonstrating a deep understanding of IoC, dependency injection, and configuration management. A key area is **concurrency**, where candidates must solve real-world threading problems, proving their expertise in using synchronization, thread pools, and concurrent collections to prevent deadlocks and race conditions. We assess their JVM knowledge by asking them to diagnose performance issues related to garbage collection and memory leaks. Finally, for data access, they must demonstrate efficiency in using ORMs (like Hibernate/JPA) and writing complex, performant SQL queries, ensuring the entire stack is optimized for speed and stability.",
     interlink_slugs: ['microservices', 'postgresql', 'event-sourcing']
 },
-'python': {
-    name: 'Python',
-    category: 'Backend & APIs',
-    categorySlug: 'backend-services',
+'python': { 
+    name: 'Python', 
+    category: 'Backend & APIs', 
+    categorySlug: 'backend-services', 
     seo_title: 'Hire Senior Python Developers | AI, Data Science & Backend APIs',
     meta_description: 'Hire elite remote Python engineers for scalable APIs (FastAPI), complex data science, and robust backend systems. Vetted for performance and architecture.',
     intro: "Python's versatility makes it the engine for everything from high-traffic APIs (FastAPI) to the core of data science and machine learning (PyTorch/TensorFlow). You need an engineer who can bridge these worlds: a developer who understands both the architectural needs of a robust backend and the unique performance demands of data processing. Our vetting process finds these experts. We focus on their ability to write efficient, clean code (adhering to PEP 8), their mastery of asynchronous programming (asyncio), and their deep knowledge of key libraries like NumPy, Pandas, and Scikit-learn. For backend roles, we test their expertise in modern, high-performance frameworks like FastAPI and Django. By hiring our Python talent, you are investing in a flexible, powerful engineer capable of building intelligent, data-driven applications that scale with your business.",
@@ -626,7 +593,7 @@ export const allTech: AllTech = {
             solution: "We hire **MLOps-aware** Python engineers who can build a full ML lifecycle. They are proficient in deploying models as microservices (using FastAPI or Flask) and integrating them with cloud platforms (AWS Sagemaker, Azure ML) and containerization (Docker/Kubernetes).",
             kpi: "Time-to-deploy and model latency"
         }
-    ],
+    ], 
     evaluation: ['Asyncio and non-blocking I/O mastery', 'Modern API frameworks (FastAPI, Django/DRF)', 'Data science stack (NumPy, Pandas, Scikit-learn)', 'MLOps and production model deployment', 'Clean, idiomatic Python (PEP 8)'],
     technical_analysis: "The Python evaluation is bifurcated for core software engineering and data science roles. For backend roles, we test `asyncio` mastery, requiring candidates to design a high-concurrency service using FastAPI and explain how they would handle blocking operations. For data-centric roles, the focus is on efficient data manipulation using NumPy and Pandas, specifically vectorized operations over loops. Both tracks require strong software engineering fundamentals: modular design, dependency management (Poetry/Pipenv), and TDD using Pytest. MLOps awareness is now mandatory, requiring candidates to articulate a strategy for containerizing a model and deploying it to a cloud environment for low-latency inference.",
     interlink_slugs: ['data-engineering', 'machine-learning', 'sql']
@@ -1554,6 +1521,47 @@ export const allTech: AllTech = {
     interlink_slugs: ['aws', 'event-sourcing', 'api-gateway', 'dynamodb']
 },
 
+  'langchain': {
+    name: 'LangChain',
+    category: 'Data & AI',
+    categorySlug: 'ml-ai-llm-ops',
+    seo_title: 'Hire Senior LangChain Engineers | AI Application & RAG Experts',
+    meta_description: 'Vetted LangChain experts specializing in RAG system productionization, agent orchestration, and cost-optimized, low-latency deployments.',
+    intro: 'LangChain is the premier framework for developing applications powered by Large Language Models (LLMs). It excels at prototyping complex Retrieval-Augmented Generation (RAG) systems and autonomous AI agents.',
+    pains: [
+        {
+            icon: BrainCircuit,
+            pain: "Our proof-of-concept RAG system fails constantly in production.",
+            problem: "LangChain is built for rapid prototyping, but its abstractions and dependency bloat introduce high latency, memory leaks, and massive debugging complexity when moved to production scale.",
+            solution: "Our engineers focus on **production-ready agent architectures** (e.g., LangGraph) and observability tools (LangSmith) to provide full, trace-level visibility into every LLM call, ensuring reliability and maintainability.",
+            kpi: "99.9% uptime and <500ms API latency for complex, multi-tool agent chains.",
+        },
+        {
+            icon: DollarSign,
+            pain: "Our OpenAI token costs are out of control and rising.",
+            problem: "Inefficient RAG pipelines often retrieve too many documents, or LangChain's default memory wrappers store excess conversation history, leading to unnecessary token consumption and wasted API calls.",
+            solution: "We implement custom, cost-optimized solutions like **semantic caching** and advanced chunking/re-ranking strategies to ensure only the most relevant, context-fitting data is passed to the LLM, reducing tokens by up to 30%.",
+            kpi: "30% reduction in monthly token consumption costs via optimized retrieval and caching.",
+        },
+        {
+            icon: Bug,
+            pain: "The LLM generates plausible-sounding answers not supported by our data (Hallucinations).",
+            problem: "RAG systems frequently fail due to missed top-ranked documents, incorrect chunking, or the LLM failing to extract the correct answer from noisy context, leading to inaccurate outputs.",
+            solution: "We rigorously apply **evaluation frameworks** (e.g., RAGAS) and test-driven development to validate retrieval accuracy and answer relevance, ensuring responses are strictly grounded in your provided knowledge base.",
+            kpi: "100% answer groundness score on test benchmarks, eliminating hallucinations.",
+        },
+    ],
+    evaluation: [
+        'Mastery of core LangChain components (Chains, Agents, Tools, Prompts, Memory, Retrieval).',
+        'Expertise in optimizing Retrieval-Augmented Generation (RAG) pipelines for accuracy and low-latency.',
+        'Deep understanding of advanced RAG patterns (e.g., recursive retrieval, query transformation).',
+        'Proven ability to diagnose and debug complex, nested chain execution flows and production failures.',
+        'Cost optimization strategies for LLM API usage and token management.',
+    ],
+    technical_analysis: "Evaluating a senior LangChain engineer goes far beyond basic chaining. We test their ability to move past the **prototyping phase** and solve enterprise-scale problems like reliability, latency, and cost control. Vetting focuses on RAG system optimization (chunking, vector store selection, re-ranking) and the creation of reliable, observable agents using tools like LangGraph/LangSmith. Success requires a candidate who can manage the trade-offs between flexibility and the framework’s production-readiness shortcomings.",
+    interlink_slugs: ['llms', 'python', 'vector-databases', 'data-engineering', 'data-science'],
+  },
+
   // ----------------------------------------------------------------------
   // 9. VETTING & COGNITIVE AI (1)
   // ----------------------------------------------------------------------
@@ -1767,3 +1775,9 @@ export const techCategories: TechCategory[] = [
     ],
   }
 ];
+
+// Note: This is an incomplete list. You will be prompted to add more technologies.
+// Final list should have 87 entries.
+// Missing: rx-js, pandas, numpy, jest, vitest, api-security, graphql, etc.
+
+
