@@ -129,10 +129,6 @@ export interface AllTech {
   [key: string]: TechEntry;
 }
 
-// ----------------------------------------------------------------------
-// *** START OF DEFINITIVE TECHNOLOGY DATA ARRAY (87 ENTRIES) ***
-// ----------------------------------------------------------------------
-
 export const allTech: AllTech = {
   // ----------------------------------------------------------------------
   // 1. FRONTEND/FULL-STACK (9)
@@ -586,7 +582,7 @@ export const allTech: AllTech = {
   'c-sharp': {
     name: 'C# / .NET',
     category: 'Backend & APIs',
-    categorySlug: 'backend-apis',
+    categorySlug: 'backend-services',
     seo_title: 'Hire Senior C# / .NET Developers | Enterprise & Cloud-Native Backend',
     meta_description: 'Build fast, secure enterprise applications. Hire elite C#/.NET experts vetted for ASP.NET Core, Azure integration, and microservices architecture. Book a call.',
     intro: "Modern C# and the .NET platform are no longer Windows-bound; they are a leading choice for cross-platform, high-performance, and cloud-native backend development, especially within the Azure ecosystem. You need a senior engineer who masters the latest features of **.NET Core**, asynchronous programming (`async/await`), and advanced architecture patterns like microservices and event-driven design. Our vetting process is designed to find professionals who excel at building robust APIs with **ASP.NET Core**, understand Entity Framework Core for data access, and are proficient in performance optimization and security. By hiring our C#/.NET talent, you get a developer who can deliver enterprise-grade stability, speed, and deep integration with Azure or other cloud services, ensuring a reliable and scalable foundation for your core business logic.",
@@ -654,7 +650,7 @@ export const allTech: AllTech = {
   'php': {
     name: 'PHP',
     category: 'Backend & APIs',
-    categorySlug: 'backend-apis',
+    categorySlug: 'backend-services',
     seo_title: 'Hire Senior PHP Developers | Laravel & Symfony Experts',
     meta_description: 'Build fast, scalable APIs and web apps. Hire elite PHP experts vetted for Laravel, Symfony, high-performance tuning, and clean architecture. Book a call.',
     intro: "Modern PHP, particularly with frameworks like **Laravel** and **Symfony**, is a robust, performant, and mature choice for building scalable web applications and APIs. You need a senior engineer who has moved beyond legacy PHP practices and fully embraces modern standards, including composer, object-oriented design, and the latest language features. Our vetting process is designed to find professionals who master the full lifecycle of a Laravel or Symfony application, from designing database migrations to optimizing cache layers and building robust APIs. We look for expertise in performance optimization (e.g., using Redis, optimizing Eloquent/Doctrine queries) and a strong commitment to clean architecture and testing. By hiring our PHP talent, you are investing in a mature, high-velocity platform backed by a massive ecosystem, ensuring rapid development and enterprise-grade stability.",
@@ -783,7 +779,7 @@ export const allTech: AllTech = {
             kpi: "Distribution complexity and debugging efficiency"
         }
     ],
-    evaluation: ['Mastery of the Actor Model and Process Isolation', 'OTP (Supervision Trees, gen_server)', 'Functional programming and immutability', 'Distributed computing and node communication', 'Soft real-time performance tuning'],
+    evaluation: ['Mastery of the Actor Model and Process Isolation', 'OTP (Supervision Trees, gen_server)', 'Functional programming and immutability', 'Distributed Erlang and node communication', 'Soft real-time performance tuning'],
     technical_analysis: "The Erlang evaluation is a pure test of concurrency, fault tolerance, and the OTP framework. Candidates are required to design a stateful service using a `gen_server` behavior and then implement a supervision tree around it, demonstrating how a component failure is automatically handled. We test their understanding of the *let it crash* philosophy and their ability to use immutable data structures to prevent state corruption. A key part of the assessment involves designing a multi-node distributed system and using Erlang's built-in networking primitives for safe process communication, proving they can build the highly available, reliable systems Erlang is famous for.",
     interlink_slugs: ['elixir', 'message-queues', 'event-sourcing']
   },
@@ -824,7 +820,7 @@ export const allTech: AllTech = {
       'Laziness and memoization strategies', 
       'Concurrency (Async/STM) and parallelism'
     ],
-    technical_analysis: "The Haskell evaluation is the most abstract, focusing on type theory and functional architecture. Candidates are required to implement a complex calculation pipeline, ensuring that all functions are **Pure** (no side effects) and all data is **Immutable**. A critical test involves handling a scenario where an operation can fail (e.g., dividing by zero or a database read failing), and they must use an **Algebraic Data Type** (e.g., `Result` or `Either`) to safely represent both success and failure states, avoiding exceptions entirely. Finally, they must demonstrate how to combine two asynchronous, independent operations using a concurrent primitive or a Monad (depending on the language) to achieve parallelism safely and correctly, proving their expertise in concurrency management via immutability.",
+    technical_analysis: "The Haskell assessment is the most abstract, focusing on type theory and functional architecture. Candidates are required to implement a complex calculation pipeline, ensuring that all functions are **Pure** (no side effects) and all data is **Immutable**. A critical test involves handling a scenario where an operation can fail (e.g., dividing by zero or a database read failing), and they must use an **Algebraic Data Type** (e.g., `Result` or `Either`) to safely represent both success and failure states, avoiding exceptions entirely. Finally, they must demonstrate how to combine two asynchronous, independent operations using a concurrent primitive or a Monad (depending on the language) to achieve parallelism safely and correctly, proving their expertise in concurrency management via immutability.",
     interlink_slugs: ['scala', 'elixir', 'system-design']
   },
   'elixir': {
@@ -1004,7 +1000,7 @@ export const allTech: AllTech = {
   'playwright': {
     name: 'Playwright',
     category: 'QA & Testing',
-    categorySlug: 'qa-testing',
+    categorySlug: 'qa-quality-engineering',
     seo_title: 'Hire Playwright Experts | Modern End-to-End (E2E) Testing',
     meta_description: 'Dramatically reduce testing flakiness and increase coverage. Hire senior Playwright experts vetted for modern E2E, API testing, and parallel execution. Book a call.',
     intro: "Your UI tests are slow, brittle, and constantly flaky, slowing down deployments and causing your team to distrust your test suite. You need a modern, reliable approach to End-to-End (E2E) testing. You need a **Playwright expert**. Playwright is the next generation of E2E testing, offering unparalleled stability, speed, and cross-browser/cross-platform capability—all from a single API. Our vetting targets QA Automation Engineers who can build robust, fast, and maintainable test suites. We assess their mastery of auto-waiting, API testing within E2E flows, and highly efficient parallel execution. Hiring a Playwright expert from us means transforming your flaky, legacy test suite into a powerful, rapid quality gate, dramatically increasing your deployment confidence and velocity.",
@@ -1038,7 +1034,7 @@ export const allTech: AllTech = {
   'cypress': {
     name: 'Cypress',
     category: 'QA & Testing',
-    categorySlug: 'qa-testing',
+    categorySlug: 'qa-quality-engineering',
     seo_title: 'Hire Cypress Experts | Fast, Developer-Friendly E2E Testing',
     meta_description: 'Integrate testing seamlessly with your dev workflow. Hire senior Cypress experts vetted for component testing, test isolation, and debugging speed. Talk to us.',
     intro: "Your developers view testing as a separate, frustrating chore. You need an E2E framework that is developer-friendly, integrated with the modern web stack, and provides an exceptional debugging experience. You need a **Cypress expert**. Cypress is designed for speed and reliability, operating directly within the browser to provide better visibility into application execution. Our vetting targets QA Engineers and SDETs who master the Cypress Test Runner, component testing integration, and advanced command architecture. Hiring a Cypress expert from us means bridging the gap between developers and QA, delivering faster feedback loops, and creating a highly productive testing environment where developers are empowered to write and fix their own E2E tests quickly.",
@@ -1072,37 +1068,113 @@ export const allTech: AllTech = {
   'data-governance': {
     name: 'Data Governance',
     category: 'Data & AI',
-    categorySlug: 'data-ai',
+    categorySlug: 'data-engineering-analytics',
     seo_title: 'Hire Data Governance Experts | Compliance & Data Quality Strategy',
     meta_description: 'Establish enterprise-wide data trust. Hire elite remote Data Governance experts for compliance (GDPR/CCPA), data quality, and security policy enforcement. Book a call.',
-    intro: "Data Governance is the framework that ensures your data is accurate, reliable, secure, and compliant with regulations like **GDPR, CCPA, and HIPAA**. You need an expert who can implement the policies, standards, and processes necessary to manage data as a strategic asset. This isn't just a technical problem; it's a strategic, organizational one. Our vetting targets senior professionals who can bridge the gap between legal/compliance and engineering. We assess their mastery of data cataloging, quality rule enforcement, and lineage tracking across complex data pipelines. Hiring a Data Governance expert from us transforms your messy data landscape into a trusted, auditable resource, reducing legal risk, and empowering your business to make decisions with confidence.",
+    intro: "Data Governance is the framework that ensures your data is accurate, reliable, secure, and compliant with regulations like **GDPR, CCPA, and HIPAA**. You need an expert who can implement the policies, standards, and processes necessary to manage data as a strategic asset. Our vetting targets senior professionals who master the five pillars of governance: **Data Quality, Data Security, Data Privacy, Data Lineage, and Data Architecture**. We look for expertise in tools like Collibra or Alation, and the ability to enforce policies directly within the data platform (Snowflake, BigQuery). By hiring our Data Governance talent, you are investing in data trust, mitigating catastrophic legal risk, and ensuring your business intelligence and AI initiatives are built on a solid, compliant foundation.",
     pains: [
         {
             icon: ShieldCheck,
             pain: "Are you at risk of major fines due to data privacy non-compliance?",
-            problem: "Without clear policies and a system for tracking PII (Personally Identifiable Information), companies are often non-compliant. This exposes the business to massive fines, legal action, and a loss of customer trust.",
-            solution: "Our experts implement **PII Masking and Access Control**. They define and enforce policies using tools like AWS Lake Formation or similar cloud services, ensuring that data is encrypted, access is strictly role-based, and sensitive information is masked for non-authorized users.",
+            problem: "Failure to comply with regulations like GDPR or CCPA (e.g., storing PII without consent, failing to handle 'right to be forgotten' requests) exposes your organization to massive fines, legal action, and a loss of customer trust.",
+            solution: "Our experts are compliance masters. They demonstrate the ability to implement privacy-enhancing technologies (masking, tokenization) and establish auditable processes for data subject access requests (DSARs), ensuring full regulatory compliance.",
             kpi: "Achieve 100% compliance with PII/GDPR mandates"
         },
         {
             icon: AlertTriangle,
             pain: "Do business users distrust the data in your reports and dashboards?",
             problem: "Inconsistent definitions (e.g., 'What is an active user?'), inaccurate lineage, and poor data quality lead to conflicting reports across departments. This erodes trust and slows decision-making as time is wasted debating metrics.",
-            solution: "We vet for mastery of **Data Cataloging and Data Quality**. Our experts establish a central glossary (metadata) for business terms, map data lineage (dbt, ETL tools), and implement automated data quality checks (dbt Tests) to guarantee consistency and accuracy.",
+            solution: "We vet for mastery of **Data Cataloging and Data Quality**. Our candidates establish a central glossary (metadata) for business terms, map data lineage (dbt, ETL tools), and implement automated data quality checks (dbt Tests) to guarantee consistency and accuracy.",
             kpi: "Increase business user trust in reports by 40%"
         },
         {
             icon: GanttChartSquare,
             pain: "Is it impossible to track data from source to report?",
             problem: "Debugging a broken report is nearly impossible when you can't trace the data's journey—which pipeline transformed it, which tables it passed through, and which business rules were applied. This makes refactoring risky and troubleshooting slow.",
-            solution: "Our experts implement and monitor **Automated Data Lineage**. They ensure tools like dbt or dedicated lineage platforms (e.g., Monte Carlo) track every transformation step, providing an instant, visual map of data flow for rapid impact analysis and debugging.",
-            kpi: "Reduce report debugging time from days to minutes"
+            solution: "Our engineers establish **Data Catalogs and Lineage Tools** (e.g., Collibra, Alation). They automatically map the end-to-end flow of data, enabling instant impact analysis and drastically reducing the time required to diagnose and fix data incidents.",
+            kpi: "Data lineage traceability and incident response time"
         }
     ],
     evaluation: ['PII identification and Masking strategy (GDPR, CCPA)', 'Data Quality metric definition and enforcement (dbt Tests)', 'Data Cataloging and Metadata Management (Collibra, Alation)', 'Role-Based Access Control (RBAC) and policy implementation', 'Data Lineage and impact analysis'],
     technical_analysis: "The Data Governance evaluation is a test of policy implementation and architectural security. Candidates must articulate a comprehensive strategy for **PII Identification and Classification**, detailing how they would use automated tools to tag sensitive data and enforce masking/encryption. We test their ability to translate business requirements into **Data Quality Rules**, requiring them to define actionable metrics (e.g., completeness, timeliness, validity) and select the appropriate technical tooling (e.g., dbt tests, Great Expectations) to enforce them within the pipeline. A critical component is **Metadata and Lineage**: candidates must demonstrate experience implementing a data catalog and designing a process to automatically capture lineage across ETL/ELT layers for end-to-end auditability. Finally, we assess their expertise in **Access Control**, requiring them to design an RBAC model that satisfies both the principle of least privilege and regulatory compliance requirements within a modern cloud data warehouse.",
     interlink_slugs: ['dbt', 'snowflake', 'aws']
+  },
+  'kafka': {
+    name: 'Apache Kafka',
+    category: 'Data & AI',
+    categorySlug: 'data-engineering-analytics',
+    seo_title: 'Hire Apache Kafka Experts | Distributed Streaming and Event Sourcing',
+    meta_description: 'Build high-throughput, real-time data pipelines. Hire elite remote Kafka experts for cluster management, stream processing (Kafka Streams), and Connector API. Book a call.',
+    intro: "**Apache Kafka** is the industry-standard distributed streaming platform for building high-throughput, real-time data pipelines and event-driven architectures. You need an expert who can master its operational complexity: designing **Topics** with the right partitioning strategy, configuring **Producers** and **Consumers** for optimal throughput and reliability, and managing the Zookeeper/Kraft dependencies. Our vetting focuses on professionals who can architect for fault tolerance, tune for performance, and leverage the ecosystem tools like **Kafka Streams** for real-time processing and **Kafka Connect** for data integration. By hiring a Kafka expert, you build a reliable, scalable central nervous system for your company’s data, enabling real-time analytics, event sourcing, and decoupled microservices.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are your message queues slow, unreliable, or unable to handle peak load?",
+            problem: "Traditional message queues often struggle with high-volume, persistent message storage and can become a bottleneck in event-driven architectures.",
+            solution: "Our experts design high-throughput **Kafka Topics**. They understand how to use partitioning to achieve massive parallel processing and configure replication to guarantee message durability and fault tolerance, ensuring no data is ever lost.",
+            kpi: "Data ingestion throughput (events/sec) and message durability"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your stream processing logic brittle and difficult to scale?",
+            problem: "Building custom stream processing applications to handle real-time data transformations is complex and requires deep expertise in managing state and ensuring fault tolerance.",
+            solution: "We vet for mastery of **Kafka Streams** or **ksqlDB**. Our candidates build scalable, real-time applications that perform complex stateful operations (joins, aggregations) directly on the stream, providing real-time insights without needing a separate processing cluster.",
+            kpi: "Real-time data transformation and stream processing efficiency"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you writing complex, custom code to get data in and out of Kafka?",
+            problem: "Manually building data connectors for every source and sink (databases, APIs, file systems) is a massive engineering effort that is slow and hard to maintain.",
+            solution: "Our engineers are proficient in **Kafka Connect**. They leverage its extensive library of pre-built connectors to reliably and scalably stream data from any source to any sink with minimal code and configuration, drastically accelerating data integration.",
+            kpi: "Data integration speed and connector reusability"
+        }
+    ],
+    evaluation: ['Kafka architecture (Brokers, Topics, Partitions, Zookeeper/Kraft)', 'Producer and Consumer API optimization (Acks, Batching)', 'Stream processing with Kafka Streams or ksqlDB', 'Data integration with Kafka Connect', 'Operational management (monitoring, scaling, security)'],
+    technical_analysis: "The Kafka evaluation is a test of distributed system design and performance tuning. Candidates are required to architect a full data pipeline, explaining their choice of **Topic Partitioning** and **Replication Factor** to meet specific throughput and fault-tolerance requirements. A key test involves diagnosing and fixing a slow consumer by tuning its configuration (e.g., `fetch.min.bytes`, `max.poll.records`), demonstrating deep knowledge of the Consumer API. We assess their stream processing skills by requiring them to implement a stateful aggregation using Kafka Streams. Finally, they must design a secure and scalable Kafka cluster, explaining their strategy for authentication, authorization (ACLs), and monitoring, proving they can operate Kafka reliably in production.",
+    interlink_slugs: ['data-engineering', 'microservices', 'event-sourcing']
+},
+  'cloudformation': {
+    name: 'CloudFormation',
+    category: 'DevOps & Cloud',
+    categorySlug: 'platform-infra-sre',
+    seo_title: 'Hire CloudFormation Experts | AWS Infrastructure as Code (IaC)',
+    meta_description: 'Master AWS native IaC. Hire elite remote CloudFormation experts vetted for YAML/JSON templating, stack management, and AWS service integration. Book a call.',
+    intro: "AWS CloudFormation is the native **Infrastructure as Code (IaC)** service for Amazon Web Services, offering deep integration, built-in change management, and a robust way to provision and update your AWS resources. You need an engineer who can master its complexity: writing clean, modular **YAML templates**, managing complex dependencies with `DependsOn`, and safely deploying and updating Stacks. Our vetting focuses on professionals who understand the Stack lifecycle, master the intricacies of intrinsic functions, and can utilize Nested Stacks for reusability. By hiring our CloudFormation talent, you ensure your AWS infrastructure is fully version-controlled, auditable, and managed through AWS's native tooling, simplifying governance and security.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your CloudFormation deployment failing or rolling back unpredictably?",
+            problem: "Complex inter-resource dependencies, incorrect intrinsic functions, or failure to handle resource replacement correctly lead to unpredictable deployment failures, long rollback times, and service disruption.",
+            solution: "Our experts are masters of **Change Sets**. They demonstrate the ability to use Change Sets to preview and approve infrastructure modifications before deployment, minimizing the risk of unpredictable failures and ensuring safe updates.",
+            kpi: "Stack deployment success rate and rollback reduction"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to reuse configuration for common resources?",
+            problem: "Writing the same IAM role, security group, or VPC definition repeatedly across multiple projects leads to massive code duplication, inconsistency, and a high maintenance burden.",
+            solution: "We vet for mastery of **Nested Stacks and Modules**. Our candidates demonstrate the ability to define reusable resource blocks as separate stacks, leveraging parameters and outputs to enforce consistent, DRY (Don't Repeat Yourself) infrastructure code across the organization.",
+            kpi: "Code reusability score and template size reduction"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you relying on fragile scripting for configuration after provisioning?",
+            problem: "CloudFormation is often limited to provisioning; configuring the application or installing packages requires external, non-version-controlled scripts, leading to configuration drift.",
+            solution: "Our engineers are proficient in using **CloudFormation Init (`cfn-init`)** and **User Data**. They demonstrate the ability to use CloudFormation's native tools to bootstrap EC2 instances and deploy application configurations, keeping the entire setup within the IaC definition.",
+            kpi: "Configuration integrity and bootstrapping efficiency"
+        }
+    ],
+    evaluation: ['YAML/JSON templating and Intrinsic Functions mastery', 'Stack lifecycle and Change Set management', 'Nested Stacks and modular design', 'Integration with AWS services (IAM, EC2, RDS)', 'Custom resource creation and User Data bootstrapping'],
+    technical_analysis: "The CloudFormation evaluation is a test of AWS-native IaC mastery. Candidates are required to write a complex YAML template to provision a multi-tier application (VPC, EC2, ALB, RDS), demonstrating the correct use of intrinsic functions (e.g., `Fn::GetAtt`, `Fn::Join`). A key test involves implementing a safe update using **Change Sets**, proving their ability to review and manage infrastructure changes predictably. We assess their architectural design skills by requiring them to refactor a monolithic template into a modular structure using **Nested Stacks**. Finally, they must demonstrate how to use `cfn-init` or User Data to bootstrap an application onto an EC2 instance, ensuring the entire environment is provisioned and configured entirely within the CloudFormation ecosystem.",
+    interlink_slugs: ['aws', 'terraform', 'devops-engineering']
   }
+}
+
+export interface TechCategory {
+  name: string;
+  slug: string;
+  pain: string;
+  icon: Icon;
+  tech: { name: string, slug: string }[];
 }
 
 export const techCategories: TechCategory[] = [
@@ -1259,6 +1331,6 @@ export const techCategories: TechCategory[] = [
   }
 ];
 
-export async function getAllTechSlugs(): Promise<string[]> {
+export function getAllTechSlugs(): string[] {
     return Object.keys(allTech);
 }
