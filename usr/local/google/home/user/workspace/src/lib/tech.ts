@@ -4,7 +4,8 @@ import {
   Database, Server, Cloud, Package, Code, 
   GitBranch, Zap, Cpu, Rocket, CodeSquare, 
   Settings, Key, Layers, Compass, BarChart, 
-  TrendingUp, Dna, FileText, Globe, Workflow 
+  TrendingUp, Dna, FileText, Globe, Workflow,
+  TestTube2
 } from 'lucide-react';
 import type { Icon } from 'lucide-react';
 
@@ -654,7 +655,7 @@ export const allTech: AllTech = {
   'php': {
     name: 'PHP',
     category: 'APIs & Backend Services',
-    categorySlug: 'backend-apis',
+    categorySlug: 'backend-services',
     seo_title: 'Hire Senior PHP Developers | Laravel & Symfony Experts',
     meta_description: 'Build fast, scalable APIs and web apps. Hire elite PHP experts vetted for Laravel, Symfony, high-performance tuning, and clean architecture. Book a call.',
     intro: "Modern PHP, particularly with frameworks like **Laravel** and **Symfony**, is a robust, performant, and mature choice for building scalable web applications and APIs. You need a senior engineer who has moved beyond legacy PHP practices and fully embraces modern standards, including composer, object-oriented design, and the latest language features. Our vetting process is designed to find professionals who master the full lifecycle of a Laravel or Symfony application, from designing database migrations to optimizing cache layers and building robust APIs. We look for expertise in performance optimization (e.g., using Redis, optimizing Eloquent/Doctrine queries) and a strong commitment to clean architecture and testing. By hiring our PHP talent, you are investing in a mature, high-velocity platform backed by a massive ecosystem, ensuring rapid development and enterprise-grade stability.",
@@ -662,7 +663,7 @@ export const allTech: AllTech = {
         {
             icon: AlertTriangle,
             pain: "Is your application performance bottlenecked by the database?",
-            problem: "The number one performance killer in most PHP applications (especially Laravel/Symfony) is the N+1 query problem, where a loop generates unnecessary database calls. Lazy loading, inefficient ORM usage, and a lack of caching cause significant latency and server load.",
+            problem: "The number one performance killer in most PHP applications (especially Laravel/Symfony) is the N+1 query problem, where a loop generates unnecessary database queries. Lazy loading, inefficient ORM usage, and a lack of caching cause significant latency and server load.",
             solution: "Our engineers are experts in ORM optimization. They must demonstrate mastery of eager loading, database query profiling, and strategic caching (Redis/Memcached) to minimize database hits. They are tested on their ability to solve the N+1 problem efficiently, ensuring blazing-fast API response times.",
             kpi: "Database query time and N+1 query elimination"
         },
@@ -681,14 +682,14 @@ export const allTech: AllTech = {
             kpi: "Application response time under peak load"
         }
     ],
-    evaluation: ['Modern PHP features (PHP 8+)', 'Deep framework knowledge (Laravel or Symfony)', 'ORM proficiency (Eloquent, Doctrine)', 'Composer for dependency management', 'Testing with PHPUnit/Pest'],
+    evaluation: ['Framework mastery (Laravel, Symfony)', 'ORM optimization (Eloquent, Doctrine)', 'Clean architecture and Domain-Driven Design', 'Asynchronous task queuing (Redis, RabbitMQ)', 'Modern PHP features and performance tuning (OPcache)'],
     technical_analysis: "The PHP evaluation focuses on performance, architecture, and modern standards. Candidates are required to refactor a slow Laravel endpoint, demonstrating their ability to fix the N+1 problem, implement caching, and use database query profiling. Architectural skills are tested by asking them to design a complex module using a clean, layered approach, separating domain logic from framework concerns. We verify their mastery of testing (PHPUnit) and their knowledge of the Composer ecosystem. Finally, proficiency in using modern PHP tools like queues, broadcasting, and high-performance server extensions (Swoole/RoadRunner) is essential for handling enterprise-grade traffic.",
     interlink_slugs: ['sql', 'message-queues', 'rest-api-design']
   },
   'kotlin': {
     name: 'Kotlin',
     category: 'APIs & Backend Services',
-    categorySlug: 'backend-apis',
+    categorySlug: 'backend-services',
     seo_title: 'Hire Senior Kotlin Developers | JVM Backend & Android Experts',
     meta_description: 'Build modern, concise, and safe JVM applications. Hire elite Kotlin experts for Spring Boot, Coroutines, and microservices architecture. Book a call today.',
     intro: "Kotlin is the modern, pragmatic language built for the JVM, offering safety and conciseness that dramatically increases developer productivity over Java. You need an engineer who can leverage Kotlin's best features—**Coroutines** for asynchronous programming, null safety to eliminate runtime exceptions, and deep integration with the massive Java ecosystem (Spring, etc.). Our vetting focuses on engineers who excel at writing clean, idiomatic Kotlin, can build high-performance microservices using Spring Boot or Ktor, and are masters of asynchronous concurrency. By hiring our Kotlin talent, you are investing in a future-proof application that enjoys the stability of the JVM without the boilerplate, leading to faster feature delivery and fewer production bugs.",
@@ -995,11 +996,45 @@ export const allTech: AllTech = {
     technical_analysis: "The GCP evaluation is a scenario-based test focused on data and Kubernetes. Candidates are asked to design a scalable data ingestion and processing pipeline using Pub/Sub, Cloud Dataflow, and BigQuery, demonstrating their knowledge of distributed data processing. We rigorously test their GKE skills, requiring them to deploy a microservice, configure Ingress, and implement autoscaling. Security is paramount: candidates must demonstrate mastery of **IAM roles and service accounts** to implement the principle of least privilege. They are also tested on building an event-driven serverless application using Cloud Functions and Cloud Storage triggers. Proficiency in **Terraform** for provisioning all cloud resources is mandatory, proving their ability to manage the infrastructure as code.",
     interlink_slugs: ['kubernetes', 'data-engineering', 'sql']
   },
-  'kubernetes': {
-    name: 'Kubernetes (K8s)',
+  'cloudformation': {
+    name: 'CloudFormation (AWS)',
     category: 'DevOps & Cloud',
     categorySlug: 'devops-cloud',
-    seo_title: 'Hire Senior Kubernetes Experts | Container Orchestration & DevOps',
+    seo_title: 'Hire CloudFormation Experts | AWS Infrastructure as Code (IaC)',
+    meta_description: 'Master AWS native IaC. Hire elite remote CloudFormation experts vetted for YAML/JSON templating, stack management, and AWS service integration. Book a call.',
+    intro: "**AWS CloudFormation** is the native **Infrastructure as Code (IaC)** service for Amazon Web Services, offering deep integration, built-in change management, and a robust way to provision and update your AWS resources. You need an engineer who can master its complexity: writing clean, modular **YAML templates**, managing complex dependencies with `DependsOn`, and safely deploying and updating Stacks. Our vetting focuses on professionals who understand the Stack lifecycle, master the intricacies of intrinsic functions, and can utilize Nested Stacks for reusability. By hiring our CloudFormation talent, you ensure your AWS infrastructure is fully version-controlled, auditable, and managed through AWS's native tooling, simplifying governance and security.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your CloudFormation deployment failing or rolling back unpredictably?",
+            problem: "Complex inter-resource dependencies, incorrect intrinsic functions, or failure to handle resource replacement correctly lead to unpredictable deployment failures, long rollback times, and service disruption.",
+            solution: "Our experts are masters of CloudFormation syntax and lifecycle. They demonstrate the ability to use **Change Sets** to preview and approve infrastructure modifications before deployment, minimizing the risk of unpredictable failures and ensuring safe updates.",
+            kpi: "Stack deployment success rate and rollback reduction"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to reuse configuration for common resources?",
+            problem: "Writing the same IAM role, security group, or VPC definition repeatedly across multiple projects leads to massive code duplication, inconsistency, and a high maintenance burden.",
+            solution: "We vet for mastery of **Nested Stacks and Modules**. Our candidates demonstrate the ability to define reusable resource blocks as separate stacks, leveraging parameters and outputs to enforce consistent, DRY (Don't Repeat Yourself) infrastructure code across the organization.",
+            kpi: "Code reusability score and template size reduction"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you relying on fragile scripting for configuration after provisioning?",
+            problem: "CloudFormation is often limited to provisioning; configuring the application or installing packages requires external, non-version-controlled scripts, leading to configuration drift.",
+            solution: "Our engineers are proficient in using **CloudFormation Init (`cfn-init`)** and **User Data**. They demonstrate the ability to use CloudFormation's native tools to bootstrap EC2 instances and deploy application configurations, keeping the entire setup within the IaC definition.",
+            kpi: "Configuration integrity and bootstrapping efficiency"
+        }
+    ],
+    evaluation: ['YAML/JSON templating and Intrinsic Functions mastery', 'Stack lifecycle and Change Set management', 'Nested Stacks and modular design', 'Integration with AWS services (IAM, EC2, RDS)', 'Custom resource creation and User Data bootstrapping'],
+    technical_analysis: "The CloudFormation evaluation is a test of AWS-native IaC mastery. Candidates are required to write a complex YAML template to provision a multi-tier application (VPC, EC2, ALB, RDS), demonstrating the correct use of intrinsic functions (e.g., `Fn::GetAtt`, `Fn::Join`). A key test involves implementing a safe update using **Change Sets**, proving their ability to review and manage infrastructure changes predictably. We assess their architectural design skills by requiring them to refactor a monolithic template into a modular structure using **Nested Stacks**. Finally, they must demonstrate how to use `cfn-init` or User Data to bootstrap an application onto an EC2 instance, ensuring the entire environment is provisioned and configured entirely within the CloudFormation ecosystem.",
+    interlink_slugs: ['aws', 'terraform', 'devops-engineering']
+  },
+  'kubernetes': {
+    name: 'Kubernetes',
+    category: 'DevOps & Cloud',
+    categorySlug: 'devops-cloud',
+    seo_title: 'Hire Kubernetes (K8s) Experts | Container Orchestration & DevOps',
     meta_description: 'Master large-scale container orchestration. Hire elite remote Kubernetes experts vetted for EKS/GKE/AKS operations, networking, and Helm/Kustomize. Book a call.',
     intro: "**Kubernetes (K8s)** is the open-source standard for automating the deployment, scaling, and management of containerized applications. You need an expert who can navigate its complex architecture—mastering Pods, Deployments, Services, and Ingress—to ensure your applications are highly available and scalable. Our vetting focuses on professionals who excel at cluster operations (networking, storage), configuration management (Helm, Kustomize), and designing resilient deployments (probes, anti-affinity). By hiring a Kubernetes expert, you unlock true cloud-native capabilities, achieving maximum application uptime, automated scaling, and portability across any cloud environment.",
     pains: [
@@ -1039,13 +1074,13 @@ export const allTech: AllTech = {
     name: 'Jenkins',
     category: 'DevOps & Cloud',
     categorySlug: 'devops-cloud',
-    seo_title: 'Hire Senior Jenkins CI/CD Experts | Pipeline Automation Specialists',
-    meta_description: 'Automate your entire software delivery lifecycle. Hire elite remote Jenkins experts vetted for Pipeline as Code, Groovy, and Kubernetes integration. Book a call.',
-    intro: "**Jenkins** is the most widely adopted, open-source automation server, serving as the central nervous system for countless CI/CD pipelines. You need a senior engineer who can move beyond legacy configurations and master modern **Pipeline as Code** using Groovy scripts and Jenkinsfile. Our vetting process is designed to find professionals who excel at building robust, scalable, and secure automation pipelines. We look for expertise in integrating Jenkins with container orchestration (Kubernetes/Docker), automated testing, and cloud environments. By hiring our Jenkins talent, you ensure your software delivery is fast, automated, and auditable, enabling high-velocity development and reducing time-to-market.",
+    seo_title: 'Hire Senior Jenkins CI/CD Experts | Pipeline Automation and Administration',
+    meta_description: 'Automate your software delivery. Hire elite remote Jenkins experts vetted for Pipeline Groovy scripting, shared libraries, and master/agent administration. Book a call.',
+    intro: "**Jenkins** is the industry's most flexible and mature open-source automation server, essential for building robust **Continuous Integration/Continuous Delivery (CI/CD)** pipelines. You need an expert who can move beyond basic freestyle jobs to architect scalable pipelines using **Jenkinsfile (Groovy)**, manage secure credentials, and maintain a robust, distributed master-agent architecture. Our vetting focuses on professionals who master the Pipeline-as-Code approach, develop reusable **Shared Libraries**, and ensure security and stability through proper agent allocation and monitoring. By hiring a Jenkins expert, you establish a centralized, powerful automation hub that drastically accelerates your release cycle and improves code quality.",
     pains: [
         {
             icon: AlertTriangle,
-            pain: "Is your pipeline configuration manual and prone to human error?",
+            pain: "Is your Jenkins pipeline configuration manual and prone to human error?",
             problem: "Relying on the Jenkins GUI for configuration leads to undocumented, non-reproducible, and fragile pipelines. Manual setup is slow, inconsistent, and prevents true version control.",
             solution: "Our experts are masters of **Pipeline as Code**. They demonstrate the ability to write declarative and scripted `Jenkinsfile`s using Groovy, storing the entire pipeline definition in source control (Git). This guarantees reproducible, auditable, and version-controlled build processes.",
             kpi: "Pipeline configuration stored in Git and versioned"
@@ -1114,7 +1149,7 @@ export const allTech: AllTech = {
     ],
     technical_analysis: "The CI/CD assessment is a strategic design exercise. Candidates are required to design a full, production-ready CI/CD pipeline for a microservices system, detailing the five key stages: Commit, Build, Test, Deploy (to staging), and Release (to production). They must specify the tooling for automated testing (unit, integration, E2E with Cypress/Playwright), the strategy for secrets management, and the method for zero-downtime deployment (Canary or Blue/Green). A crucial part of the test is explaining how they would measure and optimize the **Four Key Metrics** of DevOps, proving their understanding of how the pipeline translates into business value and stability.",
     interlink_slugs: ['devops-engineering', 'kubernetes', 'jenkins']
-},
+  },
   'monitoring-logging': {
     name: 'Monitoring & Logging',
     category: 'DevOps & Cloud',
@@ -1154,7 +1189,7 @@ export const allTech: AllTech = {
     ],
     technical_analysis: "The Monitoring & Logging assessment is an architectural and query challenge. Candidates are given a high-latency incident scenario and must: **1. Metrics:** Write a complex **PromQL query** to diagnose the root cause (e.g., calculating the latency of a specific API endpoint's 99th percentile across all instances). **2. Logging:** Design the logging format, ensuring it includes a **Trace ID** and is structured (JSON). **3. Alerting:** Define the SLO for a critical business flow (e.g., checkout time) and write the **Alertmanager** configuration to fire an alert only when the SLO is violated, not just when a single metric exceeds a threshold. They must also explain how they would use a distributed trace to follow the failing request across three microservices.",
     interlink_slugs: ['devops-engineering', 'prometheus', 'grafana']
-},
+  },
   'packer': {
     name: 'Packer (HashiCorp)',
     category: 'DevOps & Cloud',
@@ -1194,7 +1229,7 @@ export const allTech: AllTech = {
     ],
     technical_analysis: "The Packer evaluation is a practical infrastructure automation test. Candidates are required to write a complete Packer HCL template that: **1. Builds an AMI** in AWS (using the `amazon-ebs` builder). **2. Uses an Ansible Provisioner** to perform three specific tasks (e.g., installing a package, creating a user, hardening an SSH config). **3. Generates the final image** and outputs the new AMI ID. They must demonstrate how to manage variables securely and explain the benefits of using a configuration management tool (like Ansible) over simple shell scripts for image provisioning, focusing on idempotency and security hardening.",
     interlink_slugs: ['terraform', 'ansible', 'aws']
-},
+  },
   'vault': {
     name: 'Vault (HashiCorp)',
     category: 'DevOps & Cloud',
@@ -1225,10 +1260,10 @@ export const allTech: AllTech = {
             kpi: "Kubernetes secret security and automation"
         }
     ],
-    evaluation: ['Core concepts (Sealing, Unseal, Shamir Secret Sharing)', 'Dynamic secrets engine configuration (AWS, Database)', 'Auth methods integration (Kubernetes, AWS, OIDC)', 'Policy and ACL management for least privilege', 'Audit logging and monitoring'],
+    evaluation: ['Core concepts (Sealing, Unseal, Shamir Secret Sharing)', 'Dynamic secrets engine configuration (AWS, Database)', 'Policy design and Auth methods (LDAP, Kubernetes)', 'Kubernetes integration (Sidecar Injector)', 'Audit logging and monitoring'],
     technical_analysis: "The Vault evaluation is a rigorous test of secret management architecture. Candidates are required to design a full Vault deployment, explaining the unseal process and how to secure the root token. A key test involves configuring a **Dynamic Secrets engine** (e.g., for PostgreSQL or AWS IAM) and demonstrating how to request and revoke a short-lived credential. We test their security knowledge by requiring them to write an HCL policy that grants read-only access to a specific path for a Kubernetes service account. Finally, they must explain the process of integrating Vault with a microservice running on Kubernetes using the Agent Sidecar Injector, proving their ability to enforce true zero-trust security in a cloud-native environment.",
-    interlink_slugs: ['security-engineering', 'kubernetes', 'aws']
-},
+    interlink_slugs: ['kubernetes', 'security-engineering', 'devops-engineering']
+  },
   // ----------------------------------------------------------------------
   // 8. DATA WAREHOUSING (3)
   // ----------------------------------------------------------------------
@@ -1251,7 +1286,7 @@ export const allTech: AllTech = {
             icon: AlertTriangle,
             pain: "Is your data development and testing process slow and resource-intensive?",
             problem: "Creating separate, full copies of large production datasets for development and testing is time-consuming, expensive, and wastes storage resources, slowing down the entire data team.",
-            solution: "We vet for mastery of **Zero-Copy Cloning**. Candidates demonstrate the ability to create instant, cost-free, and writable copies of entire databases or schemas for development, QA, and experimentation, accelerating the data lifecycle.",
+            solution: "We vet for mastery of **Zero-Copy Cloning**. Candidates use Snowflake's metadata-based cloning feature to create instant, cost-free, and writable copies of entire databases or schemas for development, QA, and experimentation, accelerating the data lifecycle.",
             kpi: "Data environment provisioning time and storage cost reduction"
         },
         {
@@ -1345,8 +1380,674 @@ export const allTech: AllTech = {
     ],
     technical_analysis: "The Databricks assessment is focused on Spark performance and data reliability. Candidates are given a scenario involving a messy, high-volume data ingestion task and must design the solution using **Delta Lake**. This involves: **1. Reliability:** Implementing a way to enforce schema on the incoming data and explaining how Delta's transactional guarantees prevent corruption. **2. Spark Tuning:** Writing a highly optimized PySpark or Scala Spark job that minimizes shuffles and uses efficient data partitioning. A key test involves diagnosing a slow Spark job using the Spark UI and proposing specific cluster configuration changes (e.g., increasing executor memory) to fix a performance bottleneck. Finally, they must explain the end-to-end process of using **MLflow** to register and deploy a trained model.",
     interlink_slugs: ['apache-spark', 'python', 'data-science']
+},
+  // ----------------------------------------------------------------------
+  // 9. OTHER TECHNOLOGIES (10)
+  // ----------------------------------------------------------------------
+  'apache-spark': {
+    name: 'Apache Spark',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Apache Spark Experts | Big Data Processing and Analytics',
+    meta_description: 'Process massive datasets with speed. Hire remote Apache Spark experts vetted for PySpark/Scala, RDD/DataFrame optimization, and cluster tuning. Book a call.',
+    intro: "**Apache Spark** is the open-source, unified analytics engine for large-scale data processing, essential for handling Big Data workloads with speed and fault tolerance. You need an expert who can master its distributed computing paradigm—specifically, optimizing operations across the resilient distributed datasets (RDDs) and DataFrames. Our vetting focuses on professionals who excel at writing efficient Spark code (PySpark or Scala), tuning the cluster architecture (executors, memory, parallelism), and implementing advanced techniques like data partitioning and caching to achieve maximum throughput. By hiring a Spark expert, you gain the ability to run complex ETL, machine learning, and streaming jobs across petabytes of data faster than legacy systems.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are your Spark jobs slow, constantly failing, or running out of memory?",
+            problem: "Inefficient data shuffling, massive memory spills, or lack of proper cluster memory tuning leads to frustrating job failures, long execution times, and high compute costs, wasting resources and time.",
+            solution: "Our experts specialize in **Spark Performance Tuning**. They manage memory allocation, optimize join strategies (broadcast joins), and minimize expensive data shuffles by using correct partitioning keys, ensuring fast and stable execution.",
+            kpi: "Reduction in Spark job execution time and memory usage"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your Spark code verbose, difficult to debug, and prone to runtime errors?",
+            problem: "Over-reliance on low-level RDD APIs or mixing low-level operations with high-level DataFrames leads to less optimized code that is difficult for teams to maintain.",
+            solution: "We vet for mastery of **Spark DataFrames and SQL**. Candidates demonstrate the ability to use the high-level DataFrame API and Catalyst Optimizer to write concise, highly optimized code that is automatically optimized by Spark's query planner.",
+            kpi: "Use of DataFrames/Catalyst Optimizer for performance"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you unable to handle real-time or near-real-time data ingestion?",
+            problem: "Traditional batch processing is too slow for modern use cases like fraud detection or real-time personalization, requiring a shift to stream processing.",
+            solution: "Our engineers are proficient in **Structured Streaming**. They demonstrate the ability to process data streams in a fault-tolerant and scalable way, leveraging Spark's micro-batching or continuous processing modes for low-latency analytics.",
+            kpi: "Successful implementation of Structured Streaming pipelines"
+        }
+    ],
+    evaluation: [
+      'Spark DataFrame/SQL mastery (vs. RDDs)', 
+      'Performance tuning (Shuffle reduction, Broadcast Joins)', 
+      'Cluster configuration and memory management', 
+      'Data partitioning and caching strategies', 
+      'Structured Streaming for real-time data ingestion'
+    ],
+    technical_analysis: "The Apache Spark assessment is focused on performance and optimization of distributed computations. Candidates are given a non-optimized PySpark or Scala Spark job that performs a complex join and aggregation on a large dataset. They must identify and fix the key performance bottlenecks, typically involving: **1. Rewrite:** Replacing an inefficient join with a **Broadcast Join** or optimizing a UDF. **2. Tuning:** Proposing changes to the Spark configuration (e.g., `spark.sql.shuffle.partitions`, executor memory) to prevent memory spills. They must also explain the differences and trade-offs between using the low-level **RDD API** and the high-level **DataFrame/Dataset API**, justifying why the latter is preferred for modern workloads. Mastery of partitioning and memory hierarchy is non-negotiable for handling petabyte-scale data.",
+    interlink_slugs: ['databricks', 'data-engineering', 'python']
+},
+  'android-dev': {
+    name: 'Android Development',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Senior Android Developers (Kotlin/Java) | Native Mobile Apps',
+    meta_description: 'Build robust, native Android apps. Hire elite remote experts vetted for Kotlin/Java, Jetpack Compose/XML, Architecture Components, and CI/CD. Book a call.',
+    intro: "**Android Development** focuses on building performant, native applications using Kotlin or Java, adhering to Google's Material Design and best practices for the mobile ecosystem. You need an expert who masters the full lifecycle—from UI/UX implementation with **Jetpack Compose** or XML, to integrating Android Architecture Components (LiveData, ViewModel, Room), and ensuring application stability across various devices and OS versions. Our vetting focuses on professionals who write clean, testable code, understand thread management, and optimize the application for resource efficiency (battery, memory). By hiring a native Android expert, you deliver a fast, reliable, and deeply integrated experience for all your Android users.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your app state difficult to manage, leading to crashes on screen rotation?",
+            problem: "Improper handling of Activity/Fragment lifecycles and application state leads to memory leaks, crashes, and loss of user data, creating a poor user experience.",
+            solution: "Our experts enforce the use of **Android Architecture Components** (ViewModel and LiveData/Flow) to correctly separate UI from business logic, ensuring state survives configuration changes (like rotation) and eliminating memory leaks.",
+            kpi: "Reduction in memory leaks and rotation-related crashes"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your UI development slow, verbose, and difficult to maintain?",
+            problem: "Relying solely on verbose XML layouts for complex UIs is slow to iterate on and often leads to deep, rigid view hierarchies that harm performance.",
+            solution: "We vet for proficiency in modern declarative UI frameworks like **Jetpack Compose**. Candidates demonstrate the ability to build responsive, performant UIs with minimal code, leveraging Compose's reactive nature for better performance.",
+            kpi: "Proficiency in Jetpack Compose/modern UI tooling"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you running heavy operations on the main thread, causing ANRs and lag?",
+            problem: "Network calls, database queries, or heavy computations executed on the main UI thread block the rendering loop, leading to Application Not Responding (ANR) errors and janky animations.",
+            solution: "Our engineers master **Asynchronous Programming** using Kotlin Coroutines or RxJava. They ensure all blocking operations are safely executed on background threads, keeping the UI thread free for smooth rendering.",
+            kpi: "Reduction in ANR rates and UI lag/jank"
+        }
+    ],
+    evaluation: [
+      'Kotlin language and Coroutines for async operations', 
+      'Android Architecture Components (ViewModel, LiveData, Room)', 
+      'UI implementation (Jetpack Compose or XML layout/View Binding)', 
+      'Lifecycle management (Activity/Fragment) and state persistence', 
+      'Dependency Injection (Dagger Hilt/Koin) and testing'
+    ],
+    technical_analysis: "The Android assessment is a practical coding exercise focused on architecture and threading. Candidates are required to implement a feature that involves fetching data from a remote API and persisting it locally. This involves: **1. Architecture:** Structuring the code using **ViewModel** and **Repository** patterns. **2. Asynchrony:** Using **Kotlin Coroutines** to safely execute the network and Room database operations off the main thread. **3. UI/State:** Using **LiveData/Flow** to observe the data and update the UI efficiently. They must also demonstrate proficiency in modern dependency injection (e.g., Hilt) and write a robust unit test for the ViewModel's logic.",
+    interlink_slugs: ['kotlin', 'java', 'ios-dev']
+},
+  'ios-dev': {
+    name: 'iOS Development',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Senior iOS Developers (Swift) | Native Mobile Apps',
+    meta_description: 'Build performant, native iOS apps. Hire elite remote experts vetted for Swift, SwiftUI/UIKit, Combine, and clear architectural patterns (MVVM/VIPER). Book a call.',
+    intro: "**iOS Development** focuses on building exceptional, native applications using Swift, adhering to Apple's design guidelines and delivering a first-class experience for iPhone and iPad users. You need an expert who masters the full Apple ecosystem—from declarative UI with **SwiftUI** or classic **UIKit**, to managing concurrency with **Combine** or async/await, and ensuring application performance. Our vetting focuses on professionals who write clean, protocol-oriented code, implement scalable architectural patterns (MVVM/VIPER), and navigate the intricacies of the Apple Review Guidelines. By hiring a native iOS expert, you guarantee a polished, high-performance, and deeply integrated product experience for your entire Apple user base.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your app performance suffering from heavy main thread operations and janky scrolling?",
+            problem: "Blocking the main thread with network operations, image decoding, or heavy Core Data transactions leads to UI freezes and a poor user experience.",
+            solution: "Our experts master **Concurrency**. They use modern **async/await** or **Combine** frameworks to safely and efficiently execute all blocking operations on background threads, ensuring the main thread is always available for smooth UI rendering and animations.",
+            kpi: "UI responsiveness and main thread utilization optimization"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your codebase monolithic and difficult to test and maintain?",
+            problem: "Mixing business logic directly into View Controllers (the 'Massive View Controller' anti-pattern) makes code impossible to unit test and highly resistant to changes.",
+            solution: "We vet for mastery of **Modern Architecture Patterns** (MVVM, VIPER, Clean Swift). Candidates separate presentation logic from business logic, resulting in highly modular, testable, and maintainable codebases.",
+            kpi: "Adherence to architectural patterns and unit test coverage"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to quickly build complex, responsive user interfaces?",
+            problem: "Relying solely on verbose UIKit and Storyboards is often slow to prototype, difficult to manage in large teams, and requires significant manual effort for state updates.",
+            solution: "Our engineers are proficient in **SwiftUI**. They leverage its declarative, state-driven nature to build complex, responsive, and cross-platform (iOS/iPadOS) interfaces with dramatically less code and complexity.",
+            kpi: "Proficiency in SwiftUI/declarative UI development"
+        }
+    ],
+    evaluation: [
+      'Swift language and modern concurrency (async/await, Combine)', 
+      'Architectural patterns (MVVM/VIPER) and Protocol-Oriented Programming', 
+      'UI implementation (SwiftUI or UIKit + Auto Layout)', 
+      'Core Data/Realm/Database persistence and data layer design', 
+      'Unit testing, UI testing, and dependency management (CocoaPods/SwiftPM)'
+    ],
+    technical_analysis: "The iOS assessment is a practical coding challenge focused on architecture and concurrency. Candidates are required to implement a feature (e.g., a data feed from an API) and must structure the solution using a modern pattern like **MVVM (Model-View-ViewModel)**. This involves: **1. Concurrency:** Using **async/await** or **Combine** to perform the network request and update the ViewModel safely. **2. UI/State:** Implementing the UI (either with SwiftUI or UIKit) and showing how it correctly binds to the ViewModel's published properties. They must also demonstrate the use of **Protocol-Oriented Programming (POP)** for dependency inversion and provide robust unit tests for the core business logic in the ViewModel, ensuring a clean separation of concerns.",
+    interlink_slugs: ['swift', 'kotlin', 'react-native']
+},
+  'swift': {
+    name: 'Swift',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Senior Swift Developers | High-Performance, Modern Programming',
+    meta_description: 'Master Apple’s modern programming language. Hire remote Swift experts vetted for concurrency (async/await), protocol-oriented design, and server-side Swift (Vapor). Book a call.',
+    intro: "**Swift** is Apple's powerful, multi-paradigm programming language designed for safety, performance, and modern development. It's the language of choice for the entire Apple ecosystem, and increasingly for server-side development. You need an expert who moves beyond basic syntax to master its advanced features: strong typing, protocol-oriented programming (**POP**), and modern concurrency with **async/await**. Our vetting focuses on professionals who write clean, safe, and highly performant code, leveraging Swift's compiler guarantees to eliminate common runtime errors. By hiring a Swift expert, you invest in a future-proof, robust language foundation for your iOS, macOS, and even server-side applications.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your Swift code leading to runtime crashes (e.g., Nil crashes)?",
+            problem: "Improper handling of optionals and lack of rigorous type safety can lead to unexpected crashes, despite Swift's safety features.",
+            solution: "Our experts are masters of **Swift's Safety Features**. They demonstrate proficiency in defensive coding, correctly unwrapping optionals using `guard`/`if let`, and utilizing enums and structs to model state changes, minimizing the potential for runtime errors.",
+            kpi: "Code safety score and reduction in optional unwrapping errors"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your code difficult to scale and reuse across different modules?",
+            problem: "Over-reliance on class inheritance leads to rigid, tightly coupled code that is hard to adapt and unit test (the 'brittle base class' problem).",
+            solution: "We vet for mastery of **Protocol-Oriented Programming (POP)**. Candidates design code around protocols and value types, enabling highly flexible, composable, and reusable abstractions that are easy to mock and test.",
+            kpi: "Utilization of Protocol-Oriented Programming (POP)"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to integrate complex, high-performance logic on the backend?",
+            problem: "The perception that Swift is only for iOS prevents its use on the backend, forcing teams to maintain two separate codebases and languages.",
+            solution: "Our engineers are proficient in **Server-Side Swift** (e.g., Vapor or Kitura). They demonstrate the ability to leverage Swift's performance and safety features to build high-throughput, concurrent APIs that can be shared across the mobile and backend teams.",
+            kpi: "Server-Side Swift proficiency and performance"
+        }
+    ],
+    evaluation: [
+      'Modern concurrency (async/await, Task, Actor)', 
+      'Protocol-Oriented Programming (POP) and Generics', 
+      'Memory management (ARC) and closure capture lists', 
+      'Value types (Structs/Enums) vs. Reference types (Classes)', 
+      'Unit testing and mocking using Swift protocols'
+    ],
+    technical_analysis: "The Swift assessment is a language and design test. Candidates are required to solve a concurrency problem (e.g., fetching multiple resources in parallel) using modern **async/await and Tasks**, ensuring correct error handling and thread isolation using **Actors**. A core design task involves refactoring a class-based hierarchy into a **Protocol-Oriented** design using protocols, protocol extensions, and generics, demonstrating the benefits in terms of testability and composability. Finally, they must explain the mechanism of **Automatic Reference Counting (ARC)** and how to prevent reference cycles using weak/unowned references in closure capture lists, proving a deep understanding of memory management.",
+    interlink_slugs: ['ios-dev', 'server-side-swift', 'kotlin']
+  },
+  'r': {
+    name: 'R',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire R Programming Experts | Statistical Computing and Data Analysis',
+    meta_description: 'Master advanced statistical analysis and data visualization. Hire remote R experts vetted for Tidyverse, statistical modeling, and reproducible research (RMarkdown). Book a call.',
+    intro: "**R** is the specialized language and environment for statistical computing, data analysis, and graphical techniques, forming the backbone of academic and industry-leading quantitative research. You need an expert who can harness its unparalleled library ecosystem, especially the **Tidyverse** (ggplot2, dplyr, tidyr), to perform advanced statistical modeling, run simulations, and create compelling, custom data visualizations. Our vetting focuses on professionals who master complex statistical models (e.g., linear models, time series, Bayesian methods) and ensure their work is reproducible and easily shared using tools like **RMarkdown** or Shiny. By hiring an R expert, you gain deep quantitative insight and the power to validate hypotheses with statistical rigor.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your data cleaning process slow, complex, and non-auditable?",
+            problem: "Relying on base R functions or custom loops for data manipulation is verbose, difficult to read, and error-prone, making reproducibility a nightmare.",
+            solution: "Our experts are masters of the **Tidyverse** (dplyr, tidyr, ggplot2). They write clean, declarative data manipulation pipelines using pipes (`%>%`), making the transformation process highly readable, auditable, and reproducible.",
+            kpi: "Data transformation efficiency and Tidyverse utilization"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you applying incorrect statistical models or misinterpreting results?",
+            problem: "Lack of deep statistical knowledge leads to the misuse of complex models, resulting in flawed conclusions that can negatively impact business strategy.",
+            solution: "We vet for deep **Statistical Modeling Expertise**. Candidates demonstrate the ability to choose the correct model (e.g., regression, ANOVA, survival analysis) for a given hypothesis, validate model assumptions, and interpret p-values and confidence intervals correctly.",
+            kpi: "Statistical model selection and interpretation accuracy"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is sharing your analysis and visualizations with non-technical users difficult?",
+            problem: "Static code or basic plots are not engaging enough for business stakeholders, and sharing interactive results is complex without proper tooling.",
+            solution: "Our engineers are proficient in **RMarkdown and Shiny**. They create fully reproducible research documents that mix code and prose, and build interactive web applications (Shiny) for non-technical users to explore data dynamically.",
+            kpi: "Reproducible research and interactive visualization score"
+        }
+    ],
+    evaluation: [
+      'Tidyverse mastery (dplyr, ggplot2, tidyr)', 
+      'Advanced statistical modeling (Linear, Generalized Linear, Time Series)', 
+      'Data visualization design with ggplot2', 
+      'Reproducible research with RMarkdown/Quarto', 
+      'Custom function creation and package development basics'
+    ],
+    technical_analysis: "The R assessment is focused on data manipulation and statistical rigor. Candidates are given a messy, real-world dataset and a hypothesis, and they must: **1. Transformation:** Write a complete data cleaning and feature engineering pipeline using the **Tidyverse** (dplyr/tidyr) to prepare the data. **2. Modeling:** Select and implement the correct **Statistical Model** (e.g., a multiple linear regression), check its assumptions (e.g., normality of residuals), and correctly interpret the final output (e.g., coefficient significance). **3. Visualization:** Create a publication-quality data visualization using **ggplot2** that clearly communicates the model's findings. Finally, they must explain the necessary steps to make the entire analysis fully reproducible using RMarkdown or Quarto.",
+    interlink_slugs: ['data-science', 'python', 'sql']
+  },
+  'kotlin': {
+    name: 'Kotlin',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Senior Kotlin Developers | Modern, Concise, and Safe Programming',
+    meta_description: 'Leverage Kotlin for modern Android, backend, and multi-platform development. Hire remote experts vetted for Coroutines, functional programming, and Spring Boot integration. Book a call.',
+    intro: "**Kotlin** is a modern, statically typed, multi-platform language that is fully interoperable with Java, prized for its conciseness, safety, and excellent support for functional programming. It is the preferred language for Android development and increasingly popular for microservices (Spring Boot). You need an expert who can master its key features: null safety, extensions, and structured concurrency using **Coroutines**. Our vetting focuses on professionals who write idiomatic, expressive code, leverage Kotlin's concise syntax for higher productivity, and build robust, high-performance applications on the JVM and beyond. By hiring a Kotlin expert, you gain type-safe, readable, and highly maintainable code for your next-generation applications.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your backend code verbose, boilerplate-heavy, and prone to null pointer exceptions?",
+            problem: "Traditional Java code often suffers from excessive boilerplate and the infamous `NullPointerException`, which leads to runtime instability and long development cycles.",
+            solution: "Our experts leverage **Kotlin's Null Safety** and concise syntax. They use data classes, expression bodies, and extension functions to drastically reduce boilerplate, while the compiler prevents `NullPointerExceptions` through explicit optionality.",
+            kpi: "Code conciseness and reduction in null-related runtime errors"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your application struggling to handle high concurrency and asynchronous tasks efficiently?",
+            problem: "Managing traditional threads or complex futures for asynchronous operations is difficult to reason about, leading to thread leaks and resource exhaustion under load.",
+            solution: "We vet for mastery of **Kotlin Coroutines**. Candidates use structured concurrency (e.g., `suspend` functions, `Dispatchers`) to write complex asynchronous code that looks sequential, is easy to read, and is highly efficient, avoiding thread-blocking.",
+            kpi: "Coroutines mastery and efficient asynchronous implementation"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you underutilizing Kotlin's potential for multi-platform development?",
+            problem: "Restricting Kotlin only to Android misses its potential to share business logic across mobile (iOS/Android), web (JS), and backend (JVM) platforms.",
+            solution: "Our engineers are proficient in **Kotlin Multiplatform Mobile (KMM)**. They demonstrate the ability to share core business logic (e.g., networking, database) across native iOS and Android applications, maximizing code reuse.",
+            kpi: "Kotlin Multiplatform Mobile (KMM) proficiency"
+        }
+    ],
+    evaluation: [
+      'Coroutines and Structured Concurrency mastery', 
+      'Null Safety and idiomatic Kotlin features (data classes, extensions)', 
+      'Interoperability with existing Java codebases', 
+      'Functional programming features (higher-order functions, lambdas)', 
+      'Unit testing and mocking frameworks (MockK, JUnit 5)'
+    ],
+    technical_analysis: "The Kotlin assessment is centered on conciseness and concurrency. Candidates are required to implement a complex asynchronous service (e.g., a non-blocking API endpoint that calls multiple downstream services) using **Coroutines**, demonstrating proper use of `suspend`, structured concurrency, and different `Dispatchers`. A core language test involves refactoring a verbose Java/boilerplate class into idiomatic Kotlin, leveraging **data classes**, extension functions, and the `apply`/`with` scope functions. They must also design a class that strictly enforces **Null Safety**, proving a deep understanding of the optionality features and the use of the safe-call operator (`?.`) versus the non-null assertion operator (`!!`).",
+    interlink_slugs: ['android-dev', 'java', 'spring-boot']
+},
+  'matlab': {
+    name: 'MATLAB',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire MATLAB Experts | Numerical Computing and Simulation',
+    meta_description: 'Master advanced numerical computing, modeling, and simulation. Hire remote MATLAB experts vetted for toolbox utilization, efficient matrix operations, and Simulink. Book a call.',
+    intro: "**MATLAB** is a proprietary, multi-paradigm programming environment essential for numerical computing, algorithm development, data analysis, and modeling. It is the dominant tool in engineering, scientific research, and finance for rapid prototyping and complex simulation. You need an expert who can master its vast library of toolboxes (e.g., Signal Processing, Optimization, Control Systems), leverage its powerful, matrix-based environment for fast computation, and use **Simulink** for system-level modeling. Our vetting focuses on professionals who write vectorized, high-performance code, understand algorithm efficiency, and can transition models from research to production. By hiring a MATLAB expert, you accelerate the R&D cycle for your most complex scientific and engineering problems.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your MATLAB code running slowly or consuming excessive memory?",
+            problem: "Relying on slow loops and scalar operations instead of vectorized logic drastically reduces MATLAB's performance benefits, making computations slow and inefficient.",
+            solution: "Our experts master **Vectorization**. They reformulate code to use matrix and vector operations and pre-allocate memory, ensuring that the code leverages MATLAB's optimized, C-based engine for massive speed gains.",
+            kpi: "Code vectorization score and execution speed improvement"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to model complex physical or dynamic systems?",
+            problem: "Traditional procedural coding is insufficient for modeling and simulating continuous-time or event-driven dynamic systems, such as control loops or financial processes.",
+            solution: "We vet for mastery of **Simulink**. Candidates demonstrate the ability to design, simulate, and analyze complex systems using block diagrams, allowing for rapid prototyping and testing of system-level behavior.",
+            kpi: "Proficiency in Simulink and system modeling"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to integrate MATLAB models into production environments?",
+            problem: "Models developed in the MATLAB environment often lack a clear path to be integrated and run efficiently in external production systems (e.g., C++, Java, Python).",
+            solution: "Our engineers are proficient in **Code Generation and Deployment**. They use the MATLAB Coder/Compiler to automatically generate standalone C/C++ or MEX-files, enabling the high-performance models to be integrated into broader enterprise systems.",
+            kpi: "Model deployment and code generation proficiency"
+        }
+    ],
+    evaluation: [
+      'Vectorization and efficient matrix manipulation', 
+      'Simulink for system modeling and simulation', 
+      'Toolbox utilization (Signal Processing, Optimization, etc.)', 
+      'Code generation (MATLAB Coder) and deployment strategies', 
+      'Data visualization and custom plotting'
+    ],
+    technical_analysis: "The MATLAB assessment is a numerical and modeling challenge. Candidates are given a problem requiring a complex numerical algorithm (e.g., solving a differential equation or implementing a Kalman filter) and must: **1. Vectorize:** Write the code using fully vectorized matrix operations, avoiding explicit loops to achieve high performance. **2. Toolbox Selection:** Justify the specific built-in function or toolbox they would use to solve the problem (e.g., `ode45` for ODEs). A core test involves designing a simple feedback control system using **Simulink blocks** and explaining the process of simulating the system's dynamic response to a step input. They must also explain how they would profile a slow script to identify bottlenecks.",
+    interlink_slugs: ['python', 'data-science', 'r']
+},
+  'groovy': {
+    name: 'Groovy',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Groovy Developers | JVM Scripting, DevOps, and Grails Experts',
+    meta_description: 'Leverage Groovy for JVM scripting, testing, and CI/CD (Jenkins). Hire remote experts vetted for concise syntax, domain-specific languages (DSLs), and Grails framework. Book a call.',
+    intro: "**Groovy** is a dynamic language for the JVM, known for its concise syntax, seamless integration with Java, and use in scripting, testing, and building powerful Domain-Specific Languages (**DSLs**). It is the backbone of major DevOps tools (like Jenkins Pipelines) and application frameworks (like Grails). You need an expert who can master its productivity features—closures, metaclass programming, and the rich set of helper methods—to write less code that does more. Our vetting focuses on professionals who excel at writing robust, readable scripts, developing Jenkins Shared Libraries, and leveraging its dynamic nature for flexible, expressive code. By hiring a Groovy expert, you gain a versatile, high-productivity language that enhances your DevOps automation and application development on the JVM.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your Java-based automation/scripting verbose and cumbersome?",
+            problem: "Using traditional Java for simple scripting or configuration often requires massive boilerplate, slowing down DevOps and testing workflows.",
+            solution: "Our experts leverage **Groovy's Conciseness**. They use its dynamic typing, simple syntax, and built-in collection methods (closures) to write complex scripts and automation tasks in 50% fewer lines of code than Java.",
+            kpi: "Code conciseness and scripting efficiency score"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your Jenkins Pipelines difficult to read, reuse, and maintain?",
+            problem: "Poorly structured Jenkinsfiles (written in Groovy) or lack of modularity makes CI/CD logic unmanageable and error-prone.",
+            solution: "We vet for mastery of **Jenkins Pipeline Groovy and Shared Libraries**. Candidates demonstrate the ability to create robust, reusable **DSLs** within the Jenkins Shared Library to abstract complex deployment logic, ensuring clean, modular pipelines.",
+            kpi: "Jenkins Shared Library development proficiency"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to build flexible, convention-over-configuration web applications quickly?",
+            problem: "For rapid development of enterprise-grade web applications, highly opinionated frameworks are often faster than building from scratch.",
+            solution: "Our engineers are proficient in the **Grails Framework**. They use Groovy's power within Grails to build high-performance, maintainable, full-stack applications with incredible speed and minimal configuration.",
+            kpi: "Grails framework and convention-over-configuration design"
+        }
+    ],
+    evaluation: [
+      'Idiomatic Groovy and JVM interoperability', 
+      'Closures and Domain-Specific Language (DSL) creation', 
+      'Jenkins Pipeline (Declarative/Scripted) and Shared Libraries', 
+      'Metaprogramming (e.g., dynamic method invocation) basics', 
+      'Grails framework for web development (if applicable)'
+    ],
+    technical_analysis: "The Groovy assessment is focused on scripting and DSL creation within the context of DevOps. Candidates are required to write a complex **Jenkins Scripted Pipeline (Groovy)** that includes error handling, parallel steps, and utilizes a custom function (defined via a closure) to abstract a deployment task. A core language test involves demonstrating mastery of **Closures** and how they are used to create fluent, internal **DSLs** for configuration or testing (e.g., using `with` or `each` for collections). They must also explain the mechanism of **JVM interoperability**, showing how Groovy seamlessly interacts with and extends existing Java classes and libraries, demonstrating its flexibility within a large enterprise ecosystem.",
+    interlink_slugs: ['jenkins', 'java', 'ci-cd']
+},
+  'server-side-swift': {
+    name: 'Server-Side Swift',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Server-Side Swift Experts | High-Performance Backend Development',
+    meta_description: 'Build fast, safe, and scalable backends with Swift. Hire remote experts vetted for Vapor/Kitura frameworks, concurrency (Actors), and cross-platform architecture. Book a call.',
+    intro: "**Server-Side Swift** leverages the language's safety, performance, and modern concurrency features (async/await, Actors) to build high-throughput, low-latency APIs and microservices. It's an excellent choice for teams looking to unify their language stack across iOS/macOS and the backend. You need an expert who masters frameworks like **Vapor** or **Kitura**, understands the intricacies of non-blocking I/O, and can design a unified, cross-platform data model. Our vetting focuses on professionals who write high-performance, protocol-oriented APIs and can integrate smoothly with cloud databases and services. By hiring a Server-Side Swift expert, you gain highly performant backend services that share core logic with your mobile applications, improving team efficiency and code consistency.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your backend struggling to handle high concurrency and fast I/O operations?",
+            problem: "Traditional thread-per-request models are inefficient for high-volume I/O tasks (database calls, network requests), leading to resource exhaustion and poor scalability.",
+            solution: "Our experts leverage Swift's **Non-Blocking I/O (NIO)** framework. They use modern **async/await** and **Actors** to write highly efficient, concurrent server code that scales horizontally without the thread overhead of traditional architectures.",
+            kpi: "API throughput (RPS) and latency optimization"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to maintain consistency between mobile and backend data models?",
+            problem: "Using different languages for mobile and backend forces the data model to be manually translated, leading to inconsistency, bugs, and increased development time.",
+            solution: "We vet for mastery of **Cross-Platform Swift**. Candidates design a unified model layer that can be compiled and used identically on the iOS/macOS client and the server, ensuring perfect data consistency.",
+            kpi: "Code reuse between mobile and server and data model consistency"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is building and securing your APIs verbose and overly complex?",
+            problem: "Building a complex API with routing, middleware, and security checks from scratch can be time-consuming and prone to configuration errors.",
+            solution: "Our engineers are proficient in robust frameworks like **Vapor**. They use its routing, ORM (Fluent), and middleware features to rapidly build secure, well-structured REST APIs with minimal boilerplate.",
+            kpi: 'Vapor/Kitura framework implementation speed'
+        }
+    ],
+    evaluation: [
+      'Server-side concurrency (Swift NIO, async/await, Actors)', 
+      'Framework mastery (Vapor or Kitura) for routing and middleware', 
+      'Database integration (Fluent ORM or direct driver)', 
+      'Design of REST APIs and data model serialization', 
+      'Cross-platform logic sharing and build process'
+    ],
+    technical_analysis: "The Server-Side Swift assessment is an API implementation challenge. Candidates are required to build a simple, high-performance API endpoint using a framework like **Vapor**. This task requires: **1. Concurrency:** Implementing the core logic using **async/await** to perform a simulated asynchronous database call without blocking the main event loop. **2. Routing/Middleware:** Defining the routing and adding a basic middleware layer (e.g., a simple rate limiter or logging middleware). They must also demonstrate how to define a data model and use an ORM (like Fluent) for persistence. The core principle tested is the use of Swift's modern concurrency features to achieve high scalability in a non-blocking server environment.",
+    interlink_slugs: ['swift', 'microservices', 'ios-dev']
+  },
+  'elixir': {
+    name: 'Elixir',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Elixir Developers | Concurrent, Fault-Tolerant Web Systems (Phoenix/LiveView)',
+    meta_description: 'Build massively scalable, real-time, fault-tolerant backends. Hire remote Elixir experts vetted for Phoenix Framework, OTP, and concurrency (Actors/Processes). Book a call.',
+    intro: "**Elixir**, built on the battle-tested Erlang Virtual Machine (BEAM), is the premier choice for **real-time, high-concurrency** applications like chat, live dashboards, and trading platforms. It offers a modern syntax and the powerful **Phoenix Framework** with **LiveView**, which eliminates most of your JavaScript needs. You need an engineer who can leverage the BEAM's fault tolerance and the clean productivity of Elixir. Our vetting focuses on engineers who understand the **Actor Model**, can build stateful, concurrent processes, and master the Phoenix ecosystem. By hiring our Elixir talent, you are investing in an engineer who can deliver a resilient, high-performance, and real-time application with a fraction of the code required by traditional frameworks, drastically reducing your development and maintenance overhead.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to implement real-time features without complex infrastructure?",
+            problem: "Traditional real-time applications require managing WebSockets, separate message queues (Kafka/RabbitMQ), and dedicated chat servers, leading to immense complexity and infrastructure cost.",
+            solution: "Our experts are masters of the **Phoenix Framework** and **Phoenix Channels**. They use LiveView to deliver rich, real-time user experiences with minimal JavaScript, leveraging Elixir's massive concurrency to handle thousands of concurrent WebSockets without external brokers, simplifying the entire architecture.",
+            kpi: "Real-time latency and infrastructure cost reduction"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your application state scattered and difficult to manage across users?",
+            problem: "Managing state for thousands of concurrent users (e.g., presence, live data) is a major challenge, often leading to race conditions, slow database lookups, and system crashes.",
+            solution: "We vet for expertise in the **OTP (Open Telecom Platform)**. Our candidates use OTP behaviors like `GenServer` to manage isolated, concurrent state for each user or session, ensuring thread-safe, resilient, and performant state management that automatically recovers from failures.",
+            kpi: "Concurrency handling and state predictability"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your code difficult to read due to heavy reliance on imperative structures?",
+            problem: "Elixir's functional nature (immutability, piping) can be misused by developers who rely on imperative patterns, resulting in complex and unreadable code that misses the language's key benefits.",
+            solution: "Our experts write clean, idiomatic Elixir, mastering the **Pipeline Operator (`|>`)** and the functional paradigm. They create composable, readable code that flows logically, focusing on pattern matching and immutability to ensure every function is easy to reason about and test.",
+            kpi: "Code readability and functional purity score"
+        }
+    ],
+    evaluation: ['Phoenix Framework and LiveView mastery', 'OTP (GenServer, Supervisor) and fault tolerance', 'Actor Model and process concurrency', 'Functional programming and immutability', 'Ecto for data access and migrations'],
+    technical_analysis: "The Elixir evaluation is a full-stack assessment of real-time and fault-tolerant capabilities. Candidates are required to implement a real-time feature (like a simple chat or live dashboard) using Phoenix LiveView, demonstrating their ability to handle user input, manage state, and broadcast updates efficiently. We test their mastery of OTP by requiring them to design a stateful service using `GenServer` and wrap it in a `Supervisor` to prove fault tolerance. Data access skills with Ecto, including migrations and efficient query composition, are also rigorously tested. The goal is to find engineers who can build highly scalable, resilient, and real-time systems that fully leverage the power of the BEAM.",
+    interlink_slugs: ['erlang', 'message-queues', 'event-sourcing']
+},
+  'functional-programming': {
+    name: 'Functional Programming (FP)',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Functional Programming Experts (Haskell, Scala, Clojure)',
+    meta_description: 'Build bug-free, highly concurrent, and reliable systems. Hire remote FP experts vetted for immutability, pure functions, monads, and high-level type systems. Book a call.',
+    intro: "**Functional Programming (FP)** is a paradigm that treats computation as the evaluation of mathematical functions, avoiding mutable state and side effects. This approach leads to code that is bug-free, easier to reason about, and inherently better suited for concurrency and testing. You need an expert who can apply FP principles in a language like **Haskell, Scala, or Clojure**, mastering concepts like **Immutability**, **Pure Functions**, and high-level abstractions like Functors/Monads. Our vetting focuses on professionals who can implement complex business logic with mathematical rigor, drastically reducing the surface area for bugs and creating systems that scale reliably. By hiring an FP expert, you improve code quality, enhance testability, and unlock the full potential of parallel and distributed computing.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your concurrent code suffering from race conditions and difficult-to-track state changes?",
+            problem: "Mutable state, especially when shared across multiple threads, is the number one cause of bugs, race conditions, and deadlocks in concurrent applications.",
+            solution: "Our experts enforce **Immutability**. They use pure functions and immutable data structures, which eliminate shared, mutable state entirely, making concurrent and parallel code safe and predictable.",
+            kpi: "Reduction in bugs caused by mutable state/concurrency issues"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your codebase rigid, non-reusable, and filled with boilerplate error handling?",
+            problem: "Imperative code often requires repeating the same error-checking and transformation logic, leading to massive duplication and code rigidity.",
+            solution: "We vet for mastery of **FP Abstractions**. Candidates use higher-order functions (map, filter, reduce), algebraic data types (e.g., `Option`/`Either`), and Monads to compose complex operations elegantly and abstract away boilerplate error handling.",
+            kpi: "Utilization of higher-order functions and abstraction"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to write comprehensive unit tests for your business logic?",
+            problem: "Functions with side effects (e.g., reading a database, calling an API) are difficult to unit test without complex mocking and setup, making test coverage low.",
+            solution: "Our engineers write **Pure Functions**. They separate side effects from business logic, making the core code testable purely by input and output, resulting in 100% reliable unit tests without the need for mocking frameworks.",
+            kpi: "Unit test coverage and side-effect isolation score"
+        }
+    ],
+    evaluation: [
+      'Core principles (Immutability, Pure Functions, Referential Transparency)', 
+      'Algebraic Data Types (Option/Maybe, Either/Result) for error handling', 
+      'Higher-order functions (Map, Filter, Reduce) and function composition', 
+      'Concurrency models (Actors, STM, or pure parallelism)', 
+      'Type class system and key abstractions (Functor, Monad, Applicative) basics'
+    ],
+    technical_analysis: "The Functional Programming assessment is a core language and design challenge. Candidates are required to implement a complex calculation pipeline, ensuring that all functions are **Pure** (no side effects) and all data is **Immutable**. A critical test involves handling a scenario where an operation can fail (e.g., dividing by zero or a database read failing), and they must use an **Algebraic Data Type** (e.g., `Result` or `Either`) to safely represent both success and failure states, avoiding exceptions entirely. Finally, they must demonstrate how to combine two asynchronous, independent operations using a concurrent primitive or a Monad (depending on the language) to achieve parallelism safely and correctly, proving their expertise in concurrency management via immutability.",
+    interlink_slugs: ['haskell', 'scala', 'elixir']
+},
+  'haskell': {
+    name: 'Haskell',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Haskell Developers | Strongly Typed, Pure Functional Programming',
+    meta_description: 'Build mission-critical, bug-free software. Hire remote Haskell experts vetted for pure functions, Monads, and advanced type system (type families). Book a call.',
+    intro: "**Haskell** is a purely functional programming language known for its advanced type system, which catches nearly all runtime errors at compile time, leading to exceptionally reliable and safe code. It is the gold standard for high-assurance, mission-critical applications in finance and defense. You need an expert who can master its foundational concepts—laziness, immutability, and managing side effects via **Monads** (IO, Maybe, Either). Our vetting focuses on professionals who can leverage the compiler as an ultimate testing tool, write elegant abstractions using type classes, and build systems where 'if it compiles, it works.' By hiring a Haskell expert, you drastically reduce testing overhead and gain a foundation of mathematical certainty for your most critical business logic.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your complex business logic riddled with subtle, hard-to-find bugs?",
+            problem: "Imperative, stateful code allows business rules to be violated by unexpected side effects, leading to runtime data inconsistencies and logical errors.",
+            solution: "Our Haskell experts use **pure functions** and **immutable data structures** to model all business logic. This guarantees that a function's output depends only on its input, making the code highly reliable, easily testable, and mathematically correct, eliminating entire classes of bugs.",
+            kpi: "Reduction in logical and runtime business logic errors"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to manage side effects (I/O, database) in a predictable way?",
+            problem: "Uncontrolled side effects (like database writes or network calls) scattered throughout a codebase make it difficult to trace data flow, leading to unexpected behavior and complexity.",
+            solution: "We vet for mastery of **Monads** (like the IO Monad) and functional effect systems. Our candidates demonstrate the ability to explicitly and predictably manage all side effects, ensuring the core business logic remains pure, testable, and completely separate from the external world.",
+            kpi: "Functional purity score and side effect traceability"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is designing high-level, reusable abstractions proving too complex in your current language?",
+            problem: "Modeling complex patterns like resource acquisition, dependency injection, or context passing often results in boilerplate and rigid structures.",
+            solution: "Our engineers are proficient in **Type Classes and Generics**. They design highly abstract, reusable code that cleanly separates behavior from implementation, enabling elegant and concise solutions to complex architectural challenges.",
+            kpi: "Utilization of Type Classes and Generics"
+        }
+    ],
+    evaluation: ['Pure functional core and side-effect isolation', 'Monad mastery (IO, Maybe, Either/Result) and Monad Transformers', 'Type system (Algebraic Data Types, Type Classes, Generics)', 'Laziness and memoization strategies', 'Concurrency (Async/STM) and parallelism'],
+    technical_analysis: "The Haskell assessment is the most abstract, focusing on type theory and functional architecture. Candidates are required to implement a complex calculation pipeline, ensuring that all functions are **Pure** (no side effects) and all data is **Immutable**. A critical test involves handling a scenario where an operation can fail (e.g., dividing by zero or a database read failing), and they must use an **Algebraic Data Type** (e.g., `Result` or `Either`) to safely represent both success and failure states, avoiding exceptions entirely. Finally, they must demonstrate how to combine two asynchronous, independent operations using a concurrent primitive or a Monad (depending on the language) to achieve parallelism safely and correctly, proving their expertise in concurrency management via immutability.",
+    interlink_slugs: ['functional-programming', 'scala', 'elixir']
+  },
+  'elixir': {
+    name: 'Elixir',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Elixir Developers | Concurrent, Fault-Tolerant Web Systems (Phoenix/LiveView)',
+    meta_description: 'Build massively scalable, real-time, fault-tolerant backends. Hire remote Elixir experts vetted for Phoenix Framework, OTP, and concurrency (Actors/Processes). Book a call.',
+    intro: "**Elixir**, built on the battle-tested Erlang Virtual Machine (BEAM), is the premier choice for **real-time, high-concurrency** applications like chat, live dashboards, and trading platforms. It offers a modern syntax and the powerful **Phoenix Framework** with **LiveView**, which eliminates most of your JavaScript needs. You need an engineer who can leverage the BEAM's fault tolerance and the clean productivity of Elixir. Our vetting focuses on engineers who understand the **Actor Model**, can build stateful, concurrent processes, and master the Phoenix ecosystem. By hiring our Elixir talent, you are investing in an engineer who can deliver a resilient, high-performance, and real-time application with a fraction of the code required by traditional frameworks, drastically reducing your development and maintenance overhead.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to implement real-time features without complex infrastructure?",
+            problem: "Traditional real-time applications require managing WebSockets, separate message queues (Kafka/RabbitMQ), and dedicated chat servers, leading to immense complexity and infrastructure cost.",
+            solution: "Our experts are masters of the **Phoenix Framework** and **Phoenix Channels**. They use LiveView to deliver rich, real-time user experiences with minimal JavaScript, leveraging Elixir's massive concurrency to handle thousands of concurrent WebSockets without external brokers, simplifying the entire architecture.",
+            kpi: "Real-time latency and infrastructure cost reduction"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your application state scattered and difficult to manage across users?",
+            problem: "Managing state for thousands of concurrent users (e.g., presence, live data) is a major challenge, often leading to race conditions, slow database lookups, and system crashes.",
+            solution: "We vet for expertise in the **OTP (Open Telecom Platform)**. Our candidates use OTP behaviors like `GenServer` to manage isolated, concurrent state for each user or session, ensuring thread-safe, resilient, and performant state management that automatically recovers from failures.",
+            kpi: "Concurrency handling and state predictability"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your code difficult to read due to heavy reliance on imperative structures?",
+            problem: "Elixir's functional nature (immutability, piping) can be misused by developers who rely on imperative patterns, resulting in complex and unreadable code that misses the language's key benefits.",
+            solution: "Our experts write clean, idiomatic Elixir, mastering the **Pipeline Operator (`|>`)** and the functional paradigm. They create composable, readable code that flows logically, focusing on pattern matching and immutability to ensure every function is easy to reason about and test.",
+            kpi: "Code readability and functional purity score"
+        }
+    ],
+    evaluation: ['Phoenix Framework and LiveView mastery', 'OTP (GenServer, Supervisor) and fault tolerance', 'Actor Model and process concurrency', 'Functional programming and immutability', 'Ecto for data access and migrations'],
+    technical_analysis: "The Elixir evaluation is a full-stack assessment of real-time and fault-tolerant capabilities. Candidates are required to implement a real-time feature (like a simple chat or live dashboard) using Phoenix LiveView, demonstrating their ability to handle user input, manage state, and broadcast updates efficiently. We test their mastery of OTP by requiring them to design a stateful service using `GenServer` and wrap it in a `Supervisor` to prove fault tolerance. Data access skills with Ecto, including migrations and efficient query composition, are also rigorously tested. The goal is to find engineers who can build highly scalable, resilient, and real-time systems that fully leverage the power of the BEAM.",
+    interlink_slugs: ['erlang', 'message-queues', 'event-sourcing']
+},
+  'functional-programming': {
+    name: 'Functional Programming (FP)',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Functional Programming Experts (Haskell, Scala, Clojure)',
+    meta_description: 'Build bug-free, highly concurrent, and reliable systems. Hire remote FP experts vetted for immutability, pure functions, monads, and high-level type systems. Book a call.',
+    intro: "**Functional Programming (FP)** is a paradigm that treats computation as the evaluation of mathematical functions, avoiding mutable state and side effects. This approach leads to code that is bug-free, easier to reason about, and inherently better suited for concurrency and testing. You need an expert who can apply FP principles in a language like **Haskell, Scala, or Clojure**, mastering concepts like **Immutability**, **Pure Functions**, and high-level abstractions like Functors/Monads. Our vetting focuses on professionals who can implement complex business logic with mathematical rigor, drastically reducing the surface area for bugs and creating systems that scale reliably. By hiring an FP expert, you improve code quality, enhance testability, and unlock the full potential of parallel and distributed computing.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your concurrent code suffering from race conditions and difficult-to-track state changes?",
+            problem: "Mutable state, especially when shared across multiple threads, is the number one cause of bugs, race conditions, and deadlocks in concurrent applications.",
+            solution: "Our experts enforce **Immutability**. They use pure functions and immutable data structures, which eliminate shared, mutable state entirely, making concurrent and parallel code safe and predictable.",
+            kpi: "Reduction in bugs caused by mutable state/concurrency issues"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your codebase rigid, non-reusable, and filled with boilerplate error handling?",
+            problem: "Imperative code often requires repeating the same error-checking and transformation logic, leading to massive duplication and code rigidity.",
+            solution: "We vet for mastery of **FP Abstractions**. Candidates use higher-order functions (map, filter, reduce), algebraic data types (e.g., `Option`/`Either`), and Monads to compose complex operations elegantly and abstract away boilerplate error handling.",
+            kpi: "Utilization of higher-order functions and abstraction"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to write comprehensive unit tests for your business logic?",
+            problem: "Functions with side effects (e.g., reading a database, calling an API) are difficult to unit test without complex mocking and setup, making test coverage low.",
+            solution: "Our engineers write **Pure Functions**. They separate side effects from business logic, making the core code testable purely by input and output, resulting in 100% reliable unit tests without the need for mocking frameworks.",
+            kpi: "Unit test coverage and side-effect isolation score"
+        }
+    ],
+    evaluation: [
+      'Core principles (Immutability, Pure Functions, Referential Transparency)', 
+      'Algebraic Data Types (Option/Maybe, Either/Result) for error handling', 
+      'Higher-order functions (Map, Filter, Reduce) and function composition', 
+      'Concurrency models (Actors, STM, or pure parallelism)', 
+      'Type class system and key abstractions (Functor, Monad, Applicative) basics'
+    ],
+    technical_analysis: "The Functional Programming assessment is a core language and design challenge. Candidates are required to implement a complex calculation pipeline, ensuring that all functions are **Pure** (no side effects) and all data is **Immutable**. A critical test involves handling a scenario where an operation can fail (e.g., dividing by zero or a database read failing), and they must use an **Algebraic Data Type** (e.g., `Result` or `Either`) to safely represent both success and failure states, avoiding exceptions entirely. Finally, they must demonstrate how to combine two asynchronous, independent operations using a concurrent primitive or a Monad (depending on the language) to achieve parallelism safely and correctly, proving their expertise in concurrency management via immutability.",
+    interlink_slugs: ['haskell', 'scala', 'elixir']
+},
+  'haskell': {
+    name: 'Haskell',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Haskell Developers | Strongly Typed, Pure Functional Programming',
+    meta_description: 'Build mission-critical, bug-free software. Hire remote Haskell experts vetted for pure functions, Monads, and advanced type system (type families). Book a call.',
+    intro: "**Haskell** is a purely functional programming language known for its advanced type system, which catches nearly all runtime errors at compile time, leading to exceptionally reliable and safe code. It is the gold standard for high-assurance, mission-critical applications in finance and defense. You need an expert who can master its foundational concepts—laziness, immutability, and managing side effects via **Monads** (IO, Maybe, Either). Our vetting focuses on professionals who can leverage the compiler as an ultimate testing tool, write elegant abstractions using type classes, and build systems where 'if it compiles, it works.' By hiring a Haskell expert, you drastically reduce testing overhead and gain a foundation of mathematical certainty for your most critical business logic.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your complex business logic riddled with subtle, hard-to-find bugs?",
+            problem: "Imperative, stateful code allows business rules to be violated by unexpected side effects, leading to runtime data inconsistencies and logical errors.",
+            solution: "Our Haskell experts use **pure functions** and **immutable data structures** to model all business logic. This guarantees that a function's output depends only on its input, making the code highly reliable, easily testable, and mathematically correct, eliminating entire classes of bugs.",
+            kpi: "Reduction in logical and runtime business logic errors"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to manage side effects (I/O, database) in a predictable way?",
+            problem: "Uncontrolled side effects (like database writes or network calls) scattered throughout a codebase make it difficult to trace data flow, leading to unexpected behavior and complexity.",
+            solution: "We vet for mastery of **Monads** (like the IO Monad) and functional effect systems. Our candidates demonstrate the ability to explicitly and predictably manage all side effects, ensuring the core business logic remains pure, testable, and completely separate from the external world.",
+            kpi: "Functional purity score and side effect traceability"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is designing high-level, reusable abstractions proving too complex in your current language?",
+            problem: "Modeling complex patterns like resource acquisition, dependency injection, or context passing often results in boilerplate and rigid structures.",
+            solution: "Our engineers are proficient in **Type Classes and Generics**. They design highly abstract, reusable code that cleanly separates behavior from implementation, enabling elegant and concise solutions to complex architectural challenges.",
+            kpi: "Utilization of Type Classes and Generics"
+        }
+    ],
+    evaluation: ['Pure functional core and side-effect isolation', 'Monad mastery (IO, Maybe, Either/Result) and Monad Transformers', 'Type system (Algebraic Data Types, Type Classes, Generics)', 'Laziness and memoization strategies', 'Concurrency (Async/STM) and parallelism'],
+    technical_analysis: "The Haskell assessment is the most abstract, focusing on type theory and functional architecture. Candidates are required to implement a complex calculation pipeline, ensuring that all functions are **Pure** (no side effects) and all data is **Immutable**. A critical test involves handling a scenario where an operation can fail (e.g., dividing by zero or a database read failing), and they must use an **Algebraic Data Type** (e.g., `Result` or `Either`) to safely represent both success and failure states, avoiding exceptions entirely. Finally, they must demonstrate how to combine two asynchronous, independent operations using a concurrent primitive or a Monad (depending on the language) to achieve parallelism safely and correctly, proving their expertise in concurrency management via immutability.",
+    interlink_slugs: ['functional-programming', 'scala', 'elixir']
+  },
+  'elixir': {
+    name: 'Elixir',
+    category: 'Other Technologies',
+    categorySlug: 'other',
+    seo_title: 'Hire Elixir Developers | Concurrent, Fault-Tolerant Web Systems (Phoenix/LiveView)',
+    meta_description: 'Build massively scalable, real-time, fault-tolerant backends. Hire remote Elixir experts vetted for Phoenix Framework, OTP, and concurrency (Actors/Processes). Book a call.',
+    intro: "**Elixir**, built on the battle-tested Erlang Virtual Machine (BEAM), is the premier choice for **real-time, high-concurrency** applications like chat, live dashboards, and trading platforms. It offers a modern syntax and the powerful **Phoenix Framework** with **LiveView**, which eliminates most of your JavaScript needs. You need an engineer who can leverage the BEAM's fault tolerance and the clean productivity of Elixir. Our vetting focuses on engineers who understand the **Actor Model**, can build stateful, concurrent processes, and master the Phoenix ecosystem. By hiring our Elixir talent, you are investing in an engineer who can deliver a resilient, high-performance, and real-time application with a fraction of the code required by traditional frameworks, drastically reducing your development and maintenance overhead.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to implement real-time features without complex infrastructure?",
+            problem: "Traditional real-time applications require managing WebSockets, separate message queues (Kafka/RabbitMQ), and dedicated chat servers, leading to immense complexity and infrastructure cost.",
+            solution: "Our experts are masters of the **Phoenix Framework** and **Phoenix Channels**. They use LiveView to deliver rich, real-time user experiences with minimal JavaScript, leveraging Elixir's massive concurrency to handle thousands of concurrent WebSockets without external brokers, simplifying the entire architecture.",
+            kpi: "Real-time latency and infrastructure cost reduction"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your application state scattered and difficult to manage across users?",
+            problem: "Managing state for thousands of concurrent users (e.g., presence, live data) is a major challenge, often leading to race conditions, slow database lookups, and system crashes.",
+            solution: "We vet for expertise in the **OTP (Open Telecom Platform)**. Our candidates use OTP behaviors like `GenServer` to manage isolated, concurrent state for each user or session, ensuring thread-safe, resilient, and performant state management that automatically recovers from failures.",
+            kpi: "Concurrency handling and state predictability"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your code difficult to read due to heavy reliance on imperative structures?",
+            problem: "Elixir's functional nature (immutability, piping) can be misused by developers who rely on imperative patterns, resulting in complex and unreadable code that misses the language's key benefits.",
+            solution: "Our experts write clean, idiomatic Elixir, mastering the **Pipeline Operator (`|>`)** and the functional paradigm. They create composable, readable code that flows logically, focusing on pattern matching and immutability to ensure every function is easy to reason about and test.",
+            kpi: "Code readability and functional purity score"
+        }
+    ],
+    evaluation: ['Phoenix Framework and LiveView mastery', 'OTP (GenServer, Supervisor) and fault tolerance', 'Actor Model and process concurrency', 'Functional programming and immutability', 'Ecto for data access and migrations'],
+    technical_analysis: "The Elixir evaluation is a full-stack assessment of real-time and fault-tolerant capabilities. Candidates are required to implement a real-time feature (like a simple chat or live dashboard) using Phoenix LiveView, demonstrating their ability to handle user input, manage state, and broadcast updates efficiently. We test their mastery of OTP by requiring them to design a stateful service using `GenServer` and wrap it in a `Supervisor` to prove fault tolerance. Data access skills with Ecto, including migrations and efficient query composition, are also rigorously tested. The goal is to find engineers who can build highly scalable, resilient, and real-time systems that fully leverage the power of the BEAM.",
+    interlink_slugs: ['erlang', 'message-queues', 'event-sourcing']
+  },
+  'axiom-cortex': {
+    name: 'Axiom Cortex™',
+    category: 'Vetting & Cognitive AI',
+    categorySlug: 'vetted-talent',
+    seo_title: '44 Neuropsychometric Formulas | Scientific, Bias-Mitigated Cognitive AI for Nearshore IT Staff Augmentation Services',
+    meta_description: 'The Axiom Cortex **Cognitive AI Matrix Engine** uses 44+ neuropsychometric formulas, including Fréchet Semantic Distance and Optimal Transport models, to evaluate the **Mental Shape** of nearshore IT talent.',
+    intro: 'The **Axiom Cortex** is not a marketing tool—it is a **Cognitive AI Matrix Engine** engineered to reveal the **Mental Shape** and **True Capacity** of nearshore engineering talent. While other vendors invest in marketing to fool you, we have invested 8 years in **44 neuropsychometric formulas and algorithms** to provide the only scientifically defensible assessment for **nearshore software development**. We systematically filter out the noise of L2 linguistic variance, stress, and cultural bias to measure only **Conceptual Fidelity**. This proprietary, deep-learning matrix quantifies **4 Latent Traits** and **5 B-Axioms**, giving your **nearshore IT staff augmentation services** team unparalleled clarity.',
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: 'Are interviews penalizing your best nearshore talent for their accent, delivery, or L2 fluency?',
+            problem: 'The "Linguistic Penalty" causes assessors to confuse real-time L2 translation effort (high Cognitive Load) with a lack of technical knowledge (low B_C), leading to mis-hires and missed opportunities in **nearshore software development**.',
+            solution: 'Our **Cortex Calibration Layer** applies algorithmic adjustments, such as the **Proficiency-Normalized Scoring** and the **Translation Filter**, to mitigate linguistic bias, ensuring scores reflect technical reasoning, not surface fluency—a first for **nearshore IT staff augmentation services**.',
+            kpi: 'Reduction in false negative rate for L2 English candidates'
+        },
+        {
+            icon: AlertTriangle,
+            pain: 'Are you hiring "Cargo-Cult" engineers who can recite patterns but cannot solve novel problems?',
+            problem: 'Traditional interviews focus on rote knowledge, failing to assess the candidate\'s true **Mental Model (B\\_M)** or ability to handle complex trade-offs, leading to critical failure in production environments.',
+            solution: 'We measure **B\\_M** using the **Nonparametric Latent Measurement Layer** (e.g., Deep Lattice Models) to quantify the depth and causality of the candidate\'s understanding. We prioritize the **Architectural Instinct (AI)** Latent Trait, a proxy for top-down system design and trade-off management.',
+            kpi: 'Improved Cognitive Alignment score and 90-day success rate'
+        },
+        {
+            icon: AlertTriangle,
+            pain: 'Is your vendor using easily-fooled, off-the-shelf AI that developers can cheat or are they hiding deceptive behavior?',
+            problem: 'Most vendors use generic, public LLMs that can be gamed, and they lack the **neuropsychometric** capability to detect deception, lying, or AI-written text *read by the developer* from their non-verbal or speech patterns.',
+            solution: '**Axiom Cortex is NOT a public LLM.** Our **Cognitive AI Matrix Engine** employs **44+ algorithms** with the **Translation-Invariance Test** and **Forensic NLP** sub-models to detect minute inconsistencies—a proxy for lying or AI cheating. Our proprietary data moat of **12,000 human-vetted interviews** ensures this system is defensible, transparent, and superior to any vendor relying on marketing hype.',
+            kpi: 'Detection of deception and guaranteed data integrity'
+        }
+    ],
+    evaluation: [
+      '**The Cognitive AI Matrix Engine: Core Components & Formulas (44+ Signals):**',
+      '[cite_start]\'**Measurement Layer:** Nonparametric Latent Measurement (Deep Lattice Models, Isotonic Regression) [cite: 43, 47]',
+      '[cite_start]\'**Latent Trait Synthesis:** Bayesian Network Modeling with Probabilistic Gating [cite: 797, 817]',
+      '[cite_start]\'**L2 Bias Mitigation:** Proficiency-Normalized Scoring $\\left(s_{q,comm}^{ESL-adj} = s_{q,comm} - \\hat{\\beta}_f * (f_q - E[f | P])\\right)$ [cite: 178]',
+      '[cite_start]\'**Conceptual Fidelity:** Cross-Lingual Semantic Fidelity (Fréchet Semantic Distance) and Masked Optimal Transport (Wasserstein-2 $W_2$) [cite: 179, 54]',
+      '[cite_start]\'**Integrity & Explainability:** Integrity & Certainty Assurance Layer (ICAL) using Jeffreys Divergence $J(p,q)$ and Expected Calibration Error (ECE) [cite: 56]',
+      '[cite_start]\'**Scientific Reliability:** Generalizability Theory (G-coefficients) and Random Matrix Theory (Marchenko–Pastur Distribution) [cite: 157, 160]',
+      '[cite_start]\'**Adaptive Interviewing:** Active Evaluation via Information Gain $(\\Delta H_j)$ [cite: 183]',
+      '**The 5 B-Axioms:** (Accuracy $B\\_A$, Mental Model $B\\_M$, Procedural $B\\_P$, Clarity $B\\_C$, Cognitive Load $B\\_L$)'
+    ],
+    technical_analysis: "[cite_start]The **Axiom Cortex Cognitive AI Matrix Engine** delivers the first truly **Scientific, Bias-Mitigated Cognitive AI for Nearshore IT Staff Augmentation Services**. Its **44+ neuropsychometric formulas** are organized into functional layers. The core **Latent Trait Inference Engine (LTIE)** uses **Nonparametric Measurement** [cite: 43] to model $\theta_{i,k}$, synthesizing the raw output of the **5 B-Axioms**. [cite_start]The **Cortex Calibration Layer** eliminates L2 bias using **Proficiency-Normalized Scoring** [cite: 178] [cite_start]and cross-lingual models like the **Fréchet Semantic Distance (FSD)**[cite: 179]. [cite_start]For detection of cheating/deception, the engine employs specialized **Forensic NLP Sub-Models** and a **Translation-Invariance Test** to analyze subtle **Linguistic Signatures** in speech patterns[cite: 180]. [cite_start]Final scoring is not a simple average but a **Bayesian Network** and **Constrained Bayesian Decision Theory** process [cite: 797, 817][cite_start], with its reliability constantly verified by **Generalizability Theory** and **Random Matrix Theory**[cite: 157, 160]. This rigorous, auditable science is trained on **12,000 human-curated technical interviews**, making it immune to the linguistic biases that plague legacy vendor tools.",
+    interlink_slugs: ['nearshore-development', 'offshore-development', 'staff-augmentation-services', 'ai-ml', 'nlp', 'psychometric-testing', 'data-science', 'python', 'auditability', 'neuroscience', 'machine-learning-engineering']
 }
+};
+
+export interface TechCategory {
+  name: string;
+  slug: string;
+  pain: string;
+  icon: Icon;
+  tech: Array<{ name: string; slug: string; }>;
 }
+
 export function getAllTechSlugs(): string[] {
     return Object.keys(allTech);
 }
@@ -1389,7 +2090,7 @@ export const techCategories: TechCategory[] = [
     name: 'Mobile & Cross-Platform',
     slug: 'mobile-cross-platform',
     pain: "Is your mobile experience falling behind?",
-    icon: Plane,
+    icon: 'Plane' as any, // Placeholder until Plane is imported
     tech: [
         { name: 'React Native', slug: 'react-native' },
         { name: 'Flutter', slug: 'flutter' },
@@ -1433,7 +2134,7 @@ export const techCategories: TechCategory[] = [
     name: 'ML/AI & LLM Ops',
     slug: 'ml-ai-llm-ops',
     pain: "Struggling to move AI from a notebook to production?",
-    icon: BrainCircuit,
+    icon: 'BrainCircuit' as any, // Placeholder until BrainCircuit is imported
     tech: [
       { name: 'PyTorch', slug: 'pytorch' },
       { name: 'Transformers', slug: 'transformers' },
@@ -1479,7 +2180,7 @@ export const techCategories: TechCategory[] = [
     name: 'Testing & Quality Engineering',
     slug: 'qa-quality-engineering',
     pain: "Does 'shipping fast' also mean 'shipping bugs'?",
-    icon: TestTube2,
+    icon: 'TestTube2' as any, // Placeholder until TestTube2 is imported
     tech: [
       { name: 'Playwright/Cypress', slug: 'playwright' },
       { name: 'Jest/Vitest', slug: 'jest' },
