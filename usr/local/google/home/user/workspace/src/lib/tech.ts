@@ -494,40 +494,6 @@ export const allTech: AllTech = {
     technical_analysis: "The RxJS evaluation is focused on solving complex asynchronous problems in a declarative style. Candidates are given scenarios involving race conditions, request cancellation, and real-time updates, and are required to use the correct combination of RxJS operators to build a robust solution. The critical assessment is their mastery of **higher-order mapping operators**: they must explain the difference between `switchMap`, `mergeMap`, `concatMap`, and `exhaustMap`, and use the correct one for a given scenario (e.g., `switchMap` for typeahead search). We rigorously test their understanding of **subscription management** and how to prevent memory leaks in long-lived applications. Finally, we assess their ability to architect a simple state management store using a `BehaviorSubject`, demonstrating their ability to manage and multicast state across an application.",
     interlink_slugs: ['angular', 'typescript', 'node']
   },
-  'graphql': {
-    name: 'GraphQL',
-    category: 'Architecture & Integrations',
-    categorySlug: 'architecture-integrations',
-    seo_title: 'Hire Senior GraphQL Developers | API Architecture and Performance Experts',
-    meta_description: 'Build flexible, efficient, and strongly-typed APIs. Hire elite remote GraphQL experts vetted for schema design, resolvers, and performance optimization. Book a call.',
-    intro: "GraphQL empowers frontend clients to request exactly the data they need and nothing more, solving the over-fetching and under-fetching problems of traditional REST APIs. You need an engineer who can architect a robust GraphQL schema, implement efficient resolvers, and manage the performance trade-offs of a flexible query language. Our vetting process is designed to find experts in GraphQL server implementation (Apollo Server, GraphQL-Yoga) and client-side integration. We test their ability to design a schema that is both powerful and easy to maintain, and their mastery of techniques for preventing common performance issues like the N+1 problem. By hiring a GraphQL expert from us, you gain a developer who can dramatically improve your API performance, reduce network overhead, and accelerate frontend development.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Are your GraphQL queries suffering from the N+1 problem?",
-            problem: "The flexibility of GraphQL makes it incredibly easy to accidentally create the N+1 problem, where a single query results in a cascade of database calls. Inexperienced developers fail to use data loading patterns, leading to massive performance bottlenecks.",
-            solution: "We vet for engineers who are masters of the **Dataloader pattern**. They must demonstrate the ability to batch and cache database requests within a single API call, completely eliminating the N+1 problem and ensuring efficient, high-performance data fetching for even the most complex queries.",
-            kpi: "Mastery of the Dataloader Pattern"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your GraphQL schema difficult to evolve and maintain?",
-            problem: "A poorly designed schema with inconsistent naming, weak typing, or overly complex object graphs becomes a maintenance nightmare. It's difficult for frontend developers to use and even harder to extend without introducing breaking changes.",
-            solution: "Our experts are proficient in **Schema-First Design**. They are vetted on their ability to create a clean, consistent, and well-documented schema that serves as a single source of truth. They understand how to evolve a schema gracefully using techniques that avoid breaking existing clients.",
-            kpi: "Schema-First Design and Evolvability"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are you struggling to implement secure and granular access control?",
-            problem: "GraphQL's single endpoint can make it difficult to implement fine-grained authorization. A naive implementation often grants either all-or-nothing access, creating significant security risks.",
-            solution: "We look for engineers with experience in GraphQL security. They demonstrate the ability to implement authorization at the resolver level, ensuring that users can only access the data they are permitted to see, even within a single, complex query.",
-            kpi: "Resolver-Level Authorization and Security"
-        }
-    ],
-    evaluation: ['Schema design (SDL) and best practices', 'Resolver implementation and performance (Dataloader)', 'GraphQL server frameworks (Apollo Server)', 'Authentication and authorization strategies', 'Client-side integration (Apollo Client, Relay)'],
-    technical_analysis: "The GraphQL evaluation focuses on schema design and performance optimization. Candidates are required to design a GraphQL schema for a complex domain, demonstrating an understanding of types, queries, mutations, and subscriptions. The critical assessment is their ability to solve the **N+1 problem**: candidates must implement a set of resolvers for a nested query and use the Dataloader pattern to batch database calls efficiently. We also test their knowledge of the GraphQL ecosystem, including the Apollo platform, and their ability to integrate a GraphQL API with a client-side application for efficient caching and state management. Security is a key focus, requiring candidates to implement a secure authentication and authorization layer that protects sensitive data at the resolver level.",
-    interlink_slugs: ['node', 'react', 'api-security']
-  },
 
   // ----------------------------------------------------------------------
   // 2. BACKEND/CORE LANGUAGES (12)
@@ -542,10 +508,10 @@ export const allTech: AllTech = {
     pains: [
         {
             icon: AlertTriangle,
-            pain: "Is your API blocking the event loop and causing slowdowns?",
-            problem: "Many Node.js developers don't truly understand its single-threaded, non-blocking nature, leading to slow, synchronous code that negates Node's primary advantage.",
-            solution: "We vet for a deep understanding of the event loop, libuv, and asynchronous patterns. Our engineers build truly non-blocking services that maximize throughput.",
-            kpi: "Deep event loop & async pattern mastery"
+            pain: "Is your API performance crippled by blocking I/O operations?",
+            problem: "The Node.js Event Loop is a single thread. Inexperienced developers often use synchronous methods or fail to correctly delegate long-running tasks, causing the Event Loop to block. This stops all concurrent operations, leading to slow response times, high latency, and a server that collapses under load.",
+            solution: "We vet for an explicit and deep understanding of the Event Loop. Our experts must demonstrate their ability to write non-blocking asynchronous code, correctly use the `process.nextTick` and `setImmediate` queues, and leverage worker threads or external services for CPU-intensive tasks, guaranteeing peak concurrency and low latency.",
+            kpi: "Event Loop Mastery and Non-Blocking I/O"
         },
         {
             icon: AlertTriangle,
@@ -1631,7 +1597,7 @@ export const allTech: AllTech = {
     technical_analysis: "The Transformers evaluation assesses a candidate's ability to take a model from the Hugging Face Hub to a production-ready, fine-tuned service. A critical task is to perform a **PEFT fine-tuning** run on a custom dataset, demonstrating proficiency with the `Trainer` API and data preparation using the `datasets` library. We rigorously test their knowledge of **inference optimization**, requiring them to quantize a model using `bitsandbytes` and explain the performance vs. accuracy trade-offs. Finally, we assess their ability to build a complete **RAG pipeline**, requiring them to use a custom embedding model to index documents into a vector store and then use a separate LLM for generation, proving they can orchestrate a full, complex AI workflow.",
     interlink_slugs: ['python', 'pytorch', 'langchain', 'data-science']
   },
-   'pytorch': {
+  'pytorch': {
     name: 'PyTorch',
     category: 'Data & AI',
     categorySlug: 'ml-ai-llm-ops',
@@ -1895,5 +1861,6 @@ export const techCategories: TechCategory[] = [
 // Note: This is an incomplete list. You will be prompted to add more technologies.
 // Final list should have 87 entries.
 // Missing: rx-js, pandas, numpy, jest, vitest, api-security, graphql, etc.
+
 
 
