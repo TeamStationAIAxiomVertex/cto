@@ -100,6 +100,8 @@ export type TechSlug =
   | 'pandas'
   | 'numpy'
   | 'langchain'
+  | 'transformers'
+  | 'pytorch'
 
   // Databases (7)
   | 'postgresql'
@@ -534,8 +536,8 @@ export const allTech: AllTech = {
     name: 'Node.js',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
-    seo_title: 'Hire Senior Node.js Developers | High-Performance Backend Talent',
-    meta_description: 'Build fast, scalable microservices. Hire elite remote Node.js experts vetted for async/await mastery, performance tuning, and robust architecture. Book a call.',
+    seo_title: 'Hire Senior Node.js Developers | Backend API & Microservices Experts',
+    meta_description: 'Build fast, scalable server-side applications. Hire elite remote Node.js experts vetted for event loop mastery, microservices, and performance. Book a call.',
     intro: "You're not looking for someone who just wrote a few Express routes. You're here because you need an engineer who understands how to build high-throughput, non-blocking APIs that can handle real-world scale without falling over. You need someone who has tamed the event loop, not just heard of it.",
     pains: [
         {
@@ -564,7 +566,7 @@ export const allTech: AllTech = {
     technical_analysis: "The Node.js evaluation is centered on performance and concurrency. Candidates are presented with a simulated high-load environment and must diagnose and fix an Event Loop blockage using the `perf_hooks` module and Worker Threads. We rigorously test their understanding of the difference between synchronous and asynchronous operations and how to write non-blocking code. Architectural assessment focuses on their ability to design a scalable API using a modern framework like NestJS, demonstrating a clear separation of concerns using the MVC/layered pattern. Security is non-negotiable; candidates must demonstrate knowledge of OWASP top 10 vulnerabilities relevant to Node.js and how to implement secure practices such as input validation, sanitization, and protecting against common attacks (e.g., XSS, SQL injection). Finally, containerization expertise (Docker multi-stage builds) is required for modern deployment.",
     interlink_slugs: ['typescript', 'kubernetes', 'rest-api-design', 'postgresql']
 },
-'java': {
+'java': { 
     name: 'Java (Spring & JVM)',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -1593,9 +1595,89 @@ export const allTech: AllTech = {
         'Cost optimization strategies for LLM API usage and token management.',
     ],
     technical_analysis: "Evaluating a senior LangChain engineer goes far beyond basic chaining. We test their ability to move past the **prototyping phase** and solve enterprise-scale problems like reliability, latency, and cost control. Vetting focuses on RAG system optimization (chunking, vector store selection, re-ranking) and the creation of reliable, observable agents using tools like LangGraph/LangSmith. Success requires a candidate who can manage the trade-offs between flexibility and the framework’s production-readiness shortcomings.",
-    interlink_slugs: ['llms', 'python', 'vector-databases', 'data-engineering', 'data-science'],
+    interlink_slugs: ['llms', 'python', 'pgvector', 'data-engineering', 'data-science'],
   },
-
+  'transformers': {
+    name: 'Transformers (Hugging Face)',
+    category: 'Data & AI',
+    categorySlug: 'ml-ai-llm-ops',
+    seo_title: 'Hire Transformers Developers | Hugging Face & NLP Experts',
+    meta_description: 'Build advanced NLP applications. Hire elite remote Transformers experts vetted for fine-tuning, RAG, and deploying models from Hugging Face Hub. Book a call.',
+    intro: "The Hugging Face Transformers library is the definitive toolkit for modern Natural Language Processing (NLP). You need an engineer who can move beyond basic `pipeline()` usage to fine-tune pre-trained models on your proprietary data and deploy them for low-latency, high-throughput inference. Our vetting process is designed to find experts in the full Hugging Face ecosystem. We assess their deep understanding of the Trainer API, their ability to implement efficient data processing with Datasets, and their mastery of deploying models for production use. By hiring a Transformers expert, you get a developer who can build state-of-the-art NLP features, from custom text classification to sophisticated question-answering systems.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to fine-tune models on your own data?",
+            problem: "Fine-tuning a Transformer model requires careful data preparation, hyperparameter tuning, and a deep understanding of the training process. A naive approach leads to poor model performance, wasted compute resources, and a failure to adapt the model to your specific domain.",
+            solution: "We vet for mastery of the **Hugging Face training ecosystem**. Our experts must demonstrate proficiency in using the `Trainer` and `PEFT` (Parameter-Efficient Fine-Tuning) libraries to efficiently and effectively fine-tune models like Llama or Mistral on custom datasets, achieving state-of-the-art performance.",
+            kpi: "Demonstrable uplift in model accuracy on custom data"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your model inference too slow or expensive for production?",
+            problem: "Running large Transformer models for real-time inference is a major performance and cost challenge. Without optimization, high latency and expensive GPU requirements make production deployment impractical.",
+            solution: "Our engineers are experts in **inference optimization**. They are vetted on their ability to use techniques like quantization (bitsandbytes), ONNX export, and optimized runtimes (vLLM, TensorRT-LLM) to dramatically reduce model latency and infrastructure costs.",
+            kpi: "Sub-500ms inference latency and 50% cost reduction"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you unable to integrate models into a production-ready RAG system?",
+            problem: "Using a Transformer model effectively within a Retrieval-Augmented Generation (RAG) system requires expertise in both the model itself and the surrounding data pipeline (vector databases, retrieval logic). A lack of integration skill leads to inaccurate and irrelevant results.",
+            solution: "We look for engineers who are proficient in the full **RAG stack**. They are vetted on their ability to integrate Hugging Face models with vector databases (Pinecone, pgvector) and retrieval frameworks to build end-to-end, production-grade question-answering and conversational AI systems.",
+            kpi: "Expertise in building and deploying RAG pipelines"
+        }
+    ],
+    evaluation: ['Fine-tuning with Trainer API and PEFT', 'Inference optimization (Quantization, ONNX)', 'Integration with the Hugging Face ecosystem (Datasets, Hub)', 'Building production RAG systems', 'Model deployment (Docker, vLLM)'],
+    technical_analysis: "The Transformers evaluation assesses a candidate's ability to take a model from the Hugging Face Hub to a production-ready, fine-tuned service. A critical task is to perform a **PEFT fine-tuning** run on a custom dataset, demonstrating proficiency with the `Trainer` API and data preparation using the `datasets` library. We rigorously test their knowledge of **inference optimization**, requiring them to quantize a model using `bitsandbytes` and explain the performance vs. accuracy trade-offs. Finally, we assess their ability to build a complete **RAG pipeline**, requiring them to use a custom embedding model to index documents into a vector store and then use a separate LLM for generation, proving they can orchestrate a full, complex AI workflow.",
+    interlink_slugs: ['python', 'pytorch', 'langchain', 'data-science']
+  },
+   'pytorch': {
+    name: 'PyTorch',
+    category: 'Data & AI',
+    categorySlug: 'ml-ai-llm-ops',
+    seo_title: 'Hire Senior PyTorch Developers | Deep Learning & AI Experts',
+    meta_description: 'Build cutting-edge AI models. Hire elite remote PyTorch experts vetted for deep learning, model optimization, and production deployment. Book a call.',
+    intro: "PyTorch is the leading deep learning framework, favored by researchers and engineers for its flexibility, Pythonic interface, and powerful GPU acceleration. You need an engineer who can move beyond basic tutorials to design, train, and deploy complex neural networks for real-world applications. Our vetting process is designed to find these experts. We assess their deep understanding of PyTorch's core APIs, their ability to build custom models, and their experience in optimizing performance for both training and inference. By hiring a PyTorch expert from us, you get a developer who can transform your AI vision into high-performance, production-ready models.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: 'Is your model training slow and expensive?',
+        problem:
+          'Inefficient data loading, failure to use mixed-precision training, or incorrect GPU utilization leads to long training times and massive cloud bills, stalling your research and development.',
+        solution:
+          'We vet for mastery of **PyTorch performance tuning**. Our experts must demonstrate proficiency in using `DDP` (Distributed Data Parallel) for multi-GPU training, optimizing data loaders, and leveraging mixed-precision to cut training time and cost by over 50%.',
+        kpi: 'Training time reduction and cost optimization',
+      },
+      {
+        icon: AlertTriangle,
+        pain: 'Are your deployed models too slow for real-time inference?',
+        problem:
+          'A model with high inference latency cannot be used in real-time applications, rendering it useless for many business use cases. Poorly optimized models create user-facing delays and require expensive, oversized hardware to run.',
+        solution:
+          'Our engineers are experts in **inference optimization**. They are vetted on their ability to use tools like **TorchScript (JIT compilation)**, quantization, and optimized runtimes (ONNX, TensorRT) to dramatically reduce model latency and enable deployment on cost-effective hardware.',
+        kpi: 'Sub-100ms inference latency on target hardware',
+      },
+      {
+        icon: AlertTriangle,
+        pain: 'Is your model architecture a tangled mess of untestable code?',
+        problem:
+          'Without a clear structure, PyTorch code can become a difficult-to-maintain spaghetti of tensor operations and manual state management. This makes it impossible to debug, test, and iterate on new model architectures.',
+        solution:
+          'We look for engineers who build modular and testable models using **PyTorch Lightning** or a similar high-level framework. They are vetted on their ability to structure code with a clear separation of research and engineering concerns, leading to a maintainable and scalable codebase.',
+        kpi: 'Modular, testable, and reusable model architecture',
+      },
+    ],
+    evaluation: [
+      'Deep understanding of core PyTorch concepts (Tensors, Autograd, Modules)',
+      'Model training and optimization (DDP, mixed-precision)',
+      'Inference performance tuning (TorchScript, quantization)',
+      'Building custom neural network architectures',
+      'Integration with the PyTorch ecosystem (TorchVision, TorchText)',
+    ],
+    technical_analysis:
+      'The PyTorch evaluation is intensely practical, focusing on the full lifecycle of a deep learning model. Candidates are required to diagnose and fix a performance bottleneck in a slow training script, demonstrating their ability to optimize data loaders and use profiling tools. The critical assessment is their skill in **inference optimization**: they must take a trained model and use TorchScript or ONNX quantization to reduce its latency and memory footprint for a production deployment scenario. We also test their architectural skills by requiring them to design a custom neural network module for a novel problem, proving they can move beyond using pre-built models. Finally, strong knowledge of the broader ecosystem, including data handling with `torch.utils.data` and deployment with `TorchServe`, is essential.',
+    interlink_slugs: ['python', 'transformers', 'machine-learning', 'data-science'],
+  },
   // ----------------------------------------------------------------------
   // 9. VETTING & COGNITIVE AI (1)
   // ----------------------------------------------------------------------
@@ -1813,4 +1895,5 @@ export const techCategories: TechCategory[] = [
 // Note: This is an incomplete list. You will be prompted to add more technologies.
 // Final list should have 87 entries.
 // Missing: rx-js, pandas, numpy, jest, vitest, api-security, graphql, etc.
+
 
