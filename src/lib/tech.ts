@@ -135,7 +135,8 @@ export type TechSlug =
 
   // Vetting & Cognitive AI (1)
   | 'axiom-cortex'
-  | 'graphql'; // <-- MISSING SLUG 7 (Alternative to REST/gRPC)
+  | 'graphql' // <-- MISSING SLUG 7 (Alternative to REST/gRPC)
+;
 
 
 export interface AllTech {
@@ -394,7 +395,7 @@ export const allTech: AllTech = {
     categorySlug: 'frontend-web',
     seo_title: 'Hire Svelte/SvelteKit Developers | Modern Component Experts',
     meta_description: 'Build lightweight, highly performant web apps. Hire senior remote Svelte/SvelteKit experts vetted for reactivity, store management, and deployment. Book a call.',
-    intro: "Svelte is a radical departure from traditional frameworks. It shifts the work from the browser to the compile step, resulting in highly optimized, 'vanilla-like' JavaScript that is incredibly fast and lightweight. SvelteKit provides the structure for building full-stack applications with this power. You need an engineer who can leverage Svelte's compiler-magic and intuitive reactivity system to deliver a superior user experience with minimal bundle size. Our vetting process is designed to find developers who appreciate the simplicity and power of Svelte's component model, who can manage state effectively using stores, and who can strategically use SvelteKit's routing and server-side capabilities. By hiring a Svelte expert, you are investing in a framework that guarantees high performance by design, leading to lower operating costs and a highly satisfied user base.",
+    intro: "Svelte is a radical departure from traditional frameworks. It shifts the work from the browser to the compile step, resulting in highly optimized, 'vanilla-like' JavaScript that is incredibly fast and lightweight. SvelteKit provides the structure for building full-stack applications with this power. You need an engineer who can leverage Svelte's compiler-magic and intuitive reactivity system to deliver a superior user experience with minimal bundle size. Our vetting process is designed to find developers who appreciate the simplicity and power of Svelte's component model, who can manage state effectively using stores, and who can strategically use SvelteKit's routing and server-side capabilities. By hiring a Svelte expert from us, you are investing in a framework that guarantees high performance by design, leading to lower operating costs and a highly satisfied user base.",
     pains: [
         {
             icon: AlertTriangle,
@@ -454,13 +455,425 @@ export const allTech: AllTech = {
     ],
     evaluation: ['WCAG 2.1/2.2 principles and guidelines', 'Semantic HTML5 and ARIA attributes', 'Keyboard navigation and focus management', 'Screen reader testing proficiency (NVDA, VoiceOver)', 'Automated A11y testing (Axe, Lighthouse)'],
     technical_analysis: "The Web Accessibility evaluation is highly practical and focused on remediation. Candidates are presented with common accessibility failures (e.g., improper color contrast, missing form labels, broken keyboard trap, incorrect ARIA usage on a custom widget) and are tasked with diagnosing and fixing them. We assess their foundational knowledge of the accessibility tree, expecting them to articulate how semantic HTML maps to it and when to use ARIA as a supplement, not a replacement. A key area is keyboard interaction: candidates must demonstrate mastery of focus management (using `tabindex`, programmatically managing focus) and correctly handling component interactions without a mouse. Finally, they must be able to integrate accessibility testing tools (like `jest-axe`) into a component testing suite, proving they can implement accessibility as a continuous quality gate.",
-    interlink_slugs: ['react', 'angular', 'qa-automation']
+    interlink_slugs: ['react', 'typescript', 'vue']
   },
 
   // ----------------------------------------------------------------------
-  // 9. VETTING & COGNITIVE AI (1) <-- START NEW CATEGORY HERE
+  // 2. BACKEND/CORE LANGUAGES (12)
   // ----------------------------------------------------------------------
-  'axiom-cortex': {
+  'node': {
+    name: 'Node.js',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-core',
+    seo_title: 'Hire Senior Node.js Developers | Backend API & Microservices Experts',
+    meta_description: 'Build fast, scalable server-side applications. Hire elite remote Node.js developers vetted for event loop mastery, microservices, and performance. Book a call.',
+    intro: "Node.js is the backbone of modern, high-performance web applications, leveraging JavaScript's non-blocking, event-driven nature for unmatched speed and scalability. You need an engineer who can move beyond basic Express routing to truly master the **Node.js Event Loop**, a non-negotiable skill for avoiding performance-killing blocking operations. Our vetting process is laser-focused on this architectural core, assessing a candidate's ability to design asynchronous, highly concurrent applications—the very definition of a scalable backend. We look for expertise in building robust, performant APIs (both REST and GraphQL) and their ability to architect microservices using Node.js for maximum agility and decoupling. By hiring a Node.js expert from us, you get a developer who can guarantee your backend can handle explosive user growth without scaling headaches or costly infrastructure overruns.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your server performance plagued by blocking I/O operations?",
+            problem: "The Node.js Event Loop is a single thread. Inexperienced developers often use synchronous methods or fail to correctly delegate long-running tasks, causing the Event Loop to block. This stops all concurrent operations, leading to slow response times, high latency, and a server that collapses under load.",
+            solution: "We vet for an explicit and deep understanding of the Event Loop. Our experts must demonstrate their ability to write non-blocking asynchronous code, correctly use the `process.nextTick` and `setImmediate` queues, and leverage worker threads or external services for CPU-intensive tasks, guaranteeing peak concurrency and low latency.",
+            kpi: "Event Loop Mastery and Non-Blocking I/O"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your API logic a monolithic, untestable mess?",
+            problem: "A common anti-pattern is building a single, monolithic Express server where business logic, database queries, and routing are tightly coupled. This makes the application nearly impossible to test, refactor, and evolve, slowing down feature development to a crawl.",
+            solution: "Our engineers are masters of architectural patterns like the **Clean Architecture** or **Hexagonal Architecture** within Node.js. They are vetted on their ability to structure code with clear separation of concerns (Controllers, Services, Repositories), leading to a highly modular, unit-testable, and maintainable codebase that scales with your business logic.",
+            kpi: "Modular Backend Architecture (e.g., Clean/Hexagonal)"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to handle security and input validation correctly?",
+            problem: "Failure to implement proper input validation (Joi, Zod) or to correctly manage authentication (JWT, OAuth) and authorization leads to vulnerable APIs susceptible to injection attacks, data breaches, and unauthorized access. Security is often an afterthought.",
+            solution: "We look for engineers who integrate security and validation as first-class citizens. They are proficient in modern validation libraries and demonstrate expertise in securing API endpoints with appropriate middleware, token management, and encryption, ensuring your data and users are safe from day one.",
+            kpi: "API Security and Validation Expertise"
+        }
+    ],
+    evaluation: ['Event Loop architecture and non-blocking I/O', 'API design (REST, GraphQL) and routing', 'Asynchronous patterns (Promises, Async/Await) and concurrency', 'Modular architecture and code structure', 'Security (Authentication, Authorization, Input Sanitization)'],
+    technical_analysis: "The Node.js evaluation is centered on a candidate's mastery of the asynchronous programming model and backend architecture. The critical assessment point is the **Node.js Event Loop**: candidates are given scenarios that intentionally lead to blocking code and are required to diagnose the bottleneck and refactor it into a non-blocking solution, demonstrating an understanding of the different phases (Timers, Pending Callbacks, I/O, Check, Close). For architecture, we evaluate their ability to design a scalable API using modern frameworks (e.g., NestJS, Express) with a clear separation of concerns (e.g., service and repository layers). We specifically test their knowledge of security best practices, including correct implementation of CORS, handling JWTs, and using validation libraries to prevent common API vulnerabilities. Finally, we assess their proficiency with ORMs (e.g., Prisma, TypeORM) and their ability to integrate with diverse data stores (PostgreSQL, MongoDB) efficiently.",
+    interlink_slugs: ['typescript', 'microservices', 'rest-api-design', 'postgresql']
+},
+'java': { 
+    name: 'Java (Spring & JVM)',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-core',
+    seo_title: 'Hire Senior Java Developers | Spring Boot & Microservices Experts',
+    meta_description: 'Build robust, mission-critical backends. Hire elite remote Java experts vetted for JVM performance, Spring, and enterprise microservice architecture. Book a call.',
+    intro: "Java and the JVM ecosystem (especially **Spring Boot**) remain the gold standard for building massive-scale, mission-critical enterprise applications and microservices. You need an engineer who can leverage Java's stability, strong typing, and vast ecosystem to deliver solutions that are not just fast, but inherently reliable and maintainable under extreme loads. Our vetting process is designed to find engineers who are masters of the JVM, assessing their deep understanding of multithreading, garbage collection, and optimizing Spring/Quarkus applications for production. We move beyond simple CRUD to test their ability to architect complex, distributed systems, ensuring they can harness Java's power for resilience and performance. By hiring a Java expert from us, you are investing in a proven technology stack handled by top-tier talent, guaranteeing the long-term stability and evolutionary capacity of your core business logic.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your JVM memory usage unstable and plagued by GC pauses?",
+            problem: "Poorly optimized Java applications can suffer from frequent, long-duration Garbage Collection (GC) pauses that halt the application (stop-the-world events), leading to high latency and unpredictable performance in high-throughput systems. This indicates a lack of JVM deep knowledge.",
+            solution: "We vet for experts who understand JVM tuning. They are required to demonstrate knowledge of different GC algorithms (e.g., G1, ZGC), and how to configure memory and thread pools in Spring Boot to minimize GC overhead, resulting in stable, low-latency service performance.",
+            kpi: "JVM Tuning and Garbage Collection Optimization"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your Spring architecture monolithic and hard to decouple?",
+            problem: "Many developers treat Spring Boot as a monolithic framework, coupling business logic, data access, and API layers too tightly. This makes refactoring risky, testing cumbersome, and prevents the application from scaling horizontally in a microservice environment.",
+            solution: "Our engineers are masters of the Spring ecosystem, focusing on architectural patterns like **Domain-Driven Design (DDD)** and clean separation of concerns. They are vetted on their ability to use Spring Cloud for microservices, and Spring Data for efficient and decoupled database access, ensuring a modular and resilient architecture.",
+            kpi: "Mastery of Spring Microservice Architecture"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you failing to correctly manage concurrency and threading?",
+            problem: "Java is inherently multithreaded, which, when handled incorrectly, leads to race conditions, deadlocks, and corrupted data. Junior developers often struggle with thread-safe data structures and synchronization primitives, resulting in elusive and costly bugs.",
+            solution: "We look for engineers who can confidently implement thread-safe code. They are vetted on their knowledge of concurrency utilities, lock-free structures, and the correct use of synchronization and locking mechanisms, guaranteeing the stability and correctness of data integrity under heavy load.",
+            kpi: "Concurrency and Thread-Safe Programming"
+        }
+    ], 
+    evaluation: ['Advanced JVM tuning and garbage collection (G1, ZGC)', 'Concurrency models (Virtual Threads, RxJava/Reactor)', 'Spring Boot/Spring Cloud for microservices', 'Database interaction (JPA/Hibernate, Spring Data)', 'Test-Driven Development (JUnit, Mockito)'],
+    technical_analysis: "The Java evaluation focuses on enterprise architecture and JVM performance. Candidates are tested on their ability to design a microservice using Spring Boot, demonstrating a deep understanding of IoC, dependency injection, and configuration management. A key area is **concurrency**, where candidates must solve real-world threading problems, proving their expertise in using synchronization, thread pools, and concurrent collections to prevent deadlocks and race conditions. We assess their JVM knowledge by asking them to diagnose performance issues related to garbage collection and memory leaks. Finally, for data access, they must demonstrate efficiency in using ORMs (like Hibernate/JPA) and writing complex, performant SQL queries, ensuring the entire stack is optimized for speed and stability.",
+    interlink_slugs: ['spring-boot', 'microservices', 'kubernetes']
+},
+'python': { 
+    name: 'Python', 
+    category: 'Backend & APIs', 
+    categorySlug: 'backend-core', 
+    seo_title: 'Hire Senior Python Developers | Django, Flask, and Data Engineering Experts',
+    meta_description: 'Build fast APIs, ML pipelines, and data systems. Hire elite remote Python developers vetted for Django/Flask, performance, and concurrency mastery. Book a call.',
+    intro: "Python's unparalleled versatility makes it the engine for everything from web backends (Django/Flask) to advanced Data Science and Machine Learning pipelines. You need an engineer who can leverage the full spectrum of the ecosystem, not just the basic syntax. Our vetting process is designed to find those rare full-spectrum Python experts. We assess their deep understanding of the **Global Interpreter Lock (GIL)** and how to write truly concurrent and parallel applications using libraries like `asyncio` or worker processes. We test their ability to build robust, secure web APIs and their proficiency with data-centric libraries (**Pandas/NumPy**) for high-performance computing. By hiring a Python expert from us, you acquire a developer who can bridge the gap between application development and data science, ensuring your team has the flexibility to tackle any challenge.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your Python code slow due to I/O and GIL bottlenecks?",
+            problem: "Due to the Global Interpreter Lock (GIL), standard Python concurrency fails for CPU-bound tasks, making many applications single-threaded and slow. Inexperienced developers fail to correctly use asynchronous libraries or multi-process parallelism, severely limiting scalability.",
+            solution: "We vet for expertise in two areas: **`asyncio`** for I/O-bound concurrency (fast API calls, network tasks) and **`multiprocessing`** for CPU-bound parallelism (data processing, complex calculations), ensuring the code runs at maximum speed and utilizes all available cores.",
+            kpi: "Asynchronous I/O and Parallelism Mastery (asyncio, multiprocessing)"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your Django/Flask APIs difficult to maintain and scale?",
+            problem: "Building a complex API without proper structure leads to 'views.py' files that are bloated with business logic, making the code untestable, unreadable, and impossible to refactor safely. This is a common failure point for scaling web applications.",
+            solution: "Our engineers are masters of MVC/MVT patterns. They are vetted on their ability to correctly structure Django models, views, and serializers/forms, and to implement Flask blueprints with a clean separation of concerns, resulting in a highly modular and maintainable web backend.",
+            kpi: "Modular Web Framework Architecture (Django/Flask)"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your data processing logic inefficiently written (slow loops)?",
+            problem: "Using native Python loops for large-scale data manipulation is incredibly slow. Developers who haven't mastered **Pandas** and **NumPy** for vectorization create data pipelines that take hours instead of seconds.",
+            solution: "We look for engineers proficient in high-performance data manipulation. They must demonstrate the ability to use Pandas DataFrames for vectorized operations and NumPy for high-speed numerical computing, bypassing Python loops for dramatic speed gains in data-intensive applications.",
+            kpi: "Vectorization and High-Performance Data Computing"
+        }
+    ], 
+    evaluation: ['Concurrency (GIL, asyncio, threading)', 'Web frameworks (Django/Flask) and API design', 'Data processing (Pandas, NumPy) and performance', 'Testing (Pytest) and TDD principles', 'Ecosystem knowledge (virtual environments, packaging)'],
+    technical_analysis: "The Python evaluation is bifurcated for core software engineering and data science roles. For backend roles, we test `asyncio` mastery, requiring candidates to design a high-concurrency service using FastAPI and explain how they would handle blocking operations. For data-centric roles, the focus is on efficient data manipulation using NumPy and Pandas, specifically vectorized operations over loops. Both tracks require strong software engineering fundamentals: modular design, dependency management (Poetry/Pipenv), and TDD using Pytest. MLOps awareness is now mandatory, requiring candidates to articulate a strategy for containerizing a model and deploying it to a cloud environment for low-latency inference.",
+    interlink_slugs: ['data-engineering', 'pandas', 'numpy', 'llms']
+},
+'golang': {
+    name: 'Go (Golang)',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-core',
+    seo_title: 'Hire Senior Go Developers | High-Concurrency and Systems Programming Experts',
+    meta_description: 'Build fast, highly concurrent microservices and system tools. Hire elite remote Go experts vetted for goroutines, channel mastery, and low-latency API design. Book a call.',
+    intro: "Go, or Golang, is the language of choice for building highly concurrent, low-latency microservices and infrastructure tools. Its simplicity, native compilation, and powerful concurrency model (goroutines and channels) make it ideal for backends that demand extreme performance and efficiency. You need an engineer who can master Go's unique approach to concurrency, moving beyond the traditional multithreading model to leverage **goroutines** and **channels** for massive parallelism. Our vetting process is designed to find these systems experts, assessing their ability to write simple, yet powerful concurrent code that avoids race conditions and deadlocks. By hiring a Go expert from us, you are equipping your team with a developer who can build the highest-performance backbone for your most critical services.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your Go concurrency code plagued by race conditions and deadlocks?",
+            problem: "While simple to write, concurrent Go code is notoriously easy to get *right*. Developers who don't follow the 'Do not communicate by sharing memory; instead, share memory by communicating' philosophy introduce hard-to-debug race conditions or deadlocks that bring services to a grinding halt.",
+            solution: "We vet for mastery of the **CSP (Communicating Sequential Processes) model**. Our experts must demonstrate correct and idiomatic use of goroutines and channels to manage shared state safely. We test their ability to use the `context` package for cancellation and timeouts, ensuring resilient service operation.",
+            kpi: "Mastery of Goroutines and Channels"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your microservices failing under heavy load due to poor structure?",
+            problem: "The minimalist nature of Go can lead to disorganized codebases if architectural discipline is lacking. Unstructured application code makes it difficult to add features, manage dependencies, and enforce consistency across a fleet of microservices.",
+            solution: "Our engineers are masters of idiomatic Go architecture. They are vetted on their ability to structure services using patterns like **Dependency Injection** and clearly separated domain, service, and data layers, ensuring the code is highly testable, scalable, and easy to navigate for new team members.",
+            kpi: "Idiomatic Go Service Architecture"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your testing strategy weak and missing concurrency checks?",
+            problem: "Many Go developers only write basic unit tests, missing critical integration issues and, crucially, failing to test for concurrency-related bugs. This allows hard-to-reproduce, high-impact bugs to sneak into production.",
+            solution: "We look for engineers proficient in Go's robust testing tools. They are vetted on their ability to write effective table-driven tests, mock external dependencies, and, most importantly, use the **race detector** to find and eliminate subtle concurrency bugs before deployment.",
+            kpi: "Proficiency in Go Testing and Race Detector"
+        }
+    ],
+    evaluation: ['Concurrency (Goroutines, Channels, Select)', 'Context package for timeouts/cancellation', 'Service architecture and dependency management', 'API implementation (HTTP, gRPC) and routing', 'Testing (table-driven tests, race detector)'],
+    technical_analysis: "The Go evaluation is highly focused on system-level concurrency and performance. The core test is the candidate's mastery of the **goroutine and channel model**: candidates are required to build a simple concurrent service that safely processes work, using channels to coordinate state and the `select` statement for handling multiple communication paths. We assess their ability to use the `context` package for proper request cancellation and cleanup in complex call chains. For architecture, we evaluate their design principles, looking for clean separation of concerns and correct use of interfaces for dependency inversion, which is critical in large Go codebases. Finally, we test their knowledge of the standard library, including HTTP, encoding/json, and their ability to use Go's built-in tools for benchmarking and profiling to ensure low-latency performance.",
+    interlink_slugs: ['microservices', 'grpc', 'docker', 'prometheus']
+},
+'c-sharp': {
+    name: 'C# / .NET',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-core',
+    seo_title: 'Hire Senior C# / .NET Developers | Enterprise Microservices and API Experts',
+    meta_description: 'Build fast, stable enterprise backends. Hire elite remote C# experts vetted for ASP.NET Core, cloud-native architecture, and asynchronous programming. Book a call.',
+    intro: "C# and the .NET platform are no longer Windows-bound; they are a leading choice for cross-platform, high-performance, and cloud-native backend development, especially within the Azure ecosystem. You need a senior engineer who masters the latest features of **.NET Core**, asynchronous programming (`async/await`), and advanced architecture patterns like microservices and event-driven design. Our vetting process is designed to find professionals who excel at building robust APIs with **ASP.NET Core**, understand Entity Framework Core for data access, and are proficient in performance optimization and security. By hiring our C#/.NET talent, you get a developer who can deliver enterprise-grade stability, speed, and deep integration with Azure or other cloud services, ensuring a reliable and scalable foundation for your core business logic.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your application suffering from asynchronous deadlock and poor performance?",
+            problem: "Inexperienced use of `async` and `await` in C# often leads to subtle deadlocks in GUI or web contexts, or inefficient thread pool usage. Developers who lack a deep understanding of the Task-based Asynchronous Pattern (TAP) create code that is buggy under load and difficult to debug.",
+            solution: "We vet for mastery of the TAP model. Our experts must demonstrate correct use of `async`/`await`, understand the differences between `Task` and `ValueTask`, and know how to avoid common pitfalls (like not using `.ConfigureAwait(false)` when appropriate), ensuring maximum thread utilization and performance.",
+            kpi: "Mastery of Asynchronous Programming (TAP)"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your APIs brittle due to poor dependency management?",
+            problem: "The core of modern .NET is Dependency Injection (DI), but many developers fail to use it correctly, leading to components that are tightly coupled and impossible to unit test. This results in code that is rigid and breaks easily during refactoring.",
+            solution: "Our engineers are masters of ASP.NET Core's built-in DI. They are vetted on their ability to structure services using interfaces, manage lifetimes correctly (Singleton, Scoped, Transient), and use DI to enforce a clean separation of concerns (e.g., repository and service patterns) for maximum testability.",
+            kpi: "Proficiency in Dependency Injection and IoC"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to efficiently query and update your database?",
+            problem: "Over-reliance on ORMs like Entity Framework (EF) Core without understanding its internals leads to inefficient database queries (N+1 problem) and poor performance. Developers fail to use projection and optimization techniques, resulting in slow endpoints.",
+            solution: "We look for engineers who are EF Core experts. They must demonstrate the ability to use query projections, understand change tracking, and know when to drop down to raw SQL for performance-critical operations, guaranteeing efficient and optimized data access.",
+            kpi: "EF Core Optimization and Data Access Efficiency"
+        }
+    ],
+    evaluation: ['ASP.NET Core (Middleware, Routing, Controllers)', 'Asynchronous programming (async/await, Task, TAP)', 'Dependency Injection (DI) and IoC Container', 'Entity Framework Core (EF Core) and query optimization', 'Testing (xUnit, Moq) and code quality'],
+    technical_analysis: "The C#/.NET evaluation focuses on enterprise readiness, performance, and architecture. The critical assessment is the candidate's mastery of the **Task-based Asynchronous Pattern (TAP)**; they are given scenarios to diagnose and fix asynchronous deadlocks and inefficient thread usage. We test their architectural skills by requiring them to design a multi-layered ASP.NET Core application, focusing on the correct use of Dependency Injection (DI) to create loosely coupled services. Expertise in **Entity Framework Core (EF Core)** is mandatory, specifically assessing their ability to write performant LINQ queries, use projections, and manage change tracking to avoid common performance pitfalls like the N+1 problem. Finally, we assess their knowledge of the C# language features (e.g., LINQ, records, pattern matching) and their ability to write clean, idiomatic, and testable code using modern testing frameworks.",
+    interlink_slugs: ['microservices', 'azure', 'postgresql']
+},
+'rust': {
+    name: 'Rust',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-core',
+    seo_title: 'Hire Senior Rust Developers | Systems Programming and Performance Experts',
+    meta_description: 'Build fast, memory-safe, and concurrent systems. Hire elite remote Rust experts vetted for ownership, borrowing, concurrency, and performance optimization. Book a call.',
+    intro: "**Rust** is a systems programming language that guarantees **memory safety and thread safety** without relying on a garbage collector, making it ideal for performance-critical applications, operating systems, and high-concurrency microservices. If your current language is facing scaling issues, suffering from random crashes, or wasting resources, Rust is the solution. You need an engineer who has mastered the **Ownership and Borrowing Model**, asynchronous programming with **Async/Await**, and the Actix or Tokio runtimes. Our vetting process is designed to find engineers who write zero-cost abstraction code that is both blisteringly fast and safe. By hiring our Rust talent, you are investing in a future-proof, stable, and incredibly performant codebase that will drastically reduce your infrastructure costs and eliminate entire classes of runtime errors.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your codebase plagued by memory bugs (segfaults, data races)?",
+            problem: "In languages like C/C++, managing memory manually leads to dangerous bugs like use-after-free, buffer overflows, and data races, which result in system crashes, security vulnerabilities, and unpredictable behavior.",
+            solution: "Our Rust experts are masters of the **Borrow Checker**. They write code that is guaranteed to be memory and thread-safe at compile time. We vet their deep understanding of the Ownership model, smart pointers, and lifetime annotations, ensuring they can harness Rust's safety guarantees without fighting the compiler.",
+            kpi: "Compile-time error vs. runtime error rate"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to build high-concurrency network services?",
+            problem: "Building concurrent network services that are both fast and safe is extremely difficult in most languages. Complex thread management and locking mechanisms often lead to deadlocks and poor scaling.",
+            solution: "We vet for expertise in modern Rust asynchronous programming using the **Tokio runtime** and the `async/await` syntax. Our candidates demonstrate the ability to build high-throughput, non-blocking APIs using frameworks like **Actix Web** or **Axum**, leveraging Rust's zero-cost abstractions for speed.",
+            kpi: "Concurrency handling and throughput (RPS)"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your build and dependency system complex and slow?",
+            problem: "The dependency management and build tooling for complex projects can often be fragmented and difficult to use, slowing down developer velocity and complicating CI/CD pipelines.",
+            solution: "Our engineers are proficient in **Cargo**, Rust's integrated build system and package manager. They demonstrate the ability to manage complex workspace dependencies, use features flags efficiently, and configure continuous integration for reliable, reproducible builds.",
+            kpi: "CI/CD build time efficiency"
+        }
+    ],
+    evaluation: ['Mastery of Ownership, Borrowing, and Lifetimes', 'Asynchronous Rust (Tokio, async/await)', 'Web frameworks (Actix Web, Axum)', 'FFI (Foreign Function Interface) and unsafe code usage', 'Advanced macro usage and generic programming'],
+    technical_analysis: "The Rust evaluation is the most rigorous, focusing entirely on systems-level thinking and safety guarantees. Candidates are tested on their ability to solve a concurrency problem using channels and mutexes while satisfying the Borrow Checker. A key scenario involves implementing a data structure using safe Rust and explaining when and how they would correctly use `unsafe` code for performance or FFI integration, demonstrating a deep understanding of its risks. We assess their ability to build a high-performance HTTP service using an asynchronous framework like Axum, ensuring correct error handling and resource management. Finally, knowledge of the Rust ecosystem, including testing with `#[test]` and benchmarking, is mandatory.",
+    interlink_slugs: ['golang', 'docker', 'system-design']
+},
+'php': {
+    name: 'PHP (Laravel/Symfony)',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-core',
+    seo_title: 'Hire Senior PHP Developers | Laravel, Symfony, and High-Volume Web Experts',
+    meta_description: 'Build fast, stable web applications and APIs. Hire elite remote PHP experts vetted for Laravel/Symfony architecture, testing, and modern performance. Book a call.',
+    intro: "Modern PHP, particularly with frameworks like **Laravel** and **Symfony**, powers a huge portion of the internet's most critical systems. It offers an incredible blend of rapid development, vast ecosystem support, and robust structure for building complex, high-volume web applications and microservices. You need an engineer who has moved beyond legacy PHP practices and fully embraces modern standards, including composer, object-oriented design, and the latest language features. Our vetting process is designed to find professionals who master the full lifecycle of a Laravel or Symfony application, from designing database migrations to optimizing cache layers and building robust APIs. We look for expertise in performance optimization (e.g., using Redis, optimizing Eloquent/Doctrine queries) and a strong commitment to clean architecture and testing. By hiring our PHP talent, you are investing in a mature, high-velocity platform backed by a massive ecosystem, ensuring rapid development and enterprise-grade stability.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your business logic tightly coupled within the controller layer?",
+            problem: "A common anti-pattern in PHP frameworks is the 'fat controller,' where all business logic, data access, and API concerns are crammed into a single controller file. This makes code impossible to unit test, violates the Single Responsibility Principle, and causes maintenance nightmares.",
+            solution: "We vet for experts in architectural patterns like the **Repository/Service pattern** and Domain-Driven Design within Laravel/Symfony. They are required to demonstrate the ability to decouple business logic into dedicated service classes, ensuring clean, testable, and reusable code.",
+            kpi: "Modular Service/Repository Architecture"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your database queries slow due to the N+1 problem?",
+            problem: "The N+1 query problem, caused by lazy loading relationships within a loop, is a notorious performance killer in ORMs like Eloquent or Doctrine. Inexperienced developers fail to use eager loading, causing dozens or hundreds of unnecessary database queries per request.",
+            solution: "Our engineers are masters of ORM optimization. They are vetted on their ability to use **eager loading** (`with` in Eloquent, `JOIN FETCH` in Doctrine) and query scopes to eliminate the N+1 problem, guaranteeing minimal and highly efficient database access for fast API response times.",
+            kpi: "ORM Optimization and N+1 Problem Elimination"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your application security weak against common web attacks?",
+            problem: "Failure to use the framework's built-in security features correctly, such as protection against SQL injection (by not using prepared statements) or CSRF attacks, leaves the application wide open to common, high-impact web vulnerabilities.",
+            solution: "We look for engineers who integrate security first. They are proficient in using Laravel's built-in Eloquent features for safe queries, Blade/Twig for cross-site scripting (XSS) prevention, and middleware for robust authentication and authorization checks, guaranteeing a secure web application.",
+            kpi: "Framework-Integrated Security and Best Practices"
+        }
+    ],
+    evaluation: ['Modern PHP features (PHP 8+)', 'Framework mastery (Laravel, Symfony)', 'ORM optimization (Eloquent, Doctrine)', 'Asynchronous task queuing (Redis, RabbitMQ)', 'Clean architecture and Domain-Driven Design'],
+    technical_analysis: "The PHP evaluation focuses on framework mastery and architectural discipline. Candidates are required to refactor a slow Laravel endpoint, demonstrating their ability to fix the N+1 problem, implement caching, and use database query profiling. Architectural skills are tested by asking them to design a complex module using a clean, layered approach, separating domain logic from framework concerns. We verify their mastery of testing (PHPUnit) and their knowledge of the Composer ecosystem. Finally, proficiency in using modern PHP tools like queues, broadcasting, and high-performance server extensions (Swoole/RoadRunner) is essential for handling enterprise-grade traffic.",
+    interlink_slugs: ['mysql', 'rest-api-design', 'postgresql']
+},
+'kotlin': {
+    name: 'Kotlin',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-core',
+    seo_title: 'Hire Senior Kotlin Developers | JVM and Microservices Experts',
+    meta_description: 'Build robust, concise microservices on the JVM. Hire elite remote Kotlin developers vetted for Coroutines, Spring Boot, and functional programming. Book a call.',
+    intro: "Kotlin is the modern, pragmatic language for the JVM, offering conciseness, safety, and superior expressiveness compared to Java, while maintaining full interoperability. It is the perfect choice for building modern, high-performance backends and Android applications. You need an engineer who can leverage Kotlin's core strength: built-in null safety and powerful support for **Coroutines** for asynchronous programming. Our vetting process is designed to find these experts, assessing their ability to write idiomatic Kotlin that is functional, concise, and harnesses Coroutines to achieve massive concurrency without the complexity of traditional Java threads. By hiring a Kotlin expert from us, you gain a developer who can dramatically reduce boilerplate, boost development velocity, and deliver a more reliable, crash-resistant application.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your application logic verbose and full of null pointer exceptions?",
+            problem: "Legacy code often suffers from excessive boilerplate and the dreaded `NullPointerException`. Developers who don't embrace Kotlin's built-in safety and functional features write code that is hard to read, overly complex, and prone to runtime errors.",
+            solution: "We vet for mastery of idiomatic Kotlin features, including null safety (`?`, `!!`, `let`, `run`), data classes, and extension functions. Our experts write concise, expressive code that eliminates boilerplate and uses the compiler to prevent null-related crashes.",
+            kpi: "Idiomatic Kotlin and Null Safety Mastery"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your concurrency solution slow or overly complex?",
+            problem: "Using traditional thread-based concurrency on the JVM is complex, resource-intensive, and bug-prone. Developers who rely on these older methods fail to leverage Kotlin's lightweight and efficient solution: Coroutines.",
+            solution: "Our engineers are experts in Coroutines. They are vetted on their ability to use `launch`, `async`, and different Coroutine dispatchers to write highly concurrent, non-blocking code that is simple to read, resource-efficient, and dramatically improves backend throughput.",
+            kpi: "Mastery of Coroutines for Asynchronous Programming"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to smoothly integrate Kotlin into a Spring/Java ecosystem?",
+            problem: "When introducing Kotlin, many teams struggle to manage the interoperability with existing Java libraries and frameworks like Spring. Inconsistent style and confusion over which features to use lead to a fragmented, difficult-to-maintain codebase.",
+            solution: "We look for engineers who are masters of Kotlin/Java interoperability. They are proficient in using Kotlin with Spring Boot, writing functional-style routes, and ensuring that all Java-based dependencies are consumed and integrated with idiomatic, type-safe Kotlin code.",
+            kpi: "Seamless Kotlin/Java Interoperability"
+        }
+    ],
+    evaluation: ['Coroutines and structured concurrency mastery', 'Null Safety and idiomatic Kotlin features', 'Frameworks (Spring Boot, Ktor)', 'Interoperability with Java libraries', 'Functional programming concepts and immutability'],
+    technical_analysis: "The Kotlin evaluation focuses on its unique features and integration with the JVM ecosystem. The critical assessment is the candidate's mastery of **Coroutines**: they must design and implement a non-blocking asynchronous solution, correctly using structured concurrency and different Coroutine dispatchers for I/O and CPU-bound tasks. We rigorously test for **idiomatic Kotlin**, assessing their use of null safety features (`?`, safe calls, `let`), functional collection operators, and conciseness, demanding that they eliminate common Java boilerplate. For backend development, we test their ability to build a performant API using a framework like Spring Boot or Ktor, focusing on dependency injection, clean layering, and seamless interaction with existing Java components and libraries.",
+    interlink_slugs: ['java', 'microservices', 'grpc']
+},
+'scala': {
+    name: 'Scala',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-core',
+    seo_title: 'Hire Senior Scala Developers | Functional Programming and Big Data Experts',
+    meta_description: 'Build reliable, high-throughput systems on the JVM. Hire elite remote Scala experts vetted for functional programming, Akka, and Apache Spark/Kafka. Book a call.',
+    intro: "Scala is a powerful, multi-paradigm language that blends object-oriented and functional programming (FP) on the JVM, making it a favorite for complex, high-concurrency, and Big Data processing systems (**Apache Spark**, **Akka**). You need an engineer who can master its complexity: an expert in both the functional paradigm and the massive data ecosystem. Our vetting process is designed to find true Scala FP experts, assessing their mastery of immutable data structures, pattern matching, and sophisticated libraries for concurrent and distributed computing. By hiring a Scala expert from us, you gain a developer who can tackle your most demanding, mission-critical tasks in data processing and real-time event streaming with unmatched robustness.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your code suffering from complexity and mutable state bugs?",
+            problem: "Developers who treat Scala like 'better Java' fail to utilize its functional features, resulting in complex, verbose code that uses mutable state. This leads to hard-to-find concurrency bugs and makes reasoning about code flow incredibly difficult.",
+            solution: "We vet for deep expertise in **Functional Programming (FP)**. Our experts must demonstrate mastery of immutability, pattern matching, and higher-order functions to create concise, declarative, and thread-safe code that eliminates entire classes of bugs related to shared mutable state.",
+            kpi: "Mastery of Functional Programming and Immutability"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling with concurrent and distributed systems?",
+            problem: "Building high-concurrency systems without the right tools leads to fragile, difficult-to-scale architectures. Traditional threading models are often too low-level and error-prone for distributed environments.",
+            solution: "Our engineers are proficient in distributed toolkits like **Akka**. They are vetted on their ability to use the Actor model to build robust, fault-tolerant, and highly concurrent services that scale out easily across multiple machines, perfect for microservices and real-time processing.",
+            kpi: "Expertise in Actor Model (Akka) for Concurrency"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your data pipelines running slowly and inefficiently?",
+            problem: "Scala is often used in Big Data, but developers who don't understand the performance implications of its collections or fail to leverage specialized libraries write inefficient pipelines that waste time and cloud computing resources.",
+            solution: "We look for engineers proficient in the **Apache Spark** and **Kafka** ecosystems. They must demonstrate the ability to use Spark's RDDs/DataFrames and Kafka Streams to build optimized, high-throughput data processing and event streaming applications.",
+            kpi: "Proficiency in Big Data Tooling (Spark/Kafka)"
+        }
+    ],
+    evaluation: ['Functional Programming (Immutability, Monads, Functors)', 'Akka for concurrency and fault tolerance', 'Apache Spark for distributed computing', 'Advanced type system usage (Implicits, Type Classes)', 'Domain-Driven Design and microservices architecture'],
+    technical_analysis: "The Scala evaluation is a rigorous test of functional programming (FP) principles. Candidates are required to solve a complex concurrent problem using the **Akka Actor Model** or by building a safe pipeline using functional effect systems (ZIO/Cats Effect). A critical area is Big Data: candidates must optimize a poorly performing Apache Spark job, explaining the mechanics of shuffles and partitioning. We assess their understanding of the Scala type system, including correct use of `implicits` (or context functions) and building custom type classes. The goal is to find engineers who can build complex, reliable, and high-performance systems using the full functional power of Scala.",
+    interlink_slugs: ['apache-spark', 'kafka', 'data-engineering']
+},
+'erlang': {
+    name: 'Erlang',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-core',
+    seo_title: 'Hire Senior Erlang Developers | Fault-Tolerant and Distributed Systems Experts',
+    meta_description: 'Build systems that never go down. Hire elite remote Erlang experts vetted for OTP, soft real-time, and massive-scale concurrent architecture. Book a call.',
+    intro: "**Erlang** is the foundational functional language and runtime that powers the world's most demanding telecom systems, known for achieving **nine nines (99.9999999%)** of uptime. It leverages the **Erlang Virtual Machine (BEAM)** and the **Open Telecom Platform (OTP)** to manage millions of lightweight processes (Actors) with unmatched concurrency and fault tolerance. You need an expert who can master the Actor Model to build concurrent systems and design self-healing architectures using **Supervisor Trees**. Our vetting process focuses on professionals who can implement robust distributed systems that can handle component failures and even *code updates* without stopping. By hiring an Erlang expert from us, you gain a backend system that is virtually indestructible and can sustain massive concurrent load (millions of users) in real-time.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your system failing catastrophically when a single component crashes?",
+            problem: "Traditional systems lack built-in mechanisms to isolate and recover from failures, leading to system-wide crashes when a bug or failure occurs.",
+            solution: "Our experts enforce the **'Let It Crash' Philosophy** using **OTP Supervisor Trees**. They design a hierarchical architecture where a failing process is automatically and quickly restarted by its supervisor, isolating the failure and making the system self-healing.",
+            kpi: "System uptime and fault recovery time"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to handle millions of simultaneous connections and state?",
+            problem: "Handling high-volume, concurrent connections requires complex threading and state synchronization, leading to deadlocks and poor scalability.",
+            solution: "We vet for mastery of the **Actor Model**. Candidates use lightweight Erlang processes (Actors) with isolated, immutable state to manage concurrency without locks or shared memory, ensuring extreme scalability and safety.",
+            kpi: "Concurrency handling and process isolation"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your updates requiring scheduled downtime and service interruption?",
+            problem: "Deploying new code typically requires restarting the application, leading to service disruption and unacceptable downtime for mission-critical services.",
+            solution: "Our engineers are proficient in **Hot Code Swapping**. They demonstrate the ability to update the running Erlang VM with new code modules *without stopping the application*, enabling true zero-downtime upgrades.",
+            kpi: "Zero-downtime deployment and hot code swapping"
+        }
+    ],
+    evaluation: ['OTP (Supervisor, GenServer, Application) for fault tolerance', 'Actor Model and message passing for concurrency', 'Functional programming (pattern matching, immutability)', 'Distributed Erlang and node communication', 'Hot code swapping and code upgrade mechanisms'],
+    technical_analysis: "The Erlang assessment is focused on the **OTP framework** and fault-tolerant design. Candidates are required to implement a core component of a concurrent system (e.g., a simple registry or a stateful process) using the **GenServer** behavior. This involves: **1. Process Implementation:** Correctly defining the state and handling messages via pattern matching. **2. Supervision:** Defining an **OTP Supervisor** that monitors the GenServer and uses an appropriate restart strategy (e.g., `one_for_one`) to ensure its resilience. A critical design test involves explaining the architecture of an Erlang-based distributed system across multiple nodes and how they would use message passing to communicate between them. They must also explain the principle and process of **Hot Code Swapping** to deploy a bug fix to a running system.",
+    interlink_slugs: ['elixir', 'real-time', 'functional-programming']
+},
+'haskell': {
+    name: 'Haskell',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-core',
+    seo_title: 'Hire Senior Haskell Developers | Pure Functional Programming and Type Safety Experts',
+    meta_description: 'Build mission-critical, bug-free software. Hire remote Haskell experts vetted for pure functions, Monads, and advanced type system (type families). Book a call.',
+    intro: "**Haskell** is a purely functional programming language known for its advanced type system, which catches nearly all runtime errors at compile time, leading to exceptionally reliable and safe code. It is the gold standard for high-assurance, mission-critical applications in finance and defense. You need an expert who can master its foundational concepts—laziness, immutability, and managing side effects via **Monads** (IO, Maybe, Either). Our vetting process is designed to find true FP experts, assessing their mastery of the most critical Haskell concepts: **Monads** (especially the IO Monad), type classes, and creating domain-specific languages (DSLs). By hiring a Haskell expert from us, you drastically reduce testing overhead and gain a foundation of mathematical certainty for your most critical business logic.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your complex business logic riddled with subtle, hard-to-find bugs?",
+            problem: "Imperative, stateful code allows business rules to be violated by unexpected side effects, leading to runtime data inconsistencies and logical errors.",
+            solution: "Our Haskell experts use **pure functions** and **immutable data structures** to model all business logic. This guarantees that a function's output depends only on its input, making the code highly reliable, easily testable, and mathematically correct, eliminating entire classes of bugs.",
+            kpi: "Reduction in logical and runtime business logic errors"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to manage side effects (I/O, database) in a predictable way?",
+            problem: "Uncontrolled side effects (like database writes or network calls) scattered throughout a codebase make it difficult to trace data flow, leading to unexpected behavior and complexity.",
+            solution: "We vet for mastery of **Monads** (like the IO Monad) and functional effect systems. Our candidates demonstrate the ability to explicitly and predictably manage all side effects, ensuring the core business logic remains pure, testable, and completely separate from the external world.",
+            kpi: "Functional purity score and side effect traceability"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is designing high-level, reusable abstractions proving too complex in your current language?",
+            problem: "Modeling complex patterns like resource acquisition, dependency injection, or context passing often results in boilerplate and rigid structures.",
+            solution: "Our engineers are proficient in **Type Classes and Generics**. They design highly abstract, reusable code that cleanly separates behavior from implementation, enabling elegant and concise solutions to complex architectural challenges.",
+            kpi: "Utilization of Type Classes and Generics"
+        }
+    ],
+    evaluation: ['Pure functional core and side-effect isolation', 'Monad mastery (IO, Maybe, Either/Result) and Monad Transformers', 'Type system (Algebraic Data Types, Type Classes, Generics)', 'Laziness and memoization strategies', 'Concurrency (Async/STM) and parallelism'],
+    technical_analysis: "The Haskell evaluation is the most abstract and rigorous, focusing entirely on **pure Functional Programming**. The core test is the candidate's mastery of the **Monad concept**, specifically requiring them to implement a complex I/O-dependent business workflow, using Monads (especially the IO Monad and Monad Transformers) to sequence operations while maintaining purity. We assess their ability to use **Algebraic Data Types (ADTs)** to model complex domains and enforce business invariants using the type system, proving they can make 'illegal states unrepresentable.' Finally, we test their understanding of **lazy evaluation** and its performance implications, requiring them to diagnose and fix scenarios that lead to space leaks, ensuring they can write efficient, production-ready code.",
+    interlink_slugs: ['functional-programming', 'scala', 'elixir']
+},
+'elixir': {
+    name: 'Elixir',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-core',
+    seo_title: 'Hire Senior Elixir Developers | Real-Time and Fault-Tolerant Web Experts (Phoenix)',
+    meta_description: 'Build fast, fault-tolerant, real-time web applications. Hire elite remote Elixir developers vetted for Phoenix LiveView, OTP, and functional concurrency. Book a call.',
+    intro: "**Elixir**, built on the battle-tested Erlang Virtual Machine (BEAM), is the premier choice for **real-time, high-concurrency** applications like chat, live dashboards, and trading platforms. It offers a modern syntax and the powerful **Phoenix Framework** with **LiveView**, which eliminates most of your JavaScript needs. You need an engineer who can leverage the BEAM's fault tolerance and the clean productivity of Elixir. Our vetting process is designed to find developers who master the functional paradigm, message passing, and the core components of OTP to build systems that scale effortlessly and never go down.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to build real-time, low-latency features?",
+            problem: "Traditional web architectures require complex tooling (WebSockets, Redis, separate service layers) to handle real-time communication, leading to fragile and complex codebases that are difficult to manage and scale.",
+            solution: "We vet for mastery of the **Phoenix Framework** and **Phoenix Channels**. Our experts must demonstrate the ability to build rich, real-time user interfaces with minimal code, leveraging the Elixir backend for all state and logic, dramatically simplifying the real-time stack.",
+            kpi: "Proficiency in Phoenix LiveView and Real-Time Architectures"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your system failing when a single component crashes?",
+            problem: "Like Erlang, Elixir's core value is fault tolerance via the Actor Model. Developers who fail to implement proper Supervision trees or handle process linking correctly build systems that are brittle and prone to cascading failures, losing the BEAM's core advantage.",
+            solution: "Our engineers are experts in the **OTP (Open Telecom Platform)**. They are vetted on their ability to use **Supervisors** (e.g., `Supervisor.start_link`) and **GenServer** (the core Actor model) to build components that are isolated and self-healing, guaranteeing maximum system uptime.",
+            kpi: "Mastery of OTP and Supervision Trees"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your code difficult to read due to heavy reliance on imperative structures?",
+            problem: "Elixir is a functional language, but developers can still introduce mutable state and side effects, leading to hard-to-find concurrency bugs. They often fail to utilize the **Pipe Operator** and immutability for clean data flow.",
+            solution: "We look for engineers who write idiomatic, pure functional code. They are vetted on their ability to use immutable data structures, pattern matching, and the pipe operator (`|>`) to create declarative, side-effect-free business logic that is simple to read, test, and parallelize.",
+            kpi: "Idiomatic Functional Programming and Immutability"
+        }
+    ],
+    evaluation: ['Phoenix LiveView and Channels for real-time web', 'OTP (GenServer, Supervisors) and fault tolerance', 'Functional Programming (Pattern Matching, Pipe Operator)', 'Concurrency (Actors, Message Passing) and state isolation', 'Ecto ORM and database interaction'],
+    technical_analysis: "The Elixir evaluation is a full-stack assessment of real-time and fault-tolerant capabilities. The core assessment is the candidate's ability to build a **real-time feature using Phoenix LiveView**, demonstrating an understanding of how LiveView manages state, handles user events, and minimizes network latency. We rigorously test their mastery of the **OTP platform**, requiring them to design a small service using a **GenServer** and implement a **Supervisor** to manage process failure, proving they can build self-healing systems. For application logic, we assess their proficiency in functional programming concepts, pattern matching, and the use of the pipe operator for clean data transformation. Finally, we test their ability to use Ecto ORM effectively for database interaction, focusing on query optimization and change management.",
+    interlink_slugs: ['erlang', 'postgresql', 'web-accessibility']
+},
+
+// ----------------------------------------------------------------------
+// 9. VETTING & COGNITIVE AI (1) <-- START NEW CATEGORY HERE
+// ----------------------------------------------------------------------
+'axiom-cortex': {
     name: 'Axiom Cortex™',
     category: 'Vetting & Cognitive AI',
     categorySlug: 'vetted-talent',
@@ -499,7 +912,7 @@ export const allTech: AllTech = {
       '**Integrity & Explainability:** Integrity & Certainty Assurance Layer (ICAL) using Jeffreys Divergence and Expected Calibration Error (ECE)',
       '**Scientific Reliability:** Generalizability Theory (G-coefficients) and Random Matrix Theory (Marchenko–Pastur Distribution)',
       '**Adaptive Interviewing:** Active Evaluation via Information Gain',
-      '**The 5 B-Axioms:** (Accuracy, Mental Model, Procedural, Clarity, Cognitive Load)'
+      '**The 5 B-Axioms:** (Accuracy $B_A$, Mental Model $B_M$, Procedural $B_P$, Clarity $B_C$, Cognitive Load $B_L$)'
     ],
     technical_analysis: "The **Axiom Cortex Cognitive AI Matrix Engine** delivers the first truly **Scientific, Bias-Mitigated Cognitive AI for Nearshore IT Staff Augmentation Services**. Its **44+ neuropsychometric formulas** are organized into functional layers. The core **Latent Trait Inference Engine (LTIE)** uses **Isotonic Regression** and **Deep Lattice Models** to guarantee score monotonicity. The **Cortex Calibration Layer** eliminates L2 bias using **Proficiency-Normalized Scoring** and cross-lingual models like the **Fréchet Semantic Distance (FSD)** to ensure **Conceptual Fidelity** is measured, not grammar or accent. For detection of cheating/deception, the engine employs specialized **Forensic NLP Sub-Models** and a **Translation-Invariance Test** to analyze subtle **Linguistic Signatures** in speech patterns. Its integrity is non-negotiable, enforced by the **ICAL** using **Jeffreys Divergence** to validate data grounding before the final, reliable score is calculated via **Bayesian Network Modeling**. This rigorous, auditable science is trained on **12,000 human-curated technical interviews**, making it immune to the linguistic biases that plague legacy vendor tools.",
     interlink_slugs: ['nearshore-development', 'offshore-development', 'staff-augmentation-services', 'ai-ml', 'nlp', 'psychometric-testing', 'data-science', 'python', 'auditability', 'neuroscience', 'machine-learning-engineering']
@@ -670,3 +1083,8 @@ export const techCategories: TechCategory[] = [
     ],
   }
 ];
+
+// Note: This is an incomplete list. You will be prompted to add more technologies.
+// Final list should have 87 entries.
+// Missing: rx-js, pandas, numpy, jest, vitest, api-security, graphql, etc.
+
