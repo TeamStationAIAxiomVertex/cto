@@ -42,7 +42,7 @@ export type TechSlug =
   | 'remix'
   | 'svelte'
   | 'web-accessibility'
-  | 'rx-js' 
+  | 'rx-js'
 
   // Backend/Core Languages (12)
   | 'node'
@@ -98,7 +98,7 @@ export type TechSlug =
   | 'data-science'
   | 'llms'
   | 'pandas'
-  | 'numpy' 
+  | 'numpy'
 
   // Databases (7)
   | 'postgresql'
@@ -321,7 +321,7 @@ export const allTech: AllTech = {
     technical_analysis: "Vue.js evaluation centers on the transition to the Composition API and a deep understanding of its reactivity system. Candidates must demonstrate proficiency in modeling application state using `ref`, `reactive`, and `computed` properties, knowing the crucial difference between the three to avoid performance-sapping reactive pitfalls. We test their ability to build complex, scalable state stores using Pinia, verifying they can structure code logically and efficiently without boilerplate. For large applications, experience with Nuxt.js (or similar full-stack frameworks) is assessed, including server-side rendering, data fetching, and module extension. The focus is on clean component design, efficient lifecycle usage, and performance optimization techniques, specifically around minimizing re-renders and leveraging the built-in compiler optimizations. A senior candidate must also show competence with the Vue ecosystem's modern tooling, including the fast feedback loop provided by Vite and the debugging capabilities of Vue DevTools.",
     interlink_slugs: ['pinia', 'typescript', 'react-native']
   },
-    'pinia': {
+  'pinia': {
     name: 'Pinia (Vue State)',
     category: 'Frontend & UI/UX',
     categorySlug: 'frontend-web',
@@ -433,8 +433,8 @@ export const allTech: AllTech = {
     pains: [
         {
             icon: AlertTriangle,
-            pain: "Is your site at high risk of ADA compliance lawsuits?",
-            problem: "Most automated tools only catch 30-40% of accessibility issues. A lack of human, expert review means critical failures related to context, user flow, and complex ARIA roles slip into production, leaving your organization vulnerable to expensive legal action.",
+            pain: "Is your app legally exposed for non-compliance?",
+            problem: "Automated tools only catch 30-40% of accessibility issues. A lack of manual, expert review means critical failures related to context, user flow, and complex ARIA roles slip into production, leaving your organization vulnerable to expensive legal action.",
             solution: "Our experts are certified and vetted for their ability to perform thorough manual audits using screen readers (VoiceOver, NVDA), keyboard-only navigation, and advanced ARIA validation. They identify critical failures that tools miss, providing clear, prioritized remediation strategies to eliminate legal risk.",
             kpi: "WCAG 2.2 Level AA compliance score"
         },
@@ -457,7 +457,7 @@ export const allTech: AllTech = {
     technical_analysis: "The Web Accessibility evaluation is highly practical and focused on remediation. Candidates are presented with common accessibility failures (e.g., improper color contrast, missing form labels, broken keyboard trap, incorrect ARIA usage on a custom widget) and are tasked with diagnosing and fixing them. We assess their foundational knowledge of the accessibility tree, expecting them to articulate how semantic HTML maps to it and when to use ARIA as a supplement, not a replacement. A key area is keyboard interaction: candidates must demonstrate mastery of focus management (using `tabindex`, programmatically managing focus) and correctly handling component interactions without a mouse. Finally, they must be able to integrate accessibility testing tools (like `jest-axe`) into a component testing suite, proving they can implement accessibility as a continuous quality gate.",
     interlink_slugs: ['react', 'typescript', 'vue']
   },
-    'graphql': {
+  'graphql': {
     name: 'GraphQL',
     category: 'Architecture & Integrations',
     categorySlug: 'architecture-integrations',
@@ -609,26 +609,26 @@ export const allTech: AllTech = {
             icon: AlertTriangle,
             pain: "Is your concurrent code prone to deadlocks or race conditions?",
             problem: "Go makes concurrency easy to *start* but hard to get *right*. Misuse of mutexes, channels, or select statements leads to non-deterministic bugs, race conditions, or deadlocks, crippling application reliability and being incredibly difficult to debug.",
-            solution: "Our engineers are masters of the Go concurrency model. They are rigorously tested on idiomatic concurrency patterns, using channels for communication and orchestration (`CSP`) and knowing when to use the `sync` package (mutexes) correctly. We demand mastery of the built-in race detector and profiler to prevent and debug these issues.",
+            solution: "We vet for mastery of the Go concurrency model. Our experts must demonstrate correct and idiomatic use of goroutines and channels to manage shared state safely and efficiently. We demand mastery of the built-in race detector and profiler to prevent and debug these issues.",
             kpi: "Concurrency model score and error rate reduction"
         },
         {
             icon: AlertTriangle,
             pain: "Are you struggling with poor code structure and excessive interface usage?",
             problem: "Go's emphasis on simplicity and interfaces is often misused, leading to overly complex interface hierarchies or 'big-package' monolithic code structures that are hard to test and maintain. This violates Go's principle of composability.",
-            solution: "We vet for engineers who write clean, idiomatic Go. They demonstrate the correct use of interfaces for dependency inversion, ensuring packages are small, cohesive, and easily testable. They understand the principle of 'accept interfaces, return structs,' making their code highly readable and maintainable.",
-            kpi: "Code complexity metrics and interface overuse reduction"
+            solution: "Our engineers are masters of idiomatic Go architecture. They are vetted on their ability to structure services using patterns like **Dependency Injection** and clearly separated domain, service, and data layers, ensuring the code is highly testable, scalable, and easy to navigate for new team members.",
+            kpi: "Idiomatic Go Service Architecture"
         },
         {
             icon: AlertTriangle,
-            pain: "Is your deployment slow and resource-heavy?",
-            problem: "Using a heavy runtime or poorly configured build process prevents you from capitalizing on Go's strength: single, small, statically linked binaries that deploy instantly and use minimal resources.",
-            solution: "Our experts are proficient in creating minimal, secure, multi-stage Docker builds for Go applications. They understand how to configure the linker and leverage the Go tooling (`go build`) to create highly optimized, small binaries perfect for cloud-native and serverless environments.",
-            kpi: "Binary size and Docker image size"
+            pain: "Is your testing strategy weak and missing concurrency checks?",
+            problem: "Many Go developers only write basic unit tests, missing critical integration issues and, crucially, failing to test for concurrency-related bugs. This allows hard-to-reproduce, high-impact bugs to sneak into production.",
+            solution: "We look for engineers proficient in Go's robust testing tools. They are vetted on their ability to write effective table-driven tests, mock external dependencies, and, most importantly, use the **race detector** to find and eliminate subtle concurrency bugs before deployment.",
+            kpi: "Proficiency in Go Testing and Race Detector"
         }
     ],
     evaluation: ['Goroutines and channel mastery (CSP model)', 'Idiomatic Go code and interface design', 'Microservices frameworks (Gin, Echo, Fiber)', 'Profiling and performance tuning', 'Building clean, minimal Docker containers'],
-    technical_analysis: "The Golang evaluation is a deep dive into concurrency and system architecture. Candidates are given scenarios requiring them to implement a highly concurrent worker pool using goroutines and channels, with a mandatory requirement to use the built-in race detector to prove their solution is thread-safe. Architectural skills are tested by requiring them to design a small microservice using a lightweight framework (like Fiber or Echo), focusing on clean separation of concerns and correct use of interfaces for dependency injection. Performance is paramount: candidates must demonstrate proficiency with the Go profiler (`pprof`) to analyze CPU and memory usage and propose optimizations. Finally, strong knowledge of the standard library, especially for networking and HTTP handling, is essential.",
+    technical_analysis: "The Golang evaluation is a deep dive into concurrency and system architecture. Candidates are given scenarios requiring them to implement a highly concurrent worker pool using goroutines and channels, with a mandatory requirement to use the built-in race detector to prove their solution is thread-safe. Architectural skills are tested by requiring them to design a small microservice using a lightweight framework (like Fiber or Echo), focusing on clean separation of concerns and correct use of interfaces for dependency inversion, which is critical in large Go codebases. Performance is paramount: candidates must demonstrate proficiency with the Go profiler (`pprof`) to analyze CPU and memory usage and propose optimizations. Finally, strong knowledge of the standard library, especially for networking and HTTP handling, is essential.",
     interlink_slugs: ['kubernetes', 'docker', 'grpc']
 },
 'c-sharp': {
@@ -671,33 +671,33 @@ export const allTech: AllTech = {
     categorySlug: 'backend-services',
     seo_title: 'Hire Senior Rust Developers | Systems Programming & High-Performance Backend',
     meta_description: 'Build fast, memory-safe, and highly concurrent systems. Hire elite remote Rust experts for systems programming, web assembly, and zero-cost abstractions. Talk to us.',
-    intro: "**Rust** is a systems programming language that guarantees **memory safety and thread safety** without relying on a garbage collector, making it ideal for performance-critical applications, operating systems, and high-concurrency microservices. If your current language is facing scaling issues, suffering from random crashes, or wasting resources, Rust is the solution. You need an engineer who has mastered the **Ownership and Borrowing Model**, asynchronous programming with **Async/Await**, and the Actix or Tokio runtimes. Our vetting process is designed to find engineers who write zero-cost abstraction code that is both blisteringly fast and safe. By hiring our Rust talent, you are investing in a future-proof, stable, and incredibly performant codebase that will drastically reduce your infrastructure costs and eliminate entire classes of runtime errors.",
+    intro: "**Rust** is the revolutionary language that delivers the performance of C/C++ with unparalleled memory safety and fearless concurrency, guaranteed by its **Compiler-Enforced Ownership Model**. You need an engineer who can leverage Rust's unique strengths to build mission-critical infrastructure, low-latency services, or embedded systems where correctness and speed are non-negotiable. Our vetting process is unlike any other: we focus almost entirely on the core principles of **Ownership, Borrowing, and Lifetimes**. We assess a candidate's ability to satisfy the compiler's strict rules, preventing entire classes of bugs (null pointer dereferences, data races) before the code even runs. By hiring a Rust expert from us, you get a developer who can deliver software with an exceptional level of stability, performance, and long-term reliability.",
     pains: [
         {
             icon: AlertTriangle,
-            pain: "Is your codebase plagued by memory bugs (segfaults, data races)?",
-            problem: "In languages like C/C++, managing memory manually leads to dangerous bugs like use-after-free, buffer overflows, and data races, which result in system crashes, security vulnerabilities, and unpredictable behavior.",
-            solution: "Our Rust experts are masters of the **Borrow Checker**. They write code that is guaranteed to be memory and thread-safe at compile time. We vet their deep understanding of the Ownership model, smart pointers, and lifetime annotations, ensuring they can harness Rust's safety guarantees without fighting the compiler.",
-            kpi: "Compile-time error vs. runtime error rate"
+            pain: "Are your developers struggling to satisfy the Borrow Checker?",
+            problem: "Rust's core strength—the Borrow Checker—is also its biggest hurdle. Inexperienced developers often hit intractable compiler errors related to ownership, borrowing, and lifetimes, leading to frustration, slow development, and resorting to unsafe code, which defeats the purpose of Rust.",
+            solution: "We vet for true mastery of the Ownership model. Our experts are required to demonstrate the correct use of references, lifetimes, and smart pointers (e.g., `Arc`, `Mutex`) to satisfy the compiler's safety guarantees without compromising performance or resorting to `unsafe` code.",
+            kpi: "Mastery of Ownership, Borrowing, and Lifetimes"
         },
         {
             icon: AlertTriangle,
-            pain: "Are you struggling to build high-concurrency network services?",
-            problem: "Building concurrent network services that are both fast and safe is extremely difficult in most languages. Complex thread management and locking mechanisms often lead to deadlocks and poor scaling.",
-            solution: "We vet for expertise in modern Rust asynchronous programming using the **Tokio runtime** and the `async/await` syntax. Our candidates demonstrate the ability to build high-throughput, non-blocking APIs using frameworks like **Actix Web** or **Axum**, leveraging Rust's zero-cost abstractions for speed.",
-            kpi: "Concurrency handling and throughput (RPS)"
+            pain: "Is your concurrent code slow or prone to deadlocks?",
+            problem: "Even in Rust, incorrect concurrency implementation can lead to bottlenecks or deadlocks. Misunderstanding the trade-offs between shared mutability (Mutex) and message passing (Channels) results in inefficient or blocked threads.",
+            solution: "Our engineers are experts in Rust's concurrency primitives. They are vetted on their ability to use **`std::sync`** and **`tokio`** for safe and efficient asynchronous programming, ensuring they can build high-throughput, low-latency concurrent services without memory-related data races.",
+            kpi: "Fearless Concurrency with Async/Await and Channels"
         },
         {
             icon: AlertTriangle,
-            pain: "Is your build and dependency system complex and slow?",
-            problem: "The dependency management and build tooling for complex projects can often be fragmented and difficult to use, slowing down developer velocity and complicating CI/CD pipelines.",
-            solution: "Our engineers are proficient in **Cargo**, Rust's integrated build system and package manager. They demonstrate the ability to manage complex workspace dependencies, use features flags efficiently, and configure continuous integration for reliable, reproducible builds.",
-            kpi: "CI/CD build time efficiency"
+            pain: "Are you struggling to manage errors and maintain clean code?",
+            problem: "Rust's strict error handling (the `Result` type) can be verbose if not handled idiomatically. Developers who use `unwrap()` or `expect()` excessively risk panics in production, which is a critical failure for reliable system software.",
+            solution: "We look for engineers proficient in idiomatic error handling. They must demonstrate mastery of the **`?` operator** and custom error types, leading to clean, declarative, and robust code that gracefully handles failure without crashing the entire application.",
+            kpi: "Idiomatic Error Handling and Robustness"
         }
     ],
-    evaluation: ['Mastery of Ownership, Borrowing, and Lifetimes', 'Asynchronous Rust (Tokio, async/await)', 'Web frameworks (Actix Web, Axum)', 'FFI (Foreign Function Interface) and unsafe code usage', 'Advanced macro usage and generic programming'],
-    technical_analysis: "The Rust evaluation is the most rigorous, focusing entirely on systems-level thinking and safety guarantees. Candidates are tested on their ability to solve a concurrency problem using channels and mutexes while satisfying the Borrow Checker. A key scenario involves implementing a data structure using safe Rust and explaining when and how they would correctly use `unsafe` code for performance or FFI integration, demonstrating a deep understanding of its risks. We assess their ability to build a high-performance HTTP service using an asynchronous framework like Axum, ensuring correct error handling and resource management. Finally, knowledge of the Rust ecosystem, including testing with `#[test]` and benchmarking, is mandatory.",
-    interlink_slugs: ['golang', 'c-sharp', 'microservices']
+    evaluation: ['Mastery of Ownership, Borrowing, and Lifetimes', 'Asynchronous programming and concurrency (Tokio, Channels)', 'Error handling (Result, `?` operator, custom errors)', 'Macro usage (procedural, declarative) and metaprogramming', 'Crate ecosystem and build system (Cargo)'],
+    technical_analysis: "The Rust evaluation is highly theoretical and practical, centered on the **Ownership Model**. Candidates are given scenarios involving complex data structures (e.g., linked lists, graphs) that are designed to fail the Borrow Checker, requiring them to implement a memory-safe solution using correct lifetimes, borrowing rules, and smart pointers. We specifically test their knowledge of **fearless concurrency**, requiring them to write a safe, concurrent solution using `Mutex`, `Arc`, and `Channel` to ensure they can manage shared mutable state without data races. For system development, we assess their ability to use Rust's powerful standard library, integrate with external C code (FFI), and use performance profiling tools (e.g., flamegraphs) to identify and fix bottlenecks, confirming their ability to build production-grade, high-performance software.",
+    interlink_slugs: ['golang', 'docker', 'system-design']
 },
 'php': {
     name: 'PHP',
@@ -705,7 +705,7 @@ export const allTech: AllTech = {
     categorySlug: 'backend-services',
     seo_title: 'Hire Senior PHP Developers | Laravel & Symfony Experts',
     meta_description: 'Build fast, scalable APIs and web apps. Hire elite PHP experts vetted for Laravel, Symfony, high-performance tuning, and clean architecture. Book a call.',
-    intro: "Modern PHP, particularly with frameworks like **Laravel** and **Symfony**, is a robust, performant, and mature choice for building scalable web applications and APIs. You need a senior engineer who has moved beyond legacy PHP practices and fully embraces modern standards, including composer, object-oriented design, and the latest language features. Our vetting process is designed to find professionals who master the full lifecycle of a Laravel or Symfony application, from designing database migrations to optimizing cache layers and building robust APIs. We look for expertise in performance optimization (e.g., using Redis, optimizing Eloquent/Doctrine queries) and a strong commitment to clean architecture and testing. By hiring our PHP talent, you are investing in a mature, high-velocity platform backed by a massive ecosystem, ensuring rapid development and enterprise-grade stability.",
+    intro: "Modern PHP, particularly with frameworks like **Laravel** and **Symfony**, is a robust, performant, and mature choice for building scalable web applications and APIs. You need a senior engineer who has moved beyond legacy PHP practices and fully embraces modern standards, including composer, object-oriented design, and the latest language features. Our vetting process is designed to find professionals who master the full lifecycle of a Laravel or Symfony application, from designing database migrations to optimizing cache layers and building robust APIs. We look for expertise in performance optimization (e.g., using Redis, optimizing Eloquent/Doctrine queries) and a strong commitment to clean architecture and testing. By hiring a PHP expert from us, you are investing in a mature, high-velocity platform backed by a massive ecosystem, ensuring rapid development and enterprise-grade stability.",
     pains: [
         {
             icon: AlertTriangle,
@@ -731,7 +731,7 @@ export const allTech: AllTech = {
     ],
     evaluation: ['Modern PHP features (PHP 8+)', 'Framework mastery (Laravel, Symfony)', 'ORM optimization (Eloquent, Doctrine)', 'Asynchronous task queuing (Redis, RabbitMQ)', 'Clean architecture and Domain-Driven Design'],
     technical_analysis: "The PHP evaluation focuses on framework mastery and architectural discipline. Candidates are required to refactor a slow Laravel endpoint, demonstrating their ability to fix the N+1 problem, implement caching, and use database query profiling. Architectural skills are tested by asking them to design a complex module using a clean, layered approach, separating domain logic from framework concerns. We verify their mastery of testing (PHPUnit) and their knowledge of the Composer ecosystem. Finally, proficiency in using modern PHP tools like queues, broadcasting, and high-performance server extensions (Swoole/RoadRunner) is essential for handling enterprise-grade traffic.",
-    interlink_slugs: ['sql', 'message-queues', 'rest-api-design']
+    interlink_slugs: ['mysql', 'rest-api-design', 'postgresql']
 },
 'kotlin': {
     name: 'Kotlin',
@@ -739,7 +739,7 @@ export const allTech: AllTech = {
     categorySlug: 'backend-services',
     seo_title: 'Hire Senior Kotlin Developers | JVM Backend & Android Experts',
     meta_description: 'Build modern, concise, and safe JVM applications. Hire elite Kotlin experts for Spring Boot, Coroutines, and microservices architecture. Book a call today.',
-    intro: "Kotlin is the modern, pragmatic language built for the JVM, offering safety and conciseness that dramatically increases developer productivity over Java. You need an engineer who can leverage Kotlin's best features—**Coroutines** for asynchronous programming, null safety to eliminate runtime exceptions, and deep integration with the massive Java ecosystem (Spring, etc.). Our vetting focuses on engineers who excel at writing clean, idiomatic Kotlin, can build high-performance microservices using Spring Boot or Ktor, and are masters of asynchronous concurrency. By hiring our Kotlin talent, you are investing in a future-proof application that enjoys the stability of the JVM without the boilerplate, leading to faster feature delivery and fewer production bugs.",
+    intro: "Kotlin is the modern, pragmatic language for the JVM, offering safety and conciseness that dramatically increases developer productivity over Java. You need an engineer who can leverage Kotlin's best features—**Coroutines** for asynchronous programming, null safety to eliminate runtime exceptions, and deep integration with the massive Java ecosystem (Spring, etc.). Our vetting process focuses on engineers who excel at writing clean, idiomatic Kotlin, can build high-performance microservices using Spring Boot or Ktor, and are masters of asynchronous concurrency. By hiring our Kotlin talent, you are investing in a future-proof application that enjoys the stability of the JVM without the boilerplate, leading to faster feature delivery and fewer production bugs.",
     pains: [
         {
             icon: AlertTriangle,
@@ -772,8 +772,8 @@ export const allTech: AllTech = {
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
     seo_title: 'Hire Senior Scala Developers | Functional Programming & Big Data',
-    meta_description: 'Build highly concurrent, fault-tolerant systems. Hire elite Scala experts for Akka, Spark, functional programming, and complex data pipeline architecture. Book a call.',
-    intro: "Scala uniquely combines the power of functional programming with the stability and ecosystem of the JVM, making it ideal for building highly-concurrent, fault-tolerant backend services and massive-scale data processing (Apache Spark). You need an engineer who can master its complexity: an expert in both the functional paradigm and the massive data ecosystem. Our vetting process is designed to find engineers who are masters of libraries like **Akka** (for concurrent systems), **Apache Spark** (for Big Data), and the intricacies of functional libraries like Cats or Zio. By hiring our Scala talent, you are investing in a system that guarantees resilience, scalability, and code that is mathematically provably correct—a massive advantage for financial or complex data-driven platforms.",
+    meta_description: 'Build highly concurrent, fault-tolerant systems. Hire elite remote Scala experts for Akka, Spark, functional programming, and complex data pipeline architecture. Book a call.',
+    intro: "Scala uniquely combines the power of functional programming with the stability and ecosystem of the JVM, making it ideal for building highly-concurrent, fault-tolerant backend services and massive-scale data processing (Apache Spark). You need an engineer who can leverage Scala's advanced type system to build highly reliable, less buggy software. Our vetting process is designed to find true FP experts, assessing their mastery of immutable data structures, pattern matching, and sophisticated libraries for concurrent and distributed computing. By hiring a Scala expert from us, you gain a developer who can tackle your most demanding, mission-critical tasks in data processing and real-time event streaming with unmatched robustness.",
     pains: [
         {
             icon: AlertTriangle,
@@ -811,29 +811,29 @@ export const allTech: AllTech = {
     pains: [
         {
             icon: AlertTriangle,
-            pain: "Is your system failing catastrophically when a single component crashes?",
-            problem: "Traditional systems lack built-in mechanisms to isolate and recover from failures, leading to system-wide crashes when a bug or failure occurs.",
-            solution: "Our experts enforce the **'Let It Crash' Philosophy** using **OTP Supervisor Trees**. They design a hierarchical architecture where a failing process is automatically and quickly restarted by its supervisor, isolating the failure and making the system self-healing.",
-            kpi: "System uptime and fault recovery time"
+            pain: "Is your system failing under load or suffering from unexpected crashes?",
+            problem: "Traditional systems suffer from hard crashes where a single failure takes down the entire application. Inexperienced developers fail to implement proper isolation and failure recovery mechanisms, leading to catastrophic system downtime.",
+            solution: "We vet for mastery of the **Erlang Actor Model**. Our experts must demonstrate the ability to isolate state, communicate via asynchronous message passing, and, crucially, use **Supervisors** from the OTP framework to automatically detect and restart failed processes, ensuring continuous availability.",
+            kpi: "OTP Supervision and Fault-Tolerant Architecture"
         },
         {
             icon: AlertTriangle,
-            pain: "Are you struggling to handle millions of simultaneous connections and state?",
+            pain: "Are you struggling to manage massive concurrency and soft real-time needs?",
             problem: "Handling high-volume, concurrent connections requires complex threading and state synchronization, leading to deadlocks and poor scalability.",
-            solution: "We vet for mastery of the **Actor Model**. Candidates use lightweight Erlang processes (Actors) with isolated, immutable state to manage concurrency without locks or shared memory, ensuring extreme scalability and safety.",
-            kpi: "Concurrency handling and process isolation"
+            solution: "Our engineers are experts in Erlang's unique scheduler and lightweight processes. They are vetted on their ability to manage millions of concurrent Actors efficiently, ensuring the system maintains low-latency, soft real-time performance even at peak load.",
+            kpi: "Massive Concurrency via Lightweight Processes"
         },
         {
             icon: AlertTriangle,
-            pain: "Are your updates requiring scheduled downtime and service interruption?",
-            problem: "Deploying new code typically requires restarting the application, leading to service disruption and unacceptable downtime for mission-critical services.",
-            solution: "Our engineers are proficient in **Hot Code Swapping**. They demonstrate the ability to update the running Erlang VM with new code modules *without stopping the application*, enabling true zero-downtime upgrades.",
-            kpi: "Zero-downtime deployment and hot code swapping"
+            pain: "Is your codebase disorganized and difficult to extend?",
+            problem: "Erlang's unique syntax and concurrent nature can lead to an opaque and disorganized codebase if developers don't adhere to OTP's established structure. This makes onboarding new team members difficult and slows down maintenance.",
+            solution: "We look for engineers proficient in the **OTP framework's core behaviors** (e.g., `gen_server`, `gen_statem`). They are vetted on their ability to build modular, structured components that conform to OTP standards, ensuring the code is readable, testable, and leverages the full power of the platform.",
+            kpi: "Proficiency in OTP Framework Behaviors"
         }
     ],
-    evaluation: ['OTP (Supervisor, GenServer, Application) for fault tolerance', 'Actor Model and message passing for concurrency', 'Functional programming (pattern matching, immutability)', 'Distributed Erlang and node communication', 'Hot code swapping and code upgrade mechanisms'],
+    evaluation: ['Actor Model and asynchronous message passing', 'OTP framework (gen_server, Supervisors)', 'Fault tolerance and process linking/monitoring', 'Distributed Erlang and clustering', 'Concurrency patterns and state isolation'],
     technical_analysis: "The Erlang assessment is focused on the **OTP framework** and fault-tolerant design. Candidates are required to implement a core component of a concurrent system (e.g., a simple registry or a stateful process) using the **GenServer** behavior. This involves: **1. Process Implementation:** Correctly defining the state and handling messages via pattern matching. **2. Supervision:** Defining an **OTP Supervisor** that monitors the GenServer and uses an appropriate restart strategy (e.g., `one_for_one`) to ensure its resilience. A critical design test involves explaining the architecture of an Erlang-based distributed system across multiple nodes and how they would use message passing to communicate between them. They must also explain the principle and process of **Hot Code Swapping** to deploy a bug fix to a running system.",
-    interlink_slugs: ['elixir', 'message-queues', 'event-sourcing']
+    interlink_slugs: ['message-queues', 'event-sourcing', 'system-design']
 },
 'haskell': {
     name: 'Haskell',
@@ -904,7 +904,6 @@ export const allTech: AllTech = {
     interlink_slugs: ['erlang', 'postgresql', 'web-accessibility']
 },
 
-,
 // ----------------------------------------------------------------------
 // 3. DEVOPS & CLOUD (18)
 // ----------------------------------------------------------------------
@@ -1075,7 +1074,7 @@ export const allTech: AllTech = {
         }
     ],
     evaluation: ['Core K8s Objects (Deployment, Service, Ingress)', 'Configuration Management (Helm, Kustomize)', 'Cluster Networking (CNI, Network Policy, Service Mesh)', 'Security (RBAC, Pod Security, Secrets Management)', 'Troubleshooting and Performance Tuning'],
-    technical_analysis: "The Kubernetes evaluation is highly practical, focusing on architecting and managing a production cluster. Candidates are tested on their understanding of the **Control Plane** (API Server, etcd) and the **Data Plane** (Kubelet, Pods). The critical assessment is their ability to deploy a multi-component application using **Helm**, demonstrating proficiency in templating, values management, and releasing. We rigorously test their networking expertise, requiring them to solve communication issues between Pods and Services, and to implement a secure, least-privilege configuration using **RBAC** (Role-Based Access Control) and **Network Policies**. For reliability, they must demonstrate mastery of liveness, readiness, and startup probes to ensure zero-downtime deployments. Finally, troubleshooting is key: candidates are presented with common failure scenarios (e.g., crashing containers, network errors) and are required to use `kubectl describe`, logs, and event analysis to quickly diagnose and fix the root cause, proving they can manage a complex, production-grade service mesh.",
+    technical_analysis: "The Kubernetes evaluation is highly practical, focusing on architecting and managing a production cluster. Candidates are tested on their understanding of the **Control Plane** (API Server, etcd) and the **Data Plane** (Kubelet, Pods). A critical task is to deploy a multi-component application using **Helm**, demonstrating proficiency in templating, values management, and releasing. We rigorously test their networking expertise, requiring them to solve communication issues between Pods and Services, and to implement a secure, least-privilege configuration using **RBAC** (Role-Based Access Control) and **Network Policies**. For reliability, they must demonstrate mastery of liveness, readiness, and startup probes to ensure zero-downtime deployments. Finally, troubleshooting is key: candidates are presented with common failure scenarios (e.g., crashing containers, network errors) and are required to use `kubectl describe`, logs, and event analysis to quickly diagnose and fix the root cause.",
     interlink_slugs: ['docker', 'devops-engineering', 'istio', 'prometheus']
 },
 'docker': {
@@ -1089,14 +1088,14 @@ export const allTech: AllTech = {
         {
             icon: AlertTriangle,
             pain: "Are your Docker images massive, slow to build, and insecure?",
-            problem: "Inefficient Dockerfiles with bloated layers and unnecessary build dependencies slow down your CI/CD pipeline and increase storage costs. These huge images are slow to transfer, consume massive disk space, and increase the application's security attack surface.",
-            solution: "We find engineers who are experts in creating optimized, **multi-stage builds**. They demonstrate the ability to separate the build environment from the final runtime environment, resulting in minimal, production-ready images that are smaller, faster, and more secure by excluding development dependencies.",
+            problem: "Failure to use best practices like `.dockerignore` or multi-stage builds leads to bloated images that contain unnecessary source code, large dependencies, and build tools. These huge images are slow to transfer, consume massive disk space, and increase the application's security attack surface.",
+            solution: "We vet for mastery of **multi-stage builds**. Our experts must demonstrate the ability to separate the build environment from the final runtime environment, resulting in minimal, production-ready images that are smaller, faster, and more secure by excluding development dependencies.",
             kpi: "Multi-Stage Build Optimization"
         },
         {
             icon: AlertTriangle,
             pain: "Are your running containers vulnerable to runtime attacks?",
-            problem: "Running containers with unnecessary root privileges is a major security risk. If an attacker compromises the container, they gain root access to the host or cluster, leading to a catastrophic security breach. This violates the principle of least privilege.",
+            problem: "Running containers with unnecessary root privileges is a major security risk. If an attacker compromises the container, they gains root access to the host or cluster, leading to a catastrophic security breach. This violates the principle of least privilege.",
             solution: "Our engineers are experts in container security. They are vetted on their ability to implement the **least privilege principle** by explicitly defining a non-root user (e.g., using the `USER` instruction) and restricting unnecessary capabilities, dramatically reducing the blast radius of a potential breach.",
             kpi: "Non-Root Container Security"
         },
