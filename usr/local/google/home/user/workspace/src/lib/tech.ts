@@ -32,7 +32,7 @@ interface TechEntry {
 }
 
 export type TechSlug = 
-  // Frontend/Full-Stack (9)
+  // Frontend/Full-Stack (10)
   | 'react'
   | 'typescript'
   | 'nextjs'
@@ -109,7 +109,7 @@ export type TechSlug =
   | 'dynamodb'
   | 'elasticsearch'
 
-  // QA & Security (5)
+  // QA & Security (7)
   | 'playwright'
   | 'cypress'
   | 'qa-automation'
@@ -133,9 +133,10 @@ export type TechSlug =
   | 'react-native'
   | 'flutter'
 
-  // Vetting & Cognitive AI (1)
+  // Vetting & Cognitive AI (2)
   | 'axiom-cortex'
   | 'graphql'
+  | 'langchain'
 ;
 
 
@@ -149,7 +150,7 @@ export interface AllTech {
 
 export const allTech: AllTech = {
   // ----------------------------------------------------------------------
-  // 1. FRONTEND/FULL-STACK (9)
+  // 1. FRONTEND/FULL-STACK (10)
   // ----------------------------------------------------------------------
   'react': {
     name: 'React/TypeScript',
@@ -306,7 +307,7 @@ export const allTech: AllTech = {
             icon: AlertTriangle,
             pain: "Is your state management overly complex with old patterns?",
             problem: "Legacy or custom state management solutions in Vue often create a boilerplate nightmare, making even simple state changes difficult to track, test, and maintain. This slows down development, frustrates engineers, and leads to an unmanageable codebase as the application scales.",
-            solution: "We specifically look for experts in **Pinia**, the modern, type-safe, and incredibly lightweight state management library for Vue. Our candidates demonstrate the ability to design clear, modular Pinia stores that are easy to test and integrate seamlessly with the Composition API, eliminating complexity and accelerating feature delivery.",
+            solution: "We specifically look for experts in **Pinia**, the modern, type-safe, and incredibly lightweight state management library for Vue. Our candidates demonstrate the ability to design clear, modular stores that are easy to test and integrate seamlessly with the Composition API, eliminating complexity and accelerating feature delivery.",
             kpi: "Expertise in Pinia state management"
         },
         {
@@ -450,7 +451,7 @@ export const allTech: AllTech = {
             pain: "Is accessibility treated as a last-minute patch rather than a core feature?",
             problem: "When accessibility is tacked on at the end of the development cycle, it often requires extensive, costly refactoring. This slows down development and results in a poor, fragile user experience.",
             solution: "We look for engineers who integrate A11y into every stage of development. They are proficient in tools like Jest-Axe for testing accessibility during component development and are skilled in automated and manual testing techniques to ensure that accessibility is a core, built-in feature of your application, not an afterthought.",
-            kpi: "Accessibility integrated into Definition of Done"
+            kpi: "Integration of A11y into CI/CD Pipeline"
         }
     ],
     evaluation: ['WCAG 2.1/2.2 principles and guidelines', 'Semantic HTML5 and ARIA attributes', 'Keyboard navigation and focus management', 'Screen reader testing proficiency (NVDA, VoiceOver)', 'Automated A11y testing (Axe, Lighthouse)'],
@@ -491,40 +492,6 @@ export const allTech: AllTech = {
     technical_analysis: "The RxJS evaluation is focused on solving complex asynchronous problems in a declarative style. Candidates are given scenarios involving race conditions, request cancellation, and real-time updates, and are required to use the correct combination of RxJS operators to build a robust solution. The critical assessment is their mastery of **higher-order mapping operators**: they must explain the difference between `switchMap`, `mergeMap`, `concatMap`, and `exhaustMap`, and use the correct one for a given scenario (e.g., `switchMap` for typeahead search). We rigorously test their understanding of **subscription management** and how to prevent memory leaks in long-lived applications. Finally, we assess their ability to architect a simple state management store using a `BehaviorSubject`, demonstrating their ability to manage and multicast state across an application.",
     interlink_slugs: ['angular', 'typescript', 'node']
   },
-  'graphql': {
-    name: 'GraphQL',
-    category: 'Architecture & Integrations',
-    categorySlug: 'architecture-integrations',
-    seo_title: 'Hire Senior GraphQL Developers | API Architecture and Performance Experts',
-    meta_description: 'Build flexible, efficient, and strongly-typed APIs. Hire elite remote GraphQL experts vetted for schema design, resolvers, and performance optimization. Book a call.',
-    intro: "GraphQL empowers frontend clients to request exactly the data they need and nothing more, solving the over-fetching and under-fetching problems of traditional REST APIs. You need an engineer who can architect a robust GraphQL schema, implement efficient resolvers, and manage the performance trade-offs of a flexible query language. Our vetting process is designed to find experts in GraphQL server implementation (Apollo Server, GraphQL-Yoga) and client-side integration. We test their ability to design a schema that is both powerful and easy to maintain, and their mastery of techniques for preventing common performance issues like the N+1 problem. By hiring a GraphQL expert from us, you gain a developer who can dramatically improve your API performance, reduce network overhead, and accelerate frontend development.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Are your GraphQL queries suffering from the N+1 problem?",
-            problem: "The flexibility of GraphQL makes it incredibly easy to accidentally create the N+1 problem, where a single query results in a cascade of database calls. Inexperienced developers often fail to use data loading patterns, leading to massive performance bottlenecks.",
-            solution: "We vet for engineers who are masters of the **Dataloader pattern**. They must demonstrate the ability to batch and cache database requests within a single API call, completely eliminating the N+1 problem and ensuring efficient, high-performance data fetching for even the most complex queries.",
-            kpi: "Mastery of the Dataloader Pattern"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your GraphQL schema difficult to evolve and maintain?",
-            problem: "A poorly designed schema with inconsistent naming, weak typing, or overly complex object graphs becomes a maintenance nightmare. It's difficult for frontend developers to use and even harder to extend without introducing breaking changes.",
-            solution: "Our experts are proficient in **Schema-First Design**. They are vetted on their ability to create a clean, consistent, and well-documented schema that serves as a single source of truth. They understand how to evolve a schema gracefully using techniques that avoid breaking existing clients.",
-            kpi: "Schema-First Design and Evolvability"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are you struggling to implement secure and granular access control?",
-            problem: "GraphQL's single endpoint can make it difficult to implement fine-grained authorization. A naive implementation often grants either all-or-nothing access, creating significant security risks.",
-            solution: "We look for engineers with experience in GraphQL security. They demonstrate the ability to implement authorization at the resolver level, ensuring that users can only access the data they are permitted to see, even within a single, complex query.",
-            kpi: "Resolver-Level Authorization and Security"
-        }
-    ],
-    evaluation: ['Schema design (SDL) and best practices', 'Resolver implementation and performance (Dataloader)', 'GraphQL server frameworks (Apollo Server)', 'Authentication and authorization strategies', 'Client-side integration (Apollo Client, Relay)'],
-    technical_analysis: "The GraphQL evaluation focuses on schema design and performance optimization. Candidates are required to design a GraphQL schema for a complex domain, demonstrating an understanding of types, queries, mutations, and subscriptions. The critical assessment is their ability to solve the **N+1 problem**: candidates must implement a set of resolvers for a nested query and use the Dataloader pattern to batch database calls efficiently. We also test their knowledge of the GraphQL ecosystem, including the Apollo platform, and their ability to integrate a GraphQL API with a client-side application for efficient caching and state management. Security is a key focus, requiring candidates to implement a secure authentication and authorization layer that protects sensitive data at the resolver level.",
-    interlink_slugs: ['node', 'react', 'api-security']
-  },
 
   // ----------------------------------------------------------------------
   // 2. BACKEND/CORE LANGUAGES (12)
@@ -561,9 +528,9 @@ export const allTech: AllTech = {
     ],
     evaluation: ['Deep mastery of the Event Loop and Worker Threads', 'Performance tuning and profiling', 'Framework expertise (NestJS, Fastify)', 'Microservices design and deployment (Docker/K8s)', 'Asynchronous control flow and error handling'],
     technical_analysis: "The Node.js evaluation is centered on performance and concurrency. Candidates are presented with a simulated high-load environment and must diagnose and fix an Event Loop blockage using the `perf_hooks` module and Worker Threads. We rigorously test their understanding of the difference between synchronous and asynchronous operations and how to write non-blocking code. Architectural assessment focuses on their ability to design a scalable API using a modern framework like NestJS, demonstrating a clear separation of concerns using the MVC/layered pattern. Security is non-negotiable; candidates must demonstrate knowledge of OWASP top 10 vulnerabilities relevant to Node.js and how to implement secure practices such as input validation, sanitization, and protecting against common attacks (e.g., XSS, SQL injection). Finally, containerization expertise (Docker multi-stage builds) is required for modern deployment.",
-    interlink_slugs: ['typescript', 'kubernetes', 'rest-api-design']
-  },
-  'java': {
+    interlink_slugs: ['typescript', 'kubernetes', 'rest-api-design', 'postgresql']
+},
+'java': {
     name: 'Java (Spring & JVM)',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -592,15 +559,15 @@ export const allTech: AllTech = {
             solution: "We look for engineers who can confidently implement thread-safe code. They are vetted on their knowledge of concurrency utilities, lock-free structures, and the correct use of synchronization and locking mechanisms, guaranteeing the stability and correctness of data integrity under heavy load.",
             kpi: "Concurrency and Thread-Safe Programming"
         }
-    ],
+    ], 
     evaluation: ['Advanced JVM tuning and garbage collection (G1, ZGC)', 'Concurrency models (Virtual Threads, RxJava/Reactor)', 'Spring Boot/Spring Cloud for microservices', 'Database interaction (JPA/Hibernate, Spring Data)', 'Test-Driven Development (JUnit, Mockito)'],
     technical_analysis: "The Java evaluation focuses on enterprise architecture and JVM performance. Candidates are tested on their ability to design a microservice using Spring Boot, demonstrating a deep understanding of IoC, dependency injection, and configuration management. A key area is **concurrency**, where candidates must solve real-world threading problems, proving their expertise in using synchronization, thread pools, and concurrent collections to prevent deadlocks and race conditions. We assess their JVM knowledge by asking them to diagnose performance issues related to garbage collection and memory leaks. Finally, for data access, they must demonstrate efficiency in using ORMs (like Hibernate/JPA) and writing complex, performant SQL queries, ensuring the entire stack is optimized for speed and stability.",
     interlink_slugs: ['microservices', 'postgresql', 'event-sourcing']
-  },
-  'python': {
-    name: 'Python',
-    category: 'Backend & APIs',
-    categorySlug: 'backend-services',
+},
+'python': { 
+    name: 'Python', 
+    category: 'Backend & APIs', 
+    categorySlug: 'backend-services', 
     seo_title: 'Hire Senior Python Developers | AI, Data Science & Backend APIs',
     meta_description: 'Hire elite remote Python engineers for scalable APIs (FastAPI), complex data science, and robust backend systems. Vetted for performance and architecture.',
     intro: "Python's versatility makes it the engine for everything from high-traffic APIs (FastAPI) to the core of data science and machine learning (PyTorch/TensorFlow). You need an engineer who can bridge these worlds: a developer who understands both the architectural needs of a robust backend and the unique performance demands of data processing. Our vetting process finds these experts. We focus on their ability to write efficient, clean code (adhering to PEP 8), their mastery of asynchronous programming (asyncio), and their deep knowledge of key libraries like NumPy, Pandas, and Scikit-learn. For backend roles, we test their expertise in modern, high-performance frameworks like FastAPI and Django. By hiring our Python talent, you are investing in a flexible, powerful engineer capable of building intelligent, data-driven applications that scale with your business.",
@@ -626,12 +593,12 @@ export const allTech: AllTech = {
             solution: "We hire **MLOps-aware** Python engineers who can build a full ML lifecycle. They are proficient in deploying models as microservices (using FastAPI or Flask) and integrating them with cloud platforms (AWS Sagemaker, Azure ML) and containerization (Docker/Kubernetes).",
             kpi: "Time-to-deploy and model latency"
         }
-    ],
+    ], 
     evaluation: ['Asyncio and non-blocking I/O mastery', 'Modern API frameworks (FastAPI, Django/DRF)', 'Data science stack (NumPy, Pandas, Scikit-learn)', 'MLOps and production model deployment', 'Clean, idiomatic Python (PEP 8)'],
     technical_analysis: "The Python evaluation is bifurcated for core software engineering and data science roles. For backend roles, we test `asyncio` mastery, requiring candidates to design a high-concurrency service using FastAPI and explain how they would handle blocking operations. For data-centric roles, the focus is on efficient data manipulation using NumPy and Pandas, specifically vectorized operations over loops. Both tracks require strong software engineering fundamentals: modular design, dependency management (Poetry/Pipenv), and TDD using Pytest. MLOps awareness is now mandatory, requiring candidates to articulate a strategy for containerizing a model and deploying it to a cloud environment for low-latency inference.",
     interlink_slugs: ['data-engineering', 'machine-learning', 'sql']
-  },
-  'golang': {
+},
+'golang': {
     name: 'Go (Golang)',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -664,8 +631,8 @@ export const allTech: AllTech = {
     evaluation: ['Goroutines and channel mastery (CSP model)', 'Idiomatic Go code and interface design', 'Microservices frameworks (Gin, Echo, Fiber)', 'Profiling and performance tuning', 'Building clean, minimal Docker containers'],
     technical_analysis: "The Golang evaluation is a deep dive into concurrency and system architecture. Candidates are given scenarios requiring them to implement a highly concurrent worker pool using goroutines and channels, with a mandatory requirement to use the built-in race detector to prove their solution is thread-safe. Architectural skills are tested by requiring them to design a small microservice using a lightweight framework (like Fiber or Echo), focusing on clean separation of concerns and correct use of interfaces for dependency inversion, which is critical in large Go codebases. Performance is paramount: candidates must demonstrate proficiency with the Go profiler (`pprof`) to analyze CPU and memory usage and propose optimizations. Finally, strong knowledge of the standard library, especially for networking and HTTP handling, is essential.",
     interlink_slugs: ['kubernetes', 'docker', 'grpc']
-  },
-  'c-sharp': {
+},
+'c-sharp': {
     name: 'C# / .NET',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -695,11 +662,11 @@ export const allTech: AllTech = {
             kpi: "Container image size and security vulnerability score"
         }
     ],
-    evaluation: ['ASP.NET Core and Minimal APIs mastery', 'Asynchronous programming (async/await) and TPL', 'Data access (EF Core, Dapper)', 'Microservices architecture and inter-service communication (gRPC)', 'Azure/Cloud-native deployment and security (IdentityServer)'],
+    evaluation: ['ASP.NET Core and Minimal APIs mastery', 'Asynchronous programming (async/await, TPL)', 'Data access (EF Core, Dapper)', 'Microservices architecture and inter-service communication (gRPC)', 'Azure/Cloud-native deployment and security (IdentityServer)'],
     technical_analysis: "The C#/.NET evaluation focuses on enterprise readiness, performance, and architecture. The critical assessment is the candidate's mastery of the **Task-based Asynchronous Pattern (TAP)**; they are given scenarios to diagnose and fix asynchronous deadlocks and inefficient thread usage. We test their architectural skills by requiring them to design a multi-layered ASP.NET Core application, focusing on the correct use of Dependency Injection (DI) to create loosely coupled services. Expertise in **Entity Framework Core (EF Core)** is mandatory, specifically assessing their ability to write performant LINQ queries, use projections, and manage change tracking to avoid common performance pitfalls like the N+1 problem. Finally, we assess their knowledge of the C# language features (e.g., LINQ, records, pattern matching) and their ability to write clean, idiomatic, and testable code using modern testing frameworks.",
     interlink_slugs: ['azure', 'microservices', 'grpc']
-  },
-  'rust': {
+},
+'rust': {
     name: 'Rust',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -732,8 +699,8 @@ export const allTech: AllTech = {
     evaluation: ['Ownership, Borrowing, and Lifetimes (The core of Rust)', 'Asynchronous programming and concurrency (Tokio, Channels)', 'Error handling (Result, `?` operator, custom errors)', 'Macro usage (procedural, declarative) and metaprogramming', 'Crate ecosystem and build system (Cargo)'],
     technical_analysis: "The Rust evaluation is highly theoretical and practical, centered on the **Ownership Model**. Candidates are given scenarios involving complex data structures (e.g., linked lists, graphs) that are designed to fail the Borrow Checker, requiring them to implement a memory-safe solution using correct lifetimes, borrowing rules, and smart pointers. We specifically test their knowledge of **fearless concurrency**, requiring them to write a safe, concurrent solution using `Mutex`, `Arc`, and `Channel` to ensure they can manage shared mutable state without data races. For system development, we assess their ability to use Rust's powerful standard library, integrate with external C code (FFI), and use performance profiling tools (e.g., flamegraphs) to identify and fix bottlenecks, confirming their ability to build production-grade, high-performance software.",
     interlink_slugs: ['golang', 'docker', 'system-design']
-  },
-  'php': {
+},
+'php': {
     name: 'PHP (Laravel/Symfony)',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -766,8 +733,8 @@ export const allTech: AllTech = {
     evaluation: ['Modern PHP features (PHP 8+)', 'Framework mastery (Laravel, Symfony)', 'ORM optimization (Eloquent, Doctrine)', 'Asynchronous task queuing (Redis, RabbitMQ)', 'Clean architecture and Domain-Driven Design'],
     technical_analysis: "The PHP evaluation focuses on framework mastery and architectural discipline. Candidates are required to refactor a slow Laravel endpoint, demonstrating their ability to fix the N+1 problem, implement caching, and use database query profiling. Architectural skills are tested by asking them to design a complex module using a clean, layered approach, separating domain logic from framework concerns. We verify their mastery of testing (PHPUnit) and their knowledge of the Composer ecosystem. Finally, proficiency in using modern PHP tools like queues, broadcasting, and high-performance server extensions (Swoole/RoadRunner) is essential for handling enterprise-grade traffic.",
     interlink_slugs: ['mysql', 'rest-api-design', 'postgresql']
-  },
-  'kotlin': {
+},
+'kotlin': {
     name: 'Kotlin',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -800,8 +767,8 @@ export const allTech: AllTech = {
     evaluation: ['Coroutines and structured concurrency mastery', 'Null Safety and idiomatic Kotlin features', 'Frameworks (Spring Boot, Ktor)', 'Interoperability with Java libraries', 'Functional programming concepts and immutability'],
     technical_analysis: "The Kotlin evaluation focuses on its unique features and integration with the JVM ecosystem. The critical assessment is the candidate's mastery of **Coroutines**: they must design and implement a non-blocking asynchronous solution, correctly using structured concurrency and different Coroutine dispatchers for I/O and CPU-bound tasks. We rigorously test for **idiomatic Kotlin**, assessing their use of null safety features (`?`, safe calls, `let`), functional collection operators, and conciseness, demanding that they eliminate common Java boilerplate. For backend development, we test their ability to build a performant API using a framework like Spring Boot or Ktor, focusing on dependency injection, clean layering, and seamless interaction with existing Java components and libraries.",
     interlink_slugs: ['java', 'microservices', 'grpc']
-  },
-  'scala': {
+},
+'scala': {
     name: 'Scala',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -834,8 +801,8 @@ export const allTech: AllTech = {
     evaluation: ['Functional Programming (Immutability, Monads, Pattern Matching)', 'Concurrency (Actor Model/Akka) and asynchronous programming', 'Big Data ecosystem (Apache Spark, Kafka)', 'Advanced type system usage (Type Classes, Variance)', 'Testing (ScalaTest) and property-based testing'],
     technical_analysis: "The Scala evaluation is highly demanding, focusing entirely on functional programming and distributed systems. Candidates are tested on their ability to solve problems using an FP style, requiring mastery of immutable data structures, `Option`, `Either`, and advanced concepts like Monads and Type Classes, proving they can write reliable code. A core assessment is made on **concurrency**: they must demonstrate expertise in either the **Actor Model (Akka)** or the use of **Futures** for asynchronous operations, showing how to build fault-tolerant distributed services. For data processing, we test their practical knowledge of the Big Data ecosystem, specifically assessing their ability to write efficient data transformations using **Apache Spark** DataFrames/Datasets, ensuring they can handle massive datasets performantly.",
     interlink_slugs: ['apache-spark', 'kafka', 'data-engineering']
-  },
-  'erlang': {
+},
+'erlang': {
     name: 'Erlang',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -866,10 +833,10 @@ export const allTech: AllTech = {
         }
     ],
     evaluation: ['Actor Model and asynchronous message passing', 'OTP framework (gen_server, Supervisors)', 'Fault tolerance and process linking/monitoring', 'Distributed Erlang and clustering', 'Concurrency patterns and state isolation'],
-    technical_analysis: "The Erlang assessment is focused on the **Actor Model** and the **OTP framework**. Candidates are required to design a fault-tolerant system using a hierarchy of OTP Supervisors and Worker processes, proving their ability to implement the 'Let It Crash' philosophy for automatic failure recovery. We test their mastery of the Actor Model by requiring them to manage shared state safely using asynchronous message passing between processes, explicitly preventing race conditions. Expertise in low-latency concurrency is assessed by designing systems that can handle a high volume of simultaneous connections, demonstrating an understanding of Erlang's lightweight processes and scheduler. Finally, we test their knowledge of distributed Erlang and how to build a resilient cluster that spans multiple nodes.",
+    technical_analysis: "The Erlang evaluation is centered on the **Actor Model** and the **OTP framework**. Candidates are required to design a fault-tolerant system using a hierarchy of OTP Supervisors and Worker processes, proving their ability to implement the 'Let It Crash' philosophy for automatic failure recovery. We test their mastery of the Actor Model by requiring them to manage shared state safely using asynchronous message passing between processes, explicitly preventing race conditions. Expertise in low-latency concurrency is assessed by designing systems that can handle a high volume of simultaneous connections, demonstrating an understanding of Erlang's lightweight processes and scheduler. Finally, we test their knowledge of distributed Erlang and how to build a resilient cluster that spans multiple nodes.",
     interlink_slugs: ['message-queues', 'event-sourcing', 'system-design']
-  },
-  'haskell': {
+},
+'haskell': {
     name: 'Haskell',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -902,8 +869,8 @@ export const allTech: AllTech = {
     evaluation: ['Pure functional core and side-effect isolation', 'Monad mastery (IO, Maybe, Either/Result) and Monad Transformers', 'Type system (Algebraic Data Types, Type Classes, Generics)', 'Laziness and memoization strategies', 'Concurrency (Async/STM) and parallelism'],
     technical_analysis: "The Haskell evaluation is the most abstract and rigorous, focusing entirely on **pure Functional Programming**. The core test is the candidate's mastery of the **Monad concept**, specifically requiring them to implement a complex I/O-dependent business workflow, using Monads (especially the IO Monad and Monad Transformers) to sequence operations while maintaining purity. We assess their ability to use **Algebraic Data Types (ADTs)** to model complex domains and enforce business invariants using the type system, proving they can make 'illegal states unrepresentable.' Finally, we test their understanding of **lazy evaluation** and its performance implications, requiring them to diagnose and fix scenarios that lead to space leaks, ensuring they can write efficient, production-ready code.",
     interlink_slugs: ['functional-programming', 'scala', 'elixir']
-  },
-  'elixir': {
+},
+'elixir': {
     name: 'Elixir',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
@@ -936,7 +903,7 @@ export const allTech: AllTech = {
     evaluation: ['Phoenix LiveView and Channels for real-time web', 'OTP (GenServer, Supervisors) and fault tolerance', 'Functional Programming (Pattern Matching, Pipe Operator)', 'Concurrency (Actors, Message Passing) and state isolation', 'Ecto ORM and database interaction'],
     technical_analysis: "The Elixir evaluation is a full-stack assessment of real-time and fault-tolerant capabilities. The core assessment is the candidate's ability to build a **real-time feature using Phoenix LiveView**, demonstrating an understanding of how LiveView manages state, handles user events, and minimizes network latency. We rigorously test their mastery of the **OTP platform**, requiring them to design a small service using a **GenServer** and implement a **Supervisor** to manage process failure, proving they can build self-healing systems. For application logic, we assess their proficiency in functional programming concepts, pattern matching, and the use of the pipe operator for clean data transformation. Finally, we test their ability to use Ecto ORM effectively for database interaction, focusing on query optimization and change management.",
     interlink_slugs: ['erlang', 'postgresql', 'web-accessibility']
-  },
+},
 
   // ----------------------------------------------------------------------
   // 3. DEVOPS & CLOUD (18)
@@ -1554,9 +1521,41 @@ export const allTech: AllTech = {
     interlink_slugs: ['aws', 'event-sourcing', 'api-gateway', 'dynamodb']
 },
 
-  // ----------------------------------------------------------------------
-  // 9. VETTING & COGNITIVE AI (1)
-  // ----------------------------------------------------------------------
+  'langchain': {
+    name: 'LangChain',
+    category: 'ML/AI & LLM Ops',
+    categorySlug: 'ml-ai-llm-ops',
+    seo_title: 'Hire Senior LangChain Developers | AI Application & RAG Experts',
+    meta_description: 'Build powerful, data-aware AI applications. Hire elite remote LangChain experts vetted for complex chains, RAG architecture, and agent development. Book a call.',
+    intro: "LangChain is the definitive framework for composing LLM-powered applications, providing a rich toolkit for building complex chains, data-aware agents, and robust Retrieval-Augmented Generation (RAG) systems. You need an engineer who can move beyond basic LLM calls to architect sophisticated applications that can reason, act, and interact with your proprietary data. Our vetting process is designed to find these experts. We assess their deep understanding of LangChain's core components—Chains, Agents, and Tools—and their ability to design and optimize RAG pipelines. By hiring a LangChain expert from us, you get a developer who can transform your LLM concepts into production-ready, high-value AI applications.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are your RAG results inaccurate or irrelevant?",
+            problem: "A naive RAG implementation often retrieves irrelevant documents, causing the LLM to hallucinate or provide incorrect answers. This stems from a poor understanding of text chunking, embedding models, and retrieval strategies.",
+            solution: "We vet for mastery of the **RAG pipeline**. Our experts must demonstrate proficiency in advanced chunking strategies, choosing the right embedding models, and implementing sophisticated retrieval techniques (e.g., HyDE, multi-query retriever) to ensure high-quality, relevant results.",
+            kpi: "RAG Pipeline Optimization and Accuracy"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your LLM application a single, monolithic prompt?",
+            problem: "Attempting to solve a complex problem with a single, massive prompt is brittle and hard to debug. This approach fails to break down the problem into logical, manageable steps, leading to unpredictable and inconsistent LLM behavior.",
+            solution: "Our engineers are experts in **LangChain Expression Language (LCEL)**. They are vetted on their ability to build complex, modular chains by composing smaller, reusable components, ensuring the logic is clear, testable, and easy to maintain.",
+            kpi: "Mastery of LCEL and Composable Chains"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your application unable to interact with external tools and APIs?",
+            problem: "LLMs are powerful but are limited by their training data. Without the ability to interact with external systems, your AI application cannot access real-time information, perform actions, or integrate with your existing business logic.",
+            solution: "We look for engineers proficient in building **LangChain Agents and Tools**. They are vetted on their ability to define custom tools that allow the LLM to securely interact with any API or data source, transforming it from a simple text generator into a powerful, autonomous agent.",
+            kpi: "Custom Agent and Tool Development"
+        }
+    ],
+    evaluation: ['LangChain Expression Language (LCEL) and chain composition', 'Retrieval-Augmented Generation (RAG) architecture', 'Agent and Tool creation for external API interaction', 'Vector database integration (pgvector, Pinecone, Weaviate)', 'Model evaluation and debugging (LangSmith)'],
+    technical_analysis: "The LangChain evaluation focuses on a candidate's ability to build complex, data-aware LLM applications. The critical assessment is their mastery of **RAG architecture**: candidates must design a complete RAG pipeline, including choosing appropriate chunking strategies, embedding models, and vector stores, and then implement advanced retrieval methods to improve accuracy. We rigorously test their understanding of **LangChain Expression Language (LCEL)** by requiring them to build a complex, branching chain of runnable components, demonstrating their ability to compose and debug asynchronous data flows. For agentic behavior, we assess their proficiency in creating custom **Tools** that securely interact with external APIs, and in using those tools within a ReAct-style Agent. Finally, we test their knowledge of the LangChain ecosystem, including their ability to use LangSmith for tracing, debugging, and evaluating the performance of their LLM chains.",
+    interlink_slugs: ['python', 'llms', 'data-engineering', 'pgvector']
+  },
+
   'axiom-cortex': {
     name: 'Axiom Cortex™',
     category: 'Vetting & Cognitive AI',
@@ -1625,7 +1624,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Python', slug: 'python' },
       { name: 'Java', slug: 'java' },
       { name: 'Go', slug: 'golang' },
-      { name: '.NET', slug: 'net' },
+      { name: '.NET', slug: 'c-sharp' },
       { name: 'Ruby on Rails', slug: 'ruby' },
       { name: 'PHP (Laravel/Symphony)', slug: 'php' },
       { name: 'gRPC', slug: 'grpc' },
@@ -1767,5 +1766,3 @@ export const techCategories: TechCategory[] = [
     ],
   }
 ];
-
-    
