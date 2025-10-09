@@ -392,7 +392,7 @@ export const allTech: AllTech = {
     technical_analysis: "Vue.js evaluation centers on the transition to the Composition API and a deep understanding of its reactivity system. Candidates must demonstrate proficiency in modeling application state using `ref`, `reactive`, and `computed` properties, knowing the crucial difference between the three to avoid performance-sapping reactive pitfalls. We test their ability to build complex, scalable state stores using Pinia, verifying they can structure code logically and efficiently without boilerplate. For large applications, experience with Nuxt.js (or similar full-stack frameworks) is assessed, including server-side rendering, data fetching, and module extension. The focus is on clean component design, efficient lifecycle usage, and performance optimization techniques, specifically around minimizing re-renders and leveraging the built-in compiler optimizations. A senior candidate must also show competence with the Vue ecosystem's modern tooling, including the fast feedback loop provided by Vite and the debugging capabilities of Vue DevTools.",
     interlink_slugs: ['pinia', 'typescript', 'react-native']
   },
-   'langchain': {
+  'langchain': {
     name: 'LangChain',
     category: 'Data & AI',
     categorySlug: 'ml-ai-llm-ops',
@@ -559,8 +559,8 @@ export const allTech: AllTech = {
         }
     ],
     evaluation: ['Advanced dbt project structure and modularity', 'Data modeling and materialization strategies', 'Custom and generic data testing', 'Jinja and macro development for code reuse', 'Performance tuning and incremental models'],
-    technical_analysis: "The dbt evaluation is focused on analytics engineering best practices. Candidates are required to design a dbt project for a complex business scenario, demonstrating a clear understanding of staging, intermediate, and marts layers. The critical assessment is their choice of **materializations** and their ability to implement a robust **incremental modeling** strategy. We rigorously test their testing discipline by requiring them to write both generic and custom data tests. Finally, we assess their proficiency with **Jinja macros** for writing DRY, reusable transformation logic.",
-    interlink_slugs: ['snowflake', 'sql', 'data-engineering', 'python']
+    technical_analysis: "The dbt evaluation is focused on analytics engineering best practices. Candidates are required to design a dbt project for a complex business scenario, demonstrating a clear understanding of staging, intermediate, and marts layers. The critical assessment is their choice of **materializations** and their ability to implement a robust **incremental modeling** strategy for a large fact table, proving their understanding of performance and cost optimization. We rigorously test their testing discipline, requiring them to write both generic and custom data tests to ensure data integrity. Finally, we assess their proficiency with **Jinja macros** for writing DRY, reusable transformation logic.",
+    interlink_slugs: ['snowflake', 'data-engineering', 'sql', 'python']
   }
 };
 
