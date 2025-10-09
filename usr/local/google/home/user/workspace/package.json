@@ -1,6 +1,7 @@
 {
   "name": "cto-playbook-platform",
   "version": "0.1.0",
+  "description": "CTO Playbook and Nearshore IT Co-Pilot Platform",
   "private": true,
   "engines": { "node": "20.19.0" },
   "packageManager": "npm@10",
