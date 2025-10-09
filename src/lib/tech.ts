@@ -529,7 +529,7 @@ export const allTech: AllTech = {
         }
     ],
     evaluation: ['Event Loop architecture and non-blocking I/O', 'API design (REST, GraphQL) and routing', 'Asynchronous patterns (Promises, Async/Await) and concurrency', 'Modular architecture and code structure', 'Security (Authentication, Authorization, Input Sanitization)'],
-    technical_analysis: "The Node.js evaluation is centered on a candidate's mastery of the asynchronous programming model and backend architecture. The critical assessment point is the **Node.js Event Loop**: candidates are given scenarios that intentionally lead to blocking code and are required to diagnose the bottleneck and refactor it into a non-blocking solution, demonstrating an understanding of the different phases (Timers, Pending Callbacks, I/O, Check, Close). For architecture, we evaluate their ability to design a scalable API using modern frameworks (e.g., NestJS, Express) with a clear separation of concerns (e.g., service and repository layers). We specifically test their knowledge of security best practices, including correct implementation of CORS, handling JWTs, and using validation libraries to prevent common API vulnerabilities. Finally, we assess their proficiency with ORMs (e.g., Prisma, TypeORM) and their ability to integrate with diverse data stores (PostgreSQL, MongoDB) efficiently.",
+    technical_analysis: "The Node.js evaluation is centered on a candidate's mastery of the asynchronous programming model and backend architecture. The critical assessment point is the **Node.js Event Loop**: candidates are given scenarios that intentionally lead to blocking code and are required to diagnose the bottleneck and refactor it into a non-blocking solution, demonstrating an understanding of the different phases (Timers, Pending Callbacks, I/O, Check, Close). For architecture, we evaluate their ability to design a scalable API using a modern framework (e.g., NestJS, Express) with a clear separation of concerns (e.g., service and repository layers). We specifically test their knowledge of security best practices, including correct implementation of CORS, handling JWTs, and using validation libraries to prevent common API vulnerabilities. Finally, we assess their proficiency with ORMs (e.g., Prisma, TypeORM) and their ability to integrate with diverse data stores (PostgreSQL, MongoDB) efficiently.",
     interlink_slugs: ['typescript', 'microservices', 'rest-api-design', 'postgresql']
 },
 'java': { 
@@ -1678,6 +1678,41 @@ export const allTech: AllTech = {
     technical_analysis: "The Snowflake evaluation is focused on architecture, performance, and cost management. Candidates are required to design a multi-environment Snowflake setup, defining appropriate virtual warehouses and role-based access control (RBAC) for different user groups. The critical assessment is their ability to **optimize query performance**: candidates are given an inefficient query and must use the query profiler to identify bottlenecks (e.g., table scans, 'exploding joins') and rewrite the query using best practices like clustering keys and materialized views. We also test their data pipeline expertise by requiring them to design and implement a modular data transformation workflow using **dbt on Snowflake**. Finally, we assess their knowledge of **cost optimization**, requiring them to analyze a usage report and propose specific changes to warehouse size, auto-suspend settings, and query structure to reduce credit consumption.",
     interlink_slugs: ['dbt', 'data-engineering', 'sql', 'python']
   },
+  'dbt': {
+    name: 'dbt (Data Build Tool)',
+    category: 'Data & AI',
+    categorySlug: 'data-engineering-analytics',
+    seo_title: 'Hire Senior dbt Developers | Analytics Engineering Experts',
+    meta_description: 'Transform your data analytics workflow. Hire elite remote dbt developers vetted for data modeling, testing, and building trustworthy data pipelines. Book a call.',
+    intro: "dbt is the industry standard for analytics engineering, bringing software development best practices to data transformation. You need an engineer who can leverage dbt to build reliable, modular, and well-documented data pipelines. Our vetting process is designed to find experts in dbt Core and dbt Cloud, assessing their ability to architect complex data models, write efficient SQL, and implement robust testing and documentation. By hiring a dbt expert from us, you transform your data practice from a black box of scripts into a transparent, trusted factory for business intelligence.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: "Is your data transformation logic a tangled mess of SQL scripts?",
+        problem: "Ad-hoc SQL scripts create 'data spaghetti,' where business logic is duplicated, dependencies are hidden, and no one trusts the final reports. This makes the entire analytics process brittle, slow, and unreliable.",
+        solution: "We vet for mastery of **dbt's modeling and modularity**. Our experts build clean, reusable data models using CTEs and the `ref()` function, ensuring a clear, version-controlled dependency graph (DAG) and a single source of truth for all business logic.",
+        kpi: "DRY (Don't Repeat Yourself) Modeling"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Do you lack confidence in the accuracy of your data?",
+        problem: "Without automated testing, data quality issues (e.g., null values, failed relationship checks) go undetected, eroding trust in every dashboard and report. Manual validation is not a scalable solution.",
+        solution: "Our engineers implement a robust **data testing strategy** within dbt. They are vetted on their ability to write and deploy generic and singular tests to validate data integrity, freshness, and correctness, ensuring every data model is trustworthy.",
+        kpi: "Automated Data Quality & Testing"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Is your data pipeline poorly documented and hard to understand?",
+        problem: "Undocumented data models and metrics turn your data warehouse into a black box. New hires and business users cannot discover or understand how metrics are calculated, leading to confusion and mistrust.",
+        solution: "We look for engineers proficient in **dbt's documentation features**. They are vetted on their ability to generate comprehensive, accessible data catalogs that expose model descriptions, column-level details, and data lineage, making the entire data pipeline transparent and self-service.",
+        kpi: "Comprehensive Data Documentation & Lineage"
+      }
+    ],
+    evaluation: ['dbt Core and dbt Cloud proficiency', 'Advanced data modeling and Jinja macros', 'Data testing and quality assurance', 'Performance optimization for data warehouses', 'CI/CD for data pipelines (dbt Cloud or custom)'],
+    technical_analysis: "The dbt evaluation focuses on a candidate's ability to apply software engineering principles to analytics. We test their skill in creating modular and reusable data models using CTEs and the `ref()` function. The critical assessment is their mastery of **data testing**: candidates must write custom tests to validate complex business logic and set up source freshness checks. We also assess their Jinja proficiency for writing powerful macros that reduce boilerplate code. Performance tuning is key; candidates must demonstrate how they would optimize a dbt model for a specific data warehouse (e.g., using incremental models or correct materializations). Finally, we test their ability to integrate dbt into a CI/CD pipeline, ensuring that every change is tested and documented before deployment.",
+    interlink_slugs: ['snowflake', 'sql', 'data-engineering']
+  },
+  
   // ----------------------------------------------------------------------
   // 9. VETTING & COGNITIVE AI (1)
   // ----------------------------------------------------------------------
@@ -1892,8 +1927,4 @@ export const techCategories: TechCategory[] = [
   }
 ];
 
-// Note: This is an incomplete list. You will be prompted to add more technologies.
-// Final list should have 87 entries.
-// Missing: rx-js, pandas, numpy, jest, vitest, api-security, graphql, etc.
-
-
+    
