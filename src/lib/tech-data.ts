@@ -123,6 +123,56 @@ import { TechEntry } from "./tech";
         "Our .NET developers are vetted for their ability to design and build enterprise-grade applications. We focus on their understanding of software architecture, cloud-native development, and DevOps practices.",
       interlink_slugs: ["csharp", "azure", "sql-server"],
     },
+    python: {
+        name: "Python",
+        category: "Backend",
+        categorySlug: "backend-developer",
+        seo_title: "Hire Nearshore Python Developers | TeamStation AI",
+        meta_description:
+          "AI-vetted Python engineers from LATAM. Build scalable, data-driven applications with top talent verified by Axiom Cortex™. Hire smarter, not harder.",
+        intro:
+          "Power your data-driven applications with our elite, AI-vetted Python developers from Latin America. We deliver senior engineers who specialize in building scalable, high-performance systems for data science, machine learning, and web applications.",
+        pains: [
+          {
+            icon: BrainCircuit,
+            pain: "Are you struggling to productionize your ML models?",
+            problem:
+              "Your data science team builds great models, but you lack the engineering expertise to deploy and scale them in a production environment. Your models are stuck in notebooks, not delivering business value.",
+            solution:
+              "We provide Python engineers who are experts in MLOps. They specialize in building robust, scalable pipelines for model training, deployment, and monitoring using tools like Docker, Kubernetes, and cloud-native services.",
+            kpi: "Reduced time-to-market for new models by 70%.",
+          },
+          {
+            icon: Database,
+            pain: "Is your data pipeline slow and unreliable?",
+            problem:
+              "Your data processing is slow, error-prone, and can't handle growing data volumes. Your team spends more time firefighting than deriving insights from your data.",
+            solution:
+              "Our Python developers are proficient in building and optimizing large-scale data pipelines using frameworks like Spark and Airflow. They design resilient, scalable systems that deliver reliable data for your analytics and ML workloads.",
+            kpi: "Increased data processing speed by 5x.",
+          },
+          {
+            icon: Layers,
+            pain: "Is your Django/Flask monolith a bottleneck?",
+            problem:
+              "Your monolithic web application is difficult to scale and maintain. Development is slow, and deploying new features is risky.",
+            solution:
+              "We provide Python architects who specialize in modernizing web applications. They can refactor your monolith into a scalable microservices architecture, improving agility and performance.",
+            kpi: "Increased deployment frequency by 4x.",
+          },
+        ],
+        evaluation: [
+          "Deep expertise in Python and its data science ecosystem (Pandas, NumPy, Scikit-learn)",
+          "Experience with web frameworks like Django and Flask",
+          "Proficiency in building and scaling data pipelines (Spark, Airflow)",
+          "Knowledge of MLOps best practices and tools (Docker, Kubernetes)",
+          "Database design and optimization (SQL & NoSQL)",
+          "Cloud-native development on AWS, GCP, or Azure",
+        ],
+        technical_analysis:
+          "Our Axiom Cortex™ engine evaluates Python candidates for their ability to build and deploy production-grade data and web applications. We focus on their engineering fundamentals, problem-solving skills, and their ability to write clean, efficient, and maintainable code. We identify engineers who can bridge the gap between data science and software engineering.",
+        interlink_slugs: ["django", "flask", "pandas", "docker", "kubernetes", "aws"],
+      },
     go: {
         name: "Go",
         category: "Backend",
