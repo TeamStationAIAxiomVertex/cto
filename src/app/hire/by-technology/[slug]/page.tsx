@@ -236,7 +236,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
           <Link
             href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
             target="_blank"
-...
+            rel="noopener noreferrer"
             className="cta-button mt-6"
           >
             Book a No-Obligation Strategy Call
