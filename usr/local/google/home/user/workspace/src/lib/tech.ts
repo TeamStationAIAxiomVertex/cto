@@ -1,4 +1,5 @@
 
+import type { ElementType } from 'react';
 import type { Icon } from "lucide-react";
 import {
   AlertTriangle,
