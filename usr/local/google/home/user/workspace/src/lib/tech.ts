@@ -634,6 +634,46 @@ export const allTech: AllTech = {
     technical_analysis: "The Golang evaluation is a deep dive into concurrency and system architecture. Candidates are given scenarios requiring them to implement a highly concurrent worker pool using goroutines and channels, with a mandatory requirement to use the built-in race detector to prove their solution is thread-safe. Architectural skills are tested by requiring them to design a small microservice using a lightweight framework (like Fiber or Echo), focusing on clean separation of concerns and correct use of interfaces for dependency inversion, which is critical in large Go codebases. Performance is paramount: candidates must demonstrate proficiency with the Go profiler (`pprof`) to analyze CPU and memory usage and propose optimizations. Finally, strong knowledge of the standard library, especially for networking and HTTP handling, is essential.",
     interlink_slugs: ['kubernetes', 'docker', 'grpc']
 },
+'python': {
+    name: 'Python',
+    category: 'Backend & APIs',
+    categorySlug: 'backend-services',
+    seo_title: 'Hire Senior Python Developers | Scalable Backend & Data Experts',
+    meta_description: 'Build robust APIs, microservices, and data pipelines. Hire elite remote Python experts vetted for Django, FastAPI, and asynchronous programming. Book a call.',
+    intro: "Python is the undisputed champion for backend services, data science, and rapidly developing scalable APIs. You need an engineer who can leverage Python's simplicity for velocity without sacrificing the performance required for a modern web application. Our vetting process goes beyond basic syntax, focusing on **asynchronous programming (asyncio)**, modern API frameworks (FastAPI), and the ability to design decoupled, scalable microservices. We ensure candidates can harness the right libraries—from Django for monoliths to FastAPI for high-performance APIs—and apply Python's core strengths across the full stack. By hiring a Python expert from us, you gain an engineer who delivers clean, highly testable, and production-ready code with maximum velocity.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: "Is your Python code slow due to synchronous blocking?",
+        problem: "Python's Global Interpreter Lock (GIL) combined with synchronous I/O operations (like network calls or database queries) leads to severe performance bottlenecks, preventing the server from handling concurrent requests and crashing under load.",
+        solution: "We vet for mastery of **asyncio** and asynchronous frameworks like FastAPI or modern Django. Our experts must demonstrate the ability to write non-blocking code using `async` and `await`, effectively decoupling I/O from the main thread and achieving high concurrency and low latency.",
+        kpi: "Mastery of AsyncIO and Asynchronous Frameworks"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Is your API development slow and overly verbose?",
+        problem: "Older Python API frameworks (like traditional Flask or Django REST Framework) often require excessive boilerplate for routing, serialization, and validation, slowing development and increasing cognitive load.",
+        solution: "Our engineers are proficient in modern, high-performance frameworks like **FastAPI**. They use its Pydantic-based automatic validation and documentation generation to create robust, clean APIs with minimal boilerplate, drastically increasing development speed and code quality.",
+        kpi: "Proficiency in FastAPI/Modern API Development"
+      },
+      {
+        icon: AlertTriangle,
+        pain: "Are you struggling to manage dependencies and virtual environments?",
+        problem: "Inconsistent dependency management across teams or environments often leads to 'works on my machine' problems, build failures, and security vulnerabilities due to outdated packages.",
+        solution: "We look for engineers who enforce robust packaging and dependency standards using tools like **Poetry** or **Pipenv**. They demonstrate expertise in creating isolated, reproducible, and well-documented virtual environments, guaranteeing deployment consistency across all environments.",
+        kpi: "Expertise in Poetry/Pipenv for Dependency Management"
+      },
+    ],
+    evaluation: [
+      'Mastery of asyncio and asynchronous patterns',
+      'Proficiency in modern web frameworks (FastAPI/Django)',
+      'Expertise in package and dependency management (Poetry/Pipenv)',
+      'API design (REST, GraphQL) and serialization (Pydantic)',
+      'Performance optimization and GIL awareness',
+    ],
+    technical_analysis: "The Python evaluation focuses on moving beyond basic scripting to scalable backend and data engineering solutions. Candidates are tested heavily on their understanding of the **GIL and asynchronous programming**—they must correctly diagnose and solve I/O bound bottlenecks using `asyncio` and `await`. We assess architectural design using frameworks like Django (understanding ORM, migration strategies) and FastAPI (using Pydantic for request/response validation). Data-focused skills are also key: candidates must demonstrate proficiency with common data libraries (Pandas, NumPy) and an understanding of how to integrate them into a backend service. Finally, clean, idiomatic Python code (following PEP 8) and robust dependency management using tools like Poetry are mandatory to ensure the candidate delivers high-quality, production-ready systems.",
+    interlink_slugs: ['node', 'data-engineering', 'aws-cloud', 'postgresql'],
+  },
 'c-sharp': {
     name: 'C# / .NET',
     category: 'Backend & APIs',
