@@ -1,10 +1,11 @@
+
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { notFound } from "next/navigation";
-import { allTech } from "../../../../lib/tech";
-import { JsonLd } from "../../../../components/seo/JsonLd";
-import FurtherReading from "../../../../components/seo/FurtherReading";
+import { allTech } from "@/lib/tech-data";
+import { JsonLd } from "@/components/seo/JsonLd";
+import FurtherReading from "@/components/seo/FurtherReading";
 import {
   Tooltip,
   TooltipContent,
@@ -235,7 +236,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
           <Link
             href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
             target="_blank"
-            rel="noopener noreferrer"
+...
             className="cta-button mt-6"
           >
             Book a No-Obligation Strategy Call
