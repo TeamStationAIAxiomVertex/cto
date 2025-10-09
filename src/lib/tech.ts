@@ -101,6 +101,7 @@ export type TechSlug =
   | 'numpy'
   | 'langchain'
   | 'transformers'
+  | 'pytorch'
 
   // Databases (7)
   | 'postgresql'
@@ -501,43 +502,43 @@ export const allTech: AllTech = {
     name: 'Node.js',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
-    seo_title: 'Hire Senior Node.js Developers | High-Performance Backend Talent',
-    meta_description: 'Build fast, scalable microservices. Hire elite remote Node.js experts vetted for async/await mastery, performance tuning, and robust architecture. Book a call.',
-    intro: "You're not looking for someone who just wrote a few Express routes. You're here because you need an engineer who understands how to build high-throughput, non-blocking APIs that can handle real-world scale without falling over. You need someone who has tamed the event loop, not just heard of it.",
+    seo_title: 'Hire Senior Node.js Developers | Backend API & Microservices Experts',
+    meta_description: 'Build fast, scalable server-side applications. Hire elite remote Node.js experts vetted for event loop mastery, microservices, and performance. Book a call.',
+    intro: "Node.js is the backbone of modern, high-performance web applications, leveraging JavaScript's non-blocking, event-driven nature for unmatched speed and scalability. You need an engineer who can move beyond basic Express routing to truly master the **Node.js Event Loop**, a non-negotiable skill for avoiding performance-killing blocking operations. Our vetting process is laser-focused on this architectural core, assessing a candidate's ability to design asynchronous, highly concurrent applications—the very definition of a scalable backend. We look for expertise in building robust, performant APIs (both REST and GraphQL) and their ability to architect microservices using Node.js for maximum agility and decoupling. By hiring a Node.js expert from us, you get a developer who can guarantee your backend can handle explosive user growth without scaling headaches or costly infrastructure overruns.",
     pains: [
         {
             icon: AlertTriangle,
-            pain: "Is your API blocking the event loop and causing slowdowns?",
-            problem: "Many Node.js developers don't truly understand its single-threaded, non-blocking nature, leading to slow, synchronous code that negates Node's primary advantage.",
-            solution: "We vet for a deep understanding of the event loop, libuv, and asynchronous patterns. Our engineers build truly non-blocking services that maximize throughput.",
-            kpi: "Deep event loop & async pattern mastery"
+            pain: "Is your server performance plagued by blocking I/O operations?",
+            problem: "The Node.js Event Loop is a single thread. Inexperienced developers often use synchronous methods or fail to correctly delegate long-running tasks, causing the Event Loop to block. This stops all concurrent operations, leading to slow response times, high latency, and a server that collapses under load.",
+            solution: "We vet for an explicit and deep understanding of the Event Loop. Our experts must demonstrate their ability to write non-blocking asynchronous code, correctly use the `process.nextTick` and `setImmediate` queues, and leverage worker threads or external services for CPU-intensive tasks, guaranteeing peak concurrency and low latency.",
+            kpi: "Event Loop Mastery and Non-Blocking I/O"
         },
         {
             icon: AlertTriangle,
-            pain: "Are you struggling with unhandled promise rejections and memory leaks?",
-            problem: "Improper error handling and memory management in a long-running Node.js process can lead to crashes and instability.",
-            solution: "Our evaluation includes scenarios on robust error handling, promise chains, and using tools like Heapdump to diagnose memory leaks, ensuring service reliability.",
-            kpi: "Expertise in memory profiling & error handling"
+            pain: "Is your API logic a monolithic, untestable mess?",
+            problem: "A common anti-pattern is building a single, monolithic Express server where business logic, database queries, and routing are tightly coupled. This makes the application nearly impossible to test, refactor, and evolve, slowing down feature development to a crawl.",
+            solution: "Our engineers are masters of architectural patterns like the **Clean Architecture** or **Hexagonal Architecture** within Node.js. They are vetted on their ability to structure code with clear separation of concerns (Controllers, Services, Repositories), leading to a highly modular, unit-testable, and maintainable codebase that scales with your business logic.",
+            kpi: "Modular Backend Architecture (e.g., Clean/Hexagonal)"
         },
         {
             icon: AlertTriangle,
-            pain: "Is your Express/Fastify app an unstructured mess?",
-            problem: "Without a framework or architectural pattern, Node.js applications can quickly become hard to maintain and scale.",
-            solution: "We look for experience with modern frameworks like NestJS or Fastify, which enforce structure, dependency injection, and modularity, leading to cleaner, more scalable codebases.",
-            kpi: "Experience with modern, structured frameworks"
+            pain: "Are you struggling to handle security and input validation correctly?",
+            problem: "Failure to implement proper input validation (Joi, Zod) or to correctly manage authentication (JWT, OAuth) and authorization leads to vulnerable APIs susceptible to injection attacks, data breaches, and unauthorized access. Security is often an afterthought.",
+            solution: "We look for engineers who integrate security and validation as first-class citizens. They are proficient in modern validation libraries and demonstrate expertise in securing API endpoints with appropriate middleware, token management, and encryption, ensuring your data and users are safe from day one.",
+            kpi: "API Security and Validation Expertise"
         }
     ],
-    evaluation: ['Deep mastery of the Event Loop and Worker Threads', 'Performance tuning and profiling', 'Framework expertise (NestJS, Fastify)', 'Microservices design and deployment (Docker/K8s)', 'Asynchronous control flow and error handling'],
-    technical_analysis: "The Node.js evaluation is centered on a candidate's mastery of the asynchronous programming model and backend architecture. The critical assessment point is the **Node.js Event Loop**: candidates are given scenarios that intentionally lead to blocking code and are required to diagnose the bottleneck and refactor it into a non-blocking solution, demonstrating an understanding of the different phases (Timers, Pending Callbacks, I/O, Check, Close). For architecture, we evaluate their ability to design a scalable API using a modern framework like NestJS, demonstrating a clear separation of concerns using the MVC/layered pattern. We specifically test their knowledge of security best practices, including correct implementation of CORS, handling JWTs, and using validation libraries to prevent common API vulnerabilities. Finally, we assess their proficiency with ORMs (e.g., Prisma, TypeORM) and their ability to integrate with diverse data stores (PostgreSQL, MongoDB) efficiently.",
-    interlink_slugs: ['typescript', 'microservices', 'rest-api-design', 'postgresql']
+    evaluation: ['Event Loop architecture and non-blocking I/O', 'API design (REST, GraphQL) and routing', 'Asynchronous patterns (Promises, Async/Await) and concurrency', 'Modular architecture and code structure', 'Security (Authentication, Authorization, Input Sanitization)'],
+    technical_analysis: "The Node.js evaluation is centered on a candidate's mastery of the asynchronous programming model and backend architecture. The critical assessment point is the **Node.js Event Loop**: candidates are given scenarios that intentionally lead to blocking code and are required to diagnose the bottleneck and refactor it into a non-blocking solution, demonstrating an understanding of the different phases (Timers, Pending Callbacks, I/O, Check, Close). For architecture, we evaluate their ability to design a scalable API using a modern framework (e.g., NestJS, Express) with a clear separation of concerns (e.g., service and repository layers). We specifically test their knowledge of security best practices, including correct implementation of CORS, handling JWTs, and using validation libraries to prevent common API vulnerabilities. Finally, we assess their proficiency with ORMs (e.g., Prisma, TypeORM) and their ability to integrate with diverse data stores (PostgreSQL, MongoDB) efficiently.",
+    interlink_slugs: ['typescript', 'kubernetes', 'rest-api-design', 'postgresql']
 },
-'java': {
+'java': { 
     name: 'Java (Spring & JVM)',
     category: 'Backend & APIs',
     categorySlug: 'backend-services',
     seo_title: 'Hire Senior Java Developers | Spring Boot & Microservices Experts',
     meta_description: 'Build robust, mission-critical backends. Hire elite remote Java experts vetted for JVM performance, Spring, and enterprise microservice architecture. Book a call.',
-    intro: "Java and the JVM ecosystem (especially **Spring Boot**) remain the gold standard for building massive-scale, mission-critical enterprise applications and microservices. You need an engineer who can leverage Java's stability, strong typing, and vast ecosystem to deliver solutions that are not just fast, but inherently reliable and maintainable under extreme loads. Our vetting process is designed to find engineers who are masters of the JVM, assessing their deep understanding of multithreading, garbage collection, and optimizing Spring/Quarkus applications for production. We move beyond simple CRUD to test their ability to architect complex, distributed systems, ensuring they can harness Java's power for resilience and performance. By hiring a Java expert from us, you are investing in a proven technology stack handled by top-tier talent, guaranteeing the long-term stability and evolutionary capacity of your core business logic.",
+    intro: "Java and the JVM ecosystem (especially **Spring Boot**) remain the gold standard for building massive-scale, mission-critical enterprise applications and microservices. You need an engineer who can leverage Java's stability, strong type system, and vast ecosystem to deliver solutions that are not just fast, but inherently reliable and maintainable under extreme loads. Our vetting process is designed to find engineers who are masters of the JVM, assessing their deep understanding of multithreading, garbage collection, and optimizing Spring/Quarkus applications for production. We move beyond simple CRUD to test their ability to architect complex, distributed systems, ensuring they can harness Java's power for resilience and performance. By hiring a Java expert from us, you are investing in a proven technology stack handled by top-tier talent, guaranteeing the long-term stability and evolutionary capacity of your core business logic.",
     pains: [
         {
             icon: AlertTriangle,
@@ -786,7 +787,7 @@ export const allTech: AllTech = {
         },
         {
             icon: AlertTriangle,
-            pain: "Are you struggling with concurrent and distributed systems?",
+            pain: "Are you struggling to manage concurrent and distributed systems?",
             problem: "Building high-concurrency systems without the right tools leads to fragile, difficult-to-scale architectures. Traditional threading models are often too low-level and error-prone for distributed environments.",
             solution: "Our engineers are proficient in distributed toolkits like **Akka**. They are vetted on their ability to use the Actor model to build robust, fault-tolerant, and highly concurrent services that scale out easily across multiple machines, perfect for microservices and real-time processing.",
             kpi: "Expertise in Actor Model (Akka) for Concurrency"
@@ -1596,7 +1597,53 @@ export const allTech: AllTech = {
     technical_analysis: "The Transformers evaluation assesses a candidate's ability to take a model from the Hugging Face Hub to a production-ready, fine-tuned service. A critical task is to perform a **PEFT fine-tuning** run on a custom dataset, demonstrating proficiency with the `Trainer` API and data preparation using the `datasets` library. We rigorously test their knowledge of **inference optimization**, requiring them to quantize a model using `bitsandbytes` and explain the performance vs. accuracy trade-offs. Finally, we assess their ability to build a complete **RAG pipeline**, requiring them to use a custom embedding model to index documents into a vector store and then use a separate LLM for generation, proving they can orchestrate a full, complex AI workflow.",
     interlink_slugs: ['python', 'pytorch', 'langchain', 'data-science']
   },
-
+  'pytorch': {
+    name: 'PyTorch',
+    category: 'Data & AI',
+    categorySlug: 'ml-ai-llm-ops',
+    seo_title: 'Hire Senior PyTorch Developers | Deep Learning & AI Experts',
+    meta_description: 'Build cutting-edge AI models. Hire elite remote PyTorch experts vetted for deep learning, model optimization, and production deployment. Book a call.',
+    intro: "PyTorch is the leading deep learning framework, favored by researchers and engineers for its flexibility, Pythonic interface, and powerful GPU acceleration. You need an engineer who can move beyond basic tutorials to design, train, and deploy complex neural networks for real-world applications. Our vetting process is designed to find these experts. We assess their deep understanding of PyTorch's core APIs, their ability to build custom models, and their experience in optimizing performance for both training and inference. By hiring a PyTorch expert from us, you get a developer who can transform your AI vision into high-performance, production-ready models.",
+    pains: [
+      {
+        icon: AlertTriangle,
+        pain: 'Is your model training slow and expensive?',
+        problem:
+          'Inefficient data loading, failure to use mixed-precision training, or incorrect GPU utilization leads to long training times and massive cloud bills, stalling your research and development.',
+        solution:
+          'We vet for mastery of **PyTorch performance tuning**. Our experts must demonstrate proficiency in using `DDP` (Distributed Data Parallel) for multi-GPU training, optimizing data loaders, and leveraging mixed-precision to cut training time and cost by over 50%.',
+        kpi: 'Training time reduction and cost optimization',
+      },
+      {
+        icon: AlertTriangle,
+        pain: 'Are your deployed models too slow for real-time inference?',
+        problem:
+          'A model with high inference latency cannot be used in real-time applications, rendering it useless for many business use cases. Poorly optimized models create user-facing delays and require expensive, oversized hardware to run.',
+        solution:
+          'Our engineers are experts in **inference optimization**. They are vetted on their ability to use tools like **TorchScript (JIT compilation)**, quantization, and optimized runtimes (ONNX, TensorRT) to dramatically reduce model latency and enable deployment on cost-effective hardware.',
+        kpi: 'Sub-100ms inference latency on target hardware',
+      },
+      {
+        icon: AlertTriangle,
+        pain: 'Is your model architecture a tangled mess of untestable code?',
+        problem:
+          'Without a clear structure, PyTorch code can become a difficult-to-maintain spaghetti of tensor operations and manual state management. This makes it impossible to debug, test, and iterate on new model architectures.',
+        solution:
+          'We look for engineers who build modular and testable models using **PyTorch Lightning** or a similar high-level framework. They are vetted on their ability to structure code with a clear separation of research and engineering concerns, leading to a maintainable and scalable codebase.',
+        kpi: 'Modular, testable, and reusable model architecture',
+      },
+    ],
+    evaluation: [
+      'Deep understanding of core PyTorch concepts (Tensors, Autograd, Modules)',
+      'Model training and optimization (DDP, mixed-precision)',
+      'Inference performance tuning (TorchScript, quantization)',
+      'Building custom neural network architectures',
+      'Integration with the PyTorch ecosystem (TorchVision, TorchText)',
+    ],
+    technical_analysis:
+      'The PyTorch evaluation is intensely practical, focusing on the full lifecycle of a deep learning model. Candidates are required to diagnose and fix a performance bottleneck in a slow training script, demonstrating their ability to optimize data loaders and use profiling tools. The critical assessment is their skill in **inference optimization**: they must take a trained model and use TorchScript or ONNX quantization to reduce its latency and memory footprint for a production deployment scenario. We also test their architectural skills by requiring them to design a custom neural network module for a novel problem, proving they can move beyond using pre-built models. Finally, strong knowledge of the broader ecosystem, including data handling with `torch.utils.data` and deployment with `TorchServe`, is essential.',
+    interlink_slugs: ['python', 'transformers', 'machine-learning', 'data-science'],
+  },
   // ----------------------------------------------------------------------
   // 9. VETTING & COGNITIVE AI (1)
   // ----------------------------------------------------------------------
@@ -1814,5 +1861,6 @@ export const techCategories: TechCategory[] = [
 // Note: This is an incomplete list. You will be prompted to add more technologies.
 // Final list should have 87 entries.
 // Missing: rx-js, pandas, numpy, jest, vitest, api-security, graphql, etc.
+
 
 
