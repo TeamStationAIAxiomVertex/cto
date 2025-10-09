@@ -1,9 +1,10 @@
+
 // NO 'use client' — Footer stays a Server Component
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 import { roleCategories } from '@/lib/roles';
-import { techCategories } from '@/lib/tech';
+import { techCategories } from '@/lib/tech-categories'; // Corrected Import Path
 import { countries } from '@/lib/countries';
 import SpotifyIcon from '@/components/SpotifyIcon';
 
