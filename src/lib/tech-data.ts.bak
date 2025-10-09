@@ -123,49 +123,6 @@ import { TechEntry } from "./tech";
         "Our .NET developers are vetted for their ability to design and build enterprise-grade applications. We focus on their understanding of software architecture, cloud-native development, and DevOps practices.",
       interlink_slugs: ["csharp", "azure", "sql-server"],
     },
-    go: {
-        name: "Go",
-        category: "Backend",
-        categorySlug: "backend-developer",
-        seo_title: "Hire Nearshore Go Developers | TeamStation AI",
-        meta_description:
-          "Elite, pre-vetted Go engineers in LATAM. Axiom Cortex™ vetting, EOR compliance, and audit-ready ops. Book a strategy call today.",
-        intro:
-          "Our developers are experts in building high-performance, concurrent applications using Go.",
-        pains: [
-          {
-            icon: Server,
-            problem: "Difficulty scaling services",
-            pain: "Your current services can't handle high traffic loads, leading to slow response times and poor user experience.",
-            solution:
-              "We provide experts in Go's concurrency model who can build highly scalable and efficient microservices.",
-            kpi: "Improved service response time by 10x and handled 5x more concurrent users.",
-          },
-          {
-            icon: Cpu,
-            problem: "High resource consumption",
-            pain: "Your applications are consuming too much memory and CPU, leading to high infrastructure costs.",
-            solution:
-              "Our Go developers are proficient in writing memory-efficient code and optimizing performance.",
-            kpi: "Reduced memory usage by 60% and CPU usage by 50%.",
-          },
-          {
-            icon: Bug,
-            problem: "Complex and hard-to-maintain codebase",
-            pain: "Your existing codebase is difficult to understand and modify, slowing down development and increasing the risk of bugs.",
-            solution:
-              "We write clean, simple, and maintainable Go code, following best practices and design patterns.",
-            kpi: "Reduced bug count by 40% and improved developer productivity by 30%.",
-          },
-        ],
-        evaluation: [
-          "Proficiency in Go and its standard library",
-          "Experience with concurrency and parallelism",
-          "Knowledge of microservices architecture",
-          "Expertise in performance optimization",
-        ],
-        technical_analysis:
-          "Our Go developers are vetted for their ability to build high-performance, scalable, and maintainable systems. We focus on their understanding of concurrency, systems design, and performance optimization.",
-        interlink_slugs: ["docker", "kubernetes", "grpc"],
-      },
+    // ... add other technologies here
   };
+  
