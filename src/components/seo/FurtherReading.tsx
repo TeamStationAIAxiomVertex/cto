@@ -1,34 +1,15 @@
+
 import * as React from "react";
 import Link from "next/link";
+import { allTech } from "@/lib/tech-data";
 
 export type ReadingItem = { href: string; title: string; desc?: string };
+
 type Props = {
   items?: ReadingItem[];
   title?: string;
   comparison?: string;
   country?: string;
-};
-
-const PRESETS: Record<string, ReadingItem[]> = {
-  andela: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  bairesdev: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  coderslink: [
-    { href: "/technical-interview-evaluation", title: "Our Vetting Process" },
-    { href: "/trust", title: "Security & Compliance posture" },
-    { href: "/case-studies", title: "Customer case studies" },
-  ],
-  default: [
-    { href: "/playbook/hub", title: "CTO Playbook" },
-    { href: "/comparisons", title: "Vendor Comparisons" },
-  ],
 };
 
 export default function FurtherReading({
@@ -37,10 +18,15 @@ export default function FurtherReading({
   comparison,
   country,
 }: Props) {
-  const list = items.length
+  const tech = allTech[comparison as keyof typeof allTech];
+  const list: ReadingItem[] = items.length
     ? items
-    : PRESETS[comparison ?? ""] ?? PRESETS.default;
-  if (!list.length) return null;
+    : tech?.interlink_slugs?.map((slug) => ({
+        href: `/hire/by-technology/${slug}`,
+        title: `Learn more about ${
+          allTech[slug as keyof typeof allTech]?.name || slug
+        }`,
+      })) || [];
 
   if (list.length < 3) {
     if (country) {
