@@ -1,4 +1,3 @@
-
 import type { ElementType } from 'react';
 import type { Icon } from "lucide-react";
 import {
@@ -100,7 +99,7 @@ export interface TechEntry {
 }
 
 export type TechSlug = 
-  // Frontend/Full-Stack (9)
+  // Frontend/Full-Stack (10)
   | 'react'
   | 'typescript'
   | 'nextjs'
@@ -146,7 +145,7 @@ export type TechSlug =
   | 'gitops'
   | 'serverless'
 
-  // Data & AI (18)
+  // Data & AI (23)
   | 'data-engineering'
   | 'sql'
   | 'etl-elt'
@@ -180,7 +179,7 @@ export type TechSlug =
   | 'dynamodb'
   | 'elasticsearch'
 
-  // QA & Security (5)
+  // QA & Security (7)
   | 'playwright'
   | 'cypress'
   | 'qa-automation'
@@ -189,7 +188,7 @@ export type TechSlug =
   | 'jest'
   | 'vitest'
 
-  // Architecture & Integrations (8)
+  // Architecture & Integrations (9)
   | 'microservices'
   | 'grpc'
   | 'rest-api-design'
@@ -204,7 +203,7 @@ export type TechSlug =
   | 'react-native'
   | 'flutter'
 
-  // Vetting & Cognitive AI (1)
+  // Vetting & Cognitive AI (2)
   | 'axiom-cortex'
   | 'graphql'
 ;
@@ -215,12 +214,12 @@ export interface AllTech {
 }
 
 // ----------------------------------------------------------------------
-// *** START OF DEFINITIVE TECHNOLOGY DATA ARRAY (87 ENTRIES) ***
+// *** START OF DEFINITIVE TECHNOLOGY DATA ARRAY (90 ENTRIES) ***
 // ----------------------------------------------------------------------
 
 export const allTech: AllTech = {
   // ----------------------------------------------------------------------
-  // 1. FRONTEND/FULL-STACK (9)
+  // 1. FRONTEND/FULL-STACK (10)
   // ----------------------------------------------------------------------
   'react': {
     name: 'React/TypeScript',
