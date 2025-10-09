@@ -164,6 +164,56 @@ import { TechEntry } from "./tech";
         technical_analysis: "Our Axiom Cortex™ evaluation for Go goes beyond simple coding tests. We use explainable psychometrics and cognitive calibration to assess a candidate's ability to reason about complex concurrent systems, solve performance bottlenecks, and design robust, scalable architectures. This bias mitigation software ensures we identify top-tier talent fairly and accurately.",
         interlink_slugs: ["docker", "kubernetes", "grpc", "technical-interview-evaluation", "build-vs-buy", "nearshore-vs-offshore"],
       },
+      java: {
+        name: "Java",
+        category: "Backend",
+        categorySlug: "backend-developer",
+        seo_title: "Hire Nearshore Java Developers | TeamStation AI",
+        meta_description:
+          "AI-vetted Java engineers from LATAM. Build secure, scalable enterprise applications with top talent verified by Axiom Cortex™. Hire smarter, not harder.",
+        intro:
+          "Power your enterprise systems with our elite, AI-vetted Java developers from Latin America. We deliver senior engineers who specialize in building secure, scalable, and high-performance applications.",
+        pains: [
+          {
+            icon: Layers,
+            pain: "Is your legacy Java monolith a blocker?",
+            problem:
+              "Your aging monolithic Java application is difficult to update, scale, and maintain. Feature development is slow, and the risk of system-wide failure is high, stifling innovation and frustrating your team.",
+            solution:
+              "We provide Java architects who are experts in modernizing legacy systems. They specialize in safely decomposing monoliths into resilient, scalable microservices using frameworks like Spring Boot, improving agility and reducing technical debt.",
+            kpi: "Reduced feature deployment time by 60%.",
+          },
+          {
+            icon: ShieldCheck,
+            pain: "Are you struggling to meet enterprise security and compliance?",
+            problem:
+              "Your team lacks the deep security expertise to build and maintain Java applications that meet strict enterprise and regulatory compliance standards (e.g., SOC 2, HIPAA). Security vulnerabilities are a constant threat.",
+            solution:
+              "Our Java engineers have extensive experience in building secure, compliant enterprise systems. They are proficient in security best practices, dependency management (e.g., Maven, Gradle), and implementing robust authentication and authorization.",
+            kpi: "Zero critical vulnerabilities in the last 12 months.",
+          },
+          {
+            icon: Cloud,
+            pain: "Is your cloud strategy costly and inefficient?",
+            problem:
+              "Your Java applications are not optimized for the cloud. High operational costs, poor performance, and scalability issues are preventing you from realizing the full benefits of your cloud investment.",
+            solution:
+              "We provide cloud-native Java experts who can optimize your applications for performance and cost-efficiency on platforms like AWS and GCP. They are skilled in containerization with Docker, orchestration with Kubernetes, and leveraging cloud-managed services.",
+            kpi: "Lowered cloud infrastructure costs by 35%.",
+          },
+        ],
+        evaluation: [
+          "Deep expertise in Java and the Spring Framework (Spring Boot, Spring Security)",
+          "Microservices architecture and design patterns",
+          "Cloud-native development (Docker, Kubernetes, AWS/GCP)",
+          "Database design and optimization (SQL & NoSQL)",
+          "CI/CD pipeline implementation and automation",
+          "Application security and performance tuning",
+        ],
+        technical_analysis:
+          "Our Axiom Cortex™ engine evaluates Java candidates for their ability to design and build complex, distributed systems. We focus on their understanding of software architecture, cloud-native principles, and their proficiency in writing clean, secure, and maintainable code. We identify engineers who can solve real-world enterprise challenges.",
+        interlink_slugs: ["spring-boot", "kubernetes", "docker", "aws", "backend-developer", "technical-interview-evaluation"],
+      },
       angular: {
         name: "Angular",
         category: "Frontend",
