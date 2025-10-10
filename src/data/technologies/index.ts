@@ -117,6 +117,7 @@ import jaeger from './jaeger';
 import gremlin from './gremlin';
 import pytest from './pytest';
 import hipaa from './hipaa';
+import ray from './ray';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -238,6 +239,7 @@ const allTech: AllTech = {
   gremlin,
   pytest,
   hipaa,
+  ray,
 };
 
 export default allTech;
