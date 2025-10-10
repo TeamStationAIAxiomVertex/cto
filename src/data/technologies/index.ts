@@ -109,6 +109,11 @@ import swift from './swift';
 import memcached from './memcached';
 import trivy from './trivy';
 import flink from './flink';
+import iso from './iso';
+import soc from './soc';
+import opa from './opa';
+import codeql from './codeql';
+import jaeger from './jaeger';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -222,6 +227,11 @@ const allTech: AllTech = {
   memcached,
   trivy,
   flink,
+  iso,
+  soc,
+  opa,
+  codeql,
+  jaeger,
 };
 
 export default allTech;
