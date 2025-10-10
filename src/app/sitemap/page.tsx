@@ -9,6 +9,7 @@ import {
   collectHireByCountryUrls,
   collectHireByRoleUrls,
   collectHireByTechnologyUrls,
+  collectResearchUrls,
 } from "@/lib/sitemap-data";
 import type { SitemapUrl } from "@/lib/sitemap-utils";
 
@@ -57,7 +58,8 @@ export default async function SitemapPage() {
       </p>
       <PageGroup title="Core Pages" promise={collectCoreUrls()} />
       <PageGroup title="Playbook Pages" promise={collectPlaybookUrls()} />
-      <PageGroup title="Case Studies & Research" promise={collectCaseStudyUrls()} />
+      <PageGroup title="Case Studies" promise={collectCaseStudyUrls()} />
+      <PageGroup title="Research" promise={collectResearchUrls()} />
       <PageGroup title="Comparisons" promise={collectComparisonUrls()} />
       <PageGroup title="Hire by Country" promise={collectHireByCountryUrls()} />
       <PageGroup title="Hire by Role" promise={collectHireByRoleUrls()} />
