@@ -1,5 +1,95 @@
-<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CTO TeamStation — 404 (Rescue)</title>
-<body style="font-family:system-ui,Roboto,Arial,sans-serif;background:#0b1020;color:#e6e9f2;padding:2rem">
- <h1>Temporary 404</h1><p><a href="/">Home</a></p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CTO TeamStation — 404 (Page Not Found)</title>
+  <style>
+    body {
+      font-family: system-ui, Roboto, Arial, sans-serif;
+      background: #0b1020;
+      color: #e6e9f2;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+    }
+    a {
+      color: #3b82f6;
+      text-decoration: underline;
+    }
+    .links-section {
+      margin-top: 4rem;
+    }
+    .links-section h2 {
+      font-size: 1.875rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .links-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .links-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .link-card {
+      border: 1px solid #374151;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      text-align: left;
+      transition: background-color 0.2s;
+    }
+    .link-card:hover {
+      background-color: #1f2937;
+    }
+    .link-card h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>404 – Page Not Found</h1>
+  <p>The page you’re looking for doesn’t exist. Let’s get you back on track.</p>
+  <a href="/">Go Home</a>
+
+  <section class="links-section">
+    <h2>Download The Research: Science, Comparison, and Method</h2>
+    <div class="links-grid">
+      <div class="link-card">
+        <h3><a href="/research/platforming-nearshore-it-staff-augmentation-book">Published Book: Platforming the Nearshore Industry</a></h3>
+        <p>Access our published research on replacing legacy staff augmentation with intelligent service infrastructure (Title: Platforming the Nearshore IT Staff Augmentation Industry).</p>
+      </div>
+      <div class="link-card">
+        <h3><a href="/research/axiom-cortex-scientific-report">Axiom Cortex Scientific Report</a></h3>
+        <p>Explore the research behind our AI-powered talent evaluation system.</p>
+      </div>
+      <div class="link-card">
+        <h3><a href="/comparisons/all-vendors">Vendor Comparison</a></h3>
+        <p>See how Teamstation compares to other solutions in the market.</p>
+      </div>
+    </div>
+  </section>
 </body>
+</html>
