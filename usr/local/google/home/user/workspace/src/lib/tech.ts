@@ -1,4 +1,3 @@
-
 import type { ElementType } from 'react';
 import type { Icon } from "lucide-react";
 import allTechData from '@/data/technologies'; // Corrected to be the single source of truth
@@ -35,7 +34,7 @@ export type TechSlug =
   | 'remix'
   | 'svelte'
   | 'web-accessibility'
-  | 'rx-js' // <-- MISSING SLUG 1 (For Angular/Reactive Programming)
+  | 'rx-js' 
 
   // Backend/Core Languages (12)
   | 'node'
@@ -90,8 +89,9 @@ export type TechSlug =
   | 'kafka'
   | 'data-science'
   | 'llms'
-  | 'pandas' // <-- MISSING SLUG 2 (Data Science/Python)
-  | 'numpy' // <-- MISSING SLUG 3 (Data Science/Python)
+  | 'pandas'
+  | 'numpy'
+  | 'vllm'
 
   // Databases (7)
   | 'postgresql'
@@ -102,14 +102,16 @@ export type TechSlug =
   | 'dynamodb'
   | 'elasticsearch'
 
-  // QA & Security (5)
+  // QA & Security (7)
   | 'playwright'
   | 'cypress'
   | 'qa-automation'
   | 'security-engineering'
   | 'penetration-testing'
-  | 'jest' // <-- MISSING SLUG 4 (Testing Framework)
-  | 'vitest' // <-- MISSING SLUG 5 (Testing Framework)
+  | 'jest' 
+  | 'vitest'
+  | 'k6'
+  | 'pact'
 
   // Architecture & Integrations (8)
   | 'microservices'
@@ -120,16 +122,15 @@ export type TechSlug =
   | 'message-queues'
   | 'api-gateway'
   | 'system-design'
-  | 'api-security' // <-- MISSING SLUG 6 (General Security/API)
+  | 'api-security'
 
   // Mobile (2)
   | 'react-native'
   | 'flutter'
 
-  // Vetting & Cognitive AI (1)
+  // Vetting & Cognitive AI (2)
   | 'axiom-cortex'
-  | 'graphql' // <-- MISSING SLUG 7 (Alternative to REST/gRPC)
-  | 'pact'
+  | 'graphql'
 ;
 
 
