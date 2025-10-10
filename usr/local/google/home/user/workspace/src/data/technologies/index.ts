@@ -89,7 +89,6 @@ import reactNative from './react-native';
 import flutter from './flutter';
 import axiomCortex from './axiom-cortex';
 import graphql from './graphql';
-import reactjs from './react-js';
 import preact from './preact';
 import ember from './ember-js';
 import solid from './solid-js';
@@ -102,6 +101,24 @@ import redux from './redux';
 import mobx from './mobx';
 import dotNet from './net';
 import awsCostExplorer from './aws-cost-explorer';
+import socketio from './socketio.json';
+import ragas from './ragas';
+import airflow from './airflow';
+import sqlalchemy from './sqlalchemy';
+import swift from './swift';
+import memcached from './memcached';
+import trivy from './trivy';
+import flink from './flink';
+import iso from './iso';
+import soc from './soc';
+import opa from './opa';
+import codeql from './codeql';
+import jaeger from './jaeger';
+import gremlin from './gremlin';
+import pytest from './pytest';
+import hipaa from './hipaa';
+import ray from './ray';
+import pact from './pact';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -195,7 +212,6 @@ const allTech: AllTech = {
   flutter,
   'axiom-cortex': axiomCortex,
   graphql,
-  'react-js': reactjs,
   preact,
   'ember-js': ember,
   'solid-js': solid,
@@ -207,7 +223,25 @@ const allTech: AllTech = {
   redux,
   mobx,
   net: dotNet,
-  'aws-cost-explorer': awsCostExplorer
+  'aws-cost-explorer': awsCostExplorer,
+  socketio,
+  ragas,
+  airflow,
+  sqlalchemy,
+  swift,
+  memcached,
+  trivy,
+  flink,
+  iso,
+  soc,
+  opa,
+  codeql,
+  jaeger,
+  gremlin,
+  pytest,
+  hipaa,
+  ray,
+  pact,
 };
 
 export default allTech;
