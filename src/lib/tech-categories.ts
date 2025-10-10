@@ -1,5 +1,5 @@
 
-import type { Icon } from 'lucide-react';
+import type { ElementType } from 'react';
 import {
   Server,
   Layers,
@@ -17,7 +17,7 @@ export interface TechCategory {
   name: string;
   slug: string;
   pain: string;
-  icon: Icon;
+  icon: ElementType;
   tech: Array<{ name: string; slug: string }>;
 }
 

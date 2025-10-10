@@ -1,55 +1,40 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
+import { AlertTriangle } from "lucide-react";
 
 const rust: TechEntry = {
-  name: "Rust",
-  category: "APIs & Backend Services",
-  categorySlug: "backend-services",
-  seo_title: "Hire Rust Developers | High-Performance Systems Experts",
-  meta_description:
-    "Build memory-safe, concurrent, and high-performance systems. Hire elite remote Rust experts vetted for their deep understanding of the borrow checker, lifetimes, and fearless concurrency. Book a call.",
-  intro:
-    "Rust is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. You need an engineer who understands that building a high-performance, memory-safe application is not just about writing code, but about a deep understanding of Rust's ownership model and its powerful compiler. Our vetting process identifies developers who are experts in Rust's core concepts—the borrow checker, lifetimes, and traits—and can architect applications that are as safe as they are fast. By hiring a Rust expert, you get a developer who can build a modern backend that is a joy to use, and a joy to maintain.",
-  pains: [
-    {
-      icon: AlertTriangle,
-      pain: "Is your application plagued by memory safety bugs and security vulnerabilities?",
-      problem:
-        "In many applications, managing memory is a complex and error-prone task. This can lead to a codebase that is a mess of memory safety bugs and security vulnerabilities, and a user experience that is filled with crashes and other bugs.",
-      solution:
-        "We vet for experts in **Rust's ownership model**. Our engineers are proficient in writing memory-safe code that is guaranteed by the compiler. This results in a codebase that is easy to reason about and a user experience that is free of memory safety bugs and security vulnerabilities.",
-      kpi: "A Memory-Safe and Secure Application, Guaranteed by the Compiler",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your codebase a mess of data races and other concurrency bugs?",
-      problem:
-        "In many applications, managing concurrency is a complex and error-prone task. This can lead to a codebase that is a mess of data races and other concurrency bugs, and a user experience that is filled with deadlocks and other bugs.",
-      solution:
-        "Our engineers are masters of **fearless concurrency**. They are vetted on their ability to use Rust's ownership model and type system to write concurrent code that is free of data races. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-      kpi: "A Concurrent Codebase That is Free of Data Races",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your application slow and struggling to scale?",
-      problem:
-        "Many applications are built without a deep understanding of Rust's performance characteristics. This can lead to a user experience that is slow and a codebase that is a mess of inefficient algorithms and unoptimized code.",
-      solution:
-        "We look for engineers proficient with **Rust's performance and ecosystem**. They are vetted on their ability to write high-performance code that is powered by the best of the Rust ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-      kpi: "A High-Performance Application Powered by the Best of the Rust Ecosystem",
-    },
-  ],
-  evaluation: [
-    "The borrow checker, lifetimes, and ownership",
-    "Fearless concurrency with threads and async/await",
-    "Traits and generics",
-    "Error handling and the Result type",
-    "The Rust ecosystem (e.g., Cargo, Tokio, Serde)",
-  ],
-  technical_analysis:
-    "The Rust evaluation focuses on a candidate's ability to build memory-safe, concurrent, and high-performance systems. We assess their understanding of Rust's core concepts, requiring them to design a complex application with a clean, concurrent architecture. A critical part of the evaluation is their mastery of **the borrow checker and lifetimes**; candidates must demonstrate how to write memory-safe code that is guaranteed by the compiler. We also test their ability to build **concurrent** applications that are free of data races. Finally, we assess their knowledge of the Rust ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-  interlink_slugs: ["golang", "c-sharp", "python"],
+    name: "Rust",
+    category: "Backend & APIs",
+    categorySlug: "backend-services",
+    seo_title: "Hire Senior Rust Developers | Systems Programming & High-Performance Backend",
+    meta_description: "Build fast, memory-safe, and highly concurrent systems. Hire elite remote Rust experts for systems programming, web assembly, and zero-cost abstractions. Talk to us.",
+    intro: "**Rust** is the revolutionary language that delivers the performance of C/C++ with unparalleled memory safety and fearless concurrency, guaranteed by its **Compiler-Enforced Ownership Model**. You need an engineer who can leverage Rust's unique strengths to build mission-critical infrastructure, low-latency services, or embedded systems where correctness and speed are non-negotiable. Our vetting process is unlike any other: we focus almost entirely on the core principles of **Ownership, Borrowing, and Lifetimes**. We assess a candidate's ability to satisfy the compiler's strict rules, preventing entire classes of bugs (null pointer dereferences, data races) before the code even runs. By hiring a Rust expert from us, you get a developer who can deliver software with an exceptional level of stability, performance, and long-term reliability.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are your developers struggling to satisfy the Borrow Checker?",
+            problem: "Rust's core strength—the Borrow Checker—is also its biggest hurdle. Inexperienced developers often hit intractable compiler errors related to ownership, borrowing, and lifetimes, leading to frustration, slow development, and resorting to unsafe code, which defeats the purpose of Rust.",
+            solution: "We vet for true mastery of the Ownership model. Our experts are required to demonstrate the correct use of references, lifetimes, and smart pointers (e.g., `Arc`, `Mutex`) to satisfy the compiler's safety guarantees without compromising performance or resorting to `unsafe` code.",
+            kpi: "Mastery of Ownership, Borrowing, and Lifetimes"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your concurrent code slow or prone to deadlocks?",
+            problem: "Even in Rust, incorrect concurrency implementation can lead to bottlenecks or deadlocks. Misunderstanding the trade-offs between shared mutability (Mutex) and message passing (Channels) results in inefficient or blocked threads.",
+            solution: "Our engineers are experts in Rust's concurrency primitives. They are vetted on their ability to use **`std::sync`** and **`tokio`** for safe and efficient asynchronous programming, ensuring they can build high-throughput, low-latency concurrent services without memory-related data races.",
+            kpi: "Fearless Concurrency with Async/Await and Channels"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to manage errors and maintain clean code?",
+            problem: "Rust's strict error handling (the `Result` type) can be verbose if not handled idiomatically. Developers who use `unwrap()` or `expect()` excessively risk panics in production, which is a critical failure for reliable system software.",
+            solution: "We look for engineers proficient in idiomatic error handling. They must demonstrate mastery of the **`?` operator** and custom error types, leading to clean, declarative, and robust code that gracefully handles failure without crashing the entire application.",
+            kpi: "Idiomatic Error Handling and Robustness"
+        }
+    ],
+    evaluation: ["Ownership, Borrowing, and Lifetimes (The core of Rust)", "Asynchronous programming and concurrency (Tokio, Channels)", "Error handling (Result, `?` operator, custom errors)", "Macro usage (procedural, declarative) and metaprogramming", "Crate ecosystem and build system (Cargo)"],
+    technical_analysis: "The Rust evaluation is highly theoretical and practical, centered on the **Ownership Model**. Candidates are given scenarios involving complex data structures (e.g., linked lists, graphs) that are designed to fail the Borrow Checker, requiring them to implement a memory-safe solution using correct lifetimes, borrowing rules, and smart pointers. We specifically test their knowledge of **fearless concurrency**, requiring them to write a safe, concurrent solution using `Mutex`, `Arc`, and `Channel` to ensure they can manage shared mutable state without data races. For system development, we assess their ability to use Rust's powerful standard library, integrate with external C code (FFI), and use performance profiling tools (e.g., flamegraphs) to identify and fix bottlenecks, confirming their ability to build production-grade, high-performance software.",
+    interlink_slugs: ["golang", "docker", "system-design"]
 };
 
 export default rust;
