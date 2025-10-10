@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, AlertTriangle } from "lucide-react";
 import { notFound } from "next/navigation";
 import { allTech } from "@/lib/tech";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -12,6 +12,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@radix-ui/react-tooltip";
+
+// Map string names to actual icon components
+const icons = {
+  AlertTriangle: AlertTriangle,
+};
 
 type TechKeys = keyof typeof allTech;
 
@@ -139,7 +144,10 @@ export default function TechPage({ params }: { params: { slug: string } }) {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               {tech.pains.map((item) => {
-                const Icon = item.icon;
+                const Icon = icons[item.icon as keyof typeof icons];
+                if (!Icon) {
+                    return null; // Or a placeholder
+                }
                 return (
                   <div
                     key={item.pain}

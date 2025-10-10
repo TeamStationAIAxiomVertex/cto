@@ -1,7 +1,6 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BookOpen } from 'lucide-react';
 import ScholarlyArticleSchema from "@/components/ScholarlyArticleSchema";
 
 const pageInfo = {
@@ -64,7 +63,6 @@ export default function ResearchPaperPage() {
           <h1>{pageInfo.title.split(' | ')[0]}</h1>
           {pageInfo.summary.map((p, i) => <p key={i}>{p}</p>)}
           <a href={pageInfo.canonical} target="_blank" rel="noopener noreferrer" className="cta-button mt-4 inline-flex items-center">
-            <BookOpen className="mr-2 h-4 w-4" />
             Read full paper on SSRN →
           </a>
           <nav className="mt-12 border-t border-border pt-6 text-sm">
