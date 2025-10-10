@@ -337,7 +337,7 @@ export default async function HomePage() {
           id="pain-points"
           className="py-24 bg-card rounded-lg shadow-lg section-defer"
         >
-          <h2 className="text-center text-4xl font-bold text-foreground">
+          <h2 className.writer.style = "text-center text-4xl font-bold text-foreground">
             Sound Familiar? It's the Cost of Doing Nothing.
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
@@ -436,7 +436,7 @@ export default async function HomePage() {
                 Hear directly from our founders about the science and strategy
                 behind the TeamStation AI platform.
               </p>
-              <Link href="/research/hub#podcast" className="cta-button mt-6">
+              <Link href="https://open.spotify.com/episode/7EwovXvoVFIGLJDwqTZFUE?si=8109032fb1f14398" className="cta-button mt-6">
                 Listen Now <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
