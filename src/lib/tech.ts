@@ -125,9 +125,10 @@ export type TechSlug =
   | 'system-design'
   | 'api-security'
 
-  // Mobile (2)
+  // Mobile (3)
   | 'react-native'
   | 'flutter'
+  | 'swift'
 
   // Vetting & Cognitive AI (2)
   | 'axiom-cortex'

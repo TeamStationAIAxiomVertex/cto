@@ -87,6 +87,7 @@ import systemDesign from './system-design';
 import apiSecurity from './api-security';
 import reactNative from './react-native';
 import flutter from './flutter';
+import swift from './swift';
 import axiomCortex from './axiom-cortex';
 import graphql from './graphql';
 import reactjs from './react-js';
@@ -195,6 +196,7 @@ const allTech: AllTech = {
   'api-security': apiSecurity,
   'react-native': reactNative,
   flutter,
+  swift,
   'axiom-cortex': axiomCortex,
   graphql,
   'react-js': reactjs,
