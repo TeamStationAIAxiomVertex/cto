@@ -118,6 +118,8 @@ import gremlin from './gremlin';
 import pytest from './pytest';
 import hipaa from './hipaa';
 import ray from './ray';
+import pact from './pact.json';
+import k6 from './k6.json';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -240,6 +242,8 @@ const allTech: AllTech = {
   pytest,
   hipaa,
   ray,
+  pact,
+  k6,
 };
 
 export default allTech;
