@@ -1,6 +1,6 @@
 ---
 slug: 'global-entertainment-platform'
-title: 'From QA Crisis to Global Releases in <30 Days | Global Entertainment Platform Case Study'
+title: 'From QA Crisis to Global Releases in <30 Days'
 description: 'TeamStation AI stood up a nearshore LATAM QA squad of 10+ engineers in under 30 days, stabilizing releases and reducing defect leakage for a billion-dollar product.'
 clientName: 'Global Entertainment Platform'
 industry: 'Global Entertainment & Media'
@@ -8,7 +8,7 @@ summary: 'Replaced an incumbent offshore QA vendor with a 10+ engineer LATAM squ
 canonical: 'https://cto.teamstation.dev/case-studies/global-entertainment-platform'
 ogImage:
   src:
-    url: "/assets/case-studies/live-concert-photo.jpg"
+    url: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb25jZXJ0fGVufDB8fHx8MTc1OTI4NDM2OXww&ixlib=rb-4.1.0&q=80&w=1080"
   aiHint: "An abstract image representing global media, digital networks, and quality assurance. Show interconnected nodes across a world map, with some nodes highlighted to indicate QA testing. Use a blue and green color palette."
 techStack:
   - name: 'Selenium'
@@ -100,7 +100,7 @@ A top-tier entertainment company running a **billion‑dollar, globally distribu
 
 ---
 
-:::NCLA-Humanizer
+:::NCLA-humanizer
 **From Problem to Proof:** These case studies show how vetted LATAM engineers cut costs, improved velocity, and built CFO trust.  
 :::
 
