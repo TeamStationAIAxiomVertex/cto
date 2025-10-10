@@ -1,6 +1,5 @@
 
 import { TechEntry } from "@/lib/tech";
-import { AlertTriangle } from "lucide-react";
 
 const azure: TechEntry = {
     name: "Microsoft Azure",
@@ -11,21 +10,21 @@ const azure: TechEntry = {
     intro: "Microsoft Azure is the platform of choice for enterprises integrating tightly with the Microsoft ecosystem (Windows, Active Directory, .NET). You need an engineer who can navigate Azure's vast array of services—from scalable compute (**Azure App Services**, **Azure Functions**) and networking (**VNet**, **Azure Firewall**) to critical identity management (**Azure AD**). Our vetting process is designed to find certified experts who understand the nuances of the enterprise environment, prioritizing security, governance, and hybrid connectivity. We test for mastery of both PaaS (Platform-as-a-Service) offerings, which simplify operations, and IaaS (Infrastructure-as-a-Service) for maximum control. By hiring an Azure expert from us, you get a developer who can design a robust, integrated, and compliant cloud solution that leverages your existing enterprise investments.",
     pains: [
         {
-            icon: AlertTriangle,
+            icon: "AlertTriangle",
             pain: "Is your hybrid cloud setup complex, insecure, or difficult to manage?",
             problem: "Many enterprises require connectivity between their on-premises data centers and Azure. Poorly configured hybrid connectivity (e.g., VPN gateways) or a lack of synchronization with **Active Directory (AD)** leads to security vulnerabilities, identity sprawl, and operational overhead.",
             solution: "We vet for engineers who are experts in **Azure networking** and identity. They must demonstrate proficiency in setting up secure VNet-to-VNet and on-premises-to-Azure connectivity and mastery of Azure AD and role-based access control (RBAC) to enforce a unified, secure identity model across the entire estate.",
             kpi: "Azure Networking and Azure AD/RBAC Mastery"
         },
         {
-            icon: AlertTriangle,
+            icon: "AlertTriangle",
             pain: "Are you struggling to manage application deployments efficiently?",
             problem: "Developers often revert to manually deploying applications to VMs, bypassing Azure's powerful PaaS offerings. This increases operational toil and maintenance costs, failing to leverage the auto-scaling and managed services of App Services or AKS.",
             solution: "Our engineers are masters of Azure's PaaS offerings. They are vetted on their ability to use **Azure App Services** for streamlined web deployment, **Azure Functions** for serverless event-driven logic, and **Azure Kubernetes Service (AKS)** for container orchestration, dramatically reducing operational overhead.",
             kpi: "PaaS (App Services, Functions) Deployment Expertise"
         },
         {
-            icon: AlertTriangle,
+            icon: "AlertTriangle",
             pain: "Is your resource provisioning manual and inconsistent?",
             problem: "Managing resources through the Azure Portal (clicking in the GUI) is slow, error-prone, and impossible to audit. This leads to configuration drift, security holes, and environments that are not repeatable.",
             solution: "We look for engineers proficient in **Infrastructure-as-Code (IaC)** on Azure. They are vetted on their ability to use **Azure Resource Manager (ARM) templates** or **Terraform** to define, deploy, and manage all cloud resources in a version-controlled, automated manner, guaranteeing consistency and compliance.",
