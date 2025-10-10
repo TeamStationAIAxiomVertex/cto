@@ -1,6 +1,6 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
+import { AlertTriangle } from "lucide-react";
 
 const k6: TechEntry = {
     name: "k6",
@@ -37,7 +37,7 @@ const k6: TechEntry = {
         "Load test design (scenarios, executors, ramp-up)",
         "Performance goal setting with Thresholds",
         "Integration with CI/CD and observability platforms (Prometheus, Grafana)",
-        "Analysis of k6 output and performance metrics",
+        "Analysis of k6 output and performance metrics"
     ],
     technical_analysis: "The k6 evaluation is focused on a candidate's ability to design and implement a modern, developer-centric performance testing strategy. We assess their understanding of how to write modular and maintainable k6 scripts in JavaScript. A critical part of the evaluation is their mastery of **load test design and execution**; candidates must demonstrate how to configure different executors (e.g., `ramping-vus`) to simulate realistic traffic patterns and how to set up **Thresholds** to enforce performance SLAs. We also test their ability to integrate k6 into a CI/CD pipeline and to export metrics to an observability platform like Prometheus for real-time analysis in Grafana.",
     interlink_slugs: ["qa-automation", "devops-engineering", "ci-cd", "prometheus"]

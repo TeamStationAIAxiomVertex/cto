@@ -1,55 +1,40 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
+import { AlertTriangle } from "lucide-react";
 
 const kotlin: TechEntry = {
-  name: "Kotlin",
-  category: "APIs & Backend Services",
-  categorySlug: "backend-services",
-  seo_title: "Hire Kotlin Developers | JVM & Android Experts",
-  meta_description:
-    "Build modern, concise, and safe applications. Hire elite remote Kotlin experts vetted for their deep understanding of the language, its rich ecosystem, and its seamless interoperability with Java. Book a call.",
-  intro:
-    "Kotlin is a modern, statically typed programming language that runs on the JVM. You need an engineer who understands that Kotlin is not just 'a better Java,' but a powerful, expressive language with a rich ecosystem of libraries and frameworks. Our vetting process identifies developers who are experts in Kotlin's core concepts—coroutines, null safety, and functional programming—and can architect applications that are as elegant as they are efficient. By hiring a Kotlin expert, you get a developer who can build a modern backend that is a joy to use, and a joy to maintain.",
-  pains: [
-    {
-      icon: AlertTriangle,
-      pain: "Is your application slow and struggling to handle concurrency?",
-      problem:
-        "Many applications are built without a deep understanding of Kotlin's concurrency model. This can lead to a user experience that is slow and a codebase that is a mess of callback hell and thread-blocking operations.",
-      solution:
-        "We vet for experts in **Kotlin's coroutines**. Our engineers are proficient in using coroutines to write clean, concurrent, and bug-free code. This results in a codebase that is easy to reason about and a user experience that is fast and responsive, even under heavy load.",
-      kpi: "A Fast, Responsive, and Scalable Backend Application",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your codebase a mess of null pointer exceptions and boilerplate code?",
-      problem:
-        "In many applications, the lack of null safety and modern language features can lead to a codebase that is a mess of null pointer exceptions and boilerplate code. This can be especially problematic in large, complex applications.",
-      solution:
-        "Our engineers are masters of **modern Kotlin and functional programming**. They are vetted on their ability to write clean, concise, and bug-free code that leverages modern language features and a strong functional programming style. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-      kpi: "A Clean, Concise, and Bug-Free Codebase",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your team not leveraging the full power of the Kotlin ecosystem?",
-      problem:
-        "The Kotlin ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-      solution:
-        "We look for engineers proficient with **the Kotlin ecosystem and its seamless interoperability with Java**. They are vetted on their ability to build applications that are powered by the best of the Kotlin and Java ecosystems. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-      kpi: "An Application That is Powered by the Best of the Kotlin and Java Ecosystems",
-    },
-  ],
-  evaluation: [
-    "Coroutines and structured concurrency",
-    "Null safety and the type system",
-    "Functional programming and modern language features",
-    "Interoperability with Java and the JVM",
-    "The Kotlin ecosystem (e.g., Ktor, Exposed, Arrow)",
-  ],
-  technical_analysis:
-    "The Kotlin evaluation focuses on a candidate's ability to build modern, concise, and safe applications on the JVM. We assess their understanding of Kotlin's core concepts, requiring them to design a complex application with a clean, concurrent architecture. A critical part of the evaluation is their mastery of **coroutines and null safety**; candidates must demonstrate how to use coroutines to write clean, concurrent, and bug-free code, and how to use the type system to eliminate null pointer exceptions. We also test their ability to write **idiomatic Kotlin** that is clean, concise, and leverages modern language features. Finally, we assess their knowledge of the Kotlin ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-  interlink_slugs: ["java", "spring-boot", "android"],
+    name: "Kotlin",
+    category: "Backend & APIs",
+    categorySlug: "backend-services",
+    seo_title: "Hire Senior Kotlin Developers | JVM and Microservices Experts",
+    meta_description: "Build robust, concise microservices on the JVM. Hire elite remote Kotlin developers vetted for Coroutines, Spring Boot, and functional programming. Book a call.",
+    intro: "Kotlin is the modern, pragmatic language for the JVM, offering conciseness, safety, and superior expressiveness compared to Java, while maintaining full interoperability. It is the perfect choice for building modern, high-performance backends and Android applications. You need an engineer who can leverage Kotlin's core strength: built-in null safety and powerful support for **Coroutines** for asynchronous programming. Our vetting process is designed to find these experts, assessing their ability to write idiomatic Kotlin that is functional, concise, and harnesses Coroutines to achieve massive concurrency without the complexity of traditional Java threads. By hiring a Kotlin expert from us, you gain a developer who can dramatically reduce boilerplate, boost development velocity, and deliver a more reliable, crash-resistant application.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your application logic verbose and full of null pointer exceptions?",
+            problem: "Legacy code often suffers from excessive boilerplate and the dreaded `NullPointerException`. Developers who don't embrace Kotlin's built-in safety and functional features write code that is hard to read, overly complex, and prone to runtime errors.",
+            solution: "We vet for mastery of idiomatic Kotlin features, including null safety (`?`, `!!`, `let`, `run`), data classes, and extension functions. Our experts write concise, expressive code that eliminates boilerplate and uses the compiler to prevent null-related crashes.",
+            kpi: "Idiomatic Kotlin and Null Safety Mastery"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your concurrency solution slow or overly complex?",
+            problem: "Using traditional thread-based concurrency on the JVM is complex, resource-intensive, and bug-prone. Developers who rely on these older methods fail to leverage Kotlin's lightweight and efficient solution: Coroutines.",
+            solution: "Our engineers are experts in Coroutines. They are vetted on their ability to use `launch`, `async`, and different Coroutine dispatchers to write highly concurrent, non-blocking code that is simple to read, resource-efficient, and dramatically improves backend throughput.",
+            kpi: "Mastery of Coroutines for Asynchronous Programming"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to smoothly integrate Kotlin into a Spring/Java ecosystem?",
+            problem: "When introducing Kotlin, many teams struggle to manage the interoperability with existing Java libraries and frameworks like Spring. Inconsistent style and confusion over which features to use lead to a fragmented, difficult-to-maintain codebase.",
+            solution: "We look for engineers who are masters of Kotlin/Java interoperability. They are proficient in using Kotlin with Spring Boot, writing functional-style routes, and ensuring that all Java-based dependencies are consumed and integrated with idiomatic, type-safe Kotlin code.",
+            kpi: "Seamless Kotlin/Java Interoperability"
+        }
+    ],
+    evaluation: ["Coroutines and structured concurrency mastery", "Null Safety and idiomatic Kotlin features", "Frameworks (Spring Boot, Ktor)", "Interoperability with Java libraries", "Functional programming concepts and immutability"],
+    technical_analysis: "The Kotlin evaluation focuses on its unique features and integration with the JVM ecosystem. The critical assessment is the candidate's mastery of **Coroutines**: they must design and implement a non-blocking asynchronous solution, correctly using structured concurrency and different Coroutine dispatchers for I/O and CPU-bound tasks. We rigorously test for **idiomatic Kotlin**, assessing their use of null safety features (`?`, safe calls, `let`), functional collection operators, and conciseness, demanding that they eliminate common Java boilerplate. For backend development, we test their ability to build a performant API using a framework like Spring Boot or Ktor, focusing on dependency injection, clean layering, and seamless interaction with existing Java components and libraries.",
+    interlink_slugs: ["java", "microservices", "grpc"]
 };
 
 export default kotlin;

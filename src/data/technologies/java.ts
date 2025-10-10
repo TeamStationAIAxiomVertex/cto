@@ -1,55 +1,40 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
+import { AlertTriangle } from "lucide-react";
 
-const java: TechEntry = {
-  name: "Java",
-  category: "APIs & Backend Services",
+const java: TechEntry = { 
+  name: "Java (Spring & JVM)",
+  category: "Backend & APIs",
   categorySlug: "backend-services",
-  seo_title: "Hire Java Developers | Enterprise Backend Experts",
-  meta_description:
-    "Build robust, scalable, and high-performance enterprise applications. Hire elite remote Java experts vetted for their deep understanding of the JVM, concurrency, and modern frameworks like Spring Boot. Book a call.",
-  intro:
-    "Java is the backbone of the enterprise. You need an engineer who understands that building a high-performance, mission-critical application is not just about writing code, but about a deep understanding of the JVM, concurrency, and the entire Java ecosystem. Our vetting process identifies developers who are experts in Java's core concepts—the JVM, memory management, and multi-threading—and can architect applications that are as reliable as they are scalable. By hiring a Java expert, you get a developer who can build a modern backend that is a joy to use, and a joy to maintain.",
+  seo_title: "Hire Senior Java Developers | Spring Boot & Microservices Experts",
+  meta_description: "Build robust, mission-critical backends. Hire elite remote Java experts vetted for JVM performance, Spring, and enterprise microservice architecture. Book a call.",
+  intro: "Java and the JVM ecosystem (especially **Spring Boot**) remain the gold standard for building massive-scale, mission-critical enterprise applications and microservices. You need an engineer who can leverage Java's stability, strong typing, and vast ecosystem to deliver solutions that are not just fast, but inherently reliable and maintainable under extreme loads. Our vetting process is designed to find engineers who are masters of the JVM, assessing their deep understanding of multithreading, garbage collection, and optimizing Spring/Quarkus applications for production. We move beyond simple CRUD to test their ability to architect complex, distributed systems, ensuring they can harness Java's power for resilience and performance. By hiring a Java expert from us, you are investing in a proven technology stack handled by top-tier talent, guaranteeing the long-term stability and evolutionary capacity of your core business logic.",
   pains: [
-    {
-      icon: AlertTriangle,
-      pain: "Is your application slow and struggling to scale?",
-      problem:
-        "Many applications are built without a deep understanding of the JVM and its performance characteristics. This can lead to a user experience that is slow and a codebase that is a mess of memory leaks and inefficient garbage collection.",
-      solution:
-        "We vet for experts in **JVM performance tuning**. Our engineers are proficient in using tools like JMX, VisualVM, and profilers to identify and fix performance bottlenecks. This results in a codebase that is easy to reason about and a user experience that is fast and responsive, even under heavy load.",
-      kpi: "A Fast, Responsive, and Scalable Backend Application",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your codebase a mess of thread safety issues and race conditions?",
-      problem:
-        "In many applications, managing concurrency is a complex and error-prone task. This can lead to a codebase that is a mess of thread safety issues and race conditions, and a user experience that is filled with deadlocks and other bugs.",
-      solution:
-        "Our engineers are masters of **Java's concurrency model**. They are vetted on their ability to use threads, locks, and concurrent data structures to manage concurrency in a clean, declarative, and bug-free way. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-      kpi: "A Clean, Declarative, and Bug-Free Concurrency Model",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your application not resilient to errors and unexpected failures?",
-      problem:
-        "Many applications are not built to be resilient to errors and unexpected failures. This can lead to a user experience that is frustrating and a codebase that is hard to maintain and test.",
-      solution:
-        "We look for engineers proficient with **Java's exception handling and modern frameworks like Spring Boot**. They are vetted on their ability to build applications that are resilient to errors and unexpected failures. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-      kpi: "A Resilient User Experience and a Maintainable Codebase",
-    },
-  ],
-  evaluation: [
-    "The Java Virtual Machine (JVM) and memory management",
-    "Concurrency and multi-threading",
-    "Modern frameworks like Spring Boot and Quarkus",
-    "Build tools like Maven and Gradle",
-    "Performance tuning and optimization",
-  ],
-  technical_analysis:
-    "The Java evaluation focuses on a candidate's ability to build robust, scalable, and high-performance enterprise applications. We assess their understanding of Java's core concepts, requiring them to design a complex application with a clean, multi-threaded architecture. A critical part of the evaluation is their mastery of **the JVM and concurrency**; candidates must demonstrate how to use threads, locks, and concurrent data structures to manage concurrency in a safe and efficient way. We also test their ability to build **resilient** applications that are resilient to errors and unexpected failures. Finally, we assess their knowledge of modern frameworks like Spring Boot, and their ability to leverage the Java ecosystem to build a modern, high-performance backend.",
-  interlink_slugs: ["spring-boot", "kotlin", "aws"],
+      {
+          icon: AlertTriangle,
+          pain: "Is your JVM memory usage unstable and plagued by GC pauses?",
+          problem: "Poorly optimized Java applications can suffer from frequent, long-duration Garbage Collection (GC) pauses that halt the application (stop-the-world events), leading to high latency and unpredictable performance in high-throughput systems. This indicates a lack of JVM deep knowledge.",
+          solution: "We vet for experts who understand JVM tuning. They are required to demonstrate knowledge of different GC algorithms (e.g., G1, ZGC), and how to configure memory and thread pools in Spring Boot to minimize GC overhead, resulting in stable, low-latency service performance.",
+          kpi: "JVM Tuning and Garbage Collection Optimization"
+      },
+      {
+          icon: AlertTriangle,
+          pain: "Is your Spring architecture monolithic and hard to decouple?",
+          problem: "Many developers treat Spring Boot as a monolithic framework, coupling business logic, data access, and API layers too tightly. This makes refactoring risky, testing cumbersome, and prevents the application from scaling horizontally in a microservice environment.",
+          solution: "Our engineers are masters of the Spring ecosystem, focusing on architectural patterns like **Domain-Driven Design (DDD)** and clean separation of concerns. They are vetted on their ability to use Spring Cloud for microservices, and Spring Data for efficient and decoupled database access, ensuring a modular and resilient architecture.",
+          kpi: "Mastery of Spring Microservice Architecture"
+      },
+      {
+          icon: AlertTriangle,
+          pain: "Are you failing to correctly manage concurrency and threading?",
+          problem: "Java is inherently multithreaded, which, when handled incorrectly, leads to race conditions, deadlocks, and corrupted data. Junior developers often struggle with thread-safe data structures and synchronization primitives, resulting in elusive and costly bugs.",
+          solution: "We look for engineers who can confidently implement thread-safe code. They are vetted on their knowledge of concurrency utilities, lock-free structures, and the correct use of synchronization and locking mechanisms, guaranteeing the stability and correctness of data integrity under heavy load.",
+          kpi: "Concurrency and Thread-Safe Programming"
+      }
+  ], 
+  evaluation: ["Advanced JVM tuning and garbage collection (G1, ZGC)", "Concurrency models (Virtual Threads, RxJava/Reactor)", "Spring Boot/Spring Cloud for microservices", "Database interaction (JPA/Hibernate, Spring Data)", "Test-Driven Development (JUnit, Mockito)"],
+  technical_analysis: "The Java evaluation focuses on enterprise architecture and JVM performance. Candidates are tested on their ability to design a microservice using Spring Boot, demonstrating a deep understanding of IoC, dependency injection, and configuration management. A key area is **concurrency**, where candidates must solve real-world threading problems, proving their expertise in using synchronization, thread pools, and concurrent collections to prevent deadlocks and race conditions. We assess their JVM knowledge by asking them to diagnose performance issues related to garbage collection and memory leaks. Finally, for data access, they must demonstrate efficiency in using ORMs (like Hibernate/JPA) and writing complex, performant SQL queries, ensuring the entire stack is optimized for speed and stability.",
+  interlink_slugs: ["microservices", "postgresql", "event-sourcing"]
 };
 
 export default java;

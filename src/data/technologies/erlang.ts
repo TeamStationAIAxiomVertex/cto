@@ -1,55 +1,40 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
+import { AlertTriangle } from "lucide-react";
 
 const erlang: TechEntry = {
-  name: "Erlang",
-  category: "APIs & Backend Services",
-  categorySlug: "backend-services",
-  seo_title: "Hire Erlang Developers | Concurrent & Fault-Tolerant Experts",
-  meta_description:
-    "Build massively concurrent, fault-tolerant, and distributed systems. Hire elite remote Erlang experts vetted for their deep understanding of the BEAM VM, the actor model, and OTP. Book a call.",
-  intro:
-    "Erlang is a programming language used to build massively scalable soft real-time systems with requirements on high availability. You need an engineer who understands that building a fault-tolerant, distributed system is not just about writing code, but about a deep understanding of the BEAM VM, the actor model, and the OTP framework. Our vetting process identifies developers who are experts in Erlang's core concepts—processes, message passing, and supervision trees—and can architect applications that are as resilient as they are scalable. By hiring an Erlang expert, you get a developer who can build a modern backend that is a joy to use, and a joy to maintain.",
-  pains: [
-    {
-      icon: AlertTriangle,
-      pain: "Is your application struggling to handle massive concurrency?",
-      problem:
-        "Many applications are built without a deep understanding of Erlang's concurrency model. This can lead to a user experience that is slow and a codebase that is a mess of race conditions and deadlocks.",
-      solution:
-        "We vet for experts in **Erlang's actor model**. Our engineers are proficient in using lightweight processes and message passing to write clean, concurrent, and bug-free code. This results in a codebase that is easy to reason about and a user experience that is fast and responsive, even under heavy load.",
-      kpi: "A Fast, Responsive, and Scalable Backend Application",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your application not resilient to errors and unexpected failures?",
-      problem:
-        "Many applications are not built to be resilient to errors and unexpected failures. This can lead to a user experience that is frustrating and a codebase that is hard to maintain and test.",
-      solution:
-        "Our engineers are masters of **OTP and supervision trees**. They are vetted on their ability to build applications that are fault-tolerant and self-healing. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-      kpi: "A Fault-Tolerant and Self-Healing Application",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your team not leveraging the full power of the BEAM VM?",
-      problem:
-        "The BEAM VM is a powerful and mature platform, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-      solution:
-        "We look for engineers proficient with **the BEAM VM and the Erlang ecosystem**. They are vetted on their ability to build applications that are powered by the best of the BEAM VM and the Erlang ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-      kpi: "An Application That is Powered by the Best of the BEAM VM and the Erlang Ecosystem",
-    },
-  ],
-  evaluation: [
-    "The BEAM VM and the actor model",
-    "OTP and supervision trees",
-    "Concurrency and message passing",
-    "Distributed systems and fault tolerance",
-    "The Erlang ecosystem (e.g., Rebar3, Cowboy, Mnesia)",
-  ],
-  technical_analysis:
-    "The Erlang evaluation focuses on a candidate's ability to build massively concurrent, fault-tolerant, and distributed systems. We assess their understanding of Erlang's core concepts, requiring them to design a complex application with a clean, concurrent, and fault-tolerant architecture. A critical part of the evaluation is their mastery of **the actor model and OTP**; candidates must demonstrate how to use lightweight processes, message passing, and supervision trees to write clean, concurrent, and fault-tolerant code. We also test their ability to build **distributed** applications that can scale across multiple nodes. Finally, we assess their knowledge of the Erlang ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-  interlink_slugs: ["elixir", "rabbitmq", "phoenix"],
+    name: "Erlang",
+    category: "Backend & APIs",
+    categorySlug: "backend-services",
+    seo_title: "Hire Senior Erlang Developers | Fault-Tolerant and Distributed Systems Experts",
+    meta_description: "Build systems that never go down. Hire elite remote Erlang experts vetted for the Actor Model, OTP, and soft real-time, fault-tolerant concurrency. Book a call.",
+    intro: "Erlang is the foundation of systems that demand 99.999% uptime—used in telecom, financial trading, and message brokers (e.g., RabbitMQ). Its core strength lies in its ability to build massively concurrent, distributed, and **fault-tolerant** applications via the Actor Model and the **OTP (Open Telecom Platform) framework**. You need an engineer who can leverage Erlang's philosophy of 'Let it Crash' to build self-healing, soft real-time systems. Our vetting process is designed to find experts in concurrency and failure management, assessing their deep knowledge of Actors, process linking, and OTP behaviors. By hiring an Erlang expert from us, you get a developer who can deliver a backend system that is virtually indestructible and can handle millions of concurrent connections with ease.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your system failing under load or suffering from unexpected crashes?",
+            problem: "Traditional systems suffer from hard crashes where a single failure takes down the entire application. Inexperienced developers fail to implement proper isolation and failure recovery mechanisms, leading to catastrophic system downtime.",
+            solution: "We vet for mastery of the **Erlang Actor Model**. Our experts must demonstrate the ability to isolate state, communicate via asynchronous message passing, and, crucially, use **Supervisors** from the OTP framework to automatically detect and restart failed processes, ensuring continuous availability.",
+            kpi: "OTP Supervision and Fault-Tolerant Architecture"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to manage massive concurrency and soft real-time needs?",
+            problem: "Scaling to handle millions of simultaneous users or connections is difficult with traditional languages. Inexperienced Erlang developers fail to utilize lightweight processes effectively, limiting the system's ability to scale on a single machine.",
+            solution: "Our engineers are experts in Erlang's unique scheduler and lightweight processes. They are vetted on their ability to manage millions of concurrent Actors efficiently, ensuring the system maintains low-latency, soft real-time performance even at peak load.",
+            kpi: "Massive Concurrency via Lightweight Processes"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your codebase disorganized and difficult to extend?",
+            problem: "Erlang's unique syntax and concurrent nature can lead to an opaque and disorganized codebase if developers don't adhere to OTP's established structure. This makes onboarding new team members difficult and slows down maintenance.",
+            solution: "We look for engineers proficient in the **OTP framework's core behaviors** (e.g., `gen_server`, `gen_statem`). They are vetted on their ability to build modular, structured components that conform to OTP standards, ensuring the code is readable, testable, and leverages the full power of the platform.",
+            kpi: "Proficiency in OTP Framework Behaviors"
+        }
+    ],
+    evaluation: ["Actor Model and asynchronous message passing", "OTP framework (gen_server, Supervisors)", "Fault tolerance and process linking/monitoring", "Distributed Erlang and clustering", "Concurrency patterns and state isolation"],
+    technical_analysis: "The Erlang evaluation is centered on the **Actor Model** and the **OTP framework**. Candidates are required to design a fault-tolerant system using a hierarchy of OTP Supervisors and Worker processes, proving their ability to implement the 'Let It Crash' philosophy for automatic failure recovery. We test their mastery of the Actor Model by requiring them to manage shared state safely using asynchronous message passing between processes, explicitly preventing race conditions. Expertise in low-latency concurrency is assessed by designing systems that can handle a high volume of simultaneous connections, demonstrating an understanding of Erlang's lightweight processes and scheduler. Finally, we test their knowledge of distributed Erlang and how to build a resilient cluster that spans multiple nodes.",
+    interlink_slugs: ["message-queues", "event-sourcing", "system-design"]
 };
 
 export default erlang;

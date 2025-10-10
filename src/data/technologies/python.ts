@@ -1,55 +1,40 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
+import { AlertTriangle } from "lucide-react";
 
-const python: TechEntry = {
-  name: "Python",
-  category: "APIs & Backend Services",
-  categorySlug: "backend-services",
-  seo_title: "Hire Python Developers | Backend, Data & AI Experts",
-  meta_description:
-    "Build scalable, maintainable, and data-driven applications. Hire elite remote Python experts vetted for their deep understanding of the language, its rich ecosystem, and modern frameworks like Django and FastAPI. Book a call.",
-  intro:
-    "Python is the language of choice for everything from web development to data science and machine learning. You need an engineer who understands that Python is not just a scripting language, but a powerful, general-purpose language with a rich ecosystem of libraries and frameworks. Our vetting process identifies developers who are experts in Python's core concepts—data structures, algorithms, and the GIL—and can architect applications that are as elegant as they are efficient. By hiring a Python expert, you get a developer who can build a modern backend that is a joy to use, and a joy to maintain.",
+const python: TechEntry = { 
+  name: "Python", 
+  category: "Backend & APIs", 
+  categorySlug: "backend-services", 
+  seo_title: "Hire Senior Python Developers | AI, Data Science & Backend APIs",
+  meta_description: "Hire elite remote Python engineers for scalable APIs (FastAPI), complex data science, and robust backend systems. Vetted for performance and architecture.",
+  intro: "Python's versatility makes it the engine for everything from high-traffic APIs (FastAPI) to the core of data science and machine learning (PyTorch/TensorFlow). You need an engineer who can bridge these worlds: a developer who understands both the architectural needs of a robust backend and the unique performance demands of data processing. Our vetting process finds these experts. We focus on their ability to write efficient, clean code (adhering to PEP 8), their mastery of asynchronous programming (asyncio), and their deep knowledge of key libraries like NumPy, Pandas, and Scikit-learn. For backend roles, we test their expertise in modern, high-performance frameworks like FastAPI and Django. By hiring our Python talent, you are investing in a flexible, powerful engineer capable of building intelligent, data-driven applications that scale with your business.",
   pains: [
-    {
-      icon: AlertTriangle,
-      pain: "Is your application slow and struggling to scale?",
-      problem:
-        "Many applications are built without a deep understanding of Python's performance characteristics. This can lead to a user experience that is slow and a codebase that is a mess of inefficient algorithms and unoptimized database queries.",
-      solution:
-        "We vet for experts in **Python performance tuning**. Our engineers are proficient in using tools like cProfile and Py-Spy to identify and fix performance bottlenecks. This results in a codebase that is easy to reason about and a user experience that is fast and responsive, even under heavy load.",
-      kpi: "A Fast, Responsive, and Scalable Backend Application",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your codebase a mess of untyped, hard-to-maintain code?",
-      problem:
-        "In many applications, the lack of static typing can lead to a codebase that is hard to maintain and a user experience that is prone to bugs. This can be especially problematic in large, complex applications.",
-      solution:
-        "Our engineers are masters of **modern Python and type hints**. They are vetted on their ability to use type hints, mypy, and other static analysis tools to write clean, maintainable, and bug-free code. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-      kpi: "A Clean, Maintainable, and Bug-Free Codebase",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your team not leveraging the full power of the Python ecosystem?",
-      problem:
-        "The Python ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-      solution:
-        "We look for engineers proficient with **the Python ecosystem and modern frameworks like Django and FastAPI**. They are vetted on their ability to build applications that are powered by the best of the Python ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-      kpi: "An Application That is Powered by the Best of the Python Ecosystem",
-    },
-  ],
-  evaluation: [
-    "Python's data model and the GIL",
-    "Modern Python and type hints",
-    "Frameworks like Django and FastAPI",
-    "The Python ecosystem (e.g., NumPy, pandas, scikit-learn)",
-    "Performance tuning and optimization",
-  ],
-  technical_analysis:
-    "The Python evaluation focuses on a candidate's ability to build scalable, maintainable, and data-driven applications. We assess their understanding of Python's core concepts, requiring them to design a complex application with a clean, object-oriented architecture. A critical part of the evaluation is their mastery of **modern Python and its ecosystem**; candidates must demonstrate how to use type hints, mypy, and other static analysis tools to write clean, maintainable, and bug-free code. We also test their ability to build **high-performance** applications that are not hamstrung by the GIL. Finally, we assess their knowledge of modern frameworks like Django and FastAPI, and their ability to leverage the Python ecosystem to build a modern, high-performance backend.",
-  interlink_slugs: ["django", "fastapi", "pandas"],
+      {
+          icon: AlertTriangle,
+          pain: "Is your API performance crippled by the GIL (Global Interpreter Lock)?",
+          problem: "Python's GIL prevents true parallel execution of native threads, making I/O-heavy web services and CPU-intensive data tasks perform poorly under concurrent load. Developers who don't understand `asyncio` or multiprocess architecture fail to utilize modern cloud resources efficiently.",
+          solution: "Our engineers are masters of asynchronous Python (`asyncio`) and modern frameworks like **FastAPI**. They demonstrate the ability to build high-throughput APIs that utilize asynchronous I/O to maximize performance. For CPU-bound tasks, they implement correct parallel execution using the `multiprocessing` module or offload work to a task queue like Celery.",
+          kpi: "API throughput (RPS) and latency"
+      },
+      {
+          icon: AlertTriangle,
+          pain: "Is your data pipeline code slow and unmaintainable?",
+          problem: "Many developers use base Python loops and data structures for large-scale data processing, which is incredibly slow. Additionally, a lack of clear architecture in data code leads to brittle, untestable, and costly-to-maintain data pipelines.",
+          solution: "We vet for deep expertise in vectorized operations using **NumPy** and **Pandas**. Our candidates write highly efficient, idiomatic data processing code that is orders of magnitude faster. For data engineers, they are vetted on their ability to build structured, version-controlled pipelines using tools like **dbt** or **Apache Spark**.",
+          kpi: "Data processing time reduction"
+      },
+      {
+          icon: AlertTriangle,
+          pain: "Are your ML models stuck in notebooks, not production?",
+          problem: "The jump from a data science notebook to a production-ready, scalable ML service is massive. Most data scientists lack the DevOps and software engineering skills to package, deploy, monitor, and maintain models in a live environment.",
+          solution: "We hire **MLOps-aware** Python engineers who can build a full ML lifecycle. They are proficient in deploying models as microservices (using FastAPI or Flask) and integrating them with cloud platforms (AWS Sagemaker, Azure ML) and containerization (Docker/Kubernetes).",
+          kpi: "Time-to-deploy and model latency"
+      }
+  ], 
+  evaluation: ["Asyncio and non-blocking I/O mastery", "Modern API frameworks (FastAPI, Django/DRF)", "Data science stack (NumPy, Pandas, Scikit-learn)", "MLOps and production model deployment", "Clean, idiomatic Python (PEP 8)"],
+  technical_analysis: "The Python evaluation is bifurcated for core software engineering and data science roles. For backend roles, we test `asyncio` mastery, requiring candidates to design a high-concurrency service using FastAPI and explain how they would handle blocking operations. For data-centric roles, the focus is on efficient data manipulation using NumPy and Pandas, specifically vectorized operations over loops. Both tracks require strong software engineering fundamentals: modular design, dependency management (Poetry/Pipenv), and TDD using Pytest. MLOps awareness is now mandatory, requiring candidates to articulate a strategy for containerizing a model and deploying it to a cloud environment for low-latency inference.",
+  interlink_slugs: ["data-engineering", "machine-learning", "sql"]
 };
 
 export default python;

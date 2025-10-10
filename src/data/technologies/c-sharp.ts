@@ -1,55 +1,40 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
+import { AlertTriangle } from "lucide-react";
 
 const csharp: TechEntry = {
-  name: "C#",
-  category: "APIs & Backend Services",
-  categorySlug: "backend-services",
-  seo_title: "Hire C# Developers | .NET & Enterprise Experts",
-  meta_description:
-    "Build robust, scalable, and high-performance applications on the .NET platform. Hire elite remote C# experts vetted for their deep understanding of the CLR, asynchronous programming, and modern .NET. Book a call.",
-  intro:
-    "C# is a modern, object-oriented, and type-safe programming language. You need an engineer who understands that building a high-performance, mission-critical application is not just about writing code, but about a deep understanding of the .NET platform, the CLR, and the entire C# ecosystem. Our vetting process identifies developers who are experts in C#'s core concepts—the CLR, memory management, and asynchronous programming—and can architect applications that are as reliable as they are scalable. By hiring a C# expert, you get a developer who can build a modern backend that is a joy to use, and a joy to maintain.",
-  pains: [
-    {
-      icon: AlertTriangle,
-      pain: "Is your application slow and struggling to scale?",
-      problem:
-        "Many applications are built without a deep understanding of the CLR and its performance characteristics. This can lead to a user experience that is slow and a codebase that is a mess of memory leaks and inefficient garbage collection.",
-      solution:
-        "We vet for experts in **.NET performance tuning**. Our engineers are proficient in using tools like PerfView and dotTrace to identify and fix performance bottlenecks. This results in a codebase that is easy to reason about and a user experience that is fast and responsive, even under heavy load.",
-      kpi: "A Fast, Responsive, and Scalable Backend Application",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your codebase a mess of callback hell and unhandled exceptions?",
-      problem:
-        "In many applications, managing asynchronous operations is a complex and error-prone task. This can lead to a codebase that is a mess of callback hell and unhandled exceptions, and a user experience that is filled with race conditions and other bugs.",
-      solution:
-        "Our engineers are masters of **modern C# and asynchronous programming**. They are vetted on their ability to use async/await, tasks, and other modern language features to manage asynchronous operations in a clean, declarative, and bug-free way. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-      kpi: "A Clean, Declarative, and Bug-Free Asynchronous Codebase",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your team not leveraging the full power of the .NET ecosystem?",
-      problem:
-        "The .NET ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-      solution:
-        "We look for engineers proficient with **the .NET ecosystem and modern frameworks like ASP.NET Core**. They are vetted on their ability to build applications that are powered by the best of the .NET ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-      kpi: "An Application That is Powered by the Best of the .NET Ecosystem",
-    },
-  ],
-  evaluation: [
-    "The Common Language Runtime (CLR) and memory management",
-    "Asynchronous programming with async/await and tasks",
-    "Modern C# and .NET",
-    "Frameworks like ASP.NET Core and Entity Framework Core",
-    "Performance tuning and optimization",
-  ],
-  technical_analysis:
-    "The C# evaluation focuses on a candidate's ability to build robust, scalable, and high-performance applications on the .NET platform. We assess their understanding of C#'s core concepts, requiring them to design a complex application with a clean, object-oriented architecture. A critical part of the evaluation is their mastery of **the CLR and asynchronous programming**; candidates must demonstrate how to use async/await, tasks, and other modern language features to manage asynchronous operations in a clean, declarative, and bug-free way. We also test their ability to build **high-performance** applications that are not hamstrung by the garbage collector. Finally, we assess their knowledge of modern frameworks like ASP.NET Core, and their ability to leverage the .NET ecosystem to build a modern, high-performance backend.",
-  interlink_slugs: ["aspnet-core", "entity-framework-core", "azure"],
+    name: "C# / .NET",
+    category: "Backend & APIs",
+    categorySlug: "backend-services",
+    seo_title: "Hire Senior C# / .NET Developers | Enterprise & Cloud-Native Backend",
+    meta_description: "Build fast, secure enterprise applications. Hire elite C#/.NET experts vetted for ASP.NET Core, Azure integration, and microservices architecture. Book a call.",
+    intro: "Modern C# and the .NET platform are no longer Windows-bound; they are a leading choice for cross-platform, high-performance, and cloud-native backend development, especially within the Azure ecosystem. You need a senior engineer who masters the latest features of **.NET Core**, asynchronous programming (`async/await`), and advanced architecture patterns like microservices and event-driven design. Our vetting process is designed to find professionals who excel at building robust APIs with **ASP.NET Core**, understand Entity Framework Core for data access, and are proficient in performance optimization and security. By hiring our C#/.NET talent, you get a developer who can deliver enterprise-grade stability, speed, and deep integration with Azure or other cloud services, ensuring a reliable and scalable foundation for your core business logic.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your application suffering from asynchronous deadlocks?",
+            problem: "Incorrect use of `async` and `await` (especially mixing synchronous and asynchronous code) leads to concurrency issues, deadlocks, and severe performance degradation, particularly in desktop applications or older .NET codebases. This results in service freezing and unreliability.",
+            solution: "Our C# experts are masters of asynchronous programming. They are rigorously tested on modern `async/await` best practices, including the correct use of `ConfigureAwait(false)` in library code and understanding the TPL (Task Parallel Library). They build highly responsive, non-blocking APIs with ASP.NET Core that scale gracefully under load.",
+            kpi: "API throughput and task completion metrics"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to manage data access in a complex microservices environment?",
+            problem: "Using traditional, monolithic ORMs (like older Entity Framework) across many microservices leads to tightly coupled data access, performance bottlenecks, and difficulty managing data schema evolution.",
+            solution: "We vet for expertise in modern data access: efficient use of **Entity Framework Core (EF Core)** for simple services, and proficiency with lightweight, high-performance tools like Dapper for critical, high-read endpoints. Our candidates are also skilled in using event-driven architecture (Kafka/Azure Service Bus) to decouple microservices at the data layer.",
+            kpi: "Database query performance and ORM efficiency"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are your cloud-native services insecure and difficult to deploy?",
+            problem: "In the cloud, services must be built to be resilient, secure, and easily containerized. Lack of expertise in modern .NET hosting and security means you struggle with configuration, deployment, and vulnerability management.",
+            solution: "Our experts are proficient in building cloud-native services with **ASP.NET Core** and **Minimal APIs**. They understand containerization (Docker), security (IdentityServer/Azure AD), and building resilient services using Polly for transient fault handling. You get a modern, deployable, secure application.",
+            kpi: "Container image size and security vulnerability score"
+        }
+    ],
+    evaluation: ["ASP.NET Core and Minimal APIs mastery", "Asynchronous programming (async/await) and TPL", "Data access (EF Core, Dapper)", "Microservices architecture and inter-service communication (gRPC)", "Azure/Cloud-native deployment and security (IdentityServer)"],
+    technical_analysis: "The C#/.NET evaluation focuses on enterprise readiness, performance, and architecture. The critical assessment is the candidate's mastery of the **Task-based Asynchronous Pattern (TAP)**; they are given scenarios to diagnose and fix asynchronous deadlocks and inefficient thread usage. We test their architectural skills by requiring them to design a multi-layered ASP.NET Core application, focusing on the correct use of Dependency Injection (DI) to create loosely coupled services. Expertise in **Entity Framework Core (EF Core)** is mandatory, specifically assessing their ability to write performant LINQ queries, use projections, and manage change tracking to avoid common performance pitfalls like the N+1 problem. Finally, we assess their knowledge of the C# language features (e.g., LINQ, records, pattern matching) and their ability to write clean, idiomatic, and testable code using modern testing frameworks.",
+    interlink_slugs: ["azure", "microservices", "grpc"]
 };
 
 export default csharp;

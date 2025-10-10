@@ -12,7 +12,7 @@ import {
   Plane,
   Briefcase,
 } from "lucide-react";
-import type { Icon } from "lucide-react";
+import type { ElementType } from "react";
 
 export interface RoleCategoryInfo {
     name: string;
@@ -21,7 +21,7 @@ export interface RoleCategoryInfo {
     priorityTooltip: string;
     pain: string;
     description: string;
-    icon: Icon;
+    icon: ElementType;
     proof: {
         href: string;
         label: string;
