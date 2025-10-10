@@ -27,29 +27,27 @@ const TooltipContent = React.forwardRef<
 ))
 TooltipContent.displayName = TooltipPrimitive.Content.displayName
 
-const WithTooltip = ({
-  children,
-  label,
-  ...props
-}: {
+interface WithTooltipProps {
   children: React.ReactNode;
-  label: string | React.ReactNode;
-  [key: string]: any;
-}) => {
-  if (!label) return <>{children}</>;
+  content?: React.ReactNode;
+  label?: string;
+}
+
+const WithTooltip = ({ children, content, label }: WithTooltipProps) => {
+  if (!content && !label) {
+    return <>{children}</>;
+  }
+
+  const tooltipContent = content || <p>{label}</p>;
+
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger asChild {...props}>
-          <span>{children}</span>
-        </TooltipTrigger>
-        <TooltipContent>
-          {typeof label === 'string' ? <span>{label}</span> : <div>{label}</div>}
-        </TooltipContent>
+        <TooltipTrigger asChild>{children}</TooltipTrigger>
+        <TooltipContent>{tooltipContent}</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
 };
 
-
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, WithTooltip }
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, WithTooltip };

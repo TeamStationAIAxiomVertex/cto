@@ -7,6 +7,10 @@ import { allTech } from '@/lib/tech';
 import { JsonLd } from '@/components/seo/JsonLd';
 import TypeScriptPSPSection from '@/components/seo/sections/TypeScriptPSPSection';
 
+const icons: { [key: string]: React.ElementType } = {
+    AlertTriangle,
+};
+
 export const metadata: Metadata = {
   title: `Hire Nearshore TypeScript Developers`,
   description: `Hire elite, pre-vetted LATAM engineers with expertise in TypeScript. Our scientific evaluation de-risks hiring for critical roles.`,
@@ -64,12 +68,12 @@ export default function TechPage() {
               <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">Common problems we solve by providing true {tech.name} experts.</p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                   {tech.pains.map((item) => {
-                    const Icon = item.icon;
+                    const Icon = icons[item.icon as keyof typeof icons];
                     return(
                       <div key={item.pain} className="rounded-lg border bg-card p-6 flex flex-col">
                           <p className="text-sm font-semibold text-primary">{item.pain}</p>
                           <div className="flex items-center gap-3 mt-3">
-                              <Icon className="h-8 w-8 text-primary" />
+                              {Icon && <Icon className="h-8 w-8 text-primary" />}
                               <h3 className="text-lg font-semibold text-foreground">The Problem</h3>
                           </div>
                           <p className="mt-4 text-sm text-muted-foreground ">{item.problem}</p>

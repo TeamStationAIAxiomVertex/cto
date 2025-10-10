@@ -1,12 +1,16 @@
 
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, AlertTriangle } from "lucide-react";
 import { notFound } from "next/navigation";
 import { allTech } from "../../../../lib/tech";
 import { JsonLd } from "../../../../components/seo/JsonLd";
 import FurtherReading from "../../../../components/seo/FurtherReading";
 import { WithTooltip } from "../../../../components/ui/tooltip";
+
+const icons: { [key: string]: React.ElementType } = {
+    AlertTriangle,
+  };
 
 export const revalidate = 3600;
 
@@ -121,7 +125,7 @@ export default function TechPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               {tech.pains.map((item) => {
-                const Icon = item.icon;
+                const Icon = icons[item.icon as keyof typeof icons];
                 return (
                   <div
                     key={item.pain}
@@ -131,7 +135,7 @@ export default function TechPage() {
                       {item.pain}
                     </p>
                     <div className="flex items-center gap-3 mt-3">
-                      <Icon className="h-8 w-8 text-primary" />
+                    {Icon && <Icon className="h-8 w-8 text-primary" />}
                       <h3 className="text-lg font-semibold text-foreground">
                         The Problem
                       </h3>

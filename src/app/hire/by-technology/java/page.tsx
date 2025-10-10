@@ -3,10 +3,15 @@ import type { Metadata } from "next";
 import {
   ArrowRight,
   CheckCircle,
+  AlertTriangle
 } from "lucide-react";
 import { WithTooltip } from "../../../../components/ui/tooltip";
 import { allTech } from "../../../../lib/tech";
 import { JsonLd } from "../../../../components/seo/JsonLd";
+
+const icons: { [key: string]: React.ElementType } = {
+  AlertTriangle,
+};
 
 export const metadata: Metadata = {
   title: `Hire Nearshore Java Developers`,
@@ -96,7 +101,9 @@ export default function TechPage() {
               Common problems we solve by providing true {tech.name} experts.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-              {tech.pains.map((item) => (
+              {tech.pains.map((item) => {
+                const Icon = icons[item.icon as keyof typeof icons];
+                return(
                 <div
                   key={item.pain}
                   className="rounded-lg border bg-card p-6 flex flex-col"
@@ -105,7 +112,7 @@ export default function TechPage() {
                     {item.pain}
                   </p>
                   <div className="flex items-center gap-3 mt-3">
-                    <item.icon className="h-8 w-8 text-primary" />
+                  {Icon && <Icon className="h-8 w-8 text-primary" />}
                     <h3 className="text-lg font-semibold text-foreground">
                       The Problem
                     </h3>
@@ -129,7 +136,7 @@ export default function TechPage() {
                     </p>
                   </div>
                 </div>
-              ))}
+              )})}
             </div>
           </section>
         )}
