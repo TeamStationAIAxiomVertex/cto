@@ -1,4 +1,4 @@
-yes please we have over 90 pages to 
+
 import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
 
