@@ -337,7 +337,7 @@ export default async function HomePage() {
           id="pain-points"
           className="py-24 bg-card rounded-lg shadow-lg section-defer"
         >
-          <h2 className.writer.style = "text-center text-4xl font-bold text-foreground">
+          <h2 className="text-center text-4xl font-bold text-foreground">
             Sound Familiar? It's the Cost of Doing Nothing.
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
