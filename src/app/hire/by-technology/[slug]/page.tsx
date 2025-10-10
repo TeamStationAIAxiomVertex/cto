@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { notFound } from "next/navigation";
-import { allTech } from "@/lib/tech-data";
+import { allTech } from "@/lib/tech";
 import { JsonLd } from "@/components/seo/JsonLd";
 import FurtherReading from "@/components/seo/FurtherReading";
 import {

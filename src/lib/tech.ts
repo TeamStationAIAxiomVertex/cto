@@ -78,6 +78,9 @@ import {
   Zap,
 } from "lucide-react";
 
+import allTechData from '@/data/technologies';
+
+
 export interface PainPoint {
   icon: Icon;
   pain: string;
@@ -214,23 +217,24 @@ export interface AllTech {
   [key: string]: TechEntry;
 }
 
-// This file is now designed to be programmatically populated.
-// The `allTech` object will be assembled by importing from the `src/data/technologies` directory.
-export const allTech: AllTech = {};
+export const allTech: AllTech = allTechData;
+
 
 export function getAllTechSlugs(): string[] {
-    // This will eventually read from the file system, but for now, we can keep it static
-    // to avoid breaking changes until all files are created.
-    return [
-      'react', 'typescript', 'nextjs', 'angular', 'vue',
-      'pinia', 'remix', 'svelte', 'web-accessibility', 'rx-js',
-      'node', 'java', 'python', 'golang', 'c-sharp', 'rust', 'php',
-      'kotlin', 'scala', 'erlang', 'haskell', 'elixir',
-      'devops-engineering', 'aws', 'azure', 'google-cloud', 'kubernetes',
-      'docker', 'terraform', 'ansible', 'jenkins', 'ci-cd', 'prometheus',
-      'grafana', 'istio', 'helm', 'vault', 'cloudformation', 'gitops', 'serverless'
-    ];
+    return Object.keys(allTech);
 }
+
+export interface TechCategory {
+  name: string;
+  slug: string;
+  pain: string;
+  icon: ElementType;
+  tech: {
+    name: string;
+    slug: string;
+  }[];
+}
+
 export const techCategories: TechCategory[] = [
   {
     name: 'APIs & Backend Services',
