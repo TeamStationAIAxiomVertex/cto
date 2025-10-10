@@ -3,4 +3,4 @@ Allow: /
 Disallow: /privacy-policy
 Disallow: /terms-of-service
 
-Sitemap: https://cto.teamstation.dev/sitemap.xml
+Sitemap: https://cto.teamstation.dev/sitemap-index.xml
