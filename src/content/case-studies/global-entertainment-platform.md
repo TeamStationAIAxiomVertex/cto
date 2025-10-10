@@ -11,7 +11,7 @@ canonical: 'https://cto.teamstation.dev/case-studies/global-entertainment-platfo
 ogImage:
   src:
     url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtdXNpYyUyMGluZHVzdHJ5fGVufDB8fHx8MTc1OTI4NDQ2OHww&ixlib=rb-4.1.0&q=80&w=1080"
-  aiHint: "media platform"
+  aiHint: "modern music concert"
 techStack:
   - name: 'QA Automation'
     link: '/hire/by-role/qa-quality-engineering'
