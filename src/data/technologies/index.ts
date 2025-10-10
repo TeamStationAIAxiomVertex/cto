@@ -89,7 +89,6 @@ import reactNative from './react-native';
 import flutter from './flutter';
 import axiomCortex from './axiom-cortex';
 import graphql from './graphql';
-import reactjs from './react-js';
 import preact from './preact';
 import ember from './ember-js';
 import solid from './solid-js';
@@ -159,11 +158,11 @@ const allTech: AllTech = {
   'machine-learning': machineLearning,
   'data-warehousing': dataWarehousing,
   'power-bi': powerBi,
-  'tableau': tableau,
-  'fivetran': fivetran,
-  'looker': looker,
-  'presto': presto,
-  'kafka': kafka,
+  tableau,
+  fivetran,
+  looker,
+  presto,
+  kafka,
   'data-science': dataScience,
   llms,
   pandas,
@@ -195,7 +194,6 @@ const allTech: AllTech = {
   flutter,
   'axiom-cortex': axiomCortex,
   graphql,
-  'react-js': reactjs,
   preact,
   'ember-js': ember,
   'solid-js': solid,

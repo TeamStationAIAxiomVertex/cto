@@ -3,79 +3,16 @@ import type { ElementType } from 'react';
 import type { Icon } from "lucide-react";
 import {
   AlertTriangle,
-  AppWindow,
-  BadgeCheck,
-  BarChart,
-  BookOpen,
-  BrainCircuit,
-  Bug,
-  CheckCircle,
-  ChevronsRight,
-  ClipboardList,
-  Clock,
-  Cloud,
-  Code,
-  CodeSquare,
-  Codepen,
-  Component,
-  Compass,
-  Contact,
-  Cpu,
-  Database,
-  Dna,
-  DollarSign,
-  DraftingCompass,
-  ExternalLink,
-  FileLock,
-  FileText,
-  GanttChartSquare,
-  GitBranch,
-  GitCompare,
-  Github,
-  Gitlab,
-  Globe,
-  Handshake,
-  HelpCircle,
-  Key,
-  KeyRound,
-  Laptop,
-  Layers,
-  Link,
-  Linkedin,
-  Mail,
-  Map,
-  MessageCircle,
-  MessageSquare,
-  Package,
-  PenTool,
-  PersonStanding,
-  Plane,
-  Pyramid,
-  RadioTower,
-  Rocket,
-  Scale,
-  Search,
   Server,
-  Settings,
+  Layers,
+  Plane,
+  Database,
+  Component,
+  BrainCircuit,
+  GanttChartSquare,
   ShieldCheck,
-  Siren,
-  Slack,
-  Sprout,
-  Star,
-  Target,
   TestTube2,
-  TrendingUp,
-  Trophy,
-  UserCheck,
-  UserCog,
-  UserPlus,
-  UserX,
-  Users,
   Wallet,
-  Webhook,
-  Workflow,
-  Youtube,
-  Zap,
 } from "lucide-react";
 
 import allTechData from '@/data/technologies';
@@ -102,128 +39,21 @@ export interface TechEntry {
   interlink_slugs: string[];
 }
 
-export type TechSlug = 
-  // Frontend/Full-Stack (10)
-  | 'react'
-  | 'typescript'
-  | 'nextjs'
-  | 'angular'
-  | 'vue'
-  | 'pinia'
-  | 'remix'
-  | 'svelte'
-  | 'web-accessibility'
-  | 'rx-js' 
-
-  // Backend/Core Languages (12)
-  | 'node'
-  | 'java'
-  | 'python'
-  | 'golang'
-  | 'c-sharp'
-  | 'rust'
-  | 'php'
-  | 'kotlin'
-  | 'scala'
-  | 'erlang'
-  | 'haskell'
-  | 'elixir'
-
-  // DevOps & Cloud (18)
-  | 'devops-engineering'
-  | 'aws'
-  | 'azure'
-  | 'google-cloud'
-  | 'kubernetes'
-  | 'docker'
-  | 'terraform'
-  | 'ansible'
-  | 'jenkins'
-  | 'ci-cd'
-  | 'prometheus'
-  | 'grafana'
-  | 'istio'
-  | 'helm'
-  | 'vault'
-  | 'cloudformation'
-  | 'gitops'
-  | 'serverless'
-
-  // Data & AI (23)
-  | 'data-engineering'
-  | 'sql'
-  | 'etl-elt'
-  | 'apache-spark'
-  | 'dbt'
-  | 'snowflake'
-  | 'airbyte'
-  | 'data-governance'
-  | 'machine-learning'
-  | 'data-warehousing'
-  | 'power-bi'
-  | 'tableau'
-  | 'fivetran'
-  | 'looker'
-  | 'presto'
-  | 'kafka'
-  | 'data-science'
-  | 'llms'
-  | 'pandas'
-  | 'numpy' 
-  | 'langchain'
-  | 'pytorch'
-  | 'transformers'
-
-  // Databases (7)
-  | 'postgresql'
-  | 'mongodb'
-  | 'redis'
-  | 'cassandra'
-  | 'mysql'
-  | 'dynamodb'
-  | 'elasticsearch'
-
-  // QA & Security (7)
-  | 'playwright'
-  | 'cypress'
-  | 'qa-automation'
-  | 'security-engineering'
-  | 'penetration-testing'
-  | 'jest'
-  | 'vitest'
-
-  // Architecture & Integrations (9)
-  | 'microservices'
-  | 'grpc'
-  | 'rest-api-design'
-  | 'event-sourcing'
-  | 'domain-driven-design'
-  | 'message-queues'
-  | 'api-gateway'
-  | 'system-design'
-  | 'api-security'
-
-  // Mobile (2)
-  | 'react-native'
-  | 'flutter'
-
-  // Vetting & Cognitive AI (2)
-  | 'axiom-cortex'
-  | 'graphql'
-;
-
+// Dynamically generate the TechSlug type from the keys of the imported data.
+// This is the robust, long-term solution.
+export type TechSlug = keyof typeof allTechData;
 
 export interface AllTech {
   [key: string]: TechEntry;
 }
 
+// The single source of truth for all technology data.
 export const allTech: AllTech = allTechData;
 
 
 export function getAllTechSlugs(): string[] {
     return Object.keys(allTech);
 }
-
 export interface TechCategory {
   name: string;
   slug: string;
