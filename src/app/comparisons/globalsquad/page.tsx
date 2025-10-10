@@ -8,7 +8,7 @@ import { DecisionCard } from "@/components/ui/DecisionCard";
 import { getComparisonData } from '@/lib/comparison-data';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = await getComparisonData('revelo');
+  const data = await getComparisonData('globalsquad');
   return {
     title: data?.title,
     description: data?.meta,
@@ -16,8 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function ReveloComparisonPage() {
-  const data = await getComparisonData('revelo');
+export default async function GlobalsquadComparisonPage() {
+  const data = await getComparisonData('globalsquad');
   if (!data) return null;
 
   const siteUrl = 'https://cto.teamstation.dev';
@@ -27,7 +27,7 @@ export default async function ReveloComparisonPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
       { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": `${siteUrl}/comparisons` },
-      { "@type": "ListItem", "position": 3, "name": "Revelo Alternative", "item": `${siteUrl}/comparisons/revelo` }
+      { "@type": "ListItem", "position": 3, "name": "Globalsquad Alternative", "item": `${siteUrl}/comparisons/globalsquad` }
     ]
   };
 
@@ -50,20 +50,20 @@ export default async function ReveloComparisonPage() {
       <JsonLd data={faqSchema} />
       <main className="container py-12">
          <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Revelo Alternative</span>
+          <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Globalsquad Alternative</span>
         </div>
         <header className="text-center my-8">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{data.h1}</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">{data.meta}</p>
            <div className="mt-4 text-sm">
-              <a href="https://www.revelo.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
-                  Vendor home: revelo.com <ExternalLink className="h-4 w-4" />
+              <a href="https://www.globalsquad.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                  Vendor home: globalsquad.com <ExternalLink className="h-4 w-4" />
               </a>
           </div>
         </header>
         
         <div className="my-12">
-          <h2 className="text-3xl font-bold text-center">Managed Teams vs. a Talent Marketplace</h2>
+          <h2 className="text-3xl font-bold text-center">Integrated Pods vs. Black Box Outsourcing</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             {data.comparison_claims.map((claim) => (
               <div key={claim.metric} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
@@ -73,7 +73,7 @@ export default async function ReveloComparisonPage() {
                   <div className="border-t border-border pt-4">
                     <h4 className="font-semibold text-muted-foreground flex items-center gap-2">
                       <XCircle className="h-5 w-5 text-destructive" />
-                      Revelo Model
+                      Globalsquad Model
                     </h4>
                     <p className="text-sm text-muted-foreground m-0">{claim.competitorValue}</p>
                   </div>
@@ -92,32 +92,32 @@ export default async function ReveloComparisonPage() {
         </div>
 
         <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
-          <h2 className="text-center">Analysis: Building Teams vs. Filling Seats</h2>
+          <h2 className="text-center">Analysis: Throughput and Quality vs. Hours and Headcount</h2>
           <p>
-              Revelo is a popular marketplace for sourcing pre-vetted LATAM developers. While this is a step up from raw recruiting, it still places the burden of team-building, management, and long-term performance on you, the CTO. TeamStation AI is not a marketplace; we are a platform for building and managing high-performing, cohesive engineering teams.
+            GlobalSquad represents the traditional outsourcing model, where work is often treated as a commodity and success is measured in hours billed. TeamStation AI offers a modern alternative, focused on delivering business value through high-performing, integrated teams. We measure our success by your success.
           </p>
-          <h3>Core Offering: Managed Teams vs. a Marketplace of Individuals</h3>
+          <h3>Team Structure: Integrated Pods vs. Black Box Outsourcing</h3>
           <p>
-              With Revelo, you are hiring individual developers. You are responsible for creating a cohesive team from these individual hires. TeamStation AI provides fully-formed, managed teams that are built from the ground up to work together, led by an Engagement Manager who is accountable for performance and delivery. We build the team, so you can build the product.
+            A common frustration with traditional outsourcing is the lack of transparency and control—the “black box” model. TeamStation’s teams are designed to be an integrated part of your organization, working within your systems, and fully aligned with your goals and culture. We provide real-time visibility into team operations, so you are always in control.
           </p>
-          <h3>Vetting Depth: Predictive Cognitive Analysis vs. Skills Validation</h3>
+          <h3>Performance Metrics: Throughput & Business Value vs. Hours & Headcount</h3>
           <div>
-              Revelo's vetting process is effective at validating technical skills and English proficiency. However, TeamStation's Axiom Cortex™ provides a deeper level of insight, using cognitive science to predict a candidate's problem-solving abilities, learning agility, and potential for long-term success. This predictive capability is a key differentiator, reducing the risk of a mis-hire.
+             The traditional outsourcing model is incentivized to bill for more hours and more people. At TeamStation, our success is tied to the value we deliver—the features we ship, the bugs we fix, and the performance improvements we achieve. This fundamental alignment of interests is the cornerstone of our partnership model.
           </div>
         </div>
 
         <DecisionCard
-          problem="Hiring individual developers from a marketplace leads to a disjointed team, increased management overhead, and a lack of shared context."
-          stakes="This results in communication silos, reduced productivity, and a constant struggle to build a high-performing engineering culture."
-          approach="TeamStation AI builds and manages cohesive, high-throughput teams that are optimized for performance, with a dedicated Engagement Manager to ensure seamless integration and delivery."
-          evidence="Our teams, vetted through the Axiom Cortex™ platform, demonstrate a 40% higher rate of feature delivery compared to teams assembled from individual hires, as validated by our internal performance metrics."
+          problem="Traditional outsourcing models create a black box, leaving you with little visibility or control, and a focus on hours billed rather than value delivered."
+          stakes="This leads to misaligned priorities, quality issues, and a constant struggle to demonstrate ROI, ultimately hindering your ability to innovate."
+          approach="TeamStation AI provides fully-integrated teams that operate as a transparent extension of your organization, with a focus on delivering measurable business value and throughput."
+          evidence="Our clients typically see a 30-50% increase in feature velocity within the first six months, a direct result of our integrated team model and the high cognitive ability of our Axiom Cortex™-vetted talent."
           related={[
-            { label: "The Case for Managed Teams", href: "/playbook/managed-teams" },
-            { label: "Axiom Cortex™ Overview", href: "/research/axiom-cortex-scientific-report" },
-            { label: "Hire LATAM Developers", href: "/hire/by-country/latam" }
+            { label: "The Problem with Traditional Outsourcing", href: "/playbook/black-box-outsourcing" },
+            { label: "Measuring Engineering ROI", href: "/playbook/measuring-roi" },
+            { label: "Axiom Cortex™ Vetting", href: "/research/axiom-cortex-scientific-report" }
           ]}
         />
-        <FurtherReading comparison="revelo" />
+        <FurtherReading comparison="globalsquad" />
       </main>
     </>
   );

@@ -55,6 +55,93 @@ const MOCK_BAIREDEV_DATA: ComparisonFactPack = {
     ]
 };
 
+const MOCK_TOPTAL_DATA: ComparisonFactPack = {
+    vendorSlug: 'toptal',
+    competitorName: 'Toptal',
+    title: 'TeamStation AI vs. Toptal: A Data-Driven Comparison',
+    meta: 'Explore how TeamStation AI\'s cognitive vetting and team-based model provides a strategic advantage over Toptal\'s freelance marketplace approach.',
+    h1: 'TeamStation AI vs. Toptal: The Strategic Choice for High-Performing Teams',
+    keywords: ['Toptal alternative', 'TeamStation vs Toptal', 'freelance vs team', 'Axiom Cortex'],
+    verdict: {},
+    internal_links: [],
+    faqs: [
+        { question: "Is TeamStation a marketplace like Toptal?", answer: "No, TeamStation builds and manages cohesive, long-term engineering teams, not a freelance marketplace. We focus on team synergy and shared goals, which is a fundamental difference from the individual contractor model." },
+        { question: "How does TeamStation's pricing compare to Toptal?", answer: "TeamStation's model is value-based, centered on team throughput and long-term ROI. Toptal's pricing is based on individual freelancer rates, which can fluctuate and don't account for the hidden costs of team integration and management." },
+    ],
+    comparison_claims: [
+        {
+            metric: 'Engagement Model',
+            teamstationValue: 'Managed, Cohesive Teams',
+            competitorValue: 'Freelance Marketplace',
+            context: 'TeamStation provides fully-managed, cohesive teams that operate as a seamless extension of your organization. Toptal offers access to a pool of individual freelancers, requiring you to manage team integration and dynamics.'
+        },
+        {
+            metric: 'Vetting Focus',
+            teamstationValue: 'Cognitive Agility & Team Fit',
+            competitorValue: 'Technical Skills & Experience',
+            context: 'While Toptal has a rigorous screening process, it primarily focuses on technical proficiency. TeamStation\'s Axiom Cortex™ goes deeper, evaluating cognitive abilities and ensuring a strong fit within the team and your company culture.'
+        }
+    ]
+};
+
+const MOCK_GLOBALSQUAD_DATA: ComparisonFactPack = {
+    vendorSlug: 'globalsquad',
+    competitorName: 'GlobalSquad',
+    title: 'TeamStation AI vs. GlobalSquad: An In-Depth Analysis',
+    meta: 'A detailed comparison of TeamStation AI\'s high-throughput, managed teams and GlobalSquad\'s traditional outsourcing model.',
+    h1: 'TeamStation AI vs. GlobalSquad: A Focus on Throughput and Quality',
+    keywords: ['GlobalSquad alternative', 'TeamStation vs GlobalSquad', 'managed teams vs outsourcing', 'Axiom Cortex'],
+    verdict: {},
+    internal_links: [],
+    faqs: [
+        { question: "How does TeamStation ensure quality compared to a large-scale outsourcer like GlobalSquad?", answer: "TeamStation\'s competitive advantage is our Axiom Cortex™ vetting platform, which predicts on-the-job performance with 95% accuracy. This focus on cognitive alignment and problem-solving ability, rather than just resume keywords, results in higher-performing, more reliable teams." },
+        { question: "What kind of transparency and control can I expect with TeamStation?", answer: "We provide complete transparency into team operations, with real-time dashboards and direct communication channels. Unlike traditional outsourcing models, where you may have limited visibility, TeamStation integrates our teams directly into your workflows, providing you with full control and oversight." },
+    ],
+    comparison_claims: [
+        {
+            metric: 'Team Structure',
+            teamstationValue: 'Integrated Pods',
+            competitorValue: 'Black Box Outsourcing',
+            context: 'TeamStation teams are designed to be an integrated part of your organization, working in your systems and aligned with your goals. GlobalSquad often operates as a separate entity, which can lead to communication gaps and misalignment.'
+        },
+        {
+            metric: 'Performance Metrics',
+            teamstationValue: 'Throughput & Business Value',
+            competitorValue: 'Hours & Headcount',
+            context: 'Our success is measured by the value we deliver – features shipped, bugs fixed, and performance improvements. The traditional outsourcing model, in contrast, is often focused on billing for hours and the number of resources deployed.'
+        }
+    ]
+};
+
+const MOCK_REVELO_DATA: ComparisonFactPack = {
+    vendorSlug: 'revelo',
+    competitorName: 'Revelo',
+    title: 'TeamStation AI vs. Revelo: A Deep Dive into Vetting and Team Cohesion',
+    meta: 'Understand the critical differences between TeamStation\'s AI-driven team building and Revelo\'s marketplace for LATAM talent. ',
+    h1: 'TeamStation AI vs. Revelo: Building Teams, Not Just Filling Seats',
+    keywords: ['Revelo alternative', 'TeamStation vs Revelo', 'LATAM talent', 'Axiom Cortex'],
+    verdict: {},
+    internal_links: [],
+    faqs: [
+        { question: "Revelo focuses on LATAM talent. How is TeamStation different?", answer: "While we also recognize the immense talent in Latin America, our focus is on building high-performing, cohesive teams, not just providing individual developers. Our Axiom Cortex™ platform ensures that every team member has the cognitive abilities to excel, and our managed team model fosters a level of synergy that a marketplace like Revelo cannot match." },
+        { question: "Can I hire individual developers from TeamStation?", answer: "We specialize in building and managing full, cohesive teams. We believe that the greatest value is unlocked when a team is built to work together from the ground up, and our model is designed to deliver that outcome. We do not offer individual staff augmentation." },
+    ],
+    comparison_claims: [
+        {
+            metric: 'Core Offering',
+            teamstationValue: 'Managed, High-Throughput Teams',
+            competitorValue: 'Marketplace for Individual Developers',
+            context: 'TeamStation builds and manages end-to-end teams that are optimized for performance. Revelo provides a platform to hire individual developers from a pre-vetted pool, leaving the team-building and management responsibilities to you.'
+        },
+        {
+            metric: 'Vetting Depth',
+            teamstationValue: 'Predictive Cognitive Analysis',
+            competitorValue: 'Skills and Language Proficiency',
+            context: 'Revelo\'s vetting process is thorough, but it primarily validates technical skills and English proficiency. TeamStation\'s Axiom Cortex™ goes a step further, using cognitive science to predict a candidate\'s success and ensuring they have the problem-solving skills to thrive in a demanding environment.'
+        }
+    ]
+};
+
 
 // --- 3. DATA ACCESS FUNCTIONS ---
 
@@ -64,6 +151,9 @@ export async function getComparisonSlugs(): Promise<string[]> {
 
 export async function getComparisonData(vendorSlug: string): Promise<ComparisonFactPack | null> {
     if (vendorSlug === 'bairesdev') return MOCK_BAIREDEV_DATA;
+    if (vendorSlug === 'toptal') return MOCK_TOPTAL_DATA;
+    if (vendorSlug === 'globalsquad') return MOCK_GLOBALSQUAD_DATA;
+    if (vendorSlug === 'revelo') return MOCK_REVELO_DATA;
     
     const isMocked = MOCK_SLUGS.includes(vendorSlug);
     if (!isMocked) return null;

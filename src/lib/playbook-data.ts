@@ -56,6 +56,37 @@ const MOCK_DATA_NEARSHORE: PlaybookFactPack = {
     ],
 };
 
+const MOCK_DATA_AXIOM_CORTEX: PlaybookFactPack = {
+    slug: 'bias-free-technical-hiring-axiom-cortex',
+    title: 'Bias-Free Technical Hiring with Axiom Cortex™',
+    meta: 'Learn how to eliminate hiring bias and identify top performers with Axiom Cortex™, a cognitive evaluation platform.',
+    date: '2025-05-15',
+    author: MOCK_AUTHOR_CTO,
+    keywords: ['Hiring Bias', 'Axiom Cortex', 'Technical Vetting', 'Cognitive Science', 'Performance Prediction'],
+    toc: [
+        { id: 'problem-with-interviews', level: 2, title: 'The Flawed Proxy: Why Traditional Interviews Fail' },
+        { id: 'cognitive-load-testing', level: 2, title: 'Axiom Cortex™: Measuring What Matters' },
+        { id: 'how-it-works', level: 3, title: 'Simulating Real-World Problem Solving' },
+        { id: 'validation', level: 2, title: 'Case Study: 6x Reduction in Mis-Hires' },
+        { id: 'implementation', level: 2, title: 'Integrating Axiom Cortex™ into Your Workflow' },
+    ],
+};
+
+const MOCK_DATA_LATAM_ECONOMICS: PlaybookFactPack = {
+    slug: 'latam-economics',
+    title: 'The Economic Case for LATAM Nearshore Teams',
+    meta: 'A data-driven analysis of the total cost of ownership (TCO) for high-performing nearshore teams in Latin America.',
+    date: '2025-06-01',
+    author: MOCK_AUTHOR_CTO,
+    keywords: ['LATAM Economics', 'Total Cost of Ownership', 'Nearshore Value', 'Engineering ROI', 'Global Talent'],
+    toc: [
+        { id: 'beyond-salary', level: 2, title: 'Beyond Salary: The TCO Equation' },
+        { id: 'productivity-index', level: 2, title: 'The Productivity Index: Output per Dollar' },
+        { id: 'attrition-costs', level: 3, title: 'Hidden Costs: The Price of Attrition' },
+        { id: 'fully-loaded-model', level: 2, title: 'Financial Model: Fully-Loaded Cost Analysis' },
+        { id: 'summary', level: 2, title: 'Summary: The Strategic ROI of LATAM' },
+    ],
+};
 
 /**
  * Retrieves all available programmatic slugs for Next.js build configuration (SSG).
@@ -71,7 +102,9 @@ export async function getPlaybookSlugs(): Promise<string[]> {
 export async function getPlaybookData(slug: string): Promise<PlaybookFactPack | null> {
     // In production, this would query a CMS database with the slug.
     if (slug === 'nearshore-vs-offshore') return MOCK_DATA_NEARSHORE;
-    
+    if (slug === 'bias-free-technical-hiring-axiom-cortex') return MOCK_DATA_AXIOM_CORTEX;
+    if (slug === 'latam-economics') return MOCK_DATA_LATAM_ECONOMICS;
+
     // Simple mock for other slugs to ensure SSG works, but returns null if truly not found.
     const isMocked = MOCK_SLUGS.includes(slug);
     if (!isMocked) return null;
