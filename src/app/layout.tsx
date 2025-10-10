@@ -1,9 +1,11 @@
+
 import './globals.css';
 import { Inter, Poppins, Source_Code_Pro } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
 import { Header } from '@/components/layout/Header';
 import Footer from '@/components/Footer';
 import AppProviders from '@/providers/app-providers';
+import { teamStationAI, generateSchemaScript } from '@/lib/schema';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -45,8 +47,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const orgSchemaScript = generateSchemaScript(teamStationAI);
+
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable} ${sourceCodePro.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(teamStationAI) }}
+        />
+      </head>
       <body className={inter.className}>
         <AppProviders>
           <div className="flex min-h-screen flex-col">
