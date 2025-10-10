@@ -1,10 +1,9 @@
 
 import type { ElementType } from 'react';
-import type { Icon } from "lucide-react";
 import allTechData from '@/data/technologies'; // Corrected to be the single source of truth
 
 export interface PainPoint {
-  icon: Icon;
+  icon: string;
   pain: string;
   problem: string;
   solution: string;
@@ -147,4 +146,3 @@ export const allTech: AllTech = allTechData;
 export function getAllTechSlugs(): string[] {
     return Object.keys(allTech);
 }
-

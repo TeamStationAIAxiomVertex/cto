@@ -1,6 +1,5 @@
 
 import { TechEntry } from "@/lib/tech";
-import { AlertTriangle } from "lucide-react";
 
 const php: TechEntry = {
     name: "PHP (Laravel/Symfony)",
@@ -11,21 +10,21 @@ const php: TechEntry = {
     intro: "Modern PHP, particularly with frameworks like **Laravel** and **Symfony**, is a robust, performant, and mature choice for building scalable web applications and APIs. You need a senior engineer who has moved beyond legacy PHP practices and fully embraces modern standards, including composer, object-oriented design, and the latest language features. Our vetting process is designed to find professionals who master the full lifecycle of a Laravel or Symfony application, from designing database migrations to optimizing cache layers and building robust APIs. We look for expertise in performance optimization (e.g., using Redis, optimizing Eloquent/Doctrine queries) and a strong commitment to clean architecture and testing. By hiring a PHP expert from us, you are investing in a mature, high-velocity platform backed by a massive ecosystem, ensuring rapid development and enterprise-grade stability.",
     pains: [
         {
-            icon: AlertTriangle,
+            icon: "AlertTriangle",
             pain: "Is your business logic tightly coupled within the controller layer?",
             problem: "A common anti-pattern in PHP frameworks is the 'fat controller,' where all business logic, data access, and API concerns are crammed into a single controller file. This makes code impossible to unit test, violates the Single Responsibility Principle, and causes maintenance nightmares.",
             solution: "We vet for experts in architectural patterns like the **Repository/Service pattern** and Domain-Driven Design within Laravel/Symfony. They are required to demonstrate the ability to decouple business logic into dedicated service classes, ensuring clean, testable, and reusable code.",
             kpi: "Modular Service/Repository Architecture"
         },
         {
-            icon: AlertTriangle,
+            icon: "AlertTriangle",
             pain: "Are your database queries slow due to the N+1 problem?",
             problem: "The N+1 query problem, caused by lazy loading relationships within a loop, is a notorious performance killer in ORMs like Eloquent or Doctrine. Inexperienced developers fail to use eager loading, causing dozens or hundreds of unnecessary database queries per request.",
             solution: "Our engineers are masters of ORM optimization. They are vetted on their ability to use **eager loading** (`with` in Eloquent, `JOIN FETCH` in Doctrine) and query scopes to eliminate the N+1 problem, guaranteeing minimal and highly efficient database access for fast API response times.",
             kpi: "ORM Optimization and N+1 Problem Elimination"
         },
         {
-            icon: AlertTriangle,
+            icon: "AlertTriangle",
             pain: "Is your application security weak against common web attacks?",
             problem: "Failure to use the framework's built-in security features correctly, such as protection against SQL injection (by not using prepared statements) or CSRF attacks, leaves the application wide open to common, high-impact web vulnerabilities.",
             solution: "We look for engineers who integrate security first. They are proficient in using Laravel's built-in Eloquent features for safe queries, Blade/Twig for cross-site scripting (XSS) prevention, and middleware for robust authentication and authorization checks, guaranteeing a secure web application.",
