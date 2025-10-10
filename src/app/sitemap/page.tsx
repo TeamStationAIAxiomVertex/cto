@@ -14,9 +14,9 @@ import type { SitemapUrl } from "@/lib/sitemap-utils";
 
 export const metadata: Metadata = {
   title: "Sitemap",
-  description: "An overview of all pages on the site.",
+  description: "A complete, dynamically generated list of all pages on the site.",
   robots: {
-    index: false,
+    index: true, // Make sure this is indexable
     follow: true,
   },
 };
@@ -29,6 +29,8 @@ async function PageGroup({
   promise: Promise<SitemapUrl[]>;
 }) {
   const items = await promise;
+  if (items.length === 0) return null; // Don't render empty sections
+
   return (
     <div>
       <h2 className="text-2xl font-bold my-4">{title}</h2>
@@ -51,7 +53,7 @@ export default async function SitemapPage() {
       <h1>Sitemap</h1>
       <p>
         This is a human-readable list of all pages on the site, organized by
-        section.
+        section. This sitemap is generated dynamically and is always up-to-date.
       </p>
       <PageGroup title="Core Pages" promise={collectCoreUrls()} />
       <PageGroup title="Playbook Pages" promise={collectPlaybookUrls()} />

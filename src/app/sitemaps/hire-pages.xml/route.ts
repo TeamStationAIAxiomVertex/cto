@@ -2,12 +2,12 @@
 // src/app/sitemaps/hire-pages.xml/route.ts
 
 import { NextResponse } from 'next/server';
-import { generateSitemapXml } from '../../../lib/sitemap-utils';
+import { generateSitemapXml } from '@/lib/sitemap-utils';
 import { 
     collectHireByCountryUrls, 
     collectHireByRoleUrls,
     collectHireByTechnologyUrls 
-} from '../../../lib/sitemap-data'; 
+} from '@/lib/sitemap-data'; 
 
 /**
  * Handles GET requests to /sitemaps/hire-pages.xml

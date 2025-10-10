@@ -3,7 +3,7 @@
 
 import { NextResponse } from 'next/server';
 import { generateSitemapXml, SitemapUrl } from '@/lib/sitemap-utils';
-import { collectCoreUrls } from '@/lib/sitemap-data';
+import { collectAllStaticUrls } from '@/lib/sitemap-data';
 
 
 /**
@@ -11,7 +11,7 @@ import { collectCoreUrls } from '@/lib/sitemap-data';
  * This generates the sitemap for all top-level static pages.
  */
 export async function GET() {
-  const urls: SitemapUrl[] = await collectCoreUrls();
+  const urls: SitemapUrl[] = await collectAllStaticUrls();
 
   // Generate the XML string using the utility
   const xmlContent = generateSitemapXml(urls);

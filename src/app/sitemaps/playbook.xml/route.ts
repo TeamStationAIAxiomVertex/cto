@@ -1,3 +1,4 @@
+
 // src/app/sitemaps/playbook.xml/route.ts
 
 import { NextResponse } from 'next/server';

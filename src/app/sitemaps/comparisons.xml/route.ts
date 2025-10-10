@@ -1,3 +1,4 @@
+
 // src/app/sitemaps/comparisons.xml/route.ts
 
 import { NextResponse } from "next/server";
