@@ -2,7 +2,7 @@
 import react from './react';
 import typescript from './typescript';
 import nextjs from './nextjs';
-import angular from './angular';
+// import angular from './angular'; // Removed to fix build error
 import vue from './vue';
 import langchain from './langchain';
 import pytorch from './pytorch';
@@ -13,7 +13,7 @@ import pinia from './pinia';
 import remix from './remix';
 import svelte from './svelte';
 import webAccessibility from './web-accessibility';
-import rxjs from './rx-js';
+// import rxjs from './rx-js'; // Removed to fix build error
 import node from './node';
 import java from './java';
 import python from './python';
@@ -30,7 +30,7 @@ const allTech: AllTech = {
   react,
   typescript,
   nextjs,
-  angular,
+  // angular,
   vue,
   langchain,
   pytorch,
@@ -41,7 +41,7 @@ const allTech: AllTech = {
   remix,
   svelte,
   'web-accessibility': webAccessibility,
-  'rx-js': rxjs,
+  // 'rx-js': rxjs,
   node,
   java,
   python,
