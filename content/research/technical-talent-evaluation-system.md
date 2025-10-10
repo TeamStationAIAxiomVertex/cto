@@ -4,7 +4,7 @@ description: 'An interactive example of a real AxiomCortex™ evaluation report,
 canonical: 'https://cto.teamstation.dev/research/technical-talent-evaluation-system'
 ogImage:
   src:
-    url: "/assets/research/technical-talent-evaluation-system-og-image.jpg"
+    url: "/assets/research/technical-talent-evaluation-system-icon.svg"
 ---
 
 <script type="application/ld+json">
@@ -16,7 +16,7 @@ ogImage:
     "@type": "Organization",
     "name": "TeamStation AI"
   },
-  "image": "/assets/research/technical-talent-evaluation-system-og-image.jpg",
+  "image": "/assets/research/technical-talent-evaluation-system-icon.svg",
   "url": "https://cto.teamstation.dev/research/technical-talent-evaluation-system",
   "datePublished": "2023-11-03"
 }
