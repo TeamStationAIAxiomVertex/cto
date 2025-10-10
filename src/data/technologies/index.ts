@@ -115,6 +115,7 @@ import opa from './opa';
 import codeql from './codeql';
 import jaeger from './jaeger';
 import gremlin from './gremlin';
+import pytest from './pytest';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -234,6 +235,7 @@ const allTech: AllTech = {
   codeql,
   jaeger,
   gremlin,
+  pytest,
 };
 
 export default allTech;
