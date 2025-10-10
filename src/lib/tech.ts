@@ -78,7 +78,7 @@ import {
   Zap,
 } from "lucide-react";
 
-import allTechData from '@/data/technologies';
+import allTechData from '@/data/technologies/index';
 
 
 export interface PainPoint {

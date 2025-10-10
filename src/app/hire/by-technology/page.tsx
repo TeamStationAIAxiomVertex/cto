@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { ArrowRight, Code, Database, BrainCircuit, GanttChartSquare, TestTube2, ShieldCheck, Server, Wallet, Layers, Component, Plane } from 'lucide-react';
 import type { Metadata } from 'next';
-import { techCategories } from "../../../lib/tech";
+import { techCategories } from "../../../lib/tech-categories";
 import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
