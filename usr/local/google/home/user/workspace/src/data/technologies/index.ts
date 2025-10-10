@@ -2,7 +2,7 @@
 import react from './react';
 import typescript from './typescript';
 import nextjs from './nextjs';
-import angular from './angular';
+import angular from './angular.json';
 import vue from './vue';
 import langchain from './langchain';
 import pytorch from './pytorch';
@@ -13,7 +13,7 @@ import pinia from './pinia';
 import remix from './remix';
 import svelte from './svelte';
 import webAccessibility from './web-accessibility';
-import rxjs from './rx-js';
+import rxjs from './rx-js.json';
 import node from './node';
 import java from './java';
 import python from './python';
@@ -159,11 +159,11 @@ const allTech: AllTech = {
   'machine-learning': machineLearning,
   'data-warehousing': dataWarehousing,
   'power-bi': powerBi,
-  'tableau': tableau,
-  'fivetran': fivetran,
-  'looker': looker,
-  'presto': presto,
-  'kafka': kafka,
+  tableau,
+  fivetran,
+  looker,
+  presto,
+  kafka,
   'data-science': dataScience,
   llms,
   pandas,
