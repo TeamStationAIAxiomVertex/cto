@@ -11,8 +11,24 @@ import {
   Plane,
   Briefcase,
 } from "lucide-react";
+import type { Icon } from "lucide-react";
 
-export const roleCategories = [
+export interface RoleCategoryInfo {
+    name: string;
+    slug: string;
+    priority: string;
+    priorityTooltip: string;
+    pain: string;
+    description: string;
+    icon: Icon;
+    proof: {
+        href: string;
+        label: string;
+    };
+}
+
+
+export const roleCategories: RoleCategoryInfo[] = [
   {
     name: "Platform / Infra / SRE",
     slug: "platform-infra-sre",
@@ -177,6 +193,6 @@ export const roleCategories = [
   },
 ];
 
-export async function getAllRoleSlugs(): Promise<string[]> {
+export function getAllRoleSlugs(): string[] {
   return roleCategories.map((category) => category.slug);
 }
