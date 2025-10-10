@@ -81,6 +81,25 @@ import grpc from './grpc';
 import restApiDesign from './rest-api-design';
 import eventSourcing from './event-sourcing';
 import domainDrivenDesign from './domain-driven-design';
+import messageQueues from './message-queues';
+import apiGateway from './api-gateway';
+import systemDesign from './system-design';
+import apiSecurity from './api-security';
+import reactNative from './react-native';
+import flutter from './flutter';
+import axiomCortex from './axiom-cortex';
+import graphql from './graphql';
+import React from './React';
+import Preact from './Preact';
+import Ember from './Ember.js';
+import Solid from './Solid.js';
+import jQuery from './jQuery';
+import Nuxt from './Nuxt.js';
+import Gatsby from './Gatsby';
+import SvelteKit from './SvelteKit';
+import Astro from './Astro';
+import Redux from './Redux';
+import MobX from './MobX';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -165,7 +184,26 @@ const allTech: AllTech = {
   grpc,
   'rest-api-design': restApiDesign,
   'event-sourcing': eventSourcing,
-  'domain-driven-design': domainDrivenDesign
+  'domain-driven-design': domainDrivenDesign,
+  'message-queues': messageQueues,
+  'api-gateway': apiGateway,
+  'system-design': systemDesign,
+  'api-security': apiSecurity,
+  'react-native': reactNative,
+  flutter,
+  'axiom-cortex': axiomCortex,
+  graphql,
+  React,
+  Preact,
+  Ember,
+  Solid,
+  jQuery,
+  Nuxt,
+  Gatsby,
+  SvelteKit,
+  Astro,
+  Redux,
+  MobX
 };
 
 export default allTech;
