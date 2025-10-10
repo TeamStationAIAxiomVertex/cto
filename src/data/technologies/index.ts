@@ -44,6 +44,24 @@ import vault from './vault';
 import cloudformation from './cloudformation';
 import gitops from './gitops';
 import serverless from './serverless';
+import dataEngineering from './data-engineering';
+import sql from './sql';
+import etlElt from './etl-elt';
+import apacheSpark from './apache-spark';
+import airbyte from './airbyte';
+import dataGovernance from './data-governance';
+import machineLearning from './machine-learning';
+import dataWarehousing from './data-warehousing';
+import powerBi from './power-bi';
+import tableau from './tableau';
+import fivetran from './fivetran';
+import looker from './looker';
+import presto from './presto';
+import kafka from './kafka';
+import dataScience from './data-science';
+import llms from './llms';
+import pandas from './pandas';
+import numpy from './numpy';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -91,7 +109,25 @@ const allTech: AllTech = {
   vault,
   cloudformation,
   gitops,
-  serverless
+  serverless,
+  'data-engineering': dataEngineering,
+  sql,
+  'etl-elt': etlElt,
+  'apache-spark': apacheSpark,
+  airbyte,
+  'data-governance': dataGovernance,
+  'machine-learning': machineLearning,
+  'data-warehousing': dataWarehousing,
+  'power-bi': powerBi,
+  tableau,
+  fivetran,
+  looker,
+  presto,
+  kafka,
+  'data-science': dataScience,
+  llms,
+  pandas,
+  numpy
 };
 
 export default allTech;
