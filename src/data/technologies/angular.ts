@@ -1,4 +1,4 @@
-
+import { AlertTriangle } from 'lucide-react';
 import { TechEntry } from "@/lib/tech";
 
 const angular: TechEntry = {
@@ -10,21 +10,21 @@ const angular: TechEntry = {
   intro: "You're building a large-scale enterprise application, and you need the structure, opinionation, and long-term stability of a mature framework. You're here because you need a true Angular expert who can leverage its powerful dependency injection, build modular applications with NgModules, and tame the complexity of RxJS. This isn't about building a small marketing site; it's about creating a complex, maintainable, and performant application that will be the backbone of your business for years to come. Our vetting process is tailored to identify engineers who thrive in this environment. We focus on a candidate's ability to architect for scale, manage complexity, and write code that is both robust and easy to test. We look for a deep understanding of the framework's core principles, not just a superficial knowledge of the syntax. By hiring an Angular expert from us, you are investing in the long-term health and stability of your enterprise application, ensuring that it can evolve with your business without being crushed by technical debt.",
   pains: [
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your component communication a complex web of `@Input` and `@Output`?",
       problem: "In a large Angular application, relying solely on `@Input` and `@Output` for communication between distant components leads to a brittle and hard-to-maintain architecture. It creates tight coupling and makes refactoring a nightmare. This 'prop-drilling' problem is a classic sign of an inexperienced Angular developer.",
       solution: "We find engineers who are experts in building decoupled and scalable communication patterns. They are masters of using RxJS with injectable services to create observable data streams that components can subscribe to, regardless of their position in the component tree. They understand how to create a clean, unidirectional data flow that is easy to reason about and test.",
       kpi: "Mastery of RxJS for state management"
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your change detection slow and causing performance issues?",
       problem: "Angular's default change detection strategy is powerful but can become a performance bottleneck in large applications with many components. Many developers are unaware of how to optimize it, leading to a slow and unresponsive user interface as the application checks for changes excessively.",
       solution: "Our engineers are skilled in optimizing Angular's change detection mechanism. We vet for a deep understanding of when and how to use the `OnPush` strategy to limit change detection cycles. They know how to work with immutable data structures and observables to create highly performant applications that feel snappy and responsive to the user.",
       kpi: "Expertise in change detection optimization"
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are your modules disorganized and your lazy loading ineffective?",
       problem: "A common mistake in large Angular projects is to put everything into a single, massive `AppModule`. This leads to a slow initial load time as the entire application must be downloaded at once, and it makes the codebase hard to navigate and maintain. It's a sign of a developer who hasn't grappled with building a truly large-scale application.",
       solution: "We vet for a deep understanding of Angular's modular architecture. Our engineers are experts at designing applications with a clear separation of concerns, using feature modules to organize code logically. They know how to effectively implement lazy loading to split the application into smaller chunks that are loaded on demand, dramatically improving initial load times and the overall user experience.",

@@ -1,9 +1,21 @@
-import { PlaybookChapter } from '@/components/PlaybookChapter';
+import PlaybookAuthor from '@/components/PlaybookAuthor';
+import PlaybookContentRenderer from '@/components/PlaybookContentRenderer';
 import { getPlaybookData } from '@/lib/playbook-data';
 
 export default async function PlaybookPage() {
   const data = await getPlaybookData('latam-economics');
   if (!data) return null;
 
-  return <PlaybookChapter data={data} />;
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <div className="flex flex-col lg:flex-row gap-8">
+        <div className="lg:w-3/4">
+          <PlaybookContentRenderer slug="latam-economics" />
+        </div>
+        <div className="lg:w-1/4">
+          <PlaybookAuthor author={data.author} />
+        </div>
+      </div>
+    </div>
+  );
 }
