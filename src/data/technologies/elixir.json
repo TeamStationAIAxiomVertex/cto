@@ -1,3 +1,4 @@
+
 {
     "name": "Elixir",
     "category": "Backend & APIs",
@@ -28,7 +29,7 @@
             "kpi": "Idiomatic Functional Programming and Immutability"
         }
     ],
-    "evaluation": ['Phoenix LiveView and Channels for real-time web', 'OTP (GenServer, Supervisors) and fault tolerance', 'Functional Programming (Pattern Matching, Pipe Operator)', 'Concurrency (Actors, Message Passing) and state isolation', 'Ecto ORM and database interaction'],
+    "evaluation": ["Phoenix LiveView and Channels for real-time web", "OTP (GenServer, Supervisors) and fault tolerance", "Functional Programming (Pattern Matching, Pipe Operator)", "Concurrency (Actors, Message Passing) and state isolation", "Ecto ORM and database interaction"],
     "technical_analysis": "The Elixir evaluation is a full-stack assessment of real-time and fault-tolerant capabilities. The core assessment is the candidate's ability to build a **real-time feature using Phoenix LiveView**, demonstrating an understanding of how LiveView manages state, handles user events, and minimizes network latency. We rigorously test their mastery of the **OTP platform**, requiring them to design a small service using a **GenServer** and implement a **Supervisor** to manage process failure, proving they can build self-healing systems. For application logic, we assess their proficiency in functional programming concepts, pattern matching, and the use of the pipe operator for clean data transformation. Finally, we test their ability to use Ecto ORM effectively for database interaction, focusing on query optimization and change management.",
-    "interlink_slugs": ['erlang', 'postgresql', 'web-accessibility']
+    "interlink_slugs": ["erlang", "postgresql", "web-accessibility"]
 }

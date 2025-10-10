@@ -2,7 +2,7 @@
 import react from './react';
 import typescript from './typescript';
 import nextjs from './nextjs';
-import angular from './angular';
+import angular from './angular.json';
 import vue from './vue';
 import langchain from './langchain';
 import pytorch from './pytorch';
@@ -13,23 +13,23 @@ import pinia from './pinia';
 import remix from './remix';
 import svelte from './svelte';
 import webAccessibility from './web-accessibility';
-import rxjs from './rx-js';
+import rxjs from './rx-js.json';
 import node from './node';
 import java from './java';
 import python from './python';
 import go from './go';
-import csharp from './c-sharp';
-import rust from './rust';
-import php from './php';
-import kotlin from './kotlin';
-import scala from './scala';
-import erlang from './erlang';
-import haskell from './haskell';
-import elixir from './elixir';
-import devopsEngineering from './devops-engineering';
-import aws from './aws';
-import azure from './azure';
-import googleCloud from './google-cloud';
+import csharp from './c-sharp.json';
+import rust from './rust.json';
+import php from './php.json';
+import kotlin from './kotlin.json';
+import scala from './scala.json';
+import erlang from './erlang.json';
+import haskell from './haskell.json';
+import elixir from './elixir.json';
+import devopsEngineering from './devops-engineering.json';
+import aws from './aws.json';
+import azure from './azure.json';
+import googleCloud from './google-cloud.json';
 import kubernetes from './kubernetes';
 import docker from './docker';
 import terraform from './terraform';
@@ -101,88 +101,89 @@ import redux from './redux';
 import mobx from './mobx';
 import dotNet from './net';
 import awsCostExplorer from './aws-cost-explorer';
+import socketio from './socketio.json';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
-  react,
-  typescript,
-  nextjs,
-  angular,
-  vue,
-  langchain,
-  pytorch,
-  transformers,
-  dbt,
-  snowflake,
-  pinia,
-  remix,
-  svelte,
+  react: react,
+  typescript: typescript,
+  nextjs: nextjs,
+  angular: angular,
+  vue: vue,
+  langchain: langchain,
+  pytorch: pytorch,
+  transformers: transformers,
+  dbt: dbt,
+  snowflake: snowflake,
+  pinia: pinia,
+  remix: remix,
+  svelte: svelte,
   'web-accessibility': webAccessibility,
   'rx-js': rxjs,
-  node,
-  java,
-  python,
-  go,
+  node: node,
+  java: java,
+  python: python,
+  go: go,
   'c-sharp': csharp,
-  rust,
-  php,
-  kotlin,
-  scala,
-  erlang,
-  haskell,
-  elixir,
+  rust: rust,
+  php: php,
+  kotlin: kotlin,
+  scala: scala,
+  erlang: erlang,
+  haskell: haskell,
+  elixir: elixir,
   'devops-engineering': devopsEngineering,
-  aws,
-  azure,
+  aws: aws,
+  azure: azure,
   'google-cloud': googleCloud,
-  kubernetes,
-  docker,
-  terraform,
-  ansible,
-  jenkins,
+  kubernetes: kubernetes,
+  docker: docker,
+  terraform: terraform,
+  ansible: ansible,
+  jenkins: jenkins,
   'ci-cd': cicd,
-  prometheus,
-  grafana,
-  istio,
-  helm,
-  vault,
-  cloudformation,
-  gitops,
-  serverless,
+  prometheus: prometheus,
+  grafana: grafana,
+  istio: istio,
+  helm: helm,
+  vault: vault,
+  cloudformation: cloudformation,
+  gitops: gitops,
+  serverless: serverless,
   'data-engineering': dataEngineering,
-  sql,
+  sql: sql,
   'etl-elt': etlElt,
   'apache-spark': apacheSpark,
-  airbyte,
+  airbyte: airbyte,
   'data-governance': dataGovernance,
   'machine-learning': machineLearning,
   'data-warehousing': dataWarehousing,
   'power-bi': powerBi,
-  tableau,
-  fivetran,
-  looker,
-  presto,
-  kafka,
+  tableau: tableau,
+  fivetran: fivetran,
+  looker: looker,
+  presto: presto,
+  kafka: kafka,
   'data-science': dataScience,
-  llms,
-  pandas,
-  numpy,
-  postgresql,
-  mongodb,
-  redis,
-  cassandra,
-  mysql,
-  dynamodb,
-  elasticsearch,
-  playwright,
-  cypress,
+  llms: llms,
+  pandas: pandas,
+  numpy: numpy,
+  postgresql: postgresql,
+  mongodb: mongodb,
+  redis: redis,
+  cassandra: cassandra,
+  mysql: mysql,
+  dynamodb: dynamodb,
+  elasticsearch: elasticsearch,
+  playwright: playwright,
+  cypress: cypress,
   'qa-automation': qaAutomation,
   'security-engineering': securityEngineering,
   'penetration-testing': penetrationTesting,
-  jest,
-  vitest,
-  microservices,
-  grpc,
+  jest: jest,
+  vitest: vitest,
+  microservices: microservices,
+  grpc: grpc,
   'rest-api-design': restApiDesign,
   'event-sourcing': eventSourcing,
   'domain-driven-design': domainDrivenDesign,
@@ -191,21 +192,24 @@ const allTech: AllTech = {
   'system-design': systemDesign,
   'api-security': apiSecurity,
   'react-native': reactNative,
-  flutter,
+  flutter: flutter,
   'axiom-cortex': axiomCortex,
-  graphql,
-  preact,
+  graphql: graphql,
+  preact: preact,
   'ember-js': ember,
   'solid-js': solid,
-  jquery,
+  jquery: jquery,
   'nuxt-js': nuxt,
-  gatsby,
-  sveltekit,
-  astro,
-  redux,
-  mobx,
+  gatsby: gatsby,
+  sveltekit: sveltekit,
+  astro: astro,
+  redux: redux,
+  mobx: mobx,
   net: dotNet,
-  'aws-cost-explorer': awsCostExplorer
+  'aws-cost-explorer': awsCostExplorer,
+  socketio: socketio,
 };
 
 export default allTech;
+
+    
