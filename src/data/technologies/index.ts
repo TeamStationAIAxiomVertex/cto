@@ -2,7 +2,7 @@
 import react from './react';
 import typescript from './typescript';
 import nextjs from './nextjs';
-import angular from './angular.json';
+import angular from './angular';
 import vue from './vue';
 import langchain from './langchain';
 import pytorch from './pytorch';
@@ -13,23 +13,23 @@ import pinia from './pinia';
 import remix from './remix';
 import svelte from './svelte';
 import webAccessibility from './web-accessibility';
-import rxjs from './rx-js.json';
+import rxjs from './rx-js';
 import node from './node';
 import java from './java';
 import python from './python';
 import go from './go';
-import csharp from './c-sharp.json';
-import rust from './rust.json';
-import php from './php.json';
-import kotlin from './kotlin.json';
-import scala from './scala.json';
-import erlang from './erlang.json';
-import haskell from './haskell.json';
-import elixir from './elixir.json';
-import devopsEngineering from './devops-engineering.json';
-import aws from './aws.json';
-import azure from './azure.json';
-import googleCloud from './google-cloud.json';
+import csharp from './c-sharp';
+import rust from './rust';
+import php from './php';
+import kotlin from './kotlin';
+import scala from './scala';
+import erlang from './erlang';
+import haskell from './haskell';
+import elixir from './elixir';
+import devopsEngineering from './devops-engineering';
+import aws from './aws';
+import azure from './azure';
+import googleCloud from './google-cloud';
 import kubernetes from './kubernetes';
 import docker from './docker';
 import terraform from './terraform';
@@ -89,6 +89,7 @@ import reactNative from './react-native';
 import flutter from './flutter';
 import axiomCortex from './axiom-cortex';
 import graphql from './graphql';
+import reactjs from './react-js';
 import preact from './preact';
 import ember from './ember-js';
 import solid from './solid-js';
@@ -101,25 +102,8 @@ import redux from './redux';
 import mobx from './mobx';
 import dotNet from './net';
 import awsCostExplorer from './aws-cost-explorer';
-import socketio from './socketio.json';
-import ragas from './ragas';
-import airflow from './airflow';
-import sqlalchemy from './sqlalchemy';
-import swift from './swift';
-import memcached from './memcached';
-import trivy from './trivy';
-import flink from './flink';
-import iso from './iso';
-import soc from './soc';
-import opa from './opa';
-import codeql from './codeql';
-import jaeger from './jaeger';
-import gremlin from './gremlin';
-import pytest from './pytest';
-import hipaa from './hipaa';
-import ray from './ray';
-import pact from './pact.json';
-import k6 from './k6.json';
+import zustand from './Zustand';
+import vllm from './vllm';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -213,6 +197,7 @@ const allTech: AllTech = {
   flutter,
   'axiom-cortex': axiomCortex,
   graphql,
+  'react-js': reactjs,
   preact,
   'ember-js': ember,
   'solid-js': solid,
@@ -225,25 +210,8 @@ const allTech: AllTech = {
   mobx,
   net: dotNet,
   'aws-cost-explorer': awsCostExplorer,
-  socketio,
-  ragas,
-  airflow,
-  sqlalchemy,
-  swift,
-  memcached,
-  trivy,
-  flink,
-  iso,
-  soc,
-  opa,
-  codeql,
-  jaeger,
-  gremlin,
-  pytest,
-  hipaa,
-  ray,
-  pact,
-  k6,
+  zustand,
+  vllm
 };
 
 export default allTech;
