@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BookOpen } from 'lucide-react';
-import { JsonLd } from "../../../components/seo/JsonLd";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { teamStationAI } from '@/lib/schema';
 
 const papers = [
   {
@@ -57,14 +58,22 @@ const schema = {
   "@type": "ItemList",
   "name": "TeamStation AI Research Papers",
   "description": "Peer-reviewed and preprint research published by TeamStation AI and available on SSRN.",
+  "provider": {
+    "@type": "Organization",
+    "name": teamStationAI.name as string,
+    "url": teamStationAI.url as string
+  },
   "itemListElement": papers.map((paper, index) => ({
-    "@type": "ScholarlyArticle",
+    "@type": "ListItem",
     "position": index + 1,
-    "headline": paper.title,
-    "url": `https://cto.teamstation.dev/research/${paper.slug}`,
-    "sameAs": paper.canonical,
-    "author": { "@type": "Organization", "name": "TeamStation AI" },
-    "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
+    "item": {
+      "@type": "ScholarlyArticle",
+      "headline": paper.title,
+      "url": `https://cto.teamstation.dev/research/${paper.slug}`,
+      "sameAs": paper.canonical,
+      "author": { "@type": "Organization", "name": teamStationAI.name as string },
+      "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
+    }
   }))
 };
 

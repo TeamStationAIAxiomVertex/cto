@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BookOpen } from 'lucide-react';
-import { JsonLd } from "../../../components/seo/JsonLd";
+import ScholarlyArticleSchema from "@/components/ScholarlyArticleSchema";
 
 const pageInfo = {
     slug: "framework-for-measuring-capacity",
@@ -12,7 +12,8 @@ const pageInfo = {
     summary: [
         "This paper addresses a fundamental challenge for CTOs: how to accurately measure and forecast the productive capacity of a distributed engineering team. Traditional headcount-based planning is flawed, as it fails to account for critical variables that impact real-world output.",
         "We propose a new quantitative model that incorporates not only team size but also psychometric data (from our AxiomCortex™ engine), operational friction (e.g., time-zone latency), and economic factors (like the 'Vacancy Tax'). The framework provides a more accurate, multi-dimensional view of team capacity, enabling leaders to make data-driven decisions about team composition, resource allocation, and strategic investments for predictable delivery."
-    ]
+    ],
+    datePublished: "2025-06-20" // From original schema
 };
 
 export const metadata: Metadata = {
@@ -43,23 +44,16 @@ export const metadata: Metadata = {
   },
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
-  "headline": "A Scientific Framework for Measuring Human Capacity in Nearshore Software Engineering",
-  "author": { "@type": "Organization", "name": "TeamStation AI" },
-  "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
-  "url": `https://cto.teamstation.dev/research/${pageInfo.slug}`,
-  "sameAs": pageInfo.canonical,
-  "abstract": pageInfo.description,
-  "datePublished": "2025-06-20",
-  "dateModified": "2025-06-20"
-};
-
 export default function ResearchPaperPage() {
   return (
     <>
-      <JsonLd data={schema} />
+      <ScholarlyArticleSchema
+        title={pageInfo.title.split(' | ')[0]}
+        description={pageInfo.description}
+        url={`/research/${pageInfo.slug}`}
+        authorName="TeamStation AI Research"
+        datePublished={pageInfo.datePublished}
+      />
       <main className="container max-w-4xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / 

@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BookOpen } from 'lucide-react';
-import { JsonLd } from "../../../components/seo/JsonLd";
+import ScholarlyArticleSchema from "@/components/ScholarlyArticleSchema";
 
 const pageInfo = {
   slug: "heuristically-trained-ai",
@@ -12,7 +12,8 @@ const pageInfo = {
   summary: [
     "Traditional AI models often lack transparency in candidate evaluation. This paper introduces heuristic training methods that combine domain expertise with machine learning.",
     "The approach ensures interpretability, fairness, and adaptability while preserving predictive strength — critical factors for CTOs seeking reliable AI-driven evaluation systems."
-  ]
+  ],
+  datePublished: "2025-05-10" // From original schema
 };
 
 export const metadata: Metadata = {
@@ -34,23 +35,16 @@ export const metadata: Metadata = {
   },
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
-  "headline": pageInfo.title,
-  "author": { "@type": "Organization", "name": "TeamStation AI" },
-  "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
-  "url": `https://cto.teamstation.dev/research/${pageInfo.slug}`,
-  "sameAs": pageInfo.canonical,
-  "abstract": pageInfo.description,
-  "datePublished": "2025-05-10",
-  "dateModified": "2025-05-10"
-};
-
 export default function ResearchPaperPage() {
   return (
     <>
-      <JsonLd data={schema} />
+      <ScholarlyArticleSchema
+        title={pageInfo.title.split(' | ')[0]}
+        description={pageInfo.description}
+        url={`/research/${pageInfo.slug}`}
+        authorName="TeamStation AI Research"
+        datePublished={pageInfo.datePublished}
+      />
       <main className="container max-w-4xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> /
