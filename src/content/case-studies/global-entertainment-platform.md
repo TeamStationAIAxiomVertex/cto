@@ -1,6 +1,6 @@
 ---
 slug: 'global-entertainment-platform'
-title: 'Stabilizing Global Releases: A QA Squad Case Study'
+title: 'From QA Crisis to Global Releases in <30 Days'
 description: 'TeamStation AI deployed a 10+ engineer nearshore QA squad in <30 days for a global entertainment platform, replacing an offshore vendor to stabilize releases and cut defect leakage.'
 clientName: 'Global Entertainment Platform'
 industry: 'Global Entertainment & Media'
@@ -29,20 +29,20 @@ A top-tier entertainment company running a billion‑dollar, globally distribute
 
 ## The Challenge
 
--   Vendor replacement without downtime: Transition from a large offshore (India) provider while maintaining release cadence.
--   Real‑time collaboration: Need for same-day iteration with product and engineering in the Americas.
--   Scale & specialization: More than 10 QA resources across functional, automation, performance, and test‑ops.
--   Security & compliance: Enterprise‑grade access controls, device governance, and insurance coverage, with auditability for global stakeholders.
+-   **Vendor replacement without downtime:** Transition from a large offshore (India) provider while maintaining release cadence.
+-   **Real‑time collaboration:** Need for same-day iteration with product and engineering in the Americas.
+-   **Scale & specialization:** More than 10 QA resources across functional, automation, performance, and test‑ops.
+-   **Security & compliance:** Enterprise‑grade access controls, device governance, and insurance coverage, with auditability for global stakeholders.
 
 ---
 
 ## Why TeamStation AI
 
--   Speed to value: AI‑assisted matching and calibrated vetting enabled a full squad in <30 days across LATAM.
--   Time‑zone alignment: Real‑time stand‑ups, pairing, and triage in U.S. business hours.
--   Assured security posture: End‑to-end encryption, MFA/SSO, least‑privilege access, background checks, and regular pen‑tests.
--   Devices & coverage: Company‑issued devices with MDM, secure network baselines, and cybersecurity insurance coverage—a level of protection many far‑shore vendors typically do not provide.
--   Integrated delivery: Employer‑of‑Record (EOR), localized payroll/benefits, onboarding, governance, and ongoing performance management through the TeamStation platform.
+-   **Speed to value:** AI‑assisted matching and calibrated vetting enabled a full squad in <30 days across LATAM.
+-   **Time‑zone alignment:** Real‑time stand‑ups, pairing, and triage in U.S. business hours.
+-   **Assured security posture:** End‑to‑end encryption, MFA/SSO, least‑privilege access, background checks, and regular pen‑tests.
+-   **Devices & coverage:** Company‑issued devices with MDM, secure network baselines, and cybersecurity insurance coverage—a level of protection many far‑shore vendors typically do not provide.
+-   **Integrated delivery:** Employer‑of‑Record (EOR), localized payroll/benefits, onboarding, governance, and ongoing performance management through the TeamStation platform.
 
 ---
 
