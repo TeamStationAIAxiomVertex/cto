@@ -134,7 +134,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               {tech.pains.map((item) => {
-                const Icon = item.icon; // Directly use the component
+                const Icon = item.icon;
                 if (!Icon) {
                     return null;
                 }
