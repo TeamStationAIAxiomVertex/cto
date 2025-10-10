@@ -1,3 +1,4 @@
+
 {
     "name": "Google Cloud Platform (GCP)",
     "category": "DevOps & Cloud",
@@ -28,7 +29,7 @@
             "kpi": "IaC (Deployment Manager/Terraform) and IAM/Organization Policy"
         }
     ],
-    "evaluation": ['Containerization (GKE, Cloud Run)', 'Networking (VPC, Cloud Load Balancing)', 'Data Services (BigQuery, Cloud Pub/Sub, Cloud Spanner)', 'Identity and Security (IAM, Secret Manager)', 'IaC (Deployment Manager/Terraform)'],
+    "evaluation": ["Containerization (GKE, Cloud Run)", "Networking (VPC, Cloud Load Balancing)", "Data Services (BigQuery, Cloud Pub/Sub, Cloud Spanner)", "Identity and Security (IAM, Secret Manager)", "IaC (Deployment Manager/Terraform)"],
     "technical_analysis": "The GCP evaluation is focused on data, networking, and cloud-native containerization. Candidates are tested on their ability to design a highly scalable microservice architecture using **GKE**, including service meshes and network policies, or the serverless alternative **Cloud Run**. We rigorously assess their expertise with GCP's data crown jewel, **BigQuery**, requiring them to write complex SQL and demonstrate an understanding of its performance and cost models. A key area is security and identity, specifically testing their ability to define granular **IAM** roles and secure application secrets using **Secret Manager**. Finally, we require practical experience with **Infrastructure-as-Code (IaC)**, assessing their ability to define complex resource dependencies using either Deployment Manager or Terraform, proving they can manage a global-scale environment repeatably and securely.",
     "interlink_slugs": ["kubernetes", "terraform", "golang", "data-engineering"]
 }
