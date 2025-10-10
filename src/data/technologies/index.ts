@@ -62,6 +62,25 @@ import dataScience from './data-science';
 import llms from './llms';
 import pandas from './pandas';
 import numpy from './numpy';
+import postgresql from './postgresql';
+import mongodb from './mongodb';
+import redis from './redis';
+import cassandra from './cassandra';
+import mysql from './mysql';
+import dynamodb from './dynamodb';
+import elasticsearch from './elasticsearch';
+import playwright from './playwright';
+import cypress from './cypress';
+import qaAutomation from './qa-automation';
+import securityEngineering from './security-engineering';
+import penetrationTesting from './penetration-testing';
+import jest from './jest';
+import vitest from './vitest';
+import microservices from './microservices';
+import grpc from './grpc';
+import restApiDesign from './rest-api-design';
+import eventSourcing from './event-sourcing';
+import domainDrivenDesign from './domain-driven-design';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -127,7 +146,26 @@ const allTech: AllTech = {
   'data-science': dataScience,
   llms,
   pandas,
-  numpy
+  numpy,
+  postgresql,
+  mongodb,
+  redis,
+  cassandra,
+  mysql,
+  dynamodb,
+  elasticsearch,
+  playwright,
+  cypress,
+  'qa-automation': qaAutomation,
+  'security-engineering': securityEngineering,
+  'penetration-testing': penetrationTesting,
+  jest,
+  vitest,
+  microservices,
+  grpc,
+  'rest-api-design': restApiDesign,
+  'event-sourcing': eventSourcing,
+  'domain-driven-design': domainDrivenDesign
 };
 
 export default allTech;
