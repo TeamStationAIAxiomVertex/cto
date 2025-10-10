@@ -4,7 +4,7 @@ description: 'Proposing a novel, value-centric, and quality-driven model for ass
 canonical: 'https://cto.teamstation.dev/research/performance-evaluation-framework'
 ogImage:
   src:
-    url: "/assets/research/performance-evaluation-framework-og-image.jpg"
+    url: "/assets/research/performance-evaluation-framework-icon.svg"
 ---
 
 <script type="application/ld+json">
@@ -16,7 +16,7 @@ ogImage:
     "@type": "Organization",
     "name": "TeamStation AI"
   },
-  "image": "/assets/research/performance-evaluation-framework-og-image.jpg",
+  "image": "/assets/research/performance-evaluation-framework-icon.svg",
   "url": "https://cto.teamstation.dev/research/performance-evaluation-framework",
   "datePublished": "2023-11-01"
 }

@@ -4,7 +4,7 @@ description: 'A real, anonymized example of our 30-Day Onboarding Check, a BARS-
 canonical: 'https://cto.teamstation.dev/research/performance-evaluation-report-example'
 ogImage:
   src:
-    url: "/assets/research/performance-evaluation-report-example-og-image.jpg"
+    url: "/assets/research/performance-evaluation-report-example-icon.svg"
 ---
 
 <script type="application/ld+json">
@@ -16,7 +16,7 @@ ogImage:
     "@type": "Organization",
     "name": "TeamStation AI"
   },
-  "image": "/assets/research/performance-evaluation-report-example-og-image.jpg",
+  "image": "/assets/research/performance-evaluation-report-example-icon.svg",
   "url": "https://cto.teamstation.dev/research/performance-evaluation-report-example",
   "datePublished": "2023-11-02"
 }
