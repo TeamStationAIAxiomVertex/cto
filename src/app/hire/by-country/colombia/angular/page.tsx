@@ -2,7 +2,9 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { GitCompare, UserCheck, ShieldCheck, Scale, Layers } from 'lucide-react';
-import { PSPCard } from "../../../../../components/seo/PSPCard";
+import { PSPCard } from "@/components/seo/PSPCard";
+import ServiceSchema from "@/components/ServiceSchema";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: 'Hire Angular Developers in Colombia | Nearshore Experts',
@@ -82,44 +84,39 @@ const faq = [
     }
   ];
 
-  const schema = {
-  breadcrumbs: {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Hire", "item": `${siteUrl}/hire` },
-      { "@type": "ListItem", "position": 2, "name": "By Country", "item": `${siteUrl}/hire/by-country` },
-      { "@type": "ListItem", "position": 3, "name": "Colombia", "item": `${siteUrl}/hire/by-country/colombia` },
-      { "@type": "ListItem", "position": 4, "name": "Angular", "item": `${siteUrl}/hire/by-country/colombia/angular` }
-    ]
-  },
-  service: {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "IT Staff Augmentation",
-    "provider": { "@type": "Organization", "name": "TeamStation AI" },
-    "areaServed": { "@type": "Country", "name": "Colombia" },
-    "description": `Hire elite Angular developers in Colombia. We provide senior, pre-vetted engineers specializing in RxJS and NgRx with full US time-zone overlap.`,
-    "name": `Hire Angular Developers in Colombia`,
-    "offers": { "@type": "Offer", "price": "Contact for pricing" }
-  },
-  faq: {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faq.map(item => ({
-      "@type": "Question",
-      "name": item.q,
-      "acceptedAnswer": { "@type": "Answer", "text": item.a.replace(/<[^>]*>?/gm, '') }
-    }))
-  }
+const breadcrumbs = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Hire", "item": `${siteUrl}/hire` },
+    { "@type": "ListItem", "position": 2, "name": "By Country", "item": `${siteUrl}/hire/by-country` },
+    { "@type": "ListItem", "position": 3, "name": "Colombia", "item": `${siteUrl}/hire/by-country/colombia` },
+    { "@type": "ListItem", "position": 4, "name": "Angular", "item": `${siteUrl}/hire/by-country/colombia/angular` }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a.replace(/<[^>]*>?/gm, '') }
+  }))
 };
 
 export default function HireAngularColombiaPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.breadcrumbs) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.service) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema.faq) }} />
+      <ServiceSchema
+        name="Hire Angular Developers in Colombia"
+        serviceType="IT Staff Augmentation"
+        areaServed="Colombia"
+        description="Hire elite Angular developers in Colombia. We provide senior, pre-vetted engineers specializing in RxJS and NgRx with full US time-zone overlap."
+        url="/hire/by-country/colombia/angular"
+      />
+      <JsonLd data={breadcrumbs} />
+      <JsonLd data={faqSchema} />
       <main className="container max-w-5xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/hire" className="hover:text-foreground">Hire</Link> / 
