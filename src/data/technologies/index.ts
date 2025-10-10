@@ -108,6 +108,7 @@ import sqlalchemy from './sqlalchemy';
 import swift from './swift';
 import memcached from './memcached';
 import trivy from './trivy';
+import flink from './flink';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -220,6 +221,7 @@ const allTech: AllTech = {
   swift,
   memcached,
   trivy,
+  flink,
 };
 
 export default allTech;
