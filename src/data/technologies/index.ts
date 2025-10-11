@@ -121,7 +121,6 @@ import ray from "./ray";
 import pact from "./pact";
 import k6 from "./k6";
 import vllm from "./vllm";
-import { AllTech } from "@/lib/tech";
 import vite from "./vite";
 import tailwind from "./tailwind";
 import tanstack from "./tanstack";
@@ -131,6 +130,8 @@ import hibernate from "./hibernate";
 import pgvector from "./pgvector";
 import mlflow from "./mlflow";
 import opentelemetry from "./opentelemetry";
+
+import { AllTech } from "@/lib/tech";
 
 const allTech: AllTech = {
   react,

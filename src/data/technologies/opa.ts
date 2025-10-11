@@ -8,7 +8,7 @@ const opa: TechEntry = {
     categorySlug: "security-grc",
     seo_title: "Hire Open Policy Agent (OPA) Experts | Policy-as-Code Consultants",
     meta_description: "Implement unified policy enforcement across your stack. Hire elite remote OPA experts vetted for their deep understanding of Rego and policy-as-code. Book a call.",
-    intro: "Open Policy Agent (OPA) is an open-source, general-purpose policy engine that enables unified, context-aware policy enforcement. You need an engineer who can leverage OPA to decouple policy from service logic, creating a centralized and consistent way to manage authorization. Our vetting process identifies developers who are experts in OPA and its declarative policy language, Rego. By hiring an OPA expert, you get a developer who can build a modern, secure, and automated authorization system.",
+    intro: "Open Policy Agent (OPA) is an open-source, general-purpose policy engine that enables unified, context-aware policy enforcement. You need an engineer who can leverage OPA to decouple policy from service logic, creating a centralized and consistent way to manage authorization. Our vetting process identifies developers who are experts in OPA and its declarative policy language, **Rego**. By hiring an OPA expert, you get a developer who can build a modern, secure, and automated authorization system.",
     pains: [
         {
             icon: AlertTriangle,
@@ -25,7 +25,7 @@ const opa: TechEntry = {
         "Data integration for context-aware policies",
         "Deployment and management of OPA agents"
     ],
-    technical_analysis: "The OPA evaluation focuses on a candidate's ability to implement policy-as-code. We assess their mastery of the Rego language, requiring them to write complex policies that involve multiple data sources and hierarchical rules. A critical part of the evaluation is their understanding of how to integrate OPA with a microservices architecture, including the use of sidecar proxies and the OPA REST API. We also test their ability to write comprehensive tests for their policies to prevent regressions.",
+    technical_analysis: "The OPA evaluation focuses on a candidate's ability to implement policy-as-code. We assess their mastery of the **Rego language**, requiring them to write complex policies that involve multiple data sources and hierarchical rules. A critical part of the evaluation is their understanding of how to integrate OPA with a microservices architecture, including the use of sidecar proxies and the OPA REST API. We also test their ability to write comprehensive tests for their policies to prevent regressions.",
     interlink_slugs: ["kubernetes", "istio", "security-engineering", "devops-engineering"]
 };
 

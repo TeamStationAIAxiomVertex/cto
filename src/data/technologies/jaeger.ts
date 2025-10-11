@@ -8,13 +8,13 @@ const jaeger: TechEntry = {
     categorySlug: "platform-infra-sre",
     seo_title: "Hire Jaeger Experts | Distributed Tracing & Observability Consultants",
     meta_description: "Troubleshoot and monitor microservices. Hire elite remote Jaeger experts vetted for their deep understanding of distributed tracing and OpenTelemetry. Book a call.",
-    intro: "Jaeger is a popular open-source, end-to-end distributed tracing system. You need an engineer who can instrument your applications to generate traces, manage a Jaeger deployment, and use trace data to debug performance and reliability issues in a complex microservices environment. Our vetting process identifies developers who are experts in the principles of distributed tracing and the OpenTelemetry standard. By hiring a Jaeger expert, you get a developer who can provide deep visibility into your system, dramatically reducing your Mean Time To Resolution (MTTR) for production incidents.",
+    intro: "Jaeger is a popular open-source, end-to-end **distributed tracing** system. You need an engineer who can instrument your applications to generate traces, manage a Jaeger deployment, and use trace data to debug performance and reliability issues in a complex microservices environment. Our vetting process identifies developers who are experts in the principles of distributed tracing and the **OpenTelemetry** standard. By hiring a Jaeger expert, you get a developer who can provide deep visibility into your system, dramatically reducing your Mean Time To Resolution (MTTR) for production incidents.",
     pains: [
         {
             icon: AlertTriangle,
             pain: "Are you flying blind when debugging issues in your microservices?",
-            problem: "In a microservices architecture, a single user request can traverse dozens of services. Without distributed tracing, it's nearly impossible to understand the full lifecycle of a request, making it incredibly difficult to pinpoint the source of latency or errors.",
-            solution: "We vet for experts in **application instrumentation and distributed tracing**. Our engineers are proficient in using OpenTelemetry to generate and propagate traces across your services and can use Jaeger's UI to visualize and analyze them, quickly identifying bottlenecks and root causes.",
+            problem: "In a microservices architecture, a single user request can traverse dozens of services. Without **distributed tracing**, it's nearly impossible to understand the full lifecycle of a request, making it incredibly difficult to pinpoint the source of latency or errors.",
+            solution: "We vet for experts in **application instrumentation** and distributed tracing. Our engineers are proficient in using OpenTelemetry to generate and propagate traces across your services and can use Jaeger's UI to visualize and analyze them, quickly identifying bottlenecks and root causes.",
             kpi: "Reduced Mean Time To Resolution (MTTR) for Incidents"
         }
     ],

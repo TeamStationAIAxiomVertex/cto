@@ -8,7 +8,7 @@ const codeql: TechEntry = {
     categorySlug: "security-grc",
     seo_title: "Hire CodeQL Experts | Static Analysis & Code Security Consultants",
     meta_description: "Find and prevent vulnerabilities at scale. Hire elite remote CodeQL experts vetted for writing custom queries and integrating static analysis into your CI/CD pipeline. Book a call.",
-    intro: "CodeQL is the industry-leading semantic code analysis engine, allowing you to query your code as if it were data. You need an engineer who can go beyond running the standard query pack to write custom CodeQL queries to find novel, domain-specific vulnerabilities in your codebase. Our vetting process identifies developers who are experts in the CodeQL language and its application to modern DevSecOps. By hiring a CodeQL expert, you get a developer who can build a powerful, automated bug-finding machine tailored to your specific application and threat model.",
+    intro: "CodeQL is the industry-leading **semantic code analysis** engine, allowing you to query your code as if it were data. You need an engineer who can go beyond running the standard query pack to write **custom CodeQL queries** to find novel, domain-specific vulnerabilities in your codebase. Our vetting process identifies developers who are experts in the CodeQL language and its application to modern DevSecOps. By hiring a CodeQL expert, you get a developer who can build a powerful, automated bug-finding machine tailored to your specific application and threat model.",
     pains: [
         {
             icon: AlertTriangle,
