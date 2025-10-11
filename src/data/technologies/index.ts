@@ -191,6 +191,8 @@ import vllm from './vllm';
 import vue from './vue';
 import webAccessibility from './web-accessibility';
 import zuora from './zuora';
+import proofpoint from './proofpoint';
+import edr from './edr';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -385,6 +387,8 @@ const allTech: AllTech = {
     'vue': vue,
     'web-accessibility': webAccessibility,
     'zuora': zuora,
+    'proofpoint': proofpoint,
+    'edr': edr,
 };
 
 export default allTech;
