@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   const siteName = "TeamStation AI's CTO Playbook";
   const mainSiteUrl = "https://teamstation.dev";
-  const effectiveDate = "August 1, 2024";
+  const effectiveDate = "September 1, 2025";
 
   return (
     <main className="container max-w-4xl py-12">
@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
 
         <h2>9. Contact Us</h2>
         <p>
-          Questions? Email <a href="mailto:support@teamstation.ai">support@teamstation.ai</a> or{' '}
+          Questions? Email <a href="mailto:lonnie@teamstation.io">support@teamstation.ai</a> or{' '}
           <a
             href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
             target="_blank" rel="noopener noreferrer"

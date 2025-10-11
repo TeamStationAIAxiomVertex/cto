@@ -4,9 +4,11 @@ import type { Metadata } from "next";
 import { ArrowRight, CheckCircle, AlertTriangle } from "lucide-react";
 import { notFound } from "next/navigation";
 import { allTech } from "@/lib/tech";
-import { JsonLd } from "@/components/seo/JsonLd";
 import FurtherReading from "@/components/seo/FurtherReading";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import dynamic from 'next/dynamic';
+
+const ClientJsonLd = dynamic(() => import('@/components/seo/JsonLd'), { ssr: false });
 
 const icons: { [key: string]: React.ElementType } = {
   AlertTriangle,
@@ -14,20 +16,21 @@ const icons: { [key: string]: React.ElementType } = {
 
 type TechKeys = keyof typeof allTech;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const techName = allTech[params.slug as TechKeys]?.name || "Technology";
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+): Promise<Metadata> {
+  const tech = allTech[params.slug as TechKeys];
+  if (!tech) {
+    return {};
+  }
   const url = `https://cto.teamstation.dev/hire/by-technology/${params.slug}`;
   return {
-    title: `Hire Nearshore ${techName} Developers | TeamStation AI`,
-    description: `Elite, pre-vetted ${techName} engineers in LATAM. Axiom Cortex™ vetting, EOR compliance, and audit-ready ops. Book a strategy call today.`,
+    title: tech.seo_title || `Hire Nearshore ${tech.name} Developers | TeamStation AI`,
+    description: tech.meta_description || `Elite, pre-vetted ${tech.name} engineers in LATAM. Axiom Cortex™ vetting, EOR compliance, and audit-ready ops. Book a strategy call today.`,
     alternates: { canonical: url },
     openGraph: {
-      title: `Hire Nearshore ${techName} Developers`,
-      description: `Elite, pre-vetted ${techName} engineers in LATAM. Evidence, not resumes.`,
+      title: tech.seo_title || `Hire Nearshore ${tech.name} Developers`,
+      description: tech.meta_description || `Elite, pre-vetted ${tech.name} engineers in LATAM. Evidence, not resumes.`,
       url,
       type: "article",
       siteName: "TeamStation AI",
@@ -41,8 +44,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `Hire Nearshore ${techName} Developers`,
-      description: `Elite, pre-vetted ${techName} engineers in LATAM.`,
+      title: tech.seo_title || `Hire Nearshore ${tech.name} Developers`,
+      description: tech.meta_description || `Elite, pre-vetted ${tech.name} engineers in LATAM.`,
     },
   };
 }
@@ -102,8 +105,8 @@ export default function TechPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={serviceSchema} />
+      <ClientJsonLd data={breadcrumbSchema} />
+      <ClientJsonLd data={serviceSchema} />
       <main className="container max-w-5xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">

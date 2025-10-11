@@ -2,8 +2,10 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BookOpen } from 'lucide-react';
-import { JsonLd } from "@/components/seo/JsonLd";
 import { teamStationAI } from '@/lib/schema';
+import dynamic from 'next/dynamic';
+
+const ClientJsonLd = dynamic(() => import('@/components/seo/JsonLd'), { ssr: false });
 
 const papers = [
   {
@@ -80,7 +82,7 @@ const schema = {
 export default function ResearchHubPage() {
   return (
     <>
-      <JsonLd data={schema} />
+      <ClientJsonLd data={schema} />
       <main className="container max-w-5xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / 
