@@ -18,7 +18,7 @@ const vite: TechEntry = {
       problem:
         "Traditional bundler-based development servers can take minutes to start up and seconds to reflect changes, killing developer productivity and flow. This 'wait time' is a significant drain on your team's efficiency.",
       solution:
-        "We vet for experts in **Vite's native ESM dev server**. Our engineers are proficient in leveraging Vite's on-demand file serving to provide a near-instant development experience. This results in a team that can iterate faster and stay focused on building features, not waiting for a bundler.",
+        "We vet for experts in <strong>Vite's native ESM dev server</strong>. Our engineers are proficient in using Vite's on-demand file serving to provide a near-instant development experience. This results in a team that can iterate faster and stay focused on building features, not waiting for a bundler.",
       kpi: "Near-Instant Server Start and Hot Module Replacement (HMR)",
     },
     {
@@ -27,7 +27,7 @@ const vite: TechEntry = {
       problem:
         "A poorly configured build process can lead to large, inefficient bundles that hurt your application's performance and Core Web Vitals. This is often the result of not properly configuring tree-shaking, code-splitting, and asset optimization.",
       solution:
-        "Our engineers are masters of **Vite's Rollup-based build process**. They are vetted on their ability to configure Vite to produce highly optimized, tree-shaken, and code-split bundles for production. This ensures that your users get the smallest, fastest possible version of your application.",
+        "Our engineers are masters of <strong>Vite's Rollup-based build process</strong>. They are vetted on their ability to configure Vite to produce highly optimized, tree-shaken, and code-split bundles for production. This ensures that your users get the smallest, fastest possible version of your application.",
       kpi: "Optimized Production Builds with Rollup",
     },
     {
@@ -36,7 +36,7 @@ const vite: TechEntry = {
       problem:
         "Integrating a new build tool into an existing project can be a complex task. Without a deep understanding of Vite's plugin ecosystem and configuration options, it can be difficult to get Vite to work with your specific framework, libraries, and backend.",
       solution:
-        "We look for engineers proficient with **Vite's plugin ecosystem**. They are vetted on their ability to use and configure plugins for frameworks like React, Vue, and Svelte, and to write custom plugins to handle unique project requirements. This ensures a seamless integration with your existing stack.",
+        "We look for engineers proficient with <strong>Vite's plugin ecosystem</strong>. They are vetted on their ability to use and configure plugins for frameworks like React, Vue, and Svelte, and to write custom plugins to handle unique project requirements. This ensures a seamless integration with your existing stack.",
       kpi: "Seamless Integration with a Rich Plugin Ecosystem",
     },
   ],

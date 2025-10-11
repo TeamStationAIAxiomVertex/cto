@@ -1,6 +1,6 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
+import { AlertTriangle } from "lucide-react";
 
 const typeorm: TechEntry = {
     name: "TypeORM",
@@ -14,21 +14,21 @@ const typeorm: TechEntry = {
             icon: AlertTriangle,
             pain: "Is your data access logic tightly coupled to your business logic?",
             problem: "Mixing data access code directly within your business services creates a tightly coupled architecture that is difficult to test, refactor, and maintain. This is a common anti-pattern that leads to a monolithic and brittle codebase.",
-            solution: "We vet for experts in the **Repository pattern**. Our engineers are proficient in using TypeORM's repositories to create a clean separation between your data access layer and your business logic. This results in a more modular, testable, and maintainable application.",
+            solution: "We vet for experts in the <strong>Repository pattern</strong>. Our engineers are proficient in using TypeORM's repositories to create a clean separation between your data access layer and your business logic. This results in a more modular, testable, and maintainable application.",
             kpi: "Clean Separation of Concerns with the Repository Pattern"
         },
         {
             icon: AlertTriangle,
             pain: "Are you struggling to write complex, performant database queries?",
             problem: "While TypeORM's Active Record pattern is great for simple CRUD operations, it can be difficult to write complex, performant queries. This often leads to developers dropping down to raw SQL, losing the benefits of type safety and a consistent API.",
-            solution: "Our engineers are masters of **TypeORM's Query Builder**. They are vetted on their ability to write complex, performant queries with joins, subqueries, and aggregations, all while maintaining full type safety. This results in a more efficient and reliable data access layer.",
+            solution: "Our engineers are masters of <strong>TypeORM's Query Builder</strong>. They are vetted on their ability to write complex, performant queries with joins, subqueries, and aggregations, all while maintaining full type safety. This results in a more efficient and reliable data access layer.",
             kpi: "Complex, Performant, and Type-Safe Queries"
         },
         {
             icon: AlertTriangle,
             pain: "Are your database migrations a manual, high-risk process?",
             problem: "Manually managing database schema changes is an error-prone process that can lead to data loss and downtime. It's difficult to keep your database schema in sync with your application code across different environments.",
-            solution: "We look for engineers proficient with **TypeORM's migration system**. They are vetted on their ability to automatically generate and apply schema migrations based on your entity definitions, ensuring a safe, repeatable, and version-controlled process for evolving your database schema.",
+            solution: "We look for engineers proficient with <strong>TypeORM's migration system</strong>. They are vetted on their ability to automatically generate and apply schema migrations based on your entity definitions, ensuring a safe, repeatable, and version-controlled process for evolving your database schema.",
             kpi: "Automated and Safe Schema Migrations"
         }
     ],

@@ -1,6 +1,6 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
+import { AlertTriangle } from "lucide-react";
 
 const tanstack: TechEntry = {
   name: "TanStack Query",
@@ -14,21 +14,21 @@ const tanstack: TechEntry = {
       icon: AlertTriangle,
       pain: "Is your app filled with stale data and inconsistent UI?",
       problem: "Without a proper server state management solution, your application's UI can easily fall out of sync with the data on your server. This leads to a frustrating user experience where users are seeing stale data, and it creates a codebase that is difficult to reason about and debug.",
-      solution: "We vet for experts in **TanStack Query's caching and background refetching**. Our engineers are proficient in using features like `staleTime`, `cacheTime`, and automatic refetching on window focus to ensure that your application's data is always fresh and your UI is always consistent with the server.",
+      solution: "We vet for experts in <strong>TanStack Query's caching and background refetching</strong>. Our engineers are proficient in using features like `staleTime`, `cacheTime`, and automatic refetching on window focus to ensure that your application's data is always fresh and your UI is always consistent with the server.",
       kpi: "A Consistent, Up-to-Date User Experience"
     },
     {
       icon: AlertTriangle,
       pain: "Is your data fetching logic a complex mess of `useEffect` hooks and loading states?",
       problem: "Managing data fetching, loading, and error states manually with `useEffect` is a complex and error-prone task. This leads to a lot of boilerplate code, makes it difficult to handle race conditions, and results in a UI that is littered with loading spinners and inconsistent error messages.",
-      solution: "Our engineers are masters of **declarative data fetching with TanStack Query**. They are vetted on their ability to replace complex `useEffect` logic with a simple `useQuery` hook, allowing TanStack Query to handle all the complexities of data fetching, caching, and error handling automatically. This results in a cleaner, more readable codebase and a more resilient user experience.",
+      solution: "Our engineers are masters of <strong>declarative data fetching with TanStack Query</strong>. They are vetted on their ability to replace complex `useEffect` logic with a simple `useQuery` hook, allowing TanStack Query to handle all the complexities of data fetching, caching, and error handling automatically. This results in a cleaner, more readable codebase and a more resilient user experience.",
       kpi: "Declarative Data Fetching and Simplified Component Logic"
     },
     {
       icon: AlertTriangle,
       pain: "Are your data mutations slow and lacking optimistic UI updates?",
       problem: "When a user performs a data mutation (e.g., creating, updating, or deleting a resource), they often have to wait for the server to respond before seeing the UI update. This can lead to a slow and frustrating user experience, especially on slow networks.",
-      solution: "We look for engineers proficient with **optimistic updates in TanStack Query**. They are vetted on their ability to use the `onMutate` and `onError` callbacks to update the UI instantly, providing a snappy, optimistic user experience while ensuring that the UI is automatically rolled back to its previous state if the mutation fails.",
+      solution: "We look for engineers proficient with <strong>optimistic updates in TanStack Query</strong>. They are vetted on their ability to use the `onMutate` and `onError` callbacks to update the UI instantly, providing a snappy, optimistic user experience while ensuring that the UI is automatically rolled back to its previous state if the mutation fails.",
       kpi: "Instantaneous, Optimistic UI Updates"
     }
   ],

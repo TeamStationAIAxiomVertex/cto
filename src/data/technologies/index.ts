@@ -121,7 +121,6 @@ import ray from "./ray";
 import pact from "./pact";
 import k6 from "./k6";
 import vllm from "./vllm";
-import { AllTech } from "@/lib/tech";
 import pulumi from './pulumi';
 import gitlab from './gitlab';
 import argocd from './argocd';
@@ -130,6 +129,13 @@ import loki from './loki';
 import externalSecrets from './external-secrets';
 import launchdarkly from './launchdarkly';
 import openfeature from './openfeature';
+import ruby from "./ruby";
+import vite from "./vite";
+import tanstack from "./tanstack";
+import testing from "./testing";
+import typeorm from "./typeorm";
+import efCore from "./ef-core";
+import { AllTech } from "@/lib/tech";
 
 const allTech: AllTech = {
   react,
@@ -262,6 +268,12 @@ const allTech: AllTech = {
   "external-secrets": externalSecrets,
   launchdarkly,
   openfeature,
+  ruby,
+  vite,
+  tanstack,
+  testing,
+  typeorm,
+  "ef-core": efCore,
 };
 
 export default allTech;

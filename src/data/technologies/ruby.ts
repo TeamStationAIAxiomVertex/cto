@@ -1,6 +1,6 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
+import { AlertTriangle } from "lucide-react";
 
 const ruby: TechEntry = {
   name: "Ruby on Rails",
@@ -14,21 +14,21 @@ const ruby: TechEntry = {
       icon: AlertTriangle,
       pain: "Is your Rails application a slow, monolithic mess?",
       problem: "A common problem with large Rails applications is that they can become slow and difficult to maintain. This is often due to a lack of understanding of the framework's performance characteristics, and a failure to use its features in an idiomatic way. This leads to a poor user experience and a codebase that is a nightmare to work with.",
-      solution: "We vet for experts in **Rails performance and scalability**. Our engineers are proficient in using tools like the Rails profiler, New Relic, and other performance monitoring tools to identify and fix performance bottlenecks. They understand how to use caching, background jobs, and other techniques to build a fast, scalable, and resilient application.",
+      solution: "We vet for experts in <strong>Rails performance and scalability</strong>. Our engineers are proficient in using tools like the Rails profiler, New Relic, and other performance monitoring tools to identify and fix performance bottlenecks. They understand how to use caching, background jobs, and other techniques to build a fast, scalable, and resilient application.",
       kpi: "A Fast, Scalable, and Resilient Rails Application"
     },
     {
       icon: AlertTriangle,
       pain: "Is your data model a tangled web of complex, inefficient queries?",
       problem: "A poorly designed data model without a clear understanding of Active Record's query interface can lead to slow, inefficient queries that are difficult to debug and maintain. This is a common problem in large Rails applications with complex data requirements.",
-      solution: "Our engineers are masters of **Active Record and data modeling**. They are vetted on their ability to design a clean, normalized data model and to write efficient, idiomatic queries using Active Record's powerful query interface. They understand how to use indexes, eager loading, and other techniques to build a high-performance data access layer.",
+      solution: "Our engineers are masters of <strong>Active Record and data modeling</strong>. They are vetted on their ability to design a clean, normalized data model and to write efficient, idiomatic queries using Active Record's powerful query interface. They understand how to use indexes, eager loading, and other techniques to build a high-performance data access layer.",
       kpi: "Proficiency in Active Record & Data Modeling"
     },
     {
         icon: AlertTriangle,
-        pain: "Is your team struggling to build modern, interactive user interfaces?",
+        pain: "Are you struggling to build modern, interactive user interfaces?",
         problem: "While Rails is great for backend development, building a modern, interactive user interface can be a challenge. Many teams struggle to integrate modern JavaScript frameworks like React or Vue.js, leading to a clunky user experience and a complex, hard-to-maintain codebase.",
-        solution: "We look for engineers proficient with **modern frontend integration**. They are vetted on their ability to use tools like Hotwire, Turbo, and Stimulus to build modern, interactive user interfaces without the complexity of a full-blown single-page application. They also have experience integrating with modern JavaScript frameworks when necessary.",
+        solution: "We look for engineers proficient with <strong>modern frontend integration</strong>. They are vetted on their ability to use tools like Hotwire, Turbo, and Stimulus to build modern, interactive user interfaces without the complexity of a full-blown single-page application. They also have experience integrating with modern JavaScript frameworks when necessary.",
         kpi: "Modern, Interactive User Interfaces with Hotwire & Stimulus"
     }
   ],
