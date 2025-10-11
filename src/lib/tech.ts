@@ -80,6 +80,14 @@ export type TechSlug =
   | "jaeger"
   | "sentry"
   | "github-actions"
+  | "pulumi"
+  | "gitlab"
+  | "argocd"
+  | "linkerd"
+  | "loki"
+  | "external-secrets"
+  | "launchdarkly"
+  | "openfeature"
 
   // Data & AI (18)
   | "data-engineering"

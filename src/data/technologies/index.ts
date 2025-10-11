@@ -121,17 +121,15 @@ import ray from "./ray";
 import pact from "./pact";
 import k6 from "./k6";
 import vllm from "./vllm";
-import cloudzero from "./cloudzero";
-import salesforce from "./salesforce";
-import hubspot from "./hubspot";
-import hightouch from "./hightouch";
-import browserstack from "./browserstack";
-import owaspZap from "./owasp-zap";
-import sentry from "./sentry";
-import githubActions from "./github-actions";
-import typeorm from "./typeorm";
-import efCore from "./ef-core";
 import { AllTech } from "@/lib/tech";
+import pulumi from './pulumi';
+import gitlab from './gitlab';
+import argocd from './argocd';
+import linkerd from './linkerd';
+import loki from './loki';
+import externalSecrets from './external-secrets';
+import launchdarkly from './launchdarkly';
+import openfeature from './openfeature';
 
 const allTech: AllTech = {
   react,
@@ -256,16 +254,14 @@ const allTech: AllTech = {
   pact,
   k6,
   vllm,
-  cloudzero,
-  salesforce,
-  hubspot,
-  hightouch,
-  browserstack,
-  "owasp-zap": owaspZap,
-  sentry,
-  "github-actions": githubActions,
-  typeorm,
-  "ef-core": efCore,
+  pulumi,
+  gitlab,
+  argocd,
+  linkerd,
+  loki,
+  "external-secrets": externalSecrets,
+  launchdarkly,
+  openfeature,
 };
 
 export default allTech;
