@@ -193,6 +193,7 @@ import webAccessibility from './web-accessibility';
 import zuora from './zuora';
 import proofpoint from './proofpoint';
 import edr from './edr';
+import nest from './NestJS';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -389,6 +390,7 @@ const allTech: AllTech = {
     'zuora': zuora,
     'proofpoint': proofpoint,
     'edr': edr,
+    'nestjs': nest,
 };
 
 export default allTech;
