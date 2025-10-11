@@ -14,21 +14,21 @@ const jaeger: TechEntry = {
             icon: AlertTriangle,
             pain: "Are you flying blind when debugging issues in your microservices?",
             problem: "In a microservices architecture, a single user request can traverse dozens of services. Without **distributed tracing**, it's nearly impossible to understand the full lifecycle of a request, making it incredibly difficult to pinpoint the source of latency or errors.",
-            solution: "We vet for experts in **application instrumentation** and distributed tracing. Our engineers are proficient in using OpenTelemetry to generate and propagate traces across your services and can use Jaeger's UI to visualize and analyze them, quickly identifying bottlenecks and root causes.",
+            solution: "We vet for experts in <strong>application instrumentation and distributed tracing</strong>. Our engineers are proficient in using OpenTelemetry to generate and propagate traces across your services and can use Jaeger's UI to visualize and analyze them, quickly identifying bottlenecks and root causes.",
             kpi: "Reduced Mean Time To Resolution (MTTR) for Incidents"
         },
         {
             icon: AlertTriangle,
             pain: "Is your trace data disconnected from your metrics and logs?",
             problem: "Tracing alone is not enough. Without a way to correlate a specific trace with relevant application logs and system metrics, debugging is still a slow, manual process of switching between different tools and trying to match up timestamps.",
-            solution: "Our engineers are experts in building a **unified observability stack**. They are vetted on their ability to configure data source links between Jaeger, Prometheus, and Loki/Elastic, allowing for seamless drill-down from a trace to the exact logs and metrics for that request.",
+            solution: "Our engineers are experts in building a <strong>unified observability stack</strong>. They are vetted on their ability to configure data source links between Jaeger, Prometheus, and Loki/Elastic, allowing for seamless drill-down from a trace to the exact logs and metrics for that request.",
             kpi: "Unified Metrics, Traces, and Logs"
         },
         {
             icon: AlertTriangle,
             pain: "Is instrumenting your code for tracing a manual, inconsistent effort?",
             problem: "Manually adding tracing code to every function in every service is tedious, error-prone, and leads to inconsistent trace data. This makes it difficult to get a complete, end-to-end view of your system.",
-            solution: "We look for engineers proficient in **auto-instrumentation**. They are vetted on their ability to use OpenTelemetry's automatic instrumentation libraries for popular frameworks and languages, ensuring that you get comprehensive trace data out-of-the-box with minimal developer effort.",
+            solution: "We look for engineers proficient in <strong>auto-instrumentation</strong>. They are vetted on their ability to use OpenTelemetry's automatic instrumentation libraries for popular frameworks and languages, ensuring that you get comprehensive trace data out-of-the-box with minimal developer effort.",
             kpi: "Comprehensive Tracing with Auto-Instrumentation"
         }
     ],

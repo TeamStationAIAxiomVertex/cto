@@ -121,16 +121,10 @@ import ray from "./ray";
 import pact from "./pact";
 import k6 from "./k6";
 import vllm from "./vllm";
-import vite from "./vite";
-import tailwind from "./tailwind";
-import tanstack from "./tanstack";
-import testing from "./testing";
-import prisma from "./prisma";
-import hibernate from "./hibernate";
-import pgvector from "./pgvector";
-import mlflow from "./mlflow";
-import opentelemetry from "./opentelemetry";
-
+import cloudzero from "./cloudzero";
+import salesforce from "./salesforce";
+import hubspot from "./hubspot";
+import hightouch from "./hightouch";
 import { AllTech } from "@/lib/tech";
 
 const allTech: AllTech = {
@@ -256,15 +250,10 @@ const allTech: AllTech = {
   pact,
   k6,
   vllm,
-  vite,
-  tailwind,
-  tanstack,
-  testing,
-  prisma,
-  hibernate,
-  pgvector,
-  mlflow,
-  opentelemetry,
+  cloudzero,
+  salesforce,
+  hubspot,
+  hightouch,
 };
 
 export default allTech;
