@@ -1,311 +1,354 @@
 
+import ReactNative from "./react-native";
+import NodeJS from "./nodejs";
+import Javascript from "./javascript";
+import Typescript from "./typescript";
+import Python from "./python";
+import Java from "./java";
+import Go from "./go";
+import Ruby from "./ruby";
+import Heroku from "./heroku";
+import Netflify from "./netflify";
+import Vercel from "./vercel";
+import AWS from "./aws";
+import GCP from "./gcp";
+import Azure from "./azure";
+import Swift from "./swift";
+import Kotlin from "./kotlin";
+import Flutter from "./flutter";
+import ReactNativeNavigation from "./react-native-navigation";
+import ReactNativeGestureHandler from "./react-native-gesture-handler";
+import ReactNativeReanimated from "./react-native-reanimated";
+import ReactNativePaper from "./react-native-paper";
+import ReactNativeElements from "./react-native-elements";
+import NativeBase from "./native-base";
+import ReactNativeMaps from "./react-native-maps";
 import react from "./react";
-import typescript from "./typescript";
 import nextjs from "./nextjs";
-import angular from "./angular";
-import vue from "./vue";
-import langchain from "./langchain";
-import pytorch from "./pytorch";
-import transformers from "./transformers";
-import dbt from "./dbt";
-import snowflake from "./snowflake";
-import pinia from "./pinia";
-import remix from "./remix";
-import svelte from "./svelte";
-import webAccessibility from "./web-accessibility";
-import rxjs from "./rx-js";
-import node from "./node";
-import java from "./java";
-import python from "./python";
-import go from "./go";
-import csharp from "./c-sharp";
-import rust from "./rust";
-import php from "./php";
-import kotlin from "./kotlin";
-import scala from "./scala";
-import erlang from "./erlang";
-import haskell from "./haskell";
-import elixir from "./elixir";
-import devopsEngineering from "./devops-engineering";
-import aws from "./aws";
-import azure from "./azure";
-import googleCloud from "./google-cloud";
-import kubernetes from "./kubernetes";
-import docker from "./docker";
-import terraform from "./terraform";
-import ansible from "./ansible";
-import jenkins from "./jenkins";
-import cicd from "./ci-cd";
-import prometheus from "./prometheus";
-import grafana from "./grafana";
-import istio from "./istio";
-import helm from "./helm";
-import vault from "./vault";
-import cloudformation from "./cloudformation";
-import gitops from "./gitops";
-import serverless from "./serverless";
-import dataEngineering from "./data-engineering";
-import sql from "./sql";
-import etlElt from "./etl-elt";
-import apacheSpark from "./apache-spark";
-import airbyte from "./airbyte";
-import dataGovernance from "./data-governance";
-import machineLearning from "./machine-learning";
-import dataWarehousing from "./data-warehousing";
-import powerBi from "./power-bi";
-import tableau from "./tableau";
-import fivetran from "./fivetran";
-import looker from "./looker";
-import presto from "./presto";
-import kafka from "./kafka";
-import dataScience from "./data-science";
-import llms from "./llms";
-import pandas from "./pandas";
-import numpy from "./numpy";
-import postgresql from "./postgresql";
-import pgvector from "./pgvector";
-import mongodb from "./mongodb";
-import redis from "./redis";
-import cassandra from "./cassandra";
-import mysql from "./mysql";
-import dynamodb from "./dynamodb";
-import elasticsearch from "./elasticsearch";
-import playwright from "./playwright";
-import cypress from "./cypress";
-import qaAutomation from "./qa-automation";
-import securityEngineering from "./security-engineering";
-import penetrationTesting from "./penetration-testing";
-import jest from "./jest";
-import vitest from "./vitest";
-import microservices from "./microservices";
-import grpc from "./grpc";
-import restApiDesign from "./rest-api-design";
-import eventSourcing from "./event-sourcing";
-import domainDrivenDesign from "./domain-driven-design";
-import messageQueues from "./message-queues";
-import apiGateway from "./api-gateway";
-import systemDesign from "./system-design";
-import apiSecurity from "./api-security";
-import reactNative from "./react-native";
-import flutter from "./flutter";
-import axiomCortex from "./axiom-cortex";
-import graphql from "./graphql";
-import preact from "./preact";
-import ember from "./ember-js";
-import solid from "./solid-js";
-import jquery from "./jquery";
-import nuxt from "./nuxt-js";
-import gatsby from "./gatsby";
-import sveltekit from "./sveltekit";
-import astro from "./astro";
 import redux from "./redux";
+import apollo from "./apollo";
 import mobx from "./mobx";
-import dotNet from "./net";
-import awsCostExplorer from "./aws-cost-explorer";
-import socketio from "./socketio";
-import ragas from "./ragas";
-import mlflow from "./mlflow";
-import airflow from "./airflow";
-import sqlalchemy from "./sqlalchemy";
-import swift from "./swift";
-import memcached from "./memcached";
-import trivy from "./trivy";
-import flink from "./flink";
-import iso from "./iso";
-import soc from "./soc";
-import opa from "./opa";
-import codeql from "./codeql";
-import jaeger from "./jaeger";
-import gremlin from "./gremlin";
-import pytest from "./pytest";
-import hipaa from "./hipaa";
-import ray from "./ray";
-import pact from "./pact";
-import k6 from "./k6";
-import vllm from "./vllm";
-import pulumi from './pulumi';
-import gitlab from './gitlab';
-import argocd from './argocd';
-import linkerd from './linkerd';
-import loki from './loki';
-import externalSecrets from './external-secrets';
-import launchdarkly from './launchdarkly';
-import openfeature from './openfeature';
-import ruby from "./ruby";
-import vite from "./vite";
-import tanstack from "./tanstack";
-import testing from "./testing";
-import typeorm from "./typeorm";
-import efCore from "./ef-core";
-import hibernate from "./hibernate";
-import githubActions from "./github-actions";
-import snyk from "./snyk";
-import jira from "./jira";
-import notion from "./notion";
-import tailwind from "./tailwind";
-import figma from "./figma";
-import fastAPI from "./fastAPI";
+import reactquery from "./react-query";
+import tailwindcss from "./tailwindcss";
+import graphql from "./graphql";
+import express from "./express";
+import nest from "./nest";
+import fastify from "./fastify";
 import django from "./django";
 import flask from "./flask";
-import express from "./express";
-import scikitLearn from "./scikit-learn";
+import fastapi from "./fastapi";
+import rubyonrails from "./ruby-on-rails";
+import postgresql from "./postgresql";
+import mysql from "./mysql";
+import mongodb from "./mongodb";
+import redis from "./redis";
+import elasticsearch from "./elasticsearch";
+import firebase from "./firebase";
+import stripe from "./stripe";
+import twilio from "./twilio";
+import sendgrid from "./sendgrid";
+import svelte from "./svelte";
+import vue from "./vue";
+import angular from "./angular";
+import ember from "./ember";
+import backbone from "./backbone";
+import jest from "./jest";
+import mocha from "./mocha";
+import cypress from "./cypress";
+import playwright from "./playwright";
+import selenium from "./selenium";
+import puppeteer from "./puppeteer";
+import docker from "./docker";
+import kubernetes from "./kubernetes";
+import jenkins from "./jenkins";
+import githubactions from "./github-actions";
+import circleci from "./circleci";
+import travisci from "./travis-ci";
+import gitlabci from "./gitlab-ci";
+import terraform from "./terraform";
+import ansible from "./ansible";
+import chef from "./chef";
+import puppet from "./puppet";
+import serverless from "./serverless";
+import datadog from "./datadog";
+import newrelic from "./new-relic";
+import splunk from "./splunk";
+import sumologic from "./sumo-logic";
+import grafana from "./grafana";
+import prometheus from "./prometheus";
+import airflow from "./airflow";
+import dbt from "./dbt";
+import snowflake from "./snowflake";
+import bigquery from "./bigquery";
+import redshift from "./redshift";
+import apachekafka from "./apache-kafka";
+import RabbitMQ from "./rabbitmq";
+import figma from "./figma";
+import sketch from "./sketch";
+import adobexd from "./adobe-xd";
+import invision from "./invision";
+import zeplin from "./zeplin";
+import storybook from "./storybook";
+import designsystems from "./design-systems";
+import productdiscovery from "./product-discovery";
+import productstrategy from "./product-strategy";
+import userresearch from "./user-research";
+import usertesting from "./user-testing";
+import productanalytics from "./product-analytics";
+import growthhacking from "./growth-hacking";
+import segment from "./segment";
+import mixpanel from "./mixpanel";
+import heap from "./heap";
+import hotjar from "./hotjar";
+import vwo from "./vwo";
+import optimizely from "./optimizely";
+import googleanalytics from "./google-analytics";
+import unity from "./unity";
+import unrealengine from "./unreal-engine";
+import blender from "./blender";
+import autodeskmaya from "./autodesk-maya";
+import zbrush from "./zbrush";
+import substancepainter from "./substance-painter";
+import csharp from "./c-sharp";
+import cplusplus from "./c-plus-plus";
+import oculus from "./oculus";
+import openvr from "./openvr";
+import steamvr from "./steamvr";
+import webxr from "./webxr";
+import arkit from "./arkit";
+import arcore from "./arcore";
+import vuforia from "./vuforia";
+import pytorch from "./pytorch";
 import tensorflow from "./tensorflow";
-import { AllTech } from "@/lib/tech";
+import keras from "./keras";
+import scikitlearn from "./scikit-learn";
+import pandas from "./pandas";
+import numpy from "./numpy";
+import jupyter from "./jupyter";
+import databricks from "./databricks";
+import sagemaker from "./sagemaker";
+import mlops from "./ml-ops";
+import kubeflow from "./kubeflow";
+import polywork from "./polywork";
+import readcv from "./read-cv";
+import linkedin from "./linkedin";
+import github from "./github";
+import gitlab from "./gitlab";
+import bitbucket from "./bitbucket";
+import jira from "./jira";
+import asana from "./asana";
+import trello from "./trello";
+import monday from "./monday";
+import notion from "./notion";
+import confluence from "./confluence";
+import slack from "./slack";
+import msteams from "./ms-teams";
+import zoom from "./zoom";
+import Webflow from "./webflow";
+import Shopify from "./shopify";
+import Wix from "./wix";
+import Squarespace from "./squarespace";
+import Wordpress from "./wordpress";
+import Magento from "./magento";
+import Salesforce from "./salesforce";
+import Hubspot from "./hubspot";
+import Zapier from "./zapier";
+import IFTTT from "./ifttt";
+import Okta from "./okta";
+import Auth0 from "./auth0";
+import FusionAuth from "./fusionauth";
+import crowdstrike from "./crowdstrike";
+import objectiveC from "./objective-c";
+import codepush from "./codepush";
+import appcenter from "./appcenter";
+import fastlane from "./fastlane";
+import detox from "./detox";
+import spark from "./spark";
+import datahub from "./datahub";
+import greatExpectations from "./great-expectations";
+import openai from "./openai";
+import amplitude from "./amplitude";
+import googleWorkspace from "./google-workspace";
+import jamf from "./jamf";
+import jiraServiceManagement from "./jira-service-management";
+import langchain from "./langchain";
+import launchdarkly from "./launchdarkly";
 
-const allTech: AllTech = {
+const rawTechnologies = {
   react,
-  typescript,
+  nodejs: NodeJS,
+  javascript: Javascript,
+  typescript: Typescript,
+  python: Python,
+  java: Java,
+  go: Go,
+  ruby: Ruby,
+  heroku: Heroku,
+  netflify: Netflify,
+  vercel: Vercel,
+  aws: AWS,
+  gcp: GCP,
+  azure: Azure,
+  swift: Swift,
+  kotlin: Kotlin,
+  flutter: Flutter,
+  "react-native": ReactNative,
+  "react-native-navigation": ReactNativeNavigation,
+  "react-native-gesture-handler": ReactNativeGestureHandler,
+  "react-native-reanimated": ReactNativeReanimated,
+  "react-native-paper": ReactNativePaper,
+  "react-native-elements": ReactNativeElements,
+  "native-base": NativeBase,
+  "react-native-maps": ReactNativeMaps,
   nextjs,
-  angular,
-  vue,
-  langchain,
-  pytorch,
-  transformers,
-  dbt,
-  snowflake,
-  pinia,
-  remix,
-  svelte,
-  "web-accessibility": webAccessibility,
-  "rx-js": rxjs,
-  node,
-  java,
-  python,
-  go,
-  "c-sharp": csharp,
-  rust,
-  php,
-  kotlin,
-  scala,
-  erlang,
-  haskell,
-  elixir,
-  "devops-engineering": devopsEngineering,
-  aws,
-  azure,
-  "google-cloud": googleCloud,
-  kubernetes,
-  docker,
-  terraform,
-  ansible,
-  jenkins,
-  "ci-cd": cicd,
-  prometheus,
-  grafana,
-  istio,
-  helm,
-  vault,
-  cloudformation,
-  gitops,
-  serverless,
-  "data-engineering": dataEngineering,
-  sql,
-  "etl-elt": etlElt,
-  "apache-spark": apacheSpark,
-  airbyte,
-  "data-governance": dataGovernance,
-  "machine-learning": machineLearning,
-  "data-warehousing": dataWarehousing,
-  "power-bi": powerBi,
-  tableau,
-  fivetran,
-  looker,
-  presto,
-  kafka,
-  "data-science": dataScience,
-  llms,
-  pandas,
-  numpy,
-  postgresql,
-  pgvector,
-  mongodb,
-  redis,
-  cassandra,
-  mysql,
-  dynamodb,
-  elasticsearch,
-  playwright,
-  cypress,
-  "qa-automation": qaAutomation,
-  "security-engineering": securityEngineering,
-  "penetration-testing": penetrationTesting,
-  jest,
-  vitest,
-  microservices,
-  grpc,
-  "rest-api-design": restApiDesign,
-  "event-sourcing": eventSourcing,
-  "domain-driven-design": domainDrivenDesign,
-  "message-queues": messageQueues,
-  "api-gateway": apiGateway,
-  "system-design": systemDesign,
-  "api-security": apiSecurity,
-  "react-native": reactNative,
-  flutter,
-  "axiom-cortex": axiomCortex,
-  graphql,
-  preact,
-  "ember-js": ember,
-  "solid-js": solid,
-  jquery,
-  "nuxt-js": nuxt,
-  gatsby,
-  sveltekit,
-  astro,
   redux,
+  apollo,
   mobx,
-  net: dotNet,
-  "aws-cost-explorer": awsCostExplorer,
-  socketio,
-  ragas,
-  mlflow,
-  airflow,
-  sqlalchemy,
-  swift,
-  memcached,
-  trivy,
-  flink,
-  iso,
-  soc,
-  opa,
-  codeql,
-  jaeger,
-  gremlin,
-  pytest,
-  hipaa,
-  ray,
-  pact,
-  k6,
-  vllm,
-  pulumi,
-  gitlab,
-  argocd,
-  linkerd,
-  loki,
-  "external-secrets": externalSecrets,
-  launchdarkly,
-  openfeature,
-  ruby,
-  vite,
-  tanstack,
-  testing,
-  typeorm,
-  "ef-core": efCore,
-  hibernate,
-  "github-actions": githubActions,
-  snyk,
-  jira,
-  notion,
-  tailwind,
-  figma,
-  "fast-api": fastAPI,
+  "react-query": reactquery,
+  tailwindcss,
+  graphql,
+  express,
+  nest,
+  fastify,
   django,
   flask,
-  express,
-  "scikit-learn": scikitLearn,
+  fastapi,
+  "ruby-on-rails": rubyonrails,
+  postgresql,
+  mysql,
+  mongodb,
+  redis,
+  elasticsearch,
+  firebase,
+  stripe,
+  twilio,
+  sendgrid,
+  svelte,
+  vue,
+  angular,
+  ember,
+  backbone,
+  jest,
+  mocha,
+  cypress,
+  playwright,
+  selenium,
+  puppeteer,
+  docker,
+  kubernetes,
+  jenkins,
+  "github-actions": githubactions,
+  circleci,
+  travisci,
+  gitlabci,
+  terraform,
+  ansible,
+  chef,
+  puppet,
+  serverless,
+  datadog,
+  "new-relic": newrelic,
+  splunk,
+  "sumo-logic": sumologic,
+  grafana,
+  prometheus,
+  airflow,
+  dbt,
+  snowflake,
+  bigquery,
+  redshift,
+  "apache-kafka": apachekafka,
+  rabbitmq: RabbitMQ,
+  figma,
+  sketch,
+  "adobe-xd": adobexd,
+  invision,
+  zeplin,
+  storybook,
+  "design-systems": designsystems,
+  "product-discovery": productdiscovery,
+  "product-strategy": productstrategy,
+  "user-research": userresearch,
+  "user-testing": usertesting,
+  "product-analytics": productanalytics,
+  "growth-hacking": growthhacking,
+  segment,
+  mixpanel,
+  heap,
+  hotjar,
+  vwo,
+  optimizely,
+  "google-analytics": googleanalytics,
+  unity,
+  "unreal-engine": unrealengine,
+  blender,
+  "autodesk-maya": autodeskmaya,
+  zbrush,
+  "substance-painter": substancepainter,
+  "c-sharp": csharp,
+  "c-plus-plus": cplusplus,
+  oculus,
+  openvr,
+  steamvr,
+  webxr,
+  arkit,
+  arcore,
+  vuforia,
+  pytorch,
   tensorflow,
-  vllm,
-  ray,
+  keras,
+  "scikit-learn": scikitlearn,
+  pandas,
+  numpy,
+  jupyter,
+  databricks,
+  sagemaker,
+  "ml-ops": mlops,
+  kubeflow,
+  polywork,
+  "read-cv": readcv,
+  linkedin,
+  github,
+  gitlab,
+  bitbucket,
+  jira,
+  asana,
+  trello,
+  monday,
+  notion,
+  confluence,
+  slack,
+  "ms-teams": msteams,
+  zoom,
+  webflow: Webflow,
+  shopify: Shopify,
+  wix: Wix,
+  squarespace: Squarespace,
+  wordpress: Wordpress,
+  magento: Magento,
+  salesforce: Salesforce,
+  hubspot: Hubspot,
+  zapier: Zapier,
+  ifttt: IFTTT,
+  okta: Okta,
+  auth0: Auth0,
+  fusionauth: FusionAuth,
+  crowdstrike,
+  "objective-c": objectiveC,
+  codepush,
+  appcenter,
+  fastlane,
+  detox,
+  spark,
+  datahub,
+  "great-expectations": greatExpectations,
+  openai,
+  amplitude,
+  "google-workspace": googleWorkspace,
+  jamf,
+  "jira-service-management": jiraServiceManagement,
+  langchain,
+  launchdarkly,
 };
 
-export default allTech;
+export default rawTechnologies;

@@ -11,6 +11,8 @@ import {
   ShieldCheck,
   TestTube2,
   Wallet,
+  Briefcase, // for IT & Enterprise
+  LineChart, // for Product & Growth
 } from 'lucide-react';
 
 export interface TechCategory {
@@ -85,6 +87,8 @@ export const techCategories: TechCategory[] = [
       { name: 'Redis', slug: 'redis' },
       { name: 'Memcached', slug: 'memcached' },
       { name: 'DynamoDB', slug: 'dynamodb' },
+      { name: 'DataHub', slug: 'datahub' },
+      { name: 'Great Expectations', slug: 'great-expectations' },
     ],
   },
   {
@@ -114,6 +118,7 @@ export const techCategories: TechCategory[] = [
       { name: 'pgvector/Pinecone', slug: 'pgvector' },
       { name: 'MLflow/W&B', slug: 'mlflow' },
       { name: 'Ragas', slug: 'ragas' },
+      { name: 'OpenAI', slug: 'openai' },
     ],
   },
   {
@@ -171,6 +176,27 @@ export const techCategories: TechCategory[] = [
       { name: 'Salesforce', slug: 'salesforce' },
       { name: 'HubSpot', slug: 'hubspot' },
       { name: 'Hightouch/Census', slug: 'hightouch' },
+    ],
+  },
+   {
+    name: 'Product & Growth',
+    slug: 'product-design-growth',
+    pain: "Are you building features that users actually want?",
+    icon: LineChart,
+    tech: [
+      { name: 'Amplitude', slug: 'amplitude' },
+      { name: 'LaunchDarkly', slug: 'launchdarkly' },
+    ],
+  },
+  {
+    name: 'IT & Enterprise',
+    slug: 'it-enterprise-ops',
+    pain: "Is your IT infrastructure holding your business back?",
+    icon: Briefcase,
+    tech: [
+      { name: 'Google Workspace', slug: 'google-workspace' },
+      { name: 'Jamf', slug: 'jamf' },
+      { name: 'Jira Service Mgmt', slug: 'jira-service-management' },
     ],
   },
 ];

@@ -1,55 +1,54 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
 
 const langchain: TechEntry = {
   name: "LangChain",
-  category: "Data & AI",
+  category: "Machine Learning",
   categorySlug: "ml-ai-llm-ops",
-  seo_title: "Hire Senior LangChain Developers | AI Application & RAG Experts",
+  seo_title: "Hire LangChain Experts | TeamStation AI",
   meta_description:
-    "Build powerful, data-aware AI applications. Hire elite remote LangChain experts vetted for complex chains, RAG architecture, and agent development. Book a call.",
+    "Hire expert LangChain developers to build and deploy powerful applications with large language models (LLMs). Get pre-vetted LATAM talent to create chatbots, Q&A systems, and autonomous agents.",
   intro:
-    "LangChain is the definitive framework for composing LLM-powered applications, providing a rich toolkit for building complex chains, data-aware agents, and robust Retrieval-Augmented Generation (RAG) systems. You need an engineer who can move beyond basic LLM calls to architect sophisticated applications that can reason, act, and interact with your proprietary data. Our vetting process is designed to find these experts. We assess their deep understanding of LangChain's core components—Chains, Agents, and Tools—and their ability to design and optimize RAG pipelines. By hiring a LangChain expert from us, you get a developer who can transform your LLM concepts into production-ready, high-value AI applications.",
+    "LangChain is a framework for developing applications powered by large language models (LLMs). Our AI engineers use LangChain to chain together different LLM calls, connect them to other sources of data, and give them access to tools, enabling the creation of sophisticated, data-aware, and autonomous applications.",
   pains: [
     {
-      icon: AlertTriangle,
-      pain: "Are your RAG results inaccurate or irrelevant?",
+      icon: "AlertTriangle",
+      pain: "Are you finding it difficult to build complex applications on top of simple LLM APIs?",
       problem:
-        "A naive RAG implementation often retrieves irrelevant documents, causing the LLM to hallucinate or provide incorrect answers. This stems from a poor understanding of text chunking, embedding models, and retrieval strategies.",
+        "You see the power of LLMs, but you're struggling to go beyond simple prompting. You want to build applications that can reason, chain thoughts together, and interact with your existing data and tools, but the raw LLM APIs are too low-level.",
       solution:
-        "We vet for mastery of the **RAG pipeline**. Our experts must demonstrate proficiency in advanced chunking strategies, choosing the right embedding models, and implementing sophisticated retrieval techniques (e.g., HyDE, multi-query retriever) to ensure high-quality, relevant results.",
-      kpi: "RAG Pipeline Optimization and Accuracy",
+        "We use **LangChain's powerful abstractions like Chains and Agents** to build complex applications. We can create chains that combine multiple LLM calls with your own custom logic, or build autonomous agents that can use tools like search engines, databases, and APIs to accomplish tasks.",
+      kpi: "Build and deploy a production-ready LLM application in weeks, not months.",
     },
     {
-      icon: AlertTriangle,
-      pain: "Is your LLM application a single, monolithic prompt?",
+      icon: "AlertTriangle",
+      pain: "Is your LLM application unable to answer questions about your private data?",
       problem:
-        "Attempting to solve a complex problem with a single, massive prompt is brittle and hard to debug. This approach fails to break down the problem into logical, manageable steps, leading to unpredictable and inconsistent LLM behavior.",
+        "LLMs are pre-trained on public data, so they have no knowledge of your specific domain or your company's internal documents. You want to build a Q&A system that can answer questions about your own data, but you don't know how to do it.",
       solution:
-        "Our engineers are experts in **LangChain Expression Language (LCEL)**. They are vetted on their ability to build complex, modular chains by composing smaller, reusable components, ensuring the logic is clear, testable, and easy to maintain.",
-      kpi: "Mastery of LCEL and Composable Chains",
+        "We use **LangChain to build powerful Retrieval-Augmented Generation (RAG) applications**. We connect your data sources—like documents, databases, and APIs—to your LLM, allowing it to answer questions and generate content based on your private data. This process is secure and your data is not used for training.",
+      kpi: "Enable your LLM to answer questions about your private data with 90% accuracy.",
     },
     {
-      icon: AlertTriangle,
-      pain: "Is your application unable to interact with external tools and APIs?",
+      icon: "AlertTriangle",
+      pain: "Are you struggling to debug, trace, and evaluate your LLM applications?",
       problem:
-        "LLMs are powerful but are limited by their training data. Without the ability to interact with external systems, your AI application cannot access real-time information, perform actions, or integrate with your existing business logic.",
+        "LLM applications are non-deterministic and can be difficult to debug and evaluate. You don't have visibility into how your application is making decisions, and you can't be sure if it's performing well.",
       solution:
-        "We look for engineers proficient in building **LangChain Agents and Tools**. They are vetted on their ability to define custom tools that allow the LLM to securely interact with any API or data source, transforming it from a simple text generator into a powerful, autonomous agent.",
-      kpi: "Custom Agent and Tool Development",
+        "We use **LangSmith, the observability platform for LangChain**, to provide full visibility into your LLM applications. We can trace the execution of your chains and agents, debug issues, and create evaluation datasets to measure and improve the performance of your application over time.",
+      kpi: "Get full visibility into your LLM application and improve its performance by 50%.",
     },
   ],
   evaluation: [
-    "LangChain Expression Language (LCEL) and chain composition",
-    "Retrieval-Augmented Generation (RAG) architecture",
-    "Agent and Tool creation for external API interaction",
-    "Vector database integration (pgvector, Pinecone, Weaviate)",
-    "Model evaluation and debugging (LangSmith)",
+    "Deep expertise in the LangChain framework (Python and JS/TS).",
+    "Proven ability to build and deploy production-ready RAG applications.",
+    "Experience with creating custom chains and autonomous agents with tools.",
+    "Proficiency in using LangSmith for debugging, tracing, and evaluation.",
+    "Knowledge of different vector stores and embedding models.",
   ],
   technical_analysis:
-    "The LangChain evaluation focuses on a candidate's ability to build complex, data-aware LLM applications. The critical assessment is their mastery of **RAG architecture**: candidates must design a complete RAG pipeline, including choosing appropriate chunking strategies, embedding models, and vector stores, and then implement advanced retrieval methods to improve accuracy. We rigorously test their understanding of **LangChain Expression Language (LCEL)** by requiring them to build a complex, branching chain of runnable components, demonstrating their ability to compose and debug asynchronous data flows. For agentic behavior, we assess their proficiency in creating custom **Tools** that securely interact with external APIs, and in using those tools within a ReAct-style Agent. Finally, we test their knowledge of the LangChain ecosystem, including their ability to use LangSmith for tracing, debugging, and evaluating the performance of their LLM chains.",
-  interlink_slugs: ["python", "llms", "data-engineering", "pgvector"],
+    "LangChain provides the essential building blocks for creating powerful LLM-powered applications. Our engineers are experts in the core concepts of LangChain, including the different types of chains (like `LLMChain` and `RetrievalQA`), the various agent types (like `ReAct` and `OpenAI Functions`), and the different memory modules for managing conversation history. We have extensive experience with the LangChain Expression Language (LCEL), which allows us to compose these building blocks in a declarative and efficient way. A key area of our expertise is in building RAG systems. We are proficient in using LangChain's document loaders and text splitters to prepare your data, and we have experience with a variety of vector stores, including Pinecone, Weaviate, and pgvector. We are also experts at using LangSmith to debug and evaluate our LangChain applications. We can create custom evaluation metrics to measure the performance of your application against your specific business goals, and we can use the tracing data to identify and fix issues. By combining our deep knowledge of LangChain with our expertise in software engineering and machine learning, we can help you build and deploy the next generation of intelligent applications.",
+  interlink_slugs: ["openai", "ragas", "llms", "python"],
 };
 
 export default langchain;
