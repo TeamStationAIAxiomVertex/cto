@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle, AlertTriangle } from "lucide-react";
@@ -6,33 +5,38 @@ import { notFound } from "next/navigation";
 import { allTech, getAllTechSlugs } from "@/lib/tech";
 import FurtherReading from "@/components/seo/FurtherReading";
 import { WithTooltip } from "@/components/ui/tooltip";
-import dynamic from 'next/dynamic';
-import * as LucideIcons from 'lucide-react';
+import dynamic from "next/dynamic";
+import * as LucideIcons from "lucide-react";
 
-const ClientJsonLd = dynamic(() => import('@/components/seo/JsonLd'), { ssr: false });
-
-const icons: { [key: string]: React.ElementType } = {
-  ...LucideIcons,
-  AlertTriangle,
-};
+const ClientJsonLd = dynamic(() => import("@/components/seo/JsonLd"), {
+  ssr: false,
+});
 
 type TechKeys = keyof typeof allTech;
 
-export async function generateMetadata(
-  { params }: { params: { slug: string } }
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const tech = allTech[params.slug as TechKeys];
   if (!tech) {
     return {};
   }
   const url = `https://cto.teamstation.dev/hire/by-technology/${params.slug}`;
   return {
-    title: tech.seo_title || `Hire Nearshore ${tech.name} Developers | TeamStation AI`,
-    description: tech.meta_description || `Elite, pre-vetted ${tech.name} engineers in LATAM. Axiom Cortex™ vetting, EOR compliance, and audit-ready ops. Book a strategy call today.`,
+    title:
+      tech.seo_title ||
+      `Hire Nearshore ${tech.name} Developers | TeamStation AI`,
+    description:
+      tech.meta_description ||
+      `Elite, pre-vetted ${tech.name} engineers in LATAM. Axiom Cortex™ vetting, EOR compliance, and audit-ready ops. Book a strategy call today.`,
     alternates: { canonical: url },
     openGraph: {
       title: tech.seo_title || `Hire Nearshore ${tech.name} Developers`,
-      description: tech.meta_description || `Elite, pre-vetted ${tech.name} engineers in LATAM. Evidence, not resumes.`,
+      description:
+        tech.meta_description ||
+        `Elite, pre-vetted ${tech.name} engineers in LATAM. Evidence, not resumes.`,
       url,
       type: "article",
       siteName: "TeamStation AI",
@@ -47,7 +51,9 @@ export async function generateMetadata(
     twitter: {
       card: "summary_large_image",
       title: tech.seo_title || `Hire Nearshore ${tech.name} Developers`,
-      description: tech.meta_description || `Elite, pre-vetted ${tech.name} engineers in LATAM.`,
+      description:
+        tech.meta_description ||
+        `Elite, pre-vetted ${tech.name} engineers in LATAM.`,
     },
   };
 }
@@ -143,7 +149,10 @@ export default function TechPage({ params }: { params: { slug: string } }) {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               {tech.pains.map((item) => {
-                const Icon = icons[item.icon as keyof typeof icons] || AlertTriangle;
+                const Icon =
+                  (LucideIcons as unknown as Record<string, React.ElementType>)[
+                    item.icon as unknown as string
+                  ] || AlertTriangle;
                 return (
                   <div
                     key={item.pain}
@@ -218,12 +227,12 @@ export default function TechPage({ params }: { params: { slug: string } }) {
             </Link>
           </div>
         </div>
-        
+
         {tech.technical_analysis && (
-            <div className="prose dark:prose-invert max-w-none my-16">
-                <h3>Technical Analysis</h3>
-                <p>{tech.technical_analysis}</p>
-            </div>
+          <div className="prose dark:prose-invert max-w-none my-16">
+            <h3>Technical Analysis</h3>
+            <p>{tech.technical_analysis}</p>
+          </div>
         )}
 
         <div className="text-center rounded-lg bg-primary/10 p-8">

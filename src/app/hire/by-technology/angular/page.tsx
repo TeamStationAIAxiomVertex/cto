@@ -16,7 +16,9 @@ import { WithTooltip } from "../../../../components/ui/tooltip";
 import { allTech } from "../../../../lib/tech";
 import dynamic from "next/dynamic";
 
-const JsonLd = dynamic(() => import("../../../../components/seo/JsonLd"), { ssr: false });
+const JsonLd = dynamic(() => import("../../../../components/seo/JsonLd"), {
+  ssr: false,
+});
 
 const icons: { [key: string]: React.ElementType } = {
   AlertTriangle,
@@ -118,7 +120,7 @@ export default function TechPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               {tech.pains.map((item) => {
-                const Icon = icons[item.icon as keyof typeof icons];
+                const Icon = icons[item.icon as unknown as keyof typeof icons];
                 return (
                   <div
                     key={item.pain}

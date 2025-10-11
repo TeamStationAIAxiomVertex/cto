@@ -1,5 +1,5 @@
 import { collectCoreUrls, collectPlaybookUrls } from "@/lib/sitemap-data";
-import type { SitemapUrl } from "@/lib/sitemap-data";
+import type { SitemapUrl } from "../../../lib/sitemap-utils";
 
 function toCsv(records: SitemapUrl[]): string {
   const header = "url,lastmod,changefreq,priority\n";

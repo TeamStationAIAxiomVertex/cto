@@ -1,15 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import {
-  ArrowRight,
-  CheckCircle,
-  AlertTriangle
-} from "lucide-react";
+import { ArrowRight, CheckCircle, AlertTriangle } from "lucide-react";
 import { WithTooltip } from "../../../../components/ui/tooltip";
 import { allTech } from "../../../../lib/tech";
 import dynamic from "next/dynamic";
 
-const JsonLd = dynamic(() => import("../../../../components/seo/JsonLd"), { ssr: false });
+const JsonLd = dynamic(() => import("../../../../components/seo/JsonLd"), {
+  ssr: false,
+});
 
 const icons: { [key: string]: React.ElementType } = {
   AlertTriangle,
@@ -104,41 +102,42 @@ export default function TechPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               {tech.pains.map((item) => {
-                const Icon = icons[item.icon as keyof typeof icons];
-                return(
-                <div
-                  key={item.pain}
-                  className="rounded-lg border bg-card p-6 flex flex-col"
-                >
-                  <p className="text-sm font-semibold text-primary">
-                    {item.pain}
-                  </p>
-                  <div className="flex items-center gap-3 mt-3">
-                  {Icon && <Icon className="h-8 w-8 text-primary" />}
-                    <h3 className="text-lg font-semibold text-foreground">
-                      The Problem
-                    </h3>
-                  </div>
-                  <p className="mt-4 text-sm text-muted-foreground ">
-                    {item.problem}
-                  </p>
+                const Icon = icons[item.icon as unknown as keyof typeof icons];
+                return (
+                  <div
+                    key={item.pain}
+                    className="rounded-lg border bg-card p-6 flex flex-col"
+                  >
+                    <p className="text-sm font-semibold text-primary">
+                      {item.pain}
+                    </p>
+                    <div className="flex items-center gap-3 mt-3">
+                      {Icon && <Icon className="h-8 w-8 text-primary" />}
+                      <h3 className="text-lg font-semibold text-foreground">
+                        The Problem
+                      </h3>
+                    </div>
+                    <p className="mt-4 text-sm text-muted-foreground ">
+                      {item.problem}
+                    </p>
 
-                  <div className="mt-4 border-t border-border pt-4">
-                    <h4 className="font-semibold text-primary">
-                      The TeamStation AI Solution
-                    </h4>
-                    <p className="text-sm text-foreground m-0">
-                      {item.solution}
-                    </p>
+                    <div className="mt-4 border-t border-border pt-4">
+                      <h4 className="font-semibold text-primary">
+                        The TeamStation AI Solution
+                      </h4>
+                      <p className="text-sm text-foreground m-0">
+                        {item.solution}
+                      </p>
+                    </div>
+                    <div className="flex-grow"></div>
+                    <div className="mt-6">
+                      <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
+                        Proof: {item.kpi}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-grow"></div>
-                  <div className="mt-6">
-                    <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-                      Proof: {item.kpi}
-                    </p>
-                  </div>
-                </div>
-              )})}
+                );
+              })}
             </div>
           </section>
         )}

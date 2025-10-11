@@ -2,20 +2,99 @@
 // scripts/generate-sitemap.mjs
 import fs from 'fs';
 import path from 'path';
-import {
-  collectAllStaticUrls,
-  collectPlaybookUrls,
-  collectCaseStudyUrls,
-  collectComparisonUrls,
-  collectHireByCountryUrls,
-  collectHireByRoleUrls,
-  collectHireByTechnologyUrls,
-  collectResearchUrls
-} from '../src/lib/sitemap-data.js';
+// Note: This script runs in Node (ESM). Avoid importing TypeScript files.
+// We inline the minimal helpers needed instead of importing from src/lib/*.ts
+
+const BASE_URL = "https://cto.teamstation.dev";
+const today = new Date().toISOString();
+
+// Recursively collect all page.tsx files under a directory, with optional exclusions
+function getPages(dir, exclude = []) {
+  let results = [];
+  const list = fs.readdirSync(dir);
+  list.forEach((file) => {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+    if (stat && stat.isDirectory()) {
+      results = results.concat(getPages(filePath, exclude));
+    } else if (path.basename(filePath) === 'page.tsx') {
+      const isExcluded = exclude.some((pattern) => filePath.includes(pattern));
+      if (!isExcluded) results.push(filePath);
+    }
+  });
+  return results;
+}
+
+// Transform file paths to absolute URL strings
+function formatPaths(filePaths) {
+  return filePaths.map((p) => {
+    let route = p.replace(/^src\/app/, '').replace(/\/page\.tsx$/, '');
+    if (route === '') route = '/';
+    if (route.length > 1 && route.endsWith('/')) route = route.slice(0, -1);
+    return `${BASE_URL}${route}`;
+  });
+}
+
+// SitemapUrl mappers (mirror logic from src/lib/sitemap-data.ts)
+async function collectAllStaticUrls() {
+  const exclude = ['/api/', '/sitemaps/', 'sitemap.xml', '[slug]', '[vendor]'];
+  const pageFiles = getPages('src/app', exclude);
+  const urls = formatPaths(pageFiles);
+  return urls.map((loc) => ({ loc, lastmod: today, changefreq: 'weekly', priority: 0.8 }));
+}
+
+async function collectPlaybookUrls() {
+  const pageFiles = getPages('src/app/playbook', ['[slug]']);
+  const urls = formatPaths(pageFiles);
+  return urls.map((loc) => ({ loc, lastmod: today, changefreq: 'monthly', priority: 0.7 }));
+}
+
+async function collectCaseStudyUrls() {
+  const pageFiles = getPages('src/app/case-studies', ['[slug]']);
+  const urls = formatPaths(pageFiles);
+  return urls.map((loc) => ({ loc, lastmod: today, changefreq: 'monthly', priority: 0.7 }));
+}
+
+async function collectComparisonUrls() {
+  const pageFiles = getPages('src/app/comparisons', ['[vendor]']);
+  const urls = formatPaths(pageFiles);
+  return urls.map((loc) => ({ loc, lastmod: today, changefreq: 'monthly', priority: 0.7 }));
+}
+
+async function collectHireByCountryUrls() {
+  const pageFiles = getPages('src/app/hire/by-country', ['[slug]']);
+  const urls = formatPaths(pageFiles);
+  return urls.map((loc) => ({ loc, lastmod: today, changefreq: 'monthly', priority: 0.7 }));
+}
+
+async function collectHireByRoleUrls() {
+  const pageFiles = getPages('src/app/hire/by-role', ['[slug]']);
+  const urls = formatPaths(pageFiles);
+  return urls.map((loc) => ({ loc, lastmod: today, changefreq: 'monthly', priority: 0.7 }));
+}
+
+async function collectHireByTechnologyUrls() {
+  const allHirePages = getPages('src/app/hire');
+  const staticHirePages = allHirePages.filter((p) => !p.includes('['));
+  const techPages = staticHirePages.filter((p) => {
+    const isDirectTechPage = p.includes('/by-technology/');
+    const isNestedTechPage = p.includes('/by-country/');
+    if (isDirectTechPage) return !p.endsWith('/by-technology/page.tsx');
+    if (isNestedTechPage) return p.split('/').length > 6;
+    return false;
+  });
+  const urls = formatPaths(techPages);
+  return urls.map((loc) => ({ loc, lastmod: today, changefreq: 'monthly', priority: 0.6 }));
+}
+
+async function collectResearchUrls() {
+  const pageFiles = getPages('src/app/research', ['[slug]']);
+  const urls = formatPaths(pageFiles);
+  return urls.map((loc) => ({ loc, lastmod: today, changefreq: 'monthly', priority: 0.7 }));
+}
 
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 const SITEMAPS_DIR = path.join(PUBLIC_DIR, 'sitemaps');
-const BASE_URL = "https://cto.teamstation.dev";
 
 function generateSitemapXml(urls) {
   const urlset = urls.map(url => {
@@ -81,7 +160,6 @@ async function generate() {
         console.log(`  - No URLs found, skipping.`);
         continue;
     }
-
     const xml = generateSitemapXml(urls);
     const sitemapPath = path.join(SITEMAPS_DIR, `${section.name}.xml`);
     fs.writeFileSync(sitemapPath, xml);
@@ -93,11 +171,8 @@ async function generate() {
   const rootSitemapIndexXml = generateSitemapIndexXml(sitemapIndexUrls);
   const rootSitemapPath = path.join(PUBLIC_DIR, 'sitemap.xml');
   fs.writeFileSync(rootSitemapPath, rootSitemapIndexXml);
-  console.log(`
-Root sitemap index generated at: ${rootSitemapPath}`);
-
-  console.log("
-XML sitemap domination complete.");
+  console.log(`\nRoot sitemap index generated at: ${rootSitemapPath}`);
+  console.log("\nXML sitemap domination complete.");
 }
 
 generate();

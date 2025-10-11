@@ -14,19 +14,18 @@ import {
 import type { Icon } from "lucide-react";
 
 export interface RoleCategoryInfo {
-    name: string;
-    slug: string;
-    priority: string;
-    priorityTooltip: string;
-    pain: string;
-    description: string;
-    icon: Icon;
-    proof: {
-        href: string;
-        label: string;
-    };
+  name: string;
+  slug: string;
+  priority: string;
+  priorityTooltip: string;
+  pain: string;
+  description: string;
+  icon: typeof Icon;
+  proof: {
+    href: string;
+    label: string;
+  };
 }
-
 
 export const roleCategories: RoleCategoryInfo[] = [
   {

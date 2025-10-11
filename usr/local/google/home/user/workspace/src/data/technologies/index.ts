@@ -1,126 +1,126 @@
-import react from './react';
-import typescript from './typescript';
-import nextjs from './nextjs';
-import angular from './angular.json';
-import vue from './vue';
-import langchain from './langchain';
-import pytorch from './pytorch';
-import transformers from './transformers';
-import dbt from './dbt';
-import snowflake from './snowflake';
-import pinia from './pinia';
-import remix from './remix';
-import svelte from './svelte';
-import webAccessibility from './web-accessibility';
-import rxjs from './rx-js.json';
-import node from './node';
-import java from './java';
-import python from './python';
-import go from './go';
-import csharp from './c-sharp.json';
-import rust from './rust.json';
-import php from './php.json';
-import kotlin from './kotlin.json';
-import scala from './scala.json';
-import erlang from './erlang.json';
-import haskell from './haskell.json';
-import elixir from './elixir.json';
-import devopsEngineering from './devops-engineering.json';
-import aws from './aws.json';
-import azure from './azure.json';
-import googleCloud from './google-cloud.json';
-import kubernetes from './kubernetes';
-import docker from './docker';
-import terraform from './terraform';
-import ansible from './ansible';
-import jenkins from './jenkins';
-import cicd from './ci-cd';
-import prometheus from './prometheus';
-import grafana from './grafana';
-import istio from './istio';
-import helm from './helm';
-import vault from './vault';
-import cloudformation from './cloudformation';
-import gitops from './gitops';
-import serverless from './serverless';
-import dataEngineering from './data-engineering';
-import sql from './sql';
-import etlElt from './etl-elt';
-import apacheSpark from './apache-spark';
-import airbyte from './airbyte';
-import dataGovernance from './data-governance';
-import machineLearning from './machine-learning';
-import dataWarehousing from './data-warehousing';
-import powerBi from './power-bi';
-import tableau from './tableau';
-import fivetran from './fivetran';
-import looker from './looker';
-import presto from './presto';
-import kafka from './kafka';
-import dataScience from './data-science';
-import llms from './llms';
-import pandas from './pandas';
-import numpy from './numpy';
-import postgresql from './postgresql';
-import mongodb from './mongodb';
-import redis from './redis';
-import cassandra from './cassandra';
-import mysql from './mysql';
-import dynamodb from './dynamodb';
-import elasticsearch from './elasticsearch';
-import playwright from './playwright';
-import cypress from './cypress';
-import qaAutomation from './qa-automation';
-import securityEngineering from './security-engineering';
-import penetrationTesting from './penetration-testing';
-import jest from './jest';
-import vitest from './vitest';
-import microservices from './microservices';
-import grpc from './grpc';
-import restApiDesign from './rest-api-design';
-import eventSourcing from './event-sourcing';
-import domainDrivenDesign from './domain-driven-design';
-import messageQueues from './message-queues';
-import apiGateway from './api-gateway';
-import systemDesign from './system-design';
-import apiSecurity from './api-security';
-import reactNative from './react-native';
-import flutter from './flutter';
-import axiomCortex from './axiom-cortex';
-import graphql from './graphql';
-import preact from './preact';
-import ember from './ember-js';
-import solid from './solid-js';
-import jquery from './jquery';
-import nuxt from './nuxt-js';
-import gatsby from './gatsby';
-import sveltekit from './sveltekit';
-import astro from './astro';
-import redux from './redux';
-import mobx from './mobx';
-import dotNet from './net';
-import awsCostExplorer from './aws-cost-explorer';
-import socketio from './socketio.json';
-import ragas from './ragas';
-import airflow from './airflow';
-import sqlalchemy from './sqlalchemy';
-import swift from './swift';
-import memcached from './memcached';
-import trivy from './trivy';
-import flink from './flink';
-import iso from './iso';
-import soc from './soc';
-import opa from './opa';
-import codeql from './codeql';
-import jaeger from './jaeger';
-import gremlin from './gremlin';
-import pytest from './pytest';
-import hipaa from './hipaa';
-import ray from './ray';
-import pact from './pact.json';
-import k6 from './k6.json';
-import vllm from './vllm';
-import { AllTech } from '@/lib/tech';
+import react from "../../../../../../../../../src/data/technologies/react";
+import typescript from "../../../../../../../../../src/data/technologies/typescript";
+import nextjs from "../../../../../../../../../src/data/technologies/nextjs";
+import angular from "../../../../../../../../../src/data/technologies/angular";
+import vue from "../../../../../../../../../src/data/technologies/vue";
+import langchain from "../../../../../../../../../src/data/technologies/langchain";
+import pytorch from "../../../../../../../../../src/data/technologies/pytorch";
+import transformers from "../../../../../../../../../src/data/technologies/transformers";
+import dbt from "../../../../../../../../../src/data/technologies/dbt";
+import snowflake from "../../../../../../../../../src/data/technologies/snowflake";
+import pinia from "../../../../../../../../../src/data/technologies/pinia";
+import remix from "../../../../../../../../../src/data/technologies/remix";
+import svelte from "../../../../../../../../../src/data/technologies/svelte";
+import webAccessibility from "../../../../../../../../../src/data/technologies/web-accessibility";
+import rxjs from "../../../../../../../../../src/data/technologies/rx-js";
+import node from "../../../../../../../../../src/data/technologies/node";
+import java from "../../../../../../../../../src/data/technologies/java";
+import python from "../../../../../../../../../src/data/technologies/python";
+import go from "../../../../../../../../../src/data/technologies/go";
+import csharp from "../../../../../../../../../src/data/technologies/c-sharp";
+import rust from "../../../../../../../../../src/data/technologies/rust";
+import php from "../../../../../../../../../src/data/technologies/php";
+import kotlin from "../../../../../../../../../src/data/technologies/kotlin";
+import scala from "../../../../../../../../../src/data/technologies/scala";
+import erlang from "../../../../../../../../../src/data/technologies/erlang";
+import haskell from "../../../../../../../../../src/data/technologies/haskell";
+import elixir from "../../../../../../../../../src/data/technologies/elixir";
+import devopsEngineering from "../../../../../../../../../src/data/technologies/devops-engineering";
+import aws from "../../../../../../../../../src/data/technologies/aws";
+import azure from "../../../../../../../../../src/data/technologies/azure";
+import googleCloud from "../../../../../../../../../src/data/technologies/google-cloud";
+import kubernetes from "../../../../../../../../../src/data/technologies/kubernetes";
+import docker from "../../../../../../../../../src/data/technologies/docker";
+import terraform from "../../../../../../../../../src/data/technologies/terraform";
+import ansible from "../../../../../../../../../src/data/technologies/ansible";
+import jenkins from "../../../../../../../../../src/data/technologies/jenkins";
+import cicd from "../../../../../../../../../src/data/technologies/ci-cd";
+import prometheus from "../../../../../../../../../src/data/technologies/prometheus";
+import grafana from "../../../../../../../../../src/data/technologies/grafana";
+import istio from "../../../../../../../../../src/data/technologies/istio";
+import helm from "../../../../../../../../../src/data/technologies/helm";
+import vault from "../../../../../../../../../src/data/technologies/vault";
+import cloudformation from "../../../../../../../../../src/data/technologies/cloudformation";
+import gitops from "../../../../../../../../../src/data/technologies/gitops";
+import serverless from "../../../../../../../../../src/data/technologies/serverless";
+import dataEngineering from "../../../../../../../../../src/data/technologies/data-engineering";
+import sql from "../../../../../../../../../src/data/technologies/sql";
+import etlElt from "../../../../../../../../../src/data/technologies/etl-elt";
+import apacheSpark from "../../../../../../../../../src/data/technologies/apache-spark";
+import airbyte from "../../../../../../../../../src/data/technologies/airbyte";
+import dataGovernance from "../../../../../../../../../src/data/technologies/data-governance";
+import machineLearning from "../../../../../../../../../src/data/technologies/machine-learning";
+import dataWarehousing from "../../../../../../../../../src/data/technologies/data-warehousing";
+import powerBi from "../../../../../../../../../src/data/technologies/power-bi";
+import tableau from "../../../../../../../../../src/data/technologies/tableau";
+import fivetran from "../../../../../../../../../src/data/technologies/fivetran";
+import looker from "../../../../../../../../../src/data/technologies/looker";
+import presto from "../../../../../../../../../src/data/technologies/presto";
+import kafka from "../../../../../../../../../src/data/technologies/kafka";
+import dataScience from "../../../../../../../../../src/data/technologies/data-science";
+import llms from "../../../../../../../../../src/data/technologies/llms";
+import pandas from "../../../../../../../../../src/data/technologies/pandas";
+import numpy from "../../../../../../../../../src/data/technologies/numpy";
+import postgresql from "../../../../../../../../../src/data/technologies/postgresql";
+import mongodb from "../../../../../../../../../src/data/technologies/mongodb";
+import redis from "../../../../../../../../../src/data/technologies/redis";
+import cassandra from "../../../../../../../../../src/data/technologies/cassandra";
+import mysql from "../../../../../../../../../src/data/technologies/mysql";
+import dynamodb from "../../../../../../../../../src/data/technologies/dynamodb";
+import elasticsearch from "../../../../../../../../../src/data/technologies/elasticsearch";
+import playwright from "../../../../../../../../../src/data/technologies/playwright";
+import cypress from "../../../../../../../../../src/data/technologies/cypress";
+import qaAutomation from "../../../../../../../../../src/data/technologies/qa-automation";
+import securityEngineering from "../../../../../../../../../src/data/technologies/security-engineering";
+import penetrationTesting from "../../../../../../../../../src/data/technologies/penetration-testing";
+import jest from "../../../../../../../../../src/data/technologies/jest";
+import vitest from "../../../../../../../../../src/data/technologies/vitest";
+import microservices from "../../../../../../../../../src/data/technologies/microservices";
+import grpc from "../../../../../../../../../src/data/technologies/grpc";
+import restApiDesign from "../../../../../../../../../src/data/technologies/rest-api-design";
+import eventSourcing from "../../../../../../../../../src/data/technologies/event-sourcing";
+import domainDrivenDesign from "../../../../../../../../../src/data/technologies/domain-driven-design";
+import messageQueues from "../../../../../../../../../src/data/technologies/message-queues";
+import apiGateway from "../../../../../../../../../src/data/technologies/api-gateway";
+import systemDesign from "../../../../../../../../../src/data/technologies/system-design";
+import apiSecurity from "../../../../../../../../../src/data/technologies/api-security";
+import reactNative from "../../../../../../../../../src/data/technologies/react-native";
+import flutter from "../../../../../../../../../src/data/technologies/flutter";
+import axiomCortex from "../../../../../../../../../src/data/technologies/axiom-cortex";
+import graphql from "../../../../../../../../../src/data/technologies/graphql";
+import preact from "../../../../../../../../../src/data/technologies/preact";
+import ember from "../../../../../../../../../src/data/technologies/ember-js";
+import solid from "../../../../../../../../../src/data/technologies/solid-js";
+import jquery from "../../../../../../../../../src/data/technologies/jquery";
+import nuxt from "../../../../../../../../../src/data/technologies/nuxt-js";
+import gatsby from "../../../../../../../../../src/data/technologies/gatsby";
+import sveltekit from "../../../../../../../../../src/data/technologies/sveltekit";
+import astro from "../../../../../../../../../src/data/technologies/astro";
+import redux from "../../../../../../../../../src/data/technologies/redux";
+import mobx from "../../../../../../../../../src/data/technologies/mobx";
+import dotNet from "../../../../../../../../../src/data/technologies/net";
+import awsCostExplorer from "../../../../../../../../../src/data/technologies/aws-cost-explorer";
+import socketio from "../../../../../../../../../src/data/technologies/socketio";
+import ragas from "../../../../../../../../../src/data/technologies/ragas";
+import airflow from "../../../../../../../../../src/data/technologies/airflow";
+import sqlalchemy from "../../../../../../../../../src/data/technologies/sqlalchemy";
+import swift from "../../../../../../../../../src/data/technologies/swift";
+import memcached from "../../../../../../../../../src/data/technologies/memcached";
+import trivy from "../../../../../../../../../src/data/technologies/trivy";
+import flink from "../../../../../../../../../src/data/technologies/flink";
+import iso from "../../../../../../../../../src/data/technologies/iso";
+import soc from "../../../../../../../../../src/data/technologies/soc";
+import opa from "../../../../../../../../../src/data/technologies/opa";
+import codeql from "../../../../../../../../../src/data/technologies/codeql";
+import jaeger from "../../../../../../../../../src/data/technologies/jaeger";
+import gremlin from "../../../../../../../../../src/data/technologies/gremlin";
+import pytest from "../../../../../../../../../src/data/technologies/pytest";
+import hipaa from "../../../../../../../../../src/data/technologies/hipaa";
+import ray from "../../../../../../../../../src/data/technologies/ray";
+import pact from "../../../../../../../../../src/data/technologies/pact";
+import k6 from "../../../../../../../../../src/data/technologies/k6";
+import vllm from "../../../../../../../../../src/data/technologies/vllm";
+import { AllTech } from "@/lib/tech";
 
 const allTech: AllTech = {
   react,
@@ -136,13 +136,13 @@ const allTech: AllTech = {
   pinia,
   remix,
   svelte,
-  'web-accessibility': webAccessibility,
-  'rx-js': rxjs,
+  "web-accessibility": webAccessibility,
+  "rx-js": rxjs,
   node,
   java,
   python,
   go,
-  'c-sharp': csharp,
+  "c-sharp": csharp,
   rust,
   php,
   kotlin,
@@ -150,16 +150,16 @@ const allTech: AllTech = {
   erlang,
   haskell,
   elixir,
-  'devops-engineering': devopsEngineering,
+  "devops-engineering": devopsEngineering,
   aws,
   azure,
-  'google-cloud': googleCloud,
+  "google-cloud": googleCloud,
   kubernetes,
   docker,
   terraform,
   ansible,
   jenkins,
-  'ci-cd': cicd,
+  "ci-cd": cicd,
   prometheus,
   grafana,
   istio,
@@ -168,21 +168,21 @@ const allTech: AllTech = {
   cloudformation,
   gitops,
   serverless,
-  'data-engineering': dataEngineering,
+  "data-engineering": dataEngineering,
   sql,
-  'etl-elt': etlElt,
-  'apache-spark': apacheSpark,
+  "etl-elt": etlElt,
+  "apache-spark": apacheSpark,
   airbyte,
-  'data-governance': dataGovernance,
-  'machine-learning': machineLearning,
-  'data-warehousing': dataWarehousing,
-  'power-bi': powerBi,
+  "data-governance": dataGovernance,
+  "machine-learning": machineLearning,
+  "data-warehousing": dataWarehousing,
+  "power-bi": powerBi,
   tableau,
   fivetran,
   looker,
   presto,
   kafka,
-  'data-science': dataScience,
+  "data-science": dataScience,
   llms,
   pandas,
   numpy,
@@ -195,36 +195,36 @@ const allTech: AllTech = {
   elasticsearch,
   playwright,
   cypress,
-  'qa-automation': qaAutomation,
-  'security-engineering': securityEngineering,
-  'penetration-testing': penetrationTesting,
+  "qa-automation": qaAutomation,
+  "security-engineering": securityEngineering,
+  "penetration-testing": penetrationTesting,
   jest,
   vitest,
   microservices,
   grpc,
-  'rest-api-design': restApiDesign,
-  'event-sourcing': eventSourcing,
-  'domain-driven-design': domainDrivenDesign,
-  'message-queues': messageQueues,
-  'api-gateway': apiGateway,
-  'system-design': systemDesign,
-  'api-security': apiSecurity,
-  'react-native': reactNative,
+  "rest-api-design": restApiDesign,
+  "event-sourcing": eventSourcing,
+  "domain-driven-design": domainDrivenDesign,
+  "message-queues": messageQueues,
+  "api-gateway": apiGateway,
+  "system-design": systemDesign,
+  "api-security": apiSecurity,
+  "react-native": reactNative,
   flutter,
-  'axiom-cortex': axiomCortex,
+  "axiom-cortex": axiomCortex,
   graphql,
   preact,
-  'ember-js': ember,
-  'solid-js': solid,
+  "ember-js": ember,
+  "solid-js": solid,
   jquery,
-  'nuxt-js': nuxt,
+  "nuxt-js": nuxt,
   gatsby,
   sveltekit,
   astro,
   redux,
   mobx,
   net: dotNet,
-  'aws-cost-explorer': awsCostExplorer,
+  "aws-cost-explorer": awsCostExplorer,
   socketio,
   ragas,
   airflow,

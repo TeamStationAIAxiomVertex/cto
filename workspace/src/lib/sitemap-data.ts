@@ -1,8 +1,9 @@
 // src/lib/sitemap-data.ts
 import { getAllResearchSlugs } from "./research";
-import { getAllTechSlugs as getTechSlugs, techCategories } from "./tech";
+import { getAllTechSlugs as getTechSlugs } from "./tech";
 import { countries } from "../../../src/lib/countries";
 import { getAllCaseStudies } from "./case-studies";
+import { techCategories } from "../../../src/lib/tech-categories";
 
 const BASE_URL = "https://cto.teamstation.dev";
 

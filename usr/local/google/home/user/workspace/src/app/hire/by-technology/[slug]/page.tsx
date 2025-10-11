@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle } from "lucide-react";
@@ -26,7 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const tech = allTech[params.slug as TechKeys];
   if (!tech) {
-    return { title: 'Technology Not Found' };
+    return { title: "Technology Not Found" };
   }
   const url = `https://cto.teamstation.dev/hire/by-technology/${params.slug}`;
   return {
@@ -127,7 +126,6 @@ export default function TechPage({ params }: { params: { slug: string } }) {
 
         {tech.pains && tech.pains.length > 0 && (
           <section className="my-16">
-            <h2 className="text-center text-3xl font-bold">Sound Familiar?</h2>
             <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">
               Common problems solved by providing true{" "}
               <strong>{tech.name} experts</strong>.
@@ -179,13 +177,8 @@ export default function TechPage({ params }: { params: { slug: string } }) {
             Our Evaluation Approach for {tech.name}
           </h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
-            For roles requiring deep {tech.name} expertise, our{' '}
-            <WithTooltip label={
-                <span>
-                  Our proprietary Cognitive AI engine for talent evaluation.
-                </span>
-              }
-            >
+            For roles requiring deep {tech.name} expertise, our{" "}
+            <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation.">
               <Link
                 href="/technical-interview-evaluation"
                 className="text-primary hover:underline"
@@ -213,12 +206,12 @@ export default function TechPage({ params }: { params: { slug: string } }) {
             </Link>
           </div>
         </div>
-        
+
         {tech.technical_analysis && (
-            <div className="prose dark:prose-invert max-w-none my-16">
-                <h3>Technical Analysis</h3>
-                <p>{tech.technical_analysis}</p>
-            </div>
+          <div className="prose dark:prose-invert max-w-none my-16">
+            <h3>Technical Analysis</h3>
+            <p>{tech.technical_analysis}</p>
+          </div>
         )}
 
         <div className="text-center rounded-lg bg-primary/10 p-8">

@@ -140,13 +140,7 @@ export default function TechPage() {
           </h2>
           <div className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
             For roles requiring deep {tech.name} expertise, our{" "}
-            <WithTooltip
-              label={
-                <span>
-                  Our proprietary Cognitive AI engine for talent evaluation.
-                </span>
-              }
-            >
+            <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation.">
               <Link
                 href="/technical-interview-evaluation"
                 className="text-primary hover:underline"

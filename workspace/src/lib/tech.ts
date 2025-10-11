@@ -1,10 +1,8 @@
-
-import type { ElementType } from 'react';
 import type { Icon } from "lucide-react";
-import allTechData from '@/data/technologies'; // Corrected to be the single source of truth
+import allTechData from "@/data/technologies"; // Corrected to be the single source of truth
 
 export interface PainPoint {
-  icon: Icon;
+  icon: typeof Icon;
   pain: string;
   problem: string;
   solution: string;
@@ -24,118 +22,115 @@ export interface TechEntry {
   interlink_slugs: string[];
 }
 
-export type TechSlug = 
+export type TechSlug =
   // Frontend/Full-Stack (10)
-  | 'react'
-  | 'typescript'
-  | 'nextjs'
-  | 'angular'
-  | 'vue'
-  | 'pinia'
-  | 'remix'
-  | 'svelte'
-  | 'web-accessibility'
-  | 'rx-js' 
+  | "react"
+  | "typescript"
+  | "nextjs"
+  | "angular"
+  | "vue"
+  | "pinia"
+  | "remix"
+  | "svelte"
+  | "web-accessibility"
+  | "rx-js"
 
   // Backend/Core Languages (12)
-  | 'node'
-  | 'java'
-  | 'python'
-  | 'golang'
-  | 'c-sharp'
-  | 'rust'
-  | 'php'
-  | 'kotlin'
-  | 'scala'
-  | 'erlang'
-  | 'haskell'
-  | 'elixir'
+  | "node"
+  | "java"
+  | "python"
+  | "golang"
+  | "c-sharp"
+  | "rust"
+  | "php"
+  | "kotlin"
+  | "scala"
+  | "erlang"
+  | "haskell"
+  | "elixir"
 
   // DevOps & Cloud (18)
-  | 'devops-engineering'
-  | 'aws'
-  | 'azure'
-  | 'google-cloud'
-  | 'kubernetes'
-  | 'docker'
-  | 'terraform'
-  | 'ansible'
-  | 'jenkins'
-  | 'ci-cd'
-  | 'prometheus'
-  | 'grafana'
-  | 'istio'
-  | 'helm'
-  | 'vault'
-  | 'cloudformation'
-  | 'gitops'
-  | 'serverless'
+  | "devops-engineering"
+  | "aws"
+  | "azure"
+  | "google-cloud"
+  | "kubernetes"
+  | "docker"
+  | "terraform"
+  | "ansible"
+  | "jenkins"
+  | "ci-cd"
+  | "prometheus"
+  | "grafana"
+  | "istio"
+  | "helm"
+  | "vault"
+  | "cloudformation"
+  | "gitops"
+  | "serverless"
 
   // Data & AI (18)
-  | 'data-engineering'
-  | 'sql'
-  | 'etl-elt'
-  | 'apache-spark'
-  | 'dbt'
-  | 'snowflake'
-  | 'airbyte'
-  | 'data-governance'
-  | 'machine-learning'
-  | 'data-warehousing'
-  | 'power-bi'
-  | 'tableau'
-  | 'fivetran'
-  | 'looker'
-  | 'presto'
-  | 'kafka'
-  | 'data-science'
-  | 'llms'
-  | 'pandas' 
-  | 'numpy'
-  | 'vllm'
+  | "data-engineering"
+  | "sql"
+  | "etl-elt"
+  | "apache-spark"
+  | "dbt"
+  | "snowflake"
+  | "airbyte"
+  | "data-governance"
+  | "machine-learning"
+  | "data-warehousing"
+  | "power-bi"
+  | "tableau"
+  | "fivetran"
+  | "looker"
+  | "presto"
+  | "kafka"
+  | "data-science"
+  | "llms"
+  | "pandas"
+  | "numpy"
+  | "vllm"
 
   // Databases (7)
-  | 'postgresql'
-  | 'mongodb'
-  | 'redis'
-  | 'cassandra'
-  | 'mysql'
-  | 'dynamodb'
-  | 'elasticsearch'
+  | "postgresql"
+  | "mongodb"
+  | "redis"
+  | "cassandra"
+  | "mysql"
+  | "dynamodb"
+  | "elasticsearch"
 
   // QA & Security (7)
-  | 'playwright'
-  | 'cypress'
-  | 'qa-automation'
-  | 'security-engineering'
-  | 'penetration-testing'
-  | 'jest' 
-  | 'vitest'
-  | 'k6'
-  | 'pact'
-
+  | "playwright"
+  | "cypress"
+  | "qa-automation"
+  | "security-engineering"
+  | "penetration-testing"
+  | "jest"
+  | "vitest"
+  | "k6"
+  | "pact"
 
   // Architecture & Integrations (8)
-  | 'microservices'
-  | 'grpc'
-  | 'rest-api-design'
-  | 'event-sourcing'
-  | 'domain-driven-design'
-  | 'message-queues'
-  | 'api-gateway'
-  | 'system-design'
-  | 'api-security'
+  | "microservices"
+  | "grpc"
+  | "rest-api-design"
+  | "event-sourcing"
+  | "domain-driven-design"
+  | "message-queues"
+  | "api-gateway"
+  | "system-design"
+  | "api-security"
 
   // Mobile (3)
-  | 'react-native'
-  | 'flutter'
-  | 'swift'
+  | "react-native"
+  | "flutter"
+  | "swift"
 
   // Vetting & Cognitive AI (2)
-  | 'axiom-cortex'
-  | 'graphql'
-;
-
+  | "axiom-cortex"
+  | "graphql";
 
 export interface AllTech {
   [key: string]: TechEntry;
@@ -144,7 +139,6 @@ export interface AllTech {
 // The single source of truth for all technology data.
 export const allTech: AllTech = allTechData;
 
-
 export function getAllTechSlugs(): string[] {
-    return Object.keys(allTech);
+  return Object.keys(allTech);
 }

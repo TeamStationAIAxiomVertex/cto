@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle, AlertTriangle } from "lucide-react";
@@ -8,18 +7,24 @@ import dynamic from "next/dynamic";
 import FurtherReading from "../../../../components/seo/FurtherReading";
 import { WithTooltip } from "../../../../components/ui/tooltip";
 
-const JsonLd = dynamic(() => import("../../../../components/seo/JsonLd"), { ssr: false });
+const JsonLd = dynamic(() => import("../../../../components/seo/JsonLd"), {
+  ssr: false,
+});
 
 const icons: { [key: string]: React.ElementType } = {
-    AlertTriangle,
-  };
+  AlertTriangle,
+};
 
 export const revalidate = 3600;
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const tech = allTech['langchain'];
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const tech = allTech["langchain"];
   if (!tech) {
-    return { title: 'Technology Not Found' };
+    return { title: "Technology Not Found" };
   }
   const url = `https://cto.teamstation.dev/hire/by-technology/langchain`;
   return {
@@ -37,7 +42,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default function TechPage() {
-  const tech = allTech['langchain'];
+  const tech = allTech["langchain"];
   const siteUrl = "https://cto.teamstation.dev";
 
   if (!tech) {
@@ -127,7 +132,7 @@ export default function TechPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               {tech.pains.map((item) => {
-                const Icon = icons[item.icon as keyof typeof icons];
+                const Icon = icons[item.icon as unknown as keyof typeof icons];
                 return (
                   <div
                     key={item.pain}
@@ -137,7 +142,7 @@ export default function TechPage() {
                       {item.pain}
                     </p>
                     <div className="flex items-center gap-3 mt-3">
-                    {Icon && <Icon className="h-8 w-8 text-primary" />}
+                      {Icon && <Icon className="h-8 w-8 text-primary" />}
                       <h3 className="text-lg font-semibold text-foreground">
                         The Problem
                       </h3>
@@ -172,7 +177,7 @@ export default function TechPage() {
             Our Evaluation Approach for {tech.name}
           </h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
-            For roles requiring deep {tech.name} expertise, our{' '}
+            For roles requiring deep {tech.name} expertise, our{" "}
             <WithTooltip content="Our proprietary Cognitive AI engine for talent evaluation.">
               <Link
                 href="/technical-interview-evaluation"
@@ -201,12 +206,12 @@ export default function TechPage() {
             </Link>
           </div>
         </div>
-        
+
         {tech.technical_analysis && (
-            <div className="prose dark:prose-invert max-w-none my-16">
-                <h3>Technical Analysis</h3>
-                <p>{tech.technical_analysis}</p>
-            </div>
+          <div className="prose dark:prose-invert max-w-none my-16">
+            <h3>Technical Analysis</h3>
+            <p>{tech.technical_analysis}</p>
+          </div>
         )}
 
         <div className="text-center rounded-lg bg-primary/10 p-8">
@@ -227,7 +232,7 @@ export default function TechPage() {
             Book a No-Obligation Strategy Call
           </Link>
         </div>
-        <FurtherReading comparison='langchain' />
+        <FurtherReading comparison="langchain" />
       </main>
     </>
   );
