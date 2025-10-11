@@ -142,6 +142,11 @@ import jira from "./jira";
 import notion from "./notion";
 import tailwind from "./tailwind";
 import figma from "./figma";
+import fastAPI from "./fastAPI";
+import django from "./django";
+import flask from "./flask";
+import express from "./express";
+import scikitLearn from "./scikit-learn";
 import { AllTech } from "@/lib/tech";
 
 const allTech: AllTech = {
@@ -288,6 +293,11 @@ const allTech: AllTech = {
   notion,
   tailwind,
   figma,
+  "fast-api": fastAPI,
+  django,
+  flask,
+  express,
+  "scikit-learn": scikitLearn,
 };
 
 export default allTech;
