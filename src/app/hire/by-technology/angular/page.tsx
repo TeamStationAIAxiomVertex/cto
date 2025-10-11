@@ -14,7 +14,9 @@ import {
 } from "lucide-react";
 import { WithTooltip } from "../../../../components/ui/tooltip";
 import { allTech } from "../../../../lib/tech";
-import { JsonLd } from "../../../../components/seo/JsonLd";
+import dynamic from "next/dynamic";
+
+const JsonLd = dynamic(() => import("../../../../components/seo/JsonLd"), { ssr: false });
 
 const icons: { [key: string]: React.ElementType } = {
   AlertTriangle,
