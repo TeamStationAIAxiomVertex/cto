@@ -193,7 +193,11 @@ import webAccessibility from './web-accessibility';
 import zuora from './zuora';
 import proofpoint from './proofpoint';
 import edr from './edr';
-import nest from './NestJS';
+import auth0 from './auth0';
+import junit from './junit';
+import locust from './locust';
+import infracost from './infracost';
+import census from './census';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -390,7 +394,11 @@ const allTech: AllTech = {
     'zuora': zuora,
     'proofpoint': proofpoint,
     'edr': edr,
-    'nestjs': nest,
+    'auth0': auth0,
+    'junit': junit,
+    'locust': locust,
+    'infracost': infracost,
+    'census': census,
 };
 
 export default allTech;

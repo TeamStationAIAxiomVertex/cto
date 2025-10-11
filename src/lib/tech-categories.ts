@@ -39,7 +39,6 @@ export const techCategories: TechCategory[] = [
       { name: 'PHP (Laravel/Symphony)', slug: 'php' },
       { name: 'gRPC', slug: 'grpc' },
       { name: 'GraphQL', slug: 'graphql' },
-      { name: 'NestJS', slug: 'nestjs' },
     ],
   },
   {
@@ -150,6 +149,7 @@ export const techCategories: TechCategory[] = [
       { name: 'SOC 2', slug: 'soc' },
       { name: 'ISO 27001', slug: 'iso' },
       { name: 'HIPAA', slug: 'hipaa' },
+      { name: 'Auth0', slug: 'auth0'},
     ],
   },
   {
@@ -164,6 +164,8 @@ export const techCategories: TechCategory[] = [
       { name: 'k6/Locust', slug: 'k6' },
       { name: 'Pact', slug: 'pact' },
       { name: 'Gremlin/Litmus', slug: 'gremlin' },
+      { name: 'JUnit', slug: 'junit'},
+      { name: 'Locust', slug: 'locust'},
     ],
   },
   {
@@ -177,6 +179,8 @@ export const techCategories: TechCategory[] = [
       { name: 'Salesforce', slug: 'salesforce' },
       { name: 'HubSpot', slug: 'hubspot' },
       { name: 'Hightouch/Census', slug: 'hightouch' },
+      { name: 'Infracost', slug: 'infracost'},
+      { name: 'Census', slug: 'census'},
     ],
   },
    {
