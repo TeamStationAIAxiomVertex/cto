@@ -12,31 +12,31 @@ const pgvector: TechEntry = {
     "pgvector is an open-source extension for PostgreSQL that enables vector similarity search. Our AI/ML engineers use pgvector to build high-performance, scalable, and cost-effective applications that are powered by large language models, recommendation engines, and other AI technologies.",
   pains: [
     {
-      icon: "Search",
-      pain: "You're struggling to build a fast and accurate semantic search or recommendation engine.",
+      icon: "AlertTriangle",
+      pain: "Are you struggling to build a fast and accurate semantic search or recommendation engine?",
       problem:
         "Traditional keyword-based search is not enough for modern AI applications. You need a way to search and retrieve information based on its meaning and context, not just keywords.",
       solution:
-        "We use pgvector to store and query high-dimensional vectors, such as text embeddings from large language models. This allows us to build powerful semantic search engines that understand the user's intent and provide more relevant results.",
-      kpi: "Improve search relevance by 50% and reduce the time to find the right information by 75%.",
+        "We use **pgvector to store and query high-dimensional vectors**, such as text embeddings from large language models. This allows us to build powerful semantic search engines that understand the user's intent and provide more relevant results.",
+      kpi: "Improve search relevance by 50%.",
     },
     {
-      icon: "Database",
-      pain: "You're tired of managing a separate vector database, and you want to simplify your data infrastructure.",
+      icon: "AlertTriangle",
+      pain: "Are you tired of managing a separate vector database, and you want to simplify your data infrastructure?",
       problem:
         "Using a separate vector database adds complexity and cost to your stack. You need to manage two different databases, keep them in sync, and deal with the overhead of data duplication.",
       solution:
-        "pgvector allows you to store and search vectors directly in your PostgreSQL database, alongside your other application data. This simplifies your architecture, reduces operational overhead, and allows you to leverage the full power of PostgreSQL for your AI applications.",
-      kpi: "Reduce your data infrastructure costs by 40% and simplify your data management by 60%.",
+        "**pgvector allows you to store and search vectors directly in your PostgreSQL database**, alongside your other application data. This simplifies your architecture, reduces operational overhead, and allows you to leverage the full power of PostgreSQL for your AI applications.",
+      kpi: "Reduce data infrastructure costs by 40%.",
     },
     {
-      icon: "Scaling",
-      pain: "Your vector search is slow and not scalable, and you're worried about the performance of your AI applications.",
+      icon: "AlertTriangle",
+      pain: "Is your vector search slow and not scalable?",
       problem:
         "As your data grows, your vector search performance degrades, leading to slow response times and a poor user experience. You need a way to scale your vector search without breaking the bank.",
       solution:
-        "We use pgvector's support for approximate nearest neighbor (ANN) search, using the IVFFlat and HNSW index types, to build highly scalable and performant vector search applications. This allows us to handle billions of vectors and provide fast and accurate results, even at scale.",
-      kpi: "Achieve a 99% query success rate with a p95 latency of less than 100ms, even with billions of vectors.",
+        "We use **pgvector's support for approximate nearest neighbor (ANN) search**, using the IVFFlat and HNSW index types, to build highly scalable and performant vector search applications. This allows us to handle billions of vectors and provide fast and accurate results, even at scale.",
+      kpi: "Achieve p95 latency of <100ms with billions of vectors.",
     },
   ],
   evaluation: [

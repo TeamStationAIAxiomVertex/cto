@@ -12,31 +12,31 @@ const ray: TechEntry = {
     "Ray is an open-source unified compute framework that makes it easy to scale AI and Python workloads. Our AI/ML engineers use Ray to go from a laptop to a cluster with minimal code changes, enabling them to build and deploy large-scale, high-performance, and distributed AI applications.",
   pains: [
     {
-      icon: "Scaling",
-      pain: "You're struggling to scale your Python and ML workloads from a single machine to a large cluster.",
+      icon: "AlertTriangle",
+      pain: "Is your Python and ML workload hitting a scaling bottleneck?",
       problem:
         "Your applications are hitting the limits of a single machine, and the complexity of building and managing a distributed system is slowing down your development and increasing your operational overhead.",
       solution:
-        "We use Ray's simple and intuitive API to distribute your Python and ML applications across a cluster of machines. This allows you to scale your workloads with minimal code changes, dramatically improving performance and unlocking new capabilities.",
-      kpi: "Scale your Python applications to 100s of machines with less than 10 lines of code change.",
+        "Our engineers use **Ray's simple API** to distribute your Python and ML applications across a cluster of machines. This allows you to scale your workloads with minimal code changes, dramatically improving performance.",
+      kpi: "Scale to 100s of machines with <10 lines of code change.",
     },
     {
-      icon: "Rocket",
-      pain: "You need to build and deploy complex, multi-stage AI pipelines, but your current tools are not up to the task.",
+      icon: "AlertTriangle",
+      pain: "Are you struggling to orchestrate complex, multi-stage AI pipelines?",
       problem:
         "Modern AI applications often involve a complex web of data processing, model training, and serving components. Orchestrating these components in a reliable and scalable way is a major challenge.",
       solution:
-        "We use Ray's rich set of libraries and integrations to build and manage end-to-end AI pipelines. We use Ray Data for large-scale data processing, Ray Train for distributed model training, Ray Tune for hyperparameter tuning, and Ray Serve for scalable model serving.",
-      kpi: "Reduce the time to develop and deploy new AI pipelines by 75%.",
+        "We use **Ray's rich set of libraries and integrations** to build and manage end-to-end AI pipelines. We use Ray Data for large-scale data processing, Ray Train for distributed model training, Ray Tune for hyperparameter tuning, and Ray Serve for scalable model serving.",
+      kpi: "Reduce AI pipeline development time by 75%.",
     },
     {
-      icon: "Code",
-      pain: "You need to build a new generation of AI-powered applications, but you lack the expertise to do so.",
+      icon: "AlertTriangle",
+      pain: "Are you lacking the expertise to build the next generation of AI-powered applications?",
       problem:
         "Building applications that are powered by large language models, reinforcement learning, and other advanced AI techniques requires a deep understanding of both AI and distributed systems.",
       solution:
-        "We are experts in using Ray to build the next generation of AI applications. We use Ray to build large-scale reinforcement learning applications, scalable and efficient LLM pipelines, and other complex AI systems. We can help you unlock the power of AI and build the products of the future.",
-      kpi: "Launch a new AI-powered product in less than 3 months.",
+        "We are experts in using **Ray to build the next generation of AI applications**. We use Ray to build large-scale reinforcement learning applications, scalable and efficient LLM pipelines, and other complex AI systems.",
+      kpi: "Launch a new AI-powered product in <3 months.",
     },
   ],
   evaluation: [

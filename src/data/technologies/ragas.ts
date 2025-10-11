@@ -12,31 +12,31 @@ const ragas: TechEntry = {
     "Ragas is a framework that helps you evaluate your Retrieval Augmented Generation (RAG) pipelines. Our AI/ML engineers use Ragas to assess the performance of RAG applications from every angle, ensuring that they are accurate, reliable, and ready for production.",
   pains: [
     {
-      icon: "Test",
-      pain: "You're building a RAG application, but you have no idea how well it's performing.",
+      icon: "AlertTriangle",
+      pain: "Are you building a RAG application without a clear view of its performance?",
       problem:
         "Evaluating RAG pipelines is a complex and nuanced task. You need to assess the performance of both the retrieval and the generation components, and you need to do so in a way that is both systematic and automated.",
       solution:
-        "We use Ragas to evaluate your RAG pipelines from every angle. We use its rich set of metrics to measure everything from context relevance and answer faithfulness to answer relevance and context recall. This allows us to identify the strengths and weaknesses of your pipeline and make data-driven decisions about how to improve it.",
-      kpi: "Improve the accuracy of your RAG application by 50% and reduce the number of hallucinations by 75%.",
+        "We use **Ragas to evaluate your RAG pipelines from every angle**. We use its rich set of metrics to measure everything from context relevance and answer faithfulness to answer relevance and context recall. This allows us to identify the strengths and weaknesses of your pipeline and make data-driven decisions about how to improve it.",
+      kpi: "Improve RAG accuracy by 50% and reduce hallucinations by 75%.",
     },
     {
-      icon: "CI/CD",
-      pain: "You want to integrate RAG evaluation into your CI/CD pipeline, but you don't know how.",
+      icon: "AlertTriangle",
+      pain: "Is RAG evaluation missing from your CI/CD pipeline?",
       problem:
         "Evaluating RAG pipelines should be an automated and continuous process, not a manual and ad-hoc one. You need a way to ensure that your RAG application is always performing at its best, and that you can catch any regressions before they make it to production.",
       solution:
-        "We integrate Ragas into your CI/CD pipeline, allowing you to evaluate your RAG application every time you make a change. This allows you to catch regressions early, monitor the performance of your application over time, and ship with confidence.",
-      kpi: "Reduce the number of RAG-related bugs in production by 90%.",
+        "We **integrate Ragas into your CI/CD pipeline**, allowing you to evaluate your RAG application every time you make a change. This allows you to catch regressions early, monitor the performance of your application over time, and ship with confidence.",
+      kpi: "Reduce RAG-related production bugs by 90%.",
     },
     {
-      icon: "Monitor",
-      pain: "You need to monitor the performance of your RAG application in production, but you don't have the right tools for the job.",
+      icon: "AlertTriangle",
+      pain: "Are you struggling to monitor the performance of your RAG application in production?",
       problem:
         "The performance of your RAG application can be affected by a variety of factors, including changes in the data, the model, and the user's behavior. You need a way to monitor the performance of your application in real-time, so that you can identify and address any issues as they arise.",
       solution:
-        "We use Ragas to monitor the performance of your RAG application in production. We use it to track key metrics over time, set up alerts to notify us of any regressions, and diagnose the root cause of any issues. This allows us to ensure that your application is always running at its best.",
-      kpi: "Achieve a 99.9% uptime for your RAG application and reduce the time to resolve any issues by 80%.",
+        "We use **Ragas to monitor the performance of your RAG application in production**. We use it to track key metrics over time, set up alerts to notify us of any regressions, and diagnose the root cause of any issues. This allows us to ensure that your application is always running at its best.",
+      kpi: "Achieve 99.9% uptime and reduce time-to-resolve by 80%.",
     },
   ],
   evaluation: [

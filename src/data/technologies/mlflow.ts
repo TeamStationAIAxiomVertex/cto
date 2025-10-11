@@ -12,31 +12,31 @@ const mlflow: TechEntry = {
     "MLflow is an open-source platform for managing the end-to-end machine learning lifecycle. Our AI/ML engineers use MLflow to track experiments, package code into reproducible runs, and manage and deploy models, enabling them to build and ship machine learning applications faster and more reliably.",
   pains: [
     {
-      icon: "Experiment",
-      pain: "You're struggling to keep track of your machine learning experiments, making it difficult to reproduce results and compare models.",
+      icon: "AlertTriangle",
+      pain: "Are you struggling to reproduce and compare your machine learning experiments?",
       problem:
         "The iterative nature of machine learning development can lead to a chaotic mess of scripts, notebooks, and model artifacts. This makes it difficult to know which parameters, code, and data were used to produce a given result.",
       solution:
-        "We use MLflow Tracking to systematically record and query your experiments. We track everything from model parameters and metrics to code versions and artifacts, ensuring that your results are always reproducible and comparable.",
-      kpi: "Reduce the time to reproduce a machine learning experiment by 90%.",
+        "We use **MLflow Tracking** to systematically record and query your experiments. We track everything from model parameters and metrics to code versions and artifacts, ensuring that your results are always reproducible and comparable.",
+      kpi: "Reduce time-to-reproduce an experiment by 90%.",
     },
     {
-      icon: "Box",
-      pain: "You're having trouble packaging and deploying your machine learning models, leading to slow and error-prone handoffs between data scientists and production engineers.",
+      icon: "AlertTriangle",
+      pain: "Is the path from research to production slow and error-prone?",
       problem:
         "Moving a model from a data scientist's laptop to a production environment is often a manual and ad-hoc process. This leads to inconsistencies, errors, and a slow time-to-market for your machine learning applications.",
       solution:
-        "We use MLflow Projects and Models to package our code and models in a standardized and reproducible way. This allows us to create self-contained, reusable, and deployable machine learning applications that can run anywhere, from a local machine to a large-scale production cluster.",
-      kpi: "Accelerate the time to deploy a new model to production by 5x.",
+        "We use **MLflow Projects and Models** to package our code and models in a standardized and reproducible way. This allows us to create self-contained, reusable, and deployable machine learning applications that can run anywhere, from a local machine to a large-scale production cluster.",
+      kpi: "Accelerate time-to-deploy by 5x.",
     },
     {
-      icon: "Scaling",
-      pain: "You need a centralized place to manage and govern your machine learning models, but your current tools are not up to the task.",
+      icon: "AlertTriangle",
+      pain: "Do you lack a centralized system for model management and governance?",
       problem:
         "As your organization's use of machine learning grows, you need a way to manage the entire lifecycle of your models, from development and testing to deployment and monitoring. You also need to ensure that your models are secure, compliant, and governed by a clear set of policies.",
       solution:
-        "We use the MLflow Model Registry to provide a central repository for all of your machine learning models. We use it to manage model versions, track their lifecycle stage (e.g., staging, production, archived), and collaborate on model development and governance.",
-      kpi: "Improve the governance and security of your machine learning models by 80%.",
+        "We use the **MLflow Model Registry** to provide a central repository for all of your machine learning models. We use it to manage model versions, track their lifecycle stage (e.g., staging, production, archived), and collaborate on model development and governance.",
+      kpi: "Improve model governance and security by 80%.",
     },
   ],
   evaluation: [

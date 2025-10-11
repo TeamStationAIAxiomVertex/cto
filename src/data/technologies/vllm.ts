@@ -12,31 +12,31 @@ const vllm: TechEntry = {
     "vLLM is a high-throughput and memory-efficient inference and serving engine for Large Language Models (LLMs). Our AI/ML engineers use vLLM to dramatically increase the performance of your LLM applications, reducing latency and cost while improving throughput.",
   pains: [
     {
-      icon: "Speed",
-      pain: "Your LLM inference is slow and expensive, making it difficult to build real-time applications.",
+      icon: "AlertTriangle",
+      pain: "Is your LLM inference serving slow and expensive?",
       problem:
-        "Serving large language models is computationally intensive, leading to high latency and low throughput. This makes it challenging to provide a responsive user experience and control operational costs.",
+        "Serving large language models is notoriously expensive due to high memory requirements and inefficient batching. This leads to high costs and slow response times, making it difficult to build a profitable AI product.",
       solution:
-        "We use vLLM's PagedAttention and continuous batching to significantly accelerate LLM inference, achieving near-optimal throughput and reducing latency by orders of magnitude. This allows you to build real-time, high-performance AI applications.",
-      kpi: "Increase LLM inference throughput by 10x and reduce latency by 90%.",
+        "We vet for experts in **vLLM and PagedAttention**. Our engineers are proficient in using vLLM to implement continuous batching and efficient key-value cache management, leading to significantly higher throughput and lower serving costs.",
+      kpi: "Higher Throughput and Lower Cost-Per-Token",
     },
     {
-      icon: "Memory",
-      pain: "You're struggling with memory management and out-of-memory errors when serving large language models.",
+      icon: "AlertTriangle",
+      pain: "Are you struggling to deploy different LLMs from the Hugging Face Hub?",
       problem:
-        "The massive size of modern LLMs makes them difficult to fit into GPU memory, and inefficient memory management can lead to crashes and underutilization of your hardware.",
+        "Your team wants to experiment with different open-source LLMs, but each model has its own serving requirements, making it complex and time-consuming to deploy and manage them.",
       solution:
-        "vLLM's PagedAttention algorithm efficiently manages the memory of attention key-value blocks, allowing us to serve larger models and larger batches without running out of memory. This maximizes the utilization of your hardware and reduces costs.",
-      kpi: "Serve models that are 2x larger with the same hardware.",
+        "Our engineers use vLLM to create a unified serving layer that can handle a wide variety of models from the Hugging Face Hub. This allows you to quickly and easily deploy new models without having to worry about the underlying infrastructure.",
+      kpi: "Deploy new Hugging Face models in minutes, not days.",
     },
     {
-      icon: "Code",
-      pain: "Your LLM serving infrastructure is complex and difficult to manage, requiring a team of specialized engineers.",
+      icon: "AlertTriangle",
+      pain: "Is your AI product not scaling to meet user demand?",
       problem:
-        "Building and maintaining a custom LLM serving solution is a major undertaking, requiring deep expertise in GPU programming, distributed systems, and model optimization.",
+        "Your LLM-powered application is a success, but your serving infrastructure can't keep up with the traffic. This leads to slow response times, frustrated users, and a poor brand reputation.",
       solution:
-        "vLLM provides a simple, OpenAI-compatible API that makes it easy to integrate with your existing applications. We handle the complexities of LLM serving, allowing you to focus on building your product.",
-      kpi: "Reduce the time to deploy a new LLM to production from weeks to hours.",
+        "We are experts in scaling vLLM to handle millions of users. We use Ray to distribute vLLM across a cluster of machines, and we use our expertise in performance tuning to ensure that your application is always fast and responsive.",
+      kpi: "Scale your AI product to 1 million users with a p99 latency of less than 200ms.",
     },
   ],
   evaluation: [
