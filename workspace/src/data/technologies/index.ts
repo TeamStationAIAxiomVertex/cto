@@ -118,8 +118,8 @@ import gremlin from './gremlin';
 import pytest from './pytest';
 import hipaa from './hipaa';
 import ray from './ray';
-import pact from './pact.json';
-import k6 from './k6.json';
+import pact from './pact';
+import k6 from './k6';
 import vllm from './vllm';
 import { AllTech } from '@/lib/tech';
 
