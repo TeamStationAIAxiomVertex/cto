@@ -2,7 +2,7 @@ import { TechEntry } from "@/lib/tech";
 import { AlertTriangle } from "lucide-react";
 
 const zustand: TechEntry = {
-  name: "Zustand",
+  name: "zustand",
   category: "Frontend & UI",
   categorySlug: "frontend-ui",
   seo_title: "Hire Zustand Experts | State Management & React Consultants",
