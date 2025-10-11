@@ -60,8 +60,8 @@ const schema = {
   "description": "Peer-reviewed and preprint research published by TeamStation AI and available on SSRN.",
   "provider": {
     "@type": "Organization",
-    "name": teamStationAI.name as string,
-    "url": teamStationAI.url as string
+    "name": teamStationAI.name,
+    "url": teamStationAI.url
   },
   "itemListElement": papers.map((paper, index) => ({
     "@type": "ListItem",
@@ -71,7 +71,7 @@ const schema = {
       "headline": paper.title,
       "url": `https://cto.teamstation.dev/research/${paper.slug}`,
       "sameAs": paper.canonical,
-      "author": { "@type": "Organization", "name": teamStationAI.name as string },
+      "author": { "@type": "Organization", "name": teamStationAI.name },
       "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
     }
   }))
