@@ -1,46 +1,53 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
 
 const ragas: TechEntry = {
-    name: "Ragas",
-    category: "Data & AI",
-    categorySlug: "ml-ai-llm-ops",
-    seo_title: "Hire Ragas Experts | RAG Evaluation & LLM Consultants",
-    meta_description: "Build reliable and accurate RAG systems. Hire elite remote Ragas experts vetted for their deep understanding of RAG evaluation, from faithfulness to answer relevancy. Book a call.",
-    intro: "Ragas is a critical framework for evaluating Retrieval-Augmented Generation (RAG) pipelines, which are the backbone of most production LLM applications. You need an engineer who understands that building a reliable RAG system is not just about connecting a vector database to an LLM; it's about rigorously evaluating and improving every component of the pipeline. Our vetting process identifies developers who are experts in the Ragas framework and its core metrics—Faithfulness, Answer Relevancy, Context Precision, and Context Recall. By hiring a Ragas expert, you get a developer who can provide objective, data-driven proof of your RAG system's quality, enabling you to build trustworthy and accurate AI applications.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Are your RAG pipeline outputs unreliable and prone to hallucination?",
-            problem: "Without a robust evaluation framework, it's impossible to know if your RAG system is hallucinating or providing answers that are not grounded in the retrieved context. This leads to untrustworthy results and a poor user experience.",
-            solution: "We vet for experts in **Ragas Faithfulness** evaluation. Our engineers are proficient in using Ragas to measure the factual consistency of the generated answer against the given context, ensuring that your LLM is not making things up.",
-            kpi: "High Faithfulness Score & Reduced Hallucinations"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are your RAG answers irrelevant to the user's question?",
-            problem: "A common failure mode in RAG systems is retrieving correct context but generating an answer that doesn't actually address the user's query. This leads to a frustrating user experience where the user has to re-phrase their question multiple times.",
-            solution: "Our engineers are masters of **Ragas Answer Relevancy** evaluation. They are vetted on their ability to use Ragas to measure how well the generated answer addresses the original question, ensuring that your RAG system is not just accurate, but also helpful.",
-            kpi: "High Answer Relevancy Score & Improved User Satisfaction"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your retrieval step cluttered with irrelevant noise?",
-            problem: "If your retrieval step is returning a lot of irrelevant documents, the LLM has to sift through a lot of noise to find the correct answer. This increases the likelihood of hallucinations and reduces the overall quality of the generated response.",
-            solution: "We look for engineers proficient with **Ragas Context Precision and Recall**. They are vetted on their ability to use these metrics to evaluate the quality of your retrieval system, ensuring that you are providing the LLM with the most relevant and noise-free context possible.",
-            kpi: "High Context Precision & Recall Scores"
-        }
-    ],
-    evaluation: [
-        "RAG pipeline architecture and components",
-        "Ragas core metrics (Faithfulness, Answer Relevancy, Context Precision, Context Recall)",
-        "Synthetic test data generation",
-        "Integration with LangChain and other LLM frameworks",
-        "LLM-as-a-judge evaluation patterns",
-    ],
-    technical_analysis: "The Ragas evaluation focuses on a candidate's ability to build and evaluate reliable RAG pipelines. We assess their understanding of the entire RAG lifecycle, requiring them to design an evaluation strategy for a complex RAG application. A critical part of the evaluation is their mastery of **Ragas core metrics**; candidates must demonstrate how to use Faithfulness, Answer Relevancy, Context Precision, and Context Recall to identify and fix issues in a RAG pipeline. We also test their ability to generate **synthetic test data** to ensure comprehensive test coverage. Finally, we assess their knowledge of the LLM evaluation ecosystem, and their ability to leverage it to build a modern, high-performance RAG system.",
-    interlink_slugs: ["langchain", "llms", "python", "data-science"],
+  name: "Ragas",
+  category: "AI / ML Engineering",
+  categorySlug: "ai-ml-engineering",
+  seo_title: "Hire Ragas Experts | TeamStation AI",
+  meta_description:
+    "Hire expert Ragas developers to evaluate and test your Retrieval Augmented Generation (RAG) pipelines. Get pre-vetted LATAM talent to build reliable and high-performing LLM applications.",
+  intro:
+    "Ragas is a framework that helps you evaluate your Retrieval Augmented Generation (RAG) pipelines. Our AI/ML engineers use Ragas to assess the performance of RAG applications from every angle, ensuring that they are accurate, reliable, and ready for production.",
+  pains: [
+    {
+      icon: "Test",
+      pain: "You're building a RAG application, but you have no idea how well it's performing.",
+      problem:
+        "Evaluating RAG pipelines is a complex and nuanced task. You need to assess the performance of both the retrieval and the generation components, and you need to do so in a way that is both systematic and automated.",
+      solution:
+        "We use Ragas to evaluate your RAG pipelines from every angle. We use its rich set of metrics to measure everything from context relevance and answer faithfulness to answer relevance and context recall. This allows us to identify the strengths and weaknesses of your pipeline and make data-driven decisions about how to improve it.",
+      kpi: "Improve the accuracy of your RAG application by 50% and reduce the number of hallucinations by 75%.",
+    },
+    {
+      icon: "CI/CD",
+      pain: "You want to integrate RAG evaluation into your CI/CD pipeline, but you don't know how.",
+      problem:
+        "Evaluating RAG pipelines should be an automated and continuous process, not a manual and ad-hoc one. You need a way to ensure that your RAG application is always performing at its best, and that you can catch any regressions before they make it to production.",
+      solution:
+        "We integrate Ragas into your CI/CD pipeline, allowing you to evaluate your RAG application every time you make a change. This allows you to catch regressions early, monitor the performance of your application over time, and ship with confidence.",
+      kpi: "Reduce the number of RAG-related bugs in production by 90%.",
+    },
+    {
+      icon: "Monitor",
+      pain: "You need to monitor the performance of your RAG application in production, but you don't have the right tools for the job.",
+      problem:
+        "The performance of your RAG application can be affected by a variety of factors, including changes in the data, the model, and the user's behavior. You need a way to monitor the performance of your application in real-time, so that you can identify and address any issues as they arise.",
+      solution:
+        "We use Ragas to monitor the performance of your RAG application in production. We use it to track key metrics over time, set up alerts to notify us of any regressions, and diagnose the root cause of any issues. This allows us to ensure that your application is always running at its best.",
+      kpi: "Achieve a 99.9% uptime for your RAG application and reduce the time to resolve any issues by 80%.",
+    },
+  ],
+  evaluation: [
+    "Deep expertise in Ragas and the evaluation of RAG pipelines.",
+    "Proven ability to build and deploy reliable and high-performing RAG applications.",
+    "Experience in integrating Ragas into CI/CD pipelines and monitoring systems.",
+    "Proficiency in Python, LangChain, and other tools for building LLM applications.",
+  ],
+  technical_analysis:
+    "Ragas is an essential tool for anyone building a RAG application. Its comprehensive set of metrics and its easy-to-use API make it the perfect choice for evaluating and testing RAG pipelines. Our engineers are experts at using Ragas to build high-quality RAG applications. We use Ragas to evaluate every component of the RAG pipeline, from the retriever to the generator. We use it to measure the quality of the retrieved context, the faithfulness of the generated answer, and the overall relevance of the response. We also use Ragas to automate the evaluation process, integrating it into our CI/CD pipelines to ensure that our RAG applications are always performing at their best. By combining Ragas with our expertise in LangChain, vector databases, and other RAG-related technologies, we can help you build and deploy RAG applications that are not only powerful and intelligent, but also reliable and trustworthy.",
+  interlink_slugs: ["langchain", "python", "llms", "transformers"],
 };
 
 export default ragas;

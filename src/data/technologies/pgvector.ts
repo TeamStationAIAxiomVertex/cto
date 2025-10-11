@@ -1,46 +1,53 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
 
 const pgvector: TechEntry = {
-    name: "pgvector",
-    category: "Data & AI",
-    categorySlug: "ml-ai-llm-ops",
-    seo_title: "Hire pgvector Experts | Vector Similarity Search in PostgreSQL",
-    meta_description: "Build powerful RAG and recommendation systems. Hire elite remote pgvector experts vetted for their deep understanding of vector embeddings, indexing, and query optimization. Book a call.",
-    intro: "pgvector is a powerful extension for PostgreSQL that enables efficient vector similarity search directly in your database. You need an engineer who understands that building a scalable RAG or recommendation system is not just about storing vectors, but about indexing them for performance and querying them effectively. Our vetting process identifies developers who are experts in the intersection of traditional relational data and modern vector search. By hiring a pgvector expert, you get a developer who can build a robust, performant, and cost-effective AI application without adding a separate, specialized vector database to your stack.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Is your vector search slow and unable to scale?",
-            problem: "Performing a brute-force nearest-neighbor search on a large dataset of vectors is computationally expensive and slow. This leads to high-latency API responses and a poor user experience for your AI features.",
-            solution: "We vet for experts in **pgvector indexing**. Our engineers are proficient in using HNSW and IVFFlat indexes to dramatically accelerate vector similarity search, ensuring that your RAG system can retrieve relevant documents with low latency, even at scale.",
-            kpi: "High-Performance Vector Search with HNSW Indexing"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are you struggling to combine vector search with traditional SQL filtering?",
-            problem: "Many RAG applications need to filter documents based on metadata (e.g., user ID, creation date) *before* performing a vector search. Doing this inefficiently can negate all the performance gains of your vector index.",
-            solution: "Our engineers are masters of **hybrid search**. They are vetted on their ability to write efficient queries that combine traditional SQL `WHERE` clauses with pgvector's similarity search operators, ensuring that your RAG system is both powerful and performant.",
-            kpi: "Efficient Hybrid Search with SQL and Vector Queries"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is managing a separate vector database adding complexity to your stack?",
-            problem: "Introducing a dedicated vector database adds another moving part to your infrastructure, increasing operational overhead, cost, and the complexity of keeping your data in sync.",
-            solution: "We look for engineers proficient in **leveraging existing infrastructure**. They understand the value of using pgvector to add vector search capabilities to your existing PostgreSQL database, simplifying your architecture and reducing operational complexity.",
-            kpi: "Simplified Architecture with PostgreSQL as a Vector DB"
-        }
-    ],
-    evaluation: [
-        "Vector embeddings and similarity metrics (Cosine, L2, Inner Product)",
-        "pgvector indexing strategies (HNSW, IVFFlat)",
-        "Hybrid search query optimization",
-        "Integration with PostgreSQL and modern ORMs",
-        "Performance tuning and maintenance of vector indexes"
-    ],
-    technical_analysis: "The pgvector evaluation focuses on a candidate's ability to build and optimize vector search applications within PostgreSQL. We assess their understanding of different indexing strategies, requiring them to explain the trade-offs between HNSW and IVFFlat. A critical part of the evaluation is their ability to write and optimize **hybrid search queries** that combine vector similarity search with traditional metadata filtering. We also test their knowledge of performance tuning, including how to choose the right index parameters and how to monitor index build progress and query performance.",
-    interlink_slugs: ["postgresql", "langchain", "llms", "data-science"],
+  name: "pgvector",
+  category: "AI / ML Engineering",
+  categorySlug: "ai-ml-engineering",
+  seo_title: "Hire pgvector Experts | TeamStation AI",
+  meta_description:
+    "Hire expert pgvector developers to build scalable and efficient vector similarity search applications. Get pre-vetted LATAM talent to power your AI-native products.",
+  intro:
+    "pgvector is an open-source extension for PostgreSQL that enables vector similarity search. Our AI/ML engineers use pgvector to build high-performance, scalable, and cost-effective applications that are powered by large language models, recommendation engines, and other AI technologies.",
+  pains: [
+    {
+      icon: "Search",
+      pain: "You're struggling to build a fast and accurate semantic search or recommendation engine.",
+      problem:
+        "Traditional keyword-based search is not enough for modern AI applications. You need a way to search and retrieve information based on its meaning and context, not just keywords.",
+      solution:
+        "We use pgvector to store and query high-dimensional vectors, such as text embeddings from large language models. This allows us to build powerful semantic search engines that understand the user's intent and provide more relevant results.",
+      kpi: "Improve search relevance by 50% and reduce the time to find the right information by 75%.",
+    },
+    {
+      icon: "Database",
+      pain: "You're tired of managing a separate vector database, and you want to simplify your data infrastructure.",
+      problem:
+        "Using a separate vector database adds complexity and cost to your stack. You need to manage two different databases, keep them in sync, and deal with the overhead of data duplication.",
+      solution:
+        "pgvector allows you to store and search vectors directly in your PostgreSQL database, alongside your other application data. This simplifies your architecture, reduces operational overhead, and allows you to leverage the full power of PostgreSQL for your AI applications.",
+      kpi: "Reduce your data infrastructure costs by 40% and simplify your data management by 60%.",
+    },
+    {
+      icon: "Scaling",
+      pain: "Your vector search is slow and not scalable, and you're worried about the performance of your AI applications.",
+      problem:
+        "As your data grows, your vector search performance degrades, leading to slow response times and a poor user experience. You need a way to scale your vector search without breaking the bank.",
+      solution:
+        "We use pgvector's support for approximate nearest neighbor (ANN) search, using the IVFFlat and HNSW index types, to build highly scalable and performant vector search applications. This allows us to handle billions of vectors and provide fast and accurate results, even at scale.",
+      kpi: "Achieve a 99% query success rate with a p95 latency of less than 100ms, even with billions of vectors.",
+    },
+  ],
+  evaluation: [
+    "Deep expertise in pgvector, vector similarity search, and PostgreSQL.",
+    "Proven ability to build and deploy scalable and performant AI applications with pgvector.",
+    "Experience in using pgvector for semantic search, recommendation engines, and other AI tasks.",
+    "Proficiency in SQL, data modeling, and performance tuning for PostgreSQL.",
+  ],
+  technical_analysis:
+    "pgvector is a game-changer for building AI-native applications. By bringing vector similarity search to PostgreSQL, it allows us to build powerful and scalable AI features without the complexity and cost of a separate vector database. Our engineers are experts at using pgvector to its full potential. We use it to store and query embeddings from a variety of sources, including large language models, image recognition models, and recommendation engines. We use its support for both exact and approximate nearest neighbor search to build applications that are both accurate and fast. We also use its integration with the broader PostgreSQL ecosystem to build rich and powerful AI applications that combine the best of both worlds: the flexibility and power of a relational database with the performance and scalability of a dedicated vector database. We are confident that pgvector is the future of AI data infrastructure, and we are excited to help you build the next generation of AI-powered products with it.",
+  interlink_slugs: ["postgresql", "python", "langchain", "llms"],
 };
 
 export default pgvector;

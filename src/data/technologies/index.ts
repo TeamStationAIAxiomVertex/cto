@@ -63,6 +63,7 @@ import llms from "./llms";
 import pandas from "./pandas";
 import numpy from "./numpy";
 import postgresql from "./postgresql";
+import pgvector from "./pgvector";
 import mongodb from "./mongodb";
 import redis from "./redis";
 import cassandra from "./cassandra";
@@ -103,6 +104,7 @@ import dotNet from "./net";
 import awsCostExplorer from "./aws-cost-explorer";
 import socketio from "./socketio";
 import ragas from "./ragas";
+import mlflow from "./mlflow";
 import airflow from "./airflow";
 import sqlalchemy from "./sqlalchemy";
 import swift from "./swift";
@@ -147,6 +149,7 @@ import django from "./django";
 import flask from "./flask";
 import express from "./express";
 import scikitLearn from "./scikit-learn";
+import tensorflow from "./tensorflow";
 import { AllTech } from "@/lib/tech";
 
 const allTech: AllTech = {
@@ -214,6 +217,7 @@ const allTech: AllTech = {
   pandas,
   numpy,
   postgresql,
+  pgvector,
   mongodb,
   redis,
   cassandra,
@@ -254,6 +258,7 @@ const allTech: AllTech = {
   "aws-cost-explorer": awsCostExplorer,
   socketio,
   ragas,
+  mlflow,
   airflow,
   sqlalchemy,
   swift,
@@ -298,6 +303,9 @@ const allTech: AllTech = {
   flask,
   express,
   "scikit-learn": scikitLearn,
+  tensorflow,
+  vllm,
+  ray,
 };
 
 export default allTech;

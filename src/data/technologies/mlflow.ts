@@ -1,46 +1,53 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
 
 const mlflow: TechEntry = {
-    name: "MLflow",
-    category: "ML/AI & LLM Ops",
-    categorySlug: "ml-ai-llm-ops",
-    seo_title: "Hire MLflow Experts | MLOps & Machine Learning Lifecycle Consultants",
-    meta_description: "Build a reproducible, scalable, and automated machine learning platform. Hire elite remote MLflow experts vetted for their deep understanding of the ML lifecycle. Book a call.",
-    intro: "MLflow is an open-source platform for managing the end-to-end machine learning lifecycle. You need an engineer who can use MLflow to bring discipline and reproducibility to your ML projects, from experiment tracking to model deployment. Our vetting process identifies developers who are experts in the MLOps stack and can architect a machine learning platform that is as efficient and automated as it is scalable. By hiring an MLflow expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Are your ML experiments a chaotic mess of untracked scripts and notebooks?",
-            problem: "Without a centralized system for tracking experiments, it's impossible to reproduce results, compare different model versions, or collaborate effectively. This leads to wasted effort and a slow, ad-hoc research process.",
-            solution: "We vet for experts in **MLflow Tracking**. Our engineers are proficient in using the Tracking API to log parameters, metrics, and artifacts for every single model run, creating a fully reproducible and auditable history of all your ML experiments.",
-            kpi: "Reproducible and Auditable ML Experiments"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are you struggling to package and deploy your models in a consistent way?",
-            problem: "Moving a model from a data scientist's laptop to a production environment is a complex and error-prone process. Without a standardized packaging format, it's difficult to ensure that the model will run consistently across different environments.",
-            solution: "Our engineers are masters of **MLflow Models**. They are vetted on their ability to use the MLflow Models format to package models with all their dependencies, ensuring that they can be reliably deployed to a variety of serving platforms with a single command.",
-            kpi: "Consistent and Portable Model Packaging"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your model registry a disorganized collection of files on a shared drive?",
-            problem: "Managing the lifecycle of different model versions—from staging to production to archived—is a critical part of MLOps. Without a centralized model registry, it's difficult to track which model version is deployed where, and to manage the promotion and rollback process.",
-            solution: "We look for engineers proficient with the **MLflow Model Registry**. They are vetted on their ability to use the registry to manage the entire lifecycle of a model, including versioning, stage transitions, and annotations, providing a single source of truth for all your production models.",
-            kpi: "Centralized Model Lifecycle Management"
-        }
-    ],
-    evaluation: [
-        "MLflow Tracking for experiment management",
-        "MLflow Models for packaging and deployment",
-        "MLflow Model Registry for lifecycle management",
-        "MLflow Projects for reproducible runs",
-        "Integration with the broader MLOps ecosystem"
-    ],
-    technical_analysis: "The MLflow evaluation focuses on a candidate's ability to implement a complete, end-to-end MLOps workflow. We assess their understanding of the entire ML lifecycle, requiring them to design a process for tracking experiments, packaging models, and managing their lifecycle. A critical part of the evaluation is their mastery of the **MLflow Tracking API** and the **MLflow Model Registry**. We also test their ability to use **MLflow Projects** to create reproducible and shareable data science code. Finally, we assess their knowledge of deploying MLflow in a production environment, including setting up a tracking server and integrating with a backend store and artifact store.",
-    interlink_slugs: ["machine-learning", "pytorch", "tensorflow", "devops-engineering"]
+  name: "MLflow",
+  category: "AI / ML Engineering",
+  categorySlug: "ai-ml-engineering",
+  seo_title: "Hire MLflow Experts | TeamStation AI",
+  meta_description:
+    "Hire expert MLflow developers to manage the end-to-end machine learning lifecycle. Get pre-vetted LATAM talent to streamline your MLOps and accelerate your AI innovation.",
+  intro:
+    "MLflow is an open-source platform for managing the end-to-end machine learning lifecycle. Our AI/ML engineers use MLflow to track experiments, package code into reproducible runs, and manage and deploy models, enabling them to build and ship machine learning applications faster and more reliably.",
+  pains: [
+    {
+      icon: "Experiment",
+      pain: "You're struggling to keep track of your machine learning experiments, making it difficult to reproduce results and compare models.",
+      problem:
+        "The iterative nature of machine learning development can lead to a chaotic mess of scripts, notebooks, and model artifacts. This makes it difficult to know which parameters, code, and data were used to produce a given result.",
+      solution:
+        "We use MLflow Tracking to systematically record and query your experiments. We track everything from model parameters and metrics to code versions and artifacts, ensuring that your results are always reproducible and comparable.",
+      kpi: "Reduce the time to reproduce a machine learning experiment by 90%.",
+    },
+    {
+      icon: "Box",
+      pain: "You're having trouble packaging and deploying your machine learning models, leading to slow and error-prone handoffs between data scientists and production engineers.",
+      problem:
+        "Moving a model from a data scientist's laptop to a production environment is often a manual and ad-hoc process. This leads to inconsistencies, errors, and a slow time-to-market for your machine learning applications.",
+      solution:
+        "We use MLflow Projects and Models to package our code and models in a standardized and reproducible way. This allows us to create self-contained, reusable, and deployable machine learning applications that can run anywhere, from a local machine to a large-scale production cluster.",
+      kpi: "Accelerate the time to deploy a new model to production by 5x.",
+    },
+    {
+      icon: "Scaling",
+      pain: "You need a centralized place to manage and govern your machine learning models, but your current tools are not up to the task.",
+      problem:
+        "As your organization's use of machine learning grows, you need a way to manage the entire lifecycle of your models, from development and testing to deployment and monitoring. You also need to ensure that your models are secure, compliant, and governed by a clear set of policies.",
+      solution:
+        "We use the MLflow Model Registry to provide a central repository for all of your machine learning models. We use it to manage model versions, track their lifecycle stage (e.g., staging, production, archived), and collaborate on model development and governance.",
+      kpi: "Improve the governance and security of your machine learning models by 80%.",
+    },
+  ],
+  evaluation: [
+    "Deep expertise in MLflow and its core components (Tracking, Projects, Models, Registry).",
+    "Proven ability to build and manage end-to-end machine learning pipelines with MLflow.",
+    "Experience in integrating MLflow with various machine learning frameworks and cloud platforms.",
+    "Proficiency in MLOps best practices, including experiment tracking, model versioning, and CI/CD for machine learning.",
+  ],
+  technical_analysis:
+    "MLflow is the leading open-source platform for MLOps. Its comprehensive set of tools and its vibrant community make it the perfect choice for managing the end-to-end machine learning lifecycle. Our engineers are experts at using MLflow to build and deploy machine learning applications in a reliable, scalable, and reproducible way. We use MLflow Tracking to keep a detailed record of every experiment, ensuring that we can always reproduce our results and compare our models. We use MLflow Projects to package our code and its dependencies, making it easy to share and run our machine learning applications on any platform. We use MLflow Models to create a standard format for our machine learning models, which can be deployed to a variety of serving environments. And we use the MLflow Model Registry to manage the entire lifecycle of our models, from development to production and beyond. By combining MLflow with our expertise in machine learning and MLOps, we can help you accelerate your AI innovation and build the next generation of intelligent applications.",
+  interlink_slugs: ["python", "pytorch", "scikit-learn", "ray"],
 };
 
 export default mlflow;
