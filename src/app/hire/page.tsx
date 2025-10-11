@@ -81,8 +81,3 @@ export default function HirePage() {
             Let's discuss your specific needs. In 15 minutes, we can map your roles, security requirements, and a go-live timeline.
         </p>
         <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
-      </div>
-      <FurtherReading />
-    </main>
-  );
-}

@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { getAllCaseStudies } from '../../lib/case-studies';
 import { ArrowRight, Award, AlertTriangle, Shield, CheckCircle } from 'lucide-react';

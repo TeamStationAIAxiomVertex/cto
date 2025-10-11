@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { WithTooltip } from "../../../../components/ui/tooltip";
 import type { Metadata } from "next";
@@ -14,6 +15,14 @@ import { notFound } from "next/navigation";
 import { roleCategories } from "../../../../lib/roles";
 import { JsonLd } from "../../../../components/seo/JsonLd";
 import FurtherReading from "../../../../components/seo/FurtherReading";
+import dynamic from 'next/dynamic';
+import * as LucideIcons from 'lucide-react';
+
+const icons: { [key: string]: React.ElementType } = {
+  ...LucideIcons,
+  AlertTriangle,
+};
+
 
 const roleData: {
   [key: string]: {
@@ -552,7 +561,7 @@ export async function generateMetadata({
   const roleName = role ? role.name : "Engineer";
   return {
     title: `Hire Nearshore ${roleName}`,
-    description: `Hire elite, pre-vetted LATAM engineers with expertise in ${roleName}. Our scientific evaluation process de-risks hiring for critical tech roles.`,
+    description: `Hire elite, pre-vetted LATAM engineers with expertise in ${roleName}. Our scientific evaluation de-risks hiring for critical tech roles.`,
     keywords: `hire nearshore ${roleName}, latam ${roleName}, ${roleName} staff augmentation`,
     alternates: {
       canonical: `/hire/by-role/${params.slug}`,
@@ -847,21 +856,21 @@ export default function RoleCategoryPage({
                         className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium"
                       >
                         {skill.includes("IaC") ? (
-                          <WithTooltip content="Infrastructure as Code: Managing infrastructure through code instead of manual processes.">
+                          <WithTooltip label="Infrastructure as Code: Managing infrastructure through code instead of manual processes.">
                             <span className="border-b border-dashed">IaC</span>
                           </WithTooltip>
                         ) : skill.includes("SLO/SLI") ? (
-                          <WithTooltip content="Service Level Objectives/Indicators: A framework for defining and measuring reliability.">
+                          <WithTooltip label="Service Level Objectives/Indicators: A framework for defining and measuring reliability.">
                             <span className="border-b border-dashed">
                               SLO/SLI/error budgets
                             </span>
                           </WithTooltip>
                         ) : skill.includes("ELT") ? (
-                          <WithTooltip content="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation.">
+                          <WithTooltip label="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation.">
                             <span className="border-b border-dashed">ELT</span>
                           </WithTooltip>
                         ) : skill.includes("retrieval") ? (
-                          <WithTooltip content="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database.">
+                          <WithTooltip label="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database.">
                             <span className="border-b border-dashed">
                               retrieval design
                             </span>
@@ -951,6 +960,261 @@ export default function RoleCategoryPage({
   );
 }
 
-export async function generateStaticParams() {
-  return Object.keys(roleData).map((slug) => ({ slug }));
+```
+- workspace/src/lib/playbook.ts:
+```ts
+
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+const contentDirectory = path.join(process.cwd(), 'src', 'content', 'playbook');
+
+// Statically define the slugs for the existing playbook pages.
+// This prevents the build process from trying to find markdown files that no longer exist.
+const playbookSlugs = [
+    'bias-free-technical-hiring-axiom-cortex',
+    'build-vs-buy',
+    'latam-economics',
+    'nearshore-vs-offshore',
+    'tco-model'
+];
+
+export function getAllPlaybookSlugs(): string[] {
+    return playbookSlugs;
 }
+
+export function getPlaybookBySlug(slug: string) {
+    try {
+        const filePath = path.join(contentDirectory, `${slug}.mdx`); // Assuming .mdx, adjust if needed
+        const fileContents = fs.readFileSync(filePath, 'utf8');
+        const stats = fs.statSync(filePath);
+        const { data } = matter(fileContents);
+        
+        return {
+            slug,
+            title: data.title,
+            description: data.description,
+            lastModified: (data.lastModified || data.date || stats.mtime).toISOString(),
+        };
+    } catch (error) {
+        console.error(`Could not get playbook for slug: ${slug}`, error);
+        return null;
+    }
+}
+
+```
+- workspace/src/lib/sitemap-utils.ts:
+```ts
+// src/lib/sitemap-utils.ts
+
+export type SitemapUrl = {
+  loc: string;
+  lastmod?: string; // e.g., '2025-10-05T12:00:00+00:00'
+  changefreq?:
+    | "always"
+    | "hourly"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "yearly"
+    | "never";
+  priority?: number; // 0.0 to 1.0
+};
+
+/**
+ * Generates the full XML content for a single sitemap file.
+ * @param urls An array of SitemapUrl objects.
+ * @returns The XML string content.
+ */
+export function generateSitemapXml(urls: SitemapUrl[]): string {
+  const urlset = urls
+    .map((url) => {
+      // Escape HTML entities in the URL (optional but good practice)
+      const loc = url.loc
+        .replace(/&/g, "&amp;")
+        .replace(/'/g, "&apos;")
+        .replace(/"/g, "&quot;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+      // Construct the <url> block
+      let urlEntry = `<url><loc>${loc}</loc>`;
+
+      if (url.lastmod) {
+        urlEntry += `<lastmod>${url.lastmod}</lastmod>`;
+      }
+      if (url.changefreq) {
+        urlEntry += `<changefreq>${url.changefreq}</changefreq>`;
+      }
+      if (url.priority !== undefined) {
+        urlEntry += `<priority>${url.priority.toFixed(1)}</priority>`;
+      }
+
+      urlEntry += `</url>`;
+      return urlEntry;
+    })
+    .join("");
+
+  // Combine into the final XML structure
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urlset}
+</urlset>`;
+}
+
+```
+- workspace/src/lib/tech.ts:
+```ts
+
+import type { ElementType } from 'react';
+import type { Icon } from "lucide-react";
+import allTechData from '@/data/technologies'; // Corrected to be the single source of truth
+
+export interface PainPoint {
+  icon: Icon;
+  pain: string;
+  problem: string;
+  solution: string;
+  kpi: string;
+}
+
+export interface TechEntry {
+  name: string;
+  category: string;
+  categorySlug: string;
+  seo_title: string;
+  meta_description: string;
+  intro: string;
+  pains: PainPoint[];
+  evaluation: string[];
+  technical_analysis: string;
+  interlink_slugs: string[];
+}
+
+export type TechSlug = 
+  // Frontend/Full-Stack (10)
+  | 'react'
+  | 'typescript'
+  | 'nextjs'
+  | 'angular'
+  | 'vue'
+  | 'pinia'
+  | 'remix'
+  | 'svelte'
+  | 'web-accessibility'
+  | 'rx-js' 
+
+  // Backend/Core Languages (12)
+  | 'node'
+  | 'java'
+  | 'python'
+  | 'golang'
+  | 'c-sharp'
+  | 'rust'
+  | 'php'
+  | 'kotlin'
+  | 'scala'
+  | 'erlang'
+  | 'haskell'
+  | 'elixir'
+
+  // DevOps & Cloud (18)
+  | 'devops-engineering'
+  | 'aws'
+  | 'azure'
+  | 'google-cloud'
+  | 'kubernetes'
+  | 'docker'
+  | 'terraform'
+  | 'ansible'
+  | 'jenkins'
+  | 'ci-cd'
+  | 'prometheus'
+  | 'grafana'
+  | 'istio'
+  | 'helm'
+  | 'vault'
+  | 'cloudformation'
+  | 'gitops'
+  | 'serverless'
+
+  // Data & AI (18)
+  | 'data-engineering'
+  | 'sql'
+  | 'etl-elt'
+  | 'apache-spark'
+  | 'dbt'
+  | 'snowflake'
+  | 'airbyte'
+  | 'data-governance'
+  | 'machine-learning'
+  | 'data-warehousing'
+  | 'power-bi'
+  | 'tableau'
+  | 'fivetran'
+  | 'looker'
+  | 'presto'
+  | 'kafka'
+  | 'data-science'
+  | 'llms'
+  | 'pandas' 
+  | 'numpy'
+  | 'vllm'
+
+  // Databases (7)
+  | 'postgresql'
+  | 'mongodb'
+  | 'redis'
+  | 'cassandra'
+  | 'mysql'
+  | 'dynamodb'
+  | 'elasticsearch'
+
+  // QA & Security (7)
+  | 'playwright'
+  | 'cypress'
+  | 'qa-automation'
+  | 'security-engineering'
+  | 'penetration-testing'
+  | 'jest' 
+  | 'vitest'
+  | 'k6'
+  | 'pact'
+
+
+  // Architecture & Integrations (8)
+  | 'microservices'
+  | 'grpc'
+  | 'rest-api-design'
+  | 'event-sourcing'
+  | 'domain-driven-design'
+  | 'message-queues'
+  | 'api-gateway'
+  | 'system-design'
+  | 'api-security'
+
+  // Mobile (3)
+  | 'react-native'
+  | 'flutter'
+  | 'swift'
+
+  // Vetting & Cognitive AI (2)
+  | 'axiom-cortex'
+  | 'graphql'
+;
+
+
+export interface AllTech {
+  [key: string]: TechEntry;
+}
+
+// The single source of truth for all technology data.
+export const allTech: AllTech = allTechData;
+
+
+export function getAllTechSlugs(): string[] {
+    return Object.keys(allTech);
+}
+
+```

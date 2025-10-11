@@ -1,3 +1,4 @@
+
 import { getCaseStudyBySlug, getAllCaseStudies } from '@/lib/case-studies';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -234,6 +235,4 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
 export async function generateStaticParams() {
   const studies = await getAllCaseStudies();
   return studies.map(study => ({
-    slug: study.slug,
-  }));
-}
+    slug

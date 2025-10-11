@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { WithTooltip } from "../../../../components/ui/tooltip";
 import type { Metadata } from "next";
@@ -14,15 +15,15 @@ import { notFound } from "next/navigation";
 import { roleCategories, getAllRoleSlugs } from "../../../../lib/roles";
 import { JsonLd } from "../../../../components/seo/JsonLd";
 import FurtherReading from "../../../../components/seo/FurtherReading";
+import dynamic from 'next/dynamic';
+import * as LucideIcons from 'lucide-react';
 
-export const revalidate = 3600;
+const ClientJsonLd = dynamic(() => import('@/components/seo/JsonLd'), { ssr: false });
 
-export async function generateStaticParams() {
-  const slugs = await getAllRoleSlugs();
-  return slugs.map((slug) => ({
-    slug: slug,
-  }));
-}
+const icons: { [key: string]: React.ElementType } = {
+  ...LucideIcons,
+  AlertTriangle,
+};
 
 const roleData: {
   [key: string]: {
@@ -856,21 +857,21 @@ export default function RoleCategoryPage({
                         className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium"
                       >
                         {skill.includes("IaC") ? (
-                          <WithTooltip label="Infrastructure as Code: Managing infrastructure through code instead of manual processes.">
+                          <WithTooltip content="Infrastructure as Code: Managing infrastructure through code instead of manual processes.">
                             <span className="border-b border-dashed">IaC</span>
                           </WithTooltip>
                         ) : skill.includes("SLO/SLI") ? (
-                          <WithTooltip label="Service Level Objectives/Indicators: A framework for defining and measuring reliability.">
+                          <WithTooltip content="Service Level Objectives/Indicators: A framework for defining and measuring reliability.">
                             <span className="border-b border-dashed">
                               SLO/SLI/error budgets
                             </span>
                           </WithTooltip>
                         ) : skill.includes("ELT") ? (
-                          <WithTooltip label="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation.">
+                          <WithTooltip content="Extract, Load, Transform: A data integration process where data is loaded into the target system before transformation.">
                             <span className="border-b border-dashed">ELT</span>
                           </WithTooltip>
                         ) : skill.includes("retrieval") ? (
-                          <WithTooltip label="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database.">
+                          <WithTooltip content="In RAG systems, this is the process of designing how to best find and retrieve relevant documents from a vector database.">
                             <span className="border-b border-dashed">
                               retrieval design
                             </span>
