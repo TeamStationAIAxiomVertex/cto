@@ -16,6 +16,20 @@ const okta: TechEntry = {
             problem: "Building and maintaining your own authentication system is a massive security risk. It's complex, error-prone, and a common target for attackers. A single vulnerability can lead to a catastrophic data breach.",
             solution: "We vet for experts in **delegating authentication to identity providers**. Our engineers are proficient in using Okta to secure applications with industry-standard protocols, offloading the complexity and risk of managing user credentials. This results in a more secure and compliant application.",
             kpi: "Secure, Standards-Based Authentication"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Are you struggling to implement secure Single Sign-On (SSO)?",
+            problem: "Implementing SSO across a suite of applications is a complex task. A misconfigured SSO integration can lead to security vulnerabilities and a frustrating user experience.",
+            solution: "Our engineers are masters of **Okta's SSO capabilities**. They are vetted on their ability to configure Okta as a central identity provider and integrate it with your applications using SAML or OIDC, providing a seamless and secure login experience for your users.",
+            kpi: "Seamless and Secure Single Sign-On (SSO)"
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your API security an afterthought?",
+            problem: "Securing your APIs is just as important as securing your frontend. Without proper API security, your data is vulnerable to unauthorized access and abuse.",
+            solution: "We look for engineers proficient in **Okta's API Access Management**. They are vetted on their ability to use Okta to secure your APIs with OAuth 2.0, ensuring that only authorized clients can access your data. This results in a more secure and compliant application.",
+            kpi: "Secure and Compliant API Access Management"
         }
     ],
     evaluation: [
