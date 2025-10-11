@@ -139,6 +139,9 @@ import hibernate from "./hibernate";
 import githubActions from "./github-actions";
 import snyk from "./snyk";
 import jira from "./jira";
+import notion from "./notion";
+import tailwind from "./tailwind";
+import figma from "./figma";
 import { AllTech } from "@/lib/tech";
 
 const allTech: AllTech = {
@@ -282,6 +285,9 @@ const allTech: AllTech = {
   "github-actions": githubActions,
   snyk,
   jira,
+  notion,
+  tailwind,
+  figma,
 };
 
 export default allTech;
