@@ -1,3 +1,4 @@
+import type { ElementType } from "react";
 import type { LucideIcon } from "lucide-react";
 import allTechData from "@/data/technologies"; // Corrected to be the single source of truth
 
@@ -35,6 +36,7 @@ export type TechSlug =
   | "svelte"
   | "web-accessibility"
   | "rx-js"
+  | "vite"
 
   // Backend/Core Languages (12)
   | "node"
