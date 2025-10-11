@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { Building, Code, User, ArrowRight, Shapes } from 'lucide-react';
+import { ArrowRight, Building, Code, User, Shapes } from 'lucide-react';
 import type { Metadata } from 'next';
 import FurtherReading from "../../components/seo/FurtherReading";
 
