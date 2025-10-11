@@ -3,14 +3,16 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle, AlertTriangle } from "lucide-react";
 import { notFound } from "next/navigation";
-import { allTech } from "@/lib/tech";
+import { allTech, getAllTechSlugs } from "@/lib/tech";
 import FurtherReading from "@/components/seo/FurtherReading";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { WithTooltip } from "@/components/ui/tooltip";
 import dynamic from 'next/dynamic';
+import * as LucideIcons from 'lucide-react';
 
 const ClientJsonLd = dynamic(() => import('@/components/seo/JsonLd'), { ssr: false });
 
 const icons: { [key: string]: React.ElementType } = {
+  ...LucideIcons,
   AlertTriangle,
 };
 
@@ -93,7 +95,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
       url: "https://teamstation.dev",
       logo: "https://teamstation.dev/apple-touch-icon.png",
     },
-    areaServed: { "@type": "Country", name: "United States" },
+    areaServed: { "@type": "Country", name: "LATAM" },
     description: `Hire elite, pre-vetted LATAM engineers with expertise in ${tech.name}.`,
     name: `Hire ${tech.name} Developers`,
     offers: {
@@ -141,10 +143,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               {tech.pains.map((item) => {
-                const Icon = icons[item.icon as keyof typeof icons];
-                if (!Icon) {
-                    return null;
-                }
+                const Icon = icons[item.icon as keyof typeof icons] || AlertTriangle;
                 return (
                   <div
                     key={item.pain}
@@ -190,24 +189,15 @@ export default function TechPage({ params }: { params: { slug: string } }) {
           </h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
             For roles requiring deep {tech.name} expertise, our
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href="/technical-interview-evaluation"
-                    className="text-primary hover:underline"
-                  >
-                    {" "}
-                    Axiom Cortex™ evaluation{" "}
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>
-                    Our proprietary Cognitive AI engine for talent evaluation.
-                  </p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+            <WithTooltip label="Our proprietary Cognitive AI engine for talent evaluation.">
+              <Link
+                href="/technical-interview-evaluation"
+                className="text-primary hover:underline"
+              >
+                {" "}
+                Axiom Cortex™ evaluation{" "}
+              </Link>
+            </WithTooltip>
             ensures objective vetting beyond resumes. We assess candidates on:
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-8 max-w-2xl mx-auto">
@@ -228,6 +218,13 @@ export default function TechPage({ params }: { params: { slug: string } }) {
             </Link>
           </div>
         </div>
+        
+        {tech.technical_analysis && (
+            <div className="prose dark:prose-invert max-w-none my-16">
+                <h3>Technical Analysis</h3>
+                <p>{tech.technical_analysis}</p>
+            </div>
+        )}
 
         <div className="text-center rounded-lg bg-primary/10 p-8">
           <h2 className="text-2xl font-bold">
@@ -235,7 +232,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
           </h2>
           <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Stop sifting through unqualified resumes. Let us provide you with a
-            shortlist of 2–3 elite, pre-vetted candidates with proven{" "}
+            shortlist of 2-3 elite, pre-vetted candidates with proven{" "}
             {tech.name} mastery.
           </p>
           <Link
@@ -254,5 +251,5 @@ export default function TechPage({ params }: { params: { slug: string } }) {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(allTech).map((slug) => ({ slug }));
+  return getAllTechSlugs().map((slug) => ({ slug }));
 }
