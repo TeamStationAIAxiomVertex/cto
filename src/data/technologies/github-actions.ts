@@ -1,46 +1,53 @@
 
-import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "@/lib/tech";
 
 const githubActions: TechEntry = {
-    name: "GitHub Actions",
-    category: "DevOps & Cloud",
-    categorySlug: "devops-cloud",
-    seo_title: "Hire GitHub Actions Experts | CI/CD & DevOps Automation",
-    meta_description: "Automate your software delivery lifecycle. Hire elite remote GitHub Actions experts vetted for building complex workflows, custom actions, and secure deployment pipelines. Book a call.",
-    intro: "GitHub Actions is a powerful and flexible CI/CD platform deeply integrated into the GitHub developer workflow. You need an engineer who can leverage its full potential to automate everything from testing and security scanning to deployments and infrastructure provisioning. Our vetting process identifies developers who are experts in designing complex, reusable workflows, creating custom actions, and implementing secure deployment patterns. By hiring a GitHub Actions expert, you get a developer who can transform your repository into a fully automated, high-velocity software delivery machine.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Are your CI/CD pipelines slow, brittle, and difficult to maintain?",
-            problem: "Monolithic, single-file workflows with a lot of duplicated code are hard to manage and slow to execute. This leads to long feedback cycles for developers and a CI/CD process that becomes a bottleneck rather than an accelerator.",
-            solution: "We vet for experts in **reusable and composite workflows**. Our engineers are proficient in breaking down complex pipelines into smaller, reusable workflows and creating custom actions to encapsulate common tasks. This results in a clean, modular, and maintainable automation codebase.",
-            kpi: "Modular Workflows and Custom Actions"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your deployment process insecure and exposing secrets?",
-            problem: "Hardcoding secrets in your workflow YAML files is a massive security risk. Without proper secret management and environment protection rules, anyone with repository access could potentially deploy to production or expose sensitive credentials.",
-            solution: "Our engineers are masters of **secure deployments with GitHub Actions**. They are vetted on their ability to use encrypted secrets, OpenID Connect (OIDC) for cloud authentication, and environment protection rules to create a secure, auditable path to production.",
-            kpi: "Secure Deployments with OIDC and Environment Protection"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are you struggling to manage complex workflows for monorepos?",
-            problem: "In a monorepo, you want to run CI/CD pipelines only for the specific projects that have changed. A naive setup that triggers all workflows on every commit is incredibly inefficient and wastes a huge amount of compute time and money.",
-            solution: "We look for engineers proficient in **monorepo workflow optimization**. They are vetted on their ability to use path filtering and matrix strategies to dynamically run only the necessary jobs, ensuring a fast and cost-effective CI/CD process for your monorepo.",
-            kpi: "Optimized Monorepo Workflows"
-        }
-    ],
-    evaluation: [
-        "Workflow syntax and event triggers",
-        "Reusable workflows and custom actions",
-        "Matrix strategies and parallelism",
-        "Security (secrets, OIDC, environment protection)",
-        "Integration with the GitHub ecosystem (e.g., CodeQL, Dependabot)"
-    ],
-    technical_analysis: "The GitHub Actions evaluation focuses on a candidate's ability to build complex, secure, and efficient CI/CD pipelines. We assess their understanding of the workflow syntax, including advanced features like expressions and contexts. A critical part of the evaluation is their ability to design a secure deployment workflow using OpenID Connect (OIDC) to authenticate with a cloud provider without storing long-lived credentials. We also test their knowledge of creating and using custom actions to promote code reuse. Finally, we assess their ability to optimize workflows for performance and cost, particularly in a monorepo context.",
-    interlink_slugs: ["ci-cd", "docker", "terraform", "devops-engineering"]
+  name: "GitHub Actions",
+  category: "DevOps & Cloud",
+  categorySlug: "platform-infra-sre",
+  seo_title: "Hire GitHub Actions Experts | TeamStation AI",
+  meta_description:
+    "Hire elite GitHub Actions engineers to automate your CI/CD pipelines, improve code quality, and accelerate your deployments. Get pre-vetted LATAM talent.",
+  intro:
+    "GitHub Actions is a powerful CI/CD platform integrated directly into your GitHub repository. Our expert engineers leverage GitHub Actions to create robust, automated workflows that build, test, and deploy your code with speed and reliability.",
+  pains: [
+    {
+      icon: "Clock",
+      pain: "Slow, manual deployments are killing your team's velocity and introducing errors.",
+      problem:
+        "Your developers are bogged down by manual build and deployment processes, leading to context switching, long feedback loops, and a high risk of human error.",
+      solution:
+        "We design and implement fully automated CI/CD pipelines using GitHub Actions, enabling one-click or push-to-deploy workflows that are fast, repeatable, and secure.",
+      kpi: "Reduce deployment time from hours to minutes.",
+    },
+    {
+      icon: "AlertTriangle",
+      pain: "Inconsistent environments and failed deployments are eroding trust in your release process.",
+      problem:
+        "A lack of standardized pipelines means every deployment is a gamble. Inconsistencies between development, staging, and production lead to unexpected failures.",
+      solution:
+        "We create reusable and templated GitHub Actions workflows that ensure consistency across all environments, reducing failures and increasing developer confidence.",
+      kpi: "Increase deployment success rate to over 99%.",
+    },
+    {
+      icon: "Shield",
+      pain: "Security and compliance checks are manual, slow, and often skipped under pressure.",
+      problem:
+        "Critical security scans, linting, and quality checks are not integrated into the development lifecycle, exposing your application to vulnerabilities and technical debt.",
+      solution:
+        "We integrate automated security scanning (SAST, DAST), code quality analysis, and policy enforcement directly into your GitHub Actions pipelines, shifting security left.",
+      kpi: "Catch 80% more vulnerabilities before they reach production.",
+    },
+  ],
+  evaluation: [
+    "Deep understanding of GitHub Actions syntax, including reusable workflows, custom actions, and matrix builds.",
+    "Proven experience in designing and implementing complex CI/CD pipelines for various application types (e.g., web apps, microservices, mobile).",
+    "Expertise in integrating security tools (Snyk, CodeQL, Trivy) and quality checks into automated workflows.",
+    "Ability to optimize pipeline performance and cost by using caching, artifact management, and self-hosted runners.",
+  ],
+  technical_analysis:
+    "GitHub Actions has become a dominant force in the CI/CD landscape due to its tight integration with the GitHub ecosystem. Its key strengths lie in its developer-friendly YAML syntax, a vast marketplace of pre-built actions, and robust support for container-based workflows. Our engineers are experts in leveraging features like reusable workflows (`workflow_call`) for maintaining DRY principles across large projects, and composite actions for encapsulating complex logic. We focus on building secure and efficient pipelines by default, incorporating secrets management via GitHub encrypted secrets or integration with external vaults like HashiCorp Vault, and optimizing build times through intelligent caching strategies for dependencies and Docker layers.",
+  interlink_slugs: ["ci-cd", "docker", "terraform", "snyk"],
 };
 
 export default githubActions;
