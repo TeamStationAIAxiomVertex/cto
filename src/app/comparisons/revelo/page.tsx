@@ -3,9 +3,11 @@ import { CheckCircle, XCircle, BrainCircuit, FileText, ShieldCheck, ExternalLink
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { WithTooltip } from '../../../components/ui/tooltip';
-import { JsonLd } from '../../../components/seo/JsonLd';
+import dynamic from 'next/dynamic';
 import FurtherReading from '../../../components/seo/FurtherReading';
 import { DecisionCard } from '../../../components/ui/DecisionCard';
+
+const JsonLd = dynamic(() => import('../../../components/seo/JsonLd'), { ssr: false });
 
 export const metadata: Metadata = {
     title: 'Revelo Alternative: TeamStation AI vs. Revelo',
