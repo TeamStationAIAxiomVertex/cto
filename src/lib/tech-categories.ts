@@ -39,6 +39,7 @@ export const techCategories: TechCategory[] = [
       { name: 'PHP (Laravel/Symphony)', slug: 'php' },
       { name: 'gRPC', slug: 'grpc' },
       { name: 'GraphQL', slug: 'graphql' },
+      { name: 'NestJS', slug: 'nestjs' },
     ],
   },
   {
