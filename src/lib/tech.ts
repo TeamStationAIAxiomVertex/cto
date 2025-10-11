@@ -103,6 +103,10 @@ export type TechSlug =
   | "vllm"
   | "pgvector"
   | "mlflow"
+  | "langchain"
+  | "ragas"
+  | "hugging-face"
+  | "transformers"
 
   // Databases (7)
   | "postgresql"
@@ -129,6 +133,8 @@ export type TechSlug =
   | "opa"
   | "soc"
   | "iso"
+  | "trivy"
+  | "snyk"
 
   // Architecture & Integrations (8)
   | "microservices"
@@ -154,8 +160,7 @@ export type TechSlug =
   | "cloudzero"
   | "salesforce"
   | "hubspot"
-  | "hightouch"
-  ;
+  | "hightouch";
 
 export interface AllTech {
   [key: string]: TechEntry;

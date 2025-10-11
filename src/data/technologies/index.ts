@@ -121,14 +121,16 @@ import ray from "./ray";
 import pact from "./pact";
 import k6 from "./k6";
 import vllm from "./vllm";
+import { AllTech } from "@/lib/tech";
 import vite from "./vite";
 import tailwind from "./tailwind";
-import ruby from "./ruby";
 import tanstack from "./tanstack";
 import testing from "./testing";
 import prisma from "./prisma";
 import hibernate from "./hibernate";
-import { AllTech } from "@/lib/tech";
+import pgvector from "./pgvector";
+import mlflow from "./mlflow";
+import opentelemetry from "./opentelemetry";
 
 const allTech: AllTech = {
   react,
@@ -255,11 +257,13 @@ const allTech: AllTech = {
   vllm,
   vite,
   tailwind,
-  ruby,
   tanstack,
   testing,
   prisma,
   hibernate,
+  pgvector,
+  mlflow,
+  opentelemetry,
 };
 
 export default allTech;
