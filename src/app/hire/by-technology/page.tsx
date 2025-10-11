@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { techCategories } from "@/lib/tech-categories";
 import FurtherReading from "../../../components/seo/FurtherReading";
+import { allTech } from '@/data/technologies';
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Developers by Technology | TS AI',
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function HireByTechnologyPage() {
+  const hydratedSlugs = Object.keys(allTech);
+
   return (
     <main className="container py-12">
        <div className="text-sm text-muted-foreground mb-8">
@@ -38,12 +41,21 @@ export default function HireByTechnologyPage() {
               <h2 className="text-xl font-bold text-foreground">{category.name}</h2>
             </div>
             <div className="flex flex-wrap gap-2 my-4">
-              {category.tech.map(tech => (
-                  <Link href={`/hire/by-technology/${tech.slug}`} key={tech.slug} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium hover:bg-primary/30 transition-colors">
+              {category.tech.map(tech => {
+                const isHydrated = hydratedSlugs.includes(tech.slug);
+                if (isHydrated) {
+                  return (
+                    <Link href={`/hire/by-technology/${tech.slug}`} key={tech.slug} className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium hover:bg-primary/30 transition-colors">
+                      {tech.name}
+                    </Link>
+                  )
+                }
+                return (
+                  <span key={tech.slug} className="rounded-full bg-muted/20 text-muted-foreground px-3 py-1 text-xs font-medium cursor-not-allowed">
                     {tech.name}
-                  </Link>
+                  </span>
                 )
-              )}
+              })}
             </div>
             <div className="flex-grow"></div>
             <Link href={`/hire/by-role/${category.slug}`} className="group mt-4 flex items-center text-sm font-semibold text-primary">

@@ -1,7 +1,7 @@
 
 // This file is auto-generated. Do not edit manually.
-import recoil from './Recoil';
-import vuex from './Vuex';
+import recoil from './recoil';
+import vuex from './vuex';
 import zustand from './Zustand';
 import airbyte from './airbyte';
 import airflow from './airflow';
