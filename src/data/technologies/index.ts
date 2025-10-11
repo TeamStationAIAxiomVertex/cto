@@ -2,7 +2,7 @@
 // This file is auto-generated. Do not edit manually.
 import recoil from './recoil';
 import vuex from './vuex';
-import zustand from './Zustand';
+import zustand from './zustand';
 import airbyte from './airbyte';
 import airflow from './airflow';
 import aix from './aix';
@@ -198,6 +198,27 @@ import junit from './junit';
 import locust from './locust';
 import infracost from './infracost';
 import census from './census';
+import eslint from './eslint';
+import prettier from './prettier';
+import mocha from './mocha';
+import jasmine from './jasmine';
+import reactTestingLibrary from './react-testing-library';
+import flow from './flow';
+import koa from './koa';
+import hapiJs from './hapi-js';
+import tornado from './tornado';
+import quarkus from './quarkus';
+import micronaut from './micronaut';
+import jakartaEe from './jakarta-ee';
+import codeigniter from './codeigniter';
+import gin from './gin';
+import actixWeb from './actix-web';
+import phoenix from './phoenix';
+import websockets from './websockets';
+import mariadb from './mariadb';
+import oracle from './oracle';
+import sqlServer from './sql-server';
+import firebaseFirestore from './firebase-firestore';
 import { AllTech } from '@/lib/tech';
 
 const allTech: AllTech = {
@@ -399,6 +420,27 @@ const allTech: AllTech = {
     'locust': locust,
     'infracost': infracost,
     'census': census,
+    'eslint': eslint,
+    'prettier': prettier,
+    'mocha': mocha,
+    'jasmine': jasmine,
+    'react-testing-library': reactTestingLibrary,
+    'flow': flow,
+    'koa': koa,
+    'hapi-js': hapiJs,
+    'tornado': tornado,
+    'quarkus': quarkus,
+    'micronaut': micronaut,
+    'jakarta-ee': jakartaEe,
+    'codeigniter': codeigniter,
+    'gin': gin,
+    'actix-web': actixWeb,
+    'phoenix': phoenix,
+    'websockets': websockets,
+    'mariadb': mariadb,
+    'oracle': oracle,
+    'sql-server': sqlServer,
+    'firebase-firestore': firebaseFirestore,
 };
 
 export default allTech;
