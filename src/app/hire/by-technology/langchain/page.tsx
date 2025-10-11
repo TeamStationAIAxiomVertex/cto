@@ -4,9 +4,11 @@ import type { Metadata } from "next";
 import { ArrowRight, CheckCircle, AlertTriangle } from "lucide-react";
 import { notFound } from "next/navigation";
 import { allTech } from "../../../../lib/tech";
-import { JsonLd } from "../../../../components/seo/JsonLd";
+import dynamic from "next/dynamic";
 import FurtherReading from "../../../../components/seo/FurtherReading";
 import { WithTooltip } from "../../../../components/ui/tooltip";
+
+const JsonLd = dynamic(() => import("../../../../components/seo/JsonLd"), { ssr: false });
 
 const icons: { [key: string]: React.ElementType } = {
     AlertTriangle,
