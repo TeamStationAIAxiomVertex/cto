@@ -1,46 +1,46 @@
 
-import { TechEntry } from "@/lib/tech";
 import { AlertTriangle } from "lucide-react";
+import { TechEntry } from "@/lib/tech";
 
 const tanstack: TechEntry = {
-  name: "TanStack Query",
-  category: "Frontend & UI/UX",
-  categorySlug: "frontend-web",
-  seo_title: "Hire TanStack Query Experts | React Query & Server State Management",
-  meta_description: "Build fast, resilient, and data-driven UIs. Hire elite remote TanStack Query (React Query) experts vetted for their deep understanding of server state, caching, and background data synchronization. Book a call.",
-  intro: "TanStack Query (formerly React Query) is the de facto standard for managing server state in modern web applications. You need an engineer who understands that fetching, caching, synchronizing, and updating server state is a complex problem that most custom solutions fail to solve correctly. Our vetting process identifies developers who are experts in TanStack Query's core concepts—queries, mutations, and the query cache—and can architect a data-fetching layer that is as resilient as it is performant. By hiring a TanStack Query expert, you get a developer who can eliminate complex and brittle data-fetching logic from your components, dramatically simplifying your codebase and improving your application's user experience.",
-  pains: [
-    {
-      icon: AlertTriangle,
-      pain: "Is your app filled with stale data and inconsistent UI?",
-      problem: "Without a proper server state management solution, your application's UI can easily fall out of sync with the data on your server. This leads to a frustrating user experience where users are seeing stale data, and it creates a codebase that is difficult to reason about and debug.",
-      solution: "We vet for experts in <strong>TanStack Query's caching and background refetching</strong>. Our engineers are proficient in using features like `staleTime`, `cacheTime`, and automatic refetching on window focus to ensure that your application's data is always fresh and your UI is always consistent with the server.",
-      kpi: "A Consistent, Up-to-Date User Experience"
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your data fetching logic a complex mess of `useEffect` hooks and loading states?",
-      problem: "Managing data fetching, loading, and error states manually with `useEffect` is a complex and error-prone task. This leads to a lot of boilerplate code, makes it difficult to handle race conditions, and results in a UI that is littered with loading spinners and inconsistent error messages.",
-      solution: "Our engineers are masters of <strong>declarative data fetching with TanStack Query</strong>. They are vetted on their ability to replace complex `useEffect` logic with a simple `useQuery` hook, allowing TanStack Query to handle all the complexities of data fetching, caching, and error handling automatically. This results in a cleaner, more readable codebase and a more resilient user experience.",
-      kpi: "Declarative Data Fetching and Simplified Component Logic"
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Are your data mutations slow and lacking optimistic UI updates?",
-      problem: "When a user performs a data mutation (e.g., creating, updating, or deleting a resource), they often have to wait for the server to respond before seeing the UI update. This can lead to a slow and frustrating user experience, especially on slow networks.",
-      solution: "We look for engineers proficient with <strong>optimistic updates in TanStack Query</strong>. They are vetted on their ability to use the `onMutate` and `onError` callbacks to update the UI instantly, providing a snappy, optimistic user experience while ensuring that the UI is automatically rolled back to its previous state if the mutation fails.",
-      kpi: "Instantaneous, Optimistic UI Updates"
-    }
-  ],
-  evaluation: [
-    "Query keys and query functions",
-    "Caching strategies (staleTime, cacheTime)",
-    "Background refetching and polling",
-    "Optimistic updates with mutations",
-    "Server-side rendering (SSR) and hydration",
-  ],
-  technical_analysis: "The TanStack Query evaluation focuses on a candidate's ability to build a fast, resilient, and data-driven user interface. We assess their understanding of the entire server state management lifecycle, requiring them to design a complex application with a clean, declarative data fetching layer. A critical part of the evaluation is their mastery of **caching and background refetching**; candidates must demonstrate how to configure `staleTime` and `cacheTime` to balance data freshness with performance, and how to use background refetching to keep data up-to-date without blocking the UI. We also test their ability to build **optimistic UI updates** with mutations, ensuring they can provide a snappy, responsive user experience. Finally, we assess their knowledge of server-side rendering (SSR) and hydration, and their ability to leverage TanStack Query's SSR capabilities to build a modern, high-performance web application.",
-  interlink_slugs: ["react", "nextjs", "typescript", "graphql"],
+    name: "TanStack",
+    category: "Software Development",
+    categorySlug: "software-development",
+    seo_title: "Hire TanStack Experts | React Query & State Management",
+    meta_description: "Build a scalable, maintainable, and reactive application. Hire elite remote TanStack experts vetted for their deep understanding of state management. Book a call.",
+    intro: "TanStack is a collection of high-quality, open-source software for web developers. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the query and the mutation to the cache and the garbage collection. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a TanStack expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your application a mess of inconsistent, hard-to-maintain state?",
+            problem: "In many organizations, the application is a mess of inconsistent, hard-to-maintain state. This can lead to a user experience that is filled with bugs and a codebase that is a mess of spaghetti code and technical debt.",
+            solution: "We vet for experts in **TanStack and the modern frontend stack**. Our engineers are proficient in using TanStack to build a modern, scalable, and resilient application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
+            kpi: "A Modern, Scalable, and Resilient Application",
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your application not taking full advantage of the modern web?",
+            problem: "Many applications are not built to be truly modern. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a web application that is not as rich as it could be.",
+            solution: "Our engineers are masters of **TanStack and the modern web**. They are vetted on their ability to use modern web APIs and best practices to build a modern, fast, and feature-rich application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
+            kpi: "A Modern, Fast, and Feature-Rich Application",
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your team not leveraging the full power of the frontend ecosystem?",
+            problem: "The frontend ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
+            solution: "We look for engineers proficient with **the frontend ecosystem and the modern frontend stack**. They are vetted on their ability to build applications that are powered by the best of the frontend ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
+            kpi: "An Application That is Powered by the Best of the Frontend Ecosystem",
+        }
+    ],
+    evaluation: [
+        "The modern frontend stack (e.g., TanStack, React, other modern libraries)",
+        "TanStack and the modern web",
+        "The query and the mutation",
+        "The cache and the garbage collection",
+        "Security and best practices",
+    ],
+    technical_analysis: "The TanStack evaluation focuses on a candidate's ability to build a scalable, maintainable, and reactive application. We assess their understanding of the entire TanStack ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **TanStack and the modern frontend stack**; candidates must demonstrate how to use tools like TanStack, React, and other modern libraries to build a modern, scalable, and resilient application, and how to use the query and the mutation to build a read model that is optimized for queries. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the frontend ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
+    interlink_slugs: ["react", "redux", "javascript", "typescript"],
 };
 
 export default tanstack;

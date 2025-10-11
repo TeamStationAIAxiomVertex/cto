@@ -1,46 +1,46 @@
 
-import { TechEntry } from "@/lib/tech";
 import { AlertTriangle } from "lucide-react";
+import { TechEntry } from "@/lib/tech";
 
 const pact: TechEntry = {
     name: "Pact",
     category: "QA & Security",
-    categorySlug: "qa-quality-engineering",
-    seo_title: "Hire Pact Experts | Contract Testing & Microservices QA",
-    meta_description: "Ensure your microservices can communicate reliably. Hire elite remote Pact experts vetted for contract-driven development and CI/CD integration. Book a call.",
-    intro: "Pact is the leading framework for <strong>Consumer-Driven Contract Testing</strong>, ensuring that services (e.g., an API provider and a client) can evolve independently without breaking integrations. You need an engineer who understands that reliable microservices aren't just about unit tests, but about guaranteeing the contract between services. Our vetting process identifies developers who are experts in implementing Pact, defining clear consumer expectations, and integrating contract testing into the CI/CD pipeline. By hiring a Pact expert from us, you get a developer who can eliminate costly, slow, and flaky end-to-end integration tests, and dramatically increase your confidence in deploying microservices independently.",
+    categorySlug: "qa-security",
+    seo_title: "Hire Pact Experts | Contract Testing & Microservices Consultants",
+    meta_description: "Build a reliable, scalable, and automated testing platform. Hire elite remote Pact experts vetted for their deep understanding of contract testing, from the provider to the consumer. Book a call.",
+    intro: "Pact is a code-first tool for testing HTTP and message integrations using contract tests. You need an engineer who understands that building a modern testing platform is not just about writing tests, but about a deep understanding of the entire testing lifecycle, from the contract and the provider to the consumer and the pact broker. Our vetting process identifies developers who are experts in the modern testing stack—and can architect a testing platform that is as secure, efficient, and automated as it is scalable. By hiring a Pact expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
     pains: [
         {
             icon: AlertTriangle,
-            pain: "Are your integration tests slow, flaky, and a deployment bottleneck?",
-            problem: "Heavy reliance on full end-to-end integration tests makes your CI/CD pipeline slow, expensive, and unreliable. A failure in one minor service can block the entire release train, making it impossible to deploy services independently.",
-            solution: "We vet for experts in <strong>Consumer-Driven Contract Testing</strong>. Our engineers use Pact to replace slow integration tests with fast, reliable contract tests that run in isolation. This allows teams to verify service integrations without needing to deploy the entire environment, enabling safe and independent service releases.",
-            kpi: "Decoupled Service Deployments and Reduced CI Time"
+            pain: "Is your testing platform a mess of brittle, ad-hoc scripts?",
+            problem: "In many organizations, the testing platform is a mess of brittle, ad-hoc scripts. This can lead to a user experience that is filled with bugs and a codebase that is a mess of environment-specific hacks and workarounds.",
+            solution: "We vet for experts in **Pact and the modern testing stack**. Our engineers are proficient in using tools like Pact, Jest, and Testing Library to build a fully automated, reliable, and efficient testing platform. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
+            kpi: "A Fully Automated, Reliable, and Efficient Testing Platform",
         },
         {
             icon: AlertTriangle,
-            pain: "Are you constantly breaking consumers of your API?",
-            problem: "When an API provider makes a change, they often have no idea which consumers will be affected. This leads to unexpected breakages in production, frantic rollbacks, and a breakdown of trust between teams.",
-            solution: "Our engineers are masters of the <strong>Pact Broker</strong>. They are vetted on their ability to set up and use a Pact Broker as a central hub for sharing contracts and verification results. This provides immediate visibility into which consumers will break *before* the provider deploys a change, enabling safe, collaborative evolution of APIs.",
-            kpi: "Safe and Collaborative API Evolution with Pact Broker"
+            pain: "Is your application not taking full advantage of the cloud?",
+            problem: "Many applications are not built to be truly modern. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
+            solution: "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like AWS, Azure, and Google Cloud to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
+            kpi: "A Modern, Serverless, and Container-Based Architecture",
         },
         {
             icon: AlertTriangle,
-            pain: "Do you lack a clear, enforceable contract for your microservices?",
-            problem: "Without a formal contract, assumptions about how services communicate lead to misunderstandings and integration bugs. API documentation is often out-of-date and provides no guarantee of correctness.",
-            solution: "We look for engineers proficient in <strong>Contract-Driven Development</strong>. They are vetted on their ability to use Pact to create an executable, verifiable contract that becomes the single source of truth for how services interact. This ensures that documentation is always up-to-date and that all parties adhere to the agreed-upon contract.",
-            kpi: "Executable Contracts as a Single Source of Truth"
+            pain: "Is your team not leveraging the full power of the testing ecosystem?",
+            problem: "The testing ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
+            solution: "We look for engineers proficient with **the testing ecosystem and the modern testing stack**. They are vetted on their ability to build applications that are powered by the best of the testing ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
+            kpi: "An Application That is Powered by the Best of the Testing Ecosystem",
         }
     ],
     evaluation: [
-        "Consumer-Driven Contract Testing principles",
-        "Pact framework for both consumer and provider testing",
-        "Integration with CI/CD pipelines (e.g., Jenkins, GitHub Actions)",
-        "Pact Broker for contract sharing and verification",
-        "Strategies for handling evolving contracts and versioning"
+        "The modern testing stack (e.g., Pact, Jest, Testing Library)",
+        "Contract testing and microservices",
+        "The provider and the consumer",
+        "The pact broker and the pact file",
+        "Security and best practices",
     ],
-    technical_analysis: "The Pact evaluation focuses on a candidate's ability to implement a robust contract testing strategy for a microservices architecture. We assess their understanding of the consumer-driven workflow, requiring them to write both a consumer test that generates a pact file and a provider verification test that validates it. A critical part of the evaluation is their mastery of the <strong>Pact Broker</strong>; candidates must demonstrate how to publish contracts, retrieve them for verification, and use the 'can-i-deploy' tool to ensure safe deployments. We also test their ability to integrate Pact into a CI/CD pipeline, ensuring that contract tests are run automatically on every build. Finally, we assess their knowledge of handling more complex scenarios, such as provider states and message-based contract testing for asynchronous systems.",
-    interlink_slugs: ["microservices", "ci-cd", "devops-engineering", "qa-automation"]
+    technical_analysis: "The Pact evaluation focuses on a candidate's ability to build a reliable, scalable, and automated testing platform. We assess their understanding of the entire testing lifecycle, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **Pact and the modern testing stack**; candidates must demonstrate how to use tools like Pact, Jest, and Testing Library to build a fully automated, reliable, and efficient testing platform, and how to use the provider and the consumer to build a read model that is optimized for queries. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the testing ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
+    interlink_slugs: ["jest", "testing-library", "cypress", "qa-automation"],
 };
 
 export default pact;
