@@ -1,9 +1,10 @@
 
 import type { ElementType } from 'react';
+import type { Icon } from "lucide-react";
 import allTechData from '@/data/technologies'; // Corrected to be the single source of truth
 
 export interface PainPoint {
-  icon: string;
+  icon: Icon;
   pain: string;
   problem: string;
   solution: string;
@@ -91,6 +92,7 @@ export type TechSlug =
   | 'llms'
   | 'pandas' 
   | 'numpy'
+  | 'vllm'
 
   // Databases (7)
   | 'postgresql'
