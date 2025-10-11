@@ -122,6 +122,7 @@ import pact from "./pact";
 import k6 from "./k6";
 import vllm from "./vllm";
 import vite from "./vite";
+import tailwind from "./tailwind";
 import { AllTech } from "@/lib/tech";
 
 const allTech: AllTech = {
@@ -248,6 +249,7 @@ const allTech: AllTech = {
   k6,
   vllm,
   vite,
+  tailwind,
 };
 
 export default allTech;

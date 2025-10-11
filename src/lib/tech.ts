@@ -37,6 +37,7 @@ export type TechSlug =
   | "web-accessibility"
   | "rx-js"
   | "vite"
+  | "tailwind"
 
   // Backend/Core Languages (12)
   | "node"
