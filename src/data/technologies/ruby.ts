@@ -1,46 +1,46 @@
 
-import { TechEntry } from "@/lib/tech";
 import { AlertTriangle } from "lucide-react";
+import { TechEntry } from "@/lib/tech";
 
 const ruby: TechEntry = {
-  name: "Ruby on Rails",
-  category: "Backend & APIs",
-  categorySlug: "backend-services",
-  seo_title: "Hire Senior Ruby on Rails Developers | Backend & API Experts",
-  meta_description: "Build scalable and maintainable web applications. Hire elite remote Ruby on Rails experts vetted for their deep understanding of the framework, from Active Record to Action Mailer. Book a call.",
-  intro: "Ruby on Rails is a powerful and productive web framework. You need an engineer who understands that building a modern, scalable web application is not just about writing code, but about a deep understanding of the entire Rails ecosystem, from the model and the view to the controller and the helper. Our vetting process identifies developers who are experts in the modern web stack—and can architect a web platform that is as secure, efficient, and automated as it is scalable. By hiring a Ruby on Rails expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
-  pains: [
-    {
-      icon: AlertTriangle,
-      pain: "Is your Rails application a slow, monolithic mess?",
-      problem: "A common problem with large Rails applications is that they can become slow and difficult to maintain. This is often due to a lack of understanding of the framework's performance characteristics, and a failure to use its features in an idiomatic way. This leads to a poor user experience and a codebase that is a nightmare to work with.",
-      solution: "We vet for experts in <strong>Rails performance and scalability</strong>. Our engineers are proficient in using tools like the Rails profiler, New Relic, and other performance monitoring tools to identify and fix performance bottlenecks. They understand how to use caching, background jobs, and other techniques to build a fast, scalable, and resilient application.",
-      kpi: "A Fast, Scalable, and Resilient Rails Application"
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your data model a tangled web of complex, inefficient queries?",
-      problem: "A poorly designed data model without a clear understanding of Active Record's query interface can lead to slow, inefficient queries that are difficult to debug and maintain. This is a common problem in large Rails applications with complex data requirements.",
-      solution: "Our engineers are masters of <strong>Active Record and data modeling</strong>. They are vetted on their ability to design a clean, normalized data model and to write efficient, idiomatic queries using Active Record's powerful query interface. They understand how to use indexes, eager loading, and other techniques to build a high-performance data access layer.",
-      kpi: "Proficiency in Active Record & Data Modeling"
-    },
-    {
-        icon: AlertTriangle,
-        pain: "Are you struggling to build modern, interactive user interfaces?",
-        problem: "While Rails is great for backend development, building a modern, interactive user interface can be a challenge. Many teams struggle to integrate modern JavaScript frameworks like React or Vue.js, leading to a clunky user experience and a complex, hard-to-maintain codebase.",
-        solution: "We look for engineers proficient with <strong>modern frontend integration</strong>. They are vetted on their ability to use tools like Hotwire, Turbo, and Stimulus to build modern, interactive user interfaces without the complexity of a full-blown single-page application. They also have experience integrating with modern JavaScript frameworks when necessary.",
-        kpi: "Modern, Interactive User Interfaces with Hotwire & Stimulus"
-    }
-  ],
-  evaluation: [
-    "Ruby on Rails and the modern web stack",
-    "Active Record and data modeling",
-    "Performance and scalability",
-    "Modern frontend integration (Hotwire, Turbo, Stimulus)",
-    "Testing and continuous integration",
-  ],
-  technical_analysis: "The Ruby on Rails evaluation focuses on a candidate's ability to build a scalable, maintainable, and performant web application. We assess their understanding of the entire Rails ecosystem, requiring them to design a complex application with a clean, modular architecture. A critical part of the evaluation is their mastery of **Active Record and data modeling**; candidates must demonstrate how to design a normalized data model and write efficient queries. We also test their ability to build **modern, interactive user interfaces** using tools like Hotwire, Turbo, and Stimulus. Finally, we assess their knowledge of performance and scalability, and their ability to leverage Rails to build a modern, high-performance backend.",
-  interlink_slugs: ["postgresql", "mysql", "redis", "devops-engineering"],
+    name: "Ruby",
+    category: "Software Development",
+    categorySlug: "software-development",
+    seo_title: "Hire Ruby Experts | Ruby on Rails & Backend Consultants",
+    meta_description: "Build a scalable, maintainable, and feature-rich web application. Hire elite remote Ruby experts vetted for their deep understanding of the Ruby ecosystem, from the language to the framework. Book a call.",
+    intro: "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. You need an engineer who understands that building a modern, scalable web application is not just about writing code, but about a deep understanding of the entire Ruby ecosystem, from the language and the runtime to the framework and the gem. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Ruby expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Is your web application a mess of inconsistent, hard-to-maintain code?",
+            problem: "In many organizations, the web application is a mess of inconsistent, hard-to-maintain code. This can lead to a user experience that is filled with bugs and a codebase that is a mess of spaghetti code and technical debt.",
+            solution: "We vet for experts in **Ruby and the modern backend stack**. Our engineers are proficient in using Ruby to build a modern, scalable, and resilient web application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
+            kpi: "A Modern, Scalable, and Resilient Web Application",
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your application not taking full advantage of the modern web?",
+            problem: "Many applications are not built to be truly modern. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a web application that is not as rich as it could be.",
+            solution: "Our engineers are masters of **Ruby and the modern web**. They are vetted on their ability to use modern web APIs and best practices to build a modern, fast, and feature-rich web application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
+            kpi: "A Modern, Fast, and Feature-Rich Web Application",
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your team not leveraging the full power of the backend ecosystem?",
+            problem: "The backend ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
+            solution: "We look for engineers proficient with **the backend ecosystem and the modern backend stack**. They are vetted on their ability to build applications that are powered by the best of the backend ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
+            kpi: "An Application That is Powered by the Best of the Backend Ecosystem",
+        }
+    ],
+    evaluation: [
+        "The modern backend stack (e.g., Ruby, Ruby on Rails, other modern libraries)",
+        "Ruby and the modern web",
+        "The language and the runtime",
+        "The framework and the gem",
+        "Security and best practices",
+    ],
+    technical_analysis: "The Ruby evaluation focuses on a candidate's ability to build a scalable, maintainable, and feature-rich web application. We assess their understanding of the entire Ruby ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **Ruby and the modern backend stack**; candidates must demonstrate how to use tools like Ruby, Ruby on Rails, and other modern libraries to build a modern, scalable, and resilient web application, and how to use the language and the runtime to build a read model that is optimized for queries. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the backend ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
+    interlink_slugs: ["ruby-on-rails", "sinatra", "javascript", "typescript"],
 };
 
 export default ruby;
