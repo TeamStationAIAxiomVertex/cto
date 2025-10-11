@@ -23,7 +23,6 @@ export interface ComparisonFactPack {
     h1: string;
     keywords: string[];
     comparison_claims: ComparisonClaim[];
-    verdict: any; // Keep for backward compatibility if needed
     faqs: ComparisonFaq[];
     internal_links: { text: string; url: string; }[];
 }
@@ -39,7 +38,6 @@ const MOCK_BAIREDEV_DATA: ComparisonFactPack = {
     meta: 'A rigorous analysis for CTOs comparing TeamStation AI\'s Axiom Cortex™ Vetting against BairesDev\'s staff augmentation model. Optimize for throughput, not headcount.',
     h1: 'TeamStation AI vs. BairesDev: Why Cognitive Alignment Beats Staff Augmentation',
     keywords: ['BairesDev alternative', 'TeamStation vs BairesDev', 'nearshore vs staff aug', 'Axiom Cortex'],
-    verdict: {},
     internal_links: [],
     faqs: [
         { question: "What is the core difference between TeamStation and BairesDev?", answer: "TeamStation focuses on cognitive-first vetting to build high-throughput, aligned teams. BairesDev uses a traditional staff augmentation model focused on headcount." },
@@ -62,7 +60,6 @@ const MOCK_TOPTAL_DATA: ComparisonFactPack = {
     meta: 'Explore how TeamStation AI\'s cognitive vetting and team-based model provides a strategic advantage over Toptal\'s freelance marketplace approach.',
     h1: 'TeamStation AI vs. Toptal: The Strategic Choice for High-Performing Teams',
     keywords: ['Toptal alternative', 'TeamStation vs Toptal', 'freelance vs team', 'Axiom Cortex'],
-    verdict: {},
     internal_links: [],
     faqs: [
         { question: "Is TeamStation a marketplace like Toptal?", answer: "No, TeamStation builds and manages cohesive, long-term engineering teams, not a freelance marketplace. We focus on team synergy and shared goals, which is a fundamental difference from the individual contractor model." },
@@ -91,7 +88,6 @@ const MOCK_GLOBALSQUAD_DATA: ComparisonFactPack = {
     meta: 'A detailed comparison of TeamStation AI\'s high-throughput, managed teams and GlobalSquad\'s traditional outsourcing model.',
     h1: 'TeamStation AI vs. GlobalSquad: A Focus on Throughput and Quality',
     keywords: ['GlobalSquad alternative', 'TeamStation vs GlobalSquad', 'managed teams vs outsourcing', 'Axiom Cortex'],
-    verdict: {},
     internal_links: [],
     faqs: [
         { question: "How does TeamStation ensure quality compared to a large-scale outsourcer like GlobalSquad?", answer: "TeamStation\'s competitive advantage is our Axiom Cortex™ vetting platform, which predicts on-the-job performance with 95% accuracy. This focus on cognitive alignment and problem-solving ability, rather than just resume keywords, results in higher-performing, more reliable teams." },
@@ -120,7 +116,6 @@ const MOCK_REVELO_DATA: ComparisonFactPack = {
     meta: 'Understand the critical differences between TeamStation\'s AI-driven team building and Revelo\'s marketplace for LATAM talent. ',
     h1: 'TeamStation AI vs. Revelo: Building Teams, Not Just Filling Seats',
     keywords: ['Revelo alternative', 'TeamStation vs Revelo', 'LATAM talent', 'Axiom Cortex'],
-    verdict: {},
     internal_links: [],
     faqs: [
         { question: "Revelo focuses on LATAM talent. How is TeamStation different?", answer: "While we also recognize the immense talent in Latin America, our focus is on building high-performing, cohesive teams, not just providing individual developers. Our Axiom Cortex™ platform ensures that every team member has the cognitive abilities to excel, and our managed team model fosters a level of synergy that a marketplace like Revelo cannot match." },
@@ -170,9 +165,17 @@ export async function getComparisonData(vendorSlug: string): Promise<ComparisonF
 
 // --- 4. DATA TRANSFORMATION & SCHEMA GENERATION ---
 
-export function generateVerdictRows(verdictData: any): any[] {
-    // Basic structural return to prevent build error
-    return verdictData?.comparison_claims?.rows || []; 
+export function generateVerdictRows(claims: ComparisonClaim[]): VerdictRow[] {
+    if (!claims) {
+        return [];
+    }
+    return claims.map((claim, index) => ({
+        id: `verdict-${index}`,
+        criterion: claim.metric,
+        teamstationVerdict: claim.teamstationValue,
+        competitorVerdict: claim.competitorValue,
+        isWinningRow: true, // Defaulting to true as per the original logic's intent
+    }));
 }
 
 export function generateFaqSchema(faqs: any) {
