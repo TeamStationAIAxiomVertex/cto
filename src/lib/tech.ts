@@ -22,6 +22,7 @@ export interface TechEntry {
   evaluation: string[];
   technical_analysis: string;
   interlink_slugs: string[];
+  comparison_slugs?: string[]; // Added for more specific interlinking
 }
 
 export type TechSlug = 

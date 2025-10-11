@@ -34,7 +34,8 @@ const python: TechEntry = {
   ], 
   evaluation: ["Asyncio and non-blocking I/O mastery", "Modern API frameworks (FastAPI, Django/DRF)", "Data science stack (NumPy, Pandas, Scikit-learn)", "MLOps and production model deployment", "Clean, idiomatic Python (PEP 8)"],
   technical_analysis: "The Python evaluation is bifurcated for core software engineering and data science roles. For backend roles, we test `asyncio` mastery, requiring candidates to design a high-concurrency service using FastAPI and explain how they would handle blocking operations. For data-centric roles, the focus is on efficient data manipulation using NumPy and Pandas, specifically vectorized operations over loops. Both tracks require strong software engineering fundamentals: modular design, dependency management (Poetry/Pipenv), and TDD using Pytest. MLOps awareness is now mandatory, requiring candidates to articulate a strategy for containerizing a model and deploying it to a cloud environment for low-latency inference.",
-  interlink_slugs: ["data-engineering", "machine-learning", "sql"]
+  interlink_slugs: ['data-engineering', 'machine-learning', 'sql'],
+  comparison_slugs: ['bairesdev', 'toptal']
 };
 
 export default python;
