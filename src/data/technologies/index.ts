@@ -135,6 +135,7 @@ import tanstack from "./tanstack";
 import testing from "./testing";
 import typeorm from "./typeorm";
 import efCore from "./ef-core";
+import hibernate from "./hibernate";
 import { AllTech } from "@/lib/tech";
 
 const allTech: AllTech = {
@@ -274,6 +275,7 @@ const allTech: AllTech = {
   testing,
   typeorm,
   "ef-core": efCore,
+  hibernate,
 };
 
 export default allTech;

@@ -117,6 +117,7 @@ export type TechSlug =
   | "ragas"
   | "hugging-face"
   | "transformers"
+  | "airflow"
 
   // Databases (7)
   | "postgresql"
@@ -130,6 +131,7 @@ export type TechSlug =
   | "hibernate"
   | "typeorm"
   | "ef-core"
+  | "sqlalchemy"
 
   // QA & Security (7)
   | "playwright"

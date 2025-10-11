@@ -1,3 +1,4 @@
+
 import { TechEntry } from "@/lib/tech";
 import { AlertTriangle } from "lucide-react";
 
@@ -18,7 +19,7 @@ const airflow: TechEntry = {
       problem:
         "In many organizations, the data pipeline is a mess of brittle, ad-hoc scripts. This can lead to a user experience that is filled with stale data and a codebase that is a mess of environment-specific hacks and workarounds.",
       solution:
-        "We vet for experts in **Airflow and the modern data stack**. Our engineers are proficient in using tools like dbt, Spark, and other data processing frameworks to build a fully automated, reliable, and efficient data pipeline. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
+        "We vet for experts in <strong>Airflow and the modern data stack</strong>. Our engineers are proficient in using tools like dbt, Spark, and other data processing frameworks to build a fully automated, reliable, and efficient data pipeline. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
       kpi: "A Fully Automated, Reliable, and Efficient Data Pipeline",
     },
     {
@@ -27,7 +28,7 @@ const airflow: TechEntry = {
       problem:
         "Many applications are not built to be cloud-native. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
       solution:
-        "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like Kubernetes, Docker, and other containerization technologies to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
+        "Our engineers are masters of <strong>modern, cloud-native architectures</strong>. They are vetted on their ability to use services like Kubernetes, Docker, and other containerization technologies to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
       kpi: "A Modern, Serverless, and Container-Based Architecture",
     },
     {
@@ -36,7 +37,7 @@ const airflow: TechEntry = {
       problem:
         "The data ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
       solution:
-        "We look for engineers proficient with **the data ecosystem and the modern data stack**. They are vetted on their ability to build applications that are powered by the best of the data ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
+        "We look for engineers proficient with <strong>the data ecosystem and the modern data stack</strong>. They are vetted on their ability to build applications that are powered by the best of the data ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
       kpi: "An Application That is Powered by the Best of the Data Ecosystem",
     },
   ],
@@ -48,7 +49,7 @@ const airflow: TechEntry = {
     "Airflow on Kubernetes",
   ],
   technical_analysis:
-    "The Airflow evaluation focuses on a candidate's ability to build a reliable, scalable, and automated data pipeline. We assess their understanding of the entire data lifecycle, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **Airflow and the modern data stack**; candidates must demonstrate how to use tools like dbt, Spark, and other data processing frameworks to build a fully automated, reliable, and efficient data pipeline, and how to use services like Kubernetes and Docker to build a modern, serverless, and container-based architecture. We also test their ability to build **observable and cost-effective** systems that are easy to monitor and debug. Finally, we assess their knowledge of the data ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
+    "The Airflow evaluation focuses on a candidate's ability to build a reliable, scalable, and automated data pipeline. We assess their understanding of the entire data lifecycle, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of <strong>Airflow and the modern data stack</strong>; candidates must demonstrate how to use tools like dbt, Spark, and other data processing frameworks to build a fully automated, reliable, and efficient data pipeline, and how to use services like Kubernetes and Docker to build a modern, serverless, and container-based architecture. We also test their ability to build <strong>observable and cost-effective</strong> systems that are easy to monitor and debug. Finally, we assess their knowledge of the data ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
   interlink_slugs: ["dbt", "spark", "kubernetes", "data-engineering"],
 };
 
