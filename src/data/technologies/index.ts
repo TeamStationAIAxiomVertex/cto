@@ -1,28 +1,28 @@
 
-import ReactNative from "./react-native";
-import NodeJS from "./nodejs";
-import Javascript from "./javascript";
-import Typescript from "./typescript";
-import Python from "./python";
-import Java from "./java";
-import Go from "./go";
-import Ruby from "./ruby";
-import Heroku from "./heroku";
-import Netflify from "./netflify";
-import Vercel from "./vercel";
-import AWS from "./aws";
-import GCP from "./gcp";
-import Azure from "./azure";
-import Swift from "./swift";
-import Kotlin from "./kotlin";
-import Flutter from "./flutter";
-import ReactNativeNavigation from "./react-native-navigation";
-import ReactNativeGestureHandler from "./react-native-gesture-handler";
-import ReactNativeReanimated from "./react-native-reanimated";
-import ReactNativePaper from "./react-native-paper";
-import ReactNativeElements from "./react-native-elements";
-import NativeBase from "./native-base";
-import ReactNativeMaps from "./react-native-maps";
+import reactNative from "./react-native";
+import node from "./node";
+import javascript from "./javascript";
+import typescript from "./typescript";
+import python from "./python";
+import java from "./java";
+import go from "./go";
+import ruby from "./ruby";
+import heroku from "./heroku";
+import netflify from "./netflify";
+import vercel from "./vercel";
+import aws from "./aws";
+import gcp from "./gcp";
+import azure from "./azure";
+import swift from "./swift";
+import kotlin from "./kotlin";
+import flutter from "./flutter";
+import reactNativeNavigation from "./react-native-navigation";
+import reactNativeGestureHandler from "./react-native-gesture-handler";
+import reactNativeReanimated from "./react-native-reanimated";
+import reactNativePaper from "./react-native-paper";
+import reactNativeElements from "./react-native-elements";
+import nativeBase from "./native-base";
+import reactNativeMaps from "./react-native-maps";
 import react from "./react";
 import nextjs from "./nextjs";
 import redux from "./redux";
@@ -82,7 +82,7 @@ import snowflake from "./snowflake";
 import bigquery from "./bigquery";
 import redshift from "./redshift";
 import apachekafka from "./apache-kafka";
-import RabbitMQ from "./rabbitmq";
+import rabbitmq from "./rabbitmq";
 import figma from "./figma";
 import sketch from "./sketch";
 import adobexd from "./adobe-xd";
@@ -144,19 +144,19 @@ import confluence from "./confluence";
 import slack from "./slack";
 import msteams from "./ms-teams";
 import zoom from "./zoom";
-import Webflow from "./webflow";
-import Shopify from "./shopify";
-import Wix from "./wix";
-import Squarespace from "./squarespace";
-import Wordpress from "./wordpress";
-import Magento from "./magento";
-import Salesforce from "./salesforce";
-import Hubspot from "./hubspot";
-import Zapier from "./zapier";
-import IFTTT from "./ifttt";
-import Okta from "./okta";
-import Auth0 from "./auth0";
-import FusionAuth from "./fusionauth";
+import webflow from "./webflow";
+import shopify from "./shopify";
+import wix from "./wix";
+import squarespace from "./squarespace";
+import wordpress from "./wordpress";
+import magento from "./magento";
+import salesforce from "./salesforce";
+import hubspot from "./hubspot";
+import zapier from "./zapier";
+import ifttt from "./ifttt";
+import okta from "./okta";
+import auth0 from "./auth0";
+import fusionauth from "./fusionauth";
 import crowdstrike from "./crowdstrike";
 import objectiveC from "./objective-c";
 import codepush from "./codepush";
@@ -173,182 +173,183 @@ import jamf from "./jamf";
 import jiraServiceManagement from "./jira-service-management";
 import langchain from "./langchain";
 import launchdarkly from "./launchdarkly";
+import { AllTech } from "@/lib/tech";
 
-const rawTechnologies = {
-  react,
-  nodejs: NodeJS,
-  javascript: Javascript,
-  typescript: Typescript,
-  python: Python,
-  java: Java,
-  go: Go,
-  ruby: Ruby,
-  heroku: Heroku,
-  netflify: Netflify,
-  vercel: Vercel,
-  aws: AWS,
-  gcp: GCP,
-  azure: Azure,
-  swift: Swift,
-  kotlin: Kotlin,
-  flutter: Flutter,
-  "react-native": ReactNative,
-  "react-native-navigation": ReactNativeNavigation,
-  "react-native-gesture-handler": ReactNativeGestureHandler,
-  "react-native-reanimated": ReactNativeReanimated,
-  "react-native-paper": ReactNativePaper,
-  "react-native-elements": ReactNativeElements,
-  "native-base": NativeBase,
-  "react-native-maps": ReactNativeMaps,
-  nextjs,
-  redux,
-  apollo,
-  mobx,
-  "react-query": reactquery,
-  tailwindcss,
-  graphql,
-  express,
-  nest,
-  fastify,
-  django,
-  flask,
-  fastapi,
-  "ruby-on-rails": rubyonrails,
-  postgresql,
-  mysql,
-  mongodb,
-  redis,
-  elasticsearch,
-  firebase,
-  stripe,
-  twilio,
-  sendgrid,
-  svelte,
-  vue,
-  angular,
-  ember,
-  backbone,
-  jest,
-  mocha,
-  cypress,
-  playwright,
-  selenium,
-  puppeteer,
-  docker,
-  kubernetes,
-  jenkins,
-  "github-actions": githubactions,
-  circleci,
-  travisci,
-  gitlabci,
-  terraform,
-  ansible,
-  chef,
-  puppet,
-  serverless,
-  datadog,
-  "new-relic": newrelic,
-  splunk,
-  "sumo-logic": sumologic,
-  grafana,
-  prometheus,
-  airflow,
-  dbt,
-  snowflake,
-  bigquery,
-  redshift,
-  "apache-kafka": apachekafka,
-  rabbitmq: RabbitMQ,
-  figma,
-  sketch,
-  "adobe-xd": adobexd,
-  invision,
-  zeplin,
-  storybook,
-  "design-systems": designsystems,
-  "product-discovery": productdiscovery,
-  "product-strategy": productstrategy,
-  "user-research": userresearch,
-  "user-testing": usertesting,
-  "product-analytics": productanalytics,
-  "growth-hacking": growthhacking,
-  segment,
-  mixpanel,
-  heap,
-  hotjar,
-  vwo,
-  optimizely,
-  "google-analytics": googleanalytics,
-  unity,
-  "unreal-engine": unrealengine,
-  blender,
-  "autodesk-maya": autodeskmaya,
-  zbrush,
-  "substance-painter": substancepainter,
-  "c-sharp": csharp,
-  "c-plus-plus": cplusplus,
-  oculus,
-  openvr,
-  steamvr,
-  webxr,
-  arkit,
-  arcore,
-  vuforia,
-  pytorch,
-  tensorflow,
-  keras,
-  "scikit-learn": scikitlearn,
-  pandas,
-  numpy,
-  jupyter,
-  databricks,
-  sagemaker,
-  "ml-ops": mlops,
-  kubeflow,
-  polywork,
-  "read-cv": readcv,
-  linkedin,
-  github,
-  gitlab,
-  bitbucket,
-  jira,
-  asana,
-  trello,
-  monday,
-  notion,
-  confluence,
-  slack,
-  "ms-teams": msteams,
-  zoom,
-  webflow: Webflow,
-  shopify: Shopify,
-  wix: Wix,
-  squarespace: Squarespace,
-  wordpress: Wordpress,
-  magento: Magento,
-  salesforce: Salesforce,
-  hubspot: Hubspot,
-  zapier: Zapier,
-  ifttt: IFTTT,
-  okta: Okta,
-  auth0: Auth0,
-  fusionauth: FusionAuth,
-  crowdstrike,
-  "objective-c": objectiveC,
-  codepush,
-  appcenter,
-  fastlane,
-  detox,
-  spark,
-  datahub,
-  "great-expectations": greatExpectations,
-  openai,
-  amplitude,
-  "google-workspace": googleWorkspace,
-  jamf,
-  "jira-service-management": jiraServiceManagement,
-  langchain,
-  launchdarkly,
+const allTech: AllTech = {
+    'react-native': reactNative,
+    'node': node,
+    'javascript': javascript,
+    'typescript': typescript,
+    'python': python,
+    'java': java,
+    'go': go,
+    'ruby': ruby,
+    'heroku': heroku,
+    'netflify': netflify,
+    'vercel': vercel,
+    'aws': aws,
+    'gcp': gcp,
+    'azure': azure,
+    'swift': swift,
+    'kotlin': kotlin,
+    'flutter': flutter,
+    'react-native-navigation': reactNativeNavigation,
+    'react-native-gesture-handler': reactNativeGestureHandler,
+    'react-native-reanimated': reactNativeReanimated,
+    'react-native-paper': reactNativePaper,
+    'react-native-elements': reactNativeElements,
+    'native-base': nativeBase,
+    'react-native-maps': reactNativeMaps,
+    'react': react,
+    'nextjs': nextjs,
+    'redux': redux,
+    'apollo': apollo,
+    'mobx': mobx,
+    'react-query': reactquery,
+    'tailwindcss': tailwindcss,
+    'graphql': graphql,
+    'express': express,
+    'nest': nest,
+    'fastify': fastify,
+    'django': django,
+    'flask': flask,
+    'fastapi': fastapi,
+    'ruby-on-rails': rubyonrails,
+    'postgresql': postgresql,
+    'mysql': mysql,
+    'mongodb': mongodb,
+    'redis': redis,
+    'elasticsearch': elasticsearch,
+    'firebase': firebase,
+    'stripe': stripe,
+    'twilio': twilio,
+    'sendgrid': sendgrid,
+    'svelte': svelte,
+    'vue': vue,
+    'angular': angular,
+    'ember': ember,
+    'backbone': backbone,
+    'jest': jest,
+    'mocha': mocha,
+    'cypress': cypress,
+    'playwright': playwright,
+    'selenium': selenium,
+    'puppeteer': puppeteer,
+    'docker': docker,
+    'kubernetes': kubernetes,
+    'jenkins': jenkins,
+    'github-actions': githubactions,
+    'circleci': circleci,
+    'travis-ci': travisci,
+    'gitlab-ci': gitlabci,
+    'terraform': terraform,
+    'ansible': ansible,
+    'chef': chef,
+    'puppet': puppet,
+    'serverless': serverless,
+    'datadog': datadog,
+    'new-relic': newrelic,
+    'splunk': splunk,
+    'sumo-logic': sumologic,
+    'grafana': grafana,
+    'prometheus': prometheus,
+    'airflow': airflow,
+    'dbt': dbt,
+    'snowflake': snowflake,
+    'bigquery': bigquery,
+    'redshift': redshift,
+    'apache-kafka': apachekafka,
+    'rabbitmq': rabbitmq,
+    'figma': figma,
+    'sketch': sketch,
+    'adobe-xd': adobexd,
+    'invision': invision,
+    'zeplin': zeplin,
+    'storybook': storybook,
+    'design-systems': designsystems,
+    'product-discovery': productdiscovery,
+    'product-strategy': productstrategy,
+    'user-research': userresearch,
+    'user-testing': usertesting,
+    'product-analytics': productanalytics,
+    'growth-hacking': growthhacking,
+    'segment': segment,
+    'mixpanel': mixpanel,
+    'heap': heap,
+    'hotjar': hotjar,
+    'vwo': vwo,
+    'optimizely': optimizely,
+    'google-analytics': googleanalytics,
+    'unity': unity,
+    'unreal-engine': unrealengine,
+    'blender': blender,
+    'autodesk-maya': autodeskmaya,
+    'zbrush': zbrush,
+    'substance-painter': substancepainter,
+    'c-sharp': csharp,
+    'c-plus-plus': cplusplus,
+    'oculus': oculus,
+    'openvr': openvr,
+    'steamvr': steamvr,
+    'webxr': webxr,
+    'arkit': arkit,
+    'arcore': arcore,
+    'vuforia': vuforia,
+    'pytorch': pytorch,
+    'tensorflow': tensorflow,
+    'keras': keras,
+    'scikit-learn': scikitlearn,
+    'pandas': pandas,
+    'numpy': numpy,
+    'jupyter': jupyter,
+    'databricks': databricks,
+    'sagemaker': sagemaker,
+    'ml-ops': mlops,
+    'kubeflow': kubeflow,
+    'polywork': polywork,
+    'read-cv': readcv,
+    'linkedin': linkedin,
+    'github': github,
+    'gitlab': gitlab,
+    'bitbucket': bitbucket,
+    'jira': jira,
+    'asana': asana,
+    'trello': trello,
+    'monday': monday,
+    'notion': notion,
+    'confluence': confluence,
+    'slack': slack,
+    'ms-teams': msteams,
+    'zoom': zoom,
+    'webflow': webflow,
+    'shopify': shopify,
+    'wix': wix,
+    'squarespace': squarespace,
+    'wordpress': wordpress,
+    'magento': magento,
+    'salesforce': salesforce,
+    'hubspot': hubspot,
+    'zapier': zapier,
+    'ifttt': ifttt,
+    'okta': okta,
+    'auth0': auth0,
+    'fusionauth': fusionauth,
+    'crowdstrike': crowdstrike,
+    'objective-c': objectiveC,
+    'codepush': codepush,
+    'appcenter': appcenter,
+    'fastlane': fastlane,
+    'detox': detox,
+    'spark': spark,
+    'datahub': datahub,
+    'great-expectations': greatExpectations,
+    'openai': openai,
+    'amplitude': amplitude,
+    'google-workspace': googleWorkspace,
+    'jamf': jamf,
+    'jira-service-management': jiraServiceManagement,
+    'langchain': langchain,
+    'launchdarkly': launchdarkly,
 };
 
-export default rawTechnologies;
+export default allTech;
