@@ -1,3 +1,4 @@
+
 import type { ElementType } from "react";
 import type { LucideIcon } from "lucide-react";
 import allTechData from "@/data/technologies"; // Corrected to be the single source of truth
@@ -38,6 +39,8 @@ export type TechSlug =
   | "rx-js"
   | "vite"
   | "tailwind"
+  | "tanstack"
+  | "testing"
 
   // Backend/Core Languages (12)
   | "node"
@@ -52,6 +55,7 @@ export type TechSlug =
   | "erlang"
   | "haskell"
   | "elixir"
+  | "ruby"
 
   // DevOps & Cloud (18)
   | "devops-engineering"
@@ -72,6 +76,8 @@ export type TechSlug =
   | "cloudformation"
   | "gitops"
   | "serverless"
+  | "opentelemetry"
+  | "jaeger"
 
   // Data & AI (18)
   | "data-engineering"
@@ -95,6 +101,8 @@ export type TechSlug =
   | "pandas"
   | "numpy"
   | "vllm"
+  | "pgvector"
+  | "mlflow"
 
   // Databases (7)
   | "postgresql"
@@ -104,6 +112,8 @@ export type TechSlug =
   | "mysql"
   | "dynamodb"
   | "elasticsearch"
+  | "prisma"
+  | "hibernate"
 
   // QA & Security (7)
   | "playwright"
@@ -115,6 +125,10 @@ export type TechSlug =
   | "vitest"
   | "k6"
   | "pact"
+  | "codeql"
+  | "opa"
+  | "soc"
+  | "iso"
 
   // Architecture & Integrations (8)
   | "microservices"
@@ -134,7 +148,14 @@ export type TechSlug =
 
   // Vetting & Cognitive AI (2)
   | "axiom-cortex"
-  | "graphql";
+  | "graphql"
+  
+  // Cloud FinOps & BizTech
+  | "cloudzero"
+  | "salesforce"
+  | "hubspot"
+  | "hightouch"
+  ;
 
 export interface AllTech {
   [key: string]: TechEntry;
