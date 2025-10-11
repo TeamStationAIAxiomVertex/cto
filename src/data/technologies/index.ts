@@ -125,6 +125,12 @@ import cloudzero from "./cloudzero";
 import salesforce from "./salesforce";
 import hubspot from "./hubspot";
 import hightouch from "./hightouch";
+import browserstack from "./browserstack";
+import owaspZap from "./owasp-zap";
+import sentry from "./sentry";
+import githubActions from "./github-actions";
+import typeorm from "./typeorm";
+import efCore from "./ef-core";
 import { AllTech } from "@/lib/tech";
 
 const allTech: AllTech = {
@@ -254,6 +260,12 @@ const allTech: AllTech = {
   salesforce,
   hubspot,
   hightouch,
+  browserstack,
+  "owasp-zap": owaspZap,
+  sentry,
+  "github-actions": githubActions,
+  typeorm,
+  "ef-core": efCore,
 };
 
 export default allTech;

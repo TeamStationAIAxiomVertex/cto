@@ -78,6 +78,8 @@ export type TechSlug =
   | "serverless"
   | "opentelemetry"
   | "jaeger"
+  | "sentry"
+  | "github-actions"
 
   // Data & AI (18)
   | "data-engineering"
@@ -118,6 +120,8 @@ export type TechSlug =
   | "elasticsearch"
   | "prisma"
   | "hibernate"
+  | "typeorm"
+  | "ef-core"
 
   // QA & Security (7)
   | "playwright"
@@ -135,6 +139,8 @@ export type TechSlug =
   | "iso"
   | "trivy"
   | "snyk"
+  | "browserstack"
+  | "owasp-zap"
 
   // Architecture & Integrations (8)
   | "microservices"
