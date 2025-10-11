@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, UserCheck, FileText, ShieldCheck } from 'lucide-react';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Nearshore IT Staff Augmentation Pricing',
@@ -93,103 +94,181 @@ const pricingFactors = [
 ]
 
 export default function PricingPage() {
+  const serviceSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Service",
+    "name": "Nearshore IT Staff Augmentation by Engineering Level",
+    "description": "A predictable, all-inclusive cost model for nearshore engineering talent, with pricing clearly defined by technical proficiency level (L1-L4). Our rates include EOR, devices, compliance, and more, offering true pricing transparency.",
+    "url": "https://cto.teamstation.dev/pricing",
+    "serviceType": "Nearshore IT Staff Augmentation",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "L1 Proficient Engineer",
+        "description": "Contributes on component-level tasks with guidance.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "20.00",
+          "priceCurrency": "USD",
+          "unitText": "HOUR",
+          "unitCode": "HUR" 
+        },
+        "url": "https://cto.teamstation.dev/hire",
+        "@id": "https://cto.teamstation.dev/pricing#l1_proficient",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "LATAM"
+      },
+      {
+        "@type": "Offer",
+        "name": "L2 Mid Engineer",
+        "description": "Independently ships features and services.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "30.00",
+          "priceCurrency": "USD",
+          "unitText": "HOUR",
+          "unitCode": "HUR"
+        },
+        "url": "https://cto.teamstation.dev/hire",
+        "@id": "https://cto.teamstation.dev/pricing#l2_mid",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "LATAM"
+      },
+      {
+        "@type": "Offer",
+        "name": "L3 Senior Engineer",
+        "description": "Leads cross-component projects and raises standards.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "40.00",
+          "priceCurrency": "USD",
+          "unitText": "HOUR",
+          "unitCode": "HUR"
+        },
+        "url": "https://cto.teamstation.dev/hire",
+        "@id": "https://cto.teamstation.dev/pricing#l3_senior",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "LATAM"
+      },
+      {
+        "@type": "Offer",
+        "name": "L4 Expert Engineer",
+        "description": "Sets architecture and technical strategy across teams.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "50.00",
+          "priceCurrency": "USD",
+          "unitText": "HOUR",
+          "unitCode": "HUR"
+        },
+        "url": "https://cto.teamstation.dev/hire",
+        "@id": "https://cto.teamstation.dev/pricing#l4_expert",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "LATAM"
+      }
+    ]
+  };
+
   return (
-    <main className="container py-12">
-      <div className="text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-foreground">Home</Link> / <span>Pricing</span>
-      </div>
-      <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Your CFO-Ready Case for Nearshore</h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          Stop getting ambushed by hidden fees and vendor chaos. This is a predictable, all-inclusive cost model that your finance team will actually approve.
-        </p>
-         <div className="mt-4 text-center">
-            <span className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">From $20–$50/hr • 173 hrs/mo basis • Devices & compliance included</span>
+    <>
+      <JsonLd data={serviceSchema} />
+      <main className="container py-12">
+        <div className="text-sm text-muted-foreground mb-8">
+          <Link href="/" className="hover:text-foreground">Home</Link> / <span>Pricing</span>
         </div>
-      </header>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
-        {levels.map((level) => (
-          <div key={level.level} className={`group rounded-lg border bg-card p-6 flex flex-col transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg ${level.level === 'L3 Senior' ? 'border-primary/50' : ''}`}>
-            <h2 className="text-lg font-bold">{level.level}</h2>
-            <p className="text-sm text-muted-foreground flex-grow mt-1">{level.description}</p>
-            <div className="my-6 text-center">
-              <p className="text-sm text-muted-foreground">Starting at</p>
-              <span className="text-5xl font-extrabold">${level.rate}</span>
-              <span className="text-muted-foreground">/hour</span>
-            </div>
-            <div className="text-center text-sm text-muted-foreground space-y-1">
-              <p><span className="font-semibold text-foreground">${(level.rate * 173).toLocaleString()}</span>/mo</p>
-              <p><span className="font-semibold text-foreground">${(level.rate * 173 * 12).toLocaleString()}</span>/yr</p>
-            </div>
-             <p className="text-xs text-center text-muted-foreground mt-2">± ${level.margin} USD</p>
-             <Link href="/hire" className="cta-button w-full mt-6">
-                Find Talent
-             </Link>
+        <header className="text-center my-12">
+          <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Your CFO-Ready Case for Nearshore</h1>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+            Stop getting ambushed by hidden fees and vendor chaos. This is a predictable, all-inclusive cost model that your finance team will actually approve.
+          </p>
+           <div className="mt-4 text-center">
+              <span className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">From $20–$50/hr • 173 hrs/mo basis • Devices & compliance included</span>
           </div>
-        ))}
-      </div>
-      
-        <div className="rounded-lg border bg-card my-12 p-8 shadow-lg">
-         <h2 className="text-3xl font-bold text-center">The Math Your CFO Cares About</h2>
-         <p className="text-center text-muted-foreground max-w-3xl mx-auto mt-2">A single delayed roadmap feature can cost you millions in ARR. Faster, more accurate hiring isn't a "nice-to-have"—it's a financial necessity.</p>
-         <div className="text-center mt-8 bg-background p-6 rounded-lg max-w-2xl mx-auto shadow-lg">
-            <h3 className='font-semibold text-foreground'>The Vacancy Tax You're Paying Today</h3>
-            <div className="font-mono text-lg md:text-xl mt-2 flex flex-wrap justify-center items-center gap-2">
-                <span>(36 days saved / 365)</span>
-                <span>* $1,000,000 ARR</span>
-                <span>=</span>
-                <span className="font-bold text-primary">$98,630</span>
+        </header>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
+          {levels.map((level) => (
+            <div key={level.level} className={`group rounded-lg border bg-card p-6 flex flex-col transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg ${level.level === 'L3 Senior' ? 'border-primary/50' : ''}`}>
+              <h2 className="text-lg font-bold">{level.level}</h2>
+              <p className="text-sm text-muted-foreground flex-grow mt-1">{level.description}</p>
+              <div className="my-6 text-center">
+                <p className="text-sm text-muted-foreground">Starting at</p>
+                <span className="text-5xl font-extrabold">${level.rate}</span>
+                <span className="text-muted-foreground">/hour</span>
+              </div>
+              <div className="text-center text-sm text-muted-foreground space-y-1">
+                <p><span className="font-semibold text-foreground">${(level.rate * 173).toLocaleString()}</span>/mo</p>
+                <p><span className="font-semibold text-foreground">${(level.rate * 173 * 12).toLocaleString()}</span>/yr</p>
+              </div>
+               <p className="text-xs text-center text-muted-foreground mt-2">± ${level.margin} USD</p>
+               <Link href="/hire" className="cta-button w-full mt-6">
+                  Find Talent
+               </Link>
             </div>
-            <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in <Link href="/process" className='text-primary hover:underline'>≈9 days</Link> vs. the industry average of 45.</p>
-         </div>
-      </div>
-
-      <div className="my-16 text-center">
-        <h2 className="text-4xl font-bold">The All-Inclusive Risk Shield</h2>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Competitors' quotes hide 10-15% in extra fees for EOR, device management, and compliance. Our rate includes everything. No surprises.</p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 mt-12 max-w-6xl mx-auto text-left">
-            {includedItems.map(item => (
-                <div key={item.title} className="flex items-start gap-3">
-                    <span className="h-5 w-5 shrink-0 mt-0.5 text-primary">✓</span>
-                    <Link href={item.href} className="text-muted-foreground hover:text-foreground" target={item.href.startsWith('http') ? '_blank' : '_self'} rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}>{item.title}</Link>
-                </div>
-            ))}
+          ))}
         </div>
-      </div>
-
-       <div className="my-16">
-        <h2 className="text-4xl font-bold text-center">How We Justify Your Budget</h2>
-         <p className="mt-4 max-w-3xl mx-auto text-center text-muted-foreground">Our fully-loaded hourly rate is clear, defensible, and optimized for value. We align talent expectations with local market reality and bundle critical services under one accountable SLA.</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {pricingFactors.map(factor => (
-                <div key={factor.title} className="rounded-lg border bg-card p-6 shadow-lg">
-                     <div className="flex items-center gap-3">
-                        {factor.icon}
-                        <h3 className="text-xl font-bold text-foreground">{factor.title}</h3>
-                    </div>
-                    <ul className="space-y-3 mt-4 border-t border-border pt-4">
-                        {factor.items.map(item => (
-                             <li key={item} className="flex items-start gap-2 text-sm">
-                                <span className="h-4 w-4 shrink-0 mt-1 text-primary">✓</span>
-                                <span className="text-muted-foreground">{item}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
+        
+          <div className="rounded-lg border bg-card my-12 p-8 shadow-lg">
+           <h2 className="text-3xl font-bold text-center">The Math Your CFO Cares About</h2>
+           <p className="text-center text-muted-foreground max-w-3xl mx-auto mt-2">A single delayed roadmap feature can cost you millions in ARR. Faster, more accurate hiring isn't a "nice-to-have"—it's a financial necessity.</p>
+           <div className="text-center mt-8 bg-background p-6 rounded-lg max-w-2xl mx-auto shadow-lg">
+              <h3 className='font-semibold text-foreground'>The Vacancy Tax You're Paying Today</h3>
+              <div className="font-mono text-lg md:text-xl mt-2 flex flex-wrap justify-center items-center gap-2">
+                  <span>(36 days saved / 365)</span>
+                  <span>* $1,000,000 ARR</span>
+                  <span>=</span>
+                  <span className="font-bold text-primary">$98,630</span>
+              </div>
+              <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in <Link href="/process" className='text-primary hover:underline'>≈9 days</Link> vs. the industry average of 45.</p>
+           </div>
         </div>
-      </div>
 
-       <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
-        <h2 className="text-2xl font-bold">Stop Burning Money. Start Building.</h2>
-        <p className="mt-2 text-muted-foreground">
-          Let's have a real conversation about your budget and your roadmap. In 15 minutes, we can give you a concrete, defensible plan.
-        </p>
-         <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
-            Book a No-Bullshit Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
-        </Link>
-      </div>
-    </main>
+        <div className="my-16 text-center">
+          <h2 className="text-4xl font-bold">The All-Inclusive Risk Shield</h2>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Competitors' quotes hide 10-15% in extra fees for EOR, device management, and compliance. Our rate includes everything. No surprises.</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 mt-12 max-w-6xl mx-auto text-left">
+              {includedItems.map(item => (
+                  <div key={item.title} className="flex items-start gap-3">
+                      <span className="h-5 w-5 shrink-0 mt-0.5 text-primary">✓</span>
+                      <Link href={item.href} className="text-muted-foreground hover:text-foreground" target={item.href.startsWith('http') ? '_blank' : '_self'} rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}>{item.title}</Link>
+                  </div>
+              ))}
+          </div>
+        </div>
+
+         <div className="my-16">
+          <h2 className="text-4xl font-bold text-center">How We Justify Your Budget</h2>
+           <p className="mt-4 max-w-3xl mx-auto text-center text-muted-foreground">Our fully-loaded hourly rate is clear, defensible, and optimized for value. We align talent expectations with local market reality and bundle critical services under one accountable SLA.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              {pricingFactors.map(factor => (
+                  <div key={factor.title} className="rounded-lg border bg-card p-6 shadow-lg">
+                       <div className="flex items-center gap-3">
+                          {factor.icon}
+                          <h3 className="text-xl font-bold text-foreground">{factor.title}</h3>
+                      </div>
+                      <ul className="space-y-3 mt-4 border-t border-border pt-4">
+                          {factor.items.map(item => (
+                               <li key={item} className="flex items-start gap-2 text-sm">
+                                  <span className="h-4 w-4 shrink-0 mt-1 text-primary">✓</span>
+                                  <span className="text-muted-foreground">{item}</span>
+                              </li>
+                          ))}
+                      </ul>
+                  </div>
+              ))}
+          </div>
+        </div>
+
+         <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+          <h2 className="text-2xl font-bold">Stop Burning Money. Start Building.</h2>
+          <p className="mt-2 text-muted-foreground">
+            Let's have a real conversation about your budget and your roadmap. In 15 minutes, we can give you a concrete, defensible plan.
+          </p>
+           <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
+              Book a No-Bullshit Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
+      </main>
+    </>
   );
 }
