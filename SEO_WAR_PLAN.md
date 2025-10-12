@@ -104,11 +104,12 @@ Mandatory schema types to be applied based on page template:
 **Pipeline per page:**
 1.  Outline / draft
 2.  **Topical Map Vetting (NEW):** Validate that content covers at least **5 out of 7** sub-topics for the primary keyword (e.g., for "nearshore software development": Time Zone, Cultural Fit, Cost Structure, Compliance/EOR, Quality Vetting, Tooling/Security, Scalability).
-3.  **Transform with NCLA v7 (Humanizer; see Annex A)**
-4.  Insert schema/frontmatter
-5.  Internal link pass
-6.  Publish
-7.  Promote (SSRN, LinkedIn, Medium abstracts pointing back).
+3.  **Sandler Metadata & Header Pass (NEW):** All URL titles, meta descriptions, H1s, and H2s must be framed around the target audience's expensive problem (the "pain") rather than just features or keywords.
+4.  **Transform with NCLA v7 (Humanizer; see Annex A)**
+5.  Insert schema/frontmatter
+6.  Internal link pass
+7.  Publish
+8.  Promote (SSRN, LinkedIn, Medium abstracts pointing back).
 
 **Quality gates (blocker if failed):**
 * NCLA v7 validators pass (burstiness, syntax diversity, density oscillation, no templated smoothness).
