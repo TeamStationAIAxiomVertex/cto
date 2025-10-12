@@ -11,6 +11,8 @@
 **Non-negotiables:** Fast pages (Core Web Vitals), rigorous schema, programmatic scaling, and Humanizer pass (NCLA v7).
 **Conversion:** Primary CTA = **Book a Demo**. Secondary = Download paper / Request Playbook PDF.
 
+---
+
 ## 1) Information Architecture (IA) — URL Map [CANONICAL, VERIFIED SLUGS ONLY]
 
 **Home**
@@ -47,14 +49,17 @@
 * `/comparisons/teamstation-vs-kms`.
 * `/comparisons/teamstation-vs-devlane`.
 
-**Programmatic SEO (scalable)**
+**Programmatic SEO (scalable) [VERIFIED CODEBASE STRUCTURE - FINAL SOURCE OF TRUTH]**
+* **`/hire/by-role/[slug]`** (Slugs derived from `src/lib/roles.ts` - **21 canonical roles**.)
+* **`/hire/by-technology/[slug]`** (Slugs derived from `src/data/sitemap-urls.txt` - **137 canonical technologies**.)
 * `/hire/[tech]-engineers-in-[city]` → e.g., `hire/react-engineers-in-guadalajara`.
 * `/latam/[country]/[service]` → e.g., `latam/mexico/eor`.
-* `/roles/[role]/[seniority]` → e.g., `roles/devops/principal`.
 
 **Proof & Conversion**
 * `/case-studies/` (include Currance squad).
 * `/insights/`, `/about/`, `/trust/` (security, compliance, SLA), `/contact/` (demo booking).
+
+---
 
 ## 2) App Builder Implementation — Data Models (Collections)
 
@@ -62,11 +67,15 @@ Key collections include: `ResearchPaper`, `PlaybookChapter`, `Service`, `Compari
 
 **PlaybookChapter** fields include: `slug`, `title`, `summary`, `htmlBody`, `readingTimeMinutes`, `faq[{question,answer}]`, `relatedServices[ref]`, `relatedResearch[ref]`.
 
+---
+
 ## 3) Routing & Canonical Rules
 
 * URL Routing: `/research/[slug]` → `ResearchPaper` template; `/playbook/[slug]` → `PlaybookChapter` template; `/comparisons/[slug]` → `Comparison` template, etc..
 * **Canonicals:** Prefer hub canonicals for overlapping variants (e.g., programmatic → service hub).
 * Set **`noindex: true`** on thin/near-duplicate programmatic pages.
+
+---
 
 ## 4) Technical SEO Baseline
 
@@ -75,16 +84,20 @@ Key collections include: `ResearchPaper`, `PlaybookChapter`, `Service`, `Compari
 * **Sitemaps:** `/sitemap.xml` + dynamic sitemap for programmatic pages; include `lastmod`.
 * **Internal Linking Mesh:** Every pillar links to relevant services, research, comparisons, and **at least 3 programmatic pages**.
 
+---
+
 ## 5) Schema (JSON-LD) — Required Types & EEAT Authorship
 
 Mandatory schema types to be applied based on page template:
 * `Organization` (Home/About)
 * `Service` (Service/Programmatic service pages)
 * `ScholarlyArticle` (Research pages)
-* **`FAQPage`** (Playbook chapters and programmatic pages with FAQs)
+* **`FAQPage`** (All Programmatic Pages and Playbook chapters)
 * `Product` (or `Service`) on comparison pages
-* `JobPosting` (optional on `/roles/*`)
+* **`JobPosting` (MANDATORY on all `/hire/by-role/*` pages)**
 * **Authorship (EEAT Mandate):** All **Playbook** and **Research** pages must include **Author** and **Reviewed By** schema referencing the authors of the "Platforming the Nearshore IT Staff Augmentation Industry BOOK" (Lonnie McRorey, Dan Diachenko, Carolina Acuña, Julio Leyva, Cas Rodriguez, José Antonio Díaz Marentes).
+
+---
 
 ## 6) Editorial Workflow (NCLA v7 & Topical Authority Enforced)
 
@@ -103,12 +116,25 @@ Mandatory schema types to be applied based on page template:
 * Schema validates in Rich Results Test.
 * Clear CTA placement.
 
+---
+
 ## 7) Page Skeletons (Core Constraints)
 
-* **Content Length Floor:** **All generated prose must contain a minimum of $\mathbf{800}$ words (excluding spaces).**
-* **Playbook/Research Pages:** Length $2,500–5,000$ words. **Register:** Semi-Formal. **Audience:** Senior Engineers/CTO. **Purpose:** Justify/Analyze.
-* **Programmatic Pages:** Length $1,200–1,500$ words. Must include a **FAQPage** schema and internal links to Playbook chapter + related Research + 2 other city/tech pages.
-* **Titles Pattern (Playbook):** `{Primary keyword}: A CTO’s Guide | TeamStation AI`.
+* **Content Length Floor (Mandate):** **All generated prose must contain a minimum of $\mathbf{800}$ words (excluding spaces).**
+
+* **Playbook/Research Pages (Pillar):** Length $2,500–5,000$ words. **Register:** Semi-Formal. **Audience:** Senior Engineers/CTO. **Purpose:** Justify/Analyze. **Titles Pattern:** `{Primary keyword}: A CTO’s Guide | TeamStation AI`.
+
+* **Programmatic Pages (Roles / Tech / Country):**
+    * **Length:** $1,200–1,500$ words.
+    * **Structure (PSP Card Architecture):** Content must follow a 4-card layout (approx. 200 words prose per card section) covering:
+        1.  **Role/Tech Analysis:** (e.g., What defines a Principal DevOps Engineer/React Engineer).
+        2.  **Nearshore Advantage:** (LATAM economic/TZ/cultural fit notes).
+        3.  **Vetting/Science (EEAT):** **Mandatory mention of Axiom Cortex™ and Nebula Talent Graph.**
+        4.  **De-Risking:** (One-SLA, EOR, Compliance notes).
+    * **Mandatory Schema:** **FAQPage** and **Service** (plus **JobPosting** for **all `/hire/by-role/*` pages**).
+    * **Internal Links:** Must include links to a Playbook chapter + related Research + 2 other city/tech/role pages ($\ge 6$ total).
+
+---
 
 ## 16) Final System Command (Enforceable)
 
