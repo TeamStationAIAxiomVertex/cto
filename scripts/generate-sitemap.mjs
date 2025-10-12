@@ -1,4 +1,3 @@
-
 // scripts/generate-sitemap.mjs
 import fs from 'fs';
 import path from 'path';
@@ -74,17 +73,30 @@ async function collectHireByRoleUrls() {
 }
 
 async function collectHireByTechnologyUrls() {
+  // Part 1: Dynamically find all main technology slugs by reading the data directory
+  const techDir = path.join(process.cwd(), 'src/data/technologies');
+  const techFiles = fs.readdirSync(techDir);
+  const dynamicTechSlugs = techFiles
+    .filter(file => file.endsWith('.ts') && file !== 'index.ts')
+    .map(file => file.replace(/\.ts$/, ''));
+  const dynamicTechUrls = dynamicTechSlugs.map(slug => `${BASE_URL}/hire/by-technology/${slug}`);
+
+  // Part 2: Keep the original logic for finding static nested country-tech pages
   const allHirePages = getPages('src/app/hire');
   const staticHirePages = allHirePages.filter((p) => !p.includes('['));
-  const techPages = staticHirePages.filter((p) => {
-    const isDirectTechPage = p.includes('/by-technology/');
+  const nestedCountryTechPages = staticHirePages.filter((p) => {
     const isNestedTechPage = p.includes('/by-country/');
-    if (isDirectTechPage) return !p.endsWith('/by-technology/page.tsx');
+    // The heuristic from the original script to find pages like /hire/by-country/argentina/react
     if (isNestedTechPage) return p.split('/').length > 6;
     return false;
   });
-  const urls = formatPaths(techPages);
-  return urls.map((loc) => ({ loc, lastmod: today, changefreq: 'monthly', priority: 0.6 }));
+  const nestedCountryTechUrls = formatPaths(nestedCountryTechPages);
+
+  // Combine both lists
+  const allTechUrls = [...dynamicTechUrls, ...nestedCountryTechUrls];
+
+  // Return in the correct format
+  return allTechUrls.map((loc) => ({ loc, lastmod: today, changefreq: 'monthly', priority: 0.6 }));
 }
 
 async function collectResearchUrls() {
