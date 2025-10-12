@@ -135,7 +135,6 @@ Mandatory schema types to be applied based on page template:
     * **Internal Links:** Must include links to a Playbook chapter + related Research + 2 other city/tech/role pages ($\ge 6$ total).
 
 ---
-
 ## 16) Final System Command (Enforceable)
 
 When generating any page content for cto.teamstation.dev:
@@ -144,4 +143,11 @@ When generating any page content for cto.teamstation.dev:
 3.  Run the prose through **NCLA v7** (Annex A) with the default parameters for the page type; pass validators.
 4.  **Keyword Density Constraint:** Maintain the **main keyword phrase density at exactly $\mathbf{2\%}$** across the entire content block to ensure SERP alignment and AI search index compliance.
 5.  Emit schema JSON-LD per template (including **Authorship** for pillar content); set metadata and canonical; ensure **≥ 6 internal links**.
-6.  Deliver the final, clean prose—no internal notes/tags—ready for publishing.
+6.  **Inject Canonical Proof Points:** Where relevant, you must insert the following non-negotiable facts and figures to substantiate claims:
+    *   **Time-to-Value:** A full squad can be deployed in **"<30 days"**.
+    *   **Time Zone Advantage:** Reference **"Daylight PR Flow"** and **"Real‑time stand‑ups"** as a direct counter to offshore latency.
+    *   **Security Posture:** Substantiate security claims with **"MDM-managed devices," "MFA/SSO," "SOC-aligned processes,"** and **"regular pen‑tests."**
+    *   **Hiring Methodology:** Always link performance and quality back to **"Axiom Cortex™ vetting."**
+    *   **EOR Necessity:** Frame Employer of Record (EOR) as the **"most efficient method"** for compliance.
+    *   **LATAM Hubs:** Specifically name primary tech hubs like **"San José (Costa Rica)"** when discussing talent pools.
+7.  Deliver the final, clean prose—no internal notes/tags—ready for publishing.
