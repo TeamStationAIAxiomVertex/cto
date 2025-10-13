@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { AlertTriangle } from "lucide-react";
 
 const feast: TechEntry = {
   name: "Feast",
@@ -12,7 +13,7 @@ const feast: TechEntry = {
     "Feast is an open-source feature store for machine learning. Our AI/ML engineers use Feast to create a centralized platform for storing, serving, and discovering features, enabling you to build and deploy machine learning applications faster and more reliably.",
   pains: [
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you rebuilding the same features across different ML projects?",
       problem:
         "Teams waste significant time and resources building redundant feature engineering pipelines for each new model. This leads to inconsistent data, duplicated effort, and a slow pace of innovation.",
@@ -21,7 +22,7 @@ const feast: TechEntry = {
       kpi: "Eliminate 80% of redundant feature engineering work.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is there a disconnect between the features used for training and serving?",
       problem:
         "Training-serving skew is a common failure mode in production ML, where models perform poorly because the features they see in production differ from the ones they were trained on. This is often due to separate data pipelines for training and inference.",
@@ -30,7 +31,7 @@ const feast: TechEntry = {
       kpi: "Eradicate training-serving skew and improve model prediction accuracy.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your feature data difficult to discover and access for your data scientists?",
       problem:
         "Data scientists spend more time searching for and understanding data than building models. Without a clear, documented, and accessible feature repository, productivity grinds to a halt.",

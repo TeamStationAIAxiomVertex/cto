@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { AlertTriangle } from "lucide-react";
 
 const mlflow: TechEntry = {
   name: "MLflow",
@@ -12,7 +13,7 @@ const mlflow: TechEntry = {
     "MLflow is an open-source platform for managing the end-to-end machine learning lifecycle. Our AI/ML engineers use MLflow to track experiments, package code into reproducible runs, and manage and deploy models, enabling them to build and ship machine learning applications faster and more reliably.",
   pains: [
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to reproduce and compare your machine learning experiments?",
       problem:
         "The iterative nature of machine learning development can lead to a chaotic mess of scripts, notebooks, and model artifacts. This makes it difficult to know which parameters, code, and data were used to produce a given result.",
@@ -21,7 +22,7 @@ const mlflow: TechEntry = {
       kpi: "Reduce time-to-reproduce an experiment by 90%.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is the path from research to production slow and error-prone?",
       problem:
         "Moving a model from a data scientist's laptop to a production environment is often a manual and ad-hoc process. This leads to inconsistencies, errors, and a slow time-to-market for your machine learning applications.",
@@ -30,7 +31,7 @@ const mlflow: TechEntry = {
       kpi: "Accelerate time-to-deploy by 5x.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Do you lack a centralized system for model management and governance?",
       problem:
         "As your organization's use of machine learning grows, you need a way to manage the entire lifecycle of your models, from development and testing to deployment and monitoring. You also need to ensure that your models are secure, compliant, and governed by a clear set of policies.",

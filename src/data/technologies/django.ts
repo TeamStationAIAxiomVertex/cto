@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { ShieldOff, Truck, Scaling } from "lucide-react";
 
 const django: TechEntry = {
   name: "Django",
@@ -12,7 +13,7 @@ const django: TechEntry = {
     "Django is the high-level Python web framework that encourages rapid development and clean, pragmatic design. Our backend specialists leverage Django's batteries-included philosophy to build everything from content management systems to complex web applications.",
   pains: [
     {
-      icon: "ShieldOff",
+      icon: ShieldOff,
       pain: "You're worried about common web security vulnerabilities like SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF).",
       problem:
         "Building a secure web application from scratch is difficult and requires deep security expertise. A single vulnerability can lead to data breaches, reputational damage, and financial loss.",
@@ -21,7 +22,7 @@ const django: TechEntry = {
       kpi: "Prevent 99% of common web vulnerabilities out of the box.",
     },
     {
-      icon: "Truck",
+      icon: Truck,
       pain: "You need to build a complex web application quickly, but you don't want to sacrifice quality or scalability.",
       problem:
         "Building a full-featured web application involves many moving parts, from user authentication and database management to URL routing and templating. Integrating disparate libraries can be a major challenge.",
@@ -30,7 +31,7 @@ const django: TechEntry = {
       kpi: "Reduce development time for new features by up to 50%.",
     },
     {
-      icon: "Scaling",
+      icon: Scaling,
       pain: "Your application is growing, and you need a framework that can scale with your business.",
       problem:
         "As your application grows in complexity and traffic, you need a framework that can handle the load without requiring a complete rewrite.",

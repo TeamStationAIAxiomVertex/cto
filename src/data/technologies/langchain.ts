@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { AlertTriangle } from "lucide-react";
 
 const langchain: TechEntry = {
   name: "LangChain",
@@ -12,7 +13,7 @@ const langchain: TechEntry = {
     "LangChain is a framework for developing applications powered by large language models (LLMs). Our AI engineers use LangChain to chain together different LLM calls, connect them to other sources of data, and give them access to tools, enabling the creation of sophisticated, data-aware, and autonomous applications.",
   pains: [
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you finding it difficult to build complex applications on top of simple LLM APIs?",
       problem:
         "You see the power of LLMs, but you're struggling to go beyond simple prompting. You want to build applications that can reason, chain thoughts together, and interact with your existing data and tools, but the raw LLM APIs are too low-level.",
@@ -21,7 +22,7 @@ const langchain: TechEntry = {
       kpi: "Build and deploy a production-ready LLM application in weeks, not months.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your LLM application unable to answer questions about your private data?",
       problem:
         "LLMs are pre-trained on public data, so they have no knowledge of your specific domain or your company's internal documents. You want to build a Q&A system that can answer questions about your own data, but you don't know how to do it.",
@@ -30,7 +31,7 @@ const langchain: TechEntry = {
       kpi: "Enable your LLM to answer questions about your private data with 90% accuracy.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to debug, trace, and evaluate your LLM applications?",
       problem:
         "LLM applications are non-deterministic and can be difficult to debug and evaluate. You don't have visibility into how your application is making decisions, and you can't be sure if it's performing well.",

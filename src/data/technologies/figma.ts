@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { Unlink, Library, MessageSquare } from "lucide-react";
 
 const figma: TechEntry = {
   name: "Figma",
@@ -12,7 +13,7 @@ const figma: TechEntry = {
     "Figma is the collaborative interface design tool that’s taking the world by storm. Our expert designers use Figma to create everything from user flow diagrams and wireframes to high-fidelity mockups and interactive prototypes, all in one place.",
   pains: [
     {
-      icon: "Unlink",
+      icon: Unlink,
       pain: "Design and development are disconnected, leading to a final product that doesn't match the mockups.",
       problem:
         "Developers are working with static images and outdated specs, leading to implementation errors, design inconsistencies, and endless back-and-forth.",
@@ -21,7 +22,7 @@ const figma: TechEntry = {
       kpi: "Reduce design-to-development discrepancies by 95%.",
     },
     {
-      icon: "Library",
+      icon: Library,
       pain: "Your design system is a collection of static UI kits that are difficult to maintain and use.",
       problem:
         "Without a living design system, components become outdated, styles are inconsistent, and developers are constantly rebuilding what's already been designed.",
@@ -30,7 +31,7 @@ const figma: TechEntry = {
       kpi: "Speed up component design and development by 3x.",
     },
     {
-      icon: "MessageSquare",
+      icon: MessageSquare,
       pain: "Design feedback is scattered across email, Slack, and InVision, causing confusion and rework.",
       problem:
         "Consolidating and tracking feedback from multiple stakeholders is a nightmare. It's unclear what's been approved, what's been addressed, and what's still pending.",

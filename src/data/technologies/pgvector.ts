@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { AlertTriangle } from "lucide-react";
 
 const pgvector: TechEntry = {
   name: "pgvector",
@@ -12,7 +13,7 @@ const pgvector: TechEntry = {
     "pgvector is an open-source extension for PostgreSQL that enables vector similarity search. Our AI/ML engineers use pgvector to build high-performance, scalable, and cost-effective applications that are powered by large language models, recommendation engines, and other AI technologies.",
   pains: [
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to build a fast and accurate semantic search or recommendation engine?",
       problem:
         "Traditional keyword-based search is not enough for modern AI applications. You need a way to search and retrieve information based on its meaning and context, not just keywords.",
@@ -21,7 +22,7 @@ const pgvector: TechEntry = {
       kpi: "Improve search relevance by 50%.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you tired of managing a separate vector database, and you want to simplify your data infrastructure?",
       problem:
         "Using a separate vector database adds complexity and cost to your stack. You need to manage two different databases, keep them in sync, and deal with the overhead of data duplication.",
@@ -30,7 +31,7 @@ const pgvector: TechEntry = {
       kpi: "Reduce data infrastructure costs by 40%.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your vector search slow and not scalable?",
       problem:
         "As your data grows, your vector search performance degrades, leading to slow response times and a poor user experience. You need a way to scale your vector search without breaking the bank.",

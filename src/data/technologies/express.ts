@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { Network, Puzzle, Users } from "lucide-react";
 
 const express: TechEntry = {
   name: "Express.js",
@@ -12,7 +13,7 @@ const express: TechEntry = {
     "Express.js is the de facto standard server framework for Node.js. Our backend specialists use Express to build powerful and flexible web applications and APIs, taking full advantage of the non-blocking, event-driven nature of Node.js.",
   pains: [
     {
-      icon: "Network",
+      icon: Network,
       pain: "You need to build a high-performance, scalable backend that can handle thousands of concurrent connections.",
       problem:
         "Traditional thread-based frameworks can be resource-intensive and struggle to scale efficiently. You need a solution that can handle high-throughput I/O operations without getting bogged down.",
@@ -21,7 +22,7 @@ const express: TechEntry = {
       kpi: "Build an application that can handle 10,000+ concurrent users.",
     },
     {
-      icon: "Puzzle",
+      icon: Puzzle,
       pain: "You need a flexible and unopinionated framework that allows you to build your application your way.",
       problem:
         "Opinionated frameworks can be rigid and restrictive, forcing you into a specific architecture and making it difficult to integrate with your preferred tools and libraries.",
@@ -30,7 +31,7 @@ const express: TechEntry = {
       kpi: "Achieve 100% integration with your chosen libraries and third-party services.",
     },
     {
-      icon: "Users",
+      icon: Users,
       pain: "You have a large team of JavaScript developers, and you want to leverage their existing skills to build your backend.",
       problem:
         "Adopting a new language for your backend can be a major hurdle, requiring your team to learn a new syntax, ecosystem, and set of best practices.",

@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { AlertTriangle } from "lucide-react";
 
 const kubeflow: TechEntry = {
   name: "Kubeflow",
@@ -12,7 +13,7 @@ const kubeflow: TechEntry = {
     "Kubeflow is the machine learning toolkit for Kubernetes. Our AI/ML engineers use Kubeflow to build, deploy, and manage portable, scalable, and composable machine learning workflows, making it possible to run end-to-end MLOps on any cloud.",
   pains: [
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are your ML workflows not portable across different environments?",
       problem:
         "You've built an ML pipeline that works on a specific cloud or on-premise setup, but moving it is a nightmare. This vendor lock-in and lack of portability slows down collaboration and increases operational risk.",
@@ -21,7 +22,7 @@ const kubeflow: TechEntry = {
       kpi: "Achieve 100% portability for your ML pipelines across any cloud.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is it difficult to compose and orchestrate your ML lifecycle from experimentation to production?",
       problem:
         "Your MLOps process is a fragmented collection of scripts and services. There's no unified way to manage data preparation, training, tuning, and model serving, leading to brittle, unmaintainable systems.",
@@ -30,7 +31,7 @@ const kubeflow: TechEntry = {
       kpi: "Automate 90% of your ML operational tasks.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to provide a scalable, multi-tenant ML platform for your data science teams?",
       problem:
         "Multiple teams are competing for resources, and there is no secure way to isolate their experiments, data, and models. This creates resource contention, security vulnerabilities, and governance headaches.",

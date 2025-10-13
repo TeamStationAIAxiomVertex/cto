@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { AlertTriangle } from "lucide-react";
 
 const dvc: TechEntry = {
   name: "DVC",
@@ -12,7 +13,7 @@ const dvc: TechEntry = {
     "DVC (Data Version Control) is an open-source tool for data versioning, ML model versioning, and experiment management. Our AI/ML engineers use DVC to bring the power of Git to your entire machine learning project, making your work reproducible, collaborative, and auditable.",
   pains: [
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to version your large datasets and models with Git?",
       problem:
         "Git is not designed to handle large files, making it impossible to version the multi-gigabyte datasets and models that are common in machine learning. This leads to messy, unreliable workarounds and a lack of reproducibility.",
@@ -21,7 +22,7 @@ const dvc: TechEntry = {
       kpi: "Version datasets and models of any size, effortlessly.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is it impossible to reproduce your past ML experiments?",
       problem:
         "You have a great model result from last month, but you can't recreate it. You don't know the exact code, data, and hyperparameters used, making it impossible to build upon past work or debug issues.",
@@ -30,7 +31,7 @@ const dvc: TechEntry = {
       kpi: "Achieve 100% reproducibility for all your ML experiments.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is collaboration within your data science team chaotic and inefficient?",
       problem:
         "Team members can't easily share data, track each other's experiments, or build upon previous work. This leads to duplicated effort, conflicting versions, and a slow, frustrating development cycle.",

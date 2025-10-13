@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { AlertTriangle } from "lucide-react";
 
 const vllm: TechEntry = {
   name: "vLLM",
@@ -12,7 +13,7 @@ const vllm: TechEntry = {
     "vLLM is a high-throughput and memory-efficient inference and serving engine for Large Language Models (LLMs). Our AI/ML engineers use vLLM to dramatically increase the performance of your LLM applications, reducing latency and cost while improving throughput.",
   pains: [
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your LLM inference serving slow and expensive?",
       problem:
         "Serving large language models is notoriously expensive due to high memory requirements and inefficient batching. This leads to high costs and slow response times, making it difficult to build a profitable AI product.",
@@ -21,7 +22,7 @@ const vllm: TechEntry = {
       kpi: "Higher Throughput and Lower Cost-Per-Token",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to deploy different LLMs from the Hugging Face Hub?",
       problem:
         "Your team wants to experiment with different open-source LLMs, but each model has its own serving requirements, making it complex and time-consuming to deploy and manage them.",
@@ -30,7 +31,7 @@ const vllm: TechEntry = {
       kpi: "Deploy new Hugging Face models in minutes, not days.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your AI product not scaling to meet user demand?",
       problem:
         "Your LLM-powered application is a success, but your serving infrastructure can't keep up with the traffic. This leads to slow response times, frustrated users, and a poor brand reputation.",

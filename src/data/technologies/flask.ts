@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { GitMerge, Rocket, ToyBrick } from "lucide-react";
 
 const flask: TechEntry = {
   name: "Flask",
@@ -12,7 +13,7 @@ const flask: TechEntry = {
     "Flask is a lightweight and flexible Python web framework that provides the essentials for building web applications, leaving the rest up to you. Our backend specialists use Flask to build everything from simple microservices and APIs to complex, scalable web applications.",
   pains: [
     {
-      icon: "ToyBrick",
+      icon: ToyBrick,
       pain: "You need to build a simple API or web application, but larger frameworks like Django feel like overkill.",
       problem:
         "Batteries-included frameworks can be bloated and opinionated, forcing you into a specific way of working and adding unnecessary complexity to your project.",
@@ -21,7 +22,7 @@ const flask: TechEntry = {
       kpi: "Reduce application boilerplate code by 70%.",
     },
     {
-      icon: "GitMerge",
+      icon: GitMerge,
       pain: "You need the flexibility to integrate with a wide variety of databases, ORMs, and other tools.",
       problem:
         "Opinionated frameworks often lock you into a specific set of tools, making it difficult to integrate with your existing infrastructure or to adopt new technologies.",
@@ -30,7 +31,7 @@ const flask: TechEntry = {
       kpi: "Integrate with 100% of your existing data stores and third-party services.",
     },
     {
-      icon: "Rocket",
+      icon: Rocket,
       pain: "You're building a microservices architecture and need a lightweight framework for your individual services.",
       problem:
         "Using a large, monolithic framework for each microservice adds unnecessary overhead and complexity, defeating the purpose of a microservices approach.",

@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { Workflow, Zap, BarChart } from "lucide-react";
 
 const jira: TechEntry = {
   name: "Jira",
@@ -12,7 +13,7 @@ const jira: TechEntry = {
     "Jira is the industry standard for issue tracking and project management. Our certified Jira experts help you configure, optimize, and automate your Jira environment to match your team's specific workflows, whether you're running Agile sprints, managing a large-scale project, or operating a service desk.",
   pains: [
     {
-      icon: "Workflow",
+      icon: Workflow,
       pain: "Your Jira setup is a chaotic mess of confusing workflows and custom fields.",
       problem:
         "An unoptimized Jira instance slows your team down. Work gets lost, statuses are unclear, and reporting is impossible, leading to frustration and missed deadlines.",
@@ -21,7 +22,7 @@ const jira: TechEntry = {
       kpi: "Improve team productivity by 25% with optimized workflows.",
     },
     {
-      icon: "Zap",
+      icon: Zap,
       pain: "Manual, repetitive tasks in Jira are consuming valuable developer and PM time.",
       problem:
         "Your team is wasting hours on manual ticket creation, status updates, and notifications that could be automated, taking them away from high-value work.",
@@ -30,7 +31,7 @@ const jira: TechEntry = {
       kpi: "Save over 10 hours per week per team with workflow automation.",
     },
     {
-      icon: "BarChart",
+      icon: BarChart,
       pain: "You have no real visibility into your team's progress and can't generate meaningful reports.",
       problem:
         "Without proper configuration, you can't get reliable data out of Jira. Dashboards are useless, and you can't track key metrics like cycle time, lead time, or team velocity.",

@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { AlertTriangle } from "lucide-react";
 
 const ray: TechEntry = {
   name: "Ray",
@@ -12,7 +13,7 @@ const ray: TechEntry = {
     "Ray is an open-source unified compute framework that makes it easy to scale AI and Python workloads. Our AI/ML engineers use Ray to go from a laptop to a cluster with minimal code changes, enabling them to build and deploy large-scale, high-performance, and distributed AI applications.",
   pains: [
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your Python and ML workload hitting a scaling bottleneck?",
       problem:
         "Your applications are hitting the limits of a single machine, and the complexity of building and managing a distributed system is slowing down your development and increasing your operational overhead.",
@@ -21,7 +22,7 @@ const ray: TechEntry = {
       kpi: "Scale to 100s of machines with <10 lines of code change.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to orchestrate complex, multi-stage AI pipelines?",
       problem:
         "Modern AI applications often involve a complex web of data processing, model training, and serving components. Orchestrating these components in a reliable and scalable way is a major challenge.",
@@ -30,7 +31,7 @@ const ray: TechEntry = {
       kpi: "Reduce AI pipeline development time by 75%.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you lacking the expertise to build the next generation of AI-powered applications?",
       problem:
         "Building applications that are powered by large language models, reinforcement learning, and other advanced AI techniques requires a deep understanding of both AI and distributed systems.",

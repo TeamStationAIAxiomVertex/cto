@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { AlertTriangle } from "lucide-react";
 
 const crowdstrike: TechEntry = {
   name: "CrowdStrike",
@@ -12,7 +13,7 @@ const crowdstrike: TechEntry = {
     "CrowdStrike is a leader in cloud-native endpoint protection, offering a single platform to stop breaches, ransomware, and cyberattacks. Our security engineers use the CrowdStrike Falcon platform to provide comprehensive, real-time protection for your endpoints, workloads, and cloud environments.",
   pains: [
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to protect your endpoints from sophisticated attacks?",
       problem:
         "Traditional antivirus software is no longer effective against modern threats like ransomware, fileless malware, and zero-day exploits. These attacks can bypass traditional defenses and cause significant damage to your business.",
@@ -21,7 +22,7 @@ const crowdstrike: TechEntry = {
       kpi: "Block 99% of malware and reduce the time to detect and respond to threats by 90%.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Do you lack visibility into the security posture of your endpoints?",
       problem:
         "Without visibility into the security state of your endpoints, you can't effectively manage risk. You don't know which endpoints are vulnerable, which are being targeted, and whether your security controls are effective.",
@@ -30,7 +31,7 @@ const crowdstrike: TechEntry = {
       kpi: "Gain 100% visibility into your endpoint security posture.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your security team overwhelmed with alerts?",
       problem:
         "Traditional security tools generate a high volume of alerts, many of which are false positives. This can overwhelm your security team and lead to alert fatigue, causing them to miss real threats.",

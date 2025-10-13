@@ -1,5 +1,6 @@
-
 import { TechEntry } from "@/lib/tech";
+
+import { AlertTriangle } from "lucide-react";
 
 const jamf: TechEntry = {
   name: "Jamf",
@@ -12,7 +13,7 @@ const jamf: TechEntry = {
     "Jamf is the standard for Apple device management, providing a comprehensive solution for managing macOS, iOS, iPadOS, and tvOS devices. Our IT experts use Jamf to automate the entire lifecycle of your Apple fleet, from zero-touch deployment to ongoing security and software management.",
   pains: [
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is manually setting up and managing employee Macs and iPhones wasting your IT team's time?",
       problem:
         "Your IT team spends hours manually configuring each new Apple device. This process is slow, inconsistent, and doesn't scale as your company grows. Employees have to wait to get the tools they need, and IT is bogged down in repetitive tasks.",
@@ -21,7 +22,7 @@ const jamf: TechEntry = {
       kpi: "Reduce new device setup time from 4 hours to 15 minutes and enable 100% remote, zero-touch deployment.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you concerned about the security of your company's Apple devices?",
       problem:
         "You have no visibility or control over the security posture of your employee's Macs and iPhones. You can't enforce passcodes, encrypt drives, or remotely wipe a lost or stolen device, leaving your company data vulnerable.",
@@ -30,7 +31,7 @@ const jamf: TechEntry = {
       kpi: "Achieve 100% compliance with security policies like encryption and passcode requirements.",
     },
     {
-      icon: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is distributing and updating software on your Apple devices a chaotic and manual process?",
       problem:
         "You need to deploy new software and keep existing apps up-to-date across your entire fleet. Doing this manually is a nightmare, leading to inconsistent versions, security vulnerabilities, and a poor user experience.",
@@ -48,7 +49,12 @@ const jamf: TechEntry = {
   ],
   technical_analysis:
     "Effective Apple management with Jamf requires a deep understanding of both the Jamf Pro platform and Apple's ecosystem. Our experts are masters of Jamf's core concepts, including smart groups, policies, and configuration profiles. We design and build robust, scalable management frameworks that can handle fleets of any size. We are skilled at creating custom packages for software deployment, writing complex scripts to automate administrative tasks, and creating Extension Attributes to gather specific data from devices. A key area of our expertise is zero-touch deployment, where we orchestrate the integration between Apple Business Manager and Jamf Pro to deliver a seamless out-of-the-box experience for users. We also have deep knowledge of Jamf's security features, using policies to enforce compliance and Jamf Protect to gain visibility into and respond to threats. By leveraging the full power of the Jamf platform, we can help you build a secure, efficient, and user-friendly Apple ecosystem.",
-  interlink_slugs: ["google-workspace", "okta", "it-enterprise-ops", "security-engineering"],
+  interlink_slugs: [
+    "google-workspace",
+    "okta",
+    "it-enterprise-ops",
+    "security-engineering",
+  ],
 };
 
 export default jamf;
