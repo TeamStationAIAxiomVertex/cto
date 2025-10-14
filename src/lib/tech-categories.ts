@@ -14,6 +14,7 @@ import {
   Briefcase, // for IT & Enterprise
   LineChart, // for Product & Growth
   Cpu, // for Operating Systems
+  Code, // for Legacy Languages
 } from 'lucide-react';
 
 export interface TechCategory {
@@ -160,6 +161,15 @@ export const techCategories: TechCategory[] = [
       { name: 'ISO 27001', slug: 'iso' },
       { name: 'HIPAA', slug: 'hipaa' },
       { name: 'Auth0', slug: 'auth0'},
+    ],
+  },
+    {
+    name: 'Legacy Languages',
+    slug: 'legacy-languages',
+    pain: "Are your legacy systems holding you back?",
+    icon: Code,
+    tech: [
+      { name: 'Algol', slug: 'algol' },
     ],
   },
   {
