@@ -13,6 +13,7 @@ import {
   Wallet,
   Briefcase, // for IT & Enterprise
   LineChart, // for Product & Growth
+  Cpu, // for Operating Systems
 } from 'lucide-react';
 
 export interface TechCategory {
@@ -133,6 +134,15 @@ export const techCategories: TechCategory[] = [
       { name: 'Jaeger/Loki', slug: 'jaeger' },
       { name: 'Terraform/Pulumi', slug: 'terraform' },
       { name: 'Istio/Linkerd', slug: 'istio' },
+    ],
+  },
+    {
+    name: 'Operating Systems',
+    slug: 'operating-systems',
+    pain: "Is your OS holding your business back?",
+    icon: Cpu,
+    tech: [
+      { name: 'AIX', slug: 'aix' },
     ],
   },
   {
