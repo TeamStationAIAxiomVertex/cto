@@ -123,8 +123,6 @@ export default function ReveloComparisonPage() {
           approach="TeamStation AI provides fully-managed LATAM teams that are built for performance. We handle the hiring, management, and operational complexity, so you can get back to being a strategic leader."
           evidence="Our clients, like [Parsable](/case-studies/parsable), have seen a 2x increase in engineering velocity and a significant reduction in management overhead, all while building a more cohesive and effective engineering culture."
           related={[
-            { label: "The ROI of a Managed Team", href: "/playbook/managed-teams-roi" },
-            { label: "Hire LATAM Developers vs. The World", href: "/hire/by-country/latam" },
             { label: "Our Security and Compliance", href: "/trust" }
           ]}
         />

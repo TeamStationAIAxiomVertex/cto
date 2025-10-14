@@ -121,8 +121,6 @@ export default function GlobalsquadComparisonPage() {
           approach="TeamStation AI provides a radically transparent, managed team model that is built on a foundation of trust and alignment. We give you full visibility into our operations and a dedicated Engagement Manager who is accountable for your success."
           evidence="Our clients, like [Currance](/case-studies), have replaced their entire outsourced team with a single TeamStation AI pod and seen a 3x increase in throughput and a 50% reduction in cost."
           related={[
-            { label: "The Black Box Outsourcing Trap", href: "/playbook/black-box-outsourcing" },
-            { label: "The Power of an Integrated Team", href: "/playbook/managed-teams" },
             { label: "Our Vetting Process", href: "/technical-interview-evaluation" }
           ]}
         />

@@ -121,8 +121,6 @@ export default function ToptalComparisonPage() {
           approach="TeamStation AI delivers pre-formed, high-performing LATAM teams that are managed for you. We handle the hiring, onboarding, and team dynamics, so you can get back to building."
           evidence="Our teams, vetted for cognitive agility by our Axiom Cortex™ AI, ramp up 40% faster than individual hires and deliver a 60% lower Total Cost of Ownership compared to US-based teams."
           related={[
-            { label: "The Hidden Costs of a Freelance Workforce", href: "/playbook/hidden-freelance-costs" },
-            { label: "Our Managed Team Model", href: "/playbook/managed-teams" },
             { label: "Axiom Cortex™ vs. Traditional Vetting", href: "/research/axiom-cortex-scientific-report" }
           ]}
         />
