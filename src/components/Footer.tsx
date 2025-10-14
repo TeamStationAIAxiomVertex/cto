@@ -65,7 +65,7 @@ const hireByCountryLinks: LinkItem[] = countries.map((c) => ({
 }));
 
 const popularTechLinks: LinkItem[] = [
-  'react','node','python','java','go','net','aws','kubernetes','dbt','snowflake','pytorch','transformers','langchain','nextjs',
+  'react','node','python','java','go','net','aws','kubernetes','dbt','snowflake','pytorch','transformers','langchain','nextjs','data-engineering'
 ].map((slug) => {
   const tech = techCategories.flatMap((c) => c.tech).find((t) => t.slug === slug);
   return { href: `/hire/by-technology/${slug}`, label: `Hire ${tech?.name || slug} developers` };
