@@ -71,6 +71,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Swift', slug: 'swift' },
       { name: 'Kotlin', slug: 'kotlin' },
       { name: 'Socket.IO', slug: 'socketio' },
+      { name: 'Android', slug: 'android' },
     ],
   },
   {
@@ -135,6 +136,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Jaeger/Loki', slug: 'jaeger' },
       { name: 'Terraform/Pulumi', slug: 'terraform' },
       { name: 'Istio/Linkerd', slug: 'istio' },
+        { name: 'Ansible', slug: 'ansible' },
     ],
   },
     {
