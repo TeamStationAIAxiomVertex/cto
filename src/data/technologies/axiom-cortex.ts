@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { BrainCircuit, Bot, Scale, Code } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const axiomCortex: TechEntry = {
     name: "Axiom Cortex",
     category: "Vetting & Cognitive AI",
     categorySlug: "vetting-cognitive-ai",
-    seo_title: "Hire Axiom Cortex Experts | Cognitive AI & Talent Evaluation Consultants",
-    meta_description: "Build a reliable, scalable, and automated talent evaluation platform. Hire elite remote Axiom Cortex experts vetted for their deep understanding of cognitive AI, from the knowledge graph to the reasoning engine. Book a call.",
-    intro: "Axiom Cortex is the de facto standard for cognitive AI and talent evaluation. You need an engineer who understands that building a modern talent evaluation platform is not just about writing code, but about a deep understanding of the entire cognitive AI ecosystem, from the knowledge graph and the reasoning engine to the learning model and the explainability engine. Our vetting process identifies developers who are experts in the modern AI stack—and can architect an AI platform that is as secure, efficient, and automated as it is scalable. By hiring an Axiom Cortex expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    seo_title: "Hire Senior Axiom Cortex Experts | AI-Powered Vetting Specialists",
+    meta_description: "Hire elite Axiom Cortex experts specializing in building, managing, and scaling our proprietary AI-powered vetting platform.",
+    intro: "Axiom Cortex is our proprietary AI-powered vetting platform. Our Axiom Cortex experts are vetted for their deep understanding of Axiom Cortex's core principles, from its powerful cognitive assessments to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of AI-powered applications.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your talent evaluation platform a mess of brittle, ad-hoc scripts?",
-            problem: "In many organizations, the talent evaluation platform is a mess of brittle, ad-hoc scripts. This can lead to a user experience that is filled with biased results and a codebase that is a mess of environment-specific hacks and workarounds.",
-            solution: "We vet for experts in **Axiom Cortex and the modern AI stack**. Our engineers are proficient in using tools like TensorFlow, PyTorch, and other modern libraries to build a fully automated, reliable, and efficient talent evaluation platform. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Fully Automated, Reliable, and Efficient Talent Evaluation Platform",
+            icon: BrainCircuit,
+            pain: "We're struggling to hire the right people.",
+            problem: "Traditional hiring processes are slow, biased, and ineffective. They don't give you a true picture of a candidate's abilities.",
+            solution: "We vet for mastery in **Axiom Cortex's powerful cognitive assessments**. Our engineers can help you build a hiring process that is fast, fair, and effective.",
+            kpi: "90% Reduction in Time to Hire"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not taking full advantage of the cloud?",
-            problem: "Many applications are not built to be cloud-native. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like AWS, Azure, and Google Cloud to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Serverless, and Container-Based Architecture",
+            icon: Bot,
+            pain: "We're not sure how to build a production-ready AI-powered application.",
+            problem: "Building a production-ready AI-powered application is not as simple as just calling an API. It requires careful consideration of scalability, reliability, and cost.",
+            solution: "Our experts are tested on **building scalable, production-ready applications**. They can help you design and build a system that is reliable, scalable, and cost-effective.",
+            kpi: "99.9% Application Uptime"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the AI ecosystem?",
-            problem: "The AI ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the AI ecosystem and the modern AI stack**. They are vetted on their ability to build applications that are powered by the best of the AI ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the AI Ecosystem",
+            icon: Scale,
+            pain: "We're worried about the cost of using an AI-powered application.",
+            problem: "The cost of using an AI-powered application can quickly spiral out of control if you're not careful. It's important to choose the right model for your use case and to optimize your application for cost.",
+            solution: "We vet for expertise in **cost optimization**. Our engineers can help you choose the right model for your use case and to design and build a system that is cost-effective.",
+            kpi: "30% Reduction in AI Costs"
         }
     ],
     evaluation: [
-        "The modern AI stack (e.g., TensorFlow, PyTorch, other modern libraries)",
-        "Cognitive AI and talent evaluation",
-        "The knowledge graph and the reasoning engine",
-        "The learning model and the explainability engine",
-        "Security and best practices",
+        "Deep understanding of Axiom Cortex's core principles.",
+        "Mastery of Axiom Cortex's powerful cognitive assessments.",
+        "Proficiency in building scalable, production-ready AI-powered applications.",
+        "Experience with a variety of AI models and frameworks.",
+        "Expertise in cost optimization.",
     ],
-    technical_analysis: "The Axiom Cortex evaluation focuses on a candidate's ability to build a reliable, scalable, and automated talent evaluation platform. We assess their understanding of the entire cognitive AI ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **Axiom Cortex and the modern AI stack**; candidates must demonstrate how to use tools like TensorFlow, PyTorch, and other modern libraries to build a fully automated, reliable, and efficient talent evaluation platform, and how to use the knowledge graph and the reasoning engine to build a read model that is optimized for queries. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the AI ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["tensorflow", "pytorch", "machine-learning", "data-science"],
+    technical_analysis: "The Axiom Cortex vetting process is rigorous and hands-on. Candidates are required to build a production-ready AI-powered application from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of Axiom Cortex best practices. We also assess their experience with a variety of AI models and frameworks and their ability to optimize for performance and security.",
+    interlink_slugs: ["python", "pytorch", "tensorflow", "langchain", "generative-ai"],
+    is_ready: true,
 };
 
 export default axiomCortex;

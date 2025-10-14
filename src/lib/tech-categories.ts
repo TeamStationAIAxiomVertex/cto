@@ -54,6 +54,15 @@ export const techCategories: TechCategory[] = [
         { name: 'API Security', slug: 'api-security' },
     ],
   },
+    {
+    name: 'Vetting & Cognitive AI',
+    slug: 'vetting-cognitive-ai',
+    pain: "Are you hiring the right people?",
+    icon: BrainCircuit,
+    tech: [
+      { name: 'Axiom Cortex', slug: 'axiom-cortex' },
+    ],
+    },
   {
     name: 'Frontend & UI/UX',
     slug: 'frontend-web',
@@ -69,6 +78,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Redux/Zustand', slug: 'redux' },
       { name: 'Tailwind/shadcn', slug: 'tailwind' },
       { name: 'Testing Library', slug: 'testing' },
+        { name: 'Astro', slug: 'astro' },
     ],
   },
   {
