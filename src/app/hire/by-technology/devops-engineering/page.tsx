@@ -5,14 +5,14 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Hire DevOps Engineers | TeamStation AI',
-    description: 'Hire elite DevOps engineers, vetted for their expertise in SRE principles, cloud architecture (AWS/GCP/Azure), and CI/CD automation. Build your team with TeamStation AI.',
+    description: 'Hire elite DevOps Engineers, vetted for their expertise in building high-performance, scalable, and secure cloud infrastructure. Build your team with TeamStation AI.',
 };
 
-export default function HireDevOpsPage() {
+export default function HireDevOpsEngineeringPage() {
     return (
         <ProgrammaticContent
-            technology="DevOps"
-            description="Our DevOps engineers are experts in SRE principles, cloud architecture, and CI/CD automation. We vet for a deep understanding of infrastructure-as-code (Terraform, Pulumi), containerization (Docker, Kubernetes), and observability (Prometheus, Grafana). Our focus is on engineers who can build and maintain scalable, resilient, and secure infrastructure."
+            technology="DevOps Engineering"
+            description="Our DevOps Engineers are experts in building high-performance, scalable, and secure cloud infrastructure. We vet for a deep understanding of DevOps principles, CI/CD pipelines, and cloud-native technologies. Our focus is on developers who can build expert, cost-effective, and maintainable systems."
             country={null}
         />
     );

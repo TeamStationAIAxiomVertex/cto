@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { Code, Cloud, Repeat, Shield } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const terraform: TechEntry = {
     name: "Terraform",
-    category: "DevOps & Cloud",
+    category: "DevOps & Cloud Infrastructure",
     categorySlug: "devops-cloud",
-    seo_title: "Hire Terraform Experts | Infrastructure as Code & DevOps Consultants",
-    meta_description: "Build a consistent, portable, and efficient cloud infrastructure. Hire elite remote Terraform experts vetted for their deep understanding of infrastructure as code, from the resource block to the remote backend. Book a call.",
-    intro: "Terraform is the de facto standard for infrastructure as code. You need an engineer who understands that building a modern cloud infrastructure is not just about writing code, but about a deep understanding of the entire infrastructure as code ecosystem, from the resource block and the provider to the remote backend and the module registry. Our vetting process identifies developers who are experts in the HashiCorp ecosystem—and can architect a cloud infrastructure that is as secure, efficient, and portable as it is scalable. By hiring a Terraform expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    seo_title: "Hire Senior Terraform Experts | Infrastructure as Code (IaC) Specialists",
+    meta_description: "Hire elite Terraform experts specializing in building, managing, and scaling immutable infrastructure across all major cloud providers.",
+    intro: "Terraform is the industry standard for Infrastructure as Code. Our Terraform experts are vetted for their ability to write clean, modular, and maintainable Terraform code that can be used to manage complex, multi-cloud deployments. They are the specialists who enable your teams to build and manage infrastructure with confidence.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your cloud infrastructure a mess of snowflakes and manual configuration?",
-            problem: "In many organizations, the cloud infrastructure is a mess of snowflakes and manual configuration. This can lead to a user experience that is filled with downtime and a codebase that is a mess of environment-specific hacks and workarounds.",
-            solution: "We vet for experts in **Terraform and infrastructure as code**. Our engineers are proficient in using Terraform to build a fully automated, immutable infrastructure. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Fully Automated, Immutable, and Observable Infrastructure",
+            icon: Code,
+            pain: "Our Terraform code is a mess of spaghetti code.",
+            problem: "Poorly written Terraform code is difficult to understand, maintain, and reuse, leading to configuration drift and a lack of confidence in your infrastructure.",
+            solution: "We vet for mastery in **Terraform best practices**. Our engineers write clean, modular, and well-documented code that is easy to understand, maintain, and reuse.",
+            kpi: "90% Code Reusability"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not portable across different cloud providers?",
-            problem: "Many applications are not built to be portable across different cloud providers. This can lead to a codebase that is a mess of environment-specific hacks and workarounds, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **Terraform and the HashiCorp ecosystem**. They are vetted on their ability to use Terraform to build a portable, cloud-agnostic application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Portable, Cloud-Agnostic Application",
+            icon: Cloud,
+            pain: "We're struggling to manage our multi-cloud infrastructure.",
+            problem: "Managing infrastructure across multiple cloud providers is complex and error-prone, leading to inconsistent configurations and a lack of visibility.",
+            solution: "Our experts are tested on **multi-cloud deployments**. They use Terraform to create a single, unified workflow for managing infrastructure across all major cloud providers.",
+            kpi: "100% Infrastructure Consistency"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the infrastructure as code ecosystem?",
-            problem: "The infrastructure as code ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the infrastructure as code ecosystem and the Terraform module registry**. They are vetted on their ability to build applications that are powered by the best of the infrastructure as code ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Infrastructure as Code Ecosystem",
+            icon: Repeat,
+            pain: "Our infrastructure is not reproducible.",
+            problem: "Manual changes and a lack of version control make it impossible to reproduce your infrastructure, leading to configuration drift and a fear of making changes.",
+            solution: "We vet for expertise in building **immutable infrastructure**. Our engineers use Terraform to create a version-controlled, auditable, and reproducible infrastructure that can be deployed with confidence.",
+            kpi: "100% Reproducibility"
         }
     ],
     evaluation: [
-        "The Terraform CLI and the resource block",
-        "Infrastructure as code and the HashiCorp ecosystem",
-        "The Terraform module registry and the remote backend",
-        "Terraform providers and the provider ecosystem",
-        "Terraform security and best practices",
+        "Deep understanding of Terraform's core concepts (providers, resources, modules).",
+        "Mastery of Terraform best practices (clean, modular, and maintainable code).",
+        "Proficiency in managing complex, multi-cloud deployments.",
+        "Experience with building and managing CI/CD pipelines for Terraform.",
+        "Expertise in writing and using Terraform modules.",
     ],
-    technical_analysis: "The Terraform evaluation focuses on a candidate's ability to build a consistent, portable, and efficient cloud infrastructure. We assess their understanding of the entire infrastructure as code ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **the Terraform CLI and the resource block**; candidates must demonstrate how to use the Terraform CLI to manage the entire lifecycle of a cloud infrastructure, and how to use the resource block to define and configure a cloud resource. We also test their ability to build **portable and cloud-agnostic** applications that can run on any cloud provider. Finally, we assess their knowledge of the Terraform module registry, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["aws", "azure", "google-cloud", "devops-engineering"],
+    technical_analysis: "The Terraform vetting process is rigorous and hands-on. Candidates are required to write Terraform code to provision a complex, multi-cloud infrastructure from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of Terraform best practices. We also assess their experience with building and managing CI/CD pipelines for Terraform, and their ability to write and use Terraform modules.",
+    interlink_slugs: ["aws", "google-cloud", "azure", "kubernetes", "ci-cd"],
+    is_ready: true,
 };
 
 export default terraform;
