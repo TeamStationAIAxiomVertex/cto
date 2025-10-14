@@ -15,6 +15,7 @@ import {
   LineChart, // for Product & Growth
   Cpu, // for Operating Systems
   Code, // for Legacy Languages
+  Network, // for Architecture & Integrations
 } from 'lucide-react';
 
 export interface TechCategory {
@@ -41,6 +42,16 @@ export const techCategories: TechCategory[] = [
       { name: 'PHP (Laravel/Symphony)', slug: 'php' },
       { name: 'gRPC', slug: 'grpc' },
       { name: 'GraphQL', slug: 'graphql' },
+    ],
+  },
+    {
+    name: 'Architecture & Integrations',
+    slug: 'architecture-integrations',
+    pain: "Is your architecture holding you back?",
+    icon: Network,
+    tech: [
+      { name: 'API Gateway', slug: 'api-gateway' },
+        { name: 'API Security', slug: 'api-security' },
     ],
   },
   {
