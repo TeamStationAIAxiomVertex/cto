@@ -5,14 +5,14 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Hire Node.js Developers | TeamStation AI',
-    description: 'Hire elite Node.js developers, vetted for their expertise in building scalable microservices and high-throughput, non-blocking APIs. Build your team with TeamStation AI.',
+    description: 'Hire elite Node.js developers, vetted for their expertise in building high-performance, concurrent systems. Build your team with TeamStation AI.',
 };
 
 export default function HireNodePage() {
     return (
         <ProgrammaticContent
             technology="Node.js"
-            description="Our Node.js developers are experts in building and scaling high-throughput, non-blocking APIs. We focus on a deep understanding of the event loop, libuv, and modern async/await patterns. Our vetting emphasizes experience with structured frameworks like NestJS or Fastify, API security best practices, and performance tuning."
+            description="Our Node.js developers are experts in building high-performance, concurrent systems. We vet for a deep understanding of Node.js\'s core principles, event loop, and performance optimization techniques. Our focus is on developers who can build expert, scalable, and maintainable backend systems."
             country={null}
         />
     );

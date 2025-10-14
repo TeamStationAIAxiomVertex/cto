@@ -1,60 +1,47 @@
-import { TechEntry } from "@/lib/tech";
-import { AlertTriangle } from "lucide-react";
+
+import { Server, Bug, DollarSign, AlertTriangle } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const node: TechEntry = {
-  name: "Node.js",
-  category: "Backend & APIs",
-  categorySlug: "backend-services",
-  seo_title:
-    "Hire Senior Node.js Developers | Backend API & Microservices Experts",
-  meta_description:
-    "Build fast, scalable server-side applications. Hire elite remote Node.js experts vetted for event loop mastery, microservices, and performance. Book a call.",
-  intro:
-    "You're here because you need a backend that can handle high-concurrency and real-time data without breaking a sweat. Node.js, with its non-blocking, event-driven architecture, is the perfect tool for the job. But you need an engineer who truly understands the **Node.js Event Loop**, a non-negotiable skill for avoiding performance-killing blocking operations. Our vetting process is laser-focused on this architectural core, assessing a candidate's ability to design asynchronous, highly concurrent applications—the very definition of a scalable backend. We look for expertise in building robust, performant APIs (both REST and GraphQL) and their ability to architect microservices using Node.js for maximum agility and decoupling. By hiring a Node.js expert from us, you get a developer who can guarantee your backend can handle explosive user growth without scaling headaches or costly infrastructure overruns.",
-  pains: [
-    {
-      icon: AlertTriangle,
-      pain: "Is your server performance plagued by blocking I/O operations?",
-      problem:
-        "The Node.js Event Loop is a single thread. Inexperienced developers often use synchronous methods or fail to correctly delegate long-running tasks, causing the Event Loop to block. This stops all concurrent operations, leading to slow response times, high latency, and a server that collapses under load.",
-      solution:
-        "We vet for an explicit and deep understanding of the Event Loop. Our experts must demonstrate their ability to write non-blocking asynchronous code, correctly use the `process.nextTick` and `setImmediate` queues, and leverage worker threads or external services for CPU-intensive tasks, guaranteeing peak concurrency and low latency.",
-      kpi: "Event Loop Mastery and Non-Blocking I/O",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is your API logic a monolithic, untestable mess?",
-      problem:
-        "A common anti-pattern is building a single, monolithic Express server where business logic, database queries, and routing are tightly coupled. This makes the application nearly impossible to test, refactor, and evolve, slowing down feature development to a crawl.",
-      solution:
-        "Our engineers are masters of architectural patterns like the **Clean Architecture** or **Hexagonal Architecture** within Node.js. They are vetted on their ability to structure code with clear separation of concerns (Controllers, Services, Repositories), leading to a highly modular, unit-testable, and maintainable codebase that scales with your business logic.",
-      kpi: "Modular Backend Architecture (e.g., Clean/Hexagonal)",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Are you struggling to handle security and input validation correctly?",
-      problem:
-        "Failure to implement proper input validation (Joi, Zod) or to correctly manage authentication (JWT, OAuth) and authorization leads to vulnerable APIs susceptible to injection attacks, data breaches, and unauthorized access. Security is often an afterthought.",
-      solution:
-        "We look for engineers who integrate security and validation as first-class citizens. They are proficient in modern validation libraries and demonstrate expertise in securing API endpoints with appropriate middleware, token management, and encryption, ensuring your data and users are safe from day one.",
-      kpi: "API Security and Validation Expertise",
-    },
-  ],
-  evaluation: [
-    "Event Loop architecture and non-blocking I/O",
-    "API design (REST, GraphQL) and routing",
-    "Asynchronous patterns (Promises, Async/Await) and concurrency",
-    "Modular architecture and code structure",
-    "Security (Authentication, Authorization, Input Sanitization)",
-  ],
-  technical_analysis:
-    "The Node.js evaluation is centered on a candidate's mastery of the asynchronous programming model and backend architecture. The critical assessment point is the **Node.js Event Loop**: candidates are given scenarios that intentionally lead to blocking code and are required to refactor it into a non-blocking solution, demonstrating an understanding of the different phases (Timers, Pending Callbacks, I/O, Check, Close). For architecture, we evaluate their ability to design a scalable API using modern frameworks (e.g., NestJS, Express) with a clear separation of concerns (e.g., service and repository layers). We specifically test their knowledge of security best practices, including correct implementation of CORS, handling JWTs, and using validation libraries to prevent common API vulnerabilities. Finally, we assess their proficiency with ORMs (e.g., Prisma, TypeORM) and their ability to integrate with diverse data stores (PostgreSQL, MongoDB) efficiently.",
-  interlink_slugs: [
-    "typescript",
-    "microservices",
-    "rest-api-design",
-    "postgresql",
-  ],
+    name: "Node.js",
+    category: "Backend & Core Languages",
+    categorySlug: "backend-core",
+    seo_title: "Hire Senior Node.js Developers | Microservices, Express, and NestJS Experts",
+    meta_description: "Vetted Node.js experts specializing in high-throughput APIs, non-blocking I/O, and highly scalable cloud-native microservices. Book a strategic hiring call.",
+    intro: "Node.js is the backbone of high-growth technology platforms that require fast, concurrent execution. We vet for mastery in its single-threaded, non-blocking I/O model, and their ability to build and deploy highly performant, scalable microservices architectures.",
+    pains: [
+        {
+            icon: Server,
+            pain: "Our Node.js server keeps crashing under load.",
+            problem: "The single-threaded nature of Node.js means a single blocking operation (like a slow database query) can halt the entire event loop, leading to high latency and catastrophic failures under peak traffic.",
+            solution: "Our experts are vetted on managing the **Event Loop** and implementing robust solutions using worker threads, dedicated microservices, and specialized modules to prevent blocking operations, ensuring resilience and stability.",
+            kpi: "<50ms P99 Latency and 99.99% Uptime"
+        },
+        {
+            icon: DollarSign,
+            pain: "Our API development is slow and inconsistent.",
+            problem: "Lack of architectural consistency in sprawling Node.js codebases, especially when using lightweight frameworks like Express, leads to maintenance nightmares, inconsistent code standards, and slow feature delivery.",
+            solution: "We vet for mastery in modern, structured frameworks like **NestJS** and adherence to architectural patterns (e.g., DDD, Clean Architecture) that enforce discipline, testability, and accelerate long-term development velocity.",
+            kpi: "30% Improvement in Backend Feature Velocity"
+        },
+        {
+            icon: Bug,
+            pain: "We have unhandled exceptions and memory leaks in production.",
+            problem: "The asynchronous nature of Node.js makes error handling complex, often resulting in unhandled rejections that crash the process, or poorly managed streams/listeners that cause memory consumption to balloon.",
+            solution: "Our engineers are tested on advanced error handling patterns, using robust monitoring (Prometheus/Grafana), and implementing strict memory profiling and leak detection routines to ensure long-running process stability.",
+            kpi: "Elimination of Unhandled Rejections and Memory Leaks"
+        }
+    ],
+    evaluation: [
+        "Deep understanding of the Node.js Event Loop and non-blocking I/O.",
+        "Mastery of Express, and/or NestJS for high-quality API development.",
+        "Proficiency in building and securing RESTful and GraphQL APIs (JWT, OAuth).",
+        "Expertise in Microservices, including service discovery and gRPC communication.",
+        "Testing frameworks (Jest/Mocha) and performance profiling techniques.",
+    ],
+    technical_analysis: "The Node.js evaluation is focused heavily on a candidate's operational knowledge of the environment, not just JavaScript coding. We assess their ability to diagnose Event Loop utilization, identify and resolve blocking I/O, and implement proper error handling using domains or asynchronous wrappers. For microservices, we look for demonstrated experience in inter-service communication patterns and service-specific containerization. Finally, candidates must showcase mastery of TypeScript for type safety and maintaining large-scale Node.js applications.",
+    interlink_slugs: ["typescript", "express", "nestjs", "microservices", "ci-cd"],
+    is_ready: true,
 };
 
 export default node;
