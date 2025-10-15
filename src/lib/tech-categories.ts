@@ -44,6 +44,8 @@ export const techCategories: TechCategory[] = [
       { name: 'GraphQL', slug: 'graphql' },
         { name: 'CodeIgniter', slug: 'codeigniter' },
         { name: 'Django', slug: 'django' },
+        { name: 'Express', slug: 'express' },
+        { name: 'FastAPI', slug: 'fastapi' },
     ],
   },
     {
@@ -55,6 +57,7 @@ export const techCategories: TechCategory[] = [
       { name: 'API Gateway', slug: 'api-gateway' },
         { name: 'API Security', slug: 'api-security' },
         { name: 'Domain Driven Design', slug: 'domain-driven-design' },
+        { name: 'Event Sourcing', slug: 'event-sourcing' },
     ],
   },
     {
@@ -93,6 +96,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Tailwind/shadcn', slug: 'tailwind' },
       { name: 'Testing Library', slug: 'testing' },
         { name: 'Astro', slug: 'astro' },
+        { name: 'Ember.js', slug: 'ember-js' },
     ],
   },
   {
@@ -128,6 +132,7 @@ export const techCategories: TechCategory[] = [
       { name: 'DataHub', slug: 'datahub' },
       { name: 'Great Expectations', slug: 'great-expectations' },
         { name: 'Cassandra', slug: 'cassandra' },
+        { name: 'Elasticsearch', slug: 'elasticsearch' },
     ],
   },
   {
@@ -158,6 +163,7 @@ export const techCategories: TechCategory[] = [
       { name: 'MLflow/W&B', slug: 'mlflow' },
       { name: 'Ragas', slug: 'ragas' },
       { name: 'OpenAI', slug: 'openai' },
+        { name: 'DVC', slug: 'dvc' },
     ],
   },
   {

@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { Search, Zap, Shield, Code } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const elasticsearch: TechEntry = {
     name: "Elasticsearch",
-    category: "Databases",
-    categorySlug: "databases",
-    seo_title: "Hire Elasticsearch Experts | Search & Analytics Consultants",
-    meta_description: "Build a fast, scalable, and relevant search experience. Hire elite remote Elasticsearch experts vetted for their deep understanding of search, from the index to the query. Book a call.",
-    intro: "Elasticsearch is the de facto standard for search. You need an engineer who understands that building a modern search experience is not just about writing queries, but about a deep understanding of the entire search lifecycle, from the data and the index to the query and the relevance model. Our vetting process identifies developers who are experts in the modern data stack—and can architect a search platform that is as secure, efficient, and automated as it is scalable. By hiring an Elasticsearch expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    category: "Data Modeling & Databases",
+    categorySlug: "data-modeling-databases",
+    seo_title: "Hire Senior Elasticsearch Experts | Search and Analytics Specialists",
+    meta_description: "Hire elite Elasticsearch experts specializing in building, managing, and scaling secure, and reliable search and analytics solutions.",
+    intro: "Elasticsearch is a powerful and versatile search and analytics engine. Our Elasticsearch experts are vetted for their deep understanding of Elasticsearch's core principles, from its powerful query DSL to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a secure, and reliable search and analytics solution.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your search experience slow, irrelevant, and frustrating?",
-            problem: "In many organizations, the search experience is slow, irrelevant, and frustrating. This can lead to a user experience that is filled with dead-ends and a codebase that is a mess of environment-specific hacks and workarounds.",
-            solution: "We vet for experts in **Elasticsearch and the modern data stack**. Our engineers are proficient in using Elasticsearch to build a fast, scalable, and relevant search experience. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Fast, Scalable, and Relevant Search Experience",
+            icon: Search,
+            pain: "Our search is slow and inaccurate.",
+            problem: "Poorly designed search queries are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
+            solution: "We vet for mastery in **Elasticsearch's powerful query DSL**. Our engineers can help you build a fast, and reliable search and analytics solution.",
+            kpi: "50% Reduction in Search Latency"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not taking full advantage of the cloud?",
-            problem: "Many applications are not built to be cloud-native. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like AWS, Azure, and Google Cloud to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Serverless, and Container-Based Architecture",
+            icon: Zap,
+            pain: "We're struggling to keep up with the latest search and analytics technologies.",
+            problem: "The search and analytics landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as OpenSearch and Solr.",
+            solution: "Our experts are tested on **the latest search and analytics technologies**. They can help you take advantage of the latest features, so you can build the next generation of search and analytics solutions.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the search ecosystem?",
-            problem: "The search ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the search ecosystem and the modern data stack**. They are vetted on their ability to build applications that are powered by the best of the search ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Search Ecosystem",
+            icon: Shield,
+            pain: "We're worried about the security of our data.",
+            problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
+            solution: "We vet for expertise in **Elasticsearch's security features**. Our engineers use the latest security best practices to protect your data from attack.",
+            kpi: "100% Data Security"
         }
     ],
     evaluation: [
-        "The modern data stack (e.g., dbt, Airflow, Spark)",
-        "Search and the ELK stack (e.g., Elasticsearch, Logstash, Kibana)",
-        "Indexing and query optimization",
-        "Relevance and scoring",
-        "Elasticsearch-specific features (e.g., aggregations, machine learning)",
+        "Deep understanding of Elasticsearch's core principles.",
+        "Mastery of Elasticsearch's powerful query DSL.",
+        "Proficiency in building scalable, production-ready search and analytics solutions.",
+        "Experience with a variety of search and analytics technologies.",
+        "Expertise in Elasticsearch's security features.",
     ],
-    technical_analysis: "The Elasticsearch evaluation focuses on a candidate's ability to build a fast, scalable, and relevant search experience. We assess their understanding of the entire search lifecycle, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **Elasticsearch and the modern data stack**; candidates must demonstrate how to use Elasticsearch to build a fast, scalable, and relevant search experience, and how to use services like AWS, Azure, and Google Cloud to build a modern, serverless, and container-based architecture. We also test their ability to build **observable and cost-effective** systems that are easy to monitor and debug. Finally, we assess their knowledge of the search ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["kibana", "logstash", "devops-engineering", "ci-cd"],
+    technical_analysis: "The Elasticsearch vetting process is rigorous and hands-on. Candidates are required to build a production-ready search and analytics solution from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of Elasticsearch best practices. We also assess their experience with a variety of search and analytics technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["opensearch", "solr", "kibana", "logstash", "beats"],
+    is_ready: true,
 };
 
 export default elasticsearch;
