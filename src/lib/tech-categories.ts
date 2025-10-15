@@ -144,6 +144,8 @@ export const techCategories: TechCategory[] = [
     tech: [
       { name: 'Data Engineering', slug: 'data-engineering' },
       { name: 'dbt', slug: 'dbt' },
+      { name: 'Snowflake', slug: 'snowflake' },
+      { name: 'Apache Spark', slug: 'apache-spark' },
     ],
   },
   {
@@ -174,8 +176,8 @@ export const techCategories: TechCategory[] = [
     pain: "Are your data pipelines brittle and unreliable?",
     icon: Component,
     tech: [
-      { name: 'Airflow/Prefect', slug: 'airflow' },
-      { name: 'Kafka/RabbitMQ', slug: 'kafka' },
+      { name: 'Airflow', slug: 'airflow' },
+      { name: 'Kafka', slug: 'kafka' },
       { name: 'Flink/Beam', slug: 'flink' },
       { name: 'Kubernetes', slug: 'kubernetes' },
       { name: 'Docker', slug: 'docker' },
