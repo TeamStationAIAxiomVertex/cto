@@ -63,6 +63,15 @@ export const techCategories: TechCategory[] = [
       { name: 'Axiom Cortex', slug: 'axiom-cortex' },
     ],
     },
+      {
+    name: 'DevOps & Cloud Infrastructure',
+    slug: 'devops-cloud',
+    pain: "Is your infrastructure holding your business back?",
+    icon: Server,
+    tech: [
+      { name: 'CI/CD', slug: 'ci-cd' },
+    ],
+    },
   {
     name: 'Frontend & UI/UX',
     slug: 'frontend-web',
@@ -113,6 +122,7 @@ export const techCategories: TechCategory[] = [
       { name: 'DynamoDB', slug: 'dynamodb' },
       { name: 'DataHub', slug: 'datahub' },
       { name: 'Great Expectations', slug: 'great-expectations' },
+        { name: 'Cassandra', slug: 'cassandra' },
     ],
   },
   {
