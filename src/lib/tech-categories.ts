@@ -42,6 +42,8 @@ export const techCategories: TechCategory[] = [
       { name: 'PHP (Laravel/Symphony)', slug: 'php' },
       { name: 'gRPC', slug: 'grpc' },
       { name: 'GraphQL', slug: 'graphql' },
+        { name: 'CodeIgniter', slug: 'codeigniter' },
+        { name: 'Django', slug: 'django' },
     ],
   },
     {
@@ -70,6 +72,8 @@ export const techCategories: TechCategory[] = [
     icon: Server,
     tech: [
       { name: 'CI/CD', slug: 'ci-cd' },
+        { name: 'Cloudformation', slug: 'cloudformation' },
+        { name: 'Docker', slug: 'docker' },
     ],
     },
   {
@@ -219,6 +223,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Gremlin/Litmus', slug: 'gremlin' },
       { name: 'JUnit', slug: 'junit'},
       { name: 'Locust', slug: 'locust'},
+        { name: 'Cypress', slug: 'cypress' },
     ],
   },
   {
