@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { Server, Zap, Code, Shield } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const jakartaEE: TechEntry = {
     name: "Jakarta EE",
-    category: "Software Development",
-    categorySlug: "software-development",
-    seo_title: "Hire Jakarta EE Experts | Enterprise Java & Microservices",
-    meta_description: "Build a scalable, reliable, and secure enterprise application. Hire elite remote Jakarta EE experts vetted for their deep understanding of Java, from the EJB to the RESTful web service. Book a call.",
-    intro: "Jakarta EE is the open source future of cloud native Java. You need an engineer who understands that building a modern, cloud-native application is not just about writing code, but about a deep understanding of the entire Java ecosystem, from the EJB and the servlet to the RESTful web service and the JSON-P. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Jakarta EE expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    category: "APIs & Backend Services",
+    categorySlug: "backend-services",
+    seo_title: "Hire Senior Jakarta EE Developers | Java and Enterprise Experts",
+    meta_description: "Hire elite Jakarta EE developers specializing in building high-performance, scalable, and secure enterprise applications.",
+    intro: "Jakarta EE is a powerful and versatile enterprise Java framework. Our Jakarta EE experts are vetted for their deep understanding of Jakarta EE's core principles, from its powerful component model to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of enterprise applications.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your application a mess of slow, bloated Java?",
-            problem: "In many organizations, the application is a mess of slow, bloated Java. This can lead to a user experience that is filled with long load times and a codebase that is a mess of environment-specific hacks and workarounds.",
-            solution: "We vet for experts in **Jakarta EE and the modern backend stack**. Our engineers are proficient in using Jakarta EE to build a fast, lean, and performant application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Fast, Lean, and Performant Application",
+            icon: Server,
+            pain: "Our enterprise applications are slow and expensive to host.",
+            problem: "Traditional monolithic applications are slow to load and expensive to host. They don't take advantage of the latest web technologies, such as microservices and serverless.",
+            solution: "We vet for mastery in **Jakarta EE's powerful component model**. Our engineers can help you build a fast, scalable, and cost-effective enterprise application.",
+            kpi: "50% Reduction in Page Load Time"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not taking full advantage of the cloud?",
-            problem: "Many applications are not built to be truly modern. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **Jakarta EE and the modern cloud**. They are vetted on their ability to use modern cloud APIs and best practices to build a modern, fast, and feature-rich application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Fast, and Feature-Rich Application",
+            icon: Zap,
+            pain: "We're struggling to keep up with the latest enterprise Java technologies.",
+            problem: "The enterprise Java landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as MicroProfile and Quarkus.",
+            solution: "Our experts are tested on **the latest enterprise Java technologies**. They can help you take advantage of the latest features, so you can build the next generation of enterprise applications.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the backend ecosystem?",
-            problem: "The backend ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the backend ecosystem and the modern backend stack**. They are vetted on their ability to build applications that are powered by the best of the backend ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Backend Ecosystem",
+            icon: Code,
+            pain: "We're worried about the security of our enterprise applications.",
+            problem: "Enterprise security is a top priority for every business. It's difficult to secure a traditional monolithic application, especially when you're dealing with user authentication and data fetching.",
+            solution: "We vet for expertise in **Jakarta EE's security features**. Our engineers use the latest security best practices to protect your enterprise application from attack.",
+            kpi: "100% Application Security"
         }
     ],
     evaluation: [
-        "The modern backend stack (e.g., Jakarta EE, Java, other modern libraries)",
-        "Jakarta EE and the modern cloud",
-        "The EJB and the servlet",
-        "The RESTful web service and the JSON-P",
-        "Security and best practices",
+        "Deep understanding of Jakarta EE's core principles.",
+        "Mastery of Jakarta EE's powerful component model.",
+        "Proficiency in building scalable, production-ready enterprise applications with Jakarta EE.",
+        "Experience with a variety of enterprise Java technologies.",
+        "Expertise in Jakarta EE's security features.",
     ],
-    technical_analysis: "The Jakarta EE evaluation focuses on a candidate's ability to build a scalable, reliable, and secure enterprise application. We assess their understanding of the entire Jakarta EE ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **Jakarta EE and the modern backend stack**; candidates must demonstrate how to use tools like Jakarta EE, Java, and other modern libraries to build a modern, scalable, and resilient application, and how to use the EJB and the servlet to build a read model that is optimized for queries. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the backend ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["java", "kubernetes", "microservices", "spring-boot"],
+    technical_analysis: "The Jakarta EE vetting process is rigorous and hands-on. Candidates are required to build a production-ready enterprise application with Jakarta EE from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of Jakarta EE best practices. We also assess their experience with a variety of enterprise Java technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["java", "microprofile", "quarkus", "spring-boot", "hibernate"],
+    is_ready: true,
 };
 
 export default jakartaEE;

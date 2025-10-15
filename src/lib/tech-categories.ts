@@ -47,6 +47,8 @@ export const techCategories: TechCategory[] = [
         { name: 'Express', slug: 'express' },
         { name: 'FastAPI', slug: 'fastapi' },
         { name: 'Flask', slug: 'flask' },
+        { name: 'Hapi.js', slug: 'hapi-js' },
+        { name: 'Jakarta EE', slug: 'jakarta-ee' },
     ],
   },
     {
@@ -81,6 +83,8 @@ export const techCategories: TechCategory[] = [
         { name: 'Docker', slug: 'docker' },
         { name: 'GitOps', slug: 'gitops' },
         { name: 'Google Cloud', slug: 'google-cloud' },
+        { name: 'Helm', slug: 'helm' },
+        { name: 'Jenkins', slug: 'jenkins' },
     ],
     },
   {
@@ -102,6 +106,7 @@ export const techCategories: TechCategory[] = [
         { name: 'Ember.js', slug: 'ember-js' },
         { name: 'Flow', slug: 'flow' },
         { name: 'Gatsby', slug: 'gatsby' },
+        { name: 'jQuery', slug: 'jquery' },
     ],
   },
   {

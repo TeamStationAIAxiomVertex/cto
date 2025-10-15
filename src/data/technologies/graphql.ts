@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { Share2, Zap, Shield, Code } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const graphql: TechEntry = {
     name: "GraphQL",
-    category: "Vetting & Cognitive AI",
-    categorySlug: "vetting-cognitive-ai",
-    seo_title: "Hire GraphQL Experts | API & Microservices Consultants",
-    meta_description: "Build a flexible, efficient, and developer-friendly API. Hire elite remote GraphQL experts vetted for their deep understanding of GraphQL, from the schema to the resolver. Book a call.",
-    intro: "GraphQL is a query language for your API. You need an engineer who understands that building a modern, developer-friendly API is not just about writing code, but about a deep understanding of the entire API ecosystem, from the schema and the resolver to the query and the mutation. Our vetting process identifies developers who are experts in the modern API stack—and can architect an API platform that is as secure, efficient, and automated as it is scalable. By hiring a GraphQL expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    category: "APIs & Backend Services",
+    categorySlug: "backend-services",
+    seo_title: "Hire Senior GraphQL Developers | API and Web Experts",
+    meta_description: "Hire elite GraphQL developers specializing in building high-performance, scalable, and secure APIs.",
+    intro: "GraphQL is a powerful and versatile query language for APIs. Our GraphQL experts are vetted for their deep understanding of GraphQL's core principles, from its powerful query language to its robust security and performance tuning capabilities. They are the specialists who can help you build the next generation of APIs.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your API a mess of inconsistent, hard-to-use endpoints?",
-            problem: "In many organizations, the API is a mess of inconsistent, hard-to-use endpoints. This can lead to a developer experience that is filled with frustration and a codebase that is a mess of spaghetti code and technical debt.",
-            solution: "We vet for experts in **GraphQL and the modern API stack**. Our engineers are proficient in using tools like Apollo, Relay, and other modern libraries to build a modern, developer-friendly API. This results in a codebase that is easy to understand and a developer experience that is a joy to use.",
-            kpi: "A Modern, Developer-Friendly API",
+            icon: Share2,
+            pain: "Our APIs are slow and inefficient.",
+            problem: "Traditional REST APIs are often slow and inefficient, especially when you're dealing with complex data fetching requirements.",
+            solution: "We vet for mastery in **GraphQL's powerful query language**. Our engineers can help you build a fast, and efficient API.",
+            kpi: "50% Reduction in API Latency"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not portable across different environments?",
-            problem: "Many applications are not built to be portable across different environments. This can lead to a codebase that is a mess of environment-specific hacks and workarounds, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like AWS, Azure, and Google Cloud to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Serverless, and Container-Based Architecture",
+            icon: Zap,
+            pain: "We're struggling to keep up with the latest API technologies.",
+            problem: "The API landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as gRPC and WebSockets.",
+            solution: "Our experts are tested on **the latest API technologies**. They can help you take advantage of the latest features, so you can build the next generation of APIs.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the API ecosystem?",
-            problem: "The API ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the API ecosystem and the modern API stack**. They are vetted on their ability to build applications that are powered by the best of the API ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the API Ecosystem",
+            icon: Shield,
+            pain: "We're worried about the security of our APIs.",
+            problem: "API security is a top priority for every business. It's difficult to secure your APIs, especially when you're dealing with user authentication and authorization.",
+            solution: "We vet for expertise in **GraphQL's security features**. Our engineers use the latest security best practices to protect your APIs from attack.",
+            kpi: "100% API Security"
         }
     ],
     evaluation: [
-        "The modern API stack (e.g., Apollo, Relay, other modern libraries)",
-        "GraphQL and the schema definition language (SDL)",
-        "The query and the mutation",
-        "The resolver and the data source",
-        "Security and best practices",
+        "Deep understanding of GraphQL's core principles.",
+        "Mastery of GraphQL's powerful query language.",
+        "Proficiency in building scalable, production-ready APIs with GraphQL.",
+        "Experience with a variety of API technologies.",
+        "Expertise in GraphQL's security features.",
     ],
-    technical_analysis: "The GraphQL evaluation focuses on a candidate's ability to build a flexible, efficient, and developer-friendly API. We assess their understanding of the entire API ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **GraphQL and the modern API stack**; candidates must demonstrate how to use tools like Apollo, Relay, and other modern libraries to build a modern, developer-friendly API, and how to use the schema definition language (SDL) to design a truly flexible API. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the API ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["apollo", "relay", "react", "nodejs"],
+    technical_analysis: "The GraphQL vetting process is rigorous and hands-on. Candidates are required to build a production-ready API with GraphQL from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of GraphQL best practices. We also assess their experience with a variety of API technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["apollo", "relay", "graphql-yoga", "graphql-tools", "graphql-shield"],
+    is_ready: true,
 };
 
 export default graphql;
