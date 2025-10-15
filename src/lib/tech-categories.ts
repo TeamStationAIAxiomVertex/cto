@@ -111,6 +111,8 @@ export const techCategories: TechCategory[] = [
         { name: 'Flow', slug: 'flow' },
         { name: 'Gatsby', slug: 'gatsby' },
         { name: 'jQuery', slug: 'jquery' },
+        { name: 'MobX', slug: 'mobx' },
+        { name: 'Nuxt.js', slug: 'nuxt-js' },
     ],
   },
   {
@@ -147,6 +149,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Great Expectations', slug: 'great-expectations' },
         { name: 'Cassandra', slug: 'cassandra' },
         { name: 'Elasticsearch', slug: 'elasticsearch' },
+        { name: 'MongoDB', slug: 'mongodb' },
     ],
   },
   {
@@ -247,6 +250,7 @@ export const techCategories: TechCategory[] = [
       { name: 'JUnit', slug: 'junit'},
       { name: 'Locust', slug: 'locust'},
         { name: 'Cypress', slug: 'cypress' },
+        { name: 'OWASP ZAP', slug: 'owasp-zap' },
     ],
   },
   {

@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { AppWindow, Zap, Code, Shield } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const mobx: TechEntry = {
     name: "MobX",
-    category: "Software Development",
-    categorySlug: "software-development",
-    seo_title: "Hire MobX Experts | State Management & React Consultants",
-    meta_description: "Build a scalable, maintainable, and reactive application. Hire elite remote MobX experts vetted for their deep understanding of state management, from the observable to the action. Book a call.",
-    intro: "MobX is a simple, scalable, and battle-tested state management library. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the observable and the action to the reaction and the derivation. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a MobX expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    category: "Frontend & UI Engineering",
+    categorySlug: "frontend-ui",
+    seo_title: "Hire Senior MobX Developers | State Management Experts",
+    meta_description: "Hire elite MobX developers specializing in building high-performance, scalable, and secure web applications.",
+    intro: "MobX is a powerful and versatile state management library. Our MobX experts are vetted for their deep understanding of MobX's core principles, from its powerful observable state to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of web applications.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your application a mess of inconsistent, hard-to-maintain state?",
-            problem: "In many organizations, the application is a mess of inconsistent, hard-to-maintain state. This can lead to a user experience that is filled with bugs and a codebase that is a mess of spaghetti code and technical debt.",
-            solution: "We vet for experts in **MobX and the modern frontend stack**. Our engineers are proficient in using MobX to build a modern, scalable, and resilient application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Scalable, and Resilient Application",
+            icon: AppWindow,
+            pain: "Our application state is a mess of spaghetti code.",
+            problem: "Poorly managed application state is difficult to understand, maintain, and reuse, leading to a lack of confidence in your application.",
+            solution: "We vet for mastery in **MobX's powerful observable state**. Our engineers can help you build a clean, modular, and well-documented application state.",
+            kpi: "90% Code Reusability"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not taking full advantage of the modern web?",
-            problem: "Many applications are not built to be truly modern. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a web application that is not as rich as it could be.",
-            solution: "Our engineers are masters of **MobX and the modern web**. They are vetted on their ability to use modern web APIs and best practices to build a modern, fast, and feature-rich application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Fast, and Feature-Rich Application",
+            icon: Zap,
+            pain: "We're struggling to keep up with the latest state management technologies.",
+            problem: "The state management landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as Redux and Zustand.",
+            solution: "Our experts are tested on **the latest state management technologies**. They can help you take advantage of the latest features, so you can build the next generation of web applications.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the frontend ecosystem?",
-            problem: "The frontend ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the frontend ecosystem and the modern frontend stack**. They are vetted on their ability to build applications that are powered by the best of the frontend ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Frontend Ecosystem",
+            icon: Code,
+            pain: "We're worried about the security of our application state.",
+            problem: "Application state security is a top priority for every business. It's difficult to secure your application state, especially when you're dealing with sensitive information.",
+            solution: "We vet for expertise in **MobX's security features**. Our engineers use the latest security best practices to protect your application state from attack.",
+            kpi: "100% Application State Security"
         }
     ],
     evaluation: [
-        "The modern frontend stack (e.g., MobX, React, other modern libraries)",
-        "MobX and the modern web",
-        "The observable and the action",
-        "The reaction and the derivation",
-        "Security and best practices",
+        "Deep understanding of MobX's core principles.",
+        "Mastery of MobX's powerful observable state.",
+        "Proficiency in building scalable, production-ready web applications with MobX.",
+        "Experience with a variety of state management technologies.",
+        "Expertise in MobX's security features.",
     ],
-    technical_analysis: "The MobX evaluation focuses on a candidate's ability to build a scalable, maintainable, and reactive application. We assess their understanding of the entire MobX ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **MobX and the modern frontend stack**; candidates must demonstrate how to use tools like MobX, React, and other modern libraries to build a modern, scalable, and resilient application, and how to use the observable and the action to build a read model that is optimized for queries. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the frontend ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["react", "mobx-state-tree", "javascript", "typescript"],
+    technical_analysis: "The MobX vetting process is rigorous and hands-on. Candidates are required to build a production-ready web application with MobX from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of MobX best practices. We also assess their experience with a variety of state management technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["react", "redux", "zustand", "typescript", "javascript"],
+    is_ready: true,
 };
 
 export default mobx;
