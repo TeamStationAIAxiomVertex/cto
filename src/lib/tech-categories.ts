@@ -198,7 +198,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Ray Serve', slug: 'ray' },
       { name: 'LangChain', slug: 'langchain' },
       { name: 'pgvector/Pinecone', slug: 'pgvector' },
-      { name: 'MLflow/W&B', slug: 'mlflow' },
+      { name: 'MLflow', slug: 'mlflow' },
       { name: 'Ragas', slug: 'ragas' },
       { name: 'OpenAI', slug: 'openai' },
       { name: 'DVC', slug: 'dvc' },
