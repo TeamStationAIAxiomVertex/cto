@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { BrainCircuit, Milestone, Code, Shield } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const domainDrivenDesign: TechEntry = {
-    name: "Domain-Driven Design",
+    name: "Domain Driven Design",
     category: "Architecture & Integrations",
     categorySlug: "architecture-integrations",
-    seo_title: "Hire Domain-Driven Design Experts | Software Architecture & Microservices Consultants",
-    meta_description: "Build a scalable, resilient, and maintainable application. Hire elite remote domain-driven design experts vetted for their deep understanding of software architecture, from the bounded context to the ubiquitous language. Book a call.",
-    intro: "Domain-driven design is a powerful architectural pattern for building scalable, resilient, and maintainable applications. You need an engineer who understands that building a modern, domain-driven application is not just about writing code, but about a deep understanding of the entire software architecture ecosystem, from the bounded context and the ubiquitous language to the aggregate and the repository. Our vetting process identifies developers who are experts in the modern software architecture stack—and can architect a software platform that is as secure, efficient, and automated as it is scalable. By hiring a domain-driven design expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    seo_title: "Hire Senior Domain Driven Design Experts | Software Design Specialists",
+    meta_description: "Hire elite Domain Driven Design experts specializing in building, managing, and scaling secure, and reliable software systems.",
+    intro: "Domain Driven Design is a powerful and versatile software design methodology. Our Domain Driven Design experts are vetted for their deep understanding of Domain Driven Design's core principles, from its powerful strategic design patterns to its robust tactical design patterns. They are the specialists who can help you build and manage a secure, and reliable software system.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your application a monolithic, hard-to-maintain mess?",
-            problem: "In many organizations, the application is a monolithic, hard-to-maintain mess. This can lead to a user experience that is filled with downtime and a codebase that is a mess of spaghetti code and technical debt.",
-            solution: "We vet for experts in **domain-driven design and software architecture**. Our engineers are proficient in using tools like Event Storming, Context Mapping, and the Bounded Context Canvas to build a modern, scalable, and resilient domain-driven application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Scalable, and Resilient Domain-Driven Application",
+            icon: BrainCircuit,
+            pain: "Our software is a mess of spaghetti code.",
+            problem: "Poorly designed software is difficult to understand, maintain, and reuse, leading to a lack of confidence in your system.",
+            solution: "We vet for mastery in **Domain Driven Design's powerful strategic design patterns**. Our engineers can help you build a clean, modular, and well-documented software system.",
+            kpi: "90% Code Reusability"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not aligned with the business domain?",
-            problem: "Many applications are not built to be aligned with the business domain. This can lead to a codebase that is a mess of environment-specific hacks and workarounds, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **domain-driven design and the modern software architecture stack**. They are vetted on their ability to use domain-driven design to build an application that is aligned with the business domain. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "An Application That is Aligned with the Business Domain",
+            icon: Milestone,
+            pain: "We're struggling to keep up with the latest software design technologies.",
+            problem: "The software design landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as microservices and serverless.",
+            solution: "Our experts are tested on **the latest software design technologies**. They can help you take advantage of the latest features, so you can build the next generation of software systems.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the software architecture ecosystem?",
-            problem: "The software architecture ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the software architecture ecosystem and the modern software architecture stack**. They are vetted on their ability to build applications that are powered by the best of the software architecture ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Software Architecture Ecosystem",
+            icon: Code,
+            pain: "We're worried about the security of our software.",
+            problem: "Software security is a top priority for every business. It's difficult to secure your software, especially when you're dealing with sensitive information.",
+            solution: "We vet for expertise in **Domain Driven Design's security features**. Our engineers use the latest security best practices to protect your software from attack.",
+            kpi: "100% Software Security"
         }
     ],
     evaluation: [
-        "The modern software architecture stack (e.g., Event Storming, Context Mapping, Bounded Context Canvas)",
-        "Domain-driven design and software architecture",
-        "The bounded context and the ubiquitous language",
-        "The aggregate and the repository",
-        "Security and best practices",
+        "Deep understanding of Domain Driven Design's core principles.",
+        "Mastery of Domain Driven Design's powerful strategic design patterns.",
+        "Proficiency in building scalable, production-ready software systems.",
+        "Experience with a variety of software design technologies.",
+        "Expertise in Domain Driven Design's security features.",
     ],
-    technical_analysis: "The Domain-Driven Design evaluation focuses on a candidate's ability to build a scalable, resilient, and maintainable application. We assess their understanding of the entire software architecture ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **domain-driven design and the modern software architecture stack**; candidates must demonstrate how to use tools like Event Storming, Context Mapping, and the Bounded Context Canvas to build a modern, scalable, and resilient domain-driven application, and how to use the aggregate and the repository to build a read model that is optimized for queries. We also test their ability to build **aligned with the business domain** applications that can run on any environment. Finally, we assess their knowledge of the software architecture ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["event-storming", "context-mapping", "bounded-context-canvas", "microservices"],
+    technical_analysis: "The Domain Driven Design vetting process is rigorous and hands-on. Candidates are required to build a production-ready software system from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of Domain Driven Design best practices. We also assess their experience with a variety of software design technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["microservices", "event-sourcing", "cqrs", "clean-architecture", "solid"],
+    is_ready: true,
 };
 
 export default domainDrivenDesign;

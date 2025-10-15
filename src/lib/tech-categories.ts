@@ -54,6 +54,7 @@ export const techCategories: TechCategory[] = [
     tech: [
       { name: 'API Gateway', slug: 'api-gateway' },
         { name: 'API Security', slug: 'api-security' },
+        { name: 'Domain Driven Design', slug: 'domain-driven-design' },
     ],
   },
     {
