@@ -1,46 +1,61 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { TechEntry } from '@/lib/tech';
+import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const dataScience: TechEntry = {
-    name: "Data Science",
-    category: "Data & AI",
-    categorySlug: "ml-ai-llm-ops",
-    seo_title: "Hire Data Scientists | Machine Learning & AI Consultants",
-    meta_description: "Build a reliable, scalable, and automated data science platform. Hire elite remote data scientists vetted for their deep understanding of data science, from the model to the pipeline. Book a call.",
-    intro: "Data science is the foundation of any AI-driven organization. You need an engineer who understands that building a modern data science platform is not just about training models, but about a deep understanding of the entire data science lifecycle, from the data and the model to the pipeline and the deployment. Our vetting process identifies developers who are experts in the modern data science stack—and can architect a data science platform that is as secure, efficient, and automated as it is scalable. By hiring a data scientist, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Is your data science platform a mess of brittle, ad-hoc scripts?",
-            problem: "In many organizations, the data science platform is a mess of brittle, ad-hoc scripts. This can lead to a user experience that is filled with stale models and a codebase that is a mess of environment-specific hacks and workarounds.",
-            solution: "We vet for experts in **data science and the modern data science stack**. Our engineers are proficient in using tools like Kubeflow, MLflow, and SageMaker to build a fully automated, reliable, and efficient data science platform. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Fully Automated, Reliable, and Efficient Data Science Platform",
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your application not taking full advantage of the cloud?",
-            problem: "Many applications are not built to be cloud-native. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like Lambda, Fargate, and Kubernetes to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Serverless, and Container-Based Architecture",
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the data science ecosystem?",
-            problem: "The data science ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the data science ecosystem and the modern data science stack**. They are vetted on their ability to build applications that are powered by the best of the data science ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Data Science Ecosystem",
-        }
-    ],
-    evaluation: [
-        "The modern data science stack (e.g., Kubeflow, MLflow, SageMaker)",
-        "Data science pipelines and MLOps",
-        "Model training, evaluation, and deployment",
-        "Feature engineering and data preprocessing",
-        "Deep learning and neural networks",
-    ],
-    technical_analysis: "The Data Science evaluation focuses on a candidate's ability to build a reliable, scalable, and automated data science platform. We assess their understanding of the entire data science lifecycle, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **the modern data science stack and the data science pipeline**; candidates must demonstrate how to use tools like Kubeflow, MLflow, and SageMaker to build a fully automated, reliable, and efficient data science platform, and how to use services like Lambda, Fargate, and Kubernetes to build a modern, serverless, and container-based architecture. We also test their ability to build **observable and cost-effective** systems that are easy to monitor and debug. Finally, we assess their knowledge of the data science ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["kubeflow", "mlflow", "sagemaker", "tensorflow"],
+  name: 'Data Science',
+  category: 'Data & AI',
+  categorySlug: 'data-ai',
+  seo_title: 'Hire Data Scientists | Experts in Statistical Modeling & Insights',
+  meta_description:
+    'Hire elite Data Scientists who can translate your complex business questions into actionable, data-driven insights. Our vetted talent uncovers the signals that drive real business value.',
+  intro:
+    'Data Science is the application of the scientific method to business problems. It’s not about algorithms; it’s about answers. You need a **Data Scientist** who can move beyond simple reporting to uncover the deep, predictive insights hidden in your data. Our vetting identifies professionals who can frame a vague business problem as a testable hypothesis, explore the data to find the signal in the noise, and communicate their findings to drive strategic action.',
+  pains: [
+    {
+      icon: AlertTriangle,
+      pain: 'Drowning in Data, Starving for Insights',
+      problem:
+        'You have petabytes of data, but every strategic decision is still based on gut feeling and historical anecdotes. You lack the ability to answer your most critical business questions with data.',
+      solution:
+        'A Data Scientist translates business ambiguity into a clear, data-driven research plan. They use statistical analysis and exploratory techniques to discover the underlying drivers of your business, turning your dormant data into a source of truth.',
+      kpi: 'Deliver 3-5 major actionable insights that directly influence the product roadmap within the first quarter.',
+    },
+    {
+      icon: Workflow,
+      pain: 'Inability to Predict Business Outcomes',
+      problem:
+        'You are constantly reacting to market changes, customer churn, and inventory shortages. You have no reliable way to forecast future trends, leaving you strategically vulnerable.',
+      solution:
+        'Our Data Scientists build and validate predictive models. They use techniques from regression to classification to forecast key business outcomes, enabling you to move from a reactive to a proactive operational posture.',
+      kpi: 'Improve forecasting accuracy for key business metrics (e.g., churn, demand) by 25-40%.',
+    },
+    {
+      icon: ShieldCheck,
+      pain: 'Misinterpreting Noise as a Signal',
+      problem:
+        'Teams are chasing spurious correlations from dashboard data, launching features based on flimsy A/B test results, and making poor decisions because they lack statistical rigor.',
+      solution:
+        'A TeamStation Data Scientist brings statistical discipline. They design sound experiments, correctly interpret p-values and confidence intervals, and ensure that when you make a data-driven decision, it’s based on a real signal, not random noise.',
+      kpi: 'Eliminate false positives from A/B testing and other experiments, saving thousands in wasted engineering hours.',
+    },
+  ],
+  evaluation: [
+    'Deep expertise in statistics, probability, and experimental design.',
+    'Proven ability to translate unstructured business problems into a data science framework.',
+    'Mastery of data exploration, feature engineering, and visualization techniques.',
+    'Proficiency with core data science toolkits (e.g., Python with Pandas, Scikit-learn, R).',
+    'Excellent communication skills, with the ability to explain complex findings to non-technical stakeholders.',
+  ],
+  technical_analysis:
+    'The Axiom Cortex™ evaluation for Data Scientists is fundamentally different from that of ML Engineers. We assess their ability to handle ambiguity and structure a problem. Candidates are given a vague business scenario and a complex dataset and must formulate a hypothesis, design an analysis plan, and present their findings. We test their statistical rigor and their ability to avoid common analytical fallacies. This ensures our Data Scientists are true problem-solvers who can deliver clear, actionable insights, not just technically correct but useless models.',
+  interlink_slugs: [
+    'machine-learning',
+    'python',
+    'pandas',
+    'power-bi',
+  ],
+  is_ready: true,
 };
 
 export default dataScience;

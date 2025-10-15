@@ -1,46 +1,61 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { TechEntry } from '@/lib/tech';
+import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const llms: TechEntry = {
-    name: "LLMs",
-    category: "Data & AI",
-    categorySlug: "ml-ai-llm-ops",
-    seo_title: "Hire LLM Experts | Generative AI & Large Language Model Consultants",
-    meta_description: "Build a reliable, scalable, and automated generative AI platform. Hire elite remote LLM experts vetted for their deep understanding of large language models, from the transformer to the prompt. Book a call.",
-    intro: "LLMs are the foundation of any generative AI-driven organization. You need an engineer who understands that building a modern generative AI platform is not just about training models, but about a deep understanding of the entire generative AI lifecycle, from the data and the model to the pipeline and the deployment. Our vetting process identifies developers who are experts in the modern generative AI stack—and can architect a generative AI platform that is as secure, efficient, and automated as it is scalable. By hiring an LLM expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Is your generative AI platform a mess of brittle, ad-hoc scripts?",
-            problem: "In many organizations, the generative AI platform is a mess of brittle, ad-hoc scripts. This can lead to a user experience that is filled with stale models and a codebase that is a mess of environment-specific hacks and workarounds.",
-            solution: "We vet for experts in **LLMs and the modern generative AI stack**. Our engineers are proficient in using tools like Kubeflow, MLflow, and SageMaker to build a fully automated, reliable, and efficient generative AI platform. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Fully Automated, Reliable, and Efficient Generative AI Platform",
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your application not taking full advantage of the cloud?",
-            problem: "Many applications are not built to be cloud-native. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like Lambda, Fargate, and Kubernetes to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Serverless, and Container-Based Architecture",
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the generative AI ecosystem?",
-            problem: "The generative AI ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the generative AI ecosystem and the modern generative AI stack**. They are vetted on their ability to build applications that are powered by the best of the generative AI ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Generative AI Ecosystem",
-        }
-    ],
-    evaluation: [
-        "The modern generative AI stack (e.g., Kubeflow, MLflow, SageMaker)",
-        "Generative AI pipelines and MLOps",
-        "Model training, evaluation, and deployment",
-        "Feature engineering and data preprocessing",
-        "Deep learning and neural networks",
-    ],
-    technical_analysis: "The LLMs evaluation focuses on a candidate's ability to build a reliable, scalable, and automated generative AI platform. We assess their understanding of the entire generative AI lifecycle, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **the modern generative AI stack and the generative AI pipeline**; candidates must demonstrate how to use tools like Kubeflow, MLflow, and SageMaker to build a fully automated, reliable, and efficient generative AI platform, and how to use services like Lambda, Fargate, and Kubernetes to build a modern, serverless, and container-based architecture. We also test their ability to build **observable and cost-effective** systems that are easy to monitor and debug. Finally, we assess their knowledge of the generative AI ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["kubeflow", "mlflow", "sagemaker", "tensorflow"],
+  name: 'LLMs',
+  category: 'ML/AI & LLM Ops',
+  categorySlug: 'ml-ai-llm-ops',
+  seo_title: 'Hire LLM Engineers | Experts in RAG, Fine-Tuning & LLM Ops',
+  meta_description:
+    'Hire elite LLM Engineers to productionize generative AI. Our vetted talent builds the robust RAG pipelines, evaluation frameworks, and optimized infrastructure to deploy reliable LLM applications.',
+  intro:
+    'Building with Large Language Models is a new frontier of systems engineering. A compelling demo is easy; a production-ready, reliable, and cost-effective LLM application is brutally hard. You need an **LLM Engineer** who masters the entire stack, from data pipelines for Retrieval-Augmented Generation (RAG) to the complex trade-offs of inference optimization. Our vetting identifies engineers who can tame hallucinations, build robust evaluation systems, and turn the promise of generative AI into a hardened, valuable asset.',
+  pains: [
+    {
+      icon: AlertTriangle,
+      pain: 'Unreliable, Hallucinating Models',
+      problem:
+        'Your LLM-powered application frequently makes up facts, provides dangerously incorrect information, or goes off-topic, destroying user trust and creating significant business risk.',
+      solution:
+        'An LLM Engineer architects and implements a robust Retrieval-Augmented Generation (RAG) pipeline. They use vector databases and sophisticated retrieval strategies to ground the model in your specific, factual data, dramatically reducing hallucinations and ensuring answers are relevant and accurate.',
+      kpi: 'Reduce model hallucinations by >95% by grounding responses in verifiable data.',
+    },
+    {
+      icon: Workflow,
+      pain: 'Skyrocketing and Unpredictable Inference Costs',
+      problem:
+        'Your proof-of-concept with a proprietary API was impressive, but the cost-per-token is commercially unviable at scale. You have no clear path to making the unit economics work.',
+      solution:
+        'Our LLM experts are masters of cost optimization. They can fine-tune smaller, open-source models, implement efficient caching strategies, and use tools like vLLM to optimize inference, bringing your operational costs in line with your business model.',
+      kpi: 'Decrease the cost-per-inference by 50-80% through model and infrastructure optimization.',
+    },
+    {
+      icon: ShieldCheck,
+      pain: 'Impossible to Measure or Guarantee Quality',
+      problem:
+        'You have no objective way to measure if your LLM application is getting better or worse. You are flying blind, unable to evaluate different prompts, models, or RAG strategies in a systematic way.',
+      solution:
+        'A TeamStation LLM Engineer builds a rigorous evaluation framework. Using tools like Ragas, they create automated test suites to measure metrics like faithfulness, answer relevancy, and context recall, allowing you to iterate and improve with confidence.',
+      kpi: 'Establish a quantitative, automated evaluation pipeline for 100% of LLM development cycles.',
+    },
+  ],
+  evaluation: [
+    'Deep expertise in the trade-offs between RAG, fine-tuning, and prompting.',
+    'Proven ability to build and optimize production-grade RAG pipelines (e.g., using LangChain, LlamaIndex).',
+    'Mastery of LLM evaluation frameworks and metrics (e.g., Ragas, faithfulness, context recall).',
+    'Proficiency with the LLM Ops toolchain, including vector databases and inference optimization.',
+    'Skills in both proprietary model APIs (OpenAI, Anthropic) and open-source models.',
+  ],
+  technical_analysis:
+    'The Axiom Cortex™ evaluation for LLM Engineers is intensely focused on their ability to solve real-world production challenges. Candidates are given a complex RAG implementation with a specific business goal and must diagnose and fix issues related to retrieval, context length, and cost. We assess their ability to design a comprehensive evaluation suite to prove their solution is superior. This ensures our engineers are not just API consumers, but true systems thinkers who can build reliable, cost-effective, and trustworthy generative AI applications.',
+  interlink_slugs: [
+    'ragas',
+    'vllm',
+    'langchain',
+    'machine-learning',
+  ],
+  is_ready: true,
 };
 
 export default llms;
