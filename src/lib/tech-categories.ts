@@ -28,8 +28,8 @@ export interface TechCategory {
 
 export const techCategories: TechCategory[] = [
   {
-    name: 'APIs & Backend Services',
-    slug: 'backend-services',
+    name: 'Backend & Software Development',
+    slug: 'backend',
     pain: "Is your backend a bottleneck or a force multiplier?",
     icon: Server,
     tech: [
@@ -41,7 +41,6 @@ export const techCategories: TechCategory[] = [
       { name: 'Ruby on Rails', slug: 'ruby' },
       { name: 'PHP', slug: 'php' },
       { name: 'gRPC', slug: 'grpc' },
-      { name: 'GraphQL', slug: 'graphql' },
       { name: 'CodeIgniter', slug: 'codeigniter' },
       { name: 'Django', slug: 'django' },
       { name: 'Express', slug: 'express' },
@@ -54,6 +53,10 @@ export const techCategories: TechCategory[] = [
       { name: 'Rust', slug: 'rust' },
       { name: 'Dart', slug: 'dart' },
       { name: 'C++', slug: 'cpp' },
+      { name: 'Quarkus', slug: 'quarkus' },
+      { name: 'Stripe', slug: 'stripe' },
+      { name: 'Tornado', slug: 'tornado' },
+      { name: 'Zuora', slug: 'zuora' },
     ],
   },
     {
@@ -68,6 +71,8 @@ export const techCategories: TechCategory[] = [
       { name: 'Event Sourcing', slug: 'event-sourcing' },
       { name: 'Message Queues', slug: 'message-queues' },
       { name: 'Microservices', slug: 'microservices' },
+      { name: 'REST API Design', slug: 'rest-api-design' },
+      { name: 'System Design', slug: 'system-design' },
     ],
   },
     {
@@ -92,11 +97,15 @@ export const techCategories: TechCategory[] = [
       { name: 'Google Cloud', slug: 'google-cloud' },
       { name: 'Helm', slug: 'helm' },
       { name: 'Jenkins', slug: 'jenkins' },
+      { name: 'Azure', slug: 'azure' },
+      { name: 'DevOps Engineering', slug: 'devops-engineering' },
+      { name: 'AWS', slug: 'aws' },
+      { name: 'Serverless', slug: 'serverless' },
     ],
     },
   {
     name: 'Frontend & UI/UX',
-    slug: 'frontend-web',
+    slug: 'frontend-ui',
     pain: "Is a slow, buggy UI costing you customers?",
     icon: Layers,
     tech: [
@@ -108,7 +117,6 @@ export const techCategories: TechCategory[] = [
       { name: 'TanStack Query', slug: 'tanstack' },
       { name: 'Redux/Zustand', slug: 'redux' },
       { name: 'Tailwind/shadcn', slug: 'tailwind' },
-      { name: 'Testing Library', slug: 'testing' },
       { name: 'Astro', slug: 'astro' },
       { name: 'Ember.js', slug: 'ember-js' },
       { name: 'Flow', slug: 'flow' },
@@ -119,11 +127,16 @@ export const techCategories: TechCategory[] = [
       { name: 'Svelte', slug: 'svelte' },
       { name: 'Solid.js', slug: 'solid-js' },
       { name: 'Preact', slug: 'preact' },
+      { name: 'Recoil', slug: 'recoil' },
+      { name: 'Storybook', slug: 'storybook' },
+      { name: 'SvelteKit', slug: 'sveltekit' },
+      { name: 'Vuex', slug: 'vuex' },
+      { name: 'Zustand', slug: 'zustand' },
     ],
   },
   {
     name: 'Mobile & Cross-Platform',
-    slug: 'mobile-cross-platform',
+    slug: 'mobile-development',
     pain: "Is your mobile experience falling behind?",
     icon: Plane,
     tech: [
@@ -133,7 +146,6 @@ export const techCategories: TechCategory[] = [
       { name: 'Kotlin', slug: 'kotlin' },
       { name: 'Socket.IO', slug: 'socketio' },
       { name: 'Android', slug: 'android' },
-      { name: 'Dart', slug: 'dart' },
     ],
   },
     {
@@ -148,11 +160,12 @@ export const techCategories: TechCategory[] = [
       { name: 'Apache Spark', slug: 'apache-spark' },
       { name: 'Machine Learning', slug: 'machine-learning' },
       { name: 'Data Science', slug: 'data-science' },
+      { name: 'GraphQL', slug: 'graphql' },
     ],
   },
   {
     name: 'Data Modeling & Databases',
-    slug: 'data-modeling-databases',
+    slug: 'databases',
     pain: "Is your data model built for scale or for future refactors?",
     icon: Database,
     tech: [
@@ -187,7 +200,7 @@ export const techCategories: TechCategory[] = [
   },
   {
     name: 'ML/AI & LLM Ops',
-    slug: 'ml-ai-llm-ops',
+    slug: 'ai-ml-engineering',
     pain: "Struggling to move AI from a notebook to production?",
     icon: BrainCircuit,
     tech: [
@@ -204,11 +217,13 @@ export const techCategories: TechCategory[] = [
       { name: 'DVC', slug: 'dvc' },
       { name: 'Feast', slug: 'feast' },
       { name: 'Kubeflow', slug: 'kubeflow' },
+      { name: 'Scikit-learn', slug: 'scikit-learn' },
+      { name: 'TensorFlow', slug: 'tensorflow' },
     ],
   },
   {
-    name: 'Observability & SRE',
-    slug: 'platform-infra-sre',
+    name: 'DevOps & SRE',
+    slug: 'devops',
     pain: "Are you debugging in the dark when systems fail?",
     icon: GanttChartSquare,
     tech: [
@@ -256,18 +271,26 @@ export const techCategories: TechCategory[] = [
     ],
   },
   {
-    name: 'Testing & Quality Engineering',
-    slug: 'qa-quality-engineering',
+    name: 'QA & Security',
+    slug: 'qa-security',
     pain: "Does 'shipping fast' also mean 'shipping bugs'?",
     icon: TestTube2,
     tech: [
-      { name: 'Playwright/Cypress', slug: 'playwright' },
+      { name: 'Playwright', slug: 'playwright' },
       { name: 'Jest/Vitest', slug: 'jest' },
-      { name: 'PyTest/JUnit', slug: 'pytest' },
-      { name: 'k6/Locust', slug: 'k6' },
+      { name: 'PyTest', slug: 'pytest' },
+      { name: 'k6', slug: 'k6' },
       { name: 'Pact', slug: 'pact' },
       { name: 'Gremlin', slug: 'gremlin' },
       { name: 'OWASP ZAP', slug: 'owasp-zap' },
+      { name: 'Cypress', slug: 'cypress' },
+      { name: 'JUnit', slug: 'junit' },
+      { name: 'Locust', slug: 'locust' },
+      { name: 'QA Automation', slug: 'qa-automation' },
+      { name: 'React Testing Library', slug: 'react-testing-library' },
+      { name: 'Security Engineering', slug: 'security-engineering' },
+      { name: 'Vitest', slug: 'vitest' },
+      { name: 'Penetration Testing', slug: 'penetration-testing' },
     ],
   },
   {
