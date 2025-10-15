@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { GitBranch, Server, Cloud, Shield } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const gitops: TechEntry = {
     name: "GitOps",
-    category: "DevOps & Cloud",
+    category: "DevOps & Cloud Infrastructure",
     categorySlug: "devops-cloud",
-    seo_title: "Hire GitOps Experts | Kubernetes & DevOps Consultants",
-    meta_description: "Build a modern, automated, and observable software delivery pipeline. Hire elite remote GitOps experts vetted for their deep understanding of GitOps, from the Git repository to the Kubernetes cluster. Book a call.",
-    intro: "GitOps is the de facto standard for continuous delivery. You need an engineer who understands that building a modern software delivery pipeline is not just about writing code, but about a deep understanding of the entire GitOps ecosystem, from the Git repository and the CI/CD pipeline to the Kubernetes cluster and the observability backend. Our vetting process identifies developers who are experts in the Cloud Native Computing Foundation (CNCF) landscape—and can architect a software delivery pipeline that is as secure, efficient, and automated as it is scalable. By hiring a GitOps expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    seo_title: "Hire Senior GitOps Engineers | Automation and Pipeline Specialists",
+    meta_description: "Hire elite GitOps engineers specializing in building, managing, and scaling secure, and reliable software delivery pipelines.",
+    intro: "GitOps is a powerful and versatile software delivery methodology. Our GitOps experts are vetted for their deep understanding of GitOps's core principles, from its powerful pipeline-as-code features to its robust security and performance testing capabilities. They are the specialists who can help you build and manage a secure, and reliable software delivery pipeline.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your software delivery process slow, manual, and error-prone?",
-            problem: "In many organizations, the software delivery process is a mess of manual handoffs, ad-hoc scripts, and long-running, error-prone deployments. This can lead to a user experience that is filled with bugs and a codebase that is a mess of hotfixes and rollbacks.",
-            solution: "We vet for experts in **GitOps and continuous delivery**. Our engineers are proficient in using GitOps to build a fully automated software delivery pipeline. This results in a codebase that is easy to reason about and a user experience that is free of bugs and regressions.",
-            kpi: "A Fully Automated, Reliable, and Efficient Software Delivery Pipeline",
+            icon: GitBranch,
+            pain: "Our software delivery is slow and unreliable.",
+            problem: "Poorly designed software delivery pipelines are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
+            solution: "We vet for mastery in **GitOps's powerful pipeline-as-code features**. Our engineers can help you build a fast, and reliable software delivery pipeline.",
+            kpi: "50% Reduction in Software Delivery Time"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not portable across different environments?",
-            problem: "Many applications are not built to be portable across different environments. This can lead to a codebase that is a mess of environment-specific hacks and workarounds, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **GitOps and the modern DevOps ecosystem**. They are vetted on their ability to use GitOps to build a portable, environment-agnostic application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Portable, Environment-Agnostic Application",
+            icon: Server,
+            pain: "We're struggling to keep up with the latest software delivery technologies.",
+            problem: "The software delivery landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as DevSecOps and AIOps.",
+            solution: "Our experts are tested on **the latest software delivery technologies**. They can help you take advantage of the latest features, so you can build the next generation of software delivery pipelines.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the continuous delivery ecosystem?",
-            problem: "The continuous delivery ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the continuous delivery ecosystem and the GitOps toolkit**. They are vetted on their ability to build applications that are powered by the best of the continuous delivery ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Continuous Delivery Ecosystem",
+            icon: Shield,
+            pain: "We're worried about the security of our software.",
+            problem: "Software security is a top priority for every business. It's difficult to secure your software, especially when you're dealing with sensitive information.",
+            solution: "We vet for expertise in **GitOps's security features**. Our engineers use the latest security best practices to protect your software from attack.",
+            kpi: "100% Software Security"
         }
     ],
     evaluation: [
-        "The GitOps toolkit (e.g., Flux, Argo CD)",
-        "Continuous delivery and the Cloud Native Computing Foundation (CNCF)",
-        "The Git repository and the CI/CD pipeline",
-        "GitOps security and best practices",
-        "GitOps on Kubernetes",
+        "Deep understanding of GitOps's core principles.",
+        "Mastery of GitOps's powerful pipeline-as-code features.",
+        "Proficiency in building scalable, production-ready software delivery pipelines.",
+        "Experience with a variety of software delivery technologies.",
+        "Expertise in GitOps's security features.",
     ],
-    technical_analysis: "The GitOps evaluation focuses on a candidate's ability to build a modern, automated, and observable software delivery pipeline. We assess their understanding of the entire GitOps ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **the GitOps toolkit and the CI/CD pipeline**; candidates must demonstrate how to use tools like Flux and Argo CD to build a fully automated software delivery pipeline, and how to use the CI/CD pipeline to build and test the application. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the Cloud Native Computing Foundation (CNCF), and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["kubernetes", "docker", "ci-cd", "devops-engineering"],
+    technical_analysis: "The GitOps vetting process is rigorous and hands-on. Candidates are required to build a production-ready software delivery pipeline from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of GitOps best practices. We also assess their experience with a variety of software delivery technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["kubernetes", "argo-cd", "flux", "helm", "terraform"],
+    is_ready: true,
 };
 
 export default gitops;

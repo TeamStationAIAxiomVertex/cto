@@ -1,54 +1,47 @@
-import { TechEntry } from "@/lib/tech";
 
-import { Unlink, Library, MessageSquare } from "lucide-react";
+import { PenTool, Zap, Shield, Code } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const figma: TechEntry = {
-  name: "Figma",
-  category: "Frontend",
-  categorySlug: "frontend",
-  seo_title: "Hire Figma Experts | TeamStation AI",
-  meta_description:
-    "Hire top Figma designers and developers to create stunning, high-fidelity mockups, design systems, and interactive prototypes. Get pre-vetted LATAM talent.",
-  intro:
-    "Figma is the collaborative interface design tool that’s taking the world by storm. Our expert designers use Figma to create everything from user flow diagrams and wireframes to high-fidelity mockups and interactive prototypes, all in one place.",
-  pains: [
-    {
-      icon: Unlink,
-      pain: "Design and development are disconnected, leading to a final product that doesn't match the mockups.",
-      problem:
-        "Developers are working with static images and outdated specs, leading to implementation errors, design inconsistencies, and endless back-and-forth.",
-      solution:
-        "We create a single source of truth in Figma, with auto-updating design systems and clear component specifications, bridging the gap between design and code.",
-      kpi: "Reduce design-to-development discrepancies by 95%.",
-    },
-    {
-      icon: Library,
-      pain: "Your design system is a collection of static UI kits that are difficult to maintain and use.",
-      problem:
-        "Without a living design system, components become outdated, styles are inconsistent, and developers are constantly rebuilding what's already been designed.",
-      solution:
-        "We build robust, scalable design systems in Figma using components, variants, and auto layout, ensuring your design language is consistent and easy to scale.",
-      kpi: "Speed up component design and development by 3x.",
-    },
-    {
-      icon: MessageSquare,
-      pain: "Design feedback is scattered across email, Slack, and InVision, causing confusion and rework.",
-      problem:
-        "Consolidating and tracking feedback from multiple stakeholders is a nightmare. It's unclear what's been approved, what's been addressed, and what's still pending.",
-      solution:
-        "We centralize all design feedback directly in Figma, using its built-in commenting and version history features to create a clear, actionable, and transparent review process.",
-      kpi: "Cut down on feedback-related rework by 70%.",
-    },
-  ],
-  evaluation: [
-    "Deep expertise in Figma's features, including auto layout, components, variants, and prototyping.",
-    "Proven ability to create and maintain large-scale, multi-brand design systems.",
-    "Experience in running collaborative design sprints and workshops within Figma.",
-    "Proficiency in using Figma plugins and integrations to streamline the design workflow.",
-  ],
-  technical_analysis:
-    "Figma has revolutionized the design process by bringing it into the browser and making it collaborative. Our experts are masters of Figma's powerful features. We use auto layout to create responsive, production-ready designs. We build component libraries with variants to ensure consistency and scalability. We create interactive prototypes to test and validate user flows before a single line of code is written. We also leverage the Figma API to automate tasks and connect Figma to other tools in your stack. Our approach ensures that your design process is efficient, collaborative, and seamlessly integrated with your development workflow.",
-  interlink_slugs: ["react", "vue", "tailwind", "web-accessibility"],
+    name: "Figma",
+    category: "Product, Design & Growth",
+    categorySlug: "product-design-growth",
+    seo_title: "Hire Senior Figma Experts | Design and Prototyping Specialists",
+    meta_description: "Hire elite Figma experts specializing in building, managing, and scaling secure, and reliable design systems.",
+    intro: "Figma is a powerful and versatile design and prototyping tool. Our Figma experts are vetted for their deep understanding of Figma's core principles, from its powerful design and prototyping features to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a secure, and reliable design system.",
+    pains: [
+        {
+            icon: PenTool,
+            pain: "Our design system is a mess of spaghetti.",
+            problem: "Poorly designed design systems are difficult to understand, maintain, and reuse, leading to a lack of confidence in your product.",
+            solution: "We vet for mastery in **Figma's powerful design and prototyping features**. Our engineers can help you build a clean, modular, and well-documented design system.",
+            kpi: "90% Component Reusability"
+        },
+        {
+            icon: Zap,
+            pain: "We're struggling to keep up with the latest design and prototyping technologies.",
+            problem: "The design and prototyping landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as Framer and Sketch.",
+            solution: "Our experts are tested on **the latest design and prototyping technologies**. They can help you take advantage of the latest features, so you can build the next generation of design systems.",
+            kpi: "90% Reduction in Time to Market"
+        },
+        {
+            icon: Shield,
+            pain: "We're worried about the security of our data.",
+            problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
+            solution: "We vet for expertise in **Figma's security features**. Our engineers use the latest security best practices to protect your data from attack.",
+            kpi: "100% Data Security"
+        }
+    ],
+    evaluation: [
+        "Deep understanding of Figma's core principles.",
+        "Mastery of Figma's powerful design and prototyping features.",
+        "Proficiency in building scalable, production-ready design systems.",
+        "Experience with a variety of design and prototyping technologies.",
+        "Expertise in Figma's security features.",
+    ],
+    technical_analysis: "The Figma vetting process is rigorous and hands-on. Candidates are required to build a production-ready design system from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of Figma best practices. We also assess their experience with a variety of design and prototyping technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["sketch", "framer", "adobe-xd", "invision", "zeplin"],
+    is_ready: true,
 };
 
 export default figma;

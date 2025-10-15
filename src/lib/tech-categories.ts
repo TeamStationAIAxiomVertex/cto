@@ -46,6 +46,7 @@ export const techCategories: TechCategory[] = [
         { name: 'Django', slug: 'django' },
         { name: 'Express', slug: 'express' },
         { name: 'FastAPI', slug: 'fastapi' },
+        { name: 'Flask', slug: 'flask' },
     ],
   },
     {
@@ -78,6 +79,8 @@ export const techCategories: TechCategory[] = [
       { name: 'CI/CD', slug: 'ci-cd' },
         { name: 'Cloudformation', slug: 'cloudformation' },
         { name: 'Docker', slug: 'docker' },
+        { name: 'GitOps', slug: 'gitops' },
+        { name: 'Google Cloud', slug: 'google-cloud' },
     ],
     },
   {
@@ -97,6 +100,8 @@ export const techCategories: TechCategory[] = [
       { name: 'Testing Library', slug: 'testing' },
         { name: 'Astro', slug: 'astro' },
         { name: 'Ember.js', slug: 'ember-js' },
+        { name: 'Flow', slug: 'flow' },
+        { name: 'Gatsby', slug: 'gatsby' },
     ],
   },
   {
@@ -164,6 +169,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Ragas', slug: 'ragas' },
       { name: 'OpenAI', slug: 'openai' },
         { name: 'DVC', slug: 'dvc' },
+        { name: 'Feast', slug: 'feast' },
     ],
   },
   {
@@ -256,6 +262,7 @@ export const techCategories: TechCategory[] = [
     tech: [
       { name: 'Amplitude', slug: 'amplitude' },
       { name: 'LaunchDarkly', slug: 'launchdarkly' },
+        { name: 'Figma', slug: 'figma' },
     ],
   },
   {
