@@ -1,54 +1,47 @@
-import { TechEntry } from "@/lib/tech";
 
-import { AlertTriangle } from "lucide-react";
+import { GitBranch, TestTube2, Database, Code } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const kubeflow: TechEntry = {
-  name: "Kubeflow",
-  category: "AI / ML Engineering",
-  categorySlug: "ai-ml-engineering",
-  seo_title: "Hire Kubeflow Experts | TeamStation AI",
-  meta_description:
-    "Hire expert Kubeflow developers to build and manage scalable, portable machine learning workflows on Kubernetes. Get pre-vetted LATAM talent to orchestrate your MLOps pipelines.",
-  intro:
-    "Kubeflow is the machine learning toolkit for Kubernetes. Our AI/ML engineers use Kubeflow to build, deploy, and manage portable, scalable, and composable machine learning workflows, making it possible to run end-to-end MLOps on any cloud.",
-  pains: [
-    {
-      icon: AlertTriangle,
-      pain: "Are your ML workflows not portable across different environments?",
-      problem:
-        "You've built an ML pipeline that works on a specific cloud or on-premise setup, but moving it is a nightmare. This vendor lock-in and lack of portability slows down collaboration and increases operational risk.",
-      solution:
-        "We use **Kubeflow to abstract away the underlying infrastructure**. By building your ML pipelines on Kubernetes, we create a single, consistent environment that can run anywhere Kubernetes runs—public cloud, on-premise, or hybrid environments.",
-      kpi: "Achieve 100% portability for your ML pipelines across any cloud.",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Is it difficult to compose and orchestrate your ML lifecycle from experimentation to production?",
-      problem:
-        "Your MLOps process is a fragmented collection of scripts and services. There's no unified way to manage data preparation, training, tuning, and model serving, leading to brittle, unmaintainable systems.",
-      solution:
-        "Our engineers use **Kubeflow Pipelines** to build and automate end-to-end ML workflows. We create Directed Acyclic Graphs (DAGs) of your ML steps, making them reproducible, easy to manage, and simple to orchestrate from a single control plane.",
-      kpi: "Automate 90% of your ML operational tasks.",
-    },
-    {
-      icon: AlertTriangle,
-      pain: "Are you struggling to provide a scalable, multi-tenant ML platform for your data science teams?",
-      problem:
-        "Multiple teams are competing for resources, and there is no secure way to isolate their experiments, data, and models. This creates resource contention, security vulnerabilities, and governance headaches.",
-      solution:
-        "We leverage **Kubeflow's multi-tenancy features** to create secure, isolated environments for each team. We manage namespaces, resource quotas, and access control, providing a scalable and collaborative platform that empowers your data scientists to work efficiently and securely.",
-      kpi: "Onboard new data science teams 4x faster.",
-    },
-  ],
-  evaluation: [
-    "Deep expertise in Kubeflow and the Kubernetes ecosystem.",
-    "Proven ability to design, build, and manage end-to-end ML pipelines using Kubeflow Pipelines.",
-    "Experience with Kubeflow components for training (TFJob, PyTorchJob), serving (KServe), and hyperparameter tuning (Katib).",
-    "Proficiency in building scalable, portable, and multi-tenant MLOps platforms on any cloud.",
-  ],
-  technical_analysis:
-    "Kubeflow makes the promise of 'write once, run anywhere' a reality for machine learning. Our engineers are experts at leveraging the full power of the Kubernetes ecosystem to build robust MLOps platforms. We use Kubeflow Pipelines to create reproducible and versioned workflows that automate the entire ML lifecycle. We utilize custom resource operators like TFJob and PyTorchJob for efficient, distributed training, and KServe (formerly KFServing) for scalable, serverless model inference with advanced features like canary deployments and explainability. By treating machine learning operations as a software engineering discipline—MLOps—we build systems that are not just powerful, but also maintainable, scalable, and secure. We configure Kubeflow to provide a seamless, notebook-to-production experience for data scientists while giving platform engineers the control and observability they need.",
-  interlink_slugs: ["docker", "kubernetes", "mlflow", "feast"],
+    name: "Kubeflow",
+    category: "ML/AI & LLM Ops",
+    categorySlug: "ml-ai-llm-ops",
+    seo_title: "Hire Senior Kubeflow Experts | Machine Learning Pipeline Specialists",
+    meta_description: "Hire elite Kubeflow experts specializing in building, managing, and scaling reproducible machine learning pipelines.",
+    intro: "Kubeflow is a powerful and versatile machine learning pipeline platform. Our Kubeflow experts are vetted for their deep understanding of Kubeflow's core principles, from its powerful pipeline authoring and execution features to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a reproducible machine learning pipeline.",
+    pains: [
+        {
+            icon: GitBranch,
+            pain: "Our machine learning pipelines are not reproducible.",
+            problem: "Poorly managed machine learning pipelines are difficult to reproduce, leading to a lack of confidence in your results.",
+            solution: "We vet for mastery in **Kubeflow's powerful pipeline authoring and execution features**. Our engineers can help you build a reproducible machine learning pipeline.",
+            kpi: "100% Reproducibility"
+        },
+        {
+            icon: TestTube2,
+            pain: "We're struggling to keep up with the latest machine learning technologies.",
+            problem: "The machine learning landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as PyTorch and TensorFlow.",
+            solution: "Our experts are tested on **the latest machine learning technologies**. They can help you take advantage of the latest features, so you can build the next generation of machine learning pipelines.",
+            kpi: "90% Reduction in Time to Market"
+        },
+        {
+            icon: Database,
+            pain: "We're worried about the security of our data.",
+            problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
+            solution: "We vet for expertise in **Kubeflow's security features**. Our engineers use the latest security best practices to protect your data from attack.",
+            kpi: "100% Data Security"
+        }
+    ],
+    evaluation: [
+        "Deep understanding of Kubeflow's core principles.",
+        "Mastery of Kubeflow's powerful pipeline authoring and execution features.",
+        "Proficiency in building scalable, production-ready machine learning pipelines.",
+        "Experience with a variety of machine learning technologies.",
+        "Expertise in Kubeflow's security features.",
+    ],
+    technical_analysis: "The Kubeflow vetting process is rigorous and hands-on. Candidates are required to build a production-ready machine learning pipeline from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of Kubeflow best practices. We also assess their experience with a variety of machine learning technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["kubernetes", "docker", "python", "pytorch", "tensorflow"],
+    is_ready: true,
 };
 
 export default kubeflow;

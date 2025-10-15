@@ -49,6 +49,7 @@ export const techCategories: TechCategory[] = [
         { name: 'Flask', slug: 'flask' },
         { name: 'Hapi.js', slug: 'hapi-js' },
         { name: 'Jakarta EE', slug: 'jakarta-ee' },
+        { name: 'Koa', slug: 'koa' },
     ],
   },
     {
@@ -61,6 +62,7 @@ export const techCategories: TechCategory[] = [
         { name: 'API Security', slug: 'api-security' },
         { name: 'Domain Driven Design', slug: 'domain-driven-design' },
         { name: 'Event Sourcing', slug: 'event-sourcing' },
+        { name: 'Message Queues', slug: 'message-queues' },
     ],
   },
     {
@@ -175,6 +177,7 @@ export const techCategories: TechCategory[] = [
       { name: 'OpenAI', slug: 'openai' },
         { name: 'DVC', slug: 'dvc' },
         { name: 'Feast', slug: 'feast' },
+        { name: 'Kubeflow', slug: 'kubeflow' },
     ],
   },
   {
