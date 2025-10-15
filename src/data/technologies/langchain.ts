@@ -1,47 +1,61 @@
 
-import { Bot, Link, BrainCircuit, Code } from "lucide-react";
-import type { TechEntry } from "@/lib/tech";
+import { TechEntry } from '@/lib/tech';
+import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const langchain: TechEntry = {
-    name: "LangChain",
-    category: "Data & AI Engineering",
-    categorySlug: "data-ai",
-    seo_title: "Hire Senior LangChain Experts | LLM Application Development Specialists",
-    meta_description: "Hire elite LangChain experts specializing in building, managing, and scaling applications powered by large language models.",
-    intro: "LangChain is the leading framework for building applications with large language models. Our LangChain experts are vetted for their deep understanding of LangChain's core principles, from its powerful abstractions to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of AI-powered applications.",
-    pains: [
-        {
-            icon: Bot,
-            pain: "We're struggling to build a production-ready application with a large language model.",
-            problem: "Building a production-ready application with a large language model is not as simple as just calling an API. It requires careful consideration of scalability, reliability, and cost.",
-            solution: "We vet for mastery in **LangChain's powerful abstractions**. Our engineers can help you build a production-ready application that is reliable, scalable, and cost-effective.",
-            kpi: "99.9% Application Uptime"
-        },
-        {
-            icon: Link,
-            pain: "We're not sure how to connect our large language model to our other systems.",
-            problem: "Large language models are most powerful when they are connected to other systems, such as databases, APIs, and file systems. It's difficult to build these integrations from scratch.",
-            solution: "Our experts are tested on **LangChain's growing ecosystem of integrations**. They can help you connect your large language model to your other systems, so you can unlock its full potential.",
-            kpi: "90% Reduction in Integration Time"
-        },
-        {
-            icon: BrainCircuit,
-            pain: "We're worried about the cost of using a large language model.",
-            problem: "The cost of using a large language model can quickly spiral out of control if you're not careful. It's important to choose the right model for your use case and to optimize your application for cost.",
-            solution: "We vet for expertise in **cost optimization**. Our engineers can help you choose the right model for your use case and to design and build a system that is cost-effective.",
-            kpi: "30% Reduction in LLM Costs"
-        }
-    ],
-    evaluation: [
-        "Deep understanding of LangChain's core principles.",
-        "Mastery of LangChain's powerful abstractions.",
-        "Proficiency in building scalable, production-ready applications with LangChain.",
-        "Experience with a variety of large language models.",
-        "Expertise in cost optimization.",
-    ],
-    technical_analysis: "The LangChain vetting process is rigorous and hands-on. Candidates are required to build a production-ready application with LangChain from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of LangChain best practices. We also assess their experience with a variety of large language models and their ability to optimize for cost.",
-    interlink_slugs: ["python", "llm", "generative-ai", "pytorch", "tensorflow"],
-    is_ready: true,
+  name: 'LangChain',
+  category: 'ML/AI & LLM Ops',
+  categorySlug: 'ml-ai-llm-ops',
+  seo_title: 'Hire LangChain Experts | LLM Application & Agent Developers',
+  meta_description:
+    'Hire elite LangChain developers to build robust, production-grade applications powered by LLMs. Our vetted talent architects the chains and agents that turn your AI concepts into reality.',
+  intro:
+    'LangChain is the definitive framework for **composing and orchestrating LLM interactions**. It provides the critical scaffolding to move beyond simple prompts and build complex, data-aware, and tool-using applications. You need an engineer who can architect with Chains and Agents, not just write scripts. Our vetting identifies experts who use LangChain to structure the chaos of LLM development, creating modular, maintainable, and powerful generative AI applications.',
+  pains: [
+    {
+      icon: AlertTriangle,
+      pain: 'LLM "Spaghetti Code" is Unmaintainable',
+      problem:
+        'Your proof-of-concept is a tangled mess of prompt templates, API calls, and custom parsing logic. It’s impossible to debug, extend, or swap out the underlying model without a complete rewrite.',
+      solution:
+        'A LangChain expert uses the framework’s declarative components (Chains, Runnables) to build a modular application. This abstracts away the boilerplate, creating a clean, readable, and maintainable codebase where different models, data sources, or tools can be swapped in and out with ease.',
+      kpi: 'Reduce the complexity of LLM application code by 70% and improve maintainability.',
+    },
+    {
+      icon: Workflow,
+      pain: 'Your LLM is a Brain in a Jar, Unable to Act',
+      problem:
+        'Your LLM can talk, but it can’t *do* anything. It has no access to your internal APIs, databases, or external tools, severely limiting its usefulness for any real-world business process.',
+      solution:
+        'Our LangChain specialists build autonomous **Agents**. They give the LLM access to a secure toolkit of functions, enabling it to query databases, call APIs, and perform actions to solve complex, multi-step problems on its own.',
+      kpi: 'Automate complex business workflows by giving LLMs the ability to use your existing tools.',
+    },
+    {
+      icon: ShieldCheck,
+      pain: 'Debugging and Tracing is a Black Box',
+      problem:
+        'When your LLM application gives a bad answer, you have no idea why. You can’t see the intermediate steps, the exact prompt that was sent, or which tool was used, making it impossible to debug and improve.',
+      solution:
+        'A TeamStation LangChain engineer leverages integrated tracing tools like LangSmith. They build observable applications where every step of a chain or agent’s reasoning is logged and visualized, providing the transparency needed to rapidly find and fix issues.',
+      kpi: 'Decrease debugging time for complex LLM chains by 90% with full observability.',
+    },
+  ],
+  evaluation: [
+    'Deep expertise in the LangChain Expression Language (LCEL) and building custom chains.',
+    'Proven ability to design and implement autonomous agents with custom tools.',
+    'Mastery of integrating various data sources for Retrieval-Augmented Generation (RAG).',
+    'Proficiency with the LangChain ecosystem, including LangSmith for debugging and tracing.',
+    'Skills in composing and orchestrating both proprietary and open-source models.',
+  ],
+  technical_analysis:
+    'The Axiom Cortex™ evaluation for LangChain developers tests their ability to architect robust LLM applications, not just connect library components. Candidates are given a complex business process and must design a LangChain agent to automate it. We assess their ability to define appropriate tools, structure the agent’s logic for reliability, and implement a tracing strategy for debugging. This ensures our engineers are true application architects who can wield the power of composition to build sophisticated and reliable AI systems.',
+  interlink_slugs: [
+    'llms',
+    'ragas',
+    'python',
+    'machine-learning',
+  ],
+  is_ready: true,
 };
 
 export default langchain;
