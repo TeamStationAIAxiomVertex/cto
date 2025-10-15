@@ -136,6 +136,16 @@ export const techCategories: TechCategory[] = [
       { name: 'Dart', slug: 'dart' },
     ],
   },
+    {
+    name: 'Data & AI',
+    slug: 'data-ai',
+    pain: "Is your data a liability or your most valuable asset?",
+    icon: Database,
+    tech: [
+      { name: 'Data Engineering', slug: 'data-engineering' },
+      { name: 'dbt', slug: 'dbt' },
+    ],
+  },
   {
     name: 'Data Modeling & Databases',
     slug: 'data-modeling-databases',
@@ -145,7 +155,6 @@ export const techCategories: TechCategory[] = [
       { name: 'PostgreSQL', slug: 'postgresql' },
       { name: 'MySQL', slug: 'mysql' },
       { name: 'SQL Server', slug: 'sql' },
-      { name: 'dbt', slug: 'dbt' },
       { name: 'Prisma', slug: 'prisma' },
       { name: 'SQLAlchemy', slug: 'sqlalchemy' },
       { name: 'Hibernate', slug: 'hibernate' },

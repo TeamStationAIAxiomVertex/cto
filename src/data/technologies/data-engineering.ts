@@ -1,47 +1,61 @@
 
-import { Cpu, DollarSign, Database, Workflow } from "lucide-react";
-import type { TechEntry } from "@/lib/tech";
+import { TechEntry } from '@/lib/tech';
+import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const dataEngineering: TechEntry = {
-    name: "Data Engineering",
-    category: "Data & AI Engineering",
-    categorySlug: "data-ai",
-    seo_title: "Hire Senior Data Engineering Experts | ETL/ELT, Cloud Data Warehousing, and Pipeline Orchestration",
-    meta_description: "Hire elite Data Engineers specializing in building, maintaining, and scaling mission-critical data pipelines, modern cloud data warehouses (Snowflake, BigQuery), and real-time streaming platforms.",
-    intro: "Modern Data Engineering is the foundation of business intelligence and AI initiatives. Our experts are vetted on their ability to design robust, reliable, and scalable ETL/ELT pipelines using tools like Apache Spark, dbt, Airflow, and cloud platforms like Snowflake. They are the specialists who ensure data is clean, accessible, and ready for consumption by analytics and machine learning teams.",
-    pains: [
-        {
-            icon: Workflow,
-            pain: "Our data pipelines are constantly failing or producing inaccurate reports.",
-            problem: "Poorly orchestrated pipelines lack proper error handling, lineage tracking, and data quality checks, leading to unreliable data and a lack of trust in BI reports.",
-            solution: "We vet for mastery in orchestration (Airflow/Dagster) and **data observability**. Our engineers implement robust data quality validation (e.g., using Great Expectations) and comprehensive monitoring to ensure pipelines are self-healing.",
-            kpi: "99.9% Data Pipeline Reliability and Trust Score"
-        },
-        {
-            icon: Database,
-            pain: "Our data warehouse queries are slow and expensive.",
-            problem: "Legacy data warehouses or improperly configured cloud platforms (Snowflake, Redshift) suffer from poor data modeling (lack of star/snowflake schemas), leading to slow, costly queries.",
-            solution: "Our experts are tested on advanced **data modeling (dbt)** and data warehouse optimization techniques, ensuring data structures are efficient and query performance meets analyst and BI tool requirements.",
-            kpi: "75% Reduction in P95 Query Latency"
-        },
-        {
-            icon: DollarSign,
-            pain: "We are stuck on batch processing and lack real-time insights.",
-            problem: "Relying solely on nightly batch processes prevents the business from reacting quickly to real-time events, making systems like fraud detection or inventory management obsolete.",
-            solution: "We vet for expertise in **real-time data streaming** using platforms like Kafka or Kinesis, enabling the construction of lambda or kappa architectures for instant data ingestion and low-latency consumption.",
-            kpi: "Deployment of Real-Time Data Stream within 3 Months"
-        }
-    ],
-    evaluation: [
-        "Mastery of cloud data platforms (Snowflake, BigQuery, Redshift) and cost optimization.",
-        "Deep expertise in ETL/ELT tools and orchestration (Airflow, dbt, Fivetran).",
-        "Proficiency in data modeling (star, snowflake schemas) and SQL optimization.",
-        "Experience with real-time streaming platforms (Kafka/Kinesis) and distributed processing (Apache Spark).",
-        "Implementation of data quality checks and data lineage tracking.",
-    ],
-    technical_analysis: "The Data Engineering vetting focuses on the full life-cycle, not just SQL. Candidates must demonstrate proficiency in Python/Scala for data processing and a strategic understanding of the modern data stack (dbt/Snowflake). A critical assessment involves designing a complete data pipeline from ingestion (streaming vs. batch) through transformation (dbt models) to consumption (BI tools). We specifically test their ability to handle schema evolution and implement strict data governance and quality controls.",
-    interlink_slugs: ["snowflake", "dbt", "apache-spark", "kafka", "python"],
-    is_ready: true,
+  name: 'Data Engineering',
+  category: 'Data & AI',
+  categorySlug: 'data-ai',
+  seo_title: 'Hire Data Engineers | Experts in Modern Data Stacks & Pipelines',
+  meta_description:
+    'Hire elite Data Engineers to build reliable, scalable data platforms. Our vetted talent transforms your data chaos into a trustworthy foundation for analytics and machine learning.',
+  intro:
+    'Data Engineering is the bedrock of a data-driven organization. It’s not about writing brittle ETL scripts; it’s about building a scalable, observable, and trustworthy data factory. You need an architect of the modern data stack. Our vetting identifies engineers who design for data quality, implement robust data models, and build the reliable pipelines that turn raw data into your company’s most valuable asset.',
+  pains: [
+    {
+      icon: AlertTriangle,
+      pain: 'Untrustworthy Data and "Report Roulette"',
+      problem:
+        'Your dashboards are a minefield of conflicting metrics. Business leaders have lost all faith in the data because every report tells a different story, leading to analysis paralysis or decisions based on gut feel.',
+      solution:
+        'A skilled Data Engineer implements a "single source of truth." They build robust data models, enforce data quality contracts, and create observable pipelines so that data is not just moved, but validated and trusted at every stage.',
+      kpi: 'Achieve 99.9% data uptime and reduce data-related support tickets by 90%.',
+    },
+    {
+      icon: Workflow,
+      pain: 'Brittle, Unscalable Data Pipelines',
+      problem:
+        'Your data pipelines are a house of cards held together with cron jobs and duct tape. They fail silently, are impossible to debug, and cannot handle increasing data volumes, leaving your data stale and your analytics team blocked.',
+      solution:
+        'Our experts architect and build modern data platforms using tools like dbt, Airflow, and Snowflake. They replace fragility with resilience, implementing automated testing, lineage tracking, and proactive monitoring to ensure data flows reliably.',
+      kpi: 'Increase data pipeline reliability to over 99.5% and support 10x data volume growth.',
+    },
+    {
+      icon: ShieldCheck,
+      pain: 'Data Team as a Bottleneck',
+      problem:
+        'The business needs answers, but the data team is buried in ad-hoc requests and pipeline maintenance. Getting a new data source integrated takes months, and the backlog is endless. Innovation is impossible.',
+      solution:
+        'A TeamStation Data Engineer builds self-service platforms. By creating well-documented, reliable data assets and models, they empower analysts and data scientists to answer their own questions, freeing the core team to focus on strategic platform improvements.',
+      kpi: 'Reduce the lead time for new data requests from months to days.',
+    },
+  ],
+  evaluation: [
+    'Deep expertise in data modeling (Kimball, Inmon, Data Vault) and modern data warehousing.',
+    'Proven ability to build and orchestrate complex data pipelines (e.g., Airflow, Prefect, Dagster).',
+    'Mastery of data transformation and quality tools (e.g., dbt, Great Expectations).',
+    'Proficiency with major cloud data platforms (Snowflake, BigQuery, Redshift).',
+    'Skills in data governance, data lineage, and implementing data observability.',
+  ],
+  technical_analysis:
+    'The Axiom Cortex™ evaluation for Data Engineers is intensely focused on their ability to build production-grade data systems, not just write SQL. Candidates must architect a data platform from scratch, justifying their choices in modeling, orchestration, and quality control. We assess their ability to debug complex pipeline failures and implement robust monitoring and alerting. This ensures our engineers are not just data movers, but true platform builders who can create the reliable foundation required for high-impact analytics and machine learning.',
+  interlink_slugs: [
+    'dbt',
+    'snowflake',
+    'airflow',
+    'data-governance',
+  ],
+  is_ready: true,
 };
 
 export default dataEngineering;
