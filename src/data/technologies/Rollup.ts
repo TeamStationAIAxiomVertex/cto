@@ -5,7 +5,7 @@ import { TechEntry } from "@/lib/tech";
 const rollup: TechEntry = {
     name: "Rollup",
     category: "Software Development",
-    categorySlug: "software-development",
+    categorySlug: "frontend-web",
     seo_title: "Hire Rollup Experts | JavaScript Bundler & Frontend Consultants",
     meta_description: "Build a performant, scalable, and maintainable web application. Hire elite remote Rollup experts vetted for their deep understanding of the modern frontend stack, from the entry point to the output. Book a call.",
     intro: "Rollup is a module bundler for JavaScript. You need an engineer who understands that building a modern, perform-t web application is not just about writing code, but about a deep understanding of the entire build process, from the entry point and the output to the plugin and the external dependency. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Rollup expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
