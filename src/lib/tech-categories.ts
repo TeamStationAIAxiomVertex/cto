@@ -191,6 +191,7 @@ export const techCategories: TechCategory[] = [
     pain: "Struggling to move AI from a notebook to production?",
     icon: BrainCircuit,
     tech: [
+      { name: 'LLMs', slug: 'llms' },
       { name: 'PyTorch', slug: 'pytorch' },
       { name: 'Transformers', slug: 'transformers' },
       { name: 'vLLM', slug: 'vllm' },
