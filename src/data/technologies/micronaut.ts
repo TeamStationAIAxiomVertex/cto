@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { Server, Zap, Code, Shield } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const micronaut: TechEntry = {
     name: "Micronaut",
-    category: "Software Development",
-    categorySlug: "software-development",
-    seo_title: "Hire Micronaut Experts | Java, GraalVM & Microservices",
-    meta_description: "Build a blazing-fast, lightweight, and cloud-native application. Hire elite remote Micronaut experts vetted for their deep understanding of Java, from the bean to the native image. Book a call.",
-    intro: "Micronaut is a modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications. You need an engineer who understands that building a modern, cloud-native application is not just about writing code, but about a deep understanding of the entire Java ecosystem, from the bean and the annotation to the native image and the serverless function. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Micronaut expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    category: "APIs & Backend Services",
+    categorySlug: "backend-services",
+    seo_title: "Hire Senior Micronaut Developers | Java and Microservices Experts",
+    meta_description: "Hire elite Micronaut developers specializing in building high-performance, scalable, and secure microservices.",
+    intro: "Micronaut is a powerful and versatile Java framework. Our Micronaut experts are vetted for their deep understanding of Micronaut's core principles, from its powerful dependency injection and AOP features to its robust security and performance tuning capabilities. They are the specialists who can help you build the next generation of microservices.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your application a mess of slow, bloated Java?",
-            problem: "In many organizations, the application is a mess of slow, bloated Java. This can lead to a user experience that is filled with long load times and a codebase that is a mess of environment-specific hacks and workarounds.",
-            solution: "We vet for experts in **Micronaut and the modern backend stack**. Our engineers are proficient in using Micronaut to build a fast, lean, and performant application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Fast, Lean, and Performant Application",
+            icon: Server,
+            pain: "Our microservices are slow and expensive to host.",
+            problem: "Traditional monolithic applications are slow to load and expensive to host. They don't take advantage of the latest web technologies, such as microservices and serverless.",
+            solution: "We vet for mastery in **Micronaut's powerful dependency injection and AOP features**. Our engineers can help you build a fast, scalable, and cost-effective microservice.",
+            kpi: "50% Reduction in Page Load Time"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not taking full advantage of the cloud?",
-            problem: "Many applications are not built to be truly modern. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **Micronaut and the modern cloud**. They are vetted on their ability to use modern cloud APIs and best practices to build a modern, fast, and feature-rich application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Fast, and Feature-Rich Application",
+            icon: Zap,
+            pain: "We're struggling to keep up with the latest microservice technologies.",
+            problem: "The microservice landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as Quarkus and Helidon.",
+            solution: "Our experts are tested on **the latest microservice technologies**. They can help you take advantage of the latest features, so you can build the next generation of microservices.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the backend ecosystem?",
-            problem: "The backend ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the backend ecosystem and the modern backend stack**. They are vetted on their ability to build applications that are powered by the best of the backend ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Backend Ecosystem",
+            icon: Code,
+            pain: "We're worried about the security of our microservices.",
+            problem: "Microservice security is a top priority for every business. It's difficult to secure your microservices, especially when you're dealing with user authentication and data fetching.",
+            solution: "We vet for expertise in **Micronaut's security features**. Our engineers use the latest security best practices to protect your microservices from attack.",
+            kpi: "100% Application Security"
         }
     ],
     evaluation: [
-        "The modern backend stack (e.g., Micronaut, Java, other modern libraries)",
-        "Micronaut and the modern cloud",
-        "The bean and the annotation",
-        "The native image and the serverless function",
-        "Security and best practices",
+        "Deep understanding of Micronaut's core principles.",
+        "Mastery of Micronaut's powerful dependency injection and AOP features.",
+        "Proficiency in building scalable, production-ready microservices with Micronaut.",
+        "Experience with a variety of microservice technologies.",
+        "Expertise in Micronaut's security features.",
     ],
-    technical_analysis: "The Micronaut evaluation focuses on a candidate's ability to build a blazing-fast, lightweight, and cloud-native application. We assess their understanding of the entire Micronaut ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **Micronaut and the modern backend stack**; candidates must demonstrate how to use tools like Micronaut, Java, and other modern libraries to build a modern, scalable, and resilient application, and how to use the bean and the annotation to build a read model that is optimized for queries. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the backend ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["java", "kubernetes", "graalvm", "serverless"],
+    technical_analysis: "The Micronaut vetting process is rigorous and hands-on. Candidates are required to build a production-ready microservice with Micronaut from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of Micronaut best practices. We also assess their experience with a variety of microservice technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["java", "graalvm", "kubernetes", "docker", "microservices"],
+    is_ready: true,
 };
 
 export default micronaut;

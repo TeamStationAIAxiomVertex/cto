@@ -50,6 +50,7 @@ export const techCategories: TechCategory[] = [
         { name: 'Hapi.js', slug: 'hapi-js' },
         { name: 'Jakarta EE', slug: 'jakarta-ee' },
         { name: 'Koa', slug: 'koa' },
+        { name: 'Micronaut', slug: 'micronaut' },
     ],
   },
     {
@@ -63,6 +64,7 @@ export const techCategories: TechCategory[] = [
         { name: 'Domain Driven Design', slug: 'domain-driven-design' },
         { name: 'Event Sourcing', slug: 'event-sourcing' },
         { name: 'Message Queues', slug: 'message-queues' },
+        { name: 'Microservices', slug: 'microservices' },
     ],
   },
     {
