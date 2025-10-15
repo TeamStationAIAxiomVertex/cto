@@ -4,8 +4,8 @@ import { AlertTriangle } from "lucide-react";
 
 const python: TechEntry = { 
   name: "Python", 
-  category: "Backend & APIs", 
-  categorySlug: "backend-services", 
+  category: "AI / ML Engineering", 
+  categorySlug: "ai-ml-engineering", 
   seo_title: "Hire Senior Python Developers | AI, Data Science & Backend APIs",
   meta_description: "Hire elite remote Python engineers for scalable APIs (FastAPI), complex data science, and robust backend systems. Vetted for performance and architecture.",
   intro: "Python's versatility makes it the engine for everything from high-traffic APIs (FastAPI) to the core of data science and machine learning (PyTorch/TensorFlow). You need an engineer who can bridge these worlds: a developer who understands both the architectural needs of a robust backend and the unique performance demands of data processing. Our vetting process finds these experts. We focus on their ability to write efficient, clean code (adhering to PEP 8), their mastery of asynchronous programming (asyncio), and their deep knowledge of key libraries like NumPy, Pandas, and Scikit-learn. For backend roles, we test their expertise in modern, high-performance frameworks like FastAPI and Django. By hiring our Python talent, you are investing in a flexible, powerful engineer capable of building intelligent, data-driven applications that scale with your business.",

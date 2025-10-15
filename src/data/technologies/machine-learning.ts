@@ -4,8 +4,8 @@ import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const machineLearning: TechEntry = {
   name: 'Machine Learning',
-  category: 'Data & AI',
-  categorySlug: 'data-ai',
+  category: 'AI / ML Engineering',
+  categorySlug: 'ai-ml-engineering',
   seo_title: 'Hire Machine Learning Engineers | MLOps & Production ML Experts',
   meta_description:
     'Hire elite Machine Learning Engineers who bridge the gap between data science and production. Our vetted talent builds the robust pipelines and infrastructure to deploy and manage ML models at scale.',
