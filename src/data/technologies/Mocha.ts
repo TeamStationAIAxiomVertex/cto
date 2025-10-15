@@ -5,7 +5,7 @@ import { TechEntry } from "@/lib/tech";
 const mocha: TechEntry = {
     name: "Mocha",
     category: "Software Development",
-    categorySlug: "software-development",
+    categorySlug: "frontend-web",
     seo_title: "Hire Mocha Experts | JavaScript Testing & Test Automation Consultants",
     meta_description: "Build a reliable, scalable, and automated testing platform. Hire elite remote Mocha experts vetted for their deep understanding of test automation, from the test case to the test report. Book a call.",
     intro: "Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser. You need an engineer who understands that building a modern testing platform is not just about writing tests, but about a deep understanding of the entire testing lifecycle, from the test case and the test data to the test report and the test analytics. Our vetting process identifies developers who are experts in the modern testing stack—and can architect a testing platform that is as secure, efficient, and automated as it is scalable. By hiring a Mocha expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",

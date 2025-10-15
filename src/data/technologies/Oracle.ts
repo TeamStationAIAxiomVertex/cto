@@ -5,7 +5,7 @@ import { TechEntry } from "@/lib/tech";
 const oracle: TechEntry = {
     name: "Oracle",
     category: "Software Development",
-    categorySlug: "software-development",
+    categorySlug: "data-engineering-analytics",
     seo_title: "Hire Oracle Experts | Database, SQL, & Enterprise Consultants",
     meta_description: "Build a scalable, reliable, and secure enterprise data infrastructure. Hire elite remote Oracle experts vetted for their deep understanding of SQL, from the query to the index. Book a call.",
     intro: "Oracle is a leading relational database management system. You need an engineer who understands that building a modern, scalable data infrastructure is not just about writing queries, but about a deep understanding of the entire SQL ecosystem, from the query and the index to the storage engine and the replication. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring an Oracle expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",

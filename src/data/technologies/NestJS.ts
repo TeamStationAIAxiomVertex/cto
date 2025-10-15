@@ -5,7 +5,7 @@ import { TechEntry } from "@/lib/tech";
 const nest: TechEntry = {
     name: "NestJS",
     category: "Software Development",
-    categorySlug: "software-development",
+    categorySlug: "backend-services",
     seo_title: "Hire NestJS Experts | Node.js & TypeScript Backend",
     meta_description: "Build a scalable, maintainable, and enterprise-grade application. Hire elite remote NestJS experts vetted for their deep understanding of Node.js, from the module to the provider. Book a call.",
     intro: "NestJS is a framework for building efficient, reliable and scalable server-side applications. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire Node.js ecosystem, from the module and the provider to the controller and the service. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a NestJS expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
