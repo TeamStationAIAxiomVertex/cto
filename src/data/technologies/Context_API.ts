@@ -5,7 +5,7 @@ import { TechEntry } from "@/lib/tech";
 const contextApi: TechEntry = {
     name: "Context API",
     category: "Software Development",
-    categorySlug: "software-development",
+    categorySlug: "frontend-web",
     seo_title: "Hire React Context API Experts | State Management & React Consultants",
     meta_description: "Build a scalable, maintainable, and reactive application. Hire elite remote React Context API experts vetted for their deep understanding of state management, from the provider to the consumer. Book a call.",
     intro: "The React Context API is a powerful tool for state management in React applications. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the provider and the consumer to the hook and the context. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a React Context API expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
