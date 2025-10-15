@@ -252,7 +252,8 @@ export const techCategories: TechCategory[] = [
       { name: 'PyTest/JUnit', slug: 'pytest' },
       { name: 'k6/Locust', slug: 'k6' },
       { name: 'Pact', slug: 'pact' },
-      { name: 'Gremlin/Litmus', slug: 'gremlin' },
+      { name: 'Gremlin', slug: 'gremlin' },
+      { name: 'OWASP ZAP', slug: 'owasp-zap' },
     ],
   },
   {
@@ -261,7 +262,8 @@ export const techCategories: TechCategory[] = [
     pain: "Are runaway cloud costs eating into your margins?",
     icon: Wallet,
     tech: [
-      { name: 'CloudZero/Infracost', slug: 'cloudzero' },
+      { name: 'CloudZero', slug: 'cloudzero' },
+      { name: 'Infracost', slug: 'infracost' },
       { name: 'AWS Cost Explorer', slug: 'aws-cost-explorer' },
       { name: 'Salesforce', slug: 'salesforce' },
       { name: 'HubSpot', slug: 'hubspot' },
