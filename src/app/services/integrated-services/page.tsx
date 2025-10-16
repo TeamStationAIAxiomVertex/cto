@@ -1,17 +1,14 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, UserCheck, FileText, ShieldCheck, Laptop, Building, Scale, GanttChartSquare, BookOpen, Search, Code, CheckCircle, Brain, Book } from 'lucide-react';
-
-// NOTE: FurtherReading component is removed and replaced by explicit interlinking to fulfill the SEO War Plan
+import { ArrowRight, Brain, BookOpen, Code, FileText, Laptop, ShieldCheck, Book, Scale, GanttChartSquare, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Integrated Nearshore Services: One Accountable SLA for CTOs', // Optimized title for SEO War Plan
-  description: 'Our single, accountable SLA for nearshore engineering bundles AI-driven talent, EOR, secure devices, and compliance to defeat legacy staff augmentation risk. Surpass BairesDev.', // Optimized description
+  title: 'Integrated Nearshore Services: One Accountable SLA for CTOs',
+  description: 'Our single, accountable SLA for nearshore engineering bundles AI-driven talent, EOR, secure devices, and compliance to defeat legacy staff augmentation risk. Surpass BairesDev.',
   keywords: 'integrated nearshore services, nearshore SLA, managed nearshore teams, employer of record latam, secure nearshore development, teamstation vs bairesdev, nearshore IT staff augmentation',
 };
 
-// JSON-LD Schema (REQUIRED by SEO War Plan)
 const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -32,14 +29,13 @@ const serviceSchema = {
     }
 };
 
-// FULL CONTENT ARRAY (includes Risk, IP/NDA, and original services)
 const includedServices = [
     {
         icon: <Brain className="h-8 w-8 text-primary"/>,
-        pain: 'Hiring is slow, subjective, and prone to bias?', // PAIN
-        title: 'Cognitive AI Vetting (44 Formulas)', // SOLUTION
+        pain: 'Hiring is slow, subjective, and prone to bias?',
+        title: 'Cognitive AI Vetting (44 Formulas)',
         description: 'Our Axiom Cortex™ engine applies 44 proprietary NeuroPsychometric formulas to evaluate human capacity and deliver a high-signal shortlist of 2-3 candidates per role, scientifically aligned to your CTO vision.',
-        kpi: 'Time-to-Offer ≈ 9 days' // PROOF
+        kpi: 'Time-to-Offer ≈ 9 days'
     },
     {
         icon: <FileText className="h-8 w-8 text-primary"/>,
@@ -99,7 +95,6 @@ const includedServices = [
     }
 ];
 
-// Helper component for internal links (Crucial for SEO War Plan interlinking)
 const LinkCard = ({ href, icon, title, description }: { href: string, icon: React.ReactNode, title: string, description: string }) => (
     <Link href={href} className="group flex flex-col p-4 border rounded-lg hover:border-primary/50 transition-all bg-background dark:bg-gray-800">
         <div className="flex items-center gap-3">
@@ -111,11 +106,9 @@ const LinkCard = ({ href, icon, title, description }: { href: string, icon: Reac
     </Link>
 );
 
-
 export default function IntegratedServicesPage() {
   return (
     <main className="container max-w-6xl py-12">
-        {/* Schema Injection */}
         <script 
             type="application/ld+json" 
             dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} 
@@ -168,60 +161,33 @@ export default function IntegratedServicesPage() {
             </div>
         </section>
 
-        
-        {/* SEO WAR PLAN INTERLINKING IMPLEMENTATION: 7 highly authoritative internal links */}
         <section className="my-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Download The Research: Science, Comparison, and Method</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                {/* 1. The Book Link */}
                 <LinkCard 
-                    href="/research/platforming-nearshore-it-staff-augmentation-book"
+                    href="/research/hub"
                     icon={<Book className="h-6 w-6 text-yellow-600" />}
-                    title="Published Book: Platforming the Nearshore Industry"
-                    description="Access our published research on replacing legacy staff augmentation with intelligent service infrastructure (Title: Platforming the Nearshore IT Staff Augmentation Industry)."
+                    title="Review All Research & Whitepapers →"
+                    description="Access our published research on replacing legacy staff augmentation with intelligent service infrastructure."
                 />
-                {/* 2. Axiom Cortex Research */}
                 <LinkCard 
-                    href="/research/axiom-cortex-scientific-foundations"
+                    href="/research/hub"
                     icon={<Brain className="h-6 w-6 text-primary" />}
-                    title="The 44 Formulas: Axiom Cortex™ Scientific Deep Dive"
-                    description="Understand the proprietary Neural Search Alignment Technology and the scientific method behind our 44 NeuroPsychometric vetting formulas."
+                    title="Review All Research & Whitepapers →"
+                    description="Understand the proprietary science behind our 44 NeuroPsychometric vetting formulas."
                 />
-                {/* 3. BairesDev Comparison */}
                 <LinkCard 
-                    href="/comparisons/teamstation-vs-bairesdev"
+                    href="/comparisons"
                     icon={<Code className="h-6 w-6 text-red-600" />}
-                    title="BairesDev/Legacy Comparison: TCO & Risk Breakdown"
-                    description="See a criteria-by-criteria analysis of how our integrated SLA minimizes Total Cost of Ownership and Vendor Risk compared to fragmented legacy firms."
+                    title="View All Vendor Comparisons →"
+                    description="See a criteria-by-criteria analysis of how our integrated SLA minimizes TCO and Vendor Risk."
                 />
-                {/* 4. CTO Playbook Hub */}
                 <LinkCard 
-                    href="/playbook"
+                    href="/playbook/hub"
                     icon={<BookOpen className="h-6 w-6 text-blue-600" />}
-                    title="The CTO Playbook: Master Nearshore Strategy"
+                    title="View The Full CTO Playbook →"
                     description="Access our entire collection of research-backed guides on nearshore strategy, economics, and scaling teams."
-                />
-                {/* 5. EOR/Compliance Programmatic Example */}
-                <LinkCard 
-                    href="/latam/mexico/eor"
-                    icon={<FileText className="h-6 w-6 text-green-600" />}
-                    title="EOR, Compliance, & IP Assignment Deep Dive"
-                    description="Review the specifics of how Employer of Record (EOR) and compliance are managed in our key LATAM markets."
-                />
-                {/* 6. Programmatic Sourcing Example */}
-                <LinkCard 
-                    href="/hire/react-engineers-in-guadalajara"
-                    icon={<Laptop className="h-6 w-6 text-purple-600" />}
-                    title="Programmatic Sourcing: React Engineers in Guadalajara"
-                    description="See how our platform executes high-velocity talent sourcing for specific roles and locations using our integrated model."
-                />
-                 {/* 7. Pricing/Methodology Link */}
-                <LinkCard 
-                    href="/pricing-and-methodology"
-                    icon={<ShieldCheck className="h-6 w-6 text-primary" />}
-                    title="Pricing & Methodology: The TCO Model"
-                    description="Transparent view of our pricing structure and the proprietary methodology that makes the Single SLA economically superior."
                 />
             </div>
         </section>

@@ -40,7 +40,7 @@ const companyLinks: LinkItem[] = [
 // Research Section
 const researchLinks: LinkItem[] = [
   { href: '/research/axiom-cortex-scientific-report', label: 'AxiomCortex™ R&D Report' },
-  { href: '/research/heuristically-trained-ai', label: 'Heuristically Trained AI Whitepaper' },
+  { href: '/research/hub', label: 'Review All Research & Whitepapers →' },
   { href: '/research/framework-for-measuring-capacity', label: 'Framework for Measuring Engineering Capacity' },
   { href: '/research/performance-metrics-in-ai-age', label: 'Performance Metrics in the AI Age' },
   {
