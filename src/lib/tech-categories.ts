@@ -204,6 +204,7 @@ export const techCategories: TechCategory[] = [
       { name: 'DVC', slug: 'dvc' },
       { name: 'Feast', slug: 'feast' },
       { name: 'Kubeflow', slug: 'kubeflow' },
+      { name: 'Hugging Face', slug: 'hugging-face' },
     ],
   },
   {
