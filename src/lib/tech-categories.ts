@@ -148,6 +148,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Apache Spark', slug: 'apache-spark' },
       { name: 'Machine Learning', slug: 'machine-learning' },
       { name: 'Data Science', slug: 'data-science' },
+      { name: 'Pandas', slug: 'pandas' },
     ],
   },
   {
