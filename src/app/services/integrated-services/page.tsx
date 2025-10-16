@@ -112,6 +112,17 @@ const FeatureCard = ({ icon, title, children }: { icon: React.ReactNode, title: 
     </div>
 );
 
+const LinkCard = ({ href, icon, title, description }: { href: string, icon: React.ReactNode, title: string, description: string }) => (
+    <Link href={href} className="group flex flex-col p-4 border rounded-lg hover:border-primary/50 transition-all bg-background dark:bg-gray-800">
+        <div className="flex items-center gap-3">
+            {icon}
+            <h4 className="font-semibold text-lg group-hover:text-primary transition-colors">{title}</h4>
+        </div>
+        <p className="text-sm text-muted-foreground mt-2">{description}</p>
+        <ArrowRight className="h-4 w-4 mt-2 self-end text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-1" />
+    </Link>
+);
+
 
 export default function IntegratedServicesPage() {
   return (
@@ -201,6 +212,36 @@ export default function IntegratedServicesPage() {
                 <FeatureCard icon={<Shield className="h-6 w-6 text-primary" />} title="Compliance-Ready Talent">
                     Background checks, EOR eligibility, and device readiness pre-verified to reduce friction. Learn more at our <Link href="/trust" className="text-primary hover:underline">Trust Center</Link>.
                 </FeatureCard>
+            </div>
+        </section>
+        
+        <section className="my-16">
+            <h2 className="text-3xl font-bold mb-8 text-center">Further Reading: Explore Our Core Pillars</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <LinkCard 
+                    href="/playbook/hub"
+                    icon={<BookOpen className="h-6 w-6 text-blue-600" />}
+                    title="The CTO Playbook"
+                    description="Strategic guides on nearshore economics, security, and team scaling."
+                />
+                <LinkCard 
+                    href="/research/hub"
+                    icon={<Brain className="h-6 w-6 text-primary" />}
+                    title="Scientific Research"
+                    description="The data-driven foundation of our vetting models and operational frameworks."
+                />
+                <LinkCard 
+                    href="/comparisons"
+                    icon={<Code className="h-6 w-6 text-red-600" />}
+                    title="Vendor Risk Comparisons"
+                    description="Head-to-head analysis of our integrated model vs. legacy staff augmentation."
+                />
+                <LinkCard 
+                    href="/hire"
+                    icon={<Users className="h-6 w-6 text-green-600" />}
+                    title="Explore Vetted Talent"
+                    description="Browse available talent by country, role, or specific technology stack."
+                />
             </div>
         </section>
 
