@@ -133,7 +133,7 @@ export default function CtoOutsourcingRiskMitigationPage() {
             title: 'Beyond Vetting: Mitigating Operational, Compliance, and Financial Risk',
             icon: 'ShieldCheck',
             paragraphs: [
-                "Effective <strong>CTO outsourcing risk mitigation</strong> cannot end at candidate selection. It must extend to the entire operational lifecycle, especially when dealing with <a href=\"/playbook/managed-teams\">managed teams</a> and international compliance:",
+                "Effective <strong>CTO outsourcing risk mitigation</strong> cannot end at candidate selection. It must extend to the entire operational lifecycle, especially when dealing with <a href=\"/hire/by-team-topologies\">managed teams</a> and international compliance:",
             ],
             sub_sections: [
                 {
