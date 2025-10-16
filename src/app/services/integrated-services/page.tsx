@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, Brain, BookOpen, Code, FileText, Laptop, ShieldCheck, Book, Scale, GanttChartSquare, CheckCircle } from 'lucide-react';
+import { ArrowRight, Brain, BookOpen, Code, FileText, Laptop, ShieldCheck, Book, Scale, GanttChartSquare, CheckCircle, Building } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Integrated Nearshore Services: One Accountable SLA for CTOs',
@@ -168,13 +168,13 @@ export default function IntegratedServicesPage() {
                 <LinkCard 
                     href="/research/hub"
                     icon={<Book className="h-6 w-6 text-yellow-600" />}
-                    title="Review All Research & Whitepapers →"
+                    title="Published Book: Platforming the Nearshore Industry"
                     description="Access our published research on replacing legacy staff augmentation with intelligent service infrastructure."
                 />
                 <LinkCard 
                     href="/research/hub"
                     icon={<Brain className="h-6 w-6 text-primary" />}
-                    title="Review All Research & Whitepapers →"
+                    title="The 44 Formulas: Axiom Cortex™ Scientific Deep Dive"
                     description="Understand the proprietary science behind our 44 NeuroPsychometric vetting formulas."
                 />
                 <LinkCard 
