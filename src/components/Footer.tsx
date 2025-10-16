@@ -22,6 +22,7 @@ const playbookLinks: LinkItem[] = [
   { href: '/playbook/build-vs-buy', label: 'Build vs Buy Analysis' },
   { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring with Axiom Cortex™' },
   { href: '/playbook/tco-model', label: 'TCO Model for Engineering Teams' },
+  { href: '/playbook/cto-outsourcing-risk-mitigation', label: 'Outsourcing Risk Mitigation' },
   { href: '/faq', label: 'FAQ for CTOs' },
 ];
 
