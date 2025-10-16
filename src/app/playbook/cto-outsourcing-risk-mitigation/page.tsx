@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { AlertTriangle, Workflow, ShieldCheck, Database, BrainCircuit, Users, Server, Cloud, Cpu, Component } from 'lucide-react';
+import { ArrowRight, AlertTriangle, Workflow, ShieldCheck, Database, BrainCircuit, Users, Server, Cloud, Cpu, Component } from 'lucide-react';
 
 const pageData = {
     urlSlug: 'cto-outsourcing-risk-mitigation',
@@ -53,7 +53,7 @@ const renderContent = (content: any[]) => {
                                     </div>
                                     {sub.paragraphs?.map((p: string, j: number) => <p key={j} className="text-muted-foreground mb-4" dangerouslySetInnerHTML={{ __html: p }} />)}
                                     {sub.list_items && (
-                                        <ul className="space-y-2 my-4 pl-6">
+                                        <ul className="list-disc space-y-2 my-4 pl-6">
                                             {sub.list_items.map((item: string, k: number) => <li key={k} className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }} />)}
                                         </ul>
                                     )}
@@ -140,21 +140,21 @@ export default function CtoOutsourcingRiskMitigationPage() {
                     title: 'Financial Risk: From Cost to TCO',
                     icon: 'Workflow',
                     paragraphs: [
-                        "The risk of hiring an unqualified person is compounded by the financial model. Our solution is our <strong>TCO Model</strong>. Review our transparent <a href=\"/playbook/tco-model-for-engineering-teams\">TCO Model for Engineering Teams</a> to understand the true cost of an integrated, high-precision team versus traditional, risky staff augmentation."
+                        "The risk of hiring an unqualified person is compounded by the financial model. Our solution is our <strong>TCO Model</strong>. Review our transparent <a href=\"/playbook/tco-model\">TCO Model for Engineering Teams</a> to understand the true cost of an integrated, high-precision team versus traditional, risky staff augmentation."
                     ]
                 },
                 {
                     title: 'Compliance & IP Risk: The Single SLA',
                     icon: 'Cloud',
                     paragraphs: [
-                        "When you hire nearshore talent, compliance risk becomes a critical failure point. Our platform provides a single Master Services Agreement (MSA) and a comprehensive <strong>Single SLA</strong> that covers all aspects of <a href=\"/playbook/nearshore-vs-offshore\">Nearshore Staff Augmentation</a>, mitigating the legal and HR risks that fall entirely on a CTO. This unified legal umbrella is essential for reliable <strong>CTO outsourcing risk mitigation</strong>."
+                        "When you hire nearshore talent, compliance risk becomes a critical failure point. Our platform provides a single Master Services Agreement (MSA) and a comprehensive <strong>Single SLA</strong> that covers all aspects of <a href=\"/playbook/nearshore-vs-offshore\">Nearshore Software Development</a>, mitigating the legal and HR risks that fall entirely on a CTO. This unified legal umbrella is essential for reliable <strong>CTO outsourcing risk mitigation</strong>."
                     ]
                 },
                 {
                     title: 'The Proof: Scientific Validation',
                     icon: 'Component',
                     paragraphs: [
-                        "We believe in science over speculation. The foundation of our accuracy is detailed in our <a href=\"/research/axiom-cortex-scientific-foundations\">Axiom Cortex™ Scientific Deep Dive</a>. We invite you to review the methodologies that allow our <strong>proprietary data models</strong> to achieve the predictive accuracy required for zero-tolerance roles."
+                        "We believe in science over speculation. The foundation of our accuracy is detailed in our <a href=\"/research/hub\">Axiom Cortex™ Scientific Deep Dive</a>. We invite you to review the methodologies that allow our <strong>proprietary data models</strong> to achieve the predictive accuracy required for zero-tolerance roles."
                     ]
                 }
             ]
@@ -165,7 +165,7 @@ export default function CtoOutsourcingRiskMitigationPage() {
             icon: 'Users',
             paragraphs: [
                 "If you are tired of the cycle of low-quality candidates, broken promises, and the self-inflicted risk of traditional outsourcing, it's time to change the platform you use. We have engineered the antidote to the industry's flaws: a closed-box <strong>proprietary data model</strong> that guarantees a level of vetting precision unmatched by any legacy vendor.",
-                "Stop managing the risk of failure. Start engineering guaranteed success. The first step in <strong>CTO outsourcing risk mitigation</strong> is a 15-minute call to align your strategic needs with our predictable pipeline of vetted, senior talent. Book a strategy session today."
+                "Stop managing the risk of failure. Start engineering guaranteed success. The first step in <strong>CTO outsourcing risk mitigation</strong> is a 15-minute call to align your strategic needs with our predictable pipeline of vetted, senior talent."
             ]
         }
     ];
@@ -180,6 +180,31 @@ export default function CtoOutsourcingRiskMitigationPage() {
       <article className="prose dark:prose-invert max-w-none">
         <h1>{pageData.seo_title.split(':')[0]}</h1>
         {renderContent(content)}
+
+        <section className="mt-16 text-center rounded-lg bg-primary/10 p-8">
+          <h2 className="text-2xl font-bold">Ready to De-Risk Your Nearshore Software Development Outsourcing?</h2>
+          <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
+            Let's have a no-obligation strategy call to align your needs with our predictable pipeline of vetted, senior talent.
+          </p>
+          <Link
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button mt-6"
+          >
+            Book a Strategy Session
+          </Link>
+        </section>
+
+        <nav className="mt-16 border-t border-border pt-8">
+            <h3 className="text-xl font-bold text-foreground">Further Reading</h3>
+            <ul className="list-none p-0 mt-4 space-y-2">
+              <li><Link href="/playbook/hub" className="text-primary hover:underline">The Full CTO Playbook →</Link></li>
+              <li><Link href="/research/hub" className="text-primary hover:underline">Our Scientific Research & Whitepapers →</Link></li>
+              <li><Link href="/trust" className="text-primary hover:underline">The Trust & Compliance Center →</Link></li>
+              <li><Link href="/comparisons" className="text-primary hover:underline">Vendor Risk Comparisons →</Link></li>
+            </ul>
+        </nav>
       </article>
     </main>
   );
