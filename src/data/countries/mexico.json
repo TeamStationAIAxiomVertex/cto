@@ -7,8 +7,7 @@
     "description": "Hire vetted Mexico engineers with daylight overlap, REPSE-aligned EOR, and MDM devices with SSO/SCIM. Model TCO in 15 minutes.",
     "canonical": "https://cto.teamstation.dev/hire/by-country/mexico",
     "hreflang": {
-      "en": "https://cto.teamstation.dev/hire/by-country/mexico",
-      "es-MX": "https://cto.teamstation.dev/es/hire/by-country/mexico"
+      "en": "https://cto.teamstation.dev/hire/by-country/mexico"
     }
   },
   "h1": "Hire Software Developers in Mexico (Daylight Overlap)",
@@ -32,7 +31,7 @@
         "problem": "You need to <strong>hire software developers in Mexico</strong>, but your hiring process is a high-risk gamble on resumes. Keywords on a CV tell you nothing about a candidate's ability to solve novel problems or design resilient systems. You’re left with gut feel and biased interview loops.",
         "stakes": "A single senior mis-hire costs 6-12 months of salary in lost productivity, team disruption, and the cost of re-hiring. Relying on traditional screening is like navigating without a compass—you’ll eventually get somewhere, but likely not where you intended.",
         "prescription": "Move from resume theater to auditable evidence. Our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> cognitive AI engine provides scientific proof of a candidate’s problem-solving ability. We source from our Nebula Talent Graph of over 2.6 million LATAM profiles, then run candidates through a structured, bias-aware evaluation. This generates a 'Cognitive Fingerprint' and a full Evidence Locker, so you’re judging logic, not just presentation.",
-        "proof": "This cognition-first approach reduces mis-hire risk by over 90%, achieving a mismatch rate of ≤10%. You get a candidate whose mental shape is mapped to your role's demands.",
+        "proof": "This cognition-first approach reduces mis-hire risk by over 90%, achieving a mismatch rate of ≤10%. You get a candidate whose mental shape is mapped to your role's specific demands.",
         "recap": "Stop gambling on keywords. Build your <strong>nearshore Mexico engineers</strong> team with a partner that provides data-driven proof of cognitive ability, not just a list of credentials."
       }
     },
