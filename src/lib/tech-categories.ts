@@ -149,6 +149,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Machine Learning', slug: 'machine-learning' },
       { name: 'Data Science', slug: 'data-science' },
       { name: 'Pandas', slug: 'pandas' },
+      { name: 'NumPy', slug: 'numpy' },
     ],
   },
   {

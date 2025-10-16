@@ -15,6 +15,13 @@ const BASE_URL = "https://cto.teamstation.dev";
 
 // Utility function to recursively find all page.tsx files
 export function getPages(dir: string, exclude: string[] = []): string[] {
+  // Add the specific routes to the default exclusion list
+  const defaultExclude = [
+    '/hire/by-country/costa-rica/guatemala',
+    '/research/technical-talent-evaluation-system'
+  ];
+  const combinedExclude = [...exclude, ...defaultExclude];
+
   let results: string[] = [];
   const list = fs.readdirSync(dir);
 
@@ -24,10 +31,15 @@ export function getPages(dir: string, exclude: string[] = []): string[] {
 
     if (stat && stat.isDirectory()) {
       // Recurse into subdirectories
-      results = results.concat(getPages(filePath, exclude));
+      results = results.concat(getPages(filePath, combinedExclude));
     } else if (path.basename(filePath) === 'page.tsx') {
-      // Check against exclusion list
-      const isExcluded = exclude.some(pattern => filePath.includes(pattern));
+      // Format to a URL path for exclusion check
+      let routePath = filePath.replace(/^src\/app/, '').replace(/\/page\.tsx$/, '') || '/';
+      
+      // Normalize slug routes
+      routePath = routePath.replace(/\[\.\.\.slug\]/g, '').replace(/\[slug\]/g, '');
+
+      const isExcluded = combinedExclude.some(pattern => routePath.includes(pattern));
       if (!isExcluded) {
         results.push(filePath);
       }

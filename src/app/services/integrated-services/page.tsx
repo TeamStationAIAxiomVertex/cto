@@ -172,7 +172,7 @@ export default function IntegratedServicesPage() {
         {/* SEO WAR PLAN INTERLINKING IMPLEMENTATION: 7 highly authoritative internal links */}
         <section className="my-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Download The Research: Science, Comparison, and Method</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 {/* 1. The Book Link */}
                 <LinkCard 
