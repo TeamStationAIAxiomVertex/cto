@@ -108,6 +108,6 @@ export default function FurtherReading({ items = [], title = "Further Reading", 
           </li>
         ))}
       </ul>
-    </aside
+    </aside>
   );
 }
