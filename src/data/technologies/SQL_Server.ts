@@ -5,7 +5,7 @@ import { TechEntry } from "@/lib/tech";
 const sqlServer: TechEntry = {
     name: "SQL Server",
     category: "Software Development",
-    categorySlug: "software-development",
+    categorySlug: "data-engineering-analytics",
     seo_title: "Hire SQL Server Experts | Microsoft SQL & Database Consultants",
     meta_description: "Build a scalable, reliable, and secure enterprise data infrastructure. Hire elite remote SQL Server experts vetted for their deep understanding of SQL, from the query to the index. Book a call.",
     intro: "Microsoft SQL Server is a leading relational database management system. You need an engineer who understands that building a modern, scalable data infrastructure is not just about writing queries, but about a deep understanding of the entire SQL ecosystem, from the query and the index to the storage engine and the replication. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a SQL Server expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
@@ -29,7 +29,7 @@ const sqlServer: TechEntry = {
             pain: "Is your team not leveraging the full power of the data ecosystem?",
             problem: "The data ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
             solution: "We look for engineers proficient with **the data ecosystem and the modern data stack**. They are vetted on their ability to build applications that are powered by the best of the data ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Data Ecosystem",
+            kpi: "An Application That is Powered by the Best of the Frontend Ecosystem",
         }
     ],
     evaluation: [

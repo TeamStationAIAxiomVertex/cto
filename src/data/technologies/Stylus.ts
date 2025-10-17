@@ -5,10 +5,10 @@ import { TechEntry } from "@/lib/tech";
 const stylus: TechEntry = {
     name: "Stylus",
     category: "Software Development",
-    categorySlug: "software-development",
+    categorySlug: "frontend-web",
     seo_title: "Hire Stylus Experts | Expressive CSS Preprocessing & Frontend Consultants",
     meta_description: "Build a maintainable and expressive user interface. Hire elite remote Stylus experts vetted for their deep understanding of dynamic CSS preprocessing, from its powerful syntax to its Node.js integration. Book a call.",
-    intro: "Stylus is a revolutionary new language, providing an efficient, dynamic, and expressive way to generate CSS. Supporting both an indented syntax and regular CSS style, it's known for its flexibility and powerful built-in functions. You need an engineer who can leverage its unique features to create clean, maintainable, and highly dynamic stylesheets. Our vetting process identifies developers who have mastered Stylus, from its flexible syntax to its powerful mixins and functions. By hiring a Stylus expert, you get a developer who can build a modern, automated, and maintainable styling system for your web applications.",
+    intro: "Stylus is a revolutionary new language, providing an efficient, dynamic, and expressive way to generate CSS. Supporting both an indented syntax and regular CSS style, it\'s known for its flexibility and powerful built-in functions. You need an engineer who can leverage its unique features to create clean, maintainable, and highly dynamic stylesheets. Our vetting process identifies developers who have mastered Stylus, from its flexible syntax to its powerful mixins and functions. By hiring a Stylus expert, you get a developer who can build a modern, automated, and maintainable styling system for your web applications.",
     pains: [
         {
             icon: AlertTriangle,

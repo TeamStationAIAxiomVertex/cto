@@ -5,7 +5,7 @@ import { TechEntry } from "@/lib/tech";
 const websockets: TechEntry = {
     name: "WebSockets",
     category: "Software Development",
-    categorySlug: "software-development",
+    categorySlug: "backend-services",
     seo_title: "Hire WebSockets Experts | Real-Time & Bidirectional Communication",
     meta_description: "Build a real-time, event-driven, and interactive application. Hire elite remote WebSockets experts vetted for their deep understanding of real-time communication. Book a call.",
     intro: "WebSockets are a powerful technology for building real-time, event-driven, and interactive applications. You need an engineer who understands that building a modern, real-time application is not just about writing code, but about a deep understanding of the entire real-time ecosystem, from the handshake and the frame to the message and the close. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a WebSockets expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
