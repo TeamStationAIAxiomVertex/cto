@@ -1,61 +1,46 @@
 
-import { TechEntry } from '@/lib/tech';
-import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
+import { AlertTriangle } from "lucide-react";
+import { TechEntry } from "@/lib/tech";
 
 const huggingFace: TechEntry = {
-  name: 'Hugging Face',
-  category: 'ML/AI & LLM Ops',
-  categorySlug: 'ml-ai-llm-ops',
-  seo_title: 'Hire Hugging Face Experts | Open-Source AI & Transformers Engineers',
-  meta_description:
-    'Hire elite Hugging Face experts to leverage the open-source AI ecosystem. Our vetted talent uses the Hub, Transformers, and Datasets to accelerate your entire ML development lifecycle.',
-  intro:
-    'Hugging Face is the **GitHub of machine learning**—the central ecosystem for open-source AI. It’s more than a library; it’s a platform for collaboration and discovery. You need an engineer who can navigate this vast landscape to find, fine-tune, and deploy the optimal model for your business. Our vetting identifies experts who use the full Hugging Face stack to transform the chaos of open-source AI into a powerful, strategic asset for your team.',
-  pains: [
-    {
-      icon: AlertTriangle,
-      pain: 'Drowning in the Chaos of Open-Source Models',
-      problem:
-        'There are tens of thousands of open-source models, but finding the right one for your specific task is a nightmare. You have no reliable way to compare them, assess their biases, or know if they are suitable for production.',
-      solution:
-        'A Hugging Face expert is a master of the Model Hub. They can rapidly identify the state-of-the-art models for your use case, evaluate their performance and limitations, and select the optimal foundation for your fine-tuning efforts.',
-      kpi: 'Reduce the time spent on model discovery and selection by 90%.',
-    },
-    {
-      icon: Workflow,
-      pain: 'Reinventing the Wheel for Data Loading and Preprocessing',
-      problem:
-        'Every new ML project starts with your team writing custom, brittle scripts to download, clean, and tokenize data. This process is slow, error-prone, and creates data silos across your organization.',
-      solution:
-        'Our specialists leverage the `datasets` and `tokenizers` libraries to build standardized, efficient, and reusable data pipelines. They create a consistent workflow for handling everything from terabyte-scale corpora to your own proprietary data.',
-      kpi: 'Accelerate the data preparation phase of new ML projects by 5x.',
-    },
-    {
-      icon: ShieldCheck,
-      pain: 'No Clear Path to Deploying and Sharing Models',
-      problem:
-        'Your team has fine-tuned a great model, but it’s stuck on a local machine. There is no standard process for versioning it, sharing it with other teams, or deploying it as a scalable inference endpoint.',
-      solution:
-        'A TeamStation Hugging Face engineer uses the Hub for robust model versioning and collaboration. They can then use Inference Endpoints or integrate with other tools to create a seamless, CI/CD-driven path from a fine-tuned model to a production-ready API.',
-      kpi: 'Establish a standardized, automated workflow for deploying 100% of your fine-tuned models.',
-    },
-  ],
-  evaluation: [
-    'Deep expertise in the Hugging Face ecosystem (Hub, Transformers, Datasets, Tokenizers).',
-    'Proven ability to select, fine-tune, and evaluate a wide range of open-source models.',
-    'Mastery of building efficient and reproducible data pipelines with the `datasets` library.',
-    'Proficiency in deploying models using Hugging Face Inference Endpoints or other serving solutions.',
-    'Skills in collaborating on the Hub, including managing model versions and data cards.',
-  ],
-  technical_analysis:
-    'The Axiom Cortex™ evaluation for Hugging Face experts tests their ability to navigate and operationalize the open-source ecosystem. Candidates are given a business problem and must architect an end-to-end solution using the Hugging Face stack. We assess their ability to justify their model selection, design a robust fine-tuning and evaluation pipeline, and outline a clear deployment strategy. This ensures our engineers are not just library users, but true ecosystem architects who can turn the power of open-source AI into a reliable production advantage.',
-  interlink_slugs: [
-    'transformers',
-    'llms',
-    'pytorch',
-    'machine-learning',
-  ],
-  is_ready: true,
+    name: "Hugging Face",
+    category: "AI, ML & LLM Ops",
+    categorySlug: "ml-ai-llm-ops",
+    seo_title: "Hire Hugging Face Experts | LLM & NLP Consultants",
+    meta_description: "Deploy, and scale state-of-the-art NLP and LLM models. Hire elite remote Hugging Face experts vetted for their deep understanding of the transformer ecosystem. Book a call.",
+    intro: "Hugging Face is more than a library; it\'s the operational backbone of the modern NLP and Large Language Model ecosystem. You can\'t just hire a data scientist; you need an engineer who understands the deep, intricate, and often brutal realities of productionizing transformer models. Our vetting process, powered by Axiom Cortex™, identifies the rare engineers who have lived in this ecosystem. They don\'t just know the \'transformers\' library; they understand the full lifecycle—from fine-tuning and quantization with tools like LoRA and bitsandbytes to deploying at scale with services like Text Generation Inference. These aren\'t academics; they are battle-hardened architects of production-grade AI.",
+    pains: [
+        {
+            icon: AlertTriangle,
+            pain: "Are your AI/ML projects stuck in the lab, failing to create real-world value?",
+            problem: "The gap between a working Jupyter notebook and a production-ready, scalable AI service is a chasm where most projects fail. It\'s the difference between a science experiment and revenue-generating infrastructure. The complexity of model versioning, dependency management, and scalable inference is a technical debt nightmare waiting to happen.",
+            solution: "We vet for engineers who are **masters of the Hugging Face ecosystem and MLOps**. They know how to use tools like the \'transformers\' library, TGI, and Safetensors to build robust, versioned, and deployable AI/ML pipelines. This isn\'t just about code; it\'s about a disciplined, production-first mindset that turns AI potential into business reality.",
+            kpi: "Production-Ready AI/ML Pipelines",
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is the cost and complexity of deploying large models killing your ROI?",
+            problem: "Deploying large language models naively can lead to catastrophic cloud bills and slow, unusable services. The expertise required to optimize these models for inference—through techniques like quantization, pruning, and using optimized serving runtimes—is scarce and highly specialized.",
+            solution: "Our engineers are rigorously evaluated on their ability to **optimize and deploy transformer models efficiently**. They must demonstrate practical mastery of model quantization (bitsandbytes), efficient fine-tuning (LoRA, PEFT), and deployment with high-performance inference servers. This ensures your AI services are not just powerful, but economically viable.",
+            kpi: "Cost-Effective, High-Performance Model Deployment",
+        },
+        {
+            icon: AlertTriangle,
+            pain: "Is your team struggling to keep up with the breakneck pace of the LLM ecosystem?",
+            problem: "The LLM space evolves weekly. New models, new techniques, new security vulnerabilities. A team that isn\'t living and breathing this space is already behind. Relying on generalist developers to navigate this landscape is a direct path to building obsolete, insecure, and inefficient systems.",
+            solution: "We identify engineers who are **deeply embedded in the open-source AI community**. Our vetting requires candidates to demonstrate not just knowledge of established libraries, but also an understanding of the very latest developments discussed in papers, forums, and the Hugging Face community. You get an expert who is not just current, but forward-looking.",
+            kpi: "Future-Proof AI Architecture",
+        }
+    ],
+    evaluation: [
+        "Deep fluency in the Hugging Face Transformers and Diffusers libraries",
+        "Hands-on experience with model fine-tuning and parameter-efficient techniques (PEFT, LoRA)",
+        "Proven ability to deploy and scale models using tools like Text Generation Inference (TGI) or custom infrastructure",
+        "Expertise in model quantization and optimization for performance and cost (e.g., bitsandbytes, GPTQ)",
+        "Mastery of the broader MLOps lifecycle, including experiment tracking, model versioning (MLflow, DVC), and data management",
+    ],
+    technical_analysis: "The Hugging Face evaluation is designed to filter for true production engineers, not just data scientists. We require candidates to architect a complete, end-to-end NLP service. This isn\'t a theoretical exercise. They must select the right base model, justify their choice, and implement a robust fine-tuning strategy using a realistic dataset. The core of the evaluation is their ability to then containerize this model, optimize it for inference using techniques like 8-bit quantization, and deploy it behind a scalable API. We are testing for mastery of the **entire Hugging Face production stack**, from the code in the notebook to the bytes on the wire. A candidate who cannot explain the trade-offs between different quantization methods or justify their choice of inference server will not pass.",
+    interlink_slugs: ["langchain", "pytorch", "tensorflow", "transformers"],
 };
 
 export default huggingFace;
