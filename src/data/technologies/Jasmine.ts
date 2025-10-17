@@ -5,7 +5,7 @@ import { TechEntry } from "@/lib/tech";
 const jasmine: TechEntry = {
     name: "Jasmine",
     category: "Software Development",
-    categorySlug: "software-development",
+    categorySlug: "frontend-web",
     seo_title: "Hire Jasmine Experts | BDD Testing & JavaScript Consultants",
     meta_description: "Build a reliable, scalable, and automated testing platform. Hire elite remote Jasmine experts vetted for their deep understanding of BDD, from the spec to the spy. Book a call.",
     intro: "Jasmine is a behavior-driven development (BDD) framework for testing JavaScript code. You need an engineer who understands that building a modern testing platform is not just about writing tests, but about a deep understanding of the entire testing lifecycle, from the spec and the spy to the matcher and the reporter. Our vetting process identifies developers who are experts in the modern testing stack—and can architect a testing platform that is as secure, efficient, and automated as it is scalable. By hiring a Jasmine expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",

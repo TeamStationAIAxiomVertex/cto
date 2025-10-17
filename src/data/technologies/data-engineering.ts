@@ -1,46 +1,61 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { TechEntry } from '@/lib/tech';
+import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const dataEngineering: TechEntry = {
-    name: "Data Engineering",
-    category: "Data & AI",
-    categorySlug: "data-engineering-analytics",
-    seo_title: "Hire Data Engineers | Big Data, ETL, and Data Pipeline Experts",
-    meta_description: "Build a reliable, scalable, and automated data infrastructure. Hire elite remote data engineers vetted for their deep understanding of big data, from the data pipeline to the data warehouse. Book a call.",
-    intro: "Data engineering is the foundation of any data-driven organization. You need an engineer who understands that building a modern data infrastructure is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data source and the data pipeline to the data warehouse and the data lake. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a data engineer, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Is your data infrastructure a mess of brittle, ad-hoc scripts?",
-            problem: "In many organizations, the data infrastructure is a mess of brittle, ad-hoc scripts. This can lead to a user experience that is filled with stale data and a codebase that is a mess of environment-specific hacks and workarounds.",
-            solution: "We vet for experts in **data engineering and the modern data stack**. Our engineers are proficient in using tools like dbt, Airflow, and Spark to build a fully automated, reliable, and efficient data infrastructure. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Fully Automated, Reliable, and Efficient Data Infrastructure",
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your application not taking full advantage of the cloud?",
-            problem: "Many applications are not built to be cloud-native. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like Snowflake, BigQuery, and Redshift to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Serverless, and Container-Based Architecture",
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the data ecosystem?",
-            problem: "The data ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the data ecosystem and the modern data stack**. They are vetted on their ability to build applications that are powered by the best of the data ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Data Ecosystem",
-        }
-    ],
-    evaluation: [
-        "The modern data stack (e.g., dbt, Airflow, Spark)",
-        "Data warehousing and the data lake (e.g., Snowflake, BigQuery, Redshift)",
-        "Data pipelines and ETL/ELT",
-        "Data modeling and data governance",
-        "Data quality and data observability",
-    ],
-    technical_analysis: "The Data Engineering evaluation focuses on a candidate's ability to build a reliable, scalable, and automated data infrastructure. We assess their understanding of the entire data lifecycle, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **the modern data stack and the data warehouse**; candidates must demonstrate how to use tools like dbt, Airflow, and Spark to build a fully automated, reliable, and efficient data infrastructure, and how to use services like Snowflake, BigQuery, and Redshift to build a modern, serverless, and container-based architecture. We also test their ability to build **observable and cost-effective** systems that are easy to monitor and debug. Finally, we assess their knowledge of the data ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["dbt", "snowflake", "bigquery", "airflow"],
+  name: 'Data Engineering',
+  category: 'Data & AI',
+  categorySlug: 'data-ai',
+  seo_title: 'Hire Data Engineers | Experts in Modern Data Stacks & Pipelines',
+  meta_description:
+    'Hire elite Data Engineers to build reliable, scalable data platforms. Our vetted talent transforms your data chaos into a trustworthy foundation for analytics and machine learning.',
+  intro:
+    'Data Engineering is the bedrock of a data-driven organization. It’s not about writing brittle ETL scripts; it’s about building a scalable, observable, and trustworthy data factory. You need an architect of the modern data stack. Our vetting identifies engineers who design for data quality, implement robust data models, and build the reliable pipelines that turn raw data into your company’s most valuable asset.',
+  pains: [
+    {
+      icon: AlertTriangle,
+      pain: 'Untrustworthy Data and "Report Roulette"',
+      problem:
+        'Your dashboards are a minefield of conflicting metrics. Business leaders have lost all faith in the data because every report tells a different story, leading to analysis paralysis or decisions based on gut feel.',
+      solution:
+        'A skilled Data Engineer implements a "single source of truth." They build robust data models, enforce data quality contracts, and create observable pipelines so that data is not just moved, but validated and trusted at every stage.',
+      kpi: 'Achieve 99.9% data uptime and reduce data-related support tickets by 90%.',
+    },
+    {
+      icon: Workflow,
+      pain: 'Brittle, Unscalable Data Pipelines',
+      problem:
+        'Your data pipelines are a house of cards held together with cron jobs and duct tape. They fail silently, are impossible to debug, and cannot handle increasing data volumes, leaving your data stale and your analytics team blocked.',
+      solution:
+        'Our experts architect and build modern data platforms using tools like dbt, Airflow, and Snowflake. They replace fragility with resilience, implementing automated testing, lineage tracking, and proactive monitoring to ensure data flows reliably.',
+      kpi: 'Increase data pipeline reliability to over 99.5% and support 10x data volume growth.',
+    },
+    {
+      icon: ShieldCheck,
+      pain: 'Data Team as a Bottleneck',
+      problem:
+        'The business needs answers, but the data team is buried in ad-hoc requests and pipeline maintenance. Getting a new data source integrated takes months, and the backlog is endless. Innovation is impossible.',
+      solution:
+        'A TeamStation Data Engineer builds self-service platforms. By creating well-documented, reliable data assets and models, they empower analysts and data scientists to answer their own questions, freeing the core team to focus on strategic platform improvements.',
+      kpi: 'Reduce the lead time for new data requests from months to days.',
+    },
+  ],
+  evaluation: [
+    'Deep expertise in data modeling (Kimball, Inmon, Data Vault) and modern data warehousing.',
+    'Proven ability to build and orchestrate complex data pipelines (e.g., Airflow, Prefect, Dagster).',
+    'Mastery of data transformation and quality tools (e.g., dbt, Great Expectations).',
+    'Proficiency with major cloud data platforms (Snowflake, BigQuery, Redshift).',
+    'Skills in data governance, data lineage, and implementing data observability.',
+  ],
+  technical_analysis:
+    'The Axiom Cortex™ evaluation for Data Engineers is intensely focused on their ability to build production-grade data systems, not just write SQL. Candidates must architect a data platform from scratch, justifying their choices in modeling, orchestration, and quality control. We assess their ability to debug complex pipeline failures and implement robust monitoring and alerting. This ensures our engineers are not just data movers, but true platform builders who can create the reliable foundation required for high-impact analytics and machine learning.',
+  interlink_slugs: [
+    'dbt',
+    'snowflake',
+    'airflow',
+    'data-governance',
+  ],
+  is_ready: true,
 };
 
 export default dataEngineering;

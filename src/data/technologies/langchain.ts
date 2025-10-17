@@ -1,55 +1,61 @@
-import { TechEntry } from "@/lib/tech";
 
-import { AlertTriangle } from "lucide-react";
+import { TechEntry } from '@/lib/tech';
+import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const langchain: TechEntry = {
-  name: "LangChain",
-  category: "Machine Learning",
-  categorySlug: "ml-ai-llm-ops",
-  seo_title: "Hire LangChain Experts | TeamStation AI",
+  name: 'LangChain',
+  category: 'ML/AI & LLM Ops',
+  categorySlug: 'ml-ai-llm-ops',
+  seo_title: 'Hire LangChain Experts | LLM Application & Agent Developers',
   meta_description:
-    "Hire expert LangChain developers to build and deploy powerful applications with large language models (LLMs). Get pre-vetted LATAM talent to create chatbots, Q&A systems, and autonomous agents.",
+    'Hire elite LangChain developers to build robust, production-grade applications powered by LLMs. Our vetted talent architects the chains and agents that turn your AI concepts into reality.',
   intro:
-    "LangChain is a framework for developing applications powered by large language models (LLMs). Our AI engineers use LangChain to chain together different LLM calls, connect them to other sources of data, and give them access to tools, enabling the creation of sophisticated, data-aware, and autonomous applications.",
+    'LangChain is the definitive framework for **composing and orchestrating LLM interactions**. It provides the critical scaffolding to move beyond simple prompts and build complex, data-aware, and tool-using applications. You need an engineer who can architect with Chains and Agents, not just write scripts. Our vetting identifies experts who use LangChain to structure the chaos of LLM development, creating modular, maintainable, and powerful generative AI applications.',
   pains: [
     {
       icon: AlertTriangle,
-      pain: "Are you finding it difficult to build complex applications on top of simple LLM APIs?",
+      pain: 'LLM "Spaghetti Code" is Unmaintainable',
       problem:
-        "You see the power of LLMs, but you're struggling to go beyond simple prompting. You want to build applications that can reason, chain thoughts together, and interact with your existing data and tools, but the raw LLM APIs are too low-level.",
+        'Your proof-of-concept is a tangled mess of prompt templates, API calls, and custom parsing logic. It’s impossible to debug, extend, or swap out the underlying model without a complete rewrite.',
       solution:
-        "We use **LangChain's powerful abstractions like Chains and Agents** to build complex applications. We can create chains that combine multiple LLM calls with your own custom logic, or build autonomous agents that can use tools like search engines, databases, and APIs to accomplish tasks.",
-      kpi: "Build and deploy a production-ready LLM application in weeks, not months.",
+        'A LangChain expert uses the framework’s declarative components (Chains, Runnables) to build a modular application. This abstracts away the boilerplate, creating a clean, readable, and maintainable codebase where different models, data sources, or tools can be swapped in and out with ease.',
+      kpi: 'Reduce the complexity of LLM application code by 70% and improve maintainability.',
     },
     {
-      icon: AlertTriangle,
-      pain: "Is your LLM application unable to answer questions about your private data?",
+      icon: Workflow,
+      pain: 'Your LLM is a Brain in a Jar, Unable to Act',
       problem:
-        "LLMs are pre-trained on public data, so they have no knowledge of your specific domain or your company's internal documents. You want to build a Q&A system that can answer questions about your own data, but you don't know how to do it.",
+        'Your LLM can talk, but it can’t *do* anything. It has no access to your internal APIs, databases, or external tools, severely limiting its usefulness for any real-world business process.',
       solution:
-        "We use **LangChain to build powerful Retrieval-Augmented Generation (RAG) applications**. We connect your data sources—like documents, databases, and APIs—to your LLM, allowing it to answer questions and generate content based on your private data. This process is secure and your data is not used for training.",
-      kpi: "Enable your LLM to answer questions about your private data with 90% accuracy.",
+        'Our LangChain specialists build autonomous **Agents**. They give the LLM access to a secure toolkit of functions, enabling it to query databases, call APIs, and perform actions to solve complex, multi-step problems on its own.',
+      kpi: 'Automate complex business workflows by giving LLMs the ability to use your existing tools.',
     },
     {
-      icon: AlertTriangle,
-      pain: "Are you struggling to debug, trace, and evaluate your LLM applications?",
+      icon: ShieldCheck,
+      pain: 'Debugging and Tracing is a Black Box',
       problem:
-        "LLM applications are non-deterministic and can be difficult to debug and evaluate. You don't have visibility into how your application is making decisions, and you can't be sure if it's performing well.",
+        'When your LLM application gives a bad answer, you have no idea why. You can’t see the intermediate steps, the exact prompt that was sent, or which tool was used, making it impossible to debug and improve.',
       solution:
-        "We use **LangSmith, the observability platform for LangChain**, to provide full visibility into your LLM applications. We can trace the execution of your chains and agents, debug issues, and create evaluation datasets to measure and improve the performance of your application over time.",
-      kpi: "Get full visibility into your LLM application and improve its performance by 50%.",
+        'A TeamStation LangChain engineer leverages integrated tracing tools like LangSmith. They build observable applications where every step of a chain or agent’s reasoning is logged and visualized, providing the transparency needed to rapidly find and fix issues.',
+      kpi: 'Decrease debugging time for complex LLM chains by 90% with full observability.',
     },
   ],
   evaluation: [
-    "Deep expertise in the LangChain framework (Python and JS/TS).",
-    "Proven ability to build and deploy production-ready RAG applications.",
-    "Experience with creating custom chains and autonomous agents with tools.",
-    "Proficiency in using LangSmith for debugging, tracing, and evaluation.",
-    "Knowledge of different vector stores and embedding models.",
+    'Deep expertise in the LangChain Expression Language (LCEL) and building custom chains.',
+    'Proven ability to design and implement autonomous agents with custom tools.',
+    'Mastery of integrating various data sources for Retrieval-Augmented Generation (RAG).',
+    'Proficiency with the LangChain ecosystem, including LangSmith for debugging and tracing.',
+    'Skills in composing and orchestrating both proprietary and open-source models.',
   ],
   technical_analysis:
-    "LangChain provides the essential building blocks for creating powerful LLM-powered applications. Our engineers are experts in the core concepts of LangChain, including the different types of chains (like `LLMChain` and `RetrievalQA`), the various agent types (like `ReAct` and `OpenAI Functions`), and the different memory modules for managing conversation history. We have extensive experience with the LangChain Expression Language (LCEL), which allows us to compose these building blocks in a declarative and efficient way. A key area of our expertise is in building RAG systems. We are proficient in using LangChain's document loaders and text splitters to prepare your data, and we have experience with a variety of vector stores, including Pinecone, Weaviate, and pgvector. We are also experts at using LangSmith to debug and evaluate our LangChain applications. We can create custom evaluation metrics to measure the performance of your application against your specific business goals, and we can use the tracing data to identify and fix issues. By combining our deep knowledge of LangChain with our expertise in software engineering and machine learning, we can help you build and deploy the next generation of intelligent applications.",
-  interlink_slugs: ["openai", "ragas", "llms", "python"],
+    'The Axiom Cortex™ evaluation for LangChain developers tests their ability to architect robust LLM applications, not just connect library components. Candidates are given a complex business process and must design a LangChain agent to automate it. We assess their ability to define appropriate tools, structure the agent’s logic for reliability, and implement a tracing strategy for debugging. This ensures our engineers are true application architects who can wield the power of composition to build sophisticated and reliable AI systems.',
+  interlink_slugs: [
+    'llms',
+    'ragas',
+    'python',
+    'machine-learning',
+  ],
+  is_ready: true,
 };
 
 export default langchain;

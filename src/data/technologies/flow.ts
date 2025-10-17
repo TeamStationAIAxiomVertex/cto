@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { Check, Zap, Code, Shield } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const flow: TechEntry = {
     name: "Flow",
-    category: "Software Development",
-    categorySlug: "software-development",
-    seo_title: "Hire Flow Experts | Static Typing for JavaScript",
-    meta_description: "Build a scalable and maintainable application with Flow. Hire elite remote Flow experts vetted for their deep understanding of static typing. Book a call.",
-    intro: "Flow is a static type checker for your JavaScript code. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire static typing ecosystem, from the type annotation and the type inference to the type checking and the type generation. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Flow expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    category: "Frontend & UI Engineering",
+    categorySlug: "frontend-ui",
+    seo_title: "Hire Senior Flow Developers | JavaScript and Type Checking Experts",
+    meta_description: "Hire elite Flow developers specializing in building high-performance, scalable, and secure web applications.",
+    intro: "Flow is a powerful and versatile static type checker for JavaScript. Our Flow experts are vetted for their deep understanding of Flow's core principles, from its powerful type checking capabilities to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of web applications.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your codebase a mess of inconsistent, hard-to-maintain code?",
-            problem: "In many organizations, the codebase is a mess of inconsistent, hard-to-maintain code. This can lead to a user experience that is filled with bugs and a codebase that is a mess of spaghetti code and technical debt.",
-            solution: "We vet for experts in **Flow and the modern frontend stack**. Our engineers are proficient in using Flow to build a modern, scalable, and resilient application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Scalable, and Resilient Application",
+            icon: Check,
+            pain: "Our codebase is a mess of spaghetti code.",
+            problem: "Poorly written code is difficult to understand, maintain, and reuse, leading to a lack of confidence in your application.",
+            solution: "We vet for mastery in **Flow's powerful type checking capabilities**. Our engineers can help you build a clean, modular, and well-documented codebase.",
+            kpi: "90% Code Reusability"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not taking full advantage of the modern web?",
-            problem: "Many applications are not built to be truly modern. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a web application that is not as rich as it could be.",
-            solution: "Our engineers are masters of **Flow and the modern web**. They are vetted on their ability to use modern web APIs and best practices to build a modern, fast, and feature-rich application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Fast, and Feature-Rich Application",
+            icon: Zap,
+            pain: "We're struggling to keep up with the latest web technologies.",
+            problem: "The web is constantly evolving. It's difficult to keep up with the latest technologies, such as TypeScript and React.",
+            solution: "Our experts are tested on **the latest web technologies**. They can help you take advantage of the latest features, so you can build the next generation of web applications.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the frontend ecosystem?",
-            problem: "The frontend ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the frontend ecosystem and the modern frontend stack**. They are vetted on their ability to build applications that are powered by the best of the frontend ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Frontend Ecosystem",
+            icon: Code,
+            pain: "We're worried about the security of our website.",
+            problem: "Web security is a top priority for every business. It's difficult to secure a traditional client-side rendered application, especially when you're dealing with user authentication and data fetching.",
+            solution: "We vet for expertise in **Flow's security features**. Our engineers use the latest security best practices to protect your website from attack.",
+            kpi: "100% Website Security"
         }
     ],
     evaluation: [
-        "The modern frontend stack (e.g., Flow, React, other modern libraries)",
-        "Flow and the modern web",
-        "The type annotation and the type inference",
-        "The type checking and the type generation",
-        "Security and best practices",
+        "Deep understanding of Flow's core principles.",
+        "Mastery of Flow's powerful type checking capabilities.",
+        "Proficiency in building scalable, production-ready web applications with Flow.",
+        "Experience with a variety of web technologies.",
+        "Expertise in Flow's security features.",
     ],
-    technical_analysis: "The Flow evaluation focuses on a candidate's ability to build a scalable, maintainable, and reactive application. We assess their understanding of the entire Flow ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **Flow and the modern frontend stack**; candidates must demonstrate how to use tools like Flow, React, and other modern libraries to build a modern, scalable, and resilient application, and how to use the type annotation and the type inference to build a read model that is optimized for queries. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the frontend ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["react", "typescript", "javascript", "babel"],
+    technical_analysis: "The Flow vetting process is rigorous and hands-on. Candidates are required to build a production-ready web application with Flow from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of Flow best practices. We also assess their experience with a variety of web technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["javascript", "typescript", "react", "vue", "angular"],
+    is_ready: true,
 };
 
 export default flow;

@@ -1,55 +1,61 @@
-import { TechEntry } from "@/lib/tech";
-import { AlertTriangle } from "lucide-react";
+
+import { TechEntry } from '@/lib/tech';
+import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const dbt: TechEntry = {
-  name: "dbt (Data Build Tool)",
-  category: "Data & AI",
-  categorySlug: "data-engineering-analytics",
-  seo_title:
-    "Hire Senior dbt Developers | Analytics Engineering & Data Modeling",
+  name: 'dbt',
+  category: 'Data & AI',
+  categorySlug: 'data-ai',
+  seo_title: 'Hire dbt Developers | Analytics Engineering Experts',
   meta_description:
-    "Build reliable, well-tested data pipelines. Hire elite remote dbt experts vetted for advanced data modeling, performance optimization, and DataOps. Book a call.",
+    'Hire elite dbt developers to bring software engineering best practices to your analytics workflow. Our vetted talent builds modular, tested, and documented data models you can trust.',
   intro:
-    "dbt has become the industry standard for transforming data in the warehouse, bringing software engineering best practices to analytics. You need an Analytics Engineer who can move beyond simple `SELECT` statements to build a robust, modular, and well-tested dbt project. Our vetting process is designed to find these experts. We assess their deep understanding of dbt's core concepts—models, tests, sources, and packages—and their ability to architect scalable data transformations that are both reliable and easy to maintain. By hiring a dbt expert from us, you get a developer who can turn your raw data into a trusted, high-quality asset for the entire organization.",
+    'dbt (Data Build Tool) is the core of modern **Analytics Engineering**. It’s not about writing SQL; it’s about treating analytics as a professional software engineering discipline. You need an expert who can transform your chaotic warehouse of tangled SQL scripts into a modular, version-controlled, and tested data asset. Our vetting identifies engineers who use dbt to build trust in your data, accelerate analytics development, and create a common language between data producers and consumers.',
   pains: [
     {
       icon: AlertTriangle,
-      pain: "Is your data pipeline a slow, tangled 'spaghetti' of SQL queries?",
+      pain: '"Spaghetti SQL" and Untrustworthy Data Models',
       problem:
-        "Without a modular approach, data transformation logic becomes a monolithic, unmanageable mess. This 'SQL spaghetti' is impossible to debug, difficult to update, and runs inefficiently, causing long pipeline delays and a lack of trust in the data.",
+        'Your data warehouse is a black box of complex, undocumented SQL scripts. Business logic is duplicated and contradictory, nobody knows which tables to use, and a small change can break dozens of downstream reports.',
       solution:
-        "We vet for mastery of **dbt's modular architecture**. Our experts must demonstrate the ability to break down complex transformations into small, incremental models that build on each other, using `ref()` to create a clear, testable, and maintainable Directed Acyclic Graph (DAG) of dependencies.",
-      kpi: "Modular Data Modeling and DAG Optimization",
+        'A dbt expert refactors this chaos into a modular, layered data model. They use dbt to enforce dependencies (DAG), document every field, and implement version control, creating a single source of truth that is easy to understand and safe to modify.',
+      kpi: 'Reduce data model-related errors in reporting by 95%.',
     },
     {
-      icon: AlertTriangle,
-      pain: "Are you constantly fighting data quality issues and untrustworthy reports?",
+      icon: Workflow,
+      pain: 'No Testing for Your Most Critical Business Logic',
       problem:
-        "Without automated testing, data quality issues (e.g., null values, failed relationship checks) go undetected, silently corrupting your data warehouse and leading to incorrect business decisions. This erodes trust in the entire data platform.",
+        'Your most critical business logic—how you define revenue, active users, and other key metrics—lives in SQL with zero automated testing. You only find out about errors when an executive questions a dashboard.',
       solution:
-        "Our engineers are experts in **dbt's testing framework**. They are vetted on their ability to write and implement comprehensive data tests (generic, singular, and custom) to guarantee data quality, ensuring that every data model is accurate, fresh, and reliable.",
-      kpi: "Comprehensive Data Testing and Quality Assurance",
+        'Our dbt specialists implement a robust testing framework directly on your data models. They write tests for uniqueness, referential integrity, and custom business logic, ensuring that data is validated before it ever reaches a user.',
+      kpi: 'Achieve 100% test coverage for all critical business logic in the data warehouse.',
     },
     {
-      icon: AlertTriangle,
-      pain: "Are your dbt runs slow, inefficient, and costly?",
+      icon: ShieldCheck,
+      pain: 'Slow, Manual, and Error-Prone Analytics Workflow',
       problem:
-        "Inefficient dbt project configuration and poor model materialization strategies can lead to slow pipeline runs and excessive data warehouse costs. Developers who don't understand the trade-offs between different materializations (`view`, `table`, `incremental`) waste valuable time and money.",
+        'Onboarding new analysts takes months because they have to reverse-engineer years of undocumented SQL. Collaboration is impossible, and every change is a high-risk manual deployment.',
       solution:
-        "We look for engineers proficient in **dbt performance tuning**. They are vetted on their ability to choose the correct materialization strategy for each model, implement efficient incremental models for large datasets, and optimize dbt run commands for maximum parallelism and performance.",
-      kpi: "Performance Tuning and Incremental Modeling",
+        'A TeamStation dbt engineer builds a professional analytics development workflow. They integrate dbt with CI/CD to automate testing and deployment, use dbt Docs to provide living documentation, and create a modular codebase that is easy for new team members to contribute to.',
+      kpi: 'Reduce analyst onboarding time by 80% and accelerate analytics development cycles by 50%.',
     },
   ],
   evaluation: [
-    "Advanced dbt project structure and modularity",
-    "Data modeling and materialization strategies",
-    "Custom and generic data testing",
-    "Jinja and macro development for code reuse",
-    "Performance tuning and incremental models",
+    'Deep expertise in Analytics Engineering principles and the dbt Core/Cloud platforms.',
+    'Proven ability to design and implement modular data models using dbt.',
+    'Mastery of dbt’s testing framework (schema and data tests).',
+    'Proficiency in integrating dbt with CI/CD pipelines for automated deployments.',
+    'Skills in performance tuning dbt models and optimizing warehouse compute.',
   ],
   technical_analysis:
-    "The dbt evaluation is focused on analytics engineering best practices. Candidates are required to design a dbt project for a complex business scenario, demonstrating a clear understanding of staging, intermediate, and marts layers. The critical assessment is their choice of **materializations** and their ability to implement a robust **incremental modeling** strategy for a large fact table, proving their understanding of performance and cost optimization. We rigorously test their testing discipline, requiring them to write both generic and custom data tests to ensure data integrity. Finally, we assess their proficiency with **Jinja macros** for writing DRY, reusable transformation logic.",
-  interlink_slugs: ["snowflake", "data-engineering", "sql", "python"],
+    'The Axiom Cortex™ evaluation for dbt developers centers on their ability to build a professional-grade analytics engineering practice. Candidates must demonstrate how they would structure a complex dbt project for scalability and maintainability. We assess their ability to write custom tests and macros to solve complex business problems, and their experience with dbt’s deployment and documentation features. This ensures our engineers are not just dbt users, but true analytics engineers who can build the robust, trustworthy data models that your business needs to make critical decisions.',
+  interlink_slugs: [
+    'data-engineering',
+    'sql',
+    'snowflake',
+    'ci-cd',
+  ],
+  is_ready: true,
 };
 
 export default dbt;

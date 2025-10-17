@@ -1,46 +1,61 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { TechEntry } from '@/lib/tech';
+import { AlertTriangle } from 'lucide-react';
 
 const gremlin: TechEntry = {
-    name: "Gremlin",
-    category: "QA & Security",
-    categorySlug: "qa-quality-engineering",
-    seo_title: "Hire Gremlin Experts | Chaos Engineering & Resilience Consultants",
-    meta_description: "Build resilient, fault-tolerant systems. Hire elite remote Gremlin experts vetted for their deep understanding of chaos engineering, from blast radius to graceful degradation. Book a call.",
-    intro: "Gremlin is a leading chaos engineering platform. You need an engineer who understands that building a resilient system is not just about writing code, but about a deep understanding of the entire system, from the infrastructure to the application. Our vetting process identifies developers who are experts in the modern DevOps stack—and can architect a resilience platform that is as secure, efficient, and automated as it is scalable. By hiring a Gremlin expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Are you discovering system weaknesses during a production outage?",
-            problem: "Without proactively testing for failure, the first time you discover a single point of failure or a cascading issue is during a real incident, when the stakes are highest. This leads to longer downtime, lost revenue, and a damaged reputation.",
-            solution: "We vet for experts in **Chaos Engineering**. Our engineers are proficient in using Gremlin to safely and deliberately inject failure into your pre-production and production systems to uncover hidden weaknesses before they impact customers. This results in a more resilient and reliable system.",
-            kpi: "A Proactive, Data-Driven Approach to Resilience"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are your on-call engineers suffering from alert fatigue and burnout?",
-            problem: "When every small issue triggers a high-priority alert, on-call engineers become desensitized and burned out. They can't distinguish between a minor hiccup and a true emergency, leading to slow response times for critical incidents.",
-            solution: "Our engineers are masters of **GameDay and incident response simulation**. They are vetted on their ability to use Gremlin to run controlled experiments that test monitoring and alerting systems, ensuring that your team is only paged for actionable, customer-impacting issues.",
-            kpi: "Reduced Alert Fatigue and Improved Incident Response"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Do you know your system's 'blast radius' for a given failure?",
-            problem: "In a complex microservices architecture, it's often unclear how the failure of one service will impact others. This lack of understanding makes it impossible to prioritize fixes or communicate impact accurately during an outage.",
-            solution: "We look for engineers proficient with **scoping and containing chaos experiments**. They are vetted on their ability to use Gremlin to define a clear blast radius for each experiment, helping you understand the real-world impact of a service failure and build appropriate fallbacks and circuit breakers.",
-            kpi: "A Clear Understanding of System Dependencies and Blast Radius"
-        }
+  name: 'Gremlin',
+  category: 'QA & Security',
+  categorySlug: 'qa-automation',
+  seo_title: 'Hire Gremlin Developers | Chaos Engineering Experts',
+  meta_description:
+    'Hire expert Gremlin developers for chaos engineering. Build more resilient systems with our top-tier talent.',
+  intro:
+    'Gremlin is a chaos engineering platform that helps you build more resilient systems. With Gremlin, you can safely and securely inject failure into your systems to find weaknesses before they cause problems for your customers.',
+  pains: [
+    {
+      icon: AlertTriangle,
+      pain: 'Production Outages',
+      problem:
+        'You have no idea how your system will behave under stress, and you only find out when it’s too late and your customers are affected.',
+      solution:
+        'Gremlin developers proactively inject failure into your systems in a controlled environment, allowing you to identify and fix weaknesses before they cause production outages.',
+      kpi: '75% reduction in critical production incidents.',
+    },
+    {
+      icon: AlertTriangle,
+      pain: 'Unknown Dependencies',
+      problem:
+        'You have a complex microservices architecture, and you don’t know how the failure of one service will impact others.',
+      solution:
+        'Our Gremlin experts help you run targeted chaos engineering experiments to uncover hidden dependencies and cascading failures between your services.',
+      kpi: '90% improvement in system observability and understanding.',
+    },
+    {
+        icon: AlertTriangle,
+        pain: 'Slow Incident Response',
+        problem:
+            'When a production incident occurs, your team is slow to react because they have never seen that type of failure before.',
+        solution:
+            'By running regular chaos engineering experiments with Gremlin, your team will become more familiar with different failure modes and will be better prepared to respond to incidents.',
+        kpi: '60% faster mean time to resolution (MTTR).',
+    }
+  ],
+  evaluation: [
+    'Deep understanding of chaos engineering principles and best practices.',
+    'Experience with the Gremlin platform and its various attack types.',
+    'Ability to design and execute chaos engineering experiments in a safe and controlled manner.',
+
+    'Proficiency in identifying and prioritizing weaknesses in a system.',
+    'Experience with integrating Gremlin into a CI/CD pipeline.',
+  ],
+  technical_analysis:
+    'Gremlin is a powerful tool for any organization that is serious about reliability. By proactively testing your system’s resilience, you can prevent outages, improve your incident response, and build more robust and reliable systems. Our evaluation process ensures that our Gremlin developers have the skills and experience to implement a safe and effective chaos engineering practice.',
+    interlink_slugs: [
+        'microservices',
+        'devops-engineering',
+        'qa-automation',
+        'sre',
     ],
-    evaluation: [
-        "Chaos engineering principles and the scientific method",
-        "Gremlin platform and experiment design",
-        "Scoping blast radius and defining steady-state",
-        "Integrating Chaos Engineering into CI/CD",
-        "Incident response and GameDay facilitation",
-    ],
-    technical_analysis: "The Gremlin evaluation focuses on a candidate's ability to implement a safe and effective chaos engineering practice. We assess their understanding of the principles of resilience and their ability to design and execute controlled experiments. A critical part of the evaluation is their mastery of the **Gremlin platform**; candidates must demonstrate how to use Gremlin to inject various types of failure (e.g., latency, packet loss, CPU-burn) and how to scope the experiment to minimize risk. We also test their ability to define and measure a system's 'steady state' to determine the impact of an experiment. Finally, we assess their knowledge of integrating chaos engineering into a CI/CD pipeline to automate resilience testing.",
-    interlink_slugs: ["kubernetes", "docker", "devops-engineering", "ci-cd"],
 };
 
 export default gremlin;

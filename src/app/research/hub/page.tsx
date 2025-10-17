@@ -1,138 +1,146 @@
-
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BookOpen } from 'lucide-react';
-import { teamStationAI } from '@/lib/schema';
-import dynamic from 'next/dynamic';
-
-const ClientJsonLd = dynamic(() => import('@/components/seo/JsonLd'), { ssr: false });
-
-const papers = [
-  {
-    slug: "axiom-cortex-scientific-report",
-    title: "Bias-Free Technical Hiring with AxiomCortex™",
-    description: "Presents the AxiomCortex™ neuro-psychometric model for evaluating software engineers. Eliminates bias, improves predictive validity, and enables audit-ready hiring.",
-    canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
-  },
-  {
-    slug: "heuristically-trained-ai",
-    title: "Heuristically Trained AI Models for Technical Evaluation",
-    description: "Explores heuristic-guided model training for evaluating software engineers. Balances statistical robustness with domain-specific interpretability.",
-    canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165433",
-  },
-  {
-    slug: "framework-for-measuring-capacity",
-    title: "Framework for Measuring Engineering Capacity",
-    description: "Proposes a quantitative model for capacity planning in distributed engineering teams. Incorporates psychometric and economic factors for predictable delivery.",
-    canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490",
-  },
-  {
-    slug: "performance-metrics-in-ai-age",
-    title: "Performance Metrics in the AI Age",
-    description: "Redefines productivity and performance metrics for engineering teams using AI-assisted workflows. Proposes new measurement models aligned with modern delivery.",
-    canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5253470",
-  }
-];
+import { Book, TestTube, Lightbulb, AlertTriangle, ArrowRight } from 'lucide-react';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: "Research Hub | TeamStation AI",
-  description: "Explore TeamStation AI’s peer-reviewed research on cognitive AI hiring, engineering capacity, and performance metrics. Published on SSRN and Google Scholar.",
-  alternates: {
-    canonical: "https://cto.teamstation.dev/research/hub",
-  },
-  openGraph: {
-    title: "Research Hub | TeamStation AI",
-    description: "Explore TeamStation AI’s peer-reviewed research on cognitive AI hiring, engineering capacity, and performance metrics. Published on SSRN and Google Scholar.",
-    url: "https://cto.teamstation.dev/research/hub",
-    type: "website",
-    images: [{ url: "/og-research.png", width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Research Hub | TeamStation AI",
-    description: "Peer-reviewed research for CTOs: AI hiring, engineering capacity, and performance metrics.",
-    images: ["/og-research.png"],
-  },
+  title: "The Science of Nearshore Development: A Research Hub for CTOs | TeamStation AI",
+  description: "Access the foundational research that is transforming the nearshore industry. Read the peer-reviewed papers and the book that provide the scientific blueprint for de-risking your engineering and hiring strategy.",
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "TeamStation AI Research Papers",
-  "description": "Peer-reviewed and preprint research published by TeamStation AI and available on SSRN.",
-  "provider": {
-    "@type": "Organization",
-    "name": teamStationAI.name,
-    "url": teamStationAI.url
+const researchAssets = [
+  {
+    icon: Book,
+    title: 'The Book: Platforming the Nearshore Industry',
+    description: 'The foundational text for the new discipline of scientific nearshore management. This book provides the complete economic and operational blueprint for replacing vendor chaos with a predictable, high-throughput platform.',
+    href: '/research/platforming-nearshore-book',
   },
-  "itemListElement": papers.map((paper, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "item": {
-      "@type": "ScholarlyArticle",
-      "headline": paper.title,
-      "url": `https://cto.teamstation.dev/research/${paper.slug}`,
-      "sameAs": paper.canonical,
-      "author": { "@type": "Organization", "name": teamStationAI.name },
-      "publisher": { "@type": "Organization", "name": "Social Science Research Network (SSRN)" },
-    }
-  }))
-};
+  {
+    icon: TestTube,
+    title: 'Axiom Cortex™ Scientific Report',
+    description: 'The peer-reviewed science behind our predictive hiring model. This paper details the neurocognitive and psychometric principles that allow us to measure a candidate\'s true problem-solving ability, de-risking your most critical hires.',
+    href: '/research/axiom-cortex-scientific-report',
+  },
+  {
+    icon: TestTube,
+    title: 'Heuristically Trained AI Models for Technical Evaluation',
+    description: 'Explores heuristic-guided model training for evaluating software engineers. Balances statistical robustness with domain-specific interpretability.',
+    href: '/research/heuristically-trained-ai',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Framework for Measuring Engineering Capacity',
+    description: 'Proposes a quantitative model for capacity planning in distributed engineering teams. Incorporates psychometric and economic factors for predictable delivery.',
+    href: '/research/performance-evaluation-framework',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Performance Metrics in the AI Age',
+    description: 'Redefines productivity and performance metrics for engineering teams using AI-assisted workflows. Proposes new measurement models aligned with modern delivery.',
+    href: '/research/performance-metrics-in-ai-age',
+  },
+];
+
+const painCards = [
+  {
+    title: "The Vetting Gamble",
+    pain: "You're forced to bet your roadmap on vendors who use resume keywords and 'gut feel.' This is not a system; it's a coin flip.",
+    solution: "Our research on Axiom Cortex™ provides the scientific methodology to replace subjective interviews with a predictable, data-driven system for measuring cognitive ability.",
+    href: "/research/axiom-cortex-scientific-report"
+  },
+  {
+    title: "The Black Box of Performance",
+    pain: "You are paying for headcount, not output. You have no verifiable data to prove your remote team is effective, and no way to diagnose why they are not.",
+    solution: "Our Performance Evaluation Framework is the blueprint for an evidence-based system that measures engineering throughput, turning your team from a black box into a predictable asset.",
+    href: "/research/performance-evaluation-framework"
+  },
+  {
+    title: "Vendor Sprawl & Hidden Costs",
+    pain: "Your 'low-cost' vendor is a trojan horse for chaos. You are now drowning in the hidden costs and vendor sprawl of managing separate contracts for talent, EOR, and device security.",
+    solution: "Our book, 'Platforming the Nearshore Industry,' provides the scientific and economic model for replacing this chaos with a complete operational wrapper that provides a single, predictable TCO.",
+    href: "/research/platforming-nearshore-book"
+  }
+]
 
 export default function ResearchHubPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cto.teamstation.dev" },
+      { "@type": "ListItem", "position": 2, "name": "Research Hub", "item": "https://cto.teamstation.dev/research/hub" }
+    ]
+  };
+
   return (
     <>
-      <ClientJsonLd data={schema} />
+      <JsonLd data={breadcrumbSchema} />
       <main className="container max-w-5xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
-          <Link href="/" className="hover:text-foreground">Home</Link> / 
-          <span>Research Hub</span>
+          <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research Hub</span>
         </div>
-        <article className="prose dark:prose-invert max-w-none">
-          <h1>Research Hub</h1>
-          <p>
-            TeamStation AI is the only nearshore technology partner publishing 
-            peer-reviewed and preprint research on <strong>cognitive AI hiring</strong>, 
-            <strong> engineering capacity</strong>, and <strong>performance metrics</strong>. 
-            All papers are indexed on <a href="https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a> 
-            and published on <a href="https://papers.ssrn.com/" target="_blank" rel="noopener noreferrer">SSRN</a>.
-          </p>
-           <nav className="not-prose mt-6 mb-12 flex justify-center gap-4 text-sm">
-                <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
-                <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
-                <Link href="/hire" className="text-primary hover:underline">Hire Talent</Link>
-            </nav>
 
-          <ul className="list-none p-0 space-y-6">
-            {papers.map((paper) => (
-              <li key={paper.slug} className="border rounded-lg p-6 hover:shadow-md transition">
-                <h2 className="text-xl font-semibold">
-                  <Link href={`/research/${paper.slug}`} className="hover:underline">
-                    {paper.title}
+        <header className="my-8">
+          <div className="rounded-lg border bg-card p-8 md:p-12">
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Science of Predictable Nearshore Results</h1>
+            <div className="mt-8 max-w-4xl space-y-6">
+              <div className="bg-background p-6 rounded-lg border border-primary/20">
+                <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>The Crisis of Authority in Nearshore Outsourcing</h2>
+                <p className="mt-2 text-muted-foreground">For twenty years, you've been told to trust the nearshore model. You've been sold on time zones and cost savings, yet you're still fighting the same fires: the mis-hire that looked great on paper, the 'low-cost' team that bleeds your budget through low velocity, the vendor chaos that has become your second job. The problem isn't just a bad vendor. The problem is an entire industry built on anecdote instead of evidence. This is an unacceptable business risk.</p>
+                <p className="mt-4 text-muted-foreground">Our research exists to close this gap. We are committed to the science of transforming nearshore development from a high-risk gamble into a predictable engineering discipline.</p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section className="my-24">
+          <h2 className="text-center text-4xl font-bold text-foreground">The End of Guesswork: An Engineered Approach to Building Teams</h2>
+          <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">The legacy staff augmentation model is broken. We are the first to replace it with a new, data-driven scientific discipline. Our research is the proof.</p>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {painCards.map((card) => (
+              <div key={card.title} className="rounded-lg border bg-card p-6 flex flex-col">
+                  <h3 className="text-lg font-semibold text-foreground">{card.title}</h3>
+                  <p className="mt-2 text-sm font-semibold text-destructive">{card.pain}</p>
+                  <div className="mt-4 border-t border-border pt-4 flex-grow">
+                    <p className="text-sm text-foreground m-0">{card.solution}</p>
+                  </div>
+                  <Link href={card.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
+                      Read the Research <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
-                </h2>
-                <p className="mt-2 text-muted-foreground">{paper.description}</p>
-                <div className="mt-4 flex gap-4">
-                  <Link 
-                    href={`/research/${paper.slug}`} 
-                    className="text-primary hover:underline inline-flex items-center"
-                  >
-                    <BookOpen className="mr-2 h-4 w-4" />
-                    Read Summary
-                  </Link>
-                  <a 
-                    href={paper.canonical} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-primary hover:underline"
-                  >
-                    View on SSRN →
-                  </a>
-                </div>
-              </li>
+              </div>
             ))}
-          </ul>
-        </article>
+          </div>
+        </section>
+
+        <section className="my-24">
+            <h2 className="text-center text-4xl font-bold text-foreground">Your Research Arsenal</h2>
+            <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">This is the arsenal of evidence a CTO needs to de-risk decisions and win budget battles with the CFO.</p>
+            <div className="mt-12 space-y-8">
+                {researchAssets.map((asset) => {
+                const Icon = asset.icon;
+                return (
+                    <Link key={asset.title} href={asset.href} className="group block rounded-lg border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
+                    <div className="flex items-start gap-4">
+                        <div className="rounded-full bg-primary/10 p-3 border">
+                        <Icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                        <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{asset.title}</h3>
+                        <p className="mt-1 text-muted-foreground">{asset.description}</p>
+                        </div>
+                    </div>
+                    </Link>
+                );
+                })}
+            </div>
+        </section>
+
+        <section className="my-24 rounded-lg border bg-card p-8 md:p-12 text-center">
+            <h2 className="text-center text-3xl font-bold text-foreground">Our Scientific Commitment</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">The chaos and risk of the legacy model are no longer acceptable. Our research is the foundation of a new discipline, and our company is the vehicle for its implementation.</p>
+            <p className="mt-4 text-lg font-semibold text-primary">We are committed to the science of transforming this industry because, in a world run by software, building a team should not be an act of faith. It should be an act of engineering.</p>
+        </section>
+
       </main>
     </>
   );

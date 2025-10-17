@@ -1,17 +1,14 @@
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, UserCheck, FileText, ShieldCheck, Laptop, Building, Scale, GanttChartSquare, BookOpen, Search, Code, CheckCircle, Brain, Book } from 'lucide-react';
-
-// NOTE: FurtherReading component is removed and replaced by explicit interlinking to fulfill the SEO War Plan
+import { ArrowRight, UserCheck, FileText, ShieldCheck, Laptop, Building, Scale, GanttChartSquare, BookOpen, Search, Code, CheckCircle, Brain, Book, Users, Target, MapPin, Calendar, Check, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Integrated Nearshore Services: One Accountable SLA for CTOs', // Optimized title for SEO War Plan
-  description: 'Our single, accountable SLA for nearshore engineering bundles AI-driven talent, EOR, secure devices, and compliance to defeat legacy staff augmentation risk. Surpass BairesDev.', // Optimized description
+  title: 'Integrated Nearshore Services: One Accountable SLA for CTOs',
+  description: 'Our single, accountable SLA for nearshore engineering bundles AI-driven talent, EOR, secure devices, and compliance to defeat legacy staff augmentation risk. Surpass BairesDev.',
   keywords: 'integrated nearshore services, nearshore SLA, managed nearshore teams, employer of record latam, secure nearshore development, teamstation vs bairesdev, nearshore IT staff augmentation',
 };
 
-// JSON-LD Schema (REQUIRED by SEO War Plan)
 const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -32,14 +29,13 @@ const serviceSchema = {
     }
 };
 
-// FULL CONTENT ARRAY (includes Risk, IP/NDA, and original services)
 const includedServices = [
     {
         icon: <Brain className="h-8 w-8 text-primary"/>,
-        pain: 'Hiring is slow, subjective, and prone to bias?', // PAIN
-        title: 'Cognitive AI Vetting (44 Formulas)', // SOLUTION
+        pain: 'Hiring is slow, subjective, and prone to bias?',
+        title: 'Cognitive AI Vetting (44 Formulas)',
         description: 'Our Axiom Cortex™ engine applies 44 proprietary NeuroPsychometric formulas to evaluate human capacity and deliver a high-signal shortlist of 2-3 candidates per role, scientifically aligned to your CTO vision.',
-        kpi: 'Time-to-Offer ≈ 9 days' // PROOF
+        kpi: 'Time-to-Offer ≈ 9 days'
     },
     {
         icon: <FileText className="h-8 w-8 text-primary"/>,
@@ -99,7 +95,23 @@ const includedServices = [
     }
 ];
 
-// Helper component for internal links (Crucial for SEO War Plan interlinking)
+const Stat = ({ value, label }: { value: string, label: string }) => (
+    <div className="text-center">
+        <p className="text-4xl font-extrabold text-primary">{value}</p>
+        <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">{label}</p>
+    </div>
+);
+
+const FeatureCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
+    <div className="flex items-start space-x-4">
+        <div className="flex-shrink-0">{icon}</div>
+        <div>
+            <h4 className="font-semibold text-foreground">{title}</h4>
+            <p className="text-sm text-muted-foreground">{children}</p>
+        </div>
+    </div>
+);
+
 const LinkCard = ({ href, icon, title, description }: { href: string, icon: React.ReactNode, title: string, description: string }) => (
     <Link href={href} className="group flex flex-col p-4 border rounded-lg hover:border-primary/50 transition-all bg-background dark:bg-gray-800">
         <div className="flex items-center gap-3">
@@ -115,7 +127,6 @@ const LinkCard = ({ href, icon, title, description }: { href: string, icon: Reac
 export default function IntegratedServicesPage() {
   return (
     <main className="container max-w-6xl py-12">
-        {/* Schema Injection */}
         <script 
             type="application/ld+json" 
             dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} 
@@ -127,7 +138,7 @@ export default function IntegratedServicesPage() {
         <header className="text-center my-12">
             <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">One Accountable SLA for Your Entire Operation</h1>
             <p className="mt-4 max-w-4xl mx-auto text-xl text-muted-foreground font-medium">
-                We are the **only** intelligent services platform offering a **Single Accountable SLA/SOW/MSA** to build Nearshore IT teams at a touch of a button, fueled by **Axiom Cortex's** gigantic brain processing **44 NeuroPsychometric formulas**. This is how you defeat fragmented vendor risk.
+                We are the <strong>only</strong> intelligent services platform offering a <strong>Single Accountable SLA/SOW/MSA</strong> to build Nearshore IT teams at a touch of a button, fueled by <strong>Axiom Cortex's</strong> gigantic brain processing <strong>44 NeuroPsychometric formulas</strong>. This is how you defeat fragmented vendor risk.
             </p>
             <div className='mt-6 flex justify-center space-x-4'>
                  <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Demo & Get the SLA <ArrowRight className="ml-2 h-5 w-5"/></Link>
@@ -136,12 +147,12 @@ export default function IntegratedServicesPage() {
 
         <section className="my-16 rounded-lg border border-yellow-500/50 bg-yellow-500/5 p-8 shadow-2xl">
             <div className="text-center">
-                <h2 className="text-4xl font-extrabold text-foreground">UNF*CKING HEARD OF: The Single Accountable SLA</h2>
+                <h2 className="text-3xl font-bold text-foreground">The Power of One Contract</h2>
                 <p className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
                     Legacy staff augmentation forces you to act as the system integrator, coordinating 4–7 vendors for recruiting, payroll, security, and IP. This fragmented approach is riddled with risk, hidden costs, and finger-pointing.
                 </p>
                 <p className="mt-4 max-w-4xl mx-auto text-xl font-bold text-foreground">
-                    TeamStation flips the script: We are the single accountable party. One Master Services Agreement covers the entire operational lifecycle, guaranteeing talent quality, security compliance, and full EOR protection. **We take the risk so you can ship code.**
+                    TeamStation flips the script: We are the single accountable party. One Master Services Agreement covers the entire operational lifecycle, guaranteeing talent quality, security compliance, and full EOR protection. <strong>We take the risk so you can ship code.</strong>
                 </p>
             </div>
         </section>
@@ -168,60 +179,68 @@ export default function IntegratedServicesPage() {
             </div>
         </section>
 
+        <section className="my-24">
+            <h2 className="text-center text-3xl font-bold mb-4">Cognitive AI-Mapped LATAM Talent, Matched to Your Stack</h2>
+            <p className="text-center max-w-3xl mx-auto text-muted-foreground mb-12">
+                Coverage + precision: 2.6M+ profiles across 45+ hubs, skill-to-stack matching, level calibration, and bias-aware evaluations powered by our <Link href="/research/hub" className="text-primary hover:underline">Axiom Cortex™ research</Link>.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 py-8 px-4 bg-muted/50 rounded-lg border">
+                <Stat value="2.6M+" label="Profiles" />
+                <Stat value="45+" label="Hubs" />
+                <Stat value="≥85%" label="Short-list Relevance" />
+                <Stat value="≈ 9 days" label="Time-to-Offer" />
+                <Stat value="≥96%" label="90-Day Retention" />
+            </div>
+
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+                <FeatureCard icon={<MapPin className="h-6 w-6 text-primary" />} title="Continental Coverage">
+                    2.6M+ verified IT profiles mapped across LATAM tech hubs, refreshed continuously. Explore talent by <Link href="/hire/by-country" className="text-primary hover:underline">country</Link>.
+                </FeatureCard>
+                <FeatureCard icon={<Code className="h-6 w-6 text-primary" />} title="Skill-to-Stack Matching">
+                    Embeddings align roles to your tools and patterns (e.g., React, Python, Salesforce) for high-relevance short-lists. See our <Link href="/hire/by-technology" className="text-primary hover:underline">supported technologies</Link>.
+                </FeatureCard>
+                <FeatureCard icon={<Target className="h-6 w-6 text-primary" />} title="Level Calibration (L1–L4)">
+                    Clear proficiency bands tied to outcomes—from component work to org-level impact.
+                </FeatureCard>
+                <FeatureCard icon={<Users className="h-6 w-6 text-primary" />} title="Collaboration Readiness">
+                    English proficiency, timezone overlap, and async habits are screened for day-one effectiveness.
+                </FeatureCard>
+                <FeatureCard icon={<Calendar className="h-6 w-6 text-primary" />} title="Market & Availability Signals">
+                    City-level compensation envelopes and notice periods, so offers land fast and on budget.
+                </FeatureCard>
+                <FeatureCard icon={<Shield className="h-6 w-6 text-primary" />} title="Compliance-Ready Talent">
+                    Background checks, EOR eligibility, and device readiness pre-verified to reduce friction. Learn more at our <Link href="/trust" className="text-primary hover:underline">Trust Center</Link>.
+                </FeatureCard>
+            </div>
+        </section>
         
-        {/* SEO WAR PLAN INTERLINKING IMPLEMENTATION: 7 highly authoritative internal links */}
         <section className="my-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Download The Research: Science, Comparison, and Method</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                {/* 1. The Book Link */}
+            <h2 className="text-3xl font-bold mb-8 text-center">Further Reading: Explore Our Core Pillars</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <LinkCard 
-                    href="/research/platforming-nearshore-it-staff-augmentation-book"
-                    icon={<Book className="h-6 w-6 text-yellow-600" />}
-                    title="Published Book: Platforming the Nearshore Industry"
-                    description="Access our published research on replacing legacy staff augmentation with intelligent service infrastructure (Title: Platforming the Nearshore IT Staff Augmentation Industry)."
-                />
-                {/* 2. Axiom Cortex Research */}
-                <LinkCard 
-                    href="/research/axiom-cortex-scientific-foundations"
-                    icon={<Brain className="h-6 w-6 text-primary" />}
-                    title="The 44 Formulas: Axiom Cortex™ Scientific Deep Dive"
-                    description="Understand the proprietary Neural Search Alignment Technology and the scientific method behind our 44 NeuroPsychometric vetting formulas."
-                />
-                {/* 3. BairesDev Comparison */}
-                <LinkCard 
-                    href="/comparisons/teamstation-vs-bairesdev"
-                    icon={<Code className="h-6 w-6 text-red-600" />}
-                    title="BairesDev/Legacy Comparison: TCO & Risk Breakdown"
-                    description="See a criteria-by-criteria analysis of how our integrated SLA minimizes Total Cost of Ownership and Vendor Risk compared to fragmented legacy firms."
-                />
-                {/* 4. CTO Playbook Hub */}
-                <LinkCard 
-                    href="/playbook"
+                    href="/playbook/hub"
                     icon={<BookOpen className="h-6 w-6 text-blue-600" />}
-                    title="The CTO Playbook: Master Nearshore Strategy"
-                    description="Access our entire collection of research-backed guides on nearshore strategy, economics, and scaling teams."
+                    title="The CTO Playbook"
+                    description="Strategic guides on nearshore economics, security, and team scaling."
                 />
-                {/* 5. EOR/Compliance Programmatic Example */}
                 <LinkCard 
-                    href="/latam/mexico/eor"
-                    icon={<FileText className="h-6 w-6 text-green-600" />}
-                    title="EOR, Compliance, & IP Assignment Deep Dive"
-                    description="Review the specifics of how Employer of Record (EOR) and compliance are managed in our key LATAM markets."
+                    href="/research/hub"
+                    icon={<Brain className="h-6 w-6 text-primary" />}
+                    title="Scientific Research"
+                    description="The data-driven foundation of our vetting models and operational frameworks."
                 />
-                {/* 6. Programmatic Sourcing Example */}
                 <LinkCard 
-                    href="/hire/react-engineers-in-guadalajara"
-                    icon={<Laptop className="h-6 w-6 text-purple-600" />}
-                    title="Programmatic Sourcing: React Engineers in Guadalajara"
-                    description="See how our platform executes high-velocity talent sourcing for specific roles and locations using our integrated model."
+                    href="/comparisons"
+                    icon={<Code className="h-6 w-6 text-red-600" />}
+                    title="Vendor Risk Comparisons"
+                    description="Head-to-head analysis of our integrated model vs. legacy staff augmentation."
                 />
-                 {/* 7. Pricing/Methodology Link */}
                 <LinkCard 
-                    href="/pricing-and-methodology"
-                    icon={<ShieldCheck className="h-6 w-6 text-primary" />}
-                    title="Pricing & Methodology: The TCO Model"
-                    description="Transparent view of our pricing structure and the proprietary methodology that makes the Single SLA economically superior."
+                    href="/hire"
+                    icon={<Users className="h-6 w-6 text-green-600" />}
+                    title="Explore Vetted Talent"
+                    description="Browse available talent by country, role, or specific technology stack."
                 />
             </div>
         </section>

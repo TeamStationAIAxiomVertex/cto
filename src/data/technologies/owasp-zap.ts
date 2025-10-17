@@ -1,46 +1,61 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { TechEntry } from '@/lib/tech';
+import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const owaspZap: TechEntry = {
-    name: "OWASP ZAP",
-    category: "QA & Security",
-    categorySlug: "qa-security",
-    seo_title: "Hire OWASP ZAP Experts | DAST & Web App Security Testing",
-    meta_description: "Automate your web application security testing. Hire elite remote OWASP ZAP experts vetted for their deep understanding of DAST, from scan policies to CI/CD integration. Book a call.",
-    intro: "OWASP ZAP (Zed Attack Proxy) is a powerful, open-source tool for finding vulnerabilities in web applications. You need an engineer who can leverage ZAP to build an automated Dynamic Application Security Testing (DAST) pipeline. Our vetting process identifies developers who are experts in configuring ZAP scan policies, managing contexts and authentication, and integrating ZAP into a modern CI/CD workflow. By hiring an OWASP ZAP expert, you get a developer who can help you find and fix security vulnerabilities before they reach production.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Are you only finding vulnerabilities after your application is in production?",
-            problem: "Manual security testing is slow, expensive, and can't keep up with the pace of modern development. This means that vulnerabilities are often discovered late in the development cycle, or worse, in production by malicious actors.",
-            solution: "We vet for experts in **automated security testing**. Our engineers are proficient in using OWASP ZAP to create and automate security scans that run as part of your CI/CD pipeline. This 'shift-left' approach to security finds vulnerabilities early, when they are cheapest and easiest to fix.",
-            kpi: "Automated DAST in CI/CD"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are your security scans generating too many false positives?",
-            problem: "Off-the-shelf security scanners can be noisy, generating a high number of false positives that waste developer time and erode trust in the security process. If developers are constantly chasing down non-issues, they will start to ignore all security alerts.",
-            solution: "Our engineers are masters of **ZAP scan policy tuning**. They are vetted on their ability to customize scan policies, manage contexts, and use scripting to reduce false positives and focus on the vulnerabilities that matter most to your application.",
-            kpi: "Reduced False Positives and Actionable Scan Results"
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Are you struggling to test authenticated parts of your application?",
-            problem: "Many security scanners can only test the unauthenticated parts of an application. This leaves the most critical, data-rich parts of your application untested and vulnerable.",
-            solution: "We look for engineers proficient in **authenticated scanning**. They are vetted on their ability to configure ZAP to handle complex authentication mechanisms, allowing you to get full security coverage of your entire application, including the parts behind a login.",
-            kpi: "Comprehensive Authenticated Scanning"
-        }
-    ],
-    evaluation: [
-        "ZAP core concepts (Proxy, Spider, Active/Passive Scan)",
-        "Scan policy configuration and tuning",
-        "Contexts and session management for authenticated scanning",
-        "Automation and CI/CD integration (Docker, GitHub Actions)",
-        "Scripting with Zest or other scripting languages"
-    ],
-    technical_analysis: "The OWASP ZAP evaluation focuses on a candidate's ability to implement a practical and effective DAST program. We assess their understanding of the different scanning modes and their ability to configure a scan policy to balance coverage and speed. A critical part of the evaluation is their mastery of **authenticated scanning**; candidates must demonstrate how to configure ZAP to log in to an application and maintain an active session during a scan. We also test their ability to integrate ZAP into a CI/CD pipeline and automate the process of finding and reporting vulnerabilities.",
-    interlink_slugs: ["security-engineering", "ci-cd", "devops-engineering", "qa-automation"]
+  name: 'OWASP ZAP',
+  category: 'QA & Security',
+  categorySlug: 'qa-quality-engineering',
+  seo_title: 'Hire OWASP ZAP Experts | DevSecOps & DAST Engineers',
+  meta_description:
+    'Hire elite OWASP ZAP experts to integrate automated security testing into your CI/CD pipeline. Our vetted talent helps you find and fix vulnerabilities before they reach production.',
+  intro:
+    'OWASP ZAP is the cornerstone of a modern DevSecOps practice, enabling **Dynamic Application Security Testing (DAST)** as an automated, continuous process. You need more than a tool operator; you need a security-minded engineer who can embed ZAP into your development lifecycle. Our vetting process identifies experts who can "shift security left," transforming it from a final, manual gate into a developer-first, automated check in every build.',
+  pains: [
+    {
+      icon: AlertTriangle,
+      pain: 'Discovering Critical Vulnerabilities in Production',
+      problem:
+        'Your team ships code quickly, but security scans are run infrequently, if at all. Critical vulnerabilities like XSS, SQL Injection, or insecure configurations are only found by external researchers—or worse, attackers.',
+      solution:
+        'An OWASP ZAP expert integrates automated, baseline, and full scans directly into your CI/CD pipeline. This ensures that every deployment is automatically tested for the OWASP Top 10 and other critical vulnerabilities, catching them before they merge.',
+      kpi: 'Reduce the discovery of critical vulnerabilities in production by 98%.',
+    },
+    {
+      icon: Workflow,
+      pain: 'Security as a Development Bottleneck',
+      problem:
+        'Security reviews are manual, slow, and happen at the end of the development cycle. This creates an adversarial relationship between security and engineering, forcing a trade-off between speed and safety.',
+      solution:
+        'Our experts configure ZAP to provide immediate, actionable feedback to developers within their existing tools (e.g., GitHub, GitLab). False positives are tuned, and scan results are translated into clear, developer-friendly tickets, making security a collaborative effort.',
+      kpi: 'Decrease time spent on manual security reviews by 90%.',
+    },
+    {
+      icon: ShieldCheck,
+      pain: 'Failing Compliance and Security Audits',
+      problem:
+        'You cannot produce evidence of consistent, repeatable security testing. This puts your SOC 2, ISO 27001, or other certifications at risk and makes it difficult to win enterprise customers.',
+      solution:
+        'A ZAP specialist sets up automated reporting and evidence generation from the CI/CD pipeline. This provides auditors with a clear, verifiable trail of continuous security testing for every application, ensuring you meet and exceed compliance requirements.',
+      kpi: 'Achieve 100% auditable evidence of continuous application security testing.',
+    },
+  ],
+  evaluation: [
+    'Deep expertise in the OWASP Top 10 and common web application vulnerabilities.',
+    'Proven ability to integrate OWASP ZAP into CI/CD pipelines (e.g., GitHub Actions, Jenkins).',
+    'Experience with ZAP automation, including scripting, context configuration, and API scanning.',
+    'Proficiency in tuning ZAP to reduce false positives and provide actionable results.',
+    'Skills in interpreting scan results and communicating remediation steps to development teams.',
+  ],
+  technical_analysis:
+    'The Axiom Cortex™ evaluation for OWASP ZAP talent focuses on their ability to operationalize DAST within a high-velocity DevOps environment. Candidates are required to architect a full ZAP integration strategy, including authentication, session management, and the use of the ZAP API for complex scanning workflows. We assess their ability to configure and fine-tune scan policies to balance speed and coverage, ensuring they can provide developers with fast, reliable feedback without overwhelming them. This guarantees our engineers are true DevSecOps practitioners who can build a scalable, automated security testing function.',
+  interlink_slugs: [
+    'ci-cd',
+    'security-engineering',
+    'qa-quality-engineering',
+    'devops-engineering',
+  ],
+  is_ready: true,
 };
 
 export default owaspZap;

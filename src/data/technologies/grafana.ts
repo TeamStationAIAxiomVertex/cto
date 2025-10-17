@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { BarChart, Zap, Shield, Code } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const grafana: TechEntry = {
     name: "Grafana",
-    category: "DevOps & Cloud",
-    categorySlug: "devops-cloud",
-    seo_title: "Hire Grafana Experts | Observability & DevOps Consultants",
-    meta_description: "Build a modern, observable, and reliable system. Hire elite remote Grafana experts vetted for their deep understanding of observability, from the data source to the dashboard. Book a call.",
-    intro: "Grafana is the de facto standard for observability. You need an engineer who understands that building a modern, observable system is not just about visualizing metrics, but about a deep understanding of the entire observability ecosystem, from the data source and the query to the dashboard and the alert. Our vetting process identifies developers who are experts in the Cloud Native Computing Foundation (CNCF) landscape—and can architect an observability platform that is as secure, efficient, and automated as it is scalable. By hiring a Grafana expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    category: "Observability & SRE",
+    categorySlug: "observability-sre",
+    seo_title: "Hire Senior Grafana Experts | Observability and Monitoring Specialists",
+    meta_description: "Hire elite Grafana experts specializing in building, managing, and scaling secure, and reliable observability solutions.",
+    intro: "Grafana is a powerful and versatile observability platform. Our Grafana experts are vetted for their deep understanding of Grafana's core principles, from its powerful data visualization and dashboarding features to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a secure, and reliable observability solution.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your team flying blind when it comes to the health of your systems?",
-            problem: "Many teams are not equipped to monitor and observe their systems in production. This can lead to a user experience that is frustrating and a codebase that is hard to maintain and test.",
-            solution: "We vet for experts in **Grafana and observability**. Our engineers are proficient in using Grafana to build a modern, observable system. This results in a team that is equipped to monitor and observe their systems in production, and a user experience that is a joy to use for everyone.",
-            kpi: "A Modern, Observable System That is a Joy to Use for Everyone",
+            icon: BarChart,
+            pain: "Our dashboards are a mess of spaghetti.",
+            problem: "Poorly designed dashboards are difficult to understand, maintain, and reuse, leading to a lack of confidence in your data.",
+            solution: "We vet for mastery in **Grafana's powerful data visualization and dashboarding features**. Our engineers can help you build a clean, modular, and well-documented observability solution.",
+            kpi: "90% Dashboard Reusability"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not portable across different environments?",
-            problem: "Many applications are not built to be portable across different environments. This can lead to a codebase that is a mess of environment-specific hacks and workarounds, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **Grafana and the modern DevOps ecosystem**. They are vetted on their ability to use Grafana to build a portable, environment-agnostic application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Portable, Environment-Agnostic Application",
+            icon: Zap,
+            pain: "We're struggling to keep up with the latest observability technologies.",
+            problem: "The observability landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as Prometheus and OpenTelemetry.",
+            solution: "Our experts are tested on **the latest observability technologies**. They can help you take advantage of the latest features, so you can build the next generation of observability solutions.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the observability ecosystem?",
-            problem: "The observability ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the observability ecosystem and the Grafana plugin registry**. They are vetted on their ability to build applications that are powered by the best of the observability ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Observability Ecosystem",
+            icon: Shield,
+            pain: "We're worried about the security of our data.",
+            problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
+            solution: "We vet for expertise in **Grafana's security features**. Our engineers use the latest security best practices to protect your data from attack.",
+            kpi: "100% Data Security"
         }
     ],
     evaluation: [
-        "The Grafana server and the data source",
-        "Observability and the Cloud Native Computing Foundation (CNCF)",
-        "The Grafana plugin registry and the dashboard",
-        "Grafana security and best practices",
-        "Grafana on Kubernetes",
+        "Deep understanding of Grafana's core principles.",
+        "Mastery of Grafana's powerful data visualization and dashboarding features.",
+        "Proficiency in building scalable, production-ready observability solutions.",
+        "Experience with a variety of observability technologies.",
+        "Expertise in Grafana's security features.",
     ],
-    technical_analysis: "The Grafana evaluation focuses on a candidate's ability to build a modern, observable, and reliable system. We assess their understanding of the entire observability ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **the Grafana server and the dashboard**; candidates must demonstrate how to use the Grafana server to visualize metrics, and how to use the dashboard to create and manage them. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the Cloud Native Computing Foundation (CNCF), and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["prometheus", "kubernetes", "docker", "devops-engineering"],
+    technical_analysis: "The Grafana vetting process is rigorous and hands-on. Candidates are required to build a production-ready observability solution from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of Grafana best practices. We also assess their experience with a variety of observability technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["prometheus", "opentelemetry", "loki", "tempo", "mimir"],
+    is_ready: true,
 };
 
 export default grafana;

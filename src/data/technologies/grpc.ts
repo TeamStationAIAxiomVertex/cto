@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { Share2, Zap, Shield, Code } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const grpc: TechEntry = {
     name: "gRPC",
-    category: "Architecture & Integrations",
-    categorySlug: "architecture-integrations",
-    seo_title: "Hire gRPC Experts | High-Performance RPC & Microservices Consultants",
-    meta_description: "Build a high-performance, scalable, and resilient microservices architecture. Hire elite remote gRPC experts vetted for their deep understanding of gRPC, from the protocol buffer to the service definition. Book a call.",
-    intro: "gRPC is the de facto standard for high-performance RPC. You need an engineer who understands that building a modern, high-performance microservices architecture is not just about writing code, but about a deep understanding of the entire RPC ecosystem, from the protocol buffer and the service definition to the interceptor and the load balancer. Our vetting process identifies developers who are experts in the Cloud Native Computing Foundation (CNCF) landscape—and can architect a microservices platform that is as secure, efficient, and automated as it is scalable. By hiring a gRPC expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    category: "APIs & Backend Services",
+    categorySlug: "backend-services",
+    seo_title: "Hire Senior gRPC Developers | API and Web Experts",
+    meta_description: "Hire elite gRPC developers specializing in building high-performance, scalable, and secure APIs.",
+    intro: "gRPC is a powerful and versatile RPC framework. Our gRPC experts are vetted for their deep understanding of gRPC's core principles, from its powerful protocol buffers to its robust security and performance tuning capabilities. They are the specialists who can help you build the next generation of APIs.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your microservices architecture a mess of slow, inefficient REST APIs?",
-            problem: "In many organizations, the microservices architecture is a mess of slow, inefficient REST APIs. This can lead to a user experience that is filled with downtime and a codebase that is a mess of spaghetti code and technical debt.",
-            solution: "We vet for experts in **gRPC and high-performance RPC**. Our engineers are proficient in using gRPC to build a modern, scalable, and resilient microservices-based application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Scalable, and Resilient Microservices-Based Application",
+            icon: Share2,
+            pain: "Our APIs are slow and inefficient.",
+            problem: "Traditional REST APIs are often slow and inefficient, especially when you're dealing with complex data fetching requirements.",
+            solution: "We vet for mastery in **gRPC's powerful protocol buffers**. Our engineers can help you build a fast, and efficient API.",
+            kpi: "50% Reduction in API Latency"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not portable across different environments?",
-            problem: "Many applications are not built to be portable across different environments. This can lead to a codebase that is a mess of environment-specific hacks and workarounds, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like AWS, Azure, and Google Cloud to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Serverless, and Container-Based Architecture",
+            icon: Zap,
+            pain: "We're struggling to keep up with the latest API technologies.",
+            problem: "The API landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as GraphQL and WebSockets.",
+            solution: "Our experts are tested on **the latest API technologies**. They can help you take advantage of the latest features, so you can build the next generation of APIs.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the RPC ecosystem?",
-            problem: "The RPC ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the RPC ecosystem and the Cloud Native Computing Foundation (CNCF)**. They are vetted on their ability to build applications that are powered by the best of the RPC ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the RPC Ecosystem",
+            icon: Shield,
+            pain: "We're worried about the security of our APIs.",
+            problem: "API security is a top priority for every business. It's difficult to secure your APIs, especially when you're dealing with user authentication and authorization.",
+            solution: "We vet for expertise in **gRPC's security features**. Our engineers use the latest security best practices to protect your APIs from attack.",
+            kpi: "100% API Security"
         }
     ],
     evaluation: [
-        "The Cloud Native Computing Foundation (CNCF) landscape",
-        "High-performance RPC and gRPC",
-        "The protocol buffer and the service definition",
-        "Interceptors and load balancing",
-        "Security and best practices",
+        "Deep understanding of gRPC's core principles.",
+        "Mastery of gRPC's powerful protocol buffers.",
+        "Proficiency in building scalable, production-ready APIs with gRPC.",
+        "Experience with a variety of API technologies.",
+        "Expertise in gRPC's security features.",
     ],
-    technical_analysis: "The gRPC evaluation focuses on a candidate's ability to build a high-performance, scalable, and resilient microservices architecture. We assess their understanding of the entire RPC ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **gRPC and the protocol buffer**; candidates must demonstrate how to use gRPC to build a modern, scalable, and resilient microservices-based application, and how to use the protocol buffer to define and configure a gRPC service. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the Cloud Native Computing Foundation (CNCF), and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["kubernetes", "istio", "linkerd", "microservices"],
+    technical_analysis: "The gRPC vetting process is rigorous and hands-on. Candidates are required to build a production-ready API with gRPC from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of gRPC best practices. We also assess their experience with a variety of API technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["protobuf", "http2", "microservices", "kubernetes", "envoy"],
+    is_ready: true,
 };
 
 export default grpc;

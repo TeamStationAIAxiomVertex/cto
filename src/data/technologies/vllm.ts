@@ -1,54 +1,61 @@
-import { TechEntry } from "@/lib/tech";
 
-import { AlertTriangle } from "lucide-react";
+import { TechEntry } from '@/lib/tech';
+import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const vllm: TechEntry = {
-  name: "vLLM",
-  category: "AI / ML Engineering",
-  categorySlug: "ai-ml-engineering",
-  seo_title: "Hire vLLM Experts | TeamStation AI",
+  name: 'vLLM',
+  category: 'ML/AI & LLM Ops',
+  categorySlug: 'ml-ai-llm-ops',
+  seo_title: 'Hire vLLM Experts | High-Throughput LLM Inference Engineers',
   meta_description:
-    "Hire expert vLLM developers to accelerate your large language model (LLM) inference and serving. Get pre-vetted LATAM talent to optimize your AI infrastructure.",
+    'Hire elite vLLM engineers to drastically reduce the cost and latency of LLM serving. Our vetted talent uses PagedAttention to build high-performance inference services that scale.',
   intro:
-    "vLLM is a high-throughput and memory-efficient inference and serving engine for Large Language Models (LLMs). Our AI/ML engineers use vLLM to dramatically increase the performance of your LLM applications, reducing latency and cost while improving throughput.",
+    'vLLM is a specialized engine for one of the hardest problems in generative AI: **fast, cost-effective LLM inference**. Standard serving solutions are notoriously inefficient, but you need an engineer who can solve this bottleneck. Our vetting identifies experts in low-level LLM optimization who use vLLM’s core innovation, PagedAttention, to maximize GPU utilization. They don’t just deploy models; they build highly-tuned serving engines that deliver higher throughput at a fraction of the cost.',
   pains: [
     {
       icon: AlertTriangle,
-      pain: "Is your LLM inference serving slow and expensive?",
+      pain: 'Prohibitively High Cost of LLM Inference',
       problem:
-        "Serving large language models is notoriously expensive due to high memory requirements and inefficient batching. This leads to high costs and slow response times, making it difficult to build a profitable AI product.",
+        'Your LLM application is bleeding money. The cost of the GPU servers required to handle your user load is unsustainable, and your cost-per-token makes the entire business model ROI-negative.',
       solution:
-        "We vet for experts in **vLLM and PagedAttention**. Our engineers are proficient in using vLLM to implement continuous batching and efficient key-value cache management, leading to significantly higher throughput and lower serving costs.",
-      kpi: "Higher Throughput and Lower Cost-Per-Token",
+        'A vLLM expert uses PagedAttention to dramatically improve GPU memory efficiency, allowing you to serve more concurrent users on a single GPU. This directly translates to a massive reduction in your hardware footprint and operational costs.',
+      kpi: 'Increase inference throughput by up to 24x, delivering a >90% reduction in cost-per-token.',
     },
     {
-      icon: AlertTriangle,
-      pain: "Are you struggling to deploy different LLMs from the Hugging Face Hub?",
+      icon: Workflow,
+      pain: 'Slow, Unresponsive User Experience',
       problem:
-        "Your team wants to experiment with different open-source LLMs, but each model has its own serving requirements, making it complex and time-consuming to deploy and manage them.",
+        'Your generative AI application is too slow for real-time interaction. High latency between a user’s prompt and the model’s response creates a frustrating, laggy experience that drives users away.',
       solution:
-        "Our engineers use vLLM to create a unified serving layer that can handle a wide variety of models from the Hugging Face Hub. This allows you to quickly and easily deploy new models without having to worry about the underlying infrastructure.",
-      kpi: "Deploy new Hugging Face models in minutes, not days.",
+        'Our vLLM specialists optimize your serving stack for low latency. By implementing continuous batching and other advanced techniques available in vLLM, they ensure that the model generates responses as quickly as possible, enabling truly interactive applications.',
+      kpi: 'Reduce time-to-first-token latency by 50% or more.',
     },
     {
-      icon: AlertTriangle,
-      pain: "Is your AI product not scaling to meet user demand?",
+      icon: ShieldCheck,
+      pain: 'Wasted, Underutilized GPU Resources',
       problem:
-        "Your LLM-powered application is a success, but your serving infrastructure can't keep up with the traffic. This leads to slow response times, frustrated users, and a poor brand reputation.",
+        'Your expensive GPU fleet is sitting idle most of the time. Standard batching methods are inefficient, leaving valuable compute resources unused while user requests queue up, creating a vicious cycle of high cost and poor performance.',
       solution:
-        "We are experts in scaling vLLM to handle millions of users. We use Ray to distribute vLLM across a cluster of machines, and we use our expertise in performance tuning to ensure that your application is always fast and responsive.",
-      kpi: "Scale your AI product to 1 million users with a p99 latency of less than 200ms.",
+        'A TeamStation vLLM engineer implements continuous batching to ensure your GPUs are always working at maximum capacity. This eliminates idle time and maximizes the value of your hardware investment, allowing you to serve peak traffic without over-provisioning.',
+      kpi: 'Improve effective GPU utilization from <30% to over 80%.',
     },
   ],
   evaluation: [
-    "Deep expertise in vLLM, LLM serving, and performance optimization.",
-    "Proven ability to build and deploy high-throughput, low-latency LLM inference services.",
-    "Experience in integrating vLLM with various LLMs and application frameworks.",
-    "Proficiency in GPU programming and distributed systems for large-scale AI.",
+    'Deep architectural understanding of LLM inference and the PagedAttention algorithm.',
+    'Proven ability to deploy and manage vLLM in a production environment (e.g., using Docker, Kubernetes).',
+    'Mastery of performance tuning for both latency and throughput-sensitive workloads.',
+    'Proficiency with various serving patterns (offline batch, online serving) using vLLM.',
+    'Skills in monitoring and managing GPU resources for cost-effectiveness and reliability.',
   ],
   technical_analysis:
-    "vLLM has revolutionized LLM serving with its innovative PagedAttention algorithm. Our engineers are experts at leveraging this technology to build blazingly fast and efficient inference services. We use vLLM's continuous batching to maximize GPU utilization and throughput. We use its flexible API to integrate with a wide range of open-source and proprietary LLMs. We also use its powerful distributed serving capabilities to scale our services across multiple GPUs and nodes. By combining vLLM with our expertise in model quantization, pruning, and other optimization techniques, we can deliver LLM inference at a fraction of the cost and latency of other solutions. This enables a new class of real-time AI applications that were previously impossible to build.",
-  interlink_slugs: ["pytorch", "transformers", "ray", "langchain"],
+    'The Axiom Cortex™ evaluation for vLLM experts is intensely focused on production performance. We don’t ask theoretical questions; we provide candidates with a real-world, high-traffic serving scenario and a fixed GPU budget. They must architect a vLLM-based solution that meets strict latency and throughput SLAs. We assess their ability to debug performance bottlenecks and justify their configuration choices. This ensures our engineers are true performance specialists who can solve the critical unit economics problem of serving LLMs at scale.',
+  interlink_slugs: [
+    'llms',
+    'machine-learning',
+    'kubernetes',
+    'python',
+  ],
+  is_ready: true,
 };
 
 export default vllm;

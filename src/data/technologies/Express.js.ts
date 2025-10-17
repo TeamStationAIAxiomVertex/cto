@@ -5,7 +5,7 @@ import { TechEntry } from "@/lib/tech";
 const express: TechEntry = {
     name: "Express.js",
     category: "Software Development",
-    categorySlug: "software-development",
+    categorySlug: "backend-services",
     seo_title: "Hire Express.js Experts | Node.js & Backend Consultants",
     meta_description: "Build a scalable, maintainable, and feature-rich web application. Hire elite remote Express.js experts vetted for their deep understanding of Node.js, from the middleware to the router. Book a call.",
     intro: "Express.js is a minimal and flexible Node.js web application framework. You need an engineer who understands that building a modern, scalable web application is not just about writing code, but about a deep understanding of the entire Node.js ecosystem, from the middleware and the router to the request and the response. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring an Express.js expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",

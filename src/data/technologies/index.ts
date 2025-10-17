@@ -219,6 +219,9 @@ import phoenix from "./Phoenix";
 import prettier from "./Prettier";
 import sqlServer from "./SQL_Server";
 import websockets from "./WebSockets";
+import generativeAi from "./generative-ai";
+import llm from "./llm";
+
 
 const allTech: AllTech = {
   recoil: recoil,
@@ -440,6 +443,8 @@ const allTech: AllTech = {
   oracle: oracle,
   "sql-server": sqlServer,
   "firebase-firestore": firebaseFirestore,
+  "generative-ai": generativeAi,
+  llm: llm,
 };
 
 export default allTech;

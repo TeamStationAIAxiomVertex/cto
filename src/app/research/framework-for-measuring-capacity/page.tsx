@@ -66,11 +66,10 @@ export default function ResearchPaperPage() {
             Read full paper on SSRN →
           </a>
           <nav className="mt-12 border-t border-border pt-6 text-sm">
-            <h3 className="font-semibold text-foreground">Explore More:</h3>
+            <h3 className="font-semibold text-foreground">Related Content:</h3>
             <ul className="list-none p-0 space-y-2">
-              <li><Link href="/research/hub" className="text-primary hover:underline">Research Hub</Link></li>
-              <li><Link href="/playbook/tco-model" className="text-primary hover:underline">Playbook: TCO Model</Link></li>
-              <li><Link href="/case-studies" className="text-primary hover:underline">Case Studies</Link></li>
+              <li><Link href="/hire/by-role" className="text-primary hover:underline">Explore All Vetted Roles →</Link></li>
+              <li><Link href="/research/hub" className="text-primary hover:underline">Review All Research & Whitepapers →</Link></li>
             </ul>
           </nav>
         </article>

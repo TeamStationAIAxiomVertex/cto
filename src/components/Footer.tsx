@@ -22,6 +22,7 @@ const playbookLinks: LinkItem[] = [
   { href: '/playbook/build-vs-buy', label: 'Build vs Buy Analysis' },
   { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring with Axiom Cortex™' },
   { href: '/playbook/tco-model', label: 'TCO Model for Engineering Teams' },
+  { href: '/playbook/cto-outsourcing-risk-mitigation', label: 'Outsourcing Risk Mitigation' },
   { href: '/faq', label: 'FAQ for CTOs' },
 ];
 
@@ -40,7 +41,7 @@ const companyLinks: LinkItem[] = [
 // Research Section
 const researchLinks: LinkItem[] = [
   { href: '/research/axiom-cortex-scientific-report', label: 'AxiomCortex™ R&D Report' },
-  { href: '/research/heuristically-trained-ai', label: 'Heuristically Trained AI Whitepaper' },
+  { href: '/research/hub', label: 'Review All Research & Whitepapers →' },
   { href: '/research/framework-for-measuring-capacity', label: 'Framework for Measuring Engineering Capacity' },
   { href: '/research/performance-metrics-in-ai-age', label: 'Performance Metrics in the AI Age' },
   {
@@ -65,7 +66,7 @@ const hireByCountryLinks: LinkItem[] = countries.map((c) => ({
 }));
 
 const popularTechLinks: LinkItem[] = [
-  'react','node','python','java','go','net','aws','kubernetes','dbt','snowflake','pytorch','transformers','langchain','nextjs',
+    'react','node','python','java','devops-engineering','aws','kubernetes','terraform','llm','generative-ai','dbt','snowflake','langchain','nextjs','net'
 ].map((slug) => {
   const tech = techCategories.flatMap((c) => c.tech).find((t) => t.slug === slug);
   return { href: `/hire/by-technology/${slug}`, label: `Hire ${tech?.name || slug} developers` };

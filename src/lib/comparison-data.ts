@@ -29,7 +29,7 @@ export interface ComparisonFactPack {
 
 // --- 2. DYNAMIC DATA SIMULATION ---
 
-const MOCK_SLUGS = ['bairesdev', 'toptal', 'globalsquad', 'revelo'];
+const MOCK_SLUGS = ['bairesdev', 'toptal', 'revelo'];
 
 const MOCK_BAIREDEV_DATA: ComparisonFactPack = {
     vendorSlug: 'bairesdev',
@@ -81,34 +81,6 @@ const MOCK_TOPTAL_DATA: ComparisonFactPack = {
     ]
 };
 
-const MOCK_GLOBALSQUAD_DATA: ComparisonFactPack = {
-    vendorSlug: 'globalsquad',
-    competitorName: 'GlobalSquad',
-    title: 'TeamStation AI vs. GlobalSquad: An In-Depth Analysis',
-    meta: 'A detailed comparison of TeamStation AI\'s high-throughput, managed teams and GlobalSquad\'s traditional outsourcing model.',
-    h1: 'TeamStation AI vs. GlobalSquad: A Focus on Throughput and Quality',
-    keywords: ['GlobalSquad alternative', 'TeamStation vs GlobalSquad', 'managed teams vs outsourcing', 'Axiom Cortex'],
-    internal_links: [],
-    faqs: [
-        { question: "How does TeamStation ensure quality compared to a large-scale outsourcer like GlobalSquad?", answer: "TeamStation\'s competitive advantage is our Axiom Cortex™ vetting platform, which predicts on-the-job performance with 95% accuracy. This focus on cognitive alignment and problem-solving ability, rather than just resume keywords, results in higher-performing, more reliable teams." },
-        { question: "What kind of transparency and control can I expect with TeamStation?", answer: "We provide complete transparency into team operations, with real-time dashboards and direct communication channels. Unlike traditional outsourcing models, where you may have limited visibility, TeamStation integrates our teams directly into your workflows, providing you with full control and oversight." },
-    ],
-    comparison_claims: [
-        {
-            metric: 'Team Structure',
-            teamstationValue: 'Integrated Pods',
-            competitorValue: 'Black Box Outsourcing',
-            context: 'TeamStation teams are designed to be an integrated part of your organization, working in your systems and aligned with your goals. GlobalSquad often operates as a separate entity, which can lead to communication gaps and misalignment.'
-        },
-        {
-            metric: 'Performance Metrics',
-            teamstationValue: 'Throughput & Business Value',
-            competitorValue: 'Hours & Headcount',
-            context: 'Our success is measured by the value we deliver – features shipped, bugs fixed, and performance improvements. The traditional outsourcing model, in contrast, is often focused on billing for hours and the number of resources deployed.'
-        }
-    ]
-};
-
 const MOCK_REVELO_DATA: ComparisonFactPack = {
     vendorSlug: 'revelo',
     competitorName: 'Revelo',
@@ -147,7 +119,6 @@ export async function getComparisonSlugs(): Promise<string[]> {
 export async function getComparisonData(vendorSlug: string): Promise<ComparisonFactPack | null> {
     if (vendorSlug === 'bairesdev') return MOCK_BAIREDEV_DATA;
     if (vendorSlug === 'toptal') return MOCK_TOPTAL_DATA;
-    if (vendorSlug === 'globalsquad') return MOCK_GLOBALSQUAD_DATA;
     if (vendorSlug === 'revelo') return MOCK_REVELO_DATA;
     
     const isMocked = MOCK_SLUGS.includes(vendorSlug);
@@ -159,7 +130,7 @@ export async function getComparisonData(vendorSlug: string): Promise<ComparisonF
         competitorName: vendorSlug.charAt(0).toUpperCase() + vendorSlug.slice(1), 
         h1: `TeamStation AI vs. ${vendorSlug.charAt(0).toUpperCase() + vendorSlug.slice(1)}: Why We Win on Throughput`,
         title: `TeamStation AI vs. ${vendorSlug.charAt(0).toUpperCase() + vendorSlug.slice(1)}: An Honest Comparison`,
-        meta: `Is ${vendorSlug.charAt(0).toUpperCase() + vendorSlug.slice(1)} the right choice? See how TeamStation AI's model compares on vetting, throughput, and security.`
+        meta: `Is ${vendorSlug.charAt(0).toUpperCase() + vendorSlug.slice(1)} the right choice? See how TeamStation AI\'s model compares on vetting, throughput, and security.`
     }
 }
 

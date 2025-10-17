@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { GitBranch, Server, Cloud, Shield } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
-const cicd: TechEntry = {
+const ciCd: TechEntry = {
     name: "CI/CD",
-    category: "DevOps & Cloud",
+    category: "DevOps & Cloud Infrastructure",
     categorySlug: "devops-cloud",
-    seo_title: "Hire CI/CD Experts | DevOps & Automation Consultants",
-    meta_description: "Build a fast, reliable, and automated software delivery pipeline. Hire elite remote CI/CD experts vetted for their deep understanding of continuous integration, continuous delivery, and continuous deployment. Book a call.",
-    intro: "CI/CD is the backbone of modern software development. You need an engineer who understands that CI/CD is not just about running tests and deploying code, but about a deep understanding of the entire software delivery lifecycle, from the developer's workstation to the production environment. Our vetting process identifies developers who are experts in the entire CI/CD ecosystem—and can architect a software delivery pipeline that is as secure, efficient, and automated as it is scalable. By hiring a CI/CD expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    seo_title: "Hire Senior CI/CD Engineers | Automation and Pipeline Specialists",
+    meta_description: "Hire elite CI/CD engineers specializing in building, managing, and scaling secure, and reliable software delivery pipelines.",
+    intro: "CI/CD is a critical component of any modern, software development lifecycle. Our CI/CD experts are vetted for their deep understanding of CI/CD's core principles, from its powerful pipeline-as-code features to its robust security and performance testing capabilities. They are the specialists who can help you build and manage a secure, and reliable software delivery pipeline.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your software delivery process slow, manual, and error-prone?",
-            problem: "In many organizations, the software delivery process is a mess of manual handoffs, ad-hoc scripts, and long-running, error-prone deployments. This can lead to a user experience that is filled with bugs and a codebase that is a mess of hotfixes and rollbacks.",
-            solution: "We vet for experts in **CI/CD and automation**. Our engineers are proficient in using tools like Jenkins, GitLab CI, and GitHub Actions to build a fully automated software delivery pipeline. This results in a codebase that is easy to reason about and a user experience that is free of bugs and regressions.",
-            kpi: "A Fully Automated, Reliable, and Efficient Software Delivery Pipeline",
+            icon: GitBranch,
+            pain: "Our software delivery is slow and unreliable.",
+            problem: "Poorly designed software delivery pipelines are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
+            solution: "We vet for mastery in **CI/CD's powerful pipeline-as-code features**. Our engineers can help you build a fast, and reliable software delivery pipeline.",
+            kpi: "50% Reduction in Software Delivery Time"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not portable across different environments?",
-            problem: "Many applications are not built to be portable across different environments. This can lead to a codebase that is a mess of environment-specific hacks and workarounds, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **CI/CD and the modern DevOps ecosystem**. They are vetted on their ability to use CI/CD to build a portable, environment-agnostic application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Portable, Environment-Agnostic Application",
+            icon: Server,
+            pain: "We're struggling to keep up with the latest CI/CD technologies.",
+            problem: "The CI/CD landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as GitOps and DevSecOps.",
+            solution: "Our experts are tested on **the latest CI/CD technologies**. They can help you take advantage of the latest features, so you can build the next generation of software delivery pipelines.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the CI/CD ecosystem?",
-            problem: "The CI/CD ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the CI/CD ecosystem and modern best practices**. They are vetted on their ability to build applications that are powered by the best of the CI/CD ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the CI/CD Ecosystem",
+            icon: Shield,
+            pain: "We're worried about the security of our software.",
+            problem: "Software security is a top priority for every business. It's difficult to secure your software, especially when you're dealing with sensitive information.",
+            solution: "We vet for expertise in **CI/CD's security features**. Our engineers use the latest security best practices to protect your software from attack.",
+            kpi: "100% Software Security"
         }
     ],
     evaluation: [
-        "Continuous integration, continuous delivery, and continuous deployment",
-        "CI/CD tools (e.g., Jenkins, GitLab CI, GitHub Actions)",
-        "Automation and scripting (e.g., Bash, Python, Groovy)",
-        "Containerization and orchestration (e.g., Docker, Kubernetes)",
-        "Monitoring and observability (e.g., Prometheus, Grafana, ELK)",
+        "Deep understanding of CI/CD's core principles.",
+        "Mastery of CI/CD's powerful pipeline-as-code features.",
+        "Proficiency in building scalable, production-ready software delivery pipelines.",
+        "Experience with a variety of CI/CD technologies.",
+        "Expertise in CI/CD's security features.",
     ],
-    technical_analysis: "The CI/CD evaluation focuses on a candidate's ability to build a fast, reliable, and automated software delivery pipeline. We assess their understanding of the entire CI/CD ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **CI/CD tools and automation**; candidates must demonstrate how to use tools like Jenkins, GitLab CI, and GitHub Actions to build a fully automated software delivery pipeline. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the modern DevOps ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["jenkins", "gitlab-ci", "github-actions", "devops-engineering"],
+    technical_analysis: "The CI/CD vetting process is rigorous and hands-on. Candidates are required to build a production-ready software delivery pipeline from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of CI/CD best practices. We also assess their experience with a variety of CI/CD technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["jenkins", "gitlab", "github-actions", "docker", "kubernetes"],
+    is_ready: true,
 };
 
-export default cicd;
+export default ciCd;

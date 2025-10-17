@@ -16,8 +16,8 @@ type Props = {
 // --- Link Definitions ---
 const PLAYBOOK_LINKS: ReadingItem[] = [
     { href: "/playbook/hub", title: "CTO Playbook Hub" },
-    { href: "/playbook/tco-model", title: "TCO Model for Engineering Teams" },
-    { href: "/playbook/nearshore-vs-offshore", title: "Nearshore vs. Offshore" },
+    { href: "/playbook/nearshore-vs-offshore", title: "The Black Box Outsourcing Trap" },
+    { href: "/playbook/build-vs-buy", title: "The Power of an Integrated Team" },
 ];
 
 const HIRE_LINKS: ReadingItem[] = [

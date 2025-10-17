@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { Database, Zap, Shield, Code } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const mysql: TechEntry = {
     name: "MySQL",
-    category: "Databases",
-    categorySlug: "databases",
-    seo_title: "Hire MySQL Experts | Relational Database & SQL Consultants",
-    meta_description: "Build a reliable, scalable, and feature-rich data infrastructure. Hire elite remote MySQL experts vetted for their deep understanding of advanced SQL, performance tuning, and data modeling. Book a call.",
-    intro: "MySQL is the world's most popular open source relational database. You need an engineer who can leverage its powerful features to build a robust, scalable, and reliable data platform. Our vetting process identifies developers who are experts in MySQL's core concepts—from advanced data types and indexing to query optimization and concurrency control—and can architect a database that is as performant as it is resilient. By hiring a MySQL expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    category: "Data Modeling & Databases",
+    categorySlug: "data-modeling-databases",
+    seo_title: "Hire Senior MySQL Experts | Relational Database Specialists",
+    meta_description: "Hire elite MySQL experts specializing in building, managing, and scaling secure, and reliable relational databases.",
+    intro: "MySQL is a powerful and versatile relational database. Our MySQL experts are vetted for their deep understanding of MySQL's core principles, from its powerful data modeling and indexing features to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a secure, and reliable relational database.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your database struggling to keep up with your application's growth?",
-            problem: "Many applications are built on a database that is not designed to scale. This can lead to a user experience that is slow and a codebase that is a mess of workarounds and hacks.",
-            solution: "We vet for experts in **MySQL performance and scalability**. Our engineers are proficient in using tools like the performance schema, EXPLAIN, and other performance tuning techniques to build a database that can handle the demands of your business. This results in a fast, responsive application and a database that can scale with your business.",
-            kpi: "A Fast, Responsive, and Scalable Database"
+            icon: Database,
+            pain: "Our database is slow and unreliable.",
+            problem: "Poorly designed databases are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
+            solution: "We vet for mastery in **MySQL's powerful data modeling and indexing features**. Our engineers can help you build a fast, and reliable relational database.",
+            kpi: "50% Reduction in Database Latency"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your data model a tangled mess of inconsistent, unreliable data?",
-            problem: "A poorly designed data model without proper normalization or referential integrity can lead to data duplication, inconsistencies, and a single source of truth that nobody trusts. This makes it impossible to build reliable reports and features.",
-            solution: "Our engineers are masters of **relational data modeling**. They are vetted on their ability to design normalized, consistent, and reliable data models that enforce data integrity at the database level. This ensures that your data is always accurate and trustworthy.",
-            kpi: "Proficiency in Normalization & Relational Data Modeling"
+            icon: Zap,
+            pain: "We're struggling to keep up with the latest database technologies.",
+            problem: "The database landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as NewSQL and Graph databases.",
+            solution: "Our experts are tested on **the latest database technologies**. They can help you take advantage of the latest features, so you can build the next generation of databases.",
+            kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: AlertTriangle,
-            pain: "Are you struggling to write complex, analytical queries?",
-            problem: "Many developers struggle to write complex, analytical queries that involve multiple joins, aggregations, and window functions. This can lead to a lot of back-and-forth with data analysts and a lot of time wasted on writing inefficient, hard-to-maintain code.",
-            solution: "We look for engineers proficient with **advanced SQL features**. They are vetted on their ability to use window functions, common table expressions (CTEs), and other advanced features to write clean, efficient, and powerful analytical queries. This results in a more data-driven organization and a more productive engineering team.",
-            kpi: "Mastery of Advanced SQL (Window Functions, CTEs, etc.)"
+            icon: Shield,
+            pain: "We're worried about the security of our data.",
+            problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
+            solution: "We vet for expertise in **MySQL's security features**. Our engineers use the latest security best practices to protect your data from attack.",
+            kpi: "100% Data Security"
         }
     ],
     evaluation: [
-        "Advanced SQL query optimization (e.g., EXPLAIN, indexing)",
-        "Relational data modeling (e.g., normalization, referential integrity)",
-        "Advanced SQL features (e.g., window functions, CTEs, recursive queries)",
-        "Transactions and ACID compliance",
-        "MySQL-specific features (e.g., JSON, GIS, extensions)",
+        "Deep understanding of MySQL's core principles.",
+        "Mastery of MySQL's powerful data modeling and indexing features.",
+        "Proficiency in building scalable, production-ready relational databases.",
+        "Experience with a variety of database technologies.",
+        "Expertise in MySQL's security features.",
     ],
-    technical_analysis: "The MySQL evaluation focuses on a candidate's ability to write efficient, reliable, and maintainable SQL. We assess their understanding of the entire query lifecycle, requiring them to design a complex data model with a clean, normalized architecture. A critical part of the evaluation is their mastery of **query optimization and advanced SQL**; candidates must demonstrate how to use `EXPLAIN` to analyze and optimize a slow query, and how to use window functions and CTEs to write clean, efficient, and powerful analytical queries. We also test their ability to build **reliable and consistent** data models that enforce data integrity at the database level. Finally, we assess their knowledge of MySQL-specific features, and their ability to leverage them to build a modern, high-performance backend.",
-    interlink_slugs: ["sql", "postgresql", "sql-server", "dbt"],
+    technical_analysis: "The MySQL vetting process is rigorous and hands-on. Candidates are required to build a production-ready relational database from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of MySQL best practices. We also assess their experience with a variety of database technologies and their ability to optimize for performance and security.",
+    interlink_slugs: ["postgresql", "mariadb", "aurora", "percona", "galera"],
+    is_ready: true,
 };
 
 export default mysql;

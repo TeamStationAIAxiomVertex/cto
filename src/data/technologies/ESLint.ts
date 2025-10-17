@@ -5,7 +5,7 @@ import { TechEntry } from "@/lib/tech";
 const eslint: TechEntry = {
     name: "ESLint",
     category: "Software Development",
-    categorySlug: "software-development",
+    categorySlug: "frontend-web",
     seo_title: "Hire ESLint Experts | Code Quality & JavaScript Consultants",
     meta_description: "Build a consistent, maintainable, and bug-free codebase. Hire elite remote ESLint experts vetted for their deep understanding of code quality, from the rule to the plugin. Book a call.",
     intro: "ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire code quality ecosystem, from the rule and the plugin to the parser and the formatter. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring an ESLint expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",

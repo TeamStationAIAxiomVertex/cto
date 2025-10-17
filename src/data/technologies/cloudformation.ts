@@ -1,46 +1,47 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { Code, Cloud, Repeat, Shield } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const cloudformation: TechEntry = {
-    name: "CloudFormation",
-    category: "DevOps & Cloud",
+    name: "Cloudformation",
+    category: "DevOps & Cloud Infrastructure",
     categorySlug: "devops-cloud",
-    seo_title: "Hire CloudFormation Experts | AWS & Infrastructure as Code Consultants",
-    meta_description: "Build a consistent, automated, and efficient AWS infrastructure. Hire elite remote CloudFormation experts vetted for their deep understanding of infrastructure as code, from the template to the stack. Book a call.",
-    intro: "CloudFormation is the de facto standard for infrastructure as code on AWS. You need an engineer who understands that building a modern AWS infrastructure is not just about writing code, but about a deep understanding of the entire AWS ecosystem, from the template and the stack to the change set and the stack set. Our vetting process identifies developers who are experts in the AWS ecosystem—and can architect an AWS infrastructure that is as secure, efficient, and automated as it is scalable. By hiring a CloudFormation expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    seo_title: "Hire Senior Cloudformation Experts | Infrastructure as Code (IaC) Specialists",
+    meta_description: "Hire elite Cloudformation experts specializing in building, managing, and scaling immutable infrastructure across all major cloud providers.",
+    intro: "Cloudformation is the industry standard for Infrastructure as Code. Our Cloudformation experts are vetted for their ability to write clean, modular, and maintainable templates that can be used to manage complex, multi-cloud deployments. They are the specialists who enable your teams to build and manage infrastructure with confidence.",
     pains: [
         {
-            icon: AlertTriangle,
-            pain: "Is your AWS infrastructure a mess of snowflakes and manual configuration?",
-            problem: "In many organizations, the AWS infrastructure is a mess of snowflakes and manual configuration. This can lead to a user experience that is filled with downtime and a codebase that is a mess of environment-specific hacks and workarounds.",
-            solution: "We vet for experts in **CloudFormation and infrastructure as code**. Our engineers are proficient in using CloudFormation to build a fully automated, immutable infrastructure. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Fully Automated, Immutable, and Observable Infrastructure",
+            icon: Code,
+            pain: "Our Cloudformation templates are a mess of spaghetti code.",
+            problem: "Poorly written Cloudformation templates are difficult to understand, maintain, and reuse, leading to configuration drift and a lack of confidence in your infrastructure.",
+            solution: "We vet for mastery in **Cloudformation best practices**. Our engineers write clean, modular, and well-documented templates that are easy to understand, maintain, and reuse.",
+            kpi: "90% Code Reusability"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your application not portable across different environments?",
-            problem: "Many applications are not built to be portable across different environments. This can lead to a codebase that is a mess of environment-specific hacks and workarounds, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **CloudFormation and the modern DevOps ecosystem**. They are vetted on their ability to use CloudFormation to build a portable, environment-agnostic application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Portable, Environment-Agnostic Application",
+            icon: Cloud,
+            pain: "We're struggling to manage our multi-cloud infrastructure.",
+            problem: "Managing infrastructure across multiple cloud providers is complex and error-prone, leading to inconsistent configurations and a lack of visibility.",
+            solution: "Our experts are tested on **multi-cloud deployments**. They use Cloudformation to create a single, unified workflow for managing infrastructure across all major cloud providers.",
+            kpi: "100% Infrastructure Consistency"
         },
         {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the infrastructure as code ecosystem?",
-            problem: "The infrastructure as code ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the infrastructure as code ecosystem and the CloudFormation template**. They are vetted on their ability to build applications that are powered by the best of the infrastructure as code ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Infrastructure as Code Ecosystem",
+            icon: Repeat,
+            pain: "Our infrastructure is not reproducible.",
+            problem: "Manual changes and a lack of version control make it impossible to reproduce your infrastructure, leading to configuration drift and a fear of making changes.",
+            solution: "We vet for expertise in building **immutable infrastructure**. Our engineers use Cloudformation to create a version-controlled, auditable, and reproducible infrastructure that can be deployed with confidence.",
+            kpi: "100% Reproducibility"
         }
     ],
     evaluation: [
-        "The CloudFormation CLI and the template",
-        "Infrastructure as code and the AWS ecosystem",
-        "The CloudFormation stack and the change set",
-        "CloudFormation security and best practices",
-        "CloudFormation on AWS",
+        "Deep understanding of Cloudformation's core concepts (stacks, templates, parameters).",
+        "Mastery of Cloudformation best practices (clean, modular, and maintainable templates).",
+        "Proficiency in managing complex, multi-cloud deployments.",
+        "Experience with building and managing CI/CD pipelines for Cloudformation.",
+        "Expertise in writing and using Cloudformation modules.",
     ],
-    technical_analysis: "The CloudFormation evaluation focuses on a candidate's ability to build a consistent, automated, and efficient AWS infrastructure. We assess their understanding of the entire AWS ecosystem, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **the CloudFormation CLI and the template**; candidates must demonstrate how to use the CloudFormation CLI to manage the entire lifecycle of an AWS infrastructure, and how to use the template to define and configure an AWS resource. We also test their ability to build **portable and environment-agnostic** applications that can run on any environment. Finally, we assess their knowledge of the CloudFormation stack and the change set, and their ability to leverage them to build a modern, high-performance backend.",
-    interlink_slugs: ["aws", "terraform", "devops-engineering", "ci-cd"],
+    technical_analysis: "The Cloudformation vetting process is rigorous and hands-on. Candidates are required to write Cloudformation templates to provision a complex, multi-cloud infrastructure from scratch. We test their ability to write clean, modular, and maintainable templates, as well as their understanding of Cloudformation best practices. We also assess their experience with building and managing CI/CD pipelines for Cloudformation, and their ability to write and use Cloudformation modules.",
+    interlink_slugs: ["aws", "terraform", "docker", "kubernetes", "ci-cd"],
+    is_ready: true,
 };
 
 export default cloudformation;

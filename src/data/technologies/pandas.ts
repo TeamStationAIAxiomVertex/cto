@@ -1,46 +1,61 @@
 
-import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import { TechEntry } from '@/lib/tech';
+import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const pandas: TechEntry = {
-    name: "pandas",
-    category: "Data & AI",
-    categorySlug: "data-engineering-analytics",
-    seo_title: "Hire pandas Experts | Data Manipulation & Analysis Consultants",
-    meta_description: "Build a reliable, scalable, and efficient data analysis platform. Hire elite remote pandas experts vetted for their deep understanding of data manipulation, from the DataFrame to the Series. Book a call.",
-    intro: "pandas is the de facto standard for data manipulation and analysis in Python. You need an engineer who understands that building a modern data analysis platform is not just about writing code, but about a deep understanding of the entire data lifecycle, from the data source and the data cleaning to the data transformation and the data visualization. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a pandas expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
-    pains: [
-        {
-            icon: AlertTriangle,
-            pain: "Is your data analysis platform a mess of slow, inefficient code?",
-            problem: "In many organizations, the data analysis platform is a mess of slow, inefficient code. This can lead to a user experience that is filled with stale data and a codebase that is a mess of environment-specific hacks and workarounds.",
-            solution: "We vet for experts in **pandas and the modern data stack**. Our engineers are proficient in using tools like dbt, Airflow, and Spark to build a fully automated, reliable, and efficient data analysis platform. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Fully Automated, Reliable, and Efficient Data Analysis Platform",
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your application not taking full advantage of the cloud?",
-            problem: "Many applications are not built to be cloud-native. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
-            solution: "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like Snowflake, BigQuery, and Redshift to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
-            kpi: "A Modern, Serverless, and Container-Based Architecture",
-        },
-        {
-            icon: AlertTriangle,
-            pain: "Is your team not leveraging the full power of the data ecosystem?",
-            problem: "The data ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
-            solution: "We look for engineers proficient with **the data ecosystem and the modern data stack**. They are vetted on their ability to build applications that are powered by the best of the data ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",
-            kpi: "An Application That is Powered by the Best of the Data Ecosystem",
-        }
-    ],
-    evaluation: [
-        "The modern data stack (e.g., dbt, Airflow, Spark)",
-        "Data warehousing and the data lake (e.g., Snowflake, BigQuery, Redshift)",
-        "Data pipelines and ETL/ELT",
-        "Data modeling and data governance",
-        "Data quality and data observability",
-    ],
-    technical_analysis: "The pandas evaluation focuses on a candidate's ability to build a reliable, scalable, and efficient data analysis platform. We assess their understanding of the entire data lifecycle, requiring them to design a complex application with a clean, automated, and observable architecture. A critical part of the evaluation is their mastery of **pandas and the modern data stack**; candidates must demonstrate how to use tools like dbt, Airflow, and Spark to build a fully automated, reliable, and efficient data analysis platform, and how to use services like Snowflake, BigQuery, and Redshift to build a modern, serverless, and container-based architecture. We also test their ability to build **observable and cost-effective** systems that are easy to monitor and debug. Finally, we assess their knowledge of the data ecosystem, and their ability to leverage it to build a modern, high-performance backend.",
-    interlink_slugs: ["dbt", "snowflake", "bigquery", "numpy"],
+  name: 'Pandas',
+  category: 'Data & AI',
+  categorySlug: 'data-ai',
+  seo_title: 'Hire Pandas Experts | Python Data Manipulation & Analysis Engineers',
+  meta_description:
+    'Hire elite Pandas experts to build fast, efficient, and maintainable data wrangling pipelines. Our vetted talent transforms messy data into analysis-ready assets at scale.',
+  intro:
+    'Pandas is the **de facto standard for data manipulation in Python**. It’s the foundational tool that makes data science and machine learning possible. You need an engineer who can move beyond basic DataFrames and write performant, memory-efficient, and maintainable data transformation code. Our vetting identifies experts who can tame messy, real-world data and build the robust feature engineering pipelines that high-performance models depend on.',
+  pains: [
+    {
+      icon: AlertTriangle,
+      pain: 'Slow, Inefficient Data Cleaning Scripts',
+      problem:
+        'Your data cleaning scripts are built with slow, explicit Python loops. They are impossible to read, take hours to run on moderately sized datasets, and frequently crash due to memory errors.',
+      solution:
+        'A Pandas expert thinks in terms of vectorized operations, not loops. They leverage the full power of the Pandas C-backed internals to write concise, readable, and lightning-fast data cleaning and transformation pipelines that can handle millions of rows with ease.',
+      kpi: 'Increase data manipulation script performance by 10-100x.',
+    },
+    {
+      icon: Workflow,
+      pain: 'Inability to Handle "Larger-Than-Memory" Datasets',
+      problem:
+        'Your analysis comes to a grinding halt the moment a dataset exceeds the memory of your machine. Your team is stuck, unable to work with the full scale of your data.',
+      solution:
+        'Our Pandas specialists are experts in memory optimization. They use techniques like setting efficient `dtypes`, chunking, and integrating with other libraries like Dask or Polars to process datasets that are orders of magnitude larger than available RAM.',
+      kpi: 'Enable processing of datasets 10x larger than machine memory.',
+    },
+    {
+      icon: ShieldCheck,
+      pain: 'Unreliable and Non-Reproducible Feature Engineering',
+      problem:
+        'Your feature engineering logic is scattered across dozens of notebooks and scripts. There is no single source of truth, leading to inconsistent feature calculations that silently corrupt your ML models.',
+      solution:
+        'A TeamStation Pandas engineer builds a centralized, version-controlled feature engineering library. They create a suite of well-documented, unit-tested transformation functions that ensure every feature is calculated the exact same way, every time.',
+      kpi: 'Achieve 100% reproducible feature engineering for all production models.',
+    },
+  ],
+  evaluation: [
+    'Deep expertise in the Pandas API, including advanced indexing and vectorized operations.',
+    'Proven ability to write performant and memory-efficient data manipulation code.',
+    'Mastery of handling various data formats, time-series analysis, and merging complex datasets.',
+    'Proficiency in strategies for scaling Pandas to larger-than-memory datasets.',
+    'Skills in building clean, reusable, and tested data transformation pipelines.',
+  ],
+  technical_analysis:
+    'The Axiom Cortex™ evaluation for Pandas experts focuses on their ability to write production-grade data manipulation code. We give them a messy, large dataset and a complex feature engineering task. We assess their ability to write code that is not only correct, but also performant, memory-efficient, and—most importantly—readable and maintainable. This ensures our engineers are not just analysts who know Pandas, but true software engineers who can build the robust data foundations that scalable systems require.',
+  interlink_slugs: [
+    'python',
+    'numpy',
+    'data-science',
+    'machine-learning',
+  ],
+  is_ready: true,
 };
 
 export default pandas;

@@ -1,54 +1,47 @@
-import { TechEntry } from "@/lib/tech";
 
-import { ShieldOff, Truck, Scaling } from "lucide-react";
+import { Server, Zap, Code, Shield } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 const django: TechEntry = {
-  name: "Django",
-  category: "Backend",
-  categorySlug: "backend",
-  seo_title: "Hire Django Experts | TeamStation AI",
-  meta_description:
-    "Hire expert Django developers to build robust, secure, and scalable web applications with Python. Get pre-vetted LATAM talent to accelerate your backend development.",
-  intro:
-    "Django is the high-level Python web framework that encourages rapid development and clean, pragmatic design. Our backend specialists leverage Django's batteries-included philosophy to build everything from content management systems to complex web applications.",
-  pains: [
-    {
-      icon: ShieldOff,
-      pain: "You're worried about common web security vulnerabilities like SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF).",
-      problem:
-        "Building a secure web application from scratch is difficult and requires deep security expertise. A single vulnerability can lead to data breaches, reputational damage, and financial loss.",
-      solution:
-        "Django has built-in protection against most common security threats. We leverage Django's security features, including its ORM, template system, and middleware, to build a secure-by-default application.",
-      kpi: "Prevent 99% of common web vulnerabilities out of the box.",
-    },
-    {
-      icon: Truck,
-      pain: "You need to build a complex web application quickly, but you don't want to sacrifice quality or scalability.",
-      problem:
-        "Building a full-featured web application involves many moving parts, from user authentication and database management to URL routing and templating. Integrating disparate libraries can be a major challenge.",
-      solution:
-        "Django's batteries-included approach provides a cohesive and integrated set of tools for all common web development tasks. We use Django's built-in ORM, authentication system, and admin interface to accelerate development and build robust applications.",
-      kpi: "Reduce development time for new features by up to 50%.",
-    },
-    {
-      icon: Scaling,
-      pain: "Your application is growing, and you need a framework that can scale with your business.",
-      problem:
-        "As your application grows in complexity and traffic, you need a framework that can handle the load without requiring a complete rewrite.",
-      solution:
-        "Django's component-based architecture and its ability to work with any caching system, database, and load balancer make it highly scalable. We design your Django application to scale horizontally, ensuring it can handle millions of users.",
-      kpi: "Build an application that can scale to handle 1 million+ users.",
-    },
-  ],
-  evaluation: [
-    "Deep expertise in Django and the Django REST Framework.",
-    "Proven ability to build and maintain large-scale, high-traffic Django applications.",
-    "Experience in designing and implementing complex data models with the Django ORM.",
-    "Proficiency in deploying and scaling Django applications in production environments.",
-  ],
-  technical_analysis:
-    "Django's strength lies in its batteries-included philosophy and its mature ecosystem. Our engineers are experts in leveraging the full power of the framework. We use the Django ORM to model complex business logic and interact with the database in a safe and predictable way. We use the Django REST Framework to build powerful and flexible web APIs. We use Django's built-in admin to quickly create a rich and customizable interface for managing your application's data. We also integrate Django with other tools in the Python ecosystem, such as Celery for asynchronous tasks and Redis for caching. This allows us to build robust, scalable, and secure web applications that can grow with your business.",
-  interlink_slugs: ["python", "fast-api", "postgresql", "rest-api-design"],
+    name: "Django",
+    category: "APIs & Backend Services",
+    categorySlug: "backend-services",
+    seo_title: "Hire Senior Django Developers | Python and Web Experts",
+    meta_description: "Hire elite Django developers specializing in building high-performance, scalable, and secure web applications.",
+    intro: "Django is a powerful and versatile Python framework. Our Django experts are vetted for their deep understanding of Django's core principles, from its powerful ORM to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of web applications.",
+    pains: [
+        {
+            icon: Server,
+            pain: "Our website is slow and expensive to host.",
+            problem: "Traditional monolithic applications are slow to load and expensive to host. They don't take advantage of the latest web technologies, such as microservices and serverless.",
+            solution: "We vet for mastery in **Django's powerful ORM**. Our engineers can help you build a website that is fast, scalable, and cost-effective.",
+            kpi: "50% Reduction in Page Load Time"
+        },
+        {
+            icon: Zap,
+            pain: "We're struggling to keep up with the latest web technologies.",
+            problem: "The web is constantly evolving. It's difficult to keep up with the latest technologies, such as React and Vue.js.",
+            solution: "Our experts are tested on **Django's growing ecosystem of integrations**. They can help you take advantage of the latest web technologies, so you can build the next generation of web applications.",
+            kpi: "90% Reduction in Time to Market"
+        },
+        {
+            icon: Code,
+            pain: "We're worried about the security of our website.",
+            problem: "Web security is a top priority for every business. It's difficult to secure a traditional monolithic application, especially when you're dealing with user authentication and data fetching.",
+            solution: "We vet for expertise in **Django's security features**. Our engineers use the latest security best practices to protect your website from attack.",
+            kpi: "100% Website Security"
+        }
+    ],
+    evaluation: [
+        "Deep understanding of Django's core principles.",
+        "Mastery of Django's powerful ORM.",
+        "Proficiency in building scalable, production-ready web applications with Django.",
+        "Experience with a variety of Django integrations.",
+        "Expertise in Django's security features.",
+    ],
+    technical_analysis: "The Django vetting process is rigorous and hands-on. Candidates are required to build a production-ready web application with Django from scratch. We test their ability to write clean, modular, and maintainable code, as well as their understanding of Django best practices. We also assess their experience with a variety of Django integrations and their ability to optimize for performance and security.",
+    interlink_slugs: ["python", "postgresql", "mysql", "react", "vue"],
+    is_ready: true,
 };
 
 export default django;
