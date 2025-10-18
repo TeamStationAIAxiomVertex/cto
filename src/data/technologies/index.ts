@@ -69,7 +69,7 @@ import gatsby from "./gatsby";
 import githubActions from "./github-actions";
 import gitlab from "./gitlab";
 import gitops from "./gitops";
-import golang from "./golang";
+import go from "./go";
 import googleCloud from "./google-cloud";
 import googleWorkspace from "./google-workspace";
 import grafana from "./grafana";
@@ -83,7 +83,6 @@ import hibernate from "./hibernate";
 import hightouch from "./hightouch";
 import hipaa from "./hipaa";
 import hubspot from "./hubspot";
-import huggingFace from "./hugging-face";
 import iso from "./iso";
 import istio from "./istio";
 import jaeger from "./jaeger";
@@ -296,7 +295,7 @@ const allTech: AllTech = {
   "github-actions": githubActions,
   gitlab: gitlab,
   gitops: gitops,
-  golang: golang,
+  go: go,
   "google-cloud": googleCloud,
   "google-workspace": googleWorkspace,
   grafana: grafana,
@@ -310,7 +309,6 @@ const allTech: AllTech = {
   hightouch: hightouch,
   hipaa: hipaa,
   hubspot: hubspot,
-  "hugging-face": huggingFace,
   iso: iso,
   istio: istio,
   jaeger: jaeger,
