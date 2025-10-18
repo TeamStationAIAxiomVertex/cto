@@ -11,7 +11,7 @@ const graphql: TechEntry = {
     intro: "GraphQL is a powerful and versatile query language for APIs. Our GraphQL experts are vetted for their deep understanding of GraphQL's core principles, from its powerful query language to its robust security and performance tuning capabilities. They are the specialists who can help you build the next generation of APIs.",
     pains: [
         {
-            icon: Share2,
+            iconName: "\1",
             pain: "Our APIs are slow and inefficient.",
             problem: "Traditional REST APIs are often slow and inefficient, especially when you're dealing with complex data fetching requirements.",
             solution: "We vet for mastery in **GraphQL's powerful query language**. Our engineers can help you build a fast, and efficient API.",

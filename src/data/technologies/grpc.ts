@@ -11,7 +11,7 @@ const grpc: TechEntry = {
     intro: "gRPC is a powerful and versatile RPC framework. Our gRPC experts are vetted for their deep understanding of gRPC's core principles, from its powerful protocol buffers to its robust security and performance tuning capabilities. They are the specialists who can help you build the next generation of APIs.",
     pains: [
         {
-            icon: Share2,
+            iconName: "\1",
             pain: "Our APIs are slow and inefficient.",
             problem: "Traditional REST APIs are often slow and inefficient, especially when you're dealing with complex data fetching requirements.",
             solution: "We vet for mastery in **gRPC's powerful protocol buffers**. Our engineers can help you build a fast, and efficient API.",

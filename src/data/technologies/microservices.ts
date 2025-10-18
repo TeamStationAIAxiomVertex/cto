@@ -11,7 +11,7 @@ const microservices: TechEntry = {
     intro: "Microservices is a powerful and versatile architectural style. Our Microservices experts are vetted for their deep understanding of Microservices' core principles, from its powerful service decomposition and communication patterns to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a secure, and reliable distributed system.",
     pains: [
         {
-            icon: Share2,
+            iconName: "\1",
             pain: "Our system is a monolith.",
             problem: "Poorly designed systems are difficult to understand, maintain, and reuse, leading to a lack of confidence in your system.",
             solution: "We vet for mastery in **Microservices' powerful service decomposition and communication patterns**. Our engineers can help you build a clean, modular, and well-documented distributed system.",

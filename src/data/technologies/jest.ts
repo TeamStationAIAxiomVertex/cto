@@ -11,7 +11,7 @@ const jest: TechEntry = {
     intro: "Jest is a powerful and versatile JavaScript testing framework. Our Jest experts are vetted for their deep understanding of Jest's core principles, from its powerful mocking and assertion capabilities to its robust security and performance tuning capabilities. They are the specialists who can help you build the next generation of JavaScript tests.",
     pains: [
         {
-            icon: TestTube2,
+            iconName: "\1",
             pain: "Our tests are slow and unreliable.",
             problem: "Poorly written tests are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **Jest's powerful mocking and assertion capabilities**. Our engineers can help you build a fast, and reliable JavaScript testing suite.",
