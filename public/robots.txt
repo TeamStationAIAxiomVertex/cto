@@ -1,6 +1,36 @@
+# User-agent: *
+# This section applies to all general web crawlers (Googlebot, Bingbot, etc.)
 User-agent: *
-Allow: /
-Disallow: /privacy-policy
-Disallow: /terms-of-service
 
+# Allow all general crawling for maximum SEO visibility
+Allow: /
+
+# Conserve Crawl Budget by disallowing unnecessary static build assets.
+# Google wastes time on these, which slows down the crawling of your actual content.
+Disallow: /_next/static/chunks/
+Disallow: /_next/static/media/
+Disallow: /_next/cache/
+
+# User-agent: Google-Extended
+# Explicitly allow Google's AI crawlers (used for generative AI, Gemini/Bard responses)
+User-agent: Google-Extended
+Allow: /
+
+# User-agent: ChatGPT-User
+# Explicitly allow OpenAI's RAG/Search Assistant (used for user-triggered browsing/answers)
+User-agent: ChatGPT-User
+Allow: /
+
+# User-agent: PerplexityBot
+# Explicitly allow Perplexity's AI Search Bot
+User-agent: PerplexityBot
+Allow: /
+
+# User-agent: ClaudeBot
+# Explicitly allow Anthropic's Claude AI Bot
+User-agent: ClaudeBot
+Allow: /
+
+# Sitemap Location
+# CRITICAL: This points crawlers to the single source of truth for all your URLs.
 Sitemap: https://cto.teamstation.dev/sitemap.xml
