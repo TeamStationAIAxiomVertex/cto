@@ -1,5 +1,4 @@
 
-import { TestTube2, Zap, Code, Shield } from "lucide-react";
 import type { TechEntry } from "@/lib/tech";
 
 const cypress: TechEntry = {
@@ -11,7 +10,7 @@ const cypress: TechEntry = {
     intro: "Cypress is a powerful and versatile end-to-end testing framework. Our Cypress experts are vetted for their deep understanding of Cypress's core principles, from its powerful command-line interface to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of end-to-end tests.",
     pains: [
         {
-            icon: TestTube2,
+            iconName: "TestTube2",
             pain: "Our tests are slow and unreliable.",
             problem: "Poorly written tests are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **Cypress's powerful command-line interface**. Our engineers can help you build a fast, and reliable end-to-end testing suite.",
