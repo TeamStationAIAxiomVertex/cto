@@ -36,7 +36,7 @@ export const techCategories: TechCategory[] = [
       { name: 'Node.js', slug: 'node' },
       { name: 'Python', slug: 'python' },
       { name: 'Java', slug: 'java' },
-      { name: 'Go', slug: 'go' },
+      { name: 'Go', slug: 'golang' },
       { name: '.NET', slug: 'net' },
       { name: 'Ruby on Rails', slug: 'ruby' },
       { name: 'PHP', slug: 'php' },
