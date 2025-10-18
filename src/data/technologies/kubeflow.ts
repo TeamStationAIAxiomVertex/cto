@@ -18,7 +18,7 @@ const kubeflow: TechEntry = {
             kpi: "100% Reproducibility"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest machine learning technologies.",
             problem: "The machine learning landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as PyTorch and TensorFlow.",
             solution: "Our experts are tested on **the latest machine learning technologies**. They can help you take advantage of the latest features, so you can build the next generation of machine learning pipelines.",

@@ -11,7 +11,7 @@ const locust: TechEntry = {
     intro: "Locust is a powerful and versatile load testing framework. Our Locust experts are vetted for their deep understanding of Locust's core principles, from its powerful Python-based scripting to its robust security and performance tuning capabilities. They are the specialists who can help you build the next generation of load testing solutions.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our load tests are slow and unreliable.",
             problem: "Poorly written load tests are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **Locust's powerful Python-based scripting**. Our engineers can help you build a fast, and reliable load testing suite.",
