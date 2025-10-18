@@ -210,7 +210,6 @@ import quarkus from "./quarkus";
 import micronaut from "./micronaut";
 import jakartaEe from "./jakarta-ee";
 import codeigniter from "./codeigniter";
-import { AllTech } from "@/lib/tech";
 import actixWeb from "./Actix_Web";
 import eslint from "./ESLint";
 import firebaseFirestore from "./Firebase_Firestore";
@@ -225,8 +224,9 @@ import sqlServer from "./SQL_Server";
 import websockets from "./WebSockets";
 import generativeAi from "./generative-ai";
 import llm from "./llm";
+import huggingFace from "./hugging-face";
 
-const allTech: AllTech = {
+const allTech = {
   recoil: recoil,
   vuex: vuex,
   zustand: zustand,
@@ -309,6 +309,7 @@ const allTech: AllTech = {
   hightouch: hightouch,
   hipaa: hipaa,
   hubspot: hubspot,
+  "hugging-face": huggingFace,
   iso: iso,
   istio: istio,
   jaeger: jaeger,
