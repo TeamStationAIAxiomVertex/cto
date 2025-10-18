@@ -83,6 +83,7 @@ import hibernate from "./hibernate";
 import hightouch from "./hightouch";
 import hipaa from "./hipaa";
 import hubspot from "./hubspot";
+import huggingFace from "./hugging-face";
 import iso from "./iso";
 import istio from "./istio";
 import jaeger from "./jaeger";
@@ -309,6 +310,7 @@ const allTech: AllTech = {
   hightouch: hightouch,
   hipaa: hipaa,
   hubspot: hubspot,
+  "hugging-face": huggingFace,
   iso: iso,
   istio: istio,
   jaeger: jaeger,
