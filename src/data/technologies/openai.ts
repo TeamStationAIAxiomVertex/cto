@@ -13,7 +13,7 @@ const openai: TechEntry = {
     "OpenAI provides a powerful platform for building applications with large language models (LLMs), including the GPT-4 family, embeddings, and fine-tuning APIs. Our AI engineers use the OpenAI SDK to build intelligent applications that can understand and generate natural language, code, and images.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you struggling to build intelligent features that can understand and respond to user needs?",
       problem:
         "Your application lacks the ability to understand natural language, making it difficult to build features like chatbots, semantic search, and content generation. You are falling behind competitors who are leveraging the power of generative AI to create more engaging and personalized experiences.",
@@ -22,7 +22,7 @@ const openai: TechEntry = {
       kpi: "Increase user engagement by 50% and reduce customer support costs by 30%.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is it difficult to extract insights from your unstructured text data?",
       problem:
         "You have a wealth of unstructured text data, such as customer reviews, support tickets, and social media comments. You know there are valuable insights in this data, but you don't have the tools to extract them. You are missing out on opportunities to improve your product, your customer service, and your marketing.",
@@ -31,7 +31,7 @@ const openai: TechEntry = {
       kpi: "Automatically analyze 100% of your unstructured text data and discover key insights in real time.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you finding it challenging to build a reliable and production-ready RAG (Retrieval-Augmented Generation) system?",
       problem:
         "You want to build a chatbot or a Q&A system that can answer questions based on your own private data. However, building a reliable RAG system is complex. You need to choose a vector database, an embedding model, and a retrieval strategy. You also need to handle prompt engineering, context management, and evaluation.",

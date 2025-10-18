@@ -13,7 +13,7 @@ const dataScience: TechEntry = {
     'Data Science is the application of the scientific method to business problems. It’s not about algorithms; it’s about answers. You need a **Data Scientist** who can move beyond simple reporting to uncover the deep, predictive insights hidden in your data. Our vetting identifies professionals who can frame a vague business problem as a testable hypothesis, explore the data to find the signal in the noise, and communicate their findings to drive strategic action.',
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Drowning in Data, Starving for Insights',
       problem:
         'You have petabytes of data, but every strategic decision is still based on gut feeling and historical anecdotes. You lack the ability to answer your most critical business questions with data.',
@@ -22,7 +22,7 @@ const dataScience: TechEntry = {
       kpi: 'Deliver 3-5 major actionable insights that directly influence the product roadmap within the first quarter.',
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Inability to Predict Business Outcomes',
       problem:
         'You are constantly reacting to market changes, customer churn, and inventory shortages. You have no reliable way to forecast future trends, leaving you strategically vulnerable.',
@@ -31,7 +31,7 @@ const dataScience: TechEntry = {
       kpi: 'Improve forecasting accuracy for key business metrics (e.g., churn, demand) by 25-40%.',
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Misinterpreting Noise as a Signal',
       problem:
         'Teams are chasing spurious correlations from dashboard data, launching features based on flimsy A/B test results, and making poor decisions because they lack statistical rigor.',

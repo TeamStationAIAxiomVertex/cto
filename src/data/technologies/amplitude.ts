@@ -13,7 +13,7 @@ const amplitude: TechEntry = {
     "Amplitude is a leading product analytics platform that helps teams understand user behavior, ship the right features, and drive business outcomes. Our product and data experts use Amplitude to provide deep insights into how users are engaging with your product, enabling you to make data-informed decisions.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you flying blind, unsure of how users are actually using your product?",
       problem:
         "You are shipping features, but you have no idea if they are being used, by whom, or if they are having the intended impact. You can't answer basic questions about user engagement, retention, or conversion, leading to wasted development effort and missed opportunities.",
@@ -22,7 +22,7 @@ const amplitude: TechEntry = {
       kpi: "Gain 100% visibility into your user behavior and answer critical product questions in minutes, not weeks.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is your team struggling to identify the highest-impact product opportunities?",
       problem:
         "Your product roadmap is based on gut feelings and anecdotal feedback. You don't have a clear, data-driven way to prioritize features, leading to a bloated product that doesn't solve your users' most important problems.",
@@ -31,7 +31,7 @@ const amplitude: TechEntry = {
       kpi: "Increase your product-led growth by focusing on the features that have the biggest impact on your KPIs.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is it difficult to measure the impact of your product changes and experiments?",
       problem:
         "You are running A/B tests and shipping new features, but you can't confidently measure their impact on user behavior and business metrics. You are not learning from your experiments, and you are at risk of making bad product decisions.",

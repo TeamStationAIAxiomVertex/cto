@@ -13,7 +13,7 @@ const oidc: TechEntry = {
     "OpenID Connect (OIDC) is an identity layer built on top of the OAuth 2.0 protocol. Our security engineers use OIDC to provide secure, standardized, and interoperable authentication for your applications, allowing users to sign in with their existing accounts from providers like Google, Microsoft, or Okta.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you building and maintaining your own user authentication system?",
       problem:
         "Building a custom authentication system is complex, time-consuming, and fraught with security risks. You have to handle password storage, session management, and protect against common vulnerabilities like credential stuffing and phishing.",
@@ -22,7 +22,7 @@ const oidc: TechEntry = {
       kpi: "Eliminate the need to store user passwords and reduce authentication development time by 95%.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is it difficult to integrate your application with different identity providers?",
       problem:
         "Your enterprise customers want to use their own identity providers (like Okta or Azure AD) for single sign-on (SSO). Supporting multiple, non-standard identity providers is a significant engineering challenge.",
@@ -31,7 +31,7 @@ const oidc: TechEntry = {
       kpi: "Onboard new enterprise customers with their own identity providers in hours, not weeks.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you struggling to securely access user information from different identity providers?",
       problem:
         "Your application needs access to user profile information (like name and email address) from the identity provider. Accessing this information in a secure and standardized way can be challenging.",

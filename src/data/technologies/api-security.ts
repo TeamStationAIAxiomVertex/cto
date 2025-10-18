@@ -11,21 +11,21 @@ const apiSecurity: TechEntry = {
     intro: "API Security is a critical component of any modern, microservices-based architecture. Our API Security experts are vetted for their deep understanding of API Security's core principles, from its powerful authentication and authorization features to its robust encryption and throttling capabilities. They are the specialists who can help you build and manage a secure, and reliable API.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our APIs are vulnerable to attack.",
             problem: "Poorly designed APIs are a security risk for your entire system. They are difficult to secure, and can lead to a data breach.",
             solution: "We vet for mastery in **API Security's powerful authentication and authorization features**. Our engineers can help you build a secure, and reliable API.",
             kpi: "100% API Security"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest API security technologies.",
             problem: "The API security landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as OAuth 2.0 and OpenID Connect.",
             solution: "Our experts are tested on **the latest API security technologies**. They can help you take advantage of the latest features, so you can build the next generation of secure APIs.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our data.",
             problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **API Security's encryption features**. Our engineers use the latest encryption best practices to protect your data from attack.",

@@ -13,7 +13,7 @@ const snowflake: TechEntry = {
     'Snowflake is more than a data warehouse; it’s a **Cloud Data Platform** that redefines analytics architecture. You need an expert who understands how to leverage its unique separation of storage and compute to drive business value. Our vetting process identifies engineers who don’t just run queries, but architect for performance, govern data securely, and build the scalable foundation for your entire data strategy.',
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Crippling Performance of Legacy Data Warehouses',
       problem:
         'Your on-premise data warehouse grinds to a halt under concurrent loads. ETL jobs block analyst queries, and critical reports are delayed for hours. Scaling compute requires a massive, months-long procurement process.',
@@ -22,7 +22,7 @@ const snowflake: TechEntry = {
       kpi: '90% reduction in query execution time for critical analytics workloads.',
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Inability to Handle Modern, Semi-Structured Data',
       problem:
         'Your legacy systems choke on JSON, Avro, or Parquet data. You are forced to build and maintain complex, brittle preprocessing pipelines just to flatten the data, losing valuable information and slowing down insights.',
@@ -31,7 +31,7 @@ const snowflake: TechEntry = {
       kpi: 'Reduce data ingestion pipeline complexity and development time by 70%.',
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Insecure and Inefficient Data Sharing',
       problem:
         'Sharing data with partners or other business units involves building risky ETL processes, creating insecure copies of data, or relying on FTP. The data is stale the moment it’s sent and governance is nonexistent.',

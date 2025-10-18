@@ -13,7 +13,7 @@ const vue: TechEntry = {
     "Vue.js is the progressive framework built for approachability and performance. You need an engineer who can leverage Vue's best features—the intuitive Composition API, the power of Vite for rapid development, and the simplicity of Pinia for state management—to build applications that are not just easy to use, but easy to evolve. The Vue ecosystem is vast, and a developer who truly masters it can deliver incredible velocity. Our vetting process is focused on identifying engineers who understand the framework's core reactivity system, ensuring they write efficient and predictable code. We test their ability to design reusable components, manage complex application state with Pinia, and strategically use Vue's ecosystem tools, like Vue Router and Nuxt. By hiring a Vue expert from us, you gain a developer who can accelerate your product roadmap with clean, maintainable code that avoids the architectural pitfalls common in rapidly developed applications.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is your app slow due to incorrect reactivity usage?",
       problem:
         "Vue's reactivity system is powerful, but developers new to the Composition API often use `ref()` and `reactive()` incorrectly, leading to inefficient updates, unnecessary component re-renders, and performance bottlenecks that are hard to debug. This breaks the promise of Vue's intuitive performance.",
@@ -22,7 +22,7 @@ const vue: TechEntry = {
       kpi: "Mastery of Composition API & reactivity",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is your state management overly complex with old patterns?",
       problem:
         "Legacy or custom state management solutions in Vue often create a boilerplate nightmare, making even simple state changes difficult to track, test, and maintain. This slows down development, frustrates engineers, and leads to an unmanageable codebase as the application scales.",
@@ -31,7 +31,7 @@ const vue: TechEntry = {
       kpi: "Expertise in Pinia state management",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you struggling with SEO and server-side rendering (SSR)?",
       problem:
         "Building a complex Vue application without considering SSR can lead to poor SEO performance and slow initial page loads, impacting business goals that rely on search engine visibility and fast user acquisition. Relying on a simple CSR setup is no longer competitive for public-facing applications.",

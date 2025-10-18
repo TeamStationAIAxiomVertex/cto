@@ -11,21 +11,21 @@ const redis: TechEntry = {
     intro: "Redis is the de facto standard for in-memory data stores. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire in-memory data store ecosystem, from the data structures and the commands to the persistence and the replication. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Redis expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Is your application slow and struggling to keep up with demand?",
             problem: "Many applications are built on a database that is not designed for speed. This can lead to a user experience that is slow and a codebase that is a mess of workarounds and hacks.",
             solution: "We vet for experts in **Redis and in-memory data stores**. Our engineers are proficient in using Redis to build a fast, scalable, and resilient application. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
             kpi: "A Fast, Scalable, and Resilient Application"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Is your data model a tangled mess of inconsistent, unreliable data?",
             problem: "A poorly designed data model without proper data structures or a clear understanding of the access patterns can lead to data duplication, inconsistencies, and a single source of truth that nobody trusts. This makes it impossible to build reliable reports and features.",
             solution: "Our engineers are masters of **Redis data structures**. They are vetted on their ability to design flexible, consistent, and reliable data models that enforce data integrity at the database level. This ensures that your data is always accurate and trustworthy.",
             kpi: "Proficiency in Redis Data Structures & Access Patterns"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Are you struggling to build real-time, event-driven features?",
             problem: "Many developers struggle to build real-time, event-driven features that involve pub/sub, streams, and other modern data patterns. This can lead to a lot of back-and-forth with data analysts and a lot of time wasted on writing inefficient, hard-to-maintain code.",
             solution: "We look for engineers proficient with **Redis and real-time data**. They are vetted on their ability to use Redis to build clean, efficient, and powerful real-time features. This results in a more data-driven organization and a more productive engineering team.",

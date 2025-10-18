@@ -13,7 +13,7 @@ const greatExpectations: TechEntry = {
     "Great Expectations is an open-source tool for data testing, documentation, and profiling. It helps data teams eliminate pipeline debt, through data testing, documentation, and profiling. Our data engineers use Great Expectations to build a culture of data quality and ensure that your data is always accurate, complete, and reliable.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you constantly fighting fires caused by bad data?",
       problem:
         "Your data pipelines are failing, your reports are inaccurate, and your machine learning models are producing garbage results. You are constantly in a reactive mode, trying to fix data quality issues after they have already impacted the business.",
@@ -22,7 +22,7 @@ const greatExpectations: TechEntry = {
       kpi: "Prevent 99% of data quality issues from reaching your production systems.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Do you lack a shared understanding of what 'good data' looks like?",
       problem:
         "Your data producers and consumers have different assumptions about the data. There is no shared understanding of what the data means, what format it should be in, or what values are valid. This leads to confusion, mistrust, and a lot of wasted time.",
@@ -31,7 +31,7 @@ const greatExpectations: TechEntry = {
       kpi: "Create a shared understanding of your data and reduce data-related communication overhead by 80%.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is it difficult to monitor the quality of your data over time?",
       problem:
         "You have no way of knowing if the quality of your data is getting better or worse over time. You can't track key data quality metrics, and you can't identify trends or patterns in your data quality issues.",

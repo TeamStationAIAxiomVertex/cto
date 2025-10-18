@@ -11,21 +11,21 @@ const java: TechEntry = {
   intro: "Java and the JVM ecosystem (especially **Spring Boot**) remain the gold standard for building massive-scale, mission-critical enterprise applications and microservices. You need an engineer who can leverage Java's stability, strong typing, and vast ecosystem to deliver solutions that are not just fast, but inherently reliable and maintainable under extreme loads. Our vetting process is designed to find engineers who are masters of the JVM, assessing their deep understanding of multithreading, garbage collection, and optimizing Spring/Quarkus applications for production. We move beyond simple CRUD to test their ability to architect complex, distributed systems, ensuring they can harness Java's power for resilience and performance. By hiring a Java expert from us, you are investing in a proven technology stack handled by top-tier talent, guaranteeing the long-term stability and evolutionary capacity of your core business logic.",
   pains: [
       {
-          iconName: "\1",
+          iconName: "AlertTriangle",
           pain: "Is your JVM memory usage unstable and plagued by GC pauses?",
           problem: "Poorly optimized Java applications can suffer from frequent, long-duration Garbage Collection (GC) pauses that halt the application (stop-the-world events), leading to high latency and unpredictable performance in high-throughput systems. This indicates a lack of JVM deep knowledge.",
           solution: "We vet for experts who understand JVM tuning. They are required to demonstrate knowledge of different GC algorithms (e.g., G1, ZGC), and how to configure memory and thread pools in Spring Boot to minimize GC overhead, resulting in stable, low-latency service performance.",
           kpi: "JVM Tuning and Garbage Collection Optimization"
       },
       {
-          iconName: "\1",
+          iconName: "AlertTriangle",
           pain: "Is your Spring architecture monolithic and hard to decouple?",
           problem: "Many developers treat Spring Boot as a monolithic framework, coupling business logic, data access, and API layers too tightly. This makes refactoring risky, testing cumbersome, and prevents the application from scaling horizontally in a microservice environment.",
           solution: "Our engineers are masters of the Spring ecosystem, focusing on architectural patterns like **Domain-Driven Design (DDD)** and clean separation of concerns. They are vetted on their ability to use Spring Cloud for microservices, and Spring Data for efficient and decoupled database access, ensuring a modular and resilient architecture.",
           kpi: "Mastery of Spring Microservice Architecture"
       },
       {
-          iconName: "\1",
+          iconName: "AlertTriangle",
           pain: "Are you failing to correctly manage concurrency and threading?",
           problem: "Java is inherently multithreaded, which, when handled incorrectly, leads to race conditions, deadlocks, and corrupted data. Junior developers often struggle with thread-safe data structures and synchronization primitives, resulting in elusive and costly bugs.",
           solution: "We look for engineers who can confidently implement thread-safe code. They are vetted on their knowledge of concurrency utilities, lock-free structures, and the correct use of synchronization and locking mechanisms, guaranteeing the stability and correctness of data integrity under heavy load.",

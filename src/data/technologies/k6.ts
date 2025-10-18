@@ -11,21 +11,21 @@ const k6: TechEntry = {
     intro: "k6 is a modern, open-source load testing tool for engineering teams. You need an engineer who understands that performance testing is not just about generating load, but about a deep understanding of the entire system under test, from the application code and the infrastructure to the user experience. Our vetting process identifies developers who are experts in the modern performance testing stack—and can architect a performance testing platform that is as secure, efficient, and automated as it is scalable. By hiring a k6 expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Are you discovering performance bottlenecks in production?",
             problem: "Without a robust performance testing strategy, you are essentially using your customers as test subjects. This leads to slow response times, service outages, and a poor user experience that drives users away.",
             solution: "We vet for experts in **proactive performance testing**. Our engineers are proficient in using k6 to simulate realistic user traffic and identify performance bottlenecks before they impact your users. This results in a fast, reliable, and scalable application.",
             kpi: "Early Detection of Performance Bottlenecks"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Is your performance testing process manual, slow, and non-collaborative?",
             problem: "Traditional performance testing tools are often complex and require specialized skills, creating a bottleneck where only a few engineers can run tests. This makes it difficult to integrate performance testing into the development lifecycle.",
             solution: "Our engineers are masters of **developer-friendly performance testing**. They are vetted on their ability to write and maintain k6 tests in JavaScript, making it easy for the entire team to contribute. They integrate performance tests into the CI/CD pipeline, enabling a 'shift-left' approach to performance.",
             kpi: "Developer-Friendly, Automated Performance Testing"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Are your performance goals vague and your results hard to interpret?",
             problem: "Without clear, measurable performance goals, it's impossible to know if your application is meeting its SLAs. Vague goals and complex reports make it difficult to get actionable insights from your performance tests.",
             solution: "We look for engineers proficient in **goal-oriented performance testing**. They are vetted on their ability to use k6's Thresholds to define clear pass/fail criteria for your tests (e.g., '99th percentile response time must be under 200ms'). This results in clear, actionable feedback that drives performance improvements.",

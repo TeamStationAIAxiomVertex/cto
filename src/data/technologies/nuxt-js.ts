@@ -11,21 +11,21 @@ const nuxtjs: TechEntry = {
     intro: "Nuxt.js is a powerful and versatile Vue.js framework. Our Nuxt.js experts are vetted for their deep understanding of Nuxt.js's core principles, from its powerful server-side rendering to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of web applications.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our website is slow and expensive to host.",
             problem: "Traditional client-side rendered applications are slow to load and expensive to host. They don't take advantage of the latest web technologies, such as server-side rendering and static site generation.",
             solution: "We vet for mastery in **Nuxt.js's powerful server-side rendering**. Our engineers can help you build a website that is fast, scalable, and cost-effective.",
             kpi: "50% Reduction in Page Load Time"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest web technologies.",
             problem: "The web is constantly evolving. It's difficult to keep up with the latest technologies, such as React and Angular.",
             solution: "Our experts are tested on **Nuxt.js's growing ecosystem of integrations**. They can help you take advantage of the latest web technologies, so you can build the next generation of web applications.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our website.",
             problem: "Web security is a top priority for every business. It's difficult to secure a traditional client-side rendered application, especially when you're dealing with user authentication and data fetching.",
             solution: "We vet for expertise in **Nuxt.js's security features**. Our engineers use the latest security best practices to protect your website from attack.",

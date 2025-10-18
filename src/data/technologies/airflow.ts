@@ -13,7 +13,7 @@ const airflow: TechEntry = {
     'Apache Airflow is the engine for **programmatic workflow orchestration**. It’s not a cron replacement; it’s a platform for treating your data pipelines as testable, version-controlled, and observable code. You need an engineer who can architect complex DAGs, manage dependencies, and build self-healing data systems. Our vetting identifies experts who transform chaotic scripts into a reliable, centralized nervous system for your entire data platform.',
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'The Hell of Brittle, Interdependent Cron Jobs',
       problem:
         'Your data pipelines are a tangled mess of cron jobs and shell scripts. Jobs fail silently, there are no automatic retries, and a single upstream failure can corrupt data for the entire company with no visibility.',
@@ -22,7 +22,7 @@ const airflow: TechEntry = {
       kpi: 'Reduce data pipeline failures by 90% and eliminate silent failures entirely.',
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Lack of Observability and Debugging Nightmares',
       problem:
         'When a pipeline fails, your engineers spend hours—or days—sifting through logs on a dozen different machines to find the root cause. There is no centralized view of your data workflows.',
@@ -31,7 +31,7 @@ const airflow: TechEntry = {
       kpi: 'Decrease Mean Time to Resolution (MTTR) for pipeline failures by 80%.',
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Inability to Scale or Handle Complex Logic',
       problem:
         'Your simple scheduler cannot handle dynamic workflows, backfills, or complex business logic. Your data engineers spend more time managing the scheduler than they do building valuable data products.',

@@ -11,21 +11,21 @@ const dynamodb: TechEntry = {
     intro: "DynamoDB is a powerful and versatile NoSQL database. Our DynamoDB experts are vetted for their deep understanding of DynamoDB's core principles, from its powerful data modeling and partitioning features to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a secure, and reliable NoSQL database.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our database is slow and unreliable.",
             problem: "Poorly designed databases are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **DynamoDB's powerful data modeling and partitioning features**. Our engineers can help you build a fast, and reliable NoSQL database.",
             kpi: "50% Reduction in Database Latency"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest database technologies.",
             problem: "The database landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as NewSQL and Graph databases.",
             solution: "Our experts are tested on **the latest database technologies**. They can help you take advantage of the latest features, so you can build the next generation of databases.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our data.",
             problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **DynamoDB's security features**. Our engineers use the latest security best practices to protect your data from attack.",

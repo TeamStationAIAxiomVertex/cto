@@ -13,7 +13,7 @@ const snyk: TechEntry = {
     "Snyk is a developer-first security platform that helps you find and fix vulnerabilities in your code, open source dependencies, container images, and infrastructure as code. Our expert engineers use Snyk to embed security into your development workflow, not slow it down.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Your application is riddled with open source vulnerabilities you don't know about.",
       problem:
         "Modern applications are built on a mountain of open source dependencies, each a potential vector for attack. Manually tracking and patching these vulnerabilities is impossible.",
@@ -22,7 +22,7 @@ const snyk: TechEntry = {
       kpi: "Reduce time-to-remediate critical vulnerabilities by 90%.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Security issues are only found late in the cycle, causing delays and rework.",
       problem:
         "Static analysis (SAST) is slow, noisy, and run by a separate security team, creating a bottleneck. Developers get security feedback too late to be effective.",
@@ -31,7 +31,7 @@ const snyk: TechEntry = {
       kpi: "Fix vulnerabilities 10x faster with developer-first tooling.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Container images and IaC configurations are a black box for security risks.",
       problem:
         "Your container images and Terraform/CloudFormation scripts have misconfigurations and vulnerabilities that could lead to a major breach, but you have no visibility.",

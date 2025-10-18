@@ -11,21 +11,21 @@ const jakartaEE: TechEntry = {
     intro: "Jakarta EE is a powerful and versatile enterprise Java framework. Our Jakarta EE experts are vetted for their deep understanding of Jakarta EE's core principles, from its powerful component model to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of enterprise applications.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our enterprise applications are slow and expensive to host.",
             problem: "Traditional monolithic applications are slow to load and expensive to host. They don't take advantage of the latest web technologies, such as microservices and serverless.",
             solution: "We vet for mastery in **Jakarta EE's powerful component model**. Our engineers can help you build a fast, scalable, and cost-effective enterprise application.",
             kpi: "50% Reduction in Page Load Time"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest enterprise Java technologies.",
             problem: "The enterprise Java landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as MicroProfile and Quarkus.",
             solution: "Our experts are tested on **the latest enterprise Java technologies**. They can help you take advantage of the latest features, so you can build the next generation of enterprise applications.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our enterprise applications.",
             problem: "Enterprise security is a top priority for every business. It's difficult to secure a traditional monolithic application, especially when you're dealing with user authentication and data fetching.",
             solution: "We vet for expertise in **Jakarta EE's security features**. Our engineers use the latest security best practices to protect your enterprise application from attack.",

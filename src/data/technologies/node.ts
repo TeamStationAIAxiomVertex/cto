@@ -11,21 +11,21 @@ const node: TechEntry = {
     intro: "Node.js is the backbone of high-growth technology platforms that require fast, concurrent execution. We vet for mastery in its single-threaded, non-blocking I/O model, and their ability to build and deploy highly performant, scalable microservices architectures.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our Node.js server keeps crashing under load.",
             problem: "The single-threaded nature of Node.js means a single blocking operation (like a slow database query) can halt the entire event loop, leading to high latency and catastrophic failures under peak traffic.",
             solution: "Our experts are vetted on managing the **Event Loop** and implementing robust solutions using worker threads, dedicated microservices, and specialized modules to prevent blocking operations, ensuring resilience and stability.",
             kpi: "<50ms P99 Latency and 99.99% Uptime"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our API development is slow and inconsistent.",
             problem: "Lack of architectural consistency in sprawling Node.js codebases, especially when using lightweight frameworks like Express, leads to maintenance nightmares, inconsistent code standards, and slow feature delivery.",
             solution: "We vet for mastery in modern, structured frameworks like **NestJS** and adherence to architectural patterns (e.g., DDD, Clean Architecture) that enforce discipline, testability, and accelerate long-term development velocity.",
             kpi: "30% Improvement in Backend Feature Velocity"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We have unhandled exceptions and memory leaks in production.",
             problem: "The asynchronous nature of Node.js makes error handling complex, often resulting in unhandled rejections that crash the process, or poorly managed streams/listeners that cause memory consumption to balloon.",
             solution: "Our engineers are tested on advanced error handling patterns, using robust monitoring (Prometheus/Grafana), and implementing strict memory profiling and leak detection routines to ensure long-running process stability.",

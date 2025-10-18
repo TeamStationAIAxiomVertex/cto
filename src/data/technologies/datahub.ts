@@ -13,7 +13,7 @@ const datahub: TechEntry = {
     "DataHub is an open-source metadata platform for the modern data stack. It enables data discovery, data governance, and end-to-end data lineage. Our data engineers use DataHub to create a single source of truth for all your data assets, empowering your team to find, understand, and trust your data.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is it difficult for your team to find and understand your data?",
       problem:
         "Your data is spread across dozens of different systems, and your team wastes countless hours trying to find the data they need. When they do find it, they don't know where it came from, who owns it, or how it was created. This leads to a lack of trust in the data and poor decision-making.",
@@ -22,7 +22,7 @@ const datahub: TechEntry = {
       kpi: "Reduce the time to find and understand data by 90% and increase data literacy across your organization.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you struggling to implement data governance and compliance?",
       problem:
         "You need to comply with regulations like GDPR and CCPA, but you don't have a clear understanding of what data you have, where it is, and who has access to it. You are at risk of significant fines and reputational damage.",
@@ -31,7 +31,7 @@ const datahub: TechEntry = {
       kpi: "Achieve 100% visibility into your sensitive data and automate your compliance reporting.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you experiencing data quality issues that are impacting your business?",
       problem:
         "Your data is riddled with errors, inconsistencies, and duplicates. This leads to inaccurate reports, flawed analysis, and a lack of trust in your data. Your team is spending more time cleaning data than using it.",

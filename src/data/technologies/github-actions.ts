@@ -13,7 +13,7 @@ const githubActions: TechEntry = {
     "GitHub Actions is a powerful CI/CD platform integrated directly into your GitHub repository. Our expert engineers leverage GitHub Actions to create robust, automated workflows that build, test, and deploy your code with speed and reliability.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Slow, manual deployments are killing your team's velocity and introducing errors.",
       problem:
         "Your developers are bogged down by manual build and deployment processes, leading to context switching, long feedback loops, and a high risk of human error.",
@@ -22,7 +22,7 @@ const githubActions: TechEntry = {
       kpi: "Reduce deployment time from hours to minutes.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Inconsistent environments and failed deployments are eroding trust in your release process.",
       problem:
         "A lack of standardized pipelines means every deployment is a gamble. Inconsistencies between development, staging, and production lead to unexpected failures.",
@@ -31,7 +31,7 @@ const githubActions: TechEntry = {
       kpi: "Increase deployment success rate to over 99%.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Security and compliance checks are manual, slow, and often skipped under pressure.",
       problem:
         "Critical security scans, linting, and quality checks are not integrated into the development lifecycle, exposing your application to vulnerabilities and technical debt.",

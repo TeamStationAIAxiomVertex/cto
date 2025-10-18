@@ -13,7 +13,7 @@ const sops: TechEntry = {
     "SOPS (Secrets OPerationS) is an open-source editor for encrypted files that supports YAML, JSON, ENV, INI and BINARY formats and encrypts with AWS KMS, GCP KMS, Azure Key Vault, age, and PGP. Our security engineers use SOPS to encrypt secrets, enabling you to safely commit them to your Git repository.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you struggling to manage secrets for your applications?",
       problem:
         "Managing secrets (like API keys, database passwords, and certificates) is a major security challenge. Storing them in plaintext in your code or configuration files is a huge security risk, but managing them in a separate system can be complex and cumbersome.",
@@ -22,7 +22,7 @@ const sops: TechEntry = {
       kpi: "Store secrets in Git with confidence, knowing they are encrypted and secure.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is it difficult to share secrets securely with your team?",
       problem:
         "Sharing secrets with other developers and team members is often done through insecure channels like Slack, email, or text messages. This is a major security risk and makes it difficult to audit who has access to which secrets.",
@@ -31,7 +31,7 @@ const sops: TechEntry = {
       kpi: "Securely share secrets with your team and audit access with ease.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is your secrets management workflow incompatible with your GitOps pipeline?",
       problem:
         "If you are using GitOps tools like Argo CD or Flux, you need a way to manage secrets that is compatible with your declarative, Git-based workflow. Traditional secrets management tools can be difficult to integrate with GitOps pipelines.",

@@ -11,21 +11,21 @@ const rxjs: TechEntry = {
   intro: "RxJS is the definitive library for reactive programming in JavaScript, providing a powerful set of tools for managing asynchronous events and data streams. You need an engineer who can move beyond basic `subscribe()` calls to master the vast library of RxJS operators, architect complex data flows, and debug intricate observable chains. Our vetting process is designed to find true RxJS experts, assessing their ability to solve real-world problems involving race conditions, cancellation, and state management in a declarative, reactive style. By hiring an RxJS expert from us, you gain a developer who can tame the complexity of modern frontends, building applications that are more predictable, more resilient, and easier to reason about.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is your application riddled with memory leaks from unclosed subscriptions?",
       problem: "One of the most common and dangerous errors in RxJS is failing to unsubscribe from observables. This leads to silent memory leaks that accumulate over time, eventually crashing your application in production. It's a sign of a developer who doesn't understand the observable lifecycle.",
       solution: "We vet for engineers who have a deep, ingrained understanding of subscription management. They must demonstrate mastery of patterns like `takeUntil` or using async pipes in frameworks like Angular to ensure that every subscription is automatically cleaned up, eliminating memory leaks by design.",
       kpi: "Subscription Management & Memory Leak Prevention"
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is your code a complex mess of nested `subscribe()` calls?",
       problem: "The RxJS equivalent of 'callback hell' is 'subscription hell.' Inexperienced developers nest subscriptions inside each other, creating a tangled, unreadable, and impossible-to-debug chain of asynchronous logic that is prone to race conditions.",
       solution: "Our experts are masters of the RxJS operator pipeline. They are vetted on their ability to use higher-order mapping operators (`switchMap`, `mergeMap`, `concatMap`, `exhaustMap`) to flatten complex asynchronous chains into a single, declarative, and easy-to-read stream.",
       kpi: "Mastery of Higher-Order Mapping Operators"
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you struggling to manage complex, shared state with RxJS?",
       problem: "While RxJS provides the primitives, managing shared application state requires a clear architectural pattern. Without one, teams often build custom, buggy solutions that are difficult to maintain.",
       solution: "We look for engineers with experience in building robust state management solutions using RxJS. They are proficient in using `BehaviorSubject` for multicasting state and understand patterns for creating a centralized, observable store (similar to Redux) for managing global application state reactively.",

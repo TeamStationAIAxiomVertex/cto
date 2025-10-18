@@ -11,21 +11,21 @@ const kubernetes: TechEntry = {
     intro: "Kubernetes is the operating system of the cloud. Our Kubernetes experts are vetted for their deep understanding of container orchestration, from designing custom controllers to managing complex, multi-tenant clusters. They are the specialists who enable your teams to deploy and scale applications with confidence.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our Kubernetes clusters are unstable and constantly breaking.",
             problem: "Misconfigured control planes, improper resource allocation, and a lack of monitoring lead to cascading failures and application downtime.",
             solution: "We vet for mastery in **Kubernetes administration**. Our engineers implement robust monitoring, auto-scaling, and self-healing mechanisms to ensure your clusters are resilient and highly available.",
             kpi: "99.99% Cluster Uptime"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our containerized applications.",
             problem: "Default Kubernetes installations are not secure. Open network policies, insecure container images, and a lack of RBAC controls expose your applications to attack.",
             solution: "Our experts are tested on **Kubernetes security best practices**. They implement network policies, container security scanning, and least-privilege RBAC to secure your clusters from internal and external threats.",
             kpi: "Zero Critical Security Vulnerabilities"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our developers are struggling to use Kubernetes effectively.",
             problem: "A steep learning curve and complex YAML configurations make it difficult for developers to deploy and manage their applications on Kubernetes.",
             solution: "We vet for expertise in building **developer-friendly platforms** on top of Kubernetes. Our engineers use tools like Helm and custom operators to simplify the developer experience and accelerate adoption.",

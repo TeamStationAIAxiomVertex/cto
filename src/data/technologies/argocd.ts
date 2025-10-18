@@ -10,21 +10,21 @@ const argocd: TechEntry = {
   intro: "Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. You need an engineer who can leverage Argo CD to make Git the single source of truth for your application deployments. Our vetting process identifies developers who are experts in the GitOps workflow, from managing application manifests in Git to automating the sync process with the Kubernetes cluster. By hiring an Argo CD expert, you get a developer who can build a modern, automated, and observable deployment system that is a joy to use, and a joy to maintain.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is your deployment process manual, imperative, and impossible to audit?",
       problem: "Manually applying kubectl commands or using imperative CI scripts to deploy applications leads to configuration drift, where the live state of your cluster no longer matches what's in version control. This makes rollbacks risky and auditing impossible.",
       solution: "We vet for experts in <strong>GitOps and declarative deployments</strong>. Our engineers use Argo CD to continuously monitor a Git repository and automatically sync the desired state to your Kubernetes cluster, providing a complete, auditable history of every change.",
       kpi: "Auditable, Declarative Kubernetes Deployments"
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you struggling with complex rollouts and rollbacks?",
       problem: "Managing deployments for complex applications with many microservices is difficult. A failure in one service can cascade, and rolling back to a previous stable state is often a complex, manual process.",
       solution: "Our engineers are masters of <strong>Argo CD's sync and rollback strategies</strong>. They are vetted on their ability to configure automated sync policies, health checks, and use one-click rollbacks to instantly revert to any previous version, ensuring a safe and reliable deployment process.",
       kpi: "Automated Sync and One-Click Rollbacks"
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is it difficult to visualize the state of your applications across different clusters?",
       problem: "Without a centralized dashboard, it's hard to get a clear, real-time view of what's running in your clusters, whether applications are in sync with Git, and the health of each component.",
       solution: "We look for engineers proficient with the <strong>Argo CD user interface</strong>. They are vetted on their ability to use the UI to visualize application components, identify sync issues, and manage the entire application lifecycle, providing a single pane of glass for your Kubernetes deployments.",

@@ -18,14 +18,14 @@ const grpc: TechEntry = {
             kpi: "50% Reduction in API Latency"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest API technologies.",
             problem: "The API landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as GraphQL and WebSockets.",
             solution: "Our experts are tested on **the latest API technologies**. They can help you take advantage of the latest features, so you can build the next generation of APIs.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our APIs.",
             problem: "API security is a top priority for every business. It's difficult to secure your APIs, especially when you're dealing with user authentication and authorization.",
             solution: "We vet for expertise in **gRPC's security features**. Our engineers use the latest security best practices to protect your APIs from attack.",

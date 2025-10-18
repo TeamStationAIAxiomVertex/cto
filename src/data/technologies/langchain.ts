@@ -13,7 +13,7 @@ const langchain: TechEntry = {
     'LangChain is the definitive framework for **composing and orchestrating LLM interactions**. It provides the critical scaffolding to move beyond simple prompts and build complex, data-aware, and tool-using applications. You need an engineer who can architect with Chains and Agents, not just write scripts. Our vetting identifies experts who use LangChain to structure the chaos of LLM development, creating modular, maintainable, and powerful generative AI applications.',
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'LLM "Spaghetti Code" is Unmaintainable',
       problem:
         'Your proof-of-concept is a tangled mess of prompt templates, API calls, and custom parsing logic. It’s impossible to debug, extend, or swap out the underlying model without a complete rewrite.',
@@ -22,7 +22,7 @@ const langchain: TechEntry = {
       kpi: 'Reduce the complexity of LLM application code by 70% and improve maintainability.',
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Your LLM is a Brain in a Jar, Unable to Act',
       problem:
         'Your LLM can talk, but it can’t *do* anything. It has no access to your internal APIs, databases, or external tools, severely limiting its usefulness for any real-world business process.',
@@ -31,7 +31,7 @@ const langchain: TechEntry = {
       kpi: 'Automate complex business workflows by giving LLMs the ability to use your existing tools.',
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Debugging and Tracing is a Black Box',
       problem:
         'When your LLM application gives a bad answer, you have no idea why. You can’t see the intermediate steps, the exact prompt that was sent, or which tool was used, making it impossible to debug and improve.',

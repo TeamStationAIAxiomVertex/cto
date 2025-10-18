@@ -11,21 +11,21 @@ const elasticsearch: TechEntry = {
     intro: "Elasticsearch is a powerful and versatile search and analytics engine. Our Elasticsearch experts are vetted for their deep understanding of Elasticsearch's core principles, from its powerful query DSL to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a secure, and reliable search and analytics solution.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our search is slow and inaccurate.",
             problem: "Poorly designed search queries are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **Elasticsearch's powerful query DSL**. Our engineers can help you build a fast, and reliable search and analytics solution.",
             kpi: "50% Reduction in Search Latency"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest search and analytics technologies.",
             problem: "The search and analytics landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as OpenSearch and Solr.",
             solution: "Our experts are tested on **the latest search and analytics technologies**. They can help you take advantage of the latest features, so you can build the next generation of search and analytics solutions.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our data.",
             problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Elasticsearch's security features**. Our engineers use the latest security best practices to protect your data from attack.",

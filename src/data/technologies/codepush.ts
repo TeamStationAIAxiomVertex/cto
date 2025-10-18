@@ -13,7 +13,7 @@ const codepush: TechEntry = {
     "CodePush is a cloud service that enables developers to deploy mobile app updates directly to their users' devices. Our mobile engineers use CodePush for React Native and Cordova apps to instantly push updates, fix bugs, and add new features without having to go through the app store review process.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is the app store review process slowing down your development cycle?",
       problem:
         "Every time you want to release a small bug fix or a minor feature, you have to submit a new version of your app to the app store and wait for it to be reviewed. This can take days or even weeks, slowing down your development velocity and delaying critical updates.",
@@ -22,7 +22,7 @@ const codepush: TechEntry = {
       kpi: "Ship 10x more updates and reduce the time to fix critical bugs from days to hours.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Are you struggling to get your users to adopt the latest version of your app?",
       problem:
         "Even after you release a new version of your app, it can take a long time for users to update. This can lead to a fragmented user base, with many users running outdated and potentially buggy versions of your app.",
@@ -31,7 +31,7 @@ const codepush: TechEntry = {
       kpi: "Achieve a 95% adoption rate for new updates within 24 hours.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Is it difficult to roll back a bad update?",
       problem:
         "If you release a new version of your app with a critical bug, it can be difficult to roll it back. You have to submit a new version to the app store and wait for it to be reviewed, during which time your users are stuck with a broken app.",

@@ -13,7 +13,7 @@ const fastAPI: TechEntry = {
     "FastAPI is a modern, high-performance web framework for building APIs with Python 3.7+ based on standard Python type hints. Our backend specialists leverage FastAPI to build robust, scalable, and incredibly fast API services.",
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Your current Python backend (likely Flask or Django) is struggling to handle the required load and is becoming a performance bottleneck.",
       problem:
         "Traditional synchronous Python frameworks can't handle high concurrency. Your API slows down under pressure, leading to a poor user experience and increased infrastructure costs.",
@@ -22,7 +22,7 @@ const fastAPI: TechEntry = {
       kpi: "Achieve a 10x increase in requests per second compared to a traditional Python framework.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Your API documentation is always out of date, making it difficult for frontend developers and external partners to integrate with your services.",
       problem:
         "Manually writing and maintaining API documentation is a tedious and error-prone process. It creates a disconnect between the API's actual behavior and what's documented.",
@@ -31,7 +31,7 @@ const fastAPI: TechEntry = {
       kpi: "Reduce time spent on API documentation by 90%.",
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: "Data validation is a constant source of bugs and security vulnerabilities.",
       problem:
         "Without robust data validation, your API is vulnerable to a wide range of attacks and can easily be brought down by malformed requests.",

@@ -11,21 +11,21 @@ const aws: TechEntry = {
     intro: "AWS mastery goes far beyond launching an EC2 instance. Our vetting process identifies engineers who can architect secure, resilient, and cost-optimized infrastructure using the full AWS suite (VPC, S3, RDS, Lambda, EKS). You get a developer who treats infrastructure as code and ensures cloud spend provides maximum business value.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our monthly AWS bill is skyrocketing and unpredictable.",
             problem: "Lack of FinOps discipline and over-provisioning of resources (like EC2 or RDS) leads to unnecessary cloud waste. Organizations often fail to leverage reserved instances, spot instances, or serverless elasticity.",
             solution: "Our experts focus on **FinOps**. They are vetted to optimize infrastructure for cost using techniques like rightsizing, automated resource termination, serverless adoption (Lambda), and detailed cost allocation tagging.",
             kpi: "15-25% Reduction in Monthly Cloud Spend (via FinOps)"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Our infrastructure is manually managed, slow, and error-prone.",
             problem: "Relying on the AWS console or manual scripts for provisioning leads to configuration drift, security vulnerabilities, and slow disaster recovery times.",
             solution: "We vet for mastery in **Infrastructure as Code (IaC)** using Terraform or CloudFormation. Our engineers build fully self-healing, codified environments that are version-controlled, auditable, and deployable across multiple regions.",
             kpi: "99% Reduction in Configuration Drift"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We have constant security vulnerabilities and audit failures.",
             problem: "Misconfigured IAM policies, public S3 buckets, and non-compliant VPC settings are common. Lack of security auditing and monitoring exposes the business to massive risk.",
             solution: "Our experts focus on **DevSecOps** and AWS security services (GuardDuty, Security Hub). They are tested on implementing Zero Trust networking, least-privilege IAM policies, and VPC segmentation to create highly secure, auditable environments.",

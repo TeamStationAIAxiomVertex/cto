@@ -11,21 +11,21 @@ const browserstack: TechEntry = {
     intro: "BrowserStack provides instant access to a massive cloud of real mobile and desktop browsers for testing. You need an engineer who can leverage this platform to eliminate the 'works on my machine' problem and ensure a consistent user experience for everyone. Our vetting process identifies developers who are experts in integrating automated test suites (like Playwright or Cypress) with BrowserStack to run tests in parallel across hundreds of browser combinations, dramatically increasing test coverage and reducing ship times.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Are you manually testing on a handful of devices and hoping for the best?",
             problem: "Manual testing is slow, expensive, and provides very limited coverage of the vast landscape of browsers, devices, and operating systems your users have. This leads to production bugs that only appear on specific devices, causing a poor user experience and damaging your brand.",
             solution: "We vet for experts in <strong>large-scale parallel test execution</strong>. Our engineers use BrowserStack to run your entire test suite across a wide matrix of browsers and devices simultaneously, providing comprehensive test coverage in a fraction of the time it would take to do manually.",
             kpi: "Parallel Test Execution and Increased Test Coverage"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Is debugging flaky, environment-specific tests a nightmare?",
             problem: "When a test fails on a specific browser in CI, developers often have no way to inspect the failure, leading to a slow, frustrating debugging process of trial and error. This makes the test suite unreliable and untrusted.",
             solution: "Our engineers are masters of <strong>remote test debugging</strong>. They are vetted on their ability to use BrowserStack's debugging tools—including video recordings, console logs, and network logs—to quickly identify and fix the root cause of flaky tests, ensuring your CI pipeline is fast and reliable.",
             kpi: "Faster Debugging with Video and Log Artifacts"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Are you struggling to integrate automated testing into your CI/CD pipeline?",
             problem: "Integrating a local test suite with a cloud-based testing grid can be complex. Incorrect configuration can lead to authentication issues, slow test runs, and a CI/CD pipeline that is more of a hindrance than a help.",
             solution: "We look for engineers proficient in <strong>CI/CD integration</strong>. They are vetted on their ability to securely configure BrowserStack credentials and integrate it seamlessly with tools like GitHub Actions, Jenkins, or CircleCI, enabling a fully automated testing and release process.",

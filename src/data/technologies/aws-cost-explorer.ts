@@ -11,21 +11,21 @@ const awsCostExplorer: TechEntry = {
     intro: "AWS Cost Explorer is a critical tool for understanding and managing your AWS costs. You need an engineer who is not just an AWS user, but a true FinOps expert who can dive deep into your usage data, identify cost-saving opportunities, and build a culture of cost accountability. Our vetting process identifies developers who are experts in the AWS cost management suite—and can architect a FinOps practice that is as insightful, efficient, and automated as it is scalable. By hiring an AWS Cost Explorer expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Is your AWS bill a confusing, ever-growing surprise?",
             problem: "Without a clear understanding of your AWS costs, it's impossible to know where your money is going. This leads to a lot of wasted spend and a cloud bill that is out of control.",
             solution: "We vet for experts in **AWS Cost Explorer and FinOps**. Our engineers are proficient in using Cost Explorer to build a clear, actionable view of your AWS costs. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
             kpi: "A Clear, Actionable View of Your AWS Costs",
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Is your application not taking full advantage of the cloud?",
             problem: "Many applications are not built to be cloud-native. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
             solution: "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like AWS, Azure, and Google Cloud to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
             kpi: "A Modern, Serverless, and Container-Based Architecture",
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "Is your team not leveraging the full power of the FinOps ecosystem?",
             problem: "The FinOps ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
             solution: "We look for engineers proficient with **the FinOps ecosystem and the modern FinOps stack**. They are vetted on their ability to build applications that are powered by the best of the FinOps ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",

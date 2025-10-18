@@ -18,14 +18,14 @@ const jest: TechEntry = {
             kpi: "50% Reduction in Test Execution Time"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest testing technologies.",
             problem: "The testing landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as Vitest and Playwright.",
             solution: "Our experts are tested on **the latest testing technologies**. They can help you take advantage of the latest features, so you can build the next generation of JavaScript tests.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our tests.",
             problem: "Test security is a top priority for every business. It's difficult to secure your tests, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Jest's security features**. Our engineers use the latest security best practices to protect your tests from attack.",

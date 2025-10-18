@@ -13,7 +13,7 @@ const vllm: TechEntry = {
     'vLLM is a specialized engine for one of the hardest problems in generative AI: **fast, cost-effective LLM inference**. Standard serving solutions are notoriously inefficient, but you need an engineer who can solve this bottleneck. Our vetting identifies experts in low-level LLM optimization who use vLLM’s core innovation, PagedAttention, to maximize GPU utilization. They don’t just deploy models; they build highly-tuned serving engines that deliver higher throughput at a fraction of the cost.',
   pains: [
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Prohibitively High Cost of LLM Inference',
       problem:
         'Your LLM application is bleeding money. The cost of the GPU servers required to handle your user load is unsustainable, and your cost-per-token makes the entire business model ROI-negative.',
@@ -22,7 +22,7 @@ const vllm: TechEntry = {
       kpi: 'Increase inference throughput by up to 24x, delivering a >90% reduction in cost-per-token.',
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Slow, Unresponsive User Experience',
       problem:
         'Your generative AI application is too slow for real-time interaction. High latency between a user’s prompt and the model’s response creates a frustrating, laggy experience that drives users away.',
@@ -31,7 +31,7 @@ const vllm: TechEntry = {
       kpi: 'Reduce time-to-first-token latency by 50% or more.',
     },
     {
-      iconName: "\1",
+      iconName: "AlertTriangle",
       pain: 'Wasted, Underutilized GPU Resources',
       problem:
         'Your expensive GPU fleet is sitting idle most of the time. Standard batching methods are inefficient, leaving valuable compute resources unused while user requests queue up, creating a vicious cycle of high cost and poor performance.',

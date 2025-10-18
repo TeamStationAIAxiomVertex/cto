@@ -18,14 +18,14 @@ const microservices: TechEntry = {
             kpi: "90% Code Reusability"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest distributed systems technologies.",
             problem: "The distributed systems landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as serverless and service mesh.",
             solution: "Our experts are tested on **the latest distributed systems technologies**. They can help you take advantage of the latest features, so you can build the next generation of distributed systems.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            iconName: "\1",
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our data.",
             problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Microservices' security features**. Our engineers use the latest security best practices to protect your data from attack.",
