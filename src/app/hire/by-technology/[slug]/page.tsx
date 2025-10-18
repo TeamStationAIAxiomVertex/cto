@@ -1,6 +1,6 @@
 
 import { notFound } from 'next/navigation';
-import { allTech, getAllTechSlugs, TechEntry } from '@/lib/tech';
+import { allTech, getAllTechSlugs } from '@/lib/tech'; // Import the new data-only access functions
 import { ProgrammaticContent } from '@/components/ProgrammaticContent';
 import { Metadata } from 'next';
 import React from 'react';
@@ -11,13 +11,11 @@ type Props = {
   };
 };
 
-// This is the definitive data-fetching and metadata generation function.
+// **CRITICAL: Ensure this export is visible and correct**
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug;
-  // Defensively access the tech object.
-  const tech = (allTech as Record<string, TechEntry>)[slug];
+  const tech = allTech[slug]; // Access the tech data
 
-  // If the tech entry doesn't exist or isn't ready, return a 404-style metadata.
   if (!tech || !tech.is_ready) {
     return {
       title: 'Technology Not Found',
@@ -31,7 +29,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// This function generates all the static paths for SSG.
+// **CRITICAL FIX: Explicitly export the generateStaticParams function**
+// This function MUST be correctly exported for SSG to occur.
 export async function generateStaticParams() {
   const slugs = getAllTechSlugs();
   return slugs.map((slug) => ({
@@ -39,18 +38,16 @@ export async function generateStaticParams() {
   }));
 }
 
-// This is the main page component.
+// Main Page Component
 export default function TechPage({ params }: Props) {
   const slug = params.slug;
-  const tech = (allTech as Record<string, TechEntry>)[slug];
+  const tech = allTech[slug];
 
-  // CRITICAL FIX: Add a defensive check.
-  // This ensures that if the data is missing or malformed, we immediately 404.
-  // The `is_ready` flag is the final gate before rendering.
+  // Defensive check (already added, but vital)
   if (!tech || !tech.is_ready) {
     notFound();
   }
 
-  // The ProgrammaticContent component is now guaranteed to receive a valid tech object.
+  // The ProgrammaticContent component will handle rendering the data object
   return <ProgrammaticContent tech={tech} />;
 }
