@@ -1,3 +1,4 @@
+
 // This file is auto-generated. Do not edit manually.
 import recoil from "./recoil";
 import vuex from "./vuex";
@@ -29,8 +30,11 @@ import cloudformation from "./cloudformation";
 import cloudzero from "./cloudzero";
 import codepush from "./codepush";
 import codeql from "./codeql";
+import cpp from "./cpp";
 import crowdstrike from "./crowdstrike";
+import css from "./css";
 import cypress from "./cypress";
+import dart from "./dart";
 import dataEngineering from "./data-engineering";
 import dataGovernance from "./data-governance";
 import dataScience from "./data-science";
@@ -53,7 +57,7 @@ import etlElt from "./etl-elt";
 import eventSourcing from "./event-sourcing";
 import express from "./express";
 import externalSecrets from "./external-secrets";
-import fastAPI from "./fastAPI";
+import fastapi from "./fastapi";
 import fastlane from "./fastlane";
 import feast from "./feast";
 import figma from "./figma";
@@ -65,7 +69,7 @@ import gatsby from "./gatsby";
 import githubActions from "./github-actions";
 import gitlab from "./gitlab";
 import gitops from "./gitops";
-import go from "./go";
+import golang from "./golang";
 import googleCloud from "./google-cloud";
 import googleWorkspace from "./google-workspace";
 import grafana from "./grafana";
@@ -222,7 +226,6 @@ import websockets from "./WebSockets";
 import generativeAi from "./generative-ai";
 import llm from "./llm";
 
-
 const allTech: AllTech = {
   recoil: recoil,
   vuex: vuex,
@@ -254,8 +257,10 @@ const allTech: AllTech = {
   cloudzero: cloudzero,
   codepush: codepush,
   codeql: codeql,
+  cpp: cpp,
   crowdstrike: crowdstrike,
   cypress: cypress,
+  dart: dart,
   "data-engineering": dataEngineering,
   "data-governance": dataGovernance,
   "data-science": dataScience,
@@ -278,7 +283,7 @@ const allTech: AllTech = {
   "event-sourcing": eventSourcing,
   express: express,
   "external-secrets": externalSecrets,
-  fastAPI: fastAPI,
+  fastapi: fastapi,
   fastlane: fastlane,
   feast: feast,
   figma: figma,
@@ -290,7 +295,7 @@ const allTech: AllTech = {
   "github-actions": githubActions,
   gitlab: gitlab,
   gitops: gitops,
-  go: go,
+  golang: golang,
   "google-cloud": googleCloud,
   "google-workspace": googleWorkspace,
   grafana: grafana,
