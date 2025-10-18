@@ -11,21 +11,21 @@ const pytest: TechEntry = {
     intro: "PyTest is the premier testing framework for Python, beloved for its simplicity, powerful features, and rich plugin ecosystem. You need an engineer who can leverage PyTest to build a comprehensive and reliable testing strategy, from simple unit tests to complex integration tests. Our vetting process identifies developers who are experts in idiomatic PyTest, including its powerful fixture model, parametrization, and hooks. By hiring a PyTest expert from us, you get a developer who can dramatically improve your code quality, reduce regressions, and increase your team's confidence to ship faster.",
     pains: [
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your test suite slow, flaky, and difficult to maintain?",
             problem: "A poorly architected test suite built with less powerful frameworks often results in slow, unreliable (flaky) tests and a lot of boilerplate code. This makes testing a chore that developers avoid, leading to a decline in code quality and an increase in production bugs.",
             solution: "We vet for experts in **PyTest's fixture model**. Our engineers are proficient in using fixtures to create modular, reusable, and easily maintainable test setups. They understand how to use fixture scopes to optimize test execution speed, resulting in a fast and reliable test suite that developers actually enjoy using.",
             kpi: "Efficient and Maintainable Test Suites with Fixtures"
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Are you unable to test complex application scenarios?",
             problem: "Testing complex scenarios that involve multiple components, external services, or different input combinations can be difficult with basic testing tools. This leads to gaps in test coverage and a higher risk of bugs in critical workflows.",
             solution: "Our engineers are masters of **PyTest's advanced features**. They are vetted on their ability to use parametrization to test a wide range of inputs, and to use mocking and plugins to isolate components and test complex interactions. This ensures that your application is thoroughly tested, even in the most complex scenarios.",
             kpi: "Comprehensive Test Coverage with Parametrization and Mocking"
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your testing process disconnected from your CI/CD pipeline?",
             problem: "If your tests are not integrated into your CI/CD pipeline, they are not providing their full value. This manual step allows bugs to slip through and delays feedback to developers, slowing down the entire development process.",
             solution: "We look for engineers proficient in **integrating PyTest with CI/CD**. They are vetted on their ability to configure tools like GitHub Actions or Jenkins to run PyTest automatically on every commit, providing fast feedback and ensuring that no broken code ever makes it to production.",

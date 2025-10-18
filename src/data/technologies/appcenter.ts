@@ -13,7 +13,7 @@ const appcenter: TechEntry = {
     "Microsoft App Center is an integrated platform for building, testing, distributing, and monitoring mobile applications. Our mobile engineers use App Center to create a complete and automated CI/CD pipeline for iOS, Android, React Native, and Flutter apps, enabling faster releases and higher quality applications.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is your mobile build, test, and release process slow and manual?",
       problem:
         "Manually building, testing, and distributing your mobile app for every release is time-consuming, error-prone, and a major bottleneck. Your team spends more time on operations than on building features.",
@@ -22,7 +22,7 @@ const appcenter: TechEntry = {
       kpi: "Reduce manual release efforts by 90% and ship updates 5x faster.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Are you flying blind with no insight into app crashes or user behavior?",
       problem:
         "Once your app is in the wild, you have no idea if it's crashing, for which users, or on which devices. You can't fix bugs you can't see, and users are churning due to a poor experience.",
@@ -31,7 +31,7 @@ const appcenter: TechEntry = {
       kpi: "Identify and fix 95% of crashes before users report them, and increase user retention by 20%.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is managing beta testing and user feedback a chaotic process?",
       problem:
         "Distributing beta versions of your app to internal teams and external testers is complicated. Collecting feedback via email or spreadsheets is inefficient and makes it hard to track issues.",

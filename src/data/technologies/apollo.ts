@@ -10,21 +10,21 @@ const apollo: TechEntry = {
     intro: "You're building a modern frontend with GraphQL, and you need a developer who can harness the power of the Apollo ecosystem. You're here because you need an expert who can design a scalable GraphQL schema, implement efficient caching strategies, and manage complex local state. This isn't about making a few simple queries; it's about building a performant and resilient application that can handle real-time data and a complex user interface. Our vetting process is designed to find these experts. We look for a deep understanding of the Apollo platform, not just a superficial knowledge of the syntax. By hiring an Apollo expert from us, you are investing in the long-term health and stability of your frontend, ensuring that it can evolve with your business without being crushed by technical debt.",
     pains: [
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your data fetching slow, inefficient, and causing a poor user experience?",
             problem: "Over-fetching or under-fetching data with traditional REST APIs is a common problem that leads to slow load times and a clunky user experience. It's a sign of a developer who hasn't embraced the power of GraphQL.",
             solution: "We find engineers who are experts in designing and consuming GraphQL APIs. They can write efficient queries that fetch only the data you need, and they can use Apollo's powerful caching capabilities to avoid unnecessary network requests. They can build a frontend that is fast, responsive, and a joy to use.",
             kpi: "Expertise in designing and consuming GraphQL APIs"
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your client-side state a chaotic mess of different libraries and patterns?",
             problem: "Managing client-side state is one of the biggest challenges in modern frontend development. Without a clear strategy, your state can quickly become a tangled mess of different libraries and patterns, making your application hard to reason about and debug.",
             solution: "Our engineers are experts in managing client-side state with Apollo. We vet for a deep understanding of how to use Apollo Client as a single source of truth for all of your data, both remote and local. They can help you build a clean, predictable, and maintainable state management solution that will make your application a pleasure to work on.",
             kpi: "Proficiency in managing client-side state with Apollo Client"
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your application struggling to handle real-time data and a complex UI?",
             problem: "Building a real-time application with a complex UI is a challenge. You need to manage a lot of moving parts, and it's easy to end up with a slow, buggy, and unreliable application. This is a common problem for developers who are new to the world of real-time data.",
             solution: "We find engineers who are experts in building real-time applications with Apollo. They are skilled in using Apollo's subscriptions to build a resilient and scalable real-time data layer. They can help you build a fast, reliable, and engaging application that your users will love.",

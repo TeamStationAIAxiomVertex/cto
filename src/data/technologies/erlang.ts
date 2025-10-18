@@ -13,7 +13,7 @@ const erlang: TechEntry = {
     "Erlang is the foundation of systems that demand 99.999% uptime—used in telecom, financial trading, and message brokers (e.g., RabbitMQ). Its core strength lies in its ability to build massively concurrent, distributed, and **fault-tolerant** applications via the Actor Model and the **OTP (Open Telecom Platform) framework**. You need an engineer who can leverage Erlang's philosophy of 'Let it Crash' to build self-healing, soft real-time systems. Our vetting process is designed to find experts in concurrency and failure management, assessing their deep knowledge of Actors, process linking, and OTP behaviors. By hiring an Erlang expert from us, you get a developer who can deliver a backend system that is virtually indestructible and can handle millions of concurrent connections with ease.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is your system failing under load or suffering from unexpected crashes?",
       problem:
         "Traditional systems suffer from hard crashes where a single failure takes down the entire application. Inexperienced developers fail to implement proper isolation and failure recovery mechanisms, leading to catastrophic system downtime.",
@@ -22,7 +22,7 @@ const erlang: TechEntry = {
       kpi: "OTP Supervision and Fault-Tolerant Architecture",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Are you struggling to manage massive concurrency and soft real-time needs?",
       problem:
         "Scaling to handle millions of simultaneous users or connections is difficult with traditional languages. Inexperienced Erlang developers fail to utilize lightweight processes effectively, limiting the system's ability to scale on a single machine.",
@@ -31,7 +31,7 @@ const erlang: TechEntry = {
       kpi: "Massive Concurrency via Lightweight Processes",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is your codebase disorganized and difficult to extend?",
       problem:
         "Erlang's unique syntax and concurrent nature can lead to an opaque and disorganized codebase if developers don't adhere to OTP's established structure. This makes onboarding new team members difficult and slows down maintenance.",

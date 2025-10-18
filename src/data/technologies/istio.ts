@@ -18,14 +18,14 @@ const istio: TechEntry = {
             kpi: "90% Application Reusability"
         },
         {
-            icon: Zap,
+            iconName: "\1",
             pain: "We're struggling to keep up with the latest service mesh technologies.",
             problem: "The service mesh landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as Linkerd and Consul.",
             solution: "Our experts are tested on **the latest service mesh technologies**. They can help you take advantage of the latest features, so you can build the next generation of service meshes.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Shield,
+            iconName: "\1",
             pain: "We're worried about the security of our data.",
             problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Istio's security features**. Our engineers use the latest security best practices to protect your data from attack.",

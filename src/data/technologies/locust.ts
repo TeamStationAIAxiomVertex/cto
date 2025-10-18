@@ -18,14 +18,14 @@ const locust: TechEntry = {
             kpi: "50% Reduction in Test Execution Time"
         },
         {
-            icon: Zap,
+            iconName: "\1",
             pain: "We're struggling to keep up with the latest load testing technologies.",
             problem: "The load testing landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as k6 and Gatling.",
             solution: "Our experts are tested on **the latest load testing technologies**. They can help you take advantage of the latest features, so you can build the next generation of load testing solutions.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Code,
+            iconName: "\1",
             pain: "We're worried about the security of our load tests.",
             problem: "Load test security is a top priority for every business. It's difficult to secure your load tests, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Locust's security features**. Our engineers use the latest security best practices to protect your load tests from attack.",

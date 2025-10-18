@@ -11,21 +11,21 @@ const salesforce: TechEntry = {
     intro: "Salesforce is the world's #1 CRM platform. You need a developer who can customize and extend Salesforce to meet the unique needs of your business. Our vetting process identifies developers who are experts in the Salesforce platform, from Apex and Visualforce to Lightning Web Components and the AppExchange. By hiring a Salesforce expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
     pains: [
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your Salesforce org a mess of custom objects and legacy code?",
             problem: "A disorganized Salesforce org with a lot of legacy code can be difficult to maintain and extend. This leads to a poor user experience for your sales and marketing teams and a lot of wasted time and money.",
             solution: "We vet for experts in **Salesforce architecture and development**. Our engineers are proficient in using modern Salesforce development practices to build a clean, maintainable, and scalable Salesforce org. This results in a more productive sales and marketing team and a lower total cost of ownership.",
             kpi: "A Clean, Maintainable, and Scalable Salesforce Org"
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Are you struggling to integrate Salesforce with your other systems?",
             problem: "Integrating Salesforce with your other systems can be a complex and error-prone process. Without a clear strategy, you can end up with a lot of data duplication and inconsistencies, making it difficult to get a single source of truth for your customer data.",
             solution: "Our engineers are masters of **Salesforce integration**. They are vetted on their ability to use Salesforce's APIs and integration tools to build a seamless, reliable, and scalable integration with your other systems. This results in a single source of truth for your customer data and a more efficient sales and marketing process.",
             kpi: "A Seamless, Reliable, and Scalable Integration"
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your team not leveraging the full power of the Salesforce ecosystem?",
             problem: "The Salesforce ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a lot of reinvented wheels and a user experience that is not as rich as it could be.",
             solution: "We look for engineers proficient with **the Salesforce ecosystem and the AppExchange**. They are vetted on their ability to build applications that are powered by the best of the Salesforce ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",

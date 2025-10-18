@@ -11,21 +11,21 @@ const haskell: TechEntry = {
     intro: "**Haskell** is a purely functional programming language known for its advanced type system, which catches nearly all runtime errors at compile time, leading to exceptionally reliable and safe code. It is the gold standard for high-assurance, mission-critical applications in finance and defense. You need an expert who has mastered its foundational concepts—laziness, immutability, and managing side effects via **Monads** (IO, Maybe, Either). Our vetting process is designed to find true FP experts, assessing their mastery of the most critical Haskell concepts: **Monads** (especially the IO Monad), type classes, and creating domain-specific languages (DSLs). By hiring a Haskell expert from us, you drastically reduce testing overhead and gain a foundation of mathematical certainty for your most critical business logic.",
     pains: [
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your complex business logic riddled with subtle, hard-to-find bugs?",
             problem: "Imperative, stateful code allows business rules to be violated by unexpected side effects, leading to runtime data inconsistencies and logical errors.",
             solution: "Our Haskell experts use **pure functions** and **immutable data structures** to model all business logic. This guarantees that a function's output depends only on its input, making the code highly reliable, easily testable, and mathematically correct, eliminating entire classes of bugs.",
             kpi: "Reduction in logical and runtime business logic errors"
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Are you struggling to manage side effects (I/O, database) in a predictable way?",
             problem: "Uncontrolled side effects (like database writes or network calls) scattered throughout a codebase make it difficult to trace data flow, leading to unexpected behavior and complexity.",
             solution: "We vet for mastery of **Monads** (like the IO Monad) and functional effect systems. Our candidates demonstrate the ability to explicitly and predictably manage all side effects, ensuring the core business logic remains pure, testable, and completely separate from the external world.",
             kpi: "Functional purity score and side effect traceability"
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is designing high-level, reusable abstractions proving too complex in your current language?",
             problem: "Modeling complex patterns like resource acquisition, dependency injection, or context passing often results in boilerplate and rigid structures.",
             solution: "Our engineers are proficient in **Type Classes and Generics**. They design highly abstract, reusable code that cleanly separates behavior from implementation, enabling elegant and concise solutions to complex architectural challenges.",

@@ -13,7 +13,7 @@ const jamf: TechEntry = {
     "Jamf is the standard for Apple device management, providing a comprehensive solution for managing macOS, iOS, iPadOS, and tvOS devices. Our IT experts use Jamf to automate the entire lifecycle of your Apple fleet, from zero-touch deployment to ongoing security and software management.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is manually setting up and managing employee Macs and iPhones wasting your IT team's time?",
       problem:
         "Your IT team spends hours manually configuring each new Apple device. This process is slow, inconsistent, and doesn't scale as your company grows. Employees have to wait to get the tools they need, and IT is bogged down in repetitive tasks.",
@@ -22,7 +22,7 @@ const jamf: TechEntry = {
       kpi: "Reduce new device setup time from 4 hours to 15 minutes and enable 100% remote, zero-touch deployment.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Are you concerned about the security of your company's Apple devices?",
       problem:
         "You have no visibility or control over the security posture of your employee's Macs and iPhones. You can't enforce passcodes, encrypt drives, or remotely wipe a lost or stolen device, leaving your company data vulnerable.",
@@ -31,7 +31,7 @@ const jamf: TechEntry = {
       kpi: "Achieve 100% compliance with security policies like encryption and passcode requirements.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is distributing and updating software on your Apple devices a chaotic and manual process?",
       problem:
         "You need to deploy new software and keep existing apps up-to-date across your entire fleet. Doing this manually is a nightmare, leading to inconsistent versions, security vulnerabilities, and a poor user experience.",

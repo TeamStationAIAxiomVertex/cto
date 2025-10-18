@@ -13,7 +13,7 @@ const kafka: TechEntry = {
     'Apache Kafka is not a message queue; it’s the **central nervous system for a real-time enterprise**. It’s the durable, distributed log that decouples your systems and enables event-driven architecture. You need an engineer who can architect for massive scale, guarantee data durability, and manage a mission-critical platform. Our vetting identifies experts who build resilient Kafka clusters that can process millions of events per second, transforming your business from batch-oriented to event-driven.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: 'Brittle "Spaghetti" Point-to-Point Integrations',
       problem:
         'Your architecture is a tangled nightmare. Every new service has to build a custom integration to every other service it needs data from, creating an N-squared mess that is impossible to maintain, scale, or debug.',
@@ -22,7 +22,7 @@ const kafka: TechEntry = {
       kpi: 'Reduce the cost and time of integrating new services by 90%.',
     },
     {
-      icon: Workflow,
+      iconName: "\1",
       pain: 'Operating on Stale, Batch-Processed Data',
       problem:
         'Your business operates in the past. Critical decisions are based on data that is hours or days old because your entire infrastructure is built on slow, nightly batch jobs. You are blind to what is happening *right now*.',
@@ -31,7 +31,7 @@ const kafka: TechEntry = {
       kpi: 'Decrease data latency for critical decisions from hours to sub-second.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "\1",
       pain: 'Fear of Data Loss and Unreliable Messaging',
       problem:
         'You are using a traditional, non-durable message broker for critical events. If a consumer is down, the message is lost forever. You cannot guarantee delivery, which is unacceptable for financial transactions or critical business events.',

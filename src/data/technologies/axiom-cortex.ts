@@ -11,21 +11,21 @@ const axiomCortex: TechEntry = {
     intro: "Axiom Cortex is our proprietary AI-powered vetting platform. Our Axiom Cortex experts are vetted for their deep understanding of Axiom Cortex's core principles, from its powerful cognitive assessments to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of AI-powered applications.",
     pains: [
         {
-            icon: BrainCircuit,
+            iconName: "\1",
             pain: "We're struggling to hire the right people.",
             problem: "Traditional hiring processes are slow, biased, and ineffective. They don't give you a true picture of a candidate's abilities.",
             solution: "We vet for mastery in **Axiom Cortex's powerful cognitive assessments**. Our engineers can help you build a hiring process that is fast, fair, and effective.",
             kpi: "90% Reduction in Time to Hire"
         },
         {
-            icon: Bot,
+            iconName: "\1",
             pain: "We're not sure how to build a production-ready AI-powered application.",
             problem: "Building a production-ready AI-powered application is not as simple as just calling an API. It requires careful consideration of scalability, reliability, and cost.",
             solution: "Our experts are tested on **building scalable, production-ready applications**. They can help you design and build a system that is reliable, scalable, and cost-effective.",
             kpi: "99.9% Application Uptime"
         },
         {
-            icon: Scale,
+            iconName: "\1",
             pain: "We're worried about the cost of using an AI-powered application.",
             problem: "The cost of using an AI-powered application can quickly spiral out of control if you're not careful. It's important to choose the right model for your use case and to optimize your application for cost.",
             solution: "We vet for expertise in **cost optimization**. Our engineers can help you choose the right model for your use case and to design and build a system that is cost-effective.",

@@ -13,7 +13,7 @@ const jiraServiceManagement: TechEntry = {
     "Jira Service Management is a flexible, collaborative ITSM solution that helps teams deliver value fast. Our experts configure and customize Jira Service Management to meet your unique business needs, from IT support and change management to employee onboarding and beyond.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is your IT support process a chaotic mess of emails and Slack messages?",
       problem:
         "Employees don't have a clear, centralized place to ask for help. Requests get lost, there's no visibility into the status of an issue, and your IT team is overwhelmed with untracked work, leading to slow response times and frustrated employees.",
@@ -22,7 +22,7 @@ const jiraServiceManagement: TechEntry = {
       kpi: "Reduce time to resolve IT issues by 40% and improve employee satisfaction by 30%.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Are you struggling to manage changes to your IT infrastructure without causing disruptions?",
       problem:
         "Changes to your systems—like software updates or server maintenance—are poorly planned and executed, often leading to unexpected outages and downtime that impact the business. There is no formal approval process or risk assessment.",
@@ -31,7 +31,7 @@ const jiraServiceManagement: TechEntry = {
       kpi: "Reduce change-related incidents by 75% and ensure 99.9% uptime for critical services.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Does your IT team lack the visibility to identify recurring problems and improve services?",
       problem:
         "Your team is stuck in a reactive loop, fighting the same fires over and over again. You don't have the data to identify trends, perform root cause analysis, or proactively improve your IT services.",

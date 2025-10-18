@@ -13,7 +13,7 @@ const tensorflow: TechEntry = {
     "TensorFlow is the open-source platform for production-grade machine learning. Our AI/ML engineers use its comprehensive ecosystem to build and deploy everything from cutting-edge deep learning models to large-scale NLP and computer vision systems.",
   pains: [
     {
-      icon: Scaling,
+      iconName: "\1",
       pain: "You need to build and train large-scale deep learning models, but your current tools are not powerful enough.",
       problem:
         "Training deep neural networks on large datasets is computationally expensive and requires a distributed infrastructure. Your current setup is slow, inefficient, and difficult to scale.",
@@ -22,7 +22,7 @@ const tensorflow: TechEntry = {
       kpi: "Reduce model training time by 90% through distributed training and hardware acceleration.",
     },
     {
-      icon: Rocket,
+      iconName: "\1",
       pain: "You need to deploy your machine learning models to production, but the process is complex and error-prone.",
       problem:
         "Moving a model from a research environment to a production system that can serve millions of users is a major challenge. You need a reliable and scalable way to deploy and manage your models in production.",
@@ -31,7 +31,7 @@ const tensorflow: TechEntry = {
       kpi: "Achieve a 99.9% uptime for your production models.",
     },
     {
-      icon: Globe,
+      iconName: "\1",
       pain: "You need to deploy your models on a wide range of platforms, from servers and browsers to mobile and embedded devices.",
       problem:
         "Different platforms have different constraints and requirements. You need a flexible framework that can deploy models to any target environment without sacrificing performance.",

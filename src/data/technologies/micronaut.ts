@@ -11,21 +11,21 @@ const micronaut: TechEntry = {
     intro: "Micronaut is a powerful and versatile Java framework. Our Micronaut experts are vetted for their deep understanding of Micronaut's core principles, from its powerful dependency injection and AOP features to its robust security and performance tuning capabilities. They are the specialists who can help you build the next generation of microservices.",
     pains: [
         {
-            icon: Server,
+            iconName: "\1",
             pain: "Our microservices are slow and expensive to host.",
             problem: "Traditional monolithic applications are slow to load and expensive to host. They don't take advantage of the latest web technologies, such as microservices and serverless.",
             solution: "We vet for mastery in **Micronaut's powerful dependency injection and AOP features**. Our engineers can help you build a fast, scalable, and cost-effective microservice.",
             kpi: "50% Reduction in Page Load Time"
         },
         {
-            icon: Zap,
+            iconName: "\1",
             pain: "We're struggling to keep up with the latest microservice technologies.",
             problem: "The microservice landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as Quarkus and Helidon.",
             solution: "Our experts are tested on **the latest microservice technologies**. They can help you take advantage of the latest features, so you can build the next generation of microservices.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Code,
+            iconName: "\1",
             pain: "We're worried about the security of our microservices.",
             problem: "Microservice security is a top priority for every business. It's difficult to secure your microservices, especially when you're dealing with user authentication and data fetching.",
             solution: "We vet for expertise in **Micronaut's security features**. Our engineers use the latest security best practices to protect your microservices from attack.",

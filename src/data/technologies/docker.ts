@@ -11,21 +11,21 @@ const docker: TechEntry = {
     intro: "Docker is a powerful and versatile containerization platform. Our Docker experts are vetted for their deep understanding of Docker's core principles, from its powerful container runtime to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of containerized applications.",
     pains: [
         {
-            icon: Server,
+            iconName: "\1",
             pain: "Our applications are difficult to deploy and manage.",
             problem: "Traditional application deployment is slow, error-prone, and difficult to scale. It's hard to ensure that your applications will run consistently across different environments.",
             solution: "We vet for mastery in **Docker's powerful container runtime**. Our engineers can help you build a fast, and reliable containerized application.",
             kpi: "50% Reduction in Application Deployment Time"
         },
         {
-            icon: Zap,
+            iconName: "\1",
             pain: "We're struggling to keep up with the latest containerization technologies.",
             problem: "The containerization landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as Kubernetes and Podman.",
             solution: "Our experts are tested on **the latest containerization technologies**. They can help you take advantage of the latest features, so you can build the next generation of containerized applications.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Code,
+            iconName: "\1",
             pain: "We're worried about the security of our containers.",
             problem: "Container security is a top priority for every business. It's difficult to secure your containers, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Docker's security features**. Our engineers use the latest security best practices to protect your containers from attack.",

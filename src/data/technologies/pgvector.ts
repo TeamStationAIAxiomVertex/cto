@@ -13,7 +13,7 @@ const pgvector: TechEntry = {
     'pgvector is the strategic choice for building **Retrieval-Augmented Generation (RAG)** without adding a separate, complex vector database. It transforms PostgreSQL into a powerful engine for vector similarity search. You need an engineer who can architect a unified data strategy for AI. Our vetting identifies experts who use pgvector to build scalable, maintainable, and cost-effective RAG systems by leveraging the database you already trust.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: 'The Architectural Complexity of a Separate Vector Database',
       problem:
         'To build a RAG application, you’re forced to add a specialized vector database to your stack. This means more infrastructure to manage, complex data synchronization pipelines, and another point of failure.',
@@ -22,7 +22,7 @@ const pgvector: TechEntry = {
       kpi: 'Reduce the infrastructure complexity and operational overhead of your RAG stack by 50%.',
     },
     {
-      icon: Workflow,
+      iconName: "\1",
       pain: 'Disconnected Relational Data and Vector Embeddings',
       problem:
         'Your user data is in Postgres, but your vector embeddings are in another system. Performing hybrid searches—filtering by user metadata *before* doing a vector search—is slow, complex, and requires custom code.',
@@ -31,7 +31,7 @@ const pgvector: TechEntry = {
       kpi: 'Accelerate hybrid search query performance by 10x compared to a two-database solution.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "\1",
       pain: 'High Cost and Vendor Lock-in of Specialized Databases',
       problem:
         'Managed vector database services are expensive and lock you into a proprietary ecosystem. You are paying a premium for a capability that is becoming a commodity.',

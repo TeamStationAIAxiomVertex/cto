@@ -13,7 +13,7 @@ const svelte: TechEntry = {
     "Svelte is a radical new approach to building user interfaces. Whereas traditional frameworks like React and Vue do the bulk of their work in the browser, Svelte shifts that work into a compile step that happens when you build your app. You need an engineer who understands that a great user experience is not just about features, but about performance. Our vetting process identifies developers who are experts in Svelte's core concepts—reactivity, the compiler, and stores—and can architect applications that are as lean as they are fast. By hiring a Svelte expert, you get a developer who can build a modern web application that is a joy to use, and a joy to develop.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is your application slow and bloated with unnecessary framework code?",
       problem:
         "Traditional frameworks like React and Vue come with a runtime cost. They ship a library of code to the browser that is responsible for updating the DOM. This can lead to slow initial load times and a sluggish user experience, especially on low-powered devices.",
@@ -22,7 +22,7 @@ const svelte: TechEntry = {
       kpi: "Minimal Bundle Size and Blazing Fast Performance",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is your state management complex and hard to reason about?",
       problem:
         "In many frameworks, managing state is a complex task that requires a dedicated library and a lot of boilerplate code. This can lead to a codebase that is hard to reason about and a user experience that is prone to bugs.",
@@ -31,7 +31,7 @@ const svelte: TechEntry = {
       kpi: "Simple, Intuitive, and Bug-Free State Management",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is your application not accessible to all users?",
       problem:
         "Many frameworks make it easy to build applications that are not accessible to all users. This can lead to a user experience that is frustrating for users with disabilities and a codebase that is hard to maintain and test.",

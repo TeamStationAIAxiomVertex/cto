@@ -11,21 +11,21 @@ const testing: TechEntry = {
     intro: "React Testing Library is a testing utility for React that encourages good testing practices. You need an engineer who understands that testing a user interface is not just about writing tests, but about a deep understanding of how users interact with your application. Our vetting process identifies developers who are experts in the modern testing stack—and can architect a testing platform that is as secure, efficient, and automated as it is scalable. By hiring a React Testing Library expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
     pains: [
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Are your tests brittle and constantly breaking with implementation changes?",
             problem: "Testing implementation details (e.g., component state, method names) leads to brittle tests that break every time you refactor your code. This makes testing a chore that developers avoid, leading to a decline in code quality and an increase in production bugs.",
             solution: "We vet for experts in <strong>user-centric testing</strong>. Our engineers are proficient in using React Testing Library to write tests that resemble how users interact with your application. This results in a codebase that is easy to refactor and a test suite that is resilient to implementation changes.",
             kpi: "A Resilient Test Suite That is Easy to Maintain"
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your application not accessible to all users?",
             problem: "Many applications are built without considering the needs of users with disabilities. This can lead to a user experience that is frustrating, or even impossible, for a large segment of the population. This not only alienates users, but also exposes your business to legal risk.",
             solution: "Our engineers are masters of <strong>accessibility testing</strong>. They are vetted on their ability to use React Testing Library's accessible queries to ensure that your application is usable by everyone, regardless of their device or disability. This results in a more inclusive application and a better user experience for all.",
             kpi: "An Accessible Application That is Usable by Everyone"
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your team not leveraging the full power of the testing ecosystem?",
             problem: "The testing ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
             solution: "We look for engineers proficient with <strong>the testing ecosystem and the modern testing stack</strong>. They are vetted on their ability to build applications that are powered by the best of the testing ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",

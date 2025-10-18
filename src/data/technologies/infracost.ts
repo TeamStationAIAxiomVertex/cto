@@ -13,7 +13,7 @@ const infracost: TechEntry = {
     'Infracost is the embodiment of **FinOps shift-left**, moving cost control from a reactive monthly review to a proactive check in every pull request. You need an engineer who lives in the intersection of Infrastructure as Code and financial accountability. Our vetting identifies experts who can wire Infracost into your CI/CD pipeline, turning cost into a transparent, discussable metric for every infrastructure change, long before you `terraform apply`.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: 'Terraform-Driven Bill Shock',
       problem:
         'Your engineers submit a Terraform PR, it looks correct, gets approved, and a month later, your cloud bill has exploded. The financial impact of IaC changes is a complete unknown until it’s too late.',
@@ -22,7 +22,7 @@ const infracost: TechEntry = {
       kpi: 'Eliminate 99% of unexpected cost spikes caused by infrastructure changes.',
     },
     {
-      icon: Workflow,
+      iconName: "\1",
       pain: 'Engineering Paralysis or Recklessness',
       problem:
         'Fear of unknown costs makes your platform team overly cautious, slowing down innovation. Or, they ignore costs entirely, leading to wasteful, over-provisioned infrastructure that erodes margins.',
@@ -31,7 +31,7 @@ const infracost: TechEntry = {
       kpi: 'Accelerate decision-making on infrastructure changes by 40%.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "\1",
       pain: 'Friction Between DevOps and Finance',
       problem:
         'Finance demands cost controls, but DevOps sees their requests as bureaucratic hurdles that stifle velocity. There is no common language or shared data, leading to mistrust and inefficiency.',

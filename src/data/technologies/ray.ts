@@ -13,7 +13,7 @@ const ray: TechEntry = {
     'Ray is the universal framework for **scaling Python workloads**, and Ray Serve is its specialized engine for production machine learning inference. You need an engineer who can think in terms of distributed systems but write simple, Pythonic code. Our vetting identifies experts who use Ray to transform single-node Python applications and complex ML models into scalable, fault-tolerant production services, breaking the performance bottlenecks that are holding you back.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: 'ML Inference is More Than Just a Single Model',
       problem:
         'Your production inference logic requires a complex graph of steps: data validation, preprocessing, multiple model calls, and post-processing business logic. Orchestrating this with traditional microservices is a slow, high-latency nightmare.',
@@ -22,7 +22,7 @@ const ray: TechEntry = {
       kpi: 'Reduce end-to-end inference latency for complex model pipelines by 75%.',
     },
     {
-      icon: Workflow,
+      iconName: "\1",
       pain: 'The Barrier Between a Python Script and a Scalable Service',
       problem:
         'Your Python application works perfectly on a single machine, but you have no clear path to scale it out to handle production traffic. You are facing a complete rewrite or a deep dive into complex distributed systems frameworks.',
@@ -31,7 +31,7 @@ const ray: TechEntry = {
       kpi: 'Transition a single-node Python application to a distributed system with <10% code modification.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "\1",
       pain: 'Inefficient Resource Management for ML Models',
       problem:
         'Each of your ML models is deployed as a separate service, each with its own expensive, underutilized GPU. You cannot efficiently pack multiple models onto a single machine or dynamically scale them based on traffic.',

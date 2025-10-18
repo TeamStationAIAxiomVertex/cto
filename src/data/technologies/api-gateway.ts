@@ -11,21 +11,21 @@ const apiGateway: TechEntry = {
     intro: "API Gateway is a critical component of any modern, microservices-based architecture. Our API Gateway experts are vetted for their deep understanding of API Gateway's core principles, from its powerful routing and caching features to its robust security and throttling capabilities. They are the specialists who can help you build and manage a secure, and reliable API gateway.",
     pains: [
         {
-            icon: Server,
+            iconName: "\1",
             pain: "Our APIs are slow and unreliable.",
             problem: "Poorly designed APIs are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **API Gateway's powerful routing and caching features**. Our engineers can help you build a fast, and reliable API gateway.",
             kpi: "50% Reduction in API Latency"
         },
         {
-            icon: Zap,
+            iconName: "\1",
             pain: "We're struggling to keep up with the latest API technologies.",
             problem: "The API landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as GraphQL and gRPC.",
             solution: "Our experts are tested on **the latest API technologies**. They can help you take advantage of the latest features, so you can build the next generation of APIs.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Shield,
+            iconName: "\1",
             pain: "We're worried about the security of our APIs.",
             problem: "API security is a top priority for every business. It's difficult to secure your APIs, especially when you're dealing with user authentication and authorization.",
             solution: "We vet for expertise in **API Gateway's security features**. Our engineers use the latest security best practices to protect your APIs from attack.",

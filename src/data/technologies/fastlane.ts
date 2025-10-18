@@ -13,7 +13,7 @@ const fastlane: TechEntry = {
     "fastlane is an open-source platform aimed at simplifying Android and iOS deployment. fastlane lets you automate every aspect of your development and release workflow. Our mobile engineers use fastlane to create a fully automated, reliable, and repeatable process for building, testing, and releasing your mobile applications.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is your mobile app release process a series of manual, error-prone steps?",
       problem:
         "Taking screenshots, managing provisioning profiles, code signing, and uploading to the app stores involves dozens of manual steps. This process is slow, tedious, and a single mistake can break the release or lead to a rejection.",
@@ -22,7 +22,7 @@ const fastlane: TechEntry = {
       kpi: "Reduce release time from a full day to under an hour, and eliminate human error from the deployment process.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Are you struggling with the complexities of code signing and provisioning profiles?",
       problem:
         "Managing iOS code signing certificates and provisioning profiles is a notorious pain point. It's complex, confusing, and a frequent source of build failures, especially in a team environment.",
@@ -31,7 +31,7 @@ const fastlane: TechEntry = {
       kpi: "Eliminate all code signing and provisioning profile issues from your build process.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is distributing beta builds to your testers a slow and manual process?",
       problem:
         "You need to get new builds into the hands of your QA team and beta testers quickly. Manually uploading builds to services like TestFlight or Firebase App Distribution and notifying testers is a repetitive task that slows down the feedback loop.",

@@ -11,21 +11,21 @@ const mlOps: TechEntry = {
     intro: "MLOps is the foundation of any AI-driven organization. You need an engineer who understands that building a modern machine learning infrastructure is not just about training models, but about a deep understanding of the entire machine learning lifecycle, from the data and the model to the pipeline and the deployment. Our vetting process identifies developers who are experts in the modern machine learning stack—and can architect a machine learning platform that is as secure, efficient, and automated as it is scalable. By hiring an MLOps expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
     pains: [
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your machine learning infrastructure a mess of brittle, ad-hoc scripts?",
             problem: "In many organizations, the machine learning infrastructure is a mess of brittle, ad-hoc scripts. This can lead to a user experience that is filled with stale models and a codebase that is a mess of environment-specific hacks and workarounds.",
             solution: "We vet for experts in **MLOps and the modern machine learning stack**. Our engineers are proficient in using tools like Kubeflow, MLflow, and SageMaker to build a fully automated, reliable, and efficient machine learning infrastructure. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
             kpi: "A Fully Automated, Reliable, and Efficient Machine Learning Infrastructure",
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your application not taking full advantage of the cloud?",
             problem: "Many applications are not built to be cloud-native. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a cloud bill that is out of control.",
             solution: "Our engineers are masters of **modern, cloud-native architectures**. They are vetted on their ability to use services like Lambda, Fargate, and Kubernetes to build a modern, serverless, and container-based architecture. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
             kpi: "A Modern, Serverless, and Container-Based Architecture",
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your team not leveraging the full power of the machine learning ecosystem?",
             problem: "The machine learning ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
             solution: "We look for engineers proficient with **the machine learning ecosystem and the modern machine learning stack**. They are vetted on their ability to build applications that are powered by the best of the machine learning ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",

@@ -13,7 +13,7 @@ const apacheSpark: TechEntry = {
     'Apache Spark is the **unified analytics engine** for modern data science and engineering. It’s not just for big data; it’s for fast data. You need an expert who can tame distributed computing to solve complex problems. Our vetting identifies engineers who can build and optimize resilient Spark applications, transforming massive datasets from a processing nightmare into a source of competitive advantage.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: 'Batch Processing Bottlenecks That Kill Agility',
       problem:
         'Your critical ETL and data preparation jobs take hours, or even days, to run. The business is forced to wait, and your data scientists are blocked, unable to iterate on models because the data turnaround time is glacial.',
@@ -22,7 +22,7 @@ const apacheSpark: TechEntry = {
       kpi: 'Reduce ETL and data preprocessing job times by over 90%.',
     },
     {
-      icon: Workflow,
+      iconName: "\1",
       pain: 'Fragmented Systems for Batch, Streaming, and ML',
       problem:
         'You have separate, siloed systems for batch processing, real-time streaming, and machine learning. This creates immense architectural complexity, code duplication, and makes it impossible to build end-to-end data products.',
@@ -31,7 +31,7 @@ const apacheSpark: TechEntry = {
       kpi: 'Reduce the number of separate data processing systems by 50-75%.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "\1",
       pain: 'Mysterious Failures and Cost Overruns at Scale',
       problem:
         'Your Spark jobs run fine on small data, but fail unpredictably in production with cryptic memory errors. Tuning the cluster is a black art, and you are constantly over-provisioning resources, driving up cloud costs.',

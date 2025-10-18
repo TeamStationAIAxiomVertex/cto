@@ -11,21 +11,21 @@ const googleCloud: TechEntry = {
     intro: "Google Cloud is a powerful and versatile cloud platform. Our Google Cloud experts are vetted for their deep understanding of Google Cloud's core principles, from its powerful compute and storage services to its robust security and networking capabilities. They are the specialists who can help you build and manage a secure, and reliable cloud infrastructure.",
     pains: [
         {
-            icon: Cloud,
+            iconName: "\1",
             pain: "Our cloud infrastructure is slow and unreliable.",
             problem: "Poorly designed cloud infrastructure is a bottleneck for your entire system. It is difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **Google Cloud's powerful compute and storage services**. Our engineers can help you build a fast, and reliable cloud infrastructure.",
             kpi: "50% Reduction in Infrastructure Latency"
         },
         {
-            icon: Zap,
+            iconName: "\1",
             pain: "We're struggling to keep up with the latest cloud technologies.",
             problem: "The cloud landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as serverless and containers.",
             solution: "Our experts are tested on **the latest cloud technologies**. They can help you take advantage of the latest features, so you can build the next generation of cloud infrastructure.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Shield,
+            iconName: "\1",
             pain: "We're worried about the security of our data.",
             problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Google Cloud's security features**. Our engineers use the latest security best practices to protect your data from attack.",

@@ -13,7 +13,7 @@ const storybook: TechEntry = {
     "Storybook is a frontend workshop for building UI components and pages in isolation. Our frontend engineers use Storybook to create a sandboxed environment where they can develop, test, and showcase UI components, leading to more resilient and reusable code.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is your UI inconsistent and your development process slow?",
       problem:
         "Without a centralized place to view and work on UI components, developers constantly reinvent the wheel. This leads to visual inconsistencies, duplicated code, and a slow, frustrating development experience.",
@@ -22,7 +22,7 @@ const storybook: TechEntry = {
       kpi: "Increase development speed by 40% and eliminate UI inconsistencies.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is it difficult to test all the possible states of a UI component?",
       problem:
         "Components can have dozens of states (loading, error, disabled, different data, etc.). Manually testing these states within the full application is time-consuming, error-prone, and often impossible.",
@@ -31,7 +31,7 @@ const storybook: TechEntry = {
       kpi: "Catch 80% more UI bugs before they reach production.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is collaboration between developers, designers, and product managers a bottleneck?",
       problem:
         "Design handoffs are painful. Developers struggle to translate static mockups into interactive components, and designers have no easy way to review the final implementation, leading to endless back-and-forth.",

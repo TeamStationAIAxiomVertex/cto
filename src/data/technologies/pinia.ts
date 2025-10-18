@@ -13,7 +13,7 @@ const pinia: TechEntry = {
     "Pinia is the official, modern state management library for Vue.js, offering a simpler, more intuitive, and fully type-safe alternative to Vuex. You need an engineer who understands that effective state management isn't about complexity, but about clarity and maintainability. Our vetting process identifies developers who are experts in architecting scalable and testable state with Pinia's modular, store-based pattern. By hiring a Pinia expert, you get a developer who can build a robust state layer for your Vue application that is a joy to work with, not a source of bugs and frustration.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is your Vuex store a monolithic, untyped nightmare?",
       problem:
         "Traditional Vuex stores, especially in large applications, often become a single, massive object that is difficult to navigate, test, and maintain. The lack of proper TypeScript support leads to a codebase riddled with magic strings and untyped state, making refactoring risky and development slow.",
@@ -22,7 +22,7 @@ const pinia: TechEntry = {
       kpi: "Modular, Type-Safe Store Architecture",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Are you struggling to integrate your store with the Composition API?",
       problem:
         "Using legacy state management patterns with Vue's modern Composition API can feel clunky and verbose. It often requires boilerplate code to bridge the two systems, leading to an inconsistent and confusing codebase.",
@@ -31,7 +31,7 @@ const pinia: TechEntry = {
       kpi: "Seamless Composition API Integration",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is debugging your state changes a time-consuming guessing game?",
       problem:
         "Without proper tooling, tracing how and why state has changed in a complex application is incredibly difficult. This leads to long debugging sessions and a lack of confidence in the application's state.",

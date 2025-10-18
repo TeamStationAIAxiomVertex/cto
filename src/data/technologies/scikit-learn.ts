@@ -13,7 +13,7 @@ const scikitLearn: TechEntry = {
     "Scikit-learn is the go-to Python library for machine learning. Our AI/ML engineers use its simple and efficient tools for data mining and data analysis, building everything from predictive models to clustering algorithms.",
   pains: [
     {
-      icon: FunctionSquare,
+      iconName: "\1",
       pain: "You have a lot of data, but you're struggling to build accurate predictive models.",
       problem:
         "Choosing the right algorithm, tuning hyperparameters, and evaluating model performance can be a complex and time-consuming process.",
@@ -22,7 +22,7 @@ const scikitLearn: TechEntry = {
       kpi: "Improve model accuracy by 30% through systematic algorithm selection and hyperparameter tuning.",
     },
     {
-      icon: RefreshCw,
+      iconName: "\1",
       pain: "Your machine learning workflow is manual and difficult to reproduce, leading to inconsistent results.",
       problem:
         "Without a standardized workflow for data preprocessing, feature engineering, and model training, it's difficult to track experiments, compare results, and deploy models to production reliably.",
@@ -31,7 +31,7 @@ const scikitLearn: TechEntry = {
       kpi: "Reduce time to deploy new models by 75% by creating automated and reproducible pipelines.",
     },
     {
-      icon: Scaling,
+      iconName: "\1",
       pain: "You're not sure if your model's performance is statistically significant or just due to chance.",
       problem:
         "Without proper model evaluation and cross-validation, you risk deploying a model that performs poorly on new, unseen data, leading to bad business decisions.",

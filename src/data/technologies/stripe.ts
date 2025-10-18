@@ -13,7 +13,7 @@ const stripe: TechEntry = {
     "Stripe is a suite of payment APIs that powers commerce for online businesses of all sizes. Our backend engineers use Stripe to build seamless, secure, and scalable payment experiences, from accepting simple one-time payments to managing complex subscription billing.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is integrating and managing payments too complex and risky?",
       problem:
         "Building a payment system from scratch is a massive undertaking, requiring deep expertise in security, compliance (like PCI DSS), and financial regulations. Errors can lead to lost revenue and security breaches.",
@@ -22,7 +22,7 @@ const stripe: TechEntry = {
       kpi: "Achieve PCI compliance from day one and reduce payment integration time by 90%.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Are you struggling to expand your business globally due to payment complexities?",
       problem:
         "Entering new markets means dealing with different currencies, payment methods (like SEPA, iDEAL, or OXXO), and local regulations. This complexity can stall international growth indefinitely.",
@@ -31,7 +31,7 @@ const stripe: TechEntry = {
       kpi: "Launch in 10+ new countries in a single quarter.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "\1",
       pain: "Is your business losing revenue to fraud, churn, and failed payments?",
       problem:
         "Involuntary churn from failed payments and sophisticated fraud attacks can silently eat away at your revenue. Without the right tools, identifying and preventing these issues is nearly impossible.",

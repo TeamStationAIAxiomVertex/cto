@@ -11,21 +11,21 @@ const stylus: TechEntry = {
     intro: "Stylus is a revolutionary new language, providing an efficient, dynamic, and expressive way to generate CSS. Supporting both an indented syntax and regular CSS style, it\'s known for its flexibility and powerful built-in functions. You need an engineer who can leverage its unique features to create clean, maintainable, and highly dynamic stylesheets. Our vetting process identifies developers who have mastered Stylus, from its flexible syntax to its powerful mixins and functions. By hiring a Stylus expert, you get a developer who can build a modern, automated, and maintainable styling system for your web applications.",
     pains: [
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your CSS codebase rigid and hard to maintain?",
             problem: "In many organizations, the CSS codebase is a mess of duplicated, hard-to-maintain styles. This leads to a user experience that is filled with inconsistencies and a codebase that is a mess of spaghetti code and technical debt.",
             solution: "We vet for experts in **Stylus and the modern frontend stack**. Our engineers are proficient in using Stylus to build a modern, scalable, and resilient user interface. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
             kpi: "A Modern, Scalable, and Resilient User Interface",
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your application not taking full advantage of the modern web?",
             problem: "Many applications are not built to be truly modern. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a web application that is not as rich as it could be.",
             solution: "Our engineers are masters of **Stylus and the modern web**. They are vetted on their ability to use modern web APIs and best practices to build a modern, fast, and feature-rich user interface. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
             kpi: "A Modern, Fast, and Feature-Rich User Interface",
         },
         {
-            icon: AlertTriangle,
+            iconName: "\1",
             pain: "Is your team not leveraging the full power of the frontend ecosystem?",
             problem: "The frontend ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
             solution: "We look for engineers proficient with **the frontend ecosystem and the modern frontend stack**. They are vetted on their ability to build applications that are powered by the best of the frontend ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",

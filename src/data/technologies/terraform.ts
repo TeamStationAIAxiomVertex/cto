@@ -11,21 +11,21 @@ const terraform: TechEntry = {
     intro: "Terraform is the industry standard for Infrastructure as Code. Our Terraform experts are vetted for their ability to write clean, modular, and maintainable Terraform code that can be used to manage complex, multi-cloud deployments. They are the specialists who enable your teams to build and manage infrastructure with confidence.",
     pains: [
         {
-            icon: Code,
+            iconName: "\1",
             pain: "Our Terraform code is a mess of spaghetti code.",
             problem: "Poorly written Terraform code is difficult to understand, maintain, and reuse, leading to configuration drift and a lack of confidence in your infrastructure.",
             solution: "We vet for mastery in **Terraform best practices**. Our engineers write clean, modular, and well-documented code that is easy to understand, maintain, and reuse.",
             kpi: "90% Code Reusability"
         },
         {
-            icon: Cloud,
+            iconName: "\1",
             pain: "We're struggling to manage our multi-cloud infrastructure.",
             problem: "Managing infrastructure across multiple cloud providers is complex and error-prone, leading to inconsistent configurations and a lack of visibility.",
             solution: "Our experts are tested on **multi-cloud deployments**. They use Terraform to create a single, unified workflow for managing infrastructure across all major cloud providers.",
             kpi: "100% Infrastructure Consistency"
         },
         {
-            icon: Repeat,
+            iconName: "\1",
             pain: "Our infrastructure is not reproducible.",
             problem: "Manual changes and a lack of version control make it impossible to reproduce your infrastructure, leading to configuration drift and a fear of making changes.",
             solution: "We vet for expertise in building **immutable infrastructure**. Our engineers use Terraform to create a version-controlled, auditable, and reproducible infrastructure that can be deployed with confidence.",
