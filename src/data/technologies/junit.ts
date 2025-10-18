@@ -1,5 +1,4 @@
 
-import { TestTube2, Zap, Code, Shield } from "lucide-react";
 import type { TechEntry } from "@/lib/tech";
 
 const junit: TechEntry = {
@@ -11,7 +10,7 @@ const junit: TechEntry = {
     intro: "JUnit is a powerful and versatile Java testing framework. Our JUnit experts are vetted for their deep understanding of JUnit's core principles, from its powerful assertion and annotation capabilities to its robust security and performance tuning capabilities. They are the specialists who can help you build the next generation of Java tests.",
     pains: [
         {
-            iconName: "\1",
+            iconName: "TestTube2",
             pain: "Our tests are slow and unreliable.",
             problem: "Poorly written tests are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **JUnit's powerful assertion and annotation capabilities**. Our engineers can help you build a fast, and reliable Java testing suite.",
