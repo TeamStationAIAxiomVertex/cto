@@ -1,5 +1,4 @@
 
-import { GitBranch, TestTube2, Database, Code } from "lucide-react";
 import type { TechEntry } from "@/lib/tech";
 
 const dvc: TechEntry = {
@@ -18,7 +17,7 @@ const dvc: TechEntry = {
             kpi: "100% Reproducibility"
         },
         {
-            icon: TestTube2,
+            iconName: "TestTube2",
             pain: "We're struggling to keep up with the latest machine learning technologies.",
             problem: "The machine learning landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as PyTorch and TensorFlow.",
             solution: "Our experts are tested on **the latest machine learning technologies**. They can help you take advantage of the latest features, so you can build the next generation of machine learning experiments.",
