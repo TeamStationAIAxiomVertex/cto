@@ -6,7 +6,15 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Add any specific Next.js configurations here if necessary.
+    async redirects() {
+        return [
+            {
+                source: '/hire/by-technology/go',
+                destination: '/hire/by-technology/golang',
+                permanent: true,
+            },
+        ]
+    },
 };
 
 // Use module.exports syntax to ensure CommonJS compatibility
