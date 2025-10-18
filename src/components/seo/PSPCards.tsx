@@ -2,6 +2,16 @@
 import Link from "next/link";
 import { PainPoint } from "@/lib/tech";
 import { Button } from "@/components/ui/button";
+import * as Icons from "lucide-react";
+
+// Helper to get an icon component by its string name
+const getIcon = (name: string) => {
+  const Icon = (Icons as any)[name];
+  if (Icon) {
+    return <Icon className="mr-2 text-primary" />;
+  }
+  return null; // Or a default icon
+};
 
 export default function PSPCards({ items, heading }: { items: PainPoint[]; heading?: string }) {
   return (
@@ -11,7 +21,7 @@ export default function PSPCards({ items, heading }: { items: PainPoint[]; headi
         {items.map((it) => (
           <article key={it.problem} className="rounded-lg border bg-card shadow-sm p-6 flex flex-col">
             <h3 className="text-lg font-semibold text-foreground flex items-center">
-              <it.icon className="mr-2 text-primary" />
+              {getIcon(it.iconName)}
               {it.problem}
             </h3>
 
