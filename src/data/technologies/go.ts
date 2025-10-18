@@ -2,7 +2,7 @@
 import { TechEntry } from "@/lib/tech";
 import { AlertTriangle } from "lucide-react";
 
-const go: TechEntry = {
+const goData: TechEntry = {
     name: "Go (Golang)",
     category: "Backend & APIs",
     categorySlug: "backend-services",
@@ -35,6 +35,7 @@ const go: TechEntry = {
     evaluation: ["Goroutines and channel mastery (CSP model)", "Idiomatic Go code and interface design", "Microservices frameworks (Gin, Echo, Fiber)", "Profiling and performance tuning", "Building clean, minimal Docker containers"],
     technical_analysis: "The Golang evaluation is a deep dive into concurrency and system architecture. Candidates are given scenarios requiring them to implement a highly concurrent worker pool using goroutines and channels, with a mandatory requirement to use the built-in race detector to prove their solution is thread-safe. Architectural skills are tested by requiring them to design a small microservice using a lightweight framework (like Fiber or Echo), focusing on clean separation of concerns and correct use of interfaces for dependency inversion, which is critical in large Go codebases. Performance is paramount: candidates must demonstrate proficiency with the Go profiler (`pprof`) to analyze CPU and memory usage and propose optimizations. Finally, strong knowledge of the standard library, especially for networking and HTTP handling, is essential.",
     interlink_slugs: ["kubernetes", "docker", "grpc"],
+    is_ready: true,
 };
 
-export default go;
+export default goData;
