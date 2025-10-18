@@ -1,8 +1,9 @@
 
 import { notFound } from 'next/navigation';
-import { allTech, getAllTechSlugs } from '@/lib/tech';
+import { allTech, getAllTechSlugs, TechEntry } from '@/lib/tech';
 import { ProgrammaticContent } from '@/components/ProgrammaticContent';
 import { Metadata } from 'next';
+import React from 'react';
 
 type Props = {
   params: {
@@ -10,14 +11,17 @@ type Props = {
   };
 };
 
+// This is the definitive data-fetching and metadata generation function.
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug;
-  const tech = allTech[slug];
+  // Defensively access the tech object.
+  const tech = (allTech as Record<string, TechEntry>)[slug];
 
+  // If the tech entry doesn't exist or isn't ready, return a 404-style metadata.
   if (!tech || !tech.is_ready) {
     return {
       title: 'Technology Not Found',
-      description: 'The requested technology page could not be found.',
+      description: 'The requested technology page is not available.',
     };
   }
 
@@ -27,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// This function generates all the static paths for SSG.
 export async function generateStaticParams() {
   const slugs = getAllTechSlugs();
   return slugs.map((slug) => ({
@@ -34,13 +39,18 @@ export async function generateStaticParams() {
   }));
 }
 
+// This is the main page component.
 export default function TechPage({ params }: Props) {
   const slug = params.slug;
-  const tech = allTech[slug];
+  const tech = (allTech as Record<string, TechEntry>)[slug];
 
+  // CRITICAL FIX: Add a defensive check.
+  // This ensures that if the data is missing or malformed, we immediately 404.
+  // The `is_ready` flag is the final gate before rendering.
   if (!tech || !tech.is_ready) {
     notFound();
   }
 
+  // The ProgrammaticContent component is now guaranteed to receive a valid tech object.
   return <ProgrammaticContent tech={tech} />;
 }
