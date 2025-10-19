@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import ComparisonProse from '@/components/ComparisonProse';
 import Link from 'next/link';
 
-const VerdictTable = dynamic(() => import('@/components/VerdictTable'), { ssr: true });
+const VerdictTable = dynamic(() => import('@/components/VerdictTable').then(mod => mod.default), { ssr: true });
 const ProgrammaticContent = dynamic(() => import('@/components/ProgrammaticContent').then(mod => mod.ProgrammaticContent), { ssr: true });
 
 
@@ -56,7 +56,7 @@ export default function VendorComparisonPage({ params }: { params: { vendor: str
             <p className="mt-4 text-lg text-muted-foreground" dangerouslySetInnerHTML={{ __html: page.intro }}/>
         </header>
 
-        <VerdictTable scores={page.scores} />
+        <VerdictTable {...page.verdict} />
 
         <div className="prose dark:prose-invert max-w-none mt-12">
             <ComparisonProse content={page.prose} />
