@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { comparisonPages, getComparisonPage } from '@/lib/comparisonPages';
 import type { Metadata } from 'next';
 import ComparisonProse from '@/components/ComparisonProse';
+import Link from 'next/link'; // <-- CORRECTIVE ACTION: Import the Link component.
 
 const VerdictTable = dynamic(() => import('@/components/VerdictTable'), { ssr: true });
 // CORRECTIVE ACTION: Explicitly resolve the named export 'ProgrammaticContent'
