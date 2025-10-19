@@ -59,7 +59,7 @@ export default function VendorComparisonPage({ params }: { params: { vendor: str
         <VerdictTable {...page.verdict} />
 
         <div className="prose dark:prose-invert max-w-none mt-12">
-            <ComparisonProse content={page.prose} />
+             <ComparisonProse vendorSlug={params.vendor} />
         </div>
         
         {/* Placeholder for Further Reading or other components */}
