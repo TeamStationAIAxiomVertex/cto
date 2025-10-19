@@ -9,32 +9,40 @@ export const bairesdevData = {
     description: "See how TeamStation's integrated platform compares to BairesDev's traditional staff augmentation model on vetting, security, and true cost.",
     canonical: "https://cto.teamstation.dev/comparisons/bairesdev"
   },
-  scores: [
-    {
-      category: "Vetting & Expertise",
-      competitor: 5,
-      teamstation: 9,
-      explanation: "TeamStation's Axiom Cortex™ platform goes deeper than keyword matching, assessing architectural thinking and problem-solving. BairesDev has a large volume but the process is more opaque."
-    },
-    {
-      category: "Security & Compliance",
-      competitor: 6,
-      teamstation: 9,
-      explanation: "TeamStation offers a 'One-SLA' model with integrated MDM, SSO, and compliance baked in. BairesDev relies on client-side controls, increasing the compliance burden."
-    },
-    {
-      category: "Platform & Integration",
-      competitor: 4,
-      teamstation: 9,
-      explanation: "TeamStation is a fully integrated platform for hiring, management, and security. BairesDev is a traditional agency model with a less integrated technology stack."
-    },
-    {
-      category: "Total Cost of Ownership",
-      competitor: 7,
-      teamstation: 8,
-      explanation: "While BairesDev rates may appear competitive, TeamStation's integrated platform reduces hidden costs associated with security, compliance, and developer downtime."
-    }
-  ],
+  verdict: {
+    title: "Verdict: TeamStation vs. BairesDev",
+    competitorName: "BairesDev",
+    rows: [
+      {
+        id: "vetting",
+        criterion: "Vetting & Expertise",
+        teamstationVerdict: "Axiom Cortex™ platform for deep architectural and problem-solving skills.",
+        competitorVerdict: "High-volume, resume-based matching.",
+        isWinningRow: true
+      },
+      {
+        id: "security",
+        criterion: "Security & Compliance",
+        teamstationVerdict: "One-SLA model with integrated MDM, SSO, and compliance.",
+        competitorVerdict: "Client-side controls and responsibility.",
+        isWinningRow: true
+      },
+      {
+        id: "platform",
+        criterion: "Platform & Integration",
+        teamstationVerdict: "Fully integrated platform for hiring, management, and security.",
+        competitorVerdict: "Traditional agency model.",
+        isWinningRow: true
+      },
+      {
+        id: "tco",
+        criterion: "Total Cost of Ownership",
+        teamstationVerdict: "Reduces hidden costs of security, compliance, and downtime.",
+        competitorVerdict: "Competitive rates, but with potential for hidden costs.",
+        isWinningRow: false
+      }
+    ]
+  },
   prose: {
     sections: [
       {
@@ -51,7 +59,7 @@ export const bairesdevData = {
       },
       {
         type: "p",
-        content: "BairesDev's 'AI-powered' vetting focuses on matching skills listed on a resume to job requirements. It's a volume game. TeamStation's Axiom Cortex™ is different. We test for cognitive and architectural skills. Can the engineer design a scalable system? Can they debug a complex performance issue? We simulate real-world problems to measure the skills that actually determine project success."
+        content: "BairesDev's 'AI-powered' vetting focuses on matching skills listed on a resume to job requirements. It's a volume game. TeamStation’s Axiom Cortex™ is different. We test for cognitive and architectural skills. Can the engineer design a scalable system? Can they debug a complex performance issue? We simulate real-world problems to measure the skills that actually determine project success."
       }
     ]
   }
