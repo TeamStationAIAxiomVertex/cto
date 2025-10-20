@@ -5,6 +5,7 @@ import { WithTooltip } from "../../../components/ui/tooltip";
 import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen, UserX } from 'lucide-react';
 import { JsonLd } from "../../../components/seo/JsonLd";
 import ValuePropositionBlock from "../../../components/seo/ValuePropositionBlock";
+import FurtherReading from "../../../components/seo/FurtherReading";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -103,6 +104,12 @@ const hiddenTaxes = [
         icon: Briefcase,
         impactColor: "text-destructive"
     },
+];
+
+const furtherReadingLinks = [
+    { href: "/research/axiom-cortex-scientific-report", title: "Axiom Cortex™ Scientific Report", description: "The official scientific paper detailing the data, methodology, and validation of our cognitive AI engine." },
+    { href: "/research/performance-evaluation-framework", title: "The Performance Evaluation Framework", description: "A framework for measuring and predicting developer performance beyond simple code tests." },
+    { href: "/research/platforming-nearshore-book", title: "Platforming the Nearshore Industry", description: "Our book on the scientific principles of de-risking and scaling nearshore teams." },
 ];
 
 
@@ -249,6 +256,8 @@ export default function BiasFreeHiringAxiomCortexPage() {
           ctaHref="/technical-interview-evaluation"
           ctaText="View a Sample Evidence Locker"
         />
+        
+        <FurtherReading links={furtherReadingLinks} />
 
         <section className="mt-24 text-center">
             <h2 className="text-3xl font-bold">Ready to De-Risk Your Hiring?</h2>
