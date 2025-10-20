@@ -1,8 +1,6 @@
 
 // This file is auto-generated. Do not edit manually.
-import recoil from "./recoil";
-import vuex from "./vuex";
-import zustand from "./zustand";
+import actixWeb from "./actix-web";
 import airbyte from "./airbyte";
 import airflow from "./airflow";
 import aix from "./aix";
@@ -11,6 +9,7 @@ import amplitude from "./amplitude";
 import android from "./android";
 import angular from "./angular";
 import ansible from "./ansible";
+import antDesign from "./ant-design";
 import apacheSpark from "./apache-spark";
 import apiGateway from "./api-gateway";
 import apiSecurity from "./api-security";
@@ -18,18 +17,25 @@ import apollo from "./apollo";
 import appcenter from "./appcenter";
 import argocd from "./argocd";
 import astro from "./astro";
+import auth0 from "./auth0";
 import awsCostExplorer from "./aws-cost-explorer";
 import aws from "./aws";
 import axiomCortex from "./axiom-cortex";
 import azure from "./azure";
+import babel from "./babel";
+import bootstrap from "./bootstrap";
 import browserstack from "./browserstack";
 import cSharp from "./c-sharp";
 import cassandra from "./cassandra";
+import census from "./census";
+import chakraUi from "./chakra-ui";
 import ciCd from "./ci-cd";
 import cloudformation from "./cloudformation";
 import cloudzero from "./cloudzero";
+import codeigniter from "./codeigniter";
 import codepush from "./codepush";
 import codeql from "./codeql";
+import contextApi from "./context-api";
 import cpp from "./cpp";
 import crowdstrike from "./crowdstrike";
 import css from "./css";
@@ -48,24 +54,32 @@ import docker from "./docker";
 import domainDrivenDesign from "./domain-driven-design";
 import dvc from "./dvc";
 import dynamodb from "./dynamodb";
+import edr from "./edr";
 import efCore from "./ef-core";
 import elasticsearch from "./elasticsearch";
 import elixir from "./elixir";
 import emberJs from "./ember-js";
+import emotion from "./emotion";
 import erlang from "./erlang";
+import eslint from "./eslint";
 import etlElt from "./etl-elt";
 import eventSourcing from "./event-sourcing";
+import expressJs from "./express.js";
 import express from "./express";
 import externalSecrets from "./external-secrets";
 import fastapi from "./fastapi";
 import fastlane from "./fastlane";
 import feast from "./feast";
 import figma from "./figma";
+import firebaseFirestore from "./firebase-firestore";
 import fivetran from "./fivetran";
 import flask from "./flask";
 import flink from "./flink";
+import flow from "./flow";
 import flutter from "./flutter";
 import gatsby from "./gatsby";
+import generativeAi from "./generative-ai";
+import gin from "./gin";
 import githubActions from "./github-actions";
 import gitlab from "./gitlab";
 import gitops from "./gitops";
@@ -77,41 +91,57 @@ import graphql from "./graphql";
 import greatExpectations from "./great-expectations";
 import gremlin from "./gremlin";
 import grpc from "./grpc";
+import hapiJs from "./hapi-js";
 import haskell from "./haskell";
 import helm from "./helm";
 import hibernate from "./hibernate";
 import hightouch from "./hightouch";
 import hipaa from "./hipaa";
 import hubspot from "./hubspot";
+import huggingFace from "./hugging-face";
+import infracost from "./infracost";
 import iso from "./iso";
 import istio from "./istio";
 import jaeger from "./jaeger";
+import jakartaEe from "./jakarta-ee";
 import jamf from "./jamf";
+import jasmine from "./jasmine";
 import java from "./java";
 import jenkins from "./jenkins";
 import jest from "./jest";
 import jiraServiceManagement from "./jira-service-management";
 import jira from "./jira";
 import jquery from "./jquery";
+import junit from "./junit";
 import k6 from "./k6";
 import kafka from "./kafka";
+import koa from "./koa";
 import kotlin from "./kotlin";
 import kubeflow from "./kubeflow";
 import kubernetes from "./kubernetes";
 import langchain from "./langchain";
 import launchdarkly from "./launchdarkly";
+import less from "./less";
 import linkerd from "./linkerd";
+import llm from "./llm";
 import llms from "./llms";
+import locust from "./locust";
 import loki from "./loki";
 import looker from "./looker";
 import machineLearning from "./machine-learning";
+import mariadb from "./mariadb";
+import materialUi from "./material-ui";
 import memcached from "./memcached";
 import messageQueues from "./message-queues";
+import micronaut from "./micronaut";
 import microservices from "./microservices";
+import mlOps from "./ml-ops";
 import mlflow from "./mlflow";
 import mobx from "./mobx";
+import mocha from "./mocha";
 import mongodb from "./mongodb";
 import mysql from "./mysql";
+import nestjs from "./nestjs";
 import net from "./net";
 import nextjs from "./nextjs";
 import node from "./node";
@@ -125,11 +155,14 @@ import opa from "./opa";
 import openai from "./openai";
 import openfeature from "./openfeature";
 import opentelemetry from "./opentelemetry";
+import oracle from "./oracle";
 import owaspZap from "./owasp-zap";
 import pact from "./pact";
 import pandas from "./pandas";
+import parcel from "./parcel";
 import penetrationTesting from "./penetration-testing";
 import pgvector from "./pgvector";
+import phoenix from "./phoenix";
 import php from "./php";
 import pinia from "./pinia";
 import playwright from "./playwright";
@@ -137,29 +170,39 @@ import postgresql from "./postgresql";
 import powerBi from "./power-bi";
 import preact from "./preact";
 import presto from "./presto";
+import prettier from "./prettier";
 import prisma from "./prisma";
 import prometheus from "./prometheus";
+import proofpoint from "./proofpoint";
 import pulumi from "./pulumi";
 import pytest from "./pytest";
 import python from "./python";
 import pytorch from "./pytorch";
 import qaAutomation from "./qa-automation";
+import quarkus from "./quarkus";
 import ragas from "./ragas";
 import ray from "./ray";
 import reactJs from "./react-js";
 import reactNative from "./react-native";
+import reactTestingLibrary from "./react-testing-library";
 import react from "./react";
+import recoil from "./recoil";
 import redis from "./redis";
 import redux from "./redux";
 import remix from "./remix";
 import restApiDesign from "./rest-api-design";
+import rest from "./rest";
+import rollup from "./rollup";
+import rubyOnRails from "./ruby-on-rails";
 import ruby from "./ruby";
 import rust from "./rust";
 import rxJs from "./rx-js";
 import salesforce from "./salesforce";
+import sass from "./sass";
 import scala from "./scala";
 import scikitLearn from "./scikit-learn";
 import securityEngineering from "./security-engineering";
+import selenium from "./selenium";
 import sentry from "./sentry";
 import serverless from "./serverless";
 import snowflake from "./snowflake";
@@ -169,10 +212,13 @@ import socketio from "./socketio";
 import solidJs from "./solid-js";
 import sops from "./sops";
 import spark from "./spark";
+import sqlServer from "./sql-server";
 import sql from "./sql";
 import sqlalchemy from "./sqlalchemy";
 import storybook from "./storybook";
 import stripe from "./stripe";
+import styledComponents from "./styled-components";
+import stylus from "./stylus";
 import svelte from "./svelte";
 import sveltekit from "./sveltekit";
 import swift from "./swift";
@@ -183,6 +229,7 @@ import tanstack from "./tanstack";
 import tensorflow from "./tensorflow";
 import terraform from "./terraform";
 import testing from "./testing";
+import tornado from "./tornado";
 import transformers from "./transformers";
 import trivy from "./trivy";
 import typeorm from "./typeorm";
@@ -192,265 +239,259 @@ import vite from "./vite";
 import vitest from "./vitest";
 import vllm from "./vllm";
 import vue from "./vue";
+import vuex from "./vuex";
 import webAccessibility from "./web-accessibility";
-import zuora from "./zuora";
-import proofpoint from "./proofpoint";
-import edr from "./edr";
-import auth0 from "./auth0";
-import junit from "./junit";
-import locust from "./locust";
-import infracost from "./infracost";
-import census from "./census";
-import reactTestingLibrary from "./react-testing-library";
-import flow from "./flow";
-import koa from "./koa";
-import hapiJs from "./hapi-js";
-import tornado from "./tornado";
-import quarkus from "./quarkus";
-import micronaut from "./micronaut";
-import jakartaEe from "./jakarta-ee";
-import codeigniter from "./codeigniter";
-import actixWeb from "./actix-web";
-import eslint from "./eslint";
-import firebaseFirestore from "./firebase-firestore";
-import gin from "./gin";
-import jasmine from "./jasmine";
-import mariadb from "./mariadb";
-import mocha from "./mocha";
-import oracle from "./oracle";
-import phoenix from "./phoenix";
-import prettier from "./prettier";
-import sqlServer from "./sql-server";
+import webpack from "./webpack";
 import websockets from "./websockets";
-import generativeAi from "./generative-ai";
-import llm from "./llm";
-import huggingFace from "./hugging-face";
+import zuora from "./zuora";
+import zustand from "./zustand";
 
 const allTech = {
-  recoil: recoil,
-  vuex: vuex,
-  zustand: zustand,
-  airbyte: airbyte,
-  airflow: airflow,
-  aix: aix,
-  algol: algol,
-  amplitude: amplitude,
-  android: android,
-  angular: angular,
-  ansible: ansible,
+  "actix-web": actixWeb,
+  airbyte,
+  airflow,
+  aix,
+  algol,
+  amplitude,
+  android,
+  angular,
+  ansible,
+  "ant-design": antDesign,
   "apache-spark": apacheSpark,
   "api-gateway": apiGateway,
   "api-security": apiSecurity,
-  apollo: apollo,
-  appcenter: appcenter,
-  argocd: argocd,
-  astro: astro,
+  apollo,
+  appcenter,
+  argocd,
+  astro,
+  auth0,
   "aws-cost-explorer": awsCostExplorer,
-  aws: aws,
+  aws,
   "axiom-cortex": axiomCortex,
-  azure: azure,
-  browserstack: browserstack,
+  azure,
+  babel,
+  bootstrap,
+  browserstack,
   "c-sharp": cSharp,
-  cassandra: cassandra,
+  cassandra,
+  census,
+  "chakra-ui": chakraUi,
   "ci-cd": ciCd,
-  cloudformation: cloudformation,
-  cloudzero: cloudzero,
-  codepush: codepush,
-  codeql: codeql,
-  cpp: cpp,
-  crowdstrike: crowdstrike,
-  cypress: cypress,
-  dart: dart,
+  cloudformation,
+  cloudzero,
+  codeigniter,
+  codepush,
+  codeql,
+  "context-api": contextApi,
+  cpp,
+  crowdstrike,
+  css,
+  cypress,
+  dart,
   "data-engineering": dataEngineering,
   "data-governance": dataGovernance,
   "data-science": dataScience,
   "data-warehousing": dataWarehousing,
-  datahub: datahub,
-  dbt: dbt,
-  detox: detox,
+  datahub,
+  dbt,
+  detox,
   "devops-engineering": devopsEngineering,
-  django: django,
-  docker: docker,
+  django,
+  docker,
   "domain-driven-design": domainDrivenDesign,
-  dvc: dvc,
-  dynamodb: dynamodb,
+  dvc,
+  dynamodb,
+  edr,
   "ef-core": efCore,
-  elasticsearch: elasticsearch,
-  elixir: elixir,
+  elasticsearch,
+  elixir,
   "ember-js": emberJs,
-  erlang: erlang,
+  emotion,
+  erlang,
+  eslint,
   "etl-elt": etlElt,
   "event-sourcing": eventSourcing,
-  express: express,
+  "express.js": expressJs,
+  express,
   "external-secrets": externalSecrets,
-  fastapi: fastapi,
-  fastlane: fastlane,
-  feast: feast,
-  figma: figma,
-  fivetran: fivetran,
-  flask: flask,
-  flink: flink,
-  flutter: flutter,
-  gatsby: gatsby,
+  fastapi,
+  fastlane,
+  feast,
+  figma,
+  "firebase-firestore": firebaseFirestore,
+  fivetran,
+  flask,
+  flink,
+  flow,
+  flutter,
+  gatsby,
+  "generative-ai": generativeAi,
+  gin,
   "github-actions": githubActions,
-  gitlab: gitlab,
-  gitops: gitops,
-  go: go,
+  gitlab,
+  gitops,
+  go,
   "google-cloud": googleCloud,
   "google-workspace": googleWorkspace,
-  grafana: grafana,
-  graphql: graphql,
+  grafana,
+  graphql,
   "great-expectations": greatExpectations,
-  gremlin: gremlin,
-  grpc: grpc,
-  haskell: haskell,
-  helm: helm,
-  hibernate: hibernate,
-  hightouch: hightouch,
-  hipaa: hipaa,
-  hubspot: hubspot,
+  gremlin,
+  grpc,
+  "hapi-js": hapiJs,
+  haskell,
+  helm,
+  hibernate,
+  hightouch,
+  hipaa,
+  hubspot,
   "hugging-face": huggingFace,
-  iso: iso,
-  istio: istio,
-  jaeger: jaeger,
-  jamf: jamf,
-  java: java,
-  jenkins: jenkins,
-  jest: jest,
+  infracost,
+  iso,
+  istio,
+  jaeger,
+  "jakarta-ee": jakartaEe,
+  jamf,
+  jasmine,
+  java,
+  jenkins,
+  jest,
   "jira-service-management": jiraServiceManagement,
-  jira: jira,
-  jquery: jquery,
-  k6: k6,
-  kafka: kafka,
-  kotlin: kotlin,
-  kubeflow: kubeflow,
-  kubernetes: kubernetes,
-  langchain: langchain,
-  launchdarkly: launchdarkly,
-  linkerd: linkerd,
-  llms: llms,
-  loki: loki,
-  looker: looker,
+  jira,
+  jquery,
+  junit,
+  k6,
+  kafka,
+  koa,
+  kotlin,
+  kubeflow,
+  kubernetes,
+  langchain,
+  launchdarkly,
+  less,
+  linkerd,
+  llm,
+  llms,
+  locust,
+  loki,
+  looker,
   "machine-learning": machineLearning,
-  memcached: memcached,
+  mariadb,
+  "material-ui": materialUi,
+  memcached,
   "message-queues": messageQueues,
-  microservices: microservices,
-  mlflow: mlflow,
-  mobx: mobx,
-  mongodb: mongodb,
-  mysql: mysql,
-  net: net,
-  nextjs: nextjs,
-  node: node,
-  notion: notion,
-  numpy: numpy,
+  micronaut,
+  microservices,
+  "ml-ops": mlOps,
+  mlflow,
+  mobx,
+  mocha,
+  mongodb,
+  mysql,
+  nestjs,
+  net,
+  nextjs,
+  node,
+  notion,
+  numpy,
   "nuxt-js": nuxtJs,
   "objective-c": objectiveC,
-  oidc: oidc,
-  okta: okta,
-  opa: opa,
-  openai: openai,
-  openfeature: openfeature,
-  opentelemetry: opentelemetry,
+  oidc,
+  okta,
+  opa,
+  openai,
+  openfeature,
+  opentelemetry,
+  oracle,
   "owasp-zap": owaspZap,
-  pact: pact,
-  pandas: pandas,
+  pact,
+  pandas,
+  parcel,
   "penetration-testing": penetrationTesting,
-  pgvector: pgvector,
-  php: php,
-  pinia: pinia,
-  playwright: playwright,
-  postgresql: postgresql,
+  pgvector,
+  phoenix,
+  php,
+  pinia,
+  playwright,
+  postgresql,
   "power-bi": powerBi,
-  preact: preact,
-  presto: presto,
-  prisma: prisma,
-  prometheus: prometheus,
-  pulumi: pulumi,
-  pytest: pytest,
-  python: python,
-  pytorch: pytorch,
+  preact,
+  presto,
+  prettier,
+  prisma,
+  prometheus,
+  proofpoint,
+  pulumi,
+  pytest,
+  python,
+  pytorch,
   "qa-automation": qaAutomation,
-  ragas: ragas,
-  ray: ray,
+  quarkus,
+  ragas,
+  ray,
   "react-js": reactJs,
   "react-native": reactNative,
-  react: react,
-  redis: redis,
-  redux: redux,
-  remix: remix,
+  "react-testing-library": reactTestingLibrary,
+  react,
+  recoil,
+  redis,
+  redux,
+  remix,
   "rest-api-design": restApiDesign,
-  ruby: ruby,
-  rust: rust,
+  rest,
+  rollup,
+  "ruby-on-rails": rubyOnRails,
+  ruby,
+  rust,
   "rx-js": rxJs,
-  salesforce: salesforce,
-  scala: scala,
+  salesforce,
+  sass,
+  scala,
   "scikit-learn": scikitLearn,
   "security-engineering": securityEngineering,
-  sentry: sentry,
-  serverless: serverless,
-  snowflake: snowflake,
-  snyk: snyk,
-  soc: soc,
-  socketio: socketio,
+  selenium,
+  sentry,
+  serverless,
+  snowflake,
+  snyk,
+  soc,
+  socketio,
   "solid-js": solidJs,
-  sops: sops,
-  spark: spark,
-  sql: sql,
-  sqlalchemy: sqlalchemy,
-  storybook: storybook,
-  stripe: stripe,
-  svelte: svelte,
-  sveltekit: sveltekit,
-  swift: swift,
-  "system-design": systemDesign,
-  tableau: tableau,
-  tailwind: tailwind,
-  tanstack: tanstack,
-  tensorflow: tensorflow,
-  terraform: terraform,
-  testing: testing,
-  transformers: transformers,
-  trivy: trivy,
-  typeorm: typeorm,
-  typescript: typescript,
-  vault: vault,
-  vite: vite,
-  vitest: vitest,
-  vllm: vllm,
-  vue: vue,
-  "web-accessibility": webAccessibility,
-  zuora: zuora,
-  proofpoint: proofpoint,
-  edr: edr,
-  auth0: auth0,
-  junit: junit,
-  locust: locust,
-  infracost: infracost,
-  census: census,
-  eslint: eslint,
-  prettier: prettier,
-  mocha: mocha,
-  jasmine: jasmine,
-  "react-testing-library": reactTestingLibrary,
-  flow: flow,
-  koa: koa,
-  "hapi-js": hapiJs,
-  tornado: tornado,
-  quarkus: quarkus,
-  micronaut: micronaut,
-  "jakarta-ee": jakartaEe,
-  codeigniter: codeigniter,
-  gin: gin,
-  "actix-web": actixWeb,
-  phoenix: phoenix,
-  websockets: websockets,
-  mariadb: mariadb,
-  oracle: oracle,
+  sops,
+  spark,
   "sql-server": sqlServer,
-  "firebase-firestore": firebaseFirestore,
-  "generative-ai": generativeAi,
-  llm: llm,
+  sql,
+  sqlalchemy,
+  storybook,
+  stripe,
+  "styled-components": styledComponents,
+  stylus,
+  svelte,
+  sveltekit,
+  swift,
+  "system-design": systemDesign,
+  tableau,
+  tailwind,
+  tanstack,
+  tensorflow,
+  terraform,
+  testing,
+  tornado,
+  transformers,
+  trivy,
+  typeorm,
+  typescript,
+  vault,
+  vite,
+  vitest,
+  vllm,
+  vue,
+  vuex,
+  "web-accessibility": webAccessibility,
+  webpack,
+  websockets,
+  zuora,
+  zustand,
 };
 
 export default allTech;
