@@ -11,21 +11,21 @@ const locust: TechEntry = {
     intro: "Locust is a powerful and versatile load testing framework. Our Locust experts are vetted for their deep understanding of Locust's core principles, from its powerful Python-based scripting to its robust security and performance tuning capabilities. They are the specialists who can help you build the next generation of load testing solutions.",
     pains: [
         {
-            icon: TestTube2,
+            iconName: "AlertTriangle",
             pain: "Our load tests are slow and unreliable.",
             problem: "Poorly written load tests are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **Locust's powerful Python-based scripting**. Our engineers can help you build a fast, and reliable load testing suite.",
             kpi: "50% Reduction in Test Execution Time"
         },
         {
-            icon: Zap,
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest load testing technologies.",
             problem: "The load testing landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as k6 and Gatling.",
             solution: "Our experts are tested on **the latest load testing technologies**. They can help you take advantage of the latest features, so you can build the next generation of load testing solutions.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Code,
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our load tests.",
             problem: "Load test security is a top priority for every business. It's difficult to secure your load tests, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Locust's security features**. Our engineers use the latest security best practices to protect your load tests from attack.",

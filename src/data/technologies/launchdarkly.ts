@@ -13,7 +13,7 @@ const launchdarkly: TechEntry = {
     "LaunchDarkly is a feature management platform that empowers teams to safely deliver and control their software. Our engineers use LaunchDarkly to decouple deployment from release, allowing you to ship code more frequently, mitigate risk, and learn from your users.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are your software releases stressful, high-risk events?",
       problem:
         "Every deployment is a nerve-wracking, all-or-nothing event. A bug in a new feature can bring down the entire application, forcing a painful rollback and damaging user trust. Your team is afraid to ship, and your release velocity is grinding to a halt.",
@@ -22,7 +22,7 @@ const launchdarkly: TechEntry = {
       kpi: "Reduce deployment risk by 99% and eliminate the need for emergency rollbacks.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is it impossible to get feedback on new features before releasing them to everyone?",
       problem:
         "You want to get early feedback from real users, but you have no way to release a new feature to a small, targeted group. You are forced to do a 'big bang' release to all users at once, and you can only hope that you got it right.",
@@ -31,7 +31,7 @@ const launchdarkly: TechEntry = {
       kpi: "Release new features to targeted audiences and gather feedback before a full rollout.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are you struggling to run and analyze A/B tests to make data-driven decisions?",
       problem:
         "You want to run experiments to see which features or designs perform best, but building and managing an A/B testing framework is complex and time-consuming. You are making product decisions based on gut feelings instead of data.",

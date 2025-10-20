@@ -13,7 +13,7 @@ const dataEngineering: TechEntry = {
     'Data Engineering is the bedrock of a data-driven organization. It’s not about writing brittle ETL scripts; it’s about building a scalable, observable, and trustworthy data factory. You need an architect of the modern data stack. Our vetting identifies engineers who design for data quality, implement robust data models, and build the reliable pipelines that turn raw data into your company’s most valuable asset.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: 'Untrustworthy Data and "Report Roulette"',
       problem:
         'Your dashboards are a minefield of conflicting metrics. Business leaders have lost all faith in the data because every report tells a different story, leading to analysis paralysis or decisions based on gut feel.',
@@ -22,7 +22,7 @@ const dataEngineering: TechEntry = {
       kpi: 'Achieve 99.9% data uptime and reduce data-related support tickets by 90%.',
     },
     {
-      icon: Workflow,
+      iconName: "AlertTriangle",
       pain: 'Brittle, Unscalable Data Pipelines',
       problem:
         'Your data pipelines are a house of cards held together with cron jobs and duct tape. They fail silently, are impossible to debug, and cannot handle increasing data volumes, leaving your data stale and your analytics team blocked.',
@@ -31,7 +31,7 @@ const dataEngineering: TechEntry = {
       kpi: 'Increase data pipeline reliability to over 99.5% and support 10x data volume growth.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "AlertTriangle",
       pain: 'Data Team as a Bottleneck',
       problem:
         'The business needs answers, but the data team is buried in ad-hoc requests and pipeline maintenance. Getting a new data source integrated takes months, and the backlog is endless. Innovation is impossible.',

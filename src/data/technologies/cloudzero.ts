@@ -13,7 +13,7 @@ const cloudzero: TechEntry = {
     'CloudZero is not a billing tool; it’s a **Cloud Cost Intelligence** platform that treats spend as a first-class engineering metric. You need an expert who can translate raw billing data into granular, actionable insights. Our vetting process identifies FinOps engineers who can instrument your code, map costs directly to features and teams, and build a culture where cost is a conscious architectural trade-off, not a surprise at the end of the month.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: 'Unexplained, Runaway Cloud Bills',
       problem:
         'Your monthly cloud bill is a black box. It keeps growing, but finance has no idea why, and engineering has no idea which feature, customer, or API call is driving the cost.',
@@ -22,7 +22,7 @@ const cloudzero: TechEntry = {
       kpi: 'Identify 80% of unallocated cloud waste within the first 60 days.',
     },
     {
-      icon: Workflow,
+      iconName: "AlertTriangle",
       pain: 'Engineers Are Blind to Cost Implications',
       problem:
         'Your developers make architectural decisions—choosing an instance type, a database, a caching strategy—with zero visibility into the financial impact, leading to massively over-provisioned and inefficient systems.',
@@ -31,7 +31,7 @@ const cloudzero: TechEntry = {
       kpi: 'Reduce cost per feature by 30% by making cost a visible engineering metric.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "AlertTriangle",
       pain: 'Inaccurate Forecasting and Budgeting Chaos',
       problem:
         'You cannot forecast your cloud spend with any accuracy. This makes financial planning impossible and leads to tense, unproductive conversations between engineering and finance every quarter.',

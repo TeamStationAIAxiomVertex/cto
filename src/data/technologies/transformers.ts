@@ -14,7 +14,7 @@ const transformers: TechEntry = {
     "The Hugging Face `transformers` library is the central nervous system of the modern AI revolution, providing standardized access to thousands of state-of-the-art language models. You need an engineer who can move beyond basic `pipeline` usage to fine-tune, optimize, and deploy these massive models for your specific business needs. Our vetting process is designed to find these experts. We assess their deep understanding of the library's core components—Tokenizers, Models, and the Trainer API—and their ability to handle the practical challenges of working with large models. By hiring a Transformers expert from us, you get a developer who can build powerful, custom NLP solutions that deliver real business value.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are you unable to adapt pre-trained models to your specific domain?",
       problem:
         "Off-the-shelf, pre-trained models often perform poorly on domain-specific tasks (e.g., legal or medical text). Without the ability to fine-tune a model on your own data, you are left with a generic solution that fails to meet your accuracy requirements.",
@@ -23,7 +23,7 @@ const transformers: TechEntry = {
       kpi: "Fine-Tuning Accuracy and F1 Score",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your model slow and consuming too much memory?",
       problem:
         "Large transformer models are resource-intensive. Simply loading a model without optimization can lead to out-of-memory errors and slow performance, making it unusable in a production environment.",
@@ -32,7 +32,7 @@ const transformers: TechEntry = {
       kpi: "Inference Latency and Memory Footprint",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are you struggling to process text correctly for your model?",
       problem:
         "Every transformer model has its own unique tokenizer and expects input in a specific format. Incorrect tokenization is a common, silent failure mode that leads to poor model performance, even if the model itself is correct.",

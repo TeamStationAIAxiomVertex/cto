@@ -4,28 +4,28 @@ import type { TechEntry } from "@/lib/tech";
 
 const algol: TechEntry = {
     name: "Algol",
-    category: "Legacy Languages",
-    categorySlug: "legacy-languages",
+    category: "Backend / Services",
+    categorySlug: "backend-services",
     seo_title: "Hire Senior Algol Developers | Legacy System Experts",
     meta_description: "Hire elite Algol developers specializing in managing, and maintaining legacy systems written in Algol.",
     intro: "Algol is a historical and influential programming language. Our Algol experts are vetted for their deep understanding of Algol's core principles and its historical significance. They are the specialists who can help you maintain and modernize your legacy systems.",
     pains: [
         {
-            icon: Server,
+            iconName: "AlertTriangle",
             pain: "Our Algol systems are unstable and constantly crashing.",
             problem: "Misconfigured systems, and a lack of monitoring lead to cascading failures and application downtime.",
             solution: "We vet for mastery in **Algol administration**. Our engineers can help you stabilize and modernize your legacy systems.",
             kpi: "99.9% System Uptime"
         },
         {
-            icon: Shield,
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our Algol systems.",
             problem: "Legacy systems are often vulnerable to attack. It's difficult to secure them without a deep understanding of the underlying technology.",
             solution: "Our experts are tested on **Algol security best practices**. They can help you secure your legacy systems from internal and external threats.",
             kpi: "Zero Critical Security Vulnerabilities"
         },
         {
-            icon: Code,
+            iconName: "AlertTriangle",
             pain: "Our developers are struggling to work with Algol.",
             problem: "A steep learning curve and a lack of modern tooling make it difficult for developers to work with Algol.",
             solution: "We vet for expertise in building **developer-friendly platforms** on top of Algol. Our engineers can help you modernize your legacy systems and make them easier to work with.",

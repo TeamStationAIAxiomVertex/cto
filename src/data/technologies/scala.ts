@@ -11,21 +11,21 @@ const scala: TechEntry = {
     intro: "Scala is a powerful, multi-paradigm language that blends object-oriented and functional programming (FP) on the JVM, making it a favorite for complex, high-concurrency, and Big Data processing systems (**Apache Spark**, **Akka**). You need an engineer who can leverage Scala's advanced type system to build highly reliable, less buggy software. Our vetting process is designed to find true Scala FP experts, assessing their mastery of immutable data structures, pattern matching, and sophisticated libraries for concurrent and distributed computing. By hiring a Scala expert from us, you gain a developer who can tackle your most demanding, mission-critical tasks in data processing and real-time event streaming with unmatched robustness.",
     pains: [
         {
-            icon: AlertTriangle,
+            iconName: "AlertTriangle",
             pain: "Is your code suffering from complexity and mutable state bugs?",
             problem: "Developers who treat Scala like 'better Java' fail to utilize its functional features, resulting in complex, verbose code that uses mutable state. This leads to hard-to-find concurrency bugs and makes reasoning about code flow incredibly difficult.",
             solution: "We vet for deep expertise in **Functional Programming (FP)**. Our experts must demonstrate mastery of immutability, pattern matching, and higher-order functions to create concise, declarative, and thread-safe code that eliminates entire classes of bugs related to shared mutable state.",
             kpi: "Mastery of Functional Programming and Immutability"
         },
         {
-            icon: AlertTriangle,
+            iconName: "AlertTriangle",
             pain: "Are you struggling with concurrent and distributed systems?",
             problem: "Building high-concurrency systems without the right tools leads to fragile, difficult-to-scale architectures. Traditional threading models are often too low-level and error-prone for distributed environments.",
             solution: "Our engineers are proficient in distributed toolkits like **Akka**. They are vetted on their ability to use the Actor model to build robust, fault-tolerant, and highly concurrent services that scale out easily across multiple machines, perfect for microservices and real-time processing.",
             kpi: "Expertise in Actor Model (Akka) for Concurrency"
         },
         {
-            icon: AlertTriangle,
+            iconName: "AlertTriangle",
             pain: "Are your data pipelines running slowly and inefficiently?",
             problem: "Scala is often used in Big Data, but developers who don't understand the performance implications of its collections or fail to leverage specialized libraries write inefficient pipelines that waste time and cloud computing resources.",
             solution: "We look for engineers proficient in the **Apache Spark** and **Kafka** ecosystems. They must demonstrate the ability to use Spark's RDDs/DataFrames and Kafka Streams to build optimized, high-throughput data processing and event streaming applications.",

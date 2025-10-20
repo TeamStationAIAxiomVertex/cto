@@ -11,21 +11,21 @@ const microservices: TechEntry = {
     intro: "Microservices is a powerful and versatile architectural style. Our Microservices experts are vetted for their deep understanding of Microservices' core principles, from its powerful service decomposition and communication patterns to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a secure, and reliable distributed system.",
     pains: [
         {
-            icon: Share2,
+            iconName: "AlertTriangle",
             pain: "Our system is a monolith.",
             problem: "Poorly designed systems are difficult to understand, maintain, and reuse, leading to a lack of confidence in your system.",
             solution: "We vet for mastery in **Microservices' powerful service decomposition and communication patterns**. Our engineers can help you build a clean, modular, and well-documented distributed system.",
             kpi: "90% Code Reusability"
         },
         {
-            icon: Zap,
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest distributed systems technologies.",
             problem: "The distributed systems landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as serverless and service mesh.",
             solution: "Our experts are tested on **the latest distributed systems technologies**. They can help you take advantage of the latest features, so you can build the next generation of distributed systems.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Shield,
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our data.",
             problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Microservices' security features**. Our engineers use the latest security best practices to protect your data from attack.",

@@ -2,6 +2,7 @@
 import './globals.css';
 import { Inter, Poppins, Source_Code_Pro } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import { Header } from '@/components/layout/Header';
 import Footer from '@/components/Footer';
 import AppProviders from '@/providers/app-providers';
@@ -65,6 +66,15 @@ export default function RootLayout({
             <Footer />
           </div>
         </AppProviders>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-V34G5KN3W4"></Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-V34G5KN3W4');
+          `}
+        </Script>
       </body>
     </html>
   );

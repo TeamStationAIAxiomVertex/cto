@@ -13,7 +13,7 @@ const webAccessibility: TechEntry = {
     "Web accessibility (a11y) is the practice of ensuring that your websites and applications are usable by everyone, regardless of their abilities or disabilities. You need an engineer who understands that accessibility is not just a checklist, but a fundamental part of the user experience. Our vetting process identifies developers who are experts in the WAI-ARIA specification, semantic HTML, and assistive technologies. By hiring a web accessibility expert, you get a developer who can build a modern web application that is inclusive, compliant, and a joy to use for everyone.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your application inaccessible to users with disabilities?",
       problem:
         "Many applications are built without considering the needs of users with disabilities. This can lead to a user experience that is frustrating, or even impossible, for a large segment of the population. This not only alienates users, but also exposes your business to legal risk.",
@@ -22,7 +22,7 @@ const webAccessibility: TechEntry = {
       kpi: "WCAG 2.1 AA Compliance and a Rich, Interactive Experience for All",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your codebase a mess of non-semantic HTML and ARIA hacks?",
       problem:
         "In many applications, accessibility is an afterthought. This can lead to a codebase that is a mess of non-semantic HTML and ARIA hacks. This not only makes the code hard to maintain, but also makes it difficult to build a truly accessible user experience.",
@@ -31,7 +31,7 @@ const webAccessibility: TechEntry = {
       kpi: "A Clean, Maintainable, and Accessible Codebase",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your team not equipped to build accessible applications?",
       problem:
         "Many teams are not equipped to build accessible applications. This can lead to a user experience that is frustrating for users with disabilities and a codebase that is hard to maintain and test.",

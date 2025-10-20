@@ -13,7 +13,7 @@ const detox: TechEntry = {
     "Detox is a gray box, end-to-end testing and automation framework for React Native applications. Our QA engineers and React Native developers use Detox to write stable, reliable, and fast automated tests that simulate real user interactions, ensuring the quality and stability of your mobile app.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are you manually testing your React Native app before every release?",
       problem:
         "Manual testing is slow, expensive, and prone to human error. It's impossible to cover all the edge cases and device types, and you often discover bugs in production that you missed during the testing phase.",
@@ -22,7 +22,7 @@ const detox: TechEntry = {
       kpi: "Automate 90% of your regression testing and reduce pre-release testing time by 80%.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are your end-to-end tests flaky and unreliable?",
       problem:
         "Traditional E2E testing frameworks for mobile are often flaky and unreliable. They rely on arbitrary waits and sleeps, which can cause tests to fail intermittently, even when there are no bugs in the app. This leads to a lack of trust in the test suite and a culture of ignoring failing tests.",
@@ -31,7 +31,7 @@ const detox: TechEntry = {
       kpi: "Reduce flaky test failures by 95% and increase confidence in your test suite.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is it difficult to test your app on different devices and simulators?",
       problem:
         "Your app needs to work on a wide range of devices, screen sizes, and operating systems. Manually testing on all of these different configurations is impossible, and setting up an automated testing infrastructure can be complex.",

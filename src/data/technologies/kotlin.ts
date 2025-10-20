@@ -12,7 +12,7 @@ const kotlin: TechEntry = {
     "Kotlin is the modern, pragmatic language for the JVM, offering conciseness, safety, and superior expressiveness compared to Java, while maintaining full interoperability. It is the perfect choice for building modern, high-performance backends and Android applications. You need an engineer who can leverage Kotlin's core strength: built-in null safety and powerful support for **Coroutines** for asynchronous programming. Our vetting process is designed to find these experts, assessing their ability to write idiomatic Kotlin that is functional, concise, and harnesses Coroutines to achieve massive concurrency without the complexity of traditional Java threads. By hiring a Kotlin expert from us, you gain a developer who can dramatically reduce boilerplate, boost development velocity, and deliver a more reliable, crash-resistant application.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your application logic verbose and full of null pointer exceptions?",
       problem:
         "Legacy code often suffers from excessive boilerplate and the dreaded `NullPointerException`. Developers who don't embrace Kotlin's built-in safety and functional features write code that is hard to read, overly complex, and prone to runtime errors.",
@@ -21,7 +21,7 @@ const kotlin: TechEntry = {
       kpi: "Idiomatic Kotlin and Null Safety Mastery",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your concurrency solution slow or overly complex?",
       problem:
         "Using traditional thread-based concurrency on the JVM is complex, resource-intensive, and bug-prone. Developers who rely on these older methods fail to leverage Kotlin's lightweight and efficient solution: Coroutines.",
@@ -30,7 +30,7 @@ const kotlin: TechEntry = {
       kpi: "Mastery of Coroutines for Asynchronous Programming",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are you struggling to smoothly integrate Kotlin into a Spring/Java ecosystem?",
       problem:
         "When introducing Kotlin, many teams struggle to manage the interoperability with existing Java libraries and frameworks like Spring. Inconsistent style and confusion over which features to use lead to a fragmented, difficult-to-maintain codebase.",

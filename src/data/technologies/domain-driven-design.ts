@@ -11,21 +11,21 @@ const domainDrivenDesign: TechEntry = {
     intro: "Domain Driven Design is a powerful and versatile software design methodology. Our Domain Driven Design experts are vetted for their deep understanding of Domain Driven Design's core principles, from its powerful strategic design patterns to its robust tactical design patterns. They are the specialists who can help you build and manage a secure, and reliable software system.",
     pains: [
         {
-            icon: BrainCircuit,
+            iconName: "AlertTriangle",
             pain: "Our software is a mess of spaghetti code.",
             problem: "Poorly designed software is difficult to understand, maintain, and reuse, leading to a lack of confidence in your system.",
             solution: "We vet for mastery in **Domain Driven Design's powerful strategic design patterns**. Our engineers can help you build a clean, modular, and well-documented software system.",
             kpi: "90% Code Reusability"
         },
         {
-            icon: Milestone,
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest software design technologies.",
             problem: "The software design landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as microservices and serverless.",
             solution: "Our experts are tested on **the latest software design technologies**. They can help you take advantage of the latest features, so you can build the next generation of software systems.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Code,
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our software.",
             problem: "Software security is a top priority for every business. It's difficult to secure your software, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Domain Driven Design's security features**. Our engineers use the latest security best practices to protect your software from attack.",

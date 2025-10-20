@@ -13,7 +13,7 @@ const azure: TechEntry = {
     "Microsoft Azure is the platform of choice for enterprises integrating tightly with the Microsoft ecosystem (Windows, Active Directory, .NET). You need an engineer who can navigate Azure's vast array of services—from scalable compute (**Azure App Services**, **Azure Functions**) and networking (**VNet**, **Azure Firewall**) to critical identity management (**Azure AD**). Our vetting process is designed to find certified experts who understand the nuances of the enterprise environment, prioritizing security, governance, and hybrid connectivity. We test for mastery of both PaaS (Platform-as-a-Service) offerings, which simplify operations, and IaaS (Infrastructure-as-a-Service) for maximum control. By hiring an Azure expert from us, you get a developer who can design a robust, integrated, and compliant cloud solution that leverages your existing enterprise investments.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your hybrid cloud setup complex, insecure, or difficult to manage?",
       problem:
         "Many enterprises require connectivity between their on-premises data centers and Azure. Poorly configured hybrid connectivity (e.g., VPN gateways) or a lack of synchronization with **Active Directory (AD)** leads to security vulnerabilities, identity sprawl, and operational overhead.",
@@ -22,7 +22,7 @@ const azure: TechEntry = {
       kpi: "Azure Networking and Azure AD/RBAC Mastery",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are you struggling to manage application deployments efficiently?",
       problem:
         "Developers often revert to manually deploying applications to VMs, bypassing Azure's powerful PaaS offerings. This increases operational toil and maintenance costs, failing to leverage the auto-scaling and managed services of App Services or AKS.",
@@ -31,7 +31,7 @@ const azure: TechEntry = {
       kpi: "PaaS (App Services, Functions) Deployment Expertise",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your resource provisioning manual and inconsistent?",
       problem:
         "Managing resources through the Azure Portal (clicking in the GUI) is slow, error-prone, and impossible to audit. This leads to configuration drift, security holes, and environments that are not repeatable.",

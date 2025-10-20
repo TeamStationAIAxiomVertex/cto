@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import Link from "next/link";
 import { allTech } from "@/lib/tech";
@@ -13,11 +12,12 @@ type Props = {
   techSlug?: string;
 };
 
-// --- Link Definitions ---
+// --- Link Definitions (VERIFIED & CORRECTED) ---
 const PLAYBOOK_LINKS: ReadingItem[] = [
     { href: "/playbook/hub", title: "CTO Playbook Hub" },
-    { href: "/playbook/nearshore-vs-offshore", title: "The Black Box Outsourcing Trap" },
-    { href: "/playbook/build-vs-buy", title: "The Power of an Integrated Team" },
+    { href: "/playbook/nearshore-vs-offshore", title: "The CTO\'s Guide: Nearshore vs. Offshore Development Strategy" },
+    { href: "/playbook/build-vs-buy", title: "Build vs. Buy: The Definitive CTO Framework for Scaling Nearshore Teams" },
+    { href: "/playbook/bias-free-technical-hiring-axiom-cortex", title: "Bias-Free Technical Hiring: A Playbook for CTOs | TeamStation AI" },
 ];
 
 const HIRE_LINKS: ReadingItem[] = [
@@ -68,7 +68,7 @@ export default function FurtherReading({ items = [], title = "Further Reading", 
       pool.push(...getTechInterlinks(techSlug));
     }
     if (comparison) {
-      pool.push({ href: '/comparisons', title: `Why We're a Better ${comparison} Alternative` });
+      pool.push({ href: '/comparisons', title: `Why We\'re a Better ${comparison} Alternative` });
     }
     if (country) {
       pool.push({ href: '/hire/by-country', title: `More Nearshore Country Options` });

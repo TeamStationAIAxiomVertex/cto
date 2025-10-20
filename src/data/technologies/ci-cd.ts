@@ -11,21 +11,21 @@ const ciCd: TechEntry = {
     intro: "CI/CD is a critical component of any modern, software development lifecycle. Our CI/CD experts are vetted for their deep understanding of CI/CD's core principles, from its powerful pipeline-as-code features to its robust security and performance testing capabilities. They are the specialists who can help you build and manage a secure, and reliable software delivery pipeline.",
     pains: [
         {
-            icon: GitBranch,
+            iconName: "AlertTriangle",
             pain: "Our software delivery is slow and unreliable.",
             problem: "Poorly designed software delivery pipelines are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **CI/CD's powerful pipeline-as-code features**. Our engineers can help you build a fast, and reliable software delivery pipeline.",
             kpi: "50% Reduction in Software Delivery Time"
         },
         {
-            icon: Server,
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest CI/CD technologies.",
             problem: "The CI/CD landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as GitOps and DevSecOps.",
             solution: "Our experts are tested on **the latest CI/CD technologies**. They can help you take advantage of the latest features, so you can build the next generation of software delivery pipelines.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Shield,
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our software.",
             problem: "Software security is a top priority for every business. It's difficult to secure your software, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **CI/CD's security features**. Our engineers use the latest security best practices to protect your software from attack.",

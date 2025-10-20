@@ -13,7 +13,7 @@ const owaspZap: TechEntry = {
     'OWASP ZAP is the cornerstone of a modern DevSecOps practice, enabling **Dynamic Application Security Testing (DAST)** as an automated, continuous process. You need more than a tool operator; you need a security-minded engineer who can embed ZAP into your development lifecycle. Our vetting process identifies experts who can "shift security left," transforming it from a final, manual gate into a developer-first, automated check in every build.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: 'Discovering Critical Vulnerabilities in Production',
       problem:
         'Your team ships code quickly, but security scans are run infrequently, if at all. Critical vulnerabilities like XSS, SQL Injection, or insecure configurations are only found by external researchers—or worse, attackers.',
@@ -22,7 +22,7 @@ const owaspZap: TechEntry = {
       kpi: 'Reduce the discovery of critical vulnerabilities in production by 98%.',
     },
     {
-      icon: Workflow,
+      iconName: "AlertTriangle",
       pain: 'Security as a Development Bottleneck',
       problem:
         'Security reviews are manual, slow, and happen at the end of the development cycle. This creates an adversarial relationship between security and engineering, forcing a trade-off between speed and safety.',
@@ -31,7 +31,7 @@ const owaspZap: TechEntry = {
       kpi: 'Decrease time spent on manual security reviews by 90%.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "AlertTriangle",
       pain: 'Failing Compliance and Security Audits',
       problem:
         'You cannot produce evidence of consistent, repeatable security testing. This puts your SOC 2, ISO 27001, or other certifications at risk and makes it difficult to win enterprise customers.',

@@ -13,7 +13,7 @@ const tailwind: TechEntry = {
     "Tailwind CSS is a utility-first CSS framework that enables rapid UI development without ever leaving your HTML. Our frontend experts use Tailwind to build bespoke, production-ready designs with unmatched speed and consistency.",
   pains: [
     {
-      icon: Palette,
+      iconName: "AlertTriangle",
       pain: "Your CSS is a tangled mess of custom classes, overrides, and '!important' hacks.",
       problem:
         "Traditional CSS methodologies often lead to bloated stylesheets, naming conflicts, and a constant battle with specificity. Making a simple style change can have unintended consequences.",
@@ -22,7 +22,7 @@ const tailwind: TechEntry = {
       kpi: "Reduce CSS bundle size by up to 40%.",
     },
     {
-      icon: FastForward,
+      iconName: "AlertTriangle",
       pain: "Building new UI components takes forever, and iterating on designs is slow.",
       problem:
         "Creating custom CSS for every new component is time-consuming. Your team is reinventing the wheel instead of focusing on what matters: the user experience.",
@@ -31,7 +31,7 @@ const tailwind: TechEntry = {
       kpi: "Increase UI development speed by 2x.",
     },
     {
-      icon: Layout,
+      iconName: "AlertTriangle",
       pain: "Maintaining design consistency across your application is a constant struggle.",
       problem:
         "Without a systematic approach, your UI devolves into a collection of one-off styles, leading to an inconsistent user experience and a brand that feels disjointed.",

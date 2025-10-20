@@ -1,4 +1,6 @@
 
+import { allComparisonData } from '@/data/comparisons';
+
 export const comparisonPages = [
   { name: "BairesDev", slug: "bairesdev", url: "https://www.bairesdev.com" },
   { name: "Globant", slug: "globant", url: "https://www.globant.com" },
@@ -15,3 +17,7 @@ export const comparisonPages = [
   { name: "Devlane", slug: "devlane", url: "https://devlane.com" },
   { name: "New-Gen Nearshore", slug: "new-gen-nearshore", url: "https://teamstation.dev" },
 ];
+
+export function getComparisonPage(slug: string) {
+  return allComparisonData[slug];
+}

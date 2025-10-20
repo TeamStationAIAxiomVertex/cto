@@ -1,5 +1,4 @@
 
-import { TestTube2, Zap, Code, Shield } from "lucide-react";
 import type { TechEntry } from "@/lib/tech";
 
 const junit: TechEntry = {
@@ -11,21 +10,21 @@ const junit: TechEntry = {
     intro: "JUnit is a powerful and versatile Java testing framework. Our JUnit experts are vetted for their deep understanding of JUnit's core principles, from its powerful assertion and annotation capabilities to its robust security and performance tuning capabilities. They are the specialists who can help you build the next generation of Java tests.",
     pains: [
         {
-            icon: TestTube2,
+            iconName: "TestTube2",
             pain: "Our tests are slow and unreliable.",
             problem: "Poorly written tests are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **JUnit's powerful assertion and annotation capabilities**. Our engineers can help you build a fast, and reliable Java testing suite.",
             kpi: "50% Reduction in Test Execution Time"
         },
         {
-            icon: Zap,
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest testing technologies.",
             problem: "The testing landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as TestNG and Mockito.",
             solution: "Our experts are tested on **the latest testing technologies**. They can help you take advantage of the latest features, so you can build the next generation of Java tests.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Code,
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our tests.",
             problem: "Test security is a top priority for every business. It's difficult to secure your tests, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **JUnit's security features**. Our engineers use the latest security best practices to protect your tests from attack.",

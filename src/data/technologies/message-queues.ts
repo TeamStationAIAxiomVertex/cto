@@ -11,21 +11,21 @@ const messageQueues: TechEntry = {
     intro: "Message Queues are a powerful and versatile tool for building asynchronous systems. Our Message Queues experts are vetted for their deep understanding of Message Queues's core principles, from its powerful message brokers to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a secure, and reliable asynchronous system.",
     pains: [
         {
-            icon: MessageSquare,
+            iconName: "AlertTriangle",
             pain: "Our system is a mess of spaghetti code.",
             problem: "Poorly designed systems are difficult to understand, maintain, and reuse, leading to a lack of confidence in your system.",
             solution: "We vet for mastery in **Message Queues's powerful message brokers**. Our engineers can help you build a clean, modular, and well-documented asynchronous system.",
             kpi: "90% Code Reusability"
         },
         {
-            icon: Zap,
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest asynchronous technologies.",
             problem: "The asynchronous landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as Kafka and RabbitMQ.",
             solution: "Our experts are tested on **the latest asynchronous technologies**. They can help you take advantage of the latest features, so you can build the next generation of asynchronous systems.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Shield,
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our data.",
             problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Message Queues's security features**. Our engineers use the latest security best practices to protect your data from attack.",

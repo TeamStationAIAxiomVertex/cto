@@ -1,10 +1,10 @@
 
 import type { ElementType } from "react";
 import type { LucideIcon } from "lucide-react";
-import allTechData from "@/data/technologies"; // Corrected to be the single source of truth
+import allTechData from "@/data/technologies"; 
 
 export interface PainPoint {
-  icon: LucideIcon;
+  iconName: string; // Corrected: Use a string name for the icon
   pain: string;
   problem: string;
   solution: string;
@@ -22,169 +22,25 @@ export interface TechEntry {
   evaluation: string[];
   technical_analysis: string;
   interlink_slugs: string[];
-  comparison_slugs?: string[]; // Added for more specific interlinking
+  comparison_slugs?: string[];
+  is_ready?: boolean;
 }
 
 export type TechSlug =
-  // Frontend/Full-Stack (10)
-  | "react"
-  | "typescript"
-  | "nextjs"
-  | "angular"
-  | "vue"
-  | "pinia"
-  | "remix"
-  | "svelte"
-  | "web-accessibility"
-  | "rx-js"
-  | "vite"
-  | "tailwind"
-  | "tanstack"
-  | "testing"
+  // This will be a union of all the keys from allTechData
+  keyof typeof allTechData;
 
-  // Backend/Core Languages (12)
-  | "node"
-  | "java"
-  | "python"
-  | "golang"
-  | "c-sharp"
-  | "rust"
-  | "php"
-  | "kotlin"
-  | "scala"
-  | "erlang"
-  | "haskell"
-  | "elixir"
-  | "ruby"
-
-  // DevOps & Cloud (18)
-  | "devops-engineering"
-  | "aws"
-  | "azure"
-  | "google-cloud"
-  | "kubernetes"
-  | "docker"
-  | "terraform"
-  | "ansible"
-  | "jenkins"
-  | "ci-cd"
-  | "prometheus"
-  | "grafana"
-  | "istio"
-  | "helm"
-  | "vault"
-  | "cloudformation"
-  | "gitops"
-  | "serverless"
-  | "opentelemetry"
-  | "jaeger"
-  | "sentry"
-  | "github-actions"
-  | "pulumi"
-  | "gitlab"
-  | "argocd"
-  | "linkerd"
-  | "loki"
-  | "external-secrets"
-  | "launchdarkly"
-  | "openfeature"
-
-  // Data & AI (18)
-  | "data-engineering"
-  | "sql"
-  | "etl-elt"
-  | "apache-spark"
-  | "dbt"
-  | "snowflake"
-  | "airbyte"
-  | "data-governance"
-  | "machine-learning"
-  | "data-warehousing"
-  | "power-bi"
-  | "tableau"
-  | "fivetran"
-  | "looker"
-  | "presto"
-  | "kafka"
-  | "data-science"
-  | "llms"
-  | "pandas"
-  | "numpy"
-  | "vllm"
-  | "pgvector"
-  | "mlflow"
-  | "langchain"
-  | "ragas"
-  | "hugging-face"
-  | "transformers"
-  | "airflow"
-
-  // Databases (7)
-  | "postgresql"
-  | "mongodb"
-  | "redis"
-  | "cassandra"
-  | "mysql"
-  | "dynamodb"
-  | "elasticsearch"
-  | "prisma"
-  | "hibernate"
-  | "typeorm"
-  | "ef-core"
-  | "sqlalchemy"
-
-  // QA & Security (7)
-  | "playwright"
-  | "cypress"
-  | "qa-automation"
-  | "security-engineering"
-  | "penetration-testing"
-  | "jest"
-  | "vitest"
-  | "k6"
-  | "pact"
-  | "codeql"
-  | "opa"
-  | "soc"
-  | "iso"
-  | "trivy"
-  | "snyk"
-  | "browserstack"
-  | "owasp-zap"
-
-  // Architecture & Integrations (8)
-  | "microservices"
-  | "grpc"
-  | "rest-api-design"
-  | "event-sourcing"
-  | "domain-driven-design"
-  | "message-queues"
-  | "api-gateway"
-  | "system-design"
-  | "api-security"
-
-  // Mobile (3)
-  | "react-native"
-  | "flutter"
-  | "swift"
-
-  // Vetting & Cognitive AI (2)
-  | "axiom-cortex"
-  | "graphql"
-  
-  // Cloud FinOps & BizTech
-  | "cloudzero"
-  | "salesforce"
-  | "hubspot"
-  | "hightouch";
-
-export interface AllTech {
-  [key: string]: TechEntry;
-}
+export type AllTech = {
+  [key in TechSlug]: TechEntry;
+};
 
 // The single source of truth for all technology data.
 export const allTech: AllTech = allTechData;
 
 export function getAllTechSlugs(): string[] {
-  return Object.keys(allTech);
+  return Object.keys(allTech).filter(key => {
+    const tech = allTech[key as TechSlug];
+    // Defensive check to ensure tech and is_ready exist
+    return tech && tech.is_ready;
+  });
 }

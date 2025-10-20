@@ -13,7 +13,7 @@ const dbt: TechEntry = {
     'dbt (Data Build Tool) is the core of modern **Analytics Engineering**. It’s not about writing SQL; it’s about treating analytics as a professional software engineering discipline. You need an expert who can transform your chaotic warehouse of tangled SQL scripts into a modular, version-controlled, and tested data asset. Our vetting identifies engineers who use dbt to build trust in your data, accelerate analytics development, and create a common language between data producers and consumers.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: '"Spaghetti SQL" and Untrustworthy Data Models',
       problem:
         'Your data warehouse is a black box of complex, undocumented SQL scripts. Business logic is duplicated and contradictory, nobody knows which tables to use, and a small change can break dozens of downstream reports.',
@@ -22,7 +22,7 @@ const dbt: TechEntry = {
       kpi: 'Reduce data model-related errors in reporting by 95%.',
     },
     {
-      icon: Workflow,
+      iconName: "AlertTriangle",
       pain: 'No Testing for Your Most Critical Business Logic',
       problem:
         'Your most critical business logic—how you define revenue, active users, and other key metrics—lives in SQL with zero automated testing. You only find out about errors when an executive questions a dashboard.',
@@ -31,7 +31,7 @@ const dbt: TechEntry = {
       kpi: 'Achieve 100% test coverage for all critical business logic in the data warehouse.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "AlertTriangle",
       pain: 'Slow, Manual, and Error-Prone Analytics Workflow',
       problem:
         'Onboarding new analysts takes months because they have to reverse-engineer years of undocumented SQL. Collaboration is impossible, and every change is a high-risk manual deployment.',

@@ -13,7 +13,7 @@ const spark: TechEntry = {
     "Apache Spark is a unified analytics engine for large-scale data processing. Our data engineers use Spark to build high-performance batch and streaming data pipelines, run complex analytics, and power machine learning applications. We are experts at leveraging Spark's speed and scalability to solve your most challenging big data problems.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are your data processing jobs too slow to meet your business needs?",
       problem:
         "Your existing data pipelines, built with traditional tools like MapReduce, are too slow to handle your growing data volumes. You can't get the timely insights you need to make critical business decisions, and your data team is spending all their time waiting for jobs to finish.",
@@ -22,7 +22,7 @@ const spark: TechEntry = {
       kpi: "Reduce data processing times by up to 100x and get the insights you need in minutes, not hours.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are you struggling to process both batch and streaming data?",
       problem:
         "Your data comes from a variety of sources, including batch files, real-time streams, and interactive queries. You are using a patchwork of different tools to handle these different data processing needs, which is complex, expensive, and difficult to maintain.",
@@ -31,7 +31,7 @@ const spark: TechEntry = {
       kpi: "Unify your batch and streaming data processing on a single platform and reduce your total cost of ownership by 50%.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is it difficult to build and deploy machine learning models at scale?",
       problem:
         "You want to use machine learning to power your business, but you are struggling to build and deploy models at scale. Your data scientists are working in silos, and it's difficult to move models from development to production.",

@@ -1,5 +1,4 @@
 
-import { Share2, Zap, Shield, Code } from "lucide-react";
 import type { TechEntry } from "@/lib/tech";
 
 const istio: TechEntry = {
@@ -11,21 +10,21 @@ const istio: TechEntry = {
     intro: "Istio is a powerful and versatile service mesh. Our Istio experts are vetted for their deep understanding of Istio's core principles, from its powerful traffic management and observability features to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a secure, and reliable service mesh.",
     pains: [
         {
-            icon: Share2,
+            iconName: "Share2",
             pain: "Our microservices are a mess of spaghetti.",
             problem: "Poorly designed microservices are difficult to understand, maintain, and reuse, leading to a lack of confidence in your system.",
             solution: "We vet for mastery in **Istio's powerful traffic management and observability features**. Our engineers can help you build a clean, modular, and well-documented service mesh.",
             kpi: "90% Application Reusability"
         },
         {
-            icon: Zap,
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest service mesh technologies.",
             problem: "The service mesh landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as Linkerd and Consul.",
             solution: "Our experts are tested on **the latest service mesh technologies**. They can help you take advantage of the latest features, so you can build the next generation of service meshes.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Shield,
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our data.",
             problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Istio's security features**. Our engineers use the latest security best practices to protect your data from attack.",

@@ -13,7 +13,7 @@ const gremlin: TechEntry = {
     'Gremlin is a chaos engineering platform that helps you build more resilient systems. With Gremlin, you can safely and securely inject failure into your systems to find weaknesses before they cause problems for your customers.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: 'Production Outages',
       problem:
         'You have no idea how your system will behave under stress, and you only find out when it’s too late and your customers are affected.',
@@ -22,7 +22,7 @@ const gremlin: TechEntry = {
       kpi: '75% reduction in critical production incidents.',
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: 'Unknown Dependencies',
       problem:
         'You have a complex microservices architecture, and you don’t know how the failure of one service will impact others.',
@@ -31,7 +31,7 @@ const gremlin: TechEntry = {
       kpi: '90% improvement in system observability and understanding.',
     },
     {
-        icon: AlertTriangle,
+        iconName: "AlertTriangle",
         pain: 'Slow Incident Response',
         problem:
             'When a production incident occurs, your team is slow to react because they have never seen that type of failure before.',

@@ -13,7 +13,7 @@ const mlflow: TechEntry = {
     'MLflow is the open-source standard for **managing the end-to-end machine learning lifecycle**. It’s the engineering discipline that turns chaotic data science into a reproducible, auditable, and deployable process. You need an MLOps engineer who can build a robust foundation for your entire ML practice. Our vetting identifies experts who use MLflow to create a single source of truth for experiments, models, and deployments, eliminating the "it worked on my machine" problem for good.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: 'Un-reproducible "Magic" Models and Lost Experiments',
       problem:
         'Your data scientists are running hundreds of experiments, but the results are scattered across notebooks, spreadsheets, and Slack messages. You can’t reproduce a great result from last month, and you have no idea which code, data, and parameters created your best model.',
@@ -22,7 +22,7 @@ const mlflow: TechEntry = {
       kpi: 'Achieve perfect reproducibility for all ML experiments and model training runs.',
     },
     {
-      icon: Workflow,
+      iconName: "AlertTriangle",
       pain: 'Chaotic, Inconsistent Model Deployment Process',
       problem:
         'Every time a model is ready for production, it’s a custom, manual effort. There is no standard format for packaging the model and its dependencies, leading to a slow, error-prone deployment process that is unique every time.',
@@ -31,7 +31,7 @@ const mlflow: TechEntry = {
       kpi: 'Reduce the time and engineering effort required for model deployment by 80%.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "AlertTriangle",
       pain: 'No Governance or Visibility into Production Models',
       problem:
         'You have dozens of models running in production, but no central inventory. You don’t know which version is serving traffic, who approved its deployment, or how to roll it back, creating massive operational risk and a compliance nightmare.',

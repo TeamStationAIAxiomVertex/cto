@@ -11,21 +11,21 @@ const hipaa: TechEntry = {
     intro: "HIPAA (Health Insurance Portability and Accountability Act) is a critical US federal law that requires the protection of sensitive patient health information. You need an expert who understands that HIPAA compliance is not just about a checklist, but about architecting a secure system from the ground up. Our vetting process identifies professionals who are experts in the HIPAA Security Rule, Privacy Rule, and Breach Notification Rule. By hiring a HIPAA expert from us, you get a developer or compliance lead who can ensure your application is audit-ready and protects patient data.",
     pains: [
         {
-            icon: AlertTriangle,
+            iconName: "AlertTriangle",
             pain: "Are you at risk of massive fines for HIPAA violations?",
             problem: "Failing to comply with HIPAA can result in fines up to $1.5 million per year, per violation, not to mention reputational damage and loss of customer trust.",
             solution: "We vet for experts in **HIPAA's technical safeguards**. They can implement the necessary controls for access, auditing, integrity, and transmission security to ensure your platform is compliant.",
             kpi: "HIPAA-compliant infrastructure"
         },
         {
-            icon: AlertTriangle,
+            iconName: "AlertTriangle",
             pain: "Is your handling of Protected Health Information (PHI) insecure?",
             problem: "Storing or transmitting PHI without proper encryption, or failing to implement strong access controls, exposes sensitive patient data to breaches.",
             solution: "Our engineers are masters of **data encryption and access control**. They are vetted on their ability to implement encryption at rest and in transit, and to design and enforce granular, role-based access controls for all PHI.",
             kpi: "End-to-End Encryption and Least Privilege Access"
         },
         {
-            icon: AlertTriangle,
+            iconName: "AlertTriangle",
             pain: "Can you prove who accessed patient data and when?",
             problem: "Without a comprehensive audit trail, you cannot prove compliance or investigate a potential breach. This lack of visibility is a major red flag for auditors and enterprise customers.",
             solution: "We look for engineers proficient in **audit logging and monitoring**. They are vetted on their ability to implement detailed logging for all access to PHI and to set up monitoring and alerting for suspicious activity, ensuring you have a complete and defensible audit trail.",

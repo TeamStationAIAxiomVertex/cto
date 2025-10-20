@@ -12,7 +12,7 @@ const pytorch: TechEntry = {
     'PyTorch is the framework of choice for **high-velocity deep learning research and production**. It prioritizes flexibility and a Python-native experience, empowering teams to move from idea to optimized model faster than ever. You need an engineer who is not just a model-builder, but an expert in the entire PyTorch ecosystem, from rapid experimentation with dynamic graphs to high-performance deployment with TorchServe. Our vetting identifies engineers who use PyTorch to give your organization a competitive edge in AI development.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: 'Slow Research & Experimentation Cycles',
       problem:
         'Your data scientists are bogged down by rigid, boilerplate-heavy frameworks that make it difficult to prototype and debug new, complex model architectures. Your R&D velocity is grinding to a halt.',
@@ -21,7 +21,7 @@ const pytorch: TechEntry = {
       kpi: 'Accelerate deep learning model prototyping and experimentation by 2x.',
     },
     {
-      icon: Workflow,
+      iconName: "AlertTriangle",
       pain: 'Painful Transition from Research to Production',
       problem:
         'A model built by your research team requires a complete, costly rewrite by the engineering team to be deployed. The process is slow, error-prone, and creates a massive chasm between the two teams.',
@@ -30,7 +30,7 @@ const pytorch: TechEntry = {
       kpi: 'Reduce the engineering effort for model deployment by 70%.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "AlertTriangle",
       pain: 'Inability to Leverage the Latest AI Innovations',
       problem:
         'The deep learning field moves at a breakneck pace, but your team is stuck with older frameworks that lack support for cutting-edge models like Transformers, making it impossible to stay competitive.',

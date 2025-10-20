@@ -11,21 +11,21 @@ const astro: TechEntry = {
     intro: "Astro is a modern web framework for building fast, content-focused websites. Our Astro experts are vetted for their deep understanding of Astro's core principles, from its powerful island architecture to its growing ecosystem of integrations. They are the specialists who can help you build the next generation of web applications.",
     pains: [
         {
-            icon: Rocket,
+            iconName: "AlertTriangle",
             pain: "Our website is slow and expensive to host.",
             problem: "Traditional client-side rendered applications are slow to load and expensive to host. They don't take advantage of the latest web technologies, such as server-side rendering and static site generation.",
             solution: "We vet for mastery in **Astro's powerful island architecture**. Our engineers can help you build a website that is fast, scalable, and cost-effective.",
             kpi: "50% Reduction in Page Load Time"
         },
         {
-            icon: Zap,
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest web technologies.",
             problem: "The web is constantly evolving. It's difficult to keep up with the latest technologies, such as React Server Components and Suspense.",
             solution: "Our experts are tested on **Astro's growing ecosystem of integrations**. They can help you take advantage of the latest web technologies, so you can build the next generation of web applications.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Code,
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our website.",
             problem: "Web security is a top priority for every business. It's difficult to secure a traditional client-side rendered application, especially when you're dealing with user authentication and data fetching.",
             solution: "We vet for expertise in **Astro's security features**. Our engineers use the latest security best practices to protect your website from attack.",

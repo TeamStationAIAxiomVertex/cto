@@ -1,4 +1,3 @@
-// src/app/hire/by-country/[slug]/page.tsx
 
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
@@ -11,7 +10,7 @@ import { getCountryData, getCountrySlugs, CountryFactPack, generateFaqSchema, ge
 import VerdictTable from '@/components/VerdictTable'; 
 import Breadcrumbs from '@/components/Breadcrumbs'; 
 
-const ProgrammaticContent = dynamic(() => import('@/components/ProgrammaticContent'), { ssr: true });
+const ProgrammaticContent = dynamic(() => import('@/components/ProgrammaticContent').then(mod => mod.ProgrammaticContent), { ssr: true });
 
 // --- 1. NEXT.JS STATIC PARAMS GENERATION ---
 export async function generateStaticParams() {

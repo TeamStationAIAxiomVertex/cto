@@ -13,7 +13,7 @@ const numpy: TechEntry = {
     'NumPy is the **bedrock of the entire Python data ecosystem**. It’s the C-speed engine that powers every major data science and machine learning library. You need an engineer who thinks in arrays and vectorized operations, not slow Python loops. Our vetting identifies experts who can write highly-performant, memory-efficient numerical code, building the stable, high-speed foundation that your most demanding data applications require.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: 'Glacially Slow Numerical Computations',
       problem:
         'Your data processing and mathematical models are written in native Python loops. They are incredibly slow, cannot be parallelized, and take hours or days to run on even moderately large datasets.',
@@ -22,7 +22,7 @@ const numpy: TechEntry = {
       kpi: 'Drastically reduce the runtime of numerical algorithms, often from hours to seconds.',
     },
     {
-      icon: Workflow,
+      iconName: "AlertTriangle",
       pain: 'Massive Memory Consumption and Crashes',
       problem:
         'Using standard Python lists to store large amounts of numerical data is extremely memory-intensive. Your applications frequently crash with `MemoryError` exceptions as datasets grow.',
@@ -31,7 +31,7 @@ const numpy: TechEntry = {
       kpi: 'Reduce memory consumption for numerical data by up to 75%.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "AlertTriangle",
       pain: 'Complex and Unreadable Mathematical Code',
       problem:
         'Your codebase is filled with complex, nested loops and convoluted logic to perform what should be simple matrix and vector operations, making the code impossible to read, debug, or maintain.',

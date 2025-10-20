@@ -11,21 +11,21 @@ const solid: TechEntry = {
     intro: "Solid.js is a declarative, efficient, and flexible JavaScript library for building user interfaces. You need an engineer who understands that building a high-performance, reactive user interface is not just about writing code, but about a deep understanding of the entire frontend ecosystem, from the signal and the effect to the component and the store. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Solid.js expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
     pains: [
         {
-            icon: AlertTriangle,
+            iconName: "AlertTriangle",
             pain: "Is your user interface a mess of slow, inefficient code?",
             problem: "In many organizations, the user interface is a mess of slow, inefficient code. This can lead to a user experience that is filled with long load times and a codebase that is a mess of environment-specific hacks and workarounds.",
             solution: "We vet for experts in **Solid.js and the modern frontend stack**. Our engineers are proficient in using Solid.js to build a fast, reactive, and high-performance user interface. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
             kpi: "A Fast, Reactive, and High-Performance User Interface",
         },
         {
-            icon: AlertTriangle,
+            iconName: "AlertTriangle",
             pain: "Is your application not taking full advantage of the modern web?",
             problem: "Many applications are not built to be truly modern. This can lead to a user experience that is slow, a codebase that is a mess of monolithic, hard-to-maintain code, and a web application that is not as rich as it could be.",
             solution: "Our engineers are masters of **Solid.js and the modern web**. They are vetted on their ability to use modern web APIs and best practices to build a modern, fast, and feature-rich user interface. This results in a codebase that is easy to understand and a user experience that is a joy to use.",
             kpi: "A Modern, Fast, and Feature-Rich User Interface",
         },
         {
-            icon: AlertTriangle,
+            iconName: "AlertTriangle",
             pain: "Is your team not leveraging the full power of the frontend ecosystem?",
             problem: "The frontend ecosystem is vast and powerful, but many teams are not leveraging its full potential. This can lead to a codebase that is a mess of reinvented wheels and a user experience that is not as rich as it could be.",
             solution: "We look for engineers proficient with **the frontend ecosystem and the modern frontend stack**. They are vetted on their ability to build applications that are powered by the best of the frontend ecosystem. This results in a user experience that is a joy to use for everyone, and a codebase that is easy to maintain and test.",

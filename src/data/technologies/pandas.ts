@@ -13,7 +13,7 @@ const pandas: TechEntry = {
     'Pandas is the **de facto standard for data manipulation in Python**. It’s the foundational tool that makes data science and machine learning possible. You need an engineer who can move beyond basic DataFrames and write performant, memory-efficient, and maintainable data transformation code. Our vetting identifies experts who can tame messy, real-world data and build the robust feature engineering pipelines that high-performance models depend on.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: 'Slow, Inefficient Data Cleaning Scripts',
       problem:
         'Your data cleaning scripts are built with slow, explicit Python loops. They are impossible to read, take hours to run on moderately sized datasets, and frequently crash due to memory errors.',
@@ -22,7 +22,7 @@ const pandas: TechEntry = {
       kpi: 'Increase data manipulation script performance by 10-100x.',
     },
     {
-      icon: Workflow,
+      iconName: "AlertTriangle",
       pain: 'Inability to Handle "Larger-Than-Memory" Datasets',
       problem:
         'Your analysis comes to a grinding halt the moment a dataset exceeds the memory of your machine. Your team is stuck, unable to work with the full scale of your data.',
@@ -31,7 +31,7 @@ const pandas: TechEntry = {
       kpi: 'Enable processing of datasets 10x larger than machine memory.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "AlertTriangle",
       pain: 'Unreliable and Non-Reproducible Feature Engineering',
       problem:
         'Your feature engineering logic is scattered across dozens of notebooks and scripts. There is no single source of truth, leading to inconsistent feature calculations that silently corrupt your ML models.',

@@ -13,7 +13,7 @@ const react: TechEntry = {
     "You're not here because you need another developer who 'knows React.' You're here because your application feels sluggish, your state management is a tangled mess, and your component library is a collection of one-off hacks. You need a true React expert who obsesses over performance, architecture, and user experience as much as you do. Our vetting process, powered by the Axiom Cortex™ engine, is designed to find these individuals. We move beyond simple coding challenges to assess a candidate's deep understanding of the React render cycle, their ability to design and implement scalable state management solutions, and their discipline in creating reusable, accessible component APIs. We identify engineers who don't just use React but understand its core principles, enabling them to build applications that are not only fast and responsive but also a joy to maintain and extend. This isn't about filling a seat; it's about investing in a level of quality and craftsmanship that directly translates to a superior end-user experience and a more resilient codebase. By focusing on these core competencies, we ensure that the engineers we provide become force multipliers for your team, setting new standards for quality and driving your product forward with a velocity that a less experienced developer simply cannot match.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your app slow because of endless re-renders?",
       problem:
         "Many so-called 'senior' React developers have a superficial understanding of the render cycle. They build components that re-render unnecessarily on every state change, leading to a slow, janky user interface that feels unresponsive, especially on lower-powered devices. This directly impacts user satisfaction, increases bounce rates, and can harm your Core Web Vitals scores, affecting your SEO. The root cause is a failure to properly memoize components, overuse of context, and an inability to profile and diagnose performance bottlenecks using the React Profiler. This isn't just a technical issue; it's a product quality issue that costs you users and revenue.",
@@ -22,7 +22,7 @@ const react: TechEntry = {
       kpi: "Expertise in React Profiler & why-did-you-render",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your state management a spaghetti of props and contexts?",
       problem:
         "A common anti-pattern in large React applications is a chaotic mix of prop-drilling, oversized context providers, and legacy Redux patterns that are ill-suited for modern server-side data. This creates a 'spaghetti state' that is bug-prone, difficult to debug, and makes adding new features a slow and dangerous process. It’s a direct result of hiring developers who lack a strategic understanding of state management architecture.",
@@ -31,7 +31,7 @@ const react: TechEntry = {
       kpi: "Proven ability to architect scalable state",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your component library just a folder of inconsistent parts?",
       problem:
         "Without a disciplined approach, a component library quickly devolves into a collection of inconsistent, one-off components. It lacks a coherent API, has poor accessibility, and is difficult to use, forcing developers to reinvent the wheel for every new feature. This negates the very purpose of a design system, slowing down development and leading to an inconsistent user experience.",

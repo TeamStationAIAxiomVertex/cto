@@ -14,7 +14,7 @@ const pact: TechEntry = {
     'Pact is the premier framework for **Consumer-Driven Contract Testing**, replacing slow, fragile end-to-end integration tests. You need an engineer who can define and enforce reliable contracts between microservices. Our vetting focuses on engineers who can eliminate service dependency bottlenecks, leverage the Pact Broker for verification, and dramatically accelerate your deployment frequency.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: 'Integration Test Hell: Slow and Brittle Deployments',
       problem:
         'Your reliance on full-stack integration tests makes your CI/CD pipeline slow, expensive, and a single point of failure. Deployments are stalled waiting for the entire environment to be ready.',
@@ -23,7 +23,7 @@ const pact: TechEntry = {
       kpi: '80% reduction in integration test suite run times and CI time.',
     },
     {
-      icon: Workflow,
+      iconName: "AlertTriangle",
       pain: 'Uncontrolled Microservice Mismatches in Production',
       problem:
         'When an API provider changes its output, consumer services fail silently in production because there is no mechanism to check compatibility *before* deployment.',
@@ -32,7 +32,7 @@ const pact: TechEntry = {
       kpi: '95% decrease in production incidents caused by breaking API changes.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "AlertTriangle",
       pain: 'Lack of Clear, Enforceable API Contracts',
       problem:
         'API documentation is often outdated or ambiguous, leading to integration bugs, development rework, and a breakdown of trust between service teams.',

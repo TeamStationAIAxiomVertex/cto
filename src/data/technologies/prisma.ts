@@ -13,7 +13,7 @@ const prisma: TechEntry = {
     "Prisma is a next-generation ORM that revolutionizes how developers work with databases by providing a fully type-safe client. You need an engineer who can leverage Prisma's powerful schema-first approach to build a robust, reliable, and performant data access layer. Our vetting process identifies developers who are experts in Prisma's core concepts—the schema, migrations, and the auto-generated client—and can architect a database solution that is as easy to maintain as it is to scale. By hiring a Prisma expert from us, you get a developer who can eliminate an entire class of runtime database errors and dramatically accelerate your backend development.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are you catching database errors at runtime instead of compile time?",
       problem:
         "Traditional ORMs and raw SQL queries lack type safety, leading to runtime errors when the database schema and application code drift out of sync. This results in fragile code, difficult refactoring, and unpredictable production bugs.",
@@ -22,7 +22,7 @@ const prisma: TechEntry = {
       kpi: "Type-Safe Database Access",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are your database migrations manual, risky, and hard to manage?",
       problem:
         "Manually writing and applying SQL migration scripts is a high-risk process. It's easy to make mistakes that can lead to data loss or downtime. Managing migration history across different environments is a complex and error-prone task.",
@@ -31,7 +31,7 @@ const prisma: TechEntry = {
       kpi: "Automated, Safe Schema Migrations",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your data access layer slow and inefficient due to the N+1 problem?",
       problem:
         "The N+1 query problem is a notorious performance killer in any ORM. Inexperienced developers often fail to correctly fetch related data, leading to dozens or hundreds of unnecessary database queries per request and a slow, unresponsive API.",

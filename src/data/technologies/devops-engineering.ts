@@ -11,21 +11,21 @@ const devopsEngineering: TechEntry = {
     intro: "DevOps is not just a role; it's a culture of ownership and automation. Our DevOps Engineers are vetted for their expertise in building and maintaining the entire software delivery lifecycle, from CI/CD pipelines to container orchestration and cloud-native observability. They are the force multipliers who enable your development teams to ship faster and more reliably.",
     pains: [
         {
-            icon: GitBranch,
+            iconName: "AlertTriangle",
             pain: "Our release process is slow, manual, and stressful.",
             problem: "Manual deployments are error-prone and create bottlenecks, leading to infrequent releases and a fear of pushing to production.",
             solution: "We vet for mastery in **CI/CD automation** using tools like Jenkins, GitLab CI, or GitHub Actions. Our engineers build fully automated, zero-downtime deployment pipelines that make releases a non-event.",
             kpi: "95% Reduction in Manual Deployment Steps"
         },
         {
-            icon: Server,
+            iconName: "AlertTriangle",
             pain: "Our infrastructure is unstable and hard to manage.",
             problem: "Manually configured servers lead to configuration drift, making it impossible to replicate environments or recover from failures quickly.",
             solution: "Our experts are tested on **Infrastructure as Code (IaC)** using Terraform or Ansible. They build immutable, version-controlled infrastructure that is self-healing and easy to manage.",
             kpi: "99.9% Environment Consistency"
         },
         {
-            icon: Cloud,
+            iconName: "AlertTriangle",
             pain: "We are not taking full advantage of the cloud.",
             problem: "Simply lifting and shifting applications to the cloud doesn't unlock its full potential. You're likely over-provisioning resources and not using cloud-native services effectively.",
             solution: "We vet for expertise in **cloud-native architecture**, including containerization (Docker/Kubernetes) and serverless (Lambda/Cloud Functions), to build scalable, resilient, and cost-effective systems.",

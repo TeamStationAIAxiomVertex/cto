@@ -13,7 +13,7 @@ const machineLearning: TechEntry = {
     'Machine Learning is where data science meets production software engineering. A model in a notebook is a science experiment; a model in production is a business asset. You need a **Machine Learning Engineer** who can solve the "last mile problem." Our vetting identifies engineers who build automated training pipelines, scalable inference services, and the monitoring infrastructure required to ensure your ML models deliver real, measurable value.',
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: 'Models Are Trapped in Jupyter Notebooks',
       problem:
         'Your data scientists create promising models, but they never make it into the hands of users. There is no clear path to production, and the handover to engineering is a slow, error-prone process of rewriting and re-implementing.',
@@ -22,7 +22,7 @@ const machineLearning: TechEntry = {
       kpi: 'Reduce the time to deploy a new model from months to days.',
     },
     {
-      icon: Workflow,
+      iconName: "AlertTriangle",
       pain: 'Silent, Decaying Model Performance',
       problem:
         'You deployed a model six months ago, and you have no idea if it’s still working. Data drift and concept drift have silently degraded its performance, and it’s now making poor predictions, actively harming your business.',
@@ -31,7 +31,7 @@ const machineLearning: TechEntry = {
       kpi: 'Detect and resolve 99% of model performance degradation issues before they impact business KPIs.',
     },
     {
-      icon: ShieldCheck,
+      iconName: "AlertTriangle",
       pain: 'Non-Reproducible "Magic" Models',
       problem:
         'Your models are a black box. The training data, code, and parameters are scattered across a data scientist’s laptop, making it impossible to reproduce past results, debug issues, or pass a compliance audit.',

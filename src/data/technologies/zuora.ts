@@ -13,7 +13,7 @@ const zuora: TechEntry = {
     "Zuora is a leading subscription management platform that helps businesses launch, manage, and scale their subscription-based services. Our engineers use Zuora to architect and implement sophisticated billing, revenue recognition, and analytics for your entire subscription business.",
   pains: [
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Is your current billing system unable to handle complex subscription models?",
       problem:
         "Your business wants to offer flexible pricing with different tiers, usage-based billing, and promotions, but your homegrown or traditional billing system can't handle it. This limitation stifles innovation and your ability to compete.",
@@ -22,7 +22,7 @@ const zuora: TechEntry = {
       kpi: "Launch new pricing models 5x faster.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Are you struggling to recognize revenue correctly under ASC 606 and IFRS 15 standards?",
       problem:
         "Subscription businesses have complex revenue recognition requirements that are difficult to manage in spreadsheets or traditional ERPs. Manual processes are error-prone and can lead to serious compliance issues.",
@@ -31,7 +31,7 @@ const zuora: TechEntry = {
       kpi: "Achieve 100% compliance with ASC 606 and IFRS 15 and close your books 75% faster.",
     },
     {
-      icon: AlertTriangle,
+      iconName: "AlertTriangle",
       pain: "Do you lack a single source of truth for your subscription metrics?",
       problem:
         "Your subscription data is scattered across multiple systems—CRM, billing, ERP—making it impossible to get a clear picture of key metrics like MRR, Churn, and LTV. You can't make data-driven decisions to grow your business.",

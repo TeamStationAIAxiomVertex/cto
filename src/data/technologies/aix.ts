@@ -4,28 +4,28 @@ import type { TechEntry } from "@/lib/tech";
 
 const aix: TechEntry = {
     name: "AIX",
-    category: "Operating Systems",
-    categorySlug: "operating-systems",
+    category: "Platform / Infra / SRE",
+    categorySlug: "platform-infra-sre",
     seo_title: "Hire Senior AIX Administrators | IBM AIX Experts",
     meta_description: "Hire elite AIX administrators specializing in managing, and maintaining IBM AIX systems.",
     intro: "AIX is a powerful and reliable operating system for enterprise environments. Our AIX experts are vetted for their deep understanding of AIX's core principles, from its logical volume manager to its security features. They are the specialists who can help you keep your mission-critical systems running smoothly.",
     pains: [
         {
-            icon: Server,
+            iconName: "AlertTriangle",
             pain: "Our AIX systems are unstable and constantly crashing.",
             problem: "Misconfigured systems, improper resource allocation, and a lack of monitoring lead to cascading failures and application downtime.",
             solution: "We vet for mastery in **AIX administration**. Our engineers implement robust monitoring, and self-healing mechanisms to ensure your systems are resilient and highly available.",
             kpi: "99.99% System Uptime"
         },
         {
-            icon: Shield,
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our AIX systems.",
             problem: "Default AIX installations are not secure. Open network policies, and a lack of RBAC controls expose your systems to attack.",
             solution: "Our experts are tested on **AIX security best practices**. They implement network policies, and least-privilege RBAC to secure your systems from internal and external threats.",
             kpi: "Zero Critical Security Vulnerabilities"
         },
         {
-            icon: Database,
+            iconName: "AlertTriangle",
             pain: "Our developers are struggling to use AIX effectively.",
             problem: "A steep learning curve and complex configurations make it difficult for developers to deploy and manage their applications on AIX.",
             solution: "We vet for expertise in building **developer-friendly platforms** on top of AIX. Our engineers use tools like Ansible to simplify the developer experience and accelerate adoption.",

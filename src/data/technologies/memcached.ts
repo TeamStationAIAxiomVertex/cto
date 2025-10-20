@@ -11,21 +11,21 @@ const memcached: TechEntry = {
     intro: "Memcached is a powerful and versatile in-memory data store. Our Memcached experts are vetted for their deep understanding of Memcached's core principles, from its powerful in-memory data store to its robust security and performance tuning capabilities. They are the specialists who can help you build and manage a secure, and reliable caching solution.",
     pains: [
         {
-            icon: Database,
+            iconName: "AlertTriangle",
             pain: "Our cache is slow and unreliable.",
             problem: "Poorly designed caches are a bottleneck for your entire system. They are difficult to scale, and can lead to a poor user experience.",
             solution: "We vet for mastery in **Memcached's powerful in-memory data store**. Our engineers can help you build a fast, and reliable caching solution.",
             kpi: "50% Reduction in Cache Latency"
         },
         {
-            icon: Zap,
+            iconName: "AlertTriangle",
             pain: "We're struggling to keep up with the latest caching technologies.",
             problem: "The caching landscape is constantly evolving. It's difficult to keep up with the latest technologies, such as Redis and Hazelcast.",
             solution: "Our experts are tested on **the latest caching technologies**. They can help you take advantage of the latest features, so you can build the next generation of caching solutions.",
             kpi: "90% Reduction in Time to Market"
         },
         {
-            icon: Shield,
+            iconName: "AlertTriangle",
             pain: "We're worried about the security of our data.",
             problem: "Data security is a top priority for every business. It's difficult to secure your data, especially when you're dealing with sensitive information.",
             solution: "We vet for expertise in **Memcached's security features**. Our engineers use the latest security best practices to protect your data from attack.",
