@@ -5,22 +5,33 @@ import { WithTooltip } from "../../../components/ui/tooltip";
 import { CheckCircle, ArrowRight, BrainCircuit, ShieldCheck, UserCheck, Briefcase, FileText, DollarSign, AlertTriangle, Zap, Scale, Layers, HelpCircle, BookOpen, UserX } from 'lucide-react';
 import { JsonLd } from "../../../components/seo/JsonLd";
 import ValuePropositionBlock from "../../../components/seo/ValuePropositionBlock";
+import FurtherReading from "../../../components/seo/FurtherReading";
 
 const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
-   {
-     "@type": "Question",
-     "name": "What is cognitive AI hiring?",
-     "acceptedAnswer": { "@type": "Answer", "text": "Cognitive AI hiring validates a candidate’s real problem-solving and reasoning skills instead of relying on resumes or keyword filters." }
-   },
-   {
-     "@type": "Question",
-     "name": "How does Axiom Cortex™ reduce mis-hires?",
-     "acceptedAnswer": { "@type": "Answer", "text": "By applying psychometric and neurocognitive tests, Axiom Cortex™ reduces mismatches to less than 10%, compared to legacy resume-driven approaches." }
-   }
- ]
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is cognitive AI hiring?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cognitive AI hiring validates a candidate’s real problem-solving and reasoning skills instead of relying on resumes or keyword filters." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Axiom Cortex™ reduce mis-hires?",
+      "acceptedAnswer": { "@type": "Answer", "text": "By applying psychometric and neurocognitive tests, Axiom Cortex™ reduces mismatches to less than 10%, compared to legacy resume-driven approaches." }
+    },
+    {
+        "@type": "Question",
+        "name": "Is this just another automated code test?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. This is a human-led, AI-synthesized evaluation. A human expert conducts a structured interview to assess complex, real-world problem-solving. The AI provides a deep, unbiased analysis of the cognitive skills demonstrated during that live, dynamic conversation." }
+    },
+    {
+        "@type": "Question",
+        "name": "Can your system evaluate non-coding roles like Engineering Managers or QA Leads?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The cognitive 'shape' required for different roles varies. We use different evaluation modules and benchmarks for leadership, QA, and other specialized technical roles to measure the specific traits that predict success in those positions." }
+    }
+  ]
 };
 
 export const metadata: Metadata = {
@@ -93,6 +104,12 @@ const hiddenTaxes = [
         icon: Briefcase,
         impactColor: "text-destructive"
     },
+];
+
+const furtherReadingLinks = [
+    { href: "/research/axiom-cortex-scientific-report", title: "Axiom Cortex™ Scientific Report", description: "The official scientific paper detailing the data, methodology, and validation of our cognitive AI engine." },
+    { href: "/research/performance-evaluation-framework", title: "The Performance Evaluation Framework", description: "A framework for measuring and predicting developer performance beyond simple code tests." },
+    { href: "/research/platforming-nearshore-book", title: "Platforming the Nearshore Industry", description: "Our book on the scientific principles of de-risking and scaling nearshore teams." },
 ];
 
 
@@ -232,16 +249,26 @@ export default function BiasFreeHiringAxiomCortexPage() {
         </section>
 
         <ValuePropositionBlock
-            problem="CTOs face hidden risks in cost, compliance, and velocity when using legacy staffing models."
-            stakes="Without addressing these fundamental issues, budgets spiral, projects miss critical deadlines, and security incidents become inevitable."
-            approach="TeamStation AI's integrated platform delivers pre-vetted LATAM talent, audit-ready compliance with secure devices, and a predictable Total Cost of Ownership."
-            evidence="On average, clients see a 40–60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
-            related={[
-              { label: "CTO Playbook", href: "/playbook/hub" },
-              { label: "Our Vetting Process", href: "/technical-interview-evaluation" },
-              { label: "Hire in Mexico", href: "/hire/by-country/mexico" }
-            ]}
+          pain="You're forced to make high-stakes hiring decisions based on low-quality, biased data like resumes and unstructured interviews."
+          stakes="Every mis-hire costs you over $150,000 in lost productivity and burns engineering management cycles on a problem that shouldn't exist. Get it wrong, and you jeopardize your roadmap."
+          prescription="Shift from subjective guesswork to a scientific, data-driven hiring process. Use an engineered system to gather auditable, cognitive evidence on every candidate."
+          proof="Our Axiom Cortex™ engine provides a full Evidence Locker for every candidate, reducing mis-hires to less than 10%. See the [Axiom Cortex™ Scientific Report](/research/axiom-cortex-scientific-report) for the data."
+          ctaHref="/technical-interview-evaluation"
+          ctaText="View a Sample Evidence Locker"
         />
+        
+        <FurtherReading links={furtherReadingLinks} />
+
+        <section className="mt-24 text-center">
+            <h2 className="text-3xl font-bold">Ready to De-Risk Your Hiring?</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">Stop gambling with your most critical asset. Book a demo to see how TeamStation AI can help you build a high-performance team with confidence and scientific precision.</p>
+            <div className="mt-8">
+                <Link href="/pricing" className="cta-button">
+                    Book a Demo
+                </Link>
+            </div>
+        </section>
+
       </main>
     </>
   );
