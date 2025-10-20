@@ -35,7 +35,7 @@ export default function ValuePropositionBlock({
         </div>
         <div>
           <h3 className="text-lg font-semibold text-primary">The Proof</h3>
-          <p className="font-bold text-muted-foreground" dangerouslySetInnerHTML={{ __html: proof.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') }}></p>
+          <p className="font-bold text-muted-foreground" dangerouslySetInnerHTML={{ __html: proof ? proof.replace(/[(.*?)](S*?)/g, '<a href="$2" class="text-primary hover:underline">$1</a>') : '' }}></p>
         </div>
       </div>
 
