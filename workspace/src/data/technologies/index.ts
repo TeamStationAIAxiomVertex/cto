@@ -245,6 +245,6 @@ const allTech: AllTech = {
   pact,
   k6,
   vllm,
-};
+} as AllTech;
 
 export default allTech;

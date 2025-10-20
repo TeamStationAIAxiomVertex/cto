@@ -1,4 +1,4 @@
-import { TechEntry } from "@/lib/tech";
+import type { TechEntry } from "@/lib/tech";
 import { AlertTriangle } from "lucide-react";
 
 const rust: TechEntry = {
@@ -13,7 +13,7 @@ const rust: TechEntry = {
     "**Rust** is the revolutionary language that delivers the performance of C/C++ with unparalleled memory safety and fearless concurrency, guaranteed by its **Compiler-Enforced Ownership Model**. You need an engineer who can leverage Rust's unique strengths to build mission-critical infrastructure, low-latency services, or embedded systems where correctness and speed are non-negotiable. Our vetting process is unlike any other: we focus almost entirely on the core principles of **Ownership, Borrowing, and Lifetimes**. We assess a candidate's ability to satisfy the compiler's strict rules, preventing entire classes of bugs (null pointer dereferences, data races) before the code even runs. By hiring a Rust expert from us, you get a developer who can deliver software with an exceptional level of stability, performance, and long-term reliability.",
   pains: [
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are your developers struggling to satisfy the Borrow Checker?",
       problem:
         "Rust's core strength—the Borrow Checker—is also its biggest hurdle. Inexperienced developers often hit intractable compiler errors related to ownership, borrowing, and lifetimes, leading to frustration, slow development, and resorting to unsafe code, which defeats the purpose of Rust.",
@@ -22,7 +22,7 @@ const rust: TechEntry = {
       kpi: "Mastery of Ownership, Borrowing, and Lifetimes",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your concurrent code slow or prone to deadlocks?",
       problem:
         "Even in Rust, incorrect concurrency implementation can lead to bottlenecks or deadlocks. Misunderstanding the trade-offs between shared mutability (Mutex) and message passing (Channels) results in inefficient or blocked threads.",
@@ -31,7 +31,7 @@ const rust: TechEntry = {
       kpi: "Fearless Concurrency with Async/Await and Channels",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to manage errors and maintain clean code?",
       problem:
         "Rust's strict error handling (the `Result` type) can be verbose if not handled idiomatically. Developers who use `unwrap()` or `expect()` excessively risk panics in production, which is a critical failure for reliable system software.",

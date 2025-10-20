@@ -1,4 +1,4 @@
-import { TechEntry } from "@/lib/tech";
+import type { TechEntry } from "@/lib/tech";
 import { AlertTriangle } from "lucide-react";
 
 const csharp: TechEntry = {
@@ -13,7 +13,7 @@ const csharp: TechEntry = {
     "Modern C# and the .NET platform are no longer Windows-bound; they are a leading choice for cross-platform, high-performance, and cloud-native backend development, especially within the Azure ecosystem. You need a senior engineer who masters the latest features of **.NET Core**, asynchronous programming (`async/await`), and advanced architecture patterns like microservices and event-driven design. Our vetting process is designed to find professionals who excel at building robust APIs with **ASP.NET Core**, understand Entity Framework Core for data access, and are proficient in performance optimization and security. By hiring our C#/.NET talent, you get a developer who can deliver enterprise-grade stability, speed, and deep integration with Azure or other cloud services, ensuring a reliable and scalable foundation for your core business logic.",
   pains: [
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your application suffering from asynchronous deadlocks?",
       problem:
         "Incorrect use of `async` and `await` (especially mixing synchronous and asynchronous code) leads to concurrency issues, deadlocks, and severe performance degradation, particularly in desktop applications or older .NET codebases. This results in service freezing and unreliability.",
@@ -22,7 +22,7 @@ const csharp: TechEntry = {
       kpi: "API throughput and task completion metrics",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to manage data access in a complex microservices environment?",
       problem:
         "Using traditional, monolithic ORMs (like older Entity Framework) across many microservices leads to tightly coupled data access, performance bottlenecks, and difficulty managing data schema evolution.",
@@ -31,7 +31,7 @@ const csharp: TechEntry = {
       kpi: "Database query performance and ORM efficiency",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are your cloud-native services insecure and difficult to deploy?",
       problem:
         "In the cloud, services must be built to be resilient, secure, and easily containerized. Lack of expertise in modern .NET hosting and security means you struggle with configuration, deployment, and vulnerability management.",

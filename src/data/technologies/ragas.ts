@@ -1,4 +1,4 @@
-import { TechEntry } from "@/lib/tech";
+import type { TechEntry } from "@/lib/tech";
 
 import { AlertTriangle } from "lucide-react";
 
@@ -13,7 +13,7 @@ const ragas: TechEntry = {
     "Ragas is a framework that helps you evaluate your Retrieval Augmented Generation (RAG) pipelines. Our AI/ML engineers use Ragas to assess the performance of RAG applications from every angle, ensuring that they are accurate, reliable, and ready for production.",
   pains: [
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you building a RAG application without a clear view of its performance?",
       problem:
         "Evaluating RAG pipelines is a complex and nuanced task. You need to assess the performance of both the retrieval and the generation components, and you need to do so in a way that is both systematic and automated.",
@@ -22,7 +22,7 @@ const ragas: TechEntry = {
       kpi: "Improve RAG accuracy by 50% and reduce hallucinations by 75%.",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is RAG evaluation missing from your CI/CD pipeline?",
       problem:
         "Evaluating RAG pipelines should be an automated and continuous process, not a manual and ad-hoc one. You need a way to ensure that your RAG application is always performing at its best, and that you can catch any regressions before they make it to production.",
@@ -31,7 +31,7 @@ const ragas: TechEntry = {
       kpi: "Reduce RAG-related production bugs by 90%.",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to monitor the performance of your RAG application in production?",
       problem:
         "The performance of your RAG application can be affected by a variety of factors, including changes in the data, the model, and the user's behavior. You need a way to monitor the performance of your application in real-time, so that you can identify and address any issues as they arise.",

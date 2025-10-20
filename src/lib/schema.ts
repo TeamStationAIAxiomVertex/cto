@@ -1,4 +1,4 @@
-import { WithContext, Organization, Person, Thing } from "schema-dts";
+import { WithContext, Corporation } from "schema-dts";
 
 // This is the central hub for your site's Schema.org graph.
 // We define the core Organization entity here, which will be referenced by other schemas.
@@ -6,7 +6,7 @@ import { WithContext, Organization, Person, Thing } from "schema-dts";
 // --- CORE ENTITY: TeamStation AI ---
 // We are defining your company as a Corporation and a leader in AI-powered tech staffing.
 // This is the sun of our schema solar system.
-export const teamStationAI: WithContext<Organization> & Thing = {
+export const teamStationAI = {
   "@context": "https://schema.org",
   "@type": "Corporation",
   name: "TeamStation AI",
@@ -54,7 +54,7 @@ export const teamStationAI: WithContext<Organization> & Thing = {
     "neuro-psychometric AI signals",
     "LATAM software talent",
   ],
-};
+} satisfies WithContext<Corporation>;
 
 /**
  * Function to generate a JSON-LD script tag from a schema object.

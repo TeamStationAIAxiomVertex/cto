@@ -1,6 +1,5 @@
-
 import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import type { TechEntry } from "@/lib/tech";
 
 const remix: TechEntry = {
   name: "Remix",
@@ -13,7 +12,7 @@ const remix: TechEntry = {
     "Remix is a full-stack web framework that leverages the power of web standards to deliver fast, resilient, and progressively enhanced user experiences. You need an engineer who understands that a great user experience is not just about client-side rendering, but about a holistic approach that embraces the entire request/response lifecycle. Our vetting process identifies developers who are experts in Remix's core concepts—loaders, actions, and nested routes—and can architect applications that are as robust as they are fast. By hiring a Remix expert, you get a developer who can build a modern web application that works for every user, on every device, every time.",
   pains: [
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your application a mess of client-side state and loading spinners?",
       problem:
         "In many client-rendered applications, managing data fetching, loading states, and error handling is a complex and error-prone task. This leads to a user experience filled with loading spinners and a codebase littered with complex state management logic.",
@@ -22,7 +21,7 @@ const remix: TechEntry = {
       kpi: "Simplified Data Flow with Loaders and Actions",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your code-splitting strategy manual and inefficient?",
       problem:
         "Manually code-splitting a large application is a difficult task that often leads to suboptimal results. This can result in large initial bundle sizes and slow page loads, even for pages with very little content.",
@@ -31,7 +30,7 @@ const remix: TechEntry = {
       kpi: "Automatic Code-Splitting with Nested Routes",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your application not resilient to network failures and user interruptions?",
       problem:
         "Client-rendered applications are often not resilient to network failures or user interruptions. If a data fetch fails, the user is often left with a broken UI. If the user navigates away before a mutation is complete, the data can be left in an inconsistent state.",

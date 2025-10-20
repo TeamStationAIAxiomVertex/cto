@@ -1,10 +1,8 @@
-
-import type { ElementType } from "react";
 import type { LucideIcon } from "lucide-react";
-import allTechData from "@/data/technologies"; 
+import allTechData from "@/data/technologies";
 
 export interface PainPoint {
-  iconName: string; // Corrected: Use a string name for the icon
+  icon: LucideIcon;
   pain: string;
   problem: string;
   solution: string;
@@ -38,7 +36,7 @@ export type AllTech = {
 export const allTech: AllTech = allTechData;
 
 export function getAllTechSlugs(): string[] {
-  return Object.keys(allTech).filter(key => {
+  return Object.keys(allTech).filter((key) => {
     const tech = allTech[key as TechSlug];
     // Defensive check to ensure tech and is_ready exist
     return tech && tech.is_ready;

@@ -1,6 +1,5 @@
-
 import { AlertTriangle } from "lucide-react";
-import { TechEntry } from "@/lib/tech";
+import type { TechEntry } from "@/lib/tech";
 
 const typescript: TechEntry = {
   name: "TypeScript",
@@ -13,7 +12,7 @@ const typescript: TechEntry = {
     "You're tired of `any` types and runtime errors that should have been caught at compile time. You need more than just a JavaScript developer; you need a TypeScript expert who can leverage the full power of the type system to build safer, more maintainable, and self-documenting code. This is not about adding `:string` to a variable; it's about architecting a type-safe system from the ground up. Our vetting process is designed to find these engineers. We present them with complex scenarios that require the use of advanced TypeScript features to solve real-world problems. We're looking for the ability to create robust data models, secure API contracts, and build a codebase where the type system itself prevents entire classes of bugs. By hiring a true TypeScript expert, you are making an investment in the long-term health and stability of your application. You are reducing the time your team spends on debugging runtime errors and increasing the time they spend on building features. This is a direct lever on engineering velocity and product quality, and it's a non-negotiable skill for any modern, high-performing team.",
   pains: [
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your codebase littered with `any` types?",
       problem:
         "The `any` type is a viral infection in a TypeScript codebase. It silences the compiler and negates the primary benefit of using TypeScript in the first place. It creates a false sense of security, allowing type-related errors to slip through to runtime, where they are 100x more expensive to fix. It makes refactoring a dangerous guessing game and erodes the maintainability of the application.",
@@ -22,7 +21,7 @@ const typescript: TechEntry = {
       kpi: "Mastery of advanced TypeScript patterns",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Are you struggling to type complex third-party libraries?",
       problem:
         "Your application's type safety is only as strong as its weakest link. Integrating with untyped or poorly typed third-party JavaScript libraries introduces holes in your type system, leading to unexpected runtime errors and making it difficult to use these libraries with confidence.",
@@ -31,7 +30,7 @@ const typescript: TechEntry = {
       kpi: "Expertise in custom type declarations",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Is your build process slow due to TypeScript compilation?",
       problem:
         "A poorly configured `tsconfig.json` or an inefficient build setup can make TypeScript feel like a bottleneck rather than a productivity tool. Slow feedback loops during development frustrate engineers and reduce velocity. Long CI build times delay deployments and slow down the entire team.",

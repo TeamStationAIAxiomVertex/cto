@@ -1,8 +1,8 @@
-import type { Icon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import allTechData from "@/data/technologies"; // Corrected to be the single source of truth
 
 export interface PainPoint {
-  icon: typeof Icon;
+  icon: LucideIcon;
   pain: string;
   problem: string;
   solution: string;
@@ -39,7 +39,6 @@ export type TechSlug =
   | "node"
   | "java"
   | "python"
-  | "golang"
   | "c-sharp"
   | "rust"
   | "php"
@@ -130,15 +129,49 @@ export type TechSlug =
 
   // Vetting & Cognitive AI (2)
   | "axiom-cortex"
-  | "graphql";
+  | "graphql"
+  | "langchain"
+  | "pytorch"
+  | "transformers"
+  | "go"
+  | "preact"
+  | "ember-js"
+  | "solid-js"
+  | "jquery"
+  | "nuxt-js"
+  | "gatsby"
+  | "sveltekit"
+  | "astro"
+  | "redux"
+  | "mobx"
+  | "aws-cost-explorer"
+  | "socketio"
+  | "ragas"
+  | "airflow"
+  | "sqlalchemy"
+  | "swift"
+  | "memcached"
+  | "trivy"
+  | "flink"
+  | "iso"
+  | "soc"
+  | "opa"
+  | "codeql"
+  | "jaeger"
+  | "gremlin"
+  | "pytest"
+  | "hipaa"
+  | "ray"
+  | "vllm"
+  | "net";
 
-export interface AllTech {
-  [key: string]: TechEntry;
-}
+export type AllTech = {
+  [key in TechSlug]: TechEntry;
+};
 
 // The single source of truth for all technology data.
 export const allTech: AllTech = allTechData;
 
-export function getAllTechSlugs(): string[] {
-  return Object.keys(allTech);
+export function getAllTechSlugs(): TechSlug[] {
+  return Object.keys(allTech) as TechSlug[];
 }

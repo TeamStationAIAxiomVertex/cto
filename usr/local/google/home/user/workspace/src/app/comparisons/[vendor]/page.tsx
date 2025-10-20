@@ -19,11 +19,8 @@ const VerdictTable = dynamic(
     ssr: true,
   }
 );
-const ProgrammaticContent = dynamic(
-  () =>
-    import("../../../../../../../../../../src/components/ProgrammaticContent"),
-  { ssr: true }
-);
+
+import ComparisonProse from "../../../../../../../../../../src/components/ComparisonProse";
 
 export const revalidate = 3600;
 
@@ -91,7 +88,7 @@ export default async function ComparisonPage({
       <h1 className="text-4xl font-extrabold text-gray-900 mt-6 mb-4">{h1}</h1>
 
       <section className="prose lg:prose-xl max-w-none">
-        <ProgrammaticContent slug={params.vendor} contentType="comparisons" />
+        <ComparisonProse vendorSlug={params.vendor} />
       </section>
 
       <section className="mt-12">

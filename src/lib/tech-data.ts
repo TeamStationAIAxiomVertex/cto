@@ -1,4 +1,4 @@
-
+import { AlertTriangle } from "lucide-react";
 import { TechEntry } from "./tech";
 import { TechCategory } from "./tech-categories";
 
@@ -17,7 +17,7 @@ export const allTech: Record<string, TechEntry> = {
       "You're not here because you need another developer who 'knows React.' You're here because your application feels sluggish, your state management is a tangled mess, and your component library is a collection of one-off hacks. You need a true React expert who obsesses over performance, architecture, and user experience as much as you do. Our vetting process, powered by the Axiom Cortex™ engine, is designed to find these individuals. We move beyond simple coding challenges to assess a candidate's deep understanding of the React render cycle, their ability to design and implement scalable state management solutions, and their discipline in creating reusable, accessible component APIs. We identify engineers who don't just use React but understand its core principles, enabling them to build applications that are not only fast and responsive but also a joy to maintain and extend. This isn't about filling a seat; it's about investing in a level of quality and craftsmanship that directly translates to a superior end-user experience and a more resilient codebase. By focusing on these core competencies, we ensure that the engineers we provide become force multipliers for your team, setting new standards for quality and driving your product forward with a velocity that a less experienced developer simply cannot match.",
     pains: [
       {
-        iconName: "AlertTriangle",
+        icon: AlertTriangle,
         pain: "Is your app slow because of endless re-renders?",
         problem:
           "Many so-called 'senior' React developers have a superficial understanding of the render cycle. They build components that re-render unnecessarily on every state change, leading to a slow, janky user interface that feels unresponsive, especially on lower-powered devices. This directly impacts user satisfaction, increases bounce rates, and can harm your Core Web Vitals scores, affecting your SEO. The root cause is a failure to properly memoize components, overuse of context, and an inability to profile and diagnose performance bottlenecks using the React Profiler. This isn't just a technical issue; it's a product quality issue that costs you users and revenue.",
@@ -26,7 +26,7 @@ export const allTech: Record<string, TechEntry> = {
         kpi: "Expertise in React Profiler & why-did-you-render",
       },
       {
-        iconName: "AlertTriangle",
+        icon: AlertTriangle,
         pain: "Is your state management a spaghetti of props and contexts?",
         problem:
           "A common anti-pattern in large React applications is a chaotic mix of prop-drilling, oversized context providers, and legacy Redux patterns that are ill-suited for modern server-side data. This creates a 'spaghetti state' that is bug-prone, difficult to debug, and makes adding new features a slow and dangerous process. It’s a direct result of hiring developers who lack a strategic understanding of state management architecture.",
@@ -35,7 +35,7 @@ export const allTech: Record<string, TechEntry> = {
         kpi: "Proven ability to architect scalable state",
       },
       {
-        iconName: "AlertTriangle",
+        icon: AlertTriangle,
         pain: "Is your component library just a folder of inconsistent parts?",
         problem:
           "Without a disciplined approach, a component library quickly devolves into a collection of inconsistent, one-off components. It lacks a coherent API, has poor accessibility, and is difficult to use, forcing developers to reinvent the wheel for every new feature. This negates the very purpose of a design system, slowing down development and leading to an inconsistent user experience.",
@@ -67,7 +67,7 @@ export const allTech: Record<string, TechEntry> = {
       "You're tired of `any` types and runtime errors that should have been caught at compile time. You need more than just a JavaScript developer; you need a TypeScript expert who can leverage the full power of the type system to build safer, more maintainable, and self-documenting code. This is not about adding `:string` to a variable; it's about architecting a type-safe system from the ground up. Our vetting process is designed to find these engineers. We present them with complex scenarios that require the use of advanced TypeScript features to solve real-world problems. We're looking for the ability to create robust data models, secure API contracts, and build a codebase where the type system itself prevents entire classes of bugs. By hiring a true TypeScript expert, you are making an investment in the long-term health and stability of your application. You are reducing the time your team spends on debugging runtime errors and increasing the time they spend on building features. This is a direct lever on engineering velocity and product quality, and it's a non-negotiable skill for any modern, high-performing team.",
     pains: [
       {
-        iconName: "AlertTriangle",
+        icon: AlertTriangle,
         pain: "Is your codebase littered with `any` types?",
         problem:
           "The `any` type is a viral infection in a TypeScript codebase. It silences the compiler and negates the primary benefit of using TypeScript in the first place. It creates a false sense of security, allowing type-related errors to slip through to runtime, where they are 100x more expensive to fix. It makes refactoring a dangerous guessing game and erodes the maintainability of the application.",
@@ -76,7 +76,7 @@ export const allTech: Record<string, TechEntry> = {
         kpi: "Mastery of advanced TypeScript patterns",
       },
       {
-        iconName: "AlertTriangle",
+        icon: AlertTriangle,
         pain: "Are you struggling to type complex third-party libraries?",
         problem:
           "Your application's type safety is only as strong as its weakest link. Integrating with untyped or poorly typed third-party JavaScript libraries introduces holes in your type system, leading to unexpected runtime errors and making it difficult to use these libraries with confidence.",
@@ -85,7 +85,7 @@ export const allTech: Record<string, TechEntry> = {
         kpi: "Expertise in custom type declarations",
       },
       {
-        iconName: "AlertTriangle",
+        icon: AlertTriangle,
         pain: "Is your build process slow due to TypeScript compilation?",
         problem:
           "A poorly configured `tsconfig.json` or an inefficient build setup can make TypeScript feel like a bottleneck rather than a productivity tool. Slow feedback loops during development frustrate engineers and reduce velocity. Long CI build times delay deployments and slow down the entire team.",
@@ -113,5 +113,5 @@ export function getAllTechSlugs(): string[] {
   return Object.keys(allTech);
 }
 export const techCategories: TechCategory[] = [
-    // ... categories remain unchanged
+  // ... categories remain unchanged
 ];

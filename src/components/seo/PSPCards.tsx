@@ -1,8 +1,8 @@
-
 import Link from "next/link";
 import { PainPoint } from "@/lib/tech";
 import { Button } from "@/components/ui/button";
 import * as Icons from "lucide-react";
+import React from "react";
 
 // Helper to get an icon component by its string name
 const getIcon = (name: string) => {
@@ -13,24 +13,43 @@ const getIcon = (name: string) => {
   return null; // Or a default icon
 };
 
-export default function PSPCards({ items, heading }: { items: PainPoint[]; heading?: string }) {
+export default function PSPCards({
+  items,
+  heading,
+}: {
+  items: PainPoint[];
+  heading?: string;
+}) {
   return (
     <section aria-label={heading || "Decision Cards"} className="mt-10">
-      {heading ? <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">{heading}</h2> : null}
+      {heading ? (
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+          {heading}
+        </h2>
+      ) : null}
       <div className="grid gap-6 md:grid-cols-2">
         {items.map((it) => (
-          <article key={it.problem} className="rounded-lg border bg-card shadow-sm p-6 flex flex-col">
+          <article
+            key={it.problem}
+            className="rounded-lg border bg-card shadow-sm p-6 flex flex-col"
+          >
             <h3 className="text-lg font-semibold text-foreground flex items-center">
-              {getIcon(it.iconName)}
+              {React.createElement(it.icon, {
+                className: "mr-2 h-8 w-8 text-primary",
+              })}
               {it.problem}
             </h3>
 
             <div className="mt-4 space-y-3 text-sm leading-6 text-muted-foreground flex-grow">
               <p>
-                <span className="font-semibold text-foreground">Pain —</span> {it.pain}
+                <span className="font-semibold text-foreground">Pain —</span>{" "}
+                {it.pain}
               </p>
               <p>
-                <span className="font-semibold text-foreground">Solution —</span> {it.solution}
+                <span className="font-semibold text-foreground">
+                  Solution —
+                </span>{" "}
+                {it.solution}
               </p>
               {it.kpi ? (
                 <p className="text-foreground/80">

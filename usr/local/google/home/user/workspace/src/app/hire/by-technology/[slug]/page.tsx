@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { notFound } from "next/navigation";
-import { allTech, getAllTechSlugs } from "@/lib/tech";
+import { allTech, getAllTechSlugs, PainPoint } from "@/lib/tech";
 import { JsonLd } from "@/components/seo/JsonLd";
 import FurtherReading from "@/components/seo/FurtherReading";
 import { WithTooltip } from "@/components/ui/tooltip";
@@ -131,7 +131,7 @@ export default function TechPage({ params }: { params: { slug: string } }) {
               <strong>{tech.name} experts</strong>.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-              {tech.pains.map((item) => {
+              {tech.pains.map((item: PainPoint) => {
                 const Icon = item.icon;
                 return (
                   <div

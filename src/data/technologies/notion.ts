@@ -1,4 +1,5 @@
-import { TechEntry } from "@/lib/tech";
+import { AlertTriangle } from "lucide-react";
+import type { TechEntry } from "@/lib/tech";
 
 import { Search, Map, Users } from "lucide-react";
 
@@ -13,7 +14,7 @@ const notion: TechEntry = {
     "Notion is a flexible, all-in-one workspace for your team's documentation, project management, and knowledge base. Our Notion experts help you tame the chaos and turn Notion into a powerful, organized system that fuels your team's productivity.",
   pains: [
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Information is scattered across Google Docs, Slack, and email, making it impossible to find anything.",
       problem:
         "Your team wastes precious time searching for documents, product specs, or meeting notes. There is no single source of truth, leading to confusion and duplicated work.",
@@ -22,7 +23,7 @@ const notion: TechEntry = {
       kpi: "Reduce time spent searching for information by 50%.",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Your product roadmap is a static presentation that no one looks at.",
       problem:
         "Roadmaps in slide decks or spreadsheets quickly become outdated. There's no connection between high-level strategy and the actual work being done in Jira or Linear.",
@@ -31,7 +32,7 @@ const notion: TechEntry = {
       kpi: "Increase roadmap alignment and visibility across the entire organization.",
     },
     {
-      iconName: "AlertTriangle",
+      icon: AlertTriangle,
       pain: "Onboarding new team members is a slow, manual, and inconsistent process.",
       problem:
         "New hires are overwhelmed and struggle to find the information they need to get started. The onboarding experience is inconsistent and depends heavily on their manager's availability.",
