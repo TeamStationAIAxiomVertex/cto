@@ -4,8 +4,8 @@ import type { TechEntry } from "@/lib/tech";
 
 const ansible: TechEntry = {
     name: "Ansible",
-    category: "DevOps & Cloud Infrastructure",
-    categorySlug: "devops-cloud",
+    category: "Platform / Infra / SRE",
+    categorySlug: "platform-infra-sre",
     seo_title: "Hire Senior Ansible Experts | Automation and Configuration Management Specialists",
     meta_description: "Hire elite Ansible experts specializing in building, managing, and scaling automated infrastructure across all major cloud providers.",
     intro: "Ansible is a powerful and versatile automation engine. Our Ansible experts are vetted for their ability to write clean, modular, and maintainable playbooks that can be used to manage complex, multi-cloud deployments. They are the specialists who enable your teams to build and manage infrastructure with confidence.",

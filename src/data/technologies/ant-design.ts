@@ -4,8 +4,8 @@ import { TechEntry } from "@/lib/tech";
 
 const antDesign: TechEntry = {
     name: "Ant Design",
-    category: "Software Development",
-    categorySlug: "software-development",
+    category: "Frontend / Web",
+    categorySlug: "frontend-web",
     seo_title: "Hire Ant Design Experts | React & UI Component Library Consultants",
     meta_description: "Build a beautiful, consistent, and accessible user interface. Hire elite remote Ant Design experts vetted for their deep understanding of the Ant Design system, from the component to the theme. Book a call.",
     intro: "Ant Design is a popular React UI framework. You need an engineer who understands that building a modern, component-based user interface is not just about writing code, but about a deep understanding of the entire Ant Design ecosystem, from the component and the theme to the style and the layout. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring an Ant Design expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
