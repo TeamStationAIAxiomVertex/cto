@@ -4,8 +4,8 @@ import { AlertTriangle, Workflow, ShieldCheck } from 'lucide-react';
 
 const airflow: TechEntry = {
   name: 'Airflow',
-  category: 'Pipelines & Orchestration',
-  categorySlug: 'pipelines-orchestration',
+  category: 'Data & AI',
+  categorySlug: 'data-engineering-analytics',
   seo_title: 'Hire Airflow Experts | Data Pipeline & Workflow Orchestration Engineers',
   meta_description:
     'Hire elite Airflow experts to build and manage scalable data pipelines. Our vetted talent transforms brittle cron jobs into resilient, observable, and production-grade workflows.',
