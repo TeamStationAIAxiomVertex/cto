@@ -4,8 +4,8 @@ import type { TechEntry } from "@/lib/tech";
 
 const aix: TechEntry = {
     name: "AIX",
-    category: "Operating Systems",
-    categorySlug: "operating-systems",
+    category: "Platform / Infra / SRE",
+    categorySlug: "platform-infra-sre",
     seo_title: "Hire Senior AIX Administrators | IBM AIX Experts",
     meta_description: "Hire elite AIX administrators specializing in managing, and maintaining IBM AIX systems.",
     intro: "AIX is a powerful and reliable operating system for enterprise environments. Our AIX experts are vetted for their deep understanding of AIX's core principles, from its logical volume manager to its security features. They are the specialists who can help you keep your mission-critical systems running smoothly.",

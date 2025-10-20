@@ -4,8 +4,8 @@ import type { TechEntry } from "@/lib/tech";
 
 const algol: TechEntry = {
     name: "Algol",
-    category: "Legacy Languages",
-    categorySlug: "legacy-languages",
+    category: "Backend / Services",
+    categorySlug: "backend-services",
     seo_title: "Hire Senior Algol Developers | Legacy System Experts",
     meta_description: "Hire elite Algol developers specializing in managing, and maintaining legacy systems written in Algol.",
     intro: "Algol is a historical and influential programming language. Our Algol experts are vetted for their deep understanding of Algol's core principles and its historical significance. They are the specialists who can help you maintain and modernize your legacy systems.",
