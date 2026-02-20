@@ -9,13 +9,6 @@ const VerdictTable = dynamic(
   () => import("@/components/VerdictTable").then((mod) => mod.default),
   { ssr: true }
 );
-const ProgrammaticContent = dynamic(
-  () =>
-    import("@/components/ProgrammaticContent").then(
-      (mod) => mod.ProgrammaticContent
-    ),
-  { ssr: true }
-);
 
 // --- 1. NEXT.JS STATIC PARAMS GENERATION ---
 export async function generateStaticParams() {

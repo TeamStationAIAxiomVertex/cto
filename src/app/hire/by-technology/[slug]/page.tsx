@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import { allTech, getAllTechSlugs, TechEntry } from '@/lib/tech';
 import { ProgrammaticContent } from '@/components/ProgrammaticContent';
 import { Metadata } from 'next';
-import React from 'react';
 import { AlertTriangle } from 'lucide-react'; // Correctly import the icon
 
 type Props = {

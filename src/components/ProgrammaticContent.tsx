@@ -2,16 +2,6 @@
 import React from "react";
 import Link from "next/link";
 import { TechEntry } from "@/lib/tech";
-import * as Icons from "lucide-react";
-
-// Helper to get an icon component by its string name
-const getIcon = (name: string) => {
-  const Icon = (Icons as any)[name];
-  if (Icon) {
-    return <Icon className="mr-2 h-8 w-8 text-primary" />;
-  }
-  return null; // Or a default icon
-};
 
 interface ProgrammaticContentProps {
   tech: TechEntry;

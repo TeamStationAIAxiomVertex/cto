@@ -3,7 +3,6 @@ import { WithTooltip } from "../../../../components/ui/tooltip";
 import type { Metadata } from "next";
 import {
   CheckCircle,
-  ArrowRight,
   Shield,
   Bug,
   CloudCog,
