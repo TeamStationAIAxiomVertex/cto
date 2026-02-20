@@ -67,8 +67,22 @@ async function collectHireByCountryUrls() {
 }
 
 async function collectHireByRoleUrls() {
-  const pageFiles = getPages('src/app/hire/by-role', ['[slug]']);
-  const urls = formatPaths(pageFiles);
+  // These must match the keys in the roleData object from src/app/hire/by-role/[slug]/page.tsx
+  const roleSlugs = [
+    'platform-infra-sre',
+    'security-grc',
+    'backend-services',
+    'frontend-web',
+    'mobile-cross-platform',
+    'data-engineering-analytics',
+    'ml-ai-llm-ops',
+    'product-design-growth',
+    'qa-quality-engineering',
+    'it-enterprise-ops',
+    'finops-biztech',
+  ];
+  
+  const urls = roleSlugs.map(slug => `${BASE_URL}/hire/by-role/${slug}`);
   return urls.map((loc) => ({ loc, lastmod: today, changefreq: 'monthly', priority: 0.7 }));
 }
 

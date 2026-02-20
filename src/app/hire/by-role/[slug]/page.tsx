@@ -542,6 +542,10 @@ const roleData: {
   },
 };
 
+export async function generateStaticParams() {
+  return Object.keys(roleData).map((slug) => ({ slug }));
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -683,6 +687,10 @@ const SecurityContent = () => (
     </div>
   </div>
 );
+
+export async function generateStaticParams() {
+  return Object.keys(roleData).map((slug) => ({ slug }));
+}
 
 export default function RoleCategoryPage({
   params,

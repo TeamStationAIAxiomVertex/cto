@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Defensively access the tech object.
   const tech = (allTech as Record<string, TechEntry>)[slug];
 
-  // If the tech entry doesn't exist or isn't ready, return a 404-style metadata.
-  if (!tech || !tech.is_ready) {
+  // If the tech entry doesn't exist, return a 404-style metadata.
+  if (!tech) {
     return {
       title: 'Technology Not Found',
       description: 'The requested technology page is not available.',
@@ -27,8 +27,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: tech.seo_title,
-    description: tech.meta_description,
+    title: tech.seo_title || `Hire ${tech.name} Experts | TeamStation AI`,
+    description:
+      tech.meta_description ||
+      `Hire vetted ${tech.name} engineers with TeamStation AI for secure, fast delivery.`,
   };
 }
 
@@ -45,17 +47,16 @@ export default function TechPage({ params }: Props) {
   const slug = params.slug;
   const tech = (allTech as Record<string, TechEntry>)[slug];
 
-  // CRITICAL FIX: Add a defensive check.
-  // This ensures that if the data is missing or malformed, we immediately 404.
-  // The `is_ready` flag is the final gate before rendering.
-  if (!tech || !tech.is_ready) {
+  // Defensive check for missing data.
+  if (!tech) {
     notFound();
   }
-  
+
+  const pains = Array.isArray(tech.pains) ? tech.pains : [];
   const techWithIcon = {
     ...tech,
-    pains: tech.pains.map(p => ({...p, icon: AlertTriangle }))
-  }
+    pains: pains.map((p) => ({ ...p, icon: AlertTriangle })),
+  };
 
   // The ProgrammaticContent component is now guaranteed to receive a valid tech object.
   return <ProgrammaticContent tech={techWithIcon} />;

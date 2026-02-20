@@ -38,7 +38,6 @@ export const allTech: AllTech = allTechData;
 export function getAllTechSlugs(): string[] {
   return Object.keys(allTech).filter((key) => {
     const tech = allTech[key as TechSlug];
-    // Defensive check to ensure tech and is_ready exist
-    return tech && tech.is_ready;
+    return Boolean(tech);
   });
 }
