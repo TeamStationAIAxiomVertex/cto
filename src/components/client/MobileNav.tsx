@@ -55,7 +55,7 @@ export function MobileNav() {
                 <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="block py-2 text-lg font-semibold text-foreground hover:text-primary" onClick={handleLinkClick}>
                     Sign In
                 </Link>
-                 <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button w-full mt-4" onClick={handleLinkClick}>Book a Call</Link>
+                 <Link href="https://hire.teamstation.dev/contact" target="_blank" rel="noopener noreferrer" className="cta-button w-full mt-4" onClick={handleLinkClick}>Book a Call</Link>
             </div>
           </div>
         </div>

@@ -159,7 +159,7 @@ export default function HirePythonColombiaPage() {
               Let's build a TCO model for your Colombia-based Python team and map your roles to our <a href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</a> evaluation process.
             </p>
             <div className="mt-6 flex justify-center items-center gap-4">
-                <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" className="cta-button">
+                <Link href="https://hire.teamstation.dev/contact" className="cta-button">
                     Book a 30-minute plan
                 </Link>
             </div>

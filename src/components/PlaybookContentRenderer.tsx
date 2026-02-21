@@ -25,9 +25,8 @@ async function fetchPlaybookContent(slug: string): Promise<string> {
         
         <figure>
             <blockquote class="bg-blue-50 border-l-4 border-blue-500 p-4 italic text-blue-800">
-                "The 6-hour time difference means every question costs one full day. When you multiply that by 20 PRs a week, you've lost half your sprint to latency."
+                "A multi-hour time difference turns routine engineering questions into full-day delays, and those delays compound across every sprint."
             </blockquote>
-            <figcaption class="text-sm text-gray-500 mt-2">— Dr. Evelyn Reed, TeamStation AI CSO</figcaption>
         </figure>
         
         <h2 id="cost-risk">Cost vs. Risk: Why Cheapest is not Cheapest</h2>

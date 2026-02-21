@@ -8,24 +8,6 @@ export const metadata: Metadata = {
 };
 
 export default function RequestPlaybookPdfPage() {
-  const subject = encodeURIComponent("Request: CTO Playbook PDF");
-  const body = encodeURIComponent(
-    [
-      "Hi TeamStation AI,",
-      "",
-      "Please send me the CTO Playbook PDF package.",
-      "",
-      "Name:",
-      "Work Email:",
-      "Company:",
-      "Role:",
-      "Current Team Size:",
-      "Main topic I need:",
-      "",
-      "Thanks.",
-    ].join("\n")
-  );
-
   return (
     <main className="container max-w-3xl py-12">
       <div className="text-sm text-muted-foreground mb-8">
@@ -48,26 +30,24 @@ export default function RequestPlaybookPdfPage() {
       </header>
 
       <section className="mt-8 rounded-xl border bg-card p-8">
-        <h2 className="text-2xl font-bold">Choose How You Want It Delivered</h2>
+        <h2 className="text-2xl font-bold">Request Through TeamStation Channels</h2>
         <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href={`mailto:hello@teamstation.ai?subject=${subject}&body=${body}`}
-            className="cta-button"
-          >
-            Request by Email
+          <a href="https://hire.teamstation.dev/contact" className="cta-button">
+            Request PDF via Hire Portal
           </a>
           <a
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://research.teamstation.dev/research"
             className="px-4 py-2 rounded border text-sm font-semibold hover:bg-muted"
           >
-            Book 20-min Strategy Call
+            Open Research Library
           </a>
+          <Link href="/playbook/hub" className="px-4 py-2 rounded border text-sm font-semibold hover:bg-muted">
+            Return to Playbook Hub
+          </Link>
         </div>
         <p className="mt-5 text-sm text-muted-foreground">
-          We usually respond same business day with the PDF package and a short recommendation
-          path based on your team size and delivery goals.
+          This page now routes only through TeamStation internal paths and subdomains.
+          Use the Hire contact channel to request the CTO Playbook PDF package.
         </p>
       </section>
     </main>

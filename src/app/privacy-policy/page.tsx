@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
         <p>
           Questions? Email <a href="mailto:lonnie@teamstation.io">support@teamstation.ai</a> or{' '}
           <a
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+            href="https://hire.teamstation.dev/contact"
             target="_blank" rel="noopener noreferrer"
           >
             book a call

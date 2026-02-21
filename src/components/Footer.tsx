@@ -33,9 +33,9 @@ const companyLinks: LinkItem[] = [
   { href: '/trust', label: 'Trust & Compliance Center' },
   { href: '/case-studies', label: 'Case Studies & Proof' },
   { href: '/pricing', label: 'Pricing & Engagement Models' },
-  { href: 'https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book', label: 'Nearshore IT Platformed Book' },
-  { href: 'https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en', label: 'Google Scholar Research' },
-  { href: 'https://www.linkedin.com/company/teamstation', label: 'TeamStation LinkedIn' },
+  { href: 'https://research.teamstation.dev/research/platforming-the-nearshore-industry', label: 'Nearshore IT Platformed Book' },
+  { href: 'https://research.teamstation.dev/research', label: 'Research Archive' },
+  { href: 'https://hire.teamstation.dev/about', label: 'TeamStation Company Profile' },
 ];
 
 // Research Section
@@ -45,10 +45,10 @@ const researchLinks: LinkItem[] = [
   { href: '/research/framework-for-measuring-capacity', label: 'Framework for Measuring Engineering Capacity' },
   { href: '/research/performance-metrics-in-ai-age', label: 'Performance Metrics in the AI Age' },
   {
-    href: 'https://open.spotify.com/episode/7EwovXvoVFIGLJDwqTZFUE',
+    href: 'https://research.teamstation.dev/research',
     label: (
       <>
-        TeamStation Podcast <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
+        TeamStation Research Feed <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
       </>
     ),
   },

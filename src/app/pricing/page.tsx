@@ -264,7 +264,7 @@ export default function PricingPage() {
           <p className="mt-2 text-muted-foreground">
             Let's have a real conversation about your budget and your roadmap. In 15 minutes, we can give you a concrete, defensible plan.
           </p>
-           <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
+           <Link href="https://hire.teamstation.dev/contact" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
               Book a No-Bullshit Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>

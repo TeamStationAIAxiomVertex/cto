@@ -61,7 +61,7 @@ export default function HireByRolePage() {
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Let's discuss the specific roles and competencies you need to accelerate your roadmap.
         </p>
-        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
+        <Link href="https://hire.teamstation.dev/contact" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
       <FurtherReading />
     </main>

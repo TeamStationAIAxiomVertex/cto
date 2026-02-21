@@ -204,7 +204,7 @@ export default async function HomePage() {
               </p>
               <div className="mt-10">
                 <Link
-                  href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+                  href="https://hire.teamstation.dev/contact"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cta-button"
@@ -428,7 +428,7 @@ export default async function HomePage() {
                 Hear directly from our founders about the science and strategy
                 behind the TeamStation AI platform.
               </p>
-              <Link href="https://open.spotify.com/episode/7EwovXvoVFIGLJDwqTZFUE?si=8109032fb1f14398" className="cta-button mt-6">
+              <Link href="https://research.teamstation.dev/research" className="cta-button mt-6">
                 Listen Now <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
@@ -517,7 +517,7 @@ export default async function HomePage() {
             </p>
             <div className="mt-6">
               <Link
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
+                href="https://hire.teamstation.dev/contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-button"
