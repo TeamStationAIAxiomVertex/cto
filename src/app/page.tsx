@@ -22,15 +22,7 @@ import type { Metadata } from "next";
 import SafeImage from "../components/SafeImage";
 import placeholderImages from "./lib/placeholder-images.json";
 import HeroKpis, { type HeroKpi } from "../components/metrics/HeroKpis";
-import dynamic from "next/dynamic";
-
-const SpotifyIcon = dynamic(
-  () =>
-    import("../components/SpotifyIcon").then(
-      (mod) => mod.SpotifyIcon ?? mod.default
-    ),
-  { ssr: false }
-);
+import SpotifyIcon from "../components/SpotifyIcon";
 
 const heroKpis: HeroKpi[] = [
   {
@@ -204,7 +196,7 @@ export default async function HomePage() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="text-center md:text-left">
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                Nearshore Software Development: The CTO Playbook
+                Distributed Engineering OS: CTO Playbook
               </h1>
               <p className="mx-auto md:mx-0 mt-6 max-w-3xl text-lg text-muted-foreground">
                 The vendor era is over. Command an evidence-driven, daylight,

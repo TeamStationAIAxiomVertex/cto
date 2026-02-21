@@ -1,9 +1,7 @@
 import { Target, Telescope, Shield, Users, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-
-const SpotifyIcon = dynamic(() => import("../../components/SpotifyIcon"), { ssr: false });
+import SpotifyIcon from "../../components/SpotifyIcon";
 
 export const metadata: Metadata = {
   title: 'About TeamStation AI: Nearshore Development Teams',

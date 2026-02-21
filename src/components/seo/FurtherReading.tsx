@@ -36,15 +36,6 @@ const RESEARCH_LINKS: ReadingItem[] = [
     { href: "/research/axiom-cortex-scientific-report", title: "AxiomCortex™ Scientific Report" },
 ];
 
-// --- Helper Functions ---
-function shuffle(array: any[]) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
 function getTechInterlinks(slug: string | undefined): ReadingItem[] {
   if (!slug) return [];
   const tech = allTech[slug as keyof typeof allTech];
@@ -80,9 +71,8 @@ export default function FurtherReading({ items = [], title = "Further Reading", 
     // Remove duplicates based on href
     const uniqueLinks = Array.from(new Map(pool.map(item => [item.href, item])).values());
     
-    // Shuffle and take at least 4
-    const shuffled = shuffle(uniqueLinks);
-    return shuffled.slice(0, Math.max(4, items.length));
+    // Keep deterministic ordering to avoid client/server render drift.
+    return uniqueLinks.slice(0, Math.max(4, items.length));
     
   }, [items, comparison, country, techSlug]);
 
