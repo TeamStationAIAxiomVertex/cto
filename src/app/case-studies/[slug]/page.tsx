@@ -278,7 +278,7 @@ export default async function CaseStudyPage({
                 infrastructure you need to ship faster and more securely.
               </p>
               <Link
-                href="https://hire.teamstation.dev/contact"
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-button mt-6 text-sm"

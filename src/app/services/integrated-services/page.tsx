@@ -141,7 +141,7 @@ export default function IntegratedServicesPage() {
                 We are the <strong>only</strong> intelligent services platform offering a <strong>Single Accountable SLA/SOW/MSA</strong> to build Nearshore IT teams at a touch of a button, fueled by <strong>Axiom Cortex's</strong> gigantic brain processing <strong>44 NeuroPsychometric formulas</strong>. This is how you defeat fragmented vendor risk.
             </p>
             <div className='mt-6 flex justify-center space-x-4'>
-                 <Link href="https://hire.teamstation.dev/contact" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Demo & Get the SLA <ArrowRight className="ml-2 h-5 w-5"/></Link>
+                 <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button">Book a Demo & Get the SLA <ArrowRight className="ml-2 h-5 w-5"/></Link>
             </div>
         </header>
 

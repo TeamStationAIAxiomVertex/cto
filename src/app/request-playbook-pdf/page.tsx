@@ -32,7 +32,7 @@ export default function RequestPlaybookPdfPage() {
       <section className="mt-8 rounded-xl border bg-card p-8">
         <h2 className="text-2xl font-bold">Request Through TeamStation Channels</h2>
         <div className="mt-6 flex flex-wrap gap-3">
-          <a href="https://hire.teamstation.dev/contact" className="cta-button">
+          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" className="cta-button">
             Request PDF via Hire Portal
           </a>
           <a

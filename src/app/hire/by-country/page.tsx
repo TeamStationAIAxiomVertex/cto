@@ -44,7 +44,7 @@ export default function HireByCountryPage() {
                   <span className="text-sm text-muted-foreground">In partnership with</span> <Link href="https://www.wework.com" target="_blank" rel="noopener noreferrer" className="font-bold text-lg text-foreground hover:underline">WeWork</Link>
                 </div>
                 <p className="mt-4 text-muted-foreground">
-                    Because of WeWork, we always access the most safe, secure, and most advanced office and IT infrastructure, which comes included into our price. This provides a cost-effective solution for CTOs to meet with their teams in Latin America where their pods and squads are based on their team topologies without spending more of their budget. Some limits may apply—<Link href="https://hire.teamstation.dev/contact" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">book a demo</Link> for more details.
+                    Because of WeWork, we always access the most safe, secure, and most advanced office and IT infrastructure, which comes included into our price. This provides a cost-effective solution for CTOs to meet with their teams in Latin America where their pods and squads are based on their team topologies without spending more of their budget. Some limits may apply—<Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">book a demo</Link> for more details.
                 </p>
                  <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">One less vendor to manage</p>
             </div>
@@ -85,7 +85,7 @@ export default function HireByCountryPage() {
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Let's discuss how our nearshore talent and integrated WeWork infrastructure can accelerate your roadmap.
         </p>
-        <Link href="https://hire.teamstation.dev/contact" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
+        <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a Strategy Call</Link>
       </div>
       <FurtherReading />
     </main>

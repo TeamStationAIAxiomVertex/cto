@@ -206,7 +206,7 @@ export default function HowdyComparisonPage() {
                 Let's move beyond sourcing and payroll. In a 15-minute call, we can build a CFO-ready business case for a nearshore platform that delivers a complete, secure, and productive team.
             </p>
             <div className="mt-6 flex justify-center items-center gap-4">
-                <Link href="https://hire.teamstation.dev/contact" className="cta-button">
+                <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" className="cta-button">
                     Book a TCO Strategy Call
                 </Link>
             </div>

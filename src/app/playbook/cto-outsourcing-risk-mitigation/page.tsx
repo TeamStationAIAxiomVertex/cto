@@ -187,7 +187,7 @@ export default function CtoOutsourcingRiskMitigationPage() {
             Let's have a no-obligation strategy call to align your needs with our predictable pipeline of vetted, senior talent.
           </p>
           <Link
-            href="https://hire.teamstation.dev/contact"
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
             className="cta-button mt-6"
           >
             Book a Strategy Session

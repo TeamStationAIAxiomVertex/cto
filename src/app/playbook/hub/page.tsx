@@ -190,7 +190,7 @@ export default function PlaybookHubPage() {
           This isn't a sales pitch. It's a strategic consultation to build your CFO-ready business case for nearshore success.
         </p>
         <a
-          href="https://hire.teamstation.dev/contact"
+          href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
           className="cta-button mt-6"
         >
           Book a Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
