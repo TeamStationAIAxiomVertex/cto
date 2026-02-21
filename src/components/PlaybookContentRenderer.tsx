@@ -40,6 +40,55 @@ async function fetchPlaybookContent(slug: string): Promise<string> {
       `;
     }
 
+    if (slug === 'latam-economics') {
+      return `
+        <h2 id="beyond-salary">Beyond Salary: The True TCO Equation</h2>
+        <p>Most vendor comparisons fail because they optimize for hourly rate instead of business throughput. A CTO-level economic model must include the full cost of delivery: salary, hiring friction, onboarding lag, compliance operations, security controls, management overhead, defect rework, and delay penalties tied to roadmap slip.</p>
+        <p>When evaluated at full-stack TCO, nearshore LATAM teams frequently outperform both offshore and onshore alternatives because they preserve daylight collaboration while reducing fully-loaded labor and operational overhead. The core financial question is not “What is the cheapest engineer?” The right question is “What team model delivers the most reliable output per dollar of total spend?”</p>
+
+        <h2 id="productivity-index">The Productivity Index: Output per Dollar</h2>
+        <p>To compare models fairly, normalize each delivery system by output quality and cycle time, not nominal rate cards. In practical terms, measure:</p>
+        <ul>
+          <li>Lead time from ticket start to production</li>
+          <li>PR turnaround latency and review queue depth</li>
+          <li>Change failure rate and rework percentage</li>
+          <li>MTTR and incident-related engineering drain</li>
+          <li>Delivered business value per sprint</li>
+        </ul>
+        <p>Nearshore models with 5-8 hours of overlap improve this index because decisions and reviews happen in the same business day. That reduces queueing delay, lowers context loss, and stabilizes planning accuracy. A lower hourly rate with high async drag often produces worse economics at the portfolio level.</p>
+
+        <h3 id="attrition-costs">Hidden Costs: Attrition, Rework, and Management Tax</h3>
+        <p>Three hidden cost classes consistently break staffing budgets:</p>
+        <ul>
+          <li><strong>Attrition replacement cost:</strong> vacancy gaps, recruiting cycles, and onboarding reset.</li>
+          <li><strong>Quality leakage cost:</strong> defects detected late in the lifecycle and production incident cleanup.</li>
+          <li><strong>Management tax:</strong> additional coordination load required to compensate for timezone and process fragmentation.</li>
+        </ul>
+        <p>These costs compound. A team that appears cheaper on a spreadsheet can become materially more expensive once churn, rework, and coordination drag are priced correctly into quarterly execution.</p>
+
+        <h2 id="fully-loaded-model">Financial Model: Fully-Loaded Cost Analysis</h2>
+        <p>A practical CTO model should include the following structure for each delivery option:</p>
+        <ol>
+          <li><strong>Direct labor:</strong> salary/contract rates by role and seniority mix.</li>
+          <li><strong>Platform and tooling:</strong> CI/CD, observability, security, collaboration stack.</li>
+          <li><strong>Compliance and operations:</strong> EOR/payroll, legal, endpoint security, access governance.</li>
+          <li><strong>Execution risk reserve:</strong> defect amplification, incidents, and schedule volatility.</li>
+          <li><strong>Delay cost proxy:</strong> revenue or strategic value deferred due to cycle-time slip.</li>
+        </ol>
+        <p>When modeled this way, LATAM nearshore teams often produce a superior risk-adjusted ROI profile: lower total cost than US-only staffing with significantly better operational responsiveness than fully offshore structures.</p>
+
+        <h2 id="summary">Summary: Strategic ROI of LATAM Nearshore</h2>
+        <p>The economic case for LATAM is strongest when leadership evaluates full-system performance instead of fragmented unit costs. A high-performing nearshore model combines:</p>
+        <ul>
+          <li>Daylight execution (reduced latency and queue drag)</li>
+          <li>Strong technical quality under structured vetting</li>
+          <li>Lower fully-loaded spend than US-only alternatives</li>
+          <li>Higher planning reliability and lower governance friction</li>
+        </ul>
+        <p>For US CTO organizations, this is not a labor arbitrage strategy. It is an operating model decision that improves throughput, reduces delivery risk, and increases capital efficiency across the entire software portfolio.</p>
+      `;
+    }
+
     // Default fallback content for other slugs
     return `<p>This Playbook chapter (${slug}) is an authoritative long-form analysis that has been validated by the NCLA v7 Humanizer Protocol for maximum E-E-A-T. The content will appear here upon final generation.</p>`;
 }
