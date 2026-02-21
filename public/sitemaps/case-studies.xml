@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://cto.teamstation.dev/case-studies</loc><lastmod>2025-10-20T22:47:58.648Z</lastmod>
+    <loc>https://cto.teamstation.dev/case-studies</loc><lastmod>2025-10-20T22:47:58.648Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/case-studies/atticus</loc><lastmod>2025-10-20T22:47:58.648Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/case-studies/global-entertainment-platform</loc><lastmod>2025-10-20T22:47:58.648Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/case-studies/global-ooh-advertising-platform</loc><lastmod>2025-10-20T22:47:58.648Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/case-studies/healthcare-revenue-platform</loc><lastmod>2025-10-20T22:47:58.648Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/case-studies/parsable</loc><lastmod>2025-10-20T22:47:58.648Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cto.teamstation.dev/case-studies/rmj-technologies</loc><lastmod>2025-10-20T22:47:58.648Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
   </url>
 </urlset>

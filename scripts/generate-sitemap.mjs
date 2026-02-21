@@ -60,9 +60,30 @@ async function collectPlaybookUrls() {
 }
 
 async function collectCaseStudyUrls() {
-  const pageFiles = getPages('src/app/case-studies', ['[slug]']);
-  const urls = formatPaths(pageFiles);
-  return urls.map((loc) => ({ loc, lastmod: today, changefreq: 'monthly', priority: 0.7 }));
+  const urls = new Set([`${BASE_URL}/case-studies`]);
+  const candidateDirs = [
+    path.join(process.cwd(), 'content', 'case-studies'),
+    path.join(process.cwd(), 'src', 'content', 'case-studies'),
+  ];
+
+  for (const dir of candidateDirs) {
+    if (!fs.existsSync(dir)) continue;
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (!entry.isFile()) continue;
+      if (!entry.name.match(/\.mdx?$/)) continue;
+      const slug = entry.name.replace(/\.mdx?$/, '');
+      if (!slug) continue;
+      urls.add(`${BASE_URL}/case-studies/${slug}`);
+    }
+  }
+
+  return Array.from(urls).map((loc) => ({
+    loc,
+    lastmod: today,
+    changefreq: 'monthly',
+    priority: 0.7,
+  }));
 }
 
 async function collectComparisonUrls() {
