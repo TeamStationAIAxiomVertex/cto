@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "cto-playbook-platform"
+    "default": "teamstation-ai-v4-786709-cffac"
   },
   "targets": {
-    "cto-playbook-platform": {
+    "teamstation-ai-v4-786709-cffac": {
       "hosting": {
         "web": [
-          "cto-playbook-platform"
+          "teamstation-ai-v4-786709-cffac"
         ]
       }
     }

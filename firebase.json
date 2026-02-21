@@ -1,15 +1,12 @@
 {
   "apphosting": {
-    "targets": {
-      "web": {
-        "buildCommand": "npm run build",
-        "runCommand": "npm run start",
-        "region": "us-central1",
-        "healthCheck": {
-          "path": "/healthz",
-          "timeoutSeconds": 30
-        }
-      }
-    }
+    "backendId": "studio",
+    "rootDir": ".",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log"
+    ]
   }
 }
