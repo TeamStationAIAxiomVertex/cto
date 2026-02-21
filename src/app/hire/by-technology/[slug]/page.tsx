@@ -30,6 +30,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description:
       tech.meta_description ||
       `Hire vetted ${tech.name} engineers with TeamStation AI for secure, fast delivery.`,
+    keywords: `hire ${tech.name} engineers, nearshore ${tech.name}, latam ${tech.name}, distributed engineering`,
+    alternates: {
+      canonical: `/hire/by-technology/${slug}`,
+    },
   };
 }
 
@@ -58,5 +62,5 @@ export default function TechPage({ params }: Props) {
   };
 
   // The ProgrammaticContent component is now guaranteed to receive a valid tech object.
-  return <ProgrammaticContent tech={techWithIcon} />;
+  return <ProgrammaticContent tech={techWithIcon} slug={slug} />;
 }

@@ -746,10 +746,42 @@ export default function RoleCategoryPage({
     ],
   };
 
+  const roleFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `Why hire nearshore ${name} talent?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Nearshore ${name} teams improve delivery speed with working-hour overlap, tighter review loops, and faster execution handoffs.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `How does TeamStation evaluate candidates for ${name}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Candidates are evaluated against role-specific technical criteria, production readiness, and real problem-solving expectations before shortlist delivery.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `Which technology areas are most relevant for ${name}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: tech.map((t) => t.name).join(", "),
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={roleFaqSchema} />
       <main className="container max-w-5xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">
@@ -928,6 +960,56 @@ export default function RoleCategoryPage({
             of the role.
           </p>
         </div>
+
+        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-center">Interlinking Mesh</h2>
+          <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
+            Anchor paths for role strategy, technical qualification, and operating model alignment.
+          </p>
+
+          <div className="mt-8">
+            <h3 className="text-xl font-semibold">Role + Technology Mesh</h3>
+            <p className="mt-3 text-sm text-muted-foreground">
+              For this role category, connect the role path with{" "}
+              <Link href="/hire/by-technology" className="text-primary hover:underline">technology hiring guides</Link>,{" "}
+              <Link href="/hire/by-role" className="text-primary hover:underline">role index pages</Link>, and{" "}
+              <Link href="/hire/by-team-topologies" className="text-primary hover:underline">team topology mapping</Link>.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {tech.slice(0, 16).map((t) => (
+                <Link
+                  key={`mesh-${t.slug}`}
+                  href={`/hire/by-technology/${t.slug}`}
+                  className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium hover:bg-primary/30 transition-colors"
+                >
+                  {t.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-xl font-semibold">Research + Playbook Mesh</h3>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Tie this role to the{" "}
+              <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook hub</Link>,{" "}
+              <Link href="/playbook/latam-economics" className="text-primary hover:underline">nearshore economics framework</Link>,{" "}
+              <Link href="/research/hub" className="text-primary hover:underline">research hub</Link>, and{" "}
+              <Link href="/research/framework-for-measuring-capacity" className="text-primary hover:underline">capacity measurement research</Link>.
+            </p>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-xl font-semibold">Subdomain Network Paths</h3>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Use{" "}
+              <a href="https://hire.teamstation.dev/roles" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">hire.teamstation.dev roles index</a>,{" "}
+              <a href="https://hire.teamstation.dev/nearshore-software-development" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">nearshore delivery overview</a>,{" "}
+              <a href="https://research.teamstation.dev/research" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">research.teamstation.dev archive</a>, and{" "}
+              <a href="https://research.teamstation.dev/protocols/evaluation" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">evaluation protocol index</a> for cross-property mesh.
+            </p>
+          </div>
+        </section>
 
         <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
           <h2 className="text-2xl font-bold">
