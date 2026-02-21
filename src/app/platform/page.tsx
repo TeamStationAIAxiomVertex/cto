@@ -22,7 +22,7 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Nearshore IT Co-Pilot™ Platform | TeamStation AI",
+  title: "Distributed Engineering OS | TeamStation AI",
   description:
     "Run your LATAM engineering operation in one platform. Hire, equip, secure, and manage nearshore teams under one accountable SLA.",
   keywords:
@@ -220,7 +220,7 @@ export default function PlatformPage() {
       </div>
       <header className="text-center my-12">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-          The Nearshore IT Co-Pilot™ Platform
+          Distributed Engineering OS
         </h1>
         <div className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           <span>
@@ -253,7 +253,7 @@ export default function PlatformPage() {
         </h2>
         <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
           A high-level look at the robust, scalable, and secure technology stack
-          that powers the Nearshore IT Co-Pilot™ platform.
+          that powers the Distributed Engineering OS.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {architectureLayers.map((layer) => (

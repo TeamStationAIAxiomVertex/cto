@@ -65,9 +65,6 @@ export default async function PlaybookPage() {
               Published: <time dateTime={date}>{date}</time>
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <Link href="/request-playbook-pdf" className="cta-button">
-                Get This Playbook as PDF
-              </Link>
               <Link href="/playbook/tco-model" className="px-4 py-2 rounded border text-sm font-semibold hover:bg-muted">
                 Open TCO Model
               </Link>

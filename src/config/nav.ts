@@ -29,7 +29,7 @@ export const NAV: NavSections = {
     { href: '/faq', label: 'FAQ for CTOs', description: 'Quick answers to your most pressing questions.' },
   ],
   "What's Included": [
-    { href: '/platform', label: 'Platform', description: 'The Nearshore IT Co-Pilot™ Platform.' },
+    { href: '/platform', label: 'Platform', description: 'Distributed Engineering OS.' },
     { href: '/process', label: 'Our Process', description: 'A single, measurable SLA for hiring, EOR, and compliance.' },
     { href: '/technical-interview-evaluation', label: 'Talent Evaluations', description: 'A deep dive into the Axiom Cortex™ evaluation process.' },
     { href: '/research/performance-evaluation-framework', label: 'Performance Framework', description: 'A data-driven framework for performance and growth.' },
