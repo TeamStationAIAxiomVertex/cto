@@ -1,9 +1,25 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PlaybookContentRenderer from "@/components/PlaybookContentRenderer";
 import TableOfContents from "@/components/TableOfContents";
 import { getPlaybookData } from "@/lib/playbook-data";
+
+const relatedLinks = [
+  { href: "/playbook/hub", label: "CTO Playbook Hub" },
+  { href: "/playbook/tco-model", label: "TCO Model for Engineering Teams" },
+  { href: "/playbook/build-vs-buy", label: "Build vs Buy Framework" },
+  { href: "/playbook/nearshore-vs-offshore", label: "Nearshore vs Offshore" },
+  {
+    href: "/playbook/bias-free-technical-hiring-axiom-cortex",
+    label: "Bias-Free Technical Hiring",
+  },
+  { href: "/research/framework-for-measuring-capacity", label: "Capacity Measurement Research" },
+  { href: "/hire/by-team-topologies", label: "Team Topologies for CTOs" },
+  { href: "/comparisons/bairesdev", label: "Compare vs BairesDev" },
+  { href: "/platform", label: "Nearshore IT Co-Pilot Platform" },
+];
 
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getPlaybookData("latam-economics");
@@ -22,7 +38,7 @@ export default async function PlaybookPage() {
   const data = await getPlaybookData("latam-economics");
   if (!data) notFound();
 
-  const { title, date, toc, keywords } = data;
+  const { title, date, toc } = data;
 
   return (
     <main className="container mx-auto px-4 py-8 max-w-7xl">
@@ -48,6 +64,14 @@ export default async function PlaybookPage() {
             <p className="text-gray-500 mt-2">
               Published: <time dateTime={date}>{date}</time>
             </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link href="/request-playbook-pdf" className="cta-button">
+                Get This Playbook as PDF
+              </Link>
+              <Link href="/playbook/tco-model" className="px-4 py-2 rounded border text-sm font-semibold hover:bg-muted">
+                Open TCO Model
+              </Link>
+            </div>
           </header>
 
           <section className="prose prose-xl max-w-none">
@@ -57,14 +81,14 @@ export default async function PlaybookPage() {
           <section className="mt-16 border-t pt-8">
             <h2 className="text-2xl font-semibold mb-4">Further Reading & Related Strategy</h2>
             <div className="flex flex-wrap gap-3">
-              {keywords.slice(0, 5).map((kw, index) => (
-                <a
-                  key={index}
-                  href={`/playbook?tag=${kw}`}
+              {relatedLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
                   className="px-3 py-1 bg-gray-100 text-sm text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition-colors"
                 >
-                  {kw}
-                </a>
+                  {item.label}
+                </Link>
               ))}
             </div>
           </section>
