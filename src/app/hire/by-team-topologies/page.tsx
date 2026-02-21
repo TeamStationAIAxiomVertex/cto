@@ -225,6 +225,9 @@ export default function TeamTopologiesPage() {
           model US CTOs can implement now.
         </p>
         <nav className="mt-6 flex flex-wrap gap-4 text-sm">
+          <Link href="/engineering-doctrine" className="text-primary hover:underline">
+            Engineering Doctrine
+          </Link>
           <Link href="/research/hub" className="text-primary hover:underline">
             Research Hub
           </Link>

@@ -67,6 +67,9 @@ export default function HirePage() {
           problems, so you can build with confidence.
         </p>
         <nav className="mt-6 flex justify-center gap-4 text-sm">
+          <Link href="/engineering-doctrine" className="text-primary hover:underline">
+            Engineering Doctrine
+          </Link>
           <Link href="/playbook/hub" className="text-primary hover:underline">
             CTO Playbook
           </Link>

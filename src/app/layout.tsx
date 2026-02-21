@@ -29,8 +29,11 @@ const sourceCodePro = Source_Code_Pro({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cto.teamstation.dev'),
-  title: 'TeamStation AI',
-  description: 'Nearshore IT Co-Pilot and CTO Playbook',
+  title: {
+    default: 'TeamStation AI',
+    template: '%s | TeamStation AI',
+  },
+  description: 'Distributed Engineering OS and CTO Playbook for nearshore execution.',
   manifest: '/manifest.webmanifest',
   icons: {
     icon: '/favicon.ico',

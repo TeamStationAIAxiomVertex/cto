@@ -17,6 +17,7 @@ type LinkItem = {
 // Playbook Section
 const playbookLinks: LinkItem[] = [
   { href: '/playbook/hub', label: 'CTO Playbook Hub' },
+  { href: '/engineering-doctrine', label: 'Engineering Doctrine' },
   { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs Offshore Guide' },
   { href: '/playbook/latam-economics', label: 'LATAM Software Talent Economics' },
   { href: '/playbook/build-vs-buy', label: 'Build vs Buy Analysis' },

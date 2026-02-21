@@ -11,18 +11,10 @@ export const teamStationAI = {
   "@type": "Corporation",
   name: "TeamStation AI",
   legalName: "TeamStation, Inc.",
-  url: "https://cto.teamstation.dev",
-  logo: "https://cto.teamstation.dev/logo.png", // Assuming a logo path, we can adjust
+  url: "https://teamstation.dev",
+  logo: "https://teamstation.dev/logo.png",
   description:
-    "The integrated platform for building and scaling elite nearshore engineering teams using proprietary, bias-free AI.",
-
-  // Link to your founder/key researcher's Google Scholar to establish authority.
-  // This is a POWERFUL signal of expertise.
-  founder: {
-    "@type": "Person",
-    name: "Your Founder Name", // We can update this
-    sameAs: "https://scholar.google.com/citations?user=aNol-ycAAAAJ&hl=en",
-  },
+    "Distributed Engineering OS for building and scaling elite nearshore engineering teams with auditable, AI-assisted evaluation and governance.",
 
   // Your official address from the footer
   address: {
@@ -38,12 +30,26 @@ export const teamStationAI = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer support",
-    email: "support@teamstation.dev", // Example email
-    url: "https://cto.teamstation.dev/contact", // Example contact page
+    email: "support@teamstation.dev",
+    url: "https://teamstation.dev",
   },
 
   // Links to your social presence
-  sameAs: ["https://www.linkedin.com/company/teamstation"],
+  sameAs: [
+    "https://www.linkedin.com/company/teamstation",
+    "https://www.teamstation.dev",
+    "https://app.teamstation.dev",
+    "https://hire.teamstation.dev",
+    "https://cto.teamstation.dev",
+    "https://cio.teamstation.dev",
+    "https://docs.teamstation.dev",
+    "https://engineering.teamstation.dev",
+    "https://research.teamstation.dev",
+    "https://articles.teamstation.dev",
+    "https://insights.teamstation.dev",
+    "https://partner.teamstation.dev",
+    "https://jobs.teamstation.dev",
+  ],
 
   // We are claiming our niche and expertise
   keywords: [

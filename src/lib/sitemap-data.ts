@@ -1,6 +1,8 @@
 
 import { getPages, formatPaths } from "./sitemap-utils";
 import type { SitemapUrl } from "./sitemap-utils";
+import fs from "fs";
+import path from "path";
 
 const BASE_URL = "https://cto.teamstation.dev";
 const today = new Date().toISOString();
@@ -60,13 +62,29 @@ export async function collectCoreUrls(): Promise<SitemapUrl[]> {
 }
  
 export async function collectCaseStudyUrls(): Promise<SitemapUrl[]> {
-    const pageFiles = getPages("src/app/case-studies", ['[slug]']);
-    const urls = formatPaths(pageFiles);
-    return urls.map((url) => ({
-        loc: url,
-        lastmod: today,
-        changefreq: "monthly",
-        priority: 0.7,
+    const urls = new Set<string>([`${BASE_URL}/case-studies`]);
+    const candidateDirs = [
+      path.join(process.cwd(), "content", "case-studies"),
+      path.join(process.cwd(), "src", "content", "case-studies"),
+    ];
+
+    for (const dir of candidateDirs) {
+      if (!fs.existsSync(dir)) continue;
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
+      for (const entry of entries) {
+        if (!entry.isFile()) continue;
+        if (!entry.name.match(/\.mdx?$/)) continue;
+        const slug = entry.name.replace(/\.mdx?$/, "");
+        if (!slug) continue;
+        urls.add(`${BASE_URL}/case-studies/${slug}`);
+      }
+    }
+
+    return Array.from(urls).map((url) => ({
+      loc: url,
+      lastmod: today,
+      changefreq: "monthly",
+      priority: 0.7,
     }));
 }
 
@@ -93,39 +111,59 @@ export async function collectHireByCountryUrls(): Promise<SitemapUrl[]> {
 }
 
 export async function collectHireByRoleUrls(): Promise<SitemapUrl[]> {
-    const pageFiles = getPages("src/app/hire/by-role", ['[slug]']);
-    const urls = formatPaths(pageFiles);
+    const roleSlugs = [
+      "platform-infra-sre",
+      "security-grc",
+      "backend-services",
+      "frontend-web",
+      "mobile-cross-platform",
+      "data-engineering-analytics",
+      "ml-ai-llm-ops",
+      "product-design-growth",
+      "qa-quality-engineering",
+      "it-enterprise-ops",
+      "finops-biztech",
+    ];
+    const urls = roleSlugs.map((slug) => `${BASE_URL}/hire/by-role/${slug}`);
+    urls.unshift(`${BASE_URL}/hire/by-role`);
     return urls.map((url) => ({
-        loc: url,
-        lastmod: today,
-        changefreq: "monthly",
-        priority: 0.7,
+      loc: url,
+      lastmod: today,
+      changefreq: "monthly",
+      priority: 0.7,
     }));
 }
 
 export async function collectHireByTechnologyUrls(): Promise<SitemapUrl[]> {
+    const urls = new Set<string>([`${BASE_URL}/hire/by-technology`]);
+
+    const techDir = path.join(process.cwd(), "src", "data", "technologies");
+    if (fs.existsSync(techDir)) {
+      const techFiles = fs.readdirSync(techDir, { withFileTypes: true });
+      for (const entry of techFiles) {
+        if (!entry.isFile()) continue;
+        if (!entry.name.endsWith(".ts")) continue;
+        if (entry.name === "index.ts") continue;
+        const slug = entry.name.replace(/\.ts$/, "");
+        urls.add(`${BASE_URL}/hire/by-technology/${slug}`);
+      }
+    }
+
     const allHirePages = getPages("src/app/hire");
-    const staticHirePages = allHirePages.filter(page => !page.includes('['));
-
-    const techPages = staticHirePages.filter(page => {
-        const isDirectTechPage = page.includes('/by-technology/');
-        const isNestedTechPage = page.includes('/by-country/');
-
-        if (isDirectTechPage) {
-            return !page.endsWith('/by-technology/page.tsx');
-        }
-        if (isNestedTechPage) {
-            return page.split('/').length > 6;
-        }
-        return false;
+    const staticHirePages = allHirePages.filter((page) => !page.includes("["));
+    const nestedCountryTechPages = staticHirePages.filter((page) => {
+      const isNestedTechPage = page.includes("/by-country/");
+      if (isNestedTechPage) return page.split("/").length > 6;
+      return false;
     });
+    const nestedUrls = formatPaths(nestedCountryTechPages);
+    nestedUrls.forEach((u) => urls.add(u));
 
-    const urls = formatPaths(techPages);
-    return urls.map((url) => ({
-        loc: url,
-        lastmod: today,
-        changefreq: "monthly",
-        priority: 0.6,
+    return Array.from(urls).map((url) => ({
+      loc: url,
+      lastmod: today,
+      changefreq: "monthly",
+      priority: 0.6,
     }));
 }
 

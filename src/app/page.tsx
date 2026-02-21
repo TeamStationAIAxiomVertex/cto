@@ -211,6 +211,14 @@ export default async function HomePage() {
                 >
                   Book a Strategy Call
                 </Link>
+                <div className="mt-4 text-sm">
+                  <Link
+                    href="/engineering-doctrine"
+                    className="text-primary hover:underline"
+                  >
+                    Read the Engineering Doctrine
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="max-w-md mx-auto w-full">
