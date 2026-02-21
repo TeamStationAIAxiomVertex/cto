@@ -11,7 +11,7 @@ export type SitemapUrl = {
 };
 
 
-const BASE_URL = "https://cto.teamstation.dev";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cto.teamstation.dev";
 
 // Utility function to recursively find all page.tsx files
 export function getPages(dir: string, exclude: string[] = []): string[] {
@@ -52,8 +52,9 @@ export function getPages(dir: string, exclude: string[] = []): string[] {
 // Helper to transform file paths to URL paths
 export function formatPaths(paths: string[]): string[] {
   return paths.map(p => {
+    const normalized = p.replace(/\\/g, '/');
     // Remove 'src/app' and 'page.tsx'
-    let route = p.replace(/^src\/app/, '').replace(/\/page\.tsx$/, '');
+    let route = normalized.replace(/^src\/app/, '').replace(/\/page\.tsx$/, '');
     
     // Handle the root path case
     if (route === '') {
@@ -75,7 +76,7 @@ export function generateSitemapXml(urls: any[]): string {
         let urlContent = `<loc>${url.loc}</loc>`;
         if (url.lastmod) urlContent += `<lastmod>${url.lastmod}</lastmod>`;
         if (url.changefreq) urlContent += `<changefreq>${url.changefreq}</changefreq>`;
-        if (url.priority) urlContent += `<priority>${url.priority}</priority>`;
+        if (typeof url.priority === 'number') urlContent += `<priority>${url.priority.toFixed(1)}</priority>`;
         return `<url>${urlContent}</url>`;
     }).join('');
 

@@ -4,7 +4,7 @@ import path from 'path';
 // Note: This script runs in Node (ESM). Avoid importing TypeScript files.
 // We inline the minimal helpers needed instead of importing from src/lib/*.ts
 
-const BASE_URL = "https://cto.teamstation.dev";
+const BASE_URL = process.env.SITEMAP_BASE_URL || "https://cto.teamstation.dev";
 const today = new Date().toISOString();
 
 // Recursively collect all page.tsx files under a directory, with optional exclusions
@@ -13,10 +13,20 @@ function getPages(dir, exclude = []) {
   const list = fs.readdirSync(dir);
   list.forEach((file) => {
     const filePath = path.join(dir, file);
+    const lst = fs.lstatSync(filePath);
+
+    // Avoid symlink traversal to prevent pulling mirrored workspace paths.
+    if (lst.isSymbolicLink()) {
+      return;
+    }
+
     const stat = fs.statSync(filePath);
     if (stat && stat.isDirectory()) {
       results = results.concat(getPages(filePath, exclude));
     } else if (path.basename(filePath) === 'page.tsx') {
+      const normalized = filePath.replace(/\\/g, '/');
+      if (!normalized.startsWith('src/app/')) return;
+      if (normalized.includes('/workspace/')) return;
       const isExcluded = exclude.some((pattern) => filePath.includes(pattern));
       if (!isExcluded) results.push(filePath);
     }
@@ -27,7 +37,8 @@ function getPages(dir, exclude = []) {
 // Transform file paths to absolute URL strings
 function formatPaths(filePaths) {
   return filePaths.map((p) => {
-    let route = p.replace(/^src\/app/, '').replace(/\/page\.tsx$/, '');
+    const normalized = p.replace(/\\/g, '/');
+    let route = normalized.replace(/^src\/app/, '').replace(/\/page\.tsx$/, '');
     if (route === '') route = '/';
     if (route.length > 1 && route.endsWith('/')) route = route.slice(0, -1);
     return `${BASE_URL}${route}`;
@@ -124,10 +135,11 @@ const SITEMAPS_DIR = path.join(PUBLIC_DIR, 'sitemaps');
 
 function generateSitemapXml(urls) {
   const urlset = urls.map(url => {
-    // Use lastmod if available, otherwise omit it.
     const lastmod = url.lastmod ? `<lastmod>${url.lastmod}</lastmod>` : '';
+    const changefreq = url.changefreq ? `<changefreq>${url.changefreq}</changefreq>` : '';
+    const priority = typeof url.priority === 'number' ? `<priority>${url.priority.toFixed(1)}</priority>` : '';
     return `  <url>
-    <loc>${url.loc}</loc>${lastmod}
+    <loc>${url.loc}</loc>${lastmod}${changefreq}${priority}
   </url>`;
   }).join('\n');
 
@@ -140,6 +152,7 @@ ${urlset}
 function generateSitemapIndexXml(sitemapUrls) {
   const sitemapEntries = sitemapUrls.map(url => `  <sitemap>
     <loc>${url}</loc>
+    <lastmod>${today}</lastmod>
   </sitemap>`).join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -182,14 +195,17 @@ async function generate() {
   for (const section of sections) {
     console.log(`- Generating sitemap for: ${section.name}`);
     const urls = await section.collector();
+    const deduped = Array.from(
+      new Map(urls.map((u) => [u.loc, u])).values()
+    );
     if (urls.length === 0) {
         console.log(`  - No URLs found, skipping.`);
         continue;
     }
-    const xml = generateSitemapXml(urls);
+    const xml = generateSitemapXml(deduped);
     const sitemapPath = path.join(SITEMAPS_DIR, `${section.name}.xml`);
     fs.writeFileSync(sitemapPath, xml);
-    console.log(`  - Wrote ${urls.length} URLs to ${sitemapPath}`);
+    console.log(`  - Wrote ${deduped.length} URLs to ${sitemapPath}`);
     sitemapIndexUrls.push(`${BASE_URL}/sitemaps/${section.name}.xml`);
   }
 
