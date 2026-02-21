@@ -1,16 +1,18 @@
 /** @type {import('next').NextConfig} */
 import withPWA from 'next-pwa';
 
+const shouldEnablePWA = process.env.ENABLE_PWA === '1';
+
 const pwaConfig = withPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
+  // App Hosting builds have been failing consistently. Keep PWA off by default
+  // and enable it only when explicitly requested.
+  disable: !shouldEnablePWA,
 });
 
 const nextConfig = {
-  output: "standalone",
-
   // keep images working in prod & preview
   images: {
     remotePatterns: [
