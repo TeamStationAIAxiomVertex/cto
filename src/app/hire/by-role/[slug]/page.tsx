@@ -552,9 +552,32 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const role = roleData[params.slug];
   const roleName = role ? role.name : "Engineer";
+  const sanitize = (value: string) =>
+    value
+      .replace(/&/g, "and")
+      .replace(/['"]/g, "")
+      .replace(/[^\x00-\x7F]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  const normalizeTitle = (value: string) => {
+    const safe = sanitize(value);
+    return safe.length <= 60 ? safe : `${safe.slice(0, 57).trimEnd()}...`;
+  };
+  const normalizeDescription = (value: string) => {
+    const safe = sanitize(value);
+    return safe.length <= 145 ? safe : `${safe.slice(0, 142).trimEnd()}...`;
+  };
+
+  const title = normalizeTitle(`Hire ${roleName} Engineers | CTO CIO Teams`);
+  const description = normalizeDescription(
+    `Hire pre-vetted nearshore ${roleName} engineers with structured evaluation, strong delivery accountability, and lower execution risk.`
+  );
+
   return {
-    title: `Hire Nearshore ${roleName}`,
-    description: `Hire elite, pre-vetted LATAM engineers with expertise in ${roleName}. Our scientific evaluation de-risks hiring for critical tech roles.`,
+    title: {
+      absolute: title,
+    },
+    description,
     keywords: `hire nearshore ${roleName}, latam ${roleName}, ${roleName} staff augmentation`,
     alternates: {
       canonical: `/hire/by-role/${params.slug}`,
@@ -777,6 +800,25 @@ export default function RoleCategoryPage({
     ],
   };
 
+  const roleFaqItems = [
+    {
+      q: `What should CTO and CIO teams verify before hiring ${name} talent?`,
+      a: `Verify production decision quality, system ownership clarity, and communication reliability under delivery pressure. Role-specific frameworks beat generic interview loops.`,
+    },
+    {
+      q: `How does nearshore hiring improve outcomes for ${name} roles?`,
+      a: `Nearshore overlap reduces feedback latency, improves review throughput, and lowers rework. That usually increases predictability and lowers real delivery cost.`,
+    },
+    {
+      q: `How should we connect role hiring with technical stack planning?`,
+      a: `Link this role page to technology guides, topology design, and evaluation protocols so hiring decisions map directly to your operating model.`,
+    },
+    {
+      q: `Which planning resources should leadership use next?`,
+      a: `Use playbook economics, research frameworks, and team topology pages to align hiring quality, execution speed, and budget control.`,
+    },
+  ];
+
   return (
     <>
       <JsonLd data={serviceSchema} />
@@ -799,10 +841,78 @@ export default function RoleCategoryPage({
         </div>
         <header className="my-12">
           <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-            {name}
+            Hire {name} Engineers
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">{intro}</p>
         </header>
+
+        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-center">
+            Executive Buying Guide for {name}
+          </h2>
+          <div className="mt-6 space-y-5 text-muted-foreground leading-7">
+            <p>
+              The decision to hire {name} talent should be evaluated as a delivery-risk decision,
+              not a seat-fill activity. High-performing CTO and CIO teams define success in terms of
+              ownership clarity, release confidence, and sustained throughput. They do not rely only
+              on resumes or keyword matches. They evaluate how a candidate will perform inside
+              real engineering constraints where quality, speed, and accountability must coexist.
+            </p>
+            <p>
+              To build that confidence, align role selection with technical ownership and business
+              outcomes from day one. This means selecting role profiles that map to your immediate
+              bottlenecks, then using structured evaluation to validate production readiness before
+              handoff. For most organizations, this approach reduces onboarding drag and prevents
+              hidden execution debt from entering the roadmap.
+            </p>
+            <p>
+              Keep the plan connected through anchor resources:{" "}
+              <Link href="/hire/by-role" className="text-primary hover:underline">
+                role hiring index
+              </Link>
+              ,{" "}
+              <Link href="/hire/by-technology" className="text-primary hover:underline">
+                technology hiring paths
+              </Link>
+              ,{" "}
+              <Link href="/playbook/hub" className="text-primary hover:underline">
+                CTO playbook strategy
+              </Link>
+              ,{" "}
+              <Link href="/playbook/latam-economics" className="text-primary hover:underline">
+                LATAM economics model
+              </Link>
+              ,{" "}
+              <Link href="/research/hub" className="text-primary hover:underline">
+                research archive
+              </Link>
+              , and{" "}
+              <Link
+                href="/research/framework-for-measuring-capacity"
+                className="text-primary hover:underline"
+              >
+                capacity framework
+              </Link>
+              .
+            </p>
+            <p>
+              Treat this role as part of a full distributed engineering system. Define clear success
+              metrics for the role before sourcing, publish a decision rubric that interviewers share,
+              and enforce a consistent onboarding sequence so new hires enter with context rather than
+              ambiguity. This approach improves both speed and quality because every stakeholder,
+              from hiring manager to platform lead, is evaluating the same outcome model. For CTO and
+              CIO teams, that consistency reduces hiring variance, protects roadmap confidence, and
+              increases execution leverage across multiple squads.
+            </p>
+            <p>
+              A final execution checkpoint is weekly operating rhythm. Keep a short, stable cadence
+              for planning, review, risk escalation, and outcome reporting. Predictable rhythm gives
+              new hires faster context integration and gives leadership earlier visibility into drift.
+              That operational discipline is one of the strongest predictors of successful distributed
+              engineering adoption.
+            </p>
+          </div>
+        </section>
 
         {name === "Security & GRC" ? (
           <SecurityContent />
@@ -1008,6 +1118,187 @@ export default function RoleCategoryPage({
               <a href="https://research.teamstation.dev/research" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">research.teamstation.dev archive</a>, and{" "}
               <a href="https://research.teamstation.dev/protocols/evaluation" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">evaluation protocol index</a> for cross-property mesh.
             </p>
+          </div>
+        </section>
+
+        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-center">
+            Operating Model Blueprint for {name}
+          </h2>
+          <div className="mt-6 space-y-5 text-muted-foreground leading-7">
+            <p>
+              Weeks 1 through 4 should establish role boundaries, acceptance criteria, and decision
+              rights. Weeks 5 through 8 should stabilize delivery loops and dependency handoffs.
+              Weeks 9 through 12 should optimize for quality and predictability through measurable
+              outcomes. This phased approach helps leadership detect variance early and reinforce
+              high-signal behaviors before scaling headcount.
+            </p>
+            <p>
+              For buyer intent alignment, the page should answer three questions clearly: what
+              problems this role solves, how candidates are evaluated, and where this role fits in
+              the broader distributed engineering system. That is why this template is segmented into
+              problem blocks, skills, technology links, evaluation approach, and interlink mesh.
+            </p>
+            <p>
+              Use cross-property paths to continue high-intent journeys:{" "}
+              <a
+                href="https://hire.teamstation.dev/roles"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                roles index
+              </a>
+              ,{" "}
+              <a
+                href="https://hire.teamstation.dev/nearshore-software-development"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                nearshore delivery overview
+              </a>
+              ,{" "}
+              <a
+                href="https://research.teamstation.dev/research"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                research archive
+              </a>
+              , and{" "}
+              <a
+                href="https://research.teamstation.dev/protocols/evaluation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                evaluation protocols
+              </a>
+              . These anchors support ranking intent and keep decision-makers moving through the
+              correct sequence.
+            </p>
+          </div>
+        </section>
+
+        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-center">
+            Executive Decision Framework for {name}
+          </h2>
+          <div className="mt-6 space-y-5 text-muted-foreground leading-7">
+            <p>
+              Most hiring errors are created before interviews start. Teams define roles too
+              loosely, evaluate with generic questions, and then try to fix misalignment during
+              onboarding. A stronger model starts with business outcomes, maps those outcomes to
+              technical ownership, and then measures candidates against the exact responsibilities
+              they will carry in production. This creates faster decision velocity and lowers
+              execution risk for leaders who are accountable for roadmap reliability.
+            </p>
+            <p>
+              For {name}, the first control point is boundary clarity. Define what this role owns,
+              where collaboration is required, and which decisions need escalation. Candidates who
+              can explain tradeoffs, identify hidden dependencies, and communicate risk early are
+              usually the ones who improve delivery after onboarding. Candidates who only describe
+              tools or frameworks without showing decision quality often create rework cycles even
+              when their resume looks strong.
+            </p>
+            <p>
+              The second control point is workflow integration. Strong nearshore execution depends
+              on same-day handoffs, predictable review loops, and clear expectations for quality.
+              If your current process has long feedback cycles, unclear acceptance criteria, or
+              high reopening rates, this role should be evaluated for its ability to fix those
+              structural constraints. In practical terms, ask how candidates prioritize work under
+              pressure, how they reduce ambiguity, and how they protect release confidence during
+              cross-functional delivery.
+            </p>
+            <p>
+              The third control point is performance evidence. Use role-aligned scenarios that test
+              architectural judgment, implementation rigor, and communication clarity at the same
+              time. This avoids the common failure mode where a candidate passes isolated technical
+              drills but struggles inside real team systems. The goal is not to run longer
+              interviews; the goal is to run higher-signal interviews tied to business outcomes.
+            </p>
+            <p>
+              Leadership should also define success windows before the offer is accepted. Day-30
+              outcomes should focus on context integration and decision quality. Day-60 outcomes
+              should focus on execution reliability and reduced coordination drag. Day-90 outcomes
+              should focus on measurable contribution to team throughput, quality, and predictability.
+              This turns hiring from a one-time event into an operating mechanism that can be
+              measured, improved, and scaled.
+            </p>
+            <p>
+              When this framework is used consistently, organizations usually see fewer hiring
+              reversals, tighter roadmap control, and better management leverage. That matters for
+              CTO and CIO buyers because the real objective is not to fill seats. The objective is
+              to increase output quality per unit of leadership attention while keeping delivery
+              risk within acceptable bounds.
+            </p>
+          </div>
+        </section>
+
+        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-center">
+            90-Day Scorecard and Governance Checklist
+          </h2>
+          <div className="mt-6 space-y-5 text-muted-foreground leading-7">
+            <p>
+              A role page should not end at profile matching. It should define the governance model
+              that turns talent into repeatable outcomes. For {name}, use a scorecard that combines
+              delivery metrics, quality metrics, and collaboration metrics. Delivery metrics can
+              include lead time, throughput consistency, and missed handoff rates. Quality metrics
+              can include escaped defects, rollback frequency, and acceptance rework. Collaboration
+              metrics can include review turnaround, dependency resolution speed, and stakeholder
+              clarity scores.
+            </p>
+            <p>
+              Week 1 and 2 checklist: confirm role charter, environment access, ownership map,
+              review expectations, and escalation paths. Week 3 and 4 checklist: verify execution
+              cadence, decision documentation quality, and blocker resolution behavior. Week 5 to 8
+              checklist: track contribution depth, cross-team reliability, and risk communication
+              quality. Week 9 to 12 checklist: validate sustained impact, reduced management
+              overhead, and stronger release confidence versus baseline.
+            </p>
+            <p>
+              Governance improves when all stakeholders share the same language. Engineering leaders
+              should use one-page status views that tie technical events to business effects. For
+              example, if review latency decreases, explain the impact on release predictability and
+              launch timing. If defect leakage drops, explain the impact on support load and customer
+              trust. This translation discipline helps non-engineering stakeholders evaluate progress
+              without losing technical fidelity.
+            </p>
+            <p>
+              The scorecard also protects against silent drift. A team may look productive while
+              accumulating fragile decisions, undocumented dependencies, or hidden operational risk.
+              Monthly review cycles should include an explicit risk register for this role category
+              with mitigation owners and target dates. That simple control reduces surprises and
+              keeps accountability visible during scaling phases.
+            </p>
+            <p>
+              If your goal is sustained ranking intent and buyer trust, this governance section
+              matters as much as the technology list. Buyers evaluating nearshore partners are not
+              just comparing resumes. They are comparing operating discipline. A page that explains
+              ownership, evaluation, scorecards, and governance demonstrates that your hiring model
+              is built for production outcomes, not short-term staffing optics.
+            </p>
+            <p>
+              Use this checklist consistently across all role pages to keep message quality uniform:
+              clear role intent, explicit value hypothesis, practical evaluation criteria, measurable
+              outcomes, and internal pathing to deeper planning assets. That consistency is what
+              turns fragmented content into a coherent distributed engineering acquisition system.
+            </p>
+          </div>
+        </section>
+
+        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-center">Frequently Asked Questions</h2>
+          <div className="mt-8 space-y-4">
+            {roleFaqItems.map((item, idx) => (
+              <article key={`${params.slug}-faq-item-${idx}`} className="rounded border bg-background p-4">
+                <h3 className="font-semibold text-foreground">{item.q}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-6">{item.a}</p>
+              </article>
+            ))}
           </div>
         </section>
 

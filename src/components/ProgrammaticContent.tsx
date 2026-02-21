@@ -94,6 +94,25 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
     ],
   };
 
+  const faqItems = [
+    {
+      q: `How do we reduce delivery risk when hiring ${tech.name} engineers?`,
+      a: `Start with role-specific evaluation criteria, require practical production scenarios, and map each candidate to clear ownership boundaries. For ${tech.name}, this means validating architecture judgment, execution quality, and communication under real constraints before onboarding.`,
+    },
+    {
+      q: `What should CTO and CIO leaders measure in the first 90 days?`,
+      a: `Track lead time, review-cycle latency, escaped defects, and delivery predictability. Tie those engineering signals to business outcomes such as release confidence, roadmap stability, and team operating cost. This creates a clear ROI model for ${tech.name} hiring.`,
+    },
+    {
+      q: `How does nearshore ${tech.name} hiring compare to low-cost offshore models?`,
+      a: `Hourly rate alone is not the KPI. A stronger model improves same-day decision speed, reduces rework, and lowers management overhead. For most CTO and CIO teams, that combination produces better total cost of delivery than rate-card optimization alone.`,
+    },
+    {
+      q: `Which pages should we use for planning, hiring, and validation?`,
+      a: `Use the technology guide for role targeting, the role guide for team composition, the playbook for economics and delivery strategy, and research protocols for evaluation rigor. This connected path prevents hiring drift and keeps execution aligned.`,
+    },
+  ];
+
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
@@ -116,10 +135,72 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
         </div>
         <header className="my-12">
           <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-            Hire for {tech.name} Mastery
+            Hire {tech.name} Engineers
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">{tech.intro}</p>
         </header>
+
+        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-center">
+            Executive Brief for CTO and CIO Teams
+          </h2>
+          <div className="mt-6 space-y-5 text-muted-foreground leading-7">
+            <p>
+              The hiring decision for <strong>{tech.name}</strong> should be treated as an
+              operating model decision, not a staffing transaction. High-performing teams do not
+              optimize only for lower rates. They optimize for faster delivery loops, cleaner
+              technical ownership, and lower coordination overhead. If your team is shipping with
+              friction, the root issue is usually not effort, it is system design across people,
+              process, and technical boundaries.
+            </p>
+            <p>
+              A practical strategy is to define capability targets before sourcing. That means
+              separating must-have architecture skills from trainable implementation details. It
+              also means mapping candidate depth to business-critical workflows such as release
+              reliability, incident handling, and cross-team dependency management. This approach
+              produces stronger hiring outcomes because it aligns evaluation with production reality.
+            </p>
+            <p>
+              For easier execution, connect your hiring plan to the{" "}
+              <Link href="/playbook/hub" className="text-primary hover:underline">
+                CTO playbook hub
+              </Link>
+              , validate economics in the{" "}
+              <Link href="/playbook/latam-economics" className="text-primary hover:underline">
+                LATAM economics model
+              </Link>
+              , and benchmark evaluation rigor using the{" "}
+              <Link
+                href="/research/framework-for-measuring-capacity"
+                className="text-primary hover:underline"
+              >
+                capacity measurement framework
+              </Link>
+              . These links are not decorative. They are the control system that keeps hiring
+              quality, velocity, and budget aligned for executive stakeholders.
+            </p>
+            <p>
+              In practice, teams that perform best with nearshore hiring keep role charters clear,
+              keep review cycles short, and keep accountability explicit. If you combine those
+              controls with strong screening standards, you reduce rework and protect roadmap
+              confidence. That is the ranking intent this page serves: help CTO and CIO buyers move
+              from reactive staffing to durable distributed engineering outcomes.
+            </p>
+            <p>
+              Keep this process simple and repeatable: define outcome targets, evaluate against real
+              delivery scenarios, and document the first 90-day ownership plan before onboarding.
+              When the role charter, evaluation rubric, and execution metrics are aligned, nearshore
+              {` ${tech.name} `} hiring becomes a predictable growth mechanism instead of a
+              recruitment gamble. This is the practical standard high-performing engineering
+              organizations use to scale with lower risk and stronger delivery quality.
+            </p>
+            <p>
+              The practical takeaway is straightforward: better selection standards plus tighter
+              operating cadence create better delivery outcomes. That is the foundation for scaling
+              distributed engineering with confidence.
+            </p>
+          </div>
+        </section>
 
         {tech.pains && tech.pains.length > 0 && (
           <section className="my-16">
@@ -195,6 +276,78 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
         )}
 
         <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-center">
+            Implementation Blueprint: First 12 Weeks
+          </h2>
+          <div className="mt-6 space-y-5 text-muted-foreground leading-7">
+            <p>
+              Week 1 to 2 should focus on baseline alignment: code standards, environment setup,
+              ownership maps, and release guardrails. Week 3 to 6 should focus on throughput
+              normalization: review latency, testing quality, and dependency flow. Week 7 to 12
+              should focus on scale readiness: architectural debt burn-down, operational handoffs,
+              and risk controls. This cadence is repeatable across most {tech.name} engagements.
+            </p>
+            <p>
+              Use connected guides to keep implementation disciplined: role depth from{" "}
+              <Link href="/hire/by-role" className="text-primary hover:underline">
+                hire by role
+              </Link>
+              , technology validation from{" "}
+              <Link href="/hire/by-technology" className="text-primary hover:underline">
+                hire by technology
+              </Link>
+              , and operating model alignment from{" "}
+              <Link href="/hire/by-team-topologies" className="text-primary hover:underline">
+                team topology mapping
+              </Link>
+              . For subdomain navigation and intent continuity, route buyers to{" "}
+              <a
+                href="https://hire.teamstation.dev/roles"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                hire.teamstation.dev/roles
+              </a>
+              ,{" "}
+              <a
+                href="https://hire.teamstation.dev/nearshore-software-development"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                nearshore software development
+              </a>
+              ,{" "}
+              <a
+                href="https://research.teamstation.dev/research"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                research archive
+              </a>
+              , and{" "}
+              <a
+                href="https://research.teamstation.dev/protocols/evaluation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                evaluation protocols
+              </a>
+              .
+            </p>
+            <p>
+              This page is intentionally segmented so leadership can scan quickly and technical
+              evaluators can go deep. The objective is not just page length; it is decision clarity.
+              Every section is designed to help your team make better hiring calls for {tech.name},
+              faster, with less operational variance.
+            </p>
+          </div>
+        </section>
+
+        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
           <h2 className="text-3xl font-bold text-center">Interlinking Mesh</h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
             Use these anchor paths to navigate role strategy, technical hiring, and delivery economics.
@@ -254,6 +407,107 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
               <a href="https://research.teamstation.dev/research" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">research.teamstation.dev research archive</a>, and{" "}
               <a href="https://research.teamstation.dev/protocols/evaluation" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">evaluation protocols</a>.
             </p>
+          </div>
+        </section>
+
+        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-center">
+            CTO and CIO Decision Framework for {tech.name}
+          </h2>
+          <div className="mt-6 space-y-5 text-muted-foreground leading-7">
+            <p>
+              The most effective hiring decisions start by treating technology selection as an
+              operating decision, not a sourcing decision. For {tech.name}, leaders should define
+              outcome targets first: delivery predictability, quality stability, and ownership
+              maturity. Then map those targets to the exact technical responsibilities the team
+              must carry in production. This prevents a common failure mode where teams hire for
+              tool familiarity but miss system-level execution quality.
+            </p>
+            <p>
+              A practical framework uses three gates. Gate one is architecture judgment: can the
+              candidate explain tradeoffs and failure boundaries with clarity. Gate two is
+              implementation reliability: can the candidate convert design intent into maintainable,
+              testable, and observable delivery. Gate three is operating behavior: can the
+              candidate communicate risk early, close feedback loops quickly, and collaborate across
+              dependencies without creating hidden coordination debt.
+            </p>
+            <p>
+              For executive buyers, this framework creates clearer budget decisions. Strong
+              {tech.name} capability usually lowers real cost of delivery by reducing rework,
+              shortening review cycles, and increasing release confidence. Lower hourly rate without
+              those outcomes often increases total cost through defects, delays, and management
+              overhead. That is why this page emphasizes evaluation discipline and role alignment
+              instead of generic recruiting language.
+            </p>
+            <p>
+              Governance matters as much as selection. Define ownership boundaries, acceptance
+              criteria, and escalation paths before onboarding. Track day-30, day-60, and day-90
+              indicators tied to throughput, quality, and coordination behavior. When this structure
+              is applied consistently, nearshore teams in {tech.name} functions integrate faster and
+              produce measurable improvements in roadmap confidence.
+            </p>
+            <p>
+              This is also where content structure supports ranking intent. Decision-makers landing
+              on this page need direct paths to role strategy, economics, and research frameworks.
+              The internal links and subdomain references above are designed to keep those buyers in
+              a coherent journey from initial intent to actionable hiring decisions.
+            </p>
+          </div>
+        </section>
+
+        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-center">
+            90-Day Governance and Execution Scorecard
+          </h2>
+          <div className="mt-6 space-y-5 text-muted-foreground leading-7">
+            <p>
+              A high-quality {tech.name} hire should be evaluated with an explicit scorecard, not
+              subjective sentiment. In the first 30 days, score onboarding integration: environment
+              readiness, code review behavior, documentation quality, and dependency mapping. In
+              days 31 to 60, score execution reliability: cycle time stability, defect containment,
+              and acceptance-quality consistency. In days 61 to 90, score sustained impact:
+              measurable throughput contribution, lowered rework, and stronger operational signal.
+            </p>
+            <p>
+              Keep metrics connected to business language. If cycle time improves, explain the
+              effect on release confidence and launch timing. If defect leakage drops, explain the
+              effect on support burden and customer trust. This translation layer helps executive
+              stakeholders evaluate technical progress without losing precision and keeps cross-team
+              alignment strong during scale phases.
+            </p>
+            <p>
+              Add a monthly risk register to prevent silent drift. Common risks include unclear
+              ownership boundaries, hidden architectural debt, and weak dependency controls. Each
+              risk should have a named owner, mitigation plan, and review date. This governance
+              routine is lightweight but powerful for distributed teams because it keeps accountability
+              explicit and prevents avoidable surprises late in release cycles.
+            </p>
+            <p>
+              For organizations using multiple role types around {tech.name}, maintain a shared
+              operating baseline across platform, product, security, and delivery functions. That
+              baseline should define interface expectations, review cadence, and quality gates.
+              Consistent standards reduce handoff friction and improve manager leverage, which is a
+              core objective for CTO and CIO leaders scaling nearshore capacity.
+            </p>
+            <p>
+              The final principle is repeatability. Pages that clearly define evaluation standards,
+              delivery scorecards, and interlinking pathways become reusable assets for every new
+              hiring cycle. This improves both SEO and execution quality, because the same decision
+              model is applied every time. The result is a stronger distributed engineering system,
+              not just a one-off recruitment outcome.
+            </p>
+          </div>
+        </section>
+
+        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-center">Frequently Asked Questions</h2>
+          <div className="mt-8 space-y-4">
+            {faqItems.map((item, idx) => (
+              <article key={`${slug}-faq-${idx}`} className="rounded border bg-background p-4">
+                <h3 className="font-semibold text-foreground">{item.q}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-6">{item.a}</p>
+              </article>
+            ))}
           </div>
         </section>
       </div>

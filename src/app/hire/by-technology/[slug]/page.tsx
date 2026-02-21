@@ -25,11 +25,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const sanitize = (value: string) =>
+    value
+      .replace(/&/g, "and")
+      .replace(/['"]/g, "")
+      .replace(/[^\x00-\x7F]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  const normalizeTitle = (value: string) => {
+    const safe = sanitize(value);
+    return safe.length <= 60 ? safe : `${safe.slice(0, 57).trimEnd()}...`;
+  };
+  const normalizeDescription = (value: string) => {
+    const safe = sanitize(value);
+    return safe.length <= 145 ? safe : `${safe.slice(0, 142).trimEnd()}...`;
+  };
+
+  const title = normalizeTitle(
+    tech.seo_title || `Hire ${tech.name} Engineers | TeamStation AI`
+  );
+  const description = normalizeDescription(
+    tech.meta_description ||
+      `Hire vetted ${tech.name} engineers to deliver faster with daylight overlap, role-specific evaluation, and lower execution risk for CTO and CIO teams.`
+  );
+
   return {
-    title: tech.seo_title || `Hire ${tech.name} Experts | TeamStation AI`,
-    description:
-      tech.meta_description ||
-      `Hire vetted ${tech.name} engineers with TeamStation AI for secure, fast delivery.`,
+    title: {
+      absolute: title,
+    },
+    description,
     keywords: `hire ${tech.name} engineers, nearshore ${tech.name}, latam ${tech.name}, distributed engineering`,
     alternates: {
       canonical: `/hire/by-technology/${slug}`,
