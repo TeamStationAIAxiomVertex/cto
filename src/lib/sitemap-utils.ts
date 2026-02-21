@@ -18,7 +18,8 @@ export function getPages(dir: string, exclude: string[] = []): string[] {
   // Add the specific routes to the default exclusion list
   const defaultExclude = [
     '/hire/by-country/costa-rica/guatemala',
-    '/research/technical-talent-evaluation-system'
+    '/research/technical-talent-evaluation-system',
+    '[',
   ];
   const combinedExclude = [...exclude, ...defaultExclude];
 
@@ -34,12 +35,19 @@ export function getPages(dir: string, exclude: string[] = []): string[] {
       results = results.concat(getPages(filePath, combinedExclude));
     } else if (path.basename(filePath) === 'page.tsx') {
       // Format to a URL path for exclusion check
-      let routePath = filePath.replace(/^src\/app/, '').replace(/\/page\.tsx$/, '') || '/';
+      const routePath = filePath.replace(/^src\/app/, '').replace(/\/page\.tsx$/, '') || '/';
       
       // Normalize slug routes
-      routePath = routePath.replace(/\[\.\.\.slug\]/g, '').replace(/\[slug\]/g, '');
+      const normalizedRoutePath = routePath
+        .replace(/\[\.\.\.slug\]/g, '')
+        .replace(/\[slug\]/g, '');
 
-      const isExcluded = combinedExclude.some(pattern => routePath.includes(pattern));
+      const isExcluded = combinedExclude.some(
+        (pattern) =>
+          routePath.includes(pattern) ||
+          normalizedRoutePath.includes(pattern) ||
+          filePath.includes(pattern),
+      );
       if (!isExcluded) {
         results.push(filePath);
       }

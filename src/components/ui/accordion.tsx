@@ -1,7 +1,14 @@
 "use client";
 import * as React from "react";
 
-export function Accordion(props: React.HTMLAttributes<HTMLDivElement>) { return <div {...props} />; }
+type AccordionProps = React.HTMLAttributes<HTMLDivElement> & {
+  type?: "single" | "multiple";
+  collapsible?: boolean;
+};
+
+export function Accordion({ type: _type, collapsible: _collapsible, ...props }: AccordionProps) {
+  return <div {...props} />;
+}
 export function AccordionItem({ children, value }: { children: React.ReactNode; value: string }) {
   return <section data-accordion-item={value}>{children}</section>;
 }

@@ -45,12 +45,13 @@ export async function collectPlaybookUrls(): Promise<SitemapUrl[]> {
 
 export async function collectCoreUrls(): Promise<SitemapUrl[]> {
     const pageFiles = getPages("src/app", [
-      "/app/case-studies",
-      "/app/comparisons",
-      "/app/hire",
-      "/app/playbook",
-      "/app/research",
-      '[slug]', '[vendor]' 
+      "/case-studies",
+      "/comparisons",
+      "/hire",
+      "/playbook",
+      "/research",
+      "[slug]",
+      "[vendor]",
     ]);
     const urls = formatPaths(pageFiles);
     return urls.map((url) => ({

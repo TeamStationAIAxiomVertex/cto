@@ -29,7 +29,9 @@ async function PageGroup({
   title: string;
   promise: Promise<SitemapUrl[]>;
 }) {
-  const items = await promise;
+  const items = (await promise).filter(
+    (item) => !item.loc.includes("[") && !item.loc.includes("]"),
+  );
   if (items.length === 0) return null; // Don't render empty sections
 
   return (
@@ -37,8 +39,11 @@ async function PageGroup({
       <h2 className="text-2xl font-bold my-4">{title}</h2>
       <ul className="space-y-2 list-disc pl-5">
         {items.map((item, i) => (
-          <li key={i}>
-            <Link href={item.loc} className="text-primary hover:underline">
+          <li key={`${item.loc}-${i}`}>
+            <Link
+              href={new URL(item.loc).pathname || "/"}
+              className="text-primary hover:underline"
+            >
               {new URL(item.loc).pathname}
             </Link>
           </li>
