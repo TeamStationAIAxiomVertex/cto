@@ -1,0 +1,647 @@
+{
+  "links": [
+    {
+      "url": "https://teamstation.dev/home/platforming-nearshore-it-staff-augmentation-book",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/"
+    },
+    {
+      "url": "https://www.deel.com/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/comparisons"
+    },
+    {
+      "url": "https://www.parallelstaff.com/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/comparisons"
+    },
+    {
+      "url": "https://kms-technology.com/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/comparisons"
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/research/framework-for-measuring-capacity"
+    },
+    {
+      "url": "https://www.howdy.com/",
+      "status": 429,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/comparisons"
+    },
+    {
+      "url": "https://cto.teamstation.dev/authors/evelyn-reed",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/playbook/latam-economics"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/react",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/java",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/python",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/"
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433397",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/research/axiom-cortex-scientific-report"
+    },
+    {
+      "url": "https://cto.teamstation.dev/og-research.png",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/research/framework-for-measuring-capacity"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/prometheus",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/platform-infra-sre"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/opentelemetry",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/platform-infra-sre"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/jaeger",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/platform-infra-sre"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/vault",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/platform-infra-sre"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/external-secrets",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/platform-infra-sre"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/launchdarkly",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/platform-infra-sre"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/github-actions",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/platform-infra-sre"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/typescript",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/frontend-web"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/angular",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/frontend-web"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/vue",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/frontend-web"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/tanstack",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/frontend-web"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/redux",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/frontend-web"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/storybook",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/frontend-web"
+    },
+    {
+      "url": "https://cto.teamstation.dev/research/platforming-nearshore-it-staff-augmentation-book",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/authors/evelyn-reed"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/testing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/frontend-web"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/playwright",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/frontend-web"
+    },
+    {
+      "url": "https://cto.teamstation.dev/comparisons/all-vendors",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/authors/evelyn-reed"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/vite",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/frontend-web"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/php",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/backend-services"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/ruby",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/backend-services"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/postgresql",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/backend-services"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/sql",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/backend-services"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/tailwind",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/frontend-web"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/redis",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/backend-services"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/typeorm",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/backend-services"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/prisma",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/backend-services"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/sqlalchemy",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/backend-services"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/hibernate",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/backend-services"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/ef-core",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/backend-services"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/fivetran",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/data-engineering-analytics"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/looker",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/data-engineering-analytics"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/datahub",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/data-engineering-analytics"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/spark",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/data-engineering-analytics"
+    },
+    {
+      "url": "https://www.wework.com/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-country"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/great-expectations",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/data-engineering-analytics"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/scikit-learn",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/ml-ai-llm-ops"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/transformers",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/ml-ai-llm-ops"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/openai",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/ml-ai-llm-ops"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/ragas",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/ml-ai-llm-ops"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/jira",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/product-design-growth"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/notion",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/product-design-growth"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/amplitude",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/product-design-growth"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/k6",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/qa-quality-engineering"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/browserstack",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/qa-quality-engineering"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/gremlin",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/qa-quality-engineering"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/react-native",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/mobile-cross-platform"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/swift",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/mobile-cross-platform"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/kotlin",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/mobile-cross-platform"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/objective-c",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/mobile-cross-platform"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/codepush",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/mobile-cross-platform"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/appcenter",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/mobile-cross-platform"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/sentry",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/mobile-cross-platform"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/fastlane",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/mobile-cross-platform"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/detox",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/mobile-cross-platform"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/aws-cost-explorer",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/finops-biztech"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/salesforce",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/finops-biztech"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/hubspot",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/finops-biztech"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/zuora",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/finops-biztech"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/hightouch",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/finops-biztech"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/stripe",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/finops-biztech"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/google-workspace",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/it-enterprise-ops"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/jira-service-management",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/it-enterprise-ops"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/jamf",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/it-enterprise-ops"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/okta",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/it-enterprise-ops"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/crowdstrike",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/it-enterprise-ops"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/proofpoint",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/it-enterprise-ops"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/edr",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-role/it-enterprise-ops"
+    },
+    {
+      "url": "https://cto.teamstation.dev/case-studies/[slug]",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/sitemap"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-country/[slug]",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/sitemap"
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4749129",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/research/performance-evaluation-framework"
+    },
+    {
+      "url": "https://cto.teamstation.dev/playbook/[slug]",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/sitemap"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/[slug]",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/sitemap"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/rust",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-role/[slug]",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/sitemap"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/svelte",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/solid-js",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/socketio",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/preact",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-role/architecture-integrations",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-role/vetting-cognitive-ai",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-role/devops-cloud",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/flink",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/hugging-face",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/codeql",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/opa",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/trivy",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/soc",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/iso",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/hipaa",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-technology/pytest",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-role/data-ai",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-role/data-modeling-databases",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-role/pipelines-orchestration",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-role/operating-systems",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    },
+    {
+      "url": "https://cto.teamstation.dev/hire/by-role/legacy-languages",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://cto.teamstation.dev/hire/by-technology"
+    }
+  ],
+  "passed": false
+}
