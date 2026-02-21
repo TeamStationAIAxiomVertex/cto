@@ -5,6 +5,23 @@
     "ignore": [
       "node_modules",
       ".git",
+      ".next",
+      ".vscode",
+      ".idx",
+      "workspace",
+      "usr",
+      "teamstation",
+      "baseline-deploy",
+      "failsafe",
+      "docs",
+      "project-source-clean.tar.gz",
+      "website_codebase.txt",
+      "hydration-test.mjs",
+      "NCLA_V7_HUMANIZER.md",
+      "SEO_WAR_PLAN.md",
+      "PROJECT_CONTEXT_OUTLINE.md",
+      "gemini.md",
+      "*.log",
       "firebase-debug.log",
       "firebase-debug.*.log"
     ]
