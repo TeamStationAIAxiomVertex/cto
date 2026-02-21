@@ -687,10 +687,6 @@ const SecurityContent = () => (
   </div>
 );
 
-export async function generateStaticParams() {
-  return Object.keys(roleData).map((slug) => ({ slug }));
-}
-
 export default function RoleCategoryPage({
   params,
 }: {
