@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import PlaybookAuthor from "@/components/PlaybookAuthor";
 import PlaybookContentRenderer from "@/components/PlaybookContentRenderer";
 import TableOfContents from "@/components/TableOfContents";
 import { getPlaybookData } from "@/lib/playbook-data";
@@ -23,7 +22,7 @@ export default async function PlaybookPage() {
   const data = await getPlaybookData("latam-economics");
   if (!data) notFound();
 
-  const { title, date, author, toc, keywords } = data;
+  const { title, date, toc, keywords } = data;
 
   return (
     <main className="container mx-auto px-4 py-8 max-w-7xl">
@@ -37,7 +36,6 @@ export default async function PlaybookPage() {
       <article className="grid grid-cols-1 gap-12 mt-6 lg:grid-cols-4">
         <aside className="lg:col-span-1">
           <div className="lg:sticky lg:top-8 space-y-8">
-            <PlaybookAuthor author={author} />
             <TableOfContents items={toc} />
           </div>
         </aside>
@@ -48,7 +46,7 @@ export default async function PlaybookPage() {
               {title}
             </h1>
             <p className="text-gray-500 mt-2">
-              Published: <time dateTime={date}>{date}</time> • By: {author.name}
+              Published: <time dateTime={date}>{date}</time>
             </p>
           </header>
 
