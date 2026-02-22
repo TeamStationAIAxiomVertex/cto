@@ -130,7 +130,7 @@ export default function ProcessPage() {
                     </div>
                     <p className="mt-4 text-sm text-muted-foreground flex-grow">{pillar.description}</p>
                     <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-                        <span className='font-bold'>Proof:</span> {pillar.kpi}
+                        <span className='font-bold'>Evidence:</span> {pillar.kpi}
                     </p>
                 </div>
             ))}

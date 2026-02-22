@@ -219,7 +219,7 @@ const comparisonFaq = [
 const sectionItems = [
   { id: 'models', label: 'Models' },
   { id: 'validation-matrix', label: 'Validation Matrix' },
-  { id: 'proof', label: 'Proof' },
+  { id: 'proof', label: 'Evidence' },
   { id: 'related-paths', label: 'Related Playbooks' },
   { id: 'faq', label: 'FAQ' },
 ];
@@ -376,7 +376,7 @@ export default function ComparisonsPage() {
         <ExecutiveSection id="proof" className="scroll-mt-28">
           <ExecutivePanel>
             <SectionHeading
-              title="Proof and quantified outcomes"
+              title="Evidence and quantified outcomes"
               description="Quantified claims should always include what is in scope, where to validate, and what executive teams should request in review."
             />
             <div className="mt-6 grid gap-6 lg:grid-cols-[1.15fr_.85fr]">
@@ -426,7 +426,7 @@ export default function ComparisonsPage() {
               <article key={model.id} className="surface-card card-hover-lift flex h-full flex-col p-6 md:p-7">
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-primary">Pain</p>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary">Operating risk</p>
                     <p className="mt-1 text-sm leading-6 text-muted-foreground">{model.pain}</p>
                   </div>
                   <div className="shrink-0 rounded-lg border border-primary/20 bg-primary/10 p-2">

@@ -101,15 +101,15 @@ export default function HirePage() {
         </p>
         <div className="mt-5 card-grid-tight-3">
           <div className="rounded-lg border bg-background/60 p-4">
-            <p className="text-sm font-semibold text-foreground">Issue</p>
+            <p className="text-sm font-semibold text-foreground">Delivery constraint</p>
             <p className="mt-1 text-sm text-muted-foreground">Legacy vendor models hide risk until after onboarding.</p>
           </div>
           <div className="rounded-lg border bg-background/60 p-4">
-            <p className="text-sm font-semibold text-foreground">How we solve it</p>
+            <p className="text-sm font-semibold text-foreground">Operating response</p>
             <p className="mt-1 text-sm text-muted-foreground">Evidence driven vetting plus structured operating model setup.</p>
           </div>
           <div className="rounded-lg border bg-background/60 p-4">
-            <p className="text-sm font-semibold text-foreground">Proof signal</p>
+            <p className="text-sm font-semibold text-foreground">Validation cue</p>
             <p className="mt-1 text-sm text-muted-foreground">Faster delivery ramp with less coordination drag.</p>
           </div>
         </div>

@@ -41,13 +41,13 @@ export default function PerformanceMetricsAiAgePage() {
   return (
     <>
       <JsonLd data={[breadcrumbSchema, articleSchema]} />
-      <main className="container max-w-5xl py-12">
+      <main className="manual-page container max-w-5xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/research/hub" className="hover:text-foreground">Research Hub</Link> / <span>Performance Metrics in the AI Age</span>
         </div>
 
         <header className="my-8">
-          <div className="rounded-lg border bg-card p-8 md:p-12">
+          <div className="glass-panel rounded-2xl p-6 md:p-10">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Performance Metrics in the AI Age</h1>
             <div className="mt-8 max-w-4xl space-y-6">
               <div className="bg-background p-6 rounded-lg border border-primary/20">
@@ -60,13 +60,13 @@ export default function PerformanceMetricsAiAgePage() {
         </header>
 
         <section className="my-24 prose dark:prose-invert max-w-none">
-          <h2>The Solution: From Vanity Metrics to Value Metrics</h2>
+          <h2>From Vanity Metrics to Value Metrics</h2>
           <p>The core thesis of our research is that you cannot manage what you cannot measure. In an AI-assisted workflow, where a single engineer can generate thousands of lines of code in an afternoon, traditional volume-based metrics are meaningless. The new bottleneck is not writing code; it's defining problems, designing solutions, and integrating them into a complex system. Therefore, the new metrics must measure the speed and quality of these cognitive tasks.</p>
           <blockquote>We must move from measuring the output of an engineer's hands to measuring the throughput of their mind.</blockquote>
           <p>Our research proposes a new basket of metrics designed for the AI age, which form the foundation of our Performance Evaluation Framework. These include:</p>
           <ul>
             <li><strong>Problem-Decomposition Speed:</strong> The time it takes for a team to break down a complex feature request into a clear, actionable set of engineering tasks.</li>
-            <li><strong>Solution-Design Efficiency:</strong> A measure of how quickly a team can converge on a viable, scalable architectural solution.</li>
+            <li><strong>Architecture Decision Efficiency:</strong> A measure of how quickly a team can converge on a viable, scalable architectural solution.</li>
             <li><strong>Code-Integration Velocity:</strong> The time it takes to integrate new code into the existing codebase, including tests, and get it into a production-ready state.</li>
             <li><strong>Rework Ratio:</strong> The percentage of work that has to be redone due to misunderstandings, flawed design, or poor quality. A key indicator of a team's cognitive alignment.</li>
           </ul>

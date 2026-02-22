@@ -242,7 +242,7 @@ export default function TCOModelPage() {
   return (
     <>
       <JsonLd data={faqSchema} />
-      <main className="container max-w-5xl py-12">
+      <main className="manual-page container max-w-5xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / 
           <Link href="/playbook/hub" className="hover:text-foreground">Playbook</Link> / 
@@ -250,7 +250,7 @@ export default function TCOModelPage() {
         </div>
 
         <header className="my-8">
-            <div className="rounded-lg border bg-card p-8 md:p-12">
+            <div className="glass-panel rounded-2xl p-6 md:p-10">
                 <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Computational Cards: A CFO-Ready TCO Model</h1>
                 <div className="mt-8 max-w-4xl space-y-6">
                     <div className="bg-background p-6 rounded-lg border border-primary/20">
@@ -268,7 +268,7 @@ export default function TCOModelPage() {
         <section className="my-24">
           <div className="text-center">
               <h2 className="text-4xl font-bold text-foreground">The Computational Cost Cards: A CFO-Ready Analysis</h2>
-              <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Each card isolates a specific "hidden tax" on your engineering budget, quantifies its impact, and shows the TeamStation AI solution. Use these to build your business case.</p>
+              <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">Each card isolates a specific "hidden tax" on your engineering budget, quantifies its impact, and shows the TeamStation AI solution. Use these to build your business case.</p>
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
               {costCards.map(card => (
@@ -282,17 +282,17 @@ export default function TCOModelPage() {
                       </div>
                       
                       <div className="mt-4 pt-4 border-t border-border/50">
-                          <h3 className="font-semibold text-destructive">The Pain (Problem)</h3>
+                          <h3 className="font-semibold text-destructive">Delivery risk</h3>
                           <p className="text-sm text-muted-foreground m-0">{card.problem}</p>
                       </div>
 
                       <div className="mt-4 pt-4 border-t border-border/50">
-                          <h3 className="font-semibold text-primary">The Gain (Solution)</h3>
+                          <h3 className="font-semibold text-primary">Operating response</h3>
                           <p className="text-sm text-muted-foreground m-0">{card.solution}</p>
                       </div>
                       
                       <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
-                          <h3 className="font-semibold text-foreground">Computational Proof</h3>
+                          <h3 className="font-semibold text-foreground">Computational validation</h3>
                           <div className="font-mono text-xs bg-background/50 rounded p-3 my-2 border">
                               {card.formula}
                           </div>

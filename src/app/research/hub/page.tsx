@@ -185,7 +185,7 @@ export default function ResearchHubPage() {
           <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research Hub</span>
         </div>
 
-        <header className="my-8 rounded-lg border bg-card p-8 md:p-12">
+        <header className="glass-panel hero-depth system-grid my-8 rounded-2xl border border-border/70 p-6 md:p-10">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">
             Research Hub for Distributed Engineering Leadership
           </h1>
@@ -194,22 +194,22 @@ export default function ResearchHubPage() {
             better delivery measurement, and a clear operating model. Every section maps pain to method and method to proof.
           </p>
           <div className="mt-6 grid gap-3 md:grid-cols-3">
-            <div className="rounded-lg border bg-background p-4">
-              <p className="text-sm font-semibold text-primary">Pain</p>
+            <div className="rounded-xl border border-border/70 bg-background/70 p-4">
+              <p className="text-sm font-semibold text-primary">Decision reality</p>
               <p className="mt-1 text-sm text-muted-foreground">Nearshore decisions often rely on opinion instead of evidence.</p>
             </div>
-            <div className="rounded-lg border bg-background p-4">
-              <p className="text-sm font-semibold text-primary">Solution</p>
+            <div className="rounded-xl border border-border/70 bg-background/70 p-4">
+              <p className="text-sm font-semibold text-primary">Operating response</p>
               <p className="mt-1 text-sm text-muted-foreground">Use this research graph to choose method and action by scenario.</p>
             </div>
-            <div className="rounded-lg border bg-background p-4">
-              <p className="text-sm font-semibold text-primary">Proof</p>
+            <div className="rounded-xl border border-border/70 bg-background/70 p-4">
+              <p className="text-sm font-semibold text-primary">Validation path</p>
               <p className="mt-1 text-sm text-muted-foreground">Nine connected research assets plus direct playbook and doctrine links.</p>
             </div>
           </div>
         </header>
 
-        <section className="my-20">
+        <section className="my-16">
           <h2 className="text-3xl font-bold text-foreground">Research Library Index</h2>
           <p className="mt-3 text-muted-foreground leading-7">
             Use this index when you need to inspect the full body of work. Each item includes the core pain and the proof you can use in leadership decisions.
@@ -219,7 +219,7 @@ export default function ResearchHubPage() {
             {researchAssets.map((asset) => {
               const Icon = asset.icon;
               return (
-                <article key={asset.title} className="rounded-lg border bg-card p-6">
+                <article key={asset.title} className="glass-panel rounded-2xl p-6">
                   <div className="flex items-start gap-3">
                     <div className="rounded-full border bg-primary/10 p-2">
                       <Icon className="h-5 w-5 text-primary" />
@@ -230,8 +230,8 @@ export default function ResearchHubPage() {
                     </div>
                   </div>
 
-                  <p className="mt-4 text-sm text-muted-foreground"><strong className="text-foreground">Pain:</strong> {asset.pain.replace('Pain: ', '')}</p>
-                  <p className="mt-1 text-sm text-muted-foreground"><strong className="text-foreground">Proof:</strong> {asset.proof.replace('Proof: ', '')}</p>
+                  <p className="mt-4 text-sm text-muted-foreground"><strong className="text-foreground">What this clarifies:</strong> {asset.pain.replace('Pain: ', '')}</p>
+                  <p className="mt-1 text-sm text-muted-foreground"><strong className="text-foreground">How to validate:</strong> {asset.proof.replace('Proof: ', '')}</p>
 
                   <Link href={asset.href} className="mt-5 inline-flex items-center text-sm font-semibold text-primary hover:underline">
                     Open research page <ArrowRight className="ml-2 h-4 w-4" />
@@ -242,18 +242,18 @@ export default function ResearchHubPage() {
           </div>
         </section>
 
-        <section className="my-20 rounded-lg border bg-card p-8 md:p-10">
-          <h2 className="text-3xl font-bold text-foreground">How to Use This Hub</h2>
+        <section className="glass-panel my-16 rounded-2xl p-6 md:p-8">
+          <h2 className="text-3xl font-bold text-foreground">Reading Paths by Decision Type</h2>
           <p className="mt-3 text-muted-foreground leading-7">
             Start from the track that matches your current leadership problem. Each track gives a short path from diagnosis to implementation.
           </p>
 
           <div className="mt-8 space-y-4">
             {operatingTracks.map((track) => (
-              <article key={track.title} className="rounded-lg border bg-background p-5">
+              <article key={track.title} className="rounded-xl border border-border/70 bg-background/70 p-5">
                 <h3 className="text-xl font-semibold text-foreground">{track.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{track.pain}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{track.solution}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{track.pain.replace('Pain: ', '')}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{track.solution.replace('Solution: ', '')}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {track.links.map((l) => (
                     <Link key={l.href} href={l.href} className="rounded-md border px-3 py-2 text-sm text-foreground hover:text-primary hover:border-primary/40">
@@ -266,25 +266,25 @@ export default function ResearchHubPage() {
           </div>
         </section>
 
-        <section className="my-20 rounded-lg border bg-card p-8 md:p-10">
+        <section className="glass-panel my-16 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-foreground">FAQ</h2>
           <div className="mt-6 space-y-4">
-            <article className="rounded border bg-background p-4">
+            <article className="rounded-xl border border-border/70 bg-background/70 p-4">
               <h3 className="font-semibold text-foreground">What should we read first if hiring is our current risk?</h3>
               <p className="mt-2 text-sm text-muted-foreground">Start with Axiom Cortex Scientific Report, then Heuristic AI Evaluation, then Technical Talent Evaluation System.</p>
             </article>
-            <article className="rounded border bg-background p-4">
+            <article className="rounded-xl border border-border/70 bg-background/70 p-4">
               <h3 className="font-semibold text-foreground">What should we read first if execution performance is our current risk?</h3>
               <p className="mt-2 text-sm text-muted-foreground">Start with Performance Evaluation Framework, then AI Age Metrics, then the Report Example page.</p>
             </article>
-            <article className="rounded border bg-background p-4">
+            <article className="rounded-xl border border-border/70 bg-background/70 p-4">
               <h3 className="font-semibold text-foreground">How does this connect to action pages?</h3>
               <p className="mt-2 text-sm text-muted-foreground">Use the links to Engineering Doctrine, CTO Playbook Hub, and Hire routes to move from research to implementation.</p>
             </article>
           </div>
         </section>
 
-        <section className="my-20 rounded-lg border bg-card p-8 md:p-10 text-center">
+        <section className="glass-panel my-16 rounded-2xl p-8 text-center">
           <h2 className="text-3xl font-bold text-foreground">Next Step</h2>
           <p className="mt-3 max-w-3xl mx-auto text-muted-foreground leading-7">
             If you want this turned into a live operating program, start with Team Topologies and the CTO Playbook. The research gives the method. The playbook gives execution.

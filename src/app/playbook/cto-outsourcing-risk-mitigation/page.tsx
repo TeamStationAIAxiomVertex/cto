@@ -171,7 +171,7 @@ export default function CtoOutsourcingRiskMitigationPage() {
     ];
 
   return (
-    <main className="container max-w-4xl py-12">
+    <main className="manual-page container max-w-4xl py-10">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / 
         <Link href="/playbook/hub" className="hover:text-foreground">Playbook</Link> / 

@@ -51,7 +51,7 @@ export default function TrustPage() {
         <h1 className="text-5xl font-extrabold tracking-tight text-foreground">
           You Keep the Velocity. We Take the Risk.
         </h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+        <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
           Security and compliance aren't features; they're the foundation of our platform. We provide an auditable, enterprise-ready environment for your nearshore team from day one, so you can innovate with confidence.
         </p>
         <nav className="mt-6 flex justify-center gap-4 text-sm">
@@ -79,7 +79,7 @@ export default function TrustPage() {
 
       <div className="my-16 text-center">
         <h2 className="text-4xl font-bold text-foreground">The Security Checklist for Vetting Any Partner</h2>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+        <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
           A vendor who cannot provide clear answers to these questions is a significant risk to your organization. With TeamStation AI, the answer is "yes" to all.
         </p>
         <ul className="list-none p-0 mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">

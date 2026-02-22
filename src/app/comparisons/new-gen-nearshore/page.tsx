@@ -84,7 +84,7 @@ export default function NewGenNearshoreComparisonPage() {
   };
 
   return (
-    <main className="container max-w-7xl py-12">
+    <main className="manual-page container max-w-7xl py-10">
       <JsonLd data={faqSchema} />
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">
@@ -101,7 +101,7 @@ export default function NewGenNearshoreComparisonPage() {
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">
           Fire offshore & legacy nearshore run an IT Co-Pilot in daylight.
         </h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+        <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
           Evidence, not theater. Day-one security, daylight shipping.
         </p>
          <nav className="mt-6 flex justify-center gap-4 text-sm">

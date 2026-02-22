@@ -61,7 +61,7 @@ export default function AxiomCortexReportPage() {
         authorName="TeamStation AI Research"
         datePublished="2024-05-20"
       />
-      <main className="container max-w-4xl py-12">
+      <main className="manual-page container max-w-4xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">
             Home

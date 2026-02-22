@@ -222,7 +222,7 @@ export default function PlatformPage() {
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-foreground">
           Distributed Engineering OS
         </h1>
-        <div className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+        <div className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
           <span>
             Hire, equip, secure, and manage your entire LATAM engineering
             operation under one accountable{" "}
@@ -317,7 +317,7 @@ export default function PlatformPage() {
                 {service.description}
               </p>
               <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-                Proof: {service.kpi}
+                Evidence: {service.kpi}
               </p>
             </div>
           ))}
@@ -334,7 +334,7 @@ export default function PlatformPage() {
         className="my-24 bg-card rounded-xl p-8 md:p-12 shadow-lg"
       >
         <h2 className="text-center text-4xl font-bold text-foreground">
-          Proof, Not Promises
+          Evidence, Not Promises
         </h2>
         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">
           Independent recognition, peer-reviewed research, and platform delivery

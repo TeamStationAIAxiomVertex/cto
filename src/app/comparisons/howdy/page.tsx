@@ -122,7 +122,7 @@ export default function HowdyComparisonPage() {
 
   return (
     <>
-      <main className="container max-w-5xl py-12">
+      <main className="manual-page container max-w-5xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/comparisons" className="hover:text-foreground">All Comparisons</Link> / <span>vs. Howdy</span>
         </div>

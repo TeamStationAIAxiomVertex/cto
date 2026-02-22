@@ -53,7 +53,7 @@ export default function HireByRolePage() {
             <p className="mt-1 text-sm text-muted-foreground">Role specific vetting and role to KPI mapping before onboarding.</p>
           </div>
           <div className="rounded-lg border bg-background/60 p-4">
-            <p className="text-sm font-semibold text-foreground">Proof signal</p>
+            <p className="text-sm font-semibold text-foreground">Validation cue</p>
             <p className="mt-1 text-sm text-muted-foreground">Faster onboarding fit and lower rework in the first 90 days.</p>
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function HireByRolePage() {
             <p className="mt-2 text-sm text-muted-foreground flex-grow">{category.description}</p>
             <div className="flex-grow"></div>
             <div className="mt-6 border-t border-border pt-4">
-                 <p className="text-xs text-primary font-bold">Proof:</p>
+                 <p className="text-xs text-primary font-bold">Validation:</p>
                  <Link href={category.proof.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">{category.proof.label}</Link>
             </div>
             <Link href={`/hire/by-role/${category.slug}`} className="mt-4 flex items-center text-sm font-semibold text-primary stretched-link">

@@ -53,7 +53,7 @@ export default function ResearchPaperPage() {
         authorName="TeamStation AI Research"
         datePublished={pageInfo.datePublished}
       />
-      <main className="container max-w-4xl py-12">
+      <main className="manual-page container max-w-4xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / 
           <Link href="/research/hub" className="hover:text-foreground">Research</Link> / 

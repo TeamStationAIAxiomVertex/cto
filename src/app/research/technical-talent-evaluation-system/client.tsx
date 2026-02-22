@@ -1217,7 +1217,7 @@ export default function TalentEvaluationClient() {
   };
 
   return (
-    <main className="container max-w-5xl py-12">
+    <main className="manual-page container max-w-5xl py-10">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">
           Home

@@ -77,7 +77,7 @@ const competencies = [
 
 export default function PerformanceEvaluationFrameworkPage() {
     return (
-        <main className="container max-w-5xl py-12">
+        <main className="manual-page container max-w-5xl py-10">
              <div className="text-sm text-muted-foreground mb-8">
                 <Link href="/" className="hover:text-foreground">Home</Link> / 
                 <Link href="/research/hub" className="hover:text-foreground">Research</Link> / 
@@ -97,7 +97,7 @@ export default function PerformanceEvaluationFrameworkPage() {
 
             <section className="my-16">
                  <div className="rounded-lg border bg-card p-6 shadow-lg">
-                    <p className="text-sm font-semibold text-primary">The Pain: Performance Management is Broken</p>
+                    <p className="text-sm font-semibold text-primary">Operational reality: performance management is broken</p>
                     <div className="flex items-center gap-3 mt-3">
                          <AlertTriangle className="h-8 w-8 text-primary" />
                         <h2 className="text-xl font-semibold text-foreground">Traditional technical performance reviews are subjective, backward-looking, and generate zero actionable data.</h2>
@@ -105,7 +105,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                     <p className="mt-4 text-sm text-muted-foreground">Let's start with the ground truth: traditional performance reviews are a broken tool. They’re a mix of subjective bias, recency effect, and goals that were irrelevant three months ago. They generate anxiety for engineers and very little useful data for leaders.</p>
 
                     <div className="mt-6 border-t border-border pt-4">
-                        <h3 className="font-semibold text-primary">The Solution: A Diagnostic System, Not a Judgment</h3>
+                        <h3 className="font-semibold text-primary">A diagnostic system, not a judgment</h3>
                          <p className="mt-2 text-sm text-foreground">Our approach is different. We don't do "reviews." We run diagnostics. Our entire framework is built on four core principles to turn performance management from a subjective art into an objective science.</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                             {principles.map(p => (
@@ -128,7 +128,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                         </div>
                     </div>
                      <div className="mt-6 border-t border-border pt-4">
-                        <h3 className="font-semibold text-foreground">The Proof: Predictable Growth & Higher Retention</h3>
+                        <h3 className="font-semibold text-foreground">Measured outcomes: predictable growth and retention</h3>
                         <p className="mt-2 text-sm text-muted-foreground">This system provides a clear, high-velocity runway for our engineers to succeed within your organization. It's the proof behind our high retention rates and the predictable impact our engineers deliver.</p>
                          <Link href="/process" className="mt-4 flex items-center text-sm font-semibold text-primary">
                             See How This Fits Our Process <ArrowRight className="ml-2 h-4 w-4" />
@@ -166,7 +166,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                             </div>
                             
                             <div className="mt-4 pt-4 border-t border-border flex-grow">
-                                <h4 className="font-semibold text-foreground">Proof (BARS Scale)</h4>
+                                <h4 className="font-semibold text-foreground">Behavioral evidence (BARS scale)</h4>
                                 <div className="mt-2 space-y-2">
                                     {comp.proof.map(item => (
                                         <div key={item.rating} className="text-sm flex items-start gap-2">

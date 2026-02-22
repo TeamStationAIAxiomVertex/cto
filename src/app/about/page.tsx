@@ -44,7 +44,7 @@ export default function AboutPage() {
       </div>
       <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
         <h1 className="text-5xl font-extrabold tracking-tight text-foreground">We Dare to Go Beyond</h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+        <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
           TeamStation AI was founded not just to improve the traditional outsourcing model, but to completely replace it. We are engineering a better way to build teams by combining elite nearshore talent with the security and efficiency of a modern technology platform.
         </p>
       </header>
@@ -80,7 +80,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <section className="my-24 rounded-lg border bg-card p-8 shadow-lg">
+      <section className="my-24 glass-panel rounded-2xl p-6 md:p-8 shadow-lg">
          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <p className="text-sm font-semibold text-primary">Decades of combined experience</p>
             <div className="flex items-center gap-3 mt-3">

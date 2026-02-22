@@ -89,13 +89,13 @@ export default function PlatformingNearshoreBookPage() {
   return (
     <>
       <JsonLd data={[breadcrumbSchema, bookSchema]} />
-      <main className="container max-w-5xl py-12">
+      <main className="manual-page container max-w-5xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/research/hub" className="hover:text-foreground">Research Hub</Link> / <span>Platforming the Nearshore Industry</span>
         </div>
 
         <header className="my-8">
-          <div className="rounded-lg border bg-card p-8 md:p-12">
+          <div className="glass-panel rounded-2xl p-6 md:p-10">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Book That Is Defining the Future of Nearshore</h1>
             <div className="mt-8 max-w-4xl space-y-6">
               <div className="bg-background p-6 rounded-lg border border-primary/20">
@@ -142,7 +142,7 @@ export default function PlatformingNearshoreBookPage() {
           </div>
         </section>
 
-        <section className="my-24 rounded-lg border bg-card p-8 md:p-12 text-center">
+        <section className="my-24 glass-panel rounded-2xl p-6 md:p-10 text-center">
             <h2 className="text-center text-3xl font-bold text-foreground">Get the Blueprint</h2>
             <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">This book is the foundational text for our entire methodology and the source of truth for the new, scientific approach to nearshore development. Move beyond the legacy model and start building a predictable, high-performance engineering organization.</p>
             <div className="mt-8">

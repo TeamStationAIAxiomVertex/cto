@@ -236,7 +236,7 @@ export default function EngineeringDoctrinePage() {
         </div>
       </section>
 
-      <section className="my-16 rounded-lg border bg-card p-8">
+      <section className="my-16 glass-panel rounded-2xl p-6 md:p-8">
         <h2 className="text-3xl font-bold">Team Topologies for 2026 and Beyond</h2>
         <div className="mt-6 space-y-5 text-muted-foreground leading-7">
           <p>
@@ -258,7 +258,7 @@ export default function EngineeringDoctrinePage() {
         </div>
       </section>
 
-      <section className="my-16 rounded-lg border bg-card p-8">
+      <section className="my-16 glass-panel rounded-2xl p-6 md:p-8">
         <h2 className="text-3xl font-bold">Operating Implications for Market Visibility</h2>
         <div className="mt-6 space-y-5 text-muted-foreground leading-7">
           <p>
@@ -284,7 +284,7 @@ export default function EngineeringDoctrinePage() {
         </div>
       </section>
 
-      <section className="my-16 rounded-lg border bg-card p-8">
+      <section className="my-16 glass-panel rounded-2xl p-6 md:p-8">
         <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
         <div className="mt-8 space-y-4">
           <article className="rounded border bg-background p-4">

@@ -40,13 +40,13 @@ export default function HeuristicallyTrainedAiPage() {
   return (
     <>
       <JsonLd data={[breadcrumbSchema, articleSchema]} />
-      <main className="container max-w-5xl py-12">
+      <main className="manual-page container max-w-5xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/research/hub" className="hover:text-foreground">Research Hub</Link> / <span>Heuristically Trained AI</span>
         </div>
 
         <header className="my-8">
-          <div className="rounded-lg border bg-card p-8 md:p-12">
+          <div className="glass-panel rounded-2xl p-6 md:p-10">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Heuristically Trained AI Models for Technical Evaluation</h1>
             <div className="mt-8 max-w-4xl space-y-6">
               <div className="bg-background p-6 rounded-lg border border-primary/20">
@@ -59,7 +59,7 @@ export default function HeuristicallyTrainedAiPage() {
         </header>
 
         <section className="my-24 prose dark:prose-invert max-w-none">
-          <h2>The Solution: Combining Statistical Power with Human Expertise</h2>
+          <h2>Combining Statistical Power with Human Expertise</h2>
           <p>A purely statistical model, no matter how large, is a blunt instrument. It can identify patterns, but it lacks a true understanding of context. A human expert, on the other hand, possesses deep contextual knowledge but is prone to bias and inconsistency. The optimal solution, as our research demonstrates, is a hybrid approach that combines the best of both worlds.</p>
           <blockquote>Our heuristic-guided model is not just trained on what code looks like; it's trained on what brilliant problem-solving looks like.</blockquote>
           <p>We achieve this by building a knowledge graph and a reasoning engine, not just a simple predictive model. Our AI is trained on a proprietary dataset of interview transcripts that have been annotated by our top engineers. These annotations, or heuristics, teach the model to recognize the subtle signals of high-level cognitive traits things like:</p>

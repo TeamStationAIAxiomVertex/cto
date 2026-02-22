@@ -74,7 +74,7 @@ export default function HireByTechnologyPage() {
             <p className="mt-1 text-sm text-muted-foreground">Stack specific assessment focused on production scenarios not checklist skills.</p>
           </div>
           <div className="rounded-lg border bg-background/60 p-4">
-            <p className="text-sm font-semibold text-foreground">Proof signal</p>
+            <p className="text-sm font-semibold text-foreground">Validation cue</p>
             <p className="mt-1 text-sm text-muted-foreground">Higher quality first sprint output and lower rollback rate.</p>
           </div>
         </div>

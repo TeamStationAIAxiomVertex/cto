@@ -172,7 +172,7 @@ export default function IntegratedServicesPage() {
                         </div>
                         <p className="mt-4 text-sm text-muted-foreground flex-grow">{service.description}</p>
                         <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-                            <span className='font-bold'>Proof:</span> {service.kpi}
+                            <span className='font-bold'>Evidence:</span> {service.kpi}
                         </p>
                     </div>
                 ))}

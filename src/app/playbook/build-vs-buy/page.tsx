@@ -117,13 +117,13 @@ export default function BuildVsBuyPage() {
   return (
     <>
       <JsonLd data={faqSchema} />
-      <main className="container max-w-5xl py-12">
+      <main className="manual-page container max-w-5xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/playbook/hub" className="hover:text-foreground">CTO Playbook</Link> / <span>Build vs. Buy</span>
         </div>
 
         <header className="my-8">
-          <div className="rounded-lg border bg-card p-8 md:p-12">
+          <div className="glass-panel rounded-2xl p-6 md:p-10">
               <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Build vs. Buy: The Definitive CTO Framework for Scaling Nearshore Teams</h1>
               <div className="mt-8 max-w-4xl space-y-6">
                   <div className="bg-background p-6 rounded-lg border border-primary/20">
@@ -146,8 +146,8 @@ export default function BuildVsBuyPage() {
 
         <section className="my-24">
           <div className="text-center">
-              <h2 className="text-4xl font-bold text-foreground">Part 1 (The Pain): The "Build" Model   A High-Risk, High-Cost Gamble</h2>
-              <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Building your own nearshore operation seems like it offers more control, but it's a trap. You become responsible for a mountain of non-core activities, each with hidden costs and significant risks. Your finance team sees a lower salary; you, the CTO, are saddled with a dozen hidden "taxes" on your time and budget.</p>
+              <h2 className="text-4xl font-bold text-foreground">Part 1: The "Build" Model   A High-Risk, High-Cost Gamble</h2>
+              <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">Building your own nearshore operation seems like it offers more control, but it's a trap. You become responsible for a mountain of non-core activities, each with hidden costs and significant risks. Your finance team sees a lower salary; you, the CTO, are saddled with a dozen hidden "taxes" on your time and budget.</p>
           </div>
 
           <div className="my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
@@ -177,8 +177,8 @@ export default function BuildVsBuyPage() {
 
         <section className="my-24">
           <div className="text-center">
-              <h2 className="text-4xl font-bold text-foreground">Part 2 (The Solution): The "Buy" Model   An Integrated Platform That Absorbs Risk</h2>
-              <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Partnering with TeamStation AI means you "buy" a complete, managed operating system for your nearshore team. We absorb all the risk and operational overhead into a single, predictable, all-inclusive rate, allowing you to focus on your core competency: building world-class software.</p>
+              <h2 className="text-4xl font-bold text-foreground">Part 2: The "Buy" Model   An Integrated Platform That Absorbs Risk</h2>
+              <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">Partnering with TeamStation AI means you "buy" a complete, managed operating system for your nearshore team. We absorb all the risk and operational overhead into a single, predictable, all-inclusive rate, allowing you to focus on your core competency: building world-class software.</p>
           </div>
 
           <div className="my-16">
@@ -195,7 +195,7 @@ export default function BuildVsBuyPage() {
                               {item.solution}
                           </p>
                           <div className="mt-6 border-t border-border pt-4">
-                            <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {item.proof}</p>
+                            <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Evidence: {item.proof}</p>
                             <Link href={item.href} className="mt-4 flex items-center text-sm font-semibold text-primary">
                                   {item.linkLabel} <ArrowRight className="ml-2 h-4 w-4" />
                             </Link>

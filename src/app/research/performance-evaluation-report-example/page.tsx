@@ -40,17 +40,17 @@ export default function PerformanceEvaluationReportExamplePage() {
   return (
     <>
       <JsonLd data={[breadcrumbSchema, articleSchema]} />
-      <main className="container max-w-5xl py-12">
+      <main className="manual-page container max-w-5xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/research/hub" className="hover:text-foreground">Research Hub</Link> / <span>Performance Report Example</span>
         </div>
 
         <header className="my-8">
-          <div className="rounded-lg border bg-card p-8 md:p-12">
+          <div className="glass-panel rounded-2xl p-6 md:p-10">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Example Engineering Performance Report</h1>
             <div className="mt-8 max-w-4xl space-y-6">
               <div className="bg-background p-6 rounded-lg border border-primary/20">
-                <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>The Pain of Intangible Value</h2>
+                <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>Operational cost of intangible value</h2>
                 <p className="mt-2 text-muted-foreground">As a CTO, you know your team is creating value, but you struggle to prove it. You're stuck in budget meetings with the CFO, trying to justify headcount with metrics like 'story points' and 'commit frequency' that don't translate to business impact. You can't definitively answer the question: 'Are we getting a return on our engineering investment?' This inability to connect engineering activity to business value is a critical strategic failure.</p>
                 <p className="mt-4 text-muted-foreground">This page provides a tangible example of how to solve that problem. It is a concrete demonstration of how to apply our **Performance Evaluation Framework** to turn your team's performance data into a powerful, CFO-ready narrative of progress and value.</p>
               </div>

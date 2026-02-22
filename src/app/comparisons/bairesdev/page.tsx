@@ -86,7 +86,7 @@ export default function BairesDevComparisonPage() {
         </div>
         <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">BairesDev Alternative: TeamStation AI</h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
             An objective comparison between TeamStation AI's integrated, science-driven platform and BairesDev's traditional nearshore staff augmentation model.
           </p>
            <div className="mt-4 text-sm">

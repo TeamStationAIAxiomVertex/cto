@@ -241,7 +241,7 @@ export default async function CaseStudyPage({
             <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
               <h3 className="text-xl font-bold flex items-center gap-3 text-primary">
                 <Shield className="h-6 w-6" />
-                The Solution
+                Intervention
               </h3>
               <p className="mt-4 text-sm text-foreground">
                 {summarySafe ||
@@ -253,7 +253,7 @@ export default async function CaseStudyPage({
               <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
                 <h3 className="text-xl font-bold flex items-center gap-3 text-green-500">
                   <CheckCircle className="h-6 w-6" />
-                  The Proof (Outcomes)
+                  Outcomes
                 </h3>
                 <div className="mt-4 space-y-2 text-sm text-muted-foreground">
                   {study.outcomes.split("\\n").map(

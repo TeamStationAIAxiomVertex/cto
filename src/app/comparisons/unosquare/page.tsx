@@ -80,7 +80,7 @@ export default function UnosquareComparisonPage() {
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">
             Unosquare Alternative: TeamStation AI
           </h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
             A comparison between TeamStation AI’s integrated platform and Unosquare’s traditional nearshore staff augmentation model.
           </p>
           <div className="mt-4 text-sm">

@@ -20,7 +20,7 @@ export default async function CaseStudiesPage() {
       </div>
       <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
         <h1 className="text-5xl font-extrabold tracking-tight text-foreground">Evidence of Impact</h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+        <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
           From resolving critical SSO failures for enterprise clients to scaling monolithic platforms for 15,000+ users, our nearshore squads deliver results. Here’s the evidence.
         </p>
          <nav className="mt-6 flex justify-center gap-4 text-sm">
@@ -47,7 +47,7 @@ export default async function CaseStudiesPage() {
                     <div>
                       <h4 className="font-semibold text-sm flex items-center gap-2 text-destructive">
                         <AlertTriangle className="h-4 w-4" />
-                        Pain
+                        Context
                       </h4>
                       <p className="text-sm text-muted-foreground m-0">{study.challenge.split('\n')[0].replace(/^-/, '').trim()}</p>
                     </div>
@@ -55,7 +55,7 @@ export default async function CaseStudiesPage() {
                   <div>
                     <h4 className="font-semibold text-sm flex items-center gap-2 text-primary">
                         <Shield className="h-4 w-4" />
-                        Solution
+                        Intervention
                     </h4>
                      <p className="text-sm text-foreground m-0">{study.summary}</p>
                   </div>
@@ -63,7 +63,7 @@ export default async function CaseStudiesPage() {
                     <div>
                        <h4 className="font-semibold text-sm flex items-center gap-2 text-green-500">
                         <CheckCircle className="h-4 w-4" />
-                        Proof
+                        Outcome
                       </h4>
                        <p className="text-sm text-muted-foreground m-0">{study.outcomes.split('\n')[0].replace(/^-/, '').trim()}</p>
                     </div>

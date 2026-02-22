@@ -170,7 +170,7 @@ export default function ArgentinaPage() {
         </section>
 
         <section className="my-24 space-y-16">
-          <div className="rounded-lg border bg-card p-8 shadow-lg">
+          <div className="glass-panel rounded-2xl p-6 md:p-8 shadow-lg">
             <h2 className="text-3xl font-bold text-center">
               {countrySections.whyDaylight.h2}
             </h2>
@@ -198,7 +198,7 @@ export default function ArgentinaPage() {
                 <Link
                   href={`/hire/by-country/argentina/${tech.slug}`}
                   key={tech.slug}
-                  className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
+                  className="group flex flex-col glass-panel rounded-2xl p-6 md:p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
                 >
                   <div className="flex justify-between items-start">
                     {tech.icon}
@@ -226,7 +226,7 @@ export default function ArgentinaPage() {
               <Link
                 href={`/hire/by-role/${details.slug}`}
                 key={details.slug}
-                className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
+                className="group flex flex-col glass-panel rounded-2xl p-6 md:p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
               >
                 <div className="flex justify-between items-start">
                   <details.icon className="h-8 w-8 text-primary" />
@@ -246,7 +246,7 @@ export default function ArgentinaPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="rounded-lg border bg-card p-8 shadow-lg">
+            <div className="glass-panel rounded-2xl p-6 md:p-8 shadow-lg">
               <h2 className="text-2xl font-bold">{countrySections.hubs.h2}</h2>
               <div className="mt-4 space-y-4">
                 {countrySections.hubs.cities.map((city) => (
@@ -262,7 +262,7 @@ export default function ArgentinaPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border bg-card p-8 shadow-lg">
+            <div className="glass-panel rounded-2xl p-6 md:p-8 shadow-lg">
               <h2 className="text-2xl font-bold">{countrySections.legal.h2}</h2>
               <p className="mt-4 text-sm text-muted-foreground">
                 {countrySections.legal.body}
@@ -275,7 +275,7 @@ export default function ArgentinaPage() {
               </Link>
             </div>
 
-            <div className="rounded-lg border bg-card p-8 shadow-lg">
+            <div className="glass-panel rounded-2xl p-6 md:p-8 shadow-lg">
               <h2 className="text-2xl font-bold">
                 {countrySections.security.h2}
               </h2>
@@ -290,7 +290,7 @@ export default function ArgentinaPage() {
               </Link>
             </div>
 
-            <div className="rounded-lg border bg-card p-8 shadow-lg">
+            <div className="glass-panel rounded-2xl p-6 md:p-8 shadow-lg">
               <h2 className="text-2xl font-bold">
                 {countrySections.timeCost.h2}
               </h2>

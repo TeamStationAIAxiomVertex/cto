@@ -55,7 +55,7 @@ export default function ReveloComparisonPage() {
         </div>
         <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">TeamStation AI vs. Revelo</h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
             A comparison between TeamStation AI’s managed team model and Revelo’s marketplace for LATAM talent.
           </p>
            <div className="mt-4 text-sm">

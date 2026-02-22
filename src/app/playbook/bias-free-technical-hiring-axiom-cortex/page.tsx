@@ -169,7 +169,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
   return (
     <>
       <JsonLd data={faqSchema} />
-      <main className="container max-w-5xl py-12">
+      <main className="manual-page container max-w-5xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">
             Home
@@ -182,7 +182,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
         </div>
 
         <header className="my-8">
-          <div className="rounded-lg border bg-card p-8 md:p-12">
+          <div className="glass-panel rounded-2xl p-6 md:p-10">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
               The Playbook for Bias-Free Technical Hiring
             </h1>
@@ -227,7 +227,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
 
         <section className="my-24">
           <h2 className="text-center text-4xl font-bold text-foreground">
-            Part 1 (The Pain): Diagnosing Your Broken Hiring Funnel
+            Part 1: Diagnosing Your Broken Hiring Funnel
           </h2>
           <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">
             If you recognize your organization in these scenarios, your hiring
@@ -258,7 +258,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
                 </div>
                 <div className="mt-4 border-t border-border pt-4 flex-grow">
                   <h4 className="font-semibold text-primary">
-                    The TeamStation AI Solution
+                    TeamStation AI operating model
                   </h4>
                   <p className="text-sm text-foreground m-0">
                     {point.solution}
@@ -266,7 +266,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
                 </div>
                 <div className="mt-6">
                   <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-                    Proof: {point.kpi}
+                    Validation: {point.kpi}
                   </p>
                   <Link
                     href={point.href}
@@ -280,7 +280,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
           </div>
         </section>
 
-        <section className="my-24 rounded-lg border bg-card p-8 md:p-12">
+        <section className="my-24 glass-panel rounded-2xl p-6 md:p-10">
           <h2 className="text-center text-4xl font-bold text-foreground">
             Part 2 (The Budget): Quantifying the True Cost of a Bad Hire
           </h2>
@@ -335,7 +335,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
 
         <section className="my-24">
           <h2 className="text-center text-4xl font-bold text-foreground">
-            Part 3 (The Solution): An Engineered System for Hiring
+            Part 3: An Engineered System for Hiring
           </h2>
           <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">
             You don't build software with guesswork. It's time to stop building

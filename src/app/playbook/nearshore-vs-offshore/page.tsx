@@ -129,7 +129,7 @@ export default async function NearshoreVsOffshorePage() {
   return (
     <>
       <JsonLd data={faqSchema} />
-      <main className="container max-w-5xl py-12">
+      <main className="manual-page container max-w-5xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">
             Home
@@ -142,7 +142,7 @@ export default async function NearshoreVsOffshorePage() {
         </div>
 
         <header className="my-8">
-          <div className="rounded-lg border bg-card p-8 md:p-12 shadow-lg">
+          <div className="glass-panel rounded-2xl p-6 md:p-10 shadow-lg">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
               Nearshore vs. Offshore: The CTO’s Guide to Shipping Faster
             </h1>
@@ -150,7 +150,7 @@ export default async function NearshoreVsOffshorePage() {
               <div className="bg-background p-6 rounded-lg border border-primary/20">
                 <h2 className="font-bold text-primary flex items-center gap-2">
                   <AlertTriangle className="h-5 w-5" />
-                  The Pain: The Human Latency Tax
+                  The Human Latency Tax
                 </h2>
                 <p className="mt-2 text-muted-foreground">
                   You're here because the 12-hour time lag with your offshore
@@ -267,7 +267,7 @@ export default async function NearshoreVsOffshorePage() {
                 {options[4].painRemoved && (
                   <div>
                     <dt className="text-green-400 text-xs uppercase tracking-wider font-bold">
-                      Pain Removed
+                      Risk removed
                     </dt>
                     <dd className="text-sm text-muted-foreground mt-1">
                       {options[4].painRemoved}

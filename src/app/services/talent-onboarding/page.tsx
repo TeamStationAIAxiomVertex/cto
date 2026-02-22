@@ -69,7 +69,7 @@ export default function OnboardingPage() {
                     <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
                 </div>
                 <p className="mt-4 text-sm text-muted-foreground flex-grow">{step.description}</p>
-                <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {step.kpi}</p>
+                <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Evidence: {step.kpi}</p>
             </div>
         ))}
       </div>

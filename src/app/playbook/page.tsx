@@ -29,19 +29,19 @@ export default function PlaybookPage() {
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <div className="rounded-lg border bg-background p-4">
-            <p className="text-sm font-semibold text-primary">Pain</p>
+            <p className="text-sm font-semibold text-primary">Operating reality</p>
             <p className="mt-2 text-sm text-muted-foreground">
               Delivery slows down when hiring, architecture, and governance are managed as separate systems.
             </p>
           </div>
           <div className="rounded-lg border bg-background p-4">
-            <p className="text-sm font-semibold text-primary">Solution</p>
+            <p className="text-sm font-semibold text-primary">Operating response</p>
             <p className="mt-2 text-sm text-muted-foreground">
               Use one connected operating model that links role design, evaluation rigor, and execution cadence.
             </p>
           </div>
           <div className="rounded-lg border bg-background p-4">
-            <p className="text-sm font-semibold text-primary">Proof</p>
+            <p className="text-sm font-semibold text-primary">Validation signal</p>
             <p className="mt-2 text-sm text-muted-foreground">
               Teams with consistent topology rules and evaluation standards reduce rework, lower delay, and improve release confidence.
             </p>

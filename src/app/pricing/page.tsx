@@ -178,7 +178,7 @@ export default function PricingPage() {
         </div>
         <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
           <h1 className="text-5xl font-extrabold tracking-tight text-foreground">Your CFO-Ready Case for Nearshore</h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
             Stop getting ambushed by hidden fees and vendor chaos. This is a predictable, all-inclusive cost model that your finance team will actually approve.
           </p>
            <div className="mt-4 text-center">
@@ -225,7 +225,7 @@ export default function PricingPage() {
 
         <div className="my-16 text-center">
           <h2 className="text-4xl font-bold">The All-Inclusive Risk Shield</h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Competitors' quotes hide 10-15% in extra fees for EOR, device management, and compliance. Our rate includes everything. No surprises.</p>
+          <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">Competitors' quotes hide 10-15% in extra fees for EOR, device management, and compliance. Our rate includes everything. No surprises.</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 mt-12 max-w-6xl mx-auto text-left">
               {includedItems.map(item => (
                   <div key={item.title} className="flex items-start gap-3">

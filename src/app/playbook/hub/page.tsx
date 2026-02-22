@@ -143,19 +143,19 @@ export default function PlaybookHubPage() {
                 playbookEntries.length % 2 !== 0 && index === playbookEntries.length - 1 ? 'md:col-span-2' : ''
               }`}
             >
-              <p className="text-sm font-semibold text-primary">Pain</p>
+              <p className="text-sm font-semibold text-primary">Operating reality</p>
               <p className="mt-1 text-sm text-muted-foreground">{entry.pain}</p>
               <div className="mt-3 flex items-center gap-3">
                 {entry.icon}
                 <h2 className="text-xl font-bold text-foreground">{entry.title}</h2>
               </div>
               <div className="mt-4 border-t border-border/50 pt-4">
-                <h3 className="text-sm font-semibold text-primary">Solution</h3>
+                <h3 className="text-sm font-semibold text-primary">Operating response</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{entry.solution}</p>
               </div>
               <div className="flex-grow" />
               <div className="mt-4 border-t border-border/50 pt-4">
-                <p className="inline-block rounded bg-primary/10 px-2 py-1 text-xs font-mono text-primary">Proof: {entry.proof}</p>
+                <p className="inline-block rounded bg-primary/10 px-2 py-1 text-xs font-mono text-primary">Validation: {entry.proof}</p>
                 <Link href={entry.href} className="stretched-link mt-4 flex items-center text-sm font-semibold text-primary">
                   Open playbook page <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -179,15 +179,15 @@ export default function PlaybookHubPage() {
                 <h3 className="text-lg font-bold text-foreground">{card.title}</h3>
               </div>
               <div className="mt-4 border-t border-border/50 pt-4">
-                <p className="text-sm font-semibold text-primary">Pain</p>
+                <p className="text-sm font-semibold text-primary">Operating reality</p>
                 <p className="mt-1 text-sm text-muted-foreground">{card.problem}</p>
               </div>
               <div className="mt-4 border-t border-border/50 pt-4">
-                <p className="text-sm font-semibold text-primary">Solution</p>
+                <p className="text-sm font-semibold text-primary">Operating response</p>
                 <p className="mt-1 text-sm text-muted-foreground">{card.solution}</p>
               </div>
               <div className="mt-4 border-t border-border/50 pt-4">
-                <p className="inline-block rounded bg-primary/10 px-2 py-1 text-xs font-mono text-primary">Proof: {card.proof}</p>
+                <p className="inline-block rounded bg-primary/10 px-2 py-1 text-xs font-mono text-primary">Validation: {card.proof}</p>
               </div>
             </article>
           ))}
