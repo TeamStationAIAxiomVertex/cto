@@ -6,6 +6,13 @@ import { allTech, TechEntry } from "@/lib/tech";
 import CardGuidanceTooltip from "@/components/ui/card-guidance-tooltip";
 import { InfoDropdown } from "@/components/client/info-dropdown";
 import { CheckCircle, Gauge, ShieldCheck } from "lucide-react";
+import {
+  LiftCard,
+  RevealBlock,
+  RevealSection,
+  StaggerGrid,
+  StaggerItem,
+} from "@/components/motion/MotionPrimitives";
 
 interface ProgrammaticContentProps {
   tech: TechEntry;
@@ -136,7 +143,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
           </Link>{" "}
           /<span>{tech.name}</span>
         </div>
-        <header className="glass-panel hero-depth system-grid my-8 rounded-2xl p-6 md:p-8">
+        <RevealBlock className="glass-panel gradient-ring hero-depth system-grid my-8 rounded-2xl p-6 md:p-8">
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">
             Hire by Technology
           </p>
@@ -144,28 +151,28 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
             Hire {tech.name} Engineers
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">{tech.intro}</p>
-          <div className="mt-5 grid gap-3 md:grid-cols-3">
-            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+          <StaggerGrid className="mt-5 grid gap-3 md:grid-cols-3">
+            <StaggerItem className="rounded-xl border border-border/70 bg-background/60 p-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-primary">Delivery fit</p>
               <p className="mt-2 text-sm text-muted-foreground">Role charter and execution ownership aligned to production outcomes.</p>
-            </div>
-            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+            </StaggerItem>
+            <StaggerItem className="rounded-xl border border-border/70 bg-background/60 p-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-primary">Evaluation signal</p>
               <p className="mt-2 text-sm text-muted-foreground">Evidence based screening before shortlist delivery and onboarding risk.</p>
-            </div>
-            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+            </StaggerItem>
+            <StaggerItem className="rounded-xl border border-border/70 bg-background/60 p-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-primary">Operating control</p>
               <p className="mt-2 text-sm text-muted-foreground">Telemetry and governance checkpoints for CTO and CIO oversight.</p>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerGrid>
           <div className="mt-5">
             <InfoDropdown label="How to use this guide">
               <p>Use this page to identify the issue, validate the solution pattern, and confirm proof checkpoints before you hire.</p>
             </InfoDropdown>
           </div>
-        </header>
+        </RevealBlock>
 
-        <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
+        <RevealSection className="glass-panel gradient-ring my-12 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-center">
             Executive Brief for CTO and CIO Teams
           </h2>
@@ -225,20 +232,21 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
               distributed engineering with confidence.
             </p>
           </div>
-        </section>
+        </RevealSection>
 
         {tech.pains && tech.pains.length > 0 && (
-          <section className="my-12">
+          <RevealSection className="my-12">
             <h2 className="text-center text-3xl font-bold">Sound Familiar?</h2>
             <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">
               Common problems we solve by providing true {tech.name} experts.
             </p>
-            <div className="card-grid-tight-3 mt-8">
+            <StaggerGrid className="card-grid-tight-3 mt-8">
               {tech.pains.map((item) => (
-                <div
+                <StaggerItem
                   key={item.pain}
-                  className="glass-panel card-hover-lift mx-auto flex w-full max-w-sm flex-col rounded-2xl p-6"
+                  className="mx-auto w-full max-w-sm"
                 >
+                  <LiftCard className="glass-card-interactive gradient-ring flex w-full flex-col rounded-2xl p-6">
                   <div className="flex items-start justify-between gap-3">
                     <p className="text-sm font-semibold text-primary">
                       {item.pain}
@@ -249,7 +257,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
                       proof={item.kpi}
                     />
                   </div>
-                  <div className="flex items-center gap-3 mt-3">
+                  <div className="mt-3 flex items-center gap-3">
                     <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/30 bg-primary/10">
                       {React.createElement(item.icon, {
                         className: "h-6 w-6 text-primary",
@@ -274,10 +282,11 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
                       Proof: {item.kpi}
                     </p>
                   </div>
-                </div>
+                  </LiftCard>
+                </StaggerItem>
               ))}
-            </div>
-          </section>
+            </StaggerGrid>
+          </RevealSection>
         )}
 
         {tech.evaluation?.length > 0 && (

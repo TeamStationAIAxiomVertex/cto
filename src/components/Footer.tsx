@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { RevealBlock } from "@/components/motion/MotionPrimitives";
 
 type NavLink = {
   href: string;
@@ -106,10 +107,10 @@ export default function Footer() {
   return (
     <footer role="contentinfo" className="mt-14 border-t border-border/80 bg-background/70">
       <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <section
+        <RevealBlock
           className="surface-card glass-panel relative mb-4 overflow-hidden border border-border/70 p-4 md:p-5"
-          aria-labelledby="footer-proof-cta"
         >
+          <section aria-labelledby="footer-proof-cta">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.10),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.08),transparent_50%)]" />
           <div className="relative grid gap-4 lg:grid-cols-[1.3fr_.7fr] lg:items-center">
             <div>
@@ -166,9 +167,11 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </section>
+          </section>
+        </RevealBlock>
 
-        <section className="surface-card glass-panel border border-border/70 p-4 md:p-5" aria-labelledby="footer-nav-heading">
+        <RevealBlock className="surface-card glass-panel border border-border/70 p-4 md:p-5">
+        <section aria-labelledby="footer-nav-heading">
           <div className="grid items-start gap-5 lg:grid-cols-12">
             <div className="self-start rounded-xl border border-border/70 bg-background/60 p-4 lg:col-span-5">
               <div className="flex items-center gap-3">
@@ -321,6 +324,7 @@ export default function Footer() {
             </div>
           </div>
         </section>
+        </RevealBlock>
 
         <div className="mt-4 flex flex-col gap-2 border-t border-border/70 pt-4 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} TeamStation AI</p>

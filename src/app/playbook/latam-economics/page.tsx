@@ -6,6 +6,7 @@ import PlaybookContentRenderer from "@/components/PlaybookContentRenderer";
 import TableOfContents from "@/components/TableOfContents";
 import PlaybookAuthor from "@/components/PlaybookAuthor";
 import CTOFieldManualBlock from "@/components/seo/CTOFieldManualBlock";
+import { RevealBlock, RevealSection } from "@/components/motion/MotionPrimitives";
 import { getPlaybookData } from "@/lib/playbook-data";
 
 const relatedLinks = [
@@ -54,17 +55,17 @@ export default async function PlaybookPage() {
       <article className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-4 lg:gap-10">
         <aside className="lg:col-span-1">
           <div className="space-y-6 lg:sticky lg:top-8">
-            <div className="glass-panel rounded-2xl p-4">
+            <RevealBlock className="glass-panel gradient-ring rounded-2xl p-4">
               <PlaybookAuthor author={author} />
-            </div>
-            <div className="glass-panel rounded-2xl p-4">
+            </RevealBlock>
+            <RevealBlock className="glass-panel gradient-ring rounded-2xl p-4">
               <TableOfContents items={toc} />
-            </div>
+            </RevealBlock>
           </div>
         </aside>
 
         <div className="lg:col-span-3">
-          <header className="glass-panel hero-depth system-grid mb-8 rounded-2xl p-6 md:p-8">
+          <RevealBlock className="glass-panel gradient-ring hero-depth system-grid mb-8 rounded-2xl p-6 md:p-8">
             <p className="text-xs font-semibold uppercase tracking-wide text-primary">
               CTO Playbook Chapter
             </p>
@@ -99,15 +100,15 @@ export default async function PlaybookPage() {
                 Compare models
               </Link>
             </div>
-          </header>
+          </RevealBlock>
 
-          <section className="glass-panel rounded-2xl p-6 md:p-8">
+          <RevealSection className="glass-panel gradient-ring rounded-2xl p-6 md:p-8">
             <div className="prose prose-xl max-w-none dark:prose-invert">
               <PlaybookContentRenderer slug="latam-economics" />
             </div>
-          </section>
+          </RevealSection>
 
-          <section className="glass-panel mt-10 rounded-2xl p-6 md:p-8">
+          <RevealSection className="glass-panel gradient-ring mt-10 rounded-2xl p-6 md:p-8">
             <h2 className="mb-4 text-2xl font-semibold text-foreground">
               Further Reading and Related Strategy
             </h2>
@@ -126,14 +127,14 @@ export default async function PlaybookPage() {
                 </Link>
               ))}
             </div>
-          </section>
+          </RevealSection>
 
-          <div className="mt-10">
+          <RevealBlock className="mt-10">
             <CTOFieldManualBlock
               title="CTO Field Manual Extension: LATAM Economics"
               focus="economic modeling, operating fit, and delivery cost governance"
             />
-          </div>
+          </RevealBlock>
         </div>
       </article>
     </main>

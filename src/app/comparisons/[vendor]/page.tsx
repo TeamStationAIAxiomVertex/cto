@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import ComparisonProse from "@/components/ComparisonProse";
 import Link from "next/link";
 import CTOFieldManualBlock from "@/components/seo/CTOFieldManualBlock";
+import { RevealBlock, RevealSection } from "@/components/motion/MotionPrimitives";
 
 const VerdictTable = dynamic(
   () => import("@/components/VerdictTable").then((mod) => mod.default),
@@ -52,7 +53,7 @@ export default function VendorComparisonPage({
 
   return (
     <main className="manual-page container max-w-6xl py-10">
-      <div className="glass-panel hero-depth system-grid rounded-2xl p-6 md:p-8">
+      <RevealBlock className="glass-panel gradient-ring hero-depth system-grid rounded-2xl p-6 md:p-8">
         <div className="text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
             Home
@@ -81,24 +82,24 @@ export default function VendorComparisonPage({
             </Link>
           </div>
         </header>
-      </div>
+      </RevealBlock>
 
-      <section className="glass-panel mt-8 rounded-2xl p-5 md:p-6">
+      <RevealSection className="glass-panel gradient-ring mt-8 rounded-2xl p-5 md:p-6">
         <VerdictTable {...page.verdict} />
-      </section>
+      </RevealSection>
 
-      <section className="glass-panel mt-8 rounded-2xl p-6 md:p-8">
+      <RevealSection className="glass-panel gradient-ring mt-8 rounded-2xl p-6 md:p-8">
         <div className="prose dark:prose-invert max-w-none">
           <ComparisonProse vendorSlug={params.vendor} />
         </div>
-      </section>
+      </RevealSection>
 
-      <div className="mt-8">
+      <RevealBlock className="mt-8">
         <CTOFieldManualBlock
           title={`CTO Decision Manual for TeamStation AI versus ${page.vendorName}`}
           focus={`vendor comparison, operating fit, and proof based execution decisions`}
         />
-      </div>
+      </RevealBlock>
     </main>
   );
 }
