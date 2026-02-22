@@ -5,6 +5,16 @@ import type { Metadata } from 'next';
 import ValuePropositionBlock from "../../components/seo/ValuePropositionBlock";
 import CTOFieldManualBlock from "../../components/seo/CTOFieldManualBlock";
 import FurtherReading from "../../components/seo/FurtherReading";
+import { JsonLd } from "../../components/seo/JsonLd";
+import {
+  ExecutivePageFrame,
+  ExecutivePanel,
+  ExecutiveSection,
+  SectionHeading,
+  ChecklistSteps,
+  ProofStrip,
+  FAQList,
+} from "../../components/ui/executive-primitives";
 
 export const metadata: Metadata = {
   title: 'Nearshore Vendor Comparisons | TeamStation AI',
@@ -65,15 +75,73 @@ const models = [
     }
 ];
 
+const checklistSteps = [
+  {
+    title: "Name the failure mode",
+    body: "Start with the issue your leadership team is trying to fix such as review latency, vendor sprawl, compliance gaps, or budget uncertainty.",
+  },
+  {
+    title: "Compare the operating model",
+    body: "Evaluate execution control, operational coverage, and economic reality before evaluating recruiting claims or headline rates.",
+  },
+  {
+    title: "Validate with proof",
+    body: "Use case studies, TCO modeling, and research pages to confirm the model can support your governance and delivery requirements.",
+  },
+];
+
+const proofMetrics = [
+  { label: "Cost range", value: "40 to 60 percent lower TCO", note: "Versus legacy vendor structures in many scenarios" },
+  { label: "Review speed", value: "Faster daylight decision loops", note: "Lower queue time and reduced handoff delay" },
+  { label: "Forecast confidence", value: "Lower variance planning", note: "When governance and delivery telemetry are connected" },
+  { label: "Buyer outcome", value: "Stronger executive control", note: "Clearer accountability across hiring and execution" },
+];
+
+const comparisonFaq = [
+  {
+    q: "How should a CTO compare vendors when every firm claims senior talent?",
+    a: "Compare the operating model first. Ask who owns technical quality, how decisions are escalated, what security controls are included, and how delivery performance is measured after onboarding.",
+  },
+  {
+    q: "Why is hourly rate a weak comparison metric for executive decisions?",
+    a: "Rate alone ignores review latency, management overhead, rework, vacancies, and compliance burden. These costs often decide the real outcome more than the rate card.",
+  },
+  {
+    q: "What is the best next step if we are unsure which model fits our team?",
+    a: "Start with a short strategy discussion to identify the actual delivery constraint. Once the constraint is clear, the vendor comparison becomes much easier and more objective.",
+  },
+];
+
+const comparisonSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://cto.teamstation.dev" },
+      { "@type": "ListItem", position: 2, name: "Comparisons", item: "https://cto.teamstation.dev/comparisons" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: comparisonFaq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  },
+];
+
 export default function ComparisonsPage() {
   return (
     <main className="py-12">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <JsonLd data={comparisonSchemas} />
+      <ExecutivePageFrame>
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <span>Comparisons</span>
         </div>
 
-        <header className="surface-card p-8 md:p-10">
+        <ExecutivePanel as="header" className="p-8 md:p-10">
           <div className="grid gap-8 lg:grid-cols-[1.25fr_.75fr] lg:items-start">
             <div>
               <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
@@ -108,37 +176,32 @@ export default function ComparisonsPage() {
               </div>
             </aside>
           </div>
-        </header>
+        </ExecutivePanel>
 
-        <section className="surface-card mt-10 p-8 md:p-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">How to use this comparison page</h2>
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <div className="space-y-4 text-muted-foreground leading-7">
-              <p>
-                Start with the symptom your team is experiencing. If velocity is unstable, compare models that affect review cadence and ownership boundaries.
-                If compliance and device control are the issue, compare operational coverage instead of recruiting promises.
-                If cost approval is blocked, use the TCO and economics pages before deciding on vendor type.
-              </p>
-              <p>
-                This keeps the discussion focused on delivery outcomes instead of generic vendor narratives.
-              </p>
-            </div>
-            <div className="rounded-xl border bg-background p-5">
-              <p className="text-sm font-semibold text-primary">Supporting decision paths</p>
-              <ul className="mt-3 space-y-2 text-sm leading-6">
-                <li><Link href="/playbook/latam-economics" className="text-primary hover:underline">LATAM economics</Link></li>
-                <li><Link href="/playbook/tco-model" className="text-primary hover:underline">TCO model</Link></li>
-                <li><Link href="/research/framework-for-measuring-capacity" className="text-primary hover:underline">Capacity framework</Link></li>
-                <li><a href="https://engineering.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Engineering doctrine</a></li>
-              </ul>
-            </div>
-          </div>
-        </section>
+        <ExecutiveSection>
+          <ExecutivePanel>
+            <SectionHeading
+              title="How to use this comparison page"
+              description="Use a simple three step workflow so the conversation stays on delivery risk and executive accountability instead of vendor marketing."
+            />
+            <ChecklistSteps items={checklistSteps} className="mt-6" />
+          </ExecutivePanel>
+        </ExecutiveSection>
 
-        <section className="my-16">
+        <ExecutiveSection>
+          <ExecutivePanel>
+            <SectionHeading
+              title="Proof and outcomes executives care about"
+              description="Use these outcome categories as your evaluation baseline when comparing any vendor model."
+            />
+            <ProofStrip items={proofMetrics} className="mt-6" />
+          </ExecutivePanel>
+        </ExecutiveSection>
+
+        <ExecutiveSection>
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
               {models.map(model => (
-                  <article key={model.name} className="surface-card flex h-full flex-col p-6 md:p-7 shadow-lg">
+                  <article key={model.name} className="surface-card card-hover-lift flex h-full flex-col p-6 md:p-7 shadow-lg">
                       <div className="flex items-start justify-between gap-4">
                         <div className="min-w-0">
                           <p className="text-xs font-semibold uppercase tracking-wide text-primary">Pain Pattern</p>
@@ -187,10 +250,11 @@ export default function ComparisonsPage() {
                   </article>
               ))}
           </div>
-        </section>
+        </ExecutiveSection>
 
-        <section className="surface-card my-16 p-8 md:p-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">What CTO teams should validate before choosing any vendor</h2>
+        <ExecutiveSection>
+          <ExecutivePanel>
+          <SectionHeading title="What CTO teams should validate before choosing any vendor" />
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             <div className="rounded-lg border bg-background p-5">
               <p className="text-sm font-semibold text-primary">Execution Control</p>
@@ -205,9 +269,10 @@ export default function ComparisonsPage() {
               <p className="mt-2 text-sm text-muted-foreground">Total cost of delivery including delays, management overhead, rework, and vacancy time.</p>
             </div>
           </div>
-        </section>
+          </ExecutivePanel>
+        </ExecutiveSection>
 
-        <section className="my-16">
+        <ExecutiveSection>
           <ValuePropositionBlock
               pain="CTOs face hidden risks in cost, compliance, and velocity."
               stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
@@ -216,14 +281,38 @@ export default function ComparisonsPage() {
               ctaHref="/comparisons"
               ctaText="See All Vendor Comparisons"
           />
-        </section>
+        </ExecutiveSection>
+
+        <ExecutiveSection>
+          <ExecutivePanel>
+            <SectionHeading
+              title="Related decision paths"
+              description="Use these pages when the conversation needs budget validation, execution planning, or methodology proof."
+            />
+            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {[
+                { href: "/playbook/hub", title: "CTO Playbook Hub", body: "Decision frameworks for topology, economics, and risk control." },
+                { href: "/playbook/latam-economics", title: "LATAM Economics", body: "Budget and operating cost logic for executive approval." },
+                { href: "/playbook/tco-model", title: "TCO Model", body: "Financial model for hidden cost, delay, and delivery impact." },
+                { href: "/research/hub", title: "Research Hub", body: "Methodology and evidence paths for leadership validation." },
+              ].map((item) => (
+                <Link key={item.href} href={item.href} className="rounded-lg border bg-background p-4 transition-ui hover:border-primary/40 hover:text-inherit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                  <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                  <p className="mt-2 text-sm text-muted-foreground leading-6">{item.body}</p>
+                  <span className="mt-3 inline-flex items-center text-sm font-semibold text-primary">Open path <ArrowRight className="ml-2 h-4 w-4" /></span>
+                </Link>
+              ))}
+            </div>
+          </ExecutivePanel>
+        </ExecutiveSection>
 
         <CTOFieldManualBlock
           title="CTO Field Manual for Vendor Comparison Decisions"
           focus="vendor model diagnosis, execution control, and cost of delivery validation"
         />
 
-        <section className="surface-card my-12 p-8 md:p-10">
+        <ExecutiveSection>
+        <ExecutivePanel>
           <div className="grid gap-6 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground">Diagnose delivery risk before you choose a vendor</h2>
@@ -251,10 +340,21 @@ export default function ComparisonsPage() {
               </a>
             </div>
           </div>
-        </section>
+        </ExecutivePanel>
+        </ExecutiveSection>
+
+        <ExecutiveSection>
+          <ExecutivePanel>
+            <SectionHeading
+              title="FAQ for executive objections"
+              description="Short answers for the most common concerns during vendor evaluation and internal alignment."
+            />
+            <FAQList items={comparisonFaq} className="mt-6" />
+          </ExecutivePanel>
+        </ExecutiveSection>
 
         <FurtherReading comparison="bairesdev" />
-      </div>
+      </ExecutivePageFrame>
     </main>
   );
 }
