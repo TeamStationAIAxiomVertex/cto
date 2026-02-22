@@ -210,7 +210,7 @@ export default async function NearshoreVsOffshorePage() {
                   {option.pain && (
                     <div>
                       <dt className="text-destructive text-xs uppercase tracking-wider font-bold">
-                        Pain
+                        Risk
                       </dt>
                       <dd className="text-sm text-muted-foreground mt-1">
                         {option.pain}

@@ -115,12 +115,12 @@ export default function BairesDevComparisonPage() {
                   <div className="mt-4 border-t border-border pt-4">
                     <h4 className="font-semibold text-foreground flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-primary" />
-                      TeamStation AI Solution
+                      TeamStation AI approach
                     </h4>
                      <p className="text-sm text-foreground m-0" dangerouslySetInnerHTML={{ __html: value.teamstation.replace("<span class='border-b border-dashed'>EOR</span>", '<span class="border-b border-dashed">EOR</span>') }}></p>
                   </div>
                 </div>
-                <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Proof: {value.proof}</p>
+                <p className="mt-6 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">Evidence: {value.proof}</p>
               </div>
             ))}
           </div>
