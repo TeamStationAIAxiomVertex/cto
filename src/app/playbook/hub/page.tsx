@@ -101,7 +101,7 @@ export default function PlaybookHubPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Playbook Hub</span>
       </div>
 
-      <header className="glass-panel rounded-2xl p-8 md:p-10">
+      <header className="glass-panel gradient-ring rounded-2xl p-8 md:p-10">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
           Distributed Engineering OS Playbook Hub
         </h1>
@@ -117,7 +117,7 @@ export default function PlaybookHubPage() {
         </div>
       </header>
 
-      <section className="glass-panel rounded-2xl mt-10 p-8 md:p-10">
+      <section className="glass-panel gradient-ring rounded-2xl mt-10 p-8 md:p-10">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">How to use this hub</h2>
         <div className="mt-6 space-y-4 text-muted-foreground leading-7">
           <p>
@@ -139,7 +139,7 @@ export default function PlaybookHubPage() {
           {playbookEntries.map((entry, index) => (
             <article
               key={entry.href}
-              className={`group relative flex flex-col rounded-lg border bg-card p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 ${
+              className={`group relative flex flex-col  glass-card-interactive rounded-2xl border border-border/70 bg-background/70 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 ${
                 playbookEntries.length % 2 !== 0 && index === playbookEntries.length - 1 ? 'md:col-span-2' : ''
               }`}
             >
@@ -165,7 +165,7 @@ export default function PlaybookHubPage() {
         </div>
       </section>
 
-      <section className="glass-panel my-12 rounded-2xl p-6 md:p-8 md:p-10">
+      <section className="glass-panel gradient-ring my-12 rounded-2xl p-6 md:p-8 md:p-10">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">Core doctrine for CTO operations</h2>
         <p className="mt-4 text-muted-foreground leading-7">
           These cards summarize recurring leadership constraints and the operating response that prevents delivery drift.
@@ -173,7 +173,7 @@ export default function PlaybookHubPage() {
         </p>
         <div className="mt-10 grid gap-8 md:grid-cols-3">
           {doctrineCards.map((card) => (
-            <article key={card.title} className="rounded-lg border bg-background p-6 shadow-lg">
+            <article key={card.title} className=" glass-card-interactive rounded-2xl border border-border/70 bg-background/70 p-6">
               <div className="flex items-start gap-3">
                 {card.icon}
                 <h3 className="text-lg font-bold text-foreground">{card.title}</h3>
@@ -199,7 +199,7 @@ export default function PlaybookHubPage() {
         focus="delivery risk diagnosis, hiring signal quality, and governance alignment"
       />
 
-      <section className="glass-panel rounded-2xl my-12 p-8 md:p-10 text-center">
+      <section className="glass-panel gradient-ring rounded-2xl my-12 p-8 md:p-10 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">Diagnose delivery risk before you hire</h2>
         <p className="mx-auto mt-3 max-w-2xl text-muted-foreground leading-7">
           Use a short discovery session to identify constraints, choose the right team design, and align operating goals

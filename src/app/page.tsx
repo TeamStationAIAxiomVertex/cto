@@ -258,7 +258,7 @@ export default async function HomePage() {
       <div className="manual-page">
         <div className="container mx-auto px-4">
           <section className="py-14 md:py-18 section-defer">
-            <div className="mx-auto max-w-6xl rounded-2xl glass-panel hero-depth system-grid p-7 md:p-10">
+            <div className="mx-auto max-w-6xl rounded-2xl glass-panel gradient-ring hero-depth system-grid p-7 md:p-10">
               <div className="grid items-start gap-6 lg:grid-cols-[1.05fr_.95fr]">
                 <div>
                   <p className="text-sm font-semibold text-primary">Distributed Engineering OS Playbook</p>
@@ -345,14 +345,14 @@ export default async function HomePage() {
           </section>
 
           <section className="py-8 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel gradient-ring p-7 md:p-10">
               <SectionTitle
                 title="The Monolith Org Chart Is Failing"
                 tip="This section explains why legacy vendor models fail in enterprise engineering and why your operating model must shift to a governed system."
               />
               <div className="mt-6 grid gap-3 md:grid-cols-2">
                 {failurePoints.map((point) => (
-                  <article key={point.title} className="rounded-xl border bg-background/55 p-4">
+                  <article key={point.title} className="glass-card-interactive rounded-xl border border-border/70 bg-background/55 p-4">
                     <point.icon className="h-5 w-5 text-primary" />
                     <h3 className="mt-2 text-sm font-semibold text-foreground">{point.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-muted-foreground">{point.body}</p>
@@ -363,14 +363,14 @@ export default async function HomePage() {
           </section>
 
           <section className="py-8 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel gradient-ring p-7 md:p-10">
               <SectionTitle
                 title="CTO Pain Map for 2026 and Beyond"
                 tip="This map connects recurring CTO pains to the operating response and proof path so buyers can validate fit quickly."
               />
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 {ctoPainProof.map((item) => (
-                  <article key={item.pain} className="rounded-xl border bg-background/55 p-5">
+                  <article key={item.pain} className="glass-card-interactive rounded-xl border border-border/70 bg-background/55 p-5">
                     <div className="grid gap-4">
                       <div className="border-l-2 border-primary/60 pl-4">
                         <p className="text-xs font-semibold uppercase tracking-wide text-primary">Operational reality</p>
@@ -394,14 +394,14 @@ export default async function HomePage() {
           </section>
 
           <section className="py-8 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel gradient-ring p-7 md:p-10">
               <SectionTitle
                 title="Team Topology for Agentic Systems"
                 tip="This is the operating doctrine. It replaces disconnected staffing vendors with one topology model used in large enterprise engineering organizations."
               />
               <div className="mt-8 grid gap-4 md:grid-cols-2">
                 {topologyNodes.map((node) => (
-                  <article key={node.title} className="rounded-xl border bg-background/55 p-5">
+                  <article key={node.title} className="glass-card-interactive rounded-xl border border-border/70 bg-background/55 p-5">
                     <node.icon className="h-7 w-7 text-primary" />
                     <h3 className="mt-3 text-xl font-semibold text-foreground">{node.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{node.body}</p>
@@ -422,7 +422,7 @@ export default async function HomePage() {
           </section>
 
           <section className="py-8 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel gradient-ring p-7 md:p-10">
               <SectionTitle
                 title="Human and AI Workflow Orchestration"
                 tip="This section shows how to run human engineers and AI agents in one controlled loop so delivery is measurable, auditable, and enterprise safe."
@@ -441,7 +441,7 @@ export default async function HomePage() {
               </div>
               <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
                 {workflowDetails.map((step) => (
-                  <article key={`detail-${step.title}`} className="rounded-xl border bg-background/55 p-4">
+                  <article key={`detail-${step.title}`} className="glass-card-interactive rounded-xl border border-border/70 bg-background/55 p-4">
                     <step.icon className="h-5 w-5 text-primary" />
                     <h3 className="mt-2 text-sm font-semibold text-foreground">{step.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-muted-foreground">{step.body}</p>
@@ -452,14 +452,14 @@ export default async function HomePage() {
           </section>
 
           <section className="py-8 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel gradient-ring p-7 md:p-10">
               <SectionTitle
                 title="The Physics of Distributed Delivery"
                 tip="This section maps delivery behavior to systems science so leadership can replace guesswork with repeatable execution controls."
               />
               <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                 {deliveryPhysics.map((law) => (
-                  <article key={law.title} className="rounded-xl border bg-background/55 p-5">
+                  <article key={law.title} className="glass-card-interactive rounded-xl border border-border/70 bg-background/55 p-5">
                     <h3 className="text-lg font-semibold text-foreground">{law.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{law.body}</p>
                   </article>
@@ -469,14 +469,14 @@ export default async function HomePage() {
           </section>
 
           <section className="py-8 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel gradient-ring p-7 md:p-10">
               <SectionTitle
                 title="Velocity Comes From Daylight Collaboration"
                 tip="This section explains why the daylight operating model consistently outperforms legacy offshore vendor loops for enterprise teams."
               />
               <div className="mt-6 grid gap-3 md:grid-cols-2">
                 {daylightModel.map((item) => (
-                  <div key={item} className="rounded-lg border bg-background/55 p-4 text-sm text-muted-foreground">
+                  <div key={item} className="glass-card-interactive rounded-lg border border-border/70 bg-background/55 p-4 text-sm text-muted-foreground">
                     <Clock className="inline h-4 w-4 text-primary mr-2" />
                     {item}
                   </div>
@@ -493,7 +493,7 @@ export default async function HomePage() {
           </section>
 
           <section className="py-8 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel gradient-ring p-7 md:p-10">
               <SectionTitle
                 title="Cognitive Evidence Replaces Resume Guessing"
                 tip="This section explains how the method de risks hiring in enterprise organizations by replacing vendor resume matching with evidence based evaluation."
@@ -503,7 +503,7 @@ export default async function HomePage() {
                 mental shape evaluation, and mismatch risk reduction as one integrity process.
               </p>
               <div className="mt-6 grid gap-4 md:grid-cols-2">
-                <div className="rounded-xl border bg-background/55 p-5">
+                <div className="glass-card-interactive rounded-xl border border-border/70 bg-background/55 p-5">
                   <p className="text-sm font-semibold text-foreground">Signal extraction pipeline</p>
                   <div className="mt-4 flex flex-wrap items-center gap-2">
                     {["Problem prompt", "Reasoning signal", "Bias normalization", "Role fit map"].map((step, idx) => (
@@ -514,7 +514,7 @@ export default async function HomePage() {
                     ))}
                   </div>
                 </div>
-                <div className="rounded-xl border bg-background/55 p-5">
+                <div className="glass-card-interactive rounded-xl border border-border/70 bg-background/55 p-5">
                   <p className="text-sm font-semibold text-foreground">Evaluation trust cues</p>
                   <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                     <li className="rounded-lg border bg-background/60 px-3 py-2">Bias normalization across ESL variants</li>
@@ -527,14 +527,14 @@ export default async function HomePage() {
           </section>
 
           <section className="py-8 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel gradient-ring p-7 md:p-10">
               <SectionTitle
                 title="You Cannot Govern What You Cannot Measure"
                 tip="This section shows the telemetry layer that replaces vendor opacity with executive control and operating visibility."
               />
               <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {telemetryMetrics.map((metric) => (
-                  <div key={metric.label} className="rounded-xl border bg-background/55 p-5">
+                  <div key={metric.label} className="glass-card-interactive rounded-xl border border-border/70 bg-background/55 p-5">
                     <div className="flex items-center justify-between">
                       <p className="text-xs font-semibold uppercase tracking-wide text-primary">{metric.label}</p>
                       <Gauge className="h-5 w-5 text-primary" />
@@ -548,7 +548,7 @@ export default async function HomePage() {
           </section>
 
           <section className="py-8 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel gradient-ring p-7 md:p-10">
               <SectionTitle
                 title="Field Evidence"
                 tip="These records show enterprise contexts, constraints, interventions, and outcomes to prove that this method replaces legacy vendor outcomes with system performance."
@@ -562,7 +562,7 @@ export default async function HomePage() {
                     <Link
                       key={study.slug}
                       href={`/case-studies/${study.slug}`}
-                      className="group mx-auto w-full max-w-sm flex flex-col rounded-2xl border bg-card/85 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20"
+                      className="group glass-card-interactive gradient-ring mx-auto w-full max-w-sm flex flex-col rounded-2xl border border-border/70 bg-card/85 p-6"
                     >
                       <div className="mb-3 flex justify-end">
                         <CardGuidanceTooltip
@@ -608,7 +608,7 @@ export default async function HomePage() {
           </section>
 
           <section className="py-8 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel gradient-ring p-7 md:p-10">
               <SectionTitle
                 title="The Distributed Engineering OS"
                 tip="This stack summarizes the integrated method already used in enterprise organizations to replace fragmented vendor chains with one governed system."
@@ -627,7 +627,7 @@ export default async function HomePage() {
           </section>
 
           <section className="py-6 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-5 md:p-6">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel gradient-ring p-5 md:p-6">
               <div className="grid gap-3 md:grid-cols-3">
                 {[
                   "Enterprise environments and regulated operations",
@@ -644,7 +644,7 @@ export default async function HomePage() {
           </section>
 
           <section id="contact" className="py-14 md:py-18 section-defer">
-            <div className="mx-auto max-w-4xl rounded-2xl glass-panel p-8 text-center">
+            <div className="mx-auto max-w-4xl rounded-2xl glass-panel gradient-ring p-8 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 Stop Managing Vendors. Start Operating an Engineering System.
               </h2>

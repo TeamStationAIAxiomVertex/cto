@@ -21,7 +21,7 @@ export function ExecutivePanel({
   className,
   ...props
 }: DivProps & { as?: keyof React.JSX.IntrinsicElements }) {
-  return <Comp className={cn("surface-card p-8 md:p-10", className)} {...props} />;
+  return <Comp className={cn("surface-card glass-panel gradient-ring p-8 md:p-10", className)} {...props} />;
 }
 
 export function SectionHeading({
@@ -63,7 +63,7 @@ export function ChecklistSteps({
   return (
     <ol className={cn("grid gap-4 md:grid-cols-3", className)}>
       {items.map((item, idx) => (
-        <li key={item.title} className="rounded-lg border bg-background p-5">
+        <li key={item.title} className="rounded-xl border border-border/70 bg-background/70 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">
             Step {idx + 1}
           </p>
@@ -85,7 +85,7 @@ export function FAQList({
   return (
     <div className={cn("space-y-4", className)}>
       {items.map((item) => (
-        <article key={item.q} className="rounded-lg border bg-background p-5">
+        <article key={item.q} className="rounded-xl border border-border/70 bg-background/70 p-5">
           <h3 className="text-base font-semibold text-foreground">{item.q}</h3>
           <p className="mt-2 text-sm text-muted-foreground leading-6">{item.a}</p>
         </article>
@@ -104,7 +104,7 @@ export function ProofStrip({
   return (
     <div className={cn("grid gap-4 sm:grid-cols-2 lg:grid-cols-4", className)}>
       {items.map((item) => (
-        <div key={item.label} className="rounded-lg border bg-background p-4">
+        <div key={item.label} className="rounded-xl border border-border/70 bg-background/70 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">{item.label}</p>
           <p className="mt-2 text-base font-semibold text-foreground">{item.value}</p>
           {item.note ? <p className="mt-1 text-xs text-muted-foreground">{item.note}</p> : null}

@@ -185,7 +185,7 @@ export default function ResearchHubPage() {
           <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research Hub</span>
         </div>
 
-        <header className="glass-panel hero-depth system-grid my-8 rounded-2xl border border-border/70 p-6 md:p-10">
+        <header className="glass-panel gradient-ring hero-depth system-grid my-8 rounded-2xl border border-border/70 p-6 md:p-10">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">
             Research Hub for Distributed Engineering Leadership
           </h1>
@@ -219,7 +219,7 @@ export default function ResearchHubPage() {
             {researchAssets.map((asset) => {
               const Icon = asset.icon;
               return (
-                <article key={asset.title} className="glass-panel rounded-2xl p-6">
+                <article key={asset.title} className="glass-panel gradient-ring rounded-2xl p-6">
                   <div className="flex items-start gap-3">
                     <div className="rounded-full border bg-primary/10 p-2">
                       <Icon className="h-5 w-5 text-primary" />
@@ -242,7 +242,7 @@ export default function ResearchHubPage() {
           </div>
         </section>
 
-        <section className="glass-panel my-16 rounded-2xl p-6 md:p-8">
+        <section className="glass-panel gradient-ring my-16 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-foreground">Reading Paths by Decision Type</h2>
           <p className="mt-3 text-muted-foreground leading-7">
             Start from the track that matches your current leadership problem. Each track gives a short path from diagnosis to implementation.
@@ -266,7 +266,7 @@ export default function ResearchHubPage() {
           </div>
         </section>
 
-        <section className="glass-panel my-16 rounded-2xl p-6 md:p-8">
+        <section className="glass-panel gradient-ring my-16 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-foreground">FAQ</h2>
           <div className="mt-6 space-y-4">
             <article className="rounded-xl border border-border/70 bg-background/70 p-4">
@@ -284,7 +284,7 @@ export default function ResearchHubPage() {
           </div>
         </section>
 
-        <section className="glass-panel my-16 rounded-2xl p-8 text-center">
+        <section className="glass-panel gradient-ring my-16 rounded-2xl p-8 text-center">
           <h2 className="text-3xl font-bold text-foreground">Next Step</h2>
           <p className="mt-3 max-w-3xl mx-auto text-muted-foreground leading-7">
             If you want this turned into a live operating program, start with Team Topologies and the CTO Playbook. The research gives the method. The playbook gives execution.
