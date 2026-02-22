@@ -31,6 +31,33 @@ const failurePoints = [
   "Software delivery is now a systems problem",
 ];
 
+const ctoPainProof = [
+  {
+    pain: "Roadmaps miss because review and decision latency compounds across teams.",
+    solution: "Run topology based ownership with same day decision loops and measurable handoff controls.",
+    proofHref: "/research/framework-for-measuring-capacity",
+    proofLabel: "Capacity framework for delivery physics",
+  },
+  {
+    pain: "AI programs generate demos but fail to create governed production workflows.",
+    solution: "Use one operating doctrine for human and agentic execution with telemetry checkpoints.",
+    proofHref: "/engineering-doctrine",
+    proofLabel: "Engineering doctrine for 2026 operating systems",
+  },
+  {
+    pain: "Hiring activity rises but output quality and predictability do not improve.",
+    solution: "Apply evidence based evaluation and 90 day outcome mapping before scale.",
+    proofHref: "/technical-interview-evaluation",
+    proofLabel: "Technical interview evaluation method",
+  },
+  {
+    pain: "Cost optimization is treated as rate negotiation instead of system performance design.",
+    solution: "Model total delivery cost using delay, rework, and coordination overhead.",
+    proofHref: "/playbook/tco-model",
+    proofLabel: "Total cost model for leadership decisions",
+  },
+];
+
 const topologyNodes = [
   {
     title: "Cognitive Nodes",
@@ -212,6 +239,29 @@ export default async function HomePage() {
                   <div key={point} className="rounded-lg border bg-background/55 p-4 text-sm text-muted-foreground">
                     {point}
                   </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="py-8 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+              <SectionTitle
+                title="CTO Pain Map for 2026 and Beyond"
+                tip="This map connects recurring CTO pains to the operating response and proof path so buyers can validate fit quickly."
+              />
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {ctoPainProof.map((item) => (
+                  <article key={item.pain} className="rounded-xl border bg-background/55 p-5">
+                    <h3 className="text-base font-semibold text-foreground">Pain</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{item.pain}</p>
+                    <h3 className="mt-4 text-base font-semibold text-foreground">Solution</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{item.solution}</p>
+                    <h3 className="mt-4 text-base font-semibold text-foreground">Proof</h3>
+                    <Link href={item.proofHref} className="mt-2 inline-block text-sm text-primary hover:underline">
+                      {item.proofLabel}
+                    </Link>
+                  </article>
                 ))}
               </div>
             </div>

@@ -6,6 +6,99 @@ type CTOFieldManualBlockProps = {
 };
 
 export default function CTOFieldManualBlock({ title, focus }: CTOFieldManualBlockProps) {
+  const ctoPainMap = [
+    {
+      pain: "Release predictability is unstable across distributed teams.",
+      solution:
+        "Use role based ownership boundaries, same day review cadence, and explicit quality gates.",
+      proof: (
+        <>
+          Validate with the{" "}
+          <Link href="/research/framework-for-measuring-capacity" className="text-primary hover:underline">
+            capacity framework
+          </Link>{" "}
+          and compare outcomes in{" "}
+          <Link href="/case-studies" className="text-primary hover:underline">
+            case study evidence
+          </Link>
+          .
+        </>
+      ),
+    },
+    {
+      pain: "AI initiatives are shipping pilots but not durable production outcomes.",
+      solution:
+        "Run agentic workflow governance with decision checkpoints, telemetry controls, and escalation paths.",
+      proof: (
+        <>
+          Apply the{" "}
+          <Link href="/engineering-doctrine" className="text-primary hover:underline">
+            engineering doctrine
+          </Link>{" "}
+          with the{" "}
+          <Link href="/research/technical-talent-evaluation-system" className="text-primary hover:underline">
+            technical evaluation system
+          </Link>
+          .
+        </>
+      ),
+    },
+    {
+      pain: "Hiring velocity is high but quality variance creates rework and management drag.",
+      solution:
+        "Calibrate interview loops to scenario evidence and map role fit to first 90 day outcomes.",
+      proof: (
+        <>
+          Use the{" "}
+          <Link href="/technical-interview-evaluation" className="text-primary hover:underline">
+            technical interview evaluation model
+          </Link>{" "}
+          plus{" "}
+          <Link href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">
+            bias aware hiring playbook
+          </Link>
+          .
+        </>
+      ),
+    },
+    {
+      pain: "Cost discussions focus on hourly rate while total delivery cost keeps climbing.",
+      solution:
+        "Shift evaluation to coordination cost, delay cost, and quality related rework cost.",
+      proof: (
+        <>
+          Ground decisions in the{" "}
+          <Link href="/playbook/tco-model" className="text-primary hover:underline">
+            total cost model
+          </Link>{" "}
+          and the{" "}
+          <Link href="/playbook/latam-economics" className="text-primary hover:underline">
+            LATAM economics guide
+          </Link>
+          .
+        </>
+      ),
+    },
+    {
+      pain: "Security, compliance, and delivery are managed in separate workflows.",
+      solution:
+        "Integrate trust controls into onboarding, access management, and delivery telemetry from day one.",
+      proof: (
+        <>
+          Reference the{" "}
+          <Link href="/trust" className="text-primary hover:underline">
+            trust center
+          </Link>{" "}
+          and{" "}
+          <a href="https://research.teamstation.dev/protocols/security" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            security protocols
+          </a>
+          .
+        </>
+      ),
+    },
+  ];
+
   return (
     <section className="surface-card my-12 p-6 md:p-8">
       <h2 className="text-2xl font-bold">{title}</h2>
@@ -28,6 +121,25 @@ export default function CTOFieldManualBlock({ title, focus }: CTOFieldManualBloc
           framing keeps hiring strategy tied to business outcomes and prevents drift toward generic title based
           sourcing that looks fast at first but often creates hidden coordination debt later.
         </p>
+
+        <h3 className="text-lg font-semibold text-foreground">CTO Pain Map for 2026 and Beyond</h3>
+        <p>
+          The operating environment for CTO and CIO leaders is now defined by system level constraints, not isolated
+          staffing challenges. Use this map to align each recurring pain with a practical operating response and a
+          proof path you can validate inside your planning cycle.
+        </p>
+        <div className="card-grid-tight-2">
+          {ctoPainMap.map((item) => (
+            <article key={item.pain} className="rounded-lg border bg-background/60 p-5">
+              <h4 className="text-base font-semibold text-foreground">Pain</h4>
+              <p className="mt-2 text-sm text-muted-foreground">{item.pain}</p>
+              <h4 className="mt-4 text-base font-semibold text-foreground">Solution</h4>
+              <p className="mt-2 text-sm text-muted-foreground">{item.solution}</p>
+              <h4 className="mt-4 text-base font-semibold text-foreground">Proof</h4>
+              <p className="mt-2 text-sm text-muted-foreground">{item.proof}</p>
+            </article>
+          ))}
+        </div>
 
         <h3 className="text-lg font-semibold text-foreground">Decision Sequence for CTO and CIO Teams</h3>
         <p>
