@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { roleCategories } from "../../../lib/roles";
 import { WithTooltip } from "../../../components/ui/tooltip";
 import FurtherReading from "../../../components/seo/FurtherReading";
+import CardGuidanceTooltip from "../../../components/ui/card-guidance-tooltip";
 
 export const metadata: Metadata = {
   title: 'Hire Vetted Nearshore Engineers by Role | TeamStation AI',
@@ -33,13 +34,22 @@ export default function HireByRolePage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {roleCategories.map((category) => (
           <div key={category.slug} className="group relative flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
-             <div className="flex justify-between items-start">
-              <WithTooltip content={category.priorityTooltip}>
-                <span className="text-xs font-semibold text-destructive px-2 py-1 bg-destructive/10 rounded-full">{category.priority}</span>
-              </WithTooltip>
+             <div className="flex justify-between items-start gap-2">
+              <div className="flex items-center gap-2">
+                <WithTooltip content={category.priorityTooltip}>
+                  <span className="text-xs font-semibold text-destructive px-2 py-1 bg-destructive/10 rounded-full">{category.priority}</span>
+                </WithTooltip>
+              </div>
+              <CardGuidanceTooltip
+                issue={category.pain}
+                solution={category.description}
+                proof={category.proof.label}
+              />
             </div>
             <div className="flex items-center gap-3 mt-3">
-              <category.icon className="h-8 w-8 text-primary" />
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/30 bg-primary/10">
+                <category.icon className="h-6 w-6 text-primary" />
+              </span>
               <h2 className="text-xl font-bold text-foreground">{category.name}</h2>
             </div>
              <p className="text-sm font-semibold text-primary mt-4">{category.pain}</p>

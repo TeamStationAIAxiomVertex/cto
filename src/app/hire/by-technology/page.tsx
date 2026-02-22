@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { techCategories } from "@/lib/tech-categories";
 import FurtherReading from "../../../components/seo/FurtherReading";
 import allTech from "@/data/technologies";
+import CardGuidanceTooltip from "../../../components/ui/card-guidance-tooltip";
 
 export const metadata: Metadata = {
   title: "Hire Nearshore Developers by Technology | TS AI",
@@ -57,11 +58,19 @@ export default function HireByTechnologyPage() {
             key={category.name}
             className="group rounded-lg border bg-card p-6 flex flex-col"
           >
-            <p className="text-sm font-semibold text-primary">
-              {category.pain}
-            </p>
+            <div className="flex items-start justify-between gap-2">
+              <p className="text-sm font-semibold text-primary">
+                {category.pain}
+              </p>
+              <CardGuidanceTooltip
+                issue={category.pain}
+                solution={`We provide verified ${category.name.toLowerCase()} specialists with production level assessment.`}
+              />
+            </div>
             <div className="flex items-center gap-3 mt-3">
-              <category.icon className="h-6 w-6 text-primary" />
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/30 bg-primary/10">
+                <category.icon className="h-6 w-6 text-primary" />
+              </span>
               <h2 className="text-xl font-bold text-foreground">
                 {category.name}
               </h2>
