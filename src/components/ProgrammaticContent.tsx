@@ -348,14 +348,14 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
         </section>
 
         <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
-          <h2 className="text-3xl font-bold text-center">Interlinking Mesh</h2>
+          <h2 className="text-3xl font-bold text-center">Related Resources</h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
-            Use these anchor paths to navigate role strategy, technical hiring, and delivery economics.
+            Explore adjacent guides, research, and comparisons for this topic.
           </p>
 
           {relatedTech.length > 0 && (
             <div className="mt-8">
-              <h3 className="text-xl font-semibold">Related Technology Hiring Guides</h3>
+              <h3 className="text-xl font-semibold">Related Technology Guides</h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {relatedTech.map(({ slug: relatedSlug, entry }) => (
                   <Link
@@ -363,7 +363,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
                     href={`/hire/by-technology/${relatedSlug}`}
                     className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium hover:bg-primary/30 transition-colors"
                   >
-                    hire {entry.name} engineers
+                    {entry.name}
                   </Link>
                 ))}
               </div>
@@ -371,19 +371,20 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
           )}
 
           <div className="mt-8">
-            <h3 className="text-xl font-semibold">Strategy and Framework Paths</h3>
+            <h3 className="text-xl font-semibold">Playbook and Research</h3>
             <p className="mt-3 text-sm text-muted-foreground">
-              Connect this page to our{" "}
+              Start with the{" "}
               <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook hub</Link>,{" "}
-              <Link href="/playbook/latam-economics" className="text-primary hover:underline">LATAM economics model</Link>,{" "}
+              then review the{" "}
+              <Link href="/playbook/latam-economics" className="text-primary hover:underline">LATAM economics guide</Link>,{" "}
               <Link href="/research/hub" className="text-primary hover:underline">research hub</Link>, and{" "}
-              <Link href="/research/framework-for-measuring-capacity" className="text-primary hover:underline">capacity measurement framework</Link>.
+              <Link href="/research/framework-for-measuring-capacity" className="text-primary hover:underline">capacity framework</Link>.
             </p>
           </div>
 
           {comparisonLinks.length > 0 && (
             <div className="mt-8">
-              <h3 className="text-xl font-semibold">Vendor Comparison Links</h3>
+              <h3 className="text-xl font-semibold">Comparison Pages</h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {comparisonLinks.map((cmp) => (
                   <Link
@@ -391,23 +392,12 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
                     href={`/comparisons/${cmp}`}
                     className="rounded-full bg-muted px-3 py-1 text-xs font-medium hover:bg-primary hover:text-white transition-colors"
                   >
-                    comparison: {cmp}
+                    {cmp}
                   </Link>
                 ))}
               </div>
             </div>
           )}
-
-          <div className="mt-8">
-            <h3 className="text-xl font-semibold">TeamStation Subdomain Network</h3>
-            <p className="mt-3 text-sm text-muted-foreground">
-              For cross-site navigation use{" "}
-              <a href="https://hire.teamstation.dev/roles" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">hire.teamstation.dev roles index</a>,{" "}
-              <a href="https://hire.teamstation.dev/nearshore-software-development" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">nearshore software development overview</a>,{" "}
-              <a href="https://research.teamstation.dev/research" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">research.teamstation.dev research archive</a>, and{" "}
-              <a href="https://research.teamstation.dev/protocols/evaluation" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">evaluation protocols</a>.
-            </p>
-          </div>
         </section>
 
         <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">

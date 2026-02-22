@@ -1072,23 +1072,23 @@ export default function RoleCategoryPage({
         </div>
 
         <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
-          <h2 className="text-3xl font-bold text-center">Interlinking Mesh</h2>
+          <h2 className="text-3xl font-bold text-center">Related Resources</h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
-            Anchor paths for role strategy, technical qualification, and operating model alignment.
+            Browse linked role, technology, playbook, and research pages for this category.
           </p>
 
           <div className="mt-8">
-            <h3 className="text-xl font-semibold">Role + Technology Mesh</h3>
+            <h3 className="text-xl font-semibold">Role and Technology Guides</h3>
             <p className="mt-3 text-sm text-muted-foreground">
-              For this role category, connect the role path with{" "}
-              <Link href="/hire/by-technology" className="text-primary hover:underline">technology hiring guides</Link>,{" "}
-              <Link href="/hire/by-role" className="text-primary hover:underline">role index pages</Link>, and{" "}
-              <Link href="/hire/by-team-topologies" className="text-primary hover:underline">team topology mapping</Link>.
+              Explore the{" "}
+              <Link href="/hire/by-technology" className="text-primary hover:underline">technology guide index</Link>,{" "}
+              <Link href="/hire/by-role" className="text-primary hover:underline">role index</Link>, and{" "}
+              <Link href="/hire/by-team-topologies" className="text-primary hover:underline">team topology pages</Link>.
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
               {tech.slice(0, 16).map((t) => (
                 <Link
-                  key={`mesh-${t.slug}`}
+                  key={`resource-${t.slug}`}
                   href={`/hire/by-technology/${t.slug}`}
                   className="rounded-full bg-primary/20 text-primary px-3 py-1 text-xs font-medium hover:bg-primary/30 transition-colors"
                 >
@@ -1099,24 +1099,13 @@ export default function RoleCategoryPage({
           </div>
 
           <div className="mt-8">
-            <h3 className="text-xl font-semibold">Research + Playbook Mesh</h3>
+            <h3 className="text-xl font-semibold">Playbook and Research</h3>
             <p className="mt-3 text-sm text-muted-foreground">
-              Tie this role to the{" "}
+              Review the{" "}
               <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook hub</Link>,{" "}
-              <Link href="/playbook/latam-economics" className="text-primary hover:underline">nearshore economics framework</Link>,{" "}
+              <Link href="/playbook/latam-economics" className="text-primary hover:underline">LATAM economics guide</Link>,{" "}
               <Link href="/research/hub" className="text-primary hover:underline">research hub</Link>, and{" "}
-              <Link href="/research/framework-for-measuring-capacity" className="text-primary hover:underline">capacity measurement research</Link>.
-            </p>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-xl font-semibold">Subdomain Network Paths</h3>
-            <p className="mt-3 text-sm text-muted-foreground">
-              Use{" "}
-              <a href="https://hire.teamstation.dev/roles" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">hire.teamstation.dev roles index</a>,{" "}
-              <a href="https://hire.teamstation.dev/nearshore-software-development" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">nearshore delivery overview</a>,{" "}
-              <a href="https://research.teamstation.dev/research" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">research.teamstation.dev archive</a>, and{" "}
-              <a href="https://research.teamstation.dev/protocols/evaluation" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">evaluation protocol index</a> for cross-property mesh.
+              <Link href="/research/framework-for-measuring-capacity" className="text-primary hover:underline">capacity framework</Link>.
             </p>
           </div>
         </section>
@@ -1137,47 +1126,7 @@ export default function RoleCategoryPage({
               For buyer intent alignment, the page should answer three questions clearly: what
               problems this role solves, how candidates are evaluated, and where this role fits in
               the broader distributed engineering system. That is why this template is segmented into
-              problem blocks, skills, technology links, evaluation approach, and interlink mesh.
-            </p>
-            <p>
-              Use cross-property paths to continue high-intent journeys:{" "}
-              <a
-                href="https://hire.teamstation.dev/roles"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                roles index
-              </a>
-              ,{" "}
-              <a
-                href="https://hire.teamstation.dev/nearshore-software-development"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                nearshore delivery overview
-              </a>
-              ,{" "}
-              <a
-                href="https://research.teamstation.dev/research"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                research archive
-              </a>
-              , and{" "}
-              <a
-                href="https://research.teamstation.dev/protocols/evaluation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                evaluation protocols
-              </a>
-              . These anchors support ranking intent and keep decision-makers moving through the
-              correct sequence.
+              problem blocks, skills, technology links, and evaluation approach.
             </p>
           </div>
         </section>
