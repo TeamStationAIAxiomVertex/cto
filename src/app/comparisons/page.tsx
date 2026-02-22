@@ -254,21 +254,51 @@ export default function ComparisonsPage() {
 
         <ExecutiveSection>
           <ExecutivePanel>
-          <SectionHeading title="What CTO teams should validate before choosing any vendor" />
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            <div className="rounded-lg border bg-background p-5">
-              <p className="text-sm font-semibold text-primary">Execution Control</p>
-              <p className="mt-2 text-sm text-muted-foreground">Who owns architecture decisions, review standards, and escalation during delivery failure.</p>
+            <SectionHeading
+              title="What CTO teams should validate before choosing any vendor"
+              description="Use this matrix in evaluation calls and procurement reviews. It keeps the conversation on control, coverage, and financial reality."
+            />
+            <div className="mt-6 overflow-x-auto rounded-lg border">
+              <table className="w-full min-w-[760px] border-collapse text-sm">
+                <thead className="bg-background">
+                  <tr>
+                    <th className="border-b px-4 py-3 text-left font-semibold text-foreground">Decision Dimension</th>
+                    <th className="border-b px-4 py-3 text-left font-semibold text-foreground">What to Ask</th>
+                    <th className="border-b px-4 py-3 text-left font-semibold text-foreground">Risk if Weak</th>
+                    <th className="border-b px-4 py-3 text-left font-semibold text-foreground">What Good Looks Like</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      d: "Execution Control",
+                      q: "Who owns architecture decisions, review standards, and escalation during delivery failure?",
+                      r: "Roadmap drift, slow incident recovery, and no accountable technical owner.",
+                      g: "Clear ownership, documented escalation path, and measurable review cadence.",
+                    },
+                    {
+                      d: "Operational Coverage",
+                      q: "Are devices, access, security controls, and compliance handled in the operating model?",
+                      r: "Internal team becomes the hidden IT and risk manager.",
+                      g: "Integrated run state controls with explicit accountability and support paths.",
+                    },
+                    {
+                      d: "Economic Reality",
+                      q: "How are delay, rework, vacancy, and management overhead modeled in cost decisions?",
+                      r: "Rate card looks efficient while total delivery cost increases.",
+                      g: "TCO model ties delivery behavior to financial outcomes leadership can validate.",
+                    },
+                  ].map((row) => (
+                    <tr key={row.d} className="align-top">
+                      <td className="border-b px-4 py-3 font-semibold text-primary">{row.d}</td>
+                      <td className="border-b px-4 py-3 text-muted-foreground leading-6">{row.q}</td>
+                      <td className="border-b px-4 py-3 text-muted-foreground leading-6">{row.r}</td>
+                      <td className="border-b px-4 py-3 text-muted-foreground leading-6">{row.g}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-            <div className="rounded-lg border bg-background p-5">
-              <p className="text-sm font-semibold text-primary">Operational Coverage</p>
-              <p className="mt-2 text-sm text-muted-foreground">Whether devices, access, compliance, and risk controls are integrated or pushed back to your internal team.</p>
-            </div>
-            <div className="rounded-lg border bg-background p-5">
-              <p className="text-sm font-semibold text-primary">Economic Reality</p>
-              <p className="mt-2 text-sm text-muted-foreground">Total cost of delivery including delays, management overhead, rework, and vacancy time.</p>
-            </div>
-          </div>
           </ExecutivePanel>
         </ExecutiveSection>
 

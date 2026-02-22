@@ -16,8 +16,12 @@ export function ExecutiveSection({ className, ...props }: DivProps) {
   return <section className={cn("exec-section", className)} {...props} />;
 }
 
-export function ExecutivePanel({ className, ...props }: DivProps) {
-  return <div className={cn("surface-card p-8 md:p-10", className)} {...props} />;
+export function ExecutivePanel({
+  as: Comp = "div",
+  className,
+  ...props
+}: DivProps & { as?: keyof React.JSX.IntrinsicElements }) {
+  return <Comp className={cn("surface-card p-8 md:p-10", className)} {...props} />;
 }
 
 export function SectionHeading({
