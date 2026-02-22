@@ -4,6 +4,9 @@
 
 @layer base {
   :root {
+    --font-sans-stack: var(--font-inter), Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    --font-heading-stack: var(--font-poppins), Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    --font-mono-stack: var(--font-source-code-pro), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace;
     --background: 222 80% 5%;
     --foreground: 210 40% 90%;
     --muted: 215 20% 75%;
@@ -58,7 +61,7 @@
   }
   body {
     @apply bg-background text-foreground leading-relaxed antialiased;
-    font-family: var(--font-inter);
+    font-family: var(--font-sans-stack);
     background-image:
       radial-gradient(1200px 520px at 8% -10%, rgb(56 189 248 / 0.13), transparent 58%),
       radial-gradient(980px 540px at 88% 0%, rgb(59 130 246 / 0.12), transparent 60%),
@@ -67,7 +70,10 @@
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold text-foreground tracking-tight;
-    font-family: var(--font-poppins);
+    font-family: var(--font-heading-stack);
+  }
+  code, pre, .font-mono {
+    font-family: var(--font-mono-stack);
   }
   p, li {
     color: hsl(var(--muted-foreground));
@@ -98,6 +104,29 @@
 }
 
 @layer components {
+    .content-shell {
+      @apply mx-auto w-full max-w-6xl px-4 md:px-6;
+    }
+    .reading-shell {
+      @apply mx-auto w-full max-w-5xl px-4 md:px-6;
+    }
+    .surface-card {
+      @apply rounded-xl border bg-card shadow-lg;
+      box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 0.06),
+        0 14px 34px rgb(2 6 23 / 0.22);
+    }
+    .card-grid-tight-3 {
+      @apply grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3;
+      align-items: start;
+    }
+    .card-grid-tight-2 {
+      @apply grid grid-cols-1 gap-6 lg:grid-cols-2;
+      align-items: start;
+    }
+    .section-popover-card {
+      @apply mt-4 rounded-lg border bg-background/60 p-3 text-sm text-muted-foreground;
+    }
     .cta-button {
         @apply inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
     }

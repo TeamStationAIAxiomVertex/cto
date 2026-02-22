@@ -14,6 +14,7 @@ import {
 import { getAllCaseStudies } from "../lib/case-studies";
 import SafeImage from "../components/SafeImage";
 import { WithTooltip } from "../components/ui/tooltip";
+import CardGuidanceTooltip from "../components/ui/card-guidance-tooltip";
 
 const doctrineSignals = [
   "Cognitive Hiring Signals",
@@ -353,6 +354,12 @@ export default async function HomePage() {
                       href={`/case-studies/${study.slug}`}
                       className="group mx-auto w-full max-w-sm flex flex-col rounded-2xl border bg-card/85 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20"
                     >
+                      <div className="mb-3 flex justify-end">
+                        <CardGuidanceTooltip
+                          issue={`Enterprise constraint in ${study.industry}`}
+                          solution="Operational doctrine with guided implementation and measurable delivery controls."
+                        />
+                      </div>
                       <div className="relative h-36 w-full mb-4 rounded-lg overflow-hidden border">
                         {study.ogImage?.src?.url && (
                           <SafeImage

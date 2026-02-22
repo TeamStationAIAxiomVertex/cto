@@ -6,6 +6,8 @@ import SeoSafeImage from "../../../components/seo/SeoSafeImage";
 import { countries } from "../../../lib/countries";
 import placeholderImages from "../../lib/placeholder-images.json";
 import FurtherReading from "../../../components/seo/FurtherReading";
+import CardGuidanceTooltip from "../../../components/ui/card-guidance-tooltip";
+import { InfoDropdown } from "../../../components/client/info-dropdown";
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Country | Top LATAM Hubs',
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
 export default function HireByCountryPage() {
 
   return (
-    <main className="container py-12">
+    <main className="content-shell py-12">
        <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <span>By Country</span>
       </div>
@@ -25,6 +27,11 @@ export default function HireByCountryPage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           You're here because the 12-hour lag with your offshore team is killing your velocity. A simple question takes a full day to answer. Our nearshore model gives you access to elite talent in your time zone, enabling the real-time collaboration that agile development demands.
       </p>
+       <div className="mt-4 flex justify-center">
+        <InfoDropdown label="How this page helps">
+          <p>This country map helps you choose overlap speed, communication fit, and delivery stability before you commit to sourcing.</p>
+        </InfoDropdown>
+      </div>
        <nav className="mt-6 flex justify-center gap-4 text-sm">
             <Link href="/playbook/hub" className="text-primary hover:underline">CTO Playbook</Link>
             <Link href="/comparisons" className="text-primary hover:underline">Vendor Comparisons</Link>
@@ -32,7 +39,7 @@ export default function HireByCountryPage() {
         </nav>
       </header>
 
-       <div className="my-16 rounded-lg border bg-card p-8 md:p-12 shadow-lg">
+       <div className="surface-card my-16 p-8 md:p-12">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
                  <p className="text-sm font-semibold text-primary">Tired of insecure home offices and spotty Wi-Fi?</p>
@@ -63,10 +70,17 @@ export default function HireByCountryPage() {
 
       <div className="my-16">
         <h2 className="text-center text-3xl font-bold">Explore Our Premier LATAM Engineering Hubs</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div className="card-grid-tight-3 mt-8">
             {countries.map((country) => (
-                <div key={country.slug} className="group relative flex flex-col rounded-lg border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg">
-                    <p className="text-sm font-semibold text-primary">{country.pain}</p>
+                <div key={country.slug} className="surface-card group relative mx-auto w-full max-w-sm flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                    <div className="flex items-start justify-between gap-3">
+                      <p className="text-sm font-semibold text-primary">{country.pain}</p>
+                      <CardGuidanceTooltip
+                        issue={country.pain}
+                        solution={country.solution}
+                        proof={country.kpi}
+                      />
+                    </div>
                     <div className="mt-3 flex items-center gap-3">
                         <h3 className="text-xl font-bold text-foreground">{country.name}</h3>
                     </div>

@@ -13,6 +13,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "../../../../components/seo/JsonLd";
 import FurtherReading from "../../../../components/seo/FurtherReading";
 import CardGuidanceTooltip from "../../../../components/ui/card-guidance-tooltip";
+import { InfoDropdown } from "../../../../components/client/info-dropdown";
 
 const roleData: {
   [key: string]: {
@@ -825,7 +826,7 @@ export default function RoleCategoryPage({
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={roleFaqSchema} />
-      <main className="container max-w-5xl py-12">
+      <main className="reading-shell py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">
             Home
@@ -845,9 +846,14 @@ export default function RoleCategoryPage({
             Hire {name} Engineers
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">{intro}</p>
+          <div className="mt-4">
+            <InfoDropdown label="How to use this role guide">
+              <p>Use this guide to map role pain points to ownership, evaluation, and 90 day execution metrics before hiring.</p>
+            </InfoDropdown>
+          </div>
         </header>
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">
             Executive Buying Guide for {name}
           </h2>
@@ -928,11 +934,11 @@ export default function RoleCategoryPage({
                   We provide experts who solve these specific, high-stakes
                   business problems.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div className="card-grid-tight-3 mt-8">
                   {problems.map((problem) => (
                     <div
                       key={problem.pain}
-                      className="rounded-lg border bg-card p-6 shadow-lg"
+                      className="surface-card mx-auto w-full max-w-sm p-6"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <p className="font-semibold text-primary flex items-start gap-2">
@@ -1045,7 +1051,7 @@ export default function RoleCategoryPage({
           </div>
         )}
 
-        <div className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <div className="surface-card my-16 p-8">
           <h2 className="text-center text-3xl font-bold">
             Our Evaluation Approach for {name}
           </h2>
@@ -1078,7 +1084,7 @@ export default function RoleCategoryPage({
           </p>
         </div>
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">Related Resources</h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
             Browse linked role, technology, playbook, and research pages for this category.
@@ -1117,7 +1123,7 @@ export default function RoleCategoryPage({
           </div>
         </section>
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">
             Operating Model Blueprint for {name}
           </h2>
@@ -1138,7 +1144,7 @@ export default function RoleCategoryPage({
           </div>
         </section>
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">
             Executive Decision Framework for {name}
           </h2>
@@ -1193,7 +1199,7 @@ export default function RoleCategoryPage({
           </div>
         </section>
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">
             90-Day Scorecard and Governance Checklist
           </h2>
@@ -1246,7 +1252,81 @@ export default function RoleCategoryPage({
           </div>
         </section>
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
+          <h2 className="text-3xl font-bold text-center">
+            Field Manual for Hiring {name}
+          </h2>
+          <div className="mt-6 space-y-6 text-muted-foreground leading-7">
+            <h3 className="text-xl font-semibold text-foreground">Define pain in operational terms</h3>
+            <p>
+              Before you open a role, define the current loss in operational terms. Is this role meant
+              to reduce incident frequency, improve release confidence, compress cycle time, or increase
+              architectural clarity. When leaders define the pain with measurable language, interviewers
+              stop optimizing for resume comfort and start optimizing for execution impact. That is where
+              real hiring leverage starts.
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>Write the single highest cost failure mode this role must prevent.</li>
+              <li>Define the first operational metric this role should improve in 30 days.</li>
+              <li>Define the cross team handoff this role must stabilize in 90 days.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-foreground">Run a structured decision process</h3>
+            <p>
+              A strong process does not pressure candidates into generic perfection. It extracts evidence
+              in realistic conditions. Use role specific scenarios where candidates explain boundary choices,
+              risk handling, and escalation paths. For executive teams, this reduces false positives and
+              protects roadmap commitments. For engineering managers, it reduces onboarding surprises and
+              improves confidence in delegation.
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>Use scenario prompts with explicit pass criteria.</li>
+              <li>Capture evidence by dimension: technical depth, execution reliability, communication clarity.</li>
+              <li>Require decision notes to keep interviewer calibration consistent.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-foreground">Convert acceptance into execution control</h3>
+            <p>
+              The hiring event ends when the offer is accepted. The operating model begins on day one.
+              Assign clear ownership domains, define decision escalation rules, and publish a practical
+              weekly cadence for review and risk reporting. This keeps high potential hires from getting
+              trapped in ambiguous team behavior and protects leader focus across multiple squads.
+            </p>
+
+            <h3 className="text-xl font-semibold text-foreground">Contextual Interlinking Mesh for CTO paths</h3>
+            <p>
+              Use these anchor paths to connect this role to planning, governance, economics, and proof:
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>
+                <Link href="/playbook/hub" className="text-primary hover:underline">CTO playbook hub for operating decisions</Link>
+              </li>
+              <li>
+                <Link href="/playbook/nearshore-vs-offshore" className="text-primary hover:underline">nearshore versus offshore decision model</Link>
+              </li>
+              <li>
+                <Link href="/playbook/latam-economics" className="text-primary hover:underline">LATAM economics guide for total delivery cost</Link>
+              </li>
+              <li>
+                <Link href="/research/hub" className="text-primary hover:underline">research hub for evidence and methodology</Link>
+              </li>
+              <li>
+                <Link href="/research/framework-for-measuring-capacity" className="text-primary hover:underline">capacity measurement framework for leadership dashboards</Link>
+              </li>
+              <li>
+                <a href="https://engineering.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">engineering doctrine for team topology operations</a>
+              </li>
+              <li>
+                <a href="https://research.teamstation.dev/protocols/governance" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">governance protocols for delivery integrity</a>
+              </li>
+              <li>
+                <a href="https://hire.teamstation.dev/roles" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">role coverage index for cross functional planning</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">Frequently Asked Questions</h2>
           <div className="mt-8 space-y-4">
             {roleFaqItems.map((item, idx) => (

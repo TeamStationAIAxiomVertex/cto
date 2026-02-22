@@ -4,6 +4,7 @@ import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { allTech, TechEntry } from "@/lib/tech";
 import CardGuidanceTooltip from "@/components/ui/card-guidance-tooltip";
+import { InfoDropdown } from "@/components/client/info-dropdown";
 
 interface ProgrammaticContentProps {
   tech: TechEntry;
@@ -119,7 +120,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
-      <div className="container max-w-5xl py-12">
+      <div className="reading-shell py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">
             Home
@@ -139,9 +140,14 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
             Hire {tech.name} Engineers
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">{tech.intro}</p>
+          <div className="mt-4">
+            <InfoDropdown label="How to use this guide">
+              <p>Use this page to identify the issue, validate the solution pattern, and confirm proof checkpoints before you hire.</p>
+            </InfoDropdown>
+          </div>
         </header>
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">
             Executive Brief for CTO and CIO Teams
           </h2>
@@ -209,11 +215,11 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
             <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">
               Common problems we solve by providing true {tech.name} experts.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div className="card-grid-tight-3 mt-8">
               {tech.pains.map((item) => (
                 <div
                   key={item.pain}
-                  className="rounded-lg border bg-card p-6 flex flex-col"
+                  className="surface-card mx-auto w-full max-w-sm p-6 flex flex-col"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <p className="text-sm font-semibold text-primary">
@@ -257,7 +263,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
         )}
 
         {tech.evaluation?.length > 0 && (
-          <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <section className="surface-card my-16 p-8">
             <h2 className="text-3xl font-bold text-center">
               Evaluation Criteria for {tech.name} Roles
             </h2>
@@ -275,7 +281,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
         )}
 
         {tech.technical_analysis && (
-          <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+          <section className="surface-card my-16 p-8">
             <h2 className="text-3xl font-bold text-center">
               Technical Delivery Analysis: {tech.name}
             </h2>
@@ -285,7 +291,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
           </section>
         )}
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">
             Implementation Blueprint: First 12 Weeks
           </h2>
@@ -357,7 +363,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
           </div>
         </section>
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">Related Resources</h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
             Explore adjacent guides, research, and comparisons for this topic.
@@ -410,7 +416,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
           )}
         </section>
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">
             CTO and CIO Decision Framework for {tech.name}
           </h2>
@@ -454,7 +460,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
           </div>
         </section>
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">
             90-Day Governance and Execution Scorecard
           </h2>
@@ -498,7 +504,82 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
           </div>
         </section>
 
-        <section className="my-16 rounded-lg border bg-card p-8 shadow-lg">
+        <section className="surface-card my-16 p-8">
+          <h2 className="text-3xl font-bold text-center">
+            CTO Decision System for {tech.name}
+          </h2>
+          <div className="mt-6 space-y-6 text-muted-foreground leading-7">
+            <h3 className="text-xl font-semibold text-foreground">1. Identify the real constraint before hiring</h3>
+            <p>
+              Most teams start with a title. Strong teams start with a constraint. If releases are slipping,
+              the real issue is usually not staffing volume. The issue is unclear ownership, weak technical
+              boundaries, and long decision cycles. For {tech.name} work, define where decisions stall now:
+              architecture choices, code review quality, production stability, or dependency alignment.
+              This gives your hiring motion a measurable objective instead of a generic headcount request.
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>Document the exact workflow where delay starts.</li>
+              <li>Define one delivery metric and one quality metric to improve first.</li>
+              <li>Set a day 30 and day 90 target before interviews begin.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-foreground">2. Validate practical capability not keyword familiarity</h3>
+            <p>
+              Buyers often over index on tool checklists and under index on system behavior. In practice,
+              your outcome depends on how a candidate handles ambiguity, tradeoffs, and escalation paths.
+              For {tech.name}, this means validating technical depth under realistic production pressure.
+              Strong interview loops use scenario based prompts with clear evidence criteria and explicit
+              thresholds for acceptance.
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>Evaluate architecture reasoning with tradeoff explanations.</li>
+              <li>Evaluate execution quality with maintainability and testability controls.</li>
+              <li>Evaluate collaboration quality with cross team handoff scenarios.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-foreground">3. Convert hiring into an operating model</h3>
+            <p>
+              The hire itself is not the outcome. The outcome is a controlled system where throughput and
+              quality improve while management overhead declines. For this reason, onboarding should include
+              explicit ownership maps, decision rights, escalation channels, and delivery telemetry. When
+              those controls are missing, even strong candidates can become trapped in unclear execution loops.
+            </p>
+
+            <h3 className="text-xl font-semibold text-foreground">Contextual Interlinking Mesh for CTO teams</h3>
+            <p>
+              Use these anchor paths to move from evaluation to economics to execution planning without
+              losing decision context:
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>
+                <Link href="/playbook/hub" className="text-primary hover:underline">CTO playbook hub for operating decisions</Link>
+              </li>
+              <li>
+                <Link href="/playbook/latam-economics" className="text-primary hover:underline">LATAM economics model for budget and risk tradeoffs</Link>
+              </li>
+              <li>
+                <Link href="/research/hub" className="text-primary hover:underline">research hub for methodology and evidence standards</Link>
+              </li>
+              <li>
+                <Link href="/research/framework-for-measuring-capacity" className="text-primary hover:underline">capacity framework for throughput measurement</Link>
+              </li>
+              <li>
+                <a href="https://engineering.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">engineering doctrine library for systems execution</a>
+              </li>
+              <li>
+                <a href="https://research.teamstation.dev/protocols/evaluation" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">evaluation protocols for role calibration</a>
+              </li>
+              <li>
+                <a href="https://research.teamstation.dev/protocols/delivery" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">delivery protocols for operating cadence</a>
+              </li>
+              <li>
+                <a href="https://hire.teamstation.dev/roles" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">role index for cross functional hiring design</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="surface-card my-16 p-8">
           <h2 className="text-3xl font-bold text-center">Frequently Asked Questions</h2>
           <div className="mt-8 space-y-4">
             {faqItems.map((item, idx) => (

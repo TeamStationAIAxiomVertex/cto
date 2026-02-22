@@ -78,7 +78,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} font-sans`}>
         <AppProviders>
           <div className="flex min-h-screen flex-col">
             <Header />

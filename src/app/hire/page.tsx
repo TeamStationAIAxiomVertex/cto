@@ -3,6 +3,7 @@ import { Building, Code, User, ArrowRight, Shapes } from "lucide-react";
 import type { Metadata } from "next";
 import FurtherReading from "../../components/seo/FurtherReading";
 import CardGuidanceTooltip from "../../components/ui/card-guidance-tooltip";
+import { InfoDropdown } from "../../components/client/info-dropdown";
 
 export const metadata: Metadata = {
   title: "Hire Vetted Nearshore Engineers & LATAM IT Teams",
@@ -53,7 +54,7 @@ export default function HirePage() {
   ];
 
   return (
-    <main className="container py-12">
+    <main className="content-shell py-12">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">
           Home
@@ -71,6 +72,11 @@ export default function HirePage() {
           provides scientific evidence of their ability to solve your specific
           problems, so you can build with confidence.
         </p>
+        <div className="mt-4 flex justify-center">
+          <InfoDropdown label="How this page helps">
+            <p>This hub routes you by role, stack, country, and team topology so you can fix the exact delivery constraint first.</p>
+          </InfoDropdown>
+        </div>
         <nav className="mt-6 flex justify-center gap-4 text-sm">
           <Link href="/engineering-doctrine" className="text-primary hover:underline">
             Engineering Doctrine
@@ -87,11 +93,32 @@ export default function HirePage() {
         </nav>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+      <section className="surface-card my-10 p-6 md:p-8">
+        <h2 className="text-2xl font-bold">Hiring Decision Snapshot</h2>
+        <p className="mt-3 text-sm text-muted-foreground">
+          Start from the bottleneck. If delivery is slow use role and topology paths. If execution quality is unstable use stack and country paths with overlap and governance controls.
+        </p>
+        <div className="mt-5 card-grid-tight-3">
+          <div className="rounded-lg border bg-background/60 p-4">
+            <p className="text-sm font-semibold text-foreground">Issue</p>
+            <p className="mt-1 text-sm text-muted-foreground">Legacy vendor models hide risk until after onboarding.</p>
+          </div>
+          <div className="rounded-lg border bg-background/60 p-4">
+            <p className="text-sm font-semibold text-foreground">How we solve it</p>
+            <p className="mt-1 text-sm text-muted-foreground">Evidence driven vetting plus structured operating model setup.</p>
+          </div>
+          <div className="rounded-lg border bg-background/60 p-4">
+            <p className="text-sm font-semibold text-foreground">Proof signal</p>
+            <p className="mt-1 text-sm text-muted-foreground">Faster delivery ramp with less coordination drag.</p>
+          </div>
+        </div>
+      </section>
+
+      <div className="card-grid-tight-2 my-12">
         {hireOptions.map((option) => (
           <div
             key={option.href}
-            className="group relative flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg"
+            className="surface-card group relative mx-auto w-full max-w-md flex flex-col p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
           >
             <div className="flex items-start justify-between gap-3">
               <p className="text-sm font-semibold text-primary">{option.pain}</p>

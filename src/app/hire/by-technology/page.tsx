@@ -5,6 +5,7 @@ import { techCategories } from "@/lib/tech-categories";
 import FurtherReading from "../../../components/seo/FurtherReading";
 import allTech from "@/data/technologies";
 import CardGuidanceTooltip from "../../../components/ui/card-guidance-tooltip";
+import { InfoDropdown } from "../../../components/client/info-dropdown";
 
 export const metadata: Metadata = {
   title: "Hire Nearshore Developers by Technology | TS AI",
@@ -18,7 +19,7 @@ export default function HireByTechnologyPage() {
   const hydratedSlugs = Object.keys(allTech);
 
   return (
-    <main className="container py-12">
+    <main className="content-shell py-12">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">
           Home
@@ -39,6 +40,11 @@ export default function HireByTechnologyPage() {
           real-world problems. We provide experts with proven, deeply-rooted
           expertise in the specific technologies that power your business.
         </p>
+        <div className="mt-4 flex justify-center">
+          <InfoDropdown label="How this page helps">
+            <p>This page maps each stack area to delivery risk, then links to vetted technology pages with practical hiring guidance.</p>
+          </InfoDropdown>
+        </div>
         <nav className="mt-6 flex justify-center gap-4 text-sm">
           <Link href="/playbook/hub" className="text-primary hover:underline">
             CTO Playbook
@@ -52,11 +58,32 @@ export default function HireByTechnologyPage() {
         </nav>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
+      <section className="surface-card my-10 p-6 md:p-8">
+        <h2 className="text-2xl font-bold">Technology Selection Snapshot</h2>
+        <p className="mt-3 text-sm text-muted-foreground">
+          Pick technology paths by production risk. Backend and data stacks impact throughput. Cloud and security stacks impact resilience and compliance.
+        </p>
+        <div className="mt-5 card-grid-tight-3">
+          <div className="rounded-lg border bg-background/60 p-4">
+            <p className="text-sm font-semibold text-foreground">Issue</p>
+            <p className="mt-1 text-sm text-muted-foreground">Stack mismatch creates fragile delivery and slow releases.</p>
+          </div>
+          <div className="rounded-lg border bg-background/60 p-4">
+            <p className="text-sm font-semibold text-foreground">How we solve it</p>
+            <p className="mt-1 text-sm text-muted-foreground">Stack specific assessment focused on production scenarios not checklist skills.</p>
+          </div>
+          <div className="rounded-lg border bg-background/60 p-4">
+            <p className="text-sm font-semibold text-foreground">Proof signal</p>
+            <p className="mt-1 text-sm text-muted-foreground">Higher quality first sprint output and lower rollback rate.</p>
+          </div>
+        </div>
+      </section>
+
+      <div className="card-grid-tight-3 my-12">
         {techCategories.map((category) => (
           <div
             key={category.name}
-            className="group rounded-lg border bg-card p-6 flex flex-col"
+            className="surface-card group mx-auto w-full max-w-sm p-6 flex flex-col"
           >
             <div className="flex items-start justify-between gap-2">
               <p className="text-sm font-semibold text-primary">

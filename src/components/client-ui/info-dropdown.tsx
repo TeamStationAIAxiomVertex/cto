@@ -4,7 +4,6 @@
 import * as React from 'react';
 import * as Popover from '@radix-ui/react-popover';
 import { Info } from 'lucide-react';
-import { WithTooltip } from "../ui/tooltip";
 
 
 type InfoDropdownProps = {
@@ -32,7 +31,7 @@ export function InfoDropdown({
           type="button"
           aria-label={label}
           title={label} /* graceful native tooltip fallback */
-          className={['inline-flex items-center align-baseline text-muted-foreground hover:text-foreground', className]
+          className={['inline-flex h-8 w-8 items-center justify-center rounded-full border border-primary/30 bg-primary/10 align-baseline text-primary hover:bg-primary/20', className]
             .filter(Boolean)
             .join(' ')}
         >
@@ -46,7 +45,7 @@ export function InfoDropdown({
           side={side}
           align={align}
           sideOffset={sideOffset}
-          className="z-50 max-w-xs rounded-md border bg-popover p-3 text-sm text-popover-foreground shadow-md"
+          className="z-50 max-w-sm rounded-lg border bg-popover/95 p-4 text-sm text-popover-foreground shadow-xl backdrop-blur"
         >
           {children}
           <Popover.Arrow className="fill-border" width={10} height={5} />
