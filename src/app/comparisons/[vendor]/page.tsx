@@ -4,6 +4,7 @@ import { comparisonPages, getComparisonPage } from "@/lib/comparisonPages";
 import type { Metadata } from "next";
 import ComparisonProse from "@/components/ComparisonProse";
 import Link from "next/link";
+import CTOFieldManualBlock from "@/components/seo/CTOFieldManualBlock";
 
 const VerdictTable = dynamic(
   () => import("@/components/VerdictTable").then((mod) => mod.default),
@@ -78,7 +79,10 @@ export default function VendorComparisonPage({
         <ComparisonProse vendorSlug={params.vendor} />
       </div>
 
-      {/* Placeholder for Further Reading or other components */}
+      <CTOFieldManualBlock
+        title={`CTO Decision Manual for TeamStation AI versus ${page.vendorName}`}
+        focus={`vendor comparison, operating fit, and proof based execution decisions`}
+      />
     </main>
   );
 }

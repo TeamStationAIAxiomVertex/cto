@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { GitCompare, UserCheck, ShieldCheck, Scale, Code } from 'lucide-react';
 import { PSPCard } from "../../../../../components/seo/PSPCard";
+import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
   title: 'Hire Node.js Developers in Brazil | Nearshore Experts',
@@ -155,6 +156,11 @@ export default function HireNodeBrazilPage() {
                 ))}
             </div>
         </section>
+
+        <CTOFieldManualBlock
+            title={`CTO Field Manual for  Teams in `}
+            focus={` execution outcomes in `}
+        />
 
         <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
             <h2 className="text-2xl font-bold text-foreground">Build Your {country} {technology} Team</h2>

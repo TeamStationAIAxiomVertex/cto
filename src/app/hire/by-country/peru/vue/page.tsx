@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { GitCompare, UserCheck, ShieldCheck, Scale, Layers } from 'lucide-react';
 import { PSPCard } from "../../../../../components/seo/PSPCard";
+import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
   title: 'Hire Vue.js Developers in Peru | Nearshore Experts',
@@ -119,7 +120,12 @@ export default function HireVuePeruPage() {
           </div>
       </section>
 
-       <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+       <CTOFieldManualBlock
+            title={`CTO Field Manual for  Teams in `}
+            focus={` execution outcomes in `}
+        />
+
+        <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
           <h2 className="text-2xl font-bold text-foreground">Build Your {country} {technology} Team</h2>
           <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Let's build a TCO model for your Peru-based Vue.js team and map your roles to our <a href="/playbook/bias-free-technical-hiring-axiom-cortex" className="text-primary hover:underline">Axiom Cortex™</a> evaluation process.

@@ -12,6 +12,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 // E-E-A-T Signal: Explicitly attribute the content to an expert
 import PlaybookAuthor from '@/components/PlaybookAuthor'; 
 import TableOfContents from '@/components/TableOfContents'; 
+import CTOFieldManualBlock from '@/components/seo/CTOFieldManualBlock';
 
 // The content renderer will handle MDX/HTML rendering for the NCLA v7 prose
 const PlaybookContentRenderer = dynamic(() => import('@/components/PlaybookContentRenderer'), { ssr: true });
@@ -107,6 +108,11 @@ export default async function PlaybookChapterPage({ params }: { params: { slug: 
                 ))}
             </div>
           </section>
+
+          <CTOFieldManualBlock
+            title={`CTO Playbook Field Manual Extension: ${title}`}
+            focus={`operating doctrine and execution controls for playbook implementation`}
+          />
         </div>
 
       </article>
