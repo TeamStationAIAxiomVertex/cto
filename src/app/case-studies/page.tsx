@@ -77,7 +77,7 @@ export default async function CaseStudiesPage() {
   ];
 
   return (
-    <main className="manual-page container py-10">
+    <main className="manual-page container max-w-5xl py-10">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Case Studies</span>
       </div>
@@ -143,7 +143,7 @@ export default async function CaseStudiesPage() {
         </div>
       </RevealBlock>
 
-      <RevealSection className="my-10">
+      <RevealSection className="mx-auto my-10 max-w-5xl">
         <div className="grid gap-6 lg:grid-cols-2">
           <section aria-labelledby="proof-coverage-heading">
             <h2 id="proof-coverage-heading" className="sr-only">
@@ -171,7 +171,7 @@ export default async function CaseStudiesPage() {
         </div>
       </RevealSection>
 
-      <RevealSection className="my-10">
+      <RevealSection className="mx-auto my-10 max-w-5xl">
         <div className="flex items-center justify-between gap-4">
           <div>
             <h2 className="text-3xl font-bold text-foreground">Case Study Library</h2>
@@ -215,7 +215,7 @@ export default async function CaseStudiesPage() {
                     <h4 id={`${study.slug}-context`} className="text-[11px] font-semibold uppercase tracking-[0.12em] text-destructive">
                       Context and constraint
                     </h4>
-                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-1 max-w-[42ch] text-sm leading-6 text-muted-foreground">
                       {(study.challenge || "Case context details available in the full case study.").split("\n")[0].replace(/^-/, "").trim()}
                     </p>
                   </section>
@@ -224,14 +224,14 @@ export default async function CaseStudiesPage() {
                     <h4 id={`${study.slug}-intervention`} className="text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">
                       Intervention pattern
                     </h4>
-                    <p className="mt-1 text-sm leading-6 text-foreground">{study.summary}</p>
+                    <p className="mt-1 max-w-[42ch] text-sm leading-6 text-foreground">{study.summary}</p>
                   </section>
 
                   <section className="rounded-lg border border-border/70 bg-background/60 p-3" aria-labelledby={`${study.slug}-outcome`}>
                     <h4 id={`${study.slug}-outcome`} className="text-[11px] font-semibold uppercase tracking-[0.12em] text-emerald-400">
                       Outcome signal
                     </h4>
-                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-1 max-w-[42ch] text-sm leading-6 text-muted-foreground">
                       {(study.outcomes || "Operational results and validation notes are available in the full case study.").split("\n")[0].replace(/^-/, "").trim()}
                     </p>
                   </section>
