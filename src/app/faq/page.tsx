@@ -4,6 +4,7 @@ import faqData from "../../data/faq.json";
 import Link from "next/link";
 import type { Metadata } from 'next';
 import { HelpCircle } from "lucide-react";
+import CTOFieldManualBlock from "../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
     title: 'CTO FAQs: Nearshore Talent, TCO & Security',
@@ -75,6 +76,31 @@ export default function FAQPage() {
         <Link href="/comparisons" className="text-primary hover:underline">Comparisons</Link>
         <Link href="/hire" className="text-primary hover:underline">Hire Pages</Link>
       </nav>
+
+      <section className="surface-card my-14 p-8 text-left">
+        <h2 className="text-2xl font-bold text-foreground">How to Use This FAQ as a Decision System</h2>
+        <div className="mt-5 space-y-4 text-muted-foreground leading-7">
+          <p>
+            Treat each question as an operating signal, not just a content entry. If your concern is speed, move from this page to
+            the <Link href="/playbook/tco-model" className="text-primary hover:underline">TCO model</Link> and{' '}
+            <Link href="/playbook/latam-economics" className="text-primary hover:underline">LATAM economics</Link>.
+            If your concern is hiring quality, move to <Link href="/hire/by-role" className="text-primary hover:underline">role design</Link> and{' '}
+            <Link href="/research/technical-talent-evaluation-system" className="text-primary hover:underline">evaluation method</Link>.
+          </p>
+          <p>
+            For subdomain depth, use{' '}
+            <a href="https://research.teamstation.dev/protocols/evaluation" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">research.teamstation.dev evaluation protocols</a>{' '}
+            and{' '}
+            <a href="https://engineering.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">engineering.teamstation.dev</a>.
+            This gives CTO and CIO teams a consistent path from question to implementation.
+          </p>
+        </div>
+      </section>
+
+      <CTOFieldManualBlock
+        title="CTO Field Manual for High Stakes Hiring and Delivery Questions"
+        focus="executive FAQ workflows for delivery risk reduction and governance clarity"
+      />
 
       <link rel="canonical" href={`${SITE}/faq`} />
       <JsonLd />

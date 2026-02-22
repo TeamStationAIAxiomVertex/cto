@@ -3,6 +3,7 @@ import { getAllCaseStudies } from '../../lib/case-studies';
 import { ArrowRight, Award, AlertTriangle, Shield, CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 import FurtherReading from '../../components/seo/FurtherReading';
+import CTOFieldManualBlock from '../../components/seo/CTOFieldManualBlock';
 
 export const metadata: Metadata = {
   title: 'Nearshore IT Staff Augmentation Case Studies',
@@ -78,6 +79,35 @@ export default async function CaseStudiesPage() {
           </div>
         ))}
       </div>
+
+      <section className="surface-card my-16 p-8">
+        <h2 className="text-3xl font-bold text-center">How to Read Operational Proof</h2>
+        <div className="mt-6 space-y-4 text-muted-foreground leading-7">
+          <p>
+            A case study is only useful when it maps directly to an operating constraint. Start with the context and
+            identify the delivery risk that existed before intervention. Then inspect the solution pattern and confirm
+            what changed in execution behavior, not just what tooling was added.
+          </p>
+          <p>
+            Use this sequence with related pages so decision quality stays high. Review the{' '}
+            <Link href="/playbook/hub" className="text-primary hover:underline">CTO playbook hub</Link>, then compare cost structure in the{' '}
+            <Link href="/playbook/latam-economics" className="text-primary hover:underline">LATAM economics guide</Link>, and validate measurement logic in the{' '}
+            <Link href="/research/framework-for-measuring-capacity" className="text-primary hover:underline">capacity framework</Link>.
+          </p>
+          <p>
+            For cross domain navigation, connect evidence from this page with{' '}
+            <a href="https://engineering.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">engineering.teamstation.dev</a>{' '}
+            and{' '}
+            <a href="https://research.teamstation.dev/research" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">research.teamstation.dev/research</a>.
+            This keeps leadership evaluation focused on risk reduction, delivery control, and measurable outcomes.
+          </p>
+        </div>
+      </section>
+
+      <CTOFieldManualBlock
+        title="CTO Field Manual for Evidence Based Vendor Decisions"
+        focus="case study analysis, delivery risk diagnosis, and operating model proof"
+      />
       <FurtherReading />
     </main>
   );

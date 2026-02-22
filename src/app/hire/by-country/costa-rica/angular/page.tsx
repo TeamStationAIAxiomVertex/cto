@@ -121,8 +121,8 @@ export default function HireAngularCostaRicaPage() {
       </section>
 
        <CTOFieldManualBlock
-            title={`CTO Field Manual for  Teams in `}
-            focus={` execution outcomes in `}
+            title={`CTO Field Manual for ${technology} Teams in ${country}`}
+            focus={`${technology} execution outcomes in ${country}`}
         />
 
         <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">

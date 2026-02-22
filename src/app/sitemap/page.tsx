@@ -1,5 +1,4 @@
 
-import Link from "next/link";
 import type { Metadata } from "next";
 import {
   collectCoreUrls,
@@ -29,9 +28,21 @@ async function PageGroup({
   title: string;
   promise: Promise<SitemapUrl[]>;
 }) {
-  const items = (await promise).filter(
-    (item) => !item.loc.includes("[") && !item.loc.includes("]"),
-  );
+  const hasDynamicToken = (value: string) =>
+    value.includes("[") ||
+    value.includes("]") ||
+    value.toLowerCase().includes("%5b") ||
+    value.toLowerCase().includes("%5d");
+
+  const items = (await promise).filter((item) => {
+    if (hasDynamicToken(item.loc)) return false;
+    try {
+      const pathname = new URL(item.loc).pathname || "/";
+      return !hasDynamicToken(pathname);
+    } catch {
+      return false;
+    }
+  });
   if (items.length === 0) return null; // Don't render empty sections
 
   return (
@@ -40,12 +51,9 @@ async function PageGroup({
       <ul className="space-y-2 list-disc pl-5">
         {items.map((item, i) => (
           <li key={`${item.loc}-${i}`}>
-            <Link
-              href={new URL(item.loc).pathname || "/"}
-              className="text-primary hover:underline"
-            >
-              {new URL(item.loc).pathname}
-            </Link>
+            <a href={item.loc} className="text-primary hover:underline">
+              {new URL(item.loc).pathname || "/"}
+            </a>
           </li>
         ))}
       </ul>
