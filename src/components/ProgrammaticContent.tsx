@@ -183,8 +183,8 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
               In practice, teams that perform best with nearshore hiring keep role charters clear,
               keep review cycles short, and keep accountability explicit. If you combine those
               controls with strong screening standards, you reduce rework and protect roadmap
-              confidence. That is the ranking intent this page serves: help CTO and CIO buyers move
-              from reactive staffing to durable distributed engineering outcomes.
+              confidence. This page is built to help CTO and CIO buyers move from reactive staffing
+              to durable distributed engineering outcomes.
             </p>
             <p>
               Keep this process simple and repeatable: define outcome targets, evaluate against real
@@ -437,10 +437,9 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
               produce measurable improvements in roadmap confidence.
             </p>
             <p>
-              This is also where content structure supports ranking intent. Decision-makers landing
-              on this page need direct paths to role strategy, economics, and research frameworks.
-              The internal links and subdomain references above are designed to keep those buyers in
-              a coherent journey from initial intent to actionable hiring decisions.
+              Decision-makers landing on this page need direct paths to role strategy, economics,
+              and research frameworks. The related links above are designed to keep buyers in a
+              coherent journey from initial discovery to actionable hiring decisions.
             </p>
           </div>
         </section>

@@ -1224,8 +1224,8 @@ export default function RoleCategoryPage({
               keeps accountability visible during scaling phases.
             </p>
             <p>
-              If your goal is sustained ranking intent and buyer trust, this governance section
-              matters as much as the technology list. Buyers evaluating nearshore partners are not
+              If your goal is sustained buyer trust, this governance section matters as much as the
+              technology list. Buyers evaluating nearshore partners are not
               just comparing resumes. They are comparing operating discipline. A page that explains
               ownership, evaluation, scorecards, and governance demonstrates that your hiring model
               is built for production outcomes, not short-term staffing optics.
