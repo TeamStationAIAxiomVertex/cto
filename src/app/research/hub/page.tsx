@@ -1,146 +1,300 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Book, TestTube, Lightbulb, AlertTriangle, ArrowRight } from 'lucide-react';
+import { Book, TestTube, Lightbulb, AlertTriangle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: "The Science of Nearshore Development: A Research Hub for CTOs | TeamStation AI",
-  description: "Access the foundational research that is transforming the nearshore industry. Read the peer-reviewed papers and the book that provide the scientific blueprint for de-risking your engineering and hiring strategy.",
+  title: 'Research Hub for CTO and CIO Teams | TeamStation AI',
+  description:
+    'A complete research library for distributed engineering leadership. Use this hub to plan hiring, measure performance, reduce delivery risk, and build a stronger operating model.',
 };
 
-const researchAssets = [
+type ResearchAsset = {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+  pain: string;
+  proof: string;
+  href: string;
+};
+
+const researchAssets: ResearchAsset[] = [
   {
     icon: Book,
-    title: 'The Book: Platforming the Nearshore Industry',
-    description: 'The foundational text for the new discipline of scientific nearshore management. This book provides the complete economic and operational blueprint for replacing vendor chaos with a predictable, high-throughput platform.',
+    title: 'Platforming the Nearshore Industry',
+    description: 'The book that explains how to move from vendor chaos to one operating model for delivery.',
+    pain: 'Pain: You are managing many vendors and still not getting predictable delivery.',
+    proof: 'Proof: The book lays out the economic and operating model in one system.',
     href: '/research/platforming-nearshore-book',
   },
   {
     icon: TestTube,
-    title: 'Axiom Cortex™ Scientific Report',
-    description: 'The peer-reviewed science behind our predictive hiring model. This paper details the neurocognitive and psychometric principles that allow us to measure a candidate\'s true problem-solving ability, de-risking your most critical hires.',
+    title: 'Axiom Cortex Scientific Report',
+    description: 'The research foundation behind our cognitive evaluation model for technical talent.',
+    pain: 'Pain: Resume screening and interviews miss real problem solving ability.',
+    proof: 'Proof: This report shows the cognitive and psychometric method behind the model.',
     href: '/research/axiom-cortex-scientific-report',
   },
   {
     icon: TestTube,
-    title: 'Heuristically Trained AI Models for Technical Evaluation',
-    description: 'Explores heuristic-guided model training for evaluating software engineers. Balances statistical robustness with domain-specific interpretability.',
+    title: 'Heuristically Trained AI for Technical Evaluation',
+    description: 'Research on hybrid evaluation methods that combine model power with domain context.',
+    pain: 'Pain: Pure statistical systems miss context and domain nuance.',
+    proof: 'Proof: This paper explains why hybrid methods produce stronger decisions.',
     href: '/research/heuristically-trained-ai',
   },
   {
     icon: Lightbulb,
-    title: 'Framework for Measuring Engineering Capacity',
-    description: 'Proposes a quantitative model for capacity planning in distributed engineering teams. Incorporates psychometric and economic factors for predictable delivery.',
+    title: 'Performance Evaluation Framework',
+    description: 'A practical model for measuring engineering output quality and reliability over time.',
+    pain: 'Pain: Leadership cannot trust output when performance signals are noisy.',
+    proof: 'Proof: The framework defines measurable dimensions with direct operating use.',
     href: '/research/performance-evaluation-framework',
   },
   {
     icon: Lightbulb,
     title: 'Performance Metrics in the AI Age',
-    description: 'Redefines productivity and performance metrics for engineering teams using AI-assisted workflows. Proposes new measurement models aligned with modern delivery.',
+    description: 'A modern metric model for AI assisted engineering workflows and delivery systems.',
+    pain: 'Pain: Old productivity metrics do not describe AI assisted delivery.',
+    proof: 'Proof: This paper defines updated metrics aligned to modern engineering work.',
     href: '/research/performance-metrics-in-ai-age',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Framework for Measuring Engineering Capacity',
+    description: 'Capacity modeling for distributed teams with clearer planning and execution control.',
+    pain: 'Pain: Capacity planning breaks when assumptions are not measured.',
+    proof: 'Proof: The model maps constraints, effort, and expected throughput in one view.',
+    href: '/research/framework-for-measuring-capacity',
+  },
+  {
+    icon: TestTube,
+    title: 'Performance Evaluation Report Example',
+    description: 'A practical report example that shows how to apply the evaluation framework.',
+    pain: 'Pain: Teams struggle to turn framework theory into a live operating report.',
+    proof: 'Proof: This example shows real structure and decision output format.',
+    href: '/research/performance-evaluation-report-example',
+  },
+  {
+    icon: TestTube,
+    title: 'Technical Talent Evaluation System',
+    description: 'A deep implementation view of structured technical talent evaluation workflows.',
+    pain: 'Pain: Hiring systems are often subjective and inconsistent across interviewers.',
+    proof: 'Proof: This page shows a repeatable system with traceable evidence and review flow.',
+    href: '/research/technical-talent-evaluation-system',
+  },
+  {
+    icon: TestTube,
+    title: 'Axiom Cortex Report Node',
+    description: 'Reference node used across the research graph for doctrine and model context.',
+    pain: 'Pain: Important model pages get lost without cross linked reference nodes.',
+    proof: 'Proof: This node keeps the research graph connected for easier navigation.',
+    href: '/research/hub/axiom-cortex-scientific-report',
   },
 ];
 
-const painCards = [
+const operatingTracks = [
   {
-    title: "The Vetting Gamble",
-    pain: "You're forced to bet your roadmap on vendors who use resume keywords and 'gut feel.' This is not a system; it's a coin flip.",
-    solution: "Our research on Axiom Cortex™ provides the scientific methodology to replace subjective interviews with a predictable, data-driven system for measuring cognitive ability.",
-    href: "/research/axiom-cortex-scientific-report"
+    title: 'Track 1 Hiring Confidence',
+    pain: 'Pain: You do not know if hiring decisions are sound until too late.',
+    solution: 'Solution: Start with cognitive model research, then move to implementation detail.',
+    links: [
+      { href: '/research/axiom-cortex-scientific-report', label: 'Axiom Cortex Scientific Report' },
+      { href: '/research/heuristically-trained-ai', label: 'Heuristic AI Evaluation' },
+      { href: '/research/technical-talent-evaluation-system', label: 'Talent Evaluation System' },
+    ],
   },
   {
-    title: "The Black Box of Performance",
-    pain: "You are paying for headcount, not output. You have no verifiable data to prove your remote team is effective, and no way to diagnose why they are not.",
-    solution: "Our Performance Evaluation Framework is the blueprint for an evidence-based system that measures engineering throughput, turning your team from a black box into a predictable asset.",
-    href: "/research/performance-evaluation-framework"
+    title: 'Track 2 Delivery Performance',
+    pain: 'Pain: Delivery performance is discussed but not measured in a reliable way.',
+    solution: 'Solution: Use framework first, then metrics model, then report structure.',
+    links: [
+      { href: '/research/performance-evaluation-framework', label: 'Performance Framework' },
+      { href: '/research/performance-metrics-in-ai-age', label: 'AI Age Metrics' },
+      { href: '/research/performance-evaluation-report-example', label: 'Report Example' },
+    ],
   },
   {
-    title: "Vendor Sprawl & Hidden Costs",
-    pain: "Your 'low-cost' vendor is a trojan horse for chaos. You are now drowning in the hidden costs and vendor sprawl of managing separate contracts for talent, EOR, and device security.",
-    solution: "Our book, 'Platforming the Nearshore Industry,' provides the scientific and economic model for replacing this chaos with a complete operational wrapper that provides a single, predictable TCO.",
-    href: "/research/platforming-nearshore-book"
-  }
-]
+    title: 'Track 3 Operating Model',
+    pain: 'Pain: Strategy pages do not always translate into one operating model.',
+    solution: 'Solution: Use the book and doctrine to define how teams should run and scale.',
+    links: [
+      { href: '/research/platforming-nearshore-book', label: 'Platforming Book' },
+      { href: '/engineering-doctrine', label: 'Engineering Doctrine' },
+      { href: '/playbook/hub', label: 'CTO Playbook Hub' },
+    ],
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Who should use this research hub?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'This hub is for CTO and CIO teams that need stronger hiring, better delivery measurement, and a more predictable operating model.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the best reading order?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Start with the operating track that matches your current pain. Use Hiring Confidence for hiring risk, Delivery Performance for execution metrics, or Operating Model for leadership system design.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is this only theory?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. The hub includes practical framework pages and a full report example so teams can apply the research in real delivery environments.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cto.teamstation.dev' },
+    { '@type': 'ListItem', position: 2, name: 'Research Hub', item: 'https://cto.teamstation.dev/research/hub' },
+  ],
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'TeamStation AI Research Hub',
+  description:
+    'Research library for distributed engineering leadership including hiring, performance measurement, and operating model design.',
+  url: 'https://cto.teamstation.dev/research/hub',
+};
 
 export default function ResearchHubPage() {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cto.teamstation.dev" },
-      { "@type": "ListItem", "position": 2, "name": "Research Hub", "item": "https://cto.teamstation.dev/research/hub" }
-    ]
-  };
-
   return (
     <>
-      <JsonLd data={breadcrumbSchema} />
-      <main className="container max-w-5xl py-12">
+      <JsonLd data={[breadcrumbSchema, collectionSchema, faqSchema]} />
+
+      <main className="container max-w-6xl py-12">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research Hub</span>
         </div>
 
-        <header className="my-8">
-          <div className="rounded-lg border bg-card p-8 md:p-12">
-            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Science of Predictable Nearshore Results</h1>
-            <div className="mt-8 max-w-4xl space-y-6">
-              <div className="bg-background p-6 rounded-lg border border-primary/20">
-                <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>The Crisis of Authority in Nearshore Outsourcing</h2>
-                <p className="mt-2 text-muted-foreground">For twenty years, you've been told to trust the nearshore model. You've been sold on time zones and cost savings, yet you're still fighting the same fires: the mis-hire that looked great on paper, the 'low-cost' team that bleeds your budget through low velocity, the vendor chaos that has become your second job. The problem isn't just a bad vendor. The problem is an entire industry built on anecdote instead of evidence. This is an unacceptable business risk.</p>
-                <p className="mt-4 text-muted-foreground">Our research exists to close this gap. We are committed to the science of transforming nearshore development from a high-risk gamble into a predictable engineering discipline.</p>
-              </div>
+        <header className="my-8 rounded-lg border bg-card p-8 md:p-12">
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">
+            Research Hub for Distributed Engineering Leadership
+          </h1>
+          <p className="mt-5 max-w-4xl text-muted-foreground leading-7">
+            This page is the full research index for leadership teams that need stronger hiring decisions,
+            better delivery measurement, and a clear operating model. Every section maps pain to method and method to proof.
+          </p>
+          <div className="mt-6 grid gap-3 md:grid-cols-3">
+            <div className="rounded-lg border bg-background p-4">
+              <p className="text-sm font-semibold text-primary">Pain</p>
+              <p className="mt-1 text-sm text-muted-foreground">Nearshore decisions often rely on opinion instead of evidence.</p>
+            </div>
+            <div className="rounded-lg border bg-background p-4">
+              <p className="text-sm font-semibold text-primary">Solution</p>
+              <p className="mt-1 text-sm text-muted-foreground">Use this research graph to choose method and action by scenario.</p>
+            </div>
+            <div className="rounded-lg border bg-background p-4">
+              <p className="text-sm font-semibold text-primary">Proof</p>
+              <p className="mt-1 text-sm text-muted-foreground">Nine connected research assets plus direct playbook and doctrine links.</p>
             </div>
           </div>
         </header>
 
-        <section className="my-24">
-          <h2 className="text-center text-4xl font-bold text-foreground">The End of Guesswork: An Engineered Approach to Building Teams</h2>
-          <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">The legacy staff augmentation model is broken. We are the first to replace it with a new, data-driven scientific discipline. Our research is the proof.</p>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {painCards.map((card) => (
-              <div key={card.title} className="rounded-lg border bg-card p-6 flex flex-col">
-                  <h3 className="text-lg font-semibold text-foreground">{card.title}</h3>
-                  <p className="mt-2 text-sm font-semibold text-destructive">{card.pain}</p>
-                  <div className="mt-4 border-t border-border pt-4 flex-grow">
-                    <p className="text-sm text-foreground m-0">{card.solution}</p>
+        <section className="my-20">
+          <h2 className="text-3xl font-bold text-foreground">Research Library Index</h2>
+          <p className="mt-3 text-muted-foreground leading-7">
+            Use this index when you need to inspect the full body of work. Each item includes the core pain and the proof you can use in leadership decisions.
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {researchAssets.map((asset) => {
+              const Icon = asset.icon;
+              return (
+                <article key={asset.title} className="rounded-lg border bg-card p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="rounded-full border bg-primary/10 p-2">
+                      <Icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground">{asset.title}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground">{asset.description}</p>
+                    </div>
                   </div>
-                  <Link href={card.href} className="mt-6 flex items-center text-sm font-semibold text-primary">
-                      Read the Research <ArrowRight className="ml-2 h-4 w-4" />
+
+                  <p className="mt-4 text-sm text-muted-foreground"><strong className="text-foreground">Pain:</strong> {asset.pain.replace('Pain: ', '')}</p>
+                  <p className="mt-1 text-sm text-muted-foreground"><strong className="text-foreground">Proof:</strong> {asset.proof.replace('Proof: ', '')}</p>
+
+                  <Link href={asset.href} className="mt-5 inline-flex items-center text-sm font-semibold text-primary hover:underline">
+                    Open research page <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
-              </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="my-20 rounded-lg border bg-card p-8 md:p-10">
+          <h2 className="text-3xl font-bold text-foreground">How to Use This Hub</h2>
+          <p className="mt-3 text-muted-foreground leading-7">
+            Start from the track that matches your current leadership problem. Each track gives a short path from diagnosis to implementation.
+          </p>
+
+          <div className="mt-8 space-y-4">
+            {operatingTracks.map((track) => (
+              <article key={track.title} className="rounded-lg border bg-background p-5">
+                <h3 className="text-xl font-semibold text-foreground">{track.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{track.pain}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{track.solution}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {track.links.map((l) => (
+                    <Link key={l.href} href={l.href} className="rounded-md border px-3 py-2 text-sm text-foreground hover:text-primary hover:border-primary/40">
+                      {l.label}
+                    </Link>
+                  ))}
+                </div>
+              </article>
             ))}
           </div>
         </section>
 
-        <section className="my-24">
-            <h2 className="text-center text-4xl font-bold text-foreground">Your Research Arsenal</h2>
-            <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">This is the arsenal of evidence a CTO needs to de-risk decisions and win budget battles with the CFO.</p>
-            <div className="mt-12 space-y-8">
-                {researchAssets.map((asset) => {
-                const Icon = asset.icon;
-                return (
-                    <Link key={asset.title} href={asset.href} className="group block rounded-lg border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
-                    <div className="flex items-start gap-4">
-                        <div className="rounded-full bg-primary/10 p-3 border">
-                        <Icon className="h-6 w-6 text-primary" />
-                        </div>
-                        <div>
-                        <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">{asset.title}</h3>
-                        <p className="mt-1 text-muted-foreground">{asset.description}</p>
-                        </div>
-                    </div>
-                    </Link>
-                );
-                })}
-            </div>
+        <section className="my-20 rounded-lg border bg-card p-8 md:p-10">
+          <h2 className="text-3xl font-bold text-foreground">FAQ</h2>
+          <div className="mt-6 space-y-4">
+            <article className="rounded border bg-background p-4">
+              <h3 className="font-semibold text-foreground">What should we read first if hiring is our current risk?</h3>
+              <p className="mt-2 text-sm text-muted-foreground">Start with Axiom Cortex Scientific Report, then Heuristic AI Evaluation, then Technical Talent Evaluation System.</p>
+            </article>
+            <article className="rounded border bg-background p-4">
+              <h3 className="font-semibold text-foreground">What should we read first if execution performance is our current risk?</h3>
+              <p className="mt-2 text-sm text-muted-foreground">Start with Performance Evaluation Framework, then AI Age Metrics, then the Report Example page.</p>
+            </article>
+            <article className="rounded border bg-background p-4">
+              <h3 className="font-semibold text-foreground">How does this connect to action pages?</h3>
+              <p className="mt-2 text-sm text-muted-foreground">Use the links to Engineering Doctrine, CTO Playbook Hub, and Hire routes to move from research to implementation.</p>
+            </article>
+          </div>
         </section>
 
-        <section className="my-24 rounded-lg border bg-card p-8 md:p-12 text-center">
-            <h2 className="text-center text-3xl font-bold text-foreground">Our Scientific Commitment</h2>
-            <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">The chaos and risk of the legacy model are no longer acceptable. Our research is the foundation of a new discipline, and our company is the vehicle for its implementation.</p>
-            <p className="mt-4 text-lg font-semibold text-primary">We are committed to the science of transforming this industry because, in a world run by software, building a team should not be an act of faith. It should be an act of engineering.</p>
+        <section className="my-20 rounded-lg border bg-card p-8 md:p-10 text-center">
+          <h2 className="text-3xl font-bold text-foreground">Next Step</h2>
+          <p className="mt-3 max-w-3xl mx-auto text-muted-foreground leading-7">
+            If you want this turned into a live operating program, start with Team Topologies and the CTO Playbook. The research gives the method. The playbook gives execution.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link href="/engineering-doctrine" className="cta-button">Open Engineering Doctrine</Link>
+            <Link href="/playbook/hub" className="rounded-md border px-4 py-2 text-sm font-semibold hover:text-primary">Open CTO Playbook Hub</Link>
+            <Link href="/hire/by-role" className="rounded-md border px-4 py-2 text-sm font-semibold hover:text-primary">Open Hire by Role</Link>
+          </div>
         </section>
-
       </main>
     </>
   );

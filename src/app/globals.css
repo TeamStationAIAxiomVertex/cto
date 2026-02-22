@@ -78,6 +78,19 @@
     .cta-button {
         @apply inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
     }
+    .glass-panel {
+        background: hsl(var(--card));
+        border: 1px solid hsl(var(--border));
+        box-shadow: 0 10px 28px rgb(2 6 23 / 0.12);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .light .glass-panel {
+        background: hsl(var(--card));
+        border: 1px solid hsl(var(--border));
+        box-shadow: 0 10px 24px rgb(15 23 42 / 0.08);
+    }
 }
 
 /* --- a11y/perf helpers (appended) --- */

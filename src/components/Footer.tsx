@@ -1,169 +1,173 @@
+import Link from "next/link";
+import { countries } from "@/lib/countries";
+import { roleCategories } from "@/lib/roles";
+import { techCategories } from "@/lib/tech-categories";
 
-// NO 'use client' — Footer stays a Server Component
-import Link from 'next/link';
-import type { ReactNode } from 'react';
-
-import { roleCategories } from '@/lib/roles';
-import { techCategories } from '@/lib/tech-categories';
-import { countries } from '@/lib/countries';
-import SpotifyIcon from '@/components/SpotifyIcon';
-
-type LinkItem = {
+type FooterLink = {
   href: string;
-  label: string | ReactNode;
-  icon?: ReactNode;
+  label: string;
+  subtitle?: string;
 };
 
-// Playbook Section
-const playbookLinks: LinkItem[] = [
-  { href: '/playbook/hub', label: 'CTO Playbook Hub' },
-  { href: '/engineering-doctrine', label: 'Engineering Doctrine' },
-  { href: '/playbook/nearshore-vs-offshore', label: 'Nearshore vs Offshore Guide' },
-  { href: '/playbook/latam-economics', label: 'LATAM Software Talent Economics' },
-  { href: '/playbook/build-vs-buy', label: 'Build vs Buy Analysis' },
-  { href: '/playbook/bias-free-technical-hiring-axiom-cortex', label: 'Bias-Free Hiring with Axiom Cortex™' },
-  { href: '/playbook/tco-model', label: 'TCO Model for Engineering Teams' },
-  { href: '/playbook/cto-outsourcing-risk-mitigation', label: 'Outsourcing Risk Mitigation' },
-  { href: '/faq', label: 'FAQ for CTOs' },
-];
-
-// Company Section
-const companyLinks: LinkItem[] = [
-  { href: '/about', label: 'About TeamStation AI' },
-  { href: '/research/hub', label: 'Research Hub' },
-  { href: '/trust', label: 'Trust & Compliance Center' },
-  { href: '/case-studies', label: 'Case Studies & Proof' },
-  { href: '/pricing', label: 'Pricing & Engagement Models' },
-  { href: 'https://research.teamstation.dev/research/platforming-the-nearshore-industry', label: 'Nearshore IT Platformed Book' },
-  { href: 'https://research.teamstation.dev/research', label: 'Research Archive' },
-  { href: 'https://hire.teamstation.dev/about', label: 'TeamStation Company Profile' },
-];
-
-// Research Section
-const researchLinks: LinkItem[] = [
-  { href: '/research/axiom-cortex-scientific-report', label: 'AxiomCortex™ R&D Report' },
-  { href: '/research/hub', label: 'Review All Research & Whitepapers →' },
-  { href: '/research/framework-for-measuring-capacity', label: 'Framework for Measuring Engineering Capacity' },
-  { href: '/research/performance-metrics-in-ai-age', label: 'Performance Metrics in the AI Age' },
-  {
-    href: 'https://research.teamstation.dev/research',
-    label: (
-      <>
-        TeamStation Research Feed <SpotifyIcon className="h-4 w-4 inline-block ml-1 align-text-bottom" />
-      </>
-    ),
-  },
-];
-
-// Programmatic Links
-const hireByRoleLinks: LinkItem[] = roleCategories.map((r) => ({
-  href: `/hire/by-role/${r.slug}`,
-  label: `Hire ${r.name} engineers`,
-}));
-
-const hireByCountryLinks: LinkItem[] = countries.map((c) => ({
-  href: `/hire/by-country/${c.slug}`,
-  label: `Hire software developers in ${c.name}`,
-}));
-
-const popularTechLinks: LinkItem[] = [
-    'react','node','python','java','devops-engineering','aws','kubernetes','terraform','llm','generative-ai','dbt','snowflake','langchain','nextjs','net'
-].map((slug) => {
-  const tech = techCategories.flatMap((c) => c.tech).find((t) => t.slug === slug);
-  return { href: `/hire/by-technology/${slug}`, label: `Hire ${tech?.name || slug} developers` };
-});
-
-// Utility Section
-const utilityLinks: LinkItem[] = [
-  { href: '/faq', label: 'CTO FAQs' },
-  { href: '/sitemap', label: 'HTML Sitemap' },
-  { href: '/sitemap.xml', label: 'XML Sitemap' },
-  { href: '/privacy-policy', label: 'Privacy Policy' },
-  { href: '/terms-of-service', label: 'Terms of Service' },
-];
-
-function LinkColumn({ title, links }: { title: string; links: LinkItem[] }) {
+function LinkGroup({
+  title,
+  links,
+}: {
+  title: string;
+  links: FooterLink[];
+}) {
   return (
-    <nav aria-label={title}>
-      <h4 className="font-semibold text-foreground tracking-wider uppercase text-sm">{title}</h4>
+    <section className="rounded-xl border bg-card p-5 md:p-6">
+      <h4 className="text-base font-bold text-foreground">{title}</h4>
       <ul className="mt-4 space-y-3">
         {links.map((link) => (
-          <li key={link.href} className="text-sm">
+          <li key={`${title}-${link.href}`}>
             <Link
               href={link.href}
-              className="text-muted-foreground transition-colors hover:text-foreground flex items-center"
-              target={link.href.startsWith('http') ? '_blank' : undefined}
-              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="text-sm font-semibold text-foreground transition-colors hover:text-primary"
             >
               {link.label}
             </Link>
+            {link.subtitle ? (
+              <p className="mt-1 text-sm text-muted-foreground">{link.subtitle}</p>
+            ) : null}
           </li>
         ))}
       </ul>
-    </nav>
+    </section>
   );
 }
+
+const navigationLinks: FooterLink[] = [
+  {
+    href: "/playbook/hub",
+    label: "Playbook",
+    subtitle: "Frameworks for CTO decisions under delivery pressure",
+  },
+  {
+    href: "/research/hub",
+    label: "Research",
+    subtitle: "Evidence and operating models for distributed teams",
+  },
+  {
+    href: "/comparisons",
+    label: "Comparisons",
+    subtitle: "Side by side vendor and model comparison pages",
+  },
+  {
+    href: "/case-studies",
+    label: "Case Studies",
+    subtitle: "Outcome stories with delivery context and constraints",
+  },
+  {
+    href: "/engineering-doctrine",
+    label: "Engineering Doctrine",
+    subtitle: "Team topologies and system level operating doctrine",
+  },
+  {
+    href: "/trust",
+    label: "Trust",
+    subtitle: "Security, compliance, and governance posture",
+  },
+];
+
+const roleLinks: FooterLink[] = [
+  {
+    href: "/hire/by-role",
+    label: "Hire by Role Hub",
+    subtitle: "Select role fit before team scale begins",
+  },
+  ...roleCategories.map((role) => ({
+    href: `/hire/by-role/${role.slug}`,
+    label: `Hire ${role.name}`,
+  })),
+];
+
+const countryLinks: FooterLink[] = [
+  {
+    href: "/hire/by-country",
+    label: "Hire by Country Hub",
+    subtitle: "Compare country fit by overlap, cost, and delivery readiness",
+  },
+  ...countries.map((country) => ({
+    href: `/hire/by-country/${country.slug}`,
+    label: `Hire in ${country.name}`,
+  })),
+];
+
+const uniqueTech = Array.from(
+  new Map(techCategories.flatMap((cat) => cat.tech).map((tech) => [tech.slug, tech])).values(),
+);
+
+const technologyLinks: FooterLink[] = [
+  {
+    href: "/hire/by-technology",
+    label: "Hire by Technology Hub",
+    subtitle: "Map hiring to your exact stack and platform needs",
+  },
+  ...uniqueTech.slice(0, 42).map((tech) => ({
+    href: `/hire/by-technology/${tech.slug}`,
+    label: `Hire ${tech.name}`,
+  })),
+];
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-32 border-t border-border bg-card py-16 text-muted-foreground">
-      <div className="container mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-2 gap-y-10 gap-x-8 md:grid-cols-12">
-          <div className="col-span-2 md:col-span-3">
-            <h3 className="text-lg font-bold text-foreground">TeamStation AI</h3>
-            <p className="mt-2 text-sm">The integrated platform for building and scaling elite nearshore engineering teams.</p>
-            <address className="mt-4 text-sm not-italic">
-              One Seaport Square, 77 Sleeper St<br />
-              5830 E 2nd St, Ste 7000 #14687<br />
-              Boston, MA 02210
-            </address>
-            <div className="mt-4">
-              <Link href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:text-primary/80 a11y-tap-target">
-                Sign In to Platform
+    <footer className="mt-20 border-t border-border py-12">
+      <div className="container mx-auto max-w-7xl space-y-6 px-4 md:px-6">
+        <section className="rounded-xl border bg-card p-5 md:p-7">
+          <div className="grid gap-8 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <h3 className="text-2xl font-bold text-foreground">
+                Diagnose your delivery risk before you hire
+              </h3>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Not sure if nearshore is right for you? We help CTO teams identify delivery risk,
+                capacity gaps, and operating constraints before committing.
+              </p>
+              <ul className="mt-4 grid gap-2 text-sm text-foreground md:grid-cols-2">
+                <li>Discovery and operating constraints</li>
+                <li>Risk and capacity assessment</li>
+                <li>Fit and operating model alignment</li>
+                <li>Delivery plan and cost model</li>
+              </ul>
+              <p className="mt-3 text-xs text-muted-foreground">
+                We only engage when there is a measurable delivery fit. If we are not the right
+                solution, we will tell you.
+              </p>
+            </div>
+            <div className="flex items-start lg:justify-end">
+              <Link
+                href="/hire"
+                className="inline-flex rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Book a 20 minute discovery session
               </Link>
             </div>
-            <div className="mt-8">
-              <LinkColumn title="Scientific Research" links={researchLinks} />
-            </div>
           </div>
+          <div className="mt-6 rounded-lg border border-border bg-background/70 p-4">
+            <p className="text-sm font-semibold text-foreground">Nearshore engineering for CTO teams</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              LATAM engineering teams, delivery assurance, AI assisted hiring, risk controlled
+              scaling, and distributed engineering teams.
+            </p>
+          </div>
+        </section>
 
-          <div className="col-span-1 md:col-span-2">
-            <LinkColumn title="Playbook" links={playbookLinks} />
-            <div className="mt-8">
-              <LinkColumn title="Company" links={companyLinks} />
-            </div>
-          </div>
+        <section className="grid gap-4 lg:grid-cols-2">
+          <LinkGroup title="Explore by Interest" links={navigationLinks} />
+          <LinkGroup title="Hire by Role" links={roleLinks} />
+        </section>
 
-          <div className="col-span-1 md:col-span-2">
-            <LinkColumn title="Hire by Role" links={hireByRoleLinks.slice(0, 11)} />
-          </div>
+        <section className="grid gap-4 lg:grid-cols-2">
+          <LinkGroup title="Hire by Country" links={countryLinks} />
+          <LinkGroup title="Hire by Technology" links={technologyLinks} />
+        </section>
 
-          <div className="col-span-1 md:col-span-2">
-            <LinkColumn title="Hire by Country" links={hireByCountryLinks} />
-          </div>
-
-          <div className="col-span-1 md:col-span-3">
-            <LinkColumn title="Popular Technologies" links={popularTechLinks} />
-          </div>
-        </div>
-
-        <div className="mt-16 border-t border-border pt-8 text-center text-sm">
-          <p>© {year} TeamStation AI — All rights reserved.</p>
-          <p className="mt-2">
-            Part of the TeamStation AI network — visit our corporate site at{' '}
-            <a href="https://teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline a11y-tap-target">
-              teamstation.dev
-            </a>
-          </p>
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4">
-            {utilityLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground a11y-tap-target">
-                {link.label}
-              </Link>
-            ))}
-          </div>
+        <div className="border-t border-border pt-6 text-center text-sm text-muted-foreground">
+          © {year} TeamStation AI. All rights reserved.
         </div>
       </div>
     </footer>

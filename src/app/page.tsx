@@ -27,7 +27,7 @@ import SpotifyIcon from "../components/SpotifyIcon";
 const heroKpis: HeroKpi[] = [
   {
     id: "compliance",
-    label: "Audit-Ready Compliance",
+    label: "Audit Ready Compliance",
     value: 100,
     unit: "%",
     target: 100,
@@ -35,7 +35,7 @@ const heroKpis: HeroKpi[] = [
   },
   {
     id: "readiness",
-    label: "Day-1 Tool Readiness",
+    label: "Day 1 Tool Readiness",
     value: 97,
     unit: "%",
     target: 95,
@@ -77,19 +77,19 @@ function ServicePill({
 }
 
 const trustNumbers = [
-  { value: "≈9 days", label: "Time-to-Offer", icon: Zap },
+  { value: "≈9 days", label: "Time to Offer", icon: Zap },
   { value: "2.6M+", label: "Talent Graph Profiles", icon: Users },
-  { value: "≥95%", label: "Day-1 Tool Readiness", icon: CheckCircle },
-  { value: "100%", label: "Audit-Ready Compliance", icon: ShieldCheck },
+  { value: "≥95%", label: "Day 1 Tool Readiness", icon: CheckCircle },
+  { value: "100%", label: "Audit Ready Compliance", icon: ShieldCheck },
 ];
 
 const corePillars = [
   {
     icon: <BrainCircuit className="h-8 w-8 text-primary" />,
     pain: "Wasting months on bad hires?",
-    title: "De-Risk Your Hiring with Cognitive AI",
+    title: "Reduce Hiring Risk with Cognitive AI",
     description:
-      "Stop gambling on resumes. Our Axiom Cortex™ Cognitive AI engine provides auditable, scientific proof of a candidate's problem-solving ability and mental shape, cutting your mis-hire risk by over 90%.",
+      "Stop gambling on resumes. Our Axiom Cortex™ Cognitive AI engine provides auditable scientific proof of a candidate problem solving ability and mental shape, cutting mismatch risk by over 90 percent.",
     href: "/playbook/bias-free-technical-hiring-axiom-cortex",
     linkLabel: "Learn About Our Vetting",
     kpi: "Mismatch rate ≤10%",
@@ -107,9 +107,9 @@ const corePillars = [
   {
     icon: <Scale className="h-8 w-8 text-primary" />,
     pain: "Struggling to justify your budget?",
-    title: "Get a CFO-Ready TCO Model",
+    title: "Get a CFO Ready TCO Model",
     description:
-      "We provide a predictable, all-inclusive Total Cost of Ownership (TCO) that is often 40-60% lower than the 'hidden cost' of a DIY approach or a US hire. Make a business case your finance team will approve.",
+      "We provide a predictable all inclusive Total Cost of Ownership (TCO) that is often 40 to 60 percent lower than the hidden cost of a DIY approach or a US hire. Make a business case your finance team will approve.",
     href: "/playbook/latam-economics",
     linkLabel: "View Our TCO Model",
     kpi: "≈$98k revenue pulled forward",
@@ -125,11 +125,11 @@ const painPoints = [
 
 const sandlerCards = [
   {
-    title: "Velocity: 24-Hour Ping-Pong vs Daylight Cadence",
+    title: "Velocity: 24 Hour Ping Pong vs Daylight Cadence",
     question: "How many releases died waiting for “LGTM”?",
     problem: "PRs sleep overnight; one question = one day lost.",
-    solution: "Daylight overlap + same-day review SLAs with telemetry.",
-    proof: "PR turnaround 36–72h → <8h; cycle time drops in 2 sprints.",
+    solution: "Daylight overlap plus same day review SLAs with telemetry.",
+    proof: "PR turnaround 36 to 72 hours to under 8 hours. Cycle time drops in 2 sprints.",
     icon: <Zap className="h-8 w-8 text-primary" />,
   },
   {
@@ -137,7 +137,7 @@ const sandlerCards = [
     question: "Who last vetoed a bad pattern before it shipped?",
     problem: "“Senior” on the slide, junior in the repo.",
     solution:
-      "Axiom Cortex™ cognitive signals + structured rubrics + recorded panels.",
+      "Axiom Cortex™ cognitive signals plus structured rubrics plus recorded panels.",
     proof: "Mismatch rate ≤10%; rewrite ADRs trend down.",
     icon: <BrainCircuit className="h-8 w-8 text-primary" />,
   },
@@ -146,7 +146,7 @@ const sandlerCards = [
     question: "How many vendors does it take to ship one roadmap?",
     problem: "Vendor sprawl; shadow staffing; no single throat to choke.",
     solution:
-      "One governed system: hiring → devices/MDM → access → payroll/EOR → SLAs.",
+      "One governed system. Hiring to devices and MDM to access to payroll and EOR to SLAs.",
     proof: "Forecast vs actual variance <10%; fewer reopenings.",
     icon: <Users className="h-8 w-8 text-primary" />,
   },
@@ -191,16 +191,17 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <div className="container mx-auto px-4">
-        <section className="py-16 md:py-24">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="text-center md:text-left">
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+      <div className="bg-background">
+        <div className="container mx-auto px-4">
+        <section className="relative py-16 md:py-24 section-defer">
+                    <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="text-center md:text-left glass-panel rounded-2xl p-8 md:p-10 relative overflow-hidden">
+              
+              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary via-sky-300 to-cyan-200 bg-clip-text text-transparent">
                 Distributed Engineering OS: CTO Playbook
               </h1>
               <p className="mx-auto md:mx-0 mt-6 max-w-3xl text-lg text-muted-foreground">
-                The vendor era is over. Command an evidence-driven, daylight,
-                secure stack you control—without the lag, fog, or hidden taxes.
+                The vendor era is over. Command an evidence driven daylight secure stack you control without lag fog or hidden taxes.
               </p>
               <div className="mt-10">
                 <Link
@@ -221,7 +222,7 @@ export default async function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="max-w-md mx-auto w-full">
+            <div className="max-w-md mx-auto w-full glass-panel rounded-2xl p-4 md:p-5">
               <HeroKpis items={heroKpis} />
             </div>
           </div>
@@ -232,7 +233,7 @@ export default async function HomePage() {
             {trustNumbers.map((item) => (
               <div
                 key={item.label}
-                className="group rounded-lg border bg-card p-4 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
+                className="group rounded-xl glass-panel p-4 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20"
               >
                 <div className="flex justify-center">
                   <item.icon className="h-8 w-8 text-primary" />
@@ -260,7 +261,7 @@ export default async function HomePage() {
             {corePillars.map((pillar) => (
               <div
                 key={pillar.title}
-                className="rounded-lg border bg-card p-6 flex flex-col shadow-lg"
+                className="rounded-2xl glass-panel p-6 flex flex-col"
               >
                 <p className="text-sm font-semibold text-primary">
                   {pillar.pain}
@@ -282,7 +283,7 @@ export default async function HomePage() {
                       </WithTooltip>{" "}
                       Cognitive AI engine provides auditable, scientific proof
                       of a candidate's problem-solving ability and mental shape,
-                      cutting your mis-hire risk by over 90%.
+                      cutting your mismatch risk by over 90%.
                     </>
                   ) : pillar.description.includes("EOR") ? (
                     <>
@@ -303,7 +304,7 @@ export default async function HomePage() {
                     </>
                   ) : pillar.description.includes("TCO") ? (
                     <>
-                      We provide a predictable, all-inclusive{" "}
+                      We provide a predictable, all inclusive{" "}
                       <WithTooltip content="Total Cost of Ownership">
                         <span className="border-b border-dashed">TCO</span>
                       </WithTooltip>{" "}
@@ -335,7 +336,7 @@ export default async function HomePage() {
 
         <section
           id="pain-points"
-          className="py-24 bg-card rounded-lg shadow-lg section-defer"
+          className="py-24 glass-panel rounded-2xl section-defer"
         >
           <h2 className="text-center text-4xl font-bold text-foreground">
             Sound Familiar? It's the Cost of Doing Nothing.
@@ -348,7 +349,7 @@ export default async function HomePage() {
             {painPoints.map((pain, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 bg-background p-4 rounded-lg shadow-lg"
+                className="flex items-center gap-4 glass-panel p-4 rounded-xl"
               >
                 <AlertTriangle className="h-6 w-6 text-primary shrink-0" />
                 <p className="m-0 font-medium text-muted-foreground">{pain}</p>
@@ -362,8 +363,8 @@ export default async function HomePage() {
             There Is a Better Way
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
-            Legacy vendors promise, overcharge, and under-deliver. This Field
-            Manual names the failure modes and instruments the fixes—cognitive
+            Legacy vendors promise, overcharge, and under deliver. This Field
+            Manual names the failure modes and instruments the fixes with cognitive
             hiring signals, daylight SLAs for PRs/incidents, device/MDM control,
             EOR & compliance, and TCO you can defend in front of Finance.
           </p>
@@ -371,7 +372,7 @@ export default async function HomePage() {
             {sandlerCards.map((card) => (
               <div
                 key={card.title}
-                className="rounded-lg border bg-card p-6 flex flex-col shadow-lg"
+                className="rounded-2xl glass-panel p-6 flex flex-col"
               >
                 <div className="flex items-start gap-4">
                   {card.icon}
@@ -391,7 +392,7 @@ export default async function HomePage() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
                   <h4 className="font-semibold text-primary text-sm">
-                    Solution (Next-Gen)
+                    Solution (Next Generation)
                   </h4>
                   <p className="text-sm text-foreground m-0">{card.solution}</p>
                 </div>
@@ -423,11 +424,11 @@ export default async function HomePage() {
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
             We don't just follow best practices; we author them. Explore our
-            peer-reviewed research and listen to our leadership discuss the
+            peer reviewed research and listen to our leadership discuss the
             future of engineering.
           </p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="rounded-lg border bg-card p-8 flex flex-col items-center text-center shadow-lg">
+            <div className="rounded-2xl glass-panel p-8 flex flex-col items-center text-center">
               <SpotifyIcon className="h-12 w-12 text-[#1DB954]" />
               <h3 className="text-2xl font-bold mt-4">
                 Listen to the Platform Vision
@@ -440,11 +441,11 @@ export default async function HomePage() {
                 Listen Now <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
-            <div className="rounded-lg border bg-card p-8 flex flex-col items-center text-center shadow-lg">
+            <div className="rounded-2xl glass-panel p-8 flex flex-col items-center text-center">
               <BookOpen className="h-12 w-12 text-primary" />
               <h3 className="text-2xl font-bold mt-4">Explore Our Research</h3>
               <p className="mt-2 text-muted-foreground flex-grow">
-                From our Amazon book to peer-reviewed papers on AI in hiring,
+                From our Amazon book to peer reviewed papers on AI in hiring,
                 see the evidence that powers our platform.
               </p>
               <Link href="/research/hub" className="cta-button mt-6">
@@ -468,7 +469,7 @@ export default async function HomePage() {
                 <Link
                   key={study.slug}
                   href={`/case-studies/${study.slug}`}
-                  className="group flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg"
+                  className="group flex flex-col rounded-2xl glass-panel p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20"
                 >
                   <div className="relative h-40 w-full mb-4 rounded-lg overflow-hidden border">
                     {study.ogImage?.src?.url && (
@@ -512,14 +513,14 @@ export default async function HomePage() {
         </section>
 
         <section id="contact" className="py-24 section-defer">
-          <div className="mx-auto max-w-3xl rounded-lg border bg-card p-8 text-center shadow-lg">
+          <div className="mx-auto max-w-3xl rounded-2xl glass-panel p-8 text-center">
             <h2 className="text-3xl font-bold text-foreground">
               Stop Patching a Broken System. Build a Better One.
             </h2>
             <p className="mt-3 text-muted-foreground">
-              In a 15-minute call, we won't give you a sales pitch. We'll give
+              In a 15 minute call, we will not give you a sales pitch. We will give
               you a concrete plan to fix your hiring process, consolidate your
-              vendors, and get a predictable, CFO-ready budget for your
+              vendors, and get a predictable, CFO ready budget for your
               nearshore team. You will walk away with actionable advice, whether
               you work with us or not.
             </p>
@@ -530,11 +531,12 @@ export default async function HomePage() {
                 rel="noopener noreferrer"
                 className="cta-button"
               >
-                Book a No-Obligation Strategy Call
+                Book a Strategy Call
               </Link>
             </div>
           </div>
         </section>
+        </div>
       </div>
     </>
   );
