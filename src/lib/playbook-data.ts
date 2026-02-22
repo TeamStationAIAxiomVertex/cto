@@ -5,8 +5,8 @@
 export type Author = {
     name: string;
     title: string;
-    credentials: string; // e.g., "Former AWS Principal Engineer, 20+ years in distributed systems"
-    imageUrl: string; // For the author profile picture
+    credentials: string;
+    imageUrl?: string;
 };
 
 export type TocItem = {
@@ -31,12 +31,11 @@ export type PlaybookFactPack = {
 // Define a set of programmatic slugs for static generation
 const MOCK_SLUGS = ['nearshore-vs-offshore', 'bias-free-technical-hiring-axiom-cortex', 'latam-economics'];
 
-// Define the high-authority author for E-E-A-T
+// Define a neutral, factual attribution used until real author records are available.
 const MOCK_AUTHOR_CTO: Author = {
-    name: 'Dr. Evelyn Reed',
-    title: 'Chief Strategy Officer & Author',
-    credentials: 'PhD in Cognitive Computing, Former VP of Engineering at Google X, 20+ patents in AI Vetting.',
-    imageUrl: '/authors/evelyn-reed.jpg', // Placeholder image URL
+    name: 'TeamStation AI Research and Editorial Team',
+    title: 'Editorial and Research Attribution',
+    credentials: 'Content is maintained by the TeamStation AI editorial workflow and reviewed against internal doctrine, operating models, and research references.',
 };
 
 // Full data pack simulation for a key pillar chapter
