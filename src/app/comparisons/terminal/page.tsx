@@ -48,12 +48,12 @@ export default function TerminalComparisonPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
-      <main className="container py-12">
+      <main className="manual-page container py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Terminal</span>
         </div>
-        <header className="text-center my-8">
-          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TeamStation AI vs. Terminal</h1>
+        <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">TeamStation AI vs. Terminal</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             An analysis of TeamStation AI’s integrated Nearshore IT Co-Pilot™ versus Terminal’s EOR-plus-recruiter model.
           </p>
@@ -68,7 +68,7 @@ export default function TerminalComparisonPage() {
           <h2 className="text-3xl font-bold text-center">The Integrated Co-Pilot vs. The EOR-Plus-Recruiter</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {Object.entries(comparisonPoints).map(([key, value]) => (
-              <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+              <div key={key} className="glass-panel rounded-2xl p-6 flex flex-col shadow-lg">
                 <p className="text-sm font-semibold text-primary">{value.pain}</p>
                 <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
                 
@@ -94,7 +94,7 @@ export default function TerminalComparisonPage() {
           </div>
         </div>
 
-        <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
+        <div className="glass-panel prose dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
           <h2 className="text-center">Analysis: The Integrated Co-Pilot vs. The EOR-Plus-Recruiter</h2>
           <div>
               <a href="https://terminal.io/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Terminal <ExternalLink className="h-4 w-4" /></a> builds remote engineering teams and can act as an <WithTooltip label="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</WithTooltip>, handling payroll and benefits. They offer a valuable service by removing many of the initial hurdles of hiring globally.
@@ -114,7 +114,7 @@ export default function TerminalComparisonPage() {
           </ul>
         </div>
 
-        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+        <div className="glass-panel text-center rounded-2xl p-8">
           <h2 className="text-2xl font-bold">Conclusion</h2>
           <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
               For companies that just need to solve hiring and payroll, Terminal is a capable partner. For CTOs who require an end-to-end, secure, and scientifically-validated platform for their entire nearshore operation, TeamStation AI offers a far more comprehensive and integrated solution.

@@ -55,15 +55,15 @@ export default function HirePage() {
   ];
 
   return (
-    <main className="content-shell py-12">
+    <main className="manual-page content-shell py-10">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">
           Home
         </Link>{" "}
         / <span>Hire</span>
       </div>
-      <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <h1 className="text-5xl font-extrabold tracking-tight text-foreground">
           Stop Gambling on Talent. Start De-Risking Your Roadmap.
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
@@ -94,7 +94,7 @@ export default function HirePage() {
         </nav>
       </header>
 
-      <section className="surface-card my-10 p-6 md:p-8">
+      <section className="glass-panel my-10 rounded-2xl p-6 md:p-8">
         <h2 className="text-2xl font-bold">Hiring Decision Snapshot</h2>
         <p className="mt-3 text-sm text-muted-foreground">
           Start from the bottleneck. If delivery is slow use role and topology paths. If execution quality is unstable use stack and country paths with overlap and governance controls.
@@ -119,7 +119,7 @@ export default function HirePage() {
         {hireOptions.map((option) => (
           <div
             key={option.href}
-            className="surface-card group relative mx-auto w-full max-w-md flex flex-col p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
+            className="glass-panel rounded-2xl group relative mx-auto w-full max-w-md flex flex-col p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
           >
             <div className="flex items-start justify-between gap-3">
               <p className="text-sm font-semibold text-primary">{option.pain}</p>
@@ -147,7 +147,7 @@ export default function HirePage() {
         ))}
       </div>
 
-      <section className="surface-card my-12 p-6 md:p-8">
+      <section className="glass-panel my-10 rounded-2xl p-6 md:p-8">
         <h2 className="text-2xl font-bold">How CTO teams should use this hub</h2>
         <div className="mt-4 space-y-5 text-muted-foreground leading-7">
           <h3 className="text-lg font-semibold text-foreground">Start with the business risk not the role name</h3>

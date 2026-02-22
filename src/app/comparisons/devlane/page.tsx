@@ -55,12 +55,12 @@ export default function DevlaneComparisonPage() {
   return (
     <>
       <JsonLd data={schema} />
-      <main className="container py-12">
+      <main className="manual-page container py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>{competitor.name}</span>
         </div>
-        <header className="text-center my-8">
-          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TeamStation AI vs. {competitor.name}</h1>
+        <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">TeamStation AI vs. {competitor.name}</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             A comparison between TeamStation AI’s integrated platform and {competitor.name}’s traditional nearshore staff augmentation model.
           </p>
@@ -75,7 +75,7 @@ export default function DevlaneComparisonPage() {
           <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. Traditional Augmentation</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {Object.entries(comparisonPoints).map(([key, value]) => (
-              <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+              <div key={key} className="glass-panel rounded-2xl p-6 flex flex-col shadow-lg">
                 <p className="text-sm font-semibold text-primary">{value.pain}</p>
                 <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
                 
@@ -101,7 +101,7 @@ export default function DevlaneComparisonPage() {
           </div>
         </div>
 
-        <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
+        <div className="glass-panel prose dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
           <h2 className="text-center">Analysis: Platform vs. Placement</h2>
           <p>
             {competitor.name} is a nearshore staff augmentation vendor that sources and places talent in LATAM. This model can be effective for companies that have the internal capacity to manage the operational, legal, and security aspects of a distributed team.
@@ -111,7 +111,7 @@ export default function DevlaneComparisonPage() {
           </p>
         </div>
 
-        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+        <div className="glass-panel text-center rounded-2xl p-8">
           <h2 className="text-2xl font-bold">Conclusion</h2>
           <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             For companies that need to quickly add headcount and have robust internal operations, {competitor.name} is a viable option. For CTOs who want a strategic partner to handle the entire operational stack and provide deeply vetted talent, TeamStation AI's integrated platform is the more modern and secure choice.

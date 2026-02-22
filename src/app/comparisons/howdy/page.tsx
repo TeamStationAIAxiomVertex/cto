@@ -128,7 +128,7 @@ export default function HowdyComparisonPage() {
         </div>
 
         <header className="my-8 text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">{h1}</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">{h1}</h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: intro }}></p>
             <div className="mt-4 text-sm">
                 <a href="https://www.howdy.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
@@ -181,7 +181,7 @@ export default function HowdyComparisonPage() {
             <h2 className="text-3xl font-bold text-center">Frequently Asked Questions</h2>
             <div className="mt-8 max-w-3xl mx-auto space-y-4">
                 {faq.map((item, i) => (
-                    <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
+                    <div key={i} className="glass-panel rounded-2xl p-6 shadow-lg">
                         <h3 className="font-semibold text-primary">{item.q}</h3>
                         <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
                     </div>
@@ -200,7 +200,7 @@ export default function HowdyComparisonPage() {
 
         <FurtherReading comparison="howdy" />
 
-        <section className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+        <section className="glass-panel text-center rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-foreground">Ready for a True Platform Solution?</h2>
             <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
                 Let's move beyond sourcing and payroll. In a 15-minute call, we can build a CFO-ready business case for a nearshore platform that delivers a complete, secure, and productive team.

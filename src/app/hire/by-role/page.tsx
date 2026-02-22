@@ -17,12 +17,12 @@ export const metadata: Metadata = {
 
 export default function HireByRolePage() {
   return (
-    <main className="content-shell py-12">
+    <main className="manual-page content-shell py-10">
        <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <span>By Role</span>
       </div>
-      <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Stop Hiring for Titles. Start Hiring for Competencies.</h1>
+      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <h1 className="text-5xl font-extrabold tracking-tight text-foreground">Stop Hiring for Titles. Start Hiring for Competencies.</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             You don't need a "backend developer." You need someone who can solve your database scaling issues. Our role-based hiring focuses on the specific, high-stakes competencies that drive business value, ensuring you get the right expert for the right problem.
         </p>
@@ -38,7 +38,7 @@ export default function HireByRolePage() {
         </nav>
       </header>
 
-      <section className="surface-card my-10 p-6 md:p-8">
+      <section className="glass-panel my-10 rounded-2xl p-6 md:p-8">
         <h2 className="text-2xl font-bold">Role Selection Snapshot</h2>
         <p className="mt-3 text-sm text-muted-foreground">
           Choose role paths by constraint first. Platform roles reduce outage risk. Security roles reduce compliance and access risk. Product and delivery roles reduce roadmap delay.
@@ -61,7 +61,7 @@ export default function HireByRolePage() {
 
       <div className="card-grid-tight-3 my-12">
         {roleCategories.map((category) => (
-          <div key={category.slug} className="surface-card group relative mx-auto w-full max-w-sm flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+          <div key={category.slug} className="glass-panel rounded-2xl group relative mx-auto w-full max-w-sm flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
              <div className="flex justify-between items-start gap-2">
               <div className="flex items-center gap-2">
                 <WithTooltip content={category.priorityTooltip}>
@@ -94,7 +94,7 @@ export default function HireByRolePage() {
         ))}
       </div>
 
-      <section className="surface-card my-12 p-6 md:p-8">
+      <section className="glass-panel my-10 rounded-2xl p-6 md:p-8">
         <h2 className="text-2xl font-bold">Role Architecture for Executive Buyers</h2>
         <div className="mt-4 space-y-5 text-muted-foreground leading-7">
           <h3 className="text-lg font-semibold text-foreground">Choose roles by system pressure points</h3>

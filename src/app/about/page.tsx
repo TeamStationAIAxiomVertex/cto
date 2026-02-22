@@ -38,12 +38,12 @@ export default function AboutPage() {
     ];
 
   return (
-    <main className="container max-w-6xl py-12">
+    <main className="manual-page container max-w-6xl py-10">
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>About</span>
       </div>
-      <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">We Dare to Go Beyond</h1>
+      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <h1 className="text-5xl font-extrabold tracking-tight text-foreground">We Dare to Go Beyond</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           TeamStation AI was founded not just to improve the traditional outsourcing model, but to completely replace it. We are engineering a better way to build teams by combining elite nearshore talent with the security and efficiency of a modern technology platform.
         </p>

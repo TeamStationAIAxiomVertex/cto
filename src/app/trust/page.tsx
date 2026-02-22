@@ -43,12 +43,12 @@ export default function TrustPage() {
     ];
 
   return (
-    <main className="container max-w-7xl py-12">
+    <main className="manual-page container max-w-7xl py-10">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Trust Center</span>
       </div>
-      <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <h1 className="text-5xl font-extrabold tracking-tight text-foreground">
           You Keep the Velocity. We Take the Risk.
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">

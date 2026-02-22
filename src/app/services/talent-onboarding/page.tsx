@@ -44,12 +44,12 @@ export default function OnboardingPage() {
     ];
 
   return (
-    <main className="container max-w-6xl py-12">
+    <main className="manual-page container max-w-6xl py-10">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Services</span> / <span>Talent Onboarding</span>
       </div>
-      <header className="text-center my-12">
-      <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Onboarding You Can Audit</h1>
+      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+      <h1 className="text-5xl font-extrabold tracking-tight text-foreground">Onboarding You Can Audit</h1>
        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
         A slow or insecure onboarding process is a drain on productivity and a major security risk. Our evidence-backed onboarding system ensures every new team member is compliant, secure, and ready to contribute from day one.
       </p>

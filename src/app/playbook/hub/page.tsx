@@ -96,12 +96,12 @@ const doctrineCards = [
 
 export default function PlaybookHubPage() {
   return (
-    <main className="reading-shell py-12">
+    <main className="manual-page reading-shell py-10">
       <div className="mb-8 text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Playbook Hub</span>
       </div>
 
-      <header className="surface-card p-8 md:p-10">
+      <header className="glass-panel rounded-2xl p-8 md:p-10">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
           Distributed Engineering OS Playbook Hub
         </h1>
@@ -117,7 +117,7 @@ export default function PlaybookHubPage() {
         </div>
       </header>
 
-      <section className="surface-card mt-10 p-8 md:p-10">
+      <section className="glass-panel rounded-2xl mt-10 p-8 md:p-10">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">How to use this hub</h2>
         <div className="mt-6 space-y-4 text-muted-foreground leading-7">
           <p>
@@ -165,7 +165,7 @@ export default function PlaybookHubPage() {
         </div>
       </section>
 
-      <section className="surface-card my-16 p-8 md:p-10">
+      <section className="glass-panel my-12 rounded-2xl p-6 md:p-8 md:p-10">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">Core doctrine for CTO operations</h2>
         <p className="mt-4 text-muted-foreground leading-7">
           These cards summarize recurring leadership constraints and the operating response that prevents delivery drift.
@@ -199,7 +199,7 @@ export default function PlaybookHubPage() {
         focus="delivery risk diagnosis, hiring signal quality, and governance alignment"
       />
 
-      <section className="surface-card my-12 p-8 md:p-10 text-center">
+      <section className="glass-panel rounded-2xl my-12 p-8 md:p-10 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">Diagnose delivery risk before you hire</h2>
         <p className="mx-auto mt-3 max-w-2xl text-muted-foreground leading-7">
           Use a short discovery session to identify constraints, choose the right team design, and align operating goals

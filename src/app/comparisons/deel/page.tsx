@@ -35,12 +35,12 @@ const comparisonPoints = {
 
 export default function DeelComparisonPage() {
   return (
-    <main className="container py-12">
+    <main className="manual-page container py-10">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Deel</span>
       </div>
-      <header className="text-center my-8">
-        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TeamStation AI vs. Deel</h1>
+      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">TeamStation AI vs. Deel</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           This isn't a direct comparison, but a clarification of two very different and potentially complementary models.
         </p>
@@ -55,7 +55,7 @@ export default function DeelComparisonPage() {
         <h2 className="text-3xl font-bold text-center">The Talent Platform vs. The HR Platform</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+            <div key={key} className="glass-panel rounded-2xl p-6 flex flex-col shadow-lg">
               <p className="text-sm font-semibold text-primary">{value.pain}</p>
               <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
               
@@ -81,7 +81,7 @@ export default function DeelComparisonPage() {
         </div>
       </div>
 
-      <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
+      <div className="glass-panel prose dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
         <h2 className="text-center">Analysis: Talent Platform vs. HR Platform</h2>
         <p>
             <a href="https://www.deel.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Deel <ExternalLink className="h-4 w-4" /></a> is a world-class global payroll and compliance engine. They solve the critical problem of how to legally hire and pay people almost anywhere in the world. However, Deel is not a talent platform. They do not source, vet, or manage talent. You must bring your own candidates to their platform.
@@ -99,7 +99,7 @@ export default function DeelComparisonPage() {
         </p>
       </div>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+      <div className="glass-panel text-center rounded-2xl p-8">
         <h2 className="text-2xl font-bold">Conclusion</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             Choosing between TeamStation AI and Deel is not an either/or decision. They are different tools for different jobs. If you need to find and run an elite nearshore team with full operational support, TeamStation AI is your solution. If you simply need a way to pay an international team you've already sourced, Deel is the industry leader.

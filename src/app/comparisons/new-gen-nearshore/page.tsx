@@ -98,7 +98,7 @@ export default function NewGenNearshoreComparisonPage() {
       </div>
 
       <header className="my-8 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">
           Fire offshore & legacy nearshore run an IT Co-Pilot in daylight.
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
@@ -118,7 +118,7 @@ export default function NewGenNearshoreComparisonPage() {
         {sandlerCards.map((card) => (
           <div
             key={card.title}
-            className="rounded-lg border bg-card p-6 flex flex-col text-center shadow-lg"
+            className="glass-panel rounded-2xl p-6 flex flex-col text-center shadow-lg"
           >
             <div className="flex justify-center">{card.icon}</div>
             <h3 className="text-lg font-bold text-foreground mt-4">

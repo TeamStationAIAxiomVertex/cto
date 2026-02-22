@@ -126,7 +126,7 @@ const LinkCard = ({ href, icon, title, description }: { href: string, icon: Reac
 
 export default function IntegratedServicesPage() {
   return (
-    <main className="container max-w-6xl py-12">
+    <main className="manual-page container max-w-6xl py-10">
         <script 
             type="application/ld+json" 
             dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} 
@@ -135,8 +135,8 @@ export default function IntegratedServicesPage() {
         <div className="text-sm text-muted-foreground mb-8">
             <Link href="/" className="hover:text-foreground">Home</Link> / <span>Services</span> / <span>Integrated Services</span>
         </div>
-        <header className="text-center my-12">
-            <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">One Accountable SLA for Your Entire Operation</h1>
+        <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+            <h1 className="text-5xl font-extrabold tracking-tight text-foreground">One Accountable SLA for Your Entire Operation</h1>
             <p className="mt-4 max-w-4xl mx-auto text-xl text-muted-foreground font-medium">
                 We are the <strong>only</strong> intelligent services platform offering a <strong>Single Accountable SLA/SOW/MSA</strong> to build Nearshore IT teams at a touch of a button, fueled by <strong>Axiom Cortex's</strong> gigantic brain processing <strong>44 NeuroPsychometric formulas</strong>. This is how you defeat fragmented vendor risk.
             </p>

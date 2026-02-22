@@ -172,12 +172,12 @@ export default function PricingPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
-      <main className="container py-12">
+      <main className="manual-page container py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <span>Pricing</span>
         </div>
-        <header className="text-center my-12">
-          <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Your CFO-Ready Case for Nearshore</h1>
+        <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+          <h1 className="text-5xl font-extrabold tracking-tight text-foreground">Your CFO-Ready Case for Nearshore</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             Stop getting ambushed by hidden fees and vendor chaos. This is a predictable, all-inclusive cost model that your finance team will actually approve.
           </p>

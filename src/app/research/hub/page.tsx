@@ -180,7 +180,7 @@ export default function ResearchHubPage() {
     <>
       <JsonLd data={[breadcrumbSchema, collectionSchema, faqSchema]} />
 
-      <main className="container max-w-6xl py-12">
+      <main className="manual-page container max-w-6xl py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <span>Research Hub</span>
         </div>

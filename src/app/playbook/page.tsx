@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 
 export default function PlaybookPage() {
   return (
-    <main className="reading-shell py-12">
+    <main className="manual-page reading-shell py-10">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Playbook</span>
       </div>
 
-      <header className="surface-card p-8 md:p-10">
+      <header className="glass-panel rounded-2xl p-8 md:p-10">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
           Distributed Engineering OS Playbook
         </h1>
@@ -66,7 +66,7 @@ export default function PlaybookPage() {
         </div>
       </header>
 
-      <section className="surface-card mt-10 p-8 md:p-10">
+      <section className="glass-panel rounded-2xl mt-10 p-8 md:p-10">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">How CTO teams should use this playbook</h2>
         <div className="mt-6 space-y-4 text-muted-foreground leading-7">
           <p>

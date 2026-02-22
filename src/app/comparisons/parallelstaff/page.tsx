@@ -48,12 +48,12 @@ export default function ParallelStaffComparisonPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
-      <main className="container py-12">
+      <main className="manual-page container py-10">
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>ParallelStaff</span>
         </div>
-        <header className="text-center my-8">
-          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TeamStation AI vs. ParallelStaff</h1>
+        <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+          <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">TeamStation AI vs. ParallelStaff</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             A comparison between TeamStation AI’s integrated platform and ParallelStaff’s Talent-as-a-Service (TaaS) model.
           </p>
@@ -68,7 +68,7 @@ export default function ParallelStaffComparisonPage() {
           <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The TaaS Model</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {Object.entries(comparisonPoints).map(([key, value]) => (
-              <div key={key} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+              <div key={key} className="glass-panel rounded-2xl p-6 flex flex-col shadow-lg">
                 <p className="text-sm font-semibold text-primary">{value.pain}</p>
                 <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
                 
@@ -94,7 +94,7 @@ export default function ParallelStaffComparisonPage() {
           </div>
         </div>
 
-        <div className="prose dark:prose-invert mx-auto my-12 max-w-4xl">
+        <div className="glass-panel prose dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
           <h2 className="text-center">Analysis: The Integrated Platform vs. TaaS</h2>
           <p>
               <a href="https://www.parallelstaff.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">ParallelStaff's <ExternalLink className="h-4 w-4" /></a> Talent-as-a-Service (TaaS) model, with its "try-before-you-buy" evaluation period, is a smart evolution of traditional staff augmentation. It rightly identifies the need for structured onboarding and aims to reduce mis-hire risk.
@@ -109,7 +109,7 @@ export default function ParallelStaffComparisonPage() {
           </p>
         </div>
 
-        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+        <div className="glass-panel text-center rounded-2xl p-8">
           <h2 className="text-2xl font-bold">Conclusion</h2>
           <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
               ParallelStaff's TaaS model is a step in the right direction. However, for CTOs seeking a truly comprehensive, secure, and unified platform that minimizes risk and administrative overhead through scientific vetting and all-inclusive operations, TeamStation AI's integrated model represents the next logical evolution.

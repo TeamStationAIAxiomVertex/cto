@@ -19,12 +19,12 @@ export const metadata: Metadata = {
 export default function HireByCountryPage() {
 
   return (
-    <main className="content-shell py-12">
+    <main className="manual-page content-shell py-10">
        <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/hire" className="hover:text-foreground">Hire</Link> / <span>By Country</span>
       </div>
-      <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Stop Losing a Full Day to Time Zones.</h1>
+      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <h1 className="text-5xl font-extrabold tracking-tight text-foreground">Stop Losing a Full Day to Time Zones.</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           You're here because the 12-hour lag with your offshore team is killing your velocity. A simple question takes a full day to answer. Our nearshore model gives you access to elite talent in your time zone, enabling the real-time collaboration that agile development demands.
       </p>
@@ -40,7 +40,7 @@ export default function HireByCountryPage() {
         </nav>
       </header>
 
-       <div className="surface-card my-16 p-8 md:p-12">
+       <div className="glass-panel my-12 rounded-2xl p-6 md:p-8 md:p-12">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
                  <p className="text-sm font-semibold text-primary">Tired of insecure home offices and spotty Wi-Fi?</p>
@@ -73,7 +73,7 @@ export default function HireByCountryPage() {
         <h2 className="text-center text-3xl font-bold">Explore Our Premier LATAM Engineering Hubs</h2>
         <div className="card-grid-tight-3 mt-8">
             {countries.map((country) => (
-                <div key={country.slug} className="surface-card group relative mx-auto w-full max-w-sm flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                <div key={country.slug} className="glass-panel rounded-2xl group relative mx-auto w-full max-w-sm flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                     <div className="flex items-start justify-between gap-3">
                       <p className="text-sm font-semibold text-primary">{country.pain}</p>
                       <CardGuidanceTooltip
@@ -95,7 +95,7 @@ export default function HireByCountryPage() {
         </div>
       </div>
 
-      <section className="surface-card my-12 p-6 md:p-8">
+      <section className="glass-panel my-10 rounded-2xl p-6 md:p-8">
         <h2 className="text-2xl font-bold">Country Selection Framework for CTO and CIO teams</h2>
         <div className="mt-4 space-y-5 text-muted-foreground leading-7">
           <h3 className="text-lg font-semibold text-foreground">Select country by operating fit not headline rate</h3>

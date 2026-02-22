@@ -14,12 +14,12 @@ export default async function CaseStudiesPage() {
   const caseStudies = await getAllCaseStudies();
 
   return (
-    <main className="container py-12">
+    <main className="manual-page container py-10">
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Case Studies</span>
       </div>
-      <header className="text-center my-12">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Evidence of Impact</h1>
+      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <h1 className="text-5xl font-extrabold tracking-tight text-foreground">Evidence of Impact</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           From resolving critical SSO failures for enterprise clients to scaling monolithic platforms for 15,000+ users, our nearshore squads deliver results. Here’s the evidence.
         </p>
@@ -80,7 +80,7 @@ export default async function CaseStudiesPage() {
         ))}
       </div>
 
-      <section className="surface-card my-16 p-8">
+      <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
         <h2 className="text-3xl font-bold text-center">How to Read Operational Proof</h2>
         <div className="mt-6 space-y-4 text-muted-foreground leading-7">
           <p>
