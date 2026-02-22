@@ -6,6 +6,7 @@ import ValuePropositionBlock from '../../components/seo/ValuePropositionBlock';
 import FurtherReading from '../../components/seo/FurtherReading';
 import { JsonLd } from '../../components/seo/JsonLd';
 import SectionNav from '../../components/client/SectionNav';
+import { RevealBlock, RevealSection, StaggerGrid, StaggerItem } from '../../components/motion/MotionPrimitives';
 import {
   ExecutivePageFrame,
   ExecutivePanel,
@@ -298,7 +299,8 @@ export default function ComparisonsPage() {
           <Link href="/" className="hover:text-foreground">Home</Link> / <span>Comparisons</span>
         </div>
 
-        <ExecutivePanel as="header">
+        <RevealBlock>
+          <ExecutivePanel as="header" className="hero-depth system-grid">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_.8fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-primary">Decision Interface for CTO and CIO Buyers</p>
@@ -334,7 +336,7 @@ export default function ComparisonsPage() {
               </div>
             </div>
 
-            <aside className="glass-panel rounded-xl p-5">
+            <aside className="glass-panel gradient-ring rounded-xl p-5">
               <p className="text-sm font-semibold text-primary">Trust surface for US executive teams</p>
               <ul className="mt-3 space-y-3 text-sm leading-6 text-muted-foreground">
                 <li className="flex items-start gap-2"><ShieldCheck className="mt-0.5 h-4 w-4 text-primary" />High level compliance and governance posture built into the operating model</li>
@@ -348,7 +350,8 @@ export default function ComparisonsPage() {
               </div>
             </aside>
           </div>
-        </ExecutivePanel>
+          </ExecutivePanel>
+        </RevealBlock>
 
         <div className="mt-6">
           <SectionNav
@@ -363,6 +366,7 @@ export default function ComparisonsPage() {
           />
         </div>
 
+        <RevealSection>
         <ExecutiveSection>
           <ExecutivePanel>
             <SectionHeading
@@ -372,7 +376,9 @@ export default function ComparisonsPage() {
             <ChecklistSteps items={checklistSteps} className="mt-6" />
           </ExecutivePanel>
         </ExecutiveSection>
+        </RevealSection>
 
+        <RevealSection>
         <ExecutiveSection id="proof" className="scroll-mt-28">
           <ExecutivePanel>
             <SectionHeading
@@ -380,7 +386,7 @@ export default function ComparisonsPage() {
               description="Quantified claims should always include what is in scope, where to validate, and what executive teams should request in review."
             />
             <div className="mt-6 grid gap-6 lg:grid-cols-[1.15fr_.85fr]">
-              <div className="rounded-xl border bg-background p-5">
+              <div className="glass-card-interactive gradient-ring rounded-xl border border-border/70 bg-background/70 p-5">
                 <div className="flex items-start gap-3">
                   <Wallet className="mt-0.5 h-5 w-5 text-primary" />
                   <div>
@@ -392,17 +398,17 @@ export default function ComparisonsPage() {
                   </div>
                 </div>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  <Link href="/playbook/tco-model" className="rounded-lg border p-4 transition-ui hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                  <Link href="/playbook/tco-model" className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-4 transition-ui hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                     <p className="text-sm font-semibold text-foreground">Open TCO model</p>
                     <p className="mt-1 text-xs text-muted-foreground">Inspect cost logic and scenario assumptions</p>
                   </Link>
-                  <Link href="/case-studies" className="rounded-lg border p-4 transition-ui hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                  <Link href="/case-studies" className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-4 transition-ui hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                     <p className="text-sm font-semibold text-foreground">Review case studies</p>
                     <p className="mt-1 text-xs text-muted-foreground">See operational outcomes and implementation context</p>
                   </Link>
                 </div>
               </div>
-              <div className="rounded-xl border bg-background p-5">
+              <div className="glass-card-interactive rounded-xl border border-border/70 bg-background/70 p-5">
                 <p className="text-sm font-semibold text-primary">How to validate the claim</p>
                 <ul className="mt-3 space-y-2 text-sm leading-6 text-muted-foreground">
                   <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />Ask what cost categories are included beyond hourly rate</li>
@@ -415,15 +421,18 @@ export default function ComparisonsPage() {
             <ProofStrip items={proofStrip} className="mt-6" />
           </ExecutivePanel>
         </ExecutiveSection>
+        </RevealSection>
 
+        <RevealSection>
         <ExecutiveSection id="models" className="scroll-mt-28">
           <SectionHeading
             title="Vendor model comparison cards"
             description="Each card follows the same structure so you can compare operating models quickly without losing technical depth."
           />
-          <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <StaggerGrid className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
             {models.map((model) => (
-              <article key={model.id} className="surface-card card-hover-lift flex h-full flex-col p-6 md:p-7">
+              <StaggerItem key={model.id}>
+              <article className="surface-card glass-panel gradient-ring card-hover-lift flex h-full flex-col p-6 md:p-7">
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">Operating risk</p>
@@ -436,7 +445,7 @@ export default function ComparisonsPage() {
 
                 <h2 className="mt-4 text-xl font-bold text-foreground">{model.name}</h2>
 
-                <div className="mt-4 rounded-lg border bg-background p-4">
+                <div className="mt-4 rounded-lg border border-border/70 bg-background/70 p-4">
                   <h3 className="text-sm font-semibold text-primary">Why it fails</h3>
                   <ul className="mt-2 space-y-2 text-sm leading-6 text-muted-foreground">
                     {model.whyItFails.map((item) => (
@@ -448,7 +457,7 @@ export default function ComparisonsPage() {
                   </ul>
                 </div>
 
-                <div className="mt-4 rounded-lg border bg-background p-4">
+                <div className="mt-4 rounded-lg border border-border/70 bg-background/70 p-4">
                   <h3 className="text-sm font-semibold text-primary">Hidden risks</h3>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {model.hiddenRisks.map((risk) => (
@@ -459,7 +468,7 @@ export default function ComparisonsPage() {
                   </div>
                 </div>
 
-                <div className="mt-4 rounded-lg border bg-background p-4">
+                <div className="mt-4 rounded-lg border border-border/70 bg-background/70 p-4">
                   <h3 className="text-sm font-semibold text-primary">What to validate</h3>
                   <ul className="mt-2 space-y-2 text-sm leading-6 text-muted-foreground">
                     {model.whatToValidate.map((item) => (
@@ -471,7 +480,7 @@ export default function ComparisonsPage() {
                   </ul>
                 </div>
 
-                <div className="mt-4 rounded-lg border bg-background p-4">
+                <div className="mt-4 rounded-lg border border-border/70 bg-background/70 p-4">
                   <h3 className="text-sm font-semibold text-primary">Comparison routes</h3>
                   <div className="mt-3 grid gap-3 sm:grid-cols-2">
                     {model.vendors.map((vendor) => (
@@ -480,7 +489,7 @@ export default function ComparisonsPage() {
                   </div>
                 </div>
 
-                <div className="mt-4 rounded-lg border bg-background p-4">
+                <div className="mt-4 rounded-lg border border-border/70 bg-background/70 p-4">
                   <h3 className="text-sm font-semibold text-primary">TeamStation prescription</h3>
                   <p className="mt-2 text-sm leading-6 text-foreground" dangerouslySetInnerHTML={{ __html: model.prescription }} />
                 </div>
@@ -491,17 +500,20 @@ export default function ComparisonsPage() {
                   </Link>
                 </div>
               </article>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGrid>
         </ExecutiveSection>
+        </RevealSection>
 
+        <RevealSection>
         <ExecutiveSection id="validation-matrix" className="scroll-mt-28">
           <ExecutivePanel>
             <SectionHeading
               title="Validation matrix for CTO and CIO vendor review"
               description="This matrix is the spine of the page. Each row is a testable question and a concrete artifact you can request before commitment."
             />
-            <div className="mt-6 overflow-x-auto rounded-lg border">
+            <div className="mt-6 overflow-x-auto rounded-lg border border-border/70 bg-background/60">
               <table className="w-full min-w-[920px] border-collapse text-sm">
                 <thead className="bg-background">
                   <tr>
@@ -544,7 +556,9 @@ export default function ComparisonsPage() {
             </div>
           </ExecutivePanel>
         </ExecutiveSection>
+        </RevealSection>
 
+        <RevealSection>
         <ExecutiveSection>
           <ExecutivePanel>
             <SectionHeading
@@ -552,7 +566,7 @@ export default function ComparisonsPage() {
               description="Replace long explanatory prose with a clear sequence and concrete controls your team can apply in procurement and technical review." 
             />
             <div className="mt-6 grid gap-6 xl:grid-cols-[1.1fr_.9fr]">
-              <div className="rounded-xl border bg-background p-5">
+              <div className="glass-card-interactive rounded-xl border border-border/70 bg-background/70 p-5">
                 <h3 className="text-sm font-semibold text-primary">Decision sequence timeline</h3>
                 <ol className="mt-4 space-y-4">
                   {timelineSteps.map((step, idx) => (
@@ -574,14 +588,14 @@ export default function ComparisonsPage() {
 
               <div className="grid gap-4">
                 {riskControls.map((block) => (
-                  <section key={block.title} className="rounded-xl border bg-background p-5">
+                  <section key={block.title} className="glass-card-interactive rounded-xl border border-border/70 bg-background/70 p-5">
                     <div className="flex items-center gap-2">
                       {block.icon}
                       <h3 className="text-sm font-semibold text-foreground">{block.title}</h3>
                     </div>
                     <div className="mt-3 space-y-2">
                       {block.items.map(([left, right]) => (
-                        <div key={left} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] gap-3 rounded-lg border p-3">
+                        <div key={left} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] gap-3 rounded-lg border border-border/70 bg-background/60 p-3">
                           <p className="text-xs font-semibold uppercase tracking-wide text-primary">{left}</p>
                           <p className="text-xs leading-5 text-muted-foreground">{right}</p>
                         </div>
@@ -593,6 +607,7 @@ export default function ComparisonsPage() {
             </div>
           </ExecutivePanel>
         </ExecutiveSection>
+        </RevealSection>
 
         <ExecutiveSection>
           <ValuePropositionBlock
@@ -605,6 +620,7 @@ export default function ComparisonsPage() {
           />
         </ExecutiveSection>
 
+        <RevealSection>
         <ExecutiveSection id="related-paths" className="scroll-mt-28">
           <ExecutivePanel>
             <SectionHeading
@@ -618,7 +634,7 @@ export default function ComparisonsPage() {
                 { href: '/playbook/tco-model', title: 'TCO Model', body: 'Quantified cost logic for approval and vendor comparison.' },
                 { href: '/research/hub', title: 'Research Hub', body: 'Evidence and methodology paths for validation and governance.' },
               ].map((item) => (
-                <Link key={item.href} href={item.href} className="rounded-lg border bg-background p-4 transition-ui hover:border-primary/40 hover:text-inherit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                <Link key={item.href} href={item.href} className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-4 transition-ui hover:border-primary/40 hover:text-inherit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                   <p className="text-sm font-semibold text-foreground">{item.title}</p>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.body}</p>
                   <span className="mt-3 inline-flex items-center text-sm font-semibold text-primary">
@@ -629,7 +645,9 @@ export default function ComparisonsPage() {
             </div>
           </ExecutivePanel>
         </ExecutiveSection>
+        </RevealSection>
 
+        <RevealSection>
         <ExecutiveSection>
           <ExecutivePanel>
             <div className="grid gap-6 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
@@ -642,11 +660,11 @@ export default function ComparisonsPage() {
                 </p>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {['Delivery constraint review', 'Risk and controls gap check', 'Economic model alignment', 'Decision path for next steps'].map((item) => (
-                    <div key={item} className="rounded-lg border bg-background p-3 text-sm text-muted-foreground">{item}</div>
+                    <div key={item} className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-3 text-sm text-muted-foreground">{item}</div>
                   ))}
                 </div>
               </div>
-              <div className="glass-panel rounded-xl p-5">
+              <div className="glass-panel gradient-ring rounded-xl p-5">
                 <p className="text-sm font-semibold text-primary">Fit over selling</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   We only engage when there is a measurable delivery fit. If your current operating model is already working, we will tell you directly.
@@ -669,7 +687,9 @@ export default function ComparisonsPage() {
             </div>
           </ExecutivePanel>
         </ExecutiveSection>
+        </RevealSection>
 
+        <RevealSection>
         <ExecutiveSection id="faq" className="scroll-mt-28">
           <ExecutivePanel>
             <SectionHeading
@@ -679,29 +699,32 @@ export default function ComparisonsPage() {
             <FAQList items={comparisonFaq} className="mt-6" />
           </ExecutivePanel>
         </ExecutiveSection>
+        </RevealSection>
 
+        <RevealSection>
         <ExecutiveSection>
           <ExecutivePanel className="p-6 md:p-8">
             <div className="grid gap-4 md:grid-cols-4">
-              <div className="rounded-lg border bg-background p-4">
+              <div className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-4">
                 <p className="text-sm font-semibold text-foreground">Who we are</p>
                 <p className="mt-2 text-sm text-muted-foreground">Integrated operating model for distributed engineering teams with accountable SLA ownership.</p>
               </div>
-              <div className="rounded-lg border bg-background p-4">
+              <div className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-4">
                 <p className="text-sm font-semibold text-foreground">Control posture</p>
                 <p className="mt-2 text-sm text-muted-foreground">Governance, onboarding readiness, and operational controls treated as core delivery inputs.</p>
               </div>
-              <div className="rounded-lg border bg-background p-4">
+              <div className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-4">
                 <p className="text-sm font-semibold text-foreground">Evidence paths</p>
                 <p className="mt-2 text-sm text-muted-foreground">Playbook, research, TCO model, and case studies connected for executive validation.</p>
               </div>
-              <div className="rounded-lg border bg-background p-4">
+              <div className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-4">
                 <p className="text-sm font-semibold text-foreground">Next step</p>
                 <p className="mt-2 text-sm text-muted-foreground">Book a strategy call and align the comparison to your actual failure mode.</p>
               </div>
             </div>
           </ExecutivePanel>
         </ExecutiveSection>
+        </RevealSection>
 
         <FurtherReading comparison="bairesdev" />
       </ExecutivePageFrame>

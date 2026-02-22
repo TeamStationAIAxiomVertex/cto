@@ -43,7 +43,7 @@ export default function FAQPage() {
        <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>FAQ</span>
       </div>
-      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+      <header className="glass-panel gradient-ring hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
         <h1 className="text-5xl font-extrabold tracking-tight text-foreground">Frequently Asked Questions for CTOs</h1>
         <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
           Real questions, direct answers. This is a playbook for navigating the strategic decisions around building a high-performance nearshore engineering team.
@@ -77,7 +77,7 @@ export default function FAQPage() {
         <Link href="/hire" className="text-primary hover:underline">Hire Pages</Link>
       </nav>
 
-      <section className="glass-panel rounded-2xl my-14 p-8 text-left">
+      <section className="glass-panel gradient-ring rounded-2xl my-14 p-8 text-left">
         <h2 className="text-2xl font-bold text-foreground">How to Use This FAQ as a Decision System</h2>
         <div className="mt-5 space-y-4 text-muted-foreground leading-7">
           <p>

@@ -47,7 +47,7 @@ export default function TrustPage() {
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Trust Center</span>
       </div>
-      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+      <header className="glass-panel gradient-ring hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
         <h1 className="text-5xl font-extrabold tracking-tight text-foreground">
           You Keep the Velocity. We Take the Risk.
         </h1>

@@ -218,7 +218,7 @@ export default function PlatformPage() {
         </Link>{" "}
         / <span>Platform</span>
       </div>
-      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+      <header className="glass-panel gradient-ring hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-foreground">
           Distributed Engineering OS
         </h1>

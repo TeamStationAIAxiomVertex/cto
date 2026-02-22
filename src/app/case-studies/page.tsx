@@ -18,7 +18,7 @@ export default async function CaseStudiesPage() {
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Case Studies</span>
       </div>
-      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+      <header className="glass-panel gradient-ring hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
         <h1 className="text-5xl font-extrabold tracking-tight text-foreground">Evidence of Impact</h1>
         <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
           From resolving critical SSO failures for enterprise clients to scaling monolithic platforms for 15,000+ users, our nearshore squads deliver results. Here’s the evidence.
@@ -80,7 +80,7 @@ export default async function CaseStudiesPage() {
         ))}
       </div>
 
-      <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
+      <section className="glass-panel gradient-ring my-12 rounded-2xl p-6 md:p-8">
         <h2 className="text-3xl font-bold text-center">How to Read Operational Proof</h2>
         <div className="mt-6 space-y-4 text-muted-foreground leading-7">
           <p>

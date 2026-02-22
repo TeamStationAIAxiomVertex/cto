@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import CTOFieldManualBlock from '../../../components/seo/CTOFieldManualBlock';
 import FurtherReading from '../../../components/seo/FurtherReading';
+import { RevealBlock, RevealSection, StaggerGrid, StaggerItem } from '../../../components/motion/MotionPrimitives';
 
 export const metadata: Metadata = {
   title: 'Distributed Engineering OS Playbook Hub for CTO Teams',
@@ -101,7 +102,7 @@ export default function PlaybookHubPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Playbook Hub</span>
       </div>
 
-      <header className="glass-panel gradient-ring rounded-2xl p-8 md:p-10">
+      <RevealBlock className="glass-panel gradient-ring hero-depth system-grid rounded-2xl p-8 md:p-10">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
           Distributed Engineering OS Playbook Hub
         </h1>
@@ -115,9 +116,9 @@ export default function PlaybookHubPage() {
           <Link href="/hire" className="text-primary hover:underline">Hire Routes</Link>
           <a href="https://engineering.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Engineering Doctrine</a>
         </div>
-      </header>
+      </RevealBlock>
 
-      <section className="glass-panel gradient-ring rounded-2xl mt-10 p-8 md:p-10">
+      <RevealSection className="glass-panel gradient-ring rounded-2xl mt-10 p-8 md:p-10">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">How to use this hub</h2>
         <div className="mt-6 space-y-4 text-muted-foreground leading-7">
           <p>
@@ -132,13 +133,13 @@ export default function PlaybookHubPage() {
             {' '}and <a href="https://research.teamstation.dev/protocols/delivery" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">delivery protocols</a>.
           </p>
         </div>
-      </section>
+      </RevealSection>
 
-      <section className="my-16">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <RevealSection className="my-16">
+        <StaggerGrid className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {playbookEntries.map((entry, index) => (
+            <StaggerItem key={entry.href}>
             <article
-              key={entry.href}
               className={`group relative flex flex-col  glass-card-interactive rounded-2xl border border-border/70 bg-background/70 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 ${
                 playbookEntries.length % 2 !== 0 && index === playbookEntries.length - 1 ? 'md:col-span-2' : ''
               }`}
@@ -161,19 +162,21 @@ export default function PlaybookHubPage() {
                 </Link>
               </div>
             </article>
+            </StaggerItem>
           ))}
-        </div>
-      </section>
+        </StaggerGrid>
+      </RevealSection>
 
-      <section className="glass-panel gradient-ring my-12 rounded-2xl p-6 md:p-8 md:p-10">
+      <RevealSection className="glass-panel gradient-ring my-12 rounded-2xl p-6 md:p-8 md:p-10">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">Core doctrine for CTO operations</h2>
         <p className="mt-4 text-muted-foreground leading-7">
           These cards summarize recurring leadership constraints and the operating response that prevents delivery drift.
           Use them as review criteria in planning and steering meetings.
         </p>
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
+        <StaggerGrid className="mt-10 grid gap-8 md:grid-cols-3">
           {doctrineCards.map((card) => (
-            <article key={card.title} className=" glass-card-interactive rounded-2xl border border-border/70 bg-background/70 p-6">
+            <StaggerItem key={card.title}>
+            <article className="glass-card-interactive gradient-ring rounded-2xl border border-border/70 bg-background/70 p-6">
               <div className="flex items-start gap-3">
                 {card.icon}
                 <h3 className="text-lg font-bold text-foreground">{card.title}</h3>
@@ -190,16 +193,17 @@ export default function PlaybookHubPage() {
                 <p className="inline-block rounded bg-primary/10 px-2 py-1 text-xs font-mono text-primary">Validation: {card.proof}</p>
               </div>
             </article>
+            </StaggerItem>
           ))}
-        </div>
-      </section>
+        </StaggerGrid>
+      </RevealSection>
 
       <CTOFieldManualBlock
         title="CTO Field Manual for Playbook Orchestration"
         focus="delivery risk diagnosis, hiring signal quality, and governance alignment"
       />
 
-      <section className="glass-panel gradient-ring rounded-2xl my-12 p-8 md:p-10 text-center">
+      <RevealSection className="glass-panel gradient-ring rounded-2xl my-12 p-8 md:p-10 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">Diagnose delivery risk before you hire</h2>
         <p className="mx-auto mt-3 max-w-2xl text-muted-foreground leading-7">
           Use a short discovery session to identify constraints, choose the right team design, and align operating goals
@@ -211,7 +215,7 @@ export default function PlaybookHubPage() {
         >
           Book discovery session <ArrowRight className="ml-2 h-4 w-4" />
         </a>
-      </section>
+      </RevealSection>
 
       <FurtherReading />
     </main>
