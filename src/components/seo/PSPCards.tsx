@@ -3,6 +3,7 @@ import { PainPoint } from "@/lib/tech";
 import { Button } from "@/components/ui/button";
 import * as Icons from "lucide-react";
 import React from "react";
+import CardGuidanceTooltip from "@/components/ui/card-guidance-tooltip";
 
 // Helper to get an icon component by its string name
 const getIcon = (name: string) => {
@@ -33,12 +34,21 @@ export default function PSPCards({
             key={it.problem}
             className="rounded-lg border bg-card shadow-sm p-6 flex flex-col"
           >
-            <h3 className="text-lg font-semibold text-foreground flex items-center">
-              {React.createElement(it.icon, {
-                className: "mr-2 h-8 w-8 text-primary",
-              })}
-              {it.problem}
-            </h3>
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="text-lg font-semibold text-foreground flex items-center">
+                <span className="mr-2 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/30 bg-primary/10">
+                  {React.createElement(it.icon, {
+                    className: "h-6 w-6 text-primary",
+                  })}
+                </span>
+                {it.problem}
+              </h3>
+              <CardGuidanceTooltip
+                issue={it.pain}
+                solution={it.solution}
+                proof={it.kpi}
+              />
+            </div>
 
             <div className="mt-4 space-y-3 text-sm leading-6 text-muted-foreground flex-grow">
               <p>

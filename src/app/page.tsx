@@ -9,9 +9,11 @@ import {
   Clock,
   CheckCircle,
   Layers,
+  CircleHelp,
 } from "lucide-react";
 import { getAllCaseStudies } from "../lib/case-studies";
 import SafeImage from "../components/SafeImage";
+import { WithTooltip } from "../components/ui/tooltip";
 
 const doctrineSignals = [
   "Cognitive Hiring Signals",
@@ -102,9 +104,31 @@ const osStack = [
   "Cost Governance",
 ];
 
+function SectionTitle({ title, tip }: { title: string; tip: string }) {
+  return (
+    <div className="flex items-center gap-2">
+      <h2 className="text-3xl md:text-4xl font-bold text-foreground">{title}</h2>
+      <WithTooltip
+        content={
+          <p className="max-w-xs text-xs leading-5">
+            {tip}
+          </p>
+        }
+      >
+        <button
+          type="button"
+          aria-label="Section rationale"
+          className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border bg-background/80 text-muted-foreground hover:text-primary"
+        >
+          <CircleHelp className="h-4 w-4" />
+        </button>
+      </WithTooltip>
+    </div>
+  );
+}
+
 export default async function HomePage() {
   const caseStudies = await getAllCaseStudies();
-
   const siteUrl = "https://cto.teamstation.dev";
 
   const websiteSchema = {
@@ -144,10 +168,10 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
-      <div className="bg-background">
+      <div className="manual-page">
         <div className="container mx-auto px-4">
-          <section className="py-16 md:py-24 section-defer">
-            <div className="rounded-2xl glass-panel p-8 md:p-12">
+          <section className="py-14 md:py-20 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-11">
               <p className="text-sm font-semibold text-primary">Distributed Engineering OS Playbook</p>
               <h1 className="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
                 CTO Field Manual: Team Topology for Agentic Engineering
@@ -165,9 +189,9 @@ export default async function HomePage() {
                 </Link>
               </div>
 
-              <div className="mt-8 grid gap-2 md:grid-cols-2">
+              <div className="mt-8 grid gap-2 md:grid-cols-2 lg:grid-cols-4">
                 {doctrineSignals.map((item) => (
-                  <div key={item} className="rounded-lg border bg-background/70 px-4 py-3 text-sm text-foreground">
+                  <div key={item} className="rounded-lg border bg-background/60 px-4 py-3 text-sm text-foreground">
                     <CheckCircle className="inline h-4 w-4 text-primary mr-2" />
                     {item}
                   </div>
@@ -176,12 +200,15 @@ export default async function HomePage() {
             </div>
           </section>
 
-          <section className="py-12 section-defer">
-            <div className="rounded-2xl glass-panel p-8 md:p-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Monolith Org Chart Is Failing</h2>
+          <section className="py-8 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+              <SectionTitle
+                title="The Monolith Org Chart Is Failing"
+                tip="This section explains why legacy vendor models fail in enterprise engineering and why your operating model must shift to a governed system."
+              />
               <div className="mt-6 grid gap-3 md:grid-cols-2">
                 {failurePoints.map((point) => (
-                  <div key={point} className="rounded-lg border bg-background/60 p-4 text-sm text-muted-foreground">
+                  <div key={point} className="rounded-lg border bg-background/55 p-4 text-sm text-muted-foreground">
                     {point}
                   </div>
                 ))}
@@ -189,23 +216,26 @@ export default async function HomePage() {
             </div>
           </section>
 
-          <section className="py-12 section-defer">
-            <div className="rounded-2xl glass-panel p-8 md:p-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Team Topology for Agentic Systems</h2>
+          <section className="py-8 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+              <SectionTitle
+                title="Team Topology for Agentic Systems"
+                tip="This is the operating doctrine. It replaces disconnected staffing vendors with one topology model used in large enterprise engineering organizations."
+              />
               <div className="mt-8 grid gap-4 md:grid-cols-2">
                 {topologyNodes.map((node) => (
-                  <article key={node.title} className="rounded-xl border bg-background/60 p-5">
+                  <article key={node.title} className="rounded-xl border bg-background/55 p-5">
                     <node.icon className="h-7 w-7 text-primary" />
                     <h3 className="mt-3 text-xl font-semibold text-foreground">{node.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{node.body}</p>
                   </article>
                 ))}
               </div>
-              <div className="mt-8 rounded-xl border bg-background/60 p-5">
+              <div className="mt-8 rounded-xl border bg-background/55 p-5">
                 <p className="text-sm font-semibold text-foreground">System topology diagram</p>
                 <div className="mt-4 grid gap-3 md:grid-cols-4">
                   {topologyNodes.map((node) => (
-                    <div key={`${node.title}-topology`} className="rounded-lg border bg-card px-3 py-3 text-center text-xs text-foreground">
+                    <div key={`${node.title}-topology`} className="rounded-lg border bg-card/80 px-3 py-3 text-center text-xs text-foreground">
                       {node.title}
                     </div>
                   ))}
@@ -214,9 +244,12 @@ export default async function HomePage() {
             </div>
           </section>
 
-          <section className="py-12 section-defer">
-            <div className="rounded-2xl glass-panel p-8 md:p-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Human and AI Workflow Orchestration</h2>
+          <section className="py-8 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+              <SectionTitle
+                title="Human and AI Workflow Orchestration"
+                tip="This section shows how to run human engineers and AI agents in one controlled loop so delivery is measurable, auditable, and enterprise safe."
+              />
               <p className="mt-4 text-muted-foreground">
                 AI expands cognitive capacity. Humans guide system intent. Agents automate repetitive logic.
                 Telemetry governs system performance.
@@ -224,7 +257,7 @@ export default async function HomePage() {
               <div className="mt-6 flex flex-wrap items-center gap-2">
                 {workflowSteps.map((step, idx) => (
                   <div key={step} className="flex items-center gap-2">
-                    <span className="rounded-md border bg-background/70 px-3 py-2 text-sm text-foreground">{step}</span>
+                    <span className="rounded-md border bg-background/65 px-3 py-2 text-sm text-foreground">{step}</span>
                     {idx < workflowSteps.length - 1 ? <ArrowRight className="h-4 w-4 text-primary" /> : null}
                   </div>
                 ))}
@@ -232,12 +265,15 @@ export default async function HomePage() {
             </div>
           </section>
 
-          <section className="py-12 section-defer">
-            <div className="rounded-2xl glass-panel p-8 md:p-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Physics of Distributed Delivery</h2>
+          <section className="py-8 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+              <SectionTitle
+                title="The Physics of Distributed Delivery"
+                tip="This section maps delivery behavior to systems science so leadership can replace guesswork with repeatable execution controls."
+              />
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 {deliveryPhysics.map((law) => (
-                  <article key={law.title} className="rounded-xl border bg-background/60 p-5">
+                  <article key={law.title} className="rounded-xl border bg-background/55 p-5">
                     <h3 className="text-lg font-semibold text-foreground">{law.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{law.body}</p>
                   </article>
@@ -246,18 +282,21 @@ export default async function HomePage() {
             </div>
           </section>
 
-          <section className="py-12 section-defer">
-            <div className="rounded-2xl glass-panel p-8 md:p-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Velocity Comes From Daylight Collaboration</h2>
+          <section className="py-8 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+              <SectionTitle
+                title="Velocity Comes From Daylight Collaboration"
+                tip="This section explains why the daylight operating model consistently outperforms legacy offshore vendor loops for enterprise teams."
+              />
               <div className="mt-6 grid gap-3 md:grid-cols-2">
                 {daylightModel.map((item) => (
-                  <div key={item} className="rounded-lg border bg-background/60 p-4 text-sm text-muted-foreground">
+                  <div key={item} className="rounded-lg border bg-background/55 p-4 text-sm text-muted-foreground">
                     <Clock className="inline h-4 w-4 text-primary mr-2" />
                     {item}
                   </div>
                 ))}
               </div>
-              <div className="mt-6 rounded-xl border bg-background/60 p-5">
+              <div className="mt-6 rounded-xl border bg-background/55 p-5">
                 <p className="text-sm font-semibold text-foreground">Daylight timeline</p>
                 <div className="mt-3 h-2 rounded bg-muted">
                   <div className="h-2 w-4/5 rounded bg-primary" />
@@ -267,9 +306,12 @@ export default async function HomePage() {
             </div>
           </section>
 
-          <section className="py-12 section-defer">
-            <div className="rounded-2xl glass-panel p-8 md:p-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Cognitive Evidence Replaces Resume Guessing</h2>
+          <section className="py-8 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+              <SectionTitle
+                title="Cognitive Evidence Replaces Resume Guessing"
+                tip="This section explains how the method de risks hiring in enterprise organizations by replacing vendor resume matching with evidence based evaluation."
+              />
               <p className="mt-4 text-muted-foreground">
                 We run problem solving signal extraction, bias normalization across ESL variants,
                 mental shape evaluation, and mismatch risk reduction as one integrity process.
@@ -277,12 +319,15 @@ export default async function HomePage() {
             </div>
           </section>
 
-          <section className="py-12 section-defer">
-            <div className="rounded-2xl glass-panel p-8 md:p-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">You Cannot Govern What You Cannot Measure</h2>
-              <div className="mt-6 grid gap-4 md:grid-cols-4">
+          <section className="py-8 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+              <SectionTitle
+                title="You Cannot Govern What You Cannot Measure"
+                tip="This section shows the telemetry layer that replaces vendor opacity with executive control and operating visibility."
+              />
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {telemetryMetrics.map((metric) => (
-                  <div key={metric} className="rounded-xl border bg-background/60 p-5 text-center">
+                  <div key={metric} className="rounded-xl border bg-background/55 p-5 text-center">
                     <Gauge className="mx-auto h-6 w-6 text-primary" />
                     <p className="mt-2 text-sm text-foreground">{metric}</p>
                   </div>
@@ -291,21 +336,24 @@ export default async function HomePage() {
             </div>
           </section>
 
-          <section className="py-12 section-defer">
-            <div className="rounded-2xl glass-panel p-8 md:p-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Field Evidence</h2>
+          <section className="py-8 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+              <SectionTitle
+                title="Field Evidence"
+                tip="These records show enterprise contexts, constraints, interventions, and outcomes to prove that this method replaces legacy vendor outcomes with system performance."
+              />
               <p className="mt-4 max-w-3xl text-muted-foreground">
                 Each field record is organized as context, constraint, intervention, and operational result.
               </p>
-              <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                 {caseStudies &&
                   caseStudies.slice(0, 6).map((study) => (
                     <Link
                       key={study.slug}
                       href={`/case-studies/${study.slug}`}
-                      className="group flex flex-col rounded-2xl border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20"
+                      className="group mx-auto w-full max-w-sm flex flex-col rounded-2xl border bg-card/85 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20"
                     >
-                      <div className="relative h-40 w-full mb-4 rounded-lg overflow-hidden border">
+                      <div className="relative h-36 w-full mb-4 rounded-lg overflow-hidden border">
                         {study.ogImage?.src?.url && (
                           <SafeImage
                             src={study.ogImage?.src?.url}
@@ -337,13 +385,16 @@ export default async function HomePage() {
             </div>
           </section>
 
-          <section className="py-12 section-defer">
-            <div className="rounded-2xl glass-panel p-8 md:p-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Distributed Engineering OS</h2>
-              <div className="mt-6 rounded-xl border bg-background/60 p-5">
+          <section className="py-8 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-10">
+              <SectionTitle
+                title="The Distributed Engineering OS"
+                tip="This stack summarizes the integrated method already used in enterprise organizations to replace fragmented vendor chains with one governed system."
+              />
+              <div className="mt-6 rounded-xl border bg-background/55 p-5">
                 <div className="grid gap-3 md:grid-cols-3">
                   {osStack.map((layer) => (
-                    <div key={layer} className="rounded-lg border bg-card px-4 py-3 text-sm text-foreground">
+                    <div key={layer} className="rounded-lg border bg-card/80 px-4 py-3 text-sm text-foreground">
                       <Layers className="inline h-4 w-4 text-primary mr-2" />
                       {layer}
                     </div>
@@ -353,13 +404,13 @@ export default async function HomePage() {
             </div>
           </section>
 
-          <section id="contact" className="py-16 md:py-20 section-defer">
+          <section id="contact" className="py-14 md:py-18 section-defer">
             <div className="mx-auto max-w-4xl rounded-2xl glass-panel p-8 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 Stop Managing Vendors. Start Operating an Engineering System.
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Build an operating model with doctrine level clarity, telemetry discipline, and governance control.
+                Build an operating model with doctrine clarity, telemetry discipline, and governance control.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link href="/playbook/hub" className="cta-button">

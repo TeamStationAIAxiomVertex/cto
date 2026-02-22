@@ -12,6 +12,7 @@ import {
 import { notFound } from "next/navigation";
 import { JsonLd } from "../../../../components/seo/JsonLd";
 import FurtherReading from "../../../../components/seo/FurtherReading";
+import CardGuidanceTooltip from "../../../../components/ui/card-guidance-tooltip";
 
 const roleData: {
   [key: string]: {
@@ -933,10 +934,16 @@ export default function RoleCategoryPage({
                       key={problem.pain}
                       className="rounded-lg border bg-card p-6 shadow-lg"
                     >
-                      <p className="font-semibold text-primary flex items-start gap-2">
-                        <AlertTriangle className="h-5 w-5 mt-1 shrink-0" />
-                        {problem.pain}
-                      </p>
+                      <div className="flex items-start justify-between gap-3">
+                        <p className="font-semibold text-primary flex items-start gap-2">
+                          <AlertTriangle className="h-5 w-5 mt-1 shrink-0" />
+                          {problem.pain}
+                        </p>
+                        <CardGuidanceTooltip
+                          issue={problem.pain}
+                          solution={`Assign ${problem.roles[0]} ownership and enforce these skills: ${problem.skills.join(", ")}.`}
+                        />
+                      </div>
                       <div className="mt-4 border-t pt-4">
                         <h4 className="font-semibold text-foreground text-sm flex items-center gap-2">
                           <Key className="h-4 w-4" />

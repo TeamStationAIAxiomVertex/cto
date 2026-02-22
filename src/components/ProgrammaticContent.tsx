@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { allTech, TechEntry } from "@/lib/tech";
+import CardGuidanceTooltip from "@/components/ui/card-guidance-tooltip";
 
 interface ProgrammaticContentProps {
   tech: TechEntry;
@@ -214,13 +215,22 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
                   key={item.pain}
                   className="rounded-lg border bg-card p-6 flex flex-col"
                 >
-                  <p className="text-sm font-semibold text-primary">
-                    {item.pain}
-                  </p>
+                  <div className="flex items-start justify-between gap-3">
+                    <p className="text-sm font-semibold text-primary">
+                      {item.pain}
+                    </p>
+                    <CardGuidanceTooltip
+                      issue={item.problem}
+                      solution={item.solution}
+                      proof={item.kpi}
+                    />
+                  </div>
                   <div className="flex items-center gap-3 mt-3">
-                    {React.createElement(item.icon, {
-                      className: "mr-2 h-8 w-8 text-primary",
-                    })}
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/30 bg-primary/10">
+                      {React.createElement(item.icon, {
+                        className: "h-6 w-6 text-primary",
+                      })}
+                    </span>
                     <h3 className="text-lg font-semibold text-foreground">
                       The Problem
                     </h3>

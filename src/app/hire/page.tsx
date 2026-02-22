@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Building, Code, User, ArrowRight, Shapes } from "lucide-react";
 import type { Metadata } from "next";
 import FurtherReading from "../../components/seo/FurtherReading";
+import CardGuidanceTooltip from "../../components/ui/card-guidance-tooltip";
 
 export const metadata: Metadata = {
   title: "Hire Vetted Nearshore Engineers & LATAM IT Teams",
@@ -17,6 +18,7 @@ export default function HirePage() {
       icon: <User className="h-8 w-8 text-primary" />,
       title: "Hire by Role",
       pain: "You don't need a 'developer.' You need a specific set of competencies.",
+      solution: "We map business bottlenecks to role competency and deliver vetted specialists.",
       description:
         "Find elite, pre-vetted LATAM engineers matched to the specific, high-stakes competencies your business demands, from SRE to AppSec to AI/ML.",
       href: "/hire/by-role",
@@ -25,6 +27,7 @@ export default function HirePage() {
       icon: <Code className="h-8 w-8 text-primary" />,
       title: "Hire by Technology",
       pain: "Your stack is modern and specific. Your team must be too.",
+      solution: "We validate deep stack mastery using practical delivery scenarios.",
       description:
         "Find engineers with proven, deep expertise in the technologies you rely on daily, not just a passing familiarity listed on a resume.",
       href: "/hire/by-technology",
@@ -33,6 +36,7 @@ export default function HirePage() {
       icon: <Building className="h-8 w-8 text-primary" />,
       title: "Hire by Country",
       pain: "Losing a full day to time zones is killing your velocity.",
+      solution: "We align teams in LATAM with real time collaboration and low handoff delay.",
       description:
         "Leverage the top engineering hubs across Latin America, perfectly aligned with your time zone for the real-time collaboration that agile demands.",
       href: "/hire/by-country",
@@ -41,6 +45,7 @@ export default function HirePage() {
       icon: <Shapes className="h-8 w-8 text-primary" />,
       title: "Hire by Team Topologies",
       pain: "Are your teams structured for scale or for silos?",
+      solution: "We structure stream aligned, platform, and enabling teams for faster flow.",
       description:
         "From stream-aligned squads to platform teams, we build the LATAM engineering structures you need to accelerate delivery and reduce cognitive load.",
       href: "/hire/by-team-topologies",
@@ -88,9 +93,14 @@ export default function HirePage() {
             key={option.href}
             className="group relative flex flex-col rounded-lg border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg"
           >
-            <p className="text-sm font-semibold text-primary">{option.pain}</p>
+            <div className="flex items-start justify-between gap-3">
+              <p className="text-sm font-semibold text-primary">{option.pain}</p>
+              <CardGuidanceTooltip issue={option.pain} solution={option.solution} />
+            </div>
             <div className="flex items-center gap-3 mt-3">
-              {option.icon}
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-primary/30 bg-primary/10">
+                {option.icon}
+              </span>
               <h2 className="text-xl font-bold text-foreground">
                 {option.title}
               </h2>
