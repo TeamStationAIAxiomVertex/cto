@@ -57,11 +57,22 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground leading-relaxed;
-    font-family: var(--font-poppins);
+    @apply bg-background text-foreground leading-relaxed antialiased;
+    font-family: var(--font-inter);
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+    @apply font-bold text-foreground tracking-tight;
+    font-family: var(--font-poppins);
+  }
+  p, li {
+    color: hsl(var(--muted-foreground));
+  }
+  a {
+    color: hsl(var(--foreground));
+    text-decoration: none;
+  }
+  a:hover {
+    color: hsl(var(--primary));
   }
   .bg-card {
     background: hsl(var(--card));
