@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { allTech, TechEntry } from "@/lib/tech";
 import CardGuidanceTooltip from "@/components/ui/card-guidance-tooltip";
 import { InfoDropdown } from "@/components/client/info-dropdown";
+import { CheckCircle, Gauge, ShieldCheck } from "lucide-react";
 
 interface ProgrammaticContentProps {
   tech: TechEntry;
@@ -120,8 +121,8 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
-      <div className="reading-shell py-12">
-        <div className="text-sm text-muted-foreground mb-8">
+      <div className="manual-page reading-shell py-10">
+        <div className="mb-6 rounded-xl border border-border/70 bg-background/60 px-4 py-3 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
             Home
           </Link>{" "}
@@ -135,19 +136,36 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
           </Link>{" "}
           /<span>{tech.name}</span>
         </div>
-        <header className="my-12">
-          <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+        <header className="glass-panel hero-depth system-grid my-8 rounded-2xl p-6 md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+            Hire by Technology
+          </p>
+          <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
             Hire {tech.name} Engineers
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">{tech.intro}</p>
-          <div className="mt-4">
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">Delivery fit</p>
+              <p className="mt-2 text-sm text-muted-foreground">Role charter and execution ownership aligned to production outcomes.</p>
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">Evaluation signal</p>
+              <p className="mt-2 text-sm text-muted-foreground">Evidence based screening before shortlist delivery and onboarding risk.</p>
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">Operating control</p>
+              <p className="mt-2 text-sm text-muted-foreground">Telemetry and governance checkpoints for CTO and CIO oversight.</p>
+            </div>
+          </div>
+          <div className="mt-5">
             <InfoDropdown label="How to use this guide">
               <p>Use this page to identify the issue, validate the solution pattern, and confirm proof checkpoints before you hire.</p>
             </InfoDropdown>
           </div>
         </header>
 
-        <section className="surface-card my-16 p-8">
+        <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-center">
             Executive Brief for CTO and CIO Teams
           </h2>
@@ -210,7 +228,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
         </section>
 
         {tech.pains && tech.pains.length > 0 && (
-          <section className="my-16">
+          <section className="my-12">
             <h2 className="text-center text-3xl font-bold">Sound Familiar?</h2>
             <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">
               Common problems we solve by providing true {tech.name} experts.
@@ -219,7 +237,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
               {tech.pains.map((item) => (
                 <div
                   key={item.pain}
-                  className="surface-card mx-auto w-full max-w-sm p-6 flex flex-col"
+                  className="glass-panel card-hover-lift mx-auto flex w-full max-w-sm flex-col rounded-2xl p-6"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <p className="text-sm font-semibold text-primary">
@@ -244,7 +262,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
                   <p className="mt-4 text-sm text-muted-foreground ">
                     {item.problem}
                   </p>
-                  <div className="mt-4 border-t border-border pt-4">
+                  <div className="mt-4 border-t border-border/70 pt-4">
                     <h4 className="font-semibold text-primary">
                       The TeamStation AI Solution
                     </h4>
@@ -263,7 +281,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
         )}
 
         {tech.evaluation?.length > 0 && (
-          <section className="surface-card my-16 p-8">
+          <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
             <h2 className="text-3xl font-bold text-center">
               Evaluation Criteria for {tech.name} Roles
             </h2>
@@ -272,7 +290,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
             </p>
             <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
               {tech.evaluation.map((item, idx) => (
-                <li key={`${slug}-eval-${idx}`} className="rounded border bg-background px-4 py-3 text-sm text-muted-foreground">
+                <li key={`${slug}-eval-${idx}`} className="rounded-lg border border-border/70 bg-background/70 px-4 py-3 text-sm text-muted-foreground">
                   {item}
                 </li>
               ))}
@@ -281,7 +299,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
         )}
 
         {tech.technical_analysis && (
-          <section className="surface-card my-16 p-8">
+          <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
             <h2 className="text-3xl font-bold text-center">
               Technical Delivery Analysis: {tech.name}
             </h2>
@@ -291,7 +309,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
           </section>
         )}
 
-        <section className="surface-card my-16 p-8">
+        <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-center">
             Implementation Blueprint: First 12 Weeks
           </h2>
@@ -360,6 +378,27 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
               Every section is designed to help your team make better hiring calls for {tech.name},
               faster, with less operational variance.
             </p>
+          </div>
+        </section>
+
+        <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-center">Executive Control and Validation Signals</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+              <Gauge className="h-5 w-5 text-primary" />
+              <p className="mt-2 text-sm font-semibold text-foreground">Delivery telemetry</p>
+              <p className="mt-2 text-sm text-muted-foreground">Track review latency, throughput stability, and early execution drift in one operating view.</p>
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+              <ShieldCheck className="h-5 w-5 text-primary" />
+              <p className="mt-2 text-sm font-semibold text-foreground">Governance readiness</p>
+              <p className="mt-2 text-sm text-muted-foreground">Keep onboarding controls, role ownership, and escalation paths defined before scale.</p>
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+              <CheckCircle className="h-5 w-5 text-primary" />
+              <p className="mt-2 text-sm font-semibold text-foreground">Decision confidence</p>
+              <p className="mt-2 text-sm text-muted-foreground">Use evidence based evaluation criteria so hiring decisions map to production outcomes.</p>
+            </div>
           </div>
         </section>
 

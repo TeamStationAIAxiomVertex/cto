@@ -826,8 +826,8 @@ export default function RoleCategoryPage({
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={roleFaqSchema} />
-      <main className="reading-shell py-12">
-        <div className="text-sm text-muted-foreground mb-8">
+      <main className="manual-page reading-shell py-10">
+        <div className="mb-6 rounded-xl border border-border/70 bg-background/60 px-4 py-3 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
             Home
           </Link>{" "}
@@ -841,11 +841,26 @@ export default function RoleCategoryPage({
           </Link>{" "}
           / <span>{name}</span>
         </div>
-        <header className="my-12">
-          <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+        <header className="glass-panel hero-depth system-grid my-8 rounded-2xl p-6 md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-wide text-primary">Hire by Role</p>
+          <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
             Hire {name} Engineers
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">{intro}</p>
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">Role fit</p>
+              <p className="mt-2 text-sm text-muted-foreground">Map role ownership to delivery bottlenecks and execution outcomes.</p>
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">Evaluation rigor</p>
+              <p className="mt-2 text-sm text-muted-foreground">Use role specific decision criteria before shortlist delivery.</p>
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">Operating control</p>
+              <p className="mt-2 text-sm text-muted-foreground">Tie hiring decisions to telemetry, governance, and first 90 day metrics.</p>
+            </div>
+          </div>
           <div className="mt-4">
             <InfoDropdown label="How to use this role guide">
               <p>Use this guide to map role pain points to ownership, evaluation, and 90 day execution metrics before hiring.</p>
@@ -853,7 +868,7 @@ export default function RoleCategoryPage({
           </div>
         </header>
 
-        <section className="surface-card my-16 p-8">
+        <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-center">
             Executive Buying Guide for {name}
           </h2>
@@ -938,7 +953,7 @@ export default function RoleCategoryPage({
                   {problems.map((problem) => (
                     <div
                       key={problem.pain}
-                      className="surface-card mx-auto w-full max-w-sm p-6"
+                      className="glass-panel card-hover-lift mx-auto w-full max-w-sm rounded-2xl p-6"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <p className="font-semibold text-primary flex items-start gap-2">
@@ -1051,7 +1066,7 @@ export default function RoleCategoryPage({
           </div>
         )}
 
-        <div className="surface-card my-16 p-8">
+        <div className="glass-panel my-12 rounded-2xl p-6 md:p-8">
           <h2 className="text-center text-3xl font-bold">
             Our Evaluation Approach for {name}
           </h2>
@@ -1084,7 +1099,7 @@ export default function RoleCategoryPage({
           </p>
         </div>
 
-        <section className="surface-card my-16 p-8">
+        <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-center">Related Resources</h2>
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
             Browse linked role, technology, playbook, and research pages for this category.
@@ -1123,7 +1138,7 @@ export default function RoleCategoryPage({
           </div>
         </section>
 
-        <section className="surface-card my-16 p-8">
+        <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-center">
             Operating Model Blueprint for {name}
           </h2>
@@ -1144,7 +1159,7 @@ export default function RoleCategoryPage({
           </div>
         </section>
 
-        <section className="surface-card my-16 p-8">
+        <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-center">
             Executive Decision Framework for {name}
           </h2>
@@ -1199,7 +1214,7 @@ export default function RoleCategoryPage({
           </div>
         </section>
 
-        <section className="surface-card my-16 p-8">
+        <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-center">
             90-Day Scorecard and Governance Checklist
           </h2>
@@ -1252,7 +1267,7 @@ export default function RoleCategoryPage({
           </div>
         </section>
 
-        <section className="surface-card my-16 p-8">
+        <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-center">
             Field Manual for Hiring {name}
           </h2>
@@ -1326,7 +1341,7 @@ export default function RoleCategoryPage({
           </div>
         </section>
 
-        <section className="surface-card my-16 p-8">
+        <section className="glass-panel my-12 rounded-2xl p-6 md:p-8">
           <h2 className="text-3xl font-bold text-center">Frequently Asked Questions</h2>
           <div className="mt-8 space-y-4">
             {roleFaqItems.map((item, idx) => (

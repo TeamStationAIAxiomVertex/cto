@@ -58,7 +58,7 @@ export default async function PlaybookChapterPage({ params }: { params: { slug: 
   // NOTE: This template is designed for long-form, high-E-E-A-T content (1200-5000 words).
 
   return (
-    <main className="container mx-auto px-4 py-8 max-w-7xl">
+    <main className="manual-page container mx-auto max-w-7xl px-4 py-8">
 
       {/* JSON-LD Schema: Article or TechArticle Schema must be added here */}
       <script 
@@ -72,47 +72,65 @@ export default async function PlaybookChapterPage({ params }: { params: { slug: 
         { label: title, path: `/playbook/${params.slug}` },
       ]} />
 
-      <article className="grid grid-cols-1 lg:grid-cols-4 gap-12 mt-6">
+      <article className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-4 lg:gap-10">
         
         {/* Left Column: Author, TOC, and Sticky Navigation */}
         <aside className="lg:col-span-1">
-          <div className="lg:sticky lg:top-8 space-y-8">
+          <div className="space-y-6 lg:sticky lg:top-8">
              {/* E-E-A-T SIGNAL: Explicitly tie content to an expert author */}
-             <PlaybookAuthor author={author} /> 
-             <TableOfContents items={toc} />
+             <div className="glass-panel rounded-2xl p-4">
+               <PlaybookAuthor author={author} />
+             </div>
+             <div className="glass-panel rounded-2xl p-4">
+               <TableOfContents items={toc} />
+             </div>
           </div>
         </aside>
 
         {/* Right Column: Main Content */}
         <div className="lg:col-span-3">
-          <header className="mb-8 border-b pb-4">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">{title}</h1>
-            <p className="text-gray-500 mt-2">Published: <time dateTime={date}>{date}</time> • By: {author.name}</p>
+          <header className="glass-panel hero-depth system-grid mb-8 rounded-2xl p-6 md:p-8">
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary">CTO Playbook Chapter</p>
+            <h1 className="mt-3 text-4xl font-extrabold leading-tight text-foreground md:text-5xl">{title}</h1>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Published: <time dateTime={date}>{date}</time> • By: {author.name}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {keywords.slice(0, 4).map((kw, idx) => (
+                <span key={`${kw}-${idx}`} className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+                  {kw}
+                </span>
+              ))}
+            </div>
           </header>
 
           {/* -------------------- CORE CONTENT (NCLA v7 PROSE) -------------------- */}
-          <section className="prose prose-xl max-w-none">
+          <section className="glass-panel rounded-2xl p-6 md:p-8">
+            <div className="prose prose-xl max-w-none dark:prose-invert">
             {/* Content is loaded via a dedicated renderer component, assumed to be NCLA v7-compliant */}
-            <PlaybookContentRenderer slug={params.slug} /> 
+              <PlaybookContentRenderer slug={params.slug} /> 
+            </div>
           </section>
 
           {/* -------------------- INTERNAL LINK MESH (Related Chapters) -------------------- */}
-          <section className="mt-16 border-t pt-8">
-            <h2 className="text-2xl font-semibold mb-4">Further Reading & Related Strategy</h2>
+          <section className="glass-panel mt-10 rounded-2xl p-6 md:p-8">
+            <h2 className="mb-4 text-2xl font-semibold">Further Reading and Related Strategy</h2>
             <div className="flex flex-wrap gap-3">
                 {/* Internal links ensure link equity flows to other high-E-E-A-T pages */}
                 {keywords.slice(0, 5).map((kw, index) => (
-                    <a key={index} href={`/playbook?tag=${kw}`} className="px-3 py-1 bg-gray-100 text-sm text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+                    <a key={index} href={`/playbook?tag=${kw}`} className="rounded-full border border-border/70 bg-background/70 px-3 py-1 text-sm text-foreground transition-colors hover:bg-primary hover:text-primary-foreground">
                       {kw}
                     </a>
                 ))}
             </div>
           </section>
 
-          <CTOFieldManualBlock
-            title={`CTO Playbook Field Manual Extension: ${title}`}
-            focus={`operating doctrine and execution controls for playbook implementation`}
-          />
+          <div className="mt-10">
+            <CTOFieldManualBlock
+              title={`CTO Playbook Field Manual Extension: ${title}`}
+              focus={`operating doctrine and execution controls for playbook implementation`}
+            />
+          </div>
         </div>
 
       </article>

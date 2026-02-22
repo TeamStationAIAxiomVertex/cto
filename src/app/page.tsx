@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ComponentType } from "react";
 import {
   ArrowRight,
   Cpu,
@@ -10,6 +11,12 @@ import {
   CheckCircle,
   Layers,
   CircleHelp,
+  Activity,
+  BarChart3,
+  GitBranch,
+  Bot,
+  Radar,
+  TriangleAlert,
 } from "lucide-react";
 import { getAllCaseStudies } from "../lib/case-studies";
 import SafeImage from "../components/SafeImage";
@@ -23,12 +30,32 @@ const doctrineSignals = [
   "Governance and Compliance Controls",
 ];
 
+const heroOutcomes = [
+  {
+    label: "Decision latency",
+    value: "Reduce",
+    note: "Clear ownership and same day operating loops",
+    icon: Radar,
+  },
+  {
+    label: "Delivery control",
+    value: "Increase",
+    note: "Telemetry and governance built into the run state",
+    icon: Activity,
+  },
+  {
+    label: "Economic clarity",
+    value: "Validate",
+    note: "TCO logic before expansion or vendor commitment",
+    icon: BarChart3,
+  },
+];
+
 const failurePoints = [
-  "AI agents change work boundaries",
-  "Functional silos increase latency",
-  "Asynchronous teams create delivery drag",
-  "Vendor models break governance",
-  "Software delivery is now a systems problem",
+  { title: "AI changes boundaries", body: "Agents shift task ownership and expand execution surfaces across teams.", icon: Bot },
+  { title: "Silos create latency", body: "Functional separation slows reviews, decisions, and release coordination.", icon: Layers },
+  { title: "Async loops add drag", body: "Overnight handoffs compound delay and reduce feedback quality.", icon: Clock },
+  { title: "Vendor models break governance", body: "Accountability fragments across delivery, hiring, and controls.", icon: TriangleAlert },
 ];
 
 const ctoPainProof = [
@@ -90,6 +117,15 @@ const workflowSteps = [
   "Iteration",
 ];
 
+const workflowDetails = [
+  { title: "Intent", body: "Leadership defines objective, constraints, and success criteria.", icon: Radar },
+  { title: "Decomposition", body: "Cognitive nodes break work into governable units.", icon: GitBranch },
+  { title: "Agent execution", body: "Agentic nodes automate bounded workflow steps.", icon: Bot },
+  { title: "Human validation", body: "Execution owners verify correctness and release readiness.", icon: CheckCircle },
+  { title: "Telemetry", body: "System signals report throughput, risk, and control coverage.", icon: Gauge },
+  { title: "Iteration", body: "Operating rules adapt based on measured performance.", icon: Workflow },
+];
+
 const deliveryPhysics = [
   {
     title: "Little's Law",
@@ -117,10 +153,10 @@ const daylightModel = [
 ];
 
 const telemetryMetrics = [
-  "PR cycle time",
-  "MTTR",
-  "Day 1 readiness",
-  "Compliance status",
+  { label: "PR cycle time", value: "< 24h target", note: "Review loop speed and queue pressure" },
+  { label: "MTTR", value: "Trend down", note: "Operational recovery and incident discipline" },
+  { label: "Day 1 readiness", value: "Control pass", note: "Onboarding + access + device readiness" },
+  { label: "Compliance status", value: "Audit ready", note: "Control ownership and evidence coverage" },
 ];
 
 const osStack = [
@@ -151,6 +187,29 @@ function SectionTitle({ title, tip }: { title: string; tip: string }) {
           <CircleHelp className="h-4 w-4" />
         </button>
       </WithTooltip>
+    </div>
+  );
+}
+
+function StatTile({
+  label,
+  value,
+  note,
+  icon: Icon,
+}: {
+  label: string;
+  value: string;
+  note: string;
+  icon: ComponentType<{ className?: string }>;
+}) {
+  return (
+    <div className="rounded-xl border border-border/70 bg-background/55 p-4">
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-semibold uppercase tracking-wide text-primary">{label}</p>
+        <Icon className="h-4 w-4 text-primary" />
+      </div>
+      <p className="mt-2 text-lg font-semibold text-foreground">{value}</p>
+      <p className="mt-1 text-xs leading-5 text-muted-foreground">{note}</p>
     </div>
   );
 }
@@ -198,29 +257,86 @@ export default async function HomePage() {
 
       <div className="manual-page">
         <div className="container mx-auto px-4">
-          <section className="py-14 md:py-20 section-defer">
-            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-7 md:p-11">
-              <p className="text-sm font-semibold text-primary">Distributed Engineering OS Playbook</p>
-              <h1 className="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
-                CTO Field Manual: Team Topology for Agentic Engineering
-              </h1>
-              <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
-                Operate cognitive teams, human engineers, and AI agents as one governed system.
-              </p>
+          <section className="py-14 md:py-18 section-defer">
+            <div className="mx-auto max-w-6xl rounded-2xl glass-panel hero-depth system-grid p-7 md:p-10">
+              <div className="grid items-start gap-6 lg:grid-cols-[1.05fr_.95fr]">
+                <div>
+                  <p className="text-sm font-semibold text-primary">Distributed Engineering OS Playbook</p>
+                  <h1 className="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
+                    Operate human engineers and AI agents as one governed delivery system.
+                  </h1>
+                  <p className="mt-5 max-w-3xl text-lg text-muted-foreground">
+                    Increase delivery velocity, reduce decision latency, and achieve governance ready execution with one operating model for hiring, delivery, and control.
+                  </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/playbook/hub" className="cta-button">
-                  Read the Playbook
-                </Link>
-                <Link href="/engineering-doctrine" className="cta-button bg-card border border-border text-foreground">
-                  View the Engineering Doctrine
-                </Link>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <Link href="/playbook/hub" className="cta-button">
+                      Read the Playbook
+                    </Link>
+                    <Link href="/engineering-doctrine" className="cta-button bg-card border border-border text-foreground">
+                      View Engineering Doctrine
+                    </Link>
+                  </div>
+
+                  <div className="mt-6 grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+                    {[
+                      "Topology based ownership",
+                      "Cognitive hiring signal",
+                      "Delivery telemetry and compliance",
+                    ].map((item) => (
+                      <div key={item} className="rounded-lg border border-border/70 bg-background/60 px-4 py-3 text-sm text-foreground">
+                        <CheckCircle className="mr-2 inline h-4 w-4 text-primary" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid gap-4">
+                  <div className="rounded-2xl border border-border/70 bg-background/65 p-5">
+                    <div className="flex items-center justify-between">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-primary">System topology map</p>
+                      <Cpu className="h-4 w-4 text-primary" />
+                    </div>
+                    <div className="mt-4 grid grid-cols-2 gap-3">
+                      {topologyNodes.map((node) => (
+                        <div key={`hero-${node.title}`} className="rounded-xl border border-border/70 bg-card/60 p-3">
+                          <node.icon className="h-4 w-4 text-primary" />
+                          <p className="mt-2 text-sm font-semibold text-foreground">{node.title}</p>
+                          <p className="mt-1 text-xs leading-5 text-muted-foreground">{node.body}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-4 rounded-xl border border-border/70 bg-background/70 p-3">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-primary">Workflow loop</p>
+                      <div className="mt-2 flex flex-wrap items-center gap-2">
+                        {workflowSteps.map((step, idx) => (
+                          <div key={`hero-step-${step}`} className="flex items-center gap-2">
+                            <span className="rounded-md border border-border/70 bg-card/60 px-2.5 py-1 text-xs text-foreground">
+                              {step}
+                            </span>
+                            {idx < workflowSteps.length - 1 ? (
+                              <ArrowRight className="h-3.5 w-3.5 text-primary" />
+                            ) : null}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                    {heroOutcomes.map((item) => (
+                      <StatTile key={item.label} {...item} />
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-8 grid gap-2 md:grid-cols-2 lg:grid-cols-4">
+              <div className="glow-divider mt-6" />
+              <div className="mt-4 grid gap-2 md:grid-cols-2 lg:grid-cols-4">
                 {doctrineSignals.map((item) => (
-                  <div key={item} className="rounded-lg border bg-background/60 px-4 py-3 text-sm text-foreground">
-                    <CheckCircle className="inline h-4 w-4 text-primary mr-2" />
+                  <div key={item} className="rounded-lg border border-border/70 bg-background/55 px-4 py-3 text-sm text-foreground">
+                    <CheckCircle className="mr-2 inline h-4 w-4 text-primary" />
                     {item}
                   </div>
                 ))}
@@ -236,9 +352,11 @@ export default async function HomePage() {
               />
               <div className="mt-6 grid gap-3 md:grid-cols-2">
                 {failurePoints.map((point) => (
-                  <div key={point} className="rounded-lg border bg-background/55 p-4 text-sm text-muted-foreground">
-                    {point}
-                  </div>
+                  <article key={point.title} className="rounded-xl border bg-background/55 p-4">
+                    <point.icon className="h-5 w-5 text-primary" />
+                    <h3 className="mt-2 text-sm font-semibold text-foreground">{point.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{point.body}</p>
+                  </article>
                 ))}
               </div>
             </div>
@@ -253,14 +371,22 @@ export default async function HomePage() {
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 {ctoPainProof.map((item) => (
                   <article key={item.pain} className="rounded-xl border bg-background/55 p-5">
-                    <h3 className="text-base font-semibold text-foreground">Pain</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{item.pain}</p>
-                    <h3 className="mt-4 text-base font-semibold text-foreground">Solution</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{item.solution}</p>
-                    <h3 className="mt-4 text-base font-semibold text-foreground">Proof</h3>
-                    <Link href={item.proofHref} className="mt-2 inline-block text-sm text-primary hover:underline">
-                      {item.proofLabel}
-                    </Link>
+                    <div className="grid gap-4">
+                      <div className="border-l-2 border-primary/60 pl-4">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-primary">Operational reality</p>
+                        <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.pain}</p>
+                      </div>
+                      <div className="border-l-2 border-border pl-4">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-foreground">Operating response</p>
+                        <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.solution}</p>
+                      </div>
+                      <div className="border-l-2 border-border pl-4">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-foreground">Validation path</p>
+                        <Link href={item.proofHref} className="mt-2 inline-block text-sm text-primary hover:underline">
+                          {item.proofLabel}
+                        </Link>
+                      </div>
+                    </div>
                   </article>
                 ))}
               </div>
@@ -305,12 +431,21 @@ export default async function HomePage() {
                 AI expands cognitive capacity. Humans guide system intent. Agents automate repetitive logic.
                 Telemetry governs system performance.
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-2">
+              <div className="mt-6 hidden items-center gap-2 lg:flex">
                 {workflowSteps.map((step, idx) => (
                   <div key={step} className="flex items-center gap-2">
                     <span className="rounded-md border bg-background/65 px-3 py-2 text-sm text-foreground">{step}</span>
                     {idx < workflowSteps.length - 1 ? <ArrowRight className="h-4 w-4 text-primary" /> : null}
                   </div>
+                ))}
+              </div>
+              <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+                {workflowDetails.map((step) => (
+                  <article key={`detail-${step.title}`} className="rounded-xl border bg-background/55 p-4">
+                    <step.icon className="h-5 w-5 text-primary" />
+                    <h3 className="mt-2 text-sm font-semibold text-foreground">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{step.body}</p>
+                  </article>
                 ))}
               </div>
             </div>
@@ -322,7 +457,7 @@ export default async function HomePage() {
                 title="The Physics of Distributed Delivery"
                 tip="This section maps delivery behavior to systems science so leadership can replace guesswork with repeatable execution controls."
               />
-              <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                 {deliveryPhysics.map((law) => (
                   <article key={law.title} className="rounded-xl border bg-background/55 p-5">
                     <h3 className="text-lg font-semibold text-foreground">{law.title}</h3>
@@ -367,6 +502,27 @@ export default async function HomePage() {
                 We run problem solving signal extraction, bias normalization across ESL variants,
                 mental shape evaluation, and mismatch risk reduction as one integrity process.
               </p>
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                <div className="rounded-xl border bg-background/55 p-5">
+                  <p className="text-sm font-semibold text-foreground">Signal extraction pipeline</p>
+                  <div className="mt-4 flex flex-wrap items-center gap-2">
+                    {["Problem prompt", "Reasoning signal", "Bias normalization", "Role fit map"].map((step, idx) => (
+                      <div key={step} className="flex items-center gap-2">
+                        <span className="rounded-md border bg-background/70 px-3 py-2 text-xs text-foreground">{step}</span>
+                        {idx < 3 ? <ArrowRight className="h-3.5 w-3.5 text-primary" /> : null}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="rounded-xl border bg-background/55 p-5">
+                  <p className="text-sm font-semibold text-foreground">Evaluation trust cues</p>
+                  <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                    <li className="rounded-lg border bg-background/60 px-3 py-2">Bias normalization across ESL variants</li>
+                    <li className="rounded-lg border bg-background/60 px-3 py-2">Mental model and decision quality analysis</li>
+                    <li className="rounded-lg border bg-background/60 px-3 py-2">Mismatch risk reduction before placement</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -378,9 +534,13 @@ export default async function HomePage() {
               />
               <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {telemetryMetrics.map((metric) => (
-                  <div key={metric} className="rounded-xl border bg-background/55 p-5 text-center">
-                    <Gauge className="mx-auto h-6 w-6 text-primary" />
-                    <p className="mt-2 text-sm text-foreground">{metric}</p>
+                  <div key={metric.label} className="rounded-xl border bg-background/55 p-5">
+                    <div className="flex items-center justify-between">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-primary">{metric.label}</p>
+                      <Gauge className="h-5 w-5 text-primary" />
+                    </div>
+                    <p className="mt-3 text-xl font-semibold text-foreground">{metric.value}</p>
+                    <p className="mt-1 text-xs leading-5 text-muted-foreground">{metric.note}</p>
                   </div>
                 ))}
               </div>
@@ -425,9 +585,14 @@ export default async function HomePage() {
                           />
                         )}
                       </div>
-                      <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">
-                        {study.clientName}
-                      </h3>
+                      <div className="flex items-start justify-between gap-3">
+                        <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">
+                          {study.clientName}
+                        </h3>
+                        <span className="rounded-md border border-primary/30 bg-primary/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-primary">
+                          Outcome
+                        </span>
+                      </div>
                       <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary my-3">
                         {study.industry}
                       </span>
@@ -457,6 +622,23 @@ export default async function HomePage() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-6 section-defer">
+            <div className="mx-auto max-w-5xl rounded-2xl glass-panel p-5 md:p-6">
+              <div className="grid gap-3 md:grid-cols-3">
+                {[
+                  "Enterprise environments and regulated operations",
+                  "Security first onboarding and delivery governance",
+                  "Nearshore execution with measured control coverage",
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border border-border/70 bg-background/55 px-4 py-3 text-sm text-foreground">
+                    <ShieldCheck className="mr-2 inline h-4 w-4 text-primary" />
+                    {item}
+                  </div>
+                ))}
               </div>
             </div>
           </section>

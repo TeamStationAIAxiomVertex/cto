@@ -51,7 +51,7 @@ export default async function HireByCountryPage({
   const verdictRows = generateVerdictRows(data);
 
   return (
-    <main className="container mx-auto max-w-7xl px-4 py-10">
+    <main className="manual-page container mx-auto max-w-7xl px-4 py-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -65,21 +65,38 @@ export default async function HireByCountryPage({
         }}
       />
 
-      <Breadcrumbs
-        items={[
-          { label: "Hire", path: "/hire" },
-          { label: "By Country", path: "/hire/by-country" },
-          { label: country, path: `/hire/by-country/${params.slug}` },
-        ]}
-      />
+      <div className="glass-panel hero-depth system-grid rounded-2xl p-6 md:p-8">
+        <Breadcrumbs
+          items={[
+            { label: "Hire", path: "/hire" },
+            { label: "By Country", path: "/hire/by-country" },
+            { label: country, path: `/hire/by-country/${params.slug}` },
+          ]}
+        />
 
-      <h1 className="mt-6 mb-4 text-4xl font-extrabold">{h1}</h1>
+        <h1 className="mt-5 mb-4 text-4xl font-extrabold md:text-5xl">{h1}</h1>
 
-      <section className="prose max-w-none lg:prose-xl">
-        <p className="text-lg text-muted-foreground">{data.meta}</p>
-      </section>
+        <section className="max-w-4xl">
+          <p className="text-lg text-muted-foreground">{data.meta}</p>
+        </section>
 
-      <section className="mt-12">
+        <div className="mt-5 grid gap-3 md:grid-cols-3">
+          <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary">Operating fit</p>
+            <p className="mt-2 text-sm text-muted-foreground">Compare overlap, governance burden, and delivery readiness before team formation.</p>
+          </div>
+          <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary">Execution risk</p>
+            <p className="mt-2 text-sm text-muted-foreground">Validate legal, onboarding, and operational controls in the same decision flow.</p>
+          </div>
+          <div className="rounded-xl border border-border/70 bg-background/60 p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary">Leadership view</p>
+            <p className="mt-2 text-sm text-muted-foreground">Use one country view for compensation signals, compliance notes, and hiring pathways.</p>
+          </div>
+        </div>
+      </div>
+
+      <section className="glass-panel mt-10 rounded-2xl p-6 md:p-8">
         <h2 className="mb-6 text-3xl font-bold">
           Why TeamStation AI Wins in {country}
         </h2>
@@ -91,14 +108,14 @@ export default async function HireByCountryPage({
           className="mb-8"
         />
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
-          <div className="rounded-lg border border-border bg-card p-6">
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="rounded-xl border border-border/70 bg-background/60 p-5">
             <h3 className="mb-2 text-xl font-semibold text-foreground">
               Legal and EOR Guidance
             </h3>
             <p className="text-muted-foreground">{legal_note}</p>
           </div>
-          <div className="rounded-lg border border-border bg-card p-6">
+          <div className="rounded-xl border border-border/70 bg-background/60 p-5">
             <h3 className="mb-2 text-xl font-semibold text-foreground">
               Compensation Insights
             </h3>
@@ -107,7 +124,7 @@ export default async function HireByCountryPage({
         </div>
       </section>
 
-      <section className="mt-12 rounded-lg border bg-card p-8">
+      <section className="glass-panel mt-10 rounded-2xl p-6 md:p-8">
         <h2 className="text-3xl font-bold">
           Operating Model for {country} Engineering Pods
         </h2>
@@ -131,7 +148,7 @@ export default async function HireByCountryPage({
         </div>
       </section>
 
-      <section className="mt-12 border-t pt-8">
+      <section className="glass-panel mt-10 rounded-2xl p-6 md:p-8">
         <h2 className="mb-4 text-xl font-semibold">
           Explore Related Engineering Strategy Hubs
         </h2>
@@ -140,7 +157,7 @@ export default async function HireByCountryPage({
             <a
               key={index}
               href={link.url}
-              className="rounded-full border border-border bg-card px-3 py-1 text-sm text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="rounded-full border border-border/70 bg-background/70 px-3 py-1 text-sm text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
             >
               {link.text}
             </a>
@@ -148,13 +165,13 @@ export default async function HireByCountryPage({
         </div>
       </section>
 
-      <section className="mt-12 rounded-lg border bg-card p-8">
+      <section className="glass-panel mt-10 rounded-2xl p-6 md:p-8">
         <h2 className="text-3xl font-bold">
           Frequently Asked Questions About Hiring in {country}
         </h2>
         <div className="mt-6 space-y-4">
           {(faqs || []).slice(0, 6).map((faq, index) => (
-            <article key={`${country}-faq-${index}`} className="rounded-lg border bg-background p-5">
+            <article key={`${country}-faq-${index}`} className="rounded-xl border border-border/70 bg-background/70 p-5">
               <h3 className="font-semibold text-foreground">{faq.q}</h3>
               <p className="mt-2 text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: faq.a }} />
             </article>
@@ -162,10 +179,12 @@ export default async function HireByCountryPage({
         </div>
       </section>
 
-      <CTOFieldManualBlock
-        title={`CTO Field Manual for ${country} Engineering Operations`}
-        focus={`${country} hiring strategy, delivery governance, and executive control`}
-      />
+      <div className="mt-10">
+        <CTOFieldManualBlock
+          title={`CTO Field Manual for ${country} Engineering Operations`}
+          focus={`${country} hiring strategy, delivery governance, and executive control`}
+        />
+      </div>
     </main>
   );
 }
