@@ -10,7 +10,7 @@ const chakraUi: TechEntry = {
   meta_description:
     "Build a beautiful, consistent, and accessible user interface. Hire elite remote Chakra UI experts vetted for their deep understanding of the Chakra UI system, from the component to the theme. Book a call.",
   intro:
-    "Chakra UI is a popular React UI framework. You need an engineer who understands that building a modern, component-based user interface is not just about writing code, but about a deep understanding of the entire Chakra UI ecosystem, from the component and the theme to the style and the layout. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Chakra UI expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Chakra UI is a popular React UI framework. You need an engineer who understands that building a modern, component-based user interface is not just about writing code, but about a deep understanding of the entire Chakra UI ecosystem, from the component and the theme to the style and the layout. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Chakra UI expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

@@ -9,7 +9,7 @@ const prometheus: TechEntry = {
   meta_description:
     "Build a modern, observable, and reliable system. Hire elite remote Prometheus experts vetted for their deep understanding of monitoring, from the exporter to the query language. Book a call.",
   intro:
-    "Prometheus is the de facto standard for monitoring. You need an engineer who understands that building a modern, observable system is not just about collecting metrics, but about a deep understanding of the entire monitoring ecosystem, from the exporter and the scraping configuration to the query language and the alerting rules. Our vetting process identifies developers who are experts in the Cloud Native Computing Foundation (CNCF) landscape—and can architect a monitoring and observability platform that is as secure, efficient, and automated as it is scalable. By hiring a Prometheus expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Prometheus is the de facto standard for monitoring. You need an engineer who understands that building a modern, observable system is not just about collecting metrics, but about a deep understanding of the entire monitoring ecosystem, from the exporter and the scraping configuration to the query language and the alerting rules. Our vetting process identifies developers who are experts in the Cloud Native Computing Foundation (CNCF) landscape and can architect a monitoring and observability platform that is as secure, efficient, and automated as it is scalable. By hiring a Prometheus expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

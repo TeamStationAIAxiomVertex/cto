@@ -21,7 +21,7 @@ const pspCards = [
       body: {
         "problem": "Your offshore team pushes a React component PR at the end of their day. You find a simple hook logic issue the next morning. That question sits for 12 hours, delaying a critical fix.",
         "stakes": "This 'human latency tax' kills your agile velocity and forces your senior engineers into late-night coordination. Your roadmap slips, one day at a time.",
-        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior React engineers in Colombia with a guaranteed 5–7 hours of daily overlap, ensuring a continuous, real-time workflow.",
+        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior React engineers in Colombia with a guaranteed 5 7 hours of daily overlap, ensuring a continuous, real-time workflow.",
         "proof": "Teams adopting this model reduce their PR turnaround time from 36 hours to under 8. See the data in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
         "recap": "Stop letting time zones dictate your release schedule. When you <strong>hire React developers in Colombia</strong>, you buy back your day with a team that operates on your clock."
       }

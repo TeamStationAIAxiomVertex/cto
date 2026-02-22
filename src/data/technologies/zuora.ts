@@ -34,7 +34,7 @@ const zuora: TechEntry = {
       icon: AlertTriangle,
       pain: "Do you lack a single source of truth for your subscription metrics?",
       problem:
-        "Your subscription data is scattered across multiple systems—CRM, billing, ERP—making it impossible to get a clear picture of key metrics like MRR, Churn, and LTV. You can't make data-driven decisions to grow your business.",
+        "Your subscription data is scattered across multiple systems CRM, billing, ERP making it impossible to get a clear picture of key metrics like MRR, Churn, and LTV. You can't make data-driven decisions to grow your business.",
       solution:
         "We implement **Zuora as the central hub of your quote-to-revenue process**. By integrating Zuora with your CRM (like Salesforce) and ERP, we create a single source of truth for all subscription data, providing you with real-time, actionable insights.",
       kpi: "Gain a 360-degree view of your subscribers and reduce reporting time by 80%.",

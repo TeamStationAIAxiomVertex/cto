@@ -17,7 +17,7 @@ const machineLearning: TechEntry = {
       problem:
         "Your data scientists create promising models, but they never make it into the hands of users. There is no clear path to production, and the handover to engineering is a slow, error-prone process of rewriting and re-implementing.",
       solution:
-        "A Machine Learning Engineer builds the end-to-end MLOps pipeline. They use tools like Kubeflow or MLflow to automate the entire lifecycle—from data prep and training to deployment and monitoring—transforming the manual handoff into a repeatable, automated workflow.",
+        "A Machine Learning Engineer builds the end-to-end MLOps pipeline. They use tools like Kubeflow or MLflow to automate the entire lifecycle from data prep and training to deployment and monitoring transforming the manual handoff into a repeatable, automated workflow.",
       kpi: "Reduce the time to deploy a new model from months to days.",
     },
     {

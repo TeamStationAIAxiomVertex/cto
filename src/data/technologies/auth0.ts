@@ -9,7 +9,7 @@ const auth0: TechEntry = {
   meta_description:
     "Build a secure, scalable, and modern identity platform. Hire elite remote Auth0 experts vetted for their deep understanding of identity, from the login to the token. Book a call.",
   intro:
-    "Auth0 is a leading identity and access management platform. You need an engineer who understands that building a modern, secure identity platform is not just about writing code, but about a deep understanding of the entire identity ecosystem, from the login and the token to the user and the role. Our vetting process identifies developers who are experts in the modern security stack—and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring an Auth0 expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Auth0 is a leading identity and access management platform. You need an engineer who understands that building a modern, secure identity platform is not just about writing code, but about a deep understanding of the entire identity ecosystem, from the login and the token to the user and the role. Our vetting process identifies developers who are experts in the modern security stack and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring an Auth0 expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

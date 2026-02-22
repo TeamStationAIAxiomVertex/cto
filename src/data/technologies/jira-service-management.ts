@@ -25,7 +25,7 @@ const jiraServiceManagement: TechEntry = {
       icon: AlertTriangle,
       pain: "Are you struggling to manage changes to your IT infrastructure without causing disruptions?",
       problem:
-        "Changes to your systems—like software updates or server maintenance—are poorly planned and executed, often leading to unexpected outages and downtime that impact the business. There is no formal approval process or risk assessment.",
+        "Changes to your systems like software updates or server maintenance are poorly planned and executed, often leading to unexpected outages and downtime that impact the business. There is no formal approval process or risk assessment.",
       solution:
         "We implement a **robust change management process using Jira Service Management**. We set up automated change request workflows with risk assessment, approval chains, and deployment scheduling. This provides visibility to all stakeholders and minimizes the risk of service disruptions.",
       kpi: "Reduce change-related incidents by 75% and ensure 99.9% uptime for critical services.",

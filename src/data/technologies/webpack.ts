@@ -9,7 +9,7 @@ const webpack: TechEntry = {
   meta_description:
     "Build a performant, scalable, and maintainable web application. Hire elite remote Webpack experts vetted for their deep understanding of the modern frontend stack, from the loader to the plugin. Book a call.",
   intro:
-    "Webpack is a leading module bundler. You need an engineer who understands that building a modern, performant web application is not just about writing code, but about a deep understanding of the entire build process, from the loader and the plugin to the chunk and the bundle. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Webpack expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Webpack is a leading module bundler. You need an engineer who understands that building a modern, performant web application is not just about writing code, but about a deep understanding of the entire build process, from the loader and the plugin to the chunk and the bundle. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Webpack expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

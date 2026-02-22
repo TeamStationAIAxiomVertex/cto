@@ -25,7 +25,7 @@ techStack:
 
 ## Executive Summary
 
-Parsable needed senior, culturally aligned engineering capacity—fast—to resolve a mission-critical Okta Single Sign-On (SSO) integration issue impacting a marquee enterprise client (Georgia-Pacific) and to staff multiple product lines with accountable ownership. After evaluating 18 LATAM vendors, Parsable selected TeamStation AI for its candidate quality, culture fit, security governance, and time-zone aligned delivery. We assembled a custom, validated Scrum squad across Web, Mobile (iOS/Android), QA Automation, and UX/UI plus Product, diagnosed the SSO failure path without service disruption, and restored reliable access—unlocking onboarding of additional billable users. The team remains embedded to drive product velocity across lines of business.
+Parsable needed senior, culturally aligned engineering capacity fast to resolve a mission-critical Okta Single Sign-On (SSO) integration issue impacting a marquee enterprise client (Georgia-Pacific) and to staff multiple product lines with accountable ownership. After evaluating 18 LATAM vendors, Parsable selected TeamStation AI for its candidate quality, culture fit, security governance, and time-zone aligned delivery. We assembled a custom, validated Scrum squad across Web, Mobile (iOS/Android), QA Automation, and UX/UI plus Product, diagnosed the SSO failure path without service disruption, and restored reliable access unlocking onboarding of additional billable users. The team remains embedded to drive product velocity across lines of business.
 
 ---
 
@@ -41,7 +41,7 @@ Parsable needed senior, culturally aligned engineering capacity—fast—to reso
 ## Why TeamStation AI (Nearshore IT Copilot)
 
 -   Precision team assembly: AI-assisted selection and validation surfaced senior engineers with prior identity/SSO exposure and enterprise mobile/web delivery.
--   Tested, production-ready squads: Product Manager, Senior Frontend/Backend, Senior iOS/Android, QA Automation, and UX/UI—calibrated to Parsable’s rituals.
+-   Tested, production-ready squads: Product Manager, Senior Frontend/Backend, Senior iOS/Android, QA Automation, and UX/UI calibrated to Parsable’s rituals.
 -   Operational governance: MDM-managed devices, MFA/SSO, least-privilege access; security baselines applied before code contribution.
 -   Time-zone velocity: Same-day collaboration with U.S. leadership and customer teams; faster triage/decision loops.
 -   Cultural fit by design: English-fluent engineers with U.S. travel visas for on-site onboarding and cross-team workshops.
@@ -50,7 +50,7 @@ Parsable needed senior, culturally aligned engineering capacity—fast—to reso
 
 ## Solution & Delivery
 
-Initial Ramp (Weeks 0–3)
+Initial Ramp (Weeks 0 3)
 
 -   On-site onboarding (SF & Vancouver) with Parsable Tech Leads.
 -   Pre-provisioned laptops per INFOSEC baselines; credentials and documentation ready pre-day-1.

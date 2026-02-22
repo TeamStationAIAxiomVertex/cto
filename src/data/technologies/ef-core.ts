@@ -9,7 +9,7 @@ const efCore: TechEntry = {
   meta_description:
     "Build performant and maintainable data access layers. Hire elite remote EF Core experts vetted for query optimization, migrations, and complex data modeling. Book a call.",
   intro:
-    "Entity Framework Core (EF Core) is the modern, cross-platform ORM for .NET. You need an engineer who can leverage its power to build a fast, reliable, and scalable data access layer. Our vetting process identifies developers who are experts in EF Core's core concepts—from LINQ query translation and change tracking to migrations and performance tuning. By hiring an EF Core expert, you get a developer who can design a robust data model and write efficient, performant queries that are a joy to maintain.",
+    "Entity Framework Core (EF Core) is the modern, cross-platform ORM for .NET. You need an engineer who can leverage its power to build a fast, reliable, and scalable data access layer. Our vetting process identifies developers who are experts in EF Core's core concepts from LINQ query translation and change tracking to migrations and performance tuning. By hiring an EF Core expert, you get a developer who can design a robust data model and write efficient, performant queries that are a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

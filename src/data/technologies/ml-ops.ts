@@ -9,7 +9,7 @@ const mlOps: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and automated machine learning infrastructure. Hire elite remote MLOps experts vetted for their deep understanding of MLOps, from the model to the pipeline. Book a call.",
   intro:
-    "MLOps is the foundation of any AI-driven organization. You need an engineer who understands that building a modern machine learning infrastructure is not just about training models, but about a deep understanding of the entire machine learning lifecycle, from the data and the model to the pipeline and the deployment. Our vetting process identifies developers who are experts in the modern machine learning stack—and can architect a machine learning platform that is as secure, efficient, and automated as it is scalable. By hiring an MLOps expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "MLOps is the foundation of any AI-driven organization. You need an engineer who understands that building a modern machine learning infrastructure is not just about training models, but about a deep understanding of the entire machine learning lifecycle, from the data and the model to the pipeline and the deployment. Our vetting process identifies developers who are experts in the modern machine learning stack and can architect a machine learning platform that is as secure, efficient, and automated as it is scalable. By hiring an MLOps expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

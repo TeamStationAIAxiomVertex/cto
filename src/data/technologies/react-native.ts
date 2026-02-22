@@ -10,7 +10,7 @@ const reactNative: TechEntry = {
   meta_description:
     "Build a beautiful, native, and cross-platform mobile application. Hire elite remote React Native experts vetted for their deep understanding of mobile, from the component to the native module. Book a call.",
   intro:
-    "React Native is the de facto standard for cross-platform mobile development. You need an engineer who understands that building a modern, native mobile application is not just about writing code, but about a deep understanding of the entire mobile ecosystem, from the component and the state to the native module and the platform API. Our vetting process identifies developers who are experts in the modern mobile stack—and can architect a mobile platform that is as secure, efficient, and automated as it is scalable. By hiring a React Native expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "React Native is the de facto standard for cross-platform mobile development. You need an engineer who understands that building a modern, native mobile application is not just about writing code, but about a deep understanding of the entire mobile ecosystem, from the component and the state to the native module and the platform API. Our vetting process identifies developers who are experts in the modern mobile stack and can architect a mobile platform that is as secure, efficient, and automated as it is scalable. By hiring a React Native expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

@@ -13,14 +13,14 @@ export default function ProcessPage() {
     const processSteps = [
         { title: "Book a Demo", description: "See the live console: jobs, short-lists, devices/MDM, compliance, KPIs.", artifact: "Demo environment + sample dashboards." },
         { title: "Platform Onboarding", description: "Create your org, users, roles, and legal entity; connect tools (Slack/Jira/GitHub/IdP).", artifact: "Org workspace, SSO, billing & DPA on file." },
-        { title: "Add Jobs & Calibrate Success", description: "Define stack, level (L1–L4), ownership scope, and the 90-day outcome you need.", artifact: "Role profile + 'Success at 90 Days' spec." },
+        { title: "Add Jobs & Calibrate Success", description: "Define stack, level (L1 L4), ownership scope, and the 90-day outcome you need.", artifact: "Role profile + 'Success at 90 Days' spec." },
         { title: <>Pick <Link href="/hire/by-country" className="text-primary hover:underline">LATAM cities</Link>; align salary bands, benefits norms, and hiring constraints.</>, artifact: "Country shortlist + comp/benefit bands.", stepTitle: "Country Targeting & Market Bands" },
-        { title: <>Our <Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Cognitive AI</Link> is always-on sourcing; candidates are scored against your role profile to find the ideal mental shape.</>, artifact: "5–8 candidate short-list (relevance ≥ 85%).", stepTitle: "Cognitive AI Sourcing & Short-List" },
+        { title: <>Our <Link href="/research/axiom-cortex-scientific-report" className="text-primary hover:underline">Cognitive AI</Link> is always-on sourcing; candidates are scored against your role profile to find the ideal mental shape.</>, artifact: "5 8 candidate short-list (relevance ≥ 85%).", stepTitle: "Cognitive AI Sourcing & Short-List" },
         { title: <Link href="/technical-interview-evaluation" className="text-primary hover:underline">Technical Evaluation (Bias-Aware)</Link>, description: "A human expert conducts a structured, evidence-based interview. Our Cognitive AI then synthesizes the conversation to generate an 'Evidence Locker' with explainable scoring.", artifact: "Scorecards + hiring signal; mismatch rate ≤ 10%." },
         { title: "Client Interview Loop", description: "Calibrated panel agenda; consolidate notes and go/no-go in the platform.", artifact: "Finalist(s) + reference checks." },
         { title: "Offer, EOR & Compliance", description: "We issue enforceable contracts, handle payroll, taxes, and statutory benefits.", artifact: "Signed offer; compliant start date set." },
         { title: "Devices, MDM & Day-1 Access", description: "Procure/ship device, enroll MDM, verify tool/account access before Day-1.", artifact: "Device MTPD ≤ 5 days, MDM enrollment ≥ 99%." },
-        { title: "Day-1 to First PR + 30-60-90", description: "First ticket assigned; pair intro; measurable ramp to autonomy.", artifact: "Time-to-First-PR 7–14 days, 90-day retention ≥ 96%." }
+        { title: "Day-1 to First PR + 30-60-90", description: "First ticket assigned; pair intro; measurable ramp to autonomy.", artifact: "Time-to-First-PR 7 14 days, 90-day retention ≥ 96%." }
     ];
 
     const securityPillars = [
@@ -28,7 +28,7 @@ export default function ProcessPage() {
             icon: <FileSearch className="h-8 w-8 text-primary"/>,
             pain: "Worried about navigating complex local labor laws?",
             title: 'EOR & Country Compliance', 
-            description: 'Contracts, payroll, statutory benefits, PTO, taxes—fully compliant per country and contractually guaranteed in the SOW.',
+            description: 'Contracts, payroll, statutory benefits, PTO, taxes fully compliant per country and contractually guaranteed in the SOW.',
             kpi: "Zero compliance overhead"
         },
         { 
@@ -72,7 +72,7 @@ export default function ProcessPage() {
           This isn't a checklist; it's an engineered system. Our Nearshore IT Co-Pilot™ provides one accountable workflow for hiring, compliance, and secure devices, governed by a single <WithTooltip label="A Master Services Agreement (MSA) and Statement of Work (SOW) form a legally binding contract for our services."><span className="border-b border-dashed">MSA/SOW</span></WithTooltip>. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
         </p>
          <div className="mt-6 font-semibold text-primary">
-            Time-to-Offer ≈ 9 days • Day-1 Tool Readiness ≥ 95% • First PR in 7–14 days
+            Time-to-Offer ≈ 9 days • Day-1 Tool Readiness ≥ 95% • First PR in 7 14 days
           </div>
       </header>
 
@@ -116,7 +116,7 @@ export default function ProcessPage() {
 
 
        <div className="my-24 text-center">
-        <h2 className="text-4xl font-bold text-foreground">Security, Compliance & Liability — Under One SLA</h2>
+        <h2 className="text-4xl font-bold text-foreground">Security, Compliance & Liability   Under One SLA</h2>
         <p className='mt-4 mx-auto max-w-3xl text-lg text-muted-foreground'>
             We carry the risk, contractually. You keep the velocity.
         </p>

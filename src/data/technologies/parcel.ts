@@ -10,7 +10,7 @@ const parcel: TechEntry = {
   meta_description:
     "Build a blazing-fast, zero-configuration web application. Hire elite remote Parcel experts vetted for their deep understanding of the modern frontend stack, from the entry point to the output. Book a call.",
   intro:
-    "Parcel is a blazing-fast, zero-configuration web application bundler. You need an engineer who understands that building a modern, performant web application is not just about writing code, but about a deep understanding of the entire build process, from the entry point and the output to the plugin and the external dependency. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Parcel expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Parcel is a blazing-fast, zero-configuration web application bundler. You need an engineer who understands that building a modern, performant web application is not just about writing code, but about a deep understanding of the entire build process, from the entry point and the output to the plugin and the external dependency. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Parcel expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

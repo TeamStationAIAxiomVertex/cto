@@ -10,7 +10,7 @@ const hightouch: TechEntry = {
   meta_description:
     "Activate your data warehouse. Hire elite remote Hightouch experts vetted for their deep understanding of Reverse ETL, from the data model to the destination. Book a call.",
   intro:
-    "Hightouch is a leading Reverse ETL platform. You need an engineer who understands that activating your data warehouse is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data model and the sync to the destination and the API. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data activation platform that is as secure, efficient, and automated as it is scalable. By hiring a Hightouch expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Hightouch is a leading Reverse ETL platform. You need an engineer who understands that activating your data warehouse is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data model and the sync to the destination and the API. Our vetting process identifies developers who are experts in the modern data stack and can architect a data activation platform that is as secure, efficient, and automated as it is scalable. By hiring a Hightouch expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

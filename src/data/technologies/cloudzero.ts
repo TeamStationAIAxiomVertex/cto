@@ -25,7 +25,7 @@ const cloudzero: TechEntry = {
       icon: AlertTriangle,
       pain: "Engineers Are Blind to Cost Implications",
       problem:
-        "Your developers make architectural decisions—choosing an instance type, a database, a caching strategy—with zero visibility into the financial impact, leading to massively over-provisioned and inefficient systems.",
+        "Your developers make architectural decisions choosing an instance type, a database, a caching strategy with zero visibility into the financial impact, leading to massively over-provisioned and inefficient systems.",
       solution:
         "Our experts integrate CloudZero directly into the engineering workflow, providing immediate feedback on the cost impact of their work. This fosters a culture of **cost-aware architecture**, where engineers are empowered to innovate within budget.",
       kpi: "Reduce cost per feature by 30% by making cost a visible engineering metric.",

@@ -9,7 +9,7 @@ const postgresql: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and feature-rich data infrastructure. Hire elite remote PostgreSQL experts vetted for their deep understanding of advanced SQL, performance tuning, and data modeling. Book a call.",
   intro:
-    "PostgreSQL is the world's most advanced open source relational database. You need an engineer who can leverage its powerful features to build a robust, scalable, and reliable data platform. Our vetting process identifies developers who are experts in PostgreSQL's core concepts—from advanced data types and indexing to query optimization and concurrency control—and can architect a database that is as performant as it is resilient. By hiring a PostgreSQL expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "PostgreSQL is the world's most advanced open source relational database. You need an engineer who can leverage its powerful features to build a robust, scalable, and reliable data platform. Our vetting process identifies developers who are experts in PostgreSQL's core concepts from advanced data types and indexing to query optimization and concurrency control and can architect a database that is as performant as it is resilient. By hiring a PostgreSQL expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

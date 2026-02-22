@@ -10,7 +10,7 @@ const presto: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and efficient big data infrastructure. Hire elite remote Presto experts vetted for their deep understanding of big data, from the connector to the query plan. Book a call.",
   intro:
-    "Presto is the de facto standard for distributed SQL query engines. You need an engineer who understands that building a modern big data infrastructure is not just about moving data, but about a deep understanding of the entire big data lifecycle, from the data source and the data pipeline to the data warehouse and the data lake. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Presto expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Presto is the de facto standard for distributed SQL query engines. You need an engineer who understands that building a modern big data infrastructure is not just about moving data, but about a deep understanding of the entire big data lifecycle, from the data source and the data pipeline to the data warehouse and the data lake. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Presto expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

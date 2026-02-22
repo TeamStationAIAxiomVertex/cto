@@ -10,7 +10,7 @@ const securityEngineering: TechEntry = {
   meta_description:
     "Build a secure, resilient, and compliant application. Hire elite remote security engineers vetted for their deep understanding of threat modeling, from the code to the cloud. Book a call.",
   intro:
-    "Security engineering is the foundation of any modern software development lifecycle. You need an engineer who understands that building a secure application is not just about writing code, but about a deep understanding of the entire threat landscape, from the code and the dependencies to the infrastructure and the cloud. Our vetting process identifies developers who are experts in the modern DevSecOps stack—and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring a security engineer, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Security engineering is the foundation of any modern software development lifecycle. You need an engineer who understands that building a secure application is not just about writing code, but about a deep understanding of the entire threat landscape, from the code and the dependencies to the infrastructure and the cloud. Our vetting process identifies developers who are experts in the modern DevSecOps stack and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring a security engineer, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

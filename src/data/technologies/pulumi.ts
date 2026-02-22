@@ -10,7 +10,7 @@ const pulumi: TechEntry = {
   meta_description:
     "Build and manage cloud infrastructure using familiar languages like TypeScript, Python, and Go. Hire elite remote Pulumi experts vetted for their deep understanding of IaC and multi-cloud deployments. Book a call.",
   intro:
-    "Pulumi allows you to define and deploy cloud infrastructure using general-purpose programming languages. You need an engineer who can leverage the full power of a real programming language—loops, functions, classes, and package management—to create highly dynamic and reusable infrastructure code. Our vetting process identifies developers who are experts in Pulumi's programming model and its integration with cloud providers. By hiring a Pulumi expert, you get a developer who can build a modern, automated, and observable IaC practice that is more flexible and powerful than traditional DSL-based tools.",
+    "Pulumi allows you to define and deploy cloud infrastructure using general-purpose programming languages. You need an engineer who can leverage the full power of a real programming language loops, functions, classes, and package management to create highly dynamic and reusable infrastructure code. Our vetting process identifies developers who are experts in Pulumi's programming model and its integration with cloud providers. By hiring a Pulumi expert, you get a developer who can build a modern, automated, and observable IaC practice that is more flexible and powerful than traditional DSL-based tools.",
   pains: [
     {
       icon: AlertTriangle,

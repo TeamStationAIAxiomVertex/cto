@@ -21,7 +21,7 @@ const pspCards = [
       body: {
         "problem": "Your offshore team pushes a PR at the end of their day. A simple question on a Django model change leads to a 24-hour delay, stalling your agile process.",
         "stakes": "This 'human latency tax' kills velocity and forces senior engineers into late-night coordination. Your roadmap for critical Python services slips, one day at a time.",
-        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior Python engineers in Colombia with a guaranteed 5–7 hours of daily overlap, ensuring a continuous, real-time workflow.",
+        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior Python engineers in Colombia with a guaranteed 5 7 hours of daily overlap, ensuring a continuous, real-time workflow.",
         "proof": "Our platform telemetry shows teams adopting this model reduce PR turnaround from 36 hours to under 8. See the data in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
         "recap": "Stop letting time zones dictate your release schedule. When you <strong>hire Python developers in Colombia</strong>, you buy back your day."
       }

@@ -124,7 +124,7 @@ export default function ComparisonWidget() {
     []
   );
   const f = (n?: number) => (typeof n === "number" ? currency.format(n) : "$0");
-  const fRange = (low?: number, high?: number) => `${f(low)} – ${f(high)}`;
+  const fRange = (low?: number, high?: number) => `${f(low)}   ${f(high)}`;
 
   const data: Results = useMemo(() => {
     const buildInMonthly =
@@ -388,8 +388,8 @@ export default function ComparisonWidget() {
         New-Gen Nearshore vs Onshore, Offshore, and Legacy Nearshore
       </h2>
       <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
-        We count the hidden taxes—PR latency, vacancy days, failed-change costs,
-        and management overhead—not just the sticker. The Nearshore IT Co-Pilot
+        We count the hidden taxes PR latency, vacancy days, failed-change costs,
+        and management overhead not just the sticker. The Nearshore IT Co-Pilot
         wins because it removes lag and makes outcomes observable.
       </p>
 

@@ -146,7 +146,7 @@ export default function BuildVsBuyPage() {
 
         <section className="my-24">
           <div className="text-center">
-              <h2 className="text-4xl font-bold text-foreground">Part 1 (The Pain): The "Build" Model — A High-Risk, High-Cost Gamble</h2>
+              <h2 className="text-4xl font-bold text-foreground">Part 1 (The Pain): The "Build" Model   A High-Risk, High-Cost Gamble</h2>
               <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Building your own nearshore operation seems like it offers more control, but it's a trap. You become responsible for a mountain of non-core activities, each with hidden costs and significant risks. Your finance team sees a lower salary; you, the CTO, are saddled with a dozen hidden "taxes" on your time and budget.</p>
           </div>
 
@@ -177,7 +177,7 @@ export default function BuildVsBuyPage() {
 
         <section className="my-24">
           <div className="text-center">
-              <h2 className="text-4xl font-bold text-foreground">Part 2 (The Solution): The "Buy" Model — An Integrated Platform That Absorbs Risk</h2>
+              <h2 className="text-4xl font-bold text-foreground">Part 2 (The Solution): The "Buy" Model   An Integrated Platform That Absorbs Risk</h2>
               <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">Partnering with TeamStation AI means you "buy" a complete, managed operating system for your nearshore team. We absorb all the risk and operational overhead into a single, predictable, all-inclusive rate, allowing you to focus on your core competency: building world-class software.</p>
           </div>
 
@@ -209,7 +209,7 @@ export default function BuildVsBuyPage() {
           problem="CTOs face hidden risks in cost, compliance, and velocity when using legacy staffing models."
           stakes="Without addressing these fundamental issues, budgets spiral, projects miss critical deadlines, and security incidents become inevitable."
           approach="TeamStation AI's integrated platform delivers pre-vetted LATAM talent, audit-ready compliance with secure devices, and a predictable Total Cost of Ownership."
-          evidence="On average, clients see a 40–60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
+          evidence="On average, clients see a 40 60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
           related={[
             { label: "CTO Playbook", href: "/playbook/hub" },
             { label: "Our Vetting Process", href: "/technical-interview-evaluation" },

@@ -10,7 +10,7 @@ const solid: TechEntry = {
   meta_description:
     "Build a blazing-fast, reactive, and scalable user interface. Hire elite remote Solid.js experts vetted for their deep understanding of fine-grained reactivity, from the signal to the effect. Book a call.",
   intro:
-    "Solid.js is a declarative, efficient, and flexible JavaScript library for building user interfaces. You need an engineer who understands that building a high-performance, reactive user interface is not just about writing code, but about a deep understanding of the entire frontend ecosystem, from the signal and the effect to the component and the store. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Solid.js expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Solid.js is a declarative, efficient, and flexible JavaScript library for building user interfaces. You need an engineer who understands that building a high-performance, reactive user interface is not just about writing code, but about a deep understanding of the entire frontend ecosystem, from the signal and the effect to the component and the store. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Solid.js expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

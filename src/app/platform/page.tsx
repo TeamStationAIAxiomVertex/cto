@@ -296,7 +296,7 @@ export default function PlatformPage() {
         </h2>
         <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
           Everything you need to hire, equip, secure, and run LATAM engineering
-          teams—inside one platform and SLA.
+          teams inside one platform and SLA.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {includedServices.map((service) => (
@@ -338,7 +338,7 @@ export default function PlatformPage() {
         </h2>
         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">
           Independent recognition, peer-reviewed research, and platform delivery
-          metrics—so you’re not taking our word for it.
+          metrics so you’re not taking our word for it.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-12 gap-8">
           {recognitions.map((rec) => (

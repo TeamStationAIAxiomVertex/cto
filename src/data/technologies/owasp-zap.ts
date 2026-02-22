@@ -15,7 +15,7 @@ const owaspZap: TechEntry = {
       icon: AlertTriangle,
       pain: "Discovering Critical Vulnerabilities in Production",
       problem:
-        "Your team ships code quickly, but security scans are run infrequently, if at all. Critical vulnerabilities like XSS, SQL Injection, or insecure configurations are only found by external researchers—or worse, attackers.",
+        "Your team ships code quickly, but security scans are run infrequently, if at all. Critical vulnerabilities like XSS, SQL Injection, or insecure configurations are only found by external researchers or worse, attackers.",
       solution:
         "An OWASP ZAP expert integrates automated, baseline, and full scans directly into your CI/CD pipeline. This ensures that every deployment is automatically tested for the OWASP Top 10 and other critical vulnerabilities, catching them before they merge.",
       kpi: "Reduce the discovery of critical vulnerabilities in production by 98%.",

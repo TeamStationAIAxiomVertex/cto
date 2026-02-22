@@ -25,7 +25,7 @@ const pgvector: TechEntry = {
       icon: AlertTriangle,
       pain: "Disconnected Relational Data and Vector Embeddings",
       problem:
-        "Your user data is in Postgres, but your vector embeddings are in another system. Performing hybrid searches—filtering by user metadata *before* doing a vector search—is slow, complex, and requires custom code.",
+        "Your user data is in Postgres, but your vector embeddings are in another system. Performing hybrid searches filtering by user metadata *before* doing a vector search is slow, complex, and requires custom code.",
       solution:
         "Our pgvector specialists build integrated data solutions. Because the vectors live alongside your relational data, they can write simple, powerful SQL queries that combine metadata filtering and vector similarity search in a single, efficient operation.",
       kpi: "Accelerate hybrid search query performance by 10x compared to a two-database solution.",

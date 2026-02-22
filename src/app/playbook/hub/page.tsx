@@ -75,7 +75,7 @@ const sandlerCards = [
         question: 'How many releases died waiting for “LGTM”?',
         problem: 'PRs sleep overnight; one question = one day lost.',
         solution: 'Daylight overlap + same-day review SLAs with telemetry.',
-        proof: 'PR turnaround 36–72h → <8h; cycle time drops in 2 sprints.',
+        proof: 'PR turnaround 36 72h → <8h; cycle time drops in 2 sprints.',
         icon: <Zap className="h-8 w-8 text-primary" />,
     },
     {

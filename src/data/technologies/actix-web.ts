@@ -9,7 +9,7 @@ const actixWeb: TechEntry = {
   meta_description:
     "Build a blazing-fast, safe, and scalable web application. Hire elite remote Actix Web experts vetted for their deep understanding of Rust, from the actor model to the middleware. Book a call.",
   intro:
-    "Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust. You need an engineer who understands that building a modern, high-performance web application is not just about writing code, but about a deep understanding of the entire Rust ecosystem, from the actor model and the middleware to the handler and the application state. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring an Actix Web expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust. You need an engineer who understands that building a modern, high-performance web application is not just about writing code, but about a deep understanding of the entire Rust ecosystem, from the actor model and the middleware to the handler and the application state. Our vetting process identifies developers who are experts in the modern backend stack and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring an Actix Web expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

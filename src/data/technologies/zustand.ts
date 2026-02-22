@@ -9,7 +9,7 @@ const zustand: TechEntry = {
   meta_description:
     "Build a scalable, maintainable, and reactive application. Hire elite remote Zustand experts vetted for their deep understanding of state management, from the store to the middleware. Book a call.",
   intro:
-    "Zustand is a small, fast and scalable bearbones state-management solution using simplified flux principles. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the store and the middleware to the action and the reducer. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Zustand expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Zustand is a small, fast and scalable bearbones state-management solution using simplified flux principles. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the store and the middleware to the action and the reducer. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Zustand expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

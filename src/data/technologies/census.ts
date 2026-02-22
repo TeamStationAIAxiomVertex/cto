@@ -9,7 +9,7 @@ const census: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and automated data activation platform. Hire elite remote Census experts vetted for their deep understanding of data activation, from the data warehouse to the CRM. Book a call.",
   intro:
-    "Census is a leading data activation platform. You need an engineer who understands that building a modern data activation platform is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data warehouse and the data model to the CRM and the marketing automation platform. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Census expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Census is a leading data activation platform. You need an engineer who understands that building a modern data activation platform is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data warehouse and the data model to the CRM and the marketing automation platform. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Census expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

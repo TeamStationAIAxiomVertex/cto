@@ -14,7 +14,7 @@ export type HeroKpi = {
   desire?: Desire;      // 'up' means higher is better; 'down' means lower is better
 };
 
-/** Normalize to a 0–100 fill percentage (how “good” we are on a simple scale). */
+/** Normalize to a 0 100 fill percentage (how “good” we are on a simple scale). */
 function fillPct({ value, target, max, desire }: HeroKpi) {
   if (desire === 'down') {
     // Lower is better: if target provided, compute attainment = target/value (clamped)

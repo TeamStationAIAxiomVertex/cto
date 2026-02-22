@@ -10,7 +10,7 @@ const fivetran: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and automated data integration platform. Hire elite remote Fivetran experts vetted for their deep understanding of data integration, from the connector to the destination. Book a call.",
   intro:
-    "Fivetran is the de facto standard for automated data integration. You need an engineer who understands that building a modern data integration platform is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data source and the connector to the destination and the transformation. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Fivetran expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Fivetran is the de facto standard for automated data integration. You need an engineer who understands that building a modern data integration platform is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data source and the connector to the destination and the transformation. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Fivetran expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

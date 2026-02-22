@@ -9,7 +9,7 @@ const gin: TechEntry = {
   meta_description:
     "Build a high-performance, scalable, and maintainable web application. Hire elite remote Gin experts vetted for their deep understanding of Go, from the router to the middleware. Book a call.",
   intro:
-    "Gin is a high-performance HTTP web framework written in Go. You need an engineer who understands that building a modern, scalable web application is not just about writing code, but about a deep understanding of the entire Go ecosystem, from the router and the middleware to the handler and the context. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Gin expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Gin is a high-performance HTTP web framework written in Go. You need an engineer who understands that building a modern, scalable web application is not just about writing code, but about a deep understanding of the entire Go ecosystem, from the router and the middleware to the handler and the context. Our vetting process identifies developers who are experts in the modern backend stack and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Gin expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

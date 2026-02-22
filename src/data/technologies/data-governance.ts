@@ -9,7 +9,7 @@ const dataGovernance: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and compliant data infrastructure. Hire elite remote data governance experts vetted for their deep understanding of data governance, from the data catalog to the data lineage. Book a call.",
   intro:
-    "Data governance is the foundation of any data-driven organization. You need an engineer who understands that building a modern data infrastructure is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data source and the data pipeline to the data warehouse and the data lake. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a data governance expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Data governance is the foundation of any data-driven organization. You need an engineer who understands that building a modern data infrastructure is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data source and the data pipeline to the data warehouse and the data lake. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a data governance expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

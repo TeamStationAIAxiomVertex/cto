@@ -9,7 +9,7 @@ const babel: TechEntry = {
   meta_description:
     "Build a modern, cross-browser compatible web application. Hire elite remote Babel experts vetted for their deep understanding of the modern frontend stack, from the preset to the plugin. Book a call.",
   intro:
-    "Babel is a JavaScript compiler. You need an engineer who understands that building a modern, cross-browser compatible web application is not just about writing code, but about a deep understanding of the entire build process, from the preset and the plugin to the polyfill and the runtime. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Babel expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Babel is a JavaScript compiler. You need an engineer who understands that building a modern, cross-browser compatible web application is not just about writing code, but about a deep understanding of the entire build process, from the preset and the plugin to the polyfill and the runtime. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Babel expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

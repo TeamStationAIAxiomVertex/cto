@@ -674,7 +674,7 @@ const evidenceLocker = [
           <li>
             B_A (Accuracy): ★★★★☆ (3.8) - The initial confusion with "training"
             is a minor inaccuracy. However, his final conceptual
-            conclusions—using examples and breaking prompts down—are highly
+            conclusions using examples and breaking prompts down are highly
             accurate and represent best practices.
           </li>
           <li>
@@ -1272,7 +1272,7 @@ export default function TalentEvaluationClient() {
               first principles and arrive at architecturally sound, analogous
               solutions is a powerful indicator of a superior mental model.
               This, combined with a perfect score in Learning
-              Orientation—evidenced by his consistent intellectual honesty—and a
+              Orientation evidenced by his consistent intellectual honesty and a
               proven collaborative mindset, makes him a prime candidate. He
               passed all Core Competency Gates, and his profile strongly
               suggests he will not only excel in the role but also rapidly
@@ -1476,7 +1476,7 @@ export default function TalentEvaluationClient() {
             Evidence Locker
           </h2>
           <p className="text-muted-foreground mt-2 text-center">
-            This is the raw data—the proof behind our analysis. A human expert
+            This is the raw data the proof behind our analysis. A human expert
             interviews the candidate, and our Cognitive AI synthesizes the
             conversation, comparing responses against ideal answer blueprints to
             provide an objective score.

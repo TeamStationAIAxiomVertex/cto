@@ -33,7 +33,7 @@ const faqSchema = {
       "name": "Why should CTOs compare TeamStation AI to vendors like BairesDev or Globant?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because legacy vendors sell resumes, while TeamStation AI delivers a fully integrated platform. CTOs need visibility into cognitive vetting, device security, and compliance — not just hourly rates.",
+        "text": "Because legacy vendors sell resumes, while TeamStation AI delivers a fully integrated platform. CTOs need visibility into cognitive vetting, device security, and compliance   not just hourly rates.",
       },
     },
     {
@@ -57,7 +57,7 @@ const faqSchema = {
       "name": "What is the difference in TCO compared to traditional staff augmentation?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Traditional vendors hide costs in vendor management, compliance gaps, and rework. TeamStation AI provides a predictable, all-inclusive TCO that’s often 40–60% lower when factoring in velocity and compliance.",
+        "text": "Traditional vendors hide costs in vendor management, compliance gaps, and rework. TeamStation AI provides a predictable, all-inclusive TCO that’s often 40 60% lower when factoring in velocity and compliance.",
       },
     },
     {
@@ -65,7 +65,7 @@ const faqSchema = {
       "name": "Can we trial a pod before committing long-term?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Many clients start with a 3–6 month engagement focused on a specific outcome. This lets you validate cadence, security posture, and cost efficiency before scaling further.",
+        "text": "Yes. Many clients start with a 3 6 month engagement focused on a specific outcome. This lets you validate cadence, security posture, and cost efficiency before scaling further.",
       },
     },
     {

@@ -9,7 +9,7 @@ const prisma: TechEntry = {
   meta_description:
     "Build type-safe, performant data access layers. Hire elite remote Prisma experts vetted for their deep understanding of schema design, migrations, and query optimization. Book a call.",
   intro:
-    "Prisma is a next-generation ORM that revolutionizes how developers work with databases by providing a fully type-safe client. You need an engineer who can leverage Prisma's powerful schema-first approach to build a robust, reliable, and performant data access layer. Our vetting process identifies developers who are experts in Prisma's core concepts—the schema, migrations, and the auto-generated client—and can architect a database solution that is as easy to maintain as it is to scale. By hiring a Prisma expert from us, you get a developer who can eliminate an entire class of runtime database errors and dramatically accelerate your backend development.",
+    "Prisma is a next-generation ORM that revolutionizes how developers work with databases by providing a fully type-safe client. You need an engineer who can leverage Prisma's powerful schema-first approach to build a robust, reliable, and performant data access layer. Our vetting process identifies developers who are experts in Prisma's core concepts the schema, migrations, and the auto-generated client and can architect a database solution that is as easy to maintain as it is to scale. By hiring a Prisma expert from us, you get a developer who can eliminate an entire class of runtime database errors and dramatically accelerate your backend development.",
   pains: [
     {
       icon: AlertTriangle,

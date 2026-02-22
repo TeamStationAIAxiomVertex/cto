@@ -112,7 +112,7 @@ const options = [
       "Good time-zone overlap, but you still inherit the risk of weak vetting ('resume theater'), unmanaged devices, and a lack of true operational governance.",
     useWhen:
       "You need overlap but have the internal capacity to manage the security, compliance, and quality risks yourself.",
-    wtfCheck: "Who can read prod today—and how fast can you revoke it?",
+    wtfCheck: "Who can read prod today and how fast can you revoke it?",
   },
   {
     title: "Nearshore IT Co-Pilot (New Gen)",
@@ -167,7 +167,7 @@ export default async function NearshoreVsOffshorePage() {
                 <p className="mt-2 text-muted-foreground">
                   This playbook provides a data-driven framework to quantify
                   that tax. It's the business case for why daylight-native
-                  nearshore isn't just "better"—it's fundamentally more
+                  nearshore isn't just "better" it's fundamentally more
                   capital-efficient. We'll give you the models to prove that a
                   slightly higher hourly rate that eliminates latency delivers a
                   dramatically lower{" "}

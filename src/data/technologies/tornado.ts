@@ -9,7 +9,7 @@ const tornado: TechEntry = {
   meta_description:
     "Build a scalable, non-blocking, and high-performance application. Hire elite remote Tornado experts vetted for their deep understanding of asynchronous I/O. Book a call.",
   intro:
-    "Tornado is a Python web framework and asynchronous networking library. You need an engineer who understands that building a modern, high-performance application is not just about writing code, but about a deep understanding of the entire asynchronous I/O ecosystem, from the event loop and the coroutine to the future and the callback. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Tornado expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Tornado is a Python web framework and asynchronous networking library. You need an engineer who understands that building a modern, high-performance application is not just about writing code, but about a deep understanding of the entire asynchronous I/O ecosystem, from the event loop and the coroutine to the future and the callback. Our vetting process identifies developers who are experts in the modern backend stack and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Tornado expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

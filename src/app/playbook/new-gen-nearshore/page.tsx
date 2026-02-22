@@ -31,13 +31,13 @@ const sandlerCards = [
     title: 'Cheap Hourly → Expensive Month',
     question: 'Why is the “cheap” option $5k+/mo more after overhead?',
     proof:
-      'Proof: $55/h offshore @173h with 25% overhead ≈ $11.9k/mo vs Co-Pilot Senior $6.9–$8.1k/mo.',
+      'Proof: $55/h offshore @173h with 25% overhead ≈ $11.9k/mo vs Co-Pilot Senior $6.9 $8.1k/mo.',
     icon: <DollarSign className="h-8 w-8 text-primary" />,
   },
   {
     title: 'Overnight PRs → Daylight Cadence',
     question: 'How many releases died waiting for “LGTM”?',
-    proof: 'Proof: 120 PRs × (4h−1h) × $85 = $30,600/mo burned.',
+    proof: 'Proof: 120 PRs × (4h 1h) × $85 = $30,600/mo burned.',
     icon: <GitCompare className="h-8 w-8 text-primary" />,
   },
   {
@@ -99,7 +99,7 @@ export default function NewGenNearshoreComparisonPage() {
 
       <header className="my-8 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-          Fire offshore & legacy nearshore—run an IT Co-Pilot in daylight.
+          Fire offshore & legacy nearshore run an IT Co-Pilot in daylight.
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           Evidence, not theater. Day-one security, daylight shipping.
@@ -139,7 +139,7 @@ export default function NewGenNearshoreComparisonPage() {
         pain="CTOs face hidden risks in cost, compliance, and velocity."
         stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
         prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
-        proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
+        proof="40 60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
         ctaHref="/comparisons"
         ctaText="See All Vendor Comparisons"
       />

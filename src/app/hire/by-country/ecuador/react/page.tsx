@@ -19,7 +19,7 @@ const pspCards = [
       body: {
         "problem": "Your team in Asia pushes a complex React hook change at day's end. You spot a subtle logic flaw the next morning, but your feedback sits for 12 hours. A simple fix becomes a 36-hour saga.",
         "stakes": "This 'review latency' is a silent killer of momentum. It forces your US-based architects into late-night calls and turns your agile process into a slow, frustrating game of telephone. Your feature velocity grinds to a halt.",
-        "prescription": "Eliminate the time-zone tax with a daylight-native workflow. We assemble elite pods of React engineers in Ecuador, guaranteeing 5–7 hours of daily collaborative overlap. This ensures that complex architectural discussions and PR reviews happen in real-time, on your schedule.",
+        "prescription": "Eliminate the time-zone tax with a daylight-native workflow. We assemble elite pods of React engineers in Ecuador, guaranteeing 5 7 hours of daily collaborative overlap. This ensures that complex architectural discussions and PR reviews happen in real-time, on your schedule.",
         "proof": "Teams that switch to a daylight-native cadence cut their PR cycle times by over 75%. It's a systemic acceleration of your entire development lifecycle, detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
         "recap": "Stop letting the clock dictate your roadmap. When you <strong>hire React developers in Ecuador</strong>, you invest in real-time collaboration and reclaim your team's velocity."
       }
@@ -28,7 +28,7 @@ const pspCards = [
       "title": "Vetting for React Mastery, Not Just Keywords",
       "icon": UserCheck,
       "body": {
-        "problem": "You need a React engineer who understands the nuances of the render cycle, state management, and modern component architecture—not just someone who lists 'React' on their CV. Traditional screening methods can't distinguish true expertise from surface-level knowledge.",
+        "problem": "You need a React engineer who understands the nuances of the render cycle, state management, and modern component architecture not just someone who lists 'React' on their CV. Traditional screening methods can't distinguish true expertise from surface-level knowledge.",
         "stakes": "A developer who doesn't grasp React's performance characteristics will build a slow, janky UI with excessive re-renders. This leads to a poor user experience, lower conversion rates, and a mountain of technical debt that will require expensive refactoring.",
         "prescription": "Move beyond resume theater to verifiable evidence of skill. Our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> engine evaluates a candidate's deep understanding of React performance, state management patterns (like Zustand vs. Redux Toolkit), and component API design. You receive scientific proof of their problem-solving ability.",
         "proof": "This data-driven methodology reduces mis-hire risk by over 90%. We deliver candidates whose 'mental shape' is precisely mapped to the demands of building high-performance, scalable React applications.",

@@ -9,7 +9,7 @@ const proofpoint: TechEntry = {
   meta_description:
     "Build a secure, compliant, and resilient email security platform. Hire elite remote Proofpoint experts vetted for their deep understanding of email security, from the gateway to the archive. Book a call.",
   intro:
-    "Proofpoint is a leading email security platform. You need an engineer who understands that building a modern, secure email security platform is not just about blocking spam, but about a deep understanding of the entire email security ecosystem, from the gateway and the archive to the threat intelligence and the data loss prevention. Our vetting process identifies developers who are experts in the modern security stack—and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring a Proofpoint expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Proofpoint is a leading email security platform. You need an engineer who understands that building a modern, secure email security platform is not just about blocking spam, but about a deep understanding of the entire email security ecosystem, from the gateway and the archive to the threat intelligence and the data loss prevention. Our vetting process identifies developers who are experts in the modern security stack and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring a Proofpoint expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

@@ -9,7 +9,7 @@ const vite: TechEntry = {
   meta_description:
     "Build a blazing-fast, modern, and developer-friendly web application. Hire elite remote Vite experts vetted for their deep understanding of the modern frontend stack. Book a call.",
   intro:
-    "Vite is a next-generation frontend build tool. You need an engineer who understands that building a modern, performant web application is not just about writing code, but about a deep understanding of the entire build process, from the dev server and the hot module replacement to the production build and the tree shaking. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Vite expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Vite is a next-generation frontend build tool. You need an engineer who understands that building a modern, performant web application is not just about writing code, but about a deep understanding of the entire build process, from the dev server and the hot module replacement to the production build and the tree shaking. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Vite expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

@@ -10,7 +10,7 @@ const awsCostExplorer: TechEntry = {
   meta_description:
     "Gain control over your cloud spending. Hire elite remote AWS Cost Explorer experts vetted for their deep understanding of FinOps, from cost allocation to rightsizing. Book a call.",
   intro:
-    "AWS Cost Explorer is a critical tool for understanding and managing your AWS costs. You need an engineer who is not just an AWS user, but a true FinOps expert who can dive deep into your usage data, identify cost-saving opportunities, and build a culture of cost accountability. Our vetting process identifies developers who are experts in the AWS cost management suite—and can architect a FinOps practice that is as insightful, efficient, and automated as it is scalable. By hiring an AWS Cost Explorer expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "AWS Cost Explorer is a critical tool for understanding and managing your AWS costs. You need an engineer who is not just an AWS user, but a true FinOps expert who can dive deep into your usage data, identify cost-saving opportunities, and build a culture of cost accountability. Our vetting process identifies developers who are experts in the AWS cost management suite and can architect a FinOps practice that is as insightful, efficient, and automated as it is scalable. By hiring an AWS Cost Explorer expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

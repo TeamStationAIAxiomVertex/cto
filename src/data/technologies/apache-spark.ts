@@ -48,7 +48,7 @@ const apacheSpark: TechEntry = {
     "Experience with the broader Spark ecosystem, including MLlib for machine learning.",
   ],
   technical_analysis:
-    "The Axiom Cortex™ evaluation for Spark developers is intensely practical. Candidates are tasked with optimizing a slow, failing Spark job on a large, skewed dataset. We assess their ability to diagnose the root cause—whether it’s data shuffling, garbage collection, or poor parallelization—and implement a robust solution. They must justify their choices in partitioning, caching, and resource allocation. This ensures our engineers are not just Spark programmers, but true distributed systems experts who can deliver performance and reliability at scale.",
+    "The Axiom Cortex™ evaluation for Spark developers is intensely practical. Candidates are tasked with optimizing a slow, failing Spark job on a large, skewed dataset. We assess their ability to diagnose the root cause whether it’s data shuffling, garbage collection, or poor parallelization and implement a robust solution. They must justify their choices in partitioning, caching, and resource allocation. This ensures our engineers are not just Spark programmers, but true distributed systems experts who can deliver performance and reliability at scale.",
   interlink_slugs: ["data-engineering", "kafka", "machine-learning", "python"],
   is_ready: true,
 };

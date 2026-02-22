@@ -10,7 +10,7 @@ const systemDesign: TechEntry = {
   meta_description:
     "Build a scalable, resilient, and maintainable application. Hire elite remote system design experts vetted for their deep understanding of distributed systems, from the load balancer to the database. Book a call.",
   intro:
-    "System design is the foundation of any modern, scalable application. You need an engineer who understands that building a high-performance, resilient system is not just about writing code, but about a deep understanding of the entire distributed systems ecosystem, from the load balancer and the API gateway to the database and the cache. Our vetting process identifies developers who are experts in the modern software architecture stack—and can architect a system that is as secure, efficient, and automated as it is scalable. By hiring a system design expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "System design is the foundation of any modern, scalable application. You need an engineer who understands that building a high-performance, resilient system is not just about writing code, but about a deep understanding of the entire distributed systems ecosystem, from the load balancer and the API gateway to the database and the cache. Our vetting process identifies developers who are experts in the modern software architecture stack and can architect a system that is as secure, efficient, and automated as it is scalable. By hiring a system design expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

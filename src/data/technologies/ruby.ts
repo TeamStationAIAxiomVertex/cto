@@ -9,7 +9,7 @@ const ruby: TechEntry = {
   meta_description:
     "Build a scalable, maintainable, and feature-rich web application. Hire elite remote Ruby experts vetted for their deep understanding of the Ruby ecosystem, from the language to the framework. Book a call.",
   intro:
-    "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. You need an engineer who understands that building a modern, scalable web application is not just about writing code, but about a deep understanding of the entire Ruby ecosystem, from the language and the runtime to the framework and the gem. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Ruby expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. You need an engineer who understands that building a modern, scalable web application is not just about writing code, but about a deep understanding of the entire Ruby ecosystem, from the language and the runtime to the framework and the gem. Our vetting process identifies developers who are experts in the modern backend stack and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Ruby expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

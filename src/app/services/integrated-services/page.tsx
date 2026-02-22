@@ -77,7 +77,7 @@ const includedServices = [
         pain: 'New hires taking weeks to ship code?',
         title: 'Onboarding & Performance Automation',
         description: 'Our platform automates pre-boarding checklists, Day-1 access, and first-ticket assignment. We track progress against a 30-60-90 day plan to ensure a fast, productive ramp-up.',
-        kpi: 'Time-to-First-PR in 7–14 days'
+        kpi: 'Time-to-First-PR in 7 14 days'
     },
     {
         icon: <CheckCircle className="h-8 w-8 text-primary"/>,
@@ -149,7 +149,7 @@ export default function IntegratedServicesPage() {
             <div className="text-center">
                 <h2 className="text-3xl font-bold text-foreground">The Power of One Contract</h2>
                 <p className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
-                    Legacy staff augmentation forces you to act as the system integrator, coordinating 4–7 vendors for recruiting, payroll, security, and IP. This fragmented approach is riddled with risk, hidden costs, and finger-pointing.
+                    Legacy staff augmentation forces you to act as the system integrator, coordinating 4 7 vendors for recruiting, payroll, security, and IP. This fragmented approach is riddled with risk, hidden costs, and finger-pointing.
                 </p>
                 <p className="mt-4 max-w-4xl mx-auto text-xl font-bold text-foreground">
                     TeamStation flips the script: We are the single accountable party. One Master Services Agreement covers the entire operational lifecycle, guaranteeing talent quality, security compliance, and full EOR protection. <strong>We take the risk so you can ship code.</strong>
@@ -200,8 +200,8 @@ export default function IntegratedServicesPage() {
                 <FeatureCard icon={<Code className="h-6 w-6 text-primary" />} title="Skill-to-Stack Matching">
                     Embeddings align roles to your tools and patterns (e.g., React, Python, Salesforce) for high-relevance short-lists. See our <Link href="/hire/by-technology" className="text-primary hover:underline">supported technologies</Link>.
                 </FeatureCard>
-                <FeatureCard icon={<Target className="h-6 w-6 text-primary" />} title="Level Calibration (L1–L4)">
-                    Clear proficiency bands tied to outcomes—from component work to org-level impact.
+                <FeatureCard icon={<Target className="h-6 w-6 text-primary" />} title="Level Calibration (L1 L4)">
+                    Clear proficiency bands tied to outcomes from component work to org-level impact.
                 </FeatureCard>
                 <FeatureCard icon={<Users className="h-6 w-6 text-primary" />} title="Collaboration Readiness">
                     English proficiency, timezone overlap, and async habits are screened for day-one effectiveness.

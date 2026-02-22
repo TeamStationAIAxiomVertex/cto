@@ -30,7 +30,7 @@ function FooterLink({ href, label, external }: NavLink) {
 }
 
 const companyLinks: NavLink[] = [
-  { href: "https://teamstation.dev", label: "TeamStation AI — Corporate Home", external: true },
+  { href: "https://teamstation.dev", label: "TeamStation AI Corporate Home", external: true },
   { href: "https://app.teamstation.dev", label: "Application Platform Login", external: true },
   { href: "https://hire.teamstation.dev", label: "Hiring and Nearshore Services", external: true },
   { href: "https://cto.teamstation.dev", label: "CTO Playbook Hub", external: true },

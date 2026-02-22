@@ -9,7 +9,7 @@ const sveltekit: TechEntry = {
   meta_description:
     "Build a fast, scalable, and modern web application. Hire elite remote SvelteKit experts vetted for their deep understanding of Svelte, from the component to the server route. Book a call.",
   intro:
-    "SvelteKit is a leading Svelte framework. You need an engineer who understands that building a modern, full-stack web application is not just about writing code, but about a deep understanding of the entire SvelteKit ecosystem, from the component and the store to the server route and the adapter. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a SvelteKit expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "SvelteKit is a leading Svelte framework. You need an engineer who understands that building a modern, full-stack web application is not just about writing code, but about a deep understanding of the entire SvelteKit ecosystem, from the component and the store to the server route and the adapter. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a SvelteKit expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

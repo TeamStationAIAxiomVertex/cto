@@ -18,7 +18,7 @@ const comparisonPoints = {
     "Operations": {
         pain: "Are you equipped to be a global employer?",
         traditional: "TECLA is a talent marketplace. They connect you with talent, but the significant burden of compliance, payroll (<span class='border-b border-dashed'>EOR</span>), and IT security falls squarely on you.",
-        teamstation: "We are your global employer platform. We absorb all operational complexity—EOR, secure devices (<span class='border-b border-dashed'>MDM</span>), and insurance—into one accountable SLA.",
+        teamstation: "We are your global employer platform. We absorb all operational complexity EOR, secure devices (<span class='border-b border-dashed'>MDM</span>), and insurance into one accountable SLA.",
         proof: "1 accountable SLA"
     },
     "Vetting": {
@@ -123,7 +123,7 @@ export default function TeclaComparisonPage() {
             pain="CTOs face hidden risks in cost, compliance, and velocity."
             stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
             prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
-            proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
+            proof="40 60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
             ctaHref="/comparisons"
             ctaText="See All Vendor Comparisons"
         />

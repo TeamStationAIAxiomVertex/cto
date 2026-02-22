@@ -9,7 +9,7 @@ const typeorm: TechEntry = {
   meta_description:
     "Build type-safe, maintainable data access layers. Hire elite remote TypeORM experts vetted for their deep understanding of Data Mapper and Active Record patterns. Book a call.",
   intro:
-    "TypeORM is a powerful ORM for TypeScript and JavaScript that can run in any JS environment. You need an engineer who can leverage its flexibility to build a robust and scalable data access layer. Our vetting process identifies developers who are experts in TypeORM's core concepts—from entities and repositories to query builders and migrations. By hiring a TypeORM expert, you get a developer who can architect a data layer that is both easy to maintain and highly performant.",
+    "TypeORM is a powerful ORM for TypeScript and JavaScript that can run in any JS environment. You need an engineer who can leverage its flexibility to build a robust and scalable data access layer. Our vetting process identifies developers who are experts in TypeORM's core concepts from entities and repositories to query builders and migrations. By hiring a TypeORM expert, you get a developer who can architect a data layer that is both easy to maintain and highly performant.",
   pains: [
     {
       icon: AlertTriangle,

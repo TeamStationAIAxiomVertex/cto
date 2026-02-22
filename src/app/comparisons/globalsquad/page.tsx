@@ -26,9 +26,9 @@ const comparisonPoints = {
         proof: "Real-time Performance Dashboards"
     },
     "Performance Metrics": {
-        pain: "Are you measuring what matters—business value—or what doesn't—hours and headcount?",
+        pain: "Are you measuring what matters business value or what doesn't hours and headcount?",
         traditional: "The outsourcing model is built on billing for hours and the number of resources deployed. Their incentive is to maximize billable time, not to deliver value as efficiently as possible.",
-        teamstation: "Our success is measured by your success. We focus on throughput and business value—features shipped, bugs fixed, performance improvements. This fundamental alignment of incentives is the cornerstone of our partnership model.",
+        teamstation: "Our success is measured by your success. We focus on throughput and business value features shipped, bugs fixed, performance improvements. This fundamental alignment of incentives is the cornerstone of our partnership model.",
         proof: "30-50% Increase in Feature Velocity"
     }
 }

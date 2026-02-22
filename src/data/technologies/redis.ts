@@ -9,7 +9,7 @@ const redis: TechEntry = {
   meta_description:
     "Build a fast, scalable, and resilient application. Hire elite remote Redis experts vetted for their deep understanding of in-memory data stores, from caching to real-time data. Book a call.",
   intro:
-    "Redis is the de facto standard for in-memory data stores. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire in-memory data store ecosystem, from the data structures and the commands to the persistence and the replication. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Redis expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Redis is the de facto standard for in-memory data stores. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire in-memory data store ecosystem, from the data structures and the commands to the persistence and the replication. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Redis expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

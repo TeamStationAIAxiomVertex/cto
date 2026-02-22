@@ -9,7 +9,7 @@ const k6: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and performant application. Hire elite remote k6 experts vetted for their deep understanding of performance testing, from the VU to the threshold. Book a call.",
   intro:
-    "k6 is a modern, open-source load testing tool for engineering teams. You need an engineer who understands that performance testing is not just about generating load, but about a deep understanding of the entire system under test, from the application code and the infrastructure to the user experience. Our vetting process identifies developers who are experts in the modern performance testing stack—and can architect a performance testing platform that is as secure, efficient, and automated as it is scalable. By hiring a k6 expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "k6 is a modern, open-source load testing tool for engineering teams. You need an engineer who understands that performance testing is not just about generating load, but about a deep understanding of the entire system under test, from the application code and the infrastructure to the user experience. Our vetting process identifies developers who are experts in the modern performance testing stack and can architect a performance testing platform that is as secure, efficient, and automated as it is scalable. By hiring a k6 expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

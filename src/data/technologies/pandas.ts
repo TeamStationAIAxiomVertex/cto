@@ -48,7 +48,7 @@ const pandas: TechEntry = {
     "Skills in building clean, reusable, and tested data transformation pipelines.",
   ],
   technical_analysis:
-    "The Axiom Cortex™ evaluation for Pandas experts focuses on their ability to write production-grade data manipulation code. We give them a messy, large dataset and a complex feature engineering task. We assess their ability to write code that is not only correct, but also performant, memory-efficient, and—most importantly—readable and maintainable. This ensures our engineers are not just analysts who know Pandas, but true software engineers who can build the robust data foundations that scalable systems require.",
+    "The Axiom Cortex™ evaluation for Pandas experts focuses on their ability to write production-grade data manipulation code. We give them a messy, large dataset and a complex feature engineering task. We assess their ability to write code that is not only correct, but also performant, memory-efficient, and most importantly readable and maintainable. This ensures our engineers are not just analysts who know Pandas, but true software engineers who can build the robust data foundations that scalable systems require.",
   interlink_slugs: ["python", "numpy", "data-science", "machine-learning"],
   is_ready: true,
 };

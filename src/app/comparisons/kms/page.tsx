@@ -21,12 +21,12 @@ const comparisonPoints = {
     pain: "Are you paying for true value, or layers of overhead?",
     traditional: "With a traditional outsourcing model, costs include project management layers, margin stacking, and hidden change-order expenses. The hourly rate looks appealing but often inflates TCO.",
     teamstation: "Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO model</a> is transparent and CFO-ready. You pay a predictable all-in cost per engineer, without hidden overhead.",
-    proof: "30–50% lower TCO vs outsourcing"
+    proof: "30 50% lower TCO vs outsourcing"
   },
   "Operations": {
     pain: "Are you ready to handle compliance, devices, and global IT risk on your own?",
     traditional: "KMS Technology focuses on staffing and delivery, but operational layers like secure devices, MDM, SOC 2 alignment, and insurance typically fall on you.",
-    teamstation: "We provide a complete operational wrapper: <span class='border-b border-dashed'>EOR</span>, <span class='border-b border-dashed'>MDM</span>-secured laptops, compliance alignment, and insurance — all under a single SLA.",
+    teamstation: "We provide a complete operational wrapper: <span class='border-b border-dashed'>EOR</span>, <span class='border-b border-dashed'>MDM</span>-secured laptops, compliance alignment, and insurance   all under a single SLA.",
     proof: "SOC 2 & ISO aligned platform"
   }
 };
@@ -114,7 +114,7 @@ export default function KMSComparisonPage() {
         problem="CTOs face hidden risks in cost, compliance, and velocity when using legacy staffing models."
         stakes="Without addressing these fundamental issues, budgets spiral, projects miss critical deadlines, and security incidents become inevitable."
         approach="TeamStation AI's integrated platform delivers pre-vetted LATAM talent, audit-ready compliance with secure devices, and a predictable Total Cost of Ownership."
-        evidence="On average, clients see a 40–60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
+        evidence="On average, clients see a 40 60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
         related={[
           { label: "CTO Playbook", href: "/playbook/hub" },
           { label: "Our Vetting Process", href: "/technical-interview-evaluation" },

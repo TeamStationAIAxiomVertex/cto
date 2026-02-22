@@ -9,7 +9,7 @@ const recoil: TechEntry = {
   meta_description:
     "Build a scalable, maintainable, and reactive application. Hire elite remote Recoil experts vetted for their deep understanding of state management, from the atom to the selector. Book a call.",
   intro:
-    "Recoil is a state management library for React. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the atom and the selector to the snapshot and the transaction. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Recoil expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Recoil is a state management library for React. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the atom and the selector to the snapshot and the transaction. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Recoil expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

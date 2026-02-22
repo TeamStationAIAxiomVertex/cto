@@ -10,7 +10,7 @@ const etlElt: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and automated data infrastructure. Hire elite remote ETL/ELT experts vetted for their deep understanding of data integration, from the data source to the data warehouse. Book a call.",
   intro:
-    "ETL/ELT is the backbone of modern data integration. You need an engineer who understands that building a modern data infrastructure is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data source and the data pipeline to the data warehouse and the data lake. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring an ETL/ELT expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "ETL/ELT is the backbone of modern data integration. You need an engineer who understands that building a modern data infrastructure is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data source and the data pipeline to the data warehouse and the data lake. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring an ETL/ELT expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

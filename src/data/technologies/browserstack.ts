@@ -27,7 +27,7 @@ const browserstack: TechEntry = {
       problem:
         "When a test fails on a specific browser in CI, developers often have no way to inspect the failure, leading to a slow, frustrating debugging process of trial and error. This makes the test suite unreliable and untrusted.",
       solution:
-        "Our engineers are masters of <strong>remote test debugging</strong>. They are vetted on their ability to use BrowserStack's debugging tools—including video recordings, console logs, and network logs—to quickly identify and fix the root cause of flaky tests, ensuring your CI pipeline is fast and reliable.",
+        "Our engineers are masters of <strong>remote test debugging</strong>. They are vetted on their ability to use BrowserStack's debugging tools including video recordings, console logs, and network logs to quickly identify and fix the root cause of flaky tests, ensuring your CI pipeline is fast and reliable.",
       kpi: "Faster Debugging with Video and Log Artifacts",
     },
     {

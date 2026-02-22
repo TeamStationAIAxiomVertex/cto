@@ -10,7 +10,7 @@ const vault: TechEntry = {
   meta_description:
     "Build a secure, automated, and centralized secrets management platform. Hire elite remote Vault experts vetted for their deep understanding of secrets management, from the storage backend to the auth method. Book a call.",
   intro:
-    "Vault is the de facto standard for secrets management. You need an engineer who understands that building a modern, secure application is not just about writing code, but about a deep understanding of the entire secrets management lifecycle, from the secure storage of secrets to the dynamic generation of just-in-time credentials. Our vetting process identifies developers who are experts in the HashiCorp ecosystem—and can architect a secrets management platform that is as secure, efficient, and automated as it is scalable. By hiring a Vault expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Vault is the de facto standard for secrets management. You need an engineer who understands that building a modern, secure application is not just about writing code, but about a deep understanding of the entire secrets management lifecycle, from the secure storage of secrets to the dynamic generation of just-in-time credentials. Our vetting process identifies developers who are experts in the HashiCorp ecosystem and can architect a secrets management platform that is as secure, efficient, and automated as it is scalable. By hiring a Vault expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

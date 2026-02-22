@@ -9,7 +9,7 @@ const airbyte: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and automated data integration platform. Hire elite remote Airbyte experts vetted for their deep understanding of data integration, from the source to the destination. Book a call.",
   intro:
-    "Airbyte is the de facto standard for data integration. You need an engineer who understands that building a modern data integration platform is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data source and the data pipeline to the data warehouse and the data lake. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring an Airbyte expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Airbyte is the de facto standard for data integration. You need an engineer who understands that building a modern data integration platform is not just about moving data, but about a deep understanding of the entire data lifecycle, from the data source and the data pipeline to the data warehouse and the data lake. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring an Airbyte expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

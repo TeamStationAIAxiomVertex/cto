@@ -218,10 +218,10 @@ export default async function CaseStudyPage({
               </h3>
               <div className="mt-4 space-y-3 text-sm">
                 <p>
-                  <strong>Client:</strong> {study.clientName ?? "—"}
+                  <strong>Client:</strong> {study.clientName ?? " "}
                 </p>
                 <p>
-                  <strong>Industry:</strong> {study.industry ?? "—"}
+                  <strong>Industry:</strong> {study.industry ?? " "}
                 </p>
               </div>
             </div>

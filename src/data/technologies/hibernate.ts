@@ -9,7 +9,7 @@ const hibernate: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and efficient data access layer. Hire elite remote Hibernate experts vetted for their deep understanding of the Java Persistence API (JPA), from the entity to the query. Book a call.",
   intro:
-    "Hibernate is the de facto standard for object-relational mapping (ORM) in Java. You need an engineer who understands that building a modern data access layer is not just about writing code, but about a deep understanding of the entire database ecosystem, from the entity and the session to the query and the transaction. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Hibernate expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Hibernate is the de facto standard for object-relational mapping (ORM) in Java. You need an engineer who understands that building a modern data access layer is not just about writing code, but about a deep understanding of the entire database ecosystem, from the entity and the session to the query and the transaction. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Hibernate expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

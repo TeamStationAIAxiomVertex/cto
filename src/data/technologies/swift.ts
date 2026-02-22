@@ -9,7 +9,7 @@ const swift: TechEntry = {
   meta_description:
     "Build a beautiful, fast, and native iOS application. Hire elite remote Swift experts vetted for their deep understanding of iOS, from SwiftUI to Core Data. Book a call.",
   intro:
-    "Swift is a powerful and intuitive programming language for macOS, iOS, watchOS, and tvOS. You need an engineer who understands that building a modern, native iOS application is not just about writing code, but about a deep understanding of the entire Apple ecosystem, from SwiftUI and Core Data to Combine and XCTest. Our vetting process identifies developers who are experts in the modern mobile stack—and can architect a mobile platform that is as secure, efficient, and automated as it is scalable. By hiring a Swift expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Swift is a powerful and intuitive programming language for macOS, iOS, watchOS, and tvOS. You need an engineer who understands that building a modern, native iOS application is not just about writing code, but about a deep understanding of the entire Apple ecosystem, from SwiftUI and Core Data to Combine and XCTest. Our vetting process identifies developers who are experts in the modern mobile stack and can architect a mobile platform that is as secure, efficient, and automated as it is scalable. By hiring a Swift expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

@@ -1,155 +1,105 @@
 import Link from "next/link";
 import {
-  BrainCircuit,
-  ShieldCheck,
-  Scale,
   ArrowRight,
-  BookOpen,
-  GitCompare,
-  FileText,
-  AlertTriangle,
+  Cpu,
+  Workflow,
+  ShieldCheck,
+  Gauge,
+  BrainCircuit,
+  Clock,
   CheckCircle,
-  XCircle,
-  Users,
-  Zap,
   Layers,
-  Component,
-  Trophy,
 } from "lucide-react";
 import { getAllCaseStudies } from "../lib/case-studies";
-import { WithTooltip } from "../components/ui/tooltip";
-import type { Metadata } from "next";
 import SafeImage from "../components/SafeImage";
-import placeholderImages from "./lib/placeholder-images.json";
-import HeroKpis, { type HeroKpi } from "../components/metrics/HeroKpis";
-import SpotifyIcon from "../components/SpotifyIcon";
 
-const heroKpis: HeroKpi[] = [
+const doctrineSignals = [
+  "Cognitive Hiring Signals",
+  "Agentic Workflow Topologies",
+  "Delivery Telemetry Systems",
+  "Governance and Compliance Controls",
+];
+
+const failurePoints = [
+  "AI agents change work boundaries",
+  "Functional silos increase latency",
+  "Asynchronous teams create delivery drag",
+  "Vendor models break governance",
+  "Software delivery is now a systems problem",
+];
+
+const topologyNodes = [
   {
-    id: "compliance",
-    label: "Audit Ready Compliance",
-    value: 100,
-    unit: "%",
-    target: 100,
-    desire: "up",
+    title: "Cognitive Nodes",
+    body: "Problem decomposition and architecture thinking",
+    icon: BrainCircuit,
   },
   {
-    id: "readiness",
-    label: "Day 1 Tool Readiness",
-    value: 97,
-    unit: "%",
-    target: 95,
-    desire: "up",
+    title: "Execution Nodes",
+    body: "Implementation throughput and delivery ownership",
+    icon: Workflow,
   },
   {
-    id: "prp50",
-    label: "PR Review p50",
-    value: 6.8,
-    unit: "h",
-    target: 8,
-    desire: "down",
-    max: 12,
+    title: "Agentic Nodes",
+    body: "AI orchestration and workflow automation",
+    icon: Cpu,
   },
   {
-    id: "mttr",
-    label: "Incident MTTR p50",
-    value: 1.2,
-    unit: "h",
-    target: 4,
-    desire: "down",
-    max: 8,
+    title: "Governance Nodes",
+    body: "Security compliance and operational control",
+    icon: ShieldCheck,
   },
 ];
 
-function ServicePill({
-  icon: Icon,
-  text,
-}: {
-  icon: React.ElementType;
-  text: string;
-}) {
-  return (
-    <div className="flex items-center gap-2 rounded-full border bg-card px-4 py-2 text-sm text-muted-foreground shadow-lg">
-      <Icon className="h-5 w-5 text-primary" />
-      <span>{text}</span>
-    </div>
-  );
-}
-
-const trustNumbers = [
-  { value: "≈9 days", label: "Time to Offer", icon: Zap },
-  { value: "2.6M+", label: "Talent Graph Profiles", icon: Users },
-  { value: "≥95%", label: "Day 1 Tool Readiness", icon: CheckCircle },
-  { value: "100%", label: "Audit Ready Compliance", icon: ShieldCheck },
+const workflowSteps = [
+  "Intent",
+  "Decomposition",
+  "Agent execution",
+  "Human validation",
+  "Telemetry",
+  "Iteration",
 ];
 
-const corePillars = [
+const deliveryPhysics = [
   {
-    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
-    pain: "Wasting months on bad hires?",
-    title: "Reduce Hiring Risk with Cognitive AI",
-    description:
-      "Stop gambling on resumes. Our Axiom Cortex™ Cognitive AI engine provides auditable scientific proof of a candidate problem solving ability and mental shape, cutting mismatch risk by over 90 percent.",
-    href: "/playbook/bias-free-technical-hiring-axiom-cortex",
-    linkLabel: "Learn About Our Vetting",
-    kpi: "Mismatch rate ≤10%",
+    title: "Little's Law",
+    body: "Work in progress expands lead time and reduces flow quality.",
   },
   {
-    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-    pain: "Drowning in vendor management?",
-    title: "Eliminate Vendor Chaos with One SLA",
-    description:
-      "Stop juggling 5+ vendors. We bundle EOR, payroll, secure devices (MDM), and insurance into one accountable SLA, giving you a single pane of glass for your entire operation.",
-    href: "/services/integrated-services",
-    linkLabel: "See Our Integrated Services",
-    kpi: "1 contract, 1 invoice",
+    title: "Variability and Delay",
+    body: "Handoff latency compounds delay across system boundaries.",
   },
   {
-    icon: <Scale className="h-8 w-8 text-primary" />,
-    pain: "Struggling to justify your budget?",
-    title: "Get a CFO Ready TCO Model",
-    description:
-      "We provide a predictable all inclusive Total Cost of Ownership (TCO) that is often 40 to 60 percent lower than the hidden cost of a DIY approach or a US hire. Make a business case your finance team will approve.",
-    href: "/playbook/latam-economics",
-    linkLabel: "View Our TCO Model",
-    kpi: "≈$98k revenue pulled forward",
+    title: "Depreciation Invariant",
+    body: "Undeployed work loses economic value over time.",
+  },
+  {
+    title: "Daylight Cadence",
+    body: "Overlap compresses cycle time and strengthens execution loops.",
   },
 ];
 
-const painPoints = [
-  "Is your best engineer babysitting a failing offshore team?",
-  "Did you spend 60 days hiring a 'senior' dev who can't ship code?",
-  "Are you one insecure laptop away from a major compliance breach?",
-  "Is 'vendor management' your secret second job?",
+const daylightModel = [
+  "Same day review loops",
+  "No overnight ping pong",
+  "Real time problem solving",
+  "Cycle time compression",
 ];
 
-const sandlerCards = [
-  {
-    title: "Velocity: 24 Hour Ping Pong vs Daylight Cadence",
-    question: "How many releases died waiting for “LGTM”?",
-    problem: "PRs sleep overnight; one question = one day lost.",
-    solution: "Daylight overlap plus same day review SLAs with telemetry.",
-    proof: "PR turnaround 36 to 72 hours to under 8 hours. Cycle time drops in 2 sprints.",
-    icon: <Zap className="h-8 w-8 text-primary" />,
-  },
-  {
-    title: "Seniority: Resume Theater vs Cognitive Evidence",
-    question: "Who last vetoed a bad pattern before it shipped?",
-    problem: "“Senior” on the slide, junior in the repo.",
-    solution:
-      "Axiom Cortex™ cognitive signals plus structured rubrics plus recorded panels.",
-    proof: "Mismatch rate ≤10%; rewrite ADRs trend down.",
-    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
-  },
-  {
-    title: "Governance: Five Invoices vs One Operating Rhythm",
-    question: "How many vendors does it take to ship one roadmap?",
-    problem: "Vendor sprawl; shadow staffing; no single throat to choke.",
-    solution:
-      "One governed system. Hiring to devices and MDM to access to payroll and EOR to SLAs.",
-    proof: "Forecast vs actual variance <10%; fewer reopenings.",
-    icon: <Users className="h-8 w-8 text-primary" />,
-  },
+const telemetryMetrics = [
+  "PR cycle time",
+  "MTTR",
+  "Day 1 readiness",
+  "Compliance status",
+];
+
+const osStack = [
+  "Cognitive Hiring",
+  "Agentic Workflows",
+  "Delivery Telemetry",
+  "Security and Device Control",
+  "Compliance and EOR",
+  "Cost Governance",
 ];
 
 export default async function HomePage() {
@@ -176,6 +126,8 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "TeamStation AI",
+    description:
+      "Distributed Engineering OS Playbook for CTO and CIO teams operating agentic engineering systems.",
     url: siteUrl,
     logo: `${siteUrl}/apple-touch-icon.png`,
     sameAs: ["https://www.linkedin.com/company/teamstation"],
@@ -191,351 +143,234 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
+
       <div className="bg-background">
         <div className="container mx-auto px-4">
-        <section className="relative py-16 md:py-24 section-defer">
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="text-center md:text-left glass-panel rounded-2xl p-8 md:p-10 relative overflow-hidden">
-              
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary via-sky-300 to-cyan-200 bg-clip-text text-transparent">
-                Distributed Engineering OS: CTO Playbook
+          <section className="py-16 md:py-24 section-defer">
+            <div className="rounded-2xl glass-panel p-8 md:p-12">
+              <p className="text-sm font-semibold text-primary">Distributed Engineering OS Playbook</p>
+              <h1 className="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
+                CTO Field Manual: Team Topology for Agentic Engineering
               </h1>
-              <p className="mx-auto md:mx-0 mt-6 max-w-3xl text-lg text-muted-foreground">
-                The vendor era is over. Command an evidence driven daylight secure stack you control without lag fog or hidden taxes.
+              <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
+                Operate cognitive teams, human engineers, and AI agents as one governed system.
               </p>
-              <div className="mt-10">
-                <Link
-                  href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-button"
-                >
-                  Book a Strategy Call
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/playbook/hub" className="cta-button">
+                  Read the Playbook
                 </Link>
-                <div className="mt-4 text-sm">
-                  <Link
-                    href="/engineering-doctrine"
-                    className="text-primary hover:underline"
-                  >
-                    Read the Engineering Doctrine
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="max-w-md mx-auto w-full glass-panel rounded-2xl p-4 md:p-5">
-              <HeroKpis items={heroKpis} />
-            </div>
-          </div>
-        </section>
-
-        <section id="trust-by-numbers" className="py-12 section-defer">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            {trustNumbers.map((item) => (
-              <div
-                key={item.label}
-                className="group rounded-xl glass-panel p-4 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20"
-              >
-                <div className="flex justify-center">
-                  <item.icon className="h-8 w-8 text-primary" />
-                </div>
-                <p className="mt-3 text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
-                  {item.value}
-                </p>
-                <p className="mt-1 text-xs md:text-sm text-muted-foreground">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="core-pillars" className="py-24 section-defer">
-          <h2 className="text-center text-4xl font-bold text-foreground">
-            Your Unfair Advantage
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
-            We're not another vendor. We are a force multiplier for your
-            engineering organization, giving you the leverage to succeed.
-          </p>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {corePillars.map((pillar) => (
-              <div
-                key={pillar.title}
-                className="rounded-2xl glass-panel p-6 flex flex-col"
-              >
-                <p className="text-sm font-semibold text-primary">
-                  {pillar.pain}
-                </p>
-                <div className="flex items-center gap-3 mt-3">
-                  {pillar.icon}
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {pillar.title}
-                  </h3>
-                </div>
-                <div className="mt-4 text-sm text-muted-foreground flex-grow">
-                  {pillar.description.includes("Axiom Cortex™") ? (
-                    <>
-                      Stop gambling on resumes. Our{" "}
-                      <WithTooltip content="Our proprietary Cognitive AI engine for talent evaluation.">
-                        <span className="text-primary border-b border-dashed">
-                          Axiom Cortex™
-                        </span>
-                      </WithTooltip>{" "}
-                      Cognitive AI engine provides auditable, scientific proof
-                      of a candidate's problem-solving ability and mental shape,
-                      cutting your mismatch risk by over 90%.
-                    </>
-                  ) : pillar.description.includes("EOR") ? (
-                    <>
-                      Stop juggling 5+ vendors. We bundle{" "}
-                      <WithTooltip content="Employer of Record">
-                        <span className="border-b border-dashed">EOR</span>
-                      </WithTooltip>
-                      , payroll, secure devices (
-                      <WithTooltip content="Mobile Device Management">
-                        <span className="border-b border-dashed">MDM</span>
-                      </WithTooltip>
-                      ), and insurance into one accountable{" "}
-                      <WithTooltip content="Service Level Agreement">
-                        <span className="border-b border-dashed">SLA</span>
-                      </WithTooltip>
-                      , giving you a single pane of glass for your entire
-                      operation.
-                    </>
-                  ) : pillar.description.includes("TCO") ? (
-                    <>
-                      We provide a predictable, all inclusive{" "}
-                      <WithTooltip content="Total Cost of Ownership">
-                        <span className="border-b border-dashed">TCO</span>
-                      </WithTooltip>{" "}
-                      that is often 40-60% lower than the 'hidden cost' of a DIY
-                      approach or a US hire. Make a business case your finance
-                      team will approve.
-                    </>
-                  ) : (
-                    pillar.description
-                  )}
-                </div>
-                <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-                  {pillar.kpi}
-                </p>
-                <Link
-                  href={pillar.href}
-                  className="mt-6 flex items-center text-sm font-semibold text-primary"
-                  target={pillar.href.startsWith("http") ? "_blank" : "_self"}
-                  rel={
-                    pillar.href.startsWith("http") ? "noopener noreferrer" : ""
-                  }
-                >
-                  {pillar.linkLabel} <ArrowRight className="ml-2 h-4 w-4" />
+                <Link href="/engineering-doctrine" className="cta-button bg-card border border-border text-foreground">
+                  View the Engineering Doctrine
                 </Link>
               </div>
-            ))}
-          </div>
-        </section>
 
-        <section
-          id="pain-points"
-          className="py-24 glass-panel rounded-2xl section-defer"
-        >
-          <h2 className="text-center text-4xl font-bold text-foreground">
-            Sound Familiar? It's the Cost of Doing Nothing.
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
-            These aren't just headaches. They are symptoms of a broken IT staff
-            augmentation model.
-          </p>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {painPoints.map((pain, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-4 glass-panel p-4 rounded-xl"
-              >
-                <AlertTriangle className="h-6 w-6 text-primary shrink-0" />
-                <p className="m-0 font-medium text-muted-foreground">{pain}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="comparison" className="py-24 section-defer">
-          <h2 className="text-center text-4xl font-bold text-foreground">
-            There Is a Better Way
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
-            Legacy vendors promise, overcharge, and under deliver. This Field
-            Manual names the failure modes and instruments the fixes with cognitive
-            hiring signals, daylight SLAs for PRs/incidents, device/MDM control,
-            EOR & compliance, and TCO you can defend in front of Finance.
-          </p>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {sandlerCards.map((card) => (
-              <div
-                key={card.title}
-                className="rounded-2xl glass-panel p-6 flex flex-col"
-              >
-                <div className="flex items-start gap-4">
-                  {card.icon}
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground">
-                      {card.title}
-                    </h3>
+              <div className="mt-8 grid gap-2 md:grid-cols-2">
+                {doctrineSignals.map((item) => (
+                  <div key={item} className="rounded-lg border bg-background/70 px-4 py-3 text-sm text-foreground">
+                    <CheckCircle className="inline h-4 w-4 text-primary mr-2" />
+                    {item}
                   </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-border/50">
-                  <h4 className="font-semibold text-destructive text-sm">
-                    Problem (Legacy)
-                  </h4>
-                  <p className="text-sm text-muted-foreground m-0">
-                    {card.problem}
-                  </p>
-                </div>
-                <div className="mt-4 pt-4 border-t border-border/50 flex-grow">
-                  <h4 className="font-semibold text-primary text-sm">
-                    Solution (Next Generation)
-                  </h4>
-                  <p className="text-sm text-foreground m-0">{card.solution}</p>
-                </div>
-                <div className="mt-4 pt-4 border-t border-border/50">
-                  <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-                    Proof: {card.proof}
-                  </p>
-                </div>
-                <div className="mt-6 text-sm text-center font-semibold text-primary/90 border-t border-border/50 pt-4">
-                  <span className="italic">{card.question}</span>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="py-12 section-defer">
+            <div className="rounded-2xl glass-panel p-8 md:p-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Monolith Org Chart Is Failing</h2>
+              <div className="mt-6 grid gap-3 md:grid-cols-2">
+                {failurePoints.map((point) => (
+                  <div key={point} className="rounded-lg border bg-background/60 p-4 text-sm text-muted-foreground">
+                    {point}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="py-12 section-defer">
+            <div className="rounded-2xl glass-panel p-8 md:p-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Team Topology for Agentic Systems</h2>
+              <div className="mt-8 grid gap-4 md:grid-cols-2">
+                {topologyNodes.map((node) => (
+                  <article key={node.title} className="rounded-xl border bg-background/60 p-5">
+                    <node.icon className="h-7 w-7 text-primary" />
+                    <h3 className="mt-3 text-xl font-semibold text-foreground">{node.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{node.body}</p>
+                  </article>
+                ))}
+              </div>
+              <div className="mt-8 rounded-xl border bg-background/60 p-5">
+                <p className="text-sm font-semibold text-foreground">System topology diagram</p>
+                <div className="mt-4 grid gap-3 md:grid-cols-4">
+                  {topologyNodes.map((node) => (
+                    <div key={`${node.title}-topology`} className="rounded-lg border bg-card px-3 py-3 text-center text-xs text-foreground">
+                      {node.title}
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/comparisons"
-              className="font-semibold text-primary hover:underline"
-            >
-              See All Vendor Comparisons{" "}
-              <ArrowRight className="inline h-4 w-4" />
-            </Link>
-          </div>
-        </section>
-
-        <section id="thought-leadership" className="py-24 section-defer">
-          <h2 className="text-center text-4xl font-bold text-foreground">
-            Go Deeper: Our Research & Vision
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
-            We don't just follow best practices; we author them. Explore our
-            peer reviewed research and listen to our leadership discuss the
-            future of engineering.
-          </p>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="rounded-2xl glass-panel p-8 flex flex-col items-center text-center">
-              <SpotifyIcon className="h-12 w-12 text-[#1DB954]" />
-              <h3 className="text-2xl font-bold mt-4">
-                Listen to the Platform Vision
-              </h3>
-              <p className="mt-2 text-muted-foreground flex-grow">
-                Hear directly from our founders about the science and strategy
-                behind the TeamStation AI platform.
-              </p>
-              <Link href="https://open.spotify.com/episode/7EwovXvoVFIGLJDwqTZFUE?si=8109032fb1f14398" className="cta-button mt-6">
-                Listen Now <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
             </div>
-            <div className="rounded-2xl glass-panel p-8 flex flex-col items-center text-center">
-              <BookOpen className="h-12 w-12 text-primary" />
-              <h3 className="text-2xl font-bold mt-4">Explore Our Research</h3>
-              <p className="mt-2 text-muted-foreground flex-grow">
-                From our Amazon book to peer reviewed papers on AI in hiring,
-                see the evidence that powers our platform.
-              </p>
-              <Link href="/research/hub" className="cta-button mt-6">
-                Visit Research Hub <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        <section id="case-studies" className="py-24 section-defer">
-          <h2 className="text-center text-4xl font-bold text-foreground">
-            Evidence of Impact
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
-            See how CTOs like you have used our platform to solve critical
-            problems and deliver results.
-          </p>
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {caseStudies &&
-              caseStudies.slice(0, 6).map((study) => (
-                <Link
-                  key={study.slug}
-                  href={`/case-studies/${study.slug}`}
-                  className="group flex flex-col rounded-2xl glass-panel p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20"
-                >
-                  <div className="relative h-40 w-full mb-4 rounded-lg overflow-hidden border">
-                    {study.ogImage?.src?.url && (
-                      <SafeImage
-                        src={study.ogImage?.src?.url}
-                        alt={
-                          study.clientName
-                            ? `Hero image for ${study.clientName} case study`
-                            : "Case study image"
-                        }
-                        fill
-                        className="object-cover"
-                        data-ai-hint={study.ogImage?.aiHint}
-                      />
-                    )}
+          <section className="py-12 section-defer">
+            <div className="rounded-2xl glass-panel p-8 md:p-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Human and AI Workflow Orchestration</h2>
+              <p className="mt-4 text-muted-foreground">
+                AI expands cognitive capacity. Humans guide system intent. Agents automate repetitive logic.
+                Telemetry governs system performance.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center gap-2">
+                {workflowSteps.map((step, idx) => (
+                  <div key={step} className="flex items-center gap-2">
+                    <span className="rounded-md border bg-background/70 px-3 py-2 text-sm text-foreground">{step}</span>
+                    {idx < workflowSteps.length - 1 ? <ArrowRight className="h-4 w-4 text-primary" /> : null}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">
-                    {study.clientName}
-                  </h3>
-                  <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary my-3">
-                    {study.industry}
-                  </span>
-                  <p className="text-sm text-muted-foreground flex-grow">
-                    {study.summary}
-                  </p>
-                  <div className="mt-6 flex items-center text-sm font-semibold text-primary">
-                    Read Case Study{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="py-12 section-defer">
+            <div className="rounded-2xl glass-panel p-8 md:p-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Physics of Distributed Delivery</h2>
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {deliveryPhysics.map((law) => (
+                  <article key={law.title} className="rounded-xl border bg-background/60 p-5">
+                    <h3 className="text-lg font-semibold text-foreground">{law.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{law.body}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="py-12 section-defer">
+            <div className="rounded-2xl glass-panel p-8 md:p-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Velocity Comes From Daylight Collaboration</h2>
+              <div className="mt-6 grid gap-3 md:grid-cols-2">
+                {daylightModel.map((item) => (
+                  <div key={item} className="rounded-lg border bg-background/60 p-4 text-sm text-muted-foreground">
+                    <Clock className="inline h-4 w-4 text-primary mr-2" />
+                    {item}
                   </div>
+                ))}
+              </div>
+              <div className="mt-6 rounded-xl border bg-background/60 p-5">
+                <p className="text-sm font-semibold text-foreground">Daylight timeline</p>
+                <div className="mt-3 h-2 rounded bg-muted">
+                  <div className="h-2 w-4/5 rounded bg-primary" />
+                </div>
+                <p className="mt-2 text-xs text-muted-foreground">Overlapping hours increase system throughput.</p>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-12 section-defer">
+            <div className="rounded-2xl glass-panel p-8 md:p-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Cognitive Evidence Replaces Resume Guessing</h2>
+              <p className="mt-4 text-muted-foreground">
+                We run problem solving signal extraction, bias normalization across ESL variants,
+                mental shape evaluation, and mismatch risk reduction as one integrity process.
+              </p>
+            </div>
+          </section>
+
+          <section className="py-12 section-defer">
+            <div className="rounded-2xl glass-panel p-8 md:p-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">You Cannot Govern What You Cannot Measure</h2>
+              <div className="mt-6 grid gap-4 md:grid-cols-4">
+                {telemetryMetrics.map((metric) => (
+                  <div key={metric} className="rounded-xl border bg-background/60 p-5 text-center">
+                    <Gauge className="mx-auto h-6 w-6 text-primary" />
+                    <p className="mt-2 text-sm text-foreground">{metric}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="py-12 section-defer">
+            <div className="rounded-2xl glass-panel p-8 md:p-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Field Evidence</h2>
+              <p className="mt-4 max-w-3xl text-muted-foreground">
+                Each field record is organized as context, constraint, intervention, and operational result.
+              </p>
+              <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {caseStudies &&
+                  caseStudies.slice(0, 6).map((study) => (
+                    <Link
+                      key={study.slug}
+                      href={`/case-studies/${study.slug}`}
+                      className="group flex flex-col rounded-2xl border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20"
+                    >
+                      <div className="relative h-40 w-full mb-4 rounded-lg overflow-hidden border">
+                        {study.ogImage?.src?.url && (
+                          <SafeImage
+                            src={study.ogImage?.src?.url}
+                            alt={
+                              study.clientName
+                                ? `Field evidence for ${study.clientName}`
+                                : "Field evidence image"
+                            }
+                            fill
+                            className="object-cover"
+                            data-ai-hint={study.ogImage?.aiHint}
+                          />
+                        )}
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">
+                        {study.clientName}
+                      </h3>
+                      <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary my-3">
+                        {study.industry}
+                      </span>
+                      <p className="text-sm text-muted-foreground flex-grow">{study.summary}</p>
+                      <div className="mt-6 flex items-center text-sm font-semibold text-primary">
+                        Read Field Record
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="py-12 section-defer">
+            <div className="rounded-2xl glass-panel p-8 md:p-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Distributed Engineering OS</h2>
+              <div className="mt-6 rounded-xl border bg-background/60 p-5">
+                <div className="grid gap-3 md:grid-cols-3">
+                  {osStack.map((layer) => (
+                    <div key={layer} className="rounded-lg border bg-card px-4 py-3 text-sm text-foreground">
+                      <Layers className="inline h-4 w-4 text-primary mr-2" />
+                      {layer}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="contact" className="py-16 md:py-20 section-defer">
+            <div className="mx-auto max-w-4xl rounded-2xl glass-panel p-8 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Stop Managing Vendors. Start Operating an Engineering System.
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Build an operating model with doctrine level clarity, telemetry discipline, and governance control.
+              </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <Link href="/playbook/hub" className="cta-button">
+                  Read the Playbook
                 </Link>
-              ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/case-studies"
-              className="font-semibold text-primary hover:underline"
-            >
-              View All Case Studies <ArrowRight className="inline h-4 w-4" />
-            </Link>
-          </div>
-        </section>
-
-        <section id="contact" className="py-24 section-defer">
-          <div className="mx-auto max-w-3xl rounded-2xl glass-panel p-8 text-center">
-            <h2 className="text-3xl font-bold text-foreground">
-              Stop Patching a Broken System. Build a Better One.
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              In a 15 minute call, we will not give you a sales pitch. We will give
-              you a concrete plan to fix your hiring process, consolidate your
-              vendors, and get a predictable, CFO ready budget for your
-              nearshore team. You will walk away with actionable advice, whether
-              you work with us or not.
-            </p>
-            <div className="mt-6">
-              <Link
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-button"
-              >
-                Book a Strategy Call
-              </Link>
+                <Link href="/engineering-doctrine" className="cta-button bg-card border border-border text-foreground">
+                  Build Your Operating Model
+                </Link>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
         </div>
       </div>
     </>

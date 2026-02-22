@@ -19,7 +19,7 @@ export default function TypeScriptPSPSection() {
     {
       icon: ShieldCheck,
       problem: "Types Everywhere, Safety Nowhere",
-      pain: "TypeScript in name only—any, skipLibCheck, and leaky boundaries keep biting in production.",
+      pain: "TypeScript in name only any, skipLibCheck, and leaky boundaries keep biting in production.",
       solution:
         "Narrow types at the edges, validate at runtime, and enforce strictness with lint + CI. Contract tests protect API shapes.",
       kpi: "Teams adopting Zod/io-ts at boundaries and Pact for contracts cut ‘works on my box’ defects materially.",
@@ -35,7 +35,7 @@ export default function TypeScriptPSPSection() {
     {
       icon: Workflow,
       problem: "DX vs. Discipline",
-      pain: "DX shortcuts—barrel files, implicit any, ad-hoc utils—buy speed for a week and debt for a quarter.",
+      pain: "DX shortcuts barrel files, implicit any, ad-hoc utils buy speed for a week and debt for a quarter.",
       solution:
         "Adopt a lightweight platform standard: path aliases, strict tsconfig, ESLint rules for imports, and PR templates.",
       kpi: "Once standards converge, time-to-green PR shrinks; reviewers discuss architecture, not commas.",
@@ -51,7 +51,7 @@ export default function TypeScriptPSPSection() {
     {
       icon: Settings,
       problem: "Runtime Config Roulette",
-      pain: "Env vars sprout like weeds—no schema, no defaults, no visibility across envs.",
+      pain: "Env vars sprout like weeds no schema, no defaults, no visibility across envs.",
       solution:
         "Centralize config with typed schemas, defaults, and environment matrices checked at startup.",
       kpi: "Typed config + CI matrices catch drift pre-deploy; incidents drop and on-call sleeps.",
@@ -62,12 +62,12 @@ export default function TypeScriptPSPSection() {
       pain: "Components fetch wildly; caches fight; stale and flicker compete on screen.",
       solution:
         "Standardize data-fetch + cache (TanStack, SWR, RTK Query), isolate state, and prefetch with intent.",
-      kpi: "Predictable data layer simplified debugging and trimmed rerenders—INP improved on mobile.",
+      kpi: "Predictable data layer simplified debugging and trimmed rerenders INP improved on mobile.",
     },
     {
       icon: Search,
       problem: "Accessibility as a ‘Later’",
-      pain: "Ship first, fix a11y later—until ‘later’ is never and enterprise buyers balk.",
+      pain: "Ship first, fix a11y later until ‘later’ is never and enterprise buyers balk.",
       solution:
         "Bake a11y into components. Use headless UI patterns, keyboard traps tested, and color-contrast lint.",
       kpi: "Pods integrating a11y checks in PR templates cut late-stage rework and closed enterprise deals faster.",
@@ -75,7 +75,7 @@ export default function TypeScriptPSPSection() {
     {
       icon: AlertTriangle,
       problem: "Telemetry with Holes",
-      pain: "Logs without traces, metrics without exemplars—incidents read like a mystery novel.",
+      pain: "Logs without traces, metrics without exemplars incidents read like a mystery novel.",
       solution:
         "Adopt OpenTelemetry from day one. Trace user journeys, tag releases, sample intelligently.",
       kpi: "Tagged traces + release markers cut MTTR; engineers fixed what they could finally see.",
@@ -91,7 +91,7 @@ export default function TypeScriptPSPSection() {
     {
       icon: Rocket,
       problem: "Velocity Without Regression",
-      pain: "Speed is great—until the second rollback. Then everyone gets cautious and slow.",
+      pain: "Speed is great until the second rollback. Then everyone gets cautious and slow.",
       solution:
         "Feature flags, progressive delivery, and a paved release path. Move fast inside guardrails.",
       kpi: "Pods running this path increased deployment frequency while cutting incident rate.",
@@ -103,7 +103,7 @@ export default function TypeScriptPSPSection() {
       <header className="prose dark:prose-invert max-w-none">
         <h2>Ship TypeScript like adults: fast, safe, and auditable</h2>
         <p>
-          TypeScript isn’t a silver bullet—it’s a seatbelt. You still need good
+          TypeScript isn’t a silver bullet it’s a seatbelt. You still need good
           roads, sane drivers, and a car that passes inspection. Our daylight
           pods bring the rest of the system: strict configs, disciplined
           boundaries, layered tests, and release guardrails. The point isn’t
@@ -119,7 +119,7 @@ export default function TypeScriptPSPSection() {
       </header>
 
       <PSPCards
-        heading="Sandler PSP — TypeScript Delivery Patterns"
+        heading="Sandler PSP   TypeScript Delivery Patterns"
         items={items}
       />
 
@@ -128,7 +128,7 @@ export default function TypeScriptPSPSection() {
         <p>
           Week 1: environment parity, boundary audit, PR template with
           architectural notes. Week 2: contract tests for key integrations,
-          telemetry tags, a11y guardrails. Week 3–4: refactor the top two pain
+          telemetry tags, a11y guardrails. Week 3 4: refactor the top two pain
           points, ship a thin slice behind a flag, and prove the path by
           removing one recurring on-call issue. That rhythm compounds; that’s
           the job.

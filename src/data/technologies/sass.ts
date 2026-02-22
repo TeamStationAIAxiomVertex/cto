@@ -9,7 +9,7 @@ const sass: TechEntry = {
   meta_description:
     "Build a scalable, maintainable, and feature-rich user interface. Hire elite remote Sass experts vetted for their deep understanding of CSS preprocessing, from the variable to the mixin. Book a call.",
   intro:
-    "Sass is the de facto standard for CSS preprocessing. You need an engineer who understands that building a modern, scalable user interface is not just about writing code, but about a deep understanding of the entire CSS ecosystem, from the variable and the mixin to the function and the loop. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Sass expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Sass is the de facto standard for CSS preprocessing. You need an engineer who understands that building a modern, scalable user interface is not just about writing code, but about a deep understanding of the entire CSS ecosystem, from the variable and the mixin to the function and the loop. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Sass expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

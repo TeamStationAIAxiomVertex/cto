@@ -10,7 +10,7 @@ const looker: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and efficient business intelligence platform. Hire elite remote Looker experts vetted for their deep understanding of business intelligence, from the data model to the dashboard. Book a call.",
   intro:
-    "Looker is a leading business intelligence platform. You need an engineer who understands that building a modern business intelligence platform is not just about visualizing data, but about a deep understanding of the entire data lifecycle, from the data source and the data model to the dashboard and the report. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Looker expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Looker is a leading business intelligence platform. You need an engineer who understands that building a modern business intelligence platform is not just about visualizing data, but about a deep understanding of the entire data lifecycle, from the data source and the data model to the dashboard and the report. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Looker expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

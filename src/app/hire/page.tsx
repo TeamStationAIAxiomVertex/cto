@@ -62,7 +62,7 @@ export default function HirePage() {
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           You're here because a generic "developer" isn't enough. You have a
           critical, high-stakes role to fill, and a mis-hire could cost you
-          months. Our integrated platform doesn't just find candidates—it
+          months. Our integrated platform doesn't just find candidates it
           provides scientific evidence of their ability to solve your specific
           problems, so you can build with confidence.
         </p>

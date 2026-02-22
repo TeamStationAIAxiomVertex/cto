@@ -42,18 +42,18 @@ export default function PSPCards({
 
             <div className="mt-4 space-y-3 text-sm leading-6 text-muted-foreground flex-grow">
               <p>
-                <span className="font-semibold text-foreground">Pain —</span>{" "}
+                <span className="font-semibold text-foreground">Pain  </span>{" "}
                 {it.pain}
               </p>
               <p>
                 <span className="font-semibold text-foreground">
-                  Solution —
+                  Solution  
                 </span>{" "}
                 {it.solution}
               </p>
               {it.kpi ? (
                 <p className="text-foreground/80">
-                  <span className="font-semibold">KPI —</span> {it.kpi}
+                  <span className="font-semibold">KPI  </span> {it.kpi}
                 </p>
               ) : null}
             </div>

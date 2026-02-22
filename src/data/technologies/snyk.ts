@@ -48,7 +48,7 @@ const snyk: TechEntry = {
     "Strong understanding of developer workflows and how to effectively embed security without causing friction.",
   ],
   technical_analysis:
-    "Snyk's power comes from its developer-centric approach and its comprehensive vulnerability database. Our engineers are adept at leveraging Snyk’s CLI and API to create sophisticated automation. We configure Snyk to provide context-rich, prioritized, and actionable security insights, dramatically reducing the noise often associated with security tools. We focus on fine-tuning policies to align with your organization’s risk appetite, setting up automated pull requests for dependency upgrades, and using Snyk’s reporting to give you a clear view of your security posture over time. By integrating Snyk directly into the tools developers use every day—like VS Code, JetBrains, and GitHub—we make security a natural part of the development process.",
+    "Snyk's power comes from its developer-centric approach and its comprehensive vulnerability database. Our engineers are adept at leveraging Snyk’s CLI and API to create sophisticated automation. We configure Snyk to provide context-rich, prioritized, and actionable security insights, dramatically reducing the noise often associated with security tools. We focus on fine-tuning policies to align with your organization’s risk appetite, setting up automated pull requests for dependency upgrades, and using Snyk’s reporting to give you a clear view of your security posture over time. By integrating Snyk directly into the tools developers use every day like VS Code, JetBrains, and GitHub we make security a natural part of the development process.",
   interlink_slugs: ["security-engineering", "ci-cd", "docker", "terraform"],
 };
 

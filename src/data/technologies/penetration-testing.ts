@@ -10,7 +10,7 @@ const penetrationTesting: TechEntry = {
   meta_description:
     "Build a secure, resilient, and compliant application. Hire elite remote penetration testers vetted for their deep understanding of ethical hacking, from the reconnaissance to the report. Book a call.",
   intro:
-    "Penetration testing is the foundation of any modern security program. You need an engineer who understands that building a secure application is not just about writing code, but about a deep understanding of the entire threat landscape, from the code and the dependencies to the infrastructure and the cloud. Our vetting process identifies developers who are experts in the modern DevSecOps stack—and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring a penetration tester, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Penetration testing is the foundation of any modern security program. You need an engineer who understands that building a secure application is not just about writing code, but about a deep understanding of the entire threat landscape, from the code and the dependencies to the infrastructure and the cloud. Our vetting process identifies developers who are experts in the modern DevSecOps stack and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring a penetration tester, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

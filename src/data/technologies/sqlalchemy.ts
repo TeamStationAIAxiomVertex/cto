@@ -9,7 +9,7 @@ const sqlalchemy: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and efficient data access layer. Hire elite remote SQLAlchemy experts vetted for their deep understanding of the Core and ORM, from the connection pool to the query builder. Book a call.",
   intro:
-    "SQLAlchemy is the de facto standard for SQL toolkits and ORMs in Python. You need an engineer who understands that building a modern data access layer is not just about writing code, but about a deep understanding of the entire database ecosystem, from the connection pool and the transaction to the query builder and the session. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a SQLAlchemy expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "SQLAlchemy is the de facto standard for SQL toolkits and ORMs in Python. You need an engineer who understands that building a modern data access layer is not just about writing code, but about a deep understanding of the entire database ecosystem, from the connection pool and the transaction to the query builder and the session. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a SQLAlchemy expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

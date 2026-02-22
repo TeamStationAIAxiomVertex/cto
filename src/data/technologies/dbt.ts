@@ -24,7 +24,7 @@ const dbt: TechEntry = {
       icon: AlertTriangle,
       pain: "No Testing for Your Most Critical Business Logic",
       problem:
-        "Your most critical business logic—how you define revenue, active users, and other key metrics—lives in SQL with zero automated testing. You only find out about errors when an executive questions a dashboard.",
+        "Your most critical business logic how you define revenue, active users, and other key metrics lives in SQL with zero automated testing. You only find out about errors when an executive questions a dashboard.",
       solution:
         "Our dbt specialists implement a robust testing framework directly on your data models. They write tests for uniqueness, referential integrity, and custom business logic, ensuring that data is validated before it ever reaches a user.",
       kpi: "Achieve 100% test coverage for all critical business logic in the data warehouse.",

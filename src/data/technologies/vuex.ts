@@ -9,7 +9,7 @@ const vuex: TechEntry = {
   meta_description:
     "Build a scalable, maintainable, and reactive application. Hire elite remote Vuex experts vetted for their deep understanding of state management, from the state to the action. Book a call.",
   intro:
-    "Vuex is a state management pattern + library for Vue.js applications. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the state and the mutation to the action and the getter. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Vuex expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Vuex is a state management pattern + library for Vue.js applications. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the state and the mutation to the action and the getter. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Vuex expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

@@ -10,7 +10,7 @@ const dataWarehousing: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and efficient data warehouse. Hire elite remote data warehousing experts vetted for their deep understanding of data warehousing, from the data model to the data mart. Book a call.",
   intro:
-    "Data warehousing is the foundation of any data-driven organization. You need an engineer who understands that building a modern data warehouse is not just about storing data, but about a deep understanding of the entire data lifecycle, from the data source and the data pipeline to the data warehouse and the data mart. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a data warehousing expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Data warehousing is the foundation of any data-driven organization. You need an engineer who understands that building a modern data warehouse is not just about storing data, but about a deep understanding of the entire data lifecycle, from the data source and the data pipeline to the data warehouse and the data mart. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a data warehousing expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

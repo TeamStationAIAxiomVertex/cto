@@ -19,7 +19,7 @@ const pspCards = [
       body: {
         "problem": "Your offshore team pushes an Angular fix at the end of their day. You spot an issue with an RxJS operator the next morning. That simple question sits for 12 hours, delaying a critical enterprise feature.",
         "stakes": "This 'human latency tax' kills your agile velocity and forces your senior engineers into late-night coordination. Your roadmap for critical enterprise applications slips, one day at a time.",
-        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior Angular engineers in Ecuador with a guaranteed 5–7 hours of daily overlap, ensuring a continuous, real-time workflow for building enterprise-grade applications.",
+        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior Angular engineers in Ecuador with a guaranteed 5 7 hours of daily overlap, ensuring a continuous, real-time workflow for building enterprise-grade applications.",
         "proof": "Teams adopting this model reduce PR turnaround from 36 hours to under 8. This is a systemic acceleration detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
         "recap": "Stop letting time zones dictate your release schedule. When you <strong>hire Angular developers in Ecuador</strong>, you buy back your day with a team that operates on your clock."
       }

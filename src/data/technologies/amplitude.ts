@@ -27,7 +27,7 @@ const amplitude: TechEntry = {
       problem:
         "Your product roadmap is based on gut feelings and anecdotal feedback. You don't have a clear, data-driven way to prioritize features, leading to a bloated product that doesn't solve your users' most important problems.",
       solution:
-        "We use **Amplitude's powerful analysis tools**—like funnel analysis, retention charts, and user segmentation—to identify the biggest opportunities for improvement. We can help you understand where users are dropping off, what separates your power users from the rest, and which features are driving engagement and retention.",
+        "We use **Amplitude's powerful analysis tools** like funnel analysis, retention charts, and user segmentation to identify the biggest opportunities for improvement. We can help you understand where users are dropping off, what separates your power users from the rest, and which features are driving engagement and retention.",
       kpi: "Increase your product-led growth by focusing on the features that have the biggest impact on your KPIs.",
     },
     {

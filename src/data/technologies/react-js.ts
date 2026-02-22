@@ -9,7 +9,7 @@ const react: TechEntry = {
   meta_description:
     "Build a beautiful, fast, and scalable user interface. Hire elite remote React experts vetted for their deep understanding of React, from the component to the hook. Book a call.",
   intro:
-    "React is the de facto standard for building user interfaces. You need an engineer who understands that building a modern, scalable user interface is not just about writing code, but about a deep understanding of the entire React ecosystem, from the component and the state to the hook and the context. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a React expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "React is the de facto standard for building user interfaces. You need an engineer who understands that building a modern, scalable user interface is not just about writing code, but about a deep understanding of the entire React ecosystem, from the component and the state to the hook and the context. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a React expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

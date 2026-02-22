@@ -10,7 +10,7 @@ const preact: TechEntry = {
   meta_description:
     "Build blazing-fast, lightweight user interfaces. Hire elite remote Preact experts vetted for their deep understanding of performance optimization and the modern frontend stack. Book a call.",
   intro:
-    "Preact is a fast 3kB alternative to React with the same modern API. You need an engineer who understands that building a high-performance user interface is not just about writing code, but about a deep understanding of the entire frontend ecosystem, from the component and the state to the virtual DOM and the rendering pipeline. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Preact expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Preact is a fast 3kB alternative to React with the same modern API. You need an engineer who understands that building a high-performance user interface is not just about writing code, but about a deep understanding of the entire frontend ecosystem, from the component and the state to the virtual DOM and the rendering pipeline. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Preact expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

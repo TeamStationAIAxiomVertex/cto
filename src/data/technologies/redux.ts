@@ -9,7 +9,7 @@ const redux: TechEntry = {
   meta_description:
     "Build a predictable, scalable, and maintainable application. Hire elite remote Redux experts vetted for their deep understanding of state management, from the action to the reducer. Book a call.",
   intro:
-    "Redux is a predictable state container for JavaScript apps. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the action and the reducer to the middleware and the store. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Redux expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Redux is a predictable state container for JavaScript apps. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the action and the reducer to the middleware and the store. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Redux expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

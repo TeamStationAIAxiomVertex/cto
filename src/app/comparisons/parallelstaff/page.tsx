@@ -120,7 +120,7 @@ export default function ParallelStaffComparisonPage() {
             pain="CTOs face hidden risks in cost, compliance, and velocity."
             stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
             prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
-            proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
+            proof="40 60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
             ctaHref="/comparisons"
             ctaText="See All Vendor Comparisons"
         />

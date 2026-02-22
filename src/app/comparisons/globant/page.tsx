@@ -19,7 +19,7 @@ const comparisonPoints = {
         pain: "Do you need to augment your team or outsource a project?",
         traditional: "Globant is a massive systems integrator. They sell project delivery, which works for large-scale outsourcing but is misaligned for CTOs who need to embed talent into their own teams.",
         teamstation: "We are purpose-built for staff augmentation. We provide elite, mission-fit LATAM engineers who integrate directly into your existing teams, culture, and workflows.",
-        proof: "Time-to-First-PR in 7–14 days"
+        proof: "Time-to-First-PR in 7 14 days"
     },
     "Vetting": {
         pain: "Are you hiring an individual or a black box team?",
@@ -130,7 +130,7 @@ export default function GlobantComparisonPage() {
           problem="CTOs face hidden risks in cost, compliance, and velocity when using legacy staffing models."
           stakes="Without addressing these fundamental issues, budgets spiral, projects miss critical deadlines, and security incidents become inevitable."
           approach="TeamStation AI's integrated platform delivers pre-vetted LATAM talent, audit-ready compliance with secure devices, and a predictable Total Cost of Ownership."
-          evidence="On average, clients see a 40–60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
+          evidence="On average, clients see a 40 60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
           related={[
             { label: "CTO Playbook", href: "/playbook/hub" },
             { label: "Our Vetting Process", href: "/technical-interview-evaluation" },

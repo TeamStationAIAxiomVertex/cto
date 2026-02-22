@@ -25,7 +25,7 @@ const airflow: TechEntry = {
       icon: AlertTriangle,
       pain: "Lack of Observability and Debugging Nightmares",
       problem:
-        "When a pipeline fails, your engineers spend hours—or days—sifting through logs on a dozen different machines to find the root cause. There is no centralized view of your data workflows.",
+        "When a pipeline fails, your engineers spend hours or days sifting through logs on a dozen different machines to find the root cause. There is no centralized view of your data workflows.",
       solution:
         "Our Airflow specialists leverage the Airflow UI and logging capabilities to create a single pane of glass for all data pipelines. They provide full observability into task status, execution times, and logs, making debugging a targeted, efficient process.",
       kpi: "Decrease Mean Time to Resolution (MTTR) for pipeline failures by 80%.",

@@ -10,7 +10,7 @@ const transformers: TechEntry = {
   meta_description:
     "Leverage the power of state-of-the-art NLP models. Hire elite remote Transformers experts vetted for fine-tuning, tokenization, and production deployment. Book a call.",
   intro:
-    "The Hugging Face `transformers` library is the central nervous system of the modern AI revolution, providing standardized access to thousands of state-of-the-art language models. You need an engineer who can move beyond basic `pipeline` usage to fine-tune, optimize, and deploy these massive models for your specific business needs. Our vetting process is designed to find these experts. We assess their deep understanding of the library's core components—Tokenizers, Models, and the Trainer API—and their ability to handle the practical challenges of working with large models. By hiring a Transformers expert from us, you get a developer who can build powerful, custom NLP solutions that deliver real business value.",
+    "The Hugging Face `transformers` library is the central nervous system of the modern AI revolution, providing standardized access to thousands of state-of-the-art language models. You need an engineer who can move beyond basic `pipeline` usage to fine-tune, optimize, and deploy these massive models for your specific business needs. Our vetting process is designed to find these experts. We assess their deep understanding of the library's core components Tokenizers, Models, and the Trainer API and their ability to handle the practical challenges of working with large models. By hiring a Transformers expert from us, you get a developer who can build powerful, custom NLP solutions that deliver real business value.",
   pains: [
     {
       icon: AlertTriangle,

@@ -16,7 +16,7 @@ const rust: TechEntry = {
       icon: AlertTriangle,
       pain: "Are your developers struggling to satisfy the Borrow Checker?",
       problem:
-        "Rust's core strength—the Borrow Checker—is also its biggest hurdle. Inexperienced developers often hit intractable compiler errors related to ownership, borrowing, and lifetimes, leading to frustration, slow development, and resorting to unsafe code, which defeats the purpose of Rust.",
+        "Rust's core strength the Borrow Checker is also its biggest hurdle. Inexperienced developers often hit intractable compiler errors related to ownership, borrowing, and lifetimes, leading to frustration, slow development, and resorting to unsafe code, which defeats the purpose of Rust.",
       solution:
         "We vet for true mastery of the Ownership model. Our experts are required to demonstrate the correct use of references, lifetimes, and smart pointers (e.g., `Arc`, `Mutex`) to satisfy the compiler's safety guarantees without compromising performance or resorting to `unsafe` code.",
       kpi: "Mastery of Ownership, Borrowing, and Lifetimes",

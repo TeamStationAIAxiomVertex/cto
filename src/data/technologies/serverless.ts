@@ -10,7 +10,7 @@ const serverless: TechEntry = {
   meta_description:
     "Build a scalable, cost-effective, and event-driven application. Hire elite remote Serverless experts vetted for their deep understanding of serverless, from the function to the event source. Book a call.",
   intro:
-    "Serverless is the future of the cloud. You need an engineer who understands that building a modern, serverless application is not just about writing code, but about a deep understanding of the entire serverless ecosystem, from the function and the event source to the API gateway and the database. Our vetting process identifies developers who are experts in the Cloud Native Computing Foundation (CNCF) landscape—and can architect a serverless platform that is as secure, efficient, and automated as it is scalable. By hiring a Serverless expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Serverless is the future of the cloud. You need an engineer who understands that building a modern, serverless application is not just about writing code, but about a deep understanding of the entire serverless ecosystem, from the function and the event source to the API gateway and the database. Our vetting process identifies developers who are experts in the Cloud Native Computing Foundation (CNCF) landscape and can architect a serverless platform that is as secure, efficient, and automated as it is scalable. By hiring a Serverless expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

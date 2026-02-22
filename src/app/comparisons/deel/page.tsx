@@ -42,7 +42,7 @@ export default function DeelComparisonPage() {
       <header className="text-center my-8">
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">TeamStation AI vs. Deel</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-          This isn't a direct comparison, but a clarification of two very different—and potentially complementary—models.
+          This isn't a direct comparison, but a clarification of two very different and potentially complementary models.
         </p>
          <div className="mt-4 text-sm">
             <a href="https://www.deel.com/" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
@@ -87,7 +87,7 @@ export default function DeelComparisonPage() {
             <a href="https://www.deel.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Deel <ExternalLink className="h-4 w-4" /></a> is a world-class global payroll and compliance engine. They solve the critical problem of how to legally hire and pay people almost anywhere in the world. However, Deel is not a talent platform. They do not source, vet, or manage talent. You must bring your own candidates to their platform.
         </p>
         <p>
-           TeamStation AI, on the other hand, is an end-to-end talent and operations platform. Our primary function is to find, vet, and deliver elite LATAM engineering talent. Our platform then provides the entire operational wrapper—including <WithTooltip content="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>/payroll (which could even be powered by a platform like Deel), secure devices, and insurance—to run that team effectively.
+           TeamStation AI, on the other hand, is an end-to-end talent and operations platform. Our primary function is to find, vet, and deliver elite LATAM engineering talent. Our platform then provides the entire operational wrapper including <WithTooltip content="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity."><span className="border-b border-dashed">EOR</span></WithTooltip>/payroll (which could even be powered by a platform like Deel), secure devices, and insurance to run that team effectively.
         </p>
         <h3>Two Sides of the Same Coin</h3>
         <ul>
@@ -110,7 +110,7 @@ export default function DeelComparisonPage() {
         problem="CTOs face hidden risks in cost, compliance, and velocity when using legacy staffing models."
         stakes="Without addressing these fundamental issues, budgets spiral, projects miss critical deadlines, and security incidents become inevitable."
         approach="TeamStation AI's integrated platform delivers pre-vetted LATAM talent, audit-ready compliance with secure devices, and a predictable Total Cost of Ownership."
-        evidence="On average, clients see a 40–60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
+        evidence="On average, clients see a 40 60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
         related={[
           { label: "CTO Playbook", href: "/playbook/hub" },
           { label: "Our Vetting Process", href: "/technical-interview-evaluation" },

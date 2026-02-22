@@ -9,7 +9,7 @@ const emotion: TechEntry = {
   meta_description:
     "Build a performant, flexible, and expressive user interface. Hire elite remote Emotion experts vetted for their deep understanding of CSS-in-JS, from the css prop to the theme. Book a call.",
   intro:
-    "Emotion is a performant and flexible CSS-in-JS library. You need an engineer who understands that building a modern, component-based user interface is not just about writing code, but about a deep understanding of the entire CSS-in-JS ecosystem, from the css prop and the theme to the global style and the keyframes. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring an Emotion expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Emotion is a performant and flexible CSS-in-JS library. You need an engineer who understands that building a modern, component-based user interface is not just about writing code, but about a deep understanding of the entire CSS-in-JS ecosystem, from the css prop and the theme to the global style and the keyframes. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring an Emotion expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

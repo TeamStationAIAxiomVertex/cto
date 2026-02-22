@@ -11,7 +11,7 @@
     }
   },
   "h1": "Hire Software Developers in Mexico (Daylight Overlap)",
-  "intro": "Stop losing your release cadence to a 12-hour time lag. With Mexico, you get 6–8 hours of daily overlap with your US team, turning your pull request queue from an overnight parking lot into a real-time workflow. Our platform combines this daylight advantage with the scientific rigor of our <a href='/playbook/bias-free-technical-hiring-axiom-cortex'>Axiom Cortex™</a> vetting and a secure, compliant operational wrapper, letting you build faster and safer. See our playbook on <a href='/playbook/latam-economics'>LATAM Economics</a> for a full cost breakdown.",
+  "intro": "Stop losing your release cadence to a 12-hour time lag. With Mexico, you get 6 8 hours of daily overlap with your US team, turning your pull request queue from an overnight parking lot into a real-time workflow. Our platform combines this daylight advantage with the scientific rigor of our <a href='/playbook/bias-free-technical-hiring-axiom-cortex'>Axiom Cortex™</a> vetting and a secure, compliant operational wrapper, letting you build faster and safer. See our playbook on <a href='/playbook/latam-economics'>LATAM Economics</a> for a full cost breakdown.",
   "pspCards": [
     {
       "title": "Daylight PR Flow (No Overnight Queues)",
@@ -19,7 +19,7 @@
       "body": {
         "problem": "Your offshore team in Asia pushes a PR at the end of their day, which is the middle of your night. You review it the next morning and find a simple question. That question sits for another 12 hours. A one-line fix ends up taking 36 hours.",
         "stakes": "This 'human latency tax' is the silent killer of agile velocity. It doubles or triples your cycle time, turns standups into status updates, and forces your senior engineers into the role of late-night coordinators instead of high-value mentors. Your roadmap slips, one day at a time.",
-        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior engineers in Mexico with a guaranteed 6–8 hours of daily overlap. We establish and instrument strict PR SLAs—first response ≤1h, to-green ≤4h—and run review windows that sync with your team's core hours.",
+        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior engineers in Mexico with a guaranteed 6 8 hours of daily overlap. We establish and instrument strict PR SLAs first response ≤1h, to-green ≤4h and run review windows that sync with your team's core hours.",
         "proof": "Our platform telemetry shows teams adopting this model reduce their PR turnaround time from 36-72 hours to under 8 hours within the first two sprints. This is not a marginal gain; it is a systemic acceleration of your entire development process, as detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
         "recap": "Don't let time zones dictate your release schedule. Buy back your day with a daylight-native team that operates on your clock, not against it."
       }
@@ -29,7 +29,7 @@
       "icon": "hiring",
       "body": {
         "problem": "You need to <strong>hire software developers in Mexico</strong>, but your hiring process is a high-risk gamble on resumes. Keywords on a CV tell you nothing about a candidate's ability to solve novel problems or design resilient systems. You’re left with gut feel and biased interview loops.",
-        "stakes": "A single senior mis-hire costs 6-12 months of salary in lost productivity, team disruption, and the cost of re-hiring. Relying on traditional screening is like navigating without a compass—you’ll eventually get somewhere, but likely not where you intended.",
+        "stakes": "A single senior mis-hire costs 6-12 months of salary in lost productivity, team disruption, and the cost of re-hiring. Relying on traditional screening is like navigating without a compass you’ll eventually get somewhere, but likely not where you intended.",
         "prescription": "Move from resume theater to auditable evidence. Our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> cognitive AI engine provides scientific proof of a candidate’s problem-solving ability. We source from our Nebula Talent Graph of over 2.6 million LATAM profiles, then run candidates through a structured, bias-aware evaluation. This generates a 'Cognitive Fingerprint' and a full Evidence Locker, so you’re judging logic, not just presentation.",
         "proof": "This cognition-first approach reduces mis-hire risk by over 90%, achieving a mismatch rate of ≤10%. You get a candidate whose mental shape is mapped to your role's specific demands.",
         "recap": "Stop gambling on keywords. Build your <strong>nearshore Mexico engineers</strong> team with a partner that provides data-driven proof of cognitive ability, not just a list of credentials."
@@ -62,7 +62,7 @@
     "whyDaylight": {
       "h2": "Why Mexico works for daylight delivery",
       "bullets": [
-        "Real-time overlap with US (CST/MST/PST windows) (≈ 6–8 hours).",
+        "Real-time overlap with US (CST/MST/PST windows) (≈ 6 8 hours).",
         "Senior-leaning pods in Mexico City (CDMX), Guadalajara (GDL), and Monterrey (MTY).",
         "Cultural alignment with US agile rituals (standups, PR cadence)."
       ]
@@ -106,7 +106,7 @@
         ],
         [
           "Overlap (hrs/day)",
-          "6–8 hours"
+          "6 8 hours"
         ],
         [
           "Time-to-first-PR (envs ready)",
@@ -114,7 +114,7 @@
         ],
         [
           "Compensation (directional)",
-          "Bands vary by city/seniority; mid–senior compensation is well below US levels while preserving cadence and overlap."
+          "Bands vary by city/seniority; mid senior compensation is well below US levels while preserving cadence and overlap."
         ]
       ]
     }
@@ -134,7 +134,7 @@
     },
     {
       "q": "How much overlap will my US team have with engineers in Mexico?",
-      "a": "Typically 6–8 hours per day, covering the full US workday for teams on the West Coast. We schedule PR and review windows to this cadence."
+      "a": "Typically 6 8 hours per day, covering the full US workday for teams on the West Coast. We schedule PR and review windows to this cadence."
     },
     {
       "q": "What devices and security controls are included?",
@@ -232,7 +232,7 @@
             "name": "How much US overlap will I have with engineers in Mexico?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Typically 6–8 hours daily; we schedule PR/review windows accordingly."
+                "text": "Typically 6 8 hours daily; we schedule PR/review windows accordingly."
             }
         },
         {

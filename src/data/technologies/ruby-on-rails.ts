@@ -9,7 +9,7 @@ const rubyOnRails: TechEntry = {
   meta_description:
     "Build a scalable, maintainable, and feature-rich web application. Hire elite remote Ruby on Rails experts vetted for their deep understanding of the Ruby ecosystem, from the model to the view. Book a call.",
   intro:
-    "Ruby on Rails is a server-side web application framework written in Ruby. You need an engineer who understands that building a modern, scalable web application is not just about writing code, but about a deep understanding of the entire Ruby ecosystem, from the model and the view to the controller and the helper. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Ruby on Rails expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Ruby on Rails is a server-side web application framework written in Ruby. You need an engineer who understands that building a modern, scalable web application is not just about writing code, but about a deep understanding of the entire Ruby ecosystem, from the model and the view to the controller and the helper. Our vetting process identifies developers who are experts in the modern backend stack and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Ruby on Rails expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

@@ -9,7 +9,7 @@ const edr: TechEntry = {
   meta_description:
     "Build a secure, compliant, and resilient endpoint security platform. Hire elite remote EDR experts vetted for their deep understanding of endpoint security, from the agent to the console. Book a call.",
   intro:
-    "EDR is a critical component of any modern security program. You need an engineer who understands that building a modern, secure endpoint security platform is not just about blocking malware, but about a deep understanding of the entire endpoint security ecosystem, from the agent and the console to the threat intelligence and the incident response. Our vetting process identifies developers who are experts in the modern security stack—and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring an EDR expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "EDR is a critical component of any modern security program. You need an engineer who understands that building a modern, secure endpoint security platform is not just about blocking malware, but about a deep understanding of the entire endpoint security ecosystem, from the agent and the console to the threat intelligence and the incident response. Our vetting process identifies developers who are experts in the modern security stack and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring an EDR expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

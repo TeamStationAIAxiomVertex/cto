@@ -62,10 +62,10 @@ export default function AboutPage() {
        <div className="prose prose-lg dark:prose-invert mx-auto my-16">
         <h2 className="text-center text-4xl font-bold text-foreground">The TeamStation AI Difference</h2>
         <p>
-            We are not a staffing agency. We are not a consulting firm. We are a technology company. Our product is a fully integrated platform—the <Link href="/platform">Nearshore IT Co-Pilot™</Link>—that solves the hardest parts of building a remote team.
+            We are not a staffing agency. We are not a consulting firm. We are a technology company. Our product is a fully integrated platform the <Link href="/platform">Nearshore IT Co-Pilot™</Link> that solves the hardest parts of building a remote team.
         </p>
         <p>
-            We are inspired by the ethos of the space program—a belief in doing what is hard to push humanity forward. To avert crisis, the Apollo missions required absolute certainty, continuity, and predictability. Without them, we would never have set foot on the moon. Our mission is to provide that same level of mission certainty in a highly intelligent service infrastructure that takes anomalies out of the hiring and team management equation.
+            We are inspired by the ethos of the space program a belief in doing what is hard to push humanity forward. To avert crisis, the Apollo missions required absolute certainty, continuity, and predictability. Without them, we would never have set foot on the moon. Our mission is to provide that same level of mission certainty in a highly intelligent service infrastructure that takes anomalies out of the hiring and team management equation.
         </p>
         <p>
            Our innovation lies in unifying every part of the process under a single SLA. We use cognitive science and AI for vetting (<Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>). We provide an end-to-end operational wrapper that includes EOR, payroll, secure devices, and insurance. We give you the tools and the data to run your nearshore team with the same confidence and control as your team down the hall. This is the future of team building. We invite you to be a part of it.

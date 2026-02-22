@@ -27,8 +27,8 @@ const comparisonPoints = {
   "Cost": {
     pain: "Are you looking at an hourly rate or your true Total Cost of Ownership (TCO)?",
     traditional: "The hourly rate from traditional vendors looks appealing but hides the significant costs of internal management, IT overhead, compliance risk, and slow ramp-up times.",
-    teamstation: "Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO model</a> is transparent and all-inclusive, delivering a predictable, CFO-ready budget that is often 30–50% lower than the fully-loaded cost of other models.",
-    proof: "30–50% lower TCO vs traditional models"
+    teamstation: "Our <a href='/playbook/tco-model' class='text-primary hover:underline'>TCO model</a> is transparent and all-inclusive, delivering a predictable, CFO-ready budget that is often 30 50% lower than the fully-loaded cost of other models.",
+    proof: "30 50% lower TCO vs traditional models"
   }
 };
 
@@ -150,7 +150,7 @@ export default function UnosquareComparisonPage() {
             pain="CTOs face hidden risks in cost, compliance, and velocity."
             stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
             prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
-            proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
+            proof="40 60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
             ctaHref="/comparisons"
             ctaText="See All Vendor Comparisons"
         />

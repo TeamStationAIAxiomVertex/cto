@@ -9,7 +9,7 @@ const reactTestingLibrary: TechEntry = {
   meta_description:
     "Build a reliable, scalable, and maintainable user interface. Hire elite remote React Testing Library experts vetted for their deep understanding of testing, from the component to the user event. Book a call.",
   intro:
-    "React Testing Library is a testing utility for React. You need an engineer who understands that building a modern, scalable user interface is not just about writing code, but about a deep understanding of the entire testing ecosystem, from the component and the user event to the mock and the assertion. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a React Testing Library expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "React Testing Library is a testing utility for React. You need an engineer who understands that building a modern, scalable user interface is not just about writing code, but about a deep understanding of the entire testing ecosystem, from the component and the user event to the mock and the assertion. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a React Testing Library expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

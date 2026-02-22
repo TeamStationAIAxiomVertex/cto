@@ -101,7 +101,7 @@ export default function AndelaComparisonPage() {
               <a href="https://andela.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Andela <ExternalLink className="h-4 w-4" /></a> operates a large, global "talent cloud" that connects companies with technologists from around the world. Theirstrength is their breadth and scale. However, their model does not include bundled <WithTooltip content="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</WithTooltip>, devices, or insurance, leaving the client to manage these critical operational components.
           </div>
           <div>
-             TeamStation AI has a more specialized focus: building elite nearshore engineering teams specifically within Latin America. This focus allows us to provide a deeply integrated operational platform that is tailored to the unique legal, cultural, and logistical nuances of the region. While Andela helps you find talent, our platform provides the entire security and compliance wrapper—EOR, <WithTooltip content="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</WithTooltip>-managed devices, insurance—that is critical for a secure nearshore operation.
+             TeamStation AI has a more specialized focus: building elite nearshore engineering teams specifically within Latin America. This focus allows us to provide a deeply integrated operational platform that is tailored to the unique legal, cultural, and logistical nuances of the region. While Andela helps you find talent, our platform provides the entire security and compliance wrapper EOR, <WithTooltip content="Mobile Device Management: software that secures, monitors, and manages devices like laptops.">MDM</WithTooltip>-managed devices, insurance that is critical for a secure nearshore operation.
           </div>
           <h3>Depth vs. Breadth</h3>
           <p>
@@ -114,7 +114,7 @@ export default function AndelaComparisonPage() {
         <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
           <h2 className="text-2xl font-bold">Conclusion</h2>
           <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
-              For companies looking to source talent globally from a wide range of regions, Andela is a powerful platform. For CTOs who want to specifically leverage the benefits of the nearshore model—time-zone alignment, cultural affinity, and real-time collaboration—and require a fully secure and managed operational platform, TeamStation AI is the more specialized and integrated choice.
+              For companies looking to source talent globally from a wide range of regions, Andela is a powerful platform. For CTOs who want to specifically leverage the benefits of the nearshore model time-zone alignment, cultural affinity, and real-time collaboration and require a fully secure and managed operational platform, TeamStation AI is the more specialized and integrated choice.
           </p>
           <Link href="/comparisons" className="cta-button mt-6">Back to All Comparisons</Link>
         </div>
@@ -123,7 +123,7 @@ export default function AndelaComparisonPage() {
           problem="CTOs face hidden risks in cost, compliance, and velocity when using legacy staffing models."
           stakes="Without addressing these fundamental issues, budgets spiral, projects miss critical deadlines, and security incidents become inevitable."
           approach="TeamStation AI's integrated platform delivers pre-vetted LATAM talent, audit-ready compliance with secure devices, and a predictable Total Cost of Ownership."
-          evidence="On average, clients see a 40–60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
+          evidence="On average, clients see a 40 60% lower TCO versus traditional models and US hiring. Case studies like [Currance](/case-studies) and [Parsable](/case-studies/parsable) demonstrate measurable improvements in velocity and security posture."
           related={[
             { label: "CTO Playbook", href: "/playbook/hub" },
             { label: "Our Vetting Process", href: "/technical-interview-evaluation" },

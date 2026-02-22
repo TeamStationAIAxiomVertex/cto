@@ -79,7 +79,7 @@ const hiringPains = [
     question: "Is your hiring process a high-risk gamble?",
     solutionTitle: "From Resume Keywords to Cognitive Proof",
     problem:
-      "Traditional hiring relies on resume keywords and unstructured interviews—a biased, low-signal process that tells you nothing about a candidate's actual problem-solving ability.",
+      "Traditional hiring relies on resume keywords and unstructured interviews a biased, low-signal process that tells you nothing about a candidate's actual problem-solving ability.",
     solution:
       "Our Axiom Cortex™ Cognitive AI engine synthesizes the interview conversation, using over 44 proprietary algorithms to provide scientific, evidence-based proof of a candidate's cognitive traits and mental shape.",
     kpi: "Mismatch Rate ≤ 10%",
@@ -136,9 +136,9 @@ const hiddenTaxes = [
   {
     title: "The Management Overhead Tax",
     description:
-      "Your engineering managers are expensive resources. A flawed hiring process forces them into endless screening and interviewing cycles. If an EM spends 25% of their time on this, that's a quarter of their salary—",
+      "Your engineering managers are expensive resources. A flawed hiring process forces them into endless screening and interviewing cycles. If an EM spends 25% of their time on this, that's a quarter of their salary ",
     impact: "$50,000+ per year",
-    afterText: "—dedicated to a problem that shouldn't exist.",
+    afterText: " dedicated to a problem that shouldn't exist.",
     icon: Briefcase,
     impactColor: "text-destructive",
   },
@@ -212,13 +212,13 @@ export default function BiasFreeHiringAxiomCortexPage() {
                   subjective, high-risk art form into a data-driven, low-risk
                   science. We will diagnose the hidden costs bleeding your
                   budget, quantify the financial impact, and provide a concrete
-                  system—powered by our{" "}
+                  system powered by our{" "}
                   <WithTooltip content="Our proprietary Cognitive AI engine for talent evaluation.">
                     <span className="border-b border-dashed">
                       Axiom Cortex™
                     </span>
                   </WithTooltip>
-                  —to build a high-performance team you can bet your roadmap on.
+                   to build a high-performance team you can bet your roadmap on.
                 </p>
               </div>
             </div>

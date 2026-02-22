@@ -153,7 +153,7 @@ export default function PerformanceEvaluationFrameworkPage() {
 
             <section className="my-16">
                 <h2 className="text-center text-3xl font-bold">The Core Instrument: The TeamStation-Client Diagnostic</h2>
-                <p className="text-center mt-2 text-muted-foreground">This is the engine of our entire program—a standardized, evidence-based tool we use at each stage of the Talent Runway. Below is the exact framework we use with your leadership to evaluate our engineers.</p>
+                <p className="text-center mt-2 text-muted-foreground">This is the engine of our entire program a standardized, evidence-based tool we use at each stage of the Talent Runway. Below is the exact framework we use with your leadership to evaluate our engineers.</p>
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {competencies.map((comp, index) => (

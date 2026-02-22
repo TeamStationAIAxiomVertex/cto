@@ -62,7 +62,7 @@ export default function HeuristicallyTrainedAiPage() {
           <h2>The Solution: Combining Statistical Power with Human Expertise</h2>
           <p>A purely statistical model, no matter how large, is a blunt instrument. It can identify patterns, but it lacks a true understanding of context. A human expert, on the other hand, possesses deep contextual knowledge but is prone to bias and inconsistency. The optimal solution, as our research demonstrates, is a hybrid approach that combines the best of both worlds.</p>
           <blockquote>Our heuristic-guided model is not just trained on what code looks like; it's trained on what brilliant problem-solving looks like.</blockquote>
-          <p>We achieve this by building a knowledge graph and a reasoning engine, not just a simple predictive model. Our AI is trained on a proprietary dataset of interview transcripts that have been annotated by our top engineers. These annotations, or heuristics, teach the model to recognize the subtle signals of high-level cognitive traits—things like:</p>
+          <p>We achieve this by building a knowledge graph and a reasoning engine, not just a simple predictive model. Our AI is trained on a proprietary dataset of interview transcripts that have been annotated by our top engineers. These annotations, or heuristics, teach the model to recognize the subtle signals of high-level cognitive traits things like:</p>
           <ul>
             <li><strong>Problem Decomposition Speed:</strong> How quickly a candidate breaks down a complex problem into manageable sub-problems.</li>
             <li><strong>Architectural Instinct:</strong> The ability to foresee edge cases and design for scalability and maintainability.</li>

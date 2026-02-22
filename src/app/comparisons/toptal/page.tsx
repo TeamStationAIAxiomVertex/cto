@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 const comparisonPoints = {
     "Vetting": {
         pain: "Are you sure you're hiring for true problem-solving ability, or just well-rehearsed interview answers?",
-        traditional: "Toptal's screening is tough—no doubt. But it's still focused on technical skills and experience, which are lagging indicators of success. You're filtering for what a developer *has done*, not what they *can do*.",
-        teamstation: "We go beyond the resume. Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> scientifically measures a candidate's cognitive agility—their ability to learn, adapt, and solve novel problems. This is the #1 predictor of on-the-job success.",
+        traditional: "Toptal's screening is tough no doubt. But it's still focused on technical skills and experience, which are lagging indicators of success. You're filtering for what a developer *has done*, not what they *can do*.",
+        teamstation: "We go beyond the resume. Our <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™ Cognitive AI</a> scientifically measures a candidate's cognitive agility their ability to learn, adapt, and solve novel problems. This is the #1 predictor of on-the-job success.",
         proof: "6x Lower Mis-hire Rate vs. Traditional Interviews"
     },
     "Engagement Model": {

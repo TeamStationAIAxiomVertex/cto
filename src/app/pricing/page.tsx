@@ -60,7 +60,7 @@ const pricingFactors = [
     title: 'Role & Talent Signal',
     icon: <UserCheck className="h-8 w-8 text-primary" />,
     items: [
-      'Level & scope (L1–L4), ownership, leadership signals',
+      'Level & scope (L1 L4), ownership, leadership signals',
       'Stack fit & specialization (AI/ML, Salesforce, data, security)',
       'Interview evidence (technical correctness, mental model, practical method)',
       'Candidate salary requirements in-band for country/city',
@@ -86,7 +86,7 @@ const pricingFactors = [
       'Company devices with MDM, patch SLAs, endpoint monitoring',
       'Security workflows, IP/NDAs, incident response guardrails',
       'Day-one readiness (access, first ticket, 30-60-90 plan)',
-      'Employer of Record (EOR)—we carry employer liability',
+      'Employer of Record (EOR) we carry employer liability',
       'Background checks, contracts, payroll & benefits admin',
       'Optional offices/workspaces; consolidated invoicing',
     ]
@@ -182,7 +182,7 @@ export default function PricingPage() {
             Stop getting ambushed by hidden fees and vendor chaos. This is a predictable, all-inclusive cost model that your finance team will actually approve.
           </p>
            <div className="mt-4 text-center">
-              <span className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">From $20–$50/hr • 173 hrs/mo basis • Devices & compliance included</span>
+              <span className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">From $20 $50/hr • 173 hrs/mo basis • Devices & compliance included</span>
           </div>
         </header>
 
@@ -210,7 +210,7 @@ export default function PricingPage() {
         
           <div className="rounded-lg border bg-card my-12 p-8 shadow-lg">
            <h2 className="text-3xl font-bold text-center">The Math Your CFO Cares About</h2>
-           <p className="text-center text-muted-foreground max-w-3xl mx-auto mt-2">A single delayed roadmap feature can cost you millions in ARR. Faster, more accurate hiring isn't a "nice-to-have"—it's a financial necessity.</p>
+           <p className="text-center text-muted-foreground max-w-3xl mx-auto mt-2">A single delayed roadmap feature can cost you millions in ARR. Faster, more accurate hiring isn't a "nice-to-have" it's a financial necessity.</p>
            <div className="text-center mt-8 bg-background p-6 rounded-lg max-w-2xl mx-auto shadow-lg">
               <h3 className='font-semibold text-foreground'>The Vacancy Tax You're Paying Today</h3>
               <div className="font-mono text-lg md:text-xl mt-2 flex flex-wrap justify-center items-center gap-2">

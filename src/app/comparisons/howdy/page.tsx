@@ -21,7 +21,7 @@ const pageData = {
       "title": "Verdict Snapshot vs Howdy",
       "icon": "visibility",
       "body": {
-        "problem": "<strong>Problem.</strong> Howdy solves the 'HR problem'—hiring and payroll—which is valuable. But you are still left with the much harder, higher-risk 'CTO problems': device security, enterprise compliance, and ensuring the person you hired can actually solve complex problems.",
+        "problem": "<strong>Problem.</strong> Howdy solves the 'HR problem' hiring and payroll which is valuable. But you are still left with the much harder, higher-risk 'CTO problems': device security, enterprise compliance, and ensuring the person you hired can actually solve complex problems.",
         "stakes": "<strong>Stakes.</strong> This creates a false sense of security. You've solved payroll but inherited a massive, unmitigated security and operational risk. One unmanaged laptop can fail a SOC 2 audit. A mis-hire who passed a traditional interview can still derail your roadmap.",
         "prescription": "<strong>Prescription.</strong> Demand a complete operational platform, not just a partial HR solution. An integrated platform like TeamStation AI provides an auditable trail for every step: scientific vetting reports from <a href='/research/axiom-cortex-scientific-report' class='text-primary hover:underline'>Axiom Cortex™</a>, device security attestations from our MDM, and a single, accountable SLA for the entire operation.",
         "proof": "<strong>Proof.</strong> Our platform is your 'single pane of glass' for the entire nearshore operation. It replaces the fragmented responsibility of an EOR-plus-DIY-ops model with a single, auditable system designed for security and velocity.",
@@ -32,7 +32,7 @@ const pageData = {
       "title": "Vetting Model: Scientific Proof vs. Traditional Recruiting",
       "icon": "hiring",
       "body": {
-        "problem": "<strong>Problem.</strong> Howdy has a recruiting function, but it's based on traditional interview methods. This process is effective at sourcing candidates but is still susceptible to the same biases and false positives as any standard hiring funnel—it selects for good interviewers, not necessarily great problem-solvers.",
+        "problem": "<strong>Problem.</strong> Howdy has a recruiting function, but it's based on traditional interview methods. This process is effective at sourcing candidates but is still susceptible to the same biases and false positives as any standard hiring funnel it selects for good interviewers, not necessarily great problem-solvers.",
         "stakes": "<strong>Stakes.</strong> The risk of a mis-hire remains high. You can still onboard an engineer who 'talks a good game' but lacks the deep architectural instinct or problem-solving agility to navigate complex challenges, leading to lost time, money, and team morale.",
         "prescription": "<strong>Prescription.</strong> Move from subjective interviews to objective, scientific evidence. Our <a href='/playbook/bias-free-technical-hiring-axiom-cortex' class='text-primary hover:underline'>Axiom Cortex™</a> engine provides proof of an individual's cognitive abilities. We evaluate how they think, not just what they list on their resume. You get a candidate whose 'mental shape' is mapped to your specific needs.",
         "proof": "<strong>Proof.</strong> Our methodology, detailed in our peer-reviewed research, reduces mis-hire risk by over 90%. We provide a complete <a href='/technical-interview-evaluation' class='text-primary hover:underline'>Evidence Locker</a> for every candidate, giving you a data-driven and auditable hiring decision.",
@@ -73,7 +73,7 @@ const pageData = {
     {"q":"When is Howdy a better fit than TeamStation AI?","a":"If you have a mature internal IT and security infrastructure that can handle global device management and compliance, and your primary need is to source talent and process payroll in LATAM, Howdy's model can be very effective."},
     {"q":"Does Howdy provide secure laptops for their developers?","a":"No. Device provisioning and security (MDM) are the client's responsibility. TeamStation AI provides a corporate-owned, MDM-managed laptop for every engineer as part of our core service."},
     {"q":"How is your vetting process different from a recruiting service like Howdy's?","a":"Recruiting services focus on finding candidates who match keywords. Our <a href='/research/axiom-cortex-scientific-report'>Axiom Cortex™</a> engine goes deeper, providing a scientific measure of a candidate's cognitive abilities, like problem-solving and architectural instinct, to de-risk the hire at a more fundamental level."},
-    {"q":"What is the real difference in your operational models?","a":"Howdy solves the 'HR' part of the problem (hiring and payroll). TeamStation AI solves the entire operational stack—HR, IT, security, legal, and compliance—under a single, accountable SLA."},
+    {"q":"What is the real difference in your operational models?","a":"Howdy solves the 'HR' part of the problem (hiring and payroll). TeamStation AI solves the entire operational stack HR, IT, security, legal, and compliance under a single, accountable SLA."},
     {"q":"Can I use TeamStation AI just for sourcing and handle EOR myself?","a":"Our value is in the integrated platform. We deliver a complete, managed solution because a fragmented approach creates the exact risks (security gaps, compliance issues) that our platform is designed to eliminate."},
     {"q":"How quickly can a new nearshore pod actually start shipping code?","a":"With environments ready on your side, we target a first PR within 10 business days. Our structured onboarding process ensures that engineers are not just hired, but are effectively integrated into your team and ready to contribute quickly."}
   ]
@@ -193,7 +193,7 @@ export default function HowdyComparisonPage() {
             pain="CTOs face hidden risks in cost, compliance, and velocity."
             stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
             prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
-            proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
+            proof="40 60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
             ctaHref="/comparisons"
             ctaText="See All Vendor Comparisons"
         />

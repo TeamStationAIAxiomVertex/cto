@@ -9,7 +9,7 @@ const phoenix: TechEntry = {
   meta_description:
     "Build a scalable, fault-tolerant, and real-time web application. Hire elite remote Phoenix experts vetted for their deep understanding of Elixir, from the controller to the channel. Book a call.",
   intro:
-    "Phoenix is a web framework for the Elixir programming language. You need an engineer who understands that building a modern, real-time web application is not just about writing code, but about a deep understanding of the entire Elixir ecosystem, from the controller and the channel to the template and the context. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Phoenix expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Phoenix is a web framework for the Elixir programming language. You need an engineer who understands that building a modern, real-time web application is not just about writing code, but about a deep understanding of the entire Elixir ecosystem, from the controller and the channel to the template and the context. Our vetting process identifies developers who are experts in the modern backend stack and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Phoenix expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

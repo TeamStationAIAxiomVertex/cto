@@ -37,7 +37,7 @@ const pact: TechEntry = {
       problem:
         "API documentation is often outdated or ambiguous, leading to integration bugs, development rework, and a breakdown of trust between service teams.",
       solution:
-        "With Pact, the contract is code—an executable, verifiable artifact. This ensures that documentation is always synchronized with reality, creating a single source of truth for service interactions.",
+        "With Pact, the contract is code an executable, verifiable artifact. This ensures that documentation is always synchronized with reality, creating a single source of truth for service interactions.",
       kpi: "50% faster feature delivery due to parallelized, non-blocking development.",
     },
   ],

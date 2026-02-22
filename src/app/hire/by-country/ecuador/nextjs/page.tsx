@@ -19,7 +19,7 @@ const pspCards = [
       body: {
         "problem": "Your offshore team pushes a Next.js fix at the end of their day. You spot a simple issue with a Server Component the next morning. That question sits for 12 hours, delaying a critical performance improvement.",
         "stakes": "This 'human latency tax' kills your agile velocity. Your Core Web Vitals suffer, and your roadmap slips, one day at a time, for easily solvable issues.",
-        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior Next.js engineers in Ecuador with a guaranteed 5–7 hours of daily overlap, ensuring a continuous, real-time workflow for building high-performance web applications.",
+        "prescription": "Replace the overnight queue with a daylight-native cadence. We staff pods of senior Next.js engineers in Ecuador with a guaranteed 5 7 hours of daily overlap, ensuring a continuous, real-time workflow for building high-performance web applications.",
         "proof": "Teams adopting this model reduce PR turnaround from 36 hours to under 8. This is a systemic acceleration detailed in our <a href='/playbook/nearshore-vs-offshore' class='text-primary hover:underline'>Nearshore vs Offshore playbook</a>.",
         "recap": "Stop letting time zones dictate your release schedule. When you <strong>hire Next.js developers in Ecuador</strong>, you buy back your day with a team that operates on your clock."
       }

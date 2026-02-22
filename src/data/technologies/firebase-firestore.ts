@@ -9,7 +9,7 @@ const firebaseFirestore: TechEntry = {
   meta_description:
     "Build a scalable, real-time, and serverless application. Hire elite remote Firestore experts vetted for their deep understanding of NoSQL, from the data model to the security rule. Book a call.",
   intro:
-    "Firestore is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud Platform. You need an engineer who understands that building a modern, real-time application is not just about writing code, but about a deep understanding of the entire NoSQL ecosystem, from the data model and the query to the security rule and the index. Our vetting process identifies developers who are experts in the modern data stack—and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Firestore expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Firestore is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud Platform. You need an engineer who understands that building a modern, real-time application is not just about writing code, but about a deep understanding of the entire NoSQL ecosystem, from the data model and the query to the security rule and the index. Our vetting process identifies developers who are experts in the modern data stack and can architect a data platform that is as secure, efficient, and automated as it is scalable. By hiring a Firestore expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

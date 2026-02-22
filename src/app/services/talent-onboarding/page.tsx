@@ -39,7 +39,7 @@ export default function OnboardingPage() {
             pain: "Unsure if your new hire is ramping up?",
             title: 'Performance Diagnostics (Day 30-60-90)',
             description: 'We track progress against a clear 30-60-90 day plan, moving from component work to feature ownership. Our platform provides ongoing performance diagnostics to ensure effective ramp-up.',
-            kpi: "Time-to-First-PR 7–14 days"
+            kpi: "Time-to-First-PR 7 14 days"
         },
     ];
 

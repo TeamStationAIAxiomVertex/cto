@@ -9,7 +9,7 @@ const prettier: TechEntry = {
   meta_description:
     "Build a consistent, maintainable, and bug-free codebase. Hire elite remote Prettier experts vetted for their deep understanding of code quality, from the rule to the plugin. Book a call.",
   intro:
-    "Prettier is an opinionated code formatter. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire code quality ecosystem, from the rule and the plugin to the parser and the formatter. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Prettier expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Prettier is an opinionated code formatter. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire code quality ecosystem, from the rule and the plugin to the parser and the formatter. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Prettier expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

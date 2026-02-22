@@ -9,7 +9,7 @@ const quarkus: TechEntry = {
   meta_description:
     "Build a blazing-fast, lightweight, and cloud-native application. Hire elite remote Quarkus experts vetted for their deep understanding of Java, from the CDI container to the native image. Book a call.",
   intro:
-    "Quarkus is a Kubernetes Native Java stack tailored for GraalVM & OpenJDK HotSpot. You need an engineer who understands that building a modern, cloud-native application is not just about writing code, but about a deep understanding of the entire Java ecosystem, from the CDI container and the RESTeasy endpoint to the native image and the serverless function. Our vetting process identifies developers who are experts in the modern backend stack—and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Quarkus expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Quarkus is a Kubernetes Native Java stack tailored for GraalVM & OpenJDK HotSpot. You need an engineer who understands that building a modern, cloud-native application is not just about writing code, but about a deep understanding of the entire Java ecosystem, from the CDI container and the RESTeasy endpoint to the native image and the serverless function. Our vetting process identifies developers who are experts in the modern backend stack and can architect a backend platform that is as secure, efficient, and automated as it is scalable. By hiring a Quarkus expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

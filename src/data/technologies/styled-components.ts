@@ -9,7 +9,7 @@ const styledComponents: TechEntry = {
   meta_description:
     "Build a component-based, maintainable, and expressive user interface. Hire elite remote Styled-Components experts vetted for their deep understanding of CSS-in-JS, from the styled component to the theme. Book a call.",
   intro:
-    "Styled-Components is a popular CSS-in-JS library for React and React Native. You need an engineer who understands that building a modern, component-based user interface is not just about writing code, but about a deep understanding of the entire CSS-in-JS ecosystem, from the styled component and the theme to the global style and the keyframes. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Styled-Components expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Styled-Components is a popular CSS-in-JS library for React and React Native. You need an engineer who understands that building a modern, component-based user interface is not just about writing code, but about a deep understanding of the entire CSS-in-JS ecosystem, from the styled component and the theme to the global style and the keyframes. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Styled-Components expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

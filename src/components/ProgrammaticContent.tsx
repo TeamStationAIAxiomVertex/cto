@@ -80,7 +80,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
         name: `How does TeamStation evaluate ${tech.name} talent?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `Candidates are assessed through practical technical scenarios, role-specific evaluation criteria, and production-readiness review aligned to the target stack.`,
+          text: `Candidates are assessed through practical technical scenarios, role specific evaluation criteria, and production readiness review aligned to the target stack.`,
         },
       },
       {
@@ -97,7 +97,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
   const faqItems = [
     {
       q: `How do we reduce delivery risk when hiring ${tech.name} engineers?`,
-      a: `Start with role-specific evaluation criteria, require practical production scenarios, and map each candidate to clear ownership boundaries. For ${tech.name}, this means validating architecture judgment, execution quality, and communication under real constraints before onboarding.`,
+      a: `Start with role specific evaluation criteria, require practical production scenarios, and map each candidate to clear ownership boundaries. For ${tech.name}, this means validating architecture judgment, execution quality, and communication under real constraints before onboarding.`,
     },
     {
       q: `What should CTO and CIO leaders measure in the first 90 days?`,
@@ -105,7 +105,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
     },
     {
       q: `How does nearshore ${tech.name} hiring compare to low-cost offshore models?`,
-      a: `Hourly rate alone is not the KPI. A stronger model improves same-day decision speed, reduces rework, and lowers management overhead. For most CTO and CIO teams, that combination produces better total cost of delivery than rate-card optimization alone.`,
+      a: `Hourly rate alone is not the KPI. A stronger model improves same day decision speed, reduces rework, and lowers management overhead. For most CTO and CIO teams, that combination produces better total cost of delivery than rate card optimization alone.`,
     },
     {
       q: `Which pages should we use for planning, hiring, and validation?`,
@@ -157,7 +157,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
               A practical strategy is to define capability targets before sourcing. That means
               separating must-have architecture skills from trainable implementation details. It
               also means mapping candidate depth to business-critical workflows such as release
-              reliability, incident handling, and cross-team dependency management. This approach
+              reliability, incident handling, and cross team dependency management. This approach
               produces stronger hiring outcomes because it aligns evaluation with production reality.
             </p>
             <p>
@@ -191,7 +191,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
               delivery scenarios, and document the first 90-day ownership plan before onboarding.
               When the role charter, evaluation rubric, and execution metrics are aligned, nearshore
               {` ${tech.name} `} hiring becomes a predictable growth mechanism instead of a
-              recruitment gamble. This is the practical standard high-performing engineering
+              recruitment gamble. This is the practical standard high performing engineering
               organizations use to scale with lower risk and stronger delivery quality.
             </p>
             <p>
@@ -252,7 +252,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
               Evaluation Criteria for {tech.name} Roles
             </h2>
             <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
-              Every candidate is measured against production-grade expectations before shortlist delivery.
+              Every candidate is measured against production grade expectations before shortlist delivery.
             </p>
             <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
               {tech.evaluation.map((item, idx) => (
@@ -431,7 +431,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
             </p>
             <p>
               Governance matters as much as selection. Define ownership boundaries, acceptance
-              criteria, and escalation paths before onboarding. Track day-30, day-60, and day-90
+              criteria, and escalation paths before onboarding. Track day 30, day 60, and day 90
               indicators tied to throughput, quality, and coordination behavior. When this structure
               is applied consistently, nearshore teams in {tech.name} functions integrate faster and
               produce measurable improvements in roadmap confidence.
@@ -461,7 +461,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
               Keep metrics connected to business language. If cycle time improves, explain the
               effect on release confidence and launch timing. If defect leakage drops, explain the
               effect on support burden and customer trust. This translation layer helps executive
-              stakeholders evaluate technical progress without losing precision and keeps cross-team
+              stakeholders evaluate technical progress without losing precision and keeps cross team
               alignment strong during scale phases.
             </p>
             <p>

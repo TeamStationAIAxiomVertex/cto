@@ -17,7 +17,7 @@ const faqSchema = {
    {
      "@type": "Question",
      "name": "How much can CTOs save with nearshore TCO?",
-     "acceptedAnswer": { "@type": "Answer", "text": "CTOs can achieve 40–60% savings versus U.S. hires or legacy offshore staffing, with predictable budget alignment." }
+     "acceptedAnswer": { "@type": "Answer", "text": "CTOs can achieve 40 60% savings versus U.S. hires or legacy offshore staffing, with predictable budget alignment." }
    }
  ]
 };
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const costCards = [
   {
     "id": "seat-cost-delta",
-    "title": "Seat Cost Delta — Sticker vs Fully-Loaded",
+    "title": "Seat Cost Delta   Sticker vs Fully-Loaded",
     "segment": "Cost",
     "icon": <DollarSign className="h-8 w-8 text-primary" />,
     "problem": "U.S. senior salaries look manageable… until benefits, taxes, tools, and overhead land on the P&L.",
@@ -51,7 +51,7 @@ const costCards = [
   },
   {
     "id": "team-delta-six",
-    "title": "Team Delta — Six Seniors, One Decision",
+    "title": "Team Delta   Six Seniors, One Decision",
     "segment": "Cost",
     "icon": <Users className="h-8 w-8 text-primary" />,
     "problem": "You need a full squad; headcount is frozen.",
@@ -70,7 +70,7 @@ const costCards = [
   },
   {
     "id": "cost-of-vacancy",
-    "title": "Cost of Vacancy — The Invisible Tax",
+    "title": "Cost of Vacancy   The Invisible Tax",
     "segment": "Speed",
     "icon": <Zap className="h-8 w-8 text-primary" />,
     "problem": "Roles stay open; velocity stalls; opportunity cost compounds.",
@@ -90,7 +90,7 @@ const costCards = [
   },
   {
     "id": "pr-lgtm-latency",
-    "title": "PR “LGTM” Latency — Days Lost to Time Zones",
+    "title": "PR “LGTM” Latency   Days Lost to Time Zones",
     "segment": "Speed",
     "icon": <GitCompare className="h-8 w-8 text-primary" />,
     "problem": "One PR → one day lost; reviews trickle in overnight.",
@@ -110,7 +110,7 @@ const costCards = [
   },
   {
     "id": "faster-onboarding",
-    "title": "Faster Onboarding — Time-to-Productivity",
+    "title": "Faster Onboarding   Time-to-Productivity",
     "segment": "Speed",
     "icon": <UserCheck className="h-8 w-8 text-primary" />,
     "problem": "New engineers take weeks to add useful code.",
@@ -130,7 +130,7 @@ const costCards = [
   },
   {
     "id": "change-failure-rate",
-    "title": "Change-Failure Rate — Fewer Hotfix Fridays",
+    "title": "Change-Failure Rate   Fewer Hotfix Fridays",
     "segment": "Quality",
     "icon": <TestTube2 className="h-8 w-8 text-primary" />,
     "problem": "Failed changes burn cash and trust.",
@@ -145,12 +145,12 @@ const costCards = [
       "Monthly Savings": 45000
     },
     "proof_note": "Improving Change Failure Rate (CFR), a core DORA metric, directly reduces the high cost of incident response.",
-    "cta_question": "Which metric—CFR, MTTR, or both—hurts your renewals more?",
+    "cta_question": "Which metric CFR, MTTR, or both hurts your renewals more?",
     "learn_more_href": "/hire/by-role/qa-quality-engineering"
   },
   {
     "id": "attrition-replacement",
-    "title": "Attrition & Replacement — Context Reset Penalty",
+    "title": "Attrition & Replacement   Context Reset Penalty",
     "segment": "People",
     "icon": <Users className="h-8 w-8 text-primary" />,
     "problem": "Night-shift offshore drives churn; you keep paying the knowledge tax.",
@@ -170,7 +170,7 @@ const costCards = [
   },
   {
     "id": "management-overhead",
-    "title": "Management Overhead — Meetings You Don’t Need",
+    "title": "Management Overhead   Meetings You Don’t Need",
     "segment": "Ops",
     "icon": <Briefcase className="h-8 w-8 text-primary" />,
     "problem": "EMs/PMs spend hours herding vendors across time zones.",
@@ -192,11 +192,11 @@ const costCards = [
   },
   {
     "id": "compliance-security-drag",
-    "title": "Compliance & Security — Questionnaire Drag",
+    "title": "Compliance & Security   Questionnaire Drag",
     "segment": "Risk",
     "icon": <ShieldCheck className="h-8 w-8 text-primary" />,
     "problem": "SOC2/ISO gaps stall enterprise deals.",
-    "solution": "Built-in SSO/SAML/SCIM, SBOMs, audit trails—operated in-timezone.",
+    "solution": "Built-in SSO/SAML/SCIM, SBOMs, audit trails operated in-timezone.",
     "formula": "Savings/yr = Hours_Saved * C_hour",
     "example_inputs": {
       "Hours_Saved": 250,

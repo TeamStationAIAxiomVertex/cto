@@ -9,7 +9,7 @@ const tanstack: TechEntry = {
   meta_description:
     "Build a scalable, maintainable, and reactive application. Hire elite remote TanStack experts vetted for their deep understanding of state management. Book a call.",
   intro:
-    "TanStack is a collection of high-quality, open-source software for web developers. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the query and the mutation to the cache and the garbage collection. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a TanStack expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "TanStack is a collection of high-quality, open-source software for web developers. You need an engineer who understands that building a modern, scalable application is not just about writing code, but about a deep understanding of the entire state management ecosystem, from the query and the mutation to the cache and the garbage collection. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a TanStack expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

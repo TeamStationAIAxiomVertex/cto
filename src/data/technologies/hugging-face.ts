@@ -9,7 +9,7 @@ const huggingFace: TechEntry = {
   meta_description:
     "Deploy, and scale state-of-the-art NLP and LLM models. Hire elite remote Hugging Face experts vetted for their deep understanding of the transformer ecosystem. Book a call.",
   intro:
-    "Hugging Face is more than a library; it's the operational backbone of the modern NLP and Large Language Model ecosystem. You can't just hire a data scientist; you need an engineer who understands the deep, intricate, and often brutal realities of productionizing transformer models. Our vetting process, powered by Axiom Cortex™, identifies the rare engineers who have lived in this ecosystem. They don't just know the 'transformers' library; they understand the full lifecycle—from fine-tuning and quantization with tools like LoRA and bitsandbytes to deploying at scale with services like Text Generation Inference. These aren't academics; they are battle-hardened architects of production-grade AI.",
+    "Hugging Face is more than a library; it's the operational backbone of the modern NLP and Large Language Model ecosystem. You can't just hire a data scientist; you need an engineer who understands the deep, intricate, and often brutal realities of productionizing transformer models. Our vetting process, powered by Axiom Cortex™, identifies the rare engineers who have lived in this ecosystem. They don't just know the 'transformers' library; they understand the full lifecycle from fine-tuning and quantization with tools like LoRA and bitsandbytes to deploying at scale with services like Text Generation Inference. These aren't academics; they are battle-hardened architects of production-grade AI.",
   pains: [
     {
       icon: AlertTriangle,
@@ -24,7 +24,7 @@ const huggingFace: TechEntry = {
       icon: AlertTriangle,
       pain: "Is the cost and complexity of deploying large models killing your ROI?",
       problem:
-        "Deploying large language models naively can lead to catastrophic cloud bills and slow, unusable services. The expertise required to optimize these models for inference—through techniques like quantization, pruning, and using optimized serving runtimes—is scarce and highly specialized.",
+        "Deploying large language models naively can lead to catastrophic cloud bills and slow, unusable services. The expertise required to optimize these models for inference through techniques like quantization, pruning, and using optimized serving runtimes is scarce and highly specialized.",
       solution:
         "Our engineers are rigorously evaluated on their ability to **optimize and deploy transformer models efficiently**. They must demonstrate practical mastery of model quantization (bitsandbytes), efficient fine-tuning (LoRA, PEFT), and deployment with high-performance inference servers. This ensures your AI services are not just powerful, but economically viable.",
       kpi: "Cost-Effective, High-Performance Model Deployment",

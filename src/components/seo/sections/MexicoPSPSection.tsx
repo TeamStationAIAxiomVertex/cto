@@ -22,12 +22,12 @@ export default function MexicoPSPSection() {
       pain: "The ‘low hourly’ offshore pitch evaporates once PRs sit overnight, specs drift, and managers babysit time zones.",
       solution:
         "Buy daylight, not hours. Staff a Mexico pod with guaranteed overlap and a lead who owns the release plan.",
-      kpi: "120 PRs/month × (4h offshore wait − 1h nearshore) × $85/hr ≈ $30,600 burned monthly in idle latency.",
+      kpi: "120 PRs/month × (4h offshore wait   1h nearshore) × $85/hr ≈ $30,600 burned monthly in idle latency.",
     },
     {
       icon: BadgeCheck,
       problem: "Résumé Theater vs. Evidence",
-      pain: "CVs look great until the first integration. Then the wheels wobble—tests missing, contracts brittle.",
+      pain: "CVs look great until the first integration. Then the wheels wobble tests missing, contracts brittle.",
       solution:
         "Use evidence, not theater. Mexico candidates run calibrated work-samples; we keep the artifacts (code, ADR notes, test approach).",
       kpi: "Axiom Cortex™ reduces false positives by favoring shipped-signal over keyword-match in screening.",
@@ -35,7 +35,7 @@ export default function MexicoPSPSection() {
     {
       icon: Webhook,
       problem: "Sprawl Kills Throughput",
-      pain: "One vendor for people, another for EOR, another for devices, plus a payroll agent—four tickets per change.",
+      pain: "One vendor for people, another for EOR, another for devices, plus a payroll agent four tickets per change.",
       solution:
         "Consolidate into a Nearshore IT Co-Pilot: talent + EOR + SSO/MDM + devices under one SLA, one backlog.",
       kpi: "Teams in CDMX/MTY run same-day approvals for access and devices; first PR ≤ 10 business days with envs ready.",
@@ -43,7 +43,7 @@ export default function MexicoPSPSection() {
     {
       icon: ShieldCheck,
       problem: "Compliance Isn’t Optional",
-      pain: "Shadow laptops, ad-hoc VPNs, and shared accounts look ‘agile’—until an auditor asks for proofs.",
+      pain: "Shadow laptops, ad-hoc VPNs, and shared accounts look ‘agile’ until an auditor asks for proofs.",
       solution:
         "All Mexico pods use corporate-owned, MDM-managed devices; SSO/SAML/SCIM wired at day-one with role maps.",
       kpi: "SOC-aligned onboarding dossiers (device, identity, access) available for every engineer in the pod.",
@@ -59,9 +59,9 @@ export default function MexicoPSPSection() {
     {
       icon: GitCompare,
       problem: "Friction at the Edges",
-      pain: "Tooling drift—different CI, different linters—creates micro-friction that slows every PR.",
+      pain: "Tooling drift different CI, different linters creates micro-friction that slows every PR.",
       solution:
-        "Adopt your standards exactly. Mexico pods clone your CI, lint, testing, and release rituals—no parallel universe.",
+        "Adopt your standards exactly. Mexico pods clone your CI, lint, testing, and release rituals no parallel universe.",
       kpi: "Time-to-green PR falls as teams converge on one pipeline; fewer flakes → faster merges.",
     },
     {
@@ -83,7 +83,7 @@ export default function MexicoPSPSection() {
     {
       icon: FileText,
       problem: "Onboarding: Tickets vs. Evidence",
-      pain: "‘Everyone’s onboarded’—but where’s the evidence? Who approved access? What device posture?",
+      pain: "‘Everyone’s onboarded’ but where’s the evidence? Who approved access? What device posture?",
       solution:
         "Day-0→Day-10 dossier: device baseline, SSO/SCIM mapping, environment checklist, data-handling attestations.",
       kpi: "Dossiers pass legal/security reviews without emergency archaeology.",
@@ -93,7 +93,7 @@ export default function MexicoPSPSection() {
       problem: "Scale Without Losing Shape",
       pain: "Adding headcount accelerates chaos if process and ownership don’t scale with it.",
       solution:
-        "Grow by pods, not individuals. Each pod is a fractal unit—leadership, QA, standards—plug in and go.",
+        "Grow by pods, not individuals. Each pod is a fractal unit leadership, QA, standards plug in and go.",
       kpi: "Pods added in CDMX/Guadalajara maintain cadence; inter-pod contracts keep boundaries healthy.",
     },
   ];
@@ -111,7 +111,7 @@ export default function MexicoPSPSection() {
           with reality.
         </p>
         <p>
-          We don’t rent hands. We field <strong>pods</strong>—senior-leaning
+          We don’t rent hands. We field <strong>pods</strong> senior-leaning
           squads that mirror your rituals, run your toolchain, and leave
           evidence as they go. Every engineer ships on a managed device, behind
           SSO, with access you can prove. That’s how you scale a roadmap without
@@ -119,7 +119,7 @@ export default function MexicoPSPSection() {
         </p>
       </header>
 
-      <PSPCards heading="Sandler PSP — Mexico Nearshore Pods" items={items} />
+      <PSPCards heading="Sandler PSP   Mexico Nearshore Pods" items={items} />
 
       <footer className="prose dark:prose-invert max-w-none mt-10">
         <h3>Where to start</h3>
@@ -128,7 +128,7 @@ export default function MexicoPSPSection() {
           improvement. Keep the scope reversible: feature flags on, contracts
           guarded, telemetry wired. In two weeks you’ll know if the chemistry
           works; in six, you’ll wonder why you waited. When you’re ready, book a
-          daylight planning call—we’ll show you the math and the mechanism, not
+          daylight planning call we’ll show you the math and the mechanism, not
           a talent slideshow.
         </p>
         <p>

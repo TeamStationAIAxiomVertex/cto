@@ -9,7 +9,7 @@ const rest: TechEntry = {
   meta_description:
     "Build a scalable, maintainable, and developer-friendly API. Hire elite remote REST API experts vetted for their deep understanding of REST, from the resource to the hypermedia. Book a call.",
   intro:
-    "REST is the de facto standard for building APIs. You need an engineer who understands that building a modern, developer-friendly API is not just about writing code, but about a deep understanding of the entire API ecosystem, from the resource and the URI to the hypermedia and the documentation. Our vetting process identifies developers who are experts in the modern API stack—and can architect an API platform that is as secure, efficient, and automated as it is scalable. By hiring a REST API expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "REST is the de facto standard for building APIs. You need an engineer who understands that building a modern, developer-friendly API is not just about writing code, but about a deep understanding of the entire API ecosystem, from the resource and the URI to the hypermedia and the documentation. Our vetting process identifies developers who are experts in the modern API stack and can architect an API platform that is as secure, efficient, and automated as it is scalable. By hiring a REST API expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

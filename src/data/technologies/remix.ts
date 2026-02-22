@@ -9,7 +9,7 @@ const remix: TechEntry = {
   meta_description:
     "Build fast, modern web applications. Hire elite remote Remix experts vetted for their deep understanding of web standards, server-side rendering, and data-driven user experiences. Book a call.",
   intro:
-    "Remix is a full-stack web framework that leverages the power of web standards to deliver fast, resilient, and progressively enhanced user experiences. You need an engineer who understands that a great user experience is not just about client-side rendering, but about a holistic approach that embraces the entire request/response lifecycle. Our vetting process identifies developers who are experts in Remix's core concepts—loaders, actions, and nested routes—and can architect applications that are as robust as they are fast. By hiring a Remix expert, you get a developer who can build a modern web application that works for every user, on every device, every time.",
+    "Remix is a full-stack web framework that leverages the power of web standards to deliver fast, resilient, and progressively enhanced user experiences. You need an engineer who understands that a great user experience is not just about client-side rendering, but about a holistic approach that embraces the entire request/response lifecycle. Our vetting process identifies developers who are experts in Remix's core concepts loaders, actions, and nested routes and can architect applications that are as robust as they are fast. By hiring a Remix expert, you get a developer who can build a modern web application that works for every user, on every device, every time.",
   pains: [
     {
       icon: AlertTriangle,

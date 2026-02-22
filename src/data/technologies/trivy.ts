@@ -10,7 +10,7 @@ const trivy: TechEntry = {
   meta_description:
     "Build a secure, resilient, and compliant application. Hire elite remote Trivy experts vetted for their deep understanding of vulnerability scanning, from the container image to the Git repository. Book a call.",
   intro:
-    "Trivy is a simple and comprehensive vulnerability scanner. You need an engineer who understands that building a secure application is not just about writing code, but about a deep understanding of the entire threat landscape, from the code and the dependencies to the infrastructure and the cloud. Our vetting process identifies developers who are experts in the modern DevSecOps stack—and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring a Trivy expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Trivy is a simple and comprehensive vulnerability scanner. You need an engineer who understands that building a secure application is not just about writing code, but about a deep understanding of the entire threat landscape, from the code and the dependencies to the infrastructure and the cloud. Our vetting process identifies developers who are experts in the modern DevSecOps stack and can architect a security platform that is as secure, efficient, and automated as it is scalable. By hiring a Trivy expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

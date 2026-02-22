@@ -9,7 +9,7 @@ const css: TechEntry = {
   meta_description:
     "Build a beautiful, responsive, and maintainable user interface. Hire elite remote CSS experts vetted for their deep understanding of modern CSS, from the layout to the animation. Book a call.",
   intro:
-    "CSS is the backbone of the modern web. You need an engineer who understands that building a beautiful, responsive user interface is not just about writing code, but about a deep understanding of the entire CSS ecosystem, from the layout and the animation to the preprocessor and the framework. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a CSS expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "CSS is the backbone of the modern web. You need an engineer who understands that building a beautiful, responsive user interface is not just about writing code, but about a deep understanding of the entire CSS ecosystem, from the layout and the animation to the preprocessor and the framework. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a CSS expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

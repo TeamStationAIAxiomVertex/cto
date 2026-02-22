@@ -16,7 +16,7 @@ const comparisonPoints = {
     "Operations": {
         pain: "Are you just solving payroll, or the entire operational stack?",
         traditional: "Terminal is an <span class='border-b border-dashed'>EOR</span>-plus-recruiter. They handle hiring and payroll, but they do not provide secure devices, <span class='border-b border-dashed'>MDM</span>, or insurance, leaving critical security and governance gaps.",
-        teamstation: "We are a complete, software-defined operating model. Our integrated platform bundles all 'run-state' services—devices, MDM, offices, compliance, and insurance—under a single, predictable SLA.",
+        teamstation: "We are a complete, software-defined operating model. Our integrated platform bundles all 'run-state' services devices, MDM, offices, compliance, and insurance under a single, predictable SLA.",
         proof: "1 accountable SLA"
     },
     "Vetting": {
@@ -104,7 +104,7 @@ export default function TerminalComparisonPage() {
           </div>
           <h3>The Governance & Validation Gap</h3>
           <p>
-             TeamStation AI provides a complete, software-defined operating model. Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link> engine de-risks hiring through scientific validation, while our integrated platform bundles all necessary "run-state" services—devices, MDM, offices, compliance, and insurance—under a single, predictable SLA. This is the fundamental difference: Terminal is an EOR-plus-recruiter; TeamStation is a scientific nearshore platform that runs the whole loop from discovery to delivery.
+             TeamStation AI provides a complete, software-defined operating model. Our <Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™ Cognitive AI</Link> engine de-risks hiring through scientific validation, while our integrated platform bundles all necessary "run-state" services devices, MDM, offices, compliance, and insurance under a single, predictable SLA. This is the fundamental difference: Terminal is an EOR-plus-recruiter; TeamStation is a scientific nearshore platform that runs the whole loop from discovery to delivery.
           </p>
            <h3>Buyer's Checklist</h3>
           <ul>
@@ -125,7 +125,7 @@ export default function TerminalComparisonPage() {
             pain="CTOs face hidden risks in cost, compliance, and velocity when using legacy staffing models."
             stakes="Without addressing these, budgets spiral and projects miss critical deadlines."
             prescription="TeamStation AI delivers audit-ready compliance, Axiom Cortex™ cognitive vetting, and predictable TCO."
-            proof="40–60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
+            proof="40 60% lower TCO vs legacy models. Case studies: [Currance](/case-studies), [Parsable](/case-studies/parsable)."
             ctaHref="/comparisons"
             ctaText="See All Vendor Comparisons"
         />

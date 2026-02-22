@@ -9,7 +9,7 @@ const bootstrap: TechEntry = {
   meta_description:
     "Build a responsive, mobile-first, and accessible website. Hire elite remote Bootstrap experts vetted for their deep understanding of the Bootstrap ecosystem, from the grid system to the JavaScript plugins. Book a call.",
   intro:
-    "Bootstrap is the de facto standard for building responsive, mobile-first websites. You need an engineer who understands that building a modern, responsive website is not just about writing code, but about a deep understanding of the entire Bootstrap ecosystem, from the grid system and the components to the JavaScript plugins and the Sass variables. Our vetting process identifies developers who are experts in the modern frontend stack—and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Bootstrap expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
+    "Bootstrap is the de facto standard for building responsive, mobile-first websites. You need an engineer who understands that building a modern, responsive website is not just about writing code, but about a deep understanding of the entire Bootstrap ecosystem, from the grid system and the components to the JavaScript plugins and the Sass variables. Our vetting process identifies developers who are experts in the modern frontend stack and can architect a frontend platform that is as secure, efficient, and automated as it is scalable. By hiring a Bootstrap expert, you get a developer who can build a modern, automated, and observable system that is a joy to use, and a joy to maintain.",
   pains: [
     {
       icon: AlertTriangle,

@@ -208,7 +208,7 @@ const roleData: {
   "frontend-web": {
     name: "Frontend / Web",
     intro:
-      "You're here because your frontend is your product's face to the world. A slow, buggy, or inaccessible UI doesn't just frustrate users—it costs you revenue. You need engineers who are obsessed with performance, user experience, and code quality.",
+      "You're here because your frontend is your product's face to the world. A slow, buggy, or inaccessible UI doesn't just frustrate users it costs you revenue. You need engineers who are obsessed with performance, user experience, and code quality.",
     roles: ["Staff Frontend", "Web Platform Eng", "Design Systems Eng"],
     skills: [
       "Performance/CWV",
@@ -482,7 +482,7 @@ const roleData: {
   "it-enterprise-ops": {
     name: "IT / Enterprise Ops",
     intro:
-      "You're here because employee productivity and corporate security depend on a well-run IT infrastructure. You need engineers who can manage identities, secure endpoints, and automate internal processes at scale.",
+      "You're here because employee productivity and corporate security depend on a well run IT infrastructure. You need engineers who can manage identities, secure endpoints, and automate internal processes at scale.",
     roles: ["IT Manager", "MDM Engineer", "ITSM Lead", "Identity Engineer"],
     skills: [
       "Endpoint management",
@@ -570,7 +570,7 @@ export async function generateMetadata({
 
   const title = normalizeTitle(`Hire ${roleName} Engineers | CTO CIO Teams`);
   const description = normalizeDescription(
-    `Hire pre-vetted nearshore ${roleName} engineers with structured evaluation, strong delivery accountability, and lower execution risk.`
+    `Hire pre vetted nearshore ${roleName} engineers with structured evaluation, strong delivery accountability, and lower execution risk.`
   );
 
   return {
@@ -786,7 +786,7 @@ export default function RoleCategoryPage({
         name: `How does TeamStation evaluate candidates for ${name}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `Candidates are evaluated against role-specific technical criteria, production readiness, and real problem-solving expectations before shortlist delivery.`,
+          text: `Candidates are evaluated against role specific technical criteria, production readiness, and real problem solving expectations before shortlist delivery.`,
         },
       },
       {
@@ -853,7 +853,7 @@ export default function RoleCategoryPage({
           <div className="mt-6 space-y-5 text-muted-foreground leading-7">
             <p>
               The decision to hire {name} talent should be evaluated as a delivery-risk decision,
-              not a seat-fill activity. High-performing CTO and CIO teams define success in terms of
+              not a seat fill activity. High performing CTO and CIO teams define success in terms of
               ownership clarity, release confidence, and sustained throughput. They do not rely only
               on resumes or keyword matches. They evaluate how a candidate will perform inside
               real engineering constraints where quality, speed, and accountability must coexist.
@@ -1120,7 +1120,7 @@ export default function RoleCategoryPage({
               rights. Weeks 5 through 8 should stabilize delivery loops and dependency handoffs.
               Weeks 9 through 12 should optimize for quality and predictability through measurable
               outcomes. This phased approach helps leadership detect variance early and reinforce
-              high-signal behaviors before scaling headcount.
+              high signal behaviors before scaling headcount.
             </p>
             <p>
               For buyer intent alignment, the page should answer three questions clearly: what
@@ -1154,7 +1154,7 @@ export default function RoleCategoryPage({
             </p>
             <p>
               The second control point is workflow integration. Strong nearshore execution depends
-              on same-day handoffs, predictable review loops, and clear expectations for quality.
+              on same day handoffs, predictable review loops, and clear expectations for quality.
               If your current process has long feedback cycles, unclear acceptance criteria, or
               high reopening rates, this role should be evaluated for its ability to fix those
               structural constraints. In practical terms, ask how candidates prioritize work under
@@ -1173,7 +1173,7 @@ export default function RoleCategoryPage({
               outcomes should focus on context integration and decision quality. Day-60 outcomes
               should focus on execution reliability and reduced coordination drag. Day-90 outcomes
               should focus on measurable contribution to team throughput, quality, and predictability.
-              This turns hiring from a one-time event into an operating mechanism that can be
+              This turns hiring from a one time event into an operating mechanism that can be
               measured, improved, and scaled.
             </p>
             <p>
@@ -1204,7 +1204,7 @@ export default function RoleCategoryPage({
               Week 1 and 2 checklist: confirm role charter, environment access, ownership map,
               review expectations, and escalation paths. Week 3 and 4 checklist: verify execution
               cadence, decision documentation quality, and blocker resolution behavior. Week 5 to 8
-              checklist: track contribution depth, cross-team reliability, and risk communication
+              checklist: track contribution depth, cross team reliability, and risk communication
               quality. Week 9 to 12 checklist: validate sustained impact, reduced management
               overhead, and stronger release confidence versus baseline.
             </p>
@@ -1257,7 +1257,7 @@ export default function RoleCategoryPage({
           </h2>
           <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Stop sifting through unqualified resumes. Let us provide you with a
-            shortlist of 2-3 elite, pre-vetted candidates ready to make an
+            shortlist of 2 to 3 elite, pre vetted candidates ready to make an
             impact.
           </p>
           <Link
@@ -1266,7 +1266,7 @@ export default function RoleCategoryPage({
             rel="noopener noreferrer"
             className="cta-button mt-6"
           >
-            Book a No-Obligation Strategy Call
+            Book a No Obligation Strategy Call
           </Link>
         </div>
         <FurtherReading comparison={params.slug} />
