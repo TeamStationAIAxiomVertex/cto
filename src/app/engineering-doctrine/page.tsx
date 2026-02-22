@@ -173,7 +173,7 @@ export default function EngineeringDoctrinePage() {
         / <span>Engineering Doctrine</span>
       </div>
 
-      <header className="my-12 rounded-xl border bg-card p-8 md:p-12">
+      <header className="glass-panel gradient-ring hero-depth system-grid my-12 rounded-2xl border border-border/70 p-8 md:p-12">
         <p className="text-sm font-semibold uppercase tracking-wide text-primary">
           TeamStation AI Engineering Doctrine
         </p>
@@ -215,7 +215,7 @@ export default function EngineeringDoctrinePage() {
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
           {pillars.map((pillar) => (
-            <article key={pillar.id} className="rounded-lg border bg-card p-6">
+            <article key={pillar.id} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6">
               <h3 className="text-2xl font-bold">{pillar.title}</h3>
               <p className="mt-3 text-sm font-semibold text-primary">
                 Core Thesis
@@ -236,7 +236,7 @@ export default function EngineeringDoctrinePage() {
         </div>
       </section>
 
-      <section className="my-16 glass-panel rounded-2xl p-6 md:p-8">
+      <section className="my-16 glass-panel gradient-ring rounded-2xl p-6 md:p-8">
         <h2 className="text-3xl font-bold">Team Topologies for 2026 and Beyond</h2>
         <div className="mt-6 space-y-5 text-muted-foreground leading-7">
           <p>
@@ -258,7 +258,7 @@ export default function EngineeringDoctrinePage() {
         </div>
       </section>
 
-      <section className="my-16 glass-panel rounded-2xl p-6 md:p-8">
+      <section className="my-16 glass-panel gradient-ring rounded-2xl p-6 md:p-8">
         <h2 className="text-3xl font-bold">Operating Implications for Market Visibility</h2>
         <div className="mt-6 space-y-5 text-muted-foreground leading-7">
           <p>

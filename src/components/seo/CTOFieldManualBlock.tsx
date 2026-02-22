@@ -100,7 +100,7 @@ export default function CTOFieldManualBlock({ title, focus }: CTOFieldManualBloc
   ];
 
   return (
-    <section className="surface-card my-12 p-6 md:p-8">
+    <section className="surface-card glass-panel gradient-ring my-12 p-6 md:p-8">
       <h2 className="text-2xl font-bold">{title}</h2>
       <div className="mt-5 space-y-6 text-muted-foreground leading-7">
         <h3 className="text-lg font-semibold text-foreground">Operational Context</h3>
@@ -130,12 +130,12 @@ export default function CTOFieldManualBlock({ title, focus }: CTOFieldManualBloc
         </p>
         <div className="card-grid-tight-2">
           {ctoPainMap.map((item) => (
-            <article key={item.pain} className="rounded-lg border bg-background/60 p-5">
-              <h4 className="text-base font-semibold text-foreground">Pain</h4>
+            <article key={item.pain} className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-5">
+              <h4 className="text-base font-semibold text-foreground">Operating reality</h4>
               <p className="mt-2 text-sm text-muted-foreground">{item.pain}</p>
-              <h4 className="mt-4 text-base font-semibold text-foreground">Solution</h4>
+              <h4 className="mt-4 text-base font-semibold text-foreground">Operating response</h4>
               <p className="mt-2 text-sm text-muted-foreground">{item.solution}</p>
-              <h4 className="mt-4 text-base font-semibold text-foreground">Proof</h4>
+              <h4 className="mt-4 text-base font-semibold text-foreground">Evidence path</h4>
               <p className="mt-2 text-sm text-muted-foreground">{item.proof}</p>
             </article>
           ))}

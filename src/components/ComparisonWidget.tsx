@@ -381,7 +381,7 @@ export default function ComparisonWidget() {
 
   return (
     <section
-      className="my-16 rounded-xl border bg-card p-6 md:p-8 shadow-lg"
+      className="glass-panel gradient-ring my-16 rounded-2xl border border-border/70 p-6 md:p-8 shadow-lg"
       id="comparison-widget"
     >
       <h2 className="text-3xl font-bold text-center text-foreground">
@@ -393,7 +393,7 @@ export default function ComparisonWidget() {
         wins because it removes lag and makes outcomes observable.
       </p>
 
-      <div className="mt-6 flex flex-wrap justify-center items-center gap-x-6 gap-y-4 rounded-lg bg-background p-4 border text-sm">
+      <div className="mt-6 flex flex-wrap justify-center items-center gap-x-6 gap-y-4 rounded-lg border border-border/70 bg-background/70 p-4 text-sm">
         <div className="flex items-center gap-2">
           <label
             htmlFor={`${baseId}-basis-hours`}
@@ -514,7 +514,7 @@ export default function ComparisonWidget() {
             <tr>
               <th
                 scope="col"
-                className="p-3 border-b-2 border-border font-semibold text-foreground sticky left-0 bg-card w-1/6 z-10"
+                className="p-3 border-b-2 border-border font-semibold text-foreground sticky left-0 bg-background/80 w-1/6 z-10"
               >
                 Metric
               </th>
@@ -543,7 +543,7 @@ export default function ComparisonWidget() {
               <tr key={row.label} className="hover:bg-background/50">
                 <th
                   scope="row"
-                  className="p-3 font-medium text-muted-foreground sticky left-0 bg-card w-1/6 z-10"
+                  className="p-3 font-medium text-muted-foreground sticky left-0 bg-background/80 w-1/6 z-10"
                 >
                   <WithTooltip label={row.description}>
                     <span className="border-b border-dashed cursor-help">

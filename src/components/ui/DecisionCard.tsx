@@ -9,11 +9,11 @@ export function DecisionCard({
   related?: { label: string; href: string }[];
 }) {
   return (
-    <section className="rounded-lg border bg-card p-6 space-y-4 my-16">
+    <section className="glass-panel gradient-ring rounded-2xl border border-border/70 p-6 space-y-4 my-16">
       <h3 className="text-xl font-bold">Decision Brief</h3>
-      <p><strong className="text-destructive">Problem:</strong> {problem}</p>
-      <p><strong>Stakes:</strong> {stakes}</p>
-      <p><strong className="text-primary">Approach:</strong> {approach}</p>
+      <p><strong className="text-destructive">Operating reality:</strong> {problem}</p>
+      <p><strong>Business impact:</strong> {stakes}</p>
+      <p><strong className="text-primary">Operating response:</strong> {approach}</p>
       <p
         dangerouslySetInnerHTML={{
           __html:
@@ -23,7 +23,7 @@ export function DecisionCard({
       />
       {related.length ? (
         <div className="pt-2">
-          <div className="font-semibold">Related</div>
+          <div className="font-semibold">Related paths</div>
           <ul className="list-disc pl-5">
             {related.map((r, i) => (
               <li key={i}><Link className="text-primary hover:underline" href={r.href}>{r.label}</Link></li>

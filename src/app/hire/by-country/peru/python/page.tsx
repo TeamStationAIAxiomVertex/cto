@@ -112,7 +112,7 @@ export default function HirePythonPeruPage() {
           <h2 className="text-3xl font-bold text-center">Questions on Hiring {technology} Developers in {country}</h2>
           <div className="mt-8 max-w-3xl mx-auto space-y-4">
               {faq.map((item, i) => (
-                  <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
+                  <div key={i} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 shadow-lg">
                       <h3 className="font-semibold text-primary">{item.q}</h3>
                       <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
                   </div>

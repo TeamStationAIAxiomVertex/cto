@@ -66,7 +66,7 @@ export default function ProcessPage() {
        <div className="text-sm text-muted-foreground mb-8">
             <Link href="/" className="hover:text-foreground">Home</Link> / <span>Process</span>
         </div>
-      <header className="text-center my-12">
+      <header className="glass-panel gradient-ring hero-depth system-grid text-center my-12 rounded-2xl p-8 md:p-10">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">One Accountable Process, Guaranteed by Contract</h1>
         <p className="mt-4 max-w-4xl mx-auto text-lg text-muted-foreground">
           This isn't a checklist; it's an engineered system. Our Nearshore IT Co-Pilot™ provides one accountable workflow for hiring, compliance, and secure devices, governed by a single <WithTooltip label="A Master Services Agreement (MSA) and Statement of Work (SOW) form a legally binding contract for our services."><span className="border-b border-dashed">MSA/SOW</span></WithTooltip>. We deliver Day-1-ready LATAM engineers so you can focus on shipping product, not managing vendors.
@@ -122,7 +122,7 @@ export default function ProcessPage() {
         </p>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 mt-12 gap-8 max-w-4xl mx-auto'>
             {securityPillars.map(pillar => (
-                <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col text-left shadow-lg">
+                <div key={pillar.title} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col text-left shadow-lg">
                     <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
                     <div className="flex items-center gap-3 mt-3">
                         {pillar.icon}
@@ -144,7 +144,7 @@ export default function ProcessPage() {
         </p>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-12 gap-8 max-w-6xl mx-auto'>
             {recognitions.map(rec => (
-                 <div className="flex items-start text-left gap-4 p-4 rounded-lg bg-card shadow-lg" key={rec.title}>
+                 <div className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 flex items-start text-left gap-4 p-4 shadow-lg" key={rec.title}>
                     {rec.icon}
                     <div>
                         <h3 className="font-semibold text-foreground">{rec.title}</h3>

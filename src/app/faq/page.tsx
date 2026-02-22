@@ -56,7 +56,7 @@ export default function FAQPage() {
             <h2 className="text-3xl font-bold text-center text-foreground">{category.category}</h2>
             <div className="mt-8 space-y-6">
               {category.questions.map((item, i) => (
-                <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
+                <div key={i} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 shadow-lg">
                     <h3 className="font-semibold text-primary flex items-start gap-3">
                         <HelpCircle className="h-6 w-6 mt-1 shrink-0"/>
                         <span>{item.q}</span>

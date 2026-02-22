@@ -73,7 +73,7 @@ export default function HireByCountryPage() {
         <h2 className="text-center text-3xl font-bold">Explore Our Premier LATAM Engineering Hubs</h2>
         <div className="card-grid-tight-3 mt-8">
             {countries.map((country) => (
-                <div key={country.slug} className="glass-panel rounded-2xl group relative mx-auto w-full max-w-sm flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                <div key={country.slug} className="glass-panel gradient-ring rounded-2xl group relative mx-auto w-full max-w-sm flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                     <div className="flex items-start justify-between gap-3">
                       <p className="text-sm font-semibold text-primary">{country.pain}</p>
                       <CardGuidanceTooltip

@@ -63,7 +63,7 @@ export default function TrustPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
         {pillars.map((pillar) => (
-          <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+          <div key={pillar.title} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg">
             <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
             <div className="flex items-center gap-3 mt-3">
               {pillar.icon}

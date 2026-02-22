@@ -32,7 +32,7 @@ export default function PSPCards({
         {items.map((it) => (
           <article
             key={it.problem}
-            className="rounded-lg border bg-card shadow-sm p-6 flex flex-col"
+            className="glass-panel gradient-ring rounded-2xl border border-border/70 shadow-sm p-6 flex flex-col"
           >
             <div className="flex items-start justify-between gap-3">
               <h3 className="text-lg font-semibold text-foreground flex items-center">
@@ -52,18 +52,18 @@ export default function PSPCards({
 
             <div className="mt-4 space-y-3 text-sm leading-6 text-muted-foreground flex-grow">
               <p>
-                <span className="font-semibold text-foreground">Pain  </span>{" "}
+                <span className="font-semibold text-foreground">Operating reality  </span>{" "}
                 {it.pain}
               </p>
               <p>
                 <span className="font-semibold text-foreground">
-                  Solution  
+                  Operating response  
                 </span>{" "}
                 {it.solution}
               </p>
               {it.kpi ? (
                 <p className="text-foreground/80">
-                  <span className="font-semibold">KPI  </span> {it.kpi}
+                  <span className="font-semibold">Evidence  </span> {it.kpi}
                 </p>
               ) : null}
             </div>

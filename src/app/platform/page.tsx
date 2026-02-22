@@ -259,7 +259,7 @@ export default function PlatformPage() {
           {architectureLayers.map((layer) => (
             <div
               key={layer.title}
-              className="rounded-lg border bg-card p-6 flex flex-col shadow-lg"
+              className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg"
             >
               <div className="flex items-center gap-4">
                 {layer.icon}
@@ -302,7 +302,7 @@ export default function PlatformPage() {
           {includedServices.map((service) => (
             <div
               key={service.title}
-              className="rounded-lg border bg-card p-6 flex flex-col shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
+              className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
             >
               <p className="text-sm font-semibold text-primary">
                 {service.pain}
@@ -331,7 +331,7 @@ export default function PlatformPage() {
 
       <section
         id="proof"
-        className="my-24 bg-card rounded-xl p-8 md:p-12 shadow-lg"
+        className="my-24 glass-panel gradient-ring rounded-xl border border-border/70 p-8 md:p-12 shadow-lg"
       >
         <h2 className="text-center text-4xl font-bold text-foreground">
           Evidence, Not Promises
@@ -393,7 +393,7 @@ export default function PlatformPage() {
           {guardrails.map((item) => (
             <div
               key={item.title}
-              className="rounded-lg border bg-card p-6 shadow-lg"
+              className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 shadow-lg"
             >
               <h3 className="text-lg font-bold text-foreground">
                 {item.title}

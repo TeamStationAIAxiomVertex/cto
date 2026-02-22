@@ -211,7 +211,7 @@ export default async function CaseStudyPage({
 
           {/* Sticky Sidebar */}
           <aside className="lg:col-span-4 lg:sticky top-24 self-start space-y-8">
-            <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
+            <div className="glass-panel gradient-ring rounded-xl border border-border/70 bg-background/70 text-card-foreground p-6 shadow-lg">
               <h3 className="text-xl font-bold flex items-center gap-3">
                 <Briefcase className="h-6 w-6 text-primary" />
                 Client Snapshot
@@ -227,7 +227,7 @@ export default async function CaseStudyPage({
             </div>
 
             {study.challenge && (
-              <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
+              <div className="glass-panel gradient-ring rounded-xl border border-border/70 bg-background/70 text-card-foreground p-6 shadow-lg">
                 <h3 className="text-xl font-bold flex items-center gap-3 text-destructive">
                   <AlertTriangle className="h-6 w-6" />
                   The Challenge
@@ -238,7 +238,7 @@ export default async function CaseStudyPage({
               </div>
             )}
 
-            <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
+            <div className="glass-panel gradient-ring rounded-xl border border-border/70 bg-background/70 text-card-foreground p-6 shadow-lg">
               <h3 className="text-xl font-bold flex items-center gap-3 text-primary">
                 <Shield className="h-6 w-6" />
                 Intervention
@@ -250,7 +250,7 @@ export default async function CaseStudyPage({
             </div>
 
             {study.outcomes && study.outcomes.length > 0 && (
-              <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-lg">
+              <div className="glass-panel gradient-ring rounded-xl border border-border/70 bg-background/70 text-card-foreground p-6 shadow-lg">
                 <h3 className="text-xl font-bold flex items-center gap-3 text-green-500">
                   <CheckCircle className="h-6 w-6" />
                   Outcomes

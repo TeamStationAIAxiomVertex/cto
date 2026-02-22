@@ -46,7 +46,7 @@ export default function SectionNav({
   return (
     <div
       className={cn(
-        "sticky top-4 z-30 rounded-xl border bg-background/85 p-3 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-background/70",
+        "sticky top-4 z-30 rounded-xl border border-border/70 bg-background/80 p-3 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-background/65",
         className
       )}
     >
@@ -62,7 +62,7 @@ export default function SectionNav({
                   "a11y-tap-target rounded-md border text-sm font-medium transition-ui focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                   isActive
                     ? "border-primary/40 bg-primary/10 text-primary"
-                    : "border-border bg-background text-muted-foreground hover:border-primary/30 hover:text-foreground"
+                    : "border-border/70 bg-background/70 text-muted-foreground hover:border-primary/30 hover:text-foreground"
                 )}
                 aria-current={isActive ? "location" : undefined}
               >

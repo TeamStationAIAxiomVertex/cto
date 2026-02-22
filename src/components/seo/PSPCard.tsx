@@ -20,7 +20,7 @@ const toPlainText = (value: string) => value.replace(/<[^>]+>/g, "");
 
 export function PSPCard({ title, icon, body }: PSPCardProps) {
   return (
-    <div key={title} className="rounded-lg border bg-card p-6 shadow-lg flex flex-col">
+    <div key={title} className="glass-panel gradient-ring rounded-2xl border border-border/70 p-6 shadow-lg flex flex-col">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
           <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/30 bg-primary/10">
@@ -35,13 +35,13 @@ export function PSPCard({ title, icon, body }: PSPCardProps) {
         />
       </div>
       <div className="mt-4 space-y-3 text-sm text-muted-foreground flex-grow">
-        <p><strong className="text-foreground">Problem.</strong> <span dangerouslySetInnerHTML={{ __html: body.problem }} /></p>
-        <p><strong className="text-foreground">Stakes.</strong> <span dangerouslySetInnerHTML={{ __html: body.stakes }} /></p>
-        <p><strong className="text-foreground">Prescription.</strong> <span dangerouslySetInnerHTML={{ __html: body.prescription }} /></p>
-        <p><strong className="text-primary">Proof.</strong> <span className="text-foreground/90" dangerouslySetInnerHTML={{ __html: body.proof }} /></p>
+        <p><strong className="text-foreground">Operating reality.</strong> <span dangerouslySetInnerHTML={{ __html: body.problem }} /></p>
+        <p><strong className="text-foreground">Business impact.</strong> <span dangerouslySetInnerHTML={{ __html: body.stakes }} /></p>
+        <p><strong className="text-foreground">Operating response.</strong> <span dangerouslySetInnerHTML={{ __html: body.prescription }} /></p>
+        <p><strong className="text-primary">Evidence.</strong> <span className="text-foreground/90" dangerouslySetInnerHTML={{ __html: body.proof }} /></p>
       </div>
       <div className="mt-4 pt-4 border-t border-border/50">
-        <p className="text-sm italic text-primary/90"><strong className="not-italic">Recap.</strong> <span dangerouslySetInnerHTML={{ __html: body.recap }} /></p>
+        <p className="text-sm italic text-primary/90"><strong className="not-italic">Decision summary.</strong> <span dangerouslySetInnerHTML={{ __html: body.recap }} /></p>
       </div>
     </div>
   );

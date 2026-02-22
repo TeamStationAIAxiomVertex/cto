@@ -48,7 +48,7 @@ export default function OnboardingPage() {
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Services</span> / <span>Talent Onboarding</span>
       </div>
-      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+      <header className="glass-panel gradient-ring hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
       <h1 className="text-5xl font-extrabold tracking-tight text-foreground">Onboarding You Can Audit</h1>
        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
         A slow or insecure onboarding process is a drain on productivity and a major security risk. Our evidence-backed onboarding system ensures every new team member is compliant, secure, and ready to contribute from day one.
@@ -62,7 +62,7 @@ export default function OnboardingPage() {
 
       <div className="grid md:grid-cols-2 my-16 gap-8">
         {steps.map((step) => (
-           <div key={step.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+           <div key={step.title} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                 <p className="text-sm font-semibold text-primary">{step.pain}</p>
                 <div className="flex items-center gap-3 mt-3">
                     {step.icon}

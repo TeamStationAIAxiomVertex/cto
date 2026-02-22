@@ -164,7 +164,7 @@ export default function IntegratedServicesPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
                 {includedServices.map((service) => (
-                    <div key={service.title} className="rounded-lg border bg-card p-6 flex flex-col shadow-xl transition-all hover:ring-2 hover:ring-primary/50">
+                    <div key={service.title} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col shadow-xl transition-all hover:ring-2 hover:ring-primary/50">
                         <p className="text-sm font-semibold text-primary">{service.pain}</p>
                         <div className="flex items-center gap-3 mt-3">
                             {service.icon}
@@ -185,7 +185,7 @@ export default function IntegratedServicesPage() {
                 Coverage + precision: 2.6M+ profiles across 45+ hubs, skill-to-stack matching, level calibration, and bias-aware evaluations powered by our <Link href="/research/hub" className="text-primary hover:underline">Axiom Cortex™ research</Link>.
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 py-8 px-4 bg-muted/50 rounded-lg border">
+            <div className="glass-panel gradient-ring grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 py-8 px-4 rounded-lg border border-border/70">
                 <Stat value="2.6M+" label="Profiles" />
                 <Stat value="45+" label="Hubs" />
                 <Stat value="≥85%" label="Short-list Relevance" />

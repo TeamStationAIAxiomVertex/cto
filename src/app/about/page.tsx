@@ -51,7 +51,7 @@ export default function AboutPage() {
 
       <div className="grid md:grid-cols-3 my-16 gap-8">
         {pillars.map((pillar) => (
-          <div className="flex flex-col items-center text-center p-6 rounded-lg border bg-card shadow-lg" key={pillar.title}>
+          <div className="glass-card-interactive gradient-ring flex flex-col items-center text-center p-6 rounded-lg border border-border/70 bg-background/70 shadow-lg" key={pillar.title}>
             {pillar.icon}
             <h2 className="mt-4 text-xl font-bold text-foreground">{pillar.title}</h2>
             <p className="mt-2 text-sm text-muted-foreground">{pillar.description}</p>
@@ -70,7 +70,7 @@ export default function AboutPage() {
         <p>
            Our innovation lies in unifying every part of the process under a single SLA. We use cognitive science and AI for vetting (<Link href="/research/axiom-cortex-scientific-report">Axiom Cortex™</Link>). We provide an end-to-end operational wrapper that includes EOR, payroll, secure devices, and insurance. We give you the tools and the data to run your nearshore team with the same confidence and control as your team down the hall. This is the future of team building. We invite you to be a part of it.
         </p>
-        <div className="not-prose rounded-lg border bg-card p-6 my-8 flex items-center gap-4">
+        <div className="not-prose glass-panel gradient-ring rounded-lg border border-border/70 p-6 my-8 flex items-center gap-4">
             <SpotifyIcon className="h-12 w-12 text-[#1DB954] flex-shrink-0" />
             <div>
                 <h4 className="font-bold text-foreground">Listen to the Founders</h4>

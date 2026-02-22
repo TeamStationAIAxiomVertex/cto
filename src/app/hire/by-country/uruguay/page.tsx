@@ -92,7 +92,7 @@ export default function UruguayPage() {
         </section>
 
         <section className="my-24 space-y-16">
-            <div className="glass-panel rounded-2xl p-6 md:p-8 shadow-lg">
+            <div className="glass-panel gradient-ring rounded-2xl p-6 md:p-8 shadow-lg">
                 <h2 className="text-3xl font-bold text-center">{countrySections.whyDaylight.h2}</h2>
                 <ul className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                     {countrySections.whyDaylight.bullets.map(bullet => (
@@ -108,7 +108,7 @@ export default function UruguayPage() {
               <h2 className="text-center text-3xl font-bold mb-8">Explore Popular Technologies in {data.country}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12 justify-center">
                 {popularTech.map((tech) => (
-                  <Link href={`/hire/by-country/uruguay/${tech.slug}`} key={tech.slug} className="group flex flex-col glass-panel rounded-2xl p-6 md:p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                  <Link href={`/hire/by-country/uruguay/${tech.slug}`} key={tech.slug} className="group flex flex-col glass-panel gradient-ring rounded-2xl p-6 md:p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                       <div className='flex justify-between items-start'>
                         {tech.icon}
                       </div>
@@ -127,7 +127,7 @@ export default function UruguayPage() {
             <h2 className="text-center text-3xl font-bold mb-8">Explore Available Roles in {data.country}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
                 {roleCategories.map((details) => (
-                <Link href={`/hire/by-role/${details.slug}`} key={details.slug} className="group flex flex-col glass-panel rounded-2xl p-6 md:p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                <Link href={`/hire/by-role/${details.slug}`} key={details.slug} className="group flex flex-col glass-panel gradient-ring rounded-2xl p-6 md:p-8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
                     <div className='flex justify-between items-start'>
                         <details.icon  className="h-8 w-8 text-primary" />
                     </div>
@@ -143,7 +143,7 @@ export default function UruguayPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="glass-panel rounded-2xl p-6 md:p-8 shadow-lg">
+                <div className="glass-panel gradient-ring rounded-2xl p-6 md:p-8 shadow-lg">
                     <h2 className="text-2xl font-bold">{countrySections.hubs.h2}</h2>
                     <div className="mt-4 space-y-4">
                         {countrySections.hubs.cities.map(city => (
@@ -155,7 +155,7 @@ export default function UruguayPage() {
                     </div>
                 </div>
 
-                <div className="glass-panel rounded-2xl p-6 md:p-8 shadow-lg">
+                <div className="glass-panel gradient-ring rounded-2xl p-6 md:p-8 shadow-lg">
                     <h2 className="text-2xl font-bold">{countrySections.legal.h2}</h2>
                     <p className="mt-4 text-sm text-muted-foreground">{countrySections.legal.body}</p>
                      <Link href={countrySections.legal.cta.href} className="text-primary font-medium hover:underline text-sm mt-4 inline-block">
@@ -163,7 +163,7 @@ export default function UruguayPage() {
                     </Link>
                 </div>
 
-                 <div className="glass-panel rounded-2xl p-6 md:p-8 shadow-lg">
+                 <div className="glass-panel gradient-ring rounded-2xl p-6 md:p-8 shadow-lg">
                     <h2 className="text-2xl font-bold">{countrySections.security.h2}</h2>
                     <p className="mt-4 text-sm text-muted-foreground">{countrySections.security.body}</p>
                      <Link href={countrySections.security.link} className="text-primary font-medium hover:underline text-sm mt-4 inline-block">
@@ -171,7 +171,7 @@ export default function UruguayPage() {
                     </Link>
                 </div>
 
-                 <div className="glass-panel rounded-2xl p-6 md:p-8 shadow-lg">
+                 <div className="glass-panel gradient-ring rounded-2xl p-6 md:p-8 shadow-lg">
                     <h2 className="text-2xl font-bold">{countrySections.timeCost.h2}</h2>
                     <table className="w-full text-left text-sm mt-4">
                         <tbody>
@@ -191,7 +191,7 @@ export default function UruguayPage() {
             <h2 className="text-3xl font-bold text-center">Questions on Hiring in {data.country}</h2>
             <div className="mt-8 max-w-3xl mx-auto space-y-4">
                 {faq.map((item, i) => (
-                    <div key={i} className="rounded-lg border bg-card p-6 shadow-lg">
+                    <div key={i} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 shadow-lg">
                         <h3 className="font-semibold text-primary">{item.q}</h3>
                         <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
                     </div>

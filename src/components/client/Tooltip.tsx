@@ -26,7 +26,7 @@ export function WithTooltip({
           <Tooltip.Content
             side={side}
             align={align}
-            className="rounded-md border bg-card px-2 py-1 text-xs shadow"
+            className="glass-panel gradient-ring rounded-md border border-border/70 px-2 py-1 text-xs shadow"
           >
             {content}
             <Tooltip.Arrow className="fill-current" />
