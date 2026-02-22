@@ -92,6 +92,36 @@ export default function HireByRolePage() {
           </div>
         ))}
       </div>
+
+      <section className="surface-card my-12 p-6 md:p-8">
+        <h2 className="text-2xl font-bold">Role Architecture for Executive Buyers</h2>
+        <div className="mt-4 space-y-5 text-muted-foreground leading-7">
+          <h3 className="text-lg font-semibold text-foreground">Choose roles by system pressure points</h3>
+          <p>
+            The right role is the one that removes your highest execution drag first. Platform and reliability
+            roles reduce outage risk and change failure recovery speed. Security and governance roles reduce
+            exposure and audit friction. Data and product roles improve decision quality and roadmap coherence.
+            This page is structured so CTO and CIO teams can choose sequence, not just titles.
+          </p>
+          <ul className="list-disc space-y-2 pl-6">
+            <li>Prioritize roles that remove recurring operational incidents.</li>
+            <li>Then prioritize roles that improve release flow and decision speed.</li>
+            <li>Then add specialist roles to strengthen scale and resilience.</li>
+          </ul>
+
+          <h3 className="text-lg font-semibold text-foreground">Interlink mesh for role based planning</h3>
+          <ul className="list-disc space-y-2 pl-6">
+            <li><Link href="/hire/by-technology" className="text-primary hover:underline">technology guides aligned to each role family</Link></li>
+            <li><Link href="/hire/by-team-topologies" className="text-primary hover:underline">team topology map for ownership boundaries</Link></li>
+            <li><Link href="/playbook/hub" className="text-primary hover:underline">CTO playbook for sequencing and execution controls</Link></li>
+            <li><Link href="/playbook/latam-economics" className="text-primary hover:underline">economics guide for cost and velocity tradeoffs</Link></li>
+            <li><Link href="/research/hub" className="text-primary hover:underline">research archive for hiring methodology depth</Link></li>
+            <li><a href="https://engineering.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">engineering doctrine for operating standards</a></li>
+            <li><a href="https://research.teamstation.dev/protocols/evaluation" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">evaluation protocols for interview consistency</a></li>
+            <li><a href="https://hire.teamstation.dev/roles" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">full role index for enterprise coverage planning</a></li>
+          </ul>
+        </div>
+      </section>
       
       <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Ready to Hire for a Specific Competency?</h2>

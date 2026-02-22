@@ -146,6 +146,37 @@ export default function HirePage() {
         ))}
       </div>
 
+      <section className="surface-card my-12 p-6 md:p-8">
+        <h2 className="text-2xl font-bold">How CTO teams should use this hub</h2>
+        <div className="mt-4 space-y-5 text-muted-foreground leading-7">
+          <h3 className="text-lg font-semibold text-foreground">Start with the business risk not the role name</h3>
+          <p>
+            If release confidence is falling, route first to role and topology pages. If architecture quality
+            is uneven, route first to technology pages. If collaboration speed is the blocker, route first to
+            country overlap pages. This keeps the hiring conversation tied to delivery outcomes instead of title
+            inflation or tool checklists.
+          </p>
+          <ul className="list-disc space-y-2 pl-6">
+            <li>Use role paths for ownership clarity and operating accountability.</li>
+            <li>Use technology paths for practical execution depth validation.</li>
+            <li>Use country paths for overlap, communication fit, and delivery cadence.</li>
+            <li>Use topology paths for system level team design.</li>
+          </ul>
+
+          <h3 className="text-lg font-semibold text-foreground">Contextual interlinking mesh for decision continuity</h3>
+          <ul className="list-disc space-y-2 pl-6">
+            <li><Link href="/hire/by-role" className="text-primary hover:underline">hire by role path for capability based staffing</Link></li>
+            <li><Link href="/hire/by-technology" className="text-primary hover:underline">hire by technology path for stack level fit</Link></li>
+            <li><Link href="/hire/by-country" className="text-primary hover:underline">hire by country path for collaboration overlap</Link></li>
+            <li><Link href="/playbook/hub" className="text-primary hover:underline">CTO playbook hub for operating decisions</Link></li>
+            <li><Link href="/research/hub" className="text-primary hover:underline">research hub for evidence based governance</Link></li>
+            <li><a href="https://engineering.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">engineering doctrine for systems execution</a></li>
+            <li><a href="https://research.teamstation.dev/protocols/economics" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">economics protocols for leadership tradeoffs</a></li>
+            <li><a href="https://hire.teamstation.dev/nearshore-software-development" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">nearshore operating overview for buyer alignment</a></li>
+          </ul>
+        </div>
+      </section>
+
       <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Ready to build your team?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">

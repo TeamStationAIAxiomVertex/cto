@@ -138,6 +138,36 @@ export default function HireByTechnologyPage() {
         ))}
       </div>
 
+      <section className="surface-card my-12 p-6 md:p-8">
+        <h2 className="text-2xl font-bold">Technology Depth Framework for CTO teams</h2>
+        <div className="mt-4 space-y-5 text-muted-foreground leading-7">
+          <h3 className="text-lg font-semibold text-foreground">Evaluate technology by production impact</h3>
+          <p>
+            Technology hiring should map directly to production risk. Backend and platform choices shape
+            system stability. Data choices shape reporting trust and decision quality. Frontend choices shape
+            release confidence and user experience consistency. This page clusters technology paths so leaders
+            can route hiring by impact domain and keep selection tied to delivery outcomes.
+          </p>
+          <ul className="list-disc space-y-2 pl-6">
+            <li>Use backend clusters to reduce integration friction and release risk.</li>
+            <li>Use platform clusters to strengthen reliability and cost control.</li>
+            <li>Use data and AI clusters to improve decision speed and model quality.</li>
+          </ul>
+
+          <h3 className="text-lg font-semibold text-foreground">Interlink mesh for stack aligned planning</h3>
+          <ul className="list-disc space-y-2 pl-6">
+            <li><Link href="/hire/by-role" className="text-primary hover:underline">role guides for capability ownership mapping</Link></li>
+            <li><Link href="/playbook/hub" className="text-primary hover:underline">playbook hub for operating model sequencing</Link></li>
+            <li><Link href="/playbook/tco-model" className="text-primary hover:underline">total cost model for delivery economics</Link></li>
+            <li><Link href="/research/hub" className="text-primary hover:underline">research hub for method and validation standards</Link></li>
+            <li><Link href="/research/framework-for-measuring-capacity" className="text-primary hover:underline">capacity framework for throughput decisions</Link></li>
+            <li><a href="https://engineering.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">engineering doctrine for architecture standards</a></li>
+            <li><a href="https://research.teamstation.dev/protocols/delivery" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">delivery protocols for execution control</a></li>
+            <li><a href="https://hire.teamstation.dev/hire" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cross domain hire index for enterprise planning</a></li>
+          </ul>
+        </div>
+      </section>
+
       <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Ready to Hire for Your Stack?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
