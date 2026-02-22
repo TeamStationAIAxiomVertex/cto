@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -170,9 +171,20 @@ export default function Footer() {
         <section className="surface-card glass-panel border border-border/70 p-4 md:p-5" aria-labelledby="footer-nav-heading">
           <div className="grid items-start gap-5 lg:grid-cols-12">
             <div className="self-start rounded-xl border border-border/70 bg-background/60 p-4 lg:col-span-5">
-              <h3 id="footer-nav-heading" className="text-lg font-bold text-foreground">
-                TeamStation AI
-              </h3>
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border/70 bg-background/80">
+                  <Image
+                    src="/teamstation-logo.png"
+                    alt="TeamStation AI logo"
+                    width={28}
+                    height={28}
+                    className="h-7 w-7 object-contain"
+                  />
+                </div>
+                <h3 id="footer-nav-heading" className="text-lg font-bold text-foreground">
+                  TeamStation AI
+                </h3>
+              </div>
               <p className="mt-1 text-xs uppercase tracking-[0.14em] text-primary">
                 Distributed Engineering OS for CTO and CIO teams
               </p>
