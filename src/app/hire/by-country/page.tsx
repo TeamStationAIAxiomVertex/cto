@@ -8,6 +8,7 @@ import placeholderImages from "../../lib/placeholder-images.json";
 import FurtherReading from "../../../components/seo/FurtherReading";
 import CardGuidanceTooltip from "../../../components/ui/card-guidance-tooltip";
 import { InfoDropdown } from "../../../components/client/info-dropdown";
+import CTOFieldManualBlock from "../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
   title: 'Hire Nearshore Engineers by Country | Top LATAM Hubs',
@@ -124,6 +125,11 @@ export default function HireByCountryPage() {
           </ul>
         </div>
       </section>
+
+      <CTOFieldManualBlock
+        title="Country Strategy Field Manual for Nearshore Execution"
+        focus="country selection and collaboration model integrity"
+      />
 
        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Ready to build your real-time team?</h2>

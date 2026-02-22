@@ -6,6 +6,7 @@ import FurtherReading from "../../../components/seo/FurtherReading";
 import allTech from "@/data/technologies";
 import CardGuidanceTooltip from "../../../components/ui/card-guidance-tooltip";
 import { InfoDropdown } from "../../../components/client/info-dropdown";
+import CTOFieldManualBlock from "../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
   title: "Hire Nearshore Developers by Technology | TS AI",
@@ -167,6 +168,11 @@ export default function HireByTechnologyPage() {
           </ul>
         </div>
       </section>
+
+      <CTOFieldManualBlock
+        title="Technology Selection Field Manual for CTO Teams"
+        focus="stack aligned hiring and production reliability controls"
+      />
 
       <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Ready to Hire for Your Stack?</h2>
