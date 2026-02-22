@@ -1,14 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import type { ComponentType, ReactNode } from "react";
-import {
-  BookOpen,
-  Building2,
-  Compass,
-  FileCheck2,
-  Network,
-  ShieldCheck,
-} from "lucide-react";
+import type { ReactNode } from "react";
 
 type NavLink = {
   href: string;
@@ -42,31 +33,15 @@ function FooterLink({ href, label, external }: NavLink) {
 
 function FooterGroup({
   title,
-  description,
-  icon: Icon,
   children,
 }: {
   title: string;
-  description?: string;
-  icon?: ComponentType<{ className?: string }>;
   children: ReactNode;
 }) {
   return (
-    <section className="self-start rounded-2xl border border-border/70 bg-background/70 p-4">
-      <div className="flex items-start gap-3">
-        {Icon ? (
-          <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-primary/20 bg-primary/10 text-primary">
-            <Icon className="h-4 w-4" />
-          </span>
-        ) : null}
-        <div className="min-w-0">
-          <h4 className="text-sm font-semibold tracking-wide text-foreground">{title}</h4>
-          {description ? (
-            <p className="mt-1 text-[11px] leading-4 text-muted-foreground">{description}</p>
-          ) : null}
-        </div>
-      </div>
-      <div className="mt-3">{children}</div>
+    <section className="self-start">
+      <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/90">{title}</h4>
+      <div className="mt-2.5">{children}</div>
     </section>
   );
 }
@@ -126,45 +101,19 @@ export default function Footer() {
     <footer role="contentinfo" className="mt-14 border-t border-border/80 bg-background/70">
       <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <section
-          className="surface-card relative mb-6 overflow-hidden border border-border/70 p-4 md:p-5"
+          className="surface-card glass-panel relative mb-4 overflow-hidden border border-border/70 p-4 md:p-5"
           aria-labelledby="footer-proof-cta"
         >
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.12),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.10),transparent_50%)]" />
-          <div className="relative grid gap-4 lg:grid-cols-[1.15fr_.85fr] lg:items-start">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.10),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.08),transparent_50%)]" />
+          <div className="relative grid gap-4 lg:grid-cols-[1.35fr_.65fr] lg:items-center">
             <div>
               <h3 id="footer-proof-cta" className="text-lg font-bold text-foreground">
                 If hiring, delivery, and governance are split, speed collapses.
               </h3>
-              <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
+              <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">
                 TeamStation AI is a distributed engineering operating system. We help executive teams diagnose delivery risk,
                 confirm operating fit, and move to an execution plan without guesswork.
               </p>
-
-              <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
-                {[
-                  "We start with where delivery speed is breaking across hiring, throughput, and governance.",
-                  "We clarify who owns the decision, what timeline matters, and what has to be true to move forward.",
-                  "We map the operating constraints that usually block execution, including budget model, security posture, and overlap requirements.",
-                  "You leave with a fit or no fit answer and a concrete next step plan.",
-                ].map((line, idx) => (
-                  <div
-                    key={line}
-                    className="rounded-xl border border-border/70 bg-background/80 p-2.5"
-                  >
-                    <p className="text-[10px] font-semibold uppercase tracking-wide text-primary/90">
-                      {idx === 0
-                        ? "Operating reality"
-                        : idx === 1
-                          ? "Decision path"
-                          : idx === 2
-                            ? "Constraints"
-                            : "Next step"}
-                    </p>
-                    <p className="mt-1 text-sm leading-5 text-muted-foreground">{line}</p>
-                  </div>
-                ))}
-              </div>
-
               <div className="mt-3 flex flex-wrap gap-2">
                 {[
                   "Governance-ready delivery",
@@ -183,32 +132,14 @@ export default function Footer() {
                 If we are not a fit, we will tell you fast and point you to a safer path.
               </p>
             </div>
-            <div className="flex flex-col gap-2.5 lg:justify-start">
+            <div className="flex flex-col gap-2.5 lg:items-end">
               <a
                 href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq"
-                className="cta-button a11y-tap-target justify-center"
+                className="cta-button a11y-tap-target justify-center lg:min-w-[220px]"
               >
                 Book discovery session
               </a>
-
-              <div className="rounded-xl border border-border/70 bg-background/80 p-3.5">
-                <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
-                  Usually a strong fit when you need
-                </p>
-                <ul className="mt-2 space-y-1.5 text-sm leading-6 text-muted-foreground">
-                  <li className="rounded-lg border border-border/60 bg-background px-3 py-1.5">
-                    Clear role definitions tied to execution
-                  </li>
-                  <li className="rounded-lg border border-border/60 bg-background px-3 py-1.5">
-                    Hiring signal you can trust without resume noise
-                  </li>
-                  <li className="rounded-lg border border-border/60 bg-background px-3 py-1.5">
-                    Delivery control with governance readiness
-                  </li>
-                </ul>
-              </div>
-
-              <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-1">
+              <div className="grid w-full gap-2.5 sm:grid-cols-2 lg:max-w-[320px] lg:grid-cols-1">
                 <Link
                   href="/playbook/tco-model"
                   className="a11y-tap-target inline-flex items-center justify-center rounded-md border border-border bg-background text-sm font-semibold text-foreground transition-ui hover:border-primary/40 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -222,23 +153,22 @@ export default function Footer() {
                   Compare vendors and models
                 </Link>
               </div>
+              <p className="text-right text-[11px] leading-4 text-muted-foreground lg:max-w-[320px]">
+                Good fit for teams that need execution control, trusted technical evaluation, and governance readiness.
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="surface-card border border-border/70 p-4 md:p-6" aria-labelledby="footer-nav-heading">
-          <div className="grid gap-4 lg:grid-cols-[1.05fr_1.95fr]">
-            <div className="self-start rounded-2xl border border-border/70 bg-background/60 p-4">
+        <section className="surface-card glass-panel border border-border/70 p-4 md:p-5" aria-labelledby="footer-nav-heading">
+          <div className="grid items-start gap-4 lg:grid-cols-12">
+            <div className="self-start lg:col-span-4">
               <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border/70 bg-background">
-                  <Image
-                    src="/logo.svg"
-                    alt="TeamStation AI logo"
-                    width={22}
-                    height={22}
-                    className="h-5 w-5"
-                    priority={false}
-                  />
+                <span
+                  aria-hidden="true"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-sm font-bold text-primary"
+                >
+                  TS
                 </span>
                 <h3 id="footer-nav-heading" className="text-lg font-bold text-foreground">
                   TeamStation AI
@@ -248,15 +178,13 @@ export default function Footer() {
                 Distributed engineering operating model for US executive teams who need stronger delivery control,
                 governance readiness, and measurable hiring signal quality.
               </p>
-              <div className="mt-3 rounded-xl border border-border/70 bg-background p-3">
+              <div className="mt-3 rounded-xl border border-border/70 bg-background/70 p-3">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">Executive trust surface</p>
-                <p className="mt-2 text-sm leading-5 text-muted-foreground">
-                  Integrated operations, accountable SLA ownership, cognitive technical evaluation, and executive level
-                  decision support across hiring and delivery.
-                </p>
-                <p className="mt-2 text-xs leading-5 text-muted-foreground">
-                  Designed for regulated, security-sensitive, and compliance-driven environments.
-                </p>
+                <ul className="mt-2 space-y-1 text-xs leading-5 text-muted-foreground">
+                  <li>Accountable SLA ownership and delivery governance</li>
+                  <li>Cognitive technical evaluation and decision support</li>
+                  <li>Designed for regulated and security sensitive environments</li>
+                </ul>
               </div>
               <p className="mt-3 text-xs leading-5 text-muted-foreground">
                 US and LATAM operations with accountable delivery governance and executive support.
@@ -270,17 +198,15 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="grid items-start gap-3 sm:grid-cols-2">
+            <div className="grid items-start gap-x-6 gap-y-4 sm:grid-cols-2 lg:col-span-8 xl:grid-cols-4">
               <FooterGroup
                 title="Decide"
-                description="Buyer journey links for evaluation, cost, and proof."
-                icon={Compass}
               >
                 <nav aria-labelledby="footer-decision-paths">
                   <h4 id="footer-decision-paths" className="sr-only">
                     Decide
                   </h4>
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-2">
                     {decisionLinks.map((link) => (
                       <li key={link.href}>
                         <FooterLink {...link} />
@@ -292,14 +218,12 @@ export default function Footer() {
 
               <FooterGroup
                 title="Playbook and Research"
-                description="Decision guides, economics, and evidence paths."
-                icon={BookOpen}
               >
                 <nav aria-labelledby="footer-playbook-research">
                   <h4 id="footer-playbook-research" className="sr-only">
                     Playbook and Research
                   </h4>
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-2">
                     {playbookResearchLinks.map((link) => (
                       <li key={link.href}>
                         <FooterLink {...link} />
@@ -311,14 +235,12 @@ export default function Footer() {
 
               <FooterGroup
                 title="Hire"
-                description="Primary crawl paths for capability, geography, and stack fit."
-                icon={Network}
               >
                 <nav aria-labelledby="footer-hire">
                   <h4 id="footer-hire" className="sr-only">
                     Hire
                   </h4>
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-2">
                     {hireLinks.map((link) => (
                       <li key={link.href}>
                         <FooterLink {...link} />
@@ -328,17 +250,15 @@ export default function Footer() {
                 </nav>
               </FooterGroup>
 
-              <div className="self-start space-y-3">
-                <FooterGroup
-                  title="Trust and Legal"
-                  description="Policy, support, and crawl control pages."
-                  icon={ShieldCheck}
-                >
+              <FooterGroup
+                title="Trust Legal and Company"
+              >
+                <div className="space-y-3">
                   <nav aria-labelledby="footer-trust-legal">
                     <h4 id="footer-trust-legal" className="sr-only">
                       Trust and Legal
                     </h4>
-                    <ul className="space-y-2.5">
+                    <ul className="space-y-2">
                       {trustLegalLinks.map((link) => (
                         <li key={link.href}>
                           <FooterLink {...link} />
@@ -346,18 +266,12 @@ export default function Footer() {
                       ))}
                     </ul>
                   </nav>
-                </FooterGroup>
-
-                <FooterGroup
-                  title="Company"
-                  description="Corporate and platform context for buyers and partners."
-                  icon={Building2}
-                >
+                  <div className="border-t border-border/60 pt-0" />
                   <nav aria-labelledby="footer-company">
                     <h4 id="footer-company" className="sr-only">
                       Company
                     </h4>
-                    <ul className="space-y-2.5">
+                    <ul className="space-y-2">
                       {companyLinks.map((link) => (
                         <li key={link.href}>
                           <FooterLink {...link} />
@@ -365,29 +279,32 @@ export default function Footer() {
                       ))}
                     </ul>
                   </nav>
-                </FooterGroup>
-              </div>
+                </div>
+              </FooterGroup>
             </div>
           </div>
 
-          <div className="mt-4 rounded-2xl border border-border/70 bg-background/60 p-4">
+          <div className="mt-4 border-t border-border/70 pt-3">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-              <div className="flex items-start gap-3">
-                <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-primary/20 bg-primary/10 text-primary">
-                  <FileCheck2 className="h-4 w-4" />
-                </span>
-                <div>
-                  <h4 className="text-sm font-semibold tracking-wide text-foreground">
-                    Platform Ecosystem
-                  </h4>
-                  <p className="mt-1 text-xs leading-4 text-muted-foreground">
-                    Cross domain paths for application, executive hubs, documentation, and research authority.
-                  </p>
-                </div>
+              <div>
+                <h4 className="text-sm font-semibold tracking-wide text-foreground">
+                  Platform Ecosystem
+                </h4>
+                <p className="mt-1 text-xs leading-4 text-muted-foreground">
+                  Cross domain paths for application, executive hubs, documentation, and research authority.
+                </p>
               </div>
-              <div className="flex flex-wrap gap-x-3 gap-y-1.5 lg:max-w-[60%] lg:justify-end">
+              <div className="flex flex-wrap gap-2 lg:max-w-[62%] lg:justify-end">
                 {externalHubs.map((link) => (
-                  <FooterLink key={link.href} {...link} />
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex rounded-md border border-border/70 bg-background/70 px-2.5 py-1 text-xs text-foreground/90 transition-ui hover:border-primary/40 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    {link.label}
+                  </a>
                 ))}
               </div>
             </div>
