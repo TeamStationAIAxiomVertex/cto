@@ -7,6 +7,7 @@ import { WithTooltip } from "../../../components/ui/tooltip";
 import FurtherReading from "../../../components/seo/FurtherReading";
 import CardGuidanceTooltip from "../../../components/ui/card-guidance-tooltip";
 import { InfoDropdown } from "../../../components/client/info-dropdown";
+import CTOFieldManualBlock from "../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
   title: 'Hire Vetted Nearshore Engineers by Role | TeamStation AI',
@@ -122,6 +123,11 @@ export default function HireByRolePage() {
           </ul>
         </div>
       </section>
+
+      <CTOFieldManualBlock
+        title="Role Based Field Manual for CTO Hiring Decisions"
+        focus="role architecture and competency based delivery outcomes"
+      />
       
       <div className="text-center rounded-lg bg-primary/10 p-8">
         <h2 className="text-2xl font-bold">Ready to Hire for a Specific Competency?</h2>

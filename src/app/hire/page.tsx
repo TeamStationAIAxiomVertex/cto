@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import FurtherReading from "../../components/seo/FurtherReading";
 import CardGuidanceTooltip from "../../components/ui/card-guidance-tooltip";
 import { InfoDropdown } from "../../components/client/info-dropdown";
+import CTOFieldManualBlock from "../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
   title: "Hire Vetted Nearshore Engineers & LATAM IT Teams",
@@ -176,6 +177,11 @@ export default function HirePage() {
           </ul>
         </div>
       </section>
+
+      <CTOFieldManualBlock
+        title="Distributed Engineering Operating Manual for Hiring"
+        focus="the full hiring path across role, technology, country, and topology"
+      />
 
       <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Ready to build your team?</h2>

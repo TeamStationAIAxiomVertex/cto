@@ -94,6 +94,37 @@ export default function HireByCountryPage() {
         </div>
       </div>
 
+      <section className="surface-card my-12 p-6 md:p-8">
+        <h2 className="text-2xl font-bold">Country Selection Framework for CTO and CIO teams</h2>
+        <div className="mt-4 space-y-5 text-muted-foreground leading-7">
+          <h3 className="text-lg font-semibold text-foreground">Select country by operating fit not headline rate</h3>
+          <p>
+            Country choice should support your delivery model. If your team depends on same day architecture
+            review, optimize for overlap and communication fluency first. If your team depends on niche stack
+            depth, optimize for talent concentration in that stack. If your team is in regulated environments,
+            optimize for operational maturity and governance discipline. This avoids the common mistake of
+            selecting location for short term cost while increasing long term delivery drag.
+          </p>
+          <ul className="list-disc space-y-2 pl-6">
+            <li>Use overlap metrics to protect feedback loop speed.</li>
+            <li>Use specialization depth to protect technical quality.</li>
+            <li>Use governance readiness to protect compliance outcomes.</li>
+          </ul>
+
+          <h3 className="text-lg font-semibold text-foreground">Interlink mesh for geography and execution planning</h3>
+          <ul className="list-disc space-y-2 pl-6">
+            <li><Link href="/hire/by-role" className="text-primary hover:underline">role planning guide for capability mapping</Link></li>
+            <li><Link href="/hire/by-technology" className="text-primary hover:underline">technology planning guide for stack fit</Link></li>
+            <li><Link href="/playbook/hub" className="text-primary hover:underline">playbook hub for leadership decision sequencing</Link></li>
+            <li><Link href="/playbook/nearshore-vs-offshore" className="text-primary hover:underline">nearshore versus offshore guide for strategic fit</Link></li>
+            <li><Link href="/research/hub" className="text-primary hover:underline">research hub for evidence based policy</Link></li>
+            <li><a href="https://engineering.teamstation.dev" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">engineering doctrine for distributed execution standards</a></li>
+            <li><a href="https://research.teamstation.dev/protocols/governance" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">governance protocols for multi country operations</a></li>
+            <li><a href="https://hire.teamstation.dev/latam" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LATAM market overview for buyer alignment</a></li>
+          </ul>
+        </div>
+      </section>
+
        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
         <h2 className="text-2xl font-bold">Ready to build your real-time team?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
