@@ -112,7 +112,7 @@ export default function PlatformingNearshoreBookPage() {
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">This book provides the scientific solution to the systemic flaws of the legacy nearshore model.</p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             {painCards.map((card) => (
-              <div key={card.title} className="rounded-lg border bg-card p-6 flex flex-col">
+              <div key={card.title} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col">
                   <h3 className="text-lg font-semibold text-foreground">{card.title}</h3>
                   <p className="mt-2 text-sm font-semibold text-destructive">{card.pain}</p>
                   <div className="mt-4 border-t border-border pt-4 flex-grow">
@@ -131,7 +131,7 @@ export default function PlatformingNearshoreBookPage() {
           <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">This book provides the foundational pillars for transforming your nearshore operation from a source of chaos into a predictable, high-performance asset.</p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             {bookPillars.map((pillar) => (
-              <div key={pillar.title} className="rounded-lg border bg-card p-6 flex flex-col">
+              <div key={pillar.title} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col">
                 <div className="flex items-center gap-3">
                     <pillar.icon className="h-8 w-8 text-primary" />
                     <h3 className="text-lg font-semibold text-foreground">{pillar.title}</h3>

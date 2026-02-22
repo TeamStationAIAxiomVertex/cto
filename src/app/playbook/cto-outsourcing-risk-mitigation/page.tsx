@@ -151,7 +151,7 @@ export default function CtoOutsourcingRiskMitigationPage() {
                     ]
                 },
                 {
-                    title: 'The Proof: Scientific Validation',
+                    title: 'Scientific Validation and Evidence',
                     icon: 'Component',
                     paragraphs: [
                         "We believe in science over speculation. The foundation of our accuracy is detailed in our <a href=\"/research/hub\">Axiom Cortex™ Scientific Deep Dive</a>. We invite you to review the methodologies that allow our <strong>proprietary data models</strong> to achieve the predictive accuracy required for zero-tolerance roles."

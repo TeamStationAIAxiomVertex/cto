@@ -30,7 +30,7 @@ export default function CardGuidanceTooltip({
           </p>
           {proof ? (
             <p>
-              <span className="font-semibold text-primary">Proof:</span>{" "}
+              <span className="font-semibold text-primary">Evidence:</span>{" "}
               <span className="text-muted-foreground">{proof}</span>
             </p>
           ) : null}

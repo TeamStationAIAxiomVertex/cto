@@ -31,19 +31,19 @@ const sandlerCards = [
     title: 'Cheap Hourly → Expensive Month',
     question: 'Why is the “cheap” option $5k+/mo more after overhead?',
     proof:
-      'Proof: $55/h offshore @173h with 25% overhead ≈ $11.9k/mo vs Co-Pilot Senior $6.9 $8.1k/mo.',
+      'Evidence: $55/h offshore @173h with 25% overhead ≈ $11.9k/mo vs Co-Pilot Senior $6.9 $8.1k/mo.',
     icon: <DollarSign className="h-8 w-8 text-primary" />,
   },
   {
     title: 'Overnight PRs → Daylight Cadence',
     question: 'How many releases died waiting for “LGTM”?',
-    proof: 'Proof: 120 PRs × (4h 1h) × $85 = $30,600/mo burned.',
+    proof: 'Evidence: 120 PRs × (4h 1h) × $85 = $30,600/mo burned.',
     icon: <GitCompare className="h-8 w-8 text-primary" />,
   },
   {
     title: 'Sprawl → System',
     question: 'How many vendors does it take to ship one roadmap?',
-    proof: 'Proof: Forecast vs actual variance <10%; fewer reopenings.',
+    proof: 'Evidence: Forecast vs actual variance <10%; fewer reopenings.',
     icon: <Layers className="h-8 w-8 text-primary" />,
   },
 ];
@@ -118,7 +118,7 @@ export default function NewGenNearshoreComparisonPage() {
         {sandlerCards.map((card) => (
           <div
             key={card.title}
-            className="glass-panel rounded-2xl p-6 flex flex-col text-center shadow-lg"
+            className="glass-card-interactive gradient-ring rounded-2xl border border-border/70 bg-background/70 p-6 flex flex-col text-center shadow-lg"
           >
             <div className="flex justify-center">{card.icon}</div>
             <h3 className="text-lg font-bold text-foreground mt-4">

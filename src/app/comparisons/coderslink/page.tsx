@@ -59,7 +59,7 @@ export default function CodersLinkComparisonPage() {
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>{competitor.name}</span>
         </div>
-        <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <header className="glass-panel gradient-ring hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">TeamStation AI vs. {competitor.name}</h1>
           <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
             A comparison between TeamStation AI’s integrated platform and {competitor.name}’s recruitment marketplace model.
@@ -75,7 +75,7 @@ export default function CodersLinkComparisonPage() {
           <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The Recruitment Marketplace</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {Object.entries(comparisonPoints).map(([key, value]) => (
-              <div key={key} className="glass-panel rounded-2xl p-6 flex flex-col shadow-lg">
+              <div key={key} className="glass-card-interactive gradient-ring rounded-2xl border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg">
                 <p className="text-sm font-semibold text-primary">{value.pain}</p>
                 <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
                 
@@ -101,7 +101,7 @@ export default function CodersLinkComparisonPage() {
           </div>
         </div>
 
-        <div className="glass-panel prose dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
+        <div className="glass-panel gradient-ring prose prose-xl dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
           <h2 className="text-center">Analysis: The Integrated Platform vs. The Marketplace</h2>
           <p>
             {competitor.name} operates as a recruitment marketplace for LATAM talent, effective for sourcing candidates. However, this model places the significant burden of compliance, payroll, device security, and HR management on the client.
@@ -111,7 +111,7 @@ export default function CodersLinkComparisonPage() {
           </p>
         </div>
 
-        <div className="glass-panel text-center rounded-2xl p-8">
+        <div className="glass-panel gradient-ring text-center rounded-2xl p-8">
           <h2 className="text-2xl font-bold">Conclusion</h2>
           <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
             If you have the internal resources to manage international hiring, compliance, and IT security, a marketplace like {competitor.name} can be a good sourcing tool. For companies seeking a complete, secure, and scalable solution that reduces risk and operational burden, TeamStation AI's integrated platform offers a clear advantage.

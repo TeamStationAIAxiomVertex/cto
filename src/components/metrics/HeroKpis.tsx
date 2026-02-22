@@ -52,7 +52,7 @@ export default function HeroKpis({ items }: { items: HeroKpi[] }) {
           <section
             key={k.id}
             aria-label={`${k.label}: ${k.value}${k.unit ?? ''}${k.target != null ? ` (target ${k.target}${k.unit ?? ''})` : ''}`}
-            className="rounded-xl border bg-card p-3"
+            className="glass-card-interactive rounded-xl border border-border/70 bg-background/70 p-3"
           >
             <div className="flex items-baseline justify-between gap-3">
               <p className="text-sm text-muted-foreground truncate font-semibold">{k.label}</p>

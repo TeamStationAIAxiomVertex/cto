@@ -590,7 +590,7 @@ export async function generateMetadata({
 const SecurityContent = () => (
   <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
     {/* AppSec Pillar */}
-    <div className="rounded-lg border bg-card p-6 shadow-inner">
+    <div className="glass-panel gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 shadow-inner">
       <h3 className="text-xl font-bold flex items-center gap-3">
         <Bug className="h-6 w-6 text-primary" />
         Application Security
@@ -643,7 +643,7 @@ const SecurityContent = () => (
 
     {/* CloudSec / GRC Pillar */}
     <div className="space-y-8">
-      <div className="rounded-lg border bg-card p-6 shadow-inner">
+      <div className="glass-panel gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 shadow-inner">
         <h3 className="text-xl font-bold flex items-center gap-3">
           <CloudCog className="h-6 w-6 text-primary" />
           Cloud Security
@@ -675,7 +675,7 @@ const SecurityContent = () => (
           </div>
         </div>
       </div>
-      <div className="rounded-lg border bg-card p-6 shadow-inner">
+      <div className="glass-panel gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 shadow-inner">
         <h3 className="text-xl font-bold flex items-center gap-3">
           <Shield className="h-6 w-6 text-primary" />
           Governance, Risk & Compliance (GRC)

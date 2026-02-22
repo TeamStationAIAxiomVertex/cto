@@ -272,7 +272,7 @@ export default function TCOModelPage() {
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
               {costCards.map(card => (
-                  <div key={card.id} className="rounded-xl border bg-card p-6 flex flex-col shadow-lg">
+                  <div key={card.id} className="glass-card-interactive gradient-ring rounded-xl border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg">
                       <div className="flex items-start gap-4">
                           {card.icon}
                           <div>

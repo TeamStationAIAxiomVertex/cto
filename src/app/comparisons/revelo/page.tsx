@@ -53,7 +53,7 @@ export default function ReveloComparisonPage() {
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Revelo</span>
         </div>
-        <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <header className="glass-panel gradient-ring hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">TeamStation AI vs. Revelo</h1>
           <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
             A comparison between TeamStation AI’s managed team model and Revelo’s marketplace for LATAM talent.
@@ -69,7 +69,7 @@ export default function ReveloComparisonPage() {
           <h2 className="text-3xl font-bold text-center">Managed Teams vs. a Marketplace of Individuals</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {Object.entries(comparisonPoints).map(([key, value]) => (
-              <div key={key} className="glass-panel rounded-2xl p-6 flex flex-col shadow-lg">
+              <div key={key} className="glass-card-interactive gradient-ring rounded-2xl border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg">
                 <p className="text-sm font-semibold text-primary">{value.pain}</p>
                 <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
                 
@@ -95,7 +95,7 @@ export default function ReveloComparisonPage() {
           </div>
         </div>
 
-        <div className="glass-panel prose dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
+        <div className="glass-panel gradient-ring prose prose-xl dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
           <h2 className="text-center">Analysis: Building Teams, Not Just Filling Seats</h2>
           <div>
               <a href="https://www.revelo.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Revelo<ExternalLink className="h-4 w-4" /></a> has built a strong reputation as a go-to marketplace for sourcing pre-vetted LATAM developers. It's a valuable resource for companies looking to hire individuals. However, the model is fundamentally about filling seats, not building teams.
@@ -109,7 +109,7 @@ export default function ReveloComparisonPage() {
           </p>
         </div>
 
-        <div className="glass-panel text-center rounded-2xl p-8">
+        <div className="glass-panel gradient-ring text-center rounded-2xl p-8">
           <h2 className="text-2xl font-bold">Conclusion</h2>
           <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
               If you're looking to hire a specific developer to augment your existing team, Revelo is a great option. If you're looking to build a scalable, high-performing engineering capability without the overhead of building and managing a team yourself, TeamStation AI is the clear choice.

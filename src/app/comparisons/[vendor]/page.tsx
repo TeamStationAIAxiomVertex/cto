@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import ComparisonProse from "@/components/ComparisonProse";
 import Link from "next/link";
 import CTOFieldManualBlock from "@/components/seo/CTOFieldManualBlock";
+import BenchmarkBarsPanel from "@/components/graphs/BenchmarkBarsPanel";
 import { RevealBlock, RevealSection } from "@/components/motion/MotionPrimitives";
 
 const VerdictTable = dynamic(
@@ -51,6 +52,38 @@ export default function VendorComparisonPage({
     notFound();
   }
 
+  const verdictRows = page.verdict.rows ?? [];
+  const winningRows = verdictRows.filter((row) => row.isWinningRow).length;
+  const keywordCount = (matcher: RegExp) =>
+    verdictRows.filter((row) => matcher.test(`${row.criterion} ${String(row.teamstationVerdict)} ${String(row.competitorVerdict)}`)).length;
+
+  const comparisonProfileBars = [
+    {
+      label: "Decision coverage",
+      value: verdictRows.length,
+      target: 4,
+      note: "Number of explicit comparison dimensions covered in the verdict matrix.",
+    },
+    {
+      label: "TeamStation advantage signals",
+      value: winningRows,
+      target: Math.max(2, Math.min(4, verdictRows.length)),
+      note: "Rows marked as clear TeamStation advantages in the comparison matrix.",
+    },
+    {
+      label: "Security and governance coverage",
+      value: keywordCount(/security|compliance|device|sla|governance/i),
+      target: 1,
+      note: "Presence of governance, security, and compliance criteria in the evaluation.",
+    },
+    {
+      label: "Economics and TCO coverage",
+      value: keywordCount(/tco|cost|economic|pricing|ownership/i),
+      target: 1,
+      note: "Presence of total cost and financial control considerations in the comparison.",
+    },
+  ];
+
   return (
     <main className="manual-page container max-w-6xl py-10">
       <RevealBlock className="glass-panel gradient-ring hero-depth system-grid rounded-2xl p-6 md:p-8">
@@ -70,7 +103,7 @@ export default function VendorComparisonPage({
             {page.h1}
           </h1>
           <p
-            className="mt-4 max-w-4xl text-lg text-muted-foreground"
+            className="mt-4 max-w-[72ch] text-lg leading-8 text-muted-foreground"
             dangerouslySetInnerHTML={{ __html: page.intro }}
           />
           <div className="mt-5 flex flex-wrap gap-2">
@@ -88,8 +121,18 @@ export default function VendorComparisonPage({
         <VerdictTable {...page.verdict} />
       </RevealSection>
 
+      <RevealSection className="mt-8">
+        <BenchmarkBarsPanel
+          title="Comparison Decision Coverage"
+          subtitle={`Use this checklist-style profile to confirm the ${page.vendorName} comparison covers the dimensions your CTO team needs before a vendor decision.`}
+          unit=" rows"
+          max={Math.max(4, verdictRows.length)}
+          bars={comparisonProfileBars}
+        />
+      </RevealSection>
+
       <RevealSection className="glass-panel gradient-ring mt-8 rounded-2xl p-6 md:p-8">
-        <div className="prose dark:prose-invert max-w-none">
+        <div className="prose prose-xl dark:prose-invert max-w-none">
           <ComparisonProse vendorSlug={params.vendor} />
         </div>
       </RevealSection>

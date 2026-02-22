@@ -38,7 +38,7 @@ export default function KMSComparisonPage() {
         <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>KMS Technology</span>
       </div>
 
-      <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+      <header className="glass-panel gradient-ring hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">
           KMS Technology Alternative: TeamStation AI
         </h1>
@@ -56,7 +56,7 @@ export default function KMSComparisonPage() {
         <h2 className="text-3xl font-bold text-center">Integrated Teams vs. Outsourcing Model</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {Object.entries(comparisonPoints).map(([key, value]) => (
-            <div key={key} className="glass-panel rounded-2xl p-6 flex flex-col shadow-lg">
+            <div key={key} className="glass-card-interactive gradient-ring rounded-2xl border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg">
               <p className="text-sm font-semibold text-primary">{value.pain}</p>
               <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
 
@@ -85,7 +85,7 @@ export default function KMSComparisonPage() {
         </div>
       </div>
 
-      <div className="glass-panel prose dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
+      <div className="glass-panel gradient-ring prose prose-xl dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
         <h2 className="text-center">Analysis: Integrated Teams vs. Outsourcing</h2>
         <p>
           <a href="https://kms-technology.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">
@@ -101,7 +101,7 @@ export default function KMSComparisonPage() {
         </p>
       </div>
 
-      <div className="glass-panel text-center rounded-2xl p-8">
+      <div className="glass-panel gradient-ring text-center rounded-2xl p-8">
         <h2 className="text-2xl font-bold">Conclusion</h2>
         <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
           If you want to offload projects entirely, KMS Technology may be an option. If you want to build a secure, cost-effective, and integrated engineering team for the long term, TeamStation AI is the smarter KMS Technology alternative.

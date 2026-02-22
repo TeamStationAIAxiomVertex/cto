@@ -264,7 +264,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
                       })}
                     </span>
                     <h3 className="text-lg font-semibold text-foreground">
-                      The Problem
+                      Operating reality
                     </h3>
                   </div>
                   <p className="mt-4 text-sm text-muted-foreground ">
@@ -272,14 +272,14 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
                   </p>
                   <div className="mt-4 border-t border-border/70 pt-4">
                     <h4 className="font-semibold text-primary">
-                      The TeamStation AI Solution
+                      TeamStation AI approach
                     </h4>
                     <p className="text-sm text-foreground m-0">{item.solution}</p>
                   </div>
                   <div className="flex-grow"></div>
                   <div className="mt-6">
                     <p className="text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-                      Proof: {item.kpi}
+                      Evidence: {item.kpi}
                     </p>
                   </div>
                   </LiftCard>

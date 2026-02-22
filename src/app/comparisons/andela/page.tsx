@@ -53,7 +53,7 @@ export default function AndelaComparisonPage() {
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Andela</span>
         </div>
-        <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <header className="glass-panel gradient-ring hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">TeamStation AI vs. Andela</h1>
           <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
             A comparison between TeamStation AI’s LATAM-focused integrated platform and Andela’s global talent cloud.
@@ -69,7 +69,7 @@ export default function AndelaComparisonPage() {
           <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The Global Talent Cloud</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {Object.entries(comparisonPoints).map(([key, value]) => (
-              <div key={key} className="glass-panel rounded-2xl p-6 flex flex-col shadow-lg">
+              <div key={key} className="glass-card-interactive gradient-ring rounded-2xl border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg">
                 <p className="text-sm font-semibold text-primary">{value.pain}</p>
                 <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
                 
@@ -95,7 +95,7 @@ export default function AndelaComparisonPage() {
           </div>
         </div>
 
-        <div className="glass-panel prose dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
+        <div className="glass-panel gradient-ring prose prose-xl dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
           <h2 className="text-center">Analysis: The Nearshore Specialist vs. The Global Generalist</h2>
           <div>
               <a href="https://andela.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Andela <ExternalLink className="h-4 w-4" /></a> operates a large, global "talent cloud" that connects companies with technologists from around the world. Theirstrength is their breadth and scale. However, their model does not include bundled <WithTooltip content="Employer of Record: a service that allows you to legally hire employees in other countries without setting up a local entity.">EOR</WithTooltip>, devices, or insurance, leaving the client to manage these critical operational components.
@@ -111,7 +111,7 @@ export default function AndelaComparisonPage() {
           </p>
         </div>
 
-        <div className="glass-panel text-center rounded-2xl p-8">
+        <div className="glass-panel gradient-ring text-center rounded-2xl p-8">
           <h2 className="text-2xl font-bold">Conclusion</h2>
           <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
               For companies looking to source talent globally from a wide range of regions, Andela is a powerful platform. For CTOs who want to specifically leverage the benefits of the nearshore model time-zone alignment, cultural affinity, and real-time collaboration and require a fully secure and managed operational platform, TeamStation AI is the more specialized and integrated choice.

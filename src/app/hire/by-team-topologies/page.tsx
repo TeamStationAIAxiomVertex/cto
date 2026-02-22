@@ -10,6 +10,13 @@ import {
   Zap,
 } from "lucide-react";
 import { JsonLd } from "../../../components/seo/JsonLd";
+import BenchmarkBarsPanel from "../../../components/graphs/BenchmarkBarsPanel";
+import {
+  RevealBlock,
+  RevealSection,
+  StaggerGrid,
+  StaggerItem,
+} from "../../../components/motion/MotionPrimitives";
 
 export const metadata: Metadata = {
   title: "Team Topologies for US CTOs in the Agentic AI Era | TeamStation AI",
@@ -194,9 +201,36 @@ const references = [
   },
 ];
 
+const topologyRiskBars = [
+  {
+    label: "Handoff latency",
+    value: 86,
+    target: 45,
+    note: "High boundary count and unclear ownership create queueing delay across product, platform, and security interfaces.",
+  },
+  {
+    label: "Cognitive load on stream teams",
+    value: 79,
+    target: 50,
+    note: "Without platform and enabling support, stream teams absorb cloud, observability, and AI orchestration complexity.",
+  },
+  {
+    label: "Boundary defect probability",
+    value: 74,
+    target: 40,
+    note: "Interface ambiguity increases integration defects, policy misses, and operational rework.",
+  },
+  {
+    label: "Planning variance",
+    value: 68,
+    target: 42,
+    note: "Topology mismatch increases variability in lead time and reduces commitment reliability.",
+  },
+];
+
 export default function TeamTopologiesPage() {
   return (
-    <main className="container max-w-6xl py-12">
+    <main className="manual-page container max-w-6xl py-10">
       <JsonLd data={[breadcrumbSchema, faqSchema, articleSchema]} />
 
       <div className="mb-8 text-sm text-muted-foreground">
@@ -210,7 +244,7 @@ export default function TeamTopologiesPage() {
         / <span>By Team Topologies</span>
       </div>
 
-      <header className="my-10 rounded-2xl border bg-card p-8 md:p-12">
+      <RevealSection className="glass-panel gradient-ring hero-depth system-grid my-10 rounded-2xl p-8 md:p-12">
         <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">
           US CTO Playbook | 2026+ Agentic Era
         </p>
@@ -241,9 +275,9 @@ export default function TeamTopologiesPage() {
             TeamStation vs BairesDev
           </Link>
         </nav>
-      </header>
+      </RevealSection>
 
-      <section className="my-16">
+      <RevealSection className="my-14">
         <h2 className="text-3xl font-bold">Why Team Topology Is Now a Board-Level Decision</h2>
         <div className="mt-6 space-y-5 text-muted-foreground">
           <p>
@@ -266,23 +300,25 @@ export default function TeamTopologiesPage() {
             constraints?" The answer requires clear topology choices.
           </p>
         </div>
-      </section>
+      </RevealSection>
 
-      <section className="my-16">
+      <RevealSection className="my-14">
         <h2 className="text-3xl font-bold">The Four Team Topologies You Actually Need</h2>
         <p className="mt-4 text-muted-foreground">
           The foundation is stable and evidence-backed: stream-aligned, platform, enabling, and
           complicated-subsystem teams. The mistake is not using these models. The mistake is mixing responsibilities
           until no team has coherent ownership.
         </p>
-        <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <StaggerGrid className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           {topologyCards.map((item) => (
-            <article key={item.name} className="group rounded-xl border bg-card p-6 shadow-sm">
+            <StaggerItem key={item.name}>
+              <article className="glass-card-interactive gradient-ring group rounded-xl border border-border/70 bg-background/70 p-6 shadow-sm">
               <div className="flex items-center gap-3">
                 {item.icon}
                 <h3 className="text-xl font-bold">{item.name}</h3>
               </div>
-              <p className="mt-3 text-sm font-semibold text-primary">{item.pain}</p>
+              <p className="mt-3 text-sm font-semibold text-primary">Operating reality</p>
+              <p className="mt-1 text-sm text-muted-foreground">{item.pain}</p>
               <p className="mt-3 text-sm text-muted-foreground">{item.description}</p>
               <ul className="mt-4 space-y-2">
                 {item.outcomes.map((outcome) => (
@@ -297,18 +333,28 @@ export default function TeamTopologiesPage() {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </article>
+            </StaggerItem>
           ))}
-        </div>
-      </section>
+        </StaggerGrid>
+      </RevealSection>
 
-      <section className="my-16 rounded-2xl border bg-card p-8 md:p-10">
+      <RevealSection className="my-14">
+        <BenchmarkBarsPanel
+          title="Topology Failure Pressure Map"
+          subtitle="Indicative pressure model for CTO planning. Use these vectors to diagnose where team design is driving delay and quality variance before adding headcount."
+          bars={topologyRiskBars}
+          max={100}
+        />
+      </RevealSection>
+
+      <RevealSection className="glass-panel gradient-ring my-14 rounded-2xl p-8 md:p-10">
         <h2 className="text-3xl font-bold">Doctrine-to-Execution Mapping for CTOs</h2>
         <p className="mt-4 text-muted-foreground">
           Your attached TeamStation doctrine provides a useful lens for 2026 planning. The value is not in slogans.
           The value is in operational translation. These are the core mappings.
         </p>
         <div className="mt-8 space-y-6">
-          <article className="rounded-lg border bg-background p-5">
+          <article className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-5">
             <h3 className="text-xl font-semibold">1. O-Ring Reliability and Sequential Probability Networks</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               In multi-step delivery chains, one weak control can erase value created upstream. For CTOs, this means
@@ -316,7 +362,7 @@ export default function TeamTopologiesPage() {
               clear stream ownership directly reduce chain fragility.
             </p>
           </article>
-          <article className="rounded-lg border bg-background p-5">
+          <article className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-5">
             <h3 className="text-xl font-semibold">2. Cognitive Load as a Hard Capacity Constraint</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Cognitive overload is not a culture problem. It is a throughput and quality limiter. When every stream
@@ -324,7 +370,7 @@ export default function TeamTopologiesPage() {
               decays. Internal platform products are the primary mechanism for load shedding.
             </p>
           </article>
-          <article className="rounded-lg border bg-background p-5">
+          <article className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-5">
             <h3 className="text-xl font-semibold">3. Interface Invariant and Boundary Risk</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               The doctrine's integration section aligns with known systems thinking: failures cluster at boundaries.
@@ -332,7 +378,7 @@ export default function TeamTopologiesPage() {
               Good topology shortens interfaces, formalizes contracts, and assigns ownership for integration quality.
             </p>
           </article>
-          <article className="rounded-lg border bg-background p-5">
+          <article className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-5">
             <h3 className="text-xl font-semibold">4. Kingman-Style Queue Behavior and WIP Control</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               High utilization and unmanaged work-in-progress produce nonlinear delay. For CTO organizations, this is
@@ -340,7 +386,7 @@ export default function TeamTopologiesPage() {
               policy, explicit service classes, and realistic team load targets.
             </p>
           </article>
-          <article className="rounded-lg border bg-background p-5">
+          <article className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-5">
             <h3 className="text-xl font-semibold">5. Quality Doctrine and the Turing Trap</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               AI can generate fluent output without robust system understanding. Seniority signals must therefore be
@@ -349,9 +395,9 @@ export default function TeamTopologiesPage() {
             </p>
           </article>
         </div>
-      </section>
+      </RevealSection>
 
-      <section className="my-16">
+      <RevealSection className="my-14">
         <h2 className="text-3xl font-bold">Recommended Topology Blueprint by Growth Stage</h2>
         <div className="mt-6 space-y-6 text-muted-foreground">
           <p>
@@ -373,12 +419,12 @@ export default function TeamTopologiesPage() {
             actual system constraints.
           </p>
         </div>
-      </section>
+      </RevealSection>
 
-      <section className="my-16 rounded-2xl border bg-card p-8 md:p-10">
+      <RevealSection className="glass-panel gradient-ring my-14 rounded-2xl p-8 md:p-10">
         <h2 className="text-3xl font-bold">Execution Checklist: First 90 Days</h2>
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="rounded-lg border bg-background p-5">
+          <div className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-5">
             <h3 className="flex items-center gap-2 text-lg font-semibold">
               <Shield className="h-5 w-5 text-primary" />
               Governance and Structure
@@ -390,7 +436,7 @@ export default function TeamTopologiesPage() {
               <li>Define platform service catalogue and adoption targets.</li>
             </ul>
           </div>
-          <div className="rounded-lg border bg-background p-5">
+          <div className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-5">
             <h3 className="flex items-center gap-2 text-lg font-semibold">
               <Layers className="h-5 w-5 text-primary" />
               Metrics and Quality
@@ -403,9 +449,9 @@ export default function TeamTopologiesPage() {
             </ul>
           </div>
         </div>
-      </section>
+      </RevealSection>
 
-      <section className="my-16">
+      <RevealSection className="my-14">
         <h2 className="text-3xl font-bold">Scientific References and Supporting Evidence</h2>
         <p className="mt-4 text-muted-foreground">
           This page combines established literature with TeamStation's internal engineering doctrine to create an
@@ -413,7 +459,7 @@ export default function TeamTopologiesPage() {
         </p>
         <ul className="mt-6 space-y-4">
           {references.map((refItem) => (
-            <li key={refItem.name} className="rounded-lg border bg-card p-4">
+            <li key={refItem.name} className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-4">
               <a href={refItem.href} className="font-semibold text-primary hover:underline" target="_blank" rel="noopener noreferrer">
                 {refItem.name}
               </a>
@@ -421,9 +467,9 @@ export default function TeamTopologiesPage() {
             </li>
           ))}
         </ul>
-      </section>
+      </RevealSection>
 
-      <section className="my-16 rounded-2xl border bg-primary/10 p-8 text-center md:p-10">
+      <RevealBlock className="glass-panel gradient-ring my-14 rounded-2xl border border-primary/20 bg-primary/10 p-8 text-center md:p-10">
         <h2 className="text-3xl font-bold">Design the Right Topology Before You Add More Headcount</h2>
         <p className="mx-auto mt-4 max-w-3xl text-muted-foreground">
           If your 2026 roadmap depends on AI-enabled delivery, team design must be treated as architecture, not HR.
@@ -441,7 +487,7 @@ export default function TeamTopologiesPage() {
             Review Scientific Report
           </Link>
         </div>
-      </section>
+      </RevealBlock>
     </main>
   );
 }

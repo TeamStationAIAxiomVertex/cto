@@ -6,6 +6,7 @@ import PlaybookContentRenderer from "@/components/PlaybookContentRenderer";
 import TableOfContents from "@/components/TableOfContents";
 import PlaybookAuthor from "@/components/PlaybookAuthor";
 import CTOFieldManualBlock from "@/components/seo/CTOFieldManualBlock";
+import BenchmarkBarsPanel from "@/components/graphs/BenchmarkBarsPanel";
 import { RevealBlock, RevealSection } from "@/components/motion/MotionPrimitives";
 import { getPlaybookData } from "@/lib/playbook-data";
 
@@ -22,6 +23,45 @@ const relatedLinks = [
   { href: "/hire/by-team-topologies", label: "Team Topologies for CTOs" },
   { href: "/comparisons/bairesdev", label: "Compare vs BairesDev" },
   { href: "/platform", label: "Nearshore IT Co-Pilot Platform" },
+];
+
+const economicsModelBars = [
+  {
+    label: "Compensation and benefits",
+    value: 42,
+    target: 40,
+    note: "Base compensation is the largest cost element, but it should be modeled with seniority mix and retention assumptions.",
+  },
+  {
+    label: "Platform, tooling, and device control",
+    value: 12,
+    target: 10,
+    note: "Security tooling, managed devices, and workflow stack costs are often omitted in vendor headline rates.",
+  },
+  {
+    label: "Onboarding and enablement",
+    value: 9,
+    target: 8,
+    note: "Ramp quality determines time to productive contribution and affects first-quarter throughput.",
+  },
+  {
+    label: "Coordination and management overhead",
+    value: 14,
+    target: 12,
+    note: "Handoff latency, manager load, and cross-timezone coordination cost should be modeled explicitly.",
+  },
+  {
+    label: "Rework and defect recovery",
+    value: 11,
+    target: 8,
+    note: "Quality misses compound TCO through delayed releases, recovery effort, and opportunity cost.",
+  },
+  {
+    label: "Vacancy and replacement risk",
+    value: 12,
+    target: 9,
+    note: "Vacancy days and replacement cycles directly affect roadmap predictability and realized economics.",
+  },
 ];
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -106,6 +146,16 @@ export default async function PlaybookPage() {
             <div className="prose prose-xl max-w-none dark:prose-invert">
               <PlaybookContentRenderer slug="latam-economics" />
             </div>
+          </RevealSection>
+
+          <RevealSection className="mt-10">
+            <BenchmarkBarsPanel
+              title="Economics Modeling Lens for CTO Planning"
+              subtitle="Use a total cost view instead of bill-rate comparison. This planning model highlights the cost categories that most often distort LATAM hiring decisions when governance and execution costs are excluded."
+              unit="%"
+              max={50}
+              bars={economicsModelBars}
+            />
           </RevealSection>
 
           <RevealSection className="glass-panel gradient-ring mt-10 rounded-2xl p-6 md:p-8">

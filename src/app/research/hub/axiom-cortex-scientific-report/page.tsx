@@ -60,7 +60,7 @@ export default function AxiomCortexReportPage() {
         <h2 className="text-3xl font-bold text-center">Key Scientific Pillars</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-8">
             {scientificPillars.map(pillar => (
-                <div className="flex items-start gap-4 rounded-lg border bg-card p-6" key={pillar.title}>
+                <div className="glass-card-interactive gradient-ring flex items-start gap-4 rounded-lg border border-border/70 bg-background/70 p-6" key={pillar.title}>
                     {pillar.icon}
                     <div>
                         <h3 className="font-semibold text-foreground">{pillar.title}</h3>

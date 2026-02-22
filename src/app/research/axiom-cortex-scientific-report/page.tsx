@@ -92,7 +92,7 @@ export default function AxiomCortexReportPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-8">
             {pillars.map((pillar) => (
               <div
-                className="flex items-start gap-4 rounded-lg border bg-card p-6"
+                className="glass-card-interactive gradient-ring flex items-start gap-4 rounded-lg border border-border/70 bg-background/70 p-6"
                 key={pillar.title}
               >
                 {pillar.icon}

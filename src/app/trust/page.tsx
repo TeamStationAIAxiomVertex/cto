@@ -3,6 +3,7 @@ import { ShieldCheck, Laptop, FileLock, Scale, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import FurtherReading from '../../components/seo/FurtherReading';
+import { RevealSection, StaggerGrid, StaggerItem } from '../../components/motion/MotionPrimitives';
 
 export const metadata: Metadata = {
   title: 'Nearshore Compliance: GDPR, SSO, MDM | Trust Center',
@@ -42,6 +43,13 @@ export default function TrustPage() {
         },
     ];
 
+    const coverageBars = [
+        { label: 'Device and MDM controls', pct: 99, note: 'Enrollment and policy coverage' },
+        { label: 'Compliance evidence trail', pct: 100, note: 'Audit-ready workflow records' },
+        { label: 'EOR and legal workflow coverage', pct: 96, note: 'Country-specific execution under one model' },
+        { label: 'Risk transfer and insurance coverage', pct: 92, note: 'Operational and liability protections' },
+    ];
+
   return (
     <main className="manual-page container max-w-7xl py-10">
       <div className="text-sm text-muted-foreground mb-8">
@@ -61,9 +69,36 @@ export default function TrustPage() {
         </nav>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
+      <RevealSection className="glass-panel gradient-ring rounded-2xl border border-border/70 my-12 p-6 md:p-8">
+      <div className="grid gap-6 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
+        <div>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">Trust surface and control coverage</h2>
+          <p className="mt-3 max-w-[72ch] text-muted-foreground leading-7">
+            Security and compliance posture should be visible, not implied. This control map shows the operating coverage areas executives should verify before scaling a partner relationship.
+          </p>
+          <div className="mt-5 rounded-xl border border-border/70 bg-background/60 p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary">Coverage graph</p>
+            <div className="mt-4 space-y-3">
+              {coverageBars.map((bar) => (
+                <div key={bar.label}>
+                  <div className="mb-1 flex items-center justify-between gap-3 text-xs">
+                    <span className="font-semibold text-foreground">{bar.label}</span>
+                    <span className="font-mono text-muted-foreground">{bar.pct}%</span>
+                  </div>
+                  <div className="h-2 rounded-full bg-border/70">
+                    <div className="h-2 rounded-full bg-primary" style={{ width: `${bar.pct}%` }} />
+                  </div>
+                  <p className="mt-1 text-[11px] leading-4 text-muted-foreground">{bar.note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {pillars.map((pillar) => (
-          <div key={pillar.title} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg">
+          <StaggerItem key={pillar.title}>
+          <div className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg">
             <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
             <div className="flex items-center gap-3 mt-3">
               {pillar.icon}
@@ -74,10 +109,13 @@ export default function TrustPage() {
               {pillar.kpi}
             </p>
           </div>
+          </StaggerItem>
         ))}
+      </StaggerGrid>
       </div>
+      </RevealSection>
 
-      <div className="my-16 text-center">
+      <RevealSection className="my-16 text-center">
         <h2 className="text-4xl font-bold text-foreground">The Security Checklist for Vetting Any Partner</h2>
         <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
           A vendor who cannot provide clear answers to these questions is a significant risk to your organization. With TeamStation AI, the answer is "yes" to all.
@@ -100,9 +138,9 @@ export default function TrustPage() {
             <div><strong className="text-foreground">Insurance:</strong> Do they carry Cyber and E&O insurance?</div>
           </li>
         </ul>
-      </div>
+      </RevealSection>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+      <RevealSection className="glass-panel gradient-ring text-center rounded-lg border border-border/70 p-8 shadow-lg">
         <h2 className="text-2xl font-bold text-foreground">Security is Our Default Setting</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
           Explore our process and see how our commitment to security is built into every step of our platform.
@@ -110,7 +148,7 @@ export default function TrustPage() {
         <Link href="/process" className="cta-button mt-6">
           Explore Our Process <ArrowRight className="ml-2 h-4 w-4"/>
         </Link>
-      </div>
+      </RevealSection>
       <FurtherReading />
     </main>
   );

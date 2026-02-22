@@ -53,7 +53,7 @@ export default function GlobantComparisonPage() {
         <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>Globant Alternative</span>
         </div>
-        <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <header className="glass-panel gradient-ring hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">Globant Alternative: TeamStation AI</h1>
           <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
             A strategic breakdown for CTOs: TeamStation AI’s precision staff augmentation platform vs. Globant’s large-scale project delivery model.
@@ -69,7 +69,7 @@ export default function GlobantComparisonPage() {
           <h2 className="text-3xl font-bold text-center">The Co-Pilot vs. The Systems Integrator</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {Object.entries(comparisonPoints).map(([key, value]) => (
-              <div key={key} className="glass-panel rounded-2xl p-6 flex flex-col shadow-lg">
+              <div key={key} className="glass-card-interactive gradient-ring rounded-2xl border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg">
                 <p className="text-sm font-semibold text-primary">{value.pain}</p>
                 <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
                 
@@ -95,7 +95,7 @@ export default function GlobantComparisonPage() {
           </div>
         </div>
 
-        <div className="glass-panel prose dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
+        <div className="glass-panel gradient-ring prose prose-xl dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
           <h2 className="text-center">Analysis: The Co-Pilot vs. The Systems Integrator</h2>
           <p>
               Choosing between TeamStation AI and Globant is about selecting the right operational model. <a href="https://www.globant.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">Globant <ExternalLink className="h-4 w-4" /></a> is a massive, global systems integrator, a powerhouse for large-scale digital transformation projects. You hand them a problem, and their teams deliver a solution. It is not a staff augmentation platform.
@@ -119,7 +119,7 @@ export default function GlobantComparisonPage() {
           </p>
         </div>
 
-        <div className="glass-panel text-center rounded-2xl p-8">
+        <div className="glass-panel gradient-ring text-center rounded-2xl p-8">
           <h2 className="text-2xl font-bold">Conclusion: Choose the Right Tool for the Job</h2>
           <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
               If you need to outsource an entire digital transformation initiative, Globant is a world-class choice. If your goal is to strategically build and scale your own high-performing nearshore engineering team via staff augmentation, TeamStation AI is the superior Globant alternative.

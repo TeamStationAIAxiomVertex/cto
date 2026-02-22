@@ -2,6 +2,7 @@ import { Search, BrainCircuit, Handshake, Rocket, ShieldCheck, UserCheck, FileSe
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { WithTooltip } from "../../components/ui/tooltip";
+import { RevealSection, StaggerGrid, StaggerItem } from "../../components/motion/MotionPrimitives";
 
 export const metadata: Metadata = {
   title: 'Our Nearshore IT Process: One Accountable SLA',
@@ -76,7 +77,7 @@ export default function ProcessPage() {
           </div>
       </header>
 
-      <div className="my-24">
+      <RevealSection className="my-24">
         <h2 className="text-center text-4xl font-bold text-foreground">Your Platform-Driven Hiring Flow</h2>
         <p className="mt-2 max-w-2xl mx-auto text-center text-muted-foreground">One SLA • System of Record • Audit Trails • US-Aligned Delivery</p>
         <div className="mt-12 flow-root">
@@ -112,17 +113,18 @@ export default function ProcessPage() {
             </ul>
           </div>
         </div>
-      </div>
+      </RevealSection>
 
 
-       <div className="my-24 text-center">
+       <RevealSection className="my-24 text-center">
         <h2 className="text-4xl font-bold text-foreground">Security, Compliance & Liability   Under One SLA</h2>
         <p className='mt-4 mx-auto max-w-3xl text-lg text-muted-foreground'>
             We carry the risk, contractually. You keep the velocity.
         </p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 mt-12 gap-8 max-w-4xl mx-auto'>
+        <StaggerGrid className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 mt-12 gap-8 max-w-4xl mx-auto'>
             {securityPillars.map(pillar => (
-                <div key={pillar.title} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col text-left shadow-lg">
+                <StaggerItem key={pillar.title}>
+                <div className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col text-left shadow-lg">
                     <p className="text-sm font-semibold text-primary">{pillar.pain}</p>
                     <div className="flex items-center gap-3 mt-3">
                         {pillar.icon}
@@ -133,35 +135,38 @@ export default function ProcessPage() {
                         <span className='font-bold'>Evidence:</span> {pillar.kpi}
                     </p>
                 </div>
+                </StaggerItem>
             ))}
-        </div>
-      </div>
+        </StaggerGrid>
+      </RevealSection>
       
-       <div className="my-24 text-center">
+       <RevealSection className="my-24 text-center">
         <h2 className="text-4xl font-bold text-foreground">Recognized. Research-Backed. Field-Proven.</h2>
         <p className='mt-4 mx-auto max-w-3xl text-lg text-muted-foreground'>
             Independent awards and peer-reviewed research underpin the platform that powers your LATAM teams.
         </p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-12 gap-8 max-w-6xl mx-auto'>
+        <StaggerGrid className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-12 gap-8 max-w-6xl mx-auto'>
             {recognitions.map(rec => (
-                 <div className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 flex items-start text-left gap-4 p-4 shadow-lg" key={rec.title}>
+                 <StaggerItem key={rec.title}>
+                 <div className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 flex items-start text-left gap-4 p-4 shadow-lg">
                     {rec.icon}
                     <div>
                         <h3 className="font-semibold text-foreground">{rec.title}</h3>
                         <p className="text-sm text-muted-foreground">{rec.source}</p>
                     </div>
                 </div>
+                </StaggerItem>
             ))}
-        </div>
-      </div>
+        </StaggerGrid>
+      </RevealSection>
 
-      <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+      <RevealSection className="glass-panel gradient-ring text-center rounded-lg border border-border/70 p-8 shadow-lg">
         <h2 className="text-2xl font-bold text-foreground">Ready to Hire Under One Accountable SLA?</h2>
         <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
            Let's map your roles, security needs, and go-live timeline.
         </p>
         <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">Book a 30-Minute Discovery Call</Link>
-      </div>
+      </RevealSection>
     </main>
   );
 }

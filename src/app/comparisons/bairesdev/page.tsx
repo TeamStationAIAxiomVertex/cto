@@ -84,7 +84,7 @@ export default function BairesDevComparisonPage() {
          <div className="text-sm text-muted-foreground mb-8">
           <Link href="/" className="hover:text-foreground">Home</Link> / <Link href="/comparisons" className="hover:text-foreground">Comparisons</Link> / <span>BairesDev Alternative</span>
         </div>
-        <header className="glass-panel hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
+        <header className="glass-panel gradient-ring hero-depth system-grid text-center my-8 rounded-2xl p-6 md:p-8">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-foreground">BairesDev Alternative: TeamStation AI</h1>
           <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">
             An objective comparison between TeamStation AI's integrated, science-driven platform and BairesDev's traditional nearshore staff augmentation model.
@@ -100,7 +100,7 @@ export default function BairesDevComparisonPage() {
           <h2 className="text-3xl font-bold text-center">The Integrated Platform vs. The "Top 1%" Vendor</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {Object.entries(comparisonPoints).map(([key, value]) => (
-              <div key={key} className="glass-panel rounded-2xl p-6 flex flex-col shadow-lg">
+              <div key={key} className="glass-card-interactive gradient-ring rounded-2xl border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg">
                 <p className="text-sm font-semibold text-primary">{value.pain}</p>
                 <h3 className="mt-3 text-lg font-semibold text-foreground">{key}</h3>
                 
@@ -126,7 +126,7 @@ export default function BairesDevComparisonPage() {
           </div>
         </div>
 
-        <div className="glass-panel prose dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
+        <div className="glass-panel gradient-ring prose prose-xl dark:prose-invert mx-auto my-10 max-w-4xl rounded-2xl p-6 md:p-8">
           <h2 className="text-center">Analysis: The Co-Pilot vs. The Staffing Agency</h2>
           <div>
               <a href="https://www.bairesdev.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold inline-flex items-center gap-1">BairesDev <ExternalLink className="h-4 w-4" /></a> markets heavily on hiring the "top 1%" of talent. While this signals a large recruiting operation, their model is traditional staff augmentation. They find and place engineers, but the client is left to manage compliance, device security, and the associated risks. As a Bairesdev alternative, TeamStation AI provides a complete, science-driven system for hiring, running, and securing your nearshore team under a single, predictable contract.
@@ -141,7 +141,7 @@ export default function BairesDevComparisonPage() {
           </div>
         </div>
 
-        <div className="glass-panel text-center rounded-2xl p-8">
+        <div className="glass-panel gradient-ring text-center rounded-2xl p-8">
           <h2 className="text-2xl font-bold">Conclusion: Why Choose TeamStation AI as a BairesDev Alternative</h2>
           <p className="mt-2 mx-auto max-w-2xl text-muted-foreground">
               For leaders who prioritize operational excellence, governance, and a deeper, more accurate understanding of talent, TeamStation's integrated platform model represents a clear evolution over traditional staff augmentation. We reduce mis-hire risk and provide a lower, more predictable TCO.

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "../../../components/seo/JsonLd";
 import Link from "next/link";
 import FurtherReading from "../../../components/seo/FurtherReading";
+import { RevealBlock, RevealSection } from "@/components/motion/MotionPrimitives";
 
 export const metadata: Metadata = {
   title: "CTO Comparison FAQ | TeamStation AI",
@@ -81,26 +82,42 @@ const faqSchema = {
 
 export default function ComparisonFAQPage() {
   return (
-    <main className="container max-w-4xl py-12 prose dark:prose-invert">
+    <main className="manual-page container max-w-5xl py-10">
       <JsonLd data={faqSchema} />
 
-      <h1>CTO Comparison FAQ</h1>
-      <p>
-        Common questions CTOs ask when evaluating TeamStation AI against nearshore vendors like{" "}
-        <strong>BairesDev</strong>, <strong>Globant</strong>, <strong>Toptal</strong>, and others.
-        These FAQs focus on vetting, compliance, SLAs, and total cost of ownership.
-      </p>
+      <RevealBlock className="glass-panel gradient-ring hero-depth system-grid rounded-2xl p-6 md:p-8">
+        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">CTO Comparison FAQ</h1>
+        <p className="mt-4 max-w-[72ch] text-lg leading-8 text-muted-foreground">
+          Common questions CTOs ask when evaluating TeamStation AI against nearshore vendors like{" "}
+          <strong className="text-foreground">BairesDev</strong>, <strong className="text-foreground">Globant</strong>,{" "}
+          <strong className="text-foreground">Toptal</strong>, and others. These answers focus on cognitive vetting,
+          compliance controls, SLA accountability, and total cost of ownership.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3 text-sm">
+          <Link href="/comparisons" className="rounded-md border border-border/70 bg-background/70 px-3 py-2 font-semibold text-foreground transition-ui hover:border-primary/40 hover:text-primary">
+            Comparisons hub
+          </Link>
+          <Link href="/playbook/tco-model" className="rounded-md border border-border/70 bg-background/70 px-3 py-2 font-semibold text-foreground transition-ui hover:border-primary/40 hover:text-primary">
+            TCO model
+          </Link>
+        </div>
+      </RevealBlock>
 
-      <h2>Frequently Asked Questions</h2>
-      <dl>
-        {faqSchema.mainEntity.map((q, i) => (
-          <div key={i} className="mb-6">
-            <dt className="font-semibold">{q.name}</dt>
-            <dd className="mt-2 text-muted-foreground">{q.acceptedAnswer.text}</dd>
-          </div>
-        ))}
-      </dl>
-       <FurtherReading />
+      <RevealSection className="glass-panel gradient-ring mt-8 rounded-2xl p-6 md:p-8">
+        <h2 className="text-2xl font-bold text-foreground md:text-3xl">Frequently Asked Questions</h2>
+        <dl className="mt-6 space-y-4">
+          {faqSchema.mainEntity.map((q, i) => (
+            <div key={i} className="glass-card-interactive rounded-xl border border-border/70 bg-background/70 p-4 md:p-5">
+              <dt className="text-base font-semibold text-foreground">{q.name}</dt>
+              <dd className="mt-2 text-sm leading-7 text-muted-foreground">{q.acceptedAnswer.text}</dd>
+            </div>
+          ))}
+        </dl>
+      </RevealSection>
+
+      <RevealBlock className="mt-8">
+        <FurtherReading />
+      </RevealBlock>
     </main>
   );
 }

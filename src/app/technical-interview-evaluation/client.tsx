@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { WithTooltip } from "../../components/ui/tooltip";
+import ScoreProfilePanel from "../../components/graphs/ScoreProfilePanel";
+import { RevealSection } from "../../components/motion/MotionPrimitives";
 
 const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
@@ -1228,7 +1230,7 @@ export default function TalentEvaluationClient() {
         </Link>{" "}
         /<span>Talent Evaluations</span>
       </div>
-      <header className="my-8">
+      <header className="glass-panel gradient-ring hero-depth system-grid my-8 rounded-2xl border border-border/70 p-6 md:p-8">
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
           Technical Talent Evaluation Report: Erick [...]
         </h1>
@@ -1247,8 +1249,8 @@ export default function TalentEvaluationClient() {
         </p>
       </header>
 
-      <div className="my-16 space-y-8">
-        <div className="rounded-lg border bg-card p-6 shadow-lg">
+      <RevealSection className="my-16 space-y-8">
+        <div className="glass-panel gradient-ring rounded-lg border border-border/70 p-6 shadow-lg">
           <p className="text-sm font-semibold text-primary">
             Is this candidate the right fit?
           </p>
@@ -1280,19 +1282,30 @@ export default function TalentEvaluationClient() {
             </p>
           </div>
           <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-            Proof: Final Score: 4.6 / 5.0 (All Core Competency Gates Passed)
+            Evidence: Final score 4.6 / 5.0 (all core competency gates passed)
           </p>
         </div>
 
-        <div className="rounded-lg border bg-card p-6 shadow-lg">
+        <div className="glass-panel gradient-ring rounded-lg border border-border/70 p-6 shadow-lg">
           <h2 className="text-2xl font-bold text-foreground">
             Cognitive & Psychometric Profile
           </h2>
+          <div className="mt-5">
+            <ScoreProfilePanel
+              title="Candidate vs target cognitive profile"
+              subtitle="Scores use the same 5-point rubric used in the evidence-backed evaluation report."
+              points={cognitiveData.map((trait) => ({
+                label: trait.name,
+                value: trait.candidate,
+                target: trait.ideal,
+              }))}
+            />
+          </div>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
             {cognitiveData.map((trait) => (
               <div
                 key={trait.name}
-                className="rounded-lg border bg-background p-4 flex flex-col"
+                className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-4 flex flex-col"
               >
                 <p className="text-sm font-semibold text-primary">
                   {trait.pain}
@@ -1312,7 +1325,7 @@ export default function TalentEvaluationClient() {
                 </div>
 
                 <div className="mt-4 border-t border-border pt-4">
-                  <h4 className="font-semibold text-foreground">Proof:</h4>
+                  <h4 className="font-semibold text-foreground">Evidence:</h4>
                   <div className="flex items-center gap-4 mt-2">
                     <span className="font-bold text-lg">
                       {trait.candidate}/5.0
@@ -1385,7 +1398,7 @@ export default function TalentEvaluationClient() {
           </div>
 
           <div className="mt-8 pt-6 border-t border-border">
-            <div className="rounded-lg border bg-background p-4">
+            <div className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-4">
               <p className="text-sm font-semibold text-primary">
                 How self-aware is the candidate?
               </p>
@@ -1416,7 +1429,7 @@ export default function TalentEvaluationClient() {
                 </span>
               </div>
               <div className="mt-4 border-t border-border pt-4">
-                <h4 className="font-semibold text-foreground">Proof:</h4>
+                <h4 className="font-semibold text-foreground">Evidence:</h4>
                 <div className="my-2 p-2 rounded bg-background font-mono text-xs text-center">
                   Risk Zone [Dunning-Kruger] --- [Confident] --- [Expert] ---
                   [HONEST SELF-ASSESSMENT] &lt;--●
@@ -1431,7 +1444,7 @@ export default function TalentEvaluationClient() {
           </div>
         </div>
 
-        <div className="my-12 rounded-lg border bg-card p-6 shadow-lg">
+        <div className="glass-panel gradient-ring my-12 rounded-lg border border-border/70 p-6 shadow-lg">
           <h2 className="text-2xl font-bold text-foreground">
             Risk Factors & Mitigation Plan
           </h2>
@@ -1439,10 +1452,10 @@ export default function TalentEvaluationClient() {
             {risks.map((risk) => (
               <div
                 key={risk.title}
-                className="rounded-lg border bg-background p-4"
+                className="glass-card-interactive rounded-lg border border-border/70 bg-background/70 p-4"
               >
                 <p className="text-sm font-semibold text-destructive">
-                  The Pain: {risk.title}
+                  Operating risk: {risk.title}
                 </p>
                 <p className="mt-3 text-sm text-muted-foreground">
                   {renderWithMany(risk.description, [
@@ -1451,7 +1464,7 @@ export default function TalentEvaluationClient() {
                 </p>
                 <div className="mt-4 border-t border-border pt-4">
                   <h4 className="font-semibold text-primary">
-                    The Solution (Mitigation Plan)
+                    Mitigation plan
                   </h4>
                   <p className="text-sm text-foreground m-0">
                     {renderWithMany(risk.mitigation, [
@@ -1468,7 +1481,7 @@ export default function TalentEvaluationClient() {
           </div>
         </div>
 
-        <div className="my-12">
+        <div className="glass-panel gradient-ring my-12 rounded-lg border border-border/70 p-6">
           <h2
             id="evidence-locker"
             className="text-3xl font-bold text-center text-foreground scroll-mt-20"
@@ -1505,7 +1518,7 @@ export default function TalentEvaluationClient() {
           </div>
         </div>
 
-        <div className="my-12 rounded-lg border bg-card p-6 shadow-lg">
+        <div className="glass-panel gradient-ring my-12 rounded-lg border border-border/70 p-6 shadow-lg">
           <h2 className="text-2xl font-bold text-foreground">
             Glossary & FAQs
           </h2>
@@ -1550,7 +1563,7 @@ export default function TalentEvaluationClient() {
           </div>
         </div>
 
-        <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg mt-16">
+        <div className="glass-panel gradient-ring text-center rounded-lg border border-border/70 p-8 shadow-lg mt-16">
           <h2 className="text-2xl font-bold">Ready to De-Risk Your Hiring?</h2>
           <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
             Stop sifting through unqualified resumes. Let us provide you with a
@@ -1566,7 +1579,7 @@ export default function TalentEvaluationClient() {
             Book a No-Obligation Strategy Call
           </a>
         </div>
-      </div>
+      </RevealSection>
     </main>
   );
 }

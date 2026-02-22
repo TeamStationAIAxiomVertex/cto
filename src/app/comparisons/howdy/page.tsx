@@ -181,7 +181,7 @@ export default function HowdyComparisonPage() {
             <h2 className="text-3xl font-bold text-center">Frequently Asked Questions</h2>
             <div className="mt-8 max-w-3xl mx-auto space-y-4">
                 {faq.map((item, i) => (
-                    <div key={i} className="glass-panel rounded-2xl p-6 shadow-lg">
+                    <div key={i} className="glass-card-interactive gradient-ring rounded-2xl border border-border/70 bg-background/70 p-6 shadow-lg">
                         <h3 className="font-semibold text-primary">{item.q}</h3>
                         <p className="text-muted-foreground mt-2 text-sm" dangerouslySetInnerHTML={{ __html: item.a }}></p>
                     </div>
@@ -200,7 +200,7 @@ export default function HowdyComparisonPage() {
 
         <FurtherReading comparison="howdy" />
 
-        <section className="glass-panel text-center rounded-2xl p-8">
+        <section className="glass-panel gradient-ring text-center rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-foreground">Ready for a True Platform Solution?</h2>
             <p className="mt-2 mx-auto max-w-xl text-muted-foreground">
                 Let's move beyond sourcing and payroll. In a 15-minute call, we can build a CFO-ready business case for a nearshore platform that delivers a complete, secure, and productive team.

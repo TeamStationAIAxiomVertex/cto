@@ -96,7 +96,7 @@ export default function PerformanceEvaluationFrameworkPage() {
             </header>
 
             <section className="my-16">
-                 <div className="rounded-lg border bg-card p-6 shadow-lg">
+                 <div className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 shadow-lg">
                     <p className="text-sm font-semibold text-primary">Operational reality: performance management is broken</p>
                     <div className="flex items-center gap-3 mt-3">
                          <AlertTriangle className="h-8 w-8 text-primary" />
@@ -142,7 +142,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                 <p className="text-center mt-2 text-muted-foreground">We structure an engineer's journey as a clear, multi-stage runway designed for acceleration and long-term success.</p>
                 <div className="mt-12 space-y-8">
                     {phases.map(phase => (
-                        <div key={phase.name} className="p-6 rounded-lg border bg-card shadow-lg">
+                        <div key={phase.name} className="glass-card-interactive gradient-ring p-6 rounded-lg border border-border/70 bg-background/70 shadow-lg">
                             <h3 className="font-semibold text-foreground text-xl">{phase.name}</h3>
                             <p className="text-sm text-muted-foreground mt-1"><strong>Goal:</strong> {phase.goal}</p>
                             <p className="text-sm text-muted-foreground mt-1"><strong>Key Instrument:</strong> {phase.instrument}</p>
@@ -157,7 +157,7 @@ export default function PerformanceEvaluationFrameworkPage() {
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {competencies.map((comp, index) => (
-                        <div key={index} className="rounded-lg border bg-card p-6 flex flex-col shadow-lg">
+                        <div key={index} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col shadow-lg">
                             <p className="text-sm font-semibold text-primary">{comp.pain}</p>
 
                             <div className="mt-4 pt-4 border-t border-border">
@@ -190,7 +190,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                 <h2 className="text-center text-3xl font-bold">The Outcomes: What This Delivers</h2>
                 <p className="text-center mt-2 text-muted-foreground">By committing to this rigorous, structured program, we create a powerful set of outcomes for both you as our client and for the engineers dedicated to your success.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                    <div className="p-6 rounded-lg border bg-card shadow-lg">
+                    <div className="glass-card-interactive gradient-ring p-6 rounded-lg border border-border/70 bg-background/70 shadow-lg">
                         <h3 className="font-bold text-primary text-xl">For Our Clients</h3>
                         <ul className="mt-4 space-y-3 list-none p-0">
                             <li className="flex items-start gap-3 text-sm"><CheckCircle className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <div><strong className="text-foreground">Actionable Performance Data:</strong> A clear picture of strengths and growth areas, free from subjective noise.</div></li>
@@ -199,7 +199,7 @@ export default function PerformanceEvaluationFrameworkPage() {
                             <li className="flex items-start gap-3 text-sm"><CheckCircle className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <div><strong className="text-foreground">Higher Talent Retention & ROI:</strong> Engaged engineers with clear growth paths stay longer, ensuring stability.</div></li>
                         </ul>
                     </div>
-                     <div className="p-6 rounded-lg border bg-card shadow-lg">
+                     <div className="glass-card-interactive gradient-ring p-6 rounded-lg border border-border/70 bg-background/70 shadow-lg">
                         <h3 className="font-bold text-primary text-xl">For Our Engineers</h3>
                         <ul className="mt-4 space-y-3 list-none p-0">
                             <li className="flex items-start gap-3 text-sm"><CheckCircle className="h-4 w-4 mt-0.5 text-green-500 shrink-0" /> <div><strong className="text-foreground">Clarity and Fair Expectations:</strong> They know exactly what the bar is and how they are measured.</div></li>

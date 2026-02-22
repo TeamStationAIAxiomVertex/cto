@@ -412,7 +412,7 @@ export default async function HomePage() {
                 <p className="text-sm font-semibold text-foreground">System topology diagram</p>
                 <div className="mt-4 grid gap-3 md:grid-cols-4">
                   {topologyNodes.map((node) => (
-                    <div key={`${node.title}-topology`} className="rounded-lg border bg-card/80 px-3 py-3 text-center text-xs text-foreground">
+                    <div key={`${node.title}-topology`} className="glass-card-interactive rounded-lg border border-border/70 bg-background/75 px-3 py-3 text-center text-xs text-foreground">
                       {node.title}
                     </div>
                   ))}
@@ -616,7 +616,7 @@ export default async function HomePage() {
               <div className="mt-6 rounded-xl border bg-background/55 p-5">
                 <div className="grid gap-3 md:grid-cols-3">
                   {osStack.map((layer) => (
-                    <div key={layer} className="rounded-lg border bg-card/80 px-4 py-3 text-sm text-foreground">
+                    <div key={layer} className="glass-card-interactive rounded-lg border border-border/70 bg-background/75 px-4 py-3 text-sm text-foreground">
                       <Layers className="inline h-4 w-4 text-primary mr-2" />
                       {layer}
                     </div>

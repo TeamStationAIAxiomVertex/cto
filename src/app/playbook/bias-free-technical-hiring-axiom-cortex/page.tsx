@@ -237,7 +237,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
             {hiringPains.map((point) => (
               <div
                 key={point.pain}
-                className="rounded-lg border bg-card p-6 flex flex-col"
+                className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col"
               >
                 <p className="text-sm font-semibold text-primary">
                   {point.question}
@@ -250,7 +250,7 @@ export default function BiasFreeHiringAxiomCortexPage() {
                 </div>
                 <div className="mt-4 border-t border-border pt-4">
                   <h4 className="font-semibold text-destructive">
-                    The Problem
+                    Operating reality
                   </h4>
                   <p className="text-sm text-muted-foreground m-0">
                     {point.problem}

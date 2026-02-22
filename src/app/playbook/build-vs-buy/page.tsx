@@ -185,7 +185,7 @@ export default function BuildVsBuyPage() {
               <h3 className="text-center text-3xl font-bold text-primary">How We Eliminate the Hidden Taxes</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                   {buySolutions.map((item) => (
-                      <div key={item.pain} className="rounded-lg border bg-card p-6 flex flex-col">
+                      <div key={item.pain} className="glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col">
                           <p className="text-sm font-semibold text-primary">{item.pain}</p>
                           <div className="flex items-center gap-3 mt-3">
                               {item.icon}

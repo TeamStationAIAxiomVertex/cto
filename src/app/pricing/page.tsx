@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, UserCheck, FileText, ShieldCheck } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { RevealSection, StaggerGrid, StaggerItem } from '@/components/motion/MotionPrimitives';
 
 export const metadata: Metadata = {
   title: 'Nearshore IT Staff Augmentation Pricing',
@@ -94,6 +95,12 @@ const pricingFactors = [
 ]
 
 export default function PricingPage() {
+  const tierBars = levels.map((level) => ({
+    ...level,
+    monthly: level.rate * 173,
+    yearly: level.rate * 173 * 12,
+  }));
+  const maxMonthly = Math.max(...tierBars.map((t) => t.monthly));
   const serviceSchema = {
     "@context": "https://schema.org/",
     "@type": "Service",
@@ -186,9 +193,46 @@ export default function PricingPage() {
           </div>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 my-12">
+        <RevealSection className="glass-panel gradient-ring rounded-2xl border border-border/70 my-12 p-6 md:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground">Pricing tiers with monthly and annual cost visibility</h2>
+              <p className="mt-3 max-w-[72ch] text-muted-foreground leading-7">
+                Each tier is shown with the same basis hours so finance and engineering leaders can compare role scope and cost ranges without rate-card ambiguity.
+              </p>
+              <div className="mt-5 rounded-xl border border-border/70 bg-background/60 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary">Tier cost graph (173 hr basis)</p>
+                <div className="mt-4 space-y-3">
+                  {tierBars.map((level) => (
+                    <div key={`bar-${level.level}`}>
+                      <div className="mb-1 flex items-center justify-between gap-3 text-xs">
+                        <span className="font-semibold text-foreground">{level.level}</span>
+                        <span className="font-mono text-muted-foreground">${level.monthly.toLocaleString()} / mo</span>
+                      </div>
+                      <div className="h-2.5 rounded-full bg-border/70">
+                        <div
+                          className="h-2.5 rounded-full bg-primary"
+                          style={{ width: `${(level.monthly / maxMonthly) * 100}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                  {tierBars.map((level) => (
+                    <div key={`chip-${level.level}`} className="rounded-lg border border-border/70 bg-background/70 px-3 py-2">
+                      <p className="text-xs font-semibold text-foreground">{level.level}</p>
+                      <p className="mt-1 text-xs text-muted-foreground">${level.yearly.toLocaleString()} / year baseline</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {levels.map((level) => (
-            <div key={level.level} className={`group glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg ${level.level === 'L3 Senior' ? 'border-primary/50' : ''}`}>
+            <StaggerItem key={level.level}>
+            <div className={`group glass-card-interactive gradient-ring rounded-lg border border-border/70 bg-background/70 p-6 flex flex-col transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 shadow-lg ${level.level === 'L3 Senior' ? 'border-primary/50' : ''}`}>
               <h2 className="text-lg font-bold">{level.level}</h2>
               <p className="text-sm text-muted-foreground flex-grow mt-1">{level.description}</p>
               <div className="my-6 text-center">
@@ -205,10 +249,13 @@ export default function PricingPage() {
                   Find Talent
                </Link>
             </div>
+            </StaggerItem>
           ))}
-        </div>
+            </StaggerGrid>
+          </div>
+        </RevealSection>
         
-          <div className="glass-panel gradient-ring rounded-2xl border border-border/70 my-12 p-8 shadow-lg">
+          <RevealSection className="glass-panel gradient-ring rounded-2xl border border-border/70 my-12 p-8 shadow-lg">
            <h2 className="text-3xl font-bold text-center">The Math Your CFO Cares About</h2>
            <p className="text-center text-muted-foreground max-w-3xl mx-auto mt-2">A single delayed roadmap feature can cost you millions in ARR. Faster, more accurate hiring isn't a "nice-to-have" it's a financial necessity.</p>
            <div className="glass-card-interactive text-center mt-8 border border-border/70 bg-background/70 p-6 rounded-lg max-w-2xl mx-auto shadow-lg">
@@ -221,9 +268,9 @@ export default function PricingPage() {
               </div>
               <p className="text-xs text-muted-foreground mt-2">Revenue pulled forward by hiring in <Link href="/process" className='text-primary hover:underline'>≈9 days</Link> vs. the industry average of 45.</p>
            </div>
-        </div>
+        </RevealSection>
 
-        <div className="my-16 text-center">
+        <RevealSection className="my-16 text-center">
           <h2 className="text-4xl font-bold">The All-Inclusive Risk Shield</h2>
           <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">Competitors' quotes hide 10-15% in extra fees for EOR, device management, and compliance. Our rate includes everything. No surprises.</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 mt-12 max-w-6xl mx-auto text-left">
@@ -234,9 +281,9 @@ export default function PricingPage() {
                   </div>
               ))}
           </div>
-        </div>
+        </RevealSection>
 
-         <div className="my-16">
+         <RevealSection className="my-16">
           <h2 className="text-4xl font-bold text-center">How We Justify Your Budget</h2>
            <p className="mt-4 max-w-3xl mx-auto text-center text-muted-foreground">Our fully-loaded hourly rate is clear, defensible, and optimized for value. We align talent expectations with local market reality and bundle critical services under one accountable SLA.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -257,9 +304,9 @@ export default function PricingPage() {
                   </div>
               ))}
           </div>
-        </div>
+        </RevealSection>
 
-         <div className="text-center rounded-lg bg-primary/10 p-8 shadow-lg">
+         <RevealSection className="glass-panel gradient-ring text-center rounded-lg border border-border/70 p-8 shadow-lg">
           <h2 className="text-2xl font-bold">Stop Burning Money. Start Building.</h2>
           <p className="mt-2 text-muted-foreground">
             Let's have a real conversation about your budget and your roadmap. In 15 minutes, we can give you a concrete, defensible plan.
@@ -267,7 +314,7 @@ export default function PricingPage() {
            <Link href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1JD2e4SmSzEC82NiTvzvUJNaghMafqlUdoTB9YlWfUSsJa2fC4uqoXGoOb9XNhRIsNa-IOIXSq" target="_blank" rel="noopener noreferrer" className="cta-button mt-6">
               Book a No-Bullshit Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
-        </div>
+        </RevealSection>
       </main>
     </>
   );
