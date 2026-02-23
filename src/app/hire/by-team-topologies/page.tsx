@@ -9,6 +9,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { JsonLd } from "../../../components/seo/JsonLd";
 import BenchmarkBarsPanel from "../../../components/graphs/BenchmarkBarsPanel";
 import {
@@ -228,6 +229,195 @@ const topologyRiskBars = [
   },
 ];
 
+type TopologyRadarSnapshot = {
+  team: "Stream" | "Platform" | "Enabling" | "Subsystem";
+  label: string;
+  subtitle: string;
+  colorClass: string;
+  colorHex: string;
+  throughput: number;
+  reliability: number;
+  contextSurfaceArea: number;
+  systemicValue: number;
+  complexity: number;
+};
+
+const topologyProgressSnapshots: TopologyRadarSnapshot[] = [
+  {
+    team: "Stream",
+    label: "Stream-Aligned Team A",
+    subtitle: "Revenue workflow ownership",
+    colorClass: "text-blue-300",
+    colorHex: "#7dd3fc",
+    throughput: 0.78,
+    reliability: 0.71,
+    contextSurfaceArea: 19,
+    systemicValue: 0.83,
+    complexity: 0.58,
+  },
+  {
+    team: "Platform",
+    label: "Platform Team",
+    subtitle: "Paved road / DX controls",
+    colorClass: "text-emerald-300",
+    colorHex: "#6ee7b7",
+    throughput: 0.66,
+    reliability: 0.84,
+    contextSurfaceArea: 26,
+    systemicValue: 0.89,
+    complexity: 0.72,
+  },
+  {
+    team: "Enabling",
+    label: "Enabling Team",
+    subtitle: "Capability uplift campaign",
+    colorClass: "text-violet-300",
+    colorHex: "#c4b5fd",
+    throughput: 0.59,
+    reliability: 0.68,
+    contextSurfaceArea: 14,
+    systemicValue: 0.76,
+    complexity: 0.47,
+  },
+  {
+    team: "Subsystem",
+    label: "Complicated Subsystem Team",
+    subtitle: "Agent orchestration / evals",
+    colorClass: "text-amber-300",
+    colorHex: "#fcd34d",
+    throughput: 0.61,
+    reliability: 0.73,
+    contextSurfaceArea: 22,
+    systemicValue: 0.92,
+    complexity: 0.91,
+  },
+];
+
+function TopologyRadarChart({
+  snapshot,
+  size = 156,
+}: {
+  snapshot: TopologyRadarSnapshot;
+  size?: number;
+}) {
+  const cx = size / 2;
+  const cy = size / 2;
+  const r = size / 2 - 18;
+  const cNorm =
+    snapshot.contextSurfaceArea > 0
+      ? Math.min(snapshot.contextSurfaceArea / 30, 1)
+      : 0;
+
+  const values = [
+    snapshot.throughput,
+    snapshot.reliability,
+    cNorm,
+    snapshot.systemicValue,
+    snapshot.complexity,
+  ];
+  const labels = ["T", "R", "C", "S", "X"];
+  const n = values.length;
+
+  const polarPoint = (index: number, scalar: number) => {
+    const angle = -Math.PI / 2 + (2 * Math.PI * index) / n;
+    return {
+      x: cx + r * scalar * Math.cos(angle),
+      y: cy + r * scalar * Math.sin(angle),
+    };
+  };
+
+  const ringFractions = [0.25, 0.5, 0.75, 1];
+  const ringPoints = ringFractions.map((frac) =>
+    Array.from({ length: n }, (_, i) => {
+      const p = polarPoint(i, frac);
+      return `${p.x.toFixed(1)},${p.y.toFixed(1)}`;
+    }).join(" ")
+  );
+
+  const axisLines = Array.from({ length: n }, (_, i) => {
+    const p = polarPoint(i, 1);
+    return (
+      <line
+        key={`axis-${i}`}
+        x1={cx}
+        y1={cy}
+        x2={p.x}
+        y2={p.y}
+        stroke="rgba(148,163,184,0.35)"
+        strokeWidth="1"
+      />
+    );
+  });
+
+  const dataPoints = Array.from({ length: n }, (_, i) => {
+    const clamped = Math.max(0, Math.min(values[i], 1));
+    const p = polarPoint(i, clamped);
+    return `${p.x.toFixed(1)},${p.y.toFixed(1)}`;
+  }).join(" ");
+
+  const labelNodes = Array.from({ length: n }, (_, i) => {
+    const p = polarPoint(i, 1.15);
+    return (
+      <text
+        key={`label-${labels[i]}`}
+        x={p.x}
+        y={p.y}
+        textAnchor="middle"
+        dominantBaseline="central"
+        fontSize="10"
+        fontWeight="700"
+        fill="rgba(226,232,240,0.78)"
+      >
+        {labels[i]}
+      </text>
+    );
+  });
+
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      className="mx-auto drop-shadow-[0_0_24px_rgba(59,130,246,0.12)]"
+      role="img"
+      aria-label={`${snapshot.label} radar chart for throughput, reliability, context, systemic value, and complexity`}
+    >
+      {ringPoints.map((points, idx) => (
+        <polygon
+          key={`ring-${ringFractions[idx]}`}
+          points={points}
+          fill="none"
+          stroke="rgba(148,163,184,0.22)"
+          strokeWidth={idx === ringPoints.length - 1 ? 0.9 : 0.6}
+        />
+      ))}
+      {axisLines}
+      <polygon
+        points={dataPoints}
+        fill={snapshot.colorHex}
+        fillOpacity={0.18}
+        stroke={snapshot.colorHex}
+        strokeWidth={2}
+      />
+      {Array.from({ length: n }, (_, i) => {
+        const clamped = Math.max(0, Math.min(values[i], 1));
+        const p = polarPoint(i, clamped);
+        return (
+          <circle
+            key={`pt-${i}`}
+            cx={p.x}
+            cy={p.y}
+            r={2.4}
+            fill={snapshot.colorHex}
+            className="animate-pulse"
+          />
+        );
+      })}
+      {labelNodes}
+    </svg>
+  );
+}
+
 export default function TeamTopologiesPage() {
   return (
     <main className="manual-page container max-w-6xl py-10">
@@ -345,6 +535,106 @@ export default function TeamTopologiesPage() {
           bars={topologyRiskBars}
           max={100}
         />
+      </RevealSection>
+
+      <RevealSection className="glass-panel gradient-ring my-14 rounded-2xl p-6 md:p-8">
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+              Topology Progress Control Surface
+            </p>
+            <h2 className="mt-2 text-3xl font-bold">
+              CTO Radar View for Team Topology Progress
+            </h2>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-muted-foreground">
+              Use this radar view to measure how each team type is progressing across five signals:
+              throughput (`T`), reliability (`R`), context surface area (`C`), systemic value (`S`),
+              and complexity ownership (`X`). The point is not cosmetic symmetry. The point is to
+              see where topology design is creating delivery imbalance.
+            </p>
+          </div>
+          <div className="rounded-xl border border-border/60 bg-background/60 p-3 text-xs text-muted-foreground">
+            <p><span className="font-semibold text-foreground">C normalization:</span> context surface area / 30 (capped)</p>
+            <p className="mt-1"><span className="font-semibold text-foreground">Interpretation:</span> compare shape drift over time, not one score in isolation</p>
+          </div>
+        </div>
+
+        <div className="mt-6 grid gap-4 xl:grid-cols-2">
+          {topologyProgressSnapshots.map((snapshot) => {
+            const cNorm = Math.min(snapshot.contextSurfaceArea / 30, 1);
+            const metrics = [
+              { key: "T", label: "Throughput", value: snapshot.throughput },
+              { key: "R", label: "Reliability", value: snapshot.reliability },
+              { key: "C", label: "Context", value: cNorm },
+              { key: "S", label: "Systemic value", value: snapshot.systemicValue },
+              { key: "X", label: "Complexity", value: snapshot.complexity },
+            ];
+
+            return (
+              <article
+                key={snapshot.label}
+                className="relative overflow-hidden rounded-2xl border border-border/70 bg-background/65 p-4 md:p-5"
+              >
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_10%,rgba(59,130,246,0.12),transparent_45%),radial-gradient(circle_at_92%_10%,rgba(16,185,129,0.10),transparent_40%)]" />
+                <div className="relative grid gap-4 md:grid-cols-[170px_1fr] md:items-center">
+                  <div className="rounded-xl border border-border/60 bg-card/35 p-2">
+                    <TopologyRadarChart snapshot={snapshot} />
+                  </div>
+
+                  <div>
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div>
+                        <p className={cn("text-xs font-semibold uppercase tracking-wide", snapshot.colorClass)}>
+                          {snapshot.team} Team
+                        </p>
+                        <h3 className="text-lg font-bold text-foreground">{snapshot.label}</h3>
+                        <p className="text-xs text-muted-foreground">{snapshot.subtitle}</p>
+                      </div>
+                      <div className="rounded-lg border border-border/60 bg-background/60 px-2.5 py-1.5 text-right">
+                        <p className="text-[10px] uppercase tracking-wide text-foreground/70">Context surface</p>
+                        <p className="text-sm font-semibold text-foreground">{snapshot.contextSurfaceArea}</p>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 space-y-2.5">
+                      {metrics.map((metric) => (
+                        <div key={`${snapshot.label}-${metric.key}`}>
+                          <div className="mb-1 flex items-center justify-between text-xs">
+                            <span className="text-foreground/85">
+                              <span className="font-semibold text-primary">{metric.key}</span> {metric.label}
+                            </span>
+                            <span className="font-semibold text-foreground">{Math.round(metric.value * 100)}%</span>
+                          </div>
+                          <div className="h-1.5 overflow-hidden rounded-full bg-background/80">
+                            <div
+                              className="h-full rounded-full transition-all"
+                              style={{
+                                width: `${Math.round(metric.value * 100)}%`,
+                                background: `linear-gradient(90deg, ${snapshot.colorHex}cc, ${snapshot.colorHex})`,
+                              }}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-4 rounded-xl border border-border/60 bg-card/30 p-3 text-xs leading-5 text-muted-foreground">
+                      <span className="font-semibold text-foreground">CTO read:</span>{" "}
+                      {snapshot.team === "Stream" &&
+                        "Watch throughput and reliability together; rising context without platform support is an early warning of flow collapse."}
+                      {snapshot.team === "Platform" &&
+                        "Higher systemic value and reliability are healthy, but track complexity growth to avoid the platform becoming a bottleneck itself."}
+                      {snapshot.team === "Enabling" &&
+                        "Lower raw throughput is expected; measure impact through systemic value and reduced context pressure on stream teams."}
+                      {snapshot.team === "Subsystem" &&
+                        "High complexity ownership is intentional; ensure reliability rises with specialization or defect spillover will hit streams."}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </RevealSection>
 
       <RevealSection className="glass-panel gradient-ring my-14 rounded-2xl p-8 md:p-10">

@@ -10,7 +10,7 @@ type PrimitiveProps = {
 
 function useRevealOnce() {
   const ref = React.useRef<HTMLElement | HTMLDivElement | null>(null);
-  const [visible, setVisible] = React.useState(false);
+  const [visible, setVisible] = React.useState(true);
 
   React.useEffect(() => {
     const el = ref.current;
@@ -23,11 +23,22 @@ function useRevealOnce() {
       return;
     }
 
+    if (typeof window.IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+
+    // Fail open so content never remains hidden if intersection callbacks are delayed or blocked.
+    const fallbackTimer = window.setTimeout(() => {
+      setVisible(true);
+    }, 800);
+
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
         if (entry?.isIntersecting) {
           setVisible(true);
+          window.clearTimeout(fallbackTimer);
           observer.disconnect();
         }
       },
@@ -35,7 +46,10 @@ function useRevealOnce() {
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      window.clearTimeout(fallbackTimer);
+      observer.disconnect();
+    };
   }, []);
 
   return { ref, visible };
