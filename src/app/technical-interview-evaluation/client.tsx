@@ -47,64 +47,55 @@ const cognitiveData = [
   {
     name: "Architectural Instinct",
     pain: "Can they design for scale, or just for today?",
-    candidate: 4.3,
+    candidate: 3.9,
     ideal: 4.5,
     rationale:
-      "Erick's architectural instinct is strong. He correctly navigates monolith vs. microservices trade-offs (Q1), proposes a 'contract-first' API strategy (Q2), and, most impressively, demonstrated a powerful architectural mind by inventing the 'micro prompts' analogy (Q4). This shows he can apply architectural principles to novel domains like AI, even without knowing the specific terminology. His score reflects this high-level reasoning, moderated slightly by the need for some prompting on specific resiliency patterns.",
+      "Jesus demonstrates a solid architectural mindset for Dynamics 365 F&O work. He correctly identifies use of extensions as the upgrade-safe strategy (Q6) and describes practical large-scale performance remediation using multi-threading in X++ (Q3). The score is moderated by limited recent greenfield integration design experience noted in the report.",
   },
   {
     name: "Problem-Solving Agility",
     pain: "Do they freeze on novel problems or adapt?",
-    candidate: 4.6,
+    candidate: 4.4,
     ideal: 4.0,
     rationale:
-      "Erick's PSA is a significant strength. He showcased remarkable adaptability in the prompt engineering discussion (Q4), quickly grasping the interviewer's 'microservices' analogy and synthesizing it into a new, valid concept ('micro prompts'). This ability to pivot and apply existing mental models to new problems is a hallmark of agile thinking. His solution to the complex stakeholder problem (Q7) further confirms his ability to deconstruct and solve multifaceted challenges.",
+      "Jesus shows strong problem-solving agility, especially when diagnosing and resolving performance bottlenecks in X++ (Q3). He combines practical tooling with architectural changes (multi-threaded batch processing) and explains the reasoning clearly. The report identifies this as an immediately visible senior-level strength.",
   },
   {
     name: "Learning Orientation",
     pain: "Are they coachable or a know-it-all?",
-    candidate: 5.0,
+    candidate: 4.2,
     ideal: 5.0,
     rationale:
-      "This is Erick's strongest trait and a powerful positive signal. His score is a perfect 5.0, supported by a high MCI score and 4 distinct authenticityIncidents. He proactively and honestly stated his limitations in error handling (Q1, Q5), creating security architecture from scratch (Q2), and Infrastructure as Code (Q6). This intellectual honesty is a critical predictor of coachability and rapid growth, making him an excellent investment.",
+      "Jesus shows strong learning orientation through honest self-assessment. The report notes he was direct about feeling somewhat 'stuck' in the same modules and expressed clear interest in expanding his exposure across the F&O ecosystem. This supports coachability and long-term growth, though the score is not maxed because the evidence is more role-contextual than broad cross-domain.",
   },
   {
     name: "Collaborative Mindset",
     pain: "Are they a team-player or a lone wolf?",
-    candidate: 4.4,
+    candidate: 4.6,
     ideal: 4.0,
     rationale:
-      "Erick's score is driven by the powerful behavioral example in Q7. He demonstrated extreme ownership and empathy by positioning himself as a 'bridge between the stakeholders and the developments' to protect his team and improve project outcomes. He explicitly discussed translating technical concepts for non-technical stakeholders, a key collaborative skill. His ownershipRatio was balanced, reflecting a healthy mix of individual accountability and team-oriented thinking.",
+      "Collaborative mindset is one of Jesus's clearest strengths. As a technical lead, he describes disciplined team communication, daily check-ins, and professional handling of pushback while still executing client decisions. The report specifically highlights his mature, team-oriented communication style and stakeholder alignment behavior.",
   },
 ];
 
 const risks = [
   {
-    title: "Gaps in Advanced Resiliency Patterns",
+    title: 'Limited Recent "Greenfield" Integration Design Experience',
     description:
-      "Erick admitted weakness in designing complex error handling and resiliency systems (e.g., circuit breakers, advanced retry logic). In a high-throughput ad-tech environment, this is a critical skill.",
+      "Jesus's current role focuses on maintaining and enhancing existing integrations rather than designing new integrations from scratch. He could explain the architecture and core components clearly, but had less recent first-hand greenfield design experience.",
     mitigation:
-      "During onboarding, pair him with a senior backend engineer for architectural reviews specifically focused on fault tolerance. Assign him a small, well-defined task to implement a circuit breaker pattern for a non-critical service to build practical experience.",
+      "Treat this as a low-to-moderate risk. Pair him with an architect for early reviews and a short ramp-up focused on the company's integration patterns. His foundational knowledge of entities, OData, and extension architecture should allow a fast transition.",
     proof:
-      "Evidence: Q1 Transcript - '...in that specific, I'm not the best with error handling...'",
+      'Evidence: Report Risk 1 + Q1/Q6 evidence (strong framework knowledge, less recent greenfield design from scratch).',
   },
   {
-    title: "Unfamiliarity with Standard Prompt Engineering Terminology",
+    title: 'Potential for "Stuck in a Rut"',
     description:
-      "While demonstrating strong conceptual reasoning about prompt architecture (Q4), he is not familiar with the industry-standard lexicon (e.g., Chain-of-Thought, Few-Shot). This could create a minor communication gap initially.",
+      "Jesus reported feeling somewhat 'stuck' working on the same modules for several years. There is a minor risk that breadth across the wider F&O application could lag role expectations without exposure to new areas.",
     mitigation:
-      "This is a low-risk factor given his strong underlying reasoning. Provide him with internal best-practice documents and playbooks on advanced prompt engineering patterns. His high LO and demonstrated ability to grasp analogies suggest he will map his innate understanding to the standard terminology very quickly.",
+      "This is low risk and can be turned into a positive motivator. Intentionally rotate him into adjacent modules and give ownership opportunities that broaden domain coverage while preserving his technical lead strengths.",
     proof:
-      "Evidence: Q4 Transcript - Initial confusion between 'training' and 'prompting'.",
-  },
-  {
-    title: "Lack of Infrastructure as Code (IaC) Experience",
-    description:
-      "He explicitly stated he has not had much exposure to IaC (e.g., Terraform, CloudFormation).",
-    mitigation:
-      "This is a lower-priority risk for a full-stack role but should be addressed for senior-level growth. Enroll him in a self-paced online course for AWS CDK or Terraform. Involve him in peer reviews of IaC changes to build familiarity.",
-    proof:
-      "Evidence: Q6 Transcript - 'Not so much. I want to have that exposure, that experience.'",
+      "Evidence: Report Risk 2 + Learning Orientation rationale (explicit desire to expand scope).",
   },
 ];
 
@@ -1187,6 +1178,109 @@ const glossary = [
   },
 ];
 
+const reportEvidenceLocker = [
+  {
+    title:
+      'Question 1: Walk me through the architecture of a customization you built in X++ that impacted core business processes.',
+    content: (
+      <div className="prose dark:prose-invert max-w-none">
+        <h4>Report-aligned Summary</h4>
+        <p>
+          Jesus described an F&amp;O customization around MSF creation / release-product form extensions, including
+          use of extensions, event handlers, Chain of Command, entities, and OData exposure.
+          He tied the design to audit logging and business process requirements instead of describing code only.
+        </p>
+        <h4>Why this mattered in the report</h4>
+        <ul>
+          <li>Shows practical understanding of F&amp;O extension architecture and upgrade-safe patterns.</li>
+          <li>Demonstrates API/data integration familiarity via entities + OData.</li>
+          <li>Supports strong procedural and mental-model scoring in the evaluation.</li>
+        </ul>
+        <h4>Evidence Signals Captured</h4>
+        <p>
+          The report marks this as a strong answer with clear articulation of extension mechanics, event handlers, and
+          business rationale, indicating senior-level familiarity with the Dynamics F&amp;O customization framework.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title:
+      "Question 3: Describe a performance bottleneck you've solved in X++ and the method you used to diagnose it.",
+    content: (
+      <div className="prose dark:prose-invert max-w-none">
+        <h4>Report-aligned Summary</h4>
+        <p>
+          Jesus described a large-volume processing bottleneck and the move from single-threaded processing to a
+          multi-threaded batch-job approach. He referenced a substantial reduction in processing time and explained
+          why the bottleneck occurred.
+        </p>
+        <h4>Why this mattered in the report</h4>
+        <ul>
+          <li>Senior-level signal for performance diagnosis and architecture-level remediation (not just query tweaks).</li>
+          <li>Strong evidence of F&amp;O batch-processing knowledge in X++.</li>
+          <li>Direct support for high Problem-Solving Agility and technical lead capability.</li>
+        </ul>
+        <h4>Evidence Signals Captured</h4>
+        <p>
+          The report scores this as an excellent, senior-level response and highlights his ability to move beyond basic
+          fixes into structural performance design using multi-threading patterns.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title:
+      "Question 6: When extending core modules in F&O, how do you ensure your work remains upgrade-safe?",
+    content: (
+      <div className="prose dark:prose-invert max-w-none">
+        <h4>Report-aligned Summary</h4>
+        <p>
+          Jesus answered directly that the core principle is to use extensions and avoid modifying standard code.
+          He contrasted extension-based approaches with older layering practices and explained why extensions preserve
+          upgrade safety in modern Dynamics 365 F&amp;O.
+        </p>
+        <h4>Why this mattered in the report</h4>
+        <ul>
+          <li>Textbook validation of one of the most important architectural principles in F&amp;O development.</li>
+          <li>Strong conceptual clarity and confidence signal for a senior candidate.</li>
+          <li>Supports high Architectural Instinct and role-fit confidence.</li>
+        </ul>
+        <h4>Evidence Signals Captured</h4>
+        <p>
+          The report characterizes this as a conceptually perfect answer and a strong indicator that Jesus understands
+          upgrade-safe architecture, not just syntax-level implementation.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title:
+      "Question 7: Describe the lifecycle of a feature from dev → build → test → deploy in a proper F&O enterprise environment.",
+    content: (
+      <div className="prose dark:prose-invert max-w-none">
+        <h4>Report-aligned Summary</h4>
+        <p>
+          Jesus gave a detailed, chronological SDLC walkthrough using Azure DevOps, Git branching, PR reviews,
+          PBIs/tasks, environment-specific deployment flow, and release controls. He described this as day-to-day team
+          practice rather than theoretical process knowledge.
+        </p>
+        <h4>Why this mattered in the report</h4>
+        <ul>
+          <li>Strong evidence of technical lead experience and enterprise delivery discipline.</li>
+          <li>Confirms familiarity with modern CI/CD-oriented development lifecycle practices in F&amp;O.</li>
+          <li>Supports high Collaborative Mindset and production-readiness confidence.</li>
+        </ul>
+        <h4>Evidence Signals Captured</h4>
+        <p>
+          The report highlights the precision and depth of this answer as a major positive signal for seniority,
+          ownership, and end-to-end delivery understanding.
+        </p>
+      </div>
+    ),
+  },
+];
+
 const faqs = [
   {
     question: "How is this different from a normal technical interview?",
@@ -1232,7 +1326,7 @@ export default function TalentEvaluationClient() {
       </div>
       <header className="glass-panel gradient-ring hero-depth system-grid my-8 rounded-2xl border border-border/70 p-6 md:p-8">
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-          Technical Talent Evaluation Report: Erick [...]
+          Technical Talent Evaluation Report: Jesus [...]
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
           This is a real (anonymized) evaluation report generated by our{" "}
@@ -1263,26 +1357,20 @@ export default function TalentEvaluationClient() {
           <div className="mt-4 text-sm text-muted-foreground space-y-2">
             <p>
               This recommendation is based on a comprehensive analysis that
-              reveals Erick as a high-potential senior engineer with a robust
-              technical foundation and exceptional cognitive traits. He
-              demonstrates deep, modern expertise in frontend performance
-              engineering and a solid grasp of backend architectural principles.
+              reveals Jesus as a strong and experienced developer with a solid
+              grasp of Microsoft Dynamics 365 F&amp;O extension architecture,
+              upgrade-safe customizations, and enterprise development practices.
             </p>
             <p>
-              While he may not use standard industry jargon for every concept,
-              particularly in prompt engineering, his ability to reason from
-              first principles and arrive at architecturally sound, analogous
-              solutions is a powerful indicator of a superior mental model.
-              This, combined with a perfect score in Learning
-              Orientation evidenced by his consistent intellectual honesty and a
-              proven collaborative mindset, makes him a prime candidate. He
-              passed all Core Competency Gates, and his profile strongly
-              suggests he will not only excel in the role but also rapidly
-              evolve into a key technical leader.
+              He demonstrates practical experience solving production
+              performance bottlenecks at scale using multi-threading in X++,
+              strong communication as a technical lead, and a mature
+              collaborative approach. The identified risks are minor and
+              mitigable, with the report’s final recommendation marked as Hire.
             </p>
           </div>
           <p className="mt-4 text-xs font-mono text-primary bg-primary/10 rounded px-2 py-1 inline-block self-start">
-            Evidence: Final score 4.6 / 5.0 (all core competency gates passed)
+            Evidence: Final score 4.1 / 5.0 (Final recommendation: Hire)
           </p>
         </div>
 
@@ -1412,7 +1500,7 @@ export default function TalentEvaluationClient() {
               </div>
               <div className="mt-4 text-sm text-muted-foreground">
                 <span>
-                  Erick operates squarely in the "Honest Self-Assessment" zone.
+                  Jesus falls in the expert zone, bordering on "Honest Self-Assessment."
                   His{" "}
                 </span>
                 <WithTooltip content="Metacognitive Conviction Index">
@@ -1422,10 +1510,10 @@ export default function TalentEvaluationClient() {
                 </WithTooltip>
                 <span>
                   {" "}
-                  is exceptionally high due to his repeated, voluntary
-                  admissions of his knowledge boundaries. This demonstrates a
-                  precise and accurate understanding of what he knows and what
-                  he doesn't.
+                  indicates strong calibration between confidence and knowledge.
+                  The report notes he speaks confidently on development lifecycle,
+                  branching strategies, and performance tuning while qualifying
+                  areas where he is less current, especially API design.
                 </span>
               </div>
               <div className="mt-4 border-t border-border pt-4">
@@ -1435,8 +1523,8 @@ export default function TalentEvaluationClient() {
                   [HONEST SELF-ASSESSMENT] &lt;--●
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  This high level of self-awareness is a critical asset, as it
-                  minimizes risk and maximizes his potential for growth and
+                  This level of calibration is a strong senior signal because it
+                  improves decision quality, reduces hiring risk, and supports
                   coachability.
                 </p>
               </div>
@@ -1496,7 +1584,7 @@ export default function TalentEvaluationClient() {
           </p>
           <div className="mt-8">
             <Accordion type="single" collapsible>
-              {evidenceLocker.map((item) => (
+              {reportEvidenceLocker.map((item) => (
                 <AccordionItem
                   title={item.title}
                   value={item.title}
