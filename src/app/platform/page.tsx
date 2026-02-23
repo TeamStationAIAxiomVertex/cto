@@ -209,6 +209,56 @@ const architectureLayers = [
   },
 ];
 
+const systemInputs = [
+  {
+    icon: <Users className="h-4 w-4 text-primary" />,
+    title: "Sourcing & Vetting",
+    detail: "Recruiters, structured interviews, cognitive evaluation, approvals",
+  },
+  {
+    icon: <FileText className="h-4 w-4 text-primary" />,
+    title: "EOR & Compliance",
+    detail: "Contracts, payroll, taxes, benefits, labor-law workflows",
+  },
+  {
+    icon: <Laptop className="h-4 w-4 text-primary" />,
+    title: "Devices & Identity",
+    detail: "Procure, enroll, MDM, access provisioning, endpoint controls",
+  },
+  {
+    icon: <Gauge className="h-4 w-4 text-primary" />,
+    title: "Onboarding Signals",
+    detail: "Day-1 readiness, 30-60-90 plan, alerts, operational handoff",
+  },
+];
+
+const controlPlaneModules = [
+  "Workflow orchestration",
+  "SLA ownership",
+  "Audit trail & evidence",
+  "Policy enforcement",
+  "Integration routing",
+  "Executive telemetry",
+];
+
+const systemOutputs = [
+  {
+    icon: <CheckCircle className="h-4 w-4 text-green-400" />,
+    title: "Deterministic deployment",
+    detail: "Engineering squads activated under one accountable operating path",
+  },
+  {
+    icon: <ShieldCheck className="h-4 w-4 text-green-400" />,
+    title: "Governed delivery",
+    detail: "Compliance, security, and evidence preserved across the lifecycle",
+  },
+  {
+    icon: <Scale className="h-4 w-4 text-green-400" />,
+    title: "CFO-ready control surface",
+    detail: "One contract, one SLA, one invoice with measurable operating KPIs",
+  },
+];
+
 export default function PlatformPage() {
   return (
     <main className="manual-page container max-w-7xl py-10">
@@ -246,6 +296,147 @@ export default function PlatformPage() {
           </Link>
         </div>
       </header>
+
+      <section className="my-16">
+        <h2 className="text-center text-4xl font-bold text-foreground">
+          Platform System Visual
+        </h2>
+        <p className="mt-2 max-w-3xl mx-auto text-center text-muted-foreground">
+          How TeamStation AI replaces fragmented vendors with a governed
+          platform: multiple operational inputs are normalized through one
+          control plane and delivered as one accountable engineering system.
+        </p>
+
+        <div className="mt-10 rounded-2xl border border-border/70 bg-background/60 p-4 md:p-6 glass-panel gradient-ring">
+          <div className="grid gap-4 xl:grid-cols-[1.05fr_.9fr_1.05fr] xl:items-stretch">
+            <div className="rounded-xl border border-border/70 bg-background/55 p-4">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+                  Inputs
+                </h3>
+                <span className="text-xs text-muted-foreground">
+                  Fragmented vendors
+                </span>
+              </div>
+              <div className="mt-3 space-y-3">
+                {systemInputs.map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-lg border border-border/60 bg-card/40 p-3"
+                  >
+                    <div className="flex items-center gap-2">
+                      {item.icon}
+                      <p className="text-sm font-semibold text-foreground">
+                        {item.title}
+                      </p>
+                    </div>
+                    <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                      {item.detail}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative rounded-xl border border-primary/20 bg-background/55 p-4 overflow-hidden">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(59,130,246,0.18),transparent_50%),radial-gradient(circle_at_82%_18%,rgba(16,185,129,0.16),transparent_45%)]" />
+              <div className="relative">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+                    TeamStation Control Plane
+                  </h3>
+                  <span className="flex items-center gap-2 text-xs text-foreground/80">
+                    <span className="relative inline-flex h-2.5 w-2.5">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/60" />
+                      <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-300" />
+                    </span>
+                    Live governance
+                  </span>
+                </div>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  One operating system for hiring, compliance, security,
+                  onboarding, and delivery control.
+                </p>
+
+                <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-1">
+                  {controlPlaneModules.map((module, idx) => (
+                    <div
+                      key={module}
+                      className="flex items-center justify-between rounded-lg border border-border/60 bg-card/40 px-3 py-2"
+                    >
+                      <span className="text-xs font-medium text-foreground">
+                        {module}
+                      </span>
+                      <span className="h-1.5 w-20 rounded-full bg-background/70">
+                        <span
+                          className={`block h-1.5 rounded-full bg-gradient-to-r from-primary to-emerald-300 ${
+                            idx % 2 === 0 ? "w-[82%]" : "w-[94%]"
+                          } animate-pulse`}
+                        />
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-4 rounded-lg border border-border/60 bg-background/45 p-3">
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">
+                    Normalized operational flow
+                  </p>
+                  <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-foreground/90">
+                    {["source", "vet", "contract", "secure", "deploy", "measure"].map(
+                      (step, idx, arr) => (
+                        <div key={step} className="flex items-center gap-2">
+                          <span className="rounded-md border border-border/60 bg-card/40 px-2 py-1">
+                            {step}
+                          </span>
+                          {idx < arr.length - 1 ? (
+                            <ArrowRight className="h-3.5 w-3.5 text-primary" />
+                          ) : null}
+                        </div>
+                      ),
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-border/70 bg-background/55 p-4">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+                  Outputs
+                </h3>
+                <span className="text-xs text-muted-foreground">
+                  Governed system
+                </span>
+              </div>
+              <div className="mt-3 space-y-3">
+                {systemOutputs.map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-lg border border-border/60 bg-card/40 p-3"
+                  >
+                    <div className="flex items-center gap-2">
+                      {item.icon}
+                      <p className="text-sm font-semibold text-foreground">
+                        {item.title}
+                      </p>
+                    </div>
+                    <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                      {item.detail}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-3">
+                <p className="text-xs font-semibold text-primary">
+                  One contract, one SLA, one accountable operator.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="my-24">
         <h2 className="text-center text-4xl font-bold text-foreground">
