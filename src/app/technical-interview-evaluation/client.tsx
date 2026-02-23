@@ -50,7 +50,7 @@ const cognitiveData = [
     candidate: 3.9,
     ideal: 4.5,
     rationale:
-      "Jesus demonstrates a solid architectural mindset for Dynamics 365 F&O work. He correctly identifies use of extensions as the upgrade-safe strategy (Q6) and describes practical large-scale performance remediation using multi-threading in X++ (Q3). The score is moderated by limited recent greenfield integration design experience noted in the report.",
+      "The Sr Software Engineer candidate demonstrates a solid architectural mindset for Dynamics 365 F&O work. He correctly identifies use of extensions as the upgrade-safe strategy (Q6) and describes practical large-scale performance remediation using multi-threading in X++ (Q3). The score is moderated by limited recent greenfield integration design experience noted in the report.",
   },
   {
     name: "Problem-Solving Agility",
@@ -58,7 +58,7 @@ const cognitiveData = [
     candidate: 4.4,
     ideal: 4.0,
     rationale:
-      "Jesus shows strong problem-solving agility, especially when diagnosing and resolving performance bottlenecks in X++ (Q3). He combines practical tooling with architectural changes (multi-threaded batch processing) and explains the reasoning clearly. The report identifies this as an immediately visible senior-level strength.",
+      "The Sr Software Engineer candidate shows strong problem-solving agility, especially when diagnosing and resolving performance bottlenecks in X++ (Q3). He combines practical tooling with architectural changes (multi-threaded batch processing) and explains the reasoning clearly. The report identifies this as an immediately visible senior-level strength.",
   },
   {
     name: "Learning Orientation",
@@ -66,7 +66,7 @@ const cognitiveData = [
     candidate: 4.2,
     ideal: 5.0,
     rationale:
-      "Jesus shows strong learning orientation through honest self-assessment. The report notes he was direct about feeling somewhat 'stuck' in the same modules and expressed clear interest in expanding his exposure across the F&O ecosystem. This supports coachability and long-term growth, though the score is not maxed because the evidence is more role-contextual than broad cross-domain.",
+      "The Sr Software Engineer candidate shows strong learning orientation through honest self-assessment. The report notes he was direct about feeling somewhat 'stuck' in the same modules and expressed clear interest in expanding his exposure across the F&O ecosystem. This supports coachability and long-term growth, though the score is not maxed because the evidence is more role-contextual than broad cross-domain.",
   },
   {
     name: "Collaborative Mindset",
@@ -74,7 +74,7 @@ const cognitiveData = [
     candidate: 4.6,
     ideal: 4.0,
     rationale:
-      "Collaborative mindset is one of Jesus's clearest strengths. As a technical lead, he describes disciplined team communication, daily check-ins, and professional handling of pushback while still executing client decisions. The report specifically highlights his mature, team-oriented communication style and stakeholder alignment behavior.",
+      "Collaborative mindset is one of the Sr Software Engineer candidate's clearest strengths. As a technical lead, he describes disciplined team communication, daily check-ins, and professional handling of pushback while still executing client decisions. The report specifically highlights his mature, team-oriented communication style and stakeholder alignment behavior.",
   },
 ];
 
@@ -82,7 +82,7 @@ const risks = [
   {
     title: 'Limited Recent "Greenfield" Integration Design Experience',
     description:
-      "Jesus's current role focuses on maintaining and enhancing existing integrations rather than designing new integrations from scratch. He could explain the architecture and core components clearly, but had less recent first-hand greenfield design experience.",
+      "The Sr Software Engineer candidate's current role focuses on maintaining and enhancing existing integrations rather than designing new integrations from scratch. He could explain the architecture and core components clearly, but had less recent first-hand greenfield design experience.",
     mitigation:
       "Treat this as a low-to-moderate risk. Pair him with an architect for early reviews and a short ramp-up focused on the company's integration patterns. His foundational knowledge of entities, OData, and extension architecture should allow a fast transition.",
     proof:
@@ -91,7 +91,7 @@ const risks = [
   {
     title: 'Potential for "Stuck in a Rut"',
     description:
-      "Jesus reported feeling somewhat 'stuck' working on the same modules for several years. There is a minor risk that breadth across the wider F&O application could lag role expectations without exposure to new areas.",
+      "The Sr Software Engineer candidate reported feeling somewhat 'stuck' working on the same modules for several years. There is a minor risk that breadth across the wider F&O application could lag role expectations without exposure to new areas.",
     mitigation:
       "This is low risk and can be turned into a positive motivator. Intentionally rotate him into adjacent modules and give ownership opportunities that broaden domain coverage while preserving his technical lead strengths.",
     proof:
@@ -1186,7 +1186,7 @@ const reportEvidenceLocker = [
       <div className="prose dark:prose-invert max-w-none">
         <h4>Report-aligned Summary</h4>
         <p>
-          Jesus described an F&amp;O customization around MSF creation / release-product form extensions, including
+          The Sr Software Engineer candidate described an F&amp;O customization around MSF creation / release-product form extensions, including
           use of extensions, event handlers, Chain of Command, entities, and OData exposure.
           He tied the design to audit logging and business process requirements instead of describing code only.
         </p>
@@ -1211,7 +1211,7 @@ const reportEvidenceLocker = [
       <div className="prose dark:prose-invert max-w-none">
         <h4>Report-aligned Summary</h4>
         <p>
-          Jesus described a large-volume processing bottleneck and the move from single-threaded processing to a
+          The Sr Software Engineer candidate described a large-volume processing bottleneck and the move from single-threaded processing to a
           multi-threaded batch-job approach. He referenced a substantial reduction in processing time and explained
           why the bottleneck occurred.
         </p>
@@ -1236,7 +1236,7 @@ const reportEvidenceLocker = [
       <div className="prose dark:prose-invert max-w-none">
         <h4>Report-aligned Summary</h4>
         <p>
-          Jesus answered directly that the core principle is to use extensions and avoid modifying standard code.
+          The Sr Software Engineer candidate answered directly that the core principle is to use extensions and avoid modifying standard code.
           He contrasted extension-based approaches with older layering practices and explained why extensions preserve
           upgrade safety in modern Dynamics 365 F&amp;O.
         </p>
@@ -1248,7 +1248,7 @@ const reportEvidenceLocker = [
         </ul>
         <h4>Evidence Signals Captured</h4>
         <p>
-          The report characterizes this as a conceptually perfect answer and a strong indicator that Jesus understands
+          The report characterizes this as a conceptually perfect answer and a strong indicator that the Sr Software Engineer candidate understands
           upgrade-safe architecture, not just syntax-level implementation.
         </p>
       </div>
@@ -1261,7 +1261,7 @@ const reportEvidenceLocker = [
       <div className="prose dark:prose-invert max-w-none">
         <h4>Report-aligned Summary</h4>
         <p>
-          Jesus gave a detailed, chronological SDLC walkthrough using Azure DevOps, Git branching, PR reviews,
+          The Sr Software Engineer candidate gave a detailed, chronological SDLC walkthrough using Azure DevOps, Git branching, PR reviews,
           PBIs/tasks, environment-specific deployment flow, and release controls. He described this as day-to-day team
           practice rather than theoretical process knowledge.
         </p>
@@ -1326,7 +1326,7 @@ export default function TalentEvaluationClient() {
       </div>
       <header className="glass-panel gradient-ring hero-depth system-grid my-8 rounded-2xl border border-border/70 p-6 md:p-8">
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-          Technical Talent Evaluation Report: Jesus [...]
+          Technical Talent Evaluation Report: Sr Software Engineer
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
           This is a real (anonymized) evaluation report generated by our{" "}
@@ -1343,7 +1343,7 @@ export default function TalentEvaluationClient() {
         </p>
       </header>
 
-      <RevealSection className="my-16 space-y-8">
+      <section className="my-16 space-y-8">
         <div className="glass-panel gradient-ring rounded-lg border border-border/70 p-6 shadow-lg">
           <p className="text-sm font-semibold text-primary">
             Is this candidate the right fit?
@@ -1357,7 +1357,7 @@ export default function TalentEvaluationClient() {
           <div className="mt-4 text-sm text-muted-foreground space-y-2">
             <p>
               This recommendation is based on a comprehensive analysis that
-              reveals Jesus as a strong and experienced developer with a solid
+              reveals the Sr Software Engineer candidate as a strong and experienced developer with a solid
               grasp of Microsoft Dynamics 365 F&amp;O extension architecture,
               upgrade-safe customizations, and enterprise development practices.
             </p>
@@ -1500,7 +1500,7 @@ export default function TalentEvaluationClient() {
               </div>
               <div className="mt-4 text-sm text-muted-foreground">
                 <span>
-                  Jesus falls in the expert zone, bordering on "Honest Self-Assessment."
+                  The Sr Software Engineer candidate falls in the expert zone, bordering on "Honest Self-Assessment."
                   His{" "}
                 </span>
                 <WithTooltip content="Metacognitive Conviction Index">
@@ -1667,7 +1667,7 @@ export default function TalentEvaluationClient() {
             Book a No-Obligation Strategy Call
           </a>
         </div>
-      </RevealSection>
+      </section>
     </main>
   );
 }
