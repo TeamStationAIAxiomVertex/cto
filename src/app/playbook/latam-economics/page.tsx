@@ -531,7 +531,7 @@ export default async function PlaybookPage() {
             </div>
           </RevealSection>
 
-          <RevealSection className="glass-panel gradient-ring rounded-2xl p-6 md:p-8">
+          <RevealSection className="glass-panel gradient-ring rounded-2xl p-5 md:p-7">
             <div className="mb-5 grid gap-3 rounded-2xl border border-border/60 bg-background/45 p-4 md:grid-cols-3">
               <div className="rounded-xl border border-border/50 bg-card/35 p-3">
                 <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">
@@ -558,7 +558,50 @@ export default async function PlaybookPage() {
                 </p>
               </div>
             </div>
-            <div className="prose prose-xl max-w-none dark:prose-invert">
+            <div className="mb-5 rounded-2xl border border-border/60 bg-background/40 p-4 md:p-5">
+              <div className="grid gap-4 lg:grid-cols-[1.25fr_.75fr]">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                    How to use this chapter
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold text-foreground">
+                    Read as an operating model decision, not a labor-rate article
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    Start with the TCO equation and hidden costs, then map the economics to delivery throughput and
+                    governance controls. The most useful output is a decision model you can use with finance and
+                    product leadership, not just a comparison spreadsheet.
+                  </p>
+                </div>
+                <div className="rounded-xl border border-border/60 bg-card/35 p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">
+                    Reading order
+                  </p>
+                  <ol className="mt-2 space-y-2 text-sm text-muted-foreground">
+                    <li>1. TCO equation and hidden costs</li>
+                    <li>2. Throughput per dollar lens</li>
+                    <li>3. Fully-loaded model assumptions</li>
+                    <li>4. Strategic ROI and decision checkpoint</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <div
+              className="
+                prose max-w-none dark:prose-invert
+                prose-sm md:prose-base lg:prose-lg
+                prose-headings:scroll-mt-24
+                prose-headings:text-foreground
+                prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-2xl prose-h2:font-bold
+                prose-h3:mt-7 prose-h3:mb-3 prose-h3:text-xl prose-h3:font-semibold
+                prose-p:leading-7 prose-p:text-muted-foreground
+                prose-li:leading-7 prose-li:text-muted-foreground
+                prose-strong:text-foreground
+                prose-a:text-primary hover:prose-a:text-primary/80
+                prose-ul:my-5 prose-ol:my-5
+                prose-blockquote:border-primary/30 prose-blockquote:text-muted-foreground
+              "
+            >
               <PlaybookContentRenderer slug="latam-economics" />
             </div>
           </RevealSection>
