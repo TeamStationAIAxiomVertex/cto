@@ -301,8 +301,8 @@ export default async function HomePage() {
                     </Link>
                   </div>
 
-                  <div className="mt-6 grid gap-3 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
-                    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                  <div className="mt-6">
+                    <div className="grid gap-2 sm:grid-cols-2">
                       {heroOutcomeBullets.map((item) => (
                         <div key={item} className="rounded-lg border border-border/70 bg-background/60 px-4 py-3 text-sm text-foreground">
                           <CheckCircle className="mr-2 inline h-4 w-4 text-primary" />
@@ -311,60 +311,19 @@ export default async function HomePage() {
                       ))}
                     </div>
 
-                    <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-background/50 p-3.5">
-                      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(59,130,246,0.18),transparent_48%),radial-gradient(circle_at_85%_22%,rgba(16,185,129,0.16),transparent_45%),linear-gradient(to_bottom,rgba(59,130,246,0.04),transparent_45%)]" />
-                      <div className="relative">
-                        <div className="flex items-center justify-between gap-2">
-                          <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">
-                            Operating Control Visual
-                          </p>
-                          <span className="flex items-center gap-1.5 text-[10px] text-foreground/80">
-                            <span className="relative inline-flex h-2 w-2">
-                              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/60" />
-                              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-300" />
-                            </span>
-                            Live
-                          </span>
-                        </div>
-                        <p className="mt-1 text-[11px] leading-4 text-muted-foreground">
-                          Governed delivery signals across LATAM squads.
-                        </p>
-
-                        <div className="mt-3 grid gap-2">
-                          {[
-                            { label: "Hiring", value: "Deterministic", width: "w-[86%]" },
-                            { label: "Governance", value: "Controlled", width: "w-[92%]" },
-                            { label: "Compliance", value: "Audit-ready", width: "w-[78%]" },
-                            { label: "Cost", value: "Predictable", width: "w-[84%]" },
-                          ].map((metric) => (
-                            <div key={metric.label} className="rounded-lg border border-border/60 bg-card/45 px-2.5 py-2">
-                              <div className="flex items-center justify-between gap-2">
-                                <p className="text-[10px] uppercase tracking-wide text-foreground/70">{metric.label}</p>
-                                <p className="text-[10px] font-semibold text-primary">{metric.value}</p>
-                              </div>
-                              <div className="mt-1.5 h-1.5 rounded-full bg-background/70">
-                                <div
-                                  className={`${metric.width} h-1.5 rounded-full bg-gradient-to-r from-primary via-sky-300 to-emerald-300 animate-pulse`}
-                                />
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                    <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                      <Link href="/comparisons" className="text-primary hover:underline">
+                        Compare Vendors
+                      </Link>
+                      <Link href="/playbook/hub" className="text-primary hover:underline">
+                        CTO Playbook
+                      </Link>
+                      <Link href="/research/hub" className="text-primary hover:underline">
+                        Research Evidence
+                      </Link>
                     </div>
                   </div>
 
-                  <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-                    <Link href="/comparisons" className="text-primary hover:underline">
-                      Compare Vendors
-                    </Link>
-                    <Link href="/playbook/hub" className="text-primary hover:underline">
-                      CTO Playbook
-                    </Link>
-                    <Link href="/research/hub" className="text-primary hover:underline">
-                      Research Evidence
-                    </Link>
-                  </div>
                 </div>
 
                 <div className="grid gap-4">
@@ -410,6 +369,48 @@ export default async function HomePage() {
                           >
                             {term}
                           </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-background/50 p-3.5">
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(59,130,246,0.18),transparent_48%),radial-gradient(circle_at_85%_22%,rgba(16,185,129,0.16),transparent_45%),linear-gradient(to_bottom,rgba(59,130,246,0.04),transparent_45%)]" />
+                    <div className="relative">
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">
+                          Operating Control Visual
+                        </p>
+                        <span className="flex items-center gap-1.5 text-[10px] text-foreground/80">
+                          <span className="relative inline-flex h-2 w-2">
+                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/60" />
+                            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-300" />
+                          </span>
+                          Live
+                        </span>
+                      </div>
+                      <p className="mt-1 text-[11px] leading-4 text-muted-foreground">
+                        Governed delivery signals across LATAM squads.
+                      </p>
+
+                      <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                        {[
+                          { label: "Hiring", value: "Deterministic", width: "w-[86%]" },
+                          { label: "Governance", value: "Controlled", width: "w-[92%]" },
+                          { label: "Compliance", value: "Audit-ready", width: "w-[78%]" },
+                          { label: "Cost", value: "Predictable", width: "w-[84%]" },
+                        ].map((metric) => (
+                          <div key={metric.label} className="rounded-lg border border-border/60 bg-card/45 px-2.5 py-2">
+                            <div className="flex items-center justify-between gap-2">
+                              <p className="text-[10px] uppercase tracking-wide text-foreground/70">{metric.label}</p>
+                              <p className="text-[10px] font-semibold text-primary">{metric.value}</p>
+                            </div>
+                            <div className="mt-1.5 h-1.5 rounded-full bg-background/70">
+                              <div
+                                className={`${metric.width} h-1.5 rounded-full bg-gradient-to-r from-primary via-sky-300 to-emerald-300 animate-pulse`}
+                              />
+                            </div>
+                          </div>
                         ))}
                       </div>
                     </div>
