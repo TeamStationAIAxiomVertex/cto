@@ -1,5 +1,5 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import type { ComponentType } from "react";
 import {
   ArrowRight,
   Cpu,
@@ -11,8 +11,6 @@ import {
   CheckCircle,
   Layers,
   CircleHelp,
-  Activity,
-  BarChart3,
   GitBranch,
   Bot,
   Radar,
@@ -23,31 +21,29 @@ import SafeImage from "../components/SafeImage";
 import { WithTooltip } from "../components/ui/tooltip";
 import CardGuidanceTooltip from "../components/ui/card-guidance-tooltip";
 
-const doctrineSignals = [
-  "Cognitive Hiring Signals",
-  "Agentic Workflow Topologies",
-  "Delivery Telemetry Systems",
-  "Governance and Compliance Controls",
+const heroOutcomeBullets = [
+  "deterministic hiring & deployment",
+  "governed delivery & compliance",
+  "secure devices & identity control",
+  "predictable velocity & cost clarity",
 ];
 
-const heroOutcomes = [
+const vendorModelComparisons = [
   {
-    label: "Decision latency",
-    value: "Reduce",
-    note: "Clear ownership and same day operating loops",
-    icon: Radar,
+    traditional: "fragmented accountability",
+    operatingSystem: "single operating doctrine",
   },
   {
-    label: "Delivery control",
-    value: "Increase",
-    note: "Telemetry and governance built into the run state",
-    icon: Activity,
+    traditional: "hidden delivery risk",
+    operatingSystem: "governed execution controls",
   },
   {
-    label: "Economic clarity",
-    value: "Validate",
-    note: "TCO logic before expansion or vendor commitment",
-    icon: BarChart3,
+    traditional: "slow decision loops",
+    operatingSystem: "same-day operating loops",
+  },
+  {
+    traditional: "compliance gaps",
+    operatingSystem: "audit-ready governance",
   },
 ];
 
@@ -191,32 +187,33 @@ function SectionTitle({ title, tip }: { title: string; tip: string }) {
   );
 }
 
-function StatTile({
-  label,
-  value,
-  note,
-  icon: Icon,
-}: {
-  label: string;
-  value: string;
-  note: string;
-  icon: ComponentType<{ className?: string }>;
-}) {
-  return (
-    <div className="rounded-xl border border-border/70 bg-background/55 p-4">
-      <div className="flex items-center justify-between">
-        <p className="text-xs font-semibold uppercase tracking-wide text-primary">{label}</p>
-        <Icon className="h-4 w-4 text-primary" />
-      </div>
-      <p className="mt-2 text-lg font-semibold text-foreground">{value}</p>
-      <p className="mt-1 text-xs leading-5 text-muted-foreground">{note}</p>
-    </div>
-  );
-}
+export const metadata: Metadata = {
+  title: {
+    absolute:
+      "Distributed Engineering OS for CTOs | Nearshore Engineering Platform | TeamStation AI",
+  },
+  description:
+    "TeamStation AI replaces staffing vendors with a Distributed Engineering Operating System. Source, vet, and deploy LATAM engineering squads with built-in governance, security, EOR, and compliance.",
+  alternates: {
+    canonical: "https://teamstation.dev/",
+  },
+  openGraph: {
+    title: "Distributed Engineering OS for CTOs",
+    description:
+      "Replace vendor chaos with a governed engineering operating system across Latin America.",
+    type: "website",
+    url: "https://teamstation.dev/",
+    images: [
+      {
+        url: "/og-engineering-os.png",
+      },
+    ],
+  },
+};
 
 export default async function HomePage() {
   const caseStudies = await getAllCaseStudies();
-  const siteUrl = "https://cto.teamstation.dev";
+  const siteUrl = "https://teamstation.dev";
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -238,10 +235,29 @@ export default async function HomePage() {
     "@type": "Organization",
     name: "TeamStation AI",
     description:
-      "Distributed Engineering OS Playbook for CTO and CIO teams operating agentic engineering systems.",
+      "TeamStation AI is a Distributed Engineering Operating System that provides deterministic sourcing, vetting, deployment, governance, and compliance for nearshore engineering teams.",
     url: siteUrl,
-    logo: `${siteUrl}/apple-touch-icon.png`,
-    sameAs: ["https://www.linkedin.com/company/teamstation"],
+    logo: `${siteUrl}/logo.svg`,
+    sameAs: [
+      "https://www.linkedin.com/company/teamstation",
+      "https://cto.teamstation.dev",
+      "https://research.teamstation.dev",
+    ],
+  };
+
+  const softwareApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "TeamStation AI",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Cloud",
+    description:
+      "A Distributed Engineering Operating System that replaces staffing vendors with governed nearshore engineering infrastructure.",
+    offers: {
+      "@type": "Offer",
+      price: "Contact",
+      priceCurrency: "USD",
+    },
   };
 
   return (
@@ -254,6 +270,10 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+      />
 
       <div className="manual-page">
         <div className="container mx-auto px-4">
@@ -261,85 +281,114 @@ export default async function HomePage() {
             <div className="mx-auto max-w-6xl rounded-2xl glass-panel gradient-ring hero-depth system-grid p-7 md:p-10">
               <div className="grid items-start gap-6 lg:grid-cols-[1.05fr_.95fr]">
                 <div>
-                  <p className="text-sm font-semibold text-primary">Distributed Engineering OS Playbook</p>
+                  <p className="text-sm font-semibold text-primary">Distributed Engineering Operating System</p>
                   <h1 className="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
-                    Operate human engineers and AI agents as one governed delivery system.
+                    The Nearshore Engineering Operating System
                   </h1>
                   <p className="mt-5 max-w-3xl text-lg text-muted-foreground">
-                    Increase delivery velocity, reduce decision latency, and achieve governance ready execution with one operating model for hiring, delivery, and control.
+                    Replace fragmented vendors with a governed system for sourcing, vetting, and deploying engineering squads across Latin America.
+                  </p>
+                  <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
+                    Built for CTOs who need deterministic delivery, governance control, and predictable engineering throughput.
                   </p>
 
                   <div className="mt-6 flex flex-wrap gap-3">
-                    <Link href="/playbook/hub" className="cta-button">
-                      Read the Playbook
+                    <Link href="/process" className="cta-button">
+                      See How It Works
                     </Link>
-                    <Link href="/engineering-doctrine" className="cta-button bg-card border border-border text-foreground">
-                      View Engineering Doctrine
+                    <Link href="/playbook/hub" className="cta-button bg-card border border-border text-foreground">
+                      Read the CTO Playbook
                     </Link>
                   </div>
 
-                  <div className="mt-6 grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
-                    {[
-                      "Topology based ownership",
-                      "Cognitive hiring signal",
-                      "Delivery telemetry and compliance",
-                    ].map((item) => (
+                  <div className="mt-6 grid gap-2 sm:grid-cols-2">
+                    {heroOutcomeBullets.map((item) => (
                       <div key={item} className="rounded-lg border border-border/70 bg-background/60 px-4 py-3 text-sm text-foreground">
                         <CheckCircle className="mr-2 inline h-4 w-4 text-primary" />
                         {item}
                       </div>
                     ))}
                   </div>
+
+                  <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                    <Link href="/comparisons" className="text-primary hover:underline">
+                      Compare Vendors
+                    </Link>
+                    <Link href="/playbook/hub" className="text-primary hover:underline">
+                      CTO Playbook
+                    </Link>
+                    <Link href="/research/hub" className="text-primary hover:underline">
+                      Research Evidence
+                    </Link>
+                  </div>
                 </div>
 
                 <div className="grid gap-4">
                   <div className="rounded-2xl border border-border/70 bg-background/65 p-5">
                     <div className="flex items-center justify-between">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-primary">System topology map</p>
-                      <Cpu className="h-4 w-4 text-primary" />
+                      <p className="text-xs font-semibold uppercase tracking-wide text-primary">Traditional Vendor Model | Engineering OS Model</p>
+                      <Workflow className="h-4 w-4 text-primary" />
                     </div>
-                    <div className="mt-4 grid grid-cols-2 gap-3">
-                      {topologyNodes.map((node) => (
-                        <div key={`hero-${node.title}`} className="rounded-xl border border-border/70 bg-card/60 p-3">
-                          <node.icon className="h-4 w-4 text-primary" />
-                          <p className="mt-2 text-sm font-semibold text-foreground">{node.title}</p>
-                          <p className="mt-1 text-xs leading-5 text-muted-foreground">{node.body}</p>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-4 rounded-xl border border-border/70 bg-background/70 p-3">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-primary">Workflow loop</p>
-                      <div className="mt-2 flex flex-wrap items-center gap-2">
-                        {workflowSteps.map((step, idx) => (
-                          <div key={`hero-step-${step}`} className="flex items-center gap-2">
-                            <span className="rounded-md border border-border/70 bg-card/60 px-2.5 py-1 text-xs text-foreground">
-                              {step}
-                            </span>
-                            {idx < workflowSteps.length - 1 ? (
-                              <ArrowRight className="h-3.5 w-3.5 text-primary" />
-                            ) : null}
+                    <p className="mt-3 text-sm font-semibold text-foreground">
+                      Replace Vendors → Operate as a System
+                    </p>
+                    <div className="mt-4 overflow-hidden rounded-xl border border-border/70 bg-card/50">
+                      <div className="grid grid-cols-[1fr_auto_1fr] border-b border-border/70 bg-background/50 px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-foreground/80">
+                        <span>Traditional Vendor Model</span>
+                        <span className="px-2 text-primary">→</span>
+                        <span>Engineering OS Model</span>
+                      </div>
+                      <div className="divide-y divide-border/60">
+                        {vendorModelComparisons.map((item) => (
+                          <div
+                            key={item.traditional}
+                            className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 px-3 py-3 text-xs leading-5"
+                          >
+                            <p className="text-muted-foreground">{item.traditional}</p>
+                            <ArrowRight className="h-3.5 w-3.5 text-primary" />
+                            <p className="text-foreground">{item.operatingSystem}</p>
                           </div>
                         ))}
                       </div>
                     </div>
-                  </div>
-
-                  <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-                    {heroOutcomes.map((item) => (
-                      <StatTile key={item.label} {...item} />
-                    ))}
+                    <div className="mt-4 rounded-xl border border-border/70 bg-background/70 p-3">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-primary">Execution posture</p>
+                      <div className="mt-2 flex flex-wrap items-center gap-2">
+                        {[
+                          "Nearshore engineering LATAM",
+                          "governed delivery",
+                          "compliance & security",
+                          "deterministic delivery",
+                        ].map((term) => (
+                          <span
+                            key={term}
+                            className="rounded-md border border-border/70 bg-card/60 px-2.5 py-1 text-xs text-foreground"
+                          >
+                            {term}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div className="glow-divider mt-6" />
-              <div className="mt-4 grid gap-2 md:grid-cols-2 lg:grid-cols-4">
-                {doctrineSignals.map((item) => (
-                  <div key={item} className="rounded-lg border border-border/70 bg-background/55 px-4 py-3 text-sm text-foreground">
-                    <CheckCircle className="mr-2 inline h-4 w-4 text-primary" />
-                    {item}
+              <div className="mt-4 rounded-xl border border-border/70 bg-background/55 p-4">
+                <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                      Replace Vendors → Operate as a System
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      One distributed engineering operating system for sourcing, vetting, deployment, governance, and measured throughput.
+                    </p>
                   </div>
-                ))}
+                  <Link href="/comparisons" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+                    Compare vendors and models
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
@@ -350,6 +399,9 @@ export default async function HomePage() {
                 title="The Monolith Org Chart Is Failing"
                 tip="This section explains why legacy vendor models fail in enterprise engineering and why your operating model must shift to a governed system."
               />
+              <p className="mt-4 text-sm leading-6 text-muted-foreground">
+                A distributed engineering operating system gives CTO teams a governable alternative to vendor coordination across nearshore engineering LATAM programs, with engineering squads, governed delivery, compliance & security, and deterministic delivery controls designed into the operating model.
+              </p>
               <div className="mt-6 grid gap-3 md:grid-cols-2">
                 {failurePoints.map((point) => (
                   <article key={point.title} className="glass-card-interactive rounded-xl border border-border/70 bg-background/55 p-4">
