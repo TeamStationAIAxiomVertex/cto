@@ -46,24 +46,24 @@ export const viewport: Viewport = {
   themeColor: '#0ea5e9',
 };
 
+const deliveryAssuranceServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Nearshore Engineering Delivery Assurance',
+  provider: {
+    '@type': 'Organization',
+    name: 'TeamStation AI',
+    url: 'https://teamstation.dev',
+  },
+  areaServed: 'US',
+  serviceType: 'Nearshore engineering assessment and delivery assurance',
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const deliveryAssuranceServiceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Nearshore Engineering Delivery Assurance',
-    provider: {
-      '@type': 'Organization',
-      name: 'TeamStation AI',
-      url: 'https://teamstation.dev',
-    },
-    areaServed: 'US',
-    serviceType: 'Nearshore engineering assessment and delivery assurance',
-  };
-
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable} ${sourceCodePro.variable}`}>
       <head>

@@ -50,6 +50,15 @@ function normalizePhrase(value: string): string {
     .trim();
 }
 
+function renderInlineStrong(text: string): React.ReactNode {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, idx) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={`strong-${idx}`}>{part.slice(2, -2)}</strong>;
+    }
+    return <React.Fragment key={`text-${idx}`}>{part}</React.Fragment>;
+  });
+}
+
 function getCategoryLens(tech: TechEntry): CategoryLens {
   const key = `${tech.categorySlug} ${tech.category}`.toLowerCase();
 
@@ -139,9 +148,9 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
   const categoryKeyword = tech.category.split("&")[0]?.trim() || tech.category;
   const briefOpener = pickBySeed(
     [
-      `For **${tech.name}** hiring, the CTO decision is about system performance, not just staffing volume.`,
-      `A strong **${tech.name}** hiring plan should be treated as a delivery-system decision, not a recruiting transaction.`,
-      `Hiring **${tech.name}** talent is an operating model choice because it directly changes execution speed and control quality.`,
+      `For ${tech.name} hiring, the CTO decision is about system performance, not just staffing volume.`,
+      `A strong ${tech.name} hiring plan should be treated as a delivery-system decision, not a recruiting transaction.`,
+      `Hiring ${tech.name} talent is an operating model choice because it directly changes execution speed and control quality.`,
     ],
     seed
   );
@@ -423,7 +432,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
           <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
             Hire {tech.name} Engineers
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground">{tech.intro}</p>
+          <p className="mt-4 text-lg text-muted-foreground">{renderInlineStrong(tech.intro)}</p>
           <StaggerGrid className="mt-5 grid gap-3 md:grid-cols-3">
             <StaggerItem className="rounded-xl border border-border/70 bg-background/60 p-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-primary">Delivery fit</p>
@@ -471,7 +480,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
                   <LiftCard className="glass-card-interactive gradient-ring flex w-full flex-col rounded-2xl p-6">
                   <div className="flex items-start justify-between gap-3">
                     <p className="text-sm font-semibold text-primary">
-                      {item.pain}
+                      {renderInlineStrong(item.pain)}
                     </p>
                     <CardGuidanceTooltip
                       issue={item.problem}
@@ -490,13 +499,13 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
                     </h3>
                   </div>
                   <p className="mt-4 text-sm text-muted-foreground ">
-                    {item.problem}
+                    {renderInlineStrong(item.problem)}
                   </p>
                   <div className="mt-4 border-t border-border/70 pt-4">
                     <h4 className="font-semibold text-primary">
                       TeamStation AI approach
                     </h4>
-                    <p className="text-sm text-foreground m-0">{item.solution}</p>
+                    <p className="text-sm text-foreground m-0">{renderInlineStrong(item.solution)}</p>
                   </div>
                   <div className="flex-grow"></div>
                   <div className="mt-6">
@@ -522,7 +531,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
             <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
               {tech.evaluation.map((item, idx) => (
                 <li key={`${slug}-eval-${idx}`} className="rounded-lg border border-border/70 bg-background/70 px-4 py-3 text-sm text-muted-foreground">
-                  {item}
+                  {renderInlineStrong(item)}
                 </li>
               ))}
             </ul>
@@ -535,7 +544,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
               Technical Delivery Analysis: {tech.name}
             </h2>
             <p className="mt-4 text-muted-foreground leading-7">
-              {tech.technical_analysis}
+              {renderInlineStrong(tech.technical_analysis)}
             </p>
           </section>
         )}
@@ -703,7 +712,7 @@ export const ProgrammaticContent: React.FC<ProgrammaticContentProps> = ({
             {faqItems.map((item, idx) => (
               <article key={`${slug}-faq-${idx}`} className="rounded border bg-background p-4">
                 <h3 className="font-semibold text-foreground">{item.q}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-6">{item.a}</p>
+                <p className="mt-2 text-sm text-muted-foreground leading-6">{renderInlineStrong(item.a)}</p>
               </article>
             ))}
           </div>

@@ -10,6 +10,19 @@ type CardGuidanceTooltipProps = {
   className?: string;
 };
 
+function renderInlineStrong(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, idx) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={`tooltip-strong-${idx}`} className="font-semibold text-foreground">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return <span key={`tooltip-text-${idx}`}>{part}</span>;
+  });
+}
+
 export default function CardGuidanceTooltip({
   issue,
   solution,
@@ -22,11 +35,11 @@ export default function CardGuidanceTooltip({
         <div className="max-w-xs space-y-2 text-xs leading-5">
           <p>
             <span className="font-semibold text-foreground">Issue:</span>{" "}
-            <span className="text-muted-foreground">{issue}</span>
+            <span className="text-muted-foreground">{renderInlineStrong(issue)}</span>
           </p>
           <p>
             <span className="font-semibold text-foreground">How we solve it:</span>{" "}
-            <span className="text-muted-foreground">{solution}</span>
+            <span className="text-muted-foreground">{renderInlineStrong(solution)}</span>
           </p>
           {proof ? (
             <p>

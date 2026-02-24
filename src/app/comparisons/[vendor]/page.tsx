@@ -13,6 +13,8 @@ const VerdictTable = dynamic(
   { ssr: true }
 );
 
+export const dynamicParams = false;
+
 // --- 1. NEXT.JS STATIC PARAMS GENERATION ---
 export async function generateStaticParams() {
   return comparisonPages.map((p) => ({ vendor: p.slug }));
@@ -102,10 +104,9 @@ export default function VendorComparisonPage({
           <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
             {page.h1}
           </h1>
-          <p
-            className="mt-4 max-w-[72ch] text-lg leading-8 text-muted-foreground"
-            dangerouslySetInnerHTML={{ __html: page.intro }}
-          />
+          <p className="mt-4 max-w-[72ch] text-lg leading-8 text-muted-foreground">
+            {page.intro}
+          </p>
           <div className="mt-5 flex flex-wrap gap-2">
             <Link href="/comparisons" className="rounded-md border border-border/70 bg-background/70 px-3 py-2 text-sm font-semibold text-foreground transition-ui hover:border-primary/40 hover:text-primary">
               Back to comparisons hub

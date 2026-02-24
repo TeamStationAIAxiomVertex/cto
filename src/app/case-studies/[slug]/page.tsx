@@ -293,6 +293,8 @@ export default async function CaseStudyPage({
   );
 }
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const studies = await getAllCaseStudies();
   return studies.map((study) => ({
