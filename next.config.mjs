@@ -24,8 +24,13 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  // Static HTML export — generates /out folder for FTP/static hosting deployment.
+  output: 'export',
+
   // keep images working in prod & preview
   images: {
+    // Required for static export: no server-side image optimization available.
+    unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "picsum.photos" },
@@ -40,6 +45,8 @@ const nextConfig = {
   // Source maps in production expose application code — disabled for security and bundle size.
   productionBrowserSourceMaps: false,
 
+  // Note: headers() is silently ignored in static export.
+  // Apply these at the web server (Nginx/Apache) level instead.
   async headers() {
     return [
       {
