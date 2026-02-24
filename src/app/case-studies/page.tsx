@@ -22,9 +22,9 @@ import {
 } from "@/components/motion/MotionPrimitives";
 
 export const metadata: Metadata = {
-  title: "Nearshore Engineering Case Studies | Operational Proof for CTO Teams",
+  title: "Nearshore Engineering Case Studies | TeamStation AI",
   description:
-    "Operational proof for CTO and CIO teams evaluating nearshore engineering models. Review case studies by constraint, intervention, and measured outcomes.",
+    "Operational proof for CTO and CIO teams evaluating nearshore engineering. Case studies by constraint, intervention, and measured outcomes.",
 };
 
 export default async function CaseStudiesPage() {

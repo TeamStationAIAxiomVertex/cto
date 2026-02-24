@@ -9,7 +9,7 @@ import { RevealBlock, RevealSection, StaggerGrid, StaggerItem } from '../../../c
 export const metadata: Metadata = {
   title: 'Distributed Engineering OS Playbook Hub for CTO Teams',
   description:
-    'Playbook hub for CTO and CIO teams that need stronger delivery control, better hiring signal quality, and clear operating decisions in 2026 and beyond.',
+    'Playbook hub for CTO and CIO teams. Stronger delivery control, better hiring signal quality, and clearer operating decisions for 2026.',
   keywords:
     'cto playbook hub, distributed engineering os, latam economics, tco model, delivery risk mitigation, technical hiring framework',
 };

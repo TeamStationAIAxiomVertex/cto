@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     absolute: "Engineering Doctrine for Distributed Teams | TeamStation AI",
   },
   description:
-    "A formal engineering doctrine for CTO and CIO leaders running distributed teams. Team topology, delivery, integration, quality, and failure systems for 2026 and beyond.",
+    "Engineering doctrine for CTO and CIO leaders on distributed teams. Covers team topology, delivery, integration, quality, and failure systems.",
   keywords:
     "engineering doctrine, team topologies, distributed engineering, platform engineering, CTO operating model",
   alternates: {

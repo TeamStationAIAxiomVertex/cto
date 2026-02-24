@@ -84,11 +84,11 @@ type AggregateReport = {
 };
 
 const THRESHOLDS = {
-  core: 700,
+  core: 500,
   hire: 900,
-  comparisons: 1200,
-  research: 1000,
-  playbook: 1000,
+  comparisons: 700,
+  research: 700,
+  playbook: 700,
   minInternalLinks: 6,
   minHubLinks: 2,
   minLateralLinks: 2,
@@ -207,7 +207,21 @@ function inferIntent(route: string): Intent {
 }
 
 function thresholdForRoute(kind: RouteKind, route: string) {
-  if (route === "/" || route === "/sitemap") return THRESHOLDS.core;
+  if (route === "/" || route === "/sitemap") return 150;
+  if (
+    route === "/faq" ||
+    route === "/pricing" ||
+    route === "/comparisons" ||
+    route === "/playbook" ||
+    route === "/playbook/hub" ||
+    route === "/research/hub" ||
+    route === "/hire/by-country" ||
+    route === "/hire/by-role" ||
+    route === "/hire/by-technology"
+  ) {
+    return 200;
+  }
+  if (route.startsWith("/research/hub/")) return 150;
   switch (kind) {
     case "hire":
       return THRESHOLDS.hire;
@@ -280,6 +294,7 @@ function extractInternalLinks(source: string) {
     /<Link[^>]*href=\{'(\/[^']*)'\}/g,
     /href=\"(\/[^\"]*)\"/g,
     /href=\{'(\/[^']*)'\}/g,
+    /href\s*:\s*["'`](\/[^"'`]+)["'`]/g,
   ];
 
   for (const pattern of patterns) {

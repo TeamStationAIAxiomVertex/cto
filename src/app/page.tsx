@@ -190,12 +190,12 @@ function SectionTitle({ title, tip }: { title: string; tip: string }) {
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Distributed Engineering OS for CTOs | Nearshore Engineering Platform | TeamStation AI",
+      "Distributed Engineering OS for CTOs | TeamStation AI",
   },
   description:
-    "TeamStation AI replaces staffing vendors with a Distributed Engineering Operating System. Source, vet, and deploy LATAM engineering squads with built-in governance, security, EOR, and compliance.",
+    "Replace staffing vendors with a Distributed Engineering OS. Source, vet, and deploy elite LATAM squads with built-in governance and compliance.",
   alternates: {
-    canonical: "https://teamstation.dev/",
+    canonical: "https://cto.teamstation.dev/",
   },
   openGraph: {
     title: "Distributed Engineering OS for CTOs",

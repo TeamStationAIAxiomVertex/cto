@@ -7,7 +7,7 @@ import { RevealBlock, RevealSection, StaggerGrid, StaggerItem } from '@/componen
 export const metadata: Metadata = {
   title: 'Research Hub for CTO and CIO Teams | TeamStation AI',
   description:
-    'A complete research library for distributed engineering leadership. Use this hub to plan hiring, measure performance, reduce delivery risk, and build a stronger operating model.',
+    'Research library for CTO and CIO teams. Plan hiring, measure performance, reduce delivery risk, and build a stronger operating model.',
 };
 
 type ResearchAsset = {
