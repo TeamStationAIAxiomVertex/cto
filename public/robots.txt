@@ -31,6 +31,21 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+# User-agent: FacebookBot
+# Explicitly allow Meta AI crawlers
+User-agent: FacebookBot
+Allow: /
+
+# User-agent: Applebot-Extended
+# Explicitly allow Apple Intelligence / extended crawling
+User-agent: Applebot-Extended
+Allow: /
+
+# User-agent: cohere-ai
+# Explicitly allow Cohere AI crawlers
+User-agent: cohere-ai
+Allow: /
+
 # Sitemap Location
 # CRITICAL: This points crawlers to the single source of truth for all your URLs.
 Sitemap: https://cto.teamstation.dev/sitemap.xml

@@ -1,6 +1,7 @@
 // src/components/ScholarlyArticleSchema.tsx
-import { WithContext, ScholarlyArticle } from "schema-dts";
 import { teamStationAI } from "@/lib/schema";
+
+type JsonLdRecord = Record<string, unknown>;
 
 interface ScholarlyArticleSchemaProps {
   title: string;
@@ -9,6 +10,10 @@ interface ScholarlyArticleSchemaProps {
   authorName: string;
   authorUrl?: string;
   datePublished: string;
+  dateModified?: string;
+  keywords?: string[];
+  about?: string[];
+  citations?: string[];
 }
 
 export default function ScholarlyArticleSchema({
@@ -18,13 +23,24 @@ export default function ScholarlyArticleSchema({
   authorName,
   authorUrl,
   datePublished,
+  dateModified,
+  keywords,
+  about,
+  citations,
 }: ScholarlyArticleSchemaProps) {
-  const schema: WithContext<ScholarlyArticle> = {
+  const absoluteUrl = `https://cto.teamstation.dev${url}`;
+  const topicKeywords =
+    keywords && keywords.length > 0
+      ? keywords
+      : [title, "nearshore software engineering", "CTO research", "technical evaluation"];
+
+  const schema: JsonLdRecord = {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     headline: title,
     description: description,
-    url: `https://cto.teamstation.dev${url}`,
+    url: absoluteUrl,
+    inLanguage: "en-US",
     author: {
       "@type": "Person",
       name: authorName,
@@ -39,12 +55,32 @@ export default function ScholarlyArticleSchema({
       },
     },
     datePublished: datePublished,
+    dateModified: dateModified ?? datePublished,
+    keywords: topicKeywords,
     // We are linking this scholarly work directly to the main Organization.
     // This builds the interconnected graph.
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://cto.teamstation.dev${url}`,
+      "@id": absoluteUrl,
     },
+    isPartOf: {
+      "@type": "CollectionPage",
+      "@id": "https://cto.teamstation.dev/research/hub",
+      name: "TeamStation AI Research Hub",
+      url: "https://cto.teamstation.dev/research/hub",
+    },
+    about: (about && about.length > 0 ? about : topicKeywords.slice(0, 4)).map((topic) => ({
+      "@type": "Thing",
+      name: topic,
+    })),
+    ...(citations && citations.length > 0
+      ? {
+          citation: citations.map((citation) => ({
+            "@type": "CreativeWork",
+            name: citation,
+          })),
+        }
+      : {}),
     // And we state who funded this important research.
     funder: {
       "@type": "Organization",
