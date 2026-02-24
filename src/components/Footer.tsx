@@ -177,7 +177,7 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border/70 bg-background/80">
                   <Image
-                    src="/teamstation-logo.png"
+                    src="/logo.svg"
                     alt="TeamStation AI logo"
                     width={28}
                     height={28}

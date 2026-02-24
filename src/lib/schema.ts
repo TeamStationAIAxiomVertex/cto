@@ -1,4 +1,6 @@
-import { WithContext, Corporation } from "schema-dts";
+// schema-dts types are used for reference but the object is typed as a plain record
+// so we can add valid schema.org fields (audience, knowsAbout, etc.) not yet in schema-dts
+type SchemaRecord = Record<string, unknown>;
 
 // This is the central hub for your site's Schema.org graph.
 // We define the core Organization entity here, which will be referenced by other schemas.
@@ -12,9 +14,47 @@ export const teamStationAI = {
   name: "TeamStation AI",
   legalName: "TeamStation, Inc.",
   url: "https://teamstation.dev",
-  logo: "https://teamstation.dev/logo.png",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://teamstation.dev/logo.svg",
+    width: "200",
+    height: "200",
+  },
+  image: {
+    "@type": "ImageObject",
+    url: "https://teamstation.dev/logo.svg",
+  },
   description:
-    "Distributed Engineering OS for building and scaling elite nearshore engineering teams with auditable, AI-assisted evaluation and governance.",
+    "Distributed Engineering OS for US CTOs and CIOs building and scaling elite nearshore engineering teams with auditable, AI-assisted evaluation, governed delivery, and compliance infrastructure.",
+  foundingDate: "2020",
+  areaServed: {
+    "@type": "Country",
+    name: "United States",
+  },
+
+  // Target audience signal for search and AI engines
+  audience: {
+    "@type": "Audience",
+    audienceType: "Chief Technology Officer, Chief Information Officer, VP of Engineering, Technology Executive",
+  },
+
+  // Topical authority signals for AI bots and semantic search
+  knowsAbout: [
+    "nearshore software engineering",
+    "distributed engineering teams",
+    "technical talent evaluation",
+    "AI-powered hiring",
+    "DevOps governance",
+    "software team management",
+    "CTO strategy",
+    "engineering operating systems",
+    "LATAM technology talent",
+    "cognitive assessment for engineers",
+    "nearshore staffing",
+    "engineering compliance",
+    "team topology",
+    "CIO technology leadership",
+  ],
 
   // Your official address from the footer
   address: {
@@ -32,6 +72,8 @@ export const teamStationAI = {
     contactType: "customer support",
     email: "support@teamstation.dev",
     url: "https://teamstation.dev",
+    areaServed: "US",
+    availableLanguage: "English",
   },
 
   // Links to your social presence
@@ -51,7 +93,6 @@ export const teamStationAI = {
     "https://jobs.teamstation.dev",
   ],
 
-  // We are claiming our niche and expertise
   keywords: [
     "nearshore software development",
     "AI hiring",
@@ -59,8 +100,10 @@ export const teamStationAI = {
     "bias mitigation software hiring",
     "neuro-psychometric AI signals",
     "LATAM software talent",
+    "CTO nearshore platform",
+    "distributed engineering OS",
   ],
-} satisfies WithContext<Corporation>;
+} satisfies SchemaRecord;
 
 /**
  * Function to generate a JSON-LD script tag from a schema object.

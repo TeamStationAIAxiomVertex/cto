@@ -35,7 +35,7 @@ export default function ScholarlyArticleSchema({
       name: teamStationAI.name as string,
       logo: {
         "@type": "ImageObject",
-        url: teamStationAI.logo as string,
+        url: "https://teamstation.dev/logo.svg",
       },
     },
     datePublished: datePublished,

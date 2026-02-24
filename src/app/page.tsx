@@ -203,11 +203,23 @@ export const metadata: Metadata = {
       "Replace vendor chaos with a governed engineering operating system across Latin America.",
     type: "website",
     url: "https://teamstation.dev/",
+    siteName: "TeamStation AI",
+    locale: "en_US",
     images: [
       {
-        url: "/og-engineering-os.png",
+        url: "/logo.svg",
+        width: 200,
+        height: 200,
+        alt: "TeamStation AI — Distributed Engineering OS for CTOs",
       },
     ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Distributed Engineering OS for CTOs | TeamStation AI",
+    description:
+      "Replace vendor chaos with a governed engineering operating system across Latin America.",
+    images: ["/logo.svg"],
   },
 };
 
@@ -235,14 +247,53 @@ export default async function HomePage() {
     "@type": "Organization",
     name: "TeamStation AI",
     description:
-      "TeamStation AI is a Distributed Engineering Operating System that provides deterministic sourcing, vetting, deployment, governance, and compliance for nearshore engineering teams.",
+      "TeamStation AI is a Distributed Engineering Operating System that provides deterministic sourcing, vetting, deployment, governance, and compliance for nearshore engineering teams serving US CTOs and CIOs.",
     url: siteUrl,
-    logo: `${siteUrl}/logo.svg`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/logo.svg`,
+      width: "200",
+      height: "200",
+    },
+    areaServed: { "@type": "Country", name: "United States" },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Chief Technology Officer, Chief Information Officer, VP of Engineering",
+    },
+    knowsAbout: [
+      "nearshore software engineering",
+      "distributed engineering teams",
+      "CTO strategy",
+      "technical talent evaluation",
+      "AI-powered hiring",
+      "engineering operating systems",
+      "LATAM technology talent",
+    ],
     sameAs: [
       "https://www.linkedin.com/company/teamstation",
       "https://cto.teamstation.dev",
       "https://research.teamstation.dev",
     ],
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Distributed Engineering OS for CTOs | TeamStation AI",
+    description:
+      "TeamStation AI replaces staffing vendors with a Distributed Engineering Operating System for US CTOs and CIOs.",
+    url: `${siteUrl}/`,
+    inLanguage: "en-US",
+    isPartOf: { "@type": "WebSite", url: siteUrl, name: "TeamStation AI" },
+    publisher: { "@type": "Organization", name: "TeamStation AI", url: siteUrl },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", ".speakable"],
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Chief Technology Officer, Chief Information Officer, VP of Engineering",
+    },
   };
 
   const softwareApplicationSchema = {
@@ -273,6 +324,10 @@ export default async function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
 
       <div className="manual-page">

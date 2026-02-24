@@ -135,21 +135,28 @@ export default async function CaseStudyPage({
     },
     headline: titleSafe,
     description: summarySafe,
+    inLanguage: "en-US",
     image: imageUrl ? [imageUrl] : undefined,
     author: {
       "@type": "Organization",
-      name: "TeamStation AI",
-      url: siteUrl,
+      name: "TeamStation AI Research and Editorial Team",
+      url: "https://teamstation.dev",
     },
     publisher: {
       "@type": "Organization",
       name: "TeamStation AI",
+      url: "https://teamstation.dev",
       logo: {
         "@type": "ImageObject",
-        url: `${siteUrl}/apple-icon.png`,
+        url: "https://teamstation.dev/logo.svg",
       },
     },
-    datePublished: new Date().toISOString(), // This should ideally come from frontmatter
+    datePublished: study.lastModified ?? new Date().toISOString(),
+    dateModified: study.lastModified ?? new Date().toISOString(),
+    audience: {
+      "@type": "Audience",
+      audienceType: "Chief Technology Officer, Chief Information Officer, VP of Engineering",
+    },
   };
 
   const contentHtml = study.contentHtml || "";
