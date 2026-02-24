@@ -1,19 +1,19 @@
 # SEO Audit Report
 
-Generated: 2026-02-24T14:27:02.174Z
+Generated: 2026-02-24T19:59:01.512Z
 
 ## Summary
 
-- Total routes: 166
-- Indexable routes: 166
-- Dynamic templates: 7
-- Failures: 280
-- Warnings: 579
+- Total routes: 165
+- Indexable routes: 165
+- Dynamic templates: 6
+- Failures: 277
+- Warnings: 573
 - Thin pages (fail): 37
-- Missing schema (fail): 81
-- Missing canonical (warn): 44
-- Missing metadata (fail): 2
-- Missing SEO contract (warn): 166
+- Missing schema (fail): 80
+- Missing canonical (warn): 43
+- Missing metadata (fail): 1
+- Missing SEO contract (warn): 165
 
 ## Thresholds
 
@@ -110,27 +110,6 @@ Generated: 2026-02-24T14:27:02.174Z
 - Warnings:
   - [contract-missing] Missing seo content contract declaration (defineSeoContentContract).
   - [lateral-links-low] Only 0 lateral links detected. Target is 2+.
-
-### /authors/[slug]
-
-- File: `src/app/authors/[slug]/page.tsx`
-- Words: 0
-- Internal links: 0 (hub 0, lateral 0, programmatic 0)
-- Schema: no
-- Metadata: no
-- Canonical: no
-- Contract: no
-- Fails:
-  - [metadata-missing] Missing metadata or generateMetadata export.
-  - [schema-missing] Missing JSON-LD schema injection. Expected WebPage|Article|Organization.
-  - [internal-links-low] Only 0 internal links detected. Minimum is 6.
-- Warnings:
-  - [canonical-missing] Missing canonical signal in page metadata/config.
-  - [contract-missing] Missing seo content contract declaration (defineSeoContentContract).
-  - [hub-links-low] Only 0 hub links detected. Target is 2+.
-  - [lateral-links-low] Only 0 lateral links detected. Target is 2+.
-  - [programmatic-links-low] Only 0 programmatic links detected. Target is 2+ where applicable.
-  - [h1-missing] No <h1> detected in page component.
 
 ### /comparisons/deel
 
@@ -1801,7 +1780,7 @@ Generated: 2026-02-24T14:27:02.174Z
 ### /case-studies/[slug]
 
 - File: `src/app/case-studies/[slug]/page.tsx`
-- Words: 299
+- Words: 306
 - Internal links: 2 (hub 2, lateral 0, programmatic 0)
 - Schema: yes
 - Metadata: yes
@@ -1814,7 +1793,26 @@ Generated: 2026-02-24T14:27:02.174Z
   - [lateral-links-low] Only 0 lateral links detected. Target is 2+.
   - [programmatic-links-low] Only 0 programmatic links detected. Target is 2+ where applicable.
 
-... 62 more failing routes omitted. See `seo-report.json`.
+### /comparisons
+
+- File: `src/app/comparisons/page.tsx`
+- Words: 2939
+- Internal links: 3 (hub 2, lateral 0, programmatic 1)
+- Schema: yes
+- Metadata: yes
+- Canonical: no
+- Contract: no
+- Fails:
+  - [internal-links-low] Only 3 internal links detected. Minimum is 6.
+- Warnings:
+  - [canonical-missing] Missing canonical signal in page metadata/config.
+  - [lastmod-missing] Missing lastModified/dateModified signal for a content page.
+  - [contract-missing] Missing seo content contract declaration (defineSeoContentContract).
+  - [low-unique-ratio] Unique term ratio 0.23 is low; page may be repetitive or template-heavy.
+  - [lateral-links-low] Only 0 lateral links detected. Target is 2+.
+  - [programmatic-links-low] Only 1 programmatic links detected. Target is 2+ where applicable.
+
+... 61 more failing routes omitted. See `seo-report.json`.
 
 ## Warning-only Routes (sample)
 

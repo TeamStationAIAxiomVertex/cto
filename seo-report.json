@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-02-24T14:27:02.174Z",
+  "generatedAt": "2026-02-24T19:59:01.512Z",
   "summary": {
-    "totalRoutes": 166,
-    "indexableRoutes": 166,
-    "dynamicTemplates": 7,
-    "failures": 280,
-    "warnings": 579,
+    "totalRoutes": 165,
+    "indexableRoutes": 165,
+    "dynamicTemplates": 6,
+    "failures": 277,
+    "warnings": 573,
     "thinPages": 37,
-    "missingSchema": 81,
-    "missingCanonical": 44,
-    "missingMetadata": 2,
-    "missingContract": 166
+    "missingSchema": 80,
+    "missingCanonical": 43,
+    "missingMetadata": 1,
+    "missingContract": 165
   },
   "thresholds": {
     "core": 700,
@@ -91,84 +91,6 @@
       ]
     },
     {
-      "file": "src/app/authors/[slug]/page.tsx",
-      "route": "/authors/[slug]",
-      "indexable": true,
-      "dynamicTemplate": true,
-      "routeKind": "other",
-      "intent": "unknown",
-      "metrics": {
-        "wordCount": 0,
-        "uniqueTermRatio": 0,
-        "internalLinksTotal": 0,
-        "internalLinksByCategory": {
-          "hub": 0,
-          "lateral": 0,
-          "programmatic": 0
-        },
-        "keywordDensityPct": null,
-        "keywordHits": 0,
-        "hasMetadata": false,
-        "hasCanonical": false,
-        "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
-        "hasNoindexSignal": false,
-        "hasH1": false,
-        "primaryKeywordSource": "none",
-        "primaryKeyword": "authors"
-      },
-      "contract": {
-        "present": false
-      },
-      "findings": [
-        {
-          "severity": "fail",
-          "code": "metadata-missing",
-          "message": "Missing metadata or generateMetadata export."
-        },
-        {
-          "severity": "warn",
-          "code": "canonical-missing",
-          "message": "Missing canonical signal in page metadata/config."
-        },
-        {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
-        },
-        {
-          "severity": "warn",
-          "code": "contract-missing",
-          "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 0 internal links detected. Minimum is 6."
-        },
-        {
-          "severity": "warn",
-          "code": "hub-links-low",
-          "message": "Only 0 hub links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "lateral-links-low",
-          "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
-        },
-        {
-          "severity": "warn",
-          "code": "h1-missing",
-          "message": "No <h1> detected in page component."
-        }
-      ]
-    },
-    {
       "file": "src/app/case-studies/page.tsx",
       "route": "/case-studies",
       "indexable": true,
@@ -229,19 +151,19 @@
       "routeKind": "other",
       "intent": "unknown",
       "metrics": {
-        "wordCount": 299,
-        "uniqueTermRatio": 0.441,
+        "wordCount": 306,
+        "uniqueTermRatio": 0.438,
         "internalLinksTotal": 2,
         "internalLinksByCategory": {
           "hub": 2,
           "lateral": 0,
           "programmatic": 0
         },
-        "keywordDensityPct": 1.338,
+        "keywordDensityPct": 1.307,
         "keywordHits": 1,
         "hasMetadata": true,
         "hasCanonical": true,
-        "hasLastModifiedSignal": false,
+        "hasLastModifiedSignal": true,
         "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
@@ -7725,15 +7647,15 @@
       "routeKind": "other",
       "intent": "unknown",
       "metrics": {
-        "wordCount": 2463,
-        "uniqueTermRatio": 0.222,
+        "wordCount": 2590,
+        "uniqueTermRatio": 0.22,
         "internalLinksTotal": 5,
         "internalLinksByCategory": {
           "hub": 3,
           "lateral": 2,
           "programmatic": 0
         },
-        "keywordDensityPct": 0.122,
+        "keywordDensityPct": 0.116,
         "keywordHits": 1,
         "hasMetadata": true,
         "hasCanonical": true,
