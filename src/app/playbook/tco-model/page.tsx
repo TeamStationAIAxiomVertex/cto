@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { ArrowRight, DollarSign, Zap, TestTube2, Users, Briefcase, ShieldCheck, Layers, GitCompare, UserCheck, HelpCircle, BookOpen, AlertTriangle, Scale } from 'lucide-react';
 import { WithTooltip } from "../../../components/ui/tooltip";
 import { JsonLd } from "../../../components/seo/JsonLd";
+import { RevealBlock, RevealSection } from "../../../components/motion/MotionPrimitives";
 
 const faqSchema = {
  "@context": "https://schema.org",
@@ -237,6 +238,76 @@ const legend = [
     "EM_hrs", "PM_hrs", "C_EM", "C_PM", "reduction", "Hours_Saved", "C_hour", "Travel", "Duplicate_Tools", "Credits", "Daily_Value", "TTH_current", "TTH_TS"
 ];
 
+const tcoSignals = [
+  {
+    label: "Budget lens",
+    value: "Fully-loaded TCO",
+    note: "Model salary, burden, ramp, latency, quality, and governance together.",
+    icon: DollarSign,
+  },
+  {
+    label: "CFO framing",
+    value: "Risk-adjusted return",
+    note: "Translate engineering decisions into cash protection and throughput lift.",
+    icon: Scale,
+  },
+  {
+    label: "CTO control point",
+    value: "Delivery system design",
+    note: "Headcount cost is secondary to flow, quality, and replacement risk.",
+    icon: Layers,
+  },
+  {
+    label: "Proof posture",
+    value: "Computational cards",
+    note: "Use formulas and assumptions to make finance conversations defensible.",
+    icon: BookOpen,
+  },
+];
+
+const tcoCostStack = [
+  { label: "Base compensation", pct: 38, band: "Comp" },
+  { label: "Payroll burden + benefits", pct: 16, band: "Burden" },
+  { label: "Ramp + onboarding loss", pct: 10, band: "Ramp" },
+  { label: "Coordination + review latency", pct: 12, band: "Flow" },
+  { label: "Quality failure + rework", pct: 12, band: "Quality" },
+  { label: "Compliance + security ops", pct: 7, band: "Risk" },
+  { label: "Vendor fragmentation drag", pct: 5, band: "Ops" },
+];
+
+const cfoNarrativeBlocks = [
+  {
+    title: "Present the <strong>rate card</strong> as a misleading proxy",
+    body: "A low hourly rate can mask <strong>review latency</strong>, <strong>rework cost</strong>, and <strong>vacancy delay</strong>. Anchor the conversation on realized delivery output, not procurement optics.",
+  },
+  {
+    title: "Quantify <strong>throughput risk</strong> in dollars",
+    body: "Use the <strong>vacancy</strong>, <strong>PR latency</strong>, and <strong>change-failure</strong> cards to show how slow feedback loops and unstable releases create hard cash loss.",
+  },
+  {
+    title: "Show the operating response, not just cost savings",
+    body: "Pair each cost card with a control mechanism: <strong>timezone alignment</strong>, <strong>playbooked onboarding</strong>, <strong>single SLA governance</strong>, and <strong>platform-led QA</strong>.",
+  },
+];
+
+const subdomainLinks = [
+  { href: "https://cto.teamstation.dev", label: "CTO Hub", desc: "Executive doctrine, decision models, and operating playbooks." },
+  { href: "https://hire.teamstation.dev", label: "Hiring Services", desc: "Role, stack, country, and topology hiring paths." },
+  { href: "https://research.teamstation.dev", label: "Research", desc: "Evidence-backed models and scientific references." },
+  { href: "https://docs.teamstation.dev", label: "Documentation", desc: "System docs and operating references for implementation teams." },
+  { href: "https://app.teamstation.dev", label: "Application", desc: "Platform workflows and execution control surface." },
+];
+
+const segmentAccent: Record<string, string> = {
+  Cost: "from-emerald-400/80 to-cyan-400/80",
+  Speed: "from-blue-400/80 to-indigo-400/80",
+  Quality: "from-violet-400/80 to-fuchsia-400/80",
+  People: "from-amber-400/80 to-orange-400/80",
+  Ops: "from-sky-400/80 to-teal-400/80",
+  Risk: "from-rose-400/80 to-red-400/80",
+  Consolidation: "from-primary/80 to-blue-400/80",
+};
+
 
 export default function TCOModelPage() {
   return (
@@ -249,26 +320,210 @@ export default function TCOModelPage() {
           <span>TCO Model</span>
         </div>
 
-        <header className="my-8">
-            <div className="glass-panel rounded-2xl p-6 md:p-10">
-                <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">The Computational Cards: A CFO-Ready TCO Model</h1>
-                <div className="mt-8 max-w-4xl space-y-6">
-                    <div className="bg-background p-6 rounded-lg border border-primary/20">
-                        <h2 className="font-bold text-primary flex items-center gap-2"><AlertTriangle className="h-5 w-5"/>Foreword: Moving Beyond the Rate Card</h2>
-                        <p className="mt-2 text-muted-foreground">The hourly rate is the most misleading number in IT staffing. It tells you what you pay, but not what you get. True Total Cost of Ownership (TCO) is a function of not just salary, but speed, quality, and risk. A "cheaper" offshore team that ships buggy code slowly is infinitely more expensive than a nearshore pod that delivers clean code in your time zone.</p>
-                    </div>
-                    <div className="bg-background p-6 rounded-lg border border-border/50">
-                        <h3 className="font-bold text-primary flex items-center gap-2"><BookOpen className="h-5 w-5"/>The Playbook's Purpose</h3>
-                        <p className="mt-2 text-muted-foreground">These "Computational Cost Cards" are designed to be your internal business case. Each card isolates a "hidden tax" of traditional staffing models, provides a simple formula to quantify its impact, and shows how an integrated platform like TeamStation AI turns that cost into a saving. Use this framework to have a data-driven conversation with your CFO and move your organization from cost-based accounting to value-based investment.</p>
-                    </div>
-                </div>
+        <RevealBlock className="my-8 glass-panel gradient-ring hero-depth system-grid rounded-2xl p-6 md:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.05fr_.95fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">CTO Playbook | CFO-Ready Finance Model</p>
+              <h1 className="mt-3 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent md:text-5xl">
+                The Computational Cards: A CFO-Ready TCO Model
+              </h1>
+              <p className="mt-4 text-sm leading-7 text-muted-foreground md:text-base">
+                This page turns engineering delivery into a <strong className="text-foreground">financially defensible operating model</strong>.
+                It quantifies the hidden taxes of traditional staffing and shows how a <strong className="text-foreground">governed nearshore system</strong>{" "}
+                improves <strong className="text-foreground">speed</strong>, <strong className="text-foreground">quality</strong>, and <strong className="text-foreground">risk-adjusted cost</strong>.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {["Fully-loaded TCO", "CFO business case", "Throughput economics", "Risk-adjusted delivery"].map((pill) => (
+                  <span key={pill} className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+                    {pill}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <Link href="/playbook/latam-economics" className="inline-flex items-center justify-center rounded-md border border-border/70 bg-background/70 px-4 py-2 text-sm font-semibold text-foreground transition-ui hover:border-primary/40 hover:text-primary">
+                  Read <strong className="ml-1">LATAM Economics</strong>
+                </Link>
+                <Link href="/platform" className="inline-flex items-center justify-center rounded-md border border-border/70 bg-background/70 px-4 py-2 text-sm font-semibold text-foreground transition-ui hover:border-primary/40 hover:text-primary">
+                  View <strong className="ml-1">Platform Model</strong>
+                </Link>
+              </div>
             </div>
-        </header>
+
+            <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-background/60 p-4">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_14%,rgba(59,130,246,0.14),transparent_56%),radial-gradient(circle_at_86%_14%,rgba(16,185,129,0.10),transparent_42%)]" />
+              <div className="relative">
+                <div className="flex items-center justify-between">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">TCO Control Surface</p>
+                  <span className="flex items-center gap-1.5 text-[11px] text-foreground/80">
+                    <span className="relative inline-flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/60" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-300" />
+                    </span>
+                    CFO + CTO review
+                  </span>
+                </div>
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {tcoSignals.map((signal) => (
+                    <div key={signal.label} className="rounded-xl border border-border/60 bg-card/40 p-3">
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="text-[11px] font-semibold uppercase tracking-wide text-foreground/70">{signal.label}</p>
+                        <signal.icon className="h-4 w-4 text-primary" />
+                      </div>
+                      <p className="mt-1 text-sm font-semibold text-foreground">{signal.value}</p>
+                      <p className="mt-1 text-xs leading-5 text-muted-foreground">{signal.note}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 rounded-xl border border-border/60 bg-background/50 p-3">
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">Decision flow</p>
+                  <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-foreground/90">
+                    {["seat cost", "hidden tax", "delivery impact", "control model", "TCO case"].map((step, idx, arr) => (
+                      <div key={step} className="flex items-center gap-2">
+                        <span className="rounded-md border border-border/60 bg-card/40 px-2 py-1">{step}</span>
+                        {idx < arr.length - 1 ? <ArrowRight className="h-3.5 w-3.5 text-primary" /> : null}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </RevealBlock>
+
+        <RevealSection className="mb-10 grid gap-4 xl:grid-cols-[1.05fr_.95fr]">
+          <div className="glass-panel gradient-ring rounded-2xl p-5 md:p-6">
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary">TCO Composition Graphic</p>
+            <h2 className="mt-2 text-xl font-bold text-foreground md:text-2xl">Where engineering spend actually goes</h2>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              The <strong className="text-foreground">rate card</strong> is only one slice of the cost stack. A CFO-ready model must include
+              <strong className="text-foreground"> burden</strong>, <strong className="text-foreground">ramp loss</strong>,
+              <strong className="text-foreground"> coordination delay</strong>, <strong className="text-foreground">quality rework</strong>,
+              and <strong className="text-foreground">compliance drag</strong>.
+            </p>
+            <div className="mt-5 rounded-2xl border border-border/60 bg-background/45 p-4">
+              <div className="mb-3 flex items-center justify-between text-xs text-muted-foreground">
+                <span>Illustrative fully-loaded cost stack</span>
+                <span>Total = 100%</span>
+              </div>
+              <div className="h-4 overflow-hidden rounded-full border border-border/60 bg-background/80">
+                <div className="flex h-full w-full">
+                  {tcoCostStack.map((part) => (
+                    <div
+                      key={part.label}
+                      className={`h-full bg-gradient-to-r ${segmentAccent[part.band === "Comp" ? "Cost" : part.band === "Flow" ? "Speed" : part.band === "Quality" ? "Quality" : part.band === "Risk" ? "Risk" : part.band === "Ops" ? "Ops" : "Cost"]}`}
+                      style={{ width: `${part.pct}%` }}
+                      aria-hidden="true"
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="mt-4 space-y-2">
+                {tcoCostStack.map((part) => (
+                  <div key={`${part.label}-row`} className="rounded-lg border border-border/50 bg-card/35 p-2.5">
+                    <div className="flex items-center justify-between gap-2 text-sm">
+                      <span className="font-medium text-foreground">{part.label}</span>
+                      <span className="font-semibold text-primary">{part.pct}%</span>
+                    </div>
+                    <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-background/80">
+                      <div className="h-full rounded-full bg-[linear-gradient(90deg,rgba(129,140,248,0.95),rgba(52,211,153,0.9))]" style={{ width: `${part.pct}%` }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="glass-panel gradient-ring rounded-2xl p-5 md:p-6">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">CFO Narrative Builder</p>
+              <h2 className="mt-2 text-xl font-bold text-foreground">How to present the TCO case internally</h2>
+              <div className="mt-4 space-y-3">
+                {cfoNarrativeBlocks.map((item) => (
+                  <div key={item.title} className="rounded-xl border border-border/60 bg-background/55 p-4">
+                    <p className="text-sm font-semibold text-foreground" dangerouslySetInnerHTML={{ __html: item.title }} />
+                    <p className="mt-2 text-xs leading-5 text-muted-foreground" dangerouslySetInnerHTML={{ __html: item.body }} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="glass-panel gradient-ring rounded-2xl p-5 md:p-6">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">Internal + Subdomain Paths</p>
+              <h2 className="mt-2 text-xl font-bold text-foreground">Decision continuity across the system</h2>
+              <div className="mt-4 grid gap-3">
+                <Link href="/process" className="rounded-xl border border-border/60 bg-background/55 px-4 py-3 text-sm text-foreground transition-ui hover:border-primary/40">
+                  <strong>Process</strong>: model how <strong>time-to-offer</strong> and <strong>deployment readiness</strong> affect TCO.
+                </Link>
+                <Link href="/hire/by-team-topologies" className="rounded-xl border border-border/60 bg-background/55 px-4 py-3 text-sm text-foreground transition-ui hover:border-primary/40">
+                  <strong>Team Topologies</strong>: connect <strong>coordination overhead</strong> and <strong>handoff latency</strong> to org design.
+                </Link>
+                <Link href="/technical-interview-evaluation" className="rounded-xl border border-border/60 bg-background/55 px-4 py-3 text-sm text-foreground transition-ui hover:border-primary/40">
+                  <strong>Technical Evaluation</strong>: reduce <strong>mis-hire risk</strong> before it becomes a TCO penalty.
+                </Link>
+              </div>
+              <div className="mt-4 grid gap-3">
+                {subdomainLinks.map((item) => (
+                  <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-border/60 bg-card/35 px-4 py-3 text-sm transition-ui hover:border-primary/40">
+                    <span className="font-semibold text-primary">{item.label}</span>
+                    <span className="ml-2 text-muted-foreground">{item.desc}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </RevealSection>
+
+        <RevealSection className="mb-12 glass-panel gradient-ring rounded-2xl p-5 md:p-6">
+          <div className="grid gap-4 lg:grid-cols-[1.15fr_.85fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">The Playbook&apos;s Purpose</p>
+              <h2 className="mt-2 text-xl font-bold text-foreground md:text-2xl">
+                Build a <strong>data-backed CFO case</strong>, not a vendor pitch
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                These <strong className="text-foreground">Computational Cost Cards</strong> isolate hidden taxes across
+                <strong className="text-foreground"> staffing</strong>, <strong className="text-foreground">delivery speed</strong>,
+                <strong className="text-foreground"> quality</strong>, and <strong className="text-foreground">operational risk</strong>.
+                Use them to shift internal discussion from <strong className="text-foreground">cost-based accounting</strong> to
+                <strong className="text-foreground"> value-based engineering investment</strong>. Then pressure-test assumptions with
+                <Link href="/playbook/latam-economics" className="mx-1 font-semibold text-primary hover:underline">LATAM economics</Link>
+                and implementation constraints in the
+                <Link href="/platform" className="mx-1 font-semibold text-primary hover:underline">platform model</Link>.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-border/60 bg-background/45 p-4">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">Variable Legend / Formula Language</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {legend.slice(0, 18).map((term) => (
+                  <WithTooltip key={term} tooltip={`TCO formula variable: ${term}`}>
+                    <span className="inline-flex cursor-help rounded-full border border-border/60 bg-card/35 px-2.5 py-1 text-xs text-foreground/90">
+                      {term}
+                    </span>
+                  </WithTooltip>
+                ))}
+              </div>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">
+                Hover terms for formula context. Use <strong className="text-foreground">consistent assumptions</strong> across cards when presenting to finance.
+              </p>
+            </div>
+          </div>
+        </RevealSection>
         
-        <section className="my-24">
+        <RevealSection className="my-20">
           <div className="text-center">
-              <h2 className="text-4xl font-bold text-foreground">The Computational Cost Cards: A CFO-Ready Analysis</h2>
-              <p className="mt-4 max-w-[72ch] mx-auto text-lg leading-8 text-muted-foreground">Each card isolates a specific "hidden tax" on your engineering budget, quantifies its impact, and shows the TeamStation AI solution. Use these to build your business case.</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">Computational TCO Graphics</p>
+              <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl">The Computational Cost Cards: A CFO-Ready Analysis</h2>
+              <p className="mt-4 mx-auto max-w-[72ch] text-base leading-8 text-muted-foreground">
+                Each card isolates a specific <strong className="text-foreground">hidden tax</strong> on your engineering budget,
+                quantifies its impact, and maps the <strong className="text-foreground">operating response</strong> that turns cost leakage into savings.
+              </p>
+              <div className="mt-5 flex flex-wrap justify-center gap-2">
+                {["Cost", "Speed", "Quality", "People", "Ops", "Risk", "Consolidation"].map((segment) => (
+                  <span key={segment} className="inline-flex rounded-full border border-border/60 bg-background/55 px-2.5 py-1 text-xs font-medium text-foreground/90">
+                    {segment}
+                  </span>
+                ))}
+              </div>
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
               {costCards.map(card => (
@@ -278,6 +533,9 @@ export default function TCOModelPage() {
                           <div>
                               <h2 className="text-lg font-bold text-foreground">{card.title}</h2>
                               <p className="text-sm font-semibold text-primary">{card.segment}</p>
+                              <div className="mt-2 h-1.5 w-28 overflow-hidden rounded-full bg-background/80">
+                                <div className={`h-full w-full rounded-full bg-gradient-to-r ${segmentAccent[card.segment] ?? segmentAccent.Cost}`} />
+                              </div>
                           </div>
                       </div>
                       
@@ -321,6 +579,16 @@ export default function TCOModelPage() {
                               {card.proof_note && <p className="text-xs text-muted-foreground mt-3 italic">{card.proof_note}</p>}
                           </div>
                       </div>
+                      <div className="mt-4 rounded-xl border border-border/50 bg-background/45 p-3">
+                        <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">Related operating path</p>
+                        <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                          Use this card with{" "}
+                          <Link href="/process" className="font-semibold text-primary hover:underline">process controls</Link>,{" "}
+                          <Link href="/hire" className="font-semibold text-primary hover:underline">hiring routes</Link>, and{" "}
+                          <a href="https://research.teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">research evidence</a>{" "}
+                          to strengthen the CFO narrative.
+                        </p>
+                      </div>
                       <Link href={card.learn_more_href} className="mt-4 flex items-center text-sm font-semibold text-primary hover:underline">
                           Drill Down <ArrowRight className="inline h-4 w-4 ml-1"/>
                       </Link>
@@ -332,7 +600,47 @@ export default function TCOModelPage() {
                   </div>
               ))}
           </div>
-        </section>
+        </RevealSection>
+
+        <RevealSection className="mb-12 glass-panel gradient-ring rounded-2xl p-5 md:p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-primary">CTO Implementation Notes</p>
+          <h2 className="mt-2 text-xl font-bold text-foreground md:text-2xl">
+            How to turn this model into a <strong>CFO-approved roadmap decision</strong>
+          </h2>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <div className="rounded-xl border border-border/60 bg-background/55 p-4">
+              <h3 className="text-sm font-semibold text-foreground">1. Baseline your current system</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                Measure <strong className="text-foreground">vacancy days</strong>, <strong className="text-foreground">review latency</strong>,
+                <strong className="text-foreground"> change-failure rate</strong>, and <strong className="text-foreground">replacement cost</strong>
+                before comparing vendor proposals. Use the <Link href="/playbook/latam-economics" className="font-semibold text-primary hover:underline">LATAM economics chapter</Link> for the full decision lens.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border/60 bg-background/55 p-4">
+              <h3 className="text-sm font-semibold text-foreground">2. Map savings to shipped output</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                Finance approval improves when cost savings are tied to <strong className="text-foreground">roadmap throughput</strong>,
+                <strong className="text-foreground"> incident reduction</strong>, or <strong className="text-foreground">deal acceleration</strong>.
+                Cross-check with <Link href="/process" className="font-semibold text-primary hover:underline">process metrics</Link> and <a href="https://cto.teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">CTO Hub</a> operating doctrine.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border/60 bg-background/55 p-4">
+              <h3 className="text-sm font-semibold text-foreground">3. Validate quality and hiring signal</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                A lower-cost model fails if <strong className="text-foreground">quality</strong> drops. Pair TCO with
+                <Link href="/technical-interview-evaluation" className="mx-1 font-semibold text-primary hover:underline">technical evaluation evidence</Link>
+                and <Link href="/hire/by-team-topologies" className="font-semibold text-primary hover:underline">team topology design</Link>.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border/60 bg-background/55 p-4">
+              <h3 className="text-sm font-semibold text-foreground">4. Run the decision through one control surface</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                Use <strong className="text-foreground">one SLA</strong>, <strong className="text-foreground">one invoice</strong>,
+                and <strong className="text-foreground">one governance model</strong> to reduce fragmentation cost. For implementation references, route teams to <a href="https://docs.teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">Documentation</a> and <a href="https://app.teamstation.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">Application</a>.
+              </p>
+            </div>
+          </div>
+        </RevealSection>
       </main>
     </>
   );
