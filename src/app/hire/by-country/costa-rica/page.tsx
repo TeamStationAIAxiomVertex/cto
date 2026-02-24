@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
         };
     }
     return {
-        title: costaRicaData.pageSEO.title,
+        title: { absolute: 'Hire Engineers in Costa Rica | TeamStation AI' },
         description: costaRicaData.pageSEO.description,
         alternates: {
             canonical: costaRicaData.pageSEO.canonical,

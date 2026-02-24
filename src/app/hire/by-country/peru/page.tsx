@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
         };
     }
     return {
-        title: peruData.pageSEO.title,
+        title: { absolute: 'Hire Engineers in Peru | TeamStation AI' },
         description: peruData.pageSEO.description,
         alternates: {
             canonical: peruData.pageSEO.canonical,

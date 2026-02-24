@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
         };
     }
     return {
-        title: ecuadorData.pageSEO.title,
+        title: { absolute: 'Hire Engineers in Ecuador | TeamStation AI' },
         description: ecuadorData.pageSEO.description,
         alternates: {
             canonical: ecuadorData.pageSEO.canonical,

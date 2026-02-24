@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
         };
     }
     return {
-        title: uruguayData.pageSEO.title,
+        title: { absolute: 'Hire Engineers in Uruguay | TeamStation AI' },
         description: uruguayData.pageSEO.description,
         alternates: {
             canonical: uruguayData.pageSEO.canonical,

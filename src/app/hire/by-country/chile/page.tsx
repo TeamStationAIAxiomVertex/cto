@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
         };
     }
     return {
-        title: chileData.pageSEO.title,
+        title: { absolute: 'Hire Engineers in Chile | TeamStation AI' },
         description: chileData.pageSEO.description,
         alternates: {
             canonical: chileData.pageSEO.canonical,

@@ -34,7 +34,7 @@ export async function generateMetadata({
     };
   }
   return {
-    title: page.pageSEO.title,
+    title: { absolute: page.pageSEO.title },
     description: page.pageSEO.description,
     alternates: {
       canonical: page.pageSEO.canonical,

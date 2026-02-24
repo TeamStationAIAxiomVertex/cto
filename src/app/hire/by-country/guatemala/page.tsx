@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
         };
     }
     return {
-        title: guatemalaData.pageSEO.title,
+        title: { absolute: 'Hire Engineers in Guatemala | TeamStation AI' },
         description: guatemalaData.pageSEO.description,
         alternates: {
             canonical: guatemalaData.pageSEO.canonical,
