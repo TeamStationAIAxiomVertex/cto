@@ -20,7 +20,7 @@ export function ExecutivePanel({
   as: Comp = "div",
   className,
   ...props
-}: DivProps & { as?: keyof React.JSX.IntrinsicElements }) {
+}: React.HTMLAttributes<HTMLElement> & { as?: React.ElementType }) {
   return <Comp className={cn("surface-card glass-panel gradient-ring p-8 md:p-10", className)} {...props} />;
 }
 
