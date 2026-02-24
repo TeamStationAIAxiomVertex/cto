@@ -18,7 +18,7 @@ import CTOFieldManualBlock from "../../components/seo/CTOFieldManualBlock";
 import { JsonLd } from '../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: "Hire Vetted Nearshore Engineers & LATAM IT Teams",
+  title: { absolute: 'Hire Vetted Nearshore Engineers | TeamStation AI' },
   description:
     "De-risk your roadmap. Hire elite, pre-vetted LATAM engineers by role, tech, or country. Secure and compliant staff augmentation.",
   keywords:

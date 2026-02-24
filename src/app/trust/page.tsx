@@ -7,7 +7,7 @@ import { RevealSection, StaggerGrid, StaggerItem } from '../../components/motion
 import { JsonLd } from '../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Nearshore Compliance: GDPR, SSO, MDM | Trust Center',
+  title: { absolute: 'Trust Center: GDPR, SSO, MDM | TeamStation AI' },
   description: 'Security and compliance are the foundation of our nearshore platform. Learn about our controls for LATAM teams.',
   keywords: 'nearshore compliance, gdpr compliance, nearshore sso, nearshore mdm, latam device control, soc 2 nearshore',
 };

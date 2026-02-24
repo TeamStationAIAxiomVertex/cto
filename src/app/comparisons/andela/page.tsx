@@ -10,7 +10,7 @@ import { DecisionCard } from '../../../components/ui/DecisionCard';
 const JsonLd = dynamic(() => import('../../../components/seo/JsonLd'), { ssr: false });
 
 export const metadata: Metadata = {
-    title: 'Andela Alternative: TeamStation AI vs. Andela',
+    title: { absolute: 'Andela Alternative | TeamStation AI' },
     description: 'Compare TeamStation AI\'s integrated LATAM model to Andela\'s global talent marketplace for hiring developers.',
 };
 

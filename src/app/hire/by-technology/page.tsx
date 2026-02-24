@@ -9,7 +9,7 @@ import { InfoDropdown } from "../../../components/client/info-dropdown";
 import CTOFieldManualBlock from "../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
-  title: "Hire Nearshore Developers by Technology | TS AI",
+  title: { absolute: 'Hire LATAM Developers by Technology | TeamStation AI' },
   description:
     "Hire vetted LATAM engineers with expertise in your stack: React, Node, Python, AWS, Kubernetes, AI/ML, and more.",
   keywords:

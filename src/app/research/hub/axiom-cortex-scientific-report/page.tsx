@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AxiomCortex™ R&D Report | AI Talent Evaluation',
+  title: { absolute: 'AxiomCortex™ R&D Report | TeamStation AI' },
   description: 'Read our peer-reviewed research on AxiomCortex™, our proprietary Cognitive AI engine for bias-free technical talent evaluation.',
 };
 

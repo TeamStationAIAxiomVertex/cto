@@ -20,7 +20,7 @@ import {
 } from "../../../components/motion/MotionPrimitives";
 
 export const metadata: Metadata = {
-  title: "Team Topologies for US CTOs in the Agentic AI Era | TeamStation AI",
+  title: { absolute: 'Team Topologies: Agentic AI Era | TeamStation AI' },
   description:
     "A doctrine-backed guide to stream-aligned, platform, enabling, and complicated-subsystem team topologies for US CTOs building in the 2026+ AI agentic era.",
   keywords:

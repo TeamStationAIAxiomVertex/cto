@@ -6,7 +6,7 @@ import { PSPCard } from "../../../../../components/seo/PSPCard";
 import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
-  title: 'Hire Python Developers in Mexico | Nearshore Experts',
+  title: { absolute: 'Hire Python Developers in Mexico | TeamStation AI' },
   description: 'Hire vetted Python developers in Mexico with daylight overlap. Senior Django & FastAPI engineers under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/mexico/python',

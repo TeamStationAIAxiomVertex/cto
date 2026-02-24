@@ -4,7 +4,7 @@ import { Lightbulb, AlertTriangle, ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Performance Metrics in the AI Age | TeamStation AI Research',
+  title: { absolute: 'Performance Metrics in the AI Age | TeamStation AI' },
   description: 'Redefines performance metrics for engineering teams using AI workflows. New measurement models aligned with modern delivery patterns.',
   alternates: {
     canonical: '/research/performance-metrics-in-ai-age',

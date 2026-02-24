@@ -22,7 +22,7 @@ const ComparisonWidget = dynamic(() => import("../../../components/ComparisonWid
 );
 
 export const metadata: Metadata = {
-  title: 'New-Gen Nearshore vs. Offshore & Legacy Models',
+  title: { absolute: 'New-Gen Nearshore vs Offshore | TeamStation AI' },
   description: 'Evidence-based 5-way comparison of modern nearshore, onshore, offshore, and legacy models for software development.',
 };
 

@@ -10,7 +10,7 @@ import FurtherReading from "../../../components/seo/FurtherReading";
 const JsonLd = dynamic(() => import('../../../components/seo/JsonLd'), { ssr: false });
 
 export const metadata: Metadata = {
-  title: 'Globant Alternative for Staff Augmentation (2024) | TS AI',
+  title: { absolute: 'Globant Alternative | TeamStation AI' },
   description: 'Compare our team-building platform with Globant\'s project outsourcing model for nearshore staff augmentation. See which fits your needs as a CTO.',
 };
 

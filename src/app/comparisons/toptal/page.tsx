@@ -8,7 +8,7 @@ import FurtherReading from '../../../components/seo/FurtherReading';
 import { DecisionCard } from '../../../components/ui/DecisionCard';
 
 export const metadata: Metadata = {
-    title: 'Toptal Alternative: TeamStation AI vs. Toptal',
+    title: { absolute: 'Toptal Alternative | TeamStation AI' },
     description: 'Compare TeamStation AI\'s managed LATAM teams to Toptal\'s freelance marketplace for hiring elite developers.',
 };
 

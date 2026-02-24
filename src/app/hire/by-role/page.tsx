@@ -10,7 +10,7 @@ import { InfoDropdown } from "../../../components/client/info-dropdown";
 import CTOFieldManualBlock from "../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
-  title: 'Hire Vetted Nearshore Engineers by Role | TeamStation AI',
+  title: { absolute: 'Hire Nearshore Engineers by Role | TeamStation AI' },
   description: 'Hire elite LATAM engineers by role. We provide pre-vetted experts for SRE, AppSec, Data, AI/ML, and more, all under a single, compliant SLA.',
   keywords: 'hire by role, nearshore engineers, latam engineers, sre, appsec, data engineer, ai engineer, qa engineer',
 };

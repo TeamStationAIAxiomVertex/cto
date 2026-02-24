@@ -4,7 +4,7 @@ import { BookOpen, CheckCircle, BarChart, GitCompare, ShieldCheck, Zap, Users, B
 import { WithTooltip } from "../../../components/ui/tooltip";
 
 export const metadata: Metadata = {
-    title: 'Software Engineer Performance & Growth Framework',
+    title: { absolute: 'Engineer Performance Framework | TeamStation AI' },
     description: 'A data-driven performance evaluation framework for software engineers that moves beyond broken traditional reviews to maximize impact.',
     keywords: 'software engineer performance, performance evaluation framework, technical performance review, bias-free evaluation, engineering impact',
 };

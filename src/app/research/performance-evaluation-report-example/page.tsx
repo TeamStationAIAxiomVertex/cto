@@ -4,7 +4,7 @@ import { FileText, AlertTriangle, ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Engineering Performance Report Example | TeamStation AI',
+  title: { absolute: 'Engineering Performance Report | TeamStation AI' },
   description: 'See how we measure engineering velocity and team performance. Data-driven evaluation framework output turned into a CFO-ready report.',
   alternates: {
     canonical: '/research/performance-evaluation-report-example',

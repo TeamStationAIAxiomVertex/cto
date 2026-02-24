@@ -8,7 +8,7 @@ import ValuePropositionBlock from "../../../components/seo/ValuePropositionBlock
 import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
-    title: 'ParallelStaff Alternative: TeamStation AI',
+    title: { absolute: 'ParallelStaff Alternative | TeamStation AI' },
     description: 'Is ParallelStaff\'s "try-before-you-buy" model right for you? See how our integrated platform offers a more complete solution.',
 };
 

@@ -4,7 +4,7 @@ import { Book, AlertTriangle, ArrowRight, DollarSign, Users, BrainCircuit, Shiel
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Platforming the Nearshore Industry | TeamStation AI',
+  title: { absolute: 'Platforming the Nearshore Industry | TeamStation AI' },
   description: 'The foundational book on replacing staff augmentation with a predictable operating model. Scientific and economic blueprint for CTO and CIO teams.',
   alternates: {
     canonical: '/research/platforming-nearshore-book',

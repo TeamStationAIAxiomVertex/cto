@@ -24,7 +24,7 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: 'Build vs. Buy: CTO Framework for Nearshore Engineering',
+  title: { absolute: 'Build vs Buy: CTO Nearshore Framework | TeamStation AI' },
   description: 'Build nearshore from scratch or use an integrated platform? CTO playbook comparing TCO, speed, and risk for both approaches.',
 };
 

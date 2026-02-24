@@ -8,7 +8,7 @@ import FurtherReading from "../../../components/seo/FurtherReading";
 import { DecisionCard } from "../../../components/ui/DecisionCard";
 
 export const metadata: Metadata = {
-  title: 'BairesDev Alternative: TeamStation AI vs. BairesDev (2024)',
+  title: { absolute: 'BairesDev Alternative | TeamStation AI' },
   description: 'An objective comparison for CTOs looking for a BairesDev alternative. Compare our integrated platform with their traditional staff augmentation model.',
   keywords: 'BairesDev alternative, BairesDev vs, nearshore software development, LATAM staff augmentation, IT outsourcing comparison',
 };

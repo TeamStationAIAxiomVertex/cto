@@ -37,7 +37,7 @@ type ModelCard = {
 };
 
 export const metadata: Metadata = {
-  title: 'Nearshore Vendor Comparisons | TeamStation AI',
+  title: { absolute: 'Nearshore Vendor Comparisons | TeamStation AI' },
   description:
     'Compare nearshore vendor models by execution, governance, and TCO. Diagnose failure modes and choose the right operating model for your team.',
 };

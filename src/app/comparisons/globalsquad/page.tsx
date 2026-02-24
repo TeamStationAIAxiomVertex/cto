@@ -8,7 +8,7 @@ import FurtherReading from '../../../components/seo/FurtherReading';
 import { DecisionCard } from '../../../components/ui/DecisionCard';
 
 export const metadata: Metadata = {
-    title: 'Globalsquad Alternative: TeamStation AI vs. Globalsquad',
+    title: { absolute: 'GlobalSquad Alternative | TeamStation AI' },
     description: 'A comparison of TeamStation AI\'s high-throughput, managed LATAM teams and Globalsquad\'s traditional outsourcing model.',
 };
 

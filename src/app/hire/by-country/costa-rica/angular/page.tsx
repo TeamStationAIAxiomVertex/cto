@@ -6,7 +6,7 @@ import { PSPCard } from "../../../../../components/seo/PSPCard";
 import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
-  title: 'Hire Angular Developers in Costa Rica | Nearshore Experts',
+  title: { absolute: 'Hire Angular Developers in Costa Rica | TeamStation AI' },
   description: 'Hire vetted Angular developers in Costa Rica. Senior engineers ship secure, scalable applications under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/costa-rica/angular',

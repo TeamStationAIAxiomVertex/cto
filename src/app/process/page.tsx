@@ -6,7 +6,7 @@ import { RevealSection, StaggerGrid, StaggerItem } from "../../components/motion
 import { JsonLd } from '../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Our Nearshore IT Process: One Accountable SLA',
+  title: { absolute: 'Nearshore Hiring Process | TeamStation AI' },
   description: 'Our engineered system for hiring LATAM engineers under one SLA. We deliver Day-1-ready talent with secure onboarding.',
   keywords: 'nearshore it process, nearshore sla, cognitive ai vetting, secure onboarding, latam engineers, day-1 ready talent',
 };

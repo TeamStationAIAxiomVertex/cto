@@ -6,7 +6,7 @@ import { WithTooltip } from "../../../components/ui/tooltip";
 import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
-  title: 'Secure & Auditable Nearshore Talent Onboarding',
+  title: { absolute: 'Nearshore Talent Onboarding | TeamStation AI' },
   description: 'Our evidence-backed onboarding for LATAM engineers ensures Day-1 productivity. We handle contracts, secure devices, and 30-60-90 day plans.',
   keywords: 'nearshore talent onboarding, secure onboarding, auditable onboarding, latam engineer onboarding, day-1 productivity',
 };

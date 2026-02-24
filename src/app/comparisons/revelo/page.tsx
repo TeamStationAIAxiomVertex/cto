@@ -10,7 +10,7 @@ import { DecisionCard } from '../../../components/ui/DecisionCard';
 const JsonLd = dynamic(() => import('../../../components/seo/JsonLd'), { ssr: false });
 
 export const metadata: Metadata = {
-    title: 'Revelo Alternative: TeamStation AI vs. Revelo',
+    title: { absolute: 'Revelo Alternative | TeamStation AI' },
     description: 'A detailed comparison of TeamStation AI\'s managed LATAM teams and Revelo\'s marketplace for hiring individual developers.',
 };
 

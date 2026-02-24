@@ -6,7 +6,7 @@ import { DecisionCard } from "../../../components/ui/DecisionCard";
 import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
-  title: 'KMS Technology Alternative | TeamStation AI',
+  title: { absolute: 'KMS Technology Alternative | TeamStation AI' },
   description: 'Compare TeamStation AI’s integrated nearshore model with KMS Technology’s outsourcing model. See cost, operations, and continuity trade-offs.',
 };
 

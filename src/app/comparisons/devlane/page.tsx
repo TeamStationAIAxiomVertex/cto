@@ -15,7 +15,7 @@ const competitor = {
 };
 
 export const metadata: Metadata = {
-  title: `Devlane Alternative: TeamStation AI vs. ${competitor.name}`,
+  title: { absolute: 'Devlane Alternative | TeamStation AI' },
   description: `Compare our integrated platform with EOR, device management, and AI-vetting against ${competitor.name}'s traditional staff augmentation model for hiring LATAM developers.`,
   alternates: {
     canonical: `https://cto.teamstation.dev/comparisons/${competitor.slug}`,

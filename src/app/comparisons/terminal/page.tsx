@@ -8,7 +8,7 @@ import ValuePropositionBlock from "../../../components/seo/ValuePropositionBlock
 import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
-    title: 'Terminal.io Alternative: TeamStation AI',
+    title: { absolute: 'Terminal.io Alternative | TeamStation AI' },
     description: 'Compare our integrated nearshore platform with Terminal\'s EOR-plus-recruiter model for building remote dev teams.',
 };
 

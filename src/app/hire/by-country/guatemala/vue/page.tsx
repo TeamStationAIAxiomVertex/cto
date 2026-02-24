@@ -6,7 +6,7 @@ import { PSPCard } from "../../../../../components/seo/PSPCard";
 import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
-  title: 'Hire Vue.js Developers in Guatemala | Nearshore Experts',
+  title: { absolute: 'Hire Vue.js Developers in Guatemala | TeamStation AI' },
   description: 'Hire vetted Vue.js developers in Guatemala with perfect CST overlap. Senior engineers under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/guatemala/vue',

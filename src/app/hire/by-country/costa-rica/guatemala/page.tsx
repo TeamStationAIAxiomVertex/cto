@@ -3,7 +3,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Page Moved | Guatemala Hiring",
+  title: { absolute: 'Page Moved | TeamStation AI' },
   description: "This page has moved to the Guatemala country page.",
   robots: {
     index: false,

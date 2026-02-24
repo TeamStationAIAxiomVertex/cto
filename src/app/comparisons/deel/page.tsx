@@ -7,7 +7,7 @@ import { DecisionCard } from "../../../components/ui/DecisionCard";
 import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
-    title: 'Deel Alternative for Talent Sourcing: TeamStation AI',
+    title: { absolute: 'Deel Alternative | TeamStation AI' },
     description: 'See how TeamStation AI provides an end-to-end nearshore talent platform, while Deel focuses on HR and payroll for remote teams.',
 };
 

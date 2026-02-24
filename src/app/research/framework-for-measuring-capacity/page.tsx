@@ -5,7 +5,7 @@ import ScholarlyArticleSchema from "@/components/ScholarlyArticleSchema";
 
 const pageInfo = {
     slug: "framework-for-measuring-capacity",
-    title: "Engineering Capacity Framework for Distributed Teams | Research",
+    title: { absolute: 'Measuring Engineering Capacity | TeamStation AI' },
     description: "Quantitative model for capacity planning in distributed engineering. Incorporates psychometric and economic factors for predictable delivery.",
     canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490",
     summary: [

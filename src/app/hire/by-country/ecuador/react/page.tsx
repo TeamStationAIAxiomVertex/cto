@@ -6,7 +6,7 @@ import { PSPCard } from "../../../../../components/seo/PSPCard";
 import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
-  title: 'Hire React Developers in Ecuador | Nearshore Experts',
+  title: { absolute: 'Hire React Developers in Ecuador | TeamStation AI' },
   description: 'Hire vetted React developers in Ecuador with excellent US time-zone overlap. Senior TypeScript & Next.js engineers under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/ecuador/react',

@@ -5,7 +5,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { RevealBlock, RevealSection, StaggerGrid, StaggerItem } from '@/components/motion/MotionPrimitives';
 
 export const metadata: Metadata = {
-  title: 'Research Hub for CTO and CIO Teams | TeamStation AI',
+  title: { absolute: 'Research Hub for CTO and CIO Teams | TeamStation AI' },
   description:
     'Research library for CTO and CIO teams. Plan hiring, measure performance, reduce delivery risk, and build a stronger operating model.',
 };

@@ -6,7 +6,7 @@ import { PSPCard } from "../../../../../components/seo/PSPCard";
 import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
-  title: 'Hire Go Developers in Chile | Nearshore Golang Experts',
+  title: { absolute: 'Hire Go Developers in Chile | TeamStation AI' },
   description: 'Hire vetted Go developers in Chile with daylight overlap. Senior Golang engineers systems under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/chile/go',

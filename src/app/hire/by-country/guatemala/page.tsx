@@ -20,7 +20,7 @@ const iconMap: { [key: string]: React.FC<any> } = {
 export async function generateMetadata(): Promise<Metadata> {
     if (!guatemalaData) {
         return {
-            title: "Hire Developers in Guatemala",
+            title: { absolute: 'Hire Engineers in Guatemala | TeamStation AI' },
             description: "Information about hiring nearshore developers in Guatemala.",
         };
     }

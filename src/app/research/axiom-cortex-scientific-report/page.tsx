@@ -17,7 +17,7 @@ import { WithTooltip } from "@/components/client/tooltip-hook";
 import ScholarlyArticleSchema from "@/components/ScholarlyArticleSchema";
 
 export const metadata: Metadata = {
-  title: "The AxiomCortex™ Scientific Framework | AI Talent",
+  title: { absolute: 'AxiomCortex™ Scientific Framework | TeamStation AI' },
   description:
     "The definitive scientific framework for the AxiomCortex™ engine, detailing algorithms for bias-free technical talent evaluation.",
   keywords:

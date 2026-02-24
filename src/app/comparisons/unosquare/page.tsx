@@ -7,7 +7,7 @@ import ValuePropositionBlock from "../../../components/seo/ValuePropositionBlock
 import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
-  title: 'Unosquare Alternative | TeamStation AI',
+  title: { absolute: 'Unosquare Alternative | TeamStation AI' },
   description: 'Compare TeamStation AI’s integrated nearshore model with Unosquare’s traditional nearshore outsourcing model. See the trade-offs in TCO, security, and vetting.',
 };
 

@@ -6,7 +6,7 @@ import { PSPCard } from "../../../../../components/seo/PSPCard";
 import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
-  title: 'Hire Node.js Developers in Colombia | Nearshore Experts',
+  title: { absolute: 'Hire Node.js Developers in Colombia | TeamStation AI' },
   description: 'Hire vetted Node.js developers in Colombia with daylight overlap. Senior NestJS & Fastify engineers under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/colombia/node',

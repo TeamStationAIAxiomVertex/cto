@@ -10,7 +10,7 @@ import FurtherReading from "../../../components/seo/FurtherReading";
 const JsonLd = dynamic(() => import('../../../components/seo/JsonLd'), { ssr: false });
 
 export const metadata: Metadata = {
-  title: 'TECLA Alternative: TeamStation AI vs. TECLA',
+  title: { absolute: 'TECLA Alternative | TeamStation AI' },
   description: 'See why our integrated platform with EOR, device management, and AI-vetting is a strong TECLA alternative for LATAM talent.',
 };
 

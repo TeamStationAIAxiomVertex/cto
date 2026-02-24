@@ -8,7 +8,7 @@ import ServiceSchema from "@/components/ServiceSchema";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: 'Hire Angular Developers in Colombia | Nearshore Experts',
+  title: { absolute: 'Hire Angular Developers in Colombia | TeamStation AI' },
   description: 'Hire vetted Angular developers in Colombia with daylight overlap. Senior engineers under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/colombia/angular',

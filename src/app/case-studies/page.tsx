@@ -23,7 +23,7 @@ import {
 import { JsonLd } from '../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: "Nearshore Engineering Case Studies | TeamStation AI",
+  title: { absolute: 'Nearshore Engineering Case Studies | TeamStation AI' },
   description:
     "Operational proof for CTO and CIO teams evaluating nearshore engineering. Case studies by constraint, intervention, and measured outcomes.",
 };

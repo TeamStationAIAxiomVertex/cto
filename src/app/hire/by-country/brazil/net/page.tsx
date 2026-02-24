@@ -6,7 +6,7 @@ import { PSPCard } from "../../../../../components/seo/PSPCard";
 import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
-  title: 'Hire .NET Developers in Brazil | Nearshore Experts',
+  title: { absolute: 'Hire .NET Developers in Brazil | TeamStation AI' },
   description: 'Hire vetted .NET developers in Brazil with daylight overlap. Senior C# & ASP.NET Core engineers under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/brazil/net',

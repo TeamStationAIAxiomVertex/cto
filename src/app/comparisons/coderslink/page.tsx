@@ -15,7 +15,7 @@ const competitor = {
 };
 
 export const metadata: Metadata = {
-  title: `CodersLink Alternative: TeamStation AI vs. ${competitor.name}`,
+  title: { absolute: 'CodersLink Alternative | TeamStation AI' },
   description: `Compare our integrated platform with EOR, device management, and AI-vetting against ${competitor.name}'s recruitment marketplace model for hiring LATAM developers.`,
   alternates: {
     canonical: `https://cto.teamstation.dev/comparisons/${competitor.slug}`,

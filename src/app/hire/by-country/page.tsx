@@ -11,7 +11,7 @@ import { InfoDropdown } from "../../../components/client/info-dropdown";
 import CTOFieldManualBlock from "../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
-  title: 'Hire Nearshore Engineers by Country | Top LATAM Hubs',
+  title: { absolute: 'Hire LATAM Engineers by Country | TeamStation AI' },
   description: 'Stop losing a day to time zones. Hire elite, vetted engineers from top LATAM tech hubs like Mexico, Brazil, and Colombia.',
   keywords: 'hire nearshore by country, latam tech hubs, hire mexico developers, hire colombia developers, hire brazil developers, hire argentina developers',
 };

@@ -6,7 +6,7 @@ import { PSPCard } from "../../../../../components/seo/PSPCard";
 import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlock";
 
 export const metadata: Metadata = {
-  title: 'Hire Java Developers in Argentina | Nearshore Spring Boot Experts',
+  title: { absolute: 'Hire Java Developers in Argentina | TeamStation AI' },
   description: 'Hire vetted Java developers in Argentina with daylight overlap. Senior Spring Boot engineers under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/argentina/java',

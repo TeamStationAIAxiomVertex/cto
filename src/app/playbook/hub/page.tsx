@@ -8,7 +8,7 @@ import { RevealBlock, RevealSection, StaggerGrid, StaggerItem } from '../../../c
 import { JsonLd } from '../../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Distributed Engineering OS Playbook Hub for CTO Teams',
+  title: { absolute: 'CTO Playbook Hub | Distributed Eng OS | TeamStation AI' },
   description:
     'Playbook hub for CTO and CIO teams. Stronger delivery control, better hiring signal quality, and clearer operating decisions for 2026.',
   keywords:

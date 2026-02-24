@@ -7,7 +7,7 @@ import { DecisionCard } from "../../../components/ui/DecisionCard";
 import FurtherReading from "../../../components/seo/FurtherReading";
 
 export const metadata: Metadata = {
-  title: 'Nearsure Alternative: TeamStation AI vs. Nearsure',
+  title: { absolute: 'Nearsure Alternative | TeamStation AI' },
   description: 'Compare our integrated nearshore platform with Nearsure\'s traditional staff augmentation for LATAM developers.',
 };
 

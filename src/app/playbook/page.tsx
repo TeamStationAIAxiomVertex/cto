@@ -5,7 +5,7 @@ import FurtherReading from '../../components/seo/FurtherReading';
 import CTOFieldManualBlock from '../../components/seo/CTOFieldManualBlock';
 
 export const metadata: Metadata = {
-  title: 'Distributed Engineering OS Playbook for CTO Teams',
+  title: { absolute: 'Engineering OS Playbook for CTOs | TeamStation AI' },
   description:
     'Field manual for CTO and CIO leaders. Reduce delivery risk, improve hiring signal quality, and run distributed engineering with measurable control.',
 };

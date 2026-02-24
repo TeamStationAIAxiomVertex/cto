@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { ArrowRight, UserCheck, FileText, ShieldCheck, Laptop, Building, Scale, GanttChartSquare, BookOpen, Search, Code, CheckCircle, Brain, Book, Users, Target, MapPin, Calendar, Check, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Integrated Nearshore Services: One Accountable SLA for CTOs',
+  title: { absolute: 'Integrated Nearshore Services | TeamStation AI' },
   description: 'Our single, accountable SLA for nearshore engineering bundles AI-driven talent, EOR, secure devices, and compliance to defeat legacy staff augmentation risk. Surpass BairesDev.',
   keywords: 'integrated nearshore services, nearshore SLA, managed nearshore teams, employer of record latam, secure nearshore development, teamstation vs bairesdev, nearshore IT staff augmentation',
 };

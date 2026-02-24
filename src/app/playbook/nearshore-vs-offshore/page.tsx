@@ -63,7 +63,7 @@ const ComparisonWidget = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Nearshore vs. Offshore: The CTO’s Guide to Shipping Faster",
+  title: { absolute: 'Nearshore vs Offshore: CTO Guide | TeamStation AI' },
   description:
     "Data-driven CTO analysis of nearshore vs. offshore. Model the hidden costs of time-zone lag with a playbook for your global talent strategy.",
   keywords:

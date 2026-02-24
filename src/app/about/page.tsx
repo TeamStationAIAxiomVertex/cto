@@ -5,7 +5,7 @@ import SpotifyIcon from "../../components/SpotifyIcon";
 import { JsonLd } from '../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'About TeamStation AI: Nearshore Development Teams',
+  title: { absolute: 'About TeamStation AI | LATAM Dev Teams' },
   description: 'Learn about our mission to provide the world\'s most efficient and secure platform for building elite nearshore LATAM teams.',
   keywords: 'about teamstation ai, nearshore software development, latam teams, bairesdev alternative, cognitive science hiring',
 };
