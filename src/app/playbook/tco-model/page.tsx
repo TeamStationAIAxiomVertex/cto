@@ -495,7 +495,7 @@ export default function TCOModelPage() {
               <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">Variable Legend / Formula Language</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {legend.slice(0, 18).map((term) => (
-                  <WithTooltip key={term} tooltip={`TCO formula variable: ${term}`}>
+                  <WithTooltip key={term} label={`TCO formula variable: ${term}`}>
                     <span className="inline-flex cursor-help rounded-full border border-border/60 bg-card/35 px-2.5 py-1 text-xs text-foreground/90">
                       {term}
                     </span>
