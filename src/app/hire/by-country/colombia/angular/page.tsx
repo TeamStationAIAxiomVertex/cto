@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: 'Hire Angular Developers in Colombia | Nearshore Experts',
-  description: 'Hire vetted Angular developers in Colombia with daylight overlap. Our senior engineers ship robust, enterprise-scale applications under a single, compliant SLA.',
+  description: 'Hire vetted Angular developers in Colombia with daylight overlap. Senior engineers under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/colombia/angular',
   },

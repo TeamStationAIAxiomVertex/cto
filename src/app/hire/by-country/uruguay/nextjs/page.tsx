@@ -7,7 +7,7 @@ import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlo
 
 export const metadata: Metadata = {
   title: 'Hire Next.js Developers in Uruguay | Nearshore React Experts',
-  description: 'Hire vetted Next.js developers from Uruguay. Our senior React engineers from this stable, high-skill market ship secure, high-performance applications under a single, compliant SLA.',
+  description: 'Hire vetted Next.js developers from Uruguay. Senior React engineers under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/uruguay/nextjs',
   },

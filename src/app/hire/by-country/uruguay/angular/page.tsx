@@ -7,7 +7,7 @@ import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlo
 
 export const metadata: Metadata = {
   title: 'Hire Angular Developers in Uruguay | Nearshore Experts',
-  description: 'Hire vetted Angular developers from Uruguay. Our senior engineers from this stable, high-skill market ship robust, enterprise-scale applications under a single, compliant SLA.',
+  description: 'Hire vetted Angular developers from Uruguay. Senior engineers under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/uruguay/angular',
   },

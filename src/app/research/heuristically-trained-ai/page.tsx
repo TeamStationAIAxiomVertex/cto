@@ -4,8 +4,8 @@ import { TestTube, AlertTriangle, ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Heuristically Trained AI Models for Technical Evaluation | TeamStation AI Research',
-  description: 'Explores heuristic-guided model training for evaluating software engineers. Balances statistical robustness with domain-specific interpretability.',
+  title: 'Heuristic AI Models for Technical Talent Evaluation | Research',
+  description: 'Heuristic-guided model training for evaluating software engineers. Balances statistical robustness with domain-specific interpretability.',
   alternates: {
     canonical: '/research/heuristically-trained-ai',
   },

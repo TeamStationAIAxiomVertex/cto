@@ -7,7 +7,7 @@ import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlo
 
 export const metadata: Metadata = {
   title: 'Hire .NET Developers in Uruguay | Nearshore C# & ASP.NET Core',
-  description: 'Hire vetted .NET developers from Uruguay. Our senior C# & ASP.NET Core engineers from this stable, high-skill market ship secure, scalable code under a single, compliant SLA.',
+  description: 'Hire vetted .NET developers from Uruguay. Senior C# & ASP.NET Core engineers from this stable, high-skill market under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/uruguay/net',
   },

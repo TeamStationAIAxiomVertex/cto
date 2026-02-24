@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: 'Hire Java Developers in Colombia | Nearshore Experts',
-  description: 'Hire vetted Java developers in Colombia with daylight overlap. Our senior Spring Boot engineers ship secure, scalable code under a single, compliant SLA.',
+  description: 'Hire vetted Java developers in Colombia with daylight overlap. Senior Spring Boot engineers under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/colombia/java',
   },

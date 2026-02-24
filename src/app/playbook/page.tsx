@@ -7,7 +7,7 @@ import CTOFieldManualBlock from '../../components/seo/CTOFieldManualBlock';
 export const metadata: Metadata = {
   title: 'Distributed Engineering OS Playbook for CTO Teams',
   description:
-    'Field manual for CTO and CIO leaders. Use this playbook to reduce delivery risk, improve hiring signal quality, and run distributed engineering with measurable control.',
+    'Field manual for CTO and CIO leaders. Reduce delivery risk, improve hiring signal quality, and run distributed engineering with measurable control.',
 };
 
 export default function PlaybookPage() {

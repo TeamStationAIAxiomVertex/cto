@@ -7,7 +7,7 @@ import { RevealBlock, RevealSection } from '@/components/motion/MotionPrimitives
 const pageData = {
     urlSlug: 'cto-outsourcing-risk-mitigation',
     seo_title: 'CTO Outsourcing Risk Mitigation: Proprietary Data Models', 
-    meta_description: 'The definitive CTO outsourcing risk mitigation guide. Learn how our proprietary data models and Neural Search eliminate mis-hire bias and secure your critical projects.',
+    meta_description: 'CTO outsourcing risk mitigation guide. Our data models and Neural Search eliminate mis-hire bias and secure your critical projects.',
 };
 
 export const metadata: Metadata = {

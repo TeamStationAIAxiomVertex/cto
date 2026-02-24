@@ -7,7 +7,7 @@ import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlo
 
 export const metadata: Metadata = {
   title: 'Hire Node.js Developers in Ecuador | Nearshore Experts',
-  description: 'Hire vetted Node.js developers in Ecuador with daylight overlap. Our senior NestJS & Fastify engineers ship secure, scalable code under a single, compliant SLA.',
+  description: 'Hire vetted Node.js developers in Ecuador with daylight overlap. Senior NestJS & Fastify engineers under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/ecuador/node',
   },

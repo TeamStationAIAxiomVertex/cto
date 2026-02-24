@@ -5,7 +5,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Performance Metrics in the AI Age | TeamStation AI Research',
-  description: 'Redefines productivity and performance metrics for engineering teams using AI-assisted workflows. Proposes new measurement models aligned with modern delivery.',
+  description: 'Redefines performance metrics for engineering teams using AI workflows. New measurement models aligned with modern delivery patterns.',
   alternates: {
     canonical: '/research/performance-metrics-in-ai-age',
   },

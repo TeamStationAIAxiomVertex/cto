@@ -7,7 +7,7 @@ import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlo
 
 export const metadata: Metadata = {
   title: 'Hire React Developers in Uruguay | Nearshore TypeScript Experts',
-  description: 'Hire vetted React developers from Uruguay. Our senior TypeScript engineers from this high-skill market ship secure, scalable code under a single, compliant SLA.',
+  description: 'Hire vetted React developers from Uruguay. Senior TypeScript engineers from this high-skill market under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/uruguay/react',
   },

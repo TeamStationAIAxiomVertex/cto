@@ -65,7 +65,7 @@ const ComparisonWidget = dynamic(
 export const metadata: Metadata = {
   title: "Nearshore vs. Offshore: The CTO’s Guide to Shipping Faster",
   description:
-    "A data-driven analysis for CTOs on nearshore vs. offshore software development. We model the hidden costs of time-zone lag and provide a playbook for your global talent strategy.",
+    "Data-driven CTO analysis of nearshore vs. offshore. Model the hidden costs of time-zone lag with a playbook for your global talent strategy.",
   keywords:
     "nearshore vs offshore, nearshore software development, offshore development, cto playbook, human latency tax",
 };

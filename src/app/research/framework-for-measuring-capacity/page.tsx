@@ -5,8 +5,8 @@ import ScholarlyArticleSchema from "@/components/ScholarlyArticleSchema";
 
 const pageInfo = {
     slug: "framework-for-measuring-capacity",
-    title: "Framework for Measuring Engineering Capacity | TeamStation AI Research",
-    description: "Proposes a quantitative model for capacity planning in distributed engineering teams. Incorporates psychometric and economic factors for predictable delivery.",
+    title: "Engineering Capacity Framework for Distributed Teams | Research",
+    description: "Quantitative model for capacity planning in distributed engineering. Incorporates psychometric and economic factors for predictable delivery.",
     canonical: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188490",
     summary: [
         "This paper addresses a fundamental challenge for CTOs: how to accurately measure and forecast the productive capacity of a distributed engineering team. Traditional headcount-based planning is flawed, as it fails to account for critical variables that impact real-world output.",

@@ -62,7 +62,7 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Bias-Free Technical Hiring: A Playbook for CTOs | TeamStation AI",
+  title: "Bias-Free Technical Hiring for CTOs | TeamStation AI",
   description:
     "A strategic framework for CTOs to transform hiring from a subjective art into a data-driven science, powered by our Axiom Cortex™ Cognitive AI.",
   keywords:

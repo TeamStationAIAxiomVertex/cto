@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: 'Hire .NET Developers in Colombia | Nearshore Experts',
-  description: 'Hire vetted .NET developers in Colombia with daylight overlap. Our senior C# & ASP.NET Core engineers ship secure, scalable code under a single, compliant SLA.',
+  description: 'Hire vetted .NET developers in Colombia with daylight overlap. Senior C# & ASP.NET Core engineers under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/colombia/net',
   },

@@ -7,7 +7,7 @@ import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlo
 
 export const metadata: Metadata = {
   title: 'Hire Java Developers in Ecuador | Nearshore Spring Boot Experts',
-  description: 'Hire vetted Java developers in Ecuador with daylight overlap. Our senior Spring Boot engineers ship secure, scalable code under a single, compliant SLA.',
+  description: 'Hire vetted Java developers in Ecuador with daylight overlap. Senior Spring Boot engineers under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/ecuador/java',
   },

@@ -7,7 +7,7 @@ import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlo
 
 export const metadata: Metadata = {
   title: 'Hire Vue.js Developers in Ecuador | Nearshore Experts',
-  description: 'Hire vetted Vue.js developers in Ecuador with daylight overlap. Our senior engineers ship approachable, performant UIs under a single, compliant SLA.',
+  description: 'Hire vetted Vue.js developers in Ecuador with daylight overlap. Senior engineers ship approachable, performant UIs under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/ecuador/vue',
   },

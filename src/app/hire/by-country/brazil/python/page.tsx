@@ -7,7 +7,7 @@ import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlo
 
 export const metadata: Metadata = {
   title: 'Hire Python Developers in Brazil | Nearshore Experts',
-  description: 'Hire vetted Python developers in Brazil with daylight overlap. Our senior Django & FastAPI engineers ship secure, scalable code under a single, compliant SLA.',
+  description: 'Hire vetted Python developers in Brazil with daylight overlap. Senior Django & FastAPI engineers under one compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/brazil/python',
   },

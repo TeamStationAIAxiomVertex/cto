@@ -24,8 +24,8 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: 'Build vs. Buy: The Definitive CTO Framework for Scaling Nearshore Teams',
-  description: 'Should you build a nearshore operation from scratch or "buy" into an integrated platform? This data-driven playbook for CTOs models the trade-offs in Total Cost of Ownership (TCO), speed, and risk.',
+  title: 'Build vs. Buy: CTO Framework for Nearshore Engineering',
+  description: 'Build nearshore from scratch or use an integrated platform? CTO playbook comparing TCO, speed, and risk for both approaches.',
 };
 
 const buildCosts = [

@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: 'Hire Go Developers in Colombia | Nearshore Experts',
-  description: 'Hire vetted Go developers in Colombia with daylight overlap. Our senior Golang engineers ship secure, high-performance concurrent systems under a single, compliant SLA.',
+  description: 'Hire vetted Go developers in Colombia with daylight overlap. Senior Golang engineers systems under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/colombia/go',
   },

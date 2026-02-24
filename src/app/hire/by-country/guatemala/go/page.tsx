@@ -7,7 +7,7 @@ import CTOFieldManualBlock from "../../../../../components/seo/CTOFieldManualBlo
 
 export const metadata: Metadata = {
   title: 'Hire Go Developers in Guatemala | Nearshore Golang Experts',
-  description: 'Hire vetted Go developers in Guatemala with perfect CST overlap. Our senior Golang engineers ship secure, high-performance concurrent systems under a single, compliant SLA.',
+  description: 'Hire vetted Go developers in Guatemala with perfect CST overlap. Senior Golang engineers systems under a single, compliant SLA.',
   alternates: {
     canonical: 'https://cto.teamstation.dev/hire/by-country/guatemala/go',
   },
