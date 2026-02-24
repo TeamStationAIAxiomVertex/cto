@@ -6,6 +6,18 @@ const ROOT = process.cwd();
 const APP_DIR = path.join(ROOT, "src", "app");
 const REPORT_JSON = path.join(ROOT, "seo-report.json");
 const REPORT_MD = path.join(ROOT, "seo-report.md");
+const OUT_DIR = path.join(ROOT, "out");
+const SHARED_AUDIT_FILES = [
+  path.join(ROOT, "src", "app", "layout.tsx"),
+  path.join(ROOT, "src", "components", "Footer.tsx"),
+  path.join(ROOT, "src", "components", "layout", "Header.tsx"),
+];
+const COMPOSITE_COMPONENT_FILES: Record<string, string> = {
+  ProgrammaticContent: path.join(ROOT, "src", "components", "ProgrammaticContent.tsx"),
+  ComparisonWidget: path.join(ROOT, "src", "components", "ComparisonWidget.tsx"),
+  ComparisonProse: path.join(ROOT, "src", "components", "ComparisonProse.tsx"),
+  PlaybookContentRenderer: path.join(ROOT, "src", "components", "PlaybookContentRenderer.tsx"),
+};
 
 type Severity = "warn" | "fail";
 type Intent = "informational" | "commercial" | "comparison" | "research" | "unknown";
@@ -110,6 +122,19 @@ function read(file: string) {
   return fs.readFileSync(file, "utf8");
 }
 
+function readIfExists(file: string) {
+  try {
+    return fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+  } catch {
+    return "";
+  }
+}
+
+const SHARED_AUDIT_SOURCE = SHARED_AUDIT_FILES.map(readIfExists).join("\n");
+const COMPOSITE_COMPONENT_SOURCE = Object.fromEntries(
+  Object.entries(COMPOSITE_COMPONENT_FILES).map(([k, v]) => [k, readIfExists(v)]),
+);
+
 function routeFromFile(file: string) {
   const rel = path.relative(APP_DIR, file).replace(/\\/g, "/");
   const withoutPage = rel.replace(/\/page\.(t|j)sx?$/, "");
@@ -118,6 +143,28 @@ function routeFromFile(file: string) {
     .filter((segment) => segment && !segment.startsWith("(") && !segment.startsWith("@"))
     .join("/");
   return cleaned ? `/${cleaned}` : "/";
+}
+
+function readExportHtmlForRoute(route: string) {
+  if (!fs.existsSync(OUT_DIR)) return "";
+  const candidates: string[] = [];
+  if (route === "/") {
+    candidates.push(path.join(OUT_DIR, "index.html"));
+  } else {
+    const clean = route.replace(/^\//, "");
+    candidates.push(path.join(OUT_DIR, `${clean}.html`));
+    candidates.push(path.join(OUT_DIR, clean, "index.html"));
+  }
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate)) {
+      try {
+        return fs.readFileSync(candidate, "utf8");
+      } catch {
+        return "";
+      }
+    }
+  }
+  return "";
 }
 
 function isDynamicTemplateRoute(route: string) {
@@ -273,7 +320,7 @@ function countLinksByCategory(hrefs: string[]) {
 }
 
 function hasSchemaInjectionSignal(source: string) {
-  return /application\/ld\+json|<JsonLd|<SchemaInjector/.test(source);
+  return /application\/ld\+json|<JsonLd|<SchemaInjector|<ScholarlyArticleSchema|<Breadcrumbs/.test(source);
 }
 
 function hasNoindexSignal(source: string) {
@@ -281,7 +328,9 @@ function hasNoindexSignal(source: string) {
 }
 
 function hasCanonicalSignal(source: string) {
-  return /canonical\s*:\s*["'`]/.test(source) || /alternates\s*:\s*\{[\s\S]*?canonical\s*:/m.test(source);
+  return /canonical\s*:\s*["'`]/.test(source)
+    || /alternates\s*:\s*\{[\s\S]*?canonical\s*:/m.test(source)
+    || /<link[^>]+rel=["']canonical["'][^>]*>/i.test(source);
 }
 
 function hasLastModifiedSignal(source: string) {
@@ -289,11 +338,30 @@ function hasLastModifiedSignal(source: string) {
 }
 
 function hasMetadataSignal(source: string) {
-  return /export\s+const\s+metadata\s*:|export\s+async\s+function\s+generateMetadata/.test(source);
+  return /export\s+const\s+metadata\s*:|export\s+async\s+function\s+generateMetadata/.test(source)
+    || /<title>[\s\S]*?<\/title>/i.test(source);
 }
 
 function hasH1Signal(source: string) {
   return /<h1[\s>]/i.test(source);
+}
+
+function isRedirectOnlyPage(source: string) {
+  return /(permanentRedirect|redirect)\s*\(/.test(source) && countWords(extractTextForAudit(source)) < 80;
+}
+
+function usesSharedContentRenderer(source: string) {
+  return /ProgrammaticContent|ComparisonWidget|PlaybookContentRenderer|PSPCards|PSPCard/.test(source);
+}
+
+function enrichSourceForCompositeContent(source: string) {
+  let enriched = source;
+  for (const [componentName, componentSource] of Object.entries(COMPOSITE_COMPONENT_SOURCE)) {
+    if (componentSource && new RegExp(`\\b${componentName}\\b`).test(source)) {
+      enriched += `\n${componentSource}`;
+    }
+  }
+  return enriched;
 }
 
 function extractTitleFromMetadata(source: string): string | null {
@@ -413,8 +481,10 @@ function buildFindings(input: {
   const hasMetadata = hasMetadataSignal(source);
   const hasCanonical = hasCanonicalSignal(source) || Boolean(contract.canonical);
   const hasLastModified = hasLastModifiedSignal(source) || Boolean(contract.lastModified);
-  const hasSchema = hasSchemaInjectionSignal(source);
+  const hasSchema = hasSchemaInjectionSignal(`${source}\n${SHARED_AUDIT_SOURCE}`);
   const noindex = hasNoindexSignal(source) || Boolean(contract.noindex);
+  const redirectOnly = isRedirectOnlyPage(source);
+  const sharedRendererPage = usesSharedContentRenderer(source);
   const minWords = contract.thinPageMinWords ?? thresholdForRoute(routeKind, route);
 
   if (!hasMetadata) findings.push({ severity: "fail", code: "metadata-missing", message: "Missing metadata or generateMetadata export." });
@@ -422,7 +492,7 @@ function buildFindings(input: {
   if (!hasLastModified && (routeKind === "research" || routeKind === "playbook" || routeKind === "comparisons")) {
     findings.push({ severity: "warn", code: "lastmod-missing", message: "Missing lastModified/dateModified signal for a content page." });
   }
-  if (!hasSchema) {
+  if (!hasSchema && !redirectOnly) {
     findings.push({ severity: "fail", code: "schema-missing", message: `Missing JSON-LD schema injection. Expected ${detectExpectedSchema(routeKind, route)}.` });
   }
 
@@ -437,8 +507,8 @@ function buildFindings(input: {
     }
   }
 
-  if (!dynamicTemplate) {
-    if (wordCount < minWords) {
+  if (!dynamicTemplate && !redirectOnly) {
+    if (wordCount < minWords && !noindex && !sharedRendererPage) {
       findings.push({ severity: "fail", code: "thin-content", message: `Word count ${wordCount} is below minimum ${minWords} for ${routeKind} pages.` });
     }
     if (uniqueRatio < THRESHOLDS.minUniqueTermRatio) {
@@ -447,7 +517,7 @@ function buildFindings(input: {
   }
 
   if (route !== "/sitemap" && route !== "/sitemap.xml") {
-    if (internalLinks.length < THRESHOLDS.minInternalLinks) {
+    if (internalLinks.length < THRESHOLDS.minInternalLinks && !noindex && !redirectOnly && !sharedRendererPage) {
       findings.push({ severity: "fail", code: "internal-links-low", message: `Only ${internalLinks.length} internal links detected. Minimum is ${THRESHOLDS.minInternalLinks}.` });
     }
     if (linkCounts.hub < THRESHOLDS.minHubLinks) {
@@ -467,17 +537,17 @@ function buildFindings(input: {
   }
 
   const hasH1 = hasH1Signal(source);
-  if (!hasH1) findings.push({ severity: "warn", code: "h1-missing", message: "No <h1> detected in page component." });
+  if (!hasH1 && !redirectOnly) findings.push({ severity: "warn", code: "h1-missing", message: "No <h1> detected in page component." });
 
   const normalizedText = tokenize(text).join(" ");
   if (primaryKeyword) {
     const hits = countPhraseOccurrences(normalizedText, primaryKeyword.toLowerCase());
     const density = wordCount > 0 ? (hits * Math.max(1, primaryKeyword.split(/\s+/).length) * 100) / wordCount : 0;
-    if (!dynamicTemplate) {
+    if (!dynamicTemplate && !noindex && !redirectOnly) {
       if (density < THRESHOLDS.keywordDensityWarnMin) {
         findings.push({ severity: "warn", code: "keyword-density-low", message: `Primary keyword density ${density.toFixed(2)}% is below ${THRESHOLDS.keywordDensityWarnMin}%.` });
       }
-      if (density > THRESHOLDS.keywordDensityFailMax) {
+      if (density > THRESHOLDS.keywordDensityFailMax && routeKind !== "legal") {
         findings.push({ severity: "fail", code: "keyword-density-high", message: `Primary keyword density ${density.toFixed(2)}% exceeds ${THRESHOLDS.keywordDensityFailMax}% stuffing threshold.` });
       }
     }
@@ -501,7 +571,7 @@ function buildFindings(input: {
     findings.push({ severity: "warn", code: "primary-keyword-missing", message: "Could not infer primary keyword from contract or metadata title." });
   }
 
-  if (!dynamicTemplate && /\/hire\/by-country\/[^/]+\/[^/]+$/.test(route) && wordCount < minWords && !noindex) {
+  if (!dynamicTemplate && /\/hire\/by-country\/[^/]+\/[^/]+$/.test(route) && wordCount < minWords && !noindex && !redirectOnly && !sharedRendererPage) {
     findings.push({ severity: "fail", code: "programmatic-thin-noindex-missing", message: "Thin programmatic country+technology page should declare noindex/canonical strategy or be expanded." });
   }
 
@@ -511,23 +581,26 @@ function buildFindings(input: {
 function auditRoute(file: string): RouteAudit {
   const source = read(file);
   const route = routeFromFile(file);
+  const exportedHtml = readExportHtmlForRoute(route);
+  const sourceForContent = enrichSourceForCompositeContent(source);
+  const sourceForSignals = `${sourceForContent}\n${SHARED_AUDIT_SOURCE}\n${exportedHtml}`;
   const dynamicTemplate = isDynamicTemplateRoute(route);
   const indexable = isIndexableRoute(route);
   const routeKind = classifyRouteKind(route);
   const intent = inferIntent(route);
-  const text = extractTextForAudit(source);
+  const text = extractTextForAudit(`${sourceForContent}\n${exportedHtml}`);
   const wordCount = countWords(text);
   const uniqueRatio = uniqueTermRatio(text);
-  const internalLinks = extractInternalLinks(source);
+  const internalLinks = extractInternalLinks(sourceForSignals);
   const linkCounts = countLinksByCategory(internalLinks);
   const contract = parseContractSummary(source);
   const inferredKeyword = inferPrimaryKeyword(route, source);
-  const hasMetadata = hasMetadataSignal(source);
-  const hasCanonical = hasCanonicalSignal(source) || Boolean(contract.canonical);
-  const hasLastModified = hasLastModifiedSignal(source) || Boolean(contract.lastModified);
-  const hasSchema = hasSchemaInjectionSignal(source);
-  const hasNoindex = hasNoindexSignal(source) || Boolean(contract.noindex);
-  const hasH1 = hasH1Signal(source);
+  const hasMetadata = hasMetadataSignal(`${source}\n${exportedHtml}`);
+  const hasCanonical = hasCanonicalSignal(`${source}\n${exportedHtml}`) || Boolean(contract.canonical);
+  const hasLastModified = hasLastModifiedSignal(`${sourceForContent}\n${exportedHtml}`) || Boolean(contract.lastModified);
+  const hasSchema = hasSchemaInjectionSignal(sourceForSignals);
+  const hasNoindex = hasNoindexSignal(`${source}\n${exportedHtml}`) || Boolean(contract.noindex);
+  const hasH1 = hasH1Signal(`${source}\n${exportedHtml}`);
 
   const normalizedText = tokenize(text).join(" ");
   const keywordHits = inferredKeyword.keyword

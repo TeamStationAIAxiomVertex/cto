@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-02-24T19:59:01.512Z",
+  "generatedAt": "2026-02-24T20:11:59.420Z",
   "summary": {
     "totalRoutes": 165,
     "indexableRoutes": 165,
     "dynamicTemplates": 6,
-    "failures": 277,
-    "warnings": 573,
-    "thinPages": 37,
-    "missingSchema": 80,
-    "missingCanonical": 43,
-    "missingMetadata": 1,
+    "failures": 57,
+    "warnings": 529,
+    "thinPages": 31,
+    "missingSchema": 0,
+    "missingCanonical": 42,
+    "missingMetadata": 0,
     "missingContract": 165
   },
   "thresholds": {
@@ -37,18 +37,18 @@
       "metrics": {
         "wordCount": 850,
         "uniqueTermRatio": 0.418,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.706,
         "keywordHits": 6,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "none",
@@ -64,29 +64,14 @@
           "message": "Missing canonical signal in page metadata/config."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -100,9 +85,9 @@
       "metrics": {
         "wordCount": 777,
         "uniqueTermRatio": 0.309,
-        "internalLinksTotal": 7,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 4,
+          "hub": 5,
           "lateral": 0,
           "programmatic": 3
         },
@@ -111,7 +96,7 @@
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": true,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -125,11 +110,6 @@
           "severity": "warn",
           "code": "canonical-missing",
           "message": "Missing canonical signal in page metadata/config."
-        },
-        {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
         },
         {
           "severity": "warn",
@@ -153,11 +133,11 @@
       "metrics": {
         "wordCount": 306,
         "uniqueTermRatio": 0.438,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 1.307,
         "keywordHits": 1,
@@ -182,7 +162,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
+          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -192,7 +172,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -206,9 +186,9 @@
       "metrics": {
         "wordCount": 2939,
         "uniqueTermRatio": 0.227,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 0,
           "programmatic": 1
         },
@@ -250,7 +230,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
+          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -277,20 +257,20 @@
       "routeKind": "comparisons",
       "intent": "comparison",
       "metrics": {
-        "wordCount": 280,
-        "uniqueTermRatio": 0.507,
-        "internalLinksTotal": 3,
+        "wordCount": 436,
+        "uniqueTermRatio": 0.511,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
           "programmatic": 1
         },
-        "keywordDensityPct": 1.071,
+        "keywordDensityPct": 0.688,
         "keywordHits": 1,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -306,11 +286,6 @@
           "message": "Missing lastModified/dateModified signal for a content page."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service|Product."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -318,7 +293,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
+          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -342,11 +317,11 @@
       "metrics": {
         "wordCount": 890,
         "uniqueTermRatio": 0.415,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.225,
         "keywordHits": 1,
@@ -386,17 +361,12 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
+          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -415,11 +385,11 @@
       "metrics": {
         "wordCount": 1125,
         "uniqueTermRatio": 0.348,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 3,
+          "hub": 4,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 1.422,
         "keywordHits": 8,
@@ -457,19 +427,9 @@
           "message": "Word count 1125 is below minimum 1200 for comparisons pages."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -483,11 +443,11 @@
       "metrics": {
         "wordCount": 207,
         "uniqueTermRatio": 0.551,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.966,
         "keywordHits": 1,
@@ -522,7 +482,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
+          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -532,7 +492,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -546,18 +506,18 @@
       "metrics": {
         "wordCount": 770,
         "uniqueTermRatio": 0.378,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.649,
         "keywordHits": 1,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -578,11 +538,6 @@
           "message": "Missing lastModified/dateModified signal for a content page."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service|Product."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -595,7 +550,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
+          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -605,7 +560,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -619,11 +574,11 @@
       "metrics": {
         "wordCount": 216,
         "uniqueTermRatio": 0.542,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.926,
         "keywordHits": 1,
@@ -658,7 +613,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
+          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -668,7 +623,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -682,9 +637,9 @@
       "metrics": {
         "wordCount": 529,
         "uniqueTermRatio": 0.503,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 1,
+          "hub": 3,
           "lateral": 0,
           "programmatic": 1
         },
@@ -721,12 +676,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
-        },
-        {
-          "severity": "warn",
-          "code": "hub-links-low",
-          "message": "Only 1 hub links detected. Target is 2+."
+          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -750,11 +700,11 @@
       "metrics": {
         "wordCount": 878,
         "uniqueTermRatio": 0.416,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.228,
         "keywordHits": 1,
@@ -794,7 +744,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
+          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -804,7 +754,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -823,11 +773,11 @@
       "metrics": {
         "wordCount": 897,
         "uniqueTermRatio": 0.398,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -867,17 +817,12 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
+          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -896,18 +841,18 @@
       "metrics": {
         "wordCount": 2159,
         "uniqueTermRatio": 0.25,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 4,
+          "hub": 6,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.185,
         "keywordHits": 2,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "none",
@@ -928,11 +873,6 @@
           "message": "Missing lastModified/dateModified signal for a content page."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service|Product."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -943,11 +883,6 @@
           "message": "Unique term ratio 0.25 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -955,7 +890,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -974,18 +909,18 @@
       "metrics": {
         "wordCount": 817,
         "uniqueTermRatio": 0.405,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 1.102,
         "keywordHits": 3,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -1006,11 +941,6 @@
           "message": "Missing lastModified/dateModified signal for a content page."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service|Product."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -1023,17 +953,12 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
+          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -1047,18 +972,18 @@
       "metrics": {
         "wordCount": 906,
         "uniqueTermRatio": 0.382,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 3,
+          "hub": 4,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.221,
         "keywordHits": 1,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -1079,11 +1004,6 @@
           "message": "Missing lastModified/dateModified signal for a content page."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service|Product."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -1094,19 +1014,9 @@
           "message": "Word count 906 is below minimum 1200 for comparisons pages."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -1123,13 +1033,13 @@
       "routeKind": "comparisons",
       "intent": "comparison",
       "metrics": {
-        "wordCount": 601,
-        "uniqueTermRatio": 0.516,
-        "internalLinksTotal": 5,
+        "wordCount": 1257,
+        "uniqueTermRatio": 0.343,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 5,
+          "hub": 6,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -1162,16 +1072,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "thin-content",
-          "message": "Word count 601 is below minimum 1200 for comparisons pages."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 5 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -1179,7 +1079,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -1198,11 +1098,11 @@
       "metrics": {
         "wordCount": 880,
         "uniqueTermRatio": 0.39,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.227,
         "keywordHits": 1,
@@ -1242,17 +1142,12 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
+          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -1271,11 +1166,11 @@
       "metrics": {
         "wordCount": 921,
         "uniqueTermRatio": 0.367,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.217,
         "keywordHits": 1,
@@ -1315,7 +1210,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
+          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -1325,7 +1220,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -1344,11 +1239,11 @@
       "metrics": {
         "wordCount": 877,
         "uniqueTermRatio": 0.388,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 1.596,
         "keywordHits": 7,
@@ -1388,17 +1283,12 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
+          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -1412,11 +1302,11 @@
       "metrics": {
         "wordCount": 882,
         "uniqueTermRatio": 0.404,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -1456,17 +1346,12 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
+          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -1485,11 +1370,11 @@
       "metrics": {
         "wordCount": 799,
         "uniqueTermRatio": 0.421,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.25,
         "keywordHits": 1,
@@ -1529,7 +1414,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
+          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -1539,7 +1424,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -1558,11 +1443,11 @@
       "metrics": {
         "wordCount": 848,
         "uniqueTermRatio": 0.376,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.708,
         "keywordHits": 3,
@@ -1602,7 +1487,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
+          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -1612,7 +1497,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -1626,11 +1511,11 @@
       "metrics": {
         "wordCount": 1116,
         "uniqueTermRatio": 0.41,
-        "internalLinksTotal": 5,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 3,
+          "hub": 5,
           "lateral": 1,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 1.971,
         "keywordHits": 11,
@@ -1653,19 +1538,9 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 5 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 1 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -1679,9 +1554,9 @@
       "metrics": {
         "wordCount": 370,
         "uniqueTermRatio": 0.473,
-        "internalLinksTotal": 9,
+        "internalLinksTotal": 10,
         "internalLinksByCategory": {
-          "hub": 6,
+          "hub": 7,
           "lateral": 0,
           "programmatic": 3
         },
@@ -1732,18 +1607,18 @@
       "metrics": {
         "wordCount": 1831,
         "uniqueTermRatio": 0.242,
-        "internalLinksTotal": 8,
+        "internalLinksTotal": 10,
         "internalLinksByCategory": {
-          "hub": 7,
+          "hub": 8,
           "lateral": 1,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -1757,11 +1632,6 @@
           "severity": "warn",
           "code": "canonical-missing",
           "message": "Missing canonical signal in page metadata/config."
-        },
-        {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
         },
         {
           "severity": "warn",
@@ -1781,7 +1651,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -1800,18 +1670,18 @@
       "metrics": {
         "wordCount": 730,
         "uniqueTermRatio": 0.39,
-        "internalLinksTotal": 8,
+        "internalLinksTotal": 10,
         "internalLinksByCategory": {
-          "hub": 7,
+          "hub": 8,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.685,
         "keywordHits": 1,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -1827,11 +1697,6 @@
           "message": "Missing canonical signal in page metadata/config."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -1845,11 +1710,6 @@
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -1863,11 +1723,11 @@
       "metrics": {
         "wordCount": 195,
         "uniqueTermRatio": 0.728,
-        "internalLinksTotal": 0,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 0,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -1892,12 +1752,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 0 internal links detected. Minimum is 6."
-        },
-        {
-          "severity": "warn",
-          "code": "hub-links-low",
-          "message": "Only 0 hub links detected. Target is 2+."
+          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -1907,7 +1762,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -1921,11 +1776,11 @@
       "metrics": {
         "wordCount": 977,
         "uniqueTermRatio": 0.237,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.819,
         "keywordHits": 2,
@@ -1953,19 +1808,9 @@
           "message": "Unique term ratio 0.24 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -1979,18 +1824,18 @@
       "metrics": {
         "wordCount": 1082,
         "uniqueTermRatio": 0.392,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.848,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -2001,19 +1846,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -2032,18 +1867,18 @@
       "metrics": {
         "wordCount": 1096,
         "uniqueTermRatio": 0.4,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.825,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -2054,19 +1889,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -2085,18 +1910,18 @@
       "metrics": {
         "wordCount": 1091,
         "uniqueTermRatio": 0.398,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.833,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -2107,19 +1932,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -2138,18 +1953,18 @@
       "metrics": {
         "wordCount": 1077,
         "uniqueTermRatio": 0.396,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -2160,19 +1975,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -2196,11 +2001,11 @@
       "metrics": {
         "wordCount": 1249,
         "uniqueTermRatio": 0.372,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -2221,11 +2026,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -2249,11 +2049,11 @@
       "metrics": {
         "wordCount": 1238,
         "uniqueTermRatio": 0.379,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -2274,11 +2074,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -2302,11 +2097,11 @@
       "metrics": {
         "wordCount": 1322,
         "uniqueTermRatio": 0.386,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.891,
         "keywordHits": 5,
@@ -2329,11 +2124,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -2350,11 +2140,11 @@
       "metrics": {
         "wordCount": 1264,
         "uniqueTermRatio": 0.405,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.978,
         "keywordHits": 5,
@@ -2377,11 +2167,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -2398,18 +2183,18 @@
       "metrics": {
         "wordCount": 1107,
         "uniqueTermRatio": 0.397,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -2420,19 +2205,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -2456,11 +2231,11 @@
       "metrics": {
         "wordCount": 944,
         "uniqueTermRatio": 0.237,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.847,
         "keywordHits": 2,
@@ -2488,19 +2263,9 @@
           "message": "Unique term ratio 0.24 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -2514,11 +2279,11 @@
       "metrics": {
         "wordCount": 1214,
         "uniqueTermRatio": 0.378,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.059,
         "keywordHits": 5,
@@ -2541,11 +2306,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -2562,11 +2322,11 @@
       "metrics": {
         "wordCount": 1231,
         "uniqueTermRatio": 0.386,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.031,
         "keywordHits": 5,
@@ -2589,11 +2349,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -2610,11 +2365,11 @@
       "metrics": {
         "wordCount": 1225,
         "uniqueTermRatio": 0.385,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.041,
         "keywordHits": 5,
@@ -2637,11 +2392,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -2658,11 +2408,11 @@
       "metrics": {
         "wordCount": 1213,
         "uniqueTermRatio": 0.383,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -2683,11 +2433,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -2711,11 +2456,11 @@
       "metrics": {
         "wordCount": 1250,
         "uniqueTermRatio": 0.373,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -2736,11 +2481,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -2764,11 +2504,11 @@
       "metrics": {
         "wordCount": 1239,
         "uniqueTermRatio": 0.379,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -2789,11 +2529,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -2817,11 +2552,11 @@
       "metrics": {
         "wordCount": 1166,
         "uniqueTermRatio": 0.384,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.144,
         "keywordHits": 5,
@@ -2844,11 +2579,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -2865,11 +2595,11 @@
       "metrics": {
         "wordCount": 1262,
         "uniqueTermRatio": 0.405,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.585,
         "keywordHits": 4,
@@ -2892,11 +2622,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -2913,11 +2638,11 @@
       "metrics": {
         "wordCount": 1247,
         "uniqueTermRatio": 0.381,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -2938,11 +2663,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -2966,11 +2686,11 @@
       "metrics": {
         "wordCount": 935,
         "uniqueTermRatio": 0.235,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.428,
         "keywordHits": 1,
@@ -2998,19 +2718,9 @@
           "message": "Unique term ratio 0.24 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -3024,18 +2734,18 @@
       "metrics": {
         "wordCount": 1074,
         "uniqueTermRatio": 0.391,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.862,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -3046,19 +2756,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3077,18 +2777,18 @@
       "metrics": {
         "wordCount": 1093,
         "uniqueTermRatio": 0.399,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.83,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -3099,19 +2799,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3130,18 +2820,18 @@
       "metrics": {
         "wordCount": 1088,
         "uniqueTermRatio": 0.397,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.838,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -3152,19 +2842,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3183,18 +2863,18 @@
       "metrics": {
         "wordCount": 1074,
         "uniqueTermRatio": 0.395,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -3205,19 +2885,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3241,18 +2911,18 @@
       "metrics": {
         "wordCount": 1104,
         "uniqueTermRatio": 0.386,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -3263,19 +2933,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3299,18 +2959,18 @@
       "metrics": {
         "wordCount": 1096,
         "uniqueTermRatio": 0.393,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -3321,19 +2981,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3357,18 +3007,18 @@
       "metrics": {
         "wordCount": 1183,
         "uniqueTermRatio": 0.4,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.691,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -3379,19 +3029,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3410,18 +3050,18 @@
       "metrics": {
         "wordCount": 1118,
         "uniqueTermRatio": 0.422,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.789,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -3432,19 +3072,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3463,18 +3093,18 @@
       "metrics": {
         "wordCount": 1109,
         "uniqueTermRatio": 0.394,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -3485,19 +3115,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3521,11 +3141,11 @@
       "metrics": {
         "wordCount": 936,
         "uniqueTermRatio": 0.236,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.855,
         "keywordHits": 2,
@@ -3553,19 +3173,9 @@
           "message": "Unique term ratio 0.24 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -3579,11 +3189,11 @@
       "metrics": {
         "wordCount": 1188,
         "uniqueTermRatio": 0.377,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.104,
         "keywordHits": 5,
@@ -3606,11 +3216,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -3627,11 +3232,11 @@
       "metrics": {
         "wordCount": 1205,
         "uniqueTermRatio": 0.385,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.075,
         "keywordHits": 5,
@@ -3654,11 +3259,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -3675,11 +3275,11 @@
       "metrics": {
         "wordCount": 1199,
         "uniqueTermRatio": 0.384,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.085,
         "keywordHits": 5,
@@ -3702,11 +3302,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -3723,11 +3318,11 @@
       "metrics": {
         "wordCount": 1187,
         "uniqueTermRatio": 0.381,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -3748,11 +3343,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3776,11 +3366,11 @@
       "metrics": {
         "wordCount": 1248,
         "uniqueTermRatio": 0.372,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -3801,11 +3391,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3829,11 +3414,11 @@
       "metrics": {
         "wordCount": 1237,
         "uniqueTermRatio": 0.378,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -3854,11 +3439,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -3882,11 +3462,11 @@
       "metrics": {
         "wordCount": 1140,
         "uniqueTermRatio": 0.383,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.193,
         "keywordHits": 5,
@@ -3909,11 +3489,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -3930,11 +3505,11 @@
       "metrics": {
         "wordCount": 1162,
         "uniqueTermRatio": 0.381,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.151,
         "keywordHits": 5,
@@ -3957,11 +3532,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -3978,11 +3548,11 @@
       "metrics": {
         "wordCount": 1245,
         "uniqueTermRatio": 0.38,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -4003,11 +3573,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4031,11 +3596,11 @@
       "metrics": {
         "wordCount": 947,
         "uniqueTermRatio": 0.234,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.528,
         "keywordHits": 1,
@@ -4063,19 +3628,9 @@
           "message": "Unique term ratio 0.23 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -4089,18 +3644,18 @@
       "metrics": {
         "wordCount": 968,
         "uniqueTermRatio": 0.389,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.479,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4111,19 +3666,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4142,18 +3687,18 @@
       "metrics": {
         "wordCount": 991,
         "uniqueTermRatio": 0.397,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.422,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4164,19 +3709,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4193,93 +3728,38 @@
       "routeKind": "hire",
       "intent": "commercial",
       "metrics": {
-        "wordCount": 0,
-        "uniqueTermRatio": 0,
-        "internalLinksTotal": 0,
+        "wordCount": 79,
+        "uniqueTermRatio": 0.57,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 0,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 2
         },
-        "keywordDensityPct": null,
-        "keywordHits": 0,
-        "hasMetadata": false,
-        "hasCanonical": false,
+        "keywordDensityPct": 5.063,
+        "keywordHits": 2,
+        "hasMetadata": true,
+        "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
-        "hasNoindexSignal": false,
-        "hasH1": false,
-        "primaryKeywordSource": "none",
-        "primaryKeyword": "costa rica guatemala"
+        "hasSchemaInjection": true,
+        "hasNoindexSignal": true,
+        "hasH1": true,
+        "primaryKeywordSource": "metadata",
+        "primaryKeyword": "page moved"
       },
       "contract": {
         "present": false
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "metadata-missing",
-          "message": "Missing metadata or generateMetadata export."
-        },
-        {
-          "severity": "warn",
-          "code": "canonical-missing",
-          "message": "Missing canonical signal in page metadata/config."
-        },
-        {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "thin-content",
-          "message": "Word count 0 is below minimum 900 for hire pages."
-        },
-        {
-          "severity": "warn",
-          "code": "low-unique-ratio",
-          "message": "Unique term ratio 0.00 is low; page may be repetitive or template-heavy."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 0 internal links detected. Minimum is 6."
-        },
-        {
-          "severity": "warn",
-          "code": "hub-links-low",
-          "message": "Only 0 hub links detected. Target is 2+."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
-        },
-        {
-          "severity": "warn",
-          "code": "h1-missing",
-          "message": "No <h1> detected in page component."
-        },
-        {
-          "severity": "warn",
-          "code": "keyword-density-low",
-          "message": "Primary keyword density 0.00% is below 0.3%."
-        },
-        {
-          "severity": "fail",
-          "code": "programmatic-thin-noindex-missing",
-          "message": "Thin programmatic country+technology page should declare noindex/canonical strategy or be expanded."
         }
       ]
     },
@@ -4293,18 +3773,18 @@
       "metrics": {
         "wordCount": 996,
         "uniqueTermRatio": 0.385,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.41,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4315,19 +3795,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4346,18 +3816,18 @@
       "metrics": {
         "wordCount": 989,
         "uniqueTermRatio": 0.39,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4368,19 +3838,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4404,18 +3864,18 @@
       "metrics": {
         "wordCount": 1003,
         "uniqueTermRatio": 0.376,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4426,19 +3886,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4462,18 +3912,18 @@
       "metrics": {
         "wordCount": 999,
         "uniqueTermRatio": 0.382,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4484,19 +3934,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4520,18 +3960,18 @@
       "metrics": {
         "wordCount": 988,
         "uniqueTermRatio": 0.391,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.429,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4542,19 +3982,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4573,18 +4003,18 @@
       "metrics": {
         "wordCount": 979,
         "uniqueTermRatio": 0.393,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.451,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4595,19 +4025,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4626,18 +4046,18 @@
       "metrics": {
         "wordCount": 993,
         "uniqueTermRatio": 0.393,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4648,19 +4068,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4684,11 +4094,11 @@
       "metrics": {
         "wordCount": 935,
         "uniqueTermRatio": 0.232,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.428,
         "keywordHits": 1,
@@ -4716,19 +4126,9 @@
           "message": "Unique term ratio 0.23 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -4742,18 +4142,18 @@
       "metrics": {
         "wordCount": 1076,
         "uniqueTermRatio": 0.391,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.859,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4764,19 +4164,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4795,18 +4185,18 @@
       "metrics": {
         "wordCount": 1095,
         "uniqueTermRatio": 0.399,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.826,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4817,19 +4207,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4848,18 +4228,18 @@
       "metrics": {
         "wordCount": 1090,
         "uniqueTermRatio": 0.397,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.835,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4870,19 +4250,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4901,18 +4271,18 @@
       "metrics": {
         "wordCount": 1076,
         "uniqueTermRatio": 0.395,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4923,19 +4293,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -4959,18 +4319,18 @@
       "metrics": {
         "wordCount": 1106,
         "uniqueTermRatio": 0.386,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -4981,19 +4341,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -5017,18 +4367,18 @@
       "metrics": {
         "wordCount": 1098,
         "uniqueTermRatio": 0.393,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -5039,19 +4389,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -5075,18 +4415,18 @@
       "metrics": {
         "wordCount": 1183,
         "uniqueTermRatio": 0.401,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.691,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -5097,19 +4437,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -5128,18 +4458,18 @@
       "metrics": {
         "wordCount": 1123,
         "uniqueTermRatio": 0.422,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.781,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -5150,19 +4480,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -5181,18 +4501,18 @@
       "metrics": {
         "wordCount": 1111,
         "uniqueTermRatio": 0.394,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -5203,19 +4523,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -5239,11 +4549,11 @@
       "metrics": {
         "wordCount": 935,
         "uniqueTermRatio": 0.232,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.428,
         "keywordHits": 1,
@@ -5271,19 +4581,9 @@
           "message": "Unique term ratio 0.23 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -5297,11 +4597,11 @@
       "metrics": {
         "wordCount": 1093,
         "uniqueTermRatio": 0.389,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.287,
         "keywordHits": 5,
@@ -5324,11 +4624,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -5345,11 +4640,11 @@
       "metrics": {
         "wordCount": 1105,
         "uniqueTermRatio": 0.389,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.262,
         "keywordHits": 5,
@@ -5372,11 +4667,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -5393,11 +4683,11 @@
       "metrics": {
         "wordCount": 1115,
         "uniqueTermRatio": 0.38,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.242,
         "keywordHits": 5,
@@ -5420,11 +4710,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -5441,11 +4726,11 @@
       "metrics": {
         "wordCount": 1115,
         "uniqueTermRatio": 0.388,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -5466,11 +4751,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -5494,11 +4774,11 @@
       "metrics": {
         "wordCount": 1122,
         "uniqueTermRatio": 0.375,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -5519,11 +4799,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -5547,11 +4822,11 @@
       "metrics": {
         "wordCount": 1131,
         "uniqueTermRatio": 0.376,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -5572,11 +4847,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -5600,11 +4870,11 @@
       "metrics": {
         "wordCount": 1201,
         "uniqueTermRatio": 0.384,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.082,
         "keywordHits": 5,
@@ -5627,11 +4897,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -5648,11 +4913,11 @@
       "metrics": {
         "wordCount": 1098,
         "uniqueTermRatio": 0.39,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.277,
         "keywordHits": 5,
@@ -5675,11 +4940,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -5696,11 +4956,11 @@
       "metrics": {
         "wordCount": 1123,
         "uniqueTermRatio": 0.386,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -5721,11 +4981,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -5749,11 +5004,11 @@
       "metrics": {
         "wordCount": 945,
         "uniqueTermRatio": 0.237,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.847,
         "keywordHits": 2,
@@ -5781,19 +5036,9 @@
           "message": "Unique term ratio 0.24 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -5807,11 +5052,11 @@
       "metrics": {
         "wordCount": 1220,
         "uniqueTermRatio": 0.378,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.049,
         "keywordHits": 5,
@@ -5834,11 +5079,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -5855,11 +5095,11 @@
       "metrics": {
         "wordCount": 1230,
         "uniqueTermRatio": 0.385,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.033,
         "keywordHits": 5,
@@ -5882,11 +5122,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -5903,11 +5138,11 @@
       "metrics": {
         "wordCount": 1231,
         "uniqueTermRatio": 0.386,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.031,
         "keywordHits": 5,
@@ -5930,11 +5165,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -5951,11 +5181,11 @@
       "metrics": {
         "wordCount": 1219,
         "uniqueTermRatio": 0.382,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -5976,11 +5206,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6004,11 +5229,11 @@
       "metrics": {
         "wordCount": 1257,
         "uniqueTermRatio": 0.372,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -6029,11 +5254,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6057,11 +5277,11 @@
       "metrics": {
         "wordCount": 1238,
         "uniqueTermRatio": 0.378,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -6082,11 +5302,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6110,11 +5325,11 @@
       "metrics": {
         "wordCount": 1322,
         "uniqueTermRatio": 0.386,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.891,
         "keywordHits": 5,
@@ -6137,11 +5352,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -6158,11 +5368,11 @@
       "metrics": {
         "wordCount": 1272,
         "uniqueTermRatio": 0.406,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.965,
         "keywordHits": 5,
@@ -6185,11 +5395,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -6206,11 +5411,11 @@
       "metrics": {
         "wordCount": 1246,
         "uniqueTermRatio": 0.38,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -6231,11 +5436,6 @@
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6259,11 +5459,11 @@
       "metrics": {
         "wordCount": 935,
         "uniqueTermRatio": 0.235,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.428,
         "keywordHits": 1,
@@ -6291,19 +5491,9 @@
           "message": "Unique term ratio 0.24 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -6317,18 +5507,18 @@
       "metrics": {
         "wordCount": 1074,
         "uniqueTermRatio": 0.391,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.862,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -6339,19 +5529,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6370,18 +5550,18 @@
       "metrics": {
         "wordCount": 1093,
         "uniqueTermRatio": 0.399,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.83,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -6392,19 +5572,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6423,18 +5593,18 @@
       "metrics": {
         "wordCount": 1088,
         "uniqueTermRatio": 0.397,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.838,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -6445,19 +5615,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6476,18 +5636,18 @@
       "metrics": {
         "wordCount": 1074,
         "uniqueTermRatio": 0.395,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -6498,19 +5658,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6534,18 +5684,18 @@
       "metrics": {
         "wordCount": 1104,
         "uniqueTermRatio": 0.386,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -6556,19 +5706,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6592,18 +5732,18 @@
       "metrics": {
         "wordCount": 1096,
         "uniqueTermRatio": 0.393,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -6614,19 +5754,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6650,18 +5780,18 @@
       "metrics": {
         "wordCount": 1181,
         "uniqueTermRatio": 0.4,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.693,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -6672,19 +5802,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6703,18 +5823,18 @@
       "metrics": {
         "wordCount": 1121,
         "uniqueTermRatio": 0.422,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 1.784,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -6725,19 +5845,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6756,18 +5866,18 @@
       "metrics": {
         "wordCount": 1109,
         "uniqueTermRatio": 0.394,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -6778,19 +5888,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6814,11 +5914,11 @@
       "metrics": {
         "wordCount": 935,
         "uniqueTermRatio": 0.235,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.428,
         "keywordHits": 1,
@@ -6846,19 +5946,9 @@
           "message": "Unique term ratio 0.24 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -6872,18 +5962,18 @@
       "metrics": {
         "wordCount": 951,
         "uniqueTermRatio": 0.395,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.103,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -6894,19 +5984,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6925,18 +6005,18 @@
       "metrics": {
         "wordCount": 966,
         "uniqueTermRatio": 0.393,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.07,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -6947,19 +6027,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -6978,18 +6048,18 @@
       "metrics": {
         "wordCount": 987,
         "uniqueTermRatio": 0.39,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.026,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -7000,19 +6070,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -7031,18 +6091,18 @@
       "metrics": {
         "wordCount": 983,
         "uniqueTermRatio": 0.393,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -7053,19 +6113,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -7089,18 +6139,18 @@
       "metrics": {
         "wordCount": 979,
         "uniqueTermRatio": 0.377,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -7111,19 +6161,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -7147,18 +6187,18 @@
       "metrics": {
         "wordCount": 981,
         "uniqueTermRatio": 0.392,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -7169,19 +6209,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -7205,18 +6235,18 @@
       "metrics": {
         "wordCount": 938,
         "uniqueTermRatio": 0.406,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.132,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -7227,19 +6257,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -7258,18 +6278,18 @@
       "metrics": {
         "wordCount": 975,
         "uniqueTermRatio": 0.392,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 2.051,
         "keywordHits": 4,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -7280,19 +6300,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -7311,18 +6321,18 @@
       "metrics": {
         "wordCount": 978,
         "uniqueTermRatio": 0.394,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 2
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -7333,19 +6343,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -7369,18 +6369,18 @@
       "metrics": {
         "wordCount": 772,
         "uniqueTermRatio": 0.365,
-        "internalLinksTotal": 8,
+        "internalLinksTotal": 10,
         "internalLinksByCategory": {
-          "hub": 6,
+          "hub": 7,
           "lateral": 1,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.777,
         "keywordHits": 1,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -7396,11 +6396,6 @@
           "message": "Missing canonical signal in page metadata/config."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -7414,11 +6409,6 @@
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 1 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -7432,11 +6422,11 @@
       "metrics": {
         "wordCount": 4419,
         "uniqueTermRatio": 0.283,
-        "internalLinksTotal": 11,
+        "internalLinksTotal": 14,
         "internalLinksByCategory": {
-          "hub": 6,
+          "hub": 8,
           "lateral": 1,
-          "programmatic": 4
+          "programmatic": 5
         },
         "keywordDensityPct": 0.339,
         "keywordHits": 5,
@@ -7475,9 +6465,9 @@
       "metrics": {
         "wordCount": 2070,
         "uniqueTermRatio": 0.329,
-        "internalLinksTotal": 9,
+        "internalLinksTotal": 11,
         "internalLinksByCategory": {
-          "hub": 4,
+          "hub": 6,
           "lateral": 1,
           "programmatic": 4
         },
@@ -7523,9 +6513,9 @@
       "metrics": {
         "wordCount": 798,
         "uniqueTermRatio": 0.366,
-        "internalLinksTotal": 8,
+        "internalLinksTotal": 9,
         "internalLinksByCategory": {
-          "hub": 6,
+          "hub": 7,
           "lateral": 0,
           "programmatic": 2
         },
@@ -7534,7 +6524,7 @@
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -7548,11 +6538,6 @@
           "severity": "warn",
           "code": "canonical-missing",
           "message": "Missing canonical signal in page metadata/config."
-        },
-        {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
         },
         {
           "severity": "warn",
@@ -7579,20 +6564,20 @@
       "routeKind": "hire",
       "intent": "commercial",
       "metrics": {
-        "wordCount": 121,
-        "uniqueTermRatio": 0.545,
-        "internalLinksTotal": 0,
+        "wordCount": 2513,
+        "uniqueTermRatio": 0.279,
+        "internalLinksTotal": 13,
         "internalLinksByCategory": {
-          "hub": 0,
-          "lateral": 0,
-          "programmatic": 0
+          "hub": 8,
+          "lateral": 2,
+          "programmatic": 3
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": false,
         "primaryKeywordSource": "metadata",
@@ -7603,34 +6588,9 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected Service."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 0 internal links detected. Minimum is 6."
-        },
-        {
-          "severity": "warn",
-          "code": "hub-links-low",
-          "message": "Only 0 hub links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "lateral-links-low",
-          "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -7649,11 +6609,11 @@
       "metrics": {
         "wordCount": 2590,
         "uniqueTermRatio": 0.22,
-        "internalLinksTotal": 5,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 3,
+          "hub": 5,
           "lateral": 2,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.116,
         "keywordHits": 1,
@@ -7681,14 +6641,9 @@
           "message": "Unique term ratio 0.22 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 5 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -7707,18 +6662,18 @@
       "metrics": {
         "wordCount": 2235,
         "uniqueTermRatio": 0.239,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 1,
+          "hub": 3,
           "lateral": 2,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.403,
         "keywordHits": 3,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -7734,11 +6689,6 @@
           "message": "Missing canonical signal in page metadata/config."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -7749,19 +6699,9 @@
           "message": "Unique term ratio 0.24 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
-          "severity": "warn",
-          "code": "hub-links-low",
-          "message": "Only 1 hub links detected. Target is 2+."
-        },
-        {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -7775,9 +6715,9 @@
       "metrics": {
         "wordCount": 516,
         "uniqueTermRatio": 0.38,
-        "internalLinksTotal": 6,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 3,
+          "hub": 5,
           "lateral": 0,
           "programmatic": 3
         },
@@ -7786,7 +6726,7 @@
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -7805,11 +6745,6 @@
           "severity": "warn",
           "code": "lastmod-missing",
           "message": "Missing lastModified/dateModified signal for a content page."
-        },
-        {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage."
         },
         {
           "severity": "warn",
@@ -7836,16 +6771,16 @@
       "routeKind": "playbook",
       "intent": "informational",
       "metrics": {
-        "wordCount": 43,
-        "uniqueTermRatio": 0.791,
-        "internalLinksTotal": 0,
+        "wordCount": 2590,
+        "uniqueTermRatio": 0.346,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 0,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
-        "keywordDensityPct": 9.302,
-        "keywordHits": 4,
+        "keywordDensityPct": 0.347,
+        "keywordHits": 9,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
@@ -7870,16 +6805,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 0 internal links detected. Minimum is 6."
-        },
-        {
-          "severity": "warn",
-          "code": "hub-links-low",
-          "message": "Only 0 hub links detected. Target is 2+."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -7887,7 +6812,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -7901,11 +6826,11 @@
       "metrics": {
         "wordCount": 1622,
         "uniqueTermRatio": 0.321,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 3,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -7933,11 +6858,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -7945,7 +6865,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -7964,11 +6884,11 @@
       "metrics": {
         "wordCount": 1705,
         "uniqueTermRatio": 0.29,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -8003,7 +6923,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
+          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -8013,7 +6933,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -8032,9 +6952,9 @@
       "metrics": {
         "wordCount": 2415,
         "uniqueTermRatio": 0.259,
-        "internalLinksTotal": 6,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 5,
+          "hub": 6,
           "lateral": 0,
           "programmatic": 1
         },
@@ -8043,7 +6963,7 @@
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -8062,11 +6982,6 @@
           "severity": "warn",
           "code": "lastmod-missing",
           "message": "Missing lastModified/dateModified signal for a content page."
-        },
-        {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
         },
         {
           "severity": "warn",
@@ -8105,9 +7020,9 @@
       "metrics": {
         "wordCount": 1250,
         "uniqueTermRatio": 0.292,
-        "internalLinksTotal": 7,
+        "internalLinksTotal": 8,
         "internalLinksByCategory": {
-          "hub": 4,
+          "hub": 5,
           "lateral": 0,
           "programmatic": 3
         },
@@ -8116,7 +7031,7 @@
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -8135,11 +7050,6 @@
           "severity": "warn",
           "code": "lastmod-missing",
           "message": "Missing lastModified/dateModified signal for a content page."
-        },
-        {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage."
         },
         {
           "severity": "warn",
@@ -8161,20 +7071,20 @@
       "routeKind": "playbook",
       "intent": "informational",
       "metrics": {
-        "wordCount": 1962,
-        "uniqueTermRatio": 0.242,
-        "internalLinksTotal": 3,
+        "wordCount": 4548,
+        "uniqueTermRatio": 0.248,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 0,
           "programmatic": 1
         },
-        "keywordDensityPct": 0.204,
+        "keywordDensityPct": 0.088,
         "keywordHits": 2,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -8190,11 +7100,6 @@
           "message": "Missing lastModified/dateModified signal for a content page."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -8202,12 +7107,7 @@
         {
           "severity": "warn",
           "code": "low-unique-ratio",
-          "message": "Unique term ratio 0.24 is low; page may be repetitive or template-heavy."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
+          "message": "Unique term ratio 0.25 is low; page may be repetitive or template-heavy."
         },
         {
           "severity": "warn",
@@ -8222,7 +7122,7 @@
         {
           "severity": "warn",
           "code": "keyword-density-low",
-          "message": "Primary keyword density 0.20% is below 0.3%."
+          "message": "Primary keyword density 0.09% is below 0.3%."
         }
       ]
     },
@@ -8234,11 +7134,11 @@
       "routeKind": "playbook",
       "intent": "informational",
       "metrics": {
-        "wordCount": 1184,
-        "uniqueTermRatio": 0.327,
-        "internalLinksTotal": 4,
+        "wordCount": 1840,
+        "uniqueTermRatio": 0.278,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 0,
           "programmatic": 2
         },
@@ -8273,9 +7173,9 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
+          "severity": "warn",
+          "code": "low-unique-ratio",
+          "message": "Unique term ratio 0.28 is low; page may be repetitive or template-heavy."
         },
         {
           "severity": "warn",
@@ -8297,13 +7197,13 @@
       "routeKind": "playbook",
       "intent": "informational",
       "metrics": {
-        "wordCount": 571,
-        "uniqueTermRatio": 0.504,
-        "internalLinksTotal": 5,
+        "wordCount": 1227,
+        "uniqueTermRatio": 0.337,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 5,
+          "hub": 6,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
@@ -8336,16 +7236,6 @@
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "thin-content",
-          "message": "Word count 571 is below minimum 1000 for playbook pages."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 5 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -8353,7 +7243,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -8372,11 +7262,11 @@
       "metrics": {
         "wordCount": 3070,
         "uniqueTermRatio": 0.226,
-        "internalLinksTotal": 8,
+        "internalLinksTotal": 11,
         "internalLinksByCategory": {
-          "hub": 4,
+          "hub": 6,
           "lateral": 3,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.195,
         "keywordHits": 1,
@@ -8415,11 +7305,6 @@
         },
         {
           "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
-        },
-        {
-          "severity": "warn",
           "code": "keyword-density-low",
           "message": "Primary keyword density 0.20% is below 0.3%."
         }
@@ -8435,11 +7320,11 @@
       "metrics": {
         "wordCount": 668,
         "uniqueTermRatio": 0.54,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 1,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.749,
         "keywordHits": 1,
@@ -8472,11 +7357,6 @@
           "message": "Word count 668 is below minimum 700 for core pages."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 1 lateral links detected. Target is 2+."
@@ -8484,7 +7364,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -8498,18 +7378,18 @@
       "metrics": {
         "wordCount": 574,
         "uniqueTermRatio": 0.462,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 3.833,
         "keywordHits": 11,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": true,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -8520,34 +7400,14 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "thin-content",
-          "message": "Word count 574 is below minimum 700 for legal pages."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "fail",
-          "code": "keyword-density-high",
-          "message": "Primary keyword density 3.83% exceeds 2.5% stuffing threshold."
         }
       ]
     },
@@ -8561,18 +7421,18 @@
       "metrics": {
         "wordCount": 1802,
         "uniqueTermRatio": 0.269,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 1,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0.222,
         "keywordHits": 1,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -8588,11 +7448,6 @@
           "message": "Missing canonical signal in page metadata/config."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -8603,19 +7458,9 @@
           "message": "Unique term ratio 0.27 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 1 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -8634,18 +7479,18 @@
       "metrics": {
         "wordCount": 1216,
         "uniqueTermRatio": 0.357,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 1,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -8666,19 +7511,9 @@
           "message": "Missing lastModified/dateModified signal for a content page."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected ScholarlyArticle|Article."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -8688,7 +7523,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -8707,18 +7542,18 @@
       "metrics": {
         "wordCount": 50,
         "uniqueTermRatio": 0.8,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 3,
+          "hub": 5,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 10,
         "keywordHits": 1,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -8734,11 +7569,6 @@
           "message": "Missing lastModified/dateModified signal for a content page."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected ScholarlyArticle|Article."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -8749,11 +7579,6 @@
           "message": "Word count 50 is below minimum 1000 for research pages."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
@@ -8761,7 +7586,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "fail",
@@ -8780,11 +7605,11 @@
       "metrics": {
         "wordCount": 520,
         "uniqueTermRatio": 0.517,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 4.038,
         "keywordHits": 3,
@@ -8817,19 +7642,9 @@
           "message": "Word count 520 is below minimum 1000 for research pages."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "fail",
@@ -8848,11 +7663,11 @@
       "metrics": {
         "wordCount": 1281,
         "uniqueTermRatio": 0.278,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 3,
+          "hub": 5,
           "lateral": 1,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.546,
         "keywordHits": 1,
@@ -8890,11 +7705,6 @@
           "message": "Unique term ratio 0.28 is low; page may be repetitive or template-heavy."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 1 lateral links detected. Target is 2+."
@@ -8902,7 +7712,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -8916,18 +7726,18 @@
       "metrics": {
         "wordCount": 391,
         "uniqueTermRatio": 0.481,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 1,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -8948,11 +7758,6 @@
           "message": "Missing lastModified/dateModified signal for a content page."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected ScholarlyArticle|Article."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -8963,11 +7768,6 @@
           "message": "Word count 391 is below minimum 1000 for research pages."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 1 lateral links detected. Target is 2+."
@@ -8975,7 +7775,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -8994,18 +7794,18 @@
       "metrics": {
         "wordCount": 972,
         "uniqueTermRatio": 0.5,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 1,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -9026,11 +7826,6 @@
           "message": "Missing lastModified/dateModified signal for a content page."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected ScholarlyArticle|Article."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
@@ -9041,19 +7836,9 @@
           "message": "Word count 972 is below minimum 1000 for research pages."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 1 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -9072,11 +7857,11 @@
       "metrics": {
         "wordCount": 751,
         "uniqueTermRatio": 0.399,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 1.598,
         "keywordHits": 3,
@@ -9109,19 +7894,9 @@
           "message": "Word count 751 is below minimum 1000 for research pages."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -9135,11 +7910,11 @@
       "metrics": {
         "wordCount": 609,
         "uniqueTermRatio": 0.433,
-        "internalLinksTotal": 3,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 0,
-          "programmatic": 1
+          "programmatic": 2
         },
         "keywordDensityPct": 4.926,
         "keywordHits": 5,
@@ -9172,19 +7947,9 @@
           "message": "Word count 609 is below minimum 1000 for research pages."
         },
         {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 3 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "warn",
-          "code": "programmatic-links-low",
-          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "fail",
@@ -9203,11 +7968,11 @@
       "metrics": {
         "wordCount": 923,
         "uniqueTermRatio": 0.385,
-        "internalLinksTotal": 2,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 2,
+          "hub": 4,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 1.3,
         "keywordHits": 3,
@@ -9242,7 +8007,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 2 internal links detected. Minimum is 6."
+          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -9252,7 +8017,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -9266,18 +8031,18 @@
       "metrics": {
         "wordCount": 60,
         "uniqueTermRatio": 0.617,
-        "internalLinksTotal": 1,
+        "internalLinksTotal": 5,
         "internalLinksByCategory": {
-          "hub": 0,
+          "hub": 3,
           "lateral": 1,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": false,
         "primaryKeywordSource": "metadata",
@@ -9293,29 +8058,9 @@
           "message": "Missing lastModified/dateModified signal for a content page."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected ScholarlyArticle|Article."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "thin-content",
-          "message": "Word count 60 is below minimum 1000 for research pages."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 1 internal links detected. Minimum is 6."
-        },
-        {
-          "severity": "warn",
-          "code": "hub-links-low",
-          "message": "Only 0 hub links detected. Target is 2+."
         },
         {
           "severity": "warn",
@@ -9325,17 +8070,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
-        },
-        {
-          "severity": "warn",
-          "code": "h1-missing",
-          "message": "No <h1> detected in page component."
-        },
-        {
-          "severity": "warn",
-          "code": "keyword-density-low",
-          "message": "Primary keyword density 0.00% is below 0.3%."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -9349,11 +8084,11 @@
       "metrics": {
         "wordCount": 1614,
         "uniqueTermRatio": 0.318,
-        "internalLinksTotal": 8,
+        "internalLinksTotal": 10,
         "internalLinksByCategory": {
-          "hub": 8,
+          "hub": 9,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.372,
         "keywordHits": 2,
@@ -9388,7 +8123,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     },
@@ -9402,18 +8137,18 @@
       "metrics": {
         "wordCount": 738,
         "uniqueTermRatio": 0.354,
-        "internalLinksTotal": 5,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 4,
+          "hub": 5,
           "lateral": 1,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -9429,19 +8164,9 @@
           "message": "Missing canonical signal in page metadata/config."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -9451,7 +8176,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -9470,18 +8195,18 @@
       "metrics": {
         "wordCount": 123,
         "uniqueTermRatio": 0.626,
-        "internalLinksTotal": 0,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 0,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 4.878,
         "keywordHits": 6,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -9495,11 +8220,6 @@
           "severity": "warn",
           "code": "canonical-missing",
           "message": "Missing canonical signal in page metadata/config."
-        },
-        {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
         },
         {
           "severity": "warn",
@@ -9528,18 +8248,18 @@
       "metrics": {
         "wordCount": 40,
         "uniqueTermRatio": 0.575,
-        "internalLinksTotal": 0,
+        "internalLinksTotal": 4,
         "internalLinksByCategory": {
-          "hub": 0,
+          "hub": 3,
           "lateral": 0,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0,
         "keywordHits": 0,
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": false,
         "primaryKeywordSource": "metadata",
@@ -9549,11 +8269,6 @@
         "present": false
       },
       "findings": [
-        {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
-        },
         {
           "severity": "warn",
           "code": "contract-missing",
@@ -9567,12 +8282,7 @@
         {
           "severity": "fail",
           "code": "internal-links-low",
-          "message": "Only 0 internal links detected. Minimum is 6."
-        },
-        {
-          "severity": "warn",
-          "code": "hub-links-low",
-          "message": "Only 0 hub links detected. Target is 2+."
+          "message": "Only 4 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -9582,7 +8292,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         },
         {
           "severity": "warn",
@@ -9606,9 +8316,9 @@
       "metrics": {
         "wordCount": 613,
         "uniqueTermRatio": 0.432,
-        "internalLinksTotal": 4,
+        "internalLinksTotal": 6,
         "internalLinksByCategory": {
-          "hub": 3,
+          "hub": 5,
           "lateral": 0,
           "programmatic": 1
         },
@@ -9617,7 +8327,7 @@
         "hasMetadata": true,
         "hasCanonical": true,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": true,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -9628,34 +8338,14 @@
       },
       "findings": [
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
         },
         {
-          "severity": "fail",
-          "code": "thin-content",
-          "message": "Word count 613 is below minimum 700 for legal pages."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 4 internal links detected. Minimum is 6."
-        },
-        {
           "severity": "warn",
           "code": "lateral-links-low",
           "message": "Only 0 lateral links detected. Target is 2+."
-        },
-        {
-          "severity": "fail",
-          "code": "keyword-density-high",
-          "message": "Primary keyword density 3.43% exceeds 2.5% stuffing threshold."
         }
       ]
     },
@@ -9669,18 +8359,18 @@
       "metrics": {
         "wordCount": 836,
         "uniqueTermRatio": 0.343,
-        "internalLinksTotal": 5,
+        "internalLinksTotal": 7,
         "internalLinksByCategory": {
-          "hub": 4,
+          "hub": 5,
           "lateral": 1,
-          "programmatic": 0
+          "programmatic": 1
         },
         "keywordDensityPct": 0.718,
         "keywordHits": 3,
         "hasMetadata": true,
         "hasCanonical": false,
         "hasLastModifiedSignal": false,
-        "hasSchemaInjection": false,
+        "hasSchemaInjection": true,
         "hasNoindexSignal": false,
         "hasH1": true,
         "primaryKeywordSource": "metadata",
@@ -9696,19 +8386,9 @@
           "message": "Missing canonical signal in page metadata/config."
         },
         {
-          "severity": "fail",
-          "code": "schema-missing",
-          "message": "Missing JSON-LD schema injection. Expected WebPage|Article|Organization."
-        },
-        {
           "severity": "warn",
           "code": "contract-missing",
           "message": "Missing seo content contract declaration (defineSeoContentContract)."
-        },
-        {
-          "severity": "fail",
-          "code": "internal-links-low",
-          "message": "Only 5 internal links detected. Minimum is 6."
         },
         {
           "severity": "warn",
@@ -9718,7 +8398,7 @@
         {
           "severity": "warn",
           "code": "programmatic-links-low",
-          "message": "Only 0 programmatic links detected. Target is 2+ where applicable."
+          "message": "Only 1 programmatic links detected. Target is 2+ where applicable."
         }
       ]
     }

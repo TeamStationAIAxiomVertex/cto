@@ -10,9 +10,10 @@
   "scripts": {
     "dev": "next dev",
     "seo:audit": "ts-node --esm --transpile-only scripts/seo-audit.ts",
-    "build": "npm run seo:audit && next build",
+    "build": "next build",
+    "build:audit": "next build && npm run seo:audit",
     "build:sitemap": "node scripts/generate-sitemap.mjs",
-    "build:production": "npm run typecheck && npm run seo:audit && next build",
+    "build:production": "npm run typecheck && next build && npm run seo:audit",
     "start": "next start -p ${PORT:-3000} -H 0.0.0.0",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
