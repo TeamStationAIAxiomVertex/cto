@@ -4,11 +4,24 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import FurtherReading from '../../components/seo/FurtherReading';
 import { RevealSection, StaggerGrid, StaggerItem } from '../../components/motion/MotionPrimitives';
+import { JsonLd } from '../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Nearshore Compliance: GDPR, SSO, MDM | Trust Center',
   description: 'Security and compliance are the foundation of our nearshore platform. Learn about our controls for LATAM teams.',
   keywords: 'nearshore compliance, gdpr compliance, nearshore sso, nearshore mdm, latam device control, soc 2 nearshore',
+};
+
+const trustSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Trust Center — Nearshore Compliance and Security",
+  description: "Security and compliance controls for nearshore LATAM teams. GDPR, SSO, MDM, SOC 2 alignment.",
+  url: "https://cto.teamstation.dev/trust",
+  inLanguage: "en-US",
+  isPartOf: { "@type": "WebSite", url: "https://cto.teamstation.dev" },
+  publisher: { "@type": "Organization", name: "TeamStation AI", url: "https://teamstation.dev" },
+  audience: { "@type": "Audience", audienceType: "Chief Technology Officer, Chief Information Officer" },
 };
 
 export default function TrustPage() {
@@ -52,6 +65,7 @@ export default function TrustPage() {
 
   return (
     <main className="manual-page container max-w-7xl py-10">
+      <JsonLd data={trustSchema} />
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Trust Center</span>
       </div>

@@ -5,6 +5,7 @@ import type { ReactNode } from 'react';
 import CTOFieldManualBlock from '../../../components/seo/CTOFieldManualBlock';
 import FurtherReading from '../../../components/seo/FurtherReading';
 import { RevealBlock, RevealSection, StaggerGrid, StaggerItem } from '../../../components/motion/MotionPrimitives';
+import { JsonLd } from '../../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Distributed Engineering OS Playbook Hub for CTO Teams',
@@ -95,9 +96,23 @@ const doctrineCards = [
   },
 ];
 
+const playbookHubSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "CTO Playbook Hub | Distributed Engineering OS",
+  description: "Decision guides for distributed engineering leadership. TCO, delivery risk, and hiring signal quality.",
+  url: "https://cto.teamstation.dev/playbook/hub",
+  inLanguage: "en-US",
+  isPartOf: { "@type": "WebSite", url: "https://cto.teamstation.dev" },
+  publisher: { "@type": "Organization", name: "TeamStation AI", url: "https://teamstation.dev" },
+  audience: { "@type": "Audience", audienceType: "Chief Technology Officer, Chief Information Officer" },
+};
+
 export default function PlaybookHubPage() {
   return (
-    <main className="manual-page reading-shell py-10">
+    <main
+      className="manual-page reading-shell py-10">
+      <JsonLd data={playbookHubSchema} />
       <div className="mb-8 text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Playbook Hub</span>
       </div>

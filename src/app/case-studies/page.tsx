@@ -20,11 +20,24 @@ import {
   StaggerGrid,
   StaggerItem,
 } from "@/components/motion/MotionPrimitives";
+import { JsonLd } from '../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: "Nearshore Engineering Case Studies | TeamStation AI",
   description:
     "Operational proof for CTO and CIO teams evaluating nearshore engineering. Case studies by constraint, intervention, and measured outcomes.",
+};
+
+const caseStudiesSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Nearshore Engineering Case Studies | TeamStation AI",
+  description: "Operational proof for CTO and CIO teams evaluating nearshore engineering models.",
+  url: "https://cto.teamstation.dev/case-studies",
+  inLanguage: "en-US",
+  isPartOf: { "@type": "WebSite", url: "https://cto.teamstation.dev" },
+  publisher: { "@type": "Organization", name: "TeamStation AI", url: "https://teamstation.dev" },
+  audience: { "@type": "Audience", audienceType: "Chief Technology Officer, Chief Information Officer" },
 };
 
 export default async function CaseStudiesPage() {
@@ -77,7 +90,9 @@ export default async function CaseStudiesPage() {
   ];
 
   return (
-    <main className="manual-page container max-w-5xl py-10">
+    <main
+      className="manual-page container max-w-5xl py-10">
+      <JsonLd data={caseStudiesSchema} />
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>Case Studies</span>
       </div>

@@ -15,6 +15,7 @@ import FurtherReading from "../../components/seo/FurtherReading";
 import CardGuidanceTooltip from "../../components/ui/card-guidance-tooltip";
 import { InfoDropdown } from "../../components/client/info-dropdown";
 import CTOFieldManualBlock from "../../components/seo/CTOFieldManualBlock";
+import { JsonLd } from '../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: "Hire Vetted Nearshore Engineers & LATAM IT Teams",
@@ -74,6 +75,19 @@ const hireSystemOutputs = [
   },
 ];
 
+const hireServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Hire Elite Nearshore Engineers | TeamStation AI",
+  description: "Pre-vetted LATAM engineers by role, technology, and country under one compliant SLA.",
+  url: "https://cto.teamstation.dev/hire",
+  serviceType: "IT Staff Augmentation",
+  areaServed: { "@type": "Country", name: "United States" },
+  provider: { "@type": "Organization", name: "TeamStation AI", url: "https://teamstation.dev" },
+  audience: { "@type": "Audience", audienceType: "Chief Technology Officer, VP of Engineering" },
+  inLanguage: "en-US",
+};
+
 export default function HirePage() {
   const hireOptions = [
     {
@@ -116,6 +130,7 @@ export default function HirePage() {
 
   return (
     <main className="manual-page content-shell py-10">
+      <JsonLd data={hireServiceSchema} />
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">
           Home

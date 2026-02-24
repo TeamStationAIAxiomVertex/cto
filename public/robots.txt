@@ -10,6 +10,8 @@ Allow: /
 Disallow: /_next/static/chunks/
 Disallow: /_next/static/media/
 Disallow: /_next/cache/
+Disallow: /api/
+Disallow: /studio/
 
 # User-agent: Google-Extended
 # Explicitly allow Google's AI crawlers (used for generative AI, Gemini/Bard responses)

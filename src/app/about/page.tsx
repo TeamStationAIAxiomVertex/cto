@@ -2,11 +2,24 @@ import { Target, Telescope, Shield, Users, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import SpotifyIcon from "../../components/SpotifyIcon";
+import { JsonLd } from '../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'About TeamStation AI: Nearshore Development Teams',
   description: 'Learn about our mission to provide the world\'s most efficient and secure platform for building elite nearshore LATAM teams.',
   keywords: 'about teamstation ai, nearshore software development, latam teams, bairesdev alternative, cognitive science hiring',
+};
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About TeamStation AI",
+  description: "Our mission, vision, and commitment to elite nearshore engineering.",
+  url: "https://cto.teamstation.dev/about",
+  inLanguage: "en-US",
+  isPartOf: { "@type": "WebSite", url: "https://cto.teamstation.dev" },
+  about: { "@type": "Organization", name: "TeamStation AI", url: "https://teamstation.dev" },
+  sameAs: ["https://teamstation.dev", "https://www.linkedin.com/company/teamstation"],
 };
 
 export default function AboutPage() {
@@ -39,6 +52,7 @@ export default function AboutPage() {
 
   return (
     <main className="manual-page container max-w-6xl py-10">
+      <JsonLd data={aboutSchema} />
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">Home</Link> / <span>About</span>
       </div>

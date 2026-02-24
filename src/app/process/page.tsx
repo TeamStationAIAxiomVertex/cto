@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { WithTooltip } from "../../components/ui/tooltip";
 import { RevealSection, StaggerGrid, StaggerItem } from "../../components/motion/MotionPrimitives";
+import { JsonLd } from '../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Our Nearshore IT Process: One Accountable SLA',
@@ -60,6 +61,18 @@ const processSystemOutputs = [
   },
 ];
 
+const processSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Nearshore Engineering Process | TeamStation AI",
+  description: "Engineered system for hiring LATAM engineers under one SLA with Day-1-ready talent and secure onboarding.",
+  url: "https://cto.teamstation.dev/process",
+  serviceType: "Nearshore Talent Acquisition",
+  areaServed: { "@type": "Country", name: "United States" },
+  provider: { "@type": "Organization", name: "TeamStation AI", url: "https://teamstation.dev" },
+  inLanguage: "en-US",
+};
+
 export default function ProcessPage() {
     const processSteps = [
         { title: "Book a Demo", description: "See the live console: jobs, short-lists, devices/MDM, compliance, KPIs.", artifact: "Demo environment + sample dashboards." },
@@ -113,7 +126,9 @@ export default function ProcessPage() {
     ]
 
   return (
-    <main className="container max-w-6xl py-12">
+    <main
+      className="container max-w-6xl py-12">
+      <JsonLd data={processSchema} />
        <div className="text-sm text-muted-foreground mb-8">
             <Link href="/" className="hover:text-foreground">Home</Link> / <span>Process</span>
         </div>

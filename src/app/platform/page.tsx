@@ -20,6 +20,7 @@ import {
   Layers,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { JsonLd } from '../../components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: "Distributed Engineering OS | TeamStation AI",
@@ -259,9 +260,23 @@ const systemOutputs = [
   },
 ];
 
+const platformSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Distributed Engineering OS | TeamStation AI Platform",
+  description: "Hire, equip, secure, and manage nearshore engineering teams under one accountable SLA.",
+  url: "https://cto.teamstation.dev/platform",
+  serviceType: "Distributed Engineering Platform",
+  areaServed: { "@type": "Country", name: "United States" },
+  provider: { "@type": "Organization", name: "TeamStation AI", url: "https://teamstation.dev" },
+  audience: { "@type": "Audience", audienceType: "Chief Technology Officer, Chief Information Officer" },
+  inLanguage: "en-US",
+};
+
 export default function PlatformPage() {
   return (
     <main className="manual-page container max-w-7xl py-10">
+      <JsonLd data={platformSchema} />
       <div className="text-sm text-muted-foreground mb-8">
         <Link href="/" className="hover:text-foreground">
           Home
