@@ -80,9 +80,9 @@ const pageData = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { title, description, canonical } = pageData.pageSEO;
+  const { description, canonical } = pageData.pageSEO;
   return {
-    title,
+    title: { absolute: 'Howdy Alternative | TeamStation AI' },
     description,
     alternates: {
       canonical,
