@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { WithTooltip } from "../../../../components/ui/tooltip";
+
+export const dynamicParams = false;
 import type { Metadata } from "next";
 import {
   CheckCircle,

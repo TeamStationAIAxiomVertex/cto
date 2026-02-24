@@ -18,6 +18,8 @@ import { RevealBlock, RevealSection } from '@/components/motion/MotionPrimitives
 // The content renderer will handle MDX/HTML rendering for the NCLA v7 prose
 const PlaybookContentRenderer = dynamic(() => import('@/components/PlaybookContentRenderer'), { ssr: true });
 
+export const dynamicParams = false;
+
 // --- 1. NEXT.JS STATIC PARAMS GENERATION ---
 // Pre-render the core Playbook chapters at build time (ISR/SSG)
 export async function generateStaticParams() {

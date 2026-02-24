@@ -1,6 +1,8 @@
 
 import { notFound } from 'next/navigation';
 import { allTech, getAllTechSlugs, TechEntry } from '@/lib/tech';
+
+export const dynamicParams = false;
 import { ProgrammaticContent } from '@/components/ProgrammaticContent';
 import { Metadata } from 'next';
 import { AlertTriangle } from 'lucide-react'; // Correctly import the icon

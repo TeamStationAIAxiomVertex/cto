@@ -9,6 +9,9 @@ import {
 import VerdictTable from "@/components/VerdictTable";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTOFieldManualBlock from "@/components/seo/CTOFieldManualBlock";
+
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const slugs = await getCountrySlugs();
   return slugs.map((slug) => ({ slug }));
