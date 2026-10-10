@@ -10,8 +10,8 @@ Teach a concrete decision about the agentic AI SDLC, relevant tools, methods, en
 
 ## Brand and page format
 
-- Use the current TeamStation AI terminal mark from `assets/teamstation-mark-dark.svg`, the text wordmark `TeamStation AI`, and tagline `Distributed Engineering OS`. This is the actual mark from teamstation.dev; do not invent or substitute a logo.
-- Use the shared `assets/article.css`: graphite background, blue accents, Geist font with system fallback, readable content, accessible links, and responsive desktop/mobile layouts.
+- Use the exact official horizontal lockup from `TeamStation-AI/public/brand/assets/Logo/lockup-horizontal-dark.svg` for the article header. The current template embeds that SVG unchanged so its text inherits Geist. Do not reconstruct the wordmark from a standalone mark and HTML text, or recolor, stretch, crop, or decorate the logo. The standalone mark remains appropriate for the favicon.
+- Use the shared `assets/article.css` and the current TeamStation brand library: background `#0d1117`, panel `#11161d`, elevated `#151b23`, text `#e6edf3`, secondary `#9aa4b2`, border `#232b36`, accent `#6e8aff`, hover `#9bb8ff`. Preserve the distinct colors inside the official logo. Use Geist for body/display and Geist Mono for code and technical labels, discrete font-size breakpoints, 28px page gutters, 8px card radii and 32px card padding. Verify the rendered lockup, palette, font loading and text bounds at desktop and phone widths.
 - Base new article HTML on `2026-10-10-agentic-ai-sdlc-harness/index.html`. Keep the header, author/date, helpful answer-first intro, short takeaway box, contents links, source date note, useful section headings, contextual links and service/research footer.
 - Include accurate title, description, canonical, Open Graph and Twitter metadata, and Article JSON-LD. Match the headline, author, dates and image to the actual page. Do not copy October 10's dates, topic or image into another day's article.
 - Create a relevant branded social preview for each article. Preserve the real logo. The current example is a code-generated title card, not a claim of ranking or indexing.
