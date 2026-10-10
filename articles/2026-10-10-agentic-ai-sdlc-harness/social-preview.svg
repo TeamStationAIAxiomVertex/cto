@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0d1117"/>
+<g transform="translate(54 35) scale(.5)">
+  <rect x="14" y="14" width="92" height="92" rx="20" stroke="#FFFFFF" stroke-width="5" />
+  <path d="M40,46 L56,60 L40,74" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="64" y="52" width="16" height="16" rx="2" fill="#5E84FF" />
+</g>
+<g font-family="DejaVu Sans, sans-serif">
+<text x="132" y="73" fill="#e6edf3" font-size="30" font-weight="bold">TeamStation <tspan fill="#6e8aff">AI</tspan></text>
+<text x="132" y="96" fill="#9aa4b2" font-size="11" letter-spacing="2">DISTRIBUTED ENGINEERING OS</text>
+<path d="M60 126H1140" stroke="#232b36"/>
+<text x="64" y="188" fill="#9bb8ff" font-size="18" letter-spacing="2">THE CTO'S FIELD NOTES</text>
+<text x="60" y="270" fill="#e6edf3" font-size="60" font-weight="bold">Agentic AI SDLC</text>
+<text x="60" y="354" fill="#e6edf3" font-size="56" font-weight="bold">Build a loop that</text>
+<text x="60" y="430" fill="#e6edf3" font-size="56" font-weight="bold">survives a restart.</text>
+<rect x="60" y="480" width="72" height="4" rx="2" fill="#6e8aff"/>
+<text x="60" y="556" fill="#9aa4b2" font-size="20">Lonnie McRorey / October 10, 2026</text>
+<text x="1140" y="556" fill="#9bb8ff" font-size="18" text-anchor="end">teamstation.dev</text>
+</g></svg>
