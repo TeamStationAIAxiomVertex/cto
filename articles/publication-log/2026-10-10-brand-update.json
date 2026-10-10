@@ -1,0 +1,72 @@
+{
+  "observed_at": "2026-10-10T20:25:57.644094+00:00",
+  "checks": [
+    {
+      "url": "https://teamstationaiaxiomvertex.github.io/cto/articles/2026-10-10-agentic-ai-sdlc-harness/",
+      "http_status": 200,
+      "matches_expected_bytes": true,
+      "sha256": "90a48d4b39438e12eaa18e75ea3c07bdc4e7fb59e5dc040a0b617beb67a84ec3",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://teamstationaiaxiomvertex.github.io/cto/articles/assets/article.css",
+      "http_status": 200,
+      "matches_expected_bytes": true,
+      "sha256": "49c0f78cf43b009dcd9d17bb18064aa1eeb0c3476d0004c2dfa25e006851835e",
+      "content_type": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://teamstationaiaxiomvertex.github.io/cto/articles/assets/teamstation-mark-dark.svg",
+      "http_status": 200,
+      "matches_expected_bytes": true,
+      "sha256": "f4da8bb2f6740e9df35a4be12560f41bf91afc4c4f03d02a4e8e5503861e3159",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "url": "https://teamstationaiaxiomvertex.github.io/cto/articles/2026-10-10-agentic-ai-sdlc-harness/social-preview.png",
+      "http_status": 200,
+      "matches_expected_bytes": true,
+      "sha256": "0402c2fac76d84459455028152a1b9d32d7f732995ecad33a7042bc3d3a44bbe",
+      "content_type": "image/png"
+    }
+  ],
+  "date": "2026-10-10",
+  "timezone": "America/Mexico_City",
+  "objective": "Update existing GitHub Pages article branding and cordial informal voice",
+  "repository": "TeamStationAIAxiomVertex/cto",
+  "source_commit": "1cc293f2cd719b3b034506377d2c5b36a3968e14",
+  "previous_source_commit": "5764915d42f21100ec7222f34ecdffe3030d9c54",
+  "deployment_run_id": 38083650624,
+  "deployment_status": "completed",
+  "deployment_conclusion": "success",
+  "verified_url": "https://teamstationaiaxiomvertex.github.io/cto/articles/2026-10-10-agentic-ai-sdlc-harness/",
+  "original_primary_and_contextual_links_preserved": true,
+  "other_distribution_channels": "not_verified_by_this_change",
+  "html_metadata_schema_assets_anchors": "PASS",
+  "mobile_rendering": "NOT_VERIFIED: supported browser exposes no viewport resize/emulation; responsive CSS inspected statically",
+  "status": "VERIFIED_GITHUB_PAGES_ARTICLE_UPDATE",
+  "recorded_at": "2026-10-10T20:27:10.337748+00:00",
+  "desktop_qa": {
+    "status": "PASS",
+    "viewport": {
+      "width": 1363,
+      "height": 936
+    },
+    "exact_headline": true,
+    "official_mark_loaded": true,
+    "geist_loaded": true,
+    "document_client_width": 1348,
+    "document_scroll_width": 1348,
+    "clipping_or_overlap_observed": false,
+    "contents_interaction": {
+      "link": "Recover after a restart",
+      "observed_hash": "#restart-recovery",
+      "heading_visible_below_sticky_header": true
+    },
+    "console": "No article-origin errors observed; browser-extension metadata errors excluded"
+  },
+  "sources_and_contextual_targets_http_200": true,
+  "brand_instructions": "articles/AGENTS.md",
+  "shared_stylesheet": "articles/assets/article.css",
+  "scope": "In-place update of this article only. Does not verify other distribution lanes, scheduler or full publishing-engine uptime."
+}
